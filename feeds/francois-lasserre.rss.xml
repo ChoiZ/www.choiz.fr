@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChoiZ</title><link>/</link><description></description><atom:link href="/feeds/francois-lasserre.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 14 Aug 2014 21:21:00 +0200</lastBuildDate><item><title>Premier Article</title><link>/premier-article.html</link><description>&lt;p&gt;Voici mon premier article avec Pelican depuis le Thalys. Le thème par défaut de Pelican est pas terrible j'essayerai d'importer mon thème créer sur Tumblr plus tard.
-J'ai essayé d'importer les données de Tumblr avec Pelican mais je n'ai récupéré qu'un seul article (le dernier).&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">François LASSERRE</dc:creator><pubDate>Thu, 14 Aug 2014 21:21:00 +0200</pubDate><guid>tag:,2014-08-14:premier-article.html</guid></item></channel></rss>
+J'ai essayé d'importer les données de Tumblr avec Pelican mais je n'ai récupéré qu'un seul article (le dernier).&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">François LASSERRE</dc:creator><pubDate>Thu, 14 Aug 2014 21:21:00 +0200</pubDate><guid>tag:,2014-08-14:premier-article.html</guid></item><item><title>Faire un patch de "x" commit(s) avec git</title><link>/faire-un-patch-de-x-commits-avec-git.html</link><description>&lt;p&gt;Voici mon historique des commits :&lt;/p&gt;
+&lt;p&gt;c0004 -- dernier commit
+c0003 -- avant dernier commit
+c0002 -- second commit
+c0001 -- premier commit
+Je veux faire un patch du commit c0001 et c0002 je dois donc faire :&lt;/p&gt;
+&lt;p&gt;git format-patch -2 c0002 --stdout &amp;gt; mon.patch&lt;/p&gt;
+&lt;p&gt;le "-2" sert à récupérer 2 commits à partir du commit c0002.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">François LASSERRE</dc:creator><pubDate>Tue, 06 May 2014 21:21:00 +0200</pubDate><guid>tag:,2014-05-06:faire-un-patch-de-x-commits-avec-git.html</guid></item></channel></rss>
