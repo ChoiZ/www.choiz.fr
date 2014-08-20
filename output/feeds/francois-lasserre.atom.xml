@@ -10,4 +10,21 @@ J'ai essayé d'importer les données de Tumblr avec Pelican mais je n'ai récup�
 
 &lt;p&gt;Je veux faire un patch du commit c0001 et c0002 je dois donc faire :&lt;/p&gt;
 &lt;p&gt;git format-patch -2 c0002 --stdout &amp;gt; mon.patch&lt;/p&gt;
-&lt;p&gt;le "-2" sert à récupérer 2 commits à partir du commit c0002.&lt;/p&gt;</summary></entry></feed>
+&lt;p&gt;le "-2" sert à récupérer 2 commits à partir du commit c0002.&lt;/p&gt;</summary></entry><entry><title>Installation de Skype 64 sur Debian</title><link href="/installation-de-skype-64-sur-debian.html" rel="alternate"></link><updated>2014-03-21T00:32:00+01:00</updated><author><name>François LASSERRE</name></author><id>tag:,2014-03-21:installation-de-skype-64-sur-debian.html</id><summary type="html">&lt;p&gt;Télécharger la dernière version de &lt;a href="http://www.skype.com/"&gt;Skype&lt;/a&gt; (Debian 7.0 [multiarch]).&lt;/p&gt;
+&lt;p&gt;Ajouter l’achitecture i386 si vous ne l’avez pas déjà fait.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;dpkg&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;architecture&lt;/span&gt; &lt;span class="n"&gt;i386&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Puis mettre à jour les paquets&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;
+
+&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;upgrade&lt;/span&gt;
+
+&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Installer Skype en n’oubliant pas de remplacer "x" par la bonne version&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;dpkg&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;skype&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;debian_x_i386&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;deb&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary></entry></feed>
