@@ -57,11 +57,14 @@ J'ai essayé d'importer les données de Tumblr avec Pelican mais je n'ai récup�
 <p>In <a href="/category/blog.html">Blog</a>. </p>
 
 </footer><!-- /.post-info -->                <p>Voici mon historique des commits :</p>
-<p>c0004 -- dernier commit
-c0003 -- avant dernier commit
-c0002 -- second commit
-c0001 -- premier commit
-Je veux faire un patch du commit c0001 et c0002 je dois donc faire :</p>
+<div class="highlight"><pre><span class="n">c0004</span> <span class="o">--</span> <span class="n">dernier</span> <span class="n">commit</span>
+<span class="n">c0003</span> <span class="o">--</span> <span class="n">avant</span> <span class="n">dernier</span> <span class="n">commit</span>
+<span class="n">c0002</span> <span class="o">--</span> <span class="n">second</span> <span class="n">commit</span>
+<span class="n">c0001</span> <span class="o">--</span> <span class="n">premier</span> <span class="n">commit</span>
+</pre></div>
+
+
+<p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire :</p>
 <p>git format-patch -2 c0002 --stdout &gt; mon.patch</p>
 <p>le "-2" sert à récupérer 2 commits à partir du commit ...</p>
                 <a class="readmore" href="/faire-un-patch-de-x-commits-avec-git.html">read more</a>
