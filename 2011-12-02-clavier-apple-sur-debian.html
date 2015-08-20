@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/font-awesome.min.css">
+  <link href="http://choiz.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <link rel="shortcut icon" href="http://localhost:8000//favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000//favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+<meta name="author" content="choiz" />
+<meta name="description" content="Depuis le temps que je bosse avec un clavier Apple [STRIKEOUT:j'ai] mes doigts on eu le temps de s'habituer au mapage du clavier. Il y a beaucoup de différences entre un clavier AZERTY de PC et un clavier AZERTY de Mac. Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées ..." />
+<meta name="keywords" content="Clavier, Apple, Mapage, Debian, Linux, Keyboard, Mac, Mac Keyboard">
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:title" content="Clavier Apple sur debian"/>
+<meta property="og:description" content="Depuis le temps que je bosse avec un clavier Apple [STRIKEOUT:j'ai] mes doigts on eu le temps de s'habituer au mapage du clavier. Il y a beaucoup de différences entre un clavier AZERTY de PC et un clavier AZERTY de Mac. Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://choiz.github.io/2011-12-02-clavier-apple-sur-debian.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2011-12-02 00:14:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://choiz.github.io/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="Clavier"/>
+<meta property="article:tag" content="Apple"/>
+<meta property="article:tag" content="Mapage"/>
+<meta property="article:tag" content="Debian"/>
+<meta property="article:tag" content="Linux"/>
+<meta property="article:tag" content="Keyboard"/>
+<meta property="article:tag" content="Mac"/>
+<meta property="article:tag" content="Mac Keyboard"/>
+<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">  <title>ChoiZ &ndash; Clavier Apple sur debian</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://choiz.github.io">
+        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="" title="">
+      </a>
+      <h1><a href="http://choiz.github.io"></a></h1>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</p>
+      <p>J'ai fondé plusieurs webradios depuis l'an 2000, actuellement je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="2011-12-02-clavier-apple-sur-debian">Clavier Apple sur debian</h1>
+    <p>Posté le ven. 02 décembre 2011</p>
+  </header>
+  <div>
+    <div class="line-block">
+<div class="line">Depuis le temps que je bosse avec un clavier Apple [STRIKEOUT:j'ai]
+mes doigts on eu le temps de s'habituer au mapage du clavier. Il y a
+beaucoup de différences entre un clavier AZERTY de PC et un clavier
+AZERTY de Mac.</div>
+<div class="line">Les touches : &#64; # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
+des endroits complétement différents.</div>
+</div>
+<p>Pour modifier la configuration faire en console :</p>
+<blockquote>
+<p>dpkg-reconfigure keyboard-console</p>
+<p>Select keymap from arch list</p>
+<p>azerty</p>
+<p>French</p>
+<p>Apple USB</p>
+<p>dpkg-reconfigure keyboard-configuration</p>
+<p>model: Apple</p>
+<p>layout: France - Macintosh</p>
+<p>Key for AltGr: No AltGr Key</p>
+<p>Compose key: Right Alt (AltGr)</p>
+<p>Use Control+Alt+Backspace to terminate the X server? no</p>
+</blockquote>
+<p>J'ai choisi un clavier Apple, Français Mac, sans touche AltGr, avec
+comme touche de fonctionnalité secondaire &quot;Alt droit&quot;. Malheureusement
+je n'ai pas réussi a mapper l'Alt de gauche pour avoir la même fonction
+qu'à droite...</p>
+<p>Et ensuite j'ai indiqué que je ne voulais pas pouvoir quitter le server
+X avec la combinaison de touche Control+Alt+Backspace.</p>
+<p>Si ceci ne fonctionne pas il faut se rendre dans la configuration du
+clavier de votre gestionnaire de fenêtre (xfce: dans mon cas). Puis
+désactiver le layout par defaut du système.</p>
+<p><img alt="image0" src="http://media.tumblr.com/tumblr_lvjsbrOL8E1qzr4hx.png" /></p>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://choiz.github.io/tag/clavier.html">Clavier</a>
+      <a href="http://choiz.github.io/tag/apple.html">Apple</a>
+      <a href="http://choiz.github.io/tag/mapage.html">Mapage</a>
+      <a href="http://choiz.github.io/tag/debian.html">Debian</a>
+      <a href="http://choiz.github.io/tag/linux.html">Linux</a>
+      <a href="http://choiz.github.io/tag/keyboard.html">Keyboard</a>
+      <a href="http://choiz.github.io/tag/mac.html">Mac</a>
+      <a href="http://choiz.github.io/tag/mac-keyboard.html">Mac Keyboard</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Clavier Apple sur debian",
+  "headline": "Clavier Apple sur debian",
+  "datePublished": "2011-12-02 00:14:00+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "http://choiz.github.io/author/choiz.html"
+  },
+  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "url": "http://choiz.github.io/2011-12-02-clavier-apple-sur-debian.html",
+  "description": "Depuis le temps que je bosse avec un clavier Apple [STRIKEOUT:j'ai] mes doigts on eu le temps de s'habituer au mapage du clavier. Il y a beaucoup de différences entre un clavier AZERTY de PC et un clavier AZERTY de Mac. Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées ..."
+}
+</script></body>
+</html>

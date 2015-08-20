@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/font-awesome.min.css">
+  <link href="http://choiz.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <link rel="shortcut icon" href="http://localhost:8000//favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000//favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="François LASSERRE" />
+  <meta name="description" content="" />
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="ChoiZ"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://choiz.github.io"/>
+<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">
+  <title>ChoiZ &ndash; Tag : PHP</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://choiz.github.io">
+        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="" title="">
+      </a>
+      <h1><a href="http://choiz.github.io"></a></h1>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</p>
+      <p>J'ai fondé plusieurs webradios depuis l'an 2000, actuellement je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2013-05-29-latin1-utf-8.html#2013-05-29-latin1-utf-8">Latin1 &lt;-&gt; UTF-8</a></h2>
+    <p>
+      Posté le mer. 29 mai 2013 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/php.html">PHP</a>,      <a href="http://choiz.github.io/tag/latin1.html">LATIN1</a>,      <a href="http://choiz.github.io/tag/utf-8.html">UTF-8</a>,      <a href="http://choiz.github.io/tag/mysql.html">MYSQL</a>,      <a href="http://choiz.github.io/tag/encoding.html">ENCODING</a>,      <a href="http://choiz.github.io/tag/charset.html">CHARSET</a>,      <a href="http://choiz.github.io/tag/mysqldump.html">mysqldump</a>    </p>
+  </header>
+  <div>
+      <p>Voilà une solution simple pour convertir une base de donnée en Latin1
+vers de l'UTF-8.</p>
+<p>Utiliser mysqldump avec les options suivantes :</p>
+<p><tt class="docutils literal"><span class="pre">--default-character-set=utf8</span></tt></p>
+<p>et</p>
+<p><tt class="docutils literal"><span class="pre">--skip-set-charset</span></tt></p>
+<p>Voilà la commande&nbsp;complète :</p>
+<p><tt class="docutils literal">mysqldump <span class="pre">-u</span> user <span class="pre">-p</span> base table <span class="pre">--default-character-set=utf8</span> <span class="pre">--skip-set-charset</span> &gt; base_table.sql</tt></p>
+<p>Ensuite en utilisant vim je fais un rechercher / remplacer ...</p>
+      <a class="btn" href="http://choiz.github.io/2013-05-29-latin1-utf-8.html#2013-05-29-latin1-utf-8">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-12-04-php-gettext-debian.html#2011-12-04-php-gettext-debian">PHP + Gettext + Debian</a></h2>
+    <p>
+      Posté le dim. 04 décembre 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/mo.html">.mo</a>,      <a href="http://choiz.github.io/tag/po.html">.po</a>,      <a href="http://choiz.github.io/tag/etclocale.html">/etc/locale</a>,      <a href="http://choiz.github.io/tag/lc_all.html">LC_ALL</a>,      <a href="http://choiz.github.io/tag/gettext.html">gettext</a>,      <a href="http://choiz.github.io/tag/php.html">php</a>,      <a href="http://choiz.github.io/tag/php-gettext.html">php-gettext</a>,      <a href="http://choiz.github.io/tag/setlocale.html">setlocale</a>,      <a href="http://choiz.github.io/tag/xgettext.html">xgettext</a>    </p>
+  </header>
+  <div>
+      <div class="line-block">
+<div class="line">J'utilise maintenant php-gettext pour mes traductions. C'est plus
+facile en utilisant des outils tel que pootle ou poedit.</div>
+<div class="line">Pour utiliser gettext sur votre site en php il faut télécharger le
+package php-gettext ainsi que d'autres outils tel que xgettext ou
+msgfmt :</div>
+</div>
+<blockquote>
+<p># apt-get install php-gettext</p>
+<p># apt-get install xgettext ...</p></blockquote>
+      <a class="btn" href="http://choiz.github.io/2011-12-04-php-gettext-debian.html#2011-12-04-php-gettext-debian">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html#2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php">Petit tips pour les utilisateurs de VIM et PHP</a></h2>
+    <p>
+      Posté le mer. 13 avril 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/php.html">PHP</a>,      <a href="http://choiz.github.io/tag/vim.html">Vim</a>,      <a href="http://choiz.github.io/tag/vi.html">Vi</a>,      <a href="http://choiz.github.io/tag/console.html">Console</a>,      <a href="http://choiz.github.io/tag/mac.html">Mac</a>,      <a href="http://choiz.github.io/tag/linux.html">Linux</a>    </p>
+  </header>
+  <div>
+      <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
+dans la console je tape la commande :</p>
+<blockquote>
+php -l fichier_a_tester.php</blockquote>
+<p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
+Pour la faire il suffit de faire &quot;ESC&quot; pour passer en mode ...</p>
+      <a class="btn" href="http://choiz.github.io/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html#2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-03-08-tpaamayimnekudotayim.html#2011-03-08-tpaamayimnekudotayim">T_PAAMAYIM_NEKUDOTAYIM</a></h2>
+    <p>
+      Posté le mar. 08 mars 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/paamayim-nekudotayim.html">Paamayim Nekudotayim</a>,      <a href="http://choiz.github.io/tag/operateur-de-resolution-de-portee.html">opérateur de résolution de portée</a>,      <a href="http://choiz.github.io/tag/.html">::</a>,      <a href="http://choiz.github.io/tag/php.html">PHP</a>,      <a href="http://choiz.github.io/tag/error.html">Error</a>,      <a href="http://choiz.github.io/tag/erreur.html">Erreur</a>    </p>
+  </header>
+  <div>
+      <p>Voilà a quoi correspond cette erreur pour ceux qui demandent :</p>
+<p><tt class="docutils literal">Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695</tt></p>
+<p>Le Paamayim Nekudotayim est l'opérateur de résolution de portée.</p>
+<p><a class="reference external" href="http://fr.php.net/manual/fr/language.oop5.paamayim-nekudotayim.php">Dans la doc
+PHP</a>
+:</p>
+<p><em>L'opérateur de résolution de portée (aussi appelé Paamayim Nekudotayim)
+ou, en termes ...</em></p>
+      <a class="btn" href="http://choiz.github.io/2011-03-08-tpaamayimnekudotayim.html#2011-03-08-tpaamayimnekudotayim">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html#2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php">Protection de fichier tel qu'un htaccess en PHP</a></h2>
+    <p>
+      Posté le ven. 11 février 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/php.html">php</a>,      <a href="http://choiz.github.io/tag/htaccess.html">htaccess</a>,      <a href="http://choiz.github.io/tag/htpasswd.html">htpasswd</a>,      <a href="http://choiz.github.io/tag/protection.html">protection</a>,      <a href="http://choiz.github.io/tag/fichier.html">fichier</a>,      <a href="http://choiz.github.io/tag/authenticate.html">authenticate</a>,      <a href="http://choiz.github.io/tag/auth.html">auth</a>    </p>
+  </header>
+  <div>
+      <p>Faire un système de protection (tel que htaccess) direct dans un fichier
+php :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">&lt;?php</div>
+<div class="line">if (!empty($_SERVER[&quot;PHP_AUTH_USER&quot;]) &amp;&amp;
+$_SERVER[&quot;PHP_AUTH_USER&quot;] == &quot;login&quot; &amp;&amp;
+$_SERVER[&quot;PHP_AUTH_PW&quot;] == &quot;password&quot;) {</div>
+<div class="line">&nbsp;&nbsp;&nbsp; // code protégé ici</div>
+<div class="line">} else {</div>
+<div class="line">&nbsp;&nbsp;&nbsp; header('WWW-Authenticate: Basic realm=&quot;Restricted area&quot;');</div>
+<div class="line">&nbsp;&nbsp;&nbsp; header('HTTP/1.0 401 Unauthorized');</div>
+<div class="line">&nbsp;&nbsp;&nbsp; exit('Access Denied');</div>
+<div class="line">}</div>
+<div class="line">?&gt;</div>
+</div>
+</blockquote>
+
+      <a class="btn" href="http://choiz.github.io/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html#2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2010-10-25-commande-svn-pour-ajouter-des-keywords.html#2010-10-25-commande-svn-pour-ajouter-des-keywords">Commande SVN pour ajouter des keywords</a></h2>
+    <p>
+      Posté le lun. 25 octobre 2010 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/svn.html">SVN</a>,      <a href="http://choiz.github.io/tag/subversion.html">Subversion</a>,      <a href="http://choiz.github.io/tag/keyword.html">Keyword</a>,      <a href="http://choiz.github.io/tag/id.html">Id</a>,      <a href="http://choiz.github.io/tag/revision.html">Revision</a>,      <a href="http://choiz.github.io/tag/date.html">Date</a>,      <a href="http://choiz.github.io/tag/author.html">Author</a>,      <a href="http://choiz.github.io/tag/url.html">URL</a>,      <a href="http://choiz.github.io/tag/php.html">PHP</a>,      <a href="http://choiz.github.io/tag/code.html">Code</a>,      <a href="http://choiz.github.io/tag/subversion.html">Subversion</a>    </p>
+  </header>
+  <div>
+      <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
+informations dans vos projets il suffit de taper cette commande :</p>
+<blockquote>
+svn propset svn:keywords &quot;Id&quot; index.php</blockquote>
+<p>Ce qui permet d'ajouter le keyword &quot;Id&quot; sur le fichier index.php</p>
+<p>Pour afficher l'Id dans votre fichier index ...</p>
+      <a class="btn" href="http://choiz.github.io/2010-10-25-commande-svn-pour-ajouter-des-keywords.html#2010-10-25-commande-svn-pour-ajouter-des-keywords">Lire la suite</a>
+  </div>
+</article>
+
+  <div class="pagination">
+  </div>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " ChoiZ ",
+  "url" : "http://choiz.github.io",
+  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "description": ""
+}
+</script></body>
+</html>

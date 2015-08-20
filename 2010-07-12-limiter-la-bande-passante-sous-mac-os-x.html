@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/font-awesome.min.css">
+  <link href="http://choiz.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <link rel="shortcut icon" href="http://localhost:8000//favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000//favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+<meta name="author" content="choiz" />
+<meta name="description" content="Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau virtuel en console. Ici on créer un tuyau virtuel de 1Mbit/s. sudo ipfw pipe 1 config bw 1Mbit/s On applique ce tuyau au port 80 (pour le téléchargement de fichier via un navigateur ..." />
+<meta name="keywords" content="Limit Brandwith, Limitation Bande Passante, Mac Os, Mac Os X, Tuyau, Tuyau Virtuel, Limit Brandwidth">
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:title" content="Limiter la bande passante sous Mac Os X"/>
+<meta property="og:description" content="Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau virtuel en console. Ici on créer un tuyau virtuel de 1Mbit/s. sudo ipfw pipe 1 config bw 1Mbit/s On applique ce tuyau au port 80 (pour le téléchargement de fichier via un navigateur ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://choiz.github.io/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2010-07-12 11:59:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://choiz.github.io/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="Limit Brandwith"/>
+<meta property="article:tag" content="Limitation Bande Passante"/>
+<meta property="article:tag" content="Mac Os"/>
+<meta property="article:tag" content="Mac Os X"/>
+<meta property="article:tag" content="Tuyau"/>
+<meta property="article:tag" content="Tuyau Virtuel"/>
+<meta property="article:tag" content="Limit Brandwidth"/>
+<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">  <title>ChoiZ &ndash; Limiter la bande passante sous Mac Os X</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://choiz.github.io">
+        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="" title="">
+      </a>
+      <h1><a href="http://choiz.github.io"></a></h1>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</p>
+      <p>J'ai fondé plusieurs webradios depuis l'an 2000, actuellement je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="2010-07-12-limiter-la-bande-passante-sous-mac-os-x">Limiter la bande passante sous Mac Os X</h1>
+    <p>Posté le lun. 12 juillet 2010</p>
+  </header>
+  <div>
+    <p>Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
+virtuel en console.</p>
+<p>Ici on créer un tuyau virtuel de 1Mbit/s.</p>
+<p><tt class="docutils literal">sudo ipfw pipe 1 config bw 1Mbit/s</tt></p>
+<p>On applique ce tuyau au port 80 (pour le téléchargement de fichier via
+un navigateur par exemple).</p>
+<p><tt class="docutils literal">sudo ipfw add 1 pipe 1 proto tcp <span class="pre">src-port</span> 80</tt></p>
+<p>Pour voir le tuyau :</p>
+<p><tt class="docutils literal">sudo ipfw pipe show</tt></p>
+<p>Pour supprimer la règle du port 80 :</p>
+<p><tt class="docutils literal">sudo ipfw del 1</tt></p>
+<p>Pour supprimer le tuyau :</p>
+<p><tt class="docutils literal">sudo ipfw pipe 1 delete</tt></p>
+<p>Bien entendu on peut créer plusieurs tuyau et plusieurs règles
+différentes avec le même tuyau ;)</p>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://choiz.github.io/tag/limit-brandwith.html">Limit Brandwith</a>
+      <a href="http://choiz.github.io/tag/limitation-bande-passante.html">Limitation Bande Passante</a>
+      <a href="http://choiz.github.io/tag/mac-os.html">Mac Os</a>
+      <a href="http://choiz.github.io/tag/mac-os-x.html">Mac Os X</a>
+      <a href="http://choiz.github.io/tag/tuyau.html">Tuyau</a>
+      <a href="http://choiz.github.io/tag/tuyau-virtuel.html">Tuyau Virtuel</a>
+      <a href="http://choiz.github.io/tag/limit-brandwidth.html">Limit Brandwidth</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Limiter la bande passante sous Mac Os X",
+  "headline": "Limiter la bande passante sous Mac Os X",
+  "datePublished": "2010-07-12 11:59:00+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "http://choiz.github.io/author/choiz.html"
+  },
+  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "url": "http://choiz.github.io/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html",
+  "description": "Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau virtuel en console. Ici on créer un tuyau virtuel de 1Mbit/s. sudo ipfw pipe 1 config bw 1Mbit/s On applique ce tuyau au port 80 (pour le téléchargement de fichier via un navigateur ..."
+}
+</script></body>
+</html>

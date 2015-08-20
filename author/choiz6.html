@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/font-awesome.min.css">
+  <link href="http://choiz.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <link rel="shortcut icon" href="http://localhost:8000//favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000//favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="François LASSERRE" />
+  <meta name="description" content="" />
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="ChoiZ"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://choiz.github.io"/>
+<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">
+  <title>ChoiZ &ndash; Postées par : choiz</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://choiz.github.io">
+        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="" title="">
+      </a>
+      <h1><a href="http://choiz.github.io"></a></h1>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</p>
+      <p>J'ai fondé plusieurs webradios depuis l'an 2000, actuellement je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-06-30-elément-cliqué-en-js.html#2011-06-30-elément-cliqué-en-js">Elément cliqué en js</a></h2>
+    <p>
+      Posté le jeu. 30 juin 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/js.html">js</a>,      <a href="http://choiz.github.io/tag/element.html">element</a>,      <a href="http://choiz.github.io/tag/click.html">click</a>,      <a href="http://choiz.github.io/tag/javascript.html">javascript</a>,      <a href="http://choiz.github.io/tag/html.html">html</a>    </p>
+  </header>
+  <div>
+      <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de
+javascript :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">function checkclick(e) {</div>
+<div class="line">&nbsp;&nbsp;&nbsp; e = e || window.event;</div>
+<div class="line">&nbsp;&nbsp;&nbsp; var o = e.target || e.srcElement;</div>
+<div class="line">&nbsp;&nbsp;&nbsp; console.log(o);</div>
+<div class="line">}</div>
+<div class="line">document.onclick=checkclick;</div>
+</div>
+</blockquote>
+<p>Pratique pour du debug ;)</p>
+
+      <a class="btn" href="http://choiz.github.io/2011-06-30-elément-cliqué-en-js.html#2011-06-30-elément-cliqué-en-js">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-05-30-patch-diff.html#2011-05-30-patch-diff">Patch &amp; diff</a></h2>
+    <p>
+      Posté le lun. 30 mai 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/patch.html">Patch</a>,      <a href="http://choiz.github.io/tag/commande.html">Commande</a>,      <a href="http://choiz.github.io/tag/terminal.html">Terminal</a>,      <a href="http://choiz.github.io/tag/diff.html">Diff</a>,      <a href="http://choiz.github.io/tag/version.html">Version</a>    </p>
+  </header>
+  <div>
+      <div class="line-block">
+<div class="line">Patch permet de &quot;patcher&quot; un fichier, dossier, projet ! Pratique
+lorsque vous distribuez du code et que vous voulez le mettre à jour.</div>
+<div class="line">Comment l'utiliser ? Dans un premier temps nous allons faire un
+différentiel de notre version actuelle du projet et de la nouvelle
+version (celle patchée).</div>
+</div>
+<blockquote>
+diff -u version1 ...</blockquote>
+      <a class="btn" href="http://choiz.github.io/2011-05-30-patch-diff.html#2011-05-30-patch-diff">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-05-29-split-vsplit-dans-vim.html#2011-05-29-split-vsplit-dans-vim">Split &amp; Vsplit dans vim</a></h2>
+    <p>
+      Posté le dim. 29 mai 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/vim.html">vim</a>,      <a href="http://choiz.github.io/tag/fichier.html">fichier</a>,      <a href="http://choiz.github.io/tag/editeur.html">editeur</a>,      <a href="http://choiz.github.io/tag/texte.html">texte</a>,      <a href="http://choiz.github.io/tag/terminal.html">terminal</a>,      <a href="http://choiz.github.io/tag/commande.html">commande</a>,      <a href="http://choiz.github.io/tag/split.html">split</a>,      <a href="http://choiz.github.io/tag/vsplit.html">vsplit</a>,      <a href="http://choiz.github.io/tag/window.html">window</a>,      <a href="http://choiz.github.io/tag/colonnes.html">colonnes</a>,      <a href="http://choiz.github.io/tag/cols.html">cols</a>,      <a href="http://choiz.github.io/tag/columns.html">columns</a>    </p>
+  </header>
+  <div>
+      <p>Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
+pouvoir ouvrir plusieurs fichiers en même temps.</p>
+<p>Pour celà il utilises 2 méthodes soit :</p>
+<ol class="arabic simple">
+<li>la division de la fenêtre horizontal en utilisant</li>
+</ol>
+<p><tt class="docutils literal">:split</tt></p>
+<p>ou</p>
+<p><tt class="docutils literal">:new</tt></p>
+<p>et ensuite</p>
+<p><tt class="docutils literal">:e le_fichier_a_ouvrir</tt></p>
+<ol class="arabic simple" start="2">
+<li>la division de la fenêtre verticalement ...</li></ol>
+      <a class="btn" href="http://choiz.github.io/2011-05-29-split-vsplit-dans-vim.html#2011-05-29-split-vsplit-dans-vim">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-05-19-différences-entre-des-fichiers-avec-vim.html#2011-05-19-différences-entre-des-fichiers-avec-vim">Différences entre des fichiers avec Vim</a></h2>
+    <p>
+      Posté le jeu. 19 mai 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/vim.html">Vim</a>,      <a href="http://choiz.github.io/tag/diff.html">Diff</a>,      <a href="http://choiz.github.io/tag/difference.html">Différence</a>,      <a href="http://choiz.github.io/tag/fichiers.html">Fichiers</a>,      <a href="http://choiz.github.io/tag/editeur.html">Editeur</a>,      <a href="http://choiz.github.io/tag/texte.html">Texte</a>,      <a href="http://choiz.github.io/tag/terminal.html">Terminal</a>,      <a href="http://choiz.github.io/tag/console.html">Console</a>,      <a href="http://choiz.github.io/tag/commande.html">Commande</a>    </p>
+  </header>
+  <div>
+      <div class="line-block">
+<div class="line">J'ai souvent besoin de voir les différences entre plusieurs
+fichiers... J'utilise souvent la commande diff dans un terminal, mais
+mon éditeur texte favoris &quot;Vim&quot; sait aussi trés bien faire un
+différentiel.</div>
+<div class="line">Utilisation avec le terminal :</div>
+</div>
+<blockquote>
+$ diff fichier1 fichier2</blockquote>
+<p>Celui-ci retournera les différences directement dans le terminal (pas
+pratique ...</p>
+      <a class="btn" href="http://choiz.github.io/2011-05-19-différences-entre-des-fichiers-avec-vim.html#2011-05-19-différences-entre-des-fichiers-avec-vim">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-05-14-migration-dune-base-de-donnée-mysql.html#2011-05-14-migration-dune-base-de-donnée-mysql">Migration d'une base de donnée Mysql</a></h2>
+    <p>
+      Posté le sam. 14 mai 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/mysql.html">Mysql</a>,      <a href="http://choiz.github.io/tag/mysqldump.html">Mysqldump</a>,      <a href="http://choiz.github.io/tag/database.html">Database</a>,      <a href="http://choiz.github.io/tag/migration.html">Migration</a>,      <a href="http://choiz.github.io/tag/dump-sql.html">Dump Sql</a>,      <a href="http://choiz.github.io/tag/sql.html">Sql</a>    </p>
+  </header>
+  <div>
+      <p>Pour faire mes migrations de base de donnée j'utilise en ligne de
+commande mysqldump et mysql.</p>
+<div class="line-block">
+<div class="line">Dans un premier temps je sauve ma base <strong>*database*</strong> dans le fichier
+<strong>*fichierdump.sql*</strong></div>
+<div class="line">J'utilise l'utilisateur mysql : <strong>*utilisateur*</strong> avec son mot de
+passe <strong>*p4ssw0rd*</strong></div>
+</div>
+<blockquote>
+$ mysqldump -u utilisateur -p p4ssw0rd database &gt; fichierdump ...</blockquote>
+      <a class="btn" href="http://choiz.github.io/2011-05-14-migration-dune-base-de-donnée-mysql.html#2011-05-14-migration-dune-base-de-donnée-mysql">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html#2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php">Petit tips pour les utilisateurs de VIM et PHP</a></h2>
+    <p>
+      Posté le mer. 13 avril 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/php.html">PHP</a>,      <a href="http://choiz.github.io/tag/vim.html">Vim</a>,      <a href="http://choiz.github.io/tag/vi.html">Vi</a>,      <a href="http://choiz.github.io/tag/console.html">Console</a>,      <a href="http://choiz.github.io/tag/mac.html">Mac</a>,      <a href="http://choiz.github.io/tag/linux.html">Linux</a>    </p>
+  </header>
+  <div>
+      <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
+dans la console je tape la commande :</p>
+<blockquote>
+php -l fichier_a_tester.php</blockquote>
+<p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
+Pour la faire il suffit de faire &quot;ESC&quot; pour passer en mode ...</p>
+      <a class="btn" href="http://choiz.github.io/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html#2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-04-09-surround-avec-vim.html#2011-04-09-surround-avec-vim">Surround avec Vim</a></h2>
+    <p>
+      Posté le sam. 09 avril 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/vim.html">vim</a>,      <a href="http://choiz.github.io/tag/config.html">config</a>,      <a href="http://choiz.github.io/tag/vimrc.html">.vimrc</a>,      <a href="http://choiz.github.io/tag/plugin.html">plugin</a>,      <a href="http://choiz.github.io/tag/vim-plugin.html">vim plugin</a>,      <a href="http://choiz.github.io/tag/surround.html">surround</a>,      <a href="http://choiz.github.io/tag/surroundvim.html">surround.vim</a>,      <a href="http://choiz.github.io/tag/tags.html">tags</a>,      <a href="http://choiz.github.io/tag/html.html">html</a>    </p>
+  </header>
+  <div>
+      <p>J'ai ajouté quelques plugins dans ma configuration de Vim dont :
+surround.vim.</p>
+<p>Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un
+texte.</p>
+<p>Comment l'utiliser ?</p>
+<p><tt class="docutils literal">VS&lt;b&gt;</tt> permet d'ajouter les balises &lt;b&gt; et &lt;/b&gt; avant et apres la
+ligne courante et d'indenter ...</p>
+      <a class="btn" href="http://choiz.github.io/2011-04-09-surround-avec-vim.html#2011-04-09-surround-avec-vim">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-03-08-tpaamayimnekudotayim.html#2011-03-08-tpaamayimnekudotayim">T_PAAMAYIM_NEKUDOTAYIM</a></h2>
+    <p>
+      Posté le mar. 08 mars 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/paamayim-nekudotayim.html">Paamayim Nekudotayim</a>,      <a href="http://choiz.github.io/tag/operateur-de-resolution-de-portee.html">opérateur de résolution de portée</a>,      <a href="http://choiz.github.io/tag/.html">::</a>,      <a href="http://choiz.github.io/tag/php.html">PHP</a>,      <a href="http://choiz.github.io/tag/error.html">Error</a>,      <a href="http://choiz.github.io/tag/erreur.html">Erreur</a>    </p>
+  </header>
+  <div>
+      <p>Voilà a quoi correspond cette erreur pour ceux qui demandent :</p>
+<p><tt class="docutils literal">Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695</tt></p>
+<p>Le Paamayim Nekudotayim est l'opérateur de résolution de portée.</p>
+<p><a class="reference external" href="http://fr.php.net/manual/fr/language.oop5.paamayim-nekudotayim.php">Dans la doc
+PHP</a>
+:</p>
+<p><em>L'opérateur de résolution de portée (aussi appelé Paamayim Nekudotayim)
+ou, en termes ...</em></p>
+      <a class="btn" href="http://choiz.github.io/2011-03-08-tpaamayimnekudotayim.html#2011-03-08-tpaamayimnekudotayim">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html#2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php">Protection de fichier tel qu'un htaccess en PHP</a></h2>
+    <p>
+      Posté le ven. 11 février 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/php.html">php</a>,      <a href="http://choiz.github.io/tag/htaccess.html">htaccess</a>,      <a href="http://choiz.github.io/tag/htpasswd.html">htpasswd</a>,      <a href="http://choiz.github.io/tag/protection.html">protection</a>,      <a href="http://choiz.github.io/tag/fichier.html">fichier</a>,      <a href="http://choiz.github.io/tag/authenticate.html">authenticate</a>,      <a href="http://choiz.github.io/tag/auth.html">auth</a>    </p>
+  </header>
+  <div>
+      <p>Faire un système de protection (tel que htaccess) direct dans un fichier
+php :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">&lt;?php</div>
+<div class="line">if (!empty($_SERVER[&quot;PHP_AUTH_USER&quot;]) &amp;&amp;
+$_SERVER[&quot;PHP_AUTH_USER&quot;] == &quot;login&quot; &amp;&amp;
+$_SERVER[&quot;PHP_AUTH_PW&quot;] == &quot;password&quot;) {</div>
+<div class="line">&nbsp;&nbsp;&nbsp; // code protégé ici</div>
+<div class="line">} else {</div>
+<div class="line">&nbsp;&nbsp;&nbsp; header('WWW-Authenticate: Basic realm=&quot;Restricted area&quot;');</div>
+<div class="line">&nbsp;&nbsp;&nbsp; header('HTTP/1.0 401 Unauthorized');</div>
+<div class="line">&nbsp;&nbsp;&nbsp; exit('Access Denied');</div>
+<div class="line">}</div>
+<div class="line">?&gt;</div>
+</div>
+</blockquote>
+
+      <a class="btn" href="http://choiz.github.io/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html#2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-01-07-jquery-attr-avec-onclick-par-click.html#2011-01-07-jquery-attr-avec-onclick-par-click">jQuery attr() avec onclick par click()</a></h2>
+    <p>
+      Posté le ven. 07 janvier 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/code.html">code</a>,      <a href="http://choiz.github.io/tag/js.html">js</a>,      <a href="http://choiz.github.io/tag/jquery.html">jquery</a>,      <a href="http://choiz.github.io/tag/attr.html">attr()</a>,      <a href="http://choiz.github.io/tag/click.html">click()</a>,      <a href="http://choiz.github.io/tag/removeattr.html">removeAttr()</a>    </p>
+  </header>
+  <div>
+      <p>Après avoir perdu 2h... le attr() de jQuery [STRIKEOUT:fonctionne pas
+avec l'attribut &quot;onclick&quot;] truc super quoi !</p>
+<p>Edit : en jQuery pour modifier le contenu d'un onclick il faut faire
+.attr('onClick','valeur') ou faire de la façon suivante.</p>
+<p>Remplacer donc :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">var mavar&nbsp; = 'fonctionAffichage();';</div>
+<div class="line">$(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);</div>
+</div>
+</blockquote>
+<p>Par ...</p>
+      <a class="btn" href="http://choiz.github.io/2011-01-07-jquery-attr-avec-onclick-par-click.html#2011-01-07-jquery-attr-avec-onclick-par-click">Lire la suite</a>
+  </div>
+</article>
+
+  <div class="pagination">
+    <a class="btn" href="http://choiz.github.io/author/choiz7.html">
+      <i class="fa fa-angle-left"></i> Anciens articles
+    </a>
+      <a class="btn float-right" href="http://choiz.github.io/author/choiz5.html">
+        Nouveaux articles <i class="fa fa-angle-right"></i>
+      </a>
+  </div>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " ChoiZ ",
+  "url" : "http://choiz.github.io",
+  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "description": ""
+}
+</script></body>
+</html>

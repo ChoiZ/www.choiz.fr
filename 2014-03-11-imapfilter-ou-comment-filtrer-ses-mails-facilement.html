@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/font-awesome.min.css">
+  <link href="http://choiz.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <link rel="shortcut icon" href="http://localhost:8000//favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000//favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+<meta name="author" content="choiz" />
+<meta name="description" content="Installer imapfilter via apt par exemple : apt-get install imapfilter Se rendre dans le dossier de configuration : cd ~/.imapfilter Créer un fichier config.lua touch config.lua Maintenant je décide de faire un fichier de configuration par boite email. Ici gmail : cat > gmail.lua <<EOFgmail = IMAP {    server = 'imap.gmail.com',    username ..." />
+<meta name="keywords" content="imapfilter, mail, filter, imap">
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:title" content="imapfilter ou comment filtrer ses mails facilement"/>
+<meta property="og:description" content="Installer imapfilter via apt par exemple : apt-get install imapfilter Se rendre dans le dossier de configuration : cd ~/.imapfilter Créer un fichier config.lua touch config.lua Maintenant je décide de faire un fichier de configuration par boite email. Ici gmail : cat > gmail.lua <<EOFgmail = IMAP {    server = 'imap.gmail.com',    username ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://choiz.github.io/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2014-03-11 13:54:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://choiz.github.io/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="imapfilter"/>
+<meta property="article:tag" content="mail"/>
+<meta property="article:tag" content="filter"/>
+<meta property="article:tag" content="imap"/>
+<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">  <title>ChoiZ &ndash; imapfilter ou comment filtrer ses mails facilement</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://choiz.github.io">
+        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="" title="">
+      </a>
+      <h1><a href="http://choiz.github.io"></a></h1>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</p>
+      <p>J'ai fondé plusieurs webradios depuis l'an 2000, actuellement je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement">imapfilter ou comment filtrer ses mails facilement</h1>
+    <p>Posté le mar. 11 mars 2014</p>
+  </header>
+  <div>
+    <p>Installer imapfilter via apt par exemple :</p>
+<p><tt class="docutils literal"><span class="pre">apt-get</span> install imapfilter</tt></p>
+<p>Se rendre dans le dossier de configuration :</p>
+<p><tt class="docutils literal">cd <span class="pre">~/.imapfilter</span></tt></p>
+<p>Créer un fichier config.lua</p>
+<p><tt class="docutils literal">touch config.lua</tt></p>
+<p>Maintenant je décide de faire un fichier de configuration par boite
+email.</p>
+<p>Ici gmail :</p>
+<p><tt class="docutils literal">cat &gt; gmail.lua &lt;&lt;EOFgmail = IMAP <span class="pre">{&nbsp;&nbsp;&nbsp;</span> server = <span class="pre">'imap.gmail.com',&nbsp;&nbsp;&nbsp;</span> username = <span class="pre">'mail&#64;gmail.com',&nbsp;&nbsp;&nbsp;</span> password = <span class="pre">'mon_mot_de_passe',&nbsp;&nbsp;&nbsp;</span> ssl = <span class="pre">'ssl3',}EOF</span></tt></p>
+<p>Et un pour Yahoo :</p>
+<p><tt class="docutils literal">cat &gt; yahoo.lua &lt;&lt;EOFyahoo = IMAP <span class="pre">{&nbsp;&nbsp;&nbsp;</span> server = <span class="pre">'imap.yahoo.com',&nbsp;&nbsp;&nbsp;</span> username = <span class="pre">'mail&#64;yahoo.com',&nbsp;&nbsp;&nbsp;</span> password = <span class="pre">'mon_mot_de_passe',&nbsp;&nbsp;&nbsp;</span> ssl = <span class="pre">'ssl3',}EOF</span></tt></p>
+<p>Ajouter nos boites dans le fichier de config avec des filtres :</p>
+<p><tt class="docutils literal">if_dir = <span class="pre">os.getenv('HOME')</span> .. <span class="pre">'/.imapfilter/'--</span> on inclus nos comptes imap…dofile(if_dir .. <span class="pre">&quot;gmail.lua&quot;)dofile(if_dir</span> .. <span class="pre">&quot;yahoo.lua&quot;)--</span> nos optionsoptions.timeout = <span class="pre">120--</span> filtres pour le compte gmail (on copie les messages non lus dans la boite <span class="pre">&quot;nouveaux&quot;)nonlugmail=gmail.INBOX:is_unseen()nonlugmail:copy_message(gmail['nouveaux'])--</span> filtres pour le compte yahoo (on supprime tous les messages <span class="pre">lus)del_read_yahoo=yahoo.INBOX:is_seen()del_read_yahoo:delete_messages()</span></tt></p>
+<p>Maintenant c'est à vous de faire vos propres filtres. Une fois
+configuré, lancer imapfilter simplement depuis le terminal :</p>
+<p><tt class="docutils literal">imapfilter</tt></p>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://choiz.github.io/tag/imapfilter.html">imapfilter</a>
+      <a href="http://choiz.github.io/tag/mail.html">mail</a>
+      <a href="http://choiz.github.io/tag/filter.html">filter</a>
+      <a href="http://choiz.github.io/tag/imap.html">imap</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "imapfilter ou comment filtrer ses mails facilement",
+  "headline": "imapfilter ou comment filtrer ses mails facilement",
+  "datePublished": "2014-03-11 13:54:00+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "http://choiz.github.io/author/choiz.html"
+  },
+  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "url": "http://choiz.github.io/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html",
+  "description": "Installer imapfilter via apt par exemple : apt-get install imapfilter Se rendre dans le dossier de configuration : cd ~/.imapfilter Créer un fichier config.lua touch config.lua Maintenant je décide de faire un fichier de configuration par boite email. Ici gmail : cat > gmail.lua <<EOFgmail = IMAP {    server = 'imap.gmail.com',    username ..."
+}
+</script></body>
+</html>
