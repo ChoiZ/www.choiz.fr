@@ -4,7 +4,10 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Fran\xe7ois LASSERRE'
 SITENAME = u'ChoiZ'
-SITEURL = ''
+SITEURL = u'/'
+SITETITLE = ''
+SITESUBTITLE = 'Je suis Français, ingénieur informatique, j\'aime le développement web, les logiciels libres et l\'informatique.'
+SITESUBTITLE2 = 'J\'ai fondé plusieurs webradios depuis l\'an 2000, actuellement je fais parti de l\'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.'
 SITELOGO = u'http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png'
 
 FAVICON = SITEURL + '/favicon.ico'
@@ -16,7 +19,7 @@ MAIN_MENU = False
 PATH = 'content'
 
 TIMEZONE = 'Europe/Paris'
-THEME = 'Flex'
+THEME = 'Flexfork'
 
 DEFAULT_LANG = u'fr'
 
@@ -27,9 +30,12 @@ TRANSLATION_FEED_ATOM = None
 
 # Blogroll
 LINKS = (
-         ('Pelican', 'http://getpelican.com/'),
-         ('La Grosse Radio', 'http://www.lagrosseradio.com/'),
+         ('Home', '/'),
+         ('Archives', '/archives'),
+         ('Tags', '/tags'),
         )
+         #('Pelican', 'http://getpelican.com/'),
+         #('La Grosse Radio', 'http://www.lagrosseradio.com/'),
 
 # Social widget
 SOCIAL = (
