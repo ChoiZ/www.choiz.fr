@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Fran\xe7ois LASSERRE'
 SITENAME = u'ChoiZ'
-SITEURL = u'/'
+SITEURL = u'http://localhost:8000/'
 SITETITLE = ''
 SITESUBTITLE = 'Je suis Français, ingénieur informatique, j\'aime le développement web, les logiciels libres et l\'informatique.'
 SITESUBTITLE2 = 'J\'ai fondé plusieurs webradios depuis l\'an 2000, actuellement je fais parti de l\'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.'
