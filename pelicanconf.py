@@ -5,10 +5,18 @@ from __future__ import unicode_literals
 AUTHOR = u'Fran\xe7ois LASSERRE'
 SITENAME = u'ChoiZ'
 SITEURL = ''
+SITELOGO = u'http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png'
+
+FAVICON = SITEURL + '/favicon.ico'
+ROBOTS = 'index, follow'
+
+# top menu
+MAIN_MENU = False
 
 PATH = 'content'
 
 TIMEZONE = 'Europe/Paris'
+THEME = 'Flex'
 
 DEFAULT_LANG = u'fr'
 
@@ -18,14 +26,21 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (
+         ('Pelican', 'http://getpelican.com/'),
+         ('La Grosse Radio', 'http://www.lagrosseradio.com/'),
+        )
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (
+          ('github', '//www.github.com/ChoiZ'),
+          ('flickr', '//www.flickr.com/ChoiZ'),
+          ('lastfm', '//www.last.fm/user/ChoiZ'),
+          ('twitter', '//www.twitter.com/ChoiZ'),
+          ('facebook', '//www.facebook.com/ChoiZ'),
+          ('foursquare', '//www.foursquare.com/ChoiZ'),
+          ('linkedin', '//www.linkedin.com/in/ChoiZ'),
+         )
 
 DEFAULT_PAGINATION = 10
 
