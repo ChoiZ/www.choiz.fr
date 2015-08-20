@@ -1,0 +1,1206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChoiZ</title><link>/</link><description>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</description><atom:link href="/feeds/choiz.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 20 Aug 2015 22:03:40 +0200</lastBuildDate><item><title>Migration de Tumblr à Pelican</title><link>/2015-08-20-migration-de-tumblr-a-pelican.html</link><description>&lt;p&gt;J'ai testé pelican, lors de mon voyages à Bruxelles en Thalys le 15 Août 2014.
+Depuis cette date je n'avais pas trop pris le temps de m'occuper de la migration de tumblr vers pelican.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; est un générateur de site statique, il est pratique pour la gestion des articles tel que mon blog.&lt;/p&gt;
+&lt;p&gt;Il suffit de créer un fichier texte avec le contenu de l'article et l'envoyer sur github pour que celui-ci soit publié.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 20 Aug 2015 22:03:40 +0200</pubDate><guid>tag:,2015-08-20:2015-08-20-migration-de-tumblr-a-pelican.html</guid><category>tumblr</category><category>migration</category><category>pelican</category><category>site</category><category>static</category><category>python</category></item><item><title>Touche pour sortir sa machine de veille</title><link>/2015-08-08-touche-pour-sortir-sa-machine-de-veille.html</link><description>&lt;p&gt;Il y a quelques années, pour sortir ma machine de veille j'utilisais la
+touche &amp;quot;enter&amp;quot; ou &amp;quot;escape&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Ça fonctionne, sauf que si vous êtes dans un programme d'installation
+qui demande une confirmation (formater tout le disque par exemple), en
+appuyant sur &amp;quot;enter&amp;quot; vous allez confirmer le formatage.&lt;/p&gt;
+&lt;p&gt;Avec la touche escape vous allez généralement annuler une action que
+l'on vous demande.&lt;/p&gt;
+&lt;p&gt;Même problème avec toutes les autres touches : &amp;quot;espace&amp;quot; confirme
+généralement, &amp;quot;o&amp;quot; pour &amp;quot;oui&amp;quot;, &amp;quot;y&amp;quot; pour &amp;quot;yes&amp;quot;, &amp;quot;n&amp;quot; pour &amp;quot;no&amp;quot; ou &amp;quot;non&amp;quot;, ou
+une quantité &amp;quot;1&amp;quot;, &amp;quot;2&amp;quot;, ou toute autre lettre défini tel que &amp;quot;a&amp;quot; pour
+&amp;quot;annuler&amp;quot;, &amp;quot;c&amp;quot; pour &amp;quot;cancel&amp;quot;…&lt;/p&gt;
+&lt;p&gt;Bref la seule touche que j'utilise pour sortir mon ordinateur de veille
+est &amp;quot;shift&amp;quot;. Que ça soit le &amp;quot;shift&amp;quot; droit ou gauche il ne fais jamais
+d'action spécifique à ma connaissance.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 08 Aug 2015 09:17:25 +0200</pubDate><guid>tag:,2015-08-08:2015-08-08-touche-pour-sortir-sa-machine-de-veille.html</guid><category>touche</category><category>sortie</category><category>veille</category><category>ordinateur</category><category>shift</category><category>clavier</category></item><item><title>Récupérer le master depuis le remote origin avec git</title><link>/2015-08-07-r%C3%A9cup%C3%A9rer-le-master-depuis-le-remote-origin-avec.html</link><description>&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Dans certains projets j’utilise git avec plusieurs remote, par exemple
+:&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;- un remote “origin” se trouve sur un serveur perso.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;- un remote “github” qui lui est sur github.com.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;&lt;p&gt;Quand je vais sur le master il m’arrive d’avoir ce message :&lt;/p&gt;
+&lt;/p&gt;&lt;pre class="literal-block"&gt;
+&amp;quot;your branch is up-to-date with “github/master”.&amp;quot;
+&lt;/pre&gt;
+&lt;/p&gt;&lt;p&gt;Je préfèrerai que ma branche soit à jour avec mon origin/master et non
+github/master.&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;La solution que j’ai trouvé est la suivante :&lt;/p&gt;
+&lt;/p&gt;&lt;ol class="arabic simple"&gt;
+&lt;li&gt;supprimer ma branche master locale :&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/p&gt;&lt;p&gt;&lt;tt class="docutils literal"&gt;git branch &lt;span class="pre"&gt;-d&lt;/span&gt; master&lt;/tt&gt;&lt;/p&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;récupèrer mon master depuis le remote origin :&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/p&gt;&lt;p&gt;&lt;tt class="docutils literal"&gt;git checkout &lt;span class="pre"&gt;-t&lt;/span&gt; &lt;span class="pre"&gt;-b&lt;/span&gt; master origin/master&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Pour info :&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;-t ou --track pour rattacher à l’origin/master&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;-b pour créer ma nouvelle branche “master”&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;Plus d’info avec man git-checkout ;-)&lt;/p&gt;
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 07 Aug 2015 17:33:07 +0200</pubDate><guid>tag:,2015-08-07:2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html</guid><category>git</category><category>origin</category><category>remote</category><category>master</category><category>branch</category><category>checkout</category><category>track</category></item><item><title>Gentoo utilisation de layman &amp; eix</title><link>/2015-07-19-gentoo-utilisation-de-layman-eix.html</link><description>&lt;p&gt;Certains programmes n’étant pas en dernière version dans les dépôts
+gentoo l’utilisation de layman peut faciliter la vie.&lt;/p&gt;
+&lt;p&gt;Étant à la recherche de vagrant, la seule version disponible à ce jour
+sur gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de
+vagrant je me rend compte que nous sommes à la version 1.7.3.&lt;/p&gt;
+&lt;p&gt;J’ai donc trouvé un overlay avec vagrant-bin version 1.7.3 :
+&lt;a class="reference external" href="http://gpo.zugaina.org/app-emulation/vagrant-bin"&gt;http://gpo.zugaina.org/app-emulation/vagrant-bin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Pour utiliser cette overlay nous avons besoin de layman.&lt;/p&gt;
+&lt;p&gt;Installation :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;emerge &lt;span class="pre"&gt;-a&lt;/span&gt; layman&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;echo &amp;quot;source /usr/portage/local/layman/make.conf&amp;quot; &amp;gt;&amp;gt; /etc/make.conf&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Pour afficher tous les overlays disponible :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;layman &lt;span class="pre"&gt;-L&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Ajouter l’overlay stefantalpalaru (dans lequel nous avons
+vagrant-bin-1.7.3)&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;layman &lt;span class="pre"&gt;-f&lt;/span&gt; &lt;span class="pre"&gt;-a&amp;nbsp;stefantalpalaru&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Maintenant si on recherche dans eix “vagrant” rien n’a changé.&lt;/p&gt;
+&lt;p&gt;Il faut mettre à jour eix :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;eix-update&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Maintenant avec eix vagrant nous avons la ligne vagrant-bin et donc nous
+pouvons installer vagrant-1.7.3 via emerge.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 19 Jul 2015 10:54:55 +0200</pubDate><guid>tag:,2015-07-19:2015-07-19-gentoo-utilisation-de-layman-eix.html</guid><category>dépôt</category><category>repos</category><category>layman</category><category>eix</category><category>emerge</category><category>gentoo</category><category>vagrant-bin</category><category>overlay</category></item><item><title>Ma config : Clevo w650sz i7 4910MQ</title><link>/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html</link><description>&lt;p&gt;Ayant vendu mon Macbook Air 13″ il y a quelques mois, j’ai pris le temps
+de comparer les différents portables. La marque Taïwanaise clevo propose
+des machines avec ou sans OS (gain d’une centaine d’euros pour Windows).&lt;/p&gt;
+&lt;p&gt;J’ai donc commandé chez &lt;a class="reference external" href="http://www.clevo.fr"&gt;Anyware&lt;/a&gt; un w650sz avec
+un i7 4910MQ (qui a un score sur
+&lt;a class="reference external" href="http://www.cpubenchmark.net/cpu.php?cpu=Intel+Core+i7-4910MQ+%40+2.90GHz"&gt;cpubenchmark&lt;/a&gt;
+plutôt remarquable).&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Je l’ai commandé sans ram, sans disque dur, avec un rack pour disque
+dur à la place d’un graveur dvd ou autre cd, sans extension de garanti
+pour un peu moins de 1000€ (il y avait une réduction de 5% et frais de
+port gratuit). J’ai commandé mes barrettes de ram et mon mSata
+ailleurs, car les marques en stock ne me plaisaient pas. &lt;em&gt;Note
+l’équipe de Anyware est bien sympa (ils ont enlevé les 2Go de ram qui
+m’étaient inutiles donc non facturé)&lt;/em&gt; Plutôt que payer 2Go de ram et
+ne jamais les utiliser… J’ai donc ajouté 2 barrettes de 8Go ainsi
+qu’un mSata de 128Go pour un peu moins de 200€.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;J’ai utilisé cette machine 2 jours, pour l’instant et elle est parfaite
+pour mon utilisation. L’écran 1080p sur un 15″ est appréciable (un poil
+petit pour certains). Pour moi c’est parfait, avec mon iiyama 27″ j’ai
+un dualscreen en 2x1080p ce qui est mieux que ma config précédente avec
+un écran en 1080p et l’autre avec une résolution moindre…&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Pour la compilation de chrome qui prenait 2/3h à elle seule sur mon
+ancien laptop, en 45mn c’était fait avec d’autres grosses applications
+tel que gimp ou darktable…&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Pour l’instant rien a redire sur cette machine.&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Voici les modules a activer dans le noyau pour le réseau et le son :&lt;/div&gt;
+&lt;div class="line"&gt;- Realtek 8169 gigabit ethernet support&lt;/div&gt;
+&lt;div class="line"&gt;- Build Analog Device HD-audio codec support&lt;/div&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 18 Jul 2015 12:21:00 +0200</pubDate><guid>tag:,2015-07-18:2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html</guid><category>clevo</category><category>clevo w650</category><category>kernel</category><category>ethernet</category><category>realtek</category><category>audio</category><category>hdaudio</category><category>achat</category><category>i7 4910MQ</category><category>mSata</category></item><item><title>Comment récupérer le contenu d’un fichier d’une autre branche avec GIT ?</title><link>/2015-03-20-comment-r%C3%A9cup%C3%A9rer-le-contenu-dun-fichier-dune.html</link><description>&lt;p&gt;Il suffit d’utiliser git show.&lt;/p&gt;
+&lt;p&gt;La commande :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;git show branch_name:filename&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Exemple :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;git show &lt;span class="pre"&gt;reset_password:/templates/reset_password.tmpl&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 20 Mar 2015 15:27:23 +0100</pubDate><guid>tag:,2015-03-20:2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune.html</guid></item><item><title>Initialiser des sous-modules en cascade dans git</title><link>/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html</link><description>&lt;p&gt;Pour initialiser les sous-modules dans git j'utilise la commande
+suivante :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;git submodule init&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Ensuite je dois faire un update des sous-modules pour charger le contenu
+:&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;git submodule update&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Pour faire les deux en même temps (init + update) vous pouvez faire :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;git submodule update &lt;span class="pre"&gt;--init&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Imaginons maintenant que vous avez des sous-modules dans d'autres
+sous-modules. Exemple dans mon dépot
+&lt;a class="reference external" href="https://www.github.com/ChoiZ/dotfiles.git"&gt;dotfiles&lt;/a&gt; j'ai mon dépot
+&lt;a class="reference external" href="https://www.github.com/ChoiZ/vim-config.git"&gt;vim&lt;/a&gt; et dedans des
+sous-modules avec les plugins de vim. Pour initialiser, mettre à jour et
+le tout en cascade (dans tous les dossiers et sous-dossiers) il faut
+faire :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;git submodule update &lt;span class="pre"&gt;--init&lt;/span&gt; &lt;span class="pre"&gt;--recursive&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 25 Jan 2015 11:17:00 +0100</pubDate><guid>tag:,2015-01-25:2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html</guid><category>git</category><category>submodule</category><category>update</category><category>init</category><category>recursive</category></item><item><title>Êtes-vous à l'heure ? (Et votre serveur ?)</title><link>/2015-01-24-%C3%AAtes-vous-%C3%A0-lheure-et-votre-serveur.html</link><description>&lt;p&gt;Je suis à l'heure, et mes serveurs le sont également (normalement).&lt;/p&gt;
+&lt;p&gt;Normalement oui, mais le serveur NTP que j'utilisais ne répond plus… Mes
+serveurs ont donc 1mn30 de retard pour l'un, et 40mn de retard pour
+l'autre !&lt;/p&gt;
+&lt;p&gt;J'utilisais ntpdate avec le serveur de l'université de Nice
+(ntp.unice.fr).&lt;/p&gt;
+&lt;p&gt;J'ai donc installé ntp grâce aux paquets debian, et maintenant mes
+serveurs sont à l'heure.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 24 Jan 2015 16:54:00 +0100</pubDate><guid>tag:,2015-01-24:2015-01-24-êtes-vous-à-lheure-et-votre-serveur.html</guid><category>ntpdate</category><category>debian</category><category>ntp</category><category>time</category></item><item><title>Recherche dans le code source avec git</title><link>/2014-12-08-recherche-dans-le-code-source-avec-git.html</link><description>&lt;p&gt;Pour rechercher directement dans le code source une modification
+précise, j'utilise la commande suivante :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;git log &lt;span class="pre"&gt;-p&lt;/span&gt; &lt;span class="pre"&gt;-S&lt;/span&gt; 'display'&lt;/tt&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 08 Dec 2014 18:22:11 +0100</pubDate><guid>tag:,2014-12-08:2014-12-08-recherche-dans-le-code-source-avec-git.html</guid><category>git</category><category>search</category><category>source</category><category>code</category><category>log</category></item><item><title>Écriture d'un rapport de bug</title><link>/2014-11-08-%C3%A9criture-dun-rapport-de-bug.html</link><description>&lt;p&gt;Étant développeur, j'ai très souvent des rapports de bug, qui peuvent
+être précis, ou moins suivant la personne.&lt;/p&gt;
+&lt;p&gt;L'écriture d'un rapport de bug peut demander du temps, si on veut faire
+les choses correctement.&lt;/p&gt;
+&lt;p&gt;Le rapport de bug doit être écrit &lt;strong&gt;clairement&lt;/strong&gt; et &lt;strong&gt;précisément&lt;/strong&gt; pour
+que les développeurs sachent comment reproduire le bug.&lt;/p&gt;
+&lt;p&gt;Pensez à &lt;strong&gt;joindre un maximum d'informations&lt;/strong&gt; : le message d'erreur, le
+numéro d'erreur, une copie d'écran quand c'est possible.&lt;/p&gt;
+&lt;p&gt;Ajoutez également des &lt;strong&gt;informations sur votre environnement de
+travail&lt;/strong&gt; (version du système d'exploitation, nom et version du
+navigateur…).&lt;/p&gt;
+&lt;p&gt;Une fois que vous avez écrit votre rapport, &lt;strong&gt;relisez-le&lt;/strong&gt; pour &lt;strong&gt;être
+sûr de vous faire comprendre&lt;/strong&gt; et &lt;strong&gt;vérifiez&lt;/strong&gt; que quelque chose ne soit
+pas mal interprété.&lt;/p&gt;
+&lt;p&gt;Si le rapport est bien fait le développeur ne doit pas venir vers vous
+avec des questions ou explications supplémentaires. Le développeur gagne
+donc du temps et il ne vous perturbe pas dans votre travail (donc vous
+en gagnez aussi).&lt;/p&gt;
+&lt;p&gt;Je vous invite également à lire&amp;nbsp;&lt;a class="reference external" href="http://www.chiark.greenend.org.uk/~sgtatham/bugs-fr.html"&gt;cet
+article&lt;/a&gt;
+pour écrire un bon rapport de bug.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 08 Nov 2014 16:55:00 +0100</pubDate><guid>tag:,2014-11-08:2014-11-08-écriture-dun-rapport-de-bug.html</guid><category>Écriture rapport de bug</category><category>Rapport de bug</category><category>bug report</category><category>bug</category></item><item><title>Faire un patch de "x" commit(s) avec git</title><link>/2014-05-06-faire-un-patch-de-x-commits-avec-git.html</link><description>&lt;p&gt;Voici mon historique des commits :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+c0004 -- dernier commitc0003 -- avant dernier commitc0002 -- second commitc0001 -- premier commit
+&lt;/pre&gt;
+&lt;p&gt;Je veux faire un patch du commit c0001 et c0002 je dois donc faire :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;git &lt;span class="pre"&gt;format-patch&lt;/span&gt; &lt;span class="pre"&gt;-2&lt;/span&gt; c0002 &lt;span class="pre"&gt;--stdout&lt;/span&gt; &amp;gt; mon.patch&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;le &amp;quot;-2&amp;quot; sert à récupérer 2 commits à partir du commit c0002.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 06 May 2014 11:21:00 +0200</pubDate><guid>tag:,2014-05-06:2014-05-06-faire-un-patch-de-x-commits-avec-git.html</guid><category>git</category><category>patch</category><category>commit</category></item><item><title>Installation de Skype 64 sur Debian</title><link>/2014-03-21-installation-de-skype-64-sur-debian.html</link><description>&lt;p&gt;Télécharger la dernière version de &lt;a class="reference external" href="http://www.skype.com"&gt;Skype&lt;/a&gt;
+(Debian 7.0 [multiarch]).&lt;/p&gt;
+&lt;p&gt;Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;dpkg &lt;span class="pre"&gt;--add-architecture&lt;/span&gt; i386&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Puis mettre à jour les paquets&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;apt-get&lt;/span&gt; update&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;apt-get&lt;/span&gt; upgrade&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;apt-get&lt;/span&gt; install &lt;span class="pre"&gt;-f&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Installer Skype en n'oubliant pas de remplacer &amp;quot;x&amp;quot; par la bonne version&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;dpkg &lt;span class="pre"&gt;-i&lt;/span&gt; &lt;span class="pre"&gt;skype-debian_x_i386.deb&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 21 Mar 2014 01:32:18 +0100</pubDate><guid>tag:,2014-03-21:2014-03-21-installation-de-skype-64-sur-debian.html</guid><category>Skype</category><category>Debian</category><category>Installation de Skype</category><category>Skype Debian 64</category><category>Debian 64</category></item><item><title>Installation de Firefox sur Debian</title><link>/2014-03-21-installation-de-firefox-sur-debian.html</link><description>&lt;p&gt;Télécharger la dernière version de Firefox sur &lt;a class="reference external" href="http://www.mozilla.org/"&gt;le site de
+mozilla&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Décompresser l'archive dans :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;/opt/firefox/&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Créer un lien symbolique avec :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;ls &lt;span class="pre"&gt;-sf&lt;/span&gt; /opt/firefox/firefox /usr/bin/firefox&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Et voilà.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 21 Mar 2014 01:14:41 +0100</pubDate><guid>tag:,2014-03-21:2014-03-21-installation-de-firefox-sur-debian.html</guid><category>Firefox</category><category>Mozilla</category><category>Debian</category><category>Installation de Firefox</category><category>Firefox sur Debian</category></item><item><title>Firebug champs mot de passe présents sur une page non sécurisée</title><link>/2014-03-18-firebug-champs-mot-de-passe-pr%C3%A9sents-sur-une-page.html</link><description>&lt;p&gt;Dans mon firebug des &amp;quot;warnings&amp;quot; s'affichent :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Champs mot de passe présents sur une page non sécurisée (http://). Cela représente un risque de sécurité permettant le vol d'identifiants de connexion.
+&lt;/pre&gt;
+&lt;p&gt;Ainsi que :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Champs mot de passe présents dans un formulaire possédant une action de formulaire non sécurisée (http://). Cela représente un risque de sécurité permettant le vol d'identifiants de connexion.
+&lt;/pre&gt;
+&lt;p&gt;La première indications informe que vous n'êtes pas sur un site
+utilisant le HTTPS. Lorsque vous allez remplir le champs &amp;quot;password&amp;quot;
+celui-ci sera envoyé en clair sur le réseau.&lt;/p&gt;
+&lt;p&gt;La seconde indication informe que l'action du formulaire envoi sur une
+page qui n'est pas en HTTPS.&lt;/p&gt;
+&lt;p&gt;Vous pouvez avoir votre formulaire sur l'url :
+&lt;a class="reference external" href="https://www.mon-formulaire.fr"&gt;https://www.mon-formulaire.fr&lt;/a&gt; et dans l'action de votre formulaire avoir
+: &lt;a class="reference external" href="http://www.mon-formulaire.fr"&gt;http://www.mon-formulaire.fr&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Dans ce cas l'affichage du formulaire est sécurisé, mais l'envoi des
+données ne l'est pas vu que l'action est en http.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 18 Mar 2014 10:11:00 +0100</pubDate><guid>tag:,2014-03-18:2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html</guid><category>firebug</category><category>http</category><category>https</category><category>formulaire</category><category>warning</category><category>mot de passe</category><category>password</category><category>action</category><category>form</category></item><item><title>imapfilter ou comment filtrer ses mails facilement</title><link>/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html</link><description>&lt;p&gt;Installer imapfilter via apt par exemple :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;apt-get&lt;/span&gt; install imapfilter&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Se rendre dans le dossier de configuration :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;cd &lt;span class="pre"&gt;~/.imapfilter&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Créer un fichier config.lua&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;touch config.lua&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Maintenant je décide de faire un fichier de configuration par boite
+email.&lt;/p&gt;
+&lt;p&gt;Ici gmail :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;cat &amp;gt; gmail.lua &amp;lt;&amp;lt;EOFgmail = IMAP &lt;span class="pre"&gt;{&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt; server = &lt;span class="pre"&gt;'imap.gmail.com',&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt; username = &lt;span class="pre"&gt;'mail&amp;#64;gmail.com',&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt; password = &lt;span class="pre"&gt;'mon_mot_de_passe',&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt; ssl = &lt;span class="pre"&gt;'ssl3',}EOF&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Et un pour Yahoo :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;cat &amp;gt; yahoo.lua &amp;lt;&amp;lt;EOFyahoo = IMAP &lt;span class="pre"&gt;{&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt; server = &lt;span class="pre"&gt;'imap.yahoo.com',&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt; username = &lt;span class="pre"&gt;'mail&amp;#64;yahoo.com',&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt; password = &lt;span class="pre"&gt;'mon_mot_de_passe',&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt; ssl = &lt;span class="pre"&gt;'ssl3',}EOF&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Ajouter nos boites dans le fichier de config avec des filtres :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;if_dir = &lt;span class="pre"&gt;os.getenv('HOME')&lt;/span&gt; .. &lt;span class="pre"&gt;'/.imapfilter/'--&lt;/span&gt; on inclus nos comptes imap…dofile(if_dir .. &lt;span class="pre"&gt;&amp;quot;gmail.lua&amp;quot;)dofile(if_dir&lt;/span&gt; .. &lt;span class="pre"&gt;&amp;quot;yahoo.lua&amp;quot;)--&lt;/span&gt; nos optionsoptions.timeout = &lt;span class="pre"&gt;120--&lt;/span&gt; filtres pour le compte gmail (on copie les messages non lus dans la boite &lt;span class="pre"&gt;&amp;quot;nouveaux&amp;quot;)nonlugmail=gmail.INBOX:is_unseen()nonlugmail:copy_message(gmail['nouveaux'])--&lt;/span&gt; filtres pour le compte yahoo (on supprime tous les messages &lt;span class="pre"&gt;lus)del_read_yahoo=yahoo.INBOX:is_seen()del_read_yahoo:delete_messages()&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Maintenant c'est à vous de faire vos propres filtres. Une fois
+configuré, lancer imapfilter simplement depuis le terminal :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;imapfilter&lt;/tt&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 11 Mar 2014 13:54:00 +0100</pubDate><guid>tag:,2014-03-11:2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html</guid><category>imapfilter</category><category>mail</category><category>filter</category><category>imap</category></item><item><title>Réparer ubuntu après un apt-get remove… de trop</title><link>/2014-03-08-r%C3%A9parer-ubuntu-apr%C3%A8s-un-apt-get-remove-de-trop.html</link><description>&lt;p&gt;En voulant modifier xscreensaver par i3lock j'ai supprimé des paquets
+non utilisés (jeux etc…).&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;J'ai malheureusement supprimé un peu (trop) de paquets tel que
+(xfdesktop4 et xfce4-panel).&lt;/div&gt;
+&lt;div class="line"&gt;Au démarrage de x, une fois identifié, un écran gris s'affiche et rien
+d'autre. Heureusement grâce à mon access SSH je peux me connecter à la
+machine à distance.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Pour voir la liste des paquets déinstallés j'ai donc fait :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;dpkg &lt;span class="pre"&gt;--get-selections&lt;/span&gt; &amp;gt; &lt;span class="pre"&gt;liste-des-paquets&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Il suffit ensuite d'ouvrir dans un éditeur texte (type vi) le fichier
+pour voir les paquets installés / déinstallés. Et réinstaller avec sudo
+apt-get install le ou les paquets manquants.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 08 Mar 2014 13:34:00 +0100</pubDate><guid>tag:,2014-03-08:2014-03-08-réparer-ubuntu-après-un-apt-get-remove-de-trop.html</guid><category>xubuntu</category><category>ubuntu</category><category>xfce</category><category>écran gris</category><category>apt-get remove</category><category>réparation</category></item><item><title>Git diff multiligne</title><link>/2014-03-05-git-diff-multiligne.html</link><description>&lt;p&gt;Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
+ligne…&lt;/p&gt;
+&lt;p&gt;J'ai du faire un &lt;em&gt;git diff&lt;/em&gt; dans mon terminal et copié la ligne (mais
+pas entièrement…).&lt;/p&gt;
+&lt;p&gt;J'ai donc refais un &lt;em&gt;git diff&lt;/em&gt; dans mon terminal et je me suis aperçu
+que ma ligne qui devait être sur plusieurs lignes ne l'était pas…&lt;/p&gt;
+&lt;p&gt;Mon fichier texte ressemble à ceci :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;ligne avec un peu de texte ici nous avons 66 caractères affichés.&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Or, quand je fais un diff on ne voit pas tous les caractères&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ git diff HEAD~1 HEADdiff --git a/test.txt b/test.txtnew file mode 100644index 0000000..235a891--- /dev/null+++ b/test.txt&amp;#64;&amp;#64; -0,0 +1 &amp;#64;&amp;#64;+ligne avec un peu de texte ici nous avons 66 caractè\ No newline at end of file
+&lt;/pre&gt;
+&lt;p&gt;Pour résoudre ce problème il faut soit ajouter &lt;em&gt;GIT_PAGER=&amp;quot;&amp;quot;&lt;/em&gt; &amp;nbsp;avant la
+commande &lt;em&gt;git diff&lt;/em&gt; soit ajouter dans son fichier de config git :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;git config &lt;span class="pre"&gt;--global&lt;/span&gt; core.pager &amp;quot;less &lt;span class="pre"&gt;-r&amp;quot;&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Voila ce que ça donne avec GIT_PAGER&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;GIT_PAGER=&amp;quot;&amp;quot;&lt;/span&gt; git diff HEAD~1 HEAD&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+diff --git a/test.txt b/test.txtnew file mode 100644index 0000000..235a891--- /dev/null+++ b/test.txt&amp;#64;&amp;#64; -0,0 +1 &amp;#64;&amp;#64;+ligne avec un peu de texte ici nous avons 66 caractères affichés.\ No newline at end of file
+&lt;/pre&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 05 Mar 2014 12:56:00 +0100</pubDate><guid>tag:,2014-03-05:2014-03-05-git-diff-multiligne.html</guid><category>git</category><category>diff</category><category>wrap</category><category>multiline</category><category>multiligne</category><category>less</category><category>config</category><category>gitconfig</category></item><item><title>Création d'une clé usb xubuntu sur mac</title><link>/2014-03-04-cr%C3%A9ation-dune-cl%C3%A9-usb-xubuntu-sur-mac.html</link><description>&lt;p&gt;Dans le terminal sur votre mac :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;$ diskutil list&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Qui permet de lister vos disque dur / clés usb etc…&lt;/p&gt;
+&lt;p&gt;ici ma clé usb est disk2.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/dev/disk2
+&amp;nbsp;&amp;nbsp; #:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; TYPE NAME&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; SIZE&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; IDENTIFIER
+&amp;nbsp;&amp;nbsp; 0:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; FDisk_partition_scheme&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; *8.1 GB&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; disk2
+&amp;nbsp;&amp;nbsp; 1:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Linux&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 4.0 GB&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; disk2s1
+&amp;nbsp;&amp;nbsp; 2:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Linux_Swap&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 4.1 GB&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; disk2s5
+&lt;/pre&gt;
+&lt;p&gt;Démontez la clé.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;$ diskutil unmountDisk /dev/disk2&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Unmount of all volumes on disk2 was successful
+&lt;/pre&gt;
+&lt;p&gt;Maintenant on copie xubuntu depuis notre dossier téléchargements vers
+cette clé usb :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;$ sudo dd &lt;span class="pre"&gt;if=~/Downloads/xubuntu-13.10-desktop-i386.iso&lt;/span&gt; &lt;span class="pre"&gt;of=/dev/rdisk2&lt;/span&gt; bs=1m&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Password:
+834+0 records in
+834+0 records out
+874512384 bytes transferred in 137.915395 secs (6340934 bytes/sec)
+&lt;/pre&gt;
+&lt;p&gt;Puis on éjecte proprement la clé usb&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;$ diskutil eject /dev/disk2&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Disk /dev/disk2 ejected
+&lt;/pre&gt;
+&lt;p&gt;Et voilà&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 04 Mar 2014 14:10:00 +0100</pubDate><guid>tag:,2014-03-04:2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html</guid><category>clé usb</category><category>xubuntu</category><category>mac</category><category>terminal</category><category>ubuntu</category></item><item><title>git cherry-pick</title><link>/2014-02-06-git-cherry-pick.html</link><description>&lt;p&gt;J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
+messages sur cherry-pick sans savoir ce que c'était.&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;git cherry-pick permet d'appliquer un commit sur la branche sur la
+branche actuelle.&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;&lt;tt class="docutils literal"&gt;git &lt;span class="pre"&gt;cherry-pick&lt;/span&gt; c4a99776&lt;/tt&gt;&lt;/p&gt;
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 06 Feb 2014 23:11:30 +0100</pubDate><guid>tag:,2014-02-06:2014-02-06-git-cherry-pick.html</guid><category>git</category><category>cherry-pick</category><category>commit</category><category>branch</category></item><item><title>Nouveau thème</title><link>/2014-02-06-nouveau-th%C3%A8me.html</link><description>&lt;p&gt;Je n'avais pas mis à jour mon thème depuis bien longtemps.&lt;/p&gt;
+&lt;/p&gt;&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;C'est maintenant chose faite avec ce nouveau thème !&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="nouveau thème" src="https://31.media.tumblr.com/d0896de0a038122cee44adbfaeb7e90c/tumblr_inline_n0lh2qig1i1qzr4hx.png" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Voici l'ancien thème en souvenir.&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="ancien thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr_inline_n0lh2l5LOi1qzr4hx.png" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 06 Feb 2014 23:03:00 +0100</pubDate><guid>tag:,2014-02-06:2014-02-06-nouveau-thème.html</guid><category>thème</category><category>tumblr</category></item><item><title>Suppression d'un caractère unicode dans Vim</title><link>/2014-01-19-suppression-dun-caract%C3%A8re-unicode-dans-vim.html</link><description>&lt;p&gt;J'étais à la recherche de se caractère unicode dans vim :&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;&lt;tt class="docutils literal"&gt;&amp;lt;U+2028&amp;gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;Pour pouvoir le supprimer j'ai utilisé la commande suivante :&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;:%s/\%U2028//g&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;Décortiquons la commande :&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;&lt;tt class="docutils literal"&gt;:%s/&lt;/tt&gt; Recherche et remplace dans tout le fichier&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;&lt;tt class="docutils literal"&gt;\%U2028&lt;/tt&gt; Le caractère que l'on recherche unicode &amp;quot;2028&amp;quot;&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;&lt;tt class="docutils literal"&gt;//&lt;/tt&gt; par rien (1er slash sépare la recherche par ce qu'on remplace, le
+second pour dire la fin de ce qu'on remplace).&lt;/p&gt;
+&lt;/p&gt;&lt;p&gt;&lt;tt class="docutils literal"&gt;g&lt;/tt&gt; dans tout le fichier (global).&lt;/p&gt;
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 19 Jan 2014 17:06:00 +0100</pubDate><guid>tag:,2014-01-19:2014-01-19-suppression-dun-caractère-unicode-dans-vim.html</guid><category>vim</category><category>unicode</category><category>char</category><category>suppression</category><category>caractère</category></item><item><title>crontab -e file(s)</title><link>/2013-11-13-crontab-e-files.html</link><description>&lt;p&gt;Ou se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?&lt;/p&gt;
+&lt;p&gt;C'est une bonne question n'est-ce pas ?&lt;/p&gt;
+&lt;p&gt;La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
+debian, a voir sur d'autres distribs)&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 13 Nov 2013 21:13:34 +0100</pubDate><guid>tag:,2013-11-13:2013-11-13-crontab-e-files.html</guid><category>crontab -e</category><category>crontab</category><category>files</category><category>file</category><category>/var/spool/cron/crontabs</category><category>/var/spool/cron</category><category>user</category></item><item><title>Chmod 755 sur les dossiers et 644 sur les fichiers</title><link>/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html</link><description>&lt;p&gt;C'est toujours la galère lorsque l'on veut que tout soit clean au niveau
+des permissions des dossiers / fichiers.&lt;/p&gt;
+&lt;p&gt;Souvent la première chose que l'on fait : on va dans chaque dossier et
+on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
+dossiers ça va mais quand on en a 40… on utilise une autre technique !&lt;/p&gt;
+&lt;p&gt;J'utilise pour les dossiers :&lt;/p&gt;
+&lt;blockquote&gt;
+$ find `pwd` -type d -exec chmod 755 {} \;&lt;/blockquote&gt;
+&lt;p&gt;et pour les fichiers :&lt;/p&gt;
+&lt;blockquote&gt;
+$ find `pwd` -type f -exec chmod 644 {} \;&lt;/blockquote&gt;
+&lt;p&gt;Avec `pwd` je vais partir du dossier actuel et remplacer tous les
+droits des fichiers et dossiers enfants. Vous pouvez remplacer par un
+autre chemin par exemple :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;find /home/choiz/ -type d -exec chmod 755 {} \;&lt;/p&gt;
+&lt;p&gt;find /home/choiz/ -type f -exec chmod 644 {} \;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;PS : Je ne découvre pas ces commandes, je n'avais juste jamais pris le
+temps de faire un article la dessus, voilà qui est fait.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 12 Nov 2013 20:47:00 +0100</pubDate><guid>tag:,2013-11-12:2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html</guid><category>chmod</category><category>755</category><category>644</category><category>folder</category><category>file</category><category>folders</category><category>files</category><category>pwd</category><category>find</category></item><item><title>Icônes / Favicon / Apple-touch-icon</title><link>/2013-11-03-ic%C3%B4nes-favicon-apple-touch-icon.html</link><description>&lt;p&gt;Voici comment faire facilement sa favicon et ses icônes pour les
+appareils mobiles avec image magick.&lt;/p&gt;
+&lt;p&gt;Mon icône de base est en 512x512px au format png avec prise en charge de
+la transparence &amp;quot;icon512.png&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Je veux faire une favicon en 16x16px, 32x32px 48x48px et 64x64px le tout
+dans un seul fichier favicon.ico.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;$ convert icon512.png \&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;-bordercolor white -border 0 \&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;\( -clone 0 -resize 16x16 \) \&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;\( -clone 0 -resize 32x32 \) \&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;\( -clone 0 -resize 48x48 \) \&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;\( -clone 0 -resize 64x64 \) \&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;-delete 0 -alpha off favicon.ico&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ensuite je veux faire mes icônes pour les appareils mobiles : Android,
+Apple etc…&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;$ convert icon512.png -resize x60 touch-icon-iphone.png&lt;/div&gt;
+&lt;div class="line"&gt;$ convert icon512.png -resize x76 touch-icon-ipad.png&lt;/div&gt;
+&lt;div class="line"&gt;$ convert icon512.png -resize x120 touch-icon-iphone-retina.png&lt;/div&gt;
+&lt;div class="line"&gt;$ convert icon512.png -resize x152 touch-icon-ipad-retina.png&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Maintenant il faut ajouter dans notre page html entre les balises head :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&amp;lt;link rel=&amp;quot;shortcut icon&amp;quot; type=&amp;quot;image/x-icon&amp;quot; href=&amp;quot;favicon.ico&amp;quot;&amp;gt;&lt;/div&gt;
+&lt;div class="line"&gt;&amp;lt;link rel=&amp;quot;apple-touch-icon-precomposed&amp;quot;
+href=&amp;quot;touch-icon-iphone.png&amp;quot;&amp;gt;&lt;/div&gt;
+&lt;div class="line"&gt;&amp;lt;link rel=&amp;quot;apple-touch-icon-precomposed&amp;quot; sizes=&amp;quot;76x76&amp;quot;
+href=&amp;quot;touch-icon-ipad.png&amp;quot;&amp;gt;&lt;/div&gt;
+&lt;div class="line"&gt;&amp;lt;link rel=&amp;quot;apple-touch-icon-precomposed&amp;quot; sizes=&amp;quot;120x120&amp;quot;
+href=&amp;quot;touch-icon-iphone-retina.png&amp;quot;&amp;gt;&lt;/div&gt;
+&lt;div class="line"&gt;&amp;lt;link rel=&amp;quot;apple-touch-icon-precomposed&amp;quot; sizes=&amp;quot;152x152&amp;quot;
+href=&amp;quot;touch-icon-ipad-retina.png&amp;quot;&amp;gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A noter les appareils Android utilisent aussi les images
+&amp;quot;apple-touch-icon&amp;quot;.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 03 Nov 2013 14:11:02 +0100</pubDate><guid>tag:,2013-11-03:2013-11-03-icônes-favicon-apple-touch-icon.html</guid><category>cli</category><category>imagemagick</category><category>android</category><category>ios</category><category>apple</category><category>icons</category><category>icon</category><category>favicon</category><category>apple-touch-icon</category><category>precomposed</category><category>html</category></item><item><title>Installer jshint sur mac</title><link>/2013-10-14-installer-jshint-sur-mac.html</link><description>&lt;p&gt;Installation via npm de jshint (-g pour installer pour tous les
+utilisateurs) :&lt;/p&gt;
+&lt;blockquote&gt;
+sudo npm install -g jshint&lt;/blockquote&gt;
+&lt;p&gt;Faire un lien symbolique pour pouvoir utiliser directement jshint sans
+préciser tout le chemin a chaque fois :&lt;/p&gt;
+&lt;blockquote&gt;
+ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 14 Oct 2013 12:41:08 +0200</pubDate><guid>tag:,2013-10-14:2013-10-14-installer-jshint-sur-mac.html</guid><category>jshint</category><category>mac</category><category>setup</category><category>npm</category><category>nodejs</category></item><item><title>Git se déplacer dans une branche distante</title><link>/2013-10-01-git-se-d%C3%A9placer-dans-une-branche-distante.html</link><description>&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;J'utilise des branches tel que prod, preprod pour mes projets et en
+local il m'arrive de vouloir aller sur ses branches.&lt;/div&gt;
+&lt;div class="line"&gt;Je fais donc :&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;git checkout preprod&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Et j'ai l'erreur suivante :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+error: pathspec 'preprod' did not match any file(s) known to git.
+&lt;/pre&gt;
+&lt;p&gt;Je vais mettre a jour mon origin :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;git fetch origin&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Maintenant je veux ma branche distante en lui précisant l'origin :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;git checkout &lt;span class="pre"&gt;-b&lt;/span&gt; preprod origin/preprod&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Et j'ai bien ma branche en local comme git me l'indique :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Branch preprod set up to track remote branch preprod from origin.
+Switched to a new branch 'preprod'
+&lt;/pre&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 01 Oct 2013 13:51:00 +0200</pubDate><guid>tag:,2013-10-01:2013-10-01-git-se-déplacer-dans-une-branche-distante.html</guid><category>git</category><category>checkout</category><category>fetch</category><category>origin</category><category>checkout -b</category><category>branch</category><category>remote</category></item><item><title>Connaitre le code réponse HTTP avec curl</title><link>/2013-09-29-connaitre-le-code-r%C3%A9ponse-http-avec-curl.html</link><description>&lt;p&gt;Pour connaitre le code réponse HTTP il suffit de faire :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;curl &lt;span class="pre"&gt;-IL&lt;/span&gt; url&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Voici l'exemble avec tumblr.com :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;curl &lt;span class="pre"&gt;-IL&lt;/span&gt; &lt;span class="pre"&gt;http://tumblr.com&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+HTTP/1.1 301 Moved Permanently
+Content-length: 0
+Location: http://www.tumblr.com/
+Connection: close
+
+HTTP/1.1 302 Moved Temporarily
+Server: nginx
+Date: Sun, 29 Sep 2013 17:06:40 GMT
+Content-Type: text/html
+Connection: close
+P3P: CP=&amp;quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&amp;quot;
+Location: https://www.tumblr.com/
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 29 Sep 2013 17:06:42 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Vary: Accept-Encoding
+P3P: CP=&amp;quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&amp;quot;
+Set-Cookie: tmgioct=52485e21d628b00096885790; expires=Wed, 27-Sep-2023 17:06:41 GMT; path=/; httponly
+&lt;/pre&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 29 Sep 2013 19:10:00 +0200</pubDate><guid>tag:,2013-09-29:2013-09-29-connaitre-le-code-réponse-http-avec-curl.html</guid><category>curl</category><category>http</category><category>response</category><category>code</category><category>301</category><category>302</category><category>404</category><category>200</category></item><item><title>Passer de svn à git</title><link>/2013-07-16-passer-de-svn-%C3%A0-git.html</link><description>&lt;p&gt;Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn.
+Il est temps de faire la migration de svn à git !&lt;/p&gt;
+&lt;p&gt;J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
+voulais voici donc ma procédure :&lt;/p&gt;
+&lt;blockquote&gt;
+svn log --quiet 'svn://svn.mondomaine/monprojet' | grep &amp;quot;^r&amp;quot; | awk
+'{print $3}' | sort | uniq | awk '{ print $1&amp;quot; = &amp;quot;$1&amp;quot;
+&amp;lt;&amp;quot;$1&amp;quot;&amp;#64;mondomaine&amp;gt;&amp;quot; }' &amp;gt; authors.txt&lt;/blockquote&gt;
+&lt;p&gt;J'ai ensuite édité authors.txt pour remplacer nos différents pseudos par
+nos prénoms et noms et j'ai vérifier les adresses e-mails.&lt;/p&gt;
+&lt;p&gt;Puis j'ai git svn clone :&lt;/p&gt;
+&lt;blockquote&gt;
+git svn clone 'svn://svn.mondomaine/monprojet' --no-metadata
+--authors-file=authors.txt --tags=tags --branches=branches
+--trunk=trunk monprojet&lt;/blockquote&gt;
+&lt;p&gt;Si vous avez des tags dans svn, vous pouvez les mettre dans git :&lt;/p&gt;
+&lt;blockquote&gt;
+git branch -r | sed -rne 's, *tags/([^&amp;#64;]+)$,\1,p' | while read
+tag; do echo &amp;quot;git tag $tag 'tags/${tag}^'; git branch -r -d
+tags/$tag&amp;quot;; done | sh&lt;/blockquote&gt;
+&lt;p&gt;Pour finir ajoutez votre dépot distant :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;git remote add origin &lt;a class="reference external" href="mailto:git&amp;#64;git.mondomaine"&gt;git&amp;#64;git.mondomaine&lt;/a&gt;:/monprojet.git&lt;/div&gt;
+&lt;div class="line"&gt;git push -u origin --tags&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Merci à
+&lt;a class="reference external" href="http://bazoud.com/articles/2010-12-11-migration-de-svn-vers-git-en-4-etapes/index.html"&gt;Bazoud&lt;/a&gt;
+pour différentes commandes ;)&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 16 Jul 2013 22:37:00 +0200</pubDate><guid>tag:,2013-07-16:2013-07-16-passer-de-svn-à-git.html</guid><category>svn to git</category><category>svn</category><category>git</category><category>migate</category><category>git svn clone</category><category>authors</category><category>tags</category></item><item><title>Export / Import avec PostgreSQL</title><link>/2013-06-22-export-import-avec-postgresql.html</link><description>&lt;p&gt;Pour exporter une table spécifique d'une base :&lt;/p&gt;
+&lt;blockquote&gt;
+pg_dump &lt;em&gt;mabase&lt;/em&gt; --table=*matable* &amp;gt; &lt;em&gt;dump_base_table&lt;/em&gt;.sql&lt;/blockquote&gt;
+&lt;p&gt;Pour exporter une base :&lt;/p&gt;
+&lt;blockquote&gt;
+pg_dump &lt;em&gt;mabase&lt;/em&gt; &amp;gt; &lt;em&gt;dump_base&lt;/em&gt;.sql&lt;/blockquote&gt;
+&lt;p&gt;Pour importer un dump dans une base :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;psql &lt;em&gt;base&lt;/em&gt; &amp;lt; &lt;em&gt;dump_base_table&lt;/em&gt;.sql&lt;/p&gt;
+&lt;p&gt;psql &lt;em&gt;base&lt;/em&gt; &amp;lt; &lt;em&gt;dump_base&lt;/em&gt;.sql&lt;/p&gt;
+&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 22 Jun 2013 19:57:41 +0200</pubDate><guid>tag:,2013-06-22:2013-06-22-export-import-avec-postgresql.html</guid><category>postgreSQL</category><category>pg_dump</category><category>psql</category><category>import</category><category>export</category><category>dump</category><category>sql</category></item><item><title>Git déplacer mon dernier commit sur une autre branche</title><link>/2013-06-22-git-d%C3%A9placer-mon-dernier-commit-sur-une-autre.html</link><description>&lt;p&gt;J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
+&lt;em&gt;master&lt;/em&gt;… Généralement je fais toujours une branche pour les
+modifications, cette fois j'avais créé cette branche &lt;em&gt;debug_redirect&lt;/em&gt;
+mais je n'étais pas dessus…&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Je me suis retrouvé avec les commits A-B-C sur mon &lt;em&gt;master&lt;/em&gt;. Or le
+seul qui devait être dessus devait être A et je devais avoir B-C dans
+ma branche &lt;em&gt;debug_redirect&lt;/em&gt;.&lt;/div&gt;
+&lt;div class="line"&gt;Voici un schéma de la situation :&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;debug_redirect&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ↓&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; A-B-C&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ↑&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; master&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Je dois donc soit mettre a jour ma branche &lt;em&gt;debug_redirect&lt;/em&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git checkout debug_redirect&lt;/p&gt;
+&lt;p&gt;$ git merge master&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ce qui donne :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;debug_redirect&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ↓&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; A-B-C&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ↑&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp; master&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Il me reste qu'a retourner sur le &lt;em&gt;master&lt;/em&gt; et revenir à la version A.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git checkout master&lt;/p&gt;
+&lt;p&gt;$ git reset --hard HEAD~2&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ce qui donne :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; debug_redirect&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; ↓&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; A-B-C&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ↑&lt;/div&gt;
+&lt;div class="line"&gt;master&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Maintenant que j'ai fixé mon bug sur ma branche&amp;nbsp;&lt;em&gt;debug_redirect&lt;/em&gt; je
+peux le merger avec le &lt;em&gt;master&lt;/em&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+$ git merge debug_redirect --no-ff&lt;/blockquote&gt;
+&lt;p&gt;Résultat :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; B-C&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; debug_redirect&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; /&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;\&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; A - - - - D&amp;nbsp;&amp;nbsp; master&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Pour voir vos commits par branche vous pouvez aussi utiliser la commande
+git log :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git log --graph --oneline --decorate&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;*&amp;nbsp;&amp;nbsp; 4c677ac (HEAD, master) Merge branch 'debug_redirect'&lt;/div&gt;
+&lt;div class="line"&gt;|\&lt;/div&gt;
+&lt;div class="line"&gt;| * 90e7a7a (debug_redirect) Fix another bug on redirect&lt;/div&gt;
+&lt;div class="line"&gt;| * 40ae981 Fix the redirect bug&lt;/div&gt;
+&lt;div class="line"&gt;|/&lt;/div&gt;
+&lt;div class="line"&gt;* 4e06ff4 initial commit&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 22 Jun 2013 13:07:00 +0200</pubDate><guid>tag:,2013-06-22:2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html</guid><category>git</category><category>reset</category><category>checkout</category><category>merge</category><category>branch</category><category>commit</category></item><item><title>Installation disque dur Seagate 4To Debian</title><link>/2013-06-21-installation-disque-dur-seagate-4to-debian.html</link><description>&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
+(Fichiers persos, photos, vidéos…).&lt;/div&gt;
+&lt;div class="line"&gt;J'ai donc formaté mon disque avec « Fdisk » et j'ai eu le message
+suivant :&lt;/div&gt;
+&lt;/div&gt;
+&lt;pre class="literal-block"&gt;
+Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
+
+WARNING: The size of this disk is 4.0 TB (4000787030016 bytes).
+DOS partition table format can not be used on drives for volumes
+larger than (2199023255040 bytes) for 512-byte sectors. Use parted(1) and GUID
+partition table format (GPT).
+&lt;/pre&gt;
+&lt;p&gt;J'ai donc vérifié si j'avais dans le noyau l'option
+CONFIG_EFI_PARTITION active :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;# cat &lt;span class="pre"&gt;&amp;quot;/boot/config-`uname&lt;/span&gt; &lt;span class="pre"&gt;-r`&amp;quot;&lt;/span&gt; | grep CONFIG_EFI_PARTITION&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+CONFIG_EFI_PARTITION=y
+&lt;/pre&gt;
+&lt;p&gt;C'était le cas, donc j'ai un autre problème… C'est « Fdisk » qui pose
+problème. Avec ma version (2.20.1) on peut faire une partition maximum
+de 2To.&lt;/p&gt;
+&lt;p&gt;Donc je me relance dans le partitionnement avec « parted ».&lt;/p&gt;
+&lt;p&gt;Note : mon disque est en /dev/sdd n'oubliez pas de modifier les
+commandes en fonction de votre configuration.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;# parted /dev/sdd&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+GNU Parted 2.3
+Using /dev/sdd
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+&lt;/pre&gt;
+&lt;p&gt;Définir le label GPT qui permet de faire des partition &amp;gt; 2To.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;mklabel gpt&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Warning: The existing disk label on /dev/sdd will be destroyed and all data on this disk will be lost. Do you want to continue?
+Yes/No?
+&lt;/pre&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;yes&lt;/tt&gt; &lt;tt class="docutils literal"&gt;unit TB&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Faire la partition de 4To&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;mkpart primary 0.00TB 4.00TB&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Vérifier&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;print&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Model: ATA ST4000DM000-1F21 (scsi)
+Disk /dev/sdd: 4001GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: gpt
+
+Number&amp;nbsp; Start&amp;nbsp;&amp;nbsp; End&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Size&amp;nbsp;&amp;nbsp;&amp;nbsp; File system&amp;nbsp; Name&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Flags
+&amp;nbsp;1&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 1049kB&amp;nbsp; 4001GB&amp;nbsp; 4001GB&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; primary
+&lt;/pre&gt;
+&lt;p&gt;Quitter « parted »&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;quit&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Information: You may need to update /etc/fstab.
+&lt;/pre&gt;
+&lt;p&gt;Formater la partition avec un système de fichiers donné :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;# mkfs.ext4 /dev/sdd1&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+mke2fs 1.42.5 (29-Jul-2012)
+Étiquette de système de fichiers=
+Type de système d'exploitation&amp;nbsp;: Linux
+Taille de bloc=4096 (log=2)
+Taille de fragment=4096 (log=2)
+«&amp;nbsp;Stride&amp;nbsp;» = 0 blocs, «&amp;nbsp;Stripe width&amp;nbsp;» = 0 blocs
+244195328 i-noeuds, 976754176 blocs
+48837708 blocs (5.00%) réservés pour le super utilisateur
+Premier bloc de données=0
+Nombre maximum de blocs du système de fichiers=4294967296
+29809 groupes de blocs
+32768 blocs par groupe, 32768 fragments par groupe
+8192 i-noeuds par groupe
+Superblocs de secours stockés sur les blocs&amp;nbsp;:
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 102400000, 214990848, 512000000, 550731776, 644972544
+
+Allocation des tables de groupe&amp;nbsp;: complété
+Écriture des tables d'i-noeuds&amp;nbsp;: complété
+Création du journal (32768 blocs)&amp;nbsp;: complété
+Écriture des superblocs et de l'information de comptabilité du système de
+fichiers&amp;nbsp;: complété
+&lt;/pre&gt;
+&lt;p&gt;Il ne reste plus qu'a monter la partition et éditer le fstab ;)&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 21 Jun 2013 00:30:00 +0200</pubDate><guid>tag:,2013-06-21:2013-06-21-installation-disque-dur-seagate-4to-debian.html</guid><category>debian</category><category>disque dur</category><category>4To</category><category>partition</category><category>fs</category><category>config_efi_partition</category><category>fdisk</category><category>parted</category><category>gpt</category><category>mkfs</category></item><item><title>Toujours afficher le protocole dans Firefox</title><link>/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html</link><description>&lt;p&gt;Souvent lorsque je copie/colle une url depuis firefox j'ajoute &lt;a class="reference external" href="http://"&gt;http://&lt;/a&gt;
+or lors de la copie celui-ci est copié… Je me retrouve donc avec deux
+fois &lt;a class="reference external" href="http://"&gt;http://&lt;/a&gt;…&lt;/p&gt;
+&lt;p&gt;Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :&lt;/p&gt;
+&lt;p&gt;Ecrire dans la barre d'adresse :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;about:config&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Rechercher :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;browser.urlbar.trimURLs&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Modifier la valeur par :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;false&lt;/tt&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 10 Jun 2013 14:22:00 +0200</pubDate><guid>tag:,2013-06-10:2013-06-10-toujours-afficher-le-protocole-dans-firefox.html</guid><category>firefox</category><category>config</category><category>http</category><category>urlbar</category><category>browser</category></item><item><title>Latin1 &lt;-&gt; UTF-8</title><link>/2013-05-29-latin1-utf-8.html</link><description>&lt;p&gt;Voilà une solution simple pour convertir une base de donnée en Latin1
+vers de l'UTF-8.&lt;/p&gt;
+&lt;p&gt;Utiliser mysqldump avec les options suivantes :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--default-character-set=utf8&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;et&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--skip-set-charset&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Voilà la commande&amp;nbsp;complète :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;mysqldump &lt;span class="pre"&gt;-u&lt;/span&gt; user &lt;span class="pre"&gt;-p&lt;/span&gt; base table &lt;span class="pre"&gt;--default-character-set=utf8&lt;/span&gt; &lt;span class="pre"&gt;--skip-set-charset&lt;/span&gt; &amp;gt; base_table.sql&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Ensuite en utilisant vim je fais un rechercher / remplacer des
+différents latin1 en utf-8.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;vim dump_base_table.sql&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Et en mode commande :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;:%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;et&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;:%s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;on enregistre et quitte le fichier avec :wq (ou sinon avec ZZ).&lt;/p&gt;
+&lt;p&gt;Maintenant on réimporte la table grâce à mysql :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;mysql &lt;span class="pre"&gt;-u&lt;/span&gt; user &lt;span class="pre"&gt;-p&lt;/span&gt; base &amp;lt; dump_base_table.sql&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;il reste a vérifier si les champs sont bien en UTF-8.&lt;/p&gt;
+&lt;p&gt;Ici une table « table » avec une colonne « col » on ajoute un&amp;nbsp;caractère
+accentué.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;INSERT INTO table &lt;span class="pre"&gt;VALUES(&amp;quot;é&amp;quot;);&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Maintenant on regarde la taille de la colonne :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;SELECT col, length(col) FROM table;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Si la taille = 1 le caractère est enregistré en latin1… si c'est 2 c'est
+bien de l'UTF-8 car sauvé sur 2 octets.&lt;/p&gt;
+&lt;p&gt;Merci à &lt;a class="reference external" href="http://agopian.info/blog/mysql-mysqldump-et-php-convertir-de-latin1-vers-utf8.html"&gt;Mathieu
+Agopian&lt;/a&gt;
+pour le dernier tips.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 29 May 2013 16:32:00 +0200</pubDate><guid>tag:,2013-05-29:2013-05-29-latin1-utf-8.html</guid><category>PHP</category><category>LATIN1</category><category>UTF-8</category><category>MYSQL</category><category>ENCODING</category><category>CHARSET</category><category>mysqldump</category></item><item><title>TypeMatrix sous Mac Os X</title><link>/2013-03-04-typematrix-sous-mac-os-x.html</link><description>&lt;p&gt;J'ai chez moi comme au travail un clavier TypeMatrix 2030 USB.&lt;/p&gt;
+&lt;p&gt;Sur mac il faut &lt;a class="reference external" href="http://download.tuxfamily.org/dvorak/macosx/fr-dvorak-bepo-macosx-1.0rc2.dmg"&gt;télécharger le
+pilote&lt;/a&gt;,
+puis copier le fichier fr-dvorak-bepo.bundle dans le dossier
+/Bibliothèque/Keyboard Layouts/&lt;/p&gt;
+&lt;p&gt;Note : si vous installez le pilote dans le dossier de votre utilisateur
+(~/Bibliothèque/Keyboard Layouts/) vous ne pourrez pas utiliser le
+mappage à l'ouverture de session…&lt;/p&gt;
+&lt;p&gt;Pour utiliser les touches couper, copier,coller, j'utilise
+&lt;a class="reference external" href="http://pqrs.org/macosx/keyremap4macbook/"&gt;keyremap4macbook&lt;/a&gt;&amp;nbsp;(qui
+fonctionne aussi sur iMac etc…). L'installer puis redémarrer. Dans les
+préférences dans l'onglet &amp;quot;change key&amp;quot; recherchez &amp;quot;Use PC Style
+Copy/Paste #3bis&amp;quot; et&amp;nbsp;sélectionnez&amp;nbsp;l'option proposée.&lt;/p&gt;
+&lt;p&gt;Vous pouvez maintenant utiliser votre TypeMatrix en Bépo sur Mac Os X
+avec la prise en charge des touches couper, copier et coller.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 04 Mar 2013 13:08:09 +0100</pubDate><guid>tag:,2013-03-04:2013-03-04-typematrix-sous-mac-os-x.html</guid><category>TypeMatrix</category><category>2030</category><category>USB</category><category>mac</category><category>cut</category><category>copy</category><category>paste</category><category>couper</category><category>copier</category><category>coller</category></item><item><title>Logiciels de gestion de versions (Svn, Git, Mercurial)</title><link>/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html</link><description>&lt;p&gt;J'ai différents projet sous svn, git et mercurial. J'ai pour but de tout
+migrer sur git car disponible sur github ainsi que sur bitbucket.&lt;/p&gt;
+&lt;p&gt;J'ai trouvé un &lt;a class="reference external" href="http://www.yterium.net/Migrer-un-projet-SVN-vers-GIT"&gt;trés bon tutoriel pour migrer un projet svn à
+git&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Egalement un autre tutoriel en anglais pour passer &lt;a class="reference external" href="http://hivelogic.com/articles/converting-from-mercurial-to-git"&gt;de mercurial à
+git&lt;/a&gt;.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 12 Feb 2013 13:26:00 +0100</pubDate><guid>tag:,2013-02-12:2013-02-12-logiciels-de-gestion-de-versions-svn-git.html</guid><category>git</category><category>mercurial</category><category>svn</category><category>migration</category><category>svn to git</category><category>mercurial to git</category><category>hg to git</category><category>hg</category></item><item><title>Bug Firefox avec une iFrame blanche</title><link>/2011-12-08-bug-firefox-avec-une-iframe-blanche.html</link><description>&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Lors de l'utilisation de div et d'iFrame sous Firefox un bug étrange
+apparait.&lt;/div&gt;
+&lt;div class="line"&gt;Quand une iFrame est affiché dans un div qui a la propriété css&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+display:none;&lt;/blockquote&gt;
+&lt;p&gt;Lors de l'affichage de ce div en remplaçant le display:none par
+display:block le contenu de l'iframe reste vide (blanche). Pour résoudre
+ce probleme il faut modifier l'attribut src de l'iframe lorsque l'on
+affiche le div en display:block.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 08 Dec 2011 15:32:08 +0100</pubDate><guid>tag:,2011-12-08:2011-12-08-bug-firefox-avec-une-iframe-blanche.html</guid><category>Firefox</category><category>Bug</category><category>iFrame</category><category>display:none</category><category>css</category><category>white iframe</category></item><item><title>PHP + Gettext + Debian</title><link>/2011-12-04-php-gettext-debian.html</link><description>&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;J'utilise maintenant php-gettext pour mes traductions. C'est plus
+facile en utilisant des outils tel que pootle ou poedit.&lt;/div&gt;
+&lt;div class="line"&gt;Pour utiliser gettext sur votre site en php il faut télécharger le
+package php-gettext ainsi que d'autres outils tel que xgettext ou
+msgfmt :&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;# apt-get install php-gettext&lt;/p&gt;
+&lt;p&gt;# apt-get install xgettext&lt;/p&gt;
+&lt;p&gt;# apt-get install msgfmt&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
+commentaires devant les langues qui vont sont à traduire par exemple :
+Allemand, Anglais, Espagnol, Français &amp;amp; Suédois :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;de_DE.UTF-8 UTF-8&lt;/div&gt;
+&lt;div class="line"&gt;en_GB.UTF-8 UTF-8&lt;/div&gt;
+&lt;div class="line"&gt;es_ES.UTF-8 UTF-8&lt;/div&gt;
+&lt;div class="line"&gt;fr_FR.UTF-8 UTF-8&lt;/div&gt;
+&lt;div class="line"&gt;sv_SE.UTF-8 UTF-8&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Puis regénérer les locales :&lt;/p&gt;
+&lt;blockquote&gt;
+# locale-gen&lt;/blockquote&gt;
+&lt;p&gt;Ensuite il faut définir votre chemin pour les traductions par exemple :&lt;/p&gt;
+&lt;blockquote&gt;
+lang/fr_FR/LC_ALL/domaine.mo&lt;/blockquote&gt;
+&lt;p&gt;Puis dans votre fichier php de configuration :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&amp;lt;?php&lt;/div&gt;
+&lt;div class="line"&gt;// configuration de la langue&lt;/div&gt;
+&lt;div class="line"&gt;$lang_path = &amp;quot;./lang&amp;quot;; // Chemin des fichiers le langue&lt;/div&gt;
+&lt;div class="line"&gt;$lang = 'fr_FR'; // Langue a afficher&lt;/div&gt;
+&lt;div class="line"&gt;$lang_encode = &amp;quot;UTF-8&amp;quot;; // Encodage du fichier&lt;/div&gt;
+&lt;div class="line"&gt;$lang_LC = &amp;quot;LC_ALL&amp;quot;; // LC_MESSAGE etc...&lt;/div&gt;
+&lt;div class="line"&gt;$lang_file = &amp;quot;domaine&amp;quot;; // Nom du fichier de langue&lt;/div&gt;
+&lt;div class="line"&gt;putenv(&amp;quot;LANG=&amp;quot;.$lang);&lt;/div&gt;
+&lt;div class="line"&gt;setlocale($lang_LC, $lang.&amp;quot;.&amp;quot;.$lang_encode);&lt;/div&gt;
+&lt;div class="line"&gt;bindtextdomain($lang_file,$lang_path);&lt;/div&gt;
+&lt;div class="line"&gt;bindtextdomain_codeset($lang_file,$lang_encode);&lt;/div&gt;
+&lt;div class="line"&gt;textdomain($lang_path);&lt;/div&gt;
+&lt;div class="line"&gt;?&amp;gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Puis faites le test en affichant dans un fichier php le texte &amp;quot;hello&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&amp;lt;?php&lt;/div&gt;
+&lt;div class="line"&gt;// on inclus la config...&lt;/div&gt;
+&lt;div class="line"&gt;include_once('config.php');&lt;/div&gt;
+&lt;div class="line"&gt;echo _('hello');&lt;/div&gt;
+&lt;div class="line"&gt;?&amp;gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Pour générer un fichier .mo a partir d'un fichier .po :&lt;/p&gt;
+&lt;blockquote&gt;
+msgfmt domaine.po -o domaine.mo&lt;/blockquote&gt;
+&lt;p&gt;Pour générer un fichier .po a partir de fichier php avec du gettext,
+faire un fichier texte avec tous vos fichiers php ou on doit récupérer
+le gettext.&lt;/p&gt;
+&lt;p&gt;Exemple listing_gettext.txt tel que :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;index.php&lt;/div&gt;
+&lt;div class="line"&gt;contact.php&lt;/div&gt;
+&lt;div class="line"&gt;etc...&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ensuite il faut faire la commande suivante pour générer le fichier
+domaine.po dans le dossier lang/ depuis notre fichier texte avec les php
+:&lt;/p&gt;
+&lt;blockquote&gt;
+xgettext -d domaine -p lang/ -k_ --from-code=UTF-8 -f
+listing_gettext.txt&lt;/blockquote&gt;
+&lt;p&gt;Pour finir voilà le path des fichiers .po et .mo dans mon application
+web :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;lang/fr_FR/LC_ALL/domaine.po&lt;/div&gt;
+&lt;div class="line"&gt;lang/fr_FR/LC_ALL/domaine.mo&lt;/div&gt;
+&lt;div class="line"&gt;lang/en_GB/LC_ALL/domaine.po&lt;/div&gt;
+&lt;div class="line"&gt;lang/en_GB/LC_ALL/domaine.mo&lt;/div&gt;
+&lt;div class="line"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 04 Dec 2011 19:10:00 +0100</pubDate><guid>tag:,2011-12-04:2011-12-04-php-gettext-debian.html</guid><category>.mo</category><category>.po</category><category>/etc/locale</category><category>LC_ALL</category><category>gettext</category><category>php</category><category>php-gettext</category><category>setlocale</category><category>xgettext</category></item><item><title>Clavier Apple sur debian</title><link>/2011-12-02-clavier-apple-sur-debian.html</link><description>&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Depuis le temps que je bosse avec un clavier Apple [STRIKEOUT:j'ai]
+mes doigts on eu le temps de s'habituer au mapage du clavier. Il y a
+beaucoup de différences entre un clavier AZERTY de PC et un clavier
+AZERTY de Mac.&lt;/div&gt;
+&lt;div class="line"&gt;Les touches : &amp;#64; # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
+des endroits complétement différents.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Pour modifier la configuration faire en console :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;dpkg-reconfigure keyboard-console&lt;/p&gt;
+&lt;p&gt;Select keymap from arch list&lt;/p&gt;
+&lt;p&gt;azerty&lt;/p&gt;
+&lt;p&gt;French&lt;/p&gt;
+&lt;p&gt;Apple USB&lt;/p&gt;
+&lt;p&gt;dpkg-reconfigure keyboard-configuration&lt;/p&gt;
+&lt;p&gt;model: Apple&lt;/p&gt;
+&lt;p&gt;layout: France - Macintosh&lt;/p&gt;
+&lt;p&gt;Key for AltGr: No AltGr Key&lt;/p&gt;
+&lt;p&gt;Compose key: Right Alt (AltGr)&lt;/p&gt;
+&lt;p&gt;Use Control+Alt+Backspace to terminate the X server? no&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;J'ai choisi un clavier Apple, Français Mac, sans touche AltGr, avec
+comme touche de fonctionnalité secondaire &amp;quot;Alt droit&amp;quot;. Malheureusement
+je n'ai pas réussi a mapper l'Alt de gauche pour avoir la même fonction
+qu'à droite...&lt;/p&gt;
+&lt;p&gt;Et ensuite j'ai indiqué que je ne voulais pas pouvoir quitter le server
+X avec la combinaison de touche Control+Alt+Backspace.&lt;/p&gt;
+&lt;p&gt;Si ceci ne fonctionne pas il faut se rendre dans la configuration du
+clavier de votre gestionnaire de fenêtre (xfce: dans mon cas). Puis
+désactiver le layout par defaut du système.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://media.tumblr.com/tumblr_lvjsbrOL8E1qzr4hx.png" /&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 02 Dec 2011 00:14:00 +0100</pubDate><guid>tag:,2011-12-02:2011-12-02-clavier-apple-sur-debian.html</guid><category>Clavier</category><category>Apple</category><category>Mapage</category><category>Debian</category><category>Linux</category><category>Keyboard</category><category>Mac</category><category>Mac Keyboard</category></item><item><title>Dual screen sur xfce</title><link>/2011-12-01-dual-screen-sur-xfce.html</link><description>&lt;p&gt;Un petit package bien pratique pour configurer le dual screen sur xfce
+se nomme : arandr&lt;/p&gt;
+&lt;blockquote&gt;
+apt-get install arandr&lt;/blockquote&gt;
+&lt;p&gt;Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez
+le ARandR pour configurer les deux écrans.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 01 Dec 2011 12:14:16 +0100</pubDate><guid>tag:,2011-12-01:2011-12-01-dual-screen-sur-xfce.html</guid><category>xfce</category><category>dualscreen</category><category>dual</category><category>screen</category><category>xfce</category><category>linux</category></item><item><title>Flash sous Debian</title><link>/2011-11-30-flash-sous-debian.html</link><description>&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Lors de l'installation de debian j'ai eu la surprise en ouvrant
+Firefox que Deezer ne fonctionne pas !&lt;/div&gt;
+&lt;div class="line"&gt;Il faut donc télécharger le package flashplugin-nonfree en procédant
+comme ceci :&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+vi /etc/apt/source.list&lt;/blockquote&gt;
+&lt;p&gt;ajouter contrib non-free aux différentes sources (sauf security)&lt;/p&gt;
+&lt;p&gt;puis faire :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;apt-get update&lt;/p&gt;
+&lt;p&gt;apt-get install flashplugin-nonfree&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;En relançant Firefox j'ai bel et bien flash player fonctionnel sur
+Deezer.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 30 Nov 2011 22:52:56 +0100</pubDate><guid>tag:,2011-11-30:2011-11-30-flash-sous-debian.html</guid><category>Flash</category><category>Debian</category><category>Deezer</category><category>Firefox</category><category>flashplugin</category><category>source</category><category>apt</category><category>souce.list</category><category>non-free</category><category>contrib</category></item><item><title>Voir les fichiers cachés sur Lion</title><link>/2011-11-02-voir-les-fichiers-cach%C3%A9s-sur-lion.html</link><description>&lt;p&gt;Dans un terminal :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;defaults write com.apple.Finder AppleShowAllFiles TRUE&lt;/p&gt;
+&lt;p&gt;killall Finder&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 02 Nov 2011 11:17:12 +0100</pubDate><guid>tag:,2011-11-02:2011-11-02-voir-les-fichiers-cachés-sur-lion.html</guid><category>fichiers</category><category>cachés</category><category>hidden</category><category>files</category><category>lion</category><category>defaults</category><category>AppleShowAllFiles</category><category>Finder</category></item><item><title>Insérer un # au début de chaque ligne d'un fichier avec vim</title><link>/2011-10-05-ins%C3%A9rer-un-au-d%C3%A9but-de-chaque-ligne-dun-fichier.html</link><description>&lt;p&gt;Voilà la commande pour ajouter un # au début de chaque ligne d'un
+fichier avec vim :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;:1,$s/^/#/&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Explications :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;:1,$&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Selection des ligne 1 à $ ($ étant la dernière).&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;s/^/#/&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;s pour search (en fait il cherche et remplace) ^ le début de ligne ($ si
+on voulais la fin de la ligne) et # le caractère que je veux remplacer&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 05 Oct 2011 00:42:00 +0200</pubDate><guid>tag:,2011-10-05:2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html</guid><category>Vim</category><category>search</category><category>replace</category><category>line</category><category>add</category><category>ligne</category><category>fichier</category><category>file</category><category>remplace</category><category>ajout</category></item><item><title>Plusieurs comptes Skype sur le même Mac !</title><link>/2011-09-18-plusieurs-comptes-skype-sur-le-m%C3%AAme-mac.html</link><description>&lt;p&gt;Comment lancer plusieurs comptes Skype avec le même Mac ?&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://media.tumblr.com/tumblr_lrqn73WCUg1qzr4hx.png" /&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Créer un compte utilisateur dans les préférences systèmes &amp;gt;
+utilisateurs. Par exemple l'utilisateur : &amp;quot;skype&amp;quot; avec comme mot de
+passe &amp;quot;password&amp;quot;.&lt;/div&gt;
+&lt;div class="line"&gt;Ensuite ouvrir un terminal (dans spotlight tapez terminal).&lt;/div&gt;
+&lt;div class="line"&gt;Dans ce terminal faire :&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+su skype (ou &amp;quot;su nomdutilisateur&amp;quot; en fonction de l'utilisateur
+créé).&lt;/blockquote&gt;
+&lt;p&gt;Password:&lt;/p&gt;
+&lt;blockquote&gt;
+password (ou autre suivant le mot de passe de l'utilisateur).&lt;/blockquote&gt;
+&lt;p&gt;Puis tapez :&lt;/p&gt;
+&lt;blockquote&gt;
+/Applications/Skype.app/Contents/MacOS/Skype&lt;/blockquote&gt;
+&lt;p&gt;Ce qui devrait lancer une seconde instance de Skype.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 18 Sep 2011 23:47:53 +0200</pubDate><guid>tag:,2011-09-18:2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html</guid><category>Skype</category><category>Multiutilisateur</category><category>Mac</category><category>MacOs</category><category>Mac os x</category><category>OsX</category><category>Skype Mac</category><category>Multi</category><category>Compte</category><category>Another copy</category><category>Another copy of Skype</category></item><item><title>Profil sur viadeo sans avoir la fenêtre de login</title><link>/2011-09-18-profil-sur-viadeo-sans-avoir-la-fen%C3%AAtre-de-login.html</link><description>&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;J'ai voulu plusieurs fois voir un profil sur Viadeo sans forcement
+être identifié. Lorsque l'on déplace la souris ou que l'on scroll une
+autre page s'affiche.&lt;/div&gt;
+&lt;div class="line"&gt;Exemple sur &lt;a class="reference external" href="http://www.viadeo.com/fr/profile/francois.lasserre1"&gt;ma page
+viadeo&lt;/a&gt;.&lt;/div&gt;
+&lt;div class="line"&gt;Pour empécher d'avoir la page de login il faut modifier une fonction
+Javascript. Avec un outil tel que
+&lt;a class="reference external" href="http://www.getfirebug.com"&gt;Firebug&lt;/a&gt; vous pouvez modifier le code
+Javascript du site.&lt;/div&gt;
+&lt;div class="line"&gt;Ouvrir firebug en mode console et modifier la fonction createJoin() !&lt;/div&gt;
+&lt;div class="line"&gt;Dans la console a coté de &amp;quot;&amp;gt;&amp;gt;&amp;gt;&amp;quot; il suffit de taper :&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+function createJoin() { false; }&lt;/blockquote&gt;
+&lt;p&gt;Avec ce code on modifie le contenu de la fonction createJoin() par false
+(plutôt que le code par defaut qui ouvre la fenêtre d'identification).&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 18 Sep 2011 22:54:00 +0200</pubDate><guid>tag:,2011-09-18:2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login.html</guid><category>viadeo</category><category>javascript</category><category>js</category><category>code</category><category>login</category><category>profil</category><category>identifié</category><category>firebug</category></item><item><title>Développement web avec Safari</title><link>/2011-09-05-d%C3%A9veloppement-web-avec-safari.html</link><description>&lt;p&gt;Pour activer l'inspecteur web tapez dans le terminal :&lt;/p&gt;
+&lt;blockquote&gt;
+defaults write com.apple.Safari WebKitDeveloperExtras -bool true&lt;/blockquote&gt;
+&lt;p&gt;Redémarrez Safari et maintenant vous pouvez inspecter les éléments de
+vos pages web.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 05 Sep 2011 09:53:22 +0200</pubDate><guid>tag:,2011-09-05:2011-09-05-développement-web-avec-safari.html</guid><category>Safari</category><category>Dev</category><category>Web</category><category>WebDev</category><category>Développement</category></item><item><title>Import VM avec Virtualbox</title><link>/2011-09-02-import-vm-avec-virtualbox.html</link><description>&lt;p&gt;J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
+donc un fichier ova... Maintenant comment l'importer sur VirtualBox ?&lt;/p&gt;
+&lt;p&gt;Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper :&lt;/p&gt;
+&lt;blockquote&gt;
+VBoxManage import votrefichier.ova&lt;/blockquote&gt;
+&lt;p&gt;Maintenant lors du prochain démarrage de votre VirtualBox vous devez
+avoir la machine virtuelle importée !&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 02 Sep 2011 19:28:28 +0200</pubDate><guid>tag:,2011-09-02:2011-09-02-import-vm-avec-virtualbox.html</guid><category>VirtualBox</category><category>Import</category><category>VirtualMachine</category><category>Virtual</category><category>Machine</category><category>Ova</category><category>VBoxManage</category></item><item><title>Partage Samba !</title><link>/2011-08-17-partage-samba.html</link><description>&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;J'ai réinstallé mon serveur il n'y a pas si longtemps avec Samba.&lt;/div&gt;
+&lt;div class="line"&gt;Editer le fichier de configuration :&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+vi /etc/samba/smb.conf&lt;/blockquote&gt;
+&lt;p&gt;Voici le contenu de mon fichier de configuration :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;### Global ###&lt;/div&gt;
+&lt;div class="line"&gt;[global]&lt;/div&gt;
+&lt;div class="line"&gt;## Identification ##&lt;/div&gt;
+&lt;div class="line"&gt;workgroup = WORKGROUP&lt;/div&gt;
+&lt;div class="line"&gt;netbios name = %h&lt;/div&gt;
+&lt;div class="line"&gt;server string = Serveur samba %h&lt;/div&gt;
+&lt;div class="line"&gt;security = user&lt;/div&gt;
+&lt;div class="line"&gt;public = yes&lt;/div&gt;
+&lt;div class="line"&gt;## Log ##&lt;/div&gt;
+&lt;div class="line"&gt;log file = /var/log/samba/log.%m&lt;/div&gt;
+&lt;div class="line"&gt;max log size = 1000&lt;/div&gt;
+&lt;div class="line"&gt;## Auth ##&lt;/div&gt;
+&lt;div class="line"&gt;encrypt passwords = true&lt;/div&gt;
+&lt;div class="line"&gt;smb passwd file = /etc/samba/smbpasswd&lt;/div&gt;
+&lt;div class="line"&gt;### Share ###&lt;/div&gt;
+&lt;div class="line"&gt;[choiz]&lt;/div&gt;
+&lt;div class="line"&gt;path = /home/choiz/samba&lt;/div&gt;
+&lt;div class="line"&gt;read only = no&lt;/div&gt;
+&lt;div class="line"&gt;writeable = yes&lt;/div&gt;
+&lt;div class="line"&gt;valid users = choiz&lt;/div&gt;
+&lt;div class="line"&gt;comment = partage de choiz&lt;/div&gt;
+&lt;div class="line"&gt;[partagereadonly]&lt;/div&gt;
+&lt;div class="line"&gt;path = /home/partageread&lt;/div&gt;
+&lt;div class="line"&gt;read only = yes&lt;/div&gt;
+&lt;div class="line"&gt;writeable = no&lt;/div&gt;
+&lt;div class="line"&gt;valid users = choiz, &amp;#64;group&lt;/div&gt;
+&lt;div class="line"&gt;comment = partage en lecture pour choiz et le groupe &amp;quot;group&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Maintenant il faut créer notre utilisateur &amp;quot;choiz&amp;quot; grâce à :&lt;/p&gt;
+&lt;blockquote&gt;
+smbpasswd -a choiz&lt;/blockquote&gt;
+&lt;p&gt;Pour les groupes samba utilise les groupes unix.&lt;/p&gt;
+&lt;p&gt;N'oubliez pas de redémarrer le service Samba !&lt;/p&gt;
+&lt;blockquote&gt;
+/etc/init.d/samba restart&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 17 Aug 2011 20:41:00 +0200</pubDate><guid>tag:,2011-08-17:2011-08-17-partage-samba.html</guid><category>Linux</category><category>Samba</category><category>config</category><category>configuration</category><category>Partage</category><category>Sharing</category></item><item><title>Liens utiles</title><link>/2011-08-09-liens-utiles.html</link><description>&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://www.jsperf.com/"&gt;http://www.jsperf.com/&lt;/a&gt; Pour faire des performances de code js&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="http://www.pastebin.com/"&gt;http://www.pastebin.com/&lt;/a&gt; Pour copier coller du code facilement&lt;/div&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 09 Aug 2011 21:03:05 +0200</pubDate><guid>tag:,2011-08-09:2011-08-09-liens-utiles.html</guid><category>Code</category><category>js</category><category>html</category><category>css</category><category>xhtml</category><category>javascript</category><category>sites</category></item><item><title>Ignorer grâce au SVN</title><link>/2011-07-26-ignorer-gr%C3%A2ce-au-svn.html</link><description>&lt;p&gt;Il existe plusieurs solutions pour ignorer des fichiers sur un svn :&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;svn propset svn:ignore&lt;/em&gt; ou dans la configuration du svn dans
+&lt;em&gt;~/.subversion/config&lt;/em&gt; le &lt;em&gt;global-ignores&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
+l'on se trouve actuellement il suffit d'executer la commande svn
+suivante :&lt;/p&gt;
+&lt;blockquote&gt;
+svn propset svn:ignore &amp;quot;._*&amp;quot; .&lt;/blockquote&gt;
+&lt;p&gt;Par contre si on veut ignorer tous les fichiers qui commencent par ._
+dans tous les dossiers (et sous dossiers) du svn il faut éditer le
+fichier &lt;em&gt;~/.subversion/config&lt;/em&gt; et d'éditer la ligne suivante :&lt;/p&gt;
+&lt;blockquote&gt;
+global-ignores = ._*&lt;/blockquote&gt;
+&lt;p&gt;On peut également ajouter d'autres fichiers a ignorer tel que les .swp
+de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci :&lt;/p&gt;
+&lt;blockquote&gt;
+global-ignores = ._* .DS_STORE *.swp&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 26 Jul 2011 18:53:21 +0200</pubDate><guid>tag:,2011-07-26:2011-07-26-ignorer-grâce-au-svn.html</guid><category>svn</category><category>ignore</category><category>fichier</category><category>file</category><category>folder</category><category>dossier</category><category>.DS_Store</category><category>._*</category><category>._</category><category>.swp</category><category>Vim</category><category>Mac Os</category></item><item><title>Suppression des .DS_Store</title><link>/2011-07-05-suppression-des-dsstore.html</link><description>&lt;p&gt;Dans une console sur votre mac tappez :&lt;/p&gt;
+&lt;blockquote&gt;
+defaults write com.apple.desktopservices DSDontWriteNetworkStores
+true&lt;/blockquote&gt;
+&lt;p&gt;Redemarrez le mac.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 05 Jul 2011 18:01:40 +0200</pubDate><guid>tag:,2011-07-05:2011-07-05-suppression-des-dsstore.html</guid><category>Mac .DsStore</category><category>Mac</category><category>.DS_Store</category></item><item><title>Elément cliqué en js</title><link>/2011-06-30-el%C3%A9ment-cliqu%C3%A9-en-js.html</link><description>&lt;p&gt;Pour savoir quel élément est cliqué j'utilise ce petit bout de
+javascript :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;function checkclick(e) {&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; e = e || window.event;&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; var o = e.target || e.srcElement;&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; console.log(o);&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;document.onclick=checkclick;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Pratique pour du debug ;)&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 30 Jun 2011 16:55:59 +0200</pubDate><guid>tag:,2011-06-30:2011-06-30-elément-cliqué-en-js.html</guid><category>js</category><category>element</category><category>click</category><category>javascript</category><category>html</category></item><item><title>Patch &amp; diff</title><link>/2011-05-30-patch-diff.html</link><description>&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Patch permet de &amp;quot;patcher&amp;quot; un fichier, dossier, projet ! Pratique
+lorsque vous distribuez du code et que vous voulez le mettre à jour.&lt;/div&gt;
+&lt;div class="line"&gt;Comment l'utiliser ? Dans un premier temps nous allons faire un
+différentiel de notre version actuelle du projet et de la nouvelle
+version (celle patchée).&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+diff -u version1.php version2.php &amp;gt; mon_patch&lt;/blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;notre fichier de patch est &amp;quot;mon_patch&amp;quot; si vous ouvrez celui-ci vous
+aurez le différentiel entre les deux fichier. Comment le lire ? Les
+lignes avec des + devant sont les nouvelles lignes celles avec des -
+sont celles a supprimer. C'est pas plus difficile que ça !&lt;/div&gt;
+&lt;div class="line"&gt;Maintenant j'applique mon patch sur mon fichier version1.php grâce à
+la commande suivante :&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+patch -p0 &amp;lt; mon_patch&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 30 May 2011 06:00:06 +0200</pubDate><guid>tag:,2011-05-30:2011-05-30-patch-diff.html</guid><category>Patch</category><category>Commande</category><category>Terminal</category><category>Diff</category><category>Version</category></item><item><title>Split &amp; Vsplit dans vim</title><link>/2011-05-29-split-vsplit-dans-vim.html</link><description>&lt;p&gt;Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
+pouvoir ouvrir plusieurs fichiers en même temps.&lt;/p&gt;
+&lt;p&gt;Pour celà il utilises 2 méthodes soit :&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;la division de la fenêtre horizontal en utilisant&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;:split&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;ou&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;:new&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;et ensuite&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;:e le_fichier_a_ouvrir&lt;/tt&gt;&lt;/p&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;la division de la fenêtre verticalement en utilisant&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;:vsplit&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;puis&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;:e le_fichier_a_ouvrir&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Et comme lors de l'utilisation du diff (CTRL + W puis W) pour changer de
+fenêtre (gauche à droite ou droite à gauche ou haut en bas ou bas en
+haut) ou bien en utilisant (CTRL + W puis une fléche directionnelle).&lt;/p&gt;
+&lt;p&gt;Pour agrandir ou réduire la fenêtre courante utiliser CTRL + W (puis &amp;gt;
+si vous êtes sur votre fenêtre de droite pour ajouter une colonne, si
+vous êtes sur la fenêtre de gauche ceci supprimera une colonne et vis
+versa avec &amp;lt;) vous pouvez également ajouter / supprimer 5... 10 ou n
+colonnes avec :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;5&amp;gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;10&amp;gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;ou &lt;tt class="docutils literal"&gt;n&amp;gt;&lt;/tt&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 29 May 2011 17:16:00 +0200</pubDate><guid>tag:,2011-05-29:2011-05-29-split-vsplit-dans-vim.html</guid><category>vim</category><category>fichier</category><category>editeur</category><category>texte</category><category>terminal</category><category>commande</category><category>split</category><category>vsplit</category><category>window</category><category>colonnes</category><category>cols</category><category>columns</category></item><item><title>Différences entre des fichiers avec Vim</title><link>/2011-05-19-diff%C3%A9rences-entre-des-fichiers-avec-vim.html</link><description>&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;J'ai souvent besoin de voir les différences entre plusieurs
+fichiers... J'utilise souvent la commande diff dans un terminal, mais
+mon éditeur texte favoris &amp;quot;Vim&amp;quot; sait aussi trés bien faire un
+différentiel.&lt;/div&gt;
+&lt;div class="line"&gt;Utilisation avec le terminal :&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+$ diff fichier1 fichier2&lt;/blockquote&gt;
+&lt;p&gt;Celui-ci retournera les différences directement dans le terminal (pas
+pratique pour l'édition).&lt;/p&gt;
+&lt;p&gt;Utilisation avec vim :&lt;/p&gt;
+&lt;blockquote&gt;
+$ vim -d fichier1 fichier2&lt;/blockquote&gt;
+&lt;p&gt;Ensuite il suffit d'utiliser (CTRL + W puis W) pour changer de fenêtre
+(gauche à droite ou droite à gauche) ou bien en utilisant (CTRL + W puis
+fléche de droite ou gauche) suivant la direction ou on veut aller ;)&lt;/p&gt;
+&lt;p&gt;Pour le reste des commandes reportez-vous au &lt;a class="reference external" href="http://matrix.samizdat.net/pratique/documentation/guide-survie-VI.html"&gt;guide de survie de
+vi&lt;/a&gt;
+!&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 19 May 2011 23:32:00 +0200</pubDate><guid>tag:,2011-05-19:2011-05-19-différences-entre-des-fichiers-avec-vim.html</guid><category>Vim</category><category>Diff</category><category>Différence</category><category>Fichiers</category><category>Editeur</category><category>Texte</category><category>Terminal</category><category>Console</category><category>Commande</category></item><item><title>Migration d'une base de donnée Mysql</title><link>/2011-05-14-migration-dune-base-de-donn%C3%A9e-mysql.html</link><description>&lt;p&gt;Pour faire mes migrations de base de donnée j'utilise en ligne de
+commande mysqldump et mysql.&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Dans un premier temps je sauve ma base &lt;strong&gt;*database*&lt;/strong&gt; dans le fichier
+&lt;strong&gt;*fichierdump.sql*&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;J'utilise l'utilisateur mysql : &lt;strong&gt;*utilisateur*&lt;/strong&gt; avec son mot de
+passe &lt;strong&gt;*p4ssw0rd*&lt;/strong&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+$ mysqldump -u utilisateur -p p4ssw0rd database &amp;gt; fichierdump.sql&lt;/blockquote&gt;
+&lt;p&gt;Une fois que j'ai mon fichier &lt;strong&gt;*fichierdump.sql*&lt;/strong&gt; je le met sur la
+nouvelle machine. Ensuite j'execute la commande suivante :&lt;/p&gt;
+&lt;blockquote&gt;
+$ mysql -u utilisateur -pp4ssw0rd database &amp;lt; fichierdump.sql&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 14 May 2011 13:21:17 +0200</pubDate><guid>tag:,2011-05-14:2011-05-14-migration-dune-base-de-donnée-mysql.html</guid><category>Mysql</category><category>Mysqldump</category><category>Database</category><category>Migration</category><category>Dump Sql</category><category>Sql</category></item><item><title>Petit tips pour les utilisateurs de VIM et PHP</title><link>/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html</link><description>&lt;p&gt;Lorsque je code en PHP, pour tester si il y a des erreurs généralement
+dans la console je tape la commande :&lt;/p&gt;
+&lt;blockquote&gt;
+php -l fichier_a_tester.php&lt;/blockquote&gt;
+&lt;p&gt;Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
+Pour la faire il suffit de faire &amp;quot;ESC&amp;quot; pour passer en mode commande de
+VIM puis :&lt;/p&gt;
+&lt;blockquote&gt;
+:!php -l %&lt;/blockquote&gt;
+&lt;p&gt;Ce qui produira exactement le même résultat qu'en console.&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;:!&lt;/strong&gt; (permet l'execution d'une commande système dans vim)&lt;/div&gt;
+&lt;div class="line"&gt;ensuite &lt;strong&gt;php -l&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;strong&gt;%&lt;/strong&gt; (recupere le nom du fichier courant avec le path complet)&lt;/div&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 13 Apr 2011 13:59:00 +0200</pubDate><guid>tag:,2011-04-13:2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html</guid><category>PHP</category><category>Vim</category><category>Vi</category><category>Console</category><category>Mac</category><category>Linux</category></item><item><title>Surround avec Vim</title><link>/2011-04-09-surround-avec-vim.html</link><description>&lt;p&gt;J'ai ajouté quelques plugins dans ma configuration de Vim dont :
+surround.vim.&lt;/p&gt;
+&lt;p&gt;Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un
+texte.&lt;/p&gt;
+&lt;p&gt;Comment l'utiliser ?&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;VS&amp;lt;b&amp;gt;&lt;/tt&gt; permet d'ajouter les balises &amp;lt;b&amp;gt; et &amp;lt;/b&amp;gt; avant et apres la
+ligne courante et d'indenter celle-ci.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;vims&amp;lt;a&amp;gt;&lt;/tt&gt; permet d'ajouter le tag &amp;lt;a&amp;gt;&amp;lt;/a&amp;gt; autour du mot sur lequel
+vous vous trouvez.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;cst&amp;lt;b&amp;gt;&lt;/tt&gt; permet de changer le tag &amp;lt;a&amp;gt; (change surround tag) par &amp;lt;b&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;dst&lt;/tt&gt; permet de supprimer le tag&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 09 Apr 2011 19:37:00 +0200</pubDate><guid>tag:,2011-04-09:2011-04-09-surround-avec-vim.html</guid><category>vim</category><category>config</category><category>.vimrc</category><category>plugin</category><category>vim plugin</category><category>surround</category><category>surround.vim</category><category>tags</category><category>html</category></item><item><title>T_PAAMAYIM_NEKUDOTAYIM</title><link>/2011-03-08-tpaamayimnekudotayim.html</link><description>&lt;p&gt;Voilà a quoi correspond cette erreur pour ceux qui demandent :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Le Paamayim Nekudotayim est l'opérateur de résolution de portée.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://fr.php.net/manual/fr/language.oop5.paamayim-nekudotayim.php"&gt;Dans la doc
+PHP&lt;/a&gt;
+:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;L'opérateur de résolution de portée (aussi appelé Paamayim Nekudotayim)
+ou, en termes plus simples, le symbole &amp;quot;double deux-points&amp;quot; (::),
+fournit un moyen d'accéder aux membres
+`statics &amp;lt;http://fr.php.net/manual/fr/language.oop5.static.php&amp;gt;`__ ou
+`constants &amp;lt;http://fr.php.net/manual/fr/language.oop5.constants.php&amp;gt;`__.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Comme on dit &amp;quot;RTFM&amp;quot; hein ;)&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 08 Mar 2011 16:17:00 +0100</pubDate><guid>tag:,2011-03-08:2011-03-08-tpaamayimnekudotayim.html</guid><category>Paamayim Nekudotayim</category><category>opérateur de résolution de portée</category><category>::</category><category>PHP</category><category>Error</category><category>Erreur</category></item><item><title>Protection de fichier tel qu'un htaccess en PHP</title><link>/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html</link><description>&lt;p&gt;Faire un système de protection (tel que htaccess) direct dans un fichier
+php :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&amp;lt;?php&lt;/div&gt;
+&lt;div class="line"&gt;if (!empty($_SERVER[&amp;quot;PHP_AUTH_USER&amp;quot;]) &amp;amp;&amp;amp;
+$_SERVER[&amp;quot;PHP_AUTH_USER&amp;quot;] == &amp;quot;login&amp;quot; &amp;amp;&amp;amp;
+$_SERVER[&amp;quot;PHP_AUTH_PW&amp;quot;] == &amp;quot;password&amp;quot;) {&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; // code protégé ici&lt;/div&gt;
+&lt;div class="line"&gt;} else {&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; header('WWW-Authenticate: Basic realm=&amp;quot;Restricted area&amp;quot;');&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; header('HTTP/1.0 401 Unauthorized');&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; exit('Access Denied');&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;div class="line"&gt;?&amp;gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 11 Feb 2011 15:40:00 +0100</pubDate><guid>tag:,2011-02-11:2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html</guid><category>php</category><category>htaccess</category><category>htpasswd</category><category>protection</category><category>fichier</category><category>authenticate</category><category>auth</category></item><item><title>jQuery attr() avec onclick par click()</title><link>/2011-01-07-jquery-attr-avec-onclick-par-click.html</link><description>&lt;p&gt;Après avoir perdu 2h... le attr() de jQuery [STRIKEOUT:fonctionne pas
+avec l'attribut &amp;quot;onclick&amp;quot;] truc super quoi !&lt;/p&gt;
+&lt;p&gt;Edit : en jQuery pour modifier le contenu d'un onclick il faut faire
+.attr('onClick','valeur') ou faire de la façon suivante.&lt;/p&gt;
+&lt;p&gt;Remplacer donc :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;var mavar&amp;nbsp; = 'fonctionAffichage();';&lt;/div&gt;
+&lt;div class="line"&gt;$(&amp;quot;#code&amp;quot;).attr(&amp;quot;onclick&amp;quot;,&amp;quot;mavar&amp;quot;);&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Par :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;var mavar&amp;nbsp; = 'fonctionAffichage();';&lt;/p&gt;
+&lt;p&gt;$(&amp;quot;#code&amp;quot;).removeAttr('onclick').click(function() { eval(mavar); }
+);&lt;/p&gt;
+&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 07 Jan 2011 16:43:00 +0100</pubDate><guid>tag:,2011-01-07:2011-01-07-jquery-attr-avec-onclick-par-click.html</guid><category>code</category><category>js</category><category>jquery</category><category>attr()</category><category>click()</category><category>removeAttr()</category></item><item><title>Commande SVN pour ajouter des keywords</title><link>/2010-10-25-commande-svn-pour-ajouter-des-keywords.html</link><description>&lt;p&gt;Pour ajouter le numéro de révision ainsi que pas mal d'autres
+informations dans vos projets il suffit de taper cette commande :&lt;/p&gt;
+&lt;blockquote&gt;
+svn propset svn:keywords &amp;quot;Id&amp;quot; index.php&lt;/blockquote&gt;
+&lt;p&gt;Ce qui permet d'ajouter le keyword &amp;quot;Id&amp;quot; sur le fichier index.php&lt;/p&gt;
+&lt;p&gt;Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :&lt;/p&gt;
+&lt;blockquote&gt;
+$Id:$&lt;/blockquote&gt;
+&lt;p&gt;Une fois le fichier comité vous obtiendrez :&lt;/p&gt;
+&lt;blockquote&gt;
+$Id: ajax_modif.php 481 2010-10-25 12:02:50Z choiz $&lt;/blockquote&gt;
+&lt;p&gt;D'autres keywords sont disponible tel que :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;$Revision:$&lt;/div&gt;
+&lt;div class="line"&gt;$Date:$&lt;/div&gt;
+&lt;div class="line"&gt;$Author:$&lt;/div&gt;
+&lt;div class="line"&gt;$URL:$&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Vous pouvez les ajouter les uns a la suite des autres par exemple pour
+notre fichier index.php je veux ajouter les 4 keywords précédents grâce
+à la commande :&lt;/p&gt;
+&lt;blockquote&gt;
+svn propset svn:keywords &amp;quot;Revision Date Author URL&amp;quot; index.php&lt;/blockquote&gt;
+&lt;p&gt;Ce qui affichera :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&amp;nbsp;$Revision: 481 $&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;$Date: 2010-10-25 14:02:50 +0200 (lun., 25 oct. 2010) $&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;$Author: choiz $&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;$URL: svn://svn.choiz.fr/projet/branches/prod/index.php $&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;N'hésitez pas à ajouter des commentaires si vous avez des questions ;)&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 25 Oct 2010 14:27:33 +0200</pubDate><guid>tag:,2010-10-25:2010-10-25-commande-svn-pour-ajouter-des-keywords.html</guid><category>SVN</category><category>Subversion</category><category>Keyword</category><category>Id</category><category>Revision</category><category>Date</category><category>Author</category><category>URL</category><category>PHP</category><category>Code</category><category>Subversion</category></item><item><title>Impression de commandes entre balise &lt;pre&gt;</title><link>/2010-09-15-impression-de-commandes-entre-balise-pre.html</link><description>&lt;p&gt;J'ai toujours eu pas mal de soucis lors d'impression de différentes
+documentations...&lt;/p&gt;
+&lt;p&gt;J'utilise souvent la balise &amp;lt;pre&amp;gt; pour les lignes de commandes et il n'y
+a pas de retour à la ligne fait automatiquement pour cela un petit css
+permet de faire les retours à la ligne lorsque la page est trop grande.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;pre {&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; white-space: pre-wrap; /* CSS2.1 compliant */&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; white-space: -moz-pre-wrap; /* Mozilla-based browsers */&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; white-space: o-pre-wrap; /* Opera 7+ */&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; word-wrap: break-word;&lt;/div&gt;
+&lt;div class="line"&gt;}&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 15 Sep 2010 15:43:00 +0200</pubDate><guid>tag:,2010-09-15:2010-09-15-impression-de-commandes-entre-balise-pre.html</guid><category>Balise</category><category>hml</category><category>Balise Pre</category><category>Pre</category><category>Print</category><category>Impression</category><category>CSS</category></item><item><title>Limiter la bande passante sous Mac Os X</title><link>/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html</link><description>&lt;p&gt;Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
+virtuel en console.&lt;/p&gt;
+&lt;p&gt;Ici on créer un tuyau virtuel de 1Mbit/s.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;sudo ipfw pipe 1 config bw 1Mbit/s&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;On applique ce tuyau au port 80 (pour le téléchargement de fichier via
+un navigateur par exemple).&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;sudo ipfw add 1 pipe 1 proto tcp &lt;span class="pre"&gt;src-port&lt;/span&gt; 80&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Pour voir le tuyau :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;sudo ipfw pipe show&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Pour supprimer la règle du port 80 :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;sudo ipfw del 1&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Pour supprimer le tuyau :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;sudo ipfw pipe 1 delete&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Bien entendu on peut créer plusieurs tuyau et plusieurs règles
+différentes avec le même tuyau ;)&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 12 Jul 2010 11:59:00 +0200</pubDate><guid>tag:,2010-07-12:2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html</guid><category>Limit Brandwith</category><category>Limitation Bande Passante</category><category>Mac Os</category><category>Mac Os X</category><category>Tuyau</category><category>Tuyau Virtuel</category><category>Limit Brandwidth</category></item></channel></rss>

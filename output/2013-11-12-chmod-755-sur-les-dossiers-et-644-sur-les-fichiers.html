@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="//favicon.ico" type="image/x-icon">
+  <link rel="icon" href="//favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+<meta name="author" content="choiz" />
+<meta name="description" content="C'est toujours la galère lorsque l'on veut que tout soit clean au niveau des permissions des dossiers / fichiers. Souvent la première chose que l'on fait : on va dans chaque dossier et on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2 ..." />
+<meta name="keywords" content="chmod, 755, 644, folder, file, folders, files, pwd, find">
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:title" content="Chmod 755 sur les dossiers et 644&nbsp;sur les fichiers"/>
+<meta property="og:description" content="C'est toujours la galère lorsque l'on veut que tout soit clean au niveau des permissions des dossiers / fichiers. Souvent la première chose que l'on fait : on va dans chaque dossier et on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2 ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2013-11-12 20:47:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="chmod"/>
+<meta property="article:tag" content="755"/>
+<meta property="article:tag" content="644"/>
+<meta property="article:tag" content="folder"/>
+<meta property="article:tag" content="file"/>
+<meta property="article:tag" content="folders"/>
+<meta property="article:tag" content="files"/>
+<meta property="article:tag" content="pwd"/>
+<meta property="article:tag" content="find"/>
+<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">  <title>ChoiZ &ndash; Chmod 755 sur les dossiers et 644&nbsp;sur les fichiers</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="" title="">
+      </a>
+      <h1><a href=""></a></h1>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</p>
+      <p>J'ai fondé plusieurs webradios depuis l'an 2000, actuellement je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers">Chmod 755 sur les dossiers et 644&nbsp;sur les fichiers</h1>
+    <p>Posté le mar. 12 novembre 2013</p>
+  </header>
+  <div>
+    <p>C'est toujours la galère lorsque l'on veut que tout soit clean au niveau
+des permissions des dossiers / fichiers.</p>
+<p>Souvent la première chose que l'on fait : on va dans chaque dossier et
+on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
+dossiers ça va mais quand on en a 40… on utilise une autre technique !</p>
+<p>J'utilise pour les dossiers :</p>
+<blockquote>
+$ find `pwd` -type d -exec chmod 755 {} \;</blockquote>
+<p>et pour les fichiers :</p>
+<blockquote>
+$ find `pwd` -type f -exec chmod 644 {} \;</blockquote>
+<p>Avec `pwd` je vais partir du dossier actuel et remplacer tous les
+droits des fichiers et dossiers enfants. Vous pouvez remplacer par un
+autre chemin par exemple :</p>
+<blockquote>
+<p>find /home/choiz/ -type d -exec chmod 755 {} \;</p>
+<p>find /home/choiz/ -type f -exec chmod 644 {} \;</p>
+</blockquote>
+<p>PS : Je ne découvre pas ces commandes, je n'avais juste jamais pris le
+temps de faire un article la dessus, voilà qui est fait.</p>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/chmod.html">chmod</a>
+      <a href="/tag/755.html">755</a>
+      <a href="/tag/644.html">644</a>
+      <a href="/tag/folder.html">folder</a>
+      <a href="/tag/file.html">file</a>
+      <a href="/tag/folders.html">folders</a>
+      <a href="/tag/files.html">files</a>
+      <a href="/tag/pwd.html">pwd</a>
+      <a href="/tag/find.html">find</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Chmod 755 sur les dossiers et 644&nbsp;sur les fichiers",
+  "headline": "Chmod 755 sur les dossiers et 644&nbsp;sur les fichiers",
+  "datePublished": "2013-11-12 20:47:00+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "/author/choiz.html"
+  },
+  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "url": "/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html",
+  "description": "C'est toujours la galère lorsque l'on veut que tout soit clean au niveau des permissions des dossiers / fichiers. Souvent la première chose que l'on fait : on va dans chaque dossier et on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2 ..."
+}
+</script></body>
+</html>

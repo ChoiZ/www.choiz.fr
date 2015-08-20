@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="//favicon.ico" type="image/x-icon">
+  <link rel="icon" href="//favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+<meta name="author" content="choiz" />
+<meta name="description" content="Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est temps de faire la migration de svn à git ! J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais voici donc ma procédure : svn log --quiet 'svn://svn.mondomaine/monprojet' | grep ..." />
+<meta name="keywords" content="svn to git, svn, git, migate, git svn clone, authors, tags">
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:title" content="Passer de svn à git"/>
+<meta property="og:description" content="Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est temps de faire la migration de svn à git ! J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais voici donc ma procédure : svn log --quiet 'svn://svn.mondomaine/monprojet' | grep ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2013-07-16-passer-de-svn-à-git.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2013-07-16 22:37:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="svn to git"/>
+<meta property="article:tag" content="svn"/>
+<meta property="article:tag" content="git"/>
+<meta property="article:tag" content="migate"/>
+<meta property="article:tag" content="git svn clone"/>
+<meta property="article:tag" content="authors"/>
+<meta property="article:tag" content="tags"/>
+<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">  <title>ChoiZ &ndash; Passer de svn à git</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="" title="">
+      </a>
+      <h1><a href=""></a></h1>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</p>
+      <p>J'ai fondé plusieurs webradios depuis l'an 2000, actuellement je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="2013-07-16-passer-de-svn-à-git">Passer de svn à git</h1>
+    <p>Posté le mar. 16 juillet 2013</p>
+  </header>
+  <div>
+    <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn.
+Il est temps de faire la migration de svn à git !</p>
+<p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
+voulais voici donc ma procédure :</p>
+<blockquote>
+svn log --quiet 'svn://svn.mondomaine/monprojet' | grep &quot;^r&quot; | awk
+'{print $3}' | sort | uniq | awk '{ print $1&quot; = &quot;$1&quot;
+&lt;&quot;$1&quot;&#64;mondomaine&gt;&quot; }' &gt; authors.txt</blockquote>
+<p>J'ai ensuite édité authors.txt pour remplacer nos différents pseudos par
+nos prénoms et noms et j'ai vérifier les adresses e-mails.</p>
+<p>Puis j'ai git svn clone :</p>
+<blockquote>
+git svn clone 'svn://svn.mondomaine/monprojet' --no-metadata
+--authors-file=authors.txt --tags=tags --branches=branches
+--trunk=trunk monprojet</blockquote>
+<p>Si vous avez des tags dans svn, vous pouvez les mettre dans git :</p>
+<blockquote>
+git branch -r | sed -rne 's, *tags/([^&#64;]+)$,\1,p' | while read
+tag; do echo &quot;git tag $tag 'tags/${tag}^'; git branch -r -d
+tags/$tag&quot;; done | sh</blockquote>
+<p>Pour finir ajoutez votre dépot distant :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">git remote add origin <a class="reference external" href="mailto:git&#64;git.mondomaine">git&#64;git.mondomaine</a>:/monprojet.git</div>
+<div class="line">git push -u origin --tags</div>
+</div>
+</blockquote>
+<p>Merci à
+<a class="reference external" href="http://bazoud.com/articles/2010-12-11-migration-de-svn-vers-git-en-4-etapes/index.html">Bazoud</a>
+pour différentes commandes ;)</p>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/svn-to-git.html">svn to git</a>
+      <a href="/tag/svn.html">svn</a>
+      <a href="/tag/git.html">git</a>
+      <a href="/tag/migate.html">migate</a>
+      <a href="/tag/git-svn-clone.html">git svn clone</a>
+      <a href="/tag/authors.html">authors</a>
+      <a href="/tag/tags.html">tags</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Passer de svn à git",
+  "headline": "Passer de svn à git",
+  "datePublished": "2013-07-16 22:37:00+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "/author/choiz.html"
+  },
+  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "url": "/2013-07-16-passer-de-svn-à-git.html",
+  "description": "Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est temps de faire la migration de svn à git ! J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais voici donc ma procédure : svn log --quiet 'svn://svn.mondomaine/monprojet' | grep ..."
+}
+</script></body>
+</html>

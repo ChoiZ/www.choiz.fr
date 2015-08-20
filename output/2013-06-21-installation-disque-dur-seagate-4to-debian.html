@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="//favicon.ico" type="image/x-icon">
+  <link rel="icon" href="//favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+<meta name="author" content="choiz" />
+<meta name="description" content="J'ai investi dans un gros disque dur de 4To pour mes sauvegardes (Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec « Fdisk » et j'ai eu le message suivant : Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite) WARNING: The size of ..." />
+<meta name="keywords" content="debian, disque dur, 4To, partition, fs, config_efi_partition, fdisk, parted, gpt, mkfs">
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:title" content="Installation disque dur Seagate 4To Debian"/>
+<meta property="og:description" content="J'ai investi dans un gros disque dur de 4To pour mes sauvegardes (Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec « Fdisk » et j'ai eu le message suivant : Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite) WARNING: The size of ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2013-06-21-installation-disque-dur-seagate-4to-debian.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2013-06-21 00:30:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="debian"/>
+<meta property="article:tag" content="disque dur"/>
+<meta property="article:tag" content="4To"/>
+<meta property="article:tag" content="partition"/>
+<meta property="article:tag" content="fs"/>
+<meta property="article:tag" content="config_efi_partition"/>
+<meta property="article:tag" content="fdisk"/>
+<meta property="article:tag" content="parted"/>
+<meta property="article:tag" content="gpt"/>
+<meta property="article:tag" content="mkfs"/>
+<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">  <title>ChoiZ &ndash; Installation disque dur Seagate 4To Debian</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="" title="">
+      </a>
+      <h1><a href=""></a></h1>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</p>
+      <p>J'ai fondé plusieurs webradios depuis l'an 2000, actuellement je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="2013-06-21-installation-disque-dur-seagate-4to-debian">Installation disque dur Seagate 4To Debian</h1>
+    <p>Posté le ven. 21 juin 2013</p>
+  </header>
+  <div>
+    <div class="line-block">
+<div class="line">J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
+(Fichiers persos, photos, vidéos…).</div>
+<div class="line">J'ai donc formaté mon disque avec « Fdisk » et j'ai eu le message
+suivant :</div>
+</div>
+<pre class="literal-block">
+Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
+
+WARNING: The size of this disk is 4.0 TB (4000787030016 bytes).
+DOS partition table format can not be used on drives for volumes
+larger than (2199023255040 bytes) for 512-byte sectors. Use parted(1) and GUID
+partition table format (GPT).
+</pre>
+<p>J'ai donc vérifié si j'avais dans le noyau l'option
+CONFIG_EFI_PARTITION active :</p>
+<p><tt class="docutils literal"># cat <span class="pre">&quot;/boot/config-`uname</span> <span class="pre">-r`&quot;</span> | grep CONFIG_EFI_PARTITION</tt></p>
+<pre class="literal-block">
+CONFIG_EFI_PARTITION=y
+</pre>
+<p>C'était le cas, donc j'ai un autre problème… C'est « Fdisk » qui pose
+problème. Avec ma version (2.20.1) on peut faire une partition maximum
+de 2To.</p>
+<p>Donc je me relance dans le partitionnement avec « parted ».</p>
+<p>Note : mon disque est en /dev/sdd n'oubliez pas de modifier les
+commandes en fonction de votre configuration.</p>
+<p><tt class="docutils literal"># parted /dev/sdd</tt></p>
+<pre class="literal-block">
+GNU Parted 2.3
+Using /dev/sdd
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+</pre>
+<p>Définir le label GPT qui permet de faire des partition &gt; 2To.</p>
+<p><tt class="docutils literal">mklabel gpt</tt></p>
+<pre class="literal-block">
+Warning: The existing disk label on /dev/sdd will be destroyed and all data on this disk will be lost. Do you want to continue?
+Yes/No?
+</pre>
+<p><tt class="docutils literal">yes</tt> <tt class="docutils literal">unit TB</tt></p>
+<p>Faire la partition de 4To</p>
+<p><tt class="docutils literal">mkpart primary 0.00TB 4.00TB</tt></p>
+<p>Vérifier</p>
+<p><tt class="docutils literal">print</tt></p>
+<pre class="literal-block">
+Model: ATA ST4000DM000-1F21 (scsi)
+Disk /dev/sdd: 4001GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: gpt
+
+Number&nbsp; Start&nbsp;&nbsp; End&nbsp;&nbsp;&nbsp;&nbsp; Size&nbsp;&nbsp;&nbsp; File system&nbsp; Name&nbsp;&nbsp;&nbsp;&nbsp; Flags
+&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1049kB&nbsp; 4001GB&nbsp; 4001GB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; primary
+</pre>
+<p>Quitter « parted »</p>
+<p><tt class="docutils literal">quit</tt></p>
+<pre class="literal-block">
+Information: You may need to update /etc/fstab.
+</pre>
+<p>Formater la partition avec un système de fichiers donné :</p>
+<p><tt class="docutils literal"># mkfs.ext4 /dev/sdd1</tt></p>
+<pre class="literal-block">
+mke2fs 1.42.5 (29-Jul-2012)
+Étiquette de système de fichiers=
+Type de système d'exploitation&nbsp;: Linux
+Taille de bloc=4096 (log=2)
+Taille de fragment=4096 (log=2)
+«&nbsp;Stride&nbsp;» = 0 blocs, «&nbsp;Stripe width&nbsp;» = 0 blocs
+244195328 i-noeuds, 976754176 blocs
+48837708 blocs (5.00%) réservés pour le super utilisateur
+Premier bloc de données=0
+Nombre maximum de blocs du système de fichiers=4294967296
+29809 groupes de blocs
+32768 blocs par groupe, 32768 fragments par groupe
+8192 i-noeuds par groupe
+Superblocs de secours stockés sur les blocs&nbsp;:
+&nbsp;&nbsp;&nbsp; 32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+&nbsp;&nbsp;&nbsp; 4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
+&nbsp;&nbsp;&nbsp; 102400000, 214990848, 512000000, 550731776, 644972544
+
+Allocation des tables de groupe&nbsp;: complété
+Écriture des tables d'i-noeuds&nbsp;: complété
+Création du journal (32768 blocs)&nbsp;: complété
+Écriture des superblocs et de l'information de comptabilité du système de
+fichiers&nbsp;: complété
+</pre>
+<p>Il ne reste plus qu'a monter la partition et éditer le fstab ;)</p>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/debian.html">debian</a>
+      <a href="/tag/disque-dur.html">disque dur</a>
+      <a href="/tag/4to.html">4To</a>
+      <a href="/tag/partition.html">partition</a>
+      <a href="/tag/fs.html">fs</a>
+      <a href="/tag/config_efi_partition.html">config_efi_partition</a>
+      <a href="/tag/fdisk.html">fdisk</a>
+      <a href="/tag/parted.html">parted</a>
+      <a href="/tag/gpt.html">gpt</a>
+      <a href="/tag/mkfs.html">mkfs</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Installation disque dur Seagate 4To Debian",
+  "headline": "Installation disque dur Seagate 4To Debian",
+  "datePublished": "2013-06-21 00:30:00+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "/author/choiz.html"
+  },
+  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "url": "/2013-06-21-installation-disque-dur-seagate-4to-debian.html",
+  "description": "J'ai investi dans un gros disque dur de 4To pour mes sauvegardes (Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec « Fdisk » et j'ai eu le message suivant : Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite) WARNING: The size of ..."
+}
+</script></body>
+</html>

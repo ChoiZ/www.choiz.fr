@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="//favicon.ico" type="image/x-icon">
+  <link rel="icon" href="//favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+<meta name="author" content="choiz" />
+<meta name="description" content="J'ai réinstallé mon serveur il n'y a pas si longtemps avec Samba. Editer le fichier de configuration : vi /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : ### Global ### [global] ## Identification ## workgroup = WORKGROUP netbios name = %h server string = Serveur samba %h security = user public = yes ## Log ..." />
+<meta name="keywords" content="Linux, Samba, config, configuration, Partage, Sharing">
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:title" content="Partage Samba !"/>
+<meta property="og:description" content="J'ai réinstallé mon serveur il n'y a pas si longtemps avec Samba. Editer le fichier de configuration : vi /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : ### Global ### [global] ## Identification ## workgroup = WORKGROUP netbios name = %h server string = Serveur samba %h security = user public = yes ## Log ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2011-08-17-partage-samba.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2011-08-17 20:41:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="Linux"/>
+<meta property="article:tag" content="Samba"/>
+<meta property="article:tag" content="config"/>
+<meta property="article:tag" content="configuration"/>
+<meta property="article:tag" content="Partage"/>
+<meta property="article:tag" content="Sharing"/>
+<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">  <title>ChoiZ &ndash; Partage Samba !</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="" title="">
+      </a>
+      <h1><a href=""></a></h1>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</p>
+      <p>J'ai fondé plusieurs webradios depuis l'an 2000, actuellement je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="2011-08-17-partage-samba">Partage Samba !</h1>
+    <p>Posté le mer. 17 août 2011</p>
+  </header>
+  <div>
+    <div class="line-block">
+<div class="line">J'ai réinstallé mon serveur il n'y a pas si longtemps avec Samba.</div>
+<div class="line">Editer le fichier de configuration :</div>
+</div>
+<blockquote>
+vi /etc/samba/smb.conf</blockquote>
+<p>Voici le contenu de mon fichier de configuration :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">### Global ###</div>
+<div class="line">[global]</div>
+<div class="line">## Identification ##</div>
+<div class="line">workgroup = WORKGROUP</div>
+<div class="line">netbios name = %h</div>
+<div class="line">server string = Serveur samba %h</div>
+<div class="line">security = user</div>
+<div class="line">public = yes</div>
+<div class="line">## Log ##</div>
+<div class="line">log file = /var/log/samba/log.%m</div>
+<div class="line">max log size = 1000</div>
+<div class="line">## Auth ##</div>
+<div class="line">encrypt passwords = true</div>
+<div class="line">smb passwd file = /etc/samba/smbpasswd</div>
+<div class="line">### Share ###</div>
+<div class="line">[choiz]</div>
+<div class="line">path = /home/choiz/samba</div>
+<div class="line">read only = no</div>
+<div class="line">writeable = yes</div>
+<div class="line">valid users = choiz</div>
+<div class="line">comment = partage de choiz</div>
+<div class="line">[partagereadonly]</div>
+<div class="line">path = /home/partageread</div>
+<div class="line">read only = yes</div>
+<div class="line">writeable = no</div>
+<div class="line">valid users = choiz, &#64;group</div>
+<div class="line">comment = partage en lecture pour choiz et le groupe &quot;group&quot;</div>
+</div>
+</blockquote>
+<p>Maintenant il faut créer notre utilisateur &quot;choiz&quot; grâce à :</p>
+<blockquote>
+smbpasswd -a choiz</blockquote>
+<p>Pour les groupes samba utilise les groupes unix.</p>
+<p>N'oubliez pas de redémarrer le service Samba !</p>
+<blockquote>
+/etc/init.d/samba restart</blockquote>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/linux.html">Linux</a>
+      <a href="/tag/samba.html">Samba</a>
+      <a href="/tag/config.html">config</a>
+      <a href="/tag/configuration.html">configuration</a>
+      <a href="/tag/partage.html">Partage</a>
+      <a href="/tag/sharing.html">Sharing</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Partage Samba !",
+  "headline": "Partage Samba !",
+  "datePublished": "2011-08-17 20:41:00+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "/author/choiz.html"
+  },
+  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "url": "/2011-08-17-partage-samba.html",
+  "description": "J'ai réinstallé mon serveur il n'y a pas si longtemps avec Samba. Editer le fichier de configuration : vi /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : ### Global ### [global] ## Identification ## workgroup = WORKGROUP netbios name = %h server string = Serveur samba %h security = user public = yes ## Log ..."
+}
+</script></body>
+</html>

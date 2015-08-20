@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="//favicon.ico" type="image/x-icon">
+  <link rel="icon" href="//favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="François LASSERRE" />
+  <meta name="description" content="" />
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="ChoiZ"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=""/>
+<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">
+  <title>ChoiZ</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="" title="">
+      </a>
+      <h1><a href=""></a></h1>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</p>
+      <p>J'ai fondé plusieurs webradios depuis l'an 2000, actuellement je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h2><a href="/2013-06-21-installation-disque-dur-seagate-4to-debian.html#2013-06-21-installation-disque-dur-seagate-4to-debian">Installation disque dur Seagate 4To Debian</a></h2>
+    <p>
+      Posté le ven. 21 juin 2013 &#8226;
+Tags :
+      <a href="/tag/debian.html">debian</a>,      <a href="/tag/disque-dur.html">disque dur</a>,      <a href="/tag/4to.html">4To</a>,      <a href="/tag/partition.html">partition</a>,      <a href="/tag/fs.html">fs</a>,      <a href="/tag/config_efi_partition.html">config_efi_partition</a>,      <a href="/tag/fdisk.html">fdisk</a>,      <a href="/tag/parted.html">parted</a>,      <a href="/tag/gpt.html">gpt</a>,      <a href="/tag/mkfs.html">mkfs</a>    </p>
+  </header>
+  <div>
+      <div class="line-block">
+<div class="line">J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
+(Fichiers persos, photos, vidéos…).</div>
+<div class="line">J'ai donc formaté mon disque avec « Fdisk » et j'ai eu le message
+suivant :</div>
+</div>
+<pre class="literal-block">
+Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
+
+WARNING: The size of this disk is 4.0 TB (4000787030016 bytes).
+DOS partition table format can not be used on drives for volumes
+larger than (2199023255040 bytes) for 512-byte sectors. Use parted(1) and GUID
+partition table format (GPT).
+</pre>
+<p>J'ai donc vérifié si j'avais dans le noyau l'option
+CONFIG_EFI_PARTITION active :</p>
+<p><tt class="docutils literal"># cat <span class="pre">&quot;/boot/config-`uname</span> <span class="pre">-r`&quot;</span> | grep CONFIG_EFI_PARTITION</tt></p>
+<pre class="literal-block">
+CONFIG_EFI_PARTITION=y
+</pre>
+<p>C'était le cas, donc j'ai un autre problème… C'est « Fdisk » qui pose
+problème. Avec ma version (2.20.1) on peut faire une partition maximum
+de 2To.</p>
+<p>Donc je me relance dans le partitionnement avec « parted ».</p>
+<p>Note : mon disque est en /dev/sdd n'oubliez pas de modifier les
+commandes en fonction de votre configuration.</p>
+<p><tt class="docutils literal"># parted /dev/sdd</tt></p>
+<pre class="literal-block">
+GNU Parted 2.3
+Using /dev/sdd
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+</pre>
+<p>Définir le label GPT qui permet de faire des partition &gt; 2To.</p>
+<p><tt class="docutils literal">mklabel gpt</tt></p>
+<pre class="literal-block">
+Warning: The existing disk label on /dev/sdd will be destroyed and all data on this disk will be lost. Do you want to continue?
+Yes/No?
+</pre>
+<p><tt class="docutils literal">yes</tt> <tt class="docutils literal">unit TB</tt></p>
+<p>Faire la partition de 4To</p>
+<p><tt class="docutils literal">mkpart primary 0.00TB 4.00TB</tt></p>
+<p>Vérifier</p>
+<p><tt class="docutils literal">print</tt></p>
+<pre class="literal-block">
+Model: ATA ST4000DM000-1F21 (scsi)
+Disk /dev/sdd: 4001GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: gpt
+
+Number&nbsp; Start&nbsp;&nbsp; End&nbsp;&nbsp;&nbsp;&nbsp; Size&nbsp;&nbsp;&nbsp; File system&nbsp; Name&nbsp;&nbsp;&nbsp;&nbsp; Flags
+&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1049kB&nbsp; 4001GB&nbsp; 4001GB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; primary
+</pre>
+<p>Quitter « parted »</p>
+<p><tt class="docutils literal">quit</tt></p>
+<pre class="literal-block">
+Information: You may need to update /etc/fstab.
+</pre>
+<p>Formater la partition avec un système de fichiers donné :</p>
+<p><tt class="docutils literal"># mkfs.ext4 /dev/sdd1</tt></p>
+<pre class="literal-block">
+mke2fs 1.42.5 (29-Jul-2012)
+Étiquette de système de fichiers=
+Type de système d'exploitation&nbsp;: Linux
+Taille de bloc=4096 (log=2)
+Taille de fragment=4096 (log=2)
+«&nbsp;Stride&nbsp;» = 0 blocs, «&nbsp;Stripe width&nbsp;» = 0 blocs
+244195328 i-noeuds, 976754176 blocs
+48837708 blocs (5.00%) réservés pour le super utilisateur
+Premier bloc de données=0
+Nombre maximum de blocs du système de fichiers=4294967296
+29809 groupes de blocs
+32768 blocs par groupe, 32768 fragments par groupe
+8192 i-noeuds par groupe
+Superblocs de secours stockés sur les blocs&nbsp;:
+&nbsp;&nbsp;&nbsp; 32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+&nbsp;&nbsp;&nbsp; 4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
+&nbsp;&nbsp;&nbsp; 102400000, 214990848, 512000000, 550731776, 644972544
+
+Allocation des tables de groupe&nbsp;: complété
+Écriture des tables d'i-noeuds&nbsp;: complété
+Création du journal (32768 blocs)&nbsp;: complété
+Écriture des superblocs et de l'information de comptabilité du système de
+fichiers&nbsp;: complété
+</pre>
+<p>Il ne reste plus qu'a monter la partition et éditer le fstab ;)</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html#2013-06-10-toujours-afficher-le-protocole-dans-firefox">Toujours afficher le protocole dans Firefox</a></h2>
+    <p>
+      Posté le lun. 10 juin 2013 &#8226;
+Tags :
+      <a href="/tag/firefox.html">firefox</a>,      <a href="/tag/config.html">config</a>,      <a href="/tag/http.html">http</a>,      <a href="/tag/urlbar.html">urlbar</a>,      <a href="/tag/browser.html">browser</a>    </p>
+  </header>
+  <div>
+      <p>Souvent lorsque je copie/colle une url depuis firefox j'ajoute <a class="reference external" href="http://">http://</a>
+or lors de la copie celui-ci est copié… Je me retrouve donc avec deux
+fois <a class="reference external" href="http://">http://</a>…</p>
+<p>Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :</p>
+<p>Ecrire dans la barre d'adresse :</p>
+<p><tt class="docutils literal">about:config</tt></p>
+<p>Rechercher :</p>
+<p><tt class="docutils literal">browser.urlbar.trimURLs</tt></p>
+<p>Modifier la valeur par :</p>
+<p><tt class="docutils literal">false</tt></p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/2013-05-29-latin1-utf-8.html#2013-05-29-latin1-utf-8">Latin1 &lt;-&gt; UTF-8</a></h2>
+    <p>
+      Posté le mer. 29 mai 2013 &#8226;
+Tags :
+      <a href="/tag/php.html">PHP</a>,      <a href="/tag/latin1.html">LATIN1</a>,      <a href="/tag/utf-8.html">UTF-8</a>,      <a href="/tag/mysql.html">MYSQL</a>,      <a href="/tag/encoding.html">ENCODING</a>,      <a href="/tag/charset.html">CHARSET</a>,      <a href="/tag/mysqldump.html">mysqldump</a>    </p>
+  </header>
+  <div>
+      <p>Voilà une solution simple pour convertir une base de donnée en Latin1
+vers de l'UTF-8.</p>
+<p>Utiliser mysqldump avec les options suivantes :</p>
+<p><tt class="docutils literal"><span class="pre">--default-character-set=utf8</span></tt></p>
+<p>et</p>
+<p><tt class="docutils literal"><span class="pre">--skip-set-charset</span></tt></p>
+<p>Voilà la commande&nbsp;complète :</p>
+<p><tt class="docutils literal">mysqldump <span class="pre">-u</span> user <span class="pre">-p</span> base table <span class="pre">--default-character-set=utf8</span> <span class="pre">--skip-set-charset</span> &gt; base_table.sql</tt></p>
+<p>Ensuite en utilisant vim je fais un rechercher / remplacer des
+différents latin1 en utf-8.</p>
+<p><tt class="docutils literal">vim dump_base_table.sql</tt></p>
+<p>Et en mode commande :</p>
+<p><tt class="docutils literal">:%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/</tt></p>
+<p>et</p>
+<p><tt class="docutils literal">:%s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/</tt></p>
+<p>on enregistre et quitte le fichier avec :wq (ou sinon avec ZZ).</p>
+<p>Maintenant on réimporte la table grâce à mysql :</p>
+<p><tt class="docutils literal">mysql <span class="pre">-u</span> user <span class="pre">-p</span> base &lt; dump_base_table.sql</tt></p>
+<p>il reste a vérifier si les champs sont bien en UTF-8.</p>
+<p>Ici une table « table » avec une colonne « col » on ajoute un&nbsp;caractère
+accentué.</p>
+<p><tt class="docutils literal">INSERT INTO table <span class="pre">VALUES(&quot;é&quot;);</span></tt></p>
+<p>Maintenant on regarde la taille de la colonne :</p>
+<p><tt class="docutils literal">SELECT col, length(col) FROM table;</tt></p>
+<p>Si la taille = 1 le caractère est enregistré en latin1… si c'est 2 c'est
+bien de l'UTF-8 car sauvé sur 2 octets.</p>
+<p>Merci à <a class="reference external" href="http://agopian.info/blog/mysql-mysqldump-et-php-convertir-de-latin1-vers-utf8.html">Mathieu
+Agopian</a>
+pour le dernier tips.</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/2013-03-04-typematrix-sous-mac-os-x.html#2013-03-04-typematrix-sous-mac-os-x">TypeMatrix sous Mac Os X</a></h2>
+    <p>
+      Posté le lun. 04 mars 2013 &#8226;
+Tags :
+      <a href="/tag/typematrix.html">TypeMatrix</a>,      <a href="/tag/2030.html">2030</a>,      <a href="/tag/usb.html">USB</a>,      <a href="/tag/mac.html">mac</a>,      <a href="/tag/cut.html">cut</a>,      <a href="/tag/copy.html">copy</a>,      <a href="/tag/paste.html">paste</a>,      <a href="/tag/couper.html">couper</a>,      <a href="/tag/copier.html">copier</a>,      <a href="/tag/coller.html">coller</a>    </p>
+  </header>
+  <div>
+      <p>J'ai chez moi comme au travail un clavier TypeMatrix 2030 USB.</p>
+<p>Sur mac il faut <a class="reference external" href="http://download.tuxfamily.org/dvorak/macosx/fr-dvorak-bepo-macosx-1.0rc2.dmg">télécharger le
+pilote</a>,
+puis copier le fichier fr-dvorak-bepo.bundle dans le dossier
+/Bibliothèque/Keyboard Layouts/</p>
+<p>Note : si vous installez le pilote dans le dossier de votre utilisateur
+(~/Bibliothèque/Keyboard Layouts/) vous ne pourrez pas utiliser le
+mappage à l'ouverture de session…</p>
+<p>Pour utiliser les touches couper, copier,coller, j'utilise
+<a class="reference external" href="http://pqrs.org/macosx/keyremap4macbook/">keyremap4macbook</a>&nbsp;(qui
+fonctionne aussi sur iMac etc…). L'installer puis redémarrer. Dans les
+préférences dans l'onglet &quot;change key&quot; recherchez &quot;Use PC Style
+Copy/Paste #3bis&quot; et&nbsp;sélectionnez&nbsp;l'option proposée.</p>
+<p>Vous pouvez maintenant utiliser votre TypeMatrix en Bépo sur Mac Os X
+avec la prise en charge des touches couper, copier et coller.</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html#2013-02-12-logiciels-de-gestion-de-versions-svn-git">Logiciels de gestion de versions (Svn, Git, Mercurial)</a></h2>
+    <p>
+      Posté le mar. 12 février 2013 &#8226;
+Tags :
+      <a href="/tag/git.html">git</a>,      <a href="/tag/mercurial.html">mercurial</a>,      <a href="/tag/svn.html">svn</a>,      <a href="/tag/migration.html">migration</a>,      <a href="/tag/svn-to-git.html">svn to git</a>,      <a href="/tag/mercurial-to-git.html">mercurial to git</a>,      <a href="/tag/hg-to-git.html">hg to git</a>,      <a href="/tag/hg.html">hg</a>    </p>
+  </header>
+  <div>
+      <p>J'ai différents projet sous svn, git et mercurial. J'ai pour but de tout
+migrer sur git car disponible sur github ainsi que sur bitbucket.</p>
+<p>J'ai trouvé un <a class="reference external" href="http://www.yterium.net/Migrer-un-projet-SVN-vers-GIT">trés bon tutoriel pour migrer un projet svn à
+git</a>.</p>
+<p>Egalement un autre tutoriel en anglais pour passer <a class="reference external" href="http://hivelogic.com/articles/converting-from-mercurial-to-git">de mercurial à
+git</a>.</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/2011-12-08-bug-firefox-avec-une-iframe-blanche.html#2011-12-08-bug-firefox-avec-une-iframe-blanche">Bug Firefox avec une iFrame blanche</a></h2>
+    <p>
+      Posté le jeu. 08 décembre 2011 &#8226;
+Tags :
+      <a href="/tag/firefox.html">Firefox</a>,      <a href="/tag/bug.html">Bug</a>,      <a href="/tag/iframe.html">iFrame</a>,      <a href="/tag/displaynone.html">display:none</a>,      <a href="/tag/css.html">css</a>,      <a href="/tag/white-iframe.html">white iframe</a>    </p>
+  </header>
+  <div>
+      <div class="line-block">
+<div class="line">Lors de l'utilisation de div et d'iFrame sous Firefox un bug étrange
+apparait.</div>
+<div class="line">Quand une iFrame est affiché dans un div qui a la propriété css</div>
+</div>
+<blockquote>
+display:none;</blockquote>
+<p>Lors de l'affichage de ce div en remplaçant le display:none par
+display:block le contenu de l'iframe reste vide (blanche). Pour résoudre
+ce probleme il faut modifier l'attribut src de l'iframe lorsque l'on
+affiche le div en display:block.</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/2011-12-04-php-gettext-debian.html#2011-12-04-php-gettext-debian">PHP + Gettext + Debian</a></h2>
+    <p>
+      Posté le dim. 04 décembre 2011 &#8226;
+Tags :
+      <a href="/tag/mo.html">.mo</a>,      <a href="/tag/po.html">.po</a>,      <a href="/tag/etclocale.html">/etc/locale</a>,      <a href="/tag/lc_all.html">LC_ALL</a>,      <a href="/tag/gettext.html">gettext</a>,      <a href="/tag/php.html">php</a>,      <a href="/tag/php-gettext.html">php-gettext</a>,      <a href="/tag/setlocale.html">setlocale</a>,      <a href="/tag/xgettext.html">xgettext</a>    </p>
+  </header>
+  <div>
+      <div class="line-block">
+<div class="line">J'utilise maintenant php-gettext pour mes traductions. C'est plus
+facile en utilisant des outils tel que pootle ou poedit.</div>
+<div class="line">Pour utiliser gettext sur votre site en php il faut télécharger le
+package php-gettext ainsi que d'autres outils tel que xgettext ou
+msgfmt :</div>
+</div>
+<blockquote>
+<p># apt-get install php-gettext</p>
+<p># apt-get install xgettext</p>
+<p># apt-get install msgfmt</p>
+</blockquote>
+<p>Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
+commentaires devant les langues qui vont sont à traduire par exemple :
+Allemand, Anglais, Espagnol, Français &amp; Suédois :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">de_DE.UTF-8 UTF-8</div>
+<div class="line">en_GB.UTF-8 UTF-8</div>
+<div class="line">es_ES.UTF-8 UTF-8</div>
+<div class="line">fr_FR.UTF-8 UTF-8</div>
+<div class="line">sv_SE.UTF-8 UTF-8</div>
+</div>
+</blockquote>
+<p>Puis regénérer les locales :</p>
+<blockquote>
+# locale-gen</blockquote>
+<p>Ensuite il faut définir votre chemin pour les traductions par exemple :</p>
+<blockquote>
+lang/fr_FR/LC_ALL/domaine.mo</blockquote>
+<p>Puis dans votre fichier php de configuration :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">&lt;?php</div>
+<div class="line">// configuration de la langue</div>
+<div class="line">$lang_path = &quot;./lang&quot;; // Chemin des fichiers le langue</div>
+<div class="line">$lang = 'fr_FR'; // Langue a afficher</div>
+<div class="line">$lang_encode = &quot;UTF-8&quot;; // Encodage du fichier</div>
+<div class="line">$lang_LC = &quot;LC_ALL&quot;; // LC_MESSAGE etc...</div>
+<div class="line">$lang_file = &quot;domaine&quot;; // Nom du fichier de langue</div>
+<div class="line">putenv(&quot;LANG=&quot;.$lang);</div>
+<div class="line">setlocale($lang_LC, $lang.&quot;.&quot;.$lang_encode);</div>
+<div class="line">bindtextdomain($lang_file,$lang_path);</div>
+<div class="line">bindtextdomain_codeset($lang_file,$lang_encode);</div>
+<div class="line">textdomain($lang_path);</div>
+<div class="line">?&gt;</div>
+</div>
+</blockquote>
+<p>Puis faites le test en affichant dans un fichier php le texte &quot;hello&quot;</p>
+<blockquote>
+<div class="line-block">
+<div class="line">&lt;?php</div>
+<div class="line">// on inclus la config...</div>
+<div class="line">include_once('config.php');</div>
+<div class="line">echo _('hello');</div>
+<div class="line">?&gt;</div>
+</div>
+</blockquote>
+<p>Pour générer un fichier .mo a partir d'un fichier .po :</p>
+<blockquote>
+msgfmt domaine.po -o domaine.mo</blockquote>
+<p>Pour générer un fichier .po a partir de fichier php avec du gettext,
+faire un fichier texte avec tous vos fichiers php ou on doit récupérer
+le gettext.</p>
+<p>Exemple listing_gettext.txt tel que :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">index.php</div>
+<div class="line">contact.php</div>
+<div class="line">etc...</div>
+</div>
+</blockquote>
+<p>Ensuite il faut faire la commande suivante pour générer le fichier
+domaine.po dans le dossier lang/ depuis notre fichier texte avec les php
+:</p>
+<blockquote>
+xgettext -d domaine -p lang/ -k_ --from-code=UTF-8 -f
+listing_gettext.txt</blockquote>
+<p>Pour finir voilà le path des fichiers .po et .mo dans mon application
+web :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">lang/fr_FR/LC_ALL/domaine.po</div>
+<div class="line">lang/fr_FR/LC_ALL/domaine.mo</div>
+<div class="line">lang/en_GB/LC_ALL/domaine.po</div>
+<div class="line">lang/en_GB/LC_ALL/domaine.mo</div>
+<div class="line">...</div>
+</div>
+</blockquote>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/2011-12-02-clavier-apple-sur-debian.html#2011-12-02-clavier-apple-sur-debian">Clavier Apple sur debian</a></h2>
+    <p>
+      Posté le ven. 02 décembre 2011 &#8226;
+Tags :
+      <a href="/tag/clavier.html">Clavier</a>,      <a href="/tag/apple.html">Apple</a>,      <a href="/tag/mapage.html">Mapage</a>,      <a href="/tag/debian.html">Debian</a>,      <a href="/tag/linux.html">Linux</a>,      <a href="/tag/keyboard.html">Keyboard</a>,      <a href="/tag/mac.html">Mac</a>,      <a href="/tag/mac-keyboard.html">Mac Keyboard</a>    </p>
+  </header>
+  <div>
+      <div class="line-block">
+<div class="line">Depuis le temps que je bosse avec un clavier Apple [STRIKEOUT:j'ai]
+mes doigts on eu le temps de s'habituer au mapage du clavier. Il y a
+beaucoup de différences entre un clavier AZERTY de PC et un clavier
+AZERTY de Mac.</div>
+<div class="line">Les touches : &#64; # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
+des endroits complétement différents.</div>
+</div>
+<p>Pour modifier la configuration faire en console :</p>
+<blockquote>
+<p>dpkg-reconfigure keyboard-console</p>
+<p>Select keymap from arch list</p>
+<p>azerty</p>
+<p>French</p>
+<p>Apple USB</p>
+<p>dpkg-reconfigure keyboard-configuration</p>
+<p>model: Apple</p>
+<p>layout: France - Macintosh</p>
+<p>Key for AltGr: No AltGr Key</p>
+<p>Compose key: Right Alt (AltGr)</p>
+<p>Use Control+Alt+Backspace to terminate the X server? no</p>
+</blockquote>
+<p>J'ai choisi un clavier Apple, Français Mac, sans touche AltGr, avec
+comme touche de fonctionnalité secondaire &quot;Alt droit&quot;. Malheureusement
+je n'ai pas réussi a mapper l'Alt de gauche pour avoir la même fonction
+qu'à droite...</p>
+<p>Et ensuite j'ai indiqué que je ne voulais pas pouvoir quitter le server
+X avec la combinaison de touche Control+Alt+Backspace.</p>
+<p>Si ceci ne fonctionne pas il faut se rendre dans la configuration du
+clavier de votre gestionnaire de fenêtre (xfce: dans mon cas). Puis
+désactiver le layout par defaut du système.</p>
+<p><img alt="image0" src="http://media.tumblr.com/tumblr_lvjsbrOL8E1qzr4hx.png" /></p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/2011-12-01-dual-screen-sur-xfce.html#2011-12-01-dual-screen-sur-xfce">Dual screen sur xfce</a></h2>
+    <p>
+      Posté le jeu. 01 décembre 2011 &#8226;
+Tags :
+      <a href="/tag/xfce.html">xfce</a>,      <a href="/tag/dualscreen.html">dualscreen</a>,      <a href="/tag/dual.html">dual</a>,      <a href="/tag/screen.html">screen</a>,      <a href="/tag/xfce.html">xfce</a>,      <a href="/tag/linux.html">linux</a>    </p>
+  </header>
+  <div>
+      <p>Un petit package bien pratique pour configurer le dual screen sur xfce
+se nomme : arandr</p>
+<blockquote>
+apt-get install arandr</blockquote>
+<p>Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez
+le ARandR pour configurer les deux écrans.</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/2011-11-30-flash-sous-debian.html#2011-11-30-flash-sous-debian">Flash sous Debian</a></h2>
+    <p>
+      Posté le mer. 30 novembre 2011 &#8226;
+Tags :
+      <a href="/tag/flash.html">Flash</a>,      <a href="/tag/debian.html">Debian</a>,      <a href="/tag/deezer.html">Deezer</a>,      <a href="/tag/firefox.html">Firefox</a>,      <a href="/tag/flashplugin.html">flashplugin</a>,      <a href="/tag/source.html">source</a>,      <a href="/tag/apt.html">apt</a>,      <a href="/tag/soucelist.html">souce.list</a>,      <a href="/tag/non-free.html">non-free</a>,      <a href="/tag/contrib.html">contrib</a>    </p>
+  </header>
+  <div>
+      <div class="line-block">
+<div class="line">Lors de l'installation de debian j'ai eu la surprise en ouvrant
+Firefox que Deezer ne fonctionne pas !</div>
+<div class="line">Il faut donc télécharger le package flashplugin-nonfree en procédant
+comme ceci :</div>
+</div>
+<blockquote>
+vi /etc/apt/source.list</blockquote>
+<p>ajouter contrib non-free aux différentes sources (sauf security)</p>
+<p>puis faire :</p>
+<blockquote>
+<p>apt-get update</p>
+<p>apt-get install flashplugin-nonfree</p>
+</blockquote>
+<p>En relançant Firefox j'ai bel et bien flash player fonctionnel sur
+Deezer.</p>
+
+  </div>
+</article>
+
+  <div class="pagination">
+    <a class="btn" href="/index5.html">
+      <i class="fa fa-angle-left"></i> Anciens articles
+    </a>
+      <a class="btn float-right" href="/index3.html">
+        Nouveaux articles <i class="fa fa-angle-right"></i>
+      </a>
+  </div>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " ChoiZ ",
+  "url" : "",
+  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "description": ""
+}
+</script></body>
+</html>

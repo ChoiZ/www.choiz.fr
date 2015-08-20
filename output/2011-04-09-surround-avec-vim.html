@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="//favicon.ico" type="image/x-icon">
+  <link rel="icon" href="//favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+<meta name="author" content="choiz" />
+<meta name="description" content="J'ai ajouté quelques plugins dans ma configuration de Vim dont : surround.vim. Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un texte. Comment l'utiliser ? VS<b> permet d'ajouter les balises <b> et </b> avant et apres la ligne courante et d'indenter ..." />
+<meta name="keywords" content="vim, config, .vimrc, plugin, vim plugin, surround, surround.vim, tags, html">
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:title" content="Surround avec Vim"/>
+<meta property="og:description" content="J'ai ajouté quelques plugins dans ma configuration de Vim dont : surround.vim. Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un texte. Comment l'utiliser ? VS<b> permet d'ajouter les balises <b> et </b> avant et apres la ligne courante et d'indenter ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/2011-04-09-surround-avec-vim.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2011-04-09 19:37:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="vim"/>
+<meta property="article:tag" content="config"/>
+<meta property="article:tag" content=".vimrc"/>
+<meta property="article:tag" content="plugin"/>
+<meta property="article:tag" content="vim plugin"/>
+<meta property="article:tag" content="surround"/>
+<meta property="article:tag" content="surround.vim"/>
+<meta property="article:tag" content="tags"/>
+<meta property="article:tag" content="html"/>
+<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">  <title>ChoiZ &ndash; Surround avec Vim</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="" title="">
+      </a>
+      <h1><a href=""></a></h1>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</p>
+      <p>J'ai fondé plusieurs webradios depuis l'an 2000, actuellement je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="2011-04-09-surround-avec-vim">Surround avec Vim</h1>
+    <p>Posté le sam. 09 avril 2011</p>
+  </header>
+  <div>
+    <p>J'ai ajouté quelques plugins dans ma configuration de Vim dont :
+surround.vim.</p>
+<p>Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un
+texte.</p>
+<p>Comment l'utiliser ?</p>
+<p><tt class="docutils literal">VS&lt;b&gt;</tt> permet d'ajouter les balises &lt;b&gt; et &lt;/b&gt; avant et apres la
+ligne courante et d'indenter celle-ci.</p>
+<p><tt class="docutils literal">vims&lt;a&gt;</tt> permet d'ajouter le tag &lt;a&gt;&lt;/a&gt; autour du mot sur lequel
+vous vous trouvez.</p>
+<p><tt class="docutils literal">cst&lt;b&gt;</tt> permet de changer le tag &lt;a&gt; (change surround tag) par &lt;b&gt;</p>
+<p><tt class="docutils literal">dst</tt> permet de supprimer le tag</p>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/vim.html">vim</a>
+      <a href="/tag/config.html">config</a>
+      <a href="/tag/vimrc.html">.vimrc</a>
+      <a href="/tag/plugin.html">plugin</a>
+      <a href="/tag/vim-plugin.html">vim plugin</a>
+      <a href="/tag/surround.html">surround</a>
+      <a href="/tag/surroundvim.html">surround.vim</a>
+      <a href="/tag/tags.html">tags</a>
+      <a href="/tag/html.html">html</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Surround avec Vim",
+  "headline": "Surround avec Vim",
+  "datePublished": "2011-04-09 19:37:00+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "/author/choiz.html"
+  },
+  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "url": "/2011-04-09-surround-avec-vim.html",
+  "description": "J'ai ajouté quelques plugins dans ma configuration de Vim dont : surround.vim. Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un texte. Comment l'utiliser ? VS<b> permet d'ajouter les balises <b> et </b> avant et apres la ligne courante et d'indenter ..."
+}
+</script></body>
+</html>
