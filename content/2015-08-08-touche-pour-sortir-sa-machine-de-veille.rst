@@ -26,6 +26,3 @@ Bref la seule touche que j'utilise pour sortir mon ordinateur de veille
 est "shift". Que ça soit le "shift" droit ou gauche il ne fais jamais
 d'action spécifique à ma connaissance.
 
-.. raw:: html
-
-   </p>

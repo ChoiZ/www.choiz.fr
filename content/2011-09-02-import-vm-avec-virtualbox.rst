@@ -10,34 +10,10 @@ Import VM avec Virtualbox
 J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
 donc un fichier ova... Maintenant comment l'importer sur VirtualBox ?
 
-.. raw:: html
-
-   </p>
-
 Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper :
 
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
     VBoxManage import votrefichier.ova
-
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
 
 Maintenant lors du prochain démarrage de votre VirtualBox vous devez
 avoir la machine virtuelle importée !
 
-.. raw:: html
-
-   </p>

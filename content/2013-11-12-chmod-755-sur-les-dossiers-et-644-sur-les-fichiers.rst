@@ -10,101 +10,26 @@ Chmod 755 sur les dossiers et 644 sur les fichiers
 C'est toujours la galère lorsque l'on veut que tout soit clean au niveau
 des permissions des dossiers / fichiers.
 
-.. raw:: html
-
-   </p>
-
 Souvent la première chose que l'on fait : on va dans chaque dossier et
 on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
 dossiers ça va mais quand on en a 40… on utilise une autre technique !
 
-.. raw:: html
-
-   </p>
-
 J'utilise pour les dossiers :
-
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
 
     $ find \`pwd\` -type d -exec chmod 755 {} \\;
 
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
-
 et pour les fichiers :
 
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
     $ find \`pwd\` -type f -exec chmod 644 {} \\;
-
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
 
 Avec \`pwd\` je vais partir du dossier actuel et remplacer tous les
 droits des fichiers et dossiers enfants. Vous pouvez remplacer par un
 autre chemin par exemple :
 
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
     find /home/choiz/ -type d -exec chmod 755 {} \\;
 
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
     find /home/choiz/ -type f -exec chmod 644 {} \\;
-
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
 
 PS : Je ne découvre pas ces commandes, je n'avais juste jamais pris le
 temps de faire un article la dessus, voilà qui est fait.
 
-.. raw:: html
-
-   </p>

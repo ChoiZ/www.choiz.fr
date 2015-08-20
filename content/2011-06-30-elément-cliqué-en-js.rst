@@ -10,14 +10,6 @@ Elément cliqué en js
 Pour savoir quel élément est cliqué j'utilise ce petit bout de
 javascript :
 
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
     | function checkclick(e) {
     |     e = e \|\| window.event;
     |     var o = e.target \|\| e.srcElement;
@@ -25,17 +17,5 @@ javascript :
     | }
     | document.onclick=checkclick;
 
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
-
 Pratique pour du debug ;)
 
-.. raw:: html
-
-   </p>

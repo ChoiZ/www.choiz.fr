@@ -19,28 +19,8 @@ Profil sur viadeo sans avoir la fenêtre de login
 | Ouvrir firebug en mode console et modifier la fonction createJoin() !
 | Dans la console a coté de ">>>" il suffit de taper :
 
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
     function createJoin() { false; }
-
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
 
 Avec ce code on modifie le contenu de la fonction createJoin() par false
 (plutôt que le code par defaut qui ouvre la fenêtre d'identification).
 
-.. raw:: html
-
-   </p>

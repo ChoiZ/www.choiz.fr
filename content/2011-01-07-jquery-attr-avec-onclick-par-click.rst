@@ -10,64 +10,18 @@ jQuery attr() avec onclick par click()
 Après avoir perdu 2h... le attr() de jQuery [STRIKEOUT:fonctionne pas
 avec l'attribut "onclick"] truc super quoi !
 
-.. raw:: html
-
-   </p>
-
 Edit : en jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.
 
-.. raw:: html
-
-   </p>
-
 Remplacer donc :
-
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
 
     | var mavar  = 'fonctionAffichage();';
     | $("#code").attr("onclick","mavar");
 
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
-
-| 
-| Par :
-
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
+Par :
 
     var mavar  = 'fonctionAffichage();';
-
-    .. raw:: html
-
-       </p>
 
     $("#code").removeAttr('onclick').click(function() { eval(mavar); }
     );
 
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>

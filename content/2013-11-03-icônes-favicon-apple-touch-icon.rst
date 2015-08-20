@@ -10,64 +10,32 @@ Icônes / Favicon / Apple-touch-icon
 Voici comment faire facilement sa favicon et ses icônes pour les
 appareils mobiles avec image magick.
 
-.. raw:: html
-
-   </p>
-
 Mon icône de base est en 512x512px au format png avec prise en charge de
 la transparence "icon512.png".
-
-.. raw:: html
-
-   </p>
 
 Je veux faire une favicon en 16x16px, 32x32px 48x48px et 64x64px le tout
 dans un seul fichier favicon.ico.
 
-.. raw:: html
-
-   </p>
-
-    $ convert icon512.png \\
-         -bordercolor white -border 0 \\
-         \\( -clone 0 -resize 16x16 \\) \\
-         \\( -clone 0 -resize 32x32 \\) \\
-         \\( -clone 0 -resize 48x48 \\) \\
-         \\( -clone 0 -resize 64x64 \\) \\
-         -delete 0 -alpha off favicon.ico
-
-.. raw:: html
-
-   </p>
+    | $ convert icon512.png \\
+    |     -bordercolor white -border 0 \\
+    |     \\( -clone 0 -resize 16x16 \\) \\
+    |     \\( -clone 0 -resize 32x32 \\) \\
+    |     \\( -clone 0 -resize 48x48 \\) \\
+    |     \\( -clone 0 -resize 64x64 \\) \\
+    |     -delete 0 -alpha off favicon.ico
 
 Ensuite je veux faire mes icônes pour les appareils mobiles : Android,
 Apple etc…
 
-.. raw:: html
-
-   </p>
-
-    $ convert icon512.png -resize x60 touch-icon-iphone.png
-     $ convert icon512.png -resize x76 touch-icon-ipad.png
-     $ convert icon512.png -resize x120 touch-icon-iphone-retina.png
-     $ convert icon512.png -resize x152 touch-icon-ipad-retina.png
-
-.. raw:: html
-
-   </p>
+    | $ convert icon512.png -resize x60 touch-icon-iphone.png
+    | $ convert icon512.png -resize x76 touch-icon-ipad.png
+    | $ convert icon512.png -resize x120 touch-icon-iphone-retina.png
+    | $ convert icon512.png -resize x152 touch-icon-ipad-retina.png
 
 Maintenant il faut ajouter dans notre page html entre les balises head :
 
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
     | <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    | <Link rel="apple-touch-icon-precomposed"
+    | <link rel="apple-touch-icon-precomposed"
       href="touch-icon-iphone.png">
     | <link rel="apple-touch-icon-precomposed" sizes="76x76"
       href="touch-icon-ipad.png">
@@ -76,18 +44,6 @@ Maintenant il faut ajouter dans notre page html entre les balises head :
     | <link rel="apple-touch-icon-precomposed" sizes="152x152"
       href="touch-icon-ipad-retina.png">
 
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
-
 A noter les appareils Android utilisent aussi les images
 "apple-touch-icon".
 
-.. raw:: html
-
-   </p>

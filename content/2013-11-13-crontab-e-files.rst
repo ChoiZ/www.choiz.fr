@@ -9,19 +9,8 @@ crontab -e file(s)
 
 Ou se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?
 
-.. raw:: html
-
-   </p>
-
 C'est une bonne question n'est-ce pas ?
-
-.. raw:: html
-
-   </p>
 
 La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
 debian, a voir sur d'autres distribs)
 
-.. raw:: html
-
-   </p>

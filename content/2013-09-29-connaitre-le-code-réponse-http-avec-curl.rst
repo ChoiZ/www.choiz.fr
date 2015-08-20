@@ -7,30 +7,13 @@ Connaitre le code réponse HTTP avec curl
 :slug: 2013-09-29-connaitre-le-code-réponse-http-avec-curl
 :status: published
 
-| 
-| Pour connaitre le code réponse HTTP il suffit de faire :
-
-.. raw:: html
-
-   </p>
+Pour connaitre le code réponse HTTP il suffit de faire :
 
 ``curl -IL url``
 
-.. raw:: html
-
-   </p>
-
 Voici l'exemble avec tumblr.com :
 
-.. raw:: html
-
-   </p>
-
 ``curl -IL http://tumblr.com``
-
-.. raw:: html
-
-   </p>
 
 ::
 
@@ -56,6 +39,3 @@ Voici l'exemble avec tumblr.com :
     P3P: CP="ALL ADM DEV PSAi COM OUR OTRo STP IND ONL"
     Set-Cookie: tmgioct=52485e21d628b00096885790; expires=Wed, 27-Sep-2023 17:06:41 GMT; path=/; httponly
 
-.. raw:: html
-
-   </p>

@@ -42,6 +42,3 @@ Pour l’instant rien a redire sur cette machine.
 | - Realtek 8169 gigabit ethernet support
 | - Build Analog Device HD-audio codec support
 
-.. raw:: html
-
-   </p>

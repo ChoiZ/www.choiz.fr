@@ -13,24 +13,7 @@ Patch & diff
   différentiel de notre version actuelle du projet et de la nouvelle
   version (celle patchée).
 
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
     diff -u version1.php version2.php > mon\_patch
-
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
 
 | notre fichier de patch est "mon\_patch" si vous ouvrez celui-ci vous
   aurez le différentiel entre les deux fichier. Comment le lire ? Les
@@ -39,21 +22,5 @@ Patch & diff
 | Maintenant j'applique mon patch sur mon fichier version1.php grâce à
   la commande suivante :
 
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
     patch -p0 < mon\_patch
 
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>

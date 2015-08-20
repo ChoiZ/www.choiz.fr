@@ -9,33 +9,9 @@ Voir les fichiers cachés sur Lion
 
 Dans un terminal :
 
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
     defaults write com.apple.Finder AppleShowAllFiles TRUE
-
-    .. raw:: html
-
-       </p>
 
     killall Finder
 
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
-
 Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés
 
-.. raw:: html
-
-   </p>

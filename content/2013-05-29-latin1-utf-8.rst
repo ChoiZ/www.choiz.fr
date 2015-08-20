@@ -10,143 +10,52 @@ Latin1 <-> UTF-8
 Voilà une solution simple pour convertir une base de donnée en Latin1
 vers de l'UTF-8.
 
-.. raw:: html
-
-   </p>
-
 Utiliser mysqldump avec les options suivantes :
-
-.. raw:: html
-
-   </p>
 
 ``--default-character-set=utf8``
 
-.. raw:: html
-
-   </p>
-
 et
-
-.. raw:: html
-
-   </p>
 
 ``--skip-set-charset``
 
-.. raw:: html
-
-   </p>
-
 Voilà la commande complète :
 
-.. raw:: html
-
-   </p>
-
 ``mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset > base_table.sql``
-
-.. raw:: html
-
-   </p>
 
 Ensuite en utilisant vim je fais un rechercher / remplacer des
 différents latin1 en utf-8.
 
-.. raw:: html
-
-   </p>
-
 ``vim dump_base_table.sql``
-
-.. raw:: html
-
-   </p>
 
 Et en mode commande :
 
-.. raw:: html
-
-   </p>
-
 ``:%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/``
-
-.. raw:: html
-
-   </p>
 
 et
 
-.. raw:: html
-
-   </p>
-
 ``:%s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/``
-
-.. raw:: html
-
-   </p>
 
 on enregistre et quitte le fichier avec :wq (ou sinon avec ZZ).
 
-.. raw:: html
-
-   </p>
-
 Maintenant on réimporte la table grâce à mysql :
-
-.. raw:: html
-
-   </p>
 
 ``mysql -u user -p base < dump_base_table.sql``
 
-.. raw:: html
-
-   </p>
-
 il reste a vérifier si les champs sont bien en UTF-8.
-
-.. raw:: html
-
-   </p>
 
 Ici une table « table » avec une colonne « col » on ajoute un caractère
 accentué.
 
-.. raw:: html
-
-   </p>
-
 ``INSERT INTO table VALUES("é");``
-
-.. raw:: html
-
-   </p>
 
 Maintenant on regarde la taille de la colonne :
 
-.. raw:: html
-
-   </p>
-
 ``SELECT col, length(col) FROM table;``
-
-.. raw:: html
-
-   </p>
 
 Si la taille = 1 le caractère est enregistré en latin1… si c'est 2 c'est
 bien de l'UTF-8 car sauvé sur 2 octets.
-
-.. raw:: html
-
-   </p>
 
 Merci à `Mathieu
 Agopian <http://agopian.info/blog/mysql-mysqldump-et-php-convertir-de-latin1-vers-utf8.html>`__
 pour le dernier tips.
 
-.. raw:: html
-
-   </p>

@@ -10,22 +10,6 @@ Protection de fichier tel qu'un htaccess en PHP
 Faire un système de protection (tel que htaccess) direct dans un fichier
 php :
 
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
-    .. raw:: html
-
-       <div>
-
-    .. raw:: html
-
-       </p>
-
     | <?php
     | if (!empty($\_SERVER["PHP\_AUTH\_USER"]) &&
       $\_SERVER["PHP\_AUTH\_USER"] == "login" &&
@@ -38,20 +22,3 @@ php :
     | }
     | ?>
 
-    .. raw:: html
-
-       </p>
-       <p>
-
-    .. raw:: html
-
-       </div>
-
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>

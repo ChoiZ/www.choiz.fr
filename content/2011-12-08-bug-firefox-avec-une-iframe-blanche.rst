@@ -11,30 +11,10 @@ Bug Firefox avec une iFrame blanche
   apparait.
 | Quand une iFrame est affiché dans un div qui a la propriété css
 
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
     display:none;
-
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
 
 Lors de l'affichage de ce div en remplaçant le display:none par
 display:block le contenu de l'iframe reste vide (blanche). Pour résoudre
 ce probleme il faut modifier l'attribut src de l'iframe lorsque l'on
 affiche le div en display:block.
 
-.. raw:: html
-
-   </p>

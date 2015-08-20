@@ -12,61 +12,16 @@ Flash sous Debian
 | Il faut donc télécharger le package flashplugin-nonfree en procédant
   comme ceci :
 
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
     vi /etc/apt/source.list
-
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
 
 ajouter contrib non-free aux différentes sources (sauf security)
 
-.. raw:: html
-
-   </p>
-
 puis faire :
-
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
 
     apt-get update
 
-    .. raw:: html
-
-       </p>
-
     apt-get install flashplugin-nonfree
-
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
 
 En relançant Firefox j'ai bel et bien flash player fonctionnel sur
 Deezer.
 
-.. raw:: html
-
-   </p>

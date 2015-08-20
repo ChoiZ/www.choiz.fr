@@ -11,65 +11,26 @@ Git se déplacer dans une branche distante
   local il m'arrive de vouloir aller sur ses branches.
 | Je fais donc :
 
-.. raw:: html
-
-   </p>
-
 ``git checkout preprod``
 
-.. raw:: html
-
-   </p>
-
 Et j'ai l'erreur suivante :
-
-.. raw:: html
-
-   </p>
 
 ::
 
     error: pathspec 'preprod' did not match any file(s) known to git.
 
-.. raw:: html
-
-   </p>
-
 Je vais mettre a jour mon origin :
-
-.. raw:: html
-
-   </p>
 
 ``git fetch origin``
 
-.. raw:: html
-
-   </p>
-
 Maintenant je veux ma branche distante en lui précisant l'origin :
-
-.. raw:: html
-
-   </p>
 
 ``git checkout -b preprod origin/preprod``
 
-.. raw:: html
-
-   </p>
-
 Et j'ai bien ma branche en local comme git me l'indique :
-
-.. raw:: html
-
-   </p>
 
 ::
 
     Branch preprod set up to track remote branch preprod from origin.
     Switched to a new branch 'preprod'
 
-.. raw:: html
-
-   </p>

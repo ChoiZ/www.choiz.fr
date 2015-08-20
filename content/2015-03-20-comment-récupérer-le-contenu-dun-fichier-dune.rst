@@ -8,22 +8,10 @@ Comment récupérer le contenu d’un fichier d’une autre branche avec GIT ?
 
 Il suffit d’utiliser git show.
 
-.. raw:: html
-
-   </p>
-
 La commande :
-
-.. raw:: html
-
-   </p>
 
 ``git show branch_name:filename``
 
 Exemple :
-
-.. raw:: html
-
-   </p>
 
 ``git show reset_password:/templates/reset_password.tmpl``

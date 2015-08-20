@@ -11,6 +11,3 @@ Liens utiles
 | http://www.jsperf.com/ Pour faire des performances de code js
 | http://www.pastebin.com/ Pour copier coller du code facilement
 
-.. raw:: html
-
-   </p>

@@ -10,29 +10,9 @@ Impression de commandes entre balise <pre>
 J'ai toujours eu pas mal de soucis lors d'impression de différentes
 documentations...
 
-.. raw:: html
-
-   </p>
-
 J'utilise souvent la balise <pre> pour les lignes de commandes et il n'y
 a pas de retour à la ligne fait automatiquement pour cela un petit css
 permet de faire les retours à la ligne lorsque la page est trop grande.
-
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
-    .. raw:: html
-
-       <div>
-
-    .. raw:: html
-
-       </p>
 
     | pre {
     |         white-space: pre-wrap; /\* CSS2.1 compliant \*/
@@ -41,20 +21,3 @@ permet de faire les retours à la ligne lorsque la page est trop grande.
     |         word-wrap: break-word;
     | }
 
-    .. raw:: html
-
-       </p>
-       <p>
-
-    .. raw:: html
-
-       </div>
-
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>

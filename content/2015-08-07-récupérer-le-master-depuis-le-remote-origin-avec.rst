@@ -12,7 +12,7 @@ Récupérer le master depuis le remote origin avec git
 
 | - un remote “origin” se trouve sur un serveur perso.
 
-- un remote “github” qui lui est sur github.com.
+| - un remote “github” qui lui est sur github.com.
 
 .. raw:: html
 

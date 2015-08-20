@@ -9,28 +9,8 @@ Développement web avec Safari
 
 Pour activer l'inspecteur web tapez dans le terminal :
 
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
     defaults write com.apple.Safari WebKitDeveloperExtras -bool true
-
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
 
 Redémarrez Safari et maintenant vous pouvez inspecter les éléments de
 vos pages web.
 
-.. raw:: html
-
-   </p>

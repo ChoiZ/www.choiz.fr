@@ -9,81 +9,23 @@ Ignorer grâce au SVN
 
 Il existe plusieurs solutions pour ignorer des fichiers sur un svn :
 
-.. raw:: html
-
-   </p>
-
 *svn propset svn:ignore* ou dans la configuration du svn dans
 *~/.subversion/config* le *global-ignores*
-
-.. raw:: html
-
-   </p>
 
 Pour ignorer tous les fichiers qui commencent par .\_ dans le dossier ou
 l'on se trouve actuellement il suffit d'executer la commande svn
 suivante :
 
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
     svn propset svn:ignore ".\_\*" .
-
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
 
 Par contre si on veut ignorer tous les fichiers qui commencent par .\_
 dans tous les dossiers (et sous dossiers) du svn il faut éditer le
 fichier *~/.subversion/config* et d'éditer la ligne suivante :
 
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
     global-ignores = .\_\*
-
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>
 
 On peut également ajouter d'autres fichiers a ignorer tel que les .swp
 de Vim ou les .DS\_STORE de Mac OS en remplaçant comme ceci :
 
-.. raw:: html
-
-   </p>
-
-    .. raw:: html
-
-       </p>
-
     global-ignores = .\_\* .DS\_STORE \*.swp
 
-    .. raw:: html
-
-       </p>
-       <p>
-
-.. raw:: html
-
-   </p>

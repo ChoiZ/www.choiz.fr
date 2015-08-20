@@ -10,60 +10,29 @@
 Étant développeur, j'ai très souvent des rapports de bug, qui peuvent
 être précis, ou moins suivant la personne.
 
-.. raw:: html
-
-   </p>
-
 L'écriture d'un rapport de bug peut demander du temps, si on veut faire
 les choses correctement.
-
-.. raw:: html
-
-   </p>
 
 Le rapport de bug doit être écrit **clairement** et **précisément** pour
 que les développeurs sachent comment reproduire le bug.
 
-.. raw:: html
-
-   </p>
-
 Pensez à **joindre un maximum d'informations** : le message d'erreur, le
 numéro d'erreur, une copie d'écran quand c'est possible.
-
-.. raw:: html
-
-   </p>
 
 Ajoutez également des **informations sur votre environnement de
 travail** (version du système d'exploitation, nom et version du
 navigateur…).
 
-.. raw:: html
-
-   </p>
-
 Une fois que vous avez écrit votre rapport, **relisez-le** pour **être
 sûr de vous faire comprendre** et **vérifiez** que quelque chose ne soit
 pas mal interprété.
-
-.. raw:: html
-
-   </p>
 
 Si le rapport est bien fait le développeur ne doit pas venir vers vous
 avec des questions ou explications supplémentaires. Le développeur gagne
 donc du temps et il ne vous perturbe pas dans votre travail (donc vous
 en gagnez aussi).
 
-.. raw:: html
-
-   </p>
-
 Je vous invite également à lire \ `cet
 article <http://www.chiark.greenend.org.uk/~sgtatham/bugs-fr.html>`__
 pour écrire un bon rapport de bug.
 
-.. raw:: html
-
-   </p>

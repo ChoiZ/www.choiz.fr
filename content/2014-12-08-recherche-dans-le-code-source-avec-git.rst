@@ -10,12 +10,5 @@ Recherche dans le code source avec git
 Pour rechercher directement dans le code source une modification
 précise, j'utilise la commande suivante :
 
-.. raw:: html
-
-   </p>
-
 ``git log -p -S 'display'``
 
-.. raw:: html
-
-   </p>
