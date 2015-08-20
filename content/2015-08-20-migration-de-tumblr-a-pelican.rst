@@ -7,8 +7,8 @@ Migration de Tumblr à Pelican
 :slug: 2015-08-20-migration-de-tumblr-a-pelican
 :status: published
 
-J'ai testé pelican, lors de mon voyages à Bruxelles en Thalys le 15 Août 2014.
-Depuis cette date je n'avais pas trop pris le temps de m'occuper de la migration de tumblr vers pelican.
+J'ai testé pelican, lors de mon voyage à Bruxelles en Thalys le 15 Août 2014.
+Depuis cette date je n'avais pas pris le temps de m'occuper de la migration de mon blog de tumblr vers pelican.
 
 `Pelican`_ est un générateur de site statique, il est pratique pour la gestion des articles tel que mon blog.
 
