@@ -1,0 +1,57 @@
+Protection de fichier tel qu'un htaccess en PHP
+###############################################
+:date: 2011-02-11 15:40:00
+:author: choiz
+:category: text
+:tags: php, htaccess, htpasswd, protection, fichier, authenticate, auth
+:slug: 2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php
+:status: published
+
+Faire un système de protection (tel que htaccess) direct dans un fichier
+php :
+
+.. raw:: html
+
+   </p>
+
+    .. raw:: html
+
+       </p>
+
+    .. raw:: html
+
+       <div>
+
+    .. raw:: html
+
+       </p>
+
+    | <?php
+    | if (!empty($\_SERVER["PHP\_AUTH\_USER"]) &&
+      $\_SERVER["PHP\_AUTH\_USER"] == "login" &&
+      $\_SERVER["PHP\_AUTH\_PW"] == "password") {
+    |     // code protégé ici
+    | } else {
+    |     header('WWW-Authenticate: Basic realm="Restricted area"');
+    |     header('HTTP/1.0 401 Unauthorized');
+    |     exit('Access Denied');
+    | }
+    | ?>
+
+    .. raw:: html
+
+       </p>
+       <p>
+
+    .. raw:: html
+
+       </div>
+
+    .. raw:: html
+
+       </p>
+       <p>
+
+.. raw:: html
+
+   </p>

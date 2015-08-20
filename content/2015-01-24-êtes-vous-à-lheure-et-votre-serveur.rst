@@ -1,0 +1,36 @@
+Êtes-vous à l'heure ? (Et votre serveur ?)
+##########################################
+:date: 2015-01-24 16:54:00
+:author: choiz
+:category: text
+:tags: ntpdate, debian, ntp, time
+:slug: 2015-01-24-êtes-vous-à-lheure-et-votre-serveur
+:status: published
+
+Je suis à l'heure, et mes serveurs le sont également (normalement).
+
+.. raw:: html
+
+   </p>
+
+Normalement oui, mais le serveur NTP que j'utilisais ne répond plus… Mes
+serveurs ont donc 1mn30 de retard pour l'un, et 40mn de retard pour
+l'autre !
+
+.. raw:: html
+
+   </p>
+
+J'utilisais ntpdate avec le serveur de l'université de Nice
+(ntp.unice.fr).
+
+.. raw:: html
+
+   </p>
+
+J'ai donc installé ntp grâce aux paquets debian, et maintenant mes
+serveurs sont à l'heure.
+
+.. raw:: html
+
+   </p>

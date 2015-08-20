@@ -1,0 +1,60 @@
+Impression de commandes entre balise <pre>
+##########################################
+:date: 2010-09-15 15:43:00
+:author: choiz
+:category: text
+:tags: Balise, hml, Balise Pre, Pre, Print, Impression, CSS
+:slug: 2010-09-15-impression-de-commandes-entre-balise-pre
+:status: published
+
+J'ai toujours eu pas mal de soucis lors d'impression de différentes
+documentations...
+
+.. raw:: html
+
+   </p>
+
+J'utilise souvent la balise <pre> pour les lignes de commandes et il n'y
+a pas de retour à la ligne fait automatiquement pour cela un petit css
+permet de faire les retours à la ligne lorsque la page est trop grande.
+
+.. raw:: html
+
+   </p>
+
+    .. raw:: html
+
+       </p>
+
+    .. raw:: html
+
+       <div>
+
+    .. raw:: html
+
+       </p>
+
+    | pre {
+    |         white-space: pre-wrap; /\* CSS2.1 compliant \*/
+    |         white-space: -moz-pre-wrap; /\* Mozilla-based browsers \*/
+    |         white-space: o-pre-wrap; /\* Opera 7+ \*/
+    |         word-wrap: break-word;
+    | }
+
+    .. raw:: html
+
+       </p>
+       <p>
+
+    .. raw:: html
+
+       </div>
+
+    .. raw:: html
+
+       </p>
+       <p>
+
+.. raw:: html
+
+   </p>
