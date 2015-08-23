@@ -53,265 +53,563 @@
 
 <article>
   <header>
-    <h2><a href="http://choiz.github.io/2011-11-02-voir-les-fichiers-cachés-sur-lion.html#2011-11-02-voir-les-fichiers-cachés-sur-lion">Voir les fichiers cachés sur Lion</a></h2>
+    <h2><a href="http://choiz.github.io/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html#2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight">Ajout dans mon .vimrc de matchadd() &amp; highlight</a></h2>
     <p>
-      Posté le mer. 02 novembre 2011 &#8226;
+      Posté le ven. 27 avril 2012 &#8226;
 Tags :
-      <a href="http://choiz.github.io/tag/fichiers.html">fichiers</a>,      <a href="http://choiz.github.io/tag/caches.html">cachés</a>,      <a href="http://choiz.github.io/tag/hidden.html">hidden</a>,      <a href="http://choiz.github.io/tag/files.html">files</a>,      <a href="http://choiz.github.io/tag/lion.html">lion</a>,      <a href="http://choiz.github.io/tag/defaults.html">defaults</a>,      <a href="http://choiz.github.io/tag/appleshowallfiles.html">AppleShowAllFiles</a>,      <a href="http://choiz.github.io/tag/finder.html">Finder</a>    </p>
+      <a href="http://choiz.github.io/tag/vimrc.html">vimrc</a>,      <a href="http://choiz.github.io/tag/vim.html">vim</a>,      <a href="http://choiz.github.io/tag/config-file.html">config file</a>,      <a href="http://choiz.github.io/tag/vimrc.html">.vimrc</a>,      <a href="http://choiz.github.io/tag/todo.html">todo</a>,      <a href="http://choiz.github.io/tag/notice.html">notice</a>,      <a href="http://choiz.github.io/tag/fixme.html">fixme</a>,      <a href="http://choiz.github.io/tag/highlight.html">highlight</a>,      <a href="http://choiz.github.io/tag/matchadd.html">matchadd</a>    </p>
   </header>
   <div>
-      <p>Dans un terminal :</p>
-<blockquote>
-<p>defaults write com.apple.Finder AppleShowAllFiles TRUE</p>
-<p>killall Finder</p>
-</blockquote>
-<p>Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://choiz.github.io/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Insérer un # au début de chaque ligne d'un fichier avec vim</a></h2>
-    <p>
-      Posté le mer. 05 octobre 2011 &#8226;
-Tags :
-      <a href="http://choiz.github.io/tag/vim.html">Vim</a>,      <a href="http://choiz.github.io/tag/search.html">search</a>,      <a href="http://choiz.github.io/tag/replace.html">replace</a>,      <a href="http://choiz.github.io/tag/line.html">line</a>,      <a href="http://choiz.github.io/tag/add.html">add</a>,      <a href="http://choiz.github.io/tag/ligne.html">ligne</a>,      <a href="http://choiz.github.io/tag/fichier.html">fichier</a>,      <a href="http://choiz.github.io/tag/file.html">file</a>,      <a href="http://choiz.github.io/tag/remplace.html">remplace</a>,      <a href="http://choiz.github.io/tag/ajout.html">ajout</a>    </p>
-  </header>
-  <div>
-      <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un
-fichier avec vim :</p>
-<p><tt class="docutils literal"><span class="pre">:1,$s/^/#/</span></tt></p>
-<p>Explications :</p>
-<p><tt class="docutils literal">:1,$</tt></p>
-<p>Selection des ligne 1 à $ ($ étant la dernière).</p>
-<p><tt class="docutils literal"><span class="pre">s/^/#/</span></tt></p>
-<p>s pour search (en fait il cherche et remplace) ^ le début de ligne ($ si
-on voulais la fin de la ligne) et # le caractère que je veux remplacer</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://choiz.github.io/2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html#2011-09-18-plusieurs-comptes-skype-sur-le-même-mac">Plusieurs comptes Skype sur le même Mac !</a></h2>
-    <p>
-      Posté le dim. 18 septembre 2011 &#8226;
-Tags :
-      <a href="http://choiz.github.io/tag/skype.html">Skype</a>,      <a href="http://choiz.github.io/tag/multiutilisateur.html">Multiutilisateur</a>,      <a href="http://choiz.github.io/tag/mac.html">Mac</a>,      <a href="http://choiz.github.io/tag/macos.html">MacOs</a>,      <a href="http://choiz.github.io/tag/mac-os-x.html">Mac os x</a>,      <a href="http://choiz.github.io/tag/osx.html">OsX</a>,      <a href="http://choiz.github.io/tag/skype-mac.html">Skype Mac</a>,      <a href="http://choiz.github.io/tag/multi.html">Multi</a>,      <a href="http://choiz.github.io/tag/compte.html">Compte</a>,      <a href="http://choiz.github.io/tag/another-copy.html">Another copy</a>,      <a href="http://choiz.github.io/tag/another-copy-of-skype.html">Another copy of Skype</a>    </p>
-  </header>
-  <div>
-      <p>Comment lancer plusieurs comptes Skype avec le même Mac ?</p>
-<p><img alt="image0" src="http://media.tumblr.com/tumblr_lrqn73WCUg1qzr4hx.png" /></p>
-<div class="line-block">
-<div class="line">Créer un compte utilisateur dans les préférences systèmes &gt;
-utilisateurs. Par exemple l'utilisateur : &quot;skype&quot; avec comme mot de
-passe &quot;password&quot;.</div>
-<div class="line">Ensuite ouvrir un terminal (dans spotlight tapez terminal).</div>
-<div class="line">Dans ce terminal faire :</div>
-</div>
-<blockquote>
-su skype (ou &quot;su nomdutilisateur&quot; en fonction de l'utilisateur
-créé).</blockquote>
-<p>Password:</p>
-<blockquote>
-password (ou autre suivant le mot de passe de l'utilisateur).</blockquote>
-<p>Puis tapez :</p>
-<blockquote>
-/Applications/Skype.app/Contents/MacOS/Skype</blockquote>
-<p>Ce qui devrait lancer une seconde instance de Skype.</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://choiz.github.io/2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login.html#2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login">Profil sur viadeo sans avoir la fenêtre de login</a></h2>
-    <p>
-      Posté le dim. 18 septembre 2011 &#8226;
-Tags :
-      <a href="http://choiz.github.io/tag/viadeo.html">viadeo</a>,      <a href="http://choiz.github.io/tag/javascript.html">javascript</a>,      <a href="http://choiz.github.io/tag/js.html">js</a>,      <a href="http://choiz.github.io/tag/code.html">code</a>,      <a href="http://choiz.github.io/tag/login.html">login</a>,      <a href="http://choiz.github.io/tag/profil.html">profil</a>,      <a href="http://choiz.github.io/tag/identifie.html">identifié</a>,      <a href="http://choiz.github.io/tag/firebug.html">firebug</a>    </p>
-  </header>
-  <div>
-      <div class="line-block">
-<div class="line">J'ai voulu plusieurs fois voir un profil sur Viadeo sans forcement
-être identifié. Lorsque l'on déplace la souris ou que l'on scroll une
-autre page s'affiche.</div>
-<div class="line">Exemple sur <a class="reference external" href="http://www.viadeo.com/fr/profile/francois.lasserre1">ma page
-viadeo</a>.</div>
-<div class="line">Pour empécher d'avoir la page de login il faut modifier une fonction
-Javascript. Avec un outil tel que
-<a class="reference external" href="http://www.getfirebug.com">Firebug</a> vous pouvez modifier le code
-Javascript du site.</div>
-<div class="line">Ouvrir firebug en mode console et modifier la fonction createJoin() !</div>
-<div class="line">Dans la console a coté de &quot;&gt;&gt;&gt;&quot; il suffit de taper :</div>
-</div>
-<blockquote>
-function createJoin() { false; }</blockquote>
-<p>Avec ce code on modifie le contenu de la fonction createJoin() par false
-(plutôt que le code par defaut qui ouvre la fenêtre d'identification).</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://choiz.github.io/2011-09-05-développement-web-avec-safari.html#2011-09-05-développement-web-avec-safari">Développement web avec Safari</a></h2>
-    <p>
-      Posté le lun. 05 septembre 2011 &#8226;
-Tags :
-      <a href="http://choiz.github.io/tag/safari.html">Safari</a>,      <a href="http://choiz.github.io/tag/dev.html">Dev</a>,      <a href="http://choiz.github.io/tag/web.html">Web</a>,      <a href="http://choiz.github.io/tag/webdev.html">WebDev</a>,      <a href="http://choiz.github.io/tag/developpement.html">Développement</a>    </p>
-  </header>
-  <div>
-      <p>Pour activer l'inspecteur web tapez dans le terminal :</p>
-<blockquote>
-defaults write com.apple.Safari WebKitDeveloperExtras -bool true</blockquote>
-<p>Redémarrez Safari et maintenant vous pouvez inspecter les éléments de
-vos pages web.</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://choiz.github.io/2011-09-02-import-vm-avec-virtualbox.html#2011-09-02-import-vm-avec-virtualbox">Import VM avec Virtualbox</a></h2>
-    <p>
-      Posté le ven. 02 septembre 2011 &#8226;
-Tags :
-      <a href="http://choiz.github.io/tag/virtualbox.html">VirtualBox</a>,      <a href="http://choiz.github.io/tag/import.html">Import</a>,      <a href="http://choiz.github.io/tag/virtualmachine.html">VirtualMachine</a>,      <a href="http://choiz.github.io/tag/virtual.html">Virtual</a>,      <a href="http://choiz.github.io/tag/machine.html">Machine</a>,      <a href="http://choiz.github.io/tag/ova.html">Ova</a>,      <a href="http://choiz.github.io/tag/vboxmanage.html">VBoxManage</a>    </p>
-  </header>
-  <div>
-      <p>J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
-donc un fichier ova... Maintenant comment l'importer sur VirtualBox ?</p>
-<p>Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper :</p>
-<blockquote>
-VBoxManage import votrefichier.ova</blockquote>
-<p>Maintenant lors du prochain démarrage de votre VirtualBox vous devez
-avoir la machine virtuelle importée !</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://choiz.github.io/2011-08-17-partage-samba.html#2011-08-17-partage-samba">Partage Samba !</a></h2>
-    <p>
-      Posté le mer. 17 août 2011 &#8226;
-Tags :
-      <a href="http://choiz.github.io/tag/linux.html">Linux</a>,      <a href="http://choiz.github.io/tag/samba.html">Samba</a>,      <a href="http://choiz.github.io/tag/config.html">config</a>,      <a href="http://choiz.github.io/tag/configuration.html">configuration</a>,      <a href="http://choiz.github.io/tag/partage.html">Partage</a>,      <a href="http://choiz.github.io/tag/sharing.html">Sharing</a>    </p>
-  </header>
-  <div>
-      <div class="line-block">
-<div class="line">J'ai réinstallé mon serveur il n'y a pas si longtemps avec Samba.</div>
-<div class="line">Editer le fichier de configuration :</div>
-</div>
-<blockquote>
-vi /etc/samba/smb.conf</blockquote>
-<p>Voici le contenu de mon fichier de configuration :</p>
+      <p>Petit ajout dans mon fichier .vimrc</p>
 <blockquote>
 <div class="line-block">
-<div class="line">### Global ###</div>
-<div class="line">[global]</div>
-<div class="line">## Identification ##</div>
-<div class="line">workgroup = WORKGROUP</div>
-<div class="line">netbios name = %h</div>
-<div class="line">server string = Serveur samba %h</div>
-<div class="line">security = user</div>
-<div class="line">public = yes</div>
-<div class="line">## Log ##</div>
-<div class="line">log file = /var/log/samba/log.%m</div>
-<div class="line">max log size = 1000</div>
-<div class="line">## Auth ##</div>
-<div class="line">encrypt passwords = true</div>
-<div class="line">smb passwd file = /etc/samba/smbpasswd</div>
-<div class="line">### Share ###</div>
-<div class="line">[choiz]</div>
-<div class="line">path = /home/choiz/samba</div>
-<div class="line">read only = no</div>
-<div class="line">writeable = yes</div>
-<div class="line">valid users = choiz</div>
-<div class="line">comment = partage de choiz</div>
-<div class="line">[partagereadonly]</div>
-<div class="line">path = /home/partageread</div>
-<div class="line">read only = yes</div>
-<div class="line">writeable = no</div>
-<div class="line">valid users = choiz, &#64;group</div>
-<div class="line">comment = partage en lecture pour choiz et le groupe &quot;group&quot;</div>
+<div class="line">&quot; Highlight To do list with green background</div>
+<div class="line">highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green</div>
+<div class="line">highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue</div>
+<div class="line">highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red</div>
+<div class="line">&quot; Match todolist, notice, fixme</div>
+<div class="line">:call matchadd('Todo','[T|t][O|o][D|d][O|o]')</div>
+<div class="line">:call matchadd('Todo','[T|t][O|o] [D|d][O|o]')</div>
+<div class="line">:call matchadd('Notice','[N|n][O|o][T|t][I|i][C|c][E|e]')</div>
+<div class="line">:call matchadd('Notice','[N|n][O|o][T|t][E|e]')</div>
+<div class="line">:call matchadd('Fixme','[F|f][I|i][X|x][M|m][E|e]')</div>
+<div class="line">:call matchadd('Fixme','[F|f][I|i][X|x] [M|m][E|e]')</div>
 </div>
 </blockquote>
-<p>Maintenant il faut créer notre utilisateur &quot;choiz&quot; grâce à :</p>
-<blockquote>
-smbpasswd -a choiz</blockquote>
-<p>Pour les groupes samba utilise les groupes unix.</p>
-<p>N'oubliez pas de redémarrer le service Samba !</p>
-<blockquote>
-/etc/init.d/samba restart</blockquote>
 
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://choiz.github.io/2011-08-09-liens-utiles.html#2011-08-09-liens-utiles">Liens utiles</a></h2>
+    <h2><a href="http://choiz.github.io/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html#2012-04-18-reprendre-la-main-sur-un-screen-pas-detached">Reprendre la main sur un Screen pas &quot;detached&quot;</a></h2>
     <p>
-      Posté le mar. 09 août 2011 &#8226;
+      Posté le mer. 18 avril 2012 &#8226;
 Tags :
-      <a href="http://choiz.github.io/tag/code.html">Code</a>,      <a href="http://choiz.github.io/tag/js.html">js</a>,      <a href="http://choiz.github.io/tag/html.html">html</a>,      <a href="http://choiz.github.io/tag/css.html">css</a>,      <a href="http://choiz.github.io/tag/xhtml.html">xhtml</a>,      <a href="http://choiz.github.io/tag/javascript.html">javascript</a>,      <a href="http://choiz.github.io/tag/sites.html">sites</a>    </p>
+      <a href="http://choiz.github.io/tag/attached.html">attached</a>,      <a href="http://choiz.github.io/tag/detached.html">detached</a>,      <a href="http://choiz.github.io/tag/detacher.html">détacher</a>,      <a href="http://choiz.github.io/tag/screen.html">screen</a>,      <a href="http://choiz.github.io/tag/reattacher.html">réattacher</a>,      <a href="http://choiz.github.io/tag/linux.html">linux</a>,      <a href="http://choiz.github.io/tag/cli.html">cli</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line"><a class="reference external" href="http://www.jsfiddle.net/">http://www.jsfiddle.net/</a> Pratique pour tester un code html / css / js</div>
-<div class="line"><a class="reference external" href="http://www.jsperf.com/">http://www.jsperf.com/</a> Pour faire des performances de code js</div>
-<div class="line"><a class="reference external" href="http://www.pastebin.com/">http://www.pastebin.com/</a> Pour copier coller du code facilement</div>
-</div>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://choiz.github.io/2011-07-26-ignorer-grâce-au-svn.html#2011-07-26-ignorer-grâce-au-svn">Ignorer grâce au SVN</a></h2>
-    <p>
-      Posté le mar. 26 juillet 2011 &#8226;
-Tags :
-      <a href="http://choiz.github.io/tag/svn.html">svn</a>,      <a href="http://choiz.github.io/tag/ignore.html">ignore</a>,      <a href="http://choiz.github.io/tag/fichier.html">fichier</a>,      <a href="http://choiz.github.io/tag/file.html">file</a>,      <a href="http://choiz.github.io/tag/folder.html">folder</a>,      <a href="http://choiz.github.io/tag/dossier.html">dossier</a>,      <a href="http://choiz.github.io/tag/ds_store.html">.DS_Store</a>,      <a href="http://choiz.github.io/tag/_.html">._*</a>,      <a href="http://choiz.github.io/tag/_.html">._</a>,      <a href="http://choiz.github.io/tag/swp.html">.swp</a>,      <a href="http://choiz.github.io/tag/vim.html">Vim</a>,      <a href="http://choiz.github.io/tag/mac-os.html">Mac Os</a>    </p>
-  </header>
-  <div>
-      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<p><em>svn propset svn:ignore</em> ou dans la configuration du svn dans
-<em>~/.subversion/config</em> le <em>global-ignores</em></p>
-<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
-l'on se trouve actuellement il suffit d'executer la commande svn
+      <p>Lorsque j'ai voulu &quot;réattacher&quot; mon &quot;Screen&quot; j'ai eu le message suivant
+:</p>
+<blockquote>
+There is a screen on:
+1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)</blockquote>
+<p>Habituellement je détache mon &quot;Screen&quot; mais cette fois j'ai oublié.</p>
+<p>Pour &quot;détacher&quot; / &quot;réattacher&quot; mon &quot;Screen&quot; j'ai du faire la commande
 suivante :</p>
 <blockquote>
-svn propset svn:ignore &quot;._*&quot; .</blockquote>
-<p>Par contre si on veut ignorer tous les fichiers qui commencent par ._
-dans tous les dossiers (et sous dossiers) du svn il faut éditer le
-fichier <em>~/.subversion/config</em> et d'éditer la ligne suivante :</p>
-<blockquote>
-global-ignores = ._*</blockquote>
-<p>On peut également ajouter d'autres fichiers a ignorer tel que les .swp
-de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci :</p>
-<blockquote>
-global-ignores = ._* .DS_STORE *.swp</blockquote>
+$ screen -dRR</blockquote>
+<p>Je note car c'est toujours bon à savoir :)</p>
 
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://choiz.github.io/2011-07-05-suppression-des-dsstore.html#2011-07-05-suppression-des-dsstore">Suppression des .DS_Store</a></h2>
+    <h2><a href="http://choiz.github.io/2012-04-14-utilisation-des-branches-et-de-git-stash.html#2012-04-14-utilisation-des-branches-et-de-git-stash">Utilisation des branches et de git stash</a></h2>
     <p>
-      Posté le mar. 05 juillet 2011 &#8226;
+      Posté le sam. 14 avril 2012 &#8226;
 Tags :
-      <a href="http://choiz.github.io/tag/mac-dsstore.html">Mac .DsStore</a>,      <a href="http://choiz.github.io/tag/mac.html">Mac</a>,      <a href="http://choiz.github.io/tag/ds_store.html">.DS_Store</a>    </p>
+      <a href="http://choiz.github.io/tag/git.html">git</a>,      <a href="http://choiz.github.io/tag/git-stash.html">git stash</a>,      <a href="http://choiz.github.io/tag/git-stash-pop.html">git stash pop</a>,      <a href="http://choiz.github.io/tag/git-stash-list.html">git stash list</a>,      <a href="http://choiz.github.io/tag/git-branch.html">git branch</a>,      <a href="http://choiz.github.io/tag/git-checkout.html">git checkout</a>    </p>
   </header>
   <div>
-      <p>Dans une console sur votre mac tappez :</p>
+      <div class="line-block">
+<div class="line">Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
+sur une branche qui sont pas a commiter dans l'immédiat.</div>
+<div class="line">J'utilise donc git stash, voyons voir comment l'utiliser simplement.</div>
+</div>
+<p>On regarde l'état du status et des branches : (git status / git branch)</p>
 <blockquote>
-defaults write com.apple.desktopservices DSDontWriteNetworkStores
-true</blockquote>
-<p>Redemarrez le mac.</p>
+<div class="line-block">
+<div class="line">$ git st</div>
+<div class="line"># On branch master</div>
+<div class="line">nothing to commit (working directory clean)</div>
+</div>
+<div class="line-block">
+<div class="line">$ git br</div>
+<div class="line">* master</div>
+</div>
+</blockquote>
+<p>Je travail sur la branche master et je n'ai pas d'autre branche. Je vais
+donc faire une branche API pour mon projet.</p>
+<blockquote>
+<p>$ git br API</p>
+<p>$ git br</p>
+<div class="line-block">
+<div class="line">&nbsp; API</div>
+<div class="line">* master</div>
+</div>
+</blockquote>
+<p>Maintenant je vais changer de branche (git checkout) pour être sur ma
+branche API et modifier les fichiers sur cette branche.</p>
+<blockquote>
+<div class="line-block">
+<div class="line">$ git co API</div>
+<div class="line">Switched to branch 'API'</div>
+<div class="line">$ git br</div>
+<div class="line">* API</div>
+<div class="line">&nbsp; master</div>
+</div>
+</blockquote>
+<p>Ok maintenant je vais modifier un mon fichier manage.py sur ma branche
+API.</p>
+<blockquote>
+<div class="line-block">
+<div class="line">$ git st</div>
+<div class="line"># On branch API</div>
+<div class="line"># Changes not staged for commit:</div>
+<div class="line">#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</div>
+<div class="line">#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working
+directory)</div>
+<div class="line">#</div>
+<div class="line">#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py</div>
+<div class="line">#</div>
+<div class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</div>
+</div>
+</blockquote>
+<p>Si je veux revenir sur mon master, sans avoir la modification du
+manage.py je vais devoir utiliser git stash (qui sauvegardera mes
+modifications du manage.py)</p>
+<blockquote>
+<div class="line-block">
+<div class="line">$ git sta</div>
+<div class="line">Saved working directory and index state WIP on API: 8b6342d Fix
+register.py</div>
+<div class="line">HEAD is now at 8b6342d Fix register.py</div>
+</div>
+<div class="line-block">
+<div class="line">$ git st</div>
+<div class="line"># On branch API</div>
+<div class="line">nothing to commit (working directory clean)</div>
+</div>
+</blockquote>
+<p>Maintenant que notre branche est propre on peut changer de branche
+revenir sur le master par exemple.</p>
+<blockquote>
+<div class="line-block">
+<div class="line">$ git co master</div>
+<div class="line">Switched to branch 'master'</div>
+</div>
+<div class="line-block">
+<div class="line">$ git st</div>
+<div class="line"># On branch master</div>
+<div class="line">nothing to commit (working directory clean)</div>
+</div>
+</blockquote>
+<p>On peut donc travailler tranquillement sur la branche master. Puis
+revenir sur notre branche API, lister les stash (git stash list)
+récupérer les modifications précédentes (git stash pop).</p>
+<blockquote>
+<div class="line-block">
+<div class="line">$ git co API</div>
+<div class="line">Switched to branch 'API'</div>
+</div>
+<div class="line-block">
+<div class="line">$ git stast</div>
+<div class="line"><a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>}: WIP on API: 8b6342d Fix register.py</div>
+</div>
+<div class="line-block">
+<div class="line">$ git stapp</div>
+<div class="line"># On branch API</div>
+<div class="line"># Changes not staged for commit:</div>
+<div class="line">#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</div>
+<div class="line">#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working
+directory)</div>
+<div class="line">#</div>
+<div class="line">#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py</div>
+<div class="line">#</div>
+<div class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</div>
+<div class="line">Dropped <a class="reference external" href="mailto:refs/stash&#64;{0">refs/stash&#64;{0</a>} (533906a52b923a8960fa0f6fdf17a288c94f233a)</div>
+</div>
+<div class="line-block">
+<div class="line">$ git st</div>
+<div class="line"># On branch API</div>
+<div class="line"># Changes not staged for commit:</div>
+<div class="line">#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</div>
+<div class="line">#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working
+directory)</div>
+<div class="line">#</div>
+<div class="line">#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py</div>
+<div class="line">#</div>
+<div class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</div>
+</div>
+</blockquote>
+<p>Maintenant je peux continuer les modifications sur ma branche API
+réutilise git stash si besoin ou les commiter, merger ma branche...</p>
+<p>/!\ Attention les commandes git st, git co, git br, git sta, git stapp
+sont des alias qui se trouvent dans mon fichier .gitconfig (voir les
+billets précédents) /!\</p>
+<p>git stash (sauve le travail dans un stash) mon alias = git sta</p>
+<p>git stash list (liste les stash) mon alias = git stast (ou git stalist)</p>
+<p>git stash pop (récupére le dernier stash enregistré <a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>},
+l'applique et le supprime de la liste) mon alias = git stapp</p>
+<p>git stash apply (récupére le dernier stash enregistré <a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>} et
+l'applique)</p>
+<p>Et pour rien n'oublier (RTFM) : man git stash</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html#2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande">Renomer des fichiers en CLI (ligne de commande)</a></h2>
+    <p>
+      Posté le sam. 14 avril 2012 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/cli.html">CLI</a>,      <a href="http://choiz.github.io/tag/rename.html">rename</a>,      <a href="http://choiz.github.io/tag/renommer.html">renommer</a>,      <a href="http://choiz.github.io/tag/fichiers.html">fichiers</a>,      <a href="http://choiz.github.io/tag/wav.html">wav</a>,      <a href="http://choiz.github.io/tag/wav.html">WAV</a>    </p>
+  </header>
+  <div>
+      <p>Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
+correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
+&quot;rename&quot;.</p>
+<p>Exemple je veux supprimer tous les espaces d'un fichier :</p>
+<p><tt class="docutils literal">rename &quot;s/ <span class="pre">*//g&quot;</span> *.*</tt></p>
+<p>Ou renomer tous mes fichiers .WAV en .wav etc...</p>
+<p><tt class="docutils literal">rename <span class="pre">&quot;s/\.WAV/\.wav/g&quot;</span> *.WAV</tt></p>
+<p>A vous de modifier l'expression régulière !</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2012-04-13-update-gitconfig.html#2012-04-13-update-gitconfig">Update .gitconfig</a></h2>
+    <p>
+      Posté le ven. 13 avril 2012 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/git.html">git</a>,      <a href="http://choiz.github.io/tag/gitconfig.html">gitconfig</a>,      <a href="http://choiz.github.io/tag/git-pull.html">git pull</a>,      <a href="http://choiz.github.io/tag/git-push.html">git push</a>,      <a href="http://choiz.github.io/tag/git-diff.html">git diff</a>,      <a href="http://choiz.github.io/tag/git-stash.html">git stash</a>,      <a href="http://choiz.github.io/tag/stash.html">stash</a>    </p>
+  </header>
+  <div>
+      <p>Ajout du pull, push, diff et surtout stash ;)</p>
+<blockquote>
+<div class="line-block">
+<div class="line">[user]</div>
+<div class="line-block">
+<div class="line">name = François LASSERRE</div>
+<div class="line">email = <a class="reference external" href="mailto:mon&#64;email.fr">mon&#64;email.fr</a></div>
+</div>
+<div class="line">[diff]</div>
+<div class="line-block">
+<div class="line">tool = vimdiff</div>
+</div>
+<div class="line">[color]</div>
+<div class="line-block">
+<div class="line">branch = auto</div>
+<div class="line">diff = auto</div>
+<div class="line">status = auto</div>
+<div class="line">interactive = auto</div>
+<div class="line">ui = true</div>
+</div>
+<div class="line">[alias]</div>
+<div class="line-block">
+<div class="line">br = branch</div>
+<div class="line">ci = commit -a</div>
+<div class="line">co = checkout</div>
+<div class="line">sh = show --color-words</div>
+<div class="line">st = status</div>
+<div class="line">di = diff</div>
+<div class="line">ph = push</div>
+<div class="line">pl = pull</div>
+<div class="line">sta = stash</div>
+<div class="line">stalist = stash list</div>
+<div class="line">stast = stash list</div>
+<div class="line">stapp = stash pop</div>
+<div class="line">starm = stash drop</div>
+<div class="line">last = cat-file commit HEAD</div>
+<div class="line">graph = log --graph --decorate</div>
+<div class="line">tree = log --graph --oneline --decorate</div>
+<div class="line">pom = push origin master</div>
+<div class="line">logs = log --stat</div>
+<div class="line">currentbranch = &quot;!git branch | grep ^* | cut -d &quot; &quot; -f 2&quot;</div>
+</div>
+<div class="line">[core]</div>
+<div class="line-block">
+<div class="line">excludesfile = ~/.gitignore</div>
+</div>
+<div class="line">editor = vim</div>
+<div class="line-block">
+<div class="line">filemode = false</div>
+</div>
+<div class="line">[merge]</div>
+<div class="line-block">
+<div class="line">tool = vimdiff</div>
+</div>
+<div class="line">[http]</div>
+<div class="line-block">
+<div class="line">#sslverify = false|</div>
+</div>
+</div>
+</blockquote>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html#2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore">Git mes fichiers de config gitconfig / gitignore</a></h2>
+    <p>
+      Posté le mar. 31 janvier 2012 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/git.html">git</a>,      <a href="http://choiz.github.io/tag/gitconfig.html">gitconfig</a>,      <a href="http://choiz.github.io/tag/gitignore.html">gitignore</a>,      <a href="http://choiz.github.io/tag/git-color.html">git color</a>,      <a href="http://choiz.github.io/tag/git-tools.html">git tools</a>,      <a href="http://choiz.github.io/tag/git-alias.html">git alias</a>,      <a href="http://choiz.github.io/tag/git-merge.html">git merge</a>,      <a href="http://choiz.github.io/tag/git-diff.html">git diff</a>,      <a href="http://choiz.github.io/tag/git-editor.html">git editor</a>,      <a href="http://choiz.github.io/tag/git-excludesfile.html">git excludesfile</a>    </p>
+  </header>
+  <div>
+      <p>Fichier .gitconfig</p>
+<blockquote>
+<div class="line-block">
+<div class="line">[user]</div>
+<div class="line-block">
+<div class="line">name = François LASSERRE</div>
+<div class="line">email = <a class="reference external" href="mailto:mon&#64;email.fr">mon&#64;email.fr</a></div>
+</div>
+<div class="line">[diff]</div>
+<div class="line-block">
+<div class="line">tool = vimdiff</div>
+</div>
+<div class="line">[color]</div>
+<div class="line-block">
+<div class="line">branch = auto</div>
+<div class="line">diff = auto</div>
+<div class="line">status = auto</div>
+<div class="line">interactive = auto</div>
+<div class="line">ui = true</div>
+</div>
+<div class="line">[alias]</div>
+<div class="line-block">
+<div class="line">br = branch</div>
+<div class="line">ci = commit -a</div>
+<div class="line">co = checkout</div>
+<div class="line">sh = show --color-words</div>
+<div class="line">st = status</div>
+<div class="line">last = cat-file commit HEAD</div>
+<div class="line">tree = log --graph --oneline --decorate</div>
+<div class="line">graph = log --graph --decorate</div>
+<div class="line">pom = push origin master</div>
+</div>
+<div class="line">[core]</div>
+<div class="line-block">
+<div class="line">excludesfile = ~/.gitignore</div>
+<div class="line">editor = vim</div>
+</div>
+<div class="line">[merge]</div>
+<div class="line-block">
+<div class="line">tool = vimdiff</div>
+</div>
+</div>
+</blockquote>
+<p>Fichier .gitignore</p>
+<pre class="literal-block">
+| # Ignore files from git
+|
+| # ._ files (Mac Os X)
+| ._*
+|
+| # .DS_STORE (Mac Os X)
+| .DS_STORE
+|
+| # .swp (Vim)
+| *.swp
+</pre>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html#2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh">Créer paire de clé pour se connecter en SSH</a></h2>
+    <p>
+      Posté le ven. 13 janvier 2012 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/cle-publique.html">clé publique</a>,      <a href="http://choiz.github.io/tag/cle-privee.html">clé privée</a>,      <a href="http://choiz.github.io/tag/connexion-ssh.html">connexion ssh</a>,      <a href="http://choiz.github.io/tag/authorized_keys.html">authorized_keys</a>,      <a href="http://choiz.github.io/tag/ssh.html">ssh</a>,      <a href="http://choiz.github.io/tag/ssh.html">.ssh</a>    </p>
+  </header>
+  <div>
+      <p>On commence par ouvrir un terminal puis on tape :</p>
+<blockquote>
+$ ssh-keygen -t dsa -b 1024</blockquote>
+<p>Enter file in which to save the key (/Users/choiz/.ssh/id_dsa):</p>
+<div class="line-block">
+<div class="line">En général je garde le fichier id_rsa donc je tape &quot;enter&quot; sinon vous
+pouvez spécifier un autre chemin ainsi qu'un autre fichier.</div>
+</div>
+<p>Enter passphrase (empty for no passphrase):</p>
+<p>Ici on tape un mot de passe si on en veut un lors de la connexion aux
+différents hosts. En général j'en défini un.</p>
+<p>Pour finir on copie la clé sur le serveur soit via scp :</p>
+<blockquote>
+scp ~/.ssh/id_dsa.pub <a class="reference external" href="mailto:user&#64;ip">user&#64;ip</a>:~/.ssh/authorized_keys/</blockquote>
+<p>ou via ssh-copy-id :</p>
+<blockquote>
+ssh-copy-id -i ~/.ssh/id_dsa.pub <a class="reference external" href="mailto:user&#64;ip">user&#64;ip</a></blockquote>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-12-08-bug-firefox-avec-une-iframe-blanche.html#2011-12-08-bug-firefox-avec-une-iframe-blanche">Bug Firefox avec une iFrame blanche</a></h2>
+    <p>
+      Posté le jeu. 08 décembre 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/firefox.html">Firefox</a>,      <a href="http://choiz.github.io/tag/bug.html">Bug</a>,      <a href="http://choiz.github.io/tag/iframe.html">iFrame</a>,      <a href="http://choiz.github.io/tag/displaynone.html">display:none</a>,      <a href="http://choiz.github.io/tag/css.html">css</a>,      <a href="http://choiz.github.io/tag/white-iframe.html">white iframe</a>    </p>
+  </header>
+  <div>
+      <div class="line-block">
+<div class="line">Lors de l'utilisation de div et d'iFrame sous Firefox un bug étrange
+apparait.</div>
+<div class="line">Quand une iFrame est affiché dans un div qui a la propriété css</div>
+</div>
+<blockquote>
+display:none;</blockquote>
+<p>Lors de l'affichage de ce div en remplaçant le display:none par
+display:block le contenu de l'iframe reste vide (blanche). Pour résoudre
+ce probleme il faut modifier l'attribut src de l'iframe lorsque l'on
+affiche le div en display:block.</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-12-04-php-gettext-debian.html#2011-12-04-php-gettext-debian">PHP + Gettext + Debian</a></h2>
+    <p>
+      Posté le dim. 04 décembre 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/mo.html">.mo</a>,      <a href="http://choiz.github.io/tag/po.html">.po</a>,      <a href="http://choiz.github.io/tag/etclocale.html">/etc/locale</a>,      <a href="http://choiz.github.io/tag/lc_all.html">LC_ALL</a>,      <a href="http://choiz.github.io/tag/gettext.html">gettext</a>,      <a href="http://choiz.github.io/tag/php.html">php</a>,      <a href="http://choiz.github.io/tag/php-gettext.html">php-gettext</a>,      <a href="http://choiz.github.io/tag/setlocale.html">setlocale</a>,      <a href="http://choiz.github.io/tag/xgettext.html">xgettext</a>    </p>
+  </header>
+  <div>
+      <div class="line-block">
+<div class="line">J'utilise maintenant php-gettext pour mes traductions. C'est plus
+facile en utilisant des outils tel que pootle ou poedit.</div>
+<div class="line">Pour utiliser gettext sur votre site en php il faut télécharger le
+package php-gettext ainsi que d'autres outils tel que xgettext ou
+msgfmt :</div>
+</div>
+<blockquote>
+<p># apt-get install php-gettext</p>
+<p># apt-get install xgettext</p>
+<p># apt-get install msgfmt</p>
+</blockquote>
+<p>Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
+commentaires devant les langues qui vont sont à traduire par exemple :
+Allemand, Anglais, Espagnol, Français &amp; Suédois :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">de_DE.UTF-8 UTF-8</div>
+<div class="line">en_GB.UTF-8 UTF-8</div>
+<div class="line">es_ES.UTF-8 UTF-8</div>
+<div class="line">fr_FR.UTF-8 UTF-8</div>
+<div class="line">sv_SE.UTF-8 UTF-8</div>
+</div>
+</blockquote>
+<p>Puis regénérer les locales :</p>
+<blockquote>
+# locale-gen</blockquote>
+<p>Ensuite il faut définir votre chemin pour les traductions par exemple :</p>
+<blockquote>
+lang/fr_FR/LC_ALL/domaine.mo</blockquote>
+<p>Puis dans votre fichier php de configuration :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">&lt;?php</div>
+<div class="line">// configuration de la langue</div>
+<div class="line">$lang_path = &quot;./lang&quot;; // Chemin des fichiers le langue</div>
+<div class="line">$lang = 'fr_FR'; // Langue a afficher</div>
+<div class="line">$lang_encode = &quot;UTF-8&quot;; // Encodage du fichier</div>
+<div class="line">$lang_LC = &quot;LC_ALL&quot;; // LC_MESSAGE etc...</div>
+<div class="line">$lang_file = &quot;domaine&quot;; // Nom du fichier de langue</div>
+<div class="line">putenv(&quot;LANG=&quot;.$lang);</div>
+<div class="line">setlocale($lang_LC, $lang.&quot;.&quot;.$lang_encode);</div>
+<div class="line">bindtextdomain($lang_file,$lang_path);</div>
+<div class="line">bindtextdomain_codeset($lang_file,$lang_encode);</div>
+<div class="line">textdomain($lang_path);</div>
+<div class="line">?&gt;</div>
+</div>
+</blockquote>
+<p>Puis faites le test en affichant dans un fichier php le texte &quot;hello&quot;</p>
+<blockquote>
+<div class="line-block">
+<div class="line">&lt;?php</div>
+<div class="line">// on inclus la config...</div>
+<div class="line">include_once('config.php');</div>
+<div class="line">echo _('hello');</div>
+<div class="line">?&gt;</div>
+</div>
+</blockquote>
+<p>Pour générer un fichier .mo a partir d'un fichier .po :</p>
+<blockquote>
+msgfmt domaine.po -o domaine.mo</blockquote>
+<p>Pour générer un fichier .po a partir de fichier php avec du gettext,
+faire un fichier texte avec tous vos fichiers php ou on doit récupérer
+le gettext.</p>
+<p>Exemple listing_gettext.txt tel que :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">index.php</div>
+<div class="line">contact.php</div>
+<div class="line">etc...</div>
+</div>
+</blockquote>
+<p>Ensuite il faut faire la commande suivante pour générer le fichier
+domaine.po dans le dossier lang/ depuis notre fichier texte avec les php
+:</p>
+<blockquote>
+xgettext -d domaine -p lang/ -k_ --from-code=UTF-8 -f
+listing_gettext.txt</blockquote>
+<p>Pour finir voilà le path des fichiers .po et .mo dans mon application
+web :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">lang/fr_FR/LC_ALL/domaine.po</div>
+<div class="line">lang/fr_FR/LC_ALL/domaine.mo</div>
+<div class="line">lang/en_GB/LC_ALL/domaine.po</div>
+<div class="line">lang/en_GB/LC_ALL/domaine.mo</div>
+<div class="line">...</div>
+</div>
+</blockquote>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-12-02-clavier-apple-sur-debian.html#2011-12-02-clavier-apple-sur-debian">Clavier Apple sur debian</a></h2>
+    <p>
+      Posté le ven. 02 décembre 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/clavier.html">Clavier</a>,      <a href="http://choiz.github.io/tag/apple.html">Apple</a>,      <a href="http://choiz.github.io/tag/mapage.html">Mapage</a>,      <a href="http://choiz.github.io/tag/debian.html">Debian</a>,      <a href="http://choiz.github.io/tag/linux.html">Linux</a>,      <a href="http://choiz.github.io/tag/keyboard.html">Keyboard</a>,      <a href="http://choiz.github.io/tag/mac.html">Mac</a>,      <a href="http://choiz.github.io/tag/mac-keyboard.html">Mac Keyboard</a>    </p>
+  </header>
+  <div>
+      <div class="line-block">
+<div class="line">Depuis le temps que je bosse avec un clavier Apple [STRIKEOUT:j'ai]
+mes doigts on eu le temps de s'habituer au mapage du clavier. Il y a
+beaucoup de différences entre un clavier AZERTY de PC et un clavier
+AZERTY de Mac.</div>
+<div class="line">Les touches : &#64; # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
+des endroits complétement différents.</div>
+</div>
+<p>Pour modifier la configuration faire en console :</p>
+<blockquote>
+<p>dpkg-reconfigure keyboard-console</p>
+<p>Select keymap from arch list</p>
+<p>azerty</p>
+<p>French</p>
+<p>Apple USB</p>
+<p>dpkg-reconfigure keyboard-configuration</p>
+<p>model: Apple</p>
+<p>layout: France - Macintosh</p>
+<p>Key for AltGr: No AltGr Key</p>
+<p>Compose key: Right Alt (AltGr)</p>
+<p>Use Control+Alt+Backspace to terminate the X server? no</p>
+</blockquote>
+<p>J'ai choisi un clavier Apple, Français Mac, sans touche AltGr, avec
+comme touche de fonctionnalité secondaire &quot;Alt droit&quot;. Malheureusement
+je n'ai pas réussi a mapper l'Alt de gauche pour avoir la même fonction
+qu'à droite...</p>
+<p>Et ensuite j'ai indiqué que je ne voulais pas pouvoir quitter le server
+X avec la combinaison de touche Control+Alt+Backspace.</p>
+<p>Si ceci ne fonctionne pas il faut se rendre dans la configuration du
+clavier de votre gestionnaire de fenêtre (xfce: dans mon cas). Puis
+désactiver le layout par defaut du système.</p>
+<p><img alt="image0" src="http://media.tumblr.com/tumblr_lvjsbrOL8E1qzr4hx.png" /></p>
 
   </div>
 </article>

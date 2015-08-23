@@ -683,7 +683,466 @@ migrer sur git car disponible sur github ainsi que sur bitbucket.&lt;/p&gt;
 git&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Egalement un autre tutoriel en anglais pour passer &lt;a class="reference external" href="http://hivelogic.com/articles/converting-from-mercurial-to-git"&gt;de mercurial à
 git&lt;/a&gt;.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 12 Feb 2013 13:26:00 +0100</pubDate><guid>tag:choiz.github.io,2013-02-12:2013-02-12-logiciels-de-gestion-de-versions-svn-git.html</guid><category>git</category><category>mercurial</category><category>svn</category><category>migration</category><category>svn to git</category><category>mercurial to git</category><category>hg to git</category><category>hg</category></item><item><title>Bug Firefox avec une iFrame blanche</title><link>http://choiz.github.io/2011-12-08-bug-firefox-avec-une-iframe-blanche.html</link><description>&lt;div class="line-block"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 12 Feb 2013 13:26:00 +0100</pubDate><guid>tag:choiz.github.io,2013-02-12:2013-02-12-logiciels-de-gestion-de-versions-svn-git.html</guid><category>git</category><category>mercurial</category><category>svn</category><category>migration</category><category>svn to git</category><category>mercurial to git</category><category>hg to git</category><category>hg</category></item><item><title>Bépo 11ème jour !</title><link>http://choiz.github.io/2012-12-27-b%C3%A9po-11%C3%A8me-jour.html</link><description>&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Depuis maintenant 11 jours je me suis mis au
+&lt;a class="reference external" href="http://bepo.fr/"&gt;bépo&lt;/a&gt;.&amp;nbsp;J'ai gardé mes différents résultats, ce
+qui vas me permettre de faire une courbe de progression de mon
+apprentissage.&lt;/div&gt;
+&lt;div class="line"&gt;Sachant qu'au second jour j'arrivais à taper environ 10,2 mots par
+minute, aujourd'hui je suis à 24,4 mots par minutes...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;J'ai commandé deux claviers
+ergonomiques&amp;nbsp;&lt;a class="reference external" href="http://www.typematrix.com/"&gt;typematrix&lt;/a&gt;,&amp;nbsp;sans
+marquage sur les touches ainsi que 2 skins : un en
+&lt;a class="reference external" href="http://fr.wikipedia.org/wiki/AZERTY"&gt;azerty&lt;/a&gt; et un en
+&lt;a class="reference external" href="http://bepo.fr"&gt;bépo&lt;/a&gt;. Pour info je m'entraine généralement 2 fois
+par jour quand j'ai le temps environ 1/2 heure. Je m'intéresse pas mal
+au sujet et je vous recommande de lire le &lt;a class="reference external" href="http://bepo.fr/wiki/DVZine"&gt;dvzine en
+Français&lt;/a&gt;&amp;nbsp;qui est fascinant.&lt;/div&gt;
+&lt;div class="line"&gt;Dites-moi si vous aussi vous voulez passer au bépo ou dvorak, ainsi
+que vos motivations &amp;amp; tips si vous en avez c'est toujours bon à
+prendre ;)&lt;/div&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 27 Dec 2012 21:26:00 +0100</pubDate><guid>tag:choiz.github.io,2012-12-27:2012-12-27-bépo-11ème-jour.html</guid><category>bépo</category><category>dvorak fr</category><category>dvorak</category><category>clavier</category><category>ergonomique</category><category>typematrix</category><category>azerty</category><category>disposition</category><category>libre</category></item><item><title>Faire un ssh-copy-id sur Mac OS X</title><link>http://choiz.github.io/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html</link><description>&lt;p&gt;Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
+avez dû vous rendre compte que, même si openssh est installé nativement,
+cette commande n’est pas disponible.&lt;/p&gt;
+&lt;p&gt;Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
+peut la rendre disponible facilement en quelques étapes.
+Créer un fichier &amp;quot;ssh-copy-id&amp;quot; dans le dossier &amp;quot;/usr/bin/&amp;quot; avec ce
+contenu :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;#!/bin/sh&lt;/div&gt;
+&lt;div class="line"&gt;# Shell script to install your public key on a remote machine&lt;/div&gt;
+&lt;div class="line"&gt;# Takes the remote machine name as an argument.&lt;/div&gt;
+&lt;div class="line"&gt;# Obviously, the remote machine must accept password authentication,&lt;/div&gt;
+&lt;div class="line"&gt;# or one of the other keys in your ssh-agent, for this to work.&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;ID_FILE=&amp;quot;${HOME}/.ssh/id_rsa.pub&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;if [ &amp;quot;-i&amp;quot; = &amp;quot;$1&amp;quot; ]; then&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;shift&lt;/div&gt;
+&lt;div class="line"&gt;# check if we have 2 parameters left, if so the first is the new ID file&lt;/div&gt;
+&lt;div class="line"&gt;if [ -n &amp;quot;$2&amp;quot; ]; then&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;if expr &amp;quot;$1&amp;quot; : &amp;quot;.*.pub&amp;quot; &amp;gt; /dev/null ; then&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;ID_FILE=&amp;quot;$1&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;else&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;ID_FILE=&amp;quot;$1.pub&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;fi&lt;/div&gt;
+&lt;div class="line"&gt;shift         # and this should leave $1 as the target name&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;fi&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;else&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;if [ x$SSH_AUTH_SOCK != x ] ; then&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;GET_ID=&amp;quot;$GET_ID ssh-add -L&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;fi&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;fi&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;if [ -z &amp;quot;&lt;cite&gt;eval $GET_ID&lt;/cite&gt;&amp;quot; ] &amp;amp;&amp;amp; [ -r &amp;quot;${ID_FILE}&amp;quot; ] ; then&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;GET_ID=&amp;quot;cat ${ID_FILE}&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;fi&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;if [ -z &amp;quot;&lt;cite&gt;eval $GET_ID&lt;/cite&gt;&amp;quot; ]; then&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;echo &amp;quot;$0: ERROR: No identities found&amp;quot; &amp;gt;&amp;amp;2&lt;/div&gt;
+&lt;div class="line"&gt;exit 1&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;fi&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;if [ &amp;quot;$#&amp;quot; -lt 1 ] || [ &amp;quot;$1&amp;quot; = &amp;quot;-h&amp;quot; ] || [ &amp;quot;$1&amp;quot; = &amp;quot;--help&amp;quot; ]; then&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;echo &amp;quot;Usage: $0 [-i [identity_file]] [user&amp;#64;]machine&amp;quot; &amp;gt;&amp;amp;2&lt;/div&gt;
+&lt;div class="line"&gt;exit 1&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;fi&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;{ eval &amp;quot;$GET_ID&amp;quot; ; } | ssh $1 &amp;quot;umask 077; test -d .ssh || mkdir .ssh ; cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;quot; || exit 1&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;cat &amp;lt;&amp;lt;EOF&lt;/div&gt;
+&lt;div class="line"&gt;Now try logging into the machine, with &amp;quot;ssh '$1'&amp;quot;, and check in:&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;.ssh/authorized_keys&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;to make sure we haven't added extra keys that you weren't expecting.&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;EOF&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Il ne reste qu'a donner les droits au fichier :&lt;/p&gt;
+&lt;blockquote&gt;
+$ chmod 755 /usr/bin/ssh-copy-id&lt;/blockquote&gt;
+&lt;p&gt;Vous pouvez maintenant copier votre clé ssh sur un serveur distant en
+tapant :&lt;/p&gt;
+&lt;blockquote&gt;
+ssh-copy-id -i id_rsa.pub &lt;a class="reference external" href="mailto:user&amp;#64;machine.distante"&gt;user&amp;#64;machine.distante&lt;/a&gt;&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 30 Sep 2012 11:50:54 +0200</pubDate><guid>tag:choiz.github.io,2012-09-30:2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html</guid><category>ssh-copy-id</category><category>mac os x</category><category>copy ssh key</category><category>copier clé ssh</category><category>ssh</category><category>copy-id</category></item><item><title>Ma configuration iTerm2</title><link>http://choiz.github.io/2012-09-29-ma-configuration-iterm2.html</link><description>&lt;p&gt;Depuis quelques jours j'utilise iTerm2 et je trouve ce terminal sous Mac
+Os X vraiment au top !&lt;/p&gt;
+&lt;p&gt;J'ai un clavier Apple Usb avec le pavé numérique il faut donc modifier
+les préférences d'iTerm2.&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;iTerm &amp;gt; Préférences (ou&amp;nbsp;⌘&amp;nbsp;,) puis dans Profiles &amp;gt; Keys et en bas &amp;quot;Load
+Preset...&amp;quot; et choisir &amp;quot;xterm with Numeric Keypad&amp;quot;.&lt;/div&gt;
+&lt;div class="line"&gt;Ce n'est pas tout malheureusement.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;La touche &amp;quot;enter&amp;quot; du pavé numérique ne fonctionne pas il faut donc
+cliquer sur &amp;quot;+&amp;quot; et dans Keyboard Shortcut: appuyer sur la touche et
+&amp;quot;↩&amp;quot; doit apparaitre. Dans Action: choisir &amp;quot;Send Hex Code&amp;quot; et taper
+&amp;quot;0xd&amp;quot;.&lt;/div&gt;
+&lt;div class="line"&gt;J'ai également ajouter 2&amp;nbsp;raccourcis&amp;nbsp;bien pratiques :&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&amp;quot;alt et fleche de gauche&amp;quot; soit &amp;quot;⌥←&amp;quot; avec le code &amp;quot;[H&amp;quot; permet de revenir au debut de la ligne de commande que l'on tape (pratique si on oublie un argument).&lt;/li&gt;
+&lt;li&gt;&amp;quot;alt et fleche de droite&amp;quot; soit &amp;quot;⌥→&amp;quot; avec le code &amp;quot;[F&amp;quot; pour aller à la fin de la ligne.&lt;/li&gt;
+&lt;/ul&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 29 Sep 2012 16:27:52 +0200</pubDate><guid>tag:choiz.github.io,2012-09-29:2012-09-29-ma-configuration-iterm2.html</guid><category>iTerm2</category><category>config</category><category>keypad</category><category>numeric</category><category>enter</category><category>⌥→</category><category>⌥←</category><category>↩</category><category>shortcut</category><category>clavier</category><category>pavé numérique</category><category>configuration iTerm2</category></item><item><title>Mon fichier .gitignore</title><link>http://choiz.github.io/2012-08-13-mon-fichier-gitignore.html</link><description>&lt;p&gt;Voilà mon petit fichier .gitignore&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;# Ignore files from git&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;# ._ files (Mac Os X)&lt;/div&gt;
+&lt;div class="line"&gt;._*&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;# .DS_STORE (Mac Os X)&lt;/div&gt;
+&lt;div class="line"&gt;.DS_STORE&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;# .swp (Vim)&lt;/div&gt;
+&lt;div class="line"&gt;*.swp&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 13 Aug 2012 11:06:31 +0200</pubDate><guid>tag:choiz.github.io,2012-08-13:2012-08-13-mon-fichier-gitignore.html</guid><category>git</category><category>gitignore</category><category>.gitignore</category><category>file</category><category>fichier</category></item><item><title>Voir le contenu d'un fichier dans un stash précis (git)</title><link>http://choiz.github.io/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-pr%C3%A9cis.html</link><description>&lt;p&gt;Pour lister les stash :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;git stash list&lt;/tt&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="mailto:stash&amp;#64;{0"&gt;stash&amp;#64;{0&lt;/a&gt;}: WIP on BranchName: 5d8a556 Edit file.js
+&lt;a class="reference external" href="mailto:stash&amp;#64;{1"&gt;stash&amp;#64;{1&lt;/a&gt;}: WIP on&amp;nbsp;BranchName: 66dfe78 Edit file.css
+…
+&lt;a class="reference external" href="mailto:stash&amp;#64;{5"&gt;stash&amp;#64;{5&lt;/a&gt;}: WIP on&amp;nbsp;BranchName: 3bb67ff Add file.css file.js&lt;/blockquote&gt;
+&lt;p&gt;Pour voir le contenu d'un stash :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;git stash show&lt;/tt&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="mailto:stash&amp;#64;{0"&gt;stash&amp;#64;{0&lt;/a&gt;} chemin/vers/mon/fichier.js | 199 ++++++++++++++++++++++++++--------
+chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------&lt;/blockquote&gt;
+&lt;p&gt;Pour voir le contenu de &amp;quot;chemin/vers/mon/fichier.js&amp;quot; qui est dans le
+stash{0}&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;git show &lt;span class="pre"&gt;stash&amp;#64;{0}:chemin/vers/mon/fichier.js&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 06 Jul 2012 17:56:00 +0200</pubDate><guid>tag:choiz.github.io,2012-07-06:2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis.html</guid><category>git</category><category>stash</category><category>content</category><category>file</category><category>file content</category><category>git stash</category><category>show</category></item><item><title>Ajout dans mon .vimrc de matchadd() &amp; highlight</title><link>http://choiz.github.io/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html</link><description>&lt;p&gt;Petit ajout dans mon fichier .vimrc&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&amp;quot; Highlight To do list with green background&lt;/div&gt;
+&lt;div class="line"&gt;highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green&lt;/div&gt;
+&lt;div class="line"&gt;highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue&lt;/div&gt;
+&lt;div class="line"&gt;highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red&lt;/div&gt;
+&lt;div class="line"&gt;&amp;quot; Match todolist, notice, fixme&lt;/div&gt;
+&lt;div class="line"&gt;:call matchadd('Todo','[T|t][O|o][D|d][O|o]')&lt;/div&gt;
+&lt;div class="line"&gt;:call matchadd('Todo','[T|t][O|o] [D|d][O|o]')&lt;/div&gt;
+&lt;div class="line"&gt;:call matchadd('Notice','[N|n][O|o][T|t][I|i][C|c][E|e]')&lt;/div&gt;
+&lt;div class="line"&gt;:call matchadd('Notice','[N|n][O|o][T|t][E|e]')&lt;/div&gt;
+&lt;div class="line"&gt;:call matchadd('Fixme','[F|f][I|i][X|x][M|m][E|e]')&lt;/div&gt;
+&lt;div class="line"&gt;:call matchadd('Fixme','[F|f][I|i][X|x] [M|m][E|e]')&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 27 Apr 2012 15:11:26 +0200</pubDate><guid>tag:choiz.github.io,2012-04-27:2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html</guid><category>vimrc</category><category>vim</category><category>config file</category><category>.vimrc</category><category>todo</category><category>notice</category><category>fixme</category><category>highlight</category><category>matchadd</category></item><item><title>Reprendre la main sur un Screen pas "detached"</title><link>http://choiz.github.io/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html</link><description>&lt;p&gt;Lorsque j'ai voulu &amp;quot;réattacher&amp;quot; mon &amp;quot;Screen&amp;quot; j'ai eu le message suivant
+:&lt;/p&gt;
+&lt;blockquote&gt;
+There is a screen on:
+1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)&lt;/blockquote&gt;
+&lt;p&gt;Habituellement je détache mon &amp;quot;Screen&amp;quot; mais cette fois j'ai oublié.&lt;/p&gt;
+&lt;p&gt;Pour &amp;quot;détacher&amp;quot; / &amp;quot;réattacher&amp;quot; mon &amp;quot;Screen&amp;quot; j'ai du faire la commande
+suivante :&lt;/p&gt;
+&lt;blockquote&gt;
+$ screen -dRR&lt;/blockquote&gt;
+&lt;p&gt;Je note car c'est toujours bon à savoir :)&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 18 Apr 2012 01:39:00 +0200</pubDate><guid>tag:choiz.github.io,2012-04-18:2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html</guid><category>attached</category><category>detached</category><category>détacher</category><category>screen</category><category>réattacher</category><category>linux</category><category>cli</category></item><item><title>Utilisation des branches et de git stash</title><link>http://choiz.github.io/2012-04-14-utilisation-des-branches-et-de-git-stash.html</link><description>&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
+sur une branche qui sont pas a commiter dans l'immédiat.&lt;/div&gt;
+&lt;div class="line"&gt;J'utilise donc git stash, voyons voir comment l'utiliser simplement.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;On regarde l'état du status et des branches : (git status / git branch)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;$ git st&lt;/div&gt;
+&lt;div class="line"&gt;# On branch master&lt;/div&gt;
+&lt;div class="line"&gt;nothing to commit (working directory clean)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;$ git br&lt;/div&gt;
+&lt;div class="line"&gt;* master&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Je travail sur la branche master et je n'ai pas d'autre branche. Je vais
+donc faire une branche API pour mon projet.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git br API&lt;/p&gt;
+&lt;p&gt;$ git br&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&amp;nbsp; API&lt;/div&gt;
+&lt;div class="line"&gt;* master&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Maintenant je vais changer de branche (git checkout) pour être sur ma
+branche API et modifier les fichiers sur cette branche.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;$ git co API&lt;/div&gt;
+&lt;div class="line"&gt;Switched to branch 'API'&lt;/div&gt;
+&lt;div class="line"&gt;$ git br&lt;/div&gt;
+&lt;div class="line"&gt;* API&lt;/div&gt;
+&lt;div class="line"&gt;&amp;nbsp; master&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ok maintenant je vais modifier un mon fichier manage.py sur ma branche
+API.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;$ git st&lt;/div&gt;
+&lt;div class="line"&gt;# On branch API&lt;/div&gt;
+&lt;div class="line"&gt;# Changes not staged for commit:&lt;/div&gt;
+&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp; (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed)&lt;/div&gt;
+&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp; (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working
+directory)&lt;/div&gt;
+&lt;div class="line"&gt;#&lt;/div&gt;
+&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp;&amp;nbsp; modified:&amp;nbsp;&amp;nbsp; manage.py&lt;/div&gt;
+&lt;div class="line"&gt;#&lt;/div&gt;
+&lt;div class="line"&gt;no changes added to commit (use &amp;quot;git add&amp;quot; and/or &amp;quot;git commit -a&amp;quot;)&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Si je veux revenir sur mon master, sans avoir la modification du
+manage.py je vais devoir utiliser git stash (qui sauvegardera mes
+modifications du manage.py)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;$ git sta&lt;/div&gt;
+&lt;div class="line"&gt;Saved working directory and index state WIP on API: 8b6342d Fix
+register.py&lt;/div&gt;
+&lt;div class="line"&gt;HEAD is now at 8b6342d Fix register.py&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;$ git st&lt;/div&gt;
+&lt;div class="line"&gt;# On branch API&lt;/div&gt;
+&lt;div class="line"&gt;nothing to commit (working directory clean)&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Maintenant que notre branche est propre on peut changer de branche
+revenir sur le master par exemple.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;$ git co master&lt;/div&gt;
+&lt;div class="line"&gt;Switched to branch 'master'&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;$ git st&lt;/div&gt;
+&lt;div class="line"&gt;# On branch master&lt;/div&gt;
+&lt;div class="line"&gt;nothing to commit (working directory clean)&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;On peut donc travailler tranquillement sur la branche master. Puis
+revenir sur notre branche API, lister les stash (git stash list)
+récupérer les modifications précédentes (git stash pop).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;$ git co API&lt;/div&gt;
+&lt;div class="line"&gt;Switched to branch 'API'&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;$ git stast&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="mailto:stash&amp;#64;{0"&gt;stash&amp;#64;{0&lt;/a&gt;}: WIP on API: 8b6342d Fix register.py&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;$ git stapp&lt;/div&gt;
+&lt;div class="line"&gt;# On branch API&lt;/div&gt;
+&lt;div class="line"&gt;# Changes not staged for commit:&lt;/div&gt;
+&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp; (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed)&lt;/div&gt;
+&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp; (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working
+directory)&lt;/div&gt;
+&lt;div class="line"&gt;#&lt;/div&gt;
+&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp;&amp;nbsp; modified:&amp;nbsp;&amp;nbsp; manage.py&lt;/div&gt;
+&lt;div class="line"&gt;#&lt;/div&gt;
+&lt;div class="line"&gt;no changes added to commit (use &amp;quot;git add&amp;quot; and/or &amp;quot;git commit -a&amp;quot;)&lt;/div&gt;
+&lt;div class="line"&gt;Dropped &lt;a class="reference external" href="mailto:refs/stash&amp;#64;{0"&gt;refs/stash&amp;#64;{0&lt;/a&gt;} (533906a52b923a8960fa0f6fdf17a288c94f233a)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;$ git st&lt;/div&gt;
+&lt;div class="line"&gt;# On branch API&lt;/div&gt;
+&lt;div class="line"&gt;# Changes not staged for commit:&lt;/div&gt;
+&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp; (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed)&lt;/div&gt;
+&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp; (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working
+directory)&lt;/div&gt;
+&lt;div class="line"&gt;#&lt;/div&gt;
+&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp;&amp;nbsp; modified:&amp;nbsp;&amp;nbsp; manage.py&lt;/div&gt;
+&lt;div class="line"&gt;#&lt;/div&gt;
+&lt;div class="line"&gt;no changes added to commit (use &amp;quot;git add&amp;quot; and/or &amp;quot;git commit -a&amp;quot;)&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Maintenant je peux continuer les modifications sur ma branche API
+réutilise git stash si besoin ou les commiter, merger ma branche...&lt;/p&gt;
+&lt;p&gt;/!\ Attention les commandes git st, git co, git br, git sta, git stapp
+sont des alias qui se trouvent dans mon fichier .gitconfig (voir les
+billets précédents) /!\&lt;/p&gt;
+&lt;p&gt;git stash (sauve le travail dans un stash) mon alias = git sta&lt;/p&gt;
+&lt;p&gt;git stash list (liste les stash) mon alias = git stast (ou git stalist)&lt;/p&gt;
+&lt;p&gt;git stash pop (récupére le dernier stash enregistré &lt;a class="reference external" href="mailto:stash&amp;#64;{0"&gt;stash&amp;#64;{0&lt;/a&gt;},
+l'applique et le supprime de la liste) mon alias = git stapp&lt;/p&gt;
+&lt;p&gt;git stash apply (récupére le dernier stash enregistré &lt;a class="reference external" href="mailto:stash&amp;#64;{0"&gt;stash&amp;#64;{0&lt;/a&gt;} et
+l'applique)&lt;/p&gt;
+&lt;p&gt;Et pour rien n'oublier (RTFM) : man git stash&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 14 Apr 2012 16:32:42 +0200</pubDate><guid>tag:choiz.github.io,2012-04-14:2012-04-14-utilisation-des-branches-et-de-git-stash.html</guid><category>git</category><category>git stash</category><category>git stash pop</category><category>git stash list</category><category>git branch</category><category>git checkout</category></item><item><title>Renomer des fichiers en CLI (ligne de commande)</title><link>http://choiz.github.io/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html</link><description>&lt;p&gt;Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
+correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
+&amp;quot;rename&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Exemple je veux supprimer tous les espaces d'un fichier :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;rename &amp;quot;s/ &lt;span class="pre"&gt;*//g&amp;quot;&lt;/span&gt; *.*&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Ou renomer tous mes fichiers .WAV en .wav etc...&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;rename &lt;span class="pre"&gt;&amp;quot;s/\.WAV/\.wav/g&amp;quot;&lt;/span&gt; *.WAV&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;A vous de modifier l'expression régulière !&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 14 Apr 2012 16:02:00 +0200</pubDate><guid>tag:choiz.github.io,2012-04-14:2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html</guid><category>CLI</category><category>rename</category><category>renommer</category><category>fichiers</category><category>wav</category><category>WAV</category></item><item><title>Update .gitconfig</title><link>http://choiz.github.io/2012-04-13-update-gitconfig.html</link><description>&lt;p&gt;Ajout du pull, push, diff et surtout stash ;)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;[user]&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;name = François LASSERRE&lt;/div&gt;
+&lt;div class="line"&gt;email = &lt;a class="reference external" href="mailto:mon&amp;#64;email.fr"&gt;mon&amp;#64;email.fr&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;[diff]&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;tool = vimdiff&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;[color]&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;branch = auto&lt;/div&gt;
+&lt;div class="line"&gt;diff = auto&lt;/div&gt;
+&lt;div class="line"&gt;status = auto&lt;/div&gt;
+&lt;div class="line"&gt;interactive = auto&lt;/div&gt;
+&lt;div class="line"&gt;ui = true&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;[alias]&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;br = branch&lt;/div&gt;
+&lt;div class="line"&gt;ci = commit -a&lt;/div&gt;
+&lt;div class="line"&gt;co = checkout&lt;/div&gt;
+&lt;div class="line"&gt;sh = show --color-words&lt;/div&gt;
+&lt;div class="line"&gt;st = status&lt;/div&gt;
+&lt;div class="line"&gt;di = diff&lt;/div&gt;
+&lt;div class="line"&gt;ph = push&lt;/div&gt;
+&lt;div class="line"&gt;pl = pull&lt;/div&gt;
+&lt;div class="line"&gt;sta = stash&lt;/div&gt;
+&lt;div class="line"&gt;stalist = stash list&lt;/div&gt;
+&lt;div class="line"&gt;stast = stash list&lt;/div&gt;
+&lt;div class="line"&gt;stapp = stash pop&lt;/div&gt;
+&lt;div class="line"&gt;starm = stash drop&lt;/div&gt;
+&lt;div class="line"&gt;last = cat-file commit HEAD&lt;/div&gt;
+&lt;div class="line"&gt;graph = log --graph --decorate&lt;/div&gt;
+&lt;div class="line"&gt;tree = log --graph --oneline --decorate&lt;/div&gt;
+&lt;div class="line"&gt;pom = push origin master&lt;/div&gt;
+&lt;div class="line"&gt;logs = log --stat&lt;/div&gt;
+&lt;div class="line"&gt;currentbranch = &amp;quot;!git branch | grep ^* | cut -d &amp;quot; &amp;quot; -f 2&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;[core]&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;excludesfile = ~/.gitignore&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;editor = vim&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;filemode = false&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;[merge]&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;tool = vimdiff&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;[http]&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;#sslverify = false|&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 13 Apr 2012 12:00:00 +0200</pubDate><guid>tag:choiz.github.io,2012-04-13:2012-04-13-update-gitconfig.html</guid><category>git</category><category>gitconfig</category><category>git pull</category><category>git push</category><category>git diff</category><category>git stash</category><category>stash</category></item><item><title>Git mes fichiers de config gitconfig / gitignore</title><link>http://choiz.github.io/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html</link><description>&lt;p&gt;Fichier .gitconfig&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;[user]&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;name = François LASSERRE&lt;/div&gt;
+&lt;div class="line"&gt;email = &lt;a class="reference external" href="mailto:mon&amp;#64;email.fr"&gt;mon&amp;#64;email.fr&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;[diff]&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;tool = vimdiff&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;[color]&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;branch = auto&lt;/div&gt;
+&lt;div class="line"&gt;diff = auto&lt;/div&gt;
+&lt;div class="line"&gt;status = auto&lt;/div&gt;
+&lt;div class="line"&gt;interactive = auto&lt;/div&gt;
+&lt;div class="line"&gt;ui = true&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;[alias]&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;br = branch&lt;/div&gt;
+&lt;div class="line"&gt;ci = commit -a&lt;/div&gt;
+&lt;div class="line"&gt;co = checkout&lt;/div&gt;
+&lt;div class="line"&gt;sh = show --color-words&lt;/div&gt;
+&lt;div class="line"&gt;st = status&lt;/div&gt;
+&lt;div class="line"&gt;last = cat-file commit HEAD&lt;/div&gt;
+&lt;div class="line"&gt;tree = log --graph --oneline --decorate&lt;/div&gt;
+&lt;div class="line"&gt;graph = log --graph --decorate&lt;/div&gt;
+&lt;div class="line"&gt;pom = push origin master&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;[core]&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;excludesfile = ~/.gitignore&lt;/div&gt;
+&lt;div class="line"&gt;editor = vim&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line"&gt;[merge]&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;tool = vimdiff&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Fichier .gitignore&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+| # Ignore files from git
+|
+| # ._ files (Mac Os X)
+| ._*
+|
+| # .DS_STORE (Mac Os X)
+| .DS_STORE
+|
+| # .swp (Vim)
+| *.swp
+&lt;/pre&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 31 Jan 2012 10:34:00 +0100</pubDate><guid>tag:choiz.github.io,2012-01-31:2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html</guid><category>git</category><category>gitconfig</category><category>gitignore</category><category>git color</category><category>git tools</category><category>git alias</category><category>git merge</category><category>git diff</category><category>git editor</category><category>git excludesfile</category></item><item><title>Créer paire de clé pour se connecter en SSH</title><link>http://choiz.github.io/2012-01-13-cr%C3%A9er-paire-de-cl%C3%A9-pour-se-connecter-en-ssh.html</link><description>&lt;p&gt;On commence par ouvrir un terminal puis on tape :&lt;/p&gt;
+&lt;blockquote&gt;
+$ ssh-keygen -t dsa -b 1024&lt;/blockquote&gt;
+&lt;p&gt;Enter file in which to save the key (/Users/choiz/.ssh/id_dsa):&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;En général je garde le fichier id_rsa donc je tape &amp;quot;enter&amp;quot; sinon vous
+pouvez spécifier un autre chemin ainsi qu'un autre fichier.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Enter passphrase (empty for no passphrase):&lt;/p&gt;
+&lt;p&gt;Ici on tape un mot de passe si on en veut un lors de la connexion aux
+différents hosts. En général j'en défini un.&lt;/p&gt;
+&lt;p&gt;Pour finir on copie la clé sur le serveur soit via scp :&lt;/p&gt;
+&lt;blockquote&gt;
+scp ~/.ssh/id_dsa.pub &lt;a class="reference external" href="mailto:user&amp;#64;ip"&gt;user&amp;#64;ip&lt;/a&gt;:~/.ssh/authorized_keys/&lt;/blockquote&gt;
+&lt;p&gt;ou via ssh-copy-id :&lt;/p&gt;
+&lt;blockquote&gt;
+ssh-copy-id -i ~/.ssh/id_dsa.pub &lt;a class="reference external" href="mailto:user&amp;#64;ip"&gt;user&amp;#64;ip&lt;/a&gt;&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 13 Jan 2012 10:05:18 +0100</pubDate><guid>tag:choiz.github.io,2012-01-13:2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html</guid><category>clé publique</category><category>clé privée</category><category>connexion ssh</category><category>authorized_keys</category><category>ssh</category><category>.ssh</category></item><item><title>Bug Firefox avec une iFrame blanche</title><link>http://choiz.github.io/2011-12-08-bug-firefox-avec-une-iframe-blanche.html</link><description>&lt;div class="line-block"&gt;
 &lt;div class="line"&gt;Lors de l'utilisation de div et d'iFrame sous Firefox un bug étrange
 apparait.&lt;/div&gt;
 &lt;div class="line"&gt;Quand une iFrame est affiché dans un div qui a la propriété css&lt;/div&gt;
@@ -1172,7 +1631,6 @@ svn propset svn:keywords &amp;quot;Revision Date Author URL&amp;quot; index.php&
 &lt;div class="line"&gt;&amp;nbsp;$URL: svn://svn.choiz.fr/projet/branches/prod/index.php $&lt;/div&gt;
 &lt;/div&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;N'hésitez pas à ajouter des commentaires si vous avez des questions ;)&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 25 Oct 2010 14:27:33 +0200</pubDate><guid>tag:choiz.github.io,2010-10-25:2010-10-25-commande-svn-pour-ajouter-des-keywords.html</guid><category>SVN</category><category>Subversion</category><category>Keyword</category><category>Id</category><category>Revision</category><category>Date</category><category>Author</category><category>URL</category><category>PHP</category><category>Code</category><category>Subversion</category></item><item><title>Impression de commandes entre balise &lt;pre&gt;</title><link>http://choiz.github.io/2010-09-15-impression-de-commandes-entre-balise-pre.html</link><description>&lt;p&gt;J'ai toujours eu pas mal de soucis lors d'impression de différentes
 documentations...&lt;/p&gt;
 &lt;p&gt;J'utilise souvent la balise &amp;lt;pre&amp;gt; pour les lignes de commandes et il n'y

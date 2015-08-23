@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/font-awesome.min.css">
+  <link href="http://choiz.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <link rel="shortcut icon" href="http://localhost:8000//favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000//favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+<meta name="author" content="choiz" />
+<meta name="description" content="Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous avez dû vous rendre compte que, même si openssh est installé nativement, cette commande n’est pas disponible. Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on peut la rendre disponible ..." />
+<meta name="keywords" content="ssh-copy-id, mac os x, copy ssh key, copier clé ssh, ssh, copy-id">
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:title" content="Faire un ssh-copy-id sur Mac OS X"/>
+<meta property="og:description" content="Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous avez dû vous rendre compte que, même si openssh est installé nativement, cette commande n’est pas disponible. Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on peut la rendre disponible ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://choiz.github.io/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2012-09-30 11:50:54+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://choiz.github.io/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="ssh-copy-id"/>
+<meta property="article:tag" content="mac os x"/>
+<meta property="article:tag" content="copy ssh key"/>
+<meta property="article:tag" content="copier clé ssh"/>
+<meta property="article:tag" content="ssh"/>
+<meta property="article:tag" content="copy-id"/>
+<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">  <title>ChoiZ &ndash; Faire un ssh-copy-id sur Mac OS X</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://choiz.github.io">
+        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="" title="">
+      </a>
+      <h1><a href="http://choiz.github.io"></a></h1>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</p>
+      <p>J'ai fondé plusieurs webradios depuis l'an 2000, actuellement je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x">Faire un ssh-copy-id sur Mac OS X</h1>
+    <p>Posté le dim. 30 septembre 2012</p>
+  </header>
+  <div>
+    <p>Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
+avez dû vous rendre compte que, même si openssh est installé nativement,
+cette commande n’est pas disponible.</p>
+<p>Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
+peut la rendre disponible facilement en quelques étapes.
+Créer un fichier &quot;ssh-copy-id&quot; dans le dossier &quot;/usr/bin/&quot; avec ce
+contenu :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">#!/bin/sh</div>
+<div class="line"># Shell script to install your public key on a remote machine</div>
+<div class="line"># Takes the remote machine name as an argument.</div>
+<div class="line"># Obviously, the remote machine must accept password authentication,</div>
+<div class="line"># or one of the other keys in your ssh-agent, for this to work.</div>
+<div class="line"><br /></div>
+<div class="line">ID_FILE=&quot;${HOME}/.ssh/id_rsa.pub&quot;</div>
+<div class="line"><br /></div>
+<div class="line">if [ &quot;-i&quot; = &quot;$1&quot; ]; then</div>
+<div class="line-block">
+<div class="line">shift</div>
+<div class="line"># check if we have 2 parameters left, if so the first is the new ID file</div>
+<div class="line">if [ -n &quot;$2&quot; ]; then</div>
+<div class="line-block">
+<div class="line">if expr &quot;$1&quot; : &quot;.*.pub&quot; &gt; /dev/null ; then</div>
+<div class="line-block">
+<div class="line">ID_FILE=&quot;$1&quot;</div>
+</div>
+<div class="line">else</div>
+<div class="line-block">
+<div class="line">ID_FILE=&quot;$1.pub&quot;</div>
+</div>
+<div class="line">fi</div>
+<div class="line">shift         # and this should leave $1 as the target name</div>
+</div>
+<div class="line">fi</div>
+</div>
+<div class="line">else</div>
+<div class="line-block">
+<div class="line">if [ x$SSH_AUTH_SOCK != x ] ; then</div>
+<div class="line-block">
+<div class="line">GET_ID=&quot;$GET_ID ssh-add -L&quot;</div>
+</div>
+<div class="line">fi</div>
+</div>
+<div class="line">fi</div>
+<div class="line"><br /></div>
+<div class="line">if [ -z &quot;<cite>eval $GET_ID</cite>&quot; ] &amp;&amp; [ -r &quot;${ID_FILE}&quot; ] ; then</div>
+<div class="line-block">
+<div class="line">GET_ID=&quot;cat ${ID_FILE}&quot;</div>
+</div>
+<div class="line">fi</div>
+<div class="line"><br /></div>
+<div class="line">if [ -z &quot;<cite>eval $GET_ID</cite>&quot; ]; then</div>
+<div class="line-block">
+<div class="line">echo &quot;$0: ERROR: No identities found&quot; &gt;&amp;2</div>
+<div class="line">exit 1</div>
+</div>
+<div class="line">fi</div>
+<div class="line"><br /></div>
+<div class="line">if [ &quot;$#&quot; -lt 1 ] || [ &quot;$1&quot; = &quot;-h&quot; ] || [ &quot;$1&quot; = &quot;--help&quot; ]; then</div>
+<div class="line-block">
+<div class="line">echo &quot;Usage: $0 [-i [identity_file]] [user&#64;]machine&quot; &gt;&amp;2</div>
+<div class="line">exit 1</div>
+</div>
+<div class="line">fi</div>
+<div class="line"><br /></div>
+<div class="line">{ eval &quot;$GET_ID&quot; ; } | ssh $1 &quot;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys&quot; || exit 1</div>
+<div class="line"><br /></div>
+<div class="line">cat &lt;&lt;EOF</div>
+<div class="line">Now try logging into the machine, with &quot;ssh '$1'&quot;, and check in:</div>
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">.ssh/authorized_keys</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">to make sure we haven't added extra keys that you weren't expecting.</div>
+<div class="line"><br /></div>
+<div class="line">EOF</div>
+</div>
+</blockquote>
+<p>Il ne reste qu'a donner les droits au fichier :</p>
+<blockquote>
+$ chmod 755 /usr/bin/ssh-copy-id</blockquote>
+<p>Vous pouvez maintenant copier votre clé ssh sur un serveur distant en
+tapant :</p>
+<blockquote>
+ssh-copy-id -i id_rsa.pub <a class="reference external" href="mailto:user&#64;machine.distante">user&#64;machine.distante</a></blockquote>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://choiz.github.io/tag/ssh-copy-id.html">ssh-copy-id</a>
+      <a href="http://choiz.github.io/tag/mac-os-x.html">mac os x</a>
+      <a href="http://choiz.github.io/tag/copy-ssh-key.html">copy ssh key</a>
+      <a href="http://choiz.github.io/tag/copier-cle-ssh.html">copier clé ssh</a>
+      <a href="http://choiz.github.io/tag/ssh.html">ssh</a>
+      <a href="http://choiz.github.io/tag/copy-id.html">copy-id</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Faire un ssh-copy-id sur Mac OS X",
+  "headline": "Faire un ssh-copy-id sur Mac OS X",
+  "datePublished": "2012-09-30 11:50:54+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "http://choiz.github.io/author/choiz.html"
+  },
+  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "url": "http://choiz.github.io/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html",
+  "description": "Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous avez dû vous rendre compte que, même si openssh est installé nativement, cette commande n’est pas disponible. Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on peut la rendre disponible ..."
+}
+</script></body>
+</html>

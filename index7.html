@@ -53,109 +53,292 @@
 
 <article>
   <header>
-    <h2><a href="http://choiz.github.io/2010-10-25-commande-svn-pour-ajouter-des-keywords.html#2010-10-25-commande-svn-pour-ajouter-des-keywords">Commande SVN pour ajouter des keywords</a></h2>
+    <h2><a href="http://choiz.github.io/2011-07-26-ignorer-grâce-au-svn.html#2011-07-26-ignorer-grâce-au-svn">Ignorer grâce au SVN</a></h2>
     <p>
-      Posté le lun. 25 octobre 2010 &#8226;
+      Posté le mar. 26 juillet 2011 &#8226;
 Tags :
-      <a href="http://choiz.github.io/tag/svn.html">SVN</a>,      <a href="http://choiz.github.io/tag/subversion.html">Subversion</a>,      <a href="http://choiz.github.io/tag/keyword.html">Keyword</a>,      <a href="http://choiz.github.io/tag/id.html">Id</a>,      <a href="http://choiz.github.io/tag/revision.html">Revision</a>,      <a href="http://choiz.github.io/tag/date.html">Date</a>,      <a href="http://choiz.github.io/tag/author.html">Author</a>,      <a href="http://choiz.github.io/tag/url.html">URL</a>,      <a href="http://choiz.github.io/tag/php.html">PHP</a>,      <a href="http://choiz.github.io/tag/code.html">Code</a>,      <a href="http://choiz.github.io/tag/subversion.html">Subversion</a>    </p>
+      <a href="http://choiz.github.io/tag/svn.html">svn</a>,      <a href="http://choiz.github.io/tag/ignore.html">ignore</a>,      <a href="http://choiz.github.io/tag/fichier.html">fichier</a>,      <a href="http://choiz.github.io/tag/file.html">file</a>,      <a href="http://choiz.github.io/tag/folder.html">folder</a>,      <a href="http://choiz.github.io/tag/dossier.html">dossier</a>,      <a href="http://choiz.github.io/tag/ds_store.html">.DS_Store</a>,      <a href="http://choiz.github.io/tag/_.html">._*</a>,      <a href="http://choiz.github.io/tag/_.html">._</a>,      <a href="http://choiz.github.io/tag/swp.html">.swp</a>,      <a href="http://choiz.github.io/tag/vim.html">Vim</a>,      <a href="http://choiz.github.io/tag/mac-os.html">Mac Os</a>    </p>
   </header>
   <div>
-      <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
-informations dans vos projets il suffit de taper cette commande :</p>
+      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
+<p><em>svn propset svn:ignore</em> ou dans la configuration du svn dans
+<em>~/.subversion/config</em> le <em>global-ignores</em></p>
+<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
+l'on se trouve actuellement il suffit d'executer la commande svn
+suivante :</p>
 <blockquote>
-svn propset svn:keywords &quot;Id&quot; index.php</blockquote>
-<p>Ce qui permet d'ajouter le keyword &quot;Id&quot; sur le fichier index.php</p>
-<p>Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :</p>
+svn propset svn:ignore &quot;._*&quot; .</blockquote>
+<p>Par contre si on veut ignorer tous les fichiers qui commencent par ._
+dans tous les dossiers (et sous dossiers) du svn il faut éditer le
+fichier <em>~/.subversion/config</em> et d'éditer la ligne suivante :</p>
 <blockquote>
-$Id:$</blockquote>
-<p>Une fois le fichier comité vous obtiendrez :</p>
+global-ignores = ._*</blockquote>
+<p>On peut également ajouter d'autres fichiers a ignorer tel que les .swp
+de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci :</p>
 <blockquote>
-$Id: ajax_modif.php 481 2010-10-25 12:02:50Z choiz $</blockquote>
-<p>D'autres keywords sont disponible tel que :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$Revision:$</div>
-<div class="line">$Date:$</div>
-<div class="line">$Author:$</div>
-<div class="line">$URL:$</div>
-</div>
-</blockquote>
-<p>Vous pouvez les ajouter les uns a la suite des autres par exemple pour
-notre fichier index.php je veux ajouter les 4 keywords précédents grâce
-à la commande :</p>
-<blockquote>
-svn propset svn:keywords &quot;Revision Date Author URL&quot; index.php</blockquote>
-<p>Ce qui affichera :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">&nbsp;$Revision: 481 $</div>
-<div class="line">&nbsp;$Date: 2010-10-25 14:02:50 +0200 (lun., 25 oct. 2010) $</div>
-<div class="line">&nbsp;$Author: choiz $</div>
-<div class="line">&nbsp;$URL: svn://svn.choiz.fr/projet/branches/prod/index.php $</div>
-</div>
-</blockquote>
-<p>N'hésitez pas à ajouter des commentaires si vous avez des questions ;)</p>
+global-ignores = ._* .DS_STORE *.swp</blockquote>
 
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://choiz.github.io/2010-09-15-impression-de-commandes-entre-balise-pre.html#2010-09-15-impression-de-commandes-entre-balise-pre">Impression de commandes entre balise &lt;pre&gt;</a></h2>
+    <h2><a href="http://choiz.github.io/2011-07-05-suppression-des-dsstore.html#2011-07-05-suppression-des-dsstore">Suppression des .DS_Store</a></h2>
     <p>
-      Posté le mer. 15 septembre 2010 &#8226;
+      Posté le mar. 05 juillet 2011 &#8226;
 Tags :
-      <a href="http://choiz.github.io/tag/balise.html">Balise</a>,      <a href="http://choiz.github.io/tag/hml.html">hml</a>,      <a href="http://choiz.github.io/tag/balise-pre.html">Balise Pre</a>,      <a href="http://choiz.github.io/tag/pre.html">Pre</a>,      <a href="http://choiz.github.io/tag/print.html">Print</a>,      <a href="http://choiz.github.io/tag/impression.html">Impression</a>,      <a href="http://choiz.github.io/tag/css.html">CSS</a>    </p>
+      <a href="http://choiz.github.io/tag/mac-dsstore.html">Mac .DsStore</a>,      <a href="http://choiz.github.io/tag/mac.html">Mac</a>,      <a href="http://choiz.github.io/tag/ds_store.html">.DS_Store</a>    </p>
   </header>
   <div>
-      <p>J'ai toujours eu pas mal de soucis lors d'impression de différentes
-documentations...</p>
-<p>J'utilise souvent la balise &lt;pre&gt; pour les lignes de commandes et il n'y
-a pas de retour à la ligne fait automatiquement pour cela un petit css
-permet de faire les retours à la ligne lorsque la page est trop grande.</p>
+      <p>Dans une console sur votre mac tappez :</p>
+<blockquote>
+defaults write com.apple.desktopservices DSDontWriteNetworkStores
+true</blockquote>
+<p>Redemarrez le mac.</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-06-30-elément-cliqué-en-js.html#2011-06-30-elément-cliqué-en-js">Elément cliqué en js</a></h2>
+    <p>
+      Posté le jeu. 30 juin 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/js.html">js</a>,      <a href="http://choiz.github.io/tag/element.html">element</a>,      <a href="http://choiz.github.io/tag/click.html">click</a>,      <a href="http://choiz.github.io/tag/javascript.html">javascript</a>,      <a href="http://choiz.github.io/tag/html.html">html</a>    </p>
+  </header>
+  <div>
+      <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de
+javascript :</p>
 <blockquote>
 <div class="line-block">
-<div class="line">pre {</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; white-space: pre-wrap; /* CSS2.1 compliant */</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; white-space: -moz-pre-wrap; /* Mozilla-based browsers */</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; white-space: o-pre-wrap; /* Opera 7+ */</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; word-wrap: break-word;</div>
+<div class="line">function checkclick(e) {</div>
+<div class="line">&nbsp;&nbsp;&nbsp; e = e || window.event;</div>
+<div class="line">&nbsp;&nbsp;&nbsp; var o = e.target || e.srcElement;</div>
+<div class="line">&nbsp;&nbsp;&nbsp; console.log(o);</div>
 <div class="line">}</div>
+<div class="line">document.onclick=checkclick;</div>
 </div>
 </blockquote>
+<p>Pratique pour du debug ;)</p>
 
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://choiz.github.io/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html#2010-07-12-limiter-la-bande-passante-sous-mac-os-x">Limiter la bande passante sous Mac Os X</a></h2>
+    <h2><a href="http://choiz.github.io/2011-05-30-patch-diff.html#2011-05-30-patch-diff">Patch &amp; diff</a></h2>
     <p>
-      Posté le lun. 12 juillet 2010 &#8226;
+      Posté le lun. 30 mai 2011 &#8226;
 Tags :
-      <a href="http://choiz.github.io/tag/limit-brandwith.html">Limit Brandwith</a>,      <a href="http://choiz.github.io/tag/limitation-bande-passante.html">Limitation Bande Passante</a>,      <a href="http://choiz.github.io/tag/mac-os.html">Mac Os</a>,      <a href="http://choiz.github.io/tag/mac-os-x.html">Mac Os X</a>,      <a href="http://choiz.github.io/tag/tuyau.html">Tuyau</a>,      <a href="http://choiz.github.io/tag/tuyau-virtuel.html">Tuyau Virtuel</a>,      <a href="http://choiz.github.io/tag/limit-brandwidth.html">Limit Brandwidth</a>    </p>
+      <a href="http://choiz.github.io/tag/patch.html">Patch</a>,      <a href="http://choiz.github.io/tag/commande.html">Commande</a>,      <a href="http://choiz.github.io/tag/terminal.html">Terminal</a>,      <a href="http://choiz.github.io/tag/diff.html">Diff</a>,      <a href="http://choiz.github.io/tag/version.html">Version</a>    </p>
   </header>
   <div>
-      <p>Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
-virtuel en console.</p>
-<p>Ici on créer un tuyau virtuel de 1Mbit/s.</p>
-<p><tt class="docutils literal">sudo ipfw pipe 1 config bw 1Mbit/s</tt></p>
-<p>On applique ce tuyau au port 80 (pour le téléchargement de fichier via
-un navigateur par exemple).</p>
-<p><tt class="docutils literal">sudo ipfw add 1 pipe 1 proto tcp <span class="pre">src-port</span> 80</tt></p>
-<p>Pour voir le tuyau :</p>
-<p><tt class="docutils literal">sudo ipfw pipe show</tt></p>
-<p>Pour supprimer la règle du port 80 :</p>
-<p><tt class="docutils literal">sudo ipfw del 1</tt></p>
-<p>Pour supprimer le tuyau :</p>
-<p><tt class="docutils literal">sudo ipfw pipe 1 delete</tt></p>
-<p>Bien entendu on peut créer plusieurs tuyau et plusieurs règles
-différentes avec le même tuyau ;)</p>
+      <div class="line-block">
+<div class="line">Patch permet de &quot;patcher&quot; un fichier, dossier, projet ! Pratique
+lorsque vous distribuez du code et que vous voulez le mettre à jour.</div>
+<div class="line">Comment l'utiliser ? Dans un premier temps nous allons faire un
+différentiel de notre version actuelle du projet et de la nouvelle
+version (celle patchée).</div>
+</div>
+<blockquote>
+diff -u version1.php version2.php &gt; mon_patch</blockquote>
+<div class="line-block">
+<div class="line">notre fichier de patch est &quot;mon_patch&quot; si vous ouvrez celui-ci vous
+aurez le différentiel entre les deux fichier. Comment le lire ? Les
+lignes avec des + devant sont les nouvelles lignes celles avec des -
+sont celles a supprimer. C'est pas plus difficile que ça !</div>
+<div class="line">Maintenant j'applique mon patch sur mon fichier version1.php grâce à
+la commande suivante :</div>
+</div>
+<blockquote>
+patch -p0 &lt; mon_patch</blockquote>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-05-29-split-vsplit-dans-vim.html#2011-05-29-split-vsplit-dans-vim">Split &amp; Vsplit dans vim</a></h2>
+    <p>
+      Posté le dim. 29 mai 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/vim.html">vim</a>,      <a href="http://choiz.github.io/tag/fichier.html">fichier</a>,      <a href="http://choiz.github.io/tag/editeur.html">editeur</a>,      <a href="http://choiz.github.io/tag/texte.html">texte</a>,      <a href="http://choiz.github.io/tag/terminal.html">terminal</a>,      <a href="http://choiz.github.io/tag/commande.html">commande</a>,      <a href="http://choiz.github.io/tag/split.html">split</a>,      <a href="http://choiz.github.io/tag/vsplit.html">vsplit</a>,      <a href="http://choiz.github.io/tag/window.html">window</a>,      <a href="http://choiz.github.io/tag/colonnes.html">colonnes</a>,      <a href="http://choiz.github.io/tag/cols.html">cols</a>,      <a href="http://choiz.github.io/tag/columns.html">columns</a>    </p>
+  </header>
+  <div>
+      <p>Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
+pouvoir ouvrir plusieurs fichiers en même temps.</p>
+<p>Pour celà il utilises 2 méthodes soit :</p>
+<ol class="arabic simple">
+<li>la division de la fenêtre horizontal en utilisant</li>
+</ol>
+<p><tt class="docutils literal">:split</tt></p>
+<p>ou</p>
+<p><tt class="docutils literal">:new</tt></p>
+<p>et ensuite</p>
+<p><tt class="docutils literal">:e le_fichier_a_ouvrir</tt></p>
+<ol class="arabic simple" start="2">
+<li>la division de la fenêtre verticalement en utilisant</li>
+</ol>
+<p><tt class="docutils literal">:vsplit</tt></p>
+<p>puis</p>
+<p><tt class="docutils literal">:e le_fichier_a_ouvrir</tt></p>
+<p>Et comme lors de l'utilisation du diff (CTRL + W puis W) pour changer de
+fenêtre (gauche à droite ou droite à gauche ou haut en bas ou bas en
+haut) ou bien en utilisant (CTRL + W puis une fléche directionnelle).</p>
+<p>Pour agrandir ou réduire la fenêtre courante utiliser CTRL + W (puis &gt;
+si vous êtes sur votre fenêtre de droite pour ajouter une colonne, si
+vous êtes sur la fenêtre de gauche ceci supprimera une colonne et vis
+versa avec &lt;) vous pouvez également ajouter / supprimer 5... 10 ou n
+colonnes avec :</p>
+<p><tt class="docutils literal">5&gt;</tt></p>
+<p><tt class="docutils literal">10&gt;</tt></p>
+<p>ou <tt class="docutils literal">n&gt;</tt></p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-05-19-différences-entre-des-fichiers-avec-vim.html#2011-05-19-différences-entre-des-fichiers-avec-vim">Différences entre des fichiers avec Vim</a></h2>
+    <p>
+      Posté le jeu. 19 mai 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/vim.html">Vim</a>,      <a href="http://choiz.github.io/tag/diff.html">Diff</a>,      <a href="http://choiz.github.io/tag/difference.html">Différence</a>,      <a href="http://choiz.github.io/tag/fichiers.html">Fichiers</a>,      <a href="http://choiz.github.io/tag/editeur.html">Editeur</a>,      <a href="http://choiz.github.io/tag/texte.html">Texte</a>,      <a href="http://choiz.github.io/tag/terminal.html">Terminal</a>,      <a href="http://choiz.github.io/tag/console.html">Console</a>,      <a href="http://choiz.github.io/tag/commande.html">Commande</a>    </p>
+  </header>
+  <div>
+      <div class="line-block">
+<div class="line">J'ai souvent besoin de voir les différences entre plusieurs
+fichiers... J'utilise souvent la commande diff dans un terminal, mais
+mon éditeur texte favoris &quot;Vim&quot; sait aussi trés bien faire un
+différentiel.</div>
+<div class="line">Utilisation avec le terminal :</div>
+</div>
+<blockquote>
+$ diff fichier1 fichier2</blockquote>
+<p>Celui-ci retournera les différences directement dans le terminal (pas
+pratique pour l'édition).</p>
+<p>Utilisation avec vim :</p>
+<blockquote>
+$ vim -d fichier1 fichier2</blockquote>
+<p>Ensuite il suffit d'utiliser (CTRL + W puis W) pour changer de fenêtre
+(gauche à droite ou droite à gauche) ou bien en utilisant (CTRL + W puis
+fléche de droite ou gauche) suivant la direction ou on veut aller ;)</p>
+<p>Pour le reste des commandes reportez-vous au <a class="reference external" href="http://matrix.samizdat.net/pratique/documentation/guide-survie-VI.html">guide de survie de
+vi</a>
+!</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-05-14-migration-dune-base-de-donnée-mysql.html#2011-05-14-migration-dune-base-de-donnée-mysql">Migration d'une base de donnée Mysql</a></h2>
+    <p>
+      Posté le sam. 14 mai 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/mysql.html">Mysql</a>,      <a href="http://choiz.github.io/tag/mysqldump.html">Mysqldump</a>,      <a href="http://choiz.github.io/tag/database.html">Database</a>,      <a href="http://choiz.github.io/tag/migration.html">Migration</a>,      <a href="http://choiz.github.io/tag/dump-sql.html">Dump Sql</a>,      <a href="http://choiz.github.io/tag/sql.html">Sql</a>    </p>
+  </header>
+  <div>
+      <p>Pour faire mes migrations de base de donnée j'utilise en ligne de
+commande mysqldump et mysql.</p>
+<div class="line-block">
+<div class="line">Dans un premier temps je sauve ma base <strong>*database*</strong> dans le fichier
+<strong>*fichierdump.sql*</strong></div>
+<div class="line">J'utilise l'utilisateur mysql : <strong>*utilisateur*</strong> avec son mot de
+passe <strong>*p4ssw0rd*</strong></div>
+</div>
+<blockquote>
+$ mysqldump -u utilisateur -p p4ssw0rd database &gt; fichierdump.sql</blockquote>
+<p>Une fois que j'ai mon fichier <strong>*fichierdump.sql*</strong> je le met sur la
+nouvelle machine. Ensuite j'execute la commande suivante :</p>
+<blockquote>
+$ mysql -u utilisateur -pp4ssw0rd database &lt; fichierdump.sql</blockquote>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html#2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php">Petit tips pour les utilisateurs de VIM et PHP</a></h2>
+    <p>
+      Posté le mer. 13 avril 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/php.html">PHP</a>,      <a href="http://choiz.github.io/tag/vim.html">Vim</a>,      <a href="http://choiz.github.io/tag/vi.html">Vi</a>,      <a href="http://choiz.github.io/tag/console.html">Console</a>,      <a href="http://choiz.github.io/tag/mac.html">Mac</a>,      <a href="http://choiz.github.io/tag/linux.html">Linux</a>    </p>
+  </header>
+  <div>
+      <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
+dans la console je tape la commande :</p>
+<blockquote>
+php -l fichier_a_tester.php</blockquote>
+<p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
+Pour la faire il suffit de faire &quot;ESC&quot; pour passer en mode commande de
+VIM puis :</p>
+<blockquote>
+:!php -l %</blockquote>
+<p>Ce qui produira exactement le même résultat qu'en console.</p>
+<div class="line-block">
+<div class="line"><strong>:!</strong> (permet l'execution d'une commande système dans vim)</div>
+<div class="line">ensuite <strong>php -l</strong></div>
+<div class="line"><strong>%</strong> (recupere le nom du fichier courant avec le path complet)</div>
+</div>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-04-09-surround-avec-vim.html#2011-04-09-surround-avec-vim">Surround avec Vim</a></h2>
+    <p>
+      Posté le sam. 09 avril 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/vim.html">vim</a>,      <a href="http://choiz.github.io/tag/config.html">config</a>,      <a href="http://choiz.github.io/tag/vimrc.html">.vimrc</a>,      <a href="http://choiz.github.io/tag/plugin.html">plugin</a>,      <a href="http://choiz.github.io/tag/vim-plugin.html">vim plugin</a>,      <a href="http://choiz.github.io/tag/surround.html">surround</a>,      <a href="http://choiz.github.io/tag/surroundvim.html">surround.vim</a>,      <a href="http://choiz.github.io/tag/tags.html">tags</a>,      <a href="http://choiz.github.io/tag/html.html">html</a>    </p>
+  </header>
+  <div>
+      <p>J'ai ajouté quelques plugins dans ma configuration de Vim dont :
+surround.vim.</p>
+<p>Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un
+texte.</p>
+<p>Comment l'utiliser ?</p>
+<p><tt class="docutils literal">VS&lt;b&gt;</tt> permet d'ajouter les balises &lt;b&gt; et &lt;/b&gt; avant et apres la
+ligne courante et d'indenter celle-ci.</p>
+<p><tt class="docutils literal">vims&lt;a&gt;</tt> permet d'ajouter le tag &lt;a&gt;&lt;/a&gt; autour du mot sur lequel
+vous vous trouvez.</p>
+<p><tt class="docutils literal">cst&lt;b&gt;</tt> permet de changer le tag &lt;a&gt; (change surround tag) par &lt;b&gt;</p>
+<p><tt class="docutils literal">dst</tt> permet de supprimer le tag</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://choiz.github.io/2011-03-08-tpaamayimnekudotayim.html#2011-03-08-tpaamayimnekudotayim">T_PAAMAYIM_NEKUDOTAYIM</a></h2>
+    <p>
+      Posté le mar. 08 mars 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/paamayim-nekudotayim.html">Paamayim Nekudotayim</a>,      <a href="http://choiz.github.io/tag/operateur-de-resolution-de-portee.html">opérateur de résolution de portée</a>,      <a href="http://choiz.github.io/tag/.html">::</a>,      <a href="http://choiz.github.io/tag/php.html">PHP</a>,      <a href="http://choiz.github.io/tag/error.html">Error</a>,      <a href="http://choiz.github.io/tag/erreur.html">Erreur</a>    </p>
+  </header>
+  <div>
+      <p>Voilà a quoi correspond cette erreur pour ceux qui demandent :</p>
+<p><tt class="docutils literal">Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695</tt></p>
+<p>Le Paamayim Nekudotayim est l'opérateur de résolution de portée.</p>
+<p><a class="reference external" href="http://fr.php.net/manual/fr/language.oop5.paamayim-nekudotayim.php">Dans la doc
+PHP</a>
+:</p>
+<p><em>L'opérateur de résolution de portée (aussi appelé Paamayim Nekudotayim)
+ou, en termes plus simples, le symbole &quot;double deux-points&quot; (::),
+fournit un moyen d'accéder aux membres
+`statics &lt;http://fr.php.net/manual/fr/language.oop5.static.php&gt;`__ ou
+`constants &lt;http://fr.php.net/manual/fr/language.oop5.constants.php&gt;`__.</em></p>
+<p>Comme on dit &quot;RTFM&quot; hein ;)</p>
 
   </div>
 </article>
 
   <div class="pagination">
+    <a class="btn" href="http://choiz.github.io/index8.html">
+      <i class="fa fa-angle-left"></i> Anciens articles
+    </a>
       <a class="btn float-right" href="http://choiz.github.io/index6.html">
         Nouveaux articles <i class="fa fa-angle-right"></i>
       </a>

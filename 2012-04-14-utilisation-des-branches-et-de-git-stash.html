@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/font-awesome.min.css">
+  <link href="http://choiz.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <link rel="shortcut icon" href="http://localhost:8000//favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000//favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+<meta name="author" content="choiz" />
+<meta name="description" content="Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc git stash, voyons voir comment l'utiliser simplement. On regarde l'état du status et des branches : (git status / git branch) $ git ..." />
+<meta name="keywords" content="git, git stash, git stash pop, git stash list, git branch, git checkout">
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:title" content="Utilisation des branches et de git stash"/>
+<meta property="og:description" content="Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc git stash, voyons voir comment l'utiliser simplement. On regarde l'état du status et des branches : (git status / git branch) $ git ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://choiz.github.io/2012-04-14-utilisation-des-branches-et-de-git-stash.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2012-04-14 16:32:42+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://choiz.github.io/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="git"/>
+<meta property="article:tag" content="git stash"/>
+<meta property="article:tag" content="git stash pop"/>
+<meta property="article:tag" content="git stash list"/>
+<meta property="article:tag" content="git branch"/>
+<meta property="article:tag" content="git checkout"/>
+<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">  <title>ChoiZ &ndash; Utilisation des branches et de git stash</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://choiz.github.io">
+        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="" title="">
+      </a>
+      <h1><a href="http://choiz.github.io"></a></h1>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</p>
+      <p>J'ai fondé plusieurs webradios depuis l'an 2000, actuellement je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="2012-04-14-utilisation-des-branches-et-de-git-stash">Utilisation des branches et de git stash</h1>
+    <p>Posté le sam. 14 avril 2012</p>
+  </header>
+  <div>
+    <div class="line-block">
+<div class="line">Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
+sur une branche qui sont pas a commiter dans l'immédiat.</div>
+<div class="line">J'utilise donc git stash, voyons voir comment l'utiliser simplement.</div>
+</div>
+<p>On regarde l'état du status et des branches : (git status / git branch)</p>
+<blockquote>
+<div class="line-block">
+<div class="line">$ git st</div>
+<div class="line"># On branch master</div>
+<div class="line">nothing to commit (working directory clean)</div>
+</div>
+<div class="line-block">
+<div class="line">$ git br</div>
+<div class="line">* master</div>
+</div>
+</blockquote>
+<p>Je travail sur la branche master et je n'ai pas d'autre branche. Je vais
+donc faire une branche API pour mon projet.</p>
+<blockquote>
+<p>$ git br API</p>
+<p>$ git br</p>
+<div class="line-block">
+<div class="line">&nbsp; API</div>
+<div class="line">* master</div>
+</div>
+</blockquote>
+<p>Maintenant je vais changer de branche (git checkout) pour être sur ma
+branche API et modifier les fichiers sur cette branche.</p>
+<blockquote>
+<div class="line-block">
+<div class="line">$ git co API</div>
+<div class="line">Switched to branch 'API'</div>
+<div class="line">$ git br</div>
+<div class="line">* API</div>
+<div class="line">&nbsp; master</div>
+</div>
+</blockquote>
+<p>Ok maintenant je vais modifier un mon fichier manage.py sur ma branche
+API.</p>
+<blockquote>
+<div class="line-block">
+<div class="line">$ git st</div>
+<div class="line"># On branch API</div>
+<div class="line"># Changes not staged for commit:</div>
+<div class="line">#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</div>
+<div class="line">#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working
+directory)</div>
+<div class="line">#</div>
+<div class="line">#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py</div>
+<div class="line">#</div>
+<div class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</div>
+</div>
+</blockquote>
+<p>Si je veux revenir sur mon master, sans avoir la modification du
+manage.py je vais devoir utiliser git stash (qui sauvegardera mes
+modifications du manage.py)</p>
+<blockquote>
+<div class="line-block">
+<div class="line">$ git sta</div>
+<div class="line">Saved working directory and index state WIP on API: 8b6342d Fix
+register.py</div>
+<div class="line">HEAD is now at 8b6342d Fix register.py</div>
+</div>
+<div class="line-block">
+<div class="line">$ git st</div>
+<div class="line"># On branch API</div>
+<div class="line">nothing to commit (working directory clean)</div>
+</div>
+</blockquote>
+<p>Maintenant que notre branche est propre on peut changer de branche
+revenir sur le master par exemple.</p>
+<blockquote>
+<div class="line-block">
+<div class="line">$ git co master</div>
+<div class="line">Switched to branch 'master'</div>
+</div>
+<div class="line-block">
+<div class="line">$ git st</div>
+<div class="line"># On branch master</div>
+<div class="line">nothing to commit (working directory clean)</div>
+</div>
+</blockquote>
+<p>On peut donc travailler tranquillement sur la branche master. Puis
+revenir sur notre branche API, lister les stash (git stash list)
+récupérer les modifications précédentes (git stash pop).</p>
+<blockquote>
+<div class="line-block">
+<div class="line">$ git co API</div>
+<div class="line">Switched to branch 'API'</div>
+</div>
+<div class="line-block">
+<div class="line">$ git stast</div>
+<div class="line"><a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>}: WIP on API: 8b6342d Fix register.py</div>
+</div>
+<div class="line-block">
+<div class="line">$ git stapp</div>
+<div class="line"># On branch API</div>
+<div class="line"># Changes not staged for commit:</div>
+<div class="line">#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</div>
+<div class="line">#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working
+directory)</div>
+<div class="line">#</div>
+<div class="line">#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py</div>
+<div class="line">#</div>
+<div class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</div>
+<div class="line">Dropped <a class="reference external" href="mailto:refs/stash&#64;{0">refs/stash&#64;{0</a>} (533906a52b923a8960fa0f6fdf17a288c94f233a)</div>
+</div>
+<div class="line-block">
+<div class="line">$ git st</div>
+<div class="line"># On branch API</div>
+<div class="line"># Changes not staged for commit:</div>
+<div class="line">#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</div>
+<div class="line">#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working
+directory)</div>
+<div class="line">#</div>
+<div class="line">#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py</div>
+<div class="line">#</div>
+<div class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</div>
+</div>
+</blockquote>
+<p>Maintenant je peux continuer les modifications sur ma branche API
+réutilise git stash si besoin ou les commiter, merger ma branche...</p>
+<p>/!\ Attention les commandes git st, git co, git br, git sta, git stapp
+sont des alias qui se trouvent dans mon fichier .gitconfig (voir les
+billets précédents) /!\</p>
+<p>git stash (sauve le travail dans un stash) mon alias = git sta</p>
+<p>git stash list (liste les stash) mon alias = git stast (ou git stalist)</p>
+<p>git stash pop (récupére le dernier stash enregistré <a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>},
+l'applique et le supprime de la liste) mon alias = git stapp</p>
+<p>git stash apply (récupére le dernier stash enregistré <a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>} et
+l'applique)</p>
+<p>Et pour rien n'oublier (RTFM) : man git stash</p>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://choiz.github.io/tag/git.html">git</a>
+      <a href="http://choiz.github.io/tag/git-stash.html">git stash</a>
+      <a href="http://choiz.github.io/tag/git-stash-pop.html">git stash pop</a>
+      <a href="http://choiz.github.io/tag/git-stash-list.html">git stash list</a>
+      <a href="http://choiz.github.io/tag/git-branch.html">git branch</a>
+      <a href="http://choiz.github.io/tag/git-checkout.html">git checkout</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Utilisation des branches et de git stash",
+  "headline": "Utilisation des branches et de git stash",
+  "datePublished": "2012-04-14 16:32:42+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "http://choiz.github.io/author/choiz.html"
+  },
+  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "url": "http://choiz.github.io/2012-04-14-utilisation-des-branches-et-de-git-stash.html",
+  "description": "Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc git stash, voyons voir comment l'utiliser simplement. On regarde l'état du status et des branches : (git status / git branch) $ git ..."
+}
+</script></body>
+</html>
