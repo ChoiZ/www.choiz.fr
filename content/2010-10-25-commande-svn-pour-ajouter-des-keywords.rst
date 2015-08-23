@@ -42,5 +42,3 @@ Ce qui affichera :
     |  $Author: choiz $
     |  $URL: svn://svn.choiz.fr/projet/branches/prod/index.php $
 
-N'hésitez pas à ajouter des commentaires si vous avez des questions ;)
-
