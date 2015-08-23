@@ -23,10 +23,7 @@ les préférences d'iTerm2.
   "0xd".
 | J'ai également ajouter 2 raccourcis bien pratiques :
 
-- "alt et fleche de gauche" soit "⌥←" avec le code "[H" permet de
-revenir au debut de la ligne de commande que l'on tape (pratique si on
-oublie un argument).
+- "alt et fleche de gauche" soit "⌥←" avec le code "[H" permet de revenir au debut de la ligne de commande que l'on tape (pratique si on oublie un argument).
 
-- "alt et fleche de droite" soit "⌥→" avec le code "[F" pour aller à la
-fin de la ligne.
+- "alt et fleche de droite" soit "⌥→" avec le code "[F" pour aller à la fin de la ligne.
 
