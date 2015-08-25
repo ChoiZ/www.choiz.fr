@@ -7,11 +7,11 @@ Suppression des branches distantes inexistantes
 :slug: 2015-08-25-suppression-des-branches-distantes-inexistantes
 :status: published
 
-Lors d'un developpement j'ai créer une branche "add_namespace" qui m'a permis d'ajouter des namespaces a différents fichiers PHP.
+Lors d'un developpement j'ai créé une branche "add_namespace" qui m'a permis d'ajouté des namespaces a différents fichiers PHP.
 
 Une fois la modification faite j'ai envoyé ma branche sur l'origin, en faisant un "pull request" (github) ou "merge request" (gitlab).
 
-Un autre développeur a donc accepté mon pull request (il a donc mergé la branche) et a supprimer ma branche de l'origine.
+Un autre développeur a accepté mon pull request (il a donc mergé la branche) et a supprimé ma branche de l'origine.
 
 Sur mon environement je vois toujours cette branche.
 
@@ -25,7 +25,7 @@ Sur mon environement je vois toujours cette branche.
 
     remote/origin/master
 
-Pour pouvoir effacer cette remote qui n'existe plus il suffit de tapper la commande :
+Pour pouvoir effacer cette branche dans le remote, il suffit de tapper la commande :
 
     git remote prune origin
 
@@ -35,7 +35,7 @@ Pour pouvoir effacer cette remote qui n'existe plus il suffit de tapper la comma
 
      \* [éliminé] origin/add_namespace
 
-Maintenant il suffit de vérifier que tout est propre :
+Maintenant, vérifions que tout est propre :
 
     git branch -a
 
