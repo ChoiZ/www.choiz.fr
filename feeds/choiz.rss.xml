@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChoiZ</title><link>http://choiz.github.io/</link><description>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</description><atom:link href="http://choiz.github.io/feeds/choiz.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 25 Aug 2015 13:43:05 +0200</lastBuildDate><item><title>Suppression des branches distantes inexistantes</title><link>http://choiz.github.io/2015-08-25-suppression-des-branches-distantes-inexistantes.html</link><description>&lt;p&gt;Lors d'un developpement j'ai créé une branche &amp;quot;add_namespace&amp;quot; qui m'a permis d'ajouté des namespaces a différents fichiers PHP.&lt;/p&gt;
 &lt;p&gt;Une fois la modification faite j'ai envoyé ma branche sur l'origin, en faisant un &amp;quot;pull request&amp;quot; (github) ou &amp;quot;merge request&amp;quot; (gitlab).&lt;/p&gt;
 &lt;p&gt;Un autre développeur a accepté mon pull request (il a donc mergé la branche) et a supprimé ma branche de l'origine.&lt;/p&gt;
-&lt;p&gt;Sur mon environement je vois toujours cette branche.&lt;/p&gt;
+&lt;p&gt;Sur mon environnement je vois toujours cette branche.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;git branch -a&lt;/p&gt;
 &lt;p&gt;* master&lt;/p&gt;
