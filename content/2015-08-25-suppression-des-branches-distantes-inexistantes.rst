@@ -13,7 +13,7 @@ Une fois la modification faite j'ai envoyé ma branche sur l'origin, en faisant 
 
 Un autre développeur a accepté mon pull request (il a donc mergé la branche) et a supprimé ma branche de l'origine.
 
-Sur mon environement je vois toujours cette branche.
+Sur mon environnement je vois toujours cette branche.
 
     git branch -a
 
