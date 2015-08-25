@@ -18,5 +18,5 @@ Voilà mon petit fichier .gitignore
     | .DS_STORE
     |
     | # .swp (Vim)
-    | *.swp
+    | \*.swp
 
