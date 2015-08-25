@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="http://choiz.github.io/" rel="alternate"></link><link href="http://choiz.github.io/feeds/all.atom.xml" rel="self"></link><id>http://choiz.github.io/</id><updated>2015-08-25T13:43:05+02:00</updated><entry><title>Suppression des branches distantes inexistantes</title><link href="http://choiz.github.io/2015-08-25-suppression-des-branches-distantes-inexistantes.html" rel="alternate"></link><updated>2015-08-25T13:43:05+02:00</updated><author><name>choiz</name></author><id>tag:choiz.github.io,2015-08-25:2015-08-25-suppression-des-branches-distantes-inexistantes.html</id><summary type="html">&lt;p&gt;Lors d'un developpement j'ai créer une branche &amp;quot;add_namespace&amp;quot; qui m'a permis d'ajouter des namespaces a différents fichiers PHP.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="http://choiz.github.io/" rel="alternate"></link><link href="http://choiz.github.io/feeds/all.atom.xml" rel="self"></link><id>http://choiz.github.io/</id><updated>2015-08-25T13:43:05+02:00</updated><entry><title>Suppression des branches distantes inexistantes</title><link href="http://choiz.github.io/2015-08-25-suppression-des-branches-distantes-inexistantes.html" rel="alternate"></link><updated>2015-08-25T13:43:05+02:00</updated><author><name>choiz</name></author><id>tag:choiz.github.io,2015-08-25:2015-08-25-suppression-des-branches-distantes-inexistantes.html</id><summary type="html">&lt;p&gt;Lors d'un developpement j'ai créé une branche &amp;quot;add_namespace&amp;quot; qui m'a permis d'ajouté des namespaces a différents fichiers PHP.&lt;/p&gt;
 &lt;p&gt;Une fois la modification faite j'ai envoyé ma branche sur l'origin, en faisant un &amp;quot;pull request&amp;quot; (github) ou &amp;quot;merge request&amp;quot; (gitlab).&lt;/p&gt;
-&lt;p&gt;Un autre développeur a donc accepté mon pull request (il a donc mergé la branche) et a supprimer ma branche de l'origine.&lt;/p&gt;
+&lt;p&gt;Un autre développeur a accepté mon pull request (il a donc mergé la branche) et a supprimé ma branche de l'origine.&lt;/p&gt;
 &lt;p&gt;Sur mon environement je vois toujours cette branche.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;git branch -a&lt;/p&gt;
@@ -10,14 +10,14 @@
 &lt;p&gt;remote/origin/add_namespace&lt;/p&gt;
 &lt;p&gt;remote/origin/master&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Pour pouvoir effacer cette remote qui n'existe plus il suffit de tapper la commande :&lt;/p&gt;
+&lt;p&gt;Pour pouvoir effacer cette branche dans le remote, il suffit de tapper la commande :&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;git remote prune origin&lt;/p&gt;
 &lt;p&gt;Élimination de origin&lt;/p&gt;
 &lt;p&gt;URL : &lt;a class="reference external" href="mailto:git&amp;#64;git.mondomain.com"&gt;git&amp;#64;git.mondomain.com&lt;/a&gt;:mondepot.git&lt;/p&gt;
 &lt;p&gt;&amp;nbsp;* [éliminé] origin/add_namespace&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Maintenant il suffit de vérifier que tout est propre :&lt;/p&gt;
+&lt;p&gt;Maintenant, vérifions que tout est propre :&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;git branch -a&lt;/p&gt;
 &lt;p&gt;* master&lt;/p&gt;

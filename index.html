@@ -62,9 +62,9 @@ Tags :
       <a href="http://choiz.github.io/tag/git.html">git</a>,      <a href="http://choiz.github.io/tag/branch.html">branch</a>,      <a href="http://choiz.github.io/tag/remote.html">remote</a>,      <a href="http://choiz.github.io/tag/prune.html">prune</a>,      <a href="http://choiz.github.io/tag/origin.html">origin</a>    </p>
   </header>
   <div>
-      <p>Lors d'un developpement j'ai créer une branche &quot;add_namespace&quot; qui m'a permis d'ajouter des namespaces a différents fichiers PHP.</p>
+      <p>Lors d'un developpement j'ai créé une branche &quot;add_namespace&quot; qui m'a permis d'ajouté des namespaces a différents fichiers PHP.</p>
 <p>Une fois la modification faite j'ai envoyé ma branche sur l'origin, en faisant un &quot;pull request&quot; (github) ou &quot;merge request&quot; (gitlab).</p>
-<p>Un autre développeur a donc accepté mon pull request (il a donc mergé la branche) et a supprimer ma branche de l'origine.</p>
+<p>Un autre développeur a accepté mon pull request (il a donc mergé la branche) et a supprimé ma branche de l'origine.</p>
 <p>Sur mon environement je vois toujours cette branche.</p>
 <blockquote>
 <p>git branch -a</p>
@@ -73,14 +73,14 @@ Tags :
 <p>remote/origin/add_namespace</p>
 <p>remote/origin/master</p>
 </blockquote>
-<p>Pour pouvoir effacer cette remote qui n'existe plus il suffit de tapper la commande :</p>
+<p>Pour pouvoir effacer cette branche dans le remote, il suffit de tapper la commande :</p>
 <blockquote>
 <p>git remote prune origin</p>
 <p>Élimination de origin</p>
 <p>URL : <a class="reference external" href="mailto:git&#64;git.mondomain.com">git&#64;git.mondomain.com</a>:mondepot.git</p>
 <p>&nbsp;* [éliminé] origin/add_namespace</p>
 </blockquote>
-<p>Maintenant il suffit de vérifier que tout est propre :</p>
+<p>Maintenant, vérifions que tout est propre :</p>
 <blockquote>
 <p>git branch -a</p>
 <p>* master</p>
