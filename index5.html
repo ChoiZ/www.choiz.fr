@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/style.min.css">
   <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="http://choiz.github.io/theme/css/font-awesome.min.css">
   <link href="http://choiz.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -17,7 +18,7 @@
 <meta property="og:type" content="blog"/>
 <meta property="og:title" content="ChoiZ"/>
 <meta property="og:description" content=""/>
-<meta property="og:locale" content="fr_FR"/>
+<meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://choiz.github.io"/>
 <meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">
   <title>ChoiZ</title>
@@ -28,9 +29,7 @@
       <a href="http://choiz.github.io">
         <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="Blog de François LASSERRE, ingénieur informatique." title="Blog de François LASSERRE, ingénieur informatique.">
       </a>
-      <div>
-          <a href="http://choiz.github.io">Blog de François LASSERRE, ingénieur informatique.</a>
-      </div>
+      <h1><a href="http://choiz.github.io">Blog de François LASSERRE, ingénieur informatique.</a></h1>
       <nav>
         <ul class="list">
           <li><a href="/">Home</a></li>
@@ -55,9 +54,37 @@
 
 <article>
   <header>
+    <h2><a href="http://choiz.github.io/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis.html#2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis">Voir le contenu d'un fichier dans un stash précis (git)</a></h2>
+    <p>
+      Posté le Ven 06 juillet 2012 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/git.html">git</a>,      <a href="http://choiz.github.io/tag/stash.html">stash</a>,      <a href="http://choiz.github.io/tag/content.html">content</a>,      <a href="http://choiz.github.io/tag/file.html">file</a>,      <a href="http://choiz.github.io/tag/file-content.html">file content</a>,      <a href="http://choiz.github.io/tag/git-stash.html">git stash</a>,      <a href="http://choiz.github.io/tag/show.html">show</a>    </p>
+  </header>
+  <div>
+      <p>Pour lister les stash :</p>
+<p><tt class="docutils literal">git stash list</tt></p>
+<blockquote>
+<a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>}: WIP on BranchName: 5d8a556 Edit file.js
+<a class="reference external" href="mailto:stash&#64;{1">stash&#64;{1</a>}: WIP on&nbsp;BranchName: 66dfe78 Edit file.css
+…
+<a class="reference external" href="mailto:stash&#64;{5">stash&#64;{5</a>}: WIP on&nbsp;BranchName: 3bb67ff Add file.css file.js</blockquote>
+<p>Pour voir le contenu d'un stash :</p>
+<p><tt class="docutils literal">git stash show</tt></p>
+<blockquote>
+<a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>} chemin/vers/mon/fichier.js | 199 ++++++++++++++++++++++++++--------
+chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------</blockquote>
+<p>Pour voir le contenu de &quot;chemin/vers/mon/fichier.js&quot; qui est dans le
+stash{0}</p>
+<p><tt class="docutils literal">git show <span class="pre">stash&#64;{0}:chemin/vers/mon/fichier.js</span></tt></p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://choiz.github.io/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html#2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight">Ajout dans mon .vimrc de matchadd() &amp; highlight</a></h2>
     <p>
-      Posté le ven. 27 avril 2012 &#8226;
+      Posté le Ven 27 avril 2012 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/vimrc.html">vimrc</a>,      <a href="http://choiz.github.io/tag/vim.html">vim</a>,      <a href="http://choiz.github.io/tag/config-file.html">config file</a>,      <a href="http://choiz.github.io/tag/vimrc.html">.vimrc</a>,      <a href="http://choiz.github.io/tag/todo.html">todo</a>,      <a href="http://choiz.github.io/tag/notice.html">notice</a>,      <a href="http://choiz.github.io/tag/fixme.html">fixme</a>,      <a href="http://choiz.github.io/tag/highlight.html">highlight</a>,      <a href="http://choiz.github.io/tag/matchadd.html">matchadd</a>    </p>
   </header>
@@ -86,7 +113,7 @@ Tags :
   <header>
     <h2><a href="http://choiz.github.io/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html#2012-04-18-reprendre-la-main-sur-un-screen-pas-detached">Reprendre la main sur un Screen pas &quot;detached&quot;</a></h2>
     <p>
-      Posté le mer. 18 avril 2012 &#8226;
+      Posté le Mer 18 avril 2012 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/attached.html">attached</a>,      <a href="http://choiz.github.io/tag/detached.html">detached</a>,      <a href="http://choiz.github.io/tag/detacher.html">détacher</a>,      <a href="http://choiz.github.io/tag/screen.html">screen</a>,      <a href="http://choiz.github.io/tag/reattacher.html">réattacher</a>,      <a href="http://choiz.github.io/tag/linux.html">linux</a>,      <a href="http://choiz.github.io/tag/cli.html">cli</a>    </p>
   </header>
@@ -110,7 +137,7 @@ $ screen -dRR</blockquote>
   <header>
     <h2><a href="http://choiz.github.io/2012-04-14-utilisation-des-branches-et-de-git-stash.html#2012-04-14-utilisation-des-branches-et-de-git-stash">Utilisation des branches et de git stash</a></h2>
     <p>
-      Posté le sam. 14 avril 2012 &#8226;
+      Posté le Sam 14 avril 2012 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/git.html">git</a>,      <a href="http://choiz.github.io/tag/git-stash.html">git stash</a>,      <a href="http://choiz.github.io/tag/git-stash-pop.html">git stash pop</a>,      <a href="http://choiz.github.io/tag/git-stash-list.html">git stash list</a>,      <a href="http://choiz.github.io/tag/git-branch.html">git branch</a>,      <a href="http://choiz.github.io/tag/git-checkout.html">git checkout</a>    </p>
   </header>
@@ -256,7 +283,7 @@ l'applique)</p>
   <header>
     <h2><a href="http://choiz.github.io/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html#2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande">Renomer des fichiers en CLI (ligne de commande)</a></h2>
     <p>
-      Posté le sam. 14 avril 2012 &#8226;
+      Posté le Sam 14 avril 2012 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/cli.html">CLI</a>,      <a href="http://choiz.github.io/tag/rename.html">rename</a>,      <a href="http://choiz.github.io/tag/renommer.html">renommer</a>,      <a href="http://choiz.github.io/tag/fichiers.html">fichiers</a>,      <a href="http://choiz.github.io/tag/wav.html">wav</a>,      <a href="http://choiz.github.io/tag/wav.html">WAV</a>    </p>
   </header>
@@ -277,7 +304,7 @@ correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
   <header>
     <h2><a href="http://choiz.github.io/2012-04-13-update-gitconfig.html#2012-04-13-update-gitconfig">Update .gitconfig</a></h2>
     <p>
-      Posté le ven. 13 avril 2012 &#8226;
+      Posté le Ven 13 avril 2012 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/git.html">git</a>,      <a href="http://choiz.github.io/tag/gitconfig.html">gitconfig</a>,      <a href="http://choiz.github.io/tag/git-pull.html">git pull</a>,      <a href="http://choiz.github.io/tag/git-push.html">git push</a>,      <a href="http://choiz.github.io/tag/git-diff.html">git diff</a>,      <a href="http://choiz.github.io/tag/git-stash.html">git stash</a>,      <a href="http://choiz.github.io/tag/stash.html">stash</a>    </p>
   </header>
@@ -350,7 +377,7 @@ Tags :
   <header>
     <h2><a href="http://choiz.github.io/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html#2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore">Git mes fichiers de config gitconfig / gitignore</a></h2>
     <p>
-      Posté le mar. 31 janvier 2012 &#8226;
+      Posté le Mar 31 janvier 2012 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/git.html">git</a>,      <a href="http://choiz.github.io/tag/gitconfig.html">gitconfig</a>,      <a href="http://choiz.github.io/tag/gitignore.html">gitignore</a>,      <a href="http://choiz.github.io/tag/git-color.html">git color</a>,      <a href="http://choiz.github.io/tag/git-tools.html">git tools</a>,      <a href="http://choiz.github.io/tag/git-alias.html">git alias</a>,      <a href="http://choiz.github.io/tag/git-merge.html">git merge</a>,      <a href="http://choiz.github.io/tag/git-diff.html">git diff</a>,      <a href="http://choiz.github.io/tag/git-editor.html">git editor</a>,      <a href="http://choiz.github.io/tag/git-excludesfile.html">git excludesfile</a>    </p>
   </header>
@@ -419,7 +446,7 @@ Tags :
   <header>
     <h2><a href="http://choiz.github.io/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html#2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh">Créer paire de clé pour se connecter en SSH</a></h2>
     <p>
-      Posté le ven. 13 janvier 2012 &#8226;
+      Posté le Ven 13 janvier 2012 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/cle-publique.html">clé publique</a>,      <a href="http://choiz.github.io/tag/cle-privee.html">clé privée</a>,      <a href="http://choiz.github.io/tag/connexion-ssh.html">connexion ssh</a>,      <a href="http://choiz.github.io/tag/authorized_keys.html">authorized_keys</a>,      <a href="http://choiz.github.io/tag/ssh.html">ssh</a>,      <a href="http://choiz.github.io/tag/ssh.html">.ssh</a>    </p>
   </header>
@@ -449,7 +476,7 @@ ssh-copy-id -i ~/.ssh/id_dsa.pub <a class="reference external" href="mailto:user
   <header>
     <h2><a href="http://choiz.github.io/2011-12-08-bug-firefox-avec-une-iframe-blanche.html#2011-12-08-bug-firefox-avec-une-iframe-blanche">Bug Firefox avec une iFrame blanche</a></h2>
     <p>
-      Posté le jeu. 08 décembre 2011 &#8226;
+      Posté le Jeu 08 décembre 2011 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/firefox.html">Firefox</a>,      <a href="http://choiz.github.io/tag/bug.html">Bug</a>,      <a href="http://choiz.github.io/tag/iframe.html">iFrame</a>,      <a href="http://choiz.github.io/tag/displaynone.html">display:none</a>,      <a href="http://choiz.github.io/tag/css.html">css</a>,      <a href="http://choiz.github.io/tag/white-iframe.html">white iframe</a>    </p>
   </header>
@@ -473,7 +500,7 @@ affiche le div en display:block.</p>
   <header>
     <h2><a href="http://choiz.github.io/2011-12-04-php-gettext-debian.html#2011-12-04-php-gettext-debian">PHP + Gettext + Debian</a></h2>
     <p>
-      Posté le dim. 04 décembre 2011 &#8226;
+      Posté le Dim 04 décembre 2011 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/mo.html">.mo</a>,      <a href="http://choiz.github.io/tag/po.html">.po</a>,      <a href="http://choiz.github.io/tag/etclocale.html">/etc/locale</a>,      <a href="http://choiz.github.io/tag/lc_all.html">LC_ALL</a>,      <a href="http://choiz.github.io/tag/gettext.html">gettext</a>,      <a href="http://choiz.github.io/tag/php.html">php</a>,      <a href="http://choiz.github.io/tag/php-gettext.html">php-gettext</a>,      <a href="http://choiz.github.io/tag/setlocale.html">setlocale</a>,      <a href="http://choiz.github.io/tag/xgettext.html">xgettext</a>    </p>
   </header>
@@ -569,51 +596,6 @@ web :</p>
 </blockquote>
 
   </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://choiz.github.io/2011-12-02-clavier-apple-sur-debian.html#2011-12-02-clavier-apple-sur-debian">Clavier Apple sur debian</a></h2>
-    <p>
-      Posté le ven. 02 décembre 2011 &#8226;
-Tags :
-      <a href="http://choiz.github.io/tag/clavier.html">Clavier</a>,      <a href="http://choiz.github.io/tag/apple.html">Apple</a>,      <a href="http://choiz.github.io/tag/mapage.html">Mapage</a>,      <a href="http://choiz.github.io/tag/debian.html">Debian</a>,      <a href="http://choiz.github.io/tag/linux.html">Linux</a>,      <a href="http://choiz.github.io/tag/keyboard.html">Keyboard</a>,      <a href="http://choiz.github.io/tag/mac.html">Mac</a>,      <a href="http://choiz.github.io/tag/mac-keyboard.html">Mac Keyboard</a>    </p>
-  </header>
-  <div>
-      <div class="line-block">
-<div class="line">Depuis le temps que je bosse avec un clavier Apple [STRIKEOUT:j'ai]
-mes doigts on eu le temps de s'habituer au mapage du clavier. Il y a
-beaucoup de différences entre un clavier AZERTY de PC et un clavier
-AZERTY de Mac.</div>
-<div class="line">Les touches : &#64; # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
-des endroits complétement différents.</div>
-</div>
-<p>Pour modifier la configuration faire en console :</p>
-<blockquote>
-<p>dpkg-reconfigure keyboard-console</p>
-<p>Select keymap from arch list</p>
-<p>azerty</p>
-<p>French</p>
-<p>Apple USB</p>
-<p>dpkg-reconfigure keyboard-configuration</p>
-<p>model: Apple</p>
-<p>layout: France - Macintosh</p>
-<p>Key for AltGr: No AltGr Key</p>
-<p>Compose key: Right Alt (AltGr)</p>
-<p>Use Control+Alt+Backspace to terminate the X server? no</p>
-</blockquote>
-<p>J'ai choisi un clavier Apple, Français Mac, sans touche AltGr, avec
-comme touche de fonctionnalité secondaire &quot;Alt droit&quot;. Malheureusement
-je n'ai pas réussi a mapper l'Alt de gauche pour avoir la même fonction
-qu'à droite...</p>
-<p>Et ensuite j'ai indiqué que je ne voulais pas pouvoir quitter le server
-X avec la combinaison de touche Control+Alt+Backspace.</p>
-<p>Si ceci ne fonctionne pas il faut se rendre dans la configuration du
-clavier de votre gestionnaire de fenêtre (xfce: dans mon cas). Puis
-désactiver le layout par defaut du système.</p>
-<p><img alt="image0" src="http://media.tumblr.com/tumblr_lvjsbrOL8E1qzr4hx.png" /></p>
-
-  </div>
 </article>
 
   <div class="pagination">
@@ -627,7 +609,7 @@ désactiver le layout par defaut du système.</p>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/flex" target="_blank">Flex fork</a> theme by <a href="http://www.choiz.fr" target="_blank">François LASSERRE</a></p>    </footer>
   </main>
 <script type="application/ld+json">
 {

@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChoiZ</title><link>http://choiz.github.io/</link><description>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</description><atom:link href="http://choiz.github.io/feeds/choiz.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 20 Aug 2015 22:03:40 +0200</lastBuildDate><item><title>Migration de Tumblr à Pelican</title><link>http://choiz.github.io/2015-08-20-migration-de-tumblr-a-pelican.html</link><description>&lt;p&gt;J'ai testé pelican, lors de mon voyage à Bruxelles en Thalys le 15 Août 2014.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChoiZ</title><link>http://choiz.github.io/</link><description>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</description><atom:link href="http://choiz.github.io/feeds/choiz.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 25 Aug 2015 13:43:05 +0200</lastBuildDate><item><title>Suppression des branches distantes inexistantes</title><link>http://choiz.github.io/2015-08-25-suppression-des-branches-distantes-inexistantes.html</link><description>&lt;p&gt;Lors d'un developpement j'ai créer une branche &amp;quot;add_namespace&amp;quot; qui m'a permis d'ajouter des namespaces a différents fichiers PHP.&lt;/p&gt;
+&lt;p&gt;Une fois la modification faite j'ai envoyé ma branche sur l'origin, en faisant un &amp;quot;pull request&amp;quot; (github) ou &amp;quot;merge request&amp;quot; (gitlab).&lt;/p&gt;
+&lt;p&gt;Un autre développeur a donc accepté mon pull request (il a donc mergé la branche) et a supprimer ma branche de l'origine.&lt;/p&gt;
+&lt;p&gt;Sur mon environement je vois toujours cette branche.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;git branch -a&lt;/p&gt;
+&lt;p&gt;* master&lt;/p&gt;
+&lt;p&gt;remote/origin/HEAD -&amp;gt; origin/master&lt;/p&gt;
+&lt;p&gt;remote/origin/add_namespace&lt;/p&gt;
+&lt;p&gt;remote/origin/master&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Pour pouvoir effacer cette remote qui n'existe plus il suffit de tapper la commande :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;git remote prune origin&lt;/p&gt;
+&lt;p&gt;Élimination de origin&lt;/p&gt;
+&lt;p&gt;URL : &lt;a class="reference external" href="mailto:git&amp;#64;git.mondomain.com"&gt;git&amp;#64;git.mondomain.com&lt;/a&gt;:mondepot.git&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;* [éliminé] origin/add_namespace&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Maintenant il suffit de vérifier que tout est propre :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;git branch -a&lt;/p&gt;
+&lt;p&gt;* master&lt;/p&gt;
+&lt;p&gt;remote/origin/HEAD -&amp;gt; origin/master&lt;/p&gt;
+&lt;p&gt;remote/origin/master&lt;/p&gt;
+&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 25 Aug 2015 13:43:05 +0200</pubDate><guid>tag:choiz.github.io,2015-08-25:2015-08-25-suppression-des-branches-distantes-inexistantes.html</guid><category>git</category><category>branch</category><category>remote</category><category>prune</category><category>origin</category></item><item><title>Migration de Tumblr à Pelican</title><link>http://choiz.github.io/2015-08-20-migration-de-tumblr-a-pelican.html</link><description>&lt;p&gt;J'ai testé pelican, lors de mon voyage à Bruxelles en Thalys le 15 Août 2014.
 Depuis cette date je n'avais pas pris le temps de m'occuper de la migration de mon blog de tumblr vers pelican.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; est un générateur de site statique, il est pratique pour la gestion des articles tel que mon blog.&lt;/p&gt;
 &lt;p&gt;Il suffit de créer un fichier texte avec le contenu de l'article et l'envoyer sur github pour que celui-ci soit publié.&lt;/p&gt;
