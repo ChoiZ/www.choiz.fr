@@ -55,9 +55,111 @@
 
 <article>
   <header>
+    <h2><a href="http://choiz.github.io/2011-12-04-php-gettext-debian.html#2011-12-04-php-gettext-debian">PHP + Gettext + Debian</a></h2>
+    <p>
+      Posté le dim. 04 décembre 2011 &#8226;
+Tags :
+      <a href="http://choiz.github.io/tag/mo.html">.mo</a>,      <a href="http://choiz.github.io/tag/po.html">.po</a>,      <a href="http://choiz.github.io/tag/etclocale.html">/etc/locale</a>,      <a href="http://choiz.github.io/tag/lc_all.html">LC_ALL</a>,      <a href="http://choiz.github.io/tag/gettext.html">gettext</a>,      <a href="http://choiz.github.io/tag/php.html">php</a>,      <a href="http://choiz.github.io/tag/php-gettext.html">php-gettext</a>,      <a href="http://choiz.github.io/tag/setlocale.html">setlocale</a>,      <a href="http://choiz.github.io/tag/xgettext.html">xgettext</a>    </p>
+  </header>
+  <div>
+      <div class="line-block">
+<div class="line">J'utilise maintenant php-gettext pour mes traductions. C'est plus
+facile en utilisant des outils tel que pootle ou poedit.</div>
+<div class="line">Pour utiliser gettext sur votre site en php il faut télécharger le
+package php-gettext ainsi que d'autres outils tel que xgettext ou
+msgfmt :</div>
+</div>
+<blockquote>
+<p># apt-get install php-gettext</p>
+<p># apt-get install xgettext</p>
+<p># apt-get install msgfmt</p>
+</blockquote>
+<p>Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
+commentaires devant les langues qui vont sont à traduire par exemple :
+Allemand, Anglais, Espagnol, Français &amp; Suédois :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">de_DE.UTF-8 UTF-8</div>
+<div class="line">en_GB.UTF-8 UTF-8</div>
+<div class="line">es_ES.UTF-8 UTF-8</div>
+<div class="line">fr_FR.UTF-8 UTF-8</div>
+<div class="line">sv_SE.UTF-8 UTF-8</div>
+</div>
+</blockquote>
+<p>Puis regénérer les locales :</p>
+<blockquote>
+# locale-gen</blockquote>
+<p>Ensuite il faut définir votre chemin pour les traductions par exemple :</p>
+<blockquote>
+lang/fr_FR/LC_ALL/domaine.mo</blockquote>
+<p>Puis dans votre fichier php de configuration :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">&lt;?php</div>
+<div class="line">// configuration de la langue</div>
+<div class="line">$lang_path = &quot;./lang&quot;; // Chemin des fichiers le langue</div>
+<div class="line">$lang = 'fr_FR'; // Langue a afficher</div>
+<div class="line">$lang_encode = &quot;UTF-8&quot;; // Encodage du fichier</div>
+<div class="line">$lang_LC = &quot;LC_ALL&quot;; // LC_MESSAGE etc...</div>
+<div class="line">$lang_file = &quot;domaine&quot;; // Nom du fichier de langue</div>
+<div class="line">putenv(&quot;LANG=&quot;.$lang);</div>
+<div class="line">setlocale($lang_LC, $lang.&quot;.&quot;.$lang_encode);</div>
+<div class="line">bindtextdomain($lang_file,$lang_path);</div>
+<div class="line">bindtextdomain_codeset($lang_file,$lang_encode);</div>
+<div class="line">textdomain($lang_path);</div>
+<div class="line">?&gt;</div>
+</div>
+</blockquote>
+<p>Puis faites le test en affichant dans un fichier php le texte &quot;hello&quot;</p>
+<blockquote>
+<div class="line-block">
+<div class="line">&lt;?php</div>
+<div class="line">// on inclus la config...</div>
+<div class="line">include_once('config.php');</div>
+<div class="line">echo _('hello');</div>
+<div class="line">?&gt;</div>
+</div>
+</blockquote>
+<p>Pour générer un fichier .mo a partir d'un fichier .po :</p>
+<blockquote>
+msgfmt domaine.po -o domaine.mo</blockquote>
+<p>Pour générer un fichier .po a partir de fichier php avec du gettext,
+faire un fichier texte avec tous vos fichiers php ou on doit récupérer
+le gettext.</p>
+<p>Exemple listing_gettext.txt tel que :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">index.php</div>
+<div class="line">contact.php</div>
+<div class="line">etc...</div>
+</div>
+</blockquote>
+<p>Ensuite il faut faire la commande suivante pour générer le fichier
+domaine.po dans le dossier lang/ depuis notre fichier texte avec les php
+:</p>
+<blockquote>
+xgettext -d domaine -p lang/ -k_ --from-code=UTF-8 -f
+listing_gettext.txt</blockquote>
+<p>Pour finir voilà le path des fichiers .po et .mo dans mon application
+web :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">lang/fr_FR/LC_ALL/domaine.po</div>
+<div class="line">lang/fr_FR/LC_ALL/domaine.mo</div>
+<div class="line">lang/en_GB/LC_ALL/domaine.po</div>
+<div class="line">lang/en_GB/LC_ALL/domaine.mo</div>
+<div class="line">...</div>
+</div>
+</blockquote>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://choiz.github.io/2011-12-02-clavier-apple-sur-debian.html#2011-12-02-clavier-apple-sur-debian">Clavier Apple sur debian</a></h2>
     <p>
-      Posté le Ven 02 décembre 2011 &#8226;
+      Posté le ven. 02 décembre 2011 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/clavier.html">Clavier</a>,      <a href="http://choiz.github.io/tag/apple.html">Apple</a>,      <a href="http://choiz.github.io/tag/mapage.html">Mapage</a>,      <a href="http://choiz.github.io/tag/debian.html">Debian</a>,      <a href="http://choiz.github.io/tag/linux.html">Linux</a>,      <a href="http://choiz.github.io/tag/keyboard.html">Keyboard</a>,      <a href="http://choiz.github.io/tag/mac.html">Mac</a>,      <a href="http://choiz.github.io/tag/mac-keyboard.html">Mac Keyboard</a>    </p>
   </header>
@@ -102,7 +204,7 @@ désactiver le layout par defaut du système.</p>
   <header>
     <h2><a href="http://choiz.github.io/2011-12-01-dual-screen-sur-xfce.html#2011-12-01-dual-screen-sur-xfce">Dual screen sur xfce</a></h2>
     <p>
-      Posté le Jeu 01 décembre 2011 &#8226;
+      Posté le jeu. 01 décembre 2011 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/xfce.html">xfce</a>,      <a href="http://choiz.github.io/tag/dualscreen.html">dualscreen</a>,      <a href="http://choiz.github.io/tag/dual.html">dual</a>,      <a href="http://choiz.github.io/tag/screen.html">screen</a>,      <a href="http://choiz.github.io/tag/xfce.html">xfce</a>,      <a href="http://choiz.github.io/tag/linux.html">linux</a>    </p>
   </header>
@@ -121,7 +223,7 @@ le ARandR pour configurer les deux écrans.</p>
   <header>
     <h2><a href="http://choiz.github.io/2011-11-30-flash-sous-debian.html#2011-11-30-flash-sous-debian">Flash sous Debian</a></h2>
     <p>
-      Posté le Mer 30 novembre 2011 &#8226;
+      Posté le mer. 30 novembre 2011 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/flash.html">Flash</a>,      <a href="http://choiz.github.io/tag/debian.html">Debian</a>,      <a href="http://choiz.github.io/tag/deezer.html">Deezer</a>,      <a href="http://choiz.github.io/tag/firefox.html">Firefox</a>,      <a href="http://choiz.github.io/tag/flashplugin.html">flashplugin</a>,      <a href="http://choiz.github.io/tag/source.html">source</a>,      <a href="http://choiz.github.io/tag/apt.html">apt</a>,      <a href="http://choiz.github.io/tag/soucelist.html">souce.list</a>,      <a href="http://choiz.github.io/tag/non-free.html">non-free</a>,      <a href="http://choiz.github.io/tag/contrib.html">contrib</a>    </p>
   </header>
@@ -150,7 +252,7 @@ Deezer.</p>
   <header>
     <h2><a href="http://choiz.github.io/2011-11-02-voir-les-fichiers-cachés-sur-lion.html#2011-11-02-voir-les-fichiers-cachés-sur-lion">Voir les fichiers cachés sur Lion</a></h2>
     <p>
-      Posté le Mer 02 novembre 2011 &#8226;
+      Posté le mer. 02 novembre 2011 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/fichiers.html">fichiers</a>,      <a href="http://choiz.github.io/tag/caches.html">cachés</a>,      <a href="http://choiz.github.io/tag/hidden.html">hidden</a>,      <a href="http://choiz.github.io/tag/files.html">files</a>,      <a href="http://choiz.github.io/tag/lion.html">lion</a>,      <a href="http://choiz.github.io/tag/defaults.html">defaults</a>,      <a href="http://choiz.github.io/tag/appleshowallfiles.html">AppleShowAllFiles</a>,      <a href="http://choiz.github.io/tag/finder.html">Finder</a>    </p>
   </header>
@@ -169,7 +271,7 @@ Tags :
   <header>
     <h2><a href="http://choiz.github.io/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Insérer un # au début de chaque ligne d'un fichier avec vim</a></h2>
     <p>
-      Posté le Mer 05 octobre 2011 &#8226;
+      Posté le mer. 05 octobre 2011 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/vim.html">Vim</a>,      <a href="http://choiz.github.io/tag/search.html">search</a>,      <a href="http://choiz.github.io/tag/replace.html">replace</a>,      <a href="http://choiz.github.io/tag/line.html">line</a>,      <a href="http://choiz.github.io/tag/add.html">add</a>,      <a href="http://choiz.github.io/tag/ligne.html">ligne</a>,      <a href="http://choiz.github.io/tag/fichier.html">fichier</a>,      <a href="http://choiz.github.io/tag/file.html">file</a>,      <a href="http://choiz.github.io/tag/remplace.html">remplace</a>,      <a href="http://choiz.github.io/tag/ajout.html">ajout</a>    </p>
   </header>
@@ -191,7 +293,7 @@ on voulais la fin de la ligne) et # le caractère que je veux remplacer</p>
   <header>
     <h2><a href="http://choiz.github.io/2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html#2011-09-18-plusieurs-comptes-skype-sur-le-même-mac">Plusieurs comptes Skype sur le même Mac !</a></h2>
     <p>
-      Posté le Dim 18 septembre 2011 &#8226;
+      Posté le dim. 18 septembre 2011 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/skype.html">Skype</a>,      <a href="http://choiz.github.io/tag/multiutilisateur.html">Multiutilisateur</a>,      <a href="http://choiz.github.io/tag/mac.html">Mac</a>,      <a href="http://choiz.github.io/tag/macos.html">MacOs</a>,      <a href="http://choiz.github.io/tag/mac-os-x.html">Mac os x</a>,      <a href="http://choiz.github.io/tag/osx.html">OsX</a>,      <a href="http://choiz.github.io/tag/skype-mac.html">Skype Mac</a>,      <a href="http://choiz.github.io/tag/multi.html">Multi</a>,      <a href="http://choiz.github.io/tag/compte.html">Compte</a>,      <a href="http://choiz.github.io/tag/another-copy.html">Another copy</a>,      <a href="http://choiz.github.io/tag/another-copy-of-skype.html">Another copy of Skype</a>    </p>
   </header>
@@ -223,7 +325,7 @@ password (ou autre suivant le mot de passe de l'utilisateur).</blockquote>
   <header>
     <h2><a href="http://choiz.github.io/2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login.html#2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login">Profil sur viadeo sans avoir la fenêtre de login</a></h2>
     <p>
-      Posté le Dim 18 septembre 2011 &#8226;
+      Posté le dim. 18 septembre 2011 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/viadeo.html">viadeo</a>,      <a href="http://choiz.github.io/tag/javascript.html">javascript</a>,      <a href="http://choiz.github.io/tag/js.html">js</a>,      <a href="http://choiz.github.io/tag/code.html">code</a>,      <a href="http://choiz.github.io/tag/login.html">login</a>,      <a href="http://choiz.github.io/tag/profil.html">profil</a>,      <a href="http://choiz.github.io/tag/identifie.html">identifié</a>,      <a href="http://choiz.github.io/tag/firebug.html">firebug</a>    </p>
   </header>
@@ -253,7 +355,7 @@ function createJoin() { false; }</blockquote>
   <header>
     <h2><a href="http://choiz.github.io/2011-09-05-développement-web-avec-safari.html#2011-09-05-développement-web-avec-safari">Développement web avec Safari</a></h2>
     <p>
-      Posté le Lun 05 septembre 2011 &#8226;
+      Posté le lun. 05 septembre 2011 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/safari.html">Safari</a>,      <a href="http://choiz.github.io/tag/dev.html">Dev</a>,      <a href="http://choiz.github.io/tag/web.html">Web</a>,      <a href="http://choiz.github.io/tag/webdev.html">WebDev</a>,      <a href="http://choiz.github.io/tag/developpement.html">Développement</a>    </p>
   </header>
@@ -271,7 +373,7 @@ vos pages web.</p>
   <header>
     <h2><a href="http://choiz.github.io/2011-09-02-import-vm-avec-virtualbox.html#2011-09-02-import-vm-avec-virtualbox">Import VM avec Virtualbox</a></h2>
     <p>
-      Posté le Ven 02 septembre 2011 &#8226;
+      Posté le ven. 02 septembre 2011 &#8226;
 Tags :
       <a href="http://choiz.github.io/tag/virtualbox.html">VirtualBox</a>,      <a href="http://choiz.github.io/tag/import.html">Import</a>,      <a href="http://choiz.github.io/tag/virtualmachine.html">VirtualMachine</a>,      <a href="http://choiz.github.io/tag/virtual.html">Virtual</a>,      <a href="http://choiz.github.io/tag/machine.html">Machine</a>,      <a href="http://choiz.github.io/tag/ova.html">Ova</a>,      <a href="http://choiz.github.io/tag/vboxmanage.html">VBoxManage</a>    </p>
   </header>
@@ -283,64 +385,6 @@ donc un fichier ova... Maintenant comment l'importer sur VirtualBox ?</p>
 VBoxManage import votrefichier.ova</blockquote>
 <p>Maintenant lors du prochain démarrage de votre VirtualBox vous devez
 avoir la machine virtuelle importée !</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://choiz.github.io/2011-08-17-partage-samba.html#2011-08-17-partage-samba">Partage Samba !</a></h2>
-    <p>
-      Posté le Mer 17 août 2011 &#8226;
-Tags :
-      <a href="http://choiz.github.io/tag/linux.html">Linux</a>,      <a href="http://choiz.github.io/tag/samba.html">Samba</a>,      <a href="http://choiz.github.io/tag/config.html">config</a>,      <a href="http://choiz.github.io/tag/configuration.html">configuration</a>,      <a href="http://choiz.github.io/tag/partage.html">Partage</a>,      <a href="http://choiz.github.io/tag/sharing.html">Sharing</a>    </p>
-  </header>
-  <div>
-      <div class="line-block">
-<div class="line">J'ai réinstallé mon serveur il n'y a pas si longtemps avec Samba.</div>
-<div class="line">Editer le fichier de configuration :</div>
-</div>
-<blockquote>
-vi /etc/samba/smb.conf</blockquote>
-<p>Voici le contenu de mon fichier de configuration :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">### Global ###</div>
-<div class="line">[global]</div>
-<div class="line">## Identification ##</div>
-<div class="line">workgroup = WORKGROUP</div>
-<div class="line">netbios name = %h</div>
-<div class="line">server string = Serveur samba %h</div>
-<div class="line">security = user</div>
-<div class="line">public = yes</div>
-<div class="line">## Log ##</div>
-<div class="line">log file = /var/log/samba/log.%m</div>
-<div class="line">max log size = 1000</div>
-<div class="line">## Auth ##</div>
-<div class="line">encrypt passwords = true</div>
-<div class="line">smb passwd file = /etc/samba/smbpasswd</div>
-<div class="line">### Share ###</div>
-<div class="line">[choiz]</div>
-<div class="line">path = /home/choiz/samba</div>
-<div class="line">read only = no</div>
-<div class="line">writeable = yes</div>
-<div class="line">valid users = choiz</div>
-<div class="line">comment = partage de choiz</div>
-<div class="line">[partagereadonly]</div>
-<div class="line">path = /home/partageread</div>
-<div class="line">read only = yes</div>
-<div class="line">writeable = no</div>
-<div class="line">valid users = choiz, &#64;group</div>
-<div class="line">comment = partage en lecture pour choiz et le groupe &quot;group&quot;</div>
-</div>
-</blockquote>
-<p>Maintenant il faut créer notre utilisateur &quot;choiz&quot; grâce à :</p>
-<blockquote>
-smbpasswd -a choiz</blockquote>
-<p>Pour les groupes samba utilise les groupes unix.</p>
-<p>N'oubliez pas de redémarrer le service Samba !</p>
-<blockquote>
-/etc/init.d/samba restart</blockquote>
 
   </div>
 </article>
