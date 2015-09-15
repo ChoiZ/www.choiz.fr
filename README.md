@@ -1,7 +1,7 @@
-choiz.github.com
-================
+choiz.github.io
+===============
 
-Personnal blog available on: http://blog.choiz.fr
+Personnal blog available on: http://www.choiz.fr
 
 - Create a new post on ```content/``` folder
 
