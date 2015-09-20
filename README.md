@@ -2,4 +2,4 @@
 
 Personnal blog available on: http://www.choiz.fr powered by pelican.
 
-Pelican source code is on branch: pelican.
+Source code is on branch: [Pelican](https://github.com/ChoiZ/choiz.github.io/tree/pelican "pelican").
