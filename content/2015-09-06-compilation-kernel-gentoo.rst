@@ -3,7 +3,7 @@ Compilation Kernel Gentoo
 :date: 2015-09-06 11:48:24
 :author: choiz
 :category: text
-:tags: compilation kernel gentoo
+:tags: compilation, kernel, gentoo
 :slug: 2015-09-06-compilation-kernel-gentoo
 :status: published
 
