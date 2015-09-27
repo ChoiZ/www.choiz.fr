@@ -20,7 +20,7 @@
 <meta property="og:locale" content="fr_FR"/>
 <meta property="og:url" content="http://www.choiz.fr"/>
 <meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">
-  <title>ChoiZ &ndash; Tag : config file</title>
+  <title>ChoiZ &ndash; Tag : compilation kernel gentoo</title>
 </head>
 <body>
   <aside>
@@ -55,23 +55,28 @@
 
 <article>
   <header>
-    <h2><a href="http://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html#2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight">Ajout dans mon .vimrc de matchadd() &amp; highlight</a></h2>
+    <h2><a href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html#2015-09-06-compilation-kernel-gentoo">Compilation Kernel Gentoo</a></h2>
     <p>
-      Posté le ven. 27 avril 2012 &#8226;
+      Posté le dim. 06 septembre 2015 &#8226;
 Tags :
-      <a href="http://www.choiz.fr/tag/vimrc.html">vimrc</a>,      <a href="http://www.choiz.fr/tag/vim.html">vim</a>,      <a href="http://www.choiz.fr/tag/config-file.html">config file</a>,      <a href="http://www.choiz.fr/tag/vimrc.html">.vimrc</a>,      <a href="http://www.choiz.fr/tag/todo.html">todo</a>,      <a href="http://www.choiz.fr/tag/notice.html">notice</a>,      <a href="http://www.choiz.fr/tag/fixme.html">fixme</a>,      <a href="http://www.choiz.fr/tag/highlight.html">highlight</a>,      <a href="http://www.choiz.fr/tag/matchadd.html">matchadd</a>    </p>
+      <a href="http://www.choiz.fr/tag/compilation-kernel-gentoo.html">compilation kernel gentoo</a>    </p>
   </header>
   <div>
-      <p>Petit ajout dans mon fichier .vimrc</p>
+      <p>Pour compiler le kernel sous gentoo :</p>
 <blockquote>
-<div class="line-block">
-<div class="line">&quot; Highlight To do list with green background</div>
-<div class="line">highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green</div>
-<div class="line">highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue</div>
-<div class="line">highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red</div>
-<div class="line">&quot; Match todolist, notice, fixme</div>
-<div class="line">:call matchadd('Todo ...</div></div></blockquote>
-      <a class="btn" href="http://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html#2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight">Lire la suite</a>
+cd /usr/src/linux
+make menuconfig
+make &amp;&amp; make modules_install
+make install</blockquote>
+<p>Le kernel est maintenant compilé.</p>
+<p>Maintenant il faut mettre à jour grub.</p>
+<blockquote>
+grub2-mkconfig -o /boot/grub/grub.cfg</blockquote>
+<p>Puis lancer :</p>
+<blockquote>
+uname -a</blockquote>
+<p>Qui affiche le kernel actuellement utilisé ainsi que le nombre de ...</p>
+      <a class="btn" href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html#2015-09-06-compilation-kernel-gentoo">Lire la suite</a>
   </div>
 </article>
 
