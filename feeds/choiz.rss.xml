@@ -17,7 +17,7 @@ uname -a&lt;/blockquote&gt;
 &lt;blockquote&gt;
 reboot&lt;/blockquote&gt;
 &lt;p&gt;Au final vérifier avec &lt;cite&gt;uname -a&lt;/cite&gt; si le bon kernel est chargé.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 06 Sep 2015 11:48:24 +0200</pubDate><guid>tag:www.choiz.fr,2015-09-06:2015-09-06-compilation-kernel-gentoo.html</guid><category>compilation kernel gentoo</category></item><item><title>Compression Décompression tar.gz tar.bz2 tar.xz</title><link>http://www.choiz.fr/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html</link><description>&lt;p&gt;J'ai toujours du mal pour décompresser un fichier de type &amp;quot;tar.bz2&amp;quot; ou &amp;quot;tar.xz&amp;quot;. Je n'ai pas encore trouvé le moyen de me souvenir de la syntaxe…&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 06 Sep 2015 11:48:24 +0200</pubDate><guid>tag:www.choiz.fr,2015-09-06:2015-09-06-compilation-kernel-gentoo.html</guid><category>compilation</category><category>kernel</category><category>gentoo</category></item><item><title>Compression Décompression tar.gz tar.bz2 tar.xz</title><link>http://www.choiz.fr/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html</link><description>&lt;p&gt;J'ai toujours du mal pour décompresser un fichier de type &amp;quot;tar.bz2&amp;quot; ou &amp;quot;tar.xz&amp;quot;. Je n'ai pas encore trouvé le moyen de me souvenir de la syntaxe…&lt;/p&gt;
 &lt;div class="section" id="tar-gz"&gt;
 &lt;h2&gt;tar.gz&lt;/h2&gt;
 &lt;p&gt;Pour les fichiers &lt;strong&gt;tar.gz&lt;/strong&gt; j'arrive parfaitement à compresser ou décompresser ce format exemple :&lt;/p&gt;

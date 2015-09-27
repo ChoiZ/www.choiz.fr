@@ -55,6 +55,33 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html#2015-09-06-compilation-kernel-gentoo">Compilation Kernel Gentoo</a></h2>
+    <p>
+      Posté le dim. 06 septembre 2015 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/compilation.html">compilation</a>,      <a href="http://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="http://www.choiz.fr/tag/gentoo.html">gentoo</a>    </p>
+  </header>
+  <div>
+      <p>Pour compiler le kernel sous gentoo :</p>
+<blockquote>
+cd /usr/src/linux
+make menuconfig
+make &amp;&amp; make modules_install
+make install</blockquote>
+<p>Le kernel est maintenant compilé.</p>
+<p>Maintenant il faut mettre à jour grub.</p>
+<blockquote>
+grub2-mkconfig -o /boot/grub/grub.cfg</blockquote>
+<p>Puis lancer :</p>
+<blockquote>
+uname -a</blockquote>
+<p>Qui affiche le kernel actuellement utilisé ainsi que le nombre de ...</p>
+      <a class="btn" href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html#2015-09-06-compilation-kernel-gentoo">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html#2015-07-18-ma-config-clevo-w650sz-i7-4910mq">Ma config : Clevo w650sz i7 4910MQ</a></h2>
     <p>
       Posté le sam. 18 juillet 2015 &#8226;
