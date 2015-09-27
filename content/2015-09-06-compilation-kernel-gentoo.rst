@@ -10,8 +10,11 @@ Compilation Kernel Gentoo
 Pour compiler le kernel sous gentoo :
 
     cd /usr/src/linux
+
     make menuconfig
+
     make && make modules_install
+
     make install
 
 Le kernel est maintenant compilé.
