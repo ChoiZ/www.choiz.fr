@@ -20,11 +20,7 @@ Maintenant il faut mettre à jour grub.
 
     grub2-mkconfig -o /boot/grub/grub.cfg
 
-Puis lancer :
-
-    uname -a
-
-Qui affiche le kernel actuellement utilisé ainsi que le nombre de compilation.
+Puis lancer `uname -a` qui affiche le kernel actuellement utilisé ainsi que le nombre de compilation.
 
 Il faut maintenant redémarrer la machine :
 
