@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChoiZ</title><link>http://www.choiz.fr/</link><description>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</description><atom:link href="http://www.choiz.fr/feeds/choiz.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 06 Sep 2015 11:48:24 +0200</lastBuildDate><item><title>Compilation Kernel Gentoo</title><link>http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html</link><description>&lt;p&gt;Pour compiler le kernel sous gentoo :&lt;/p&gt;
 &lt;blockquote&gt;
-cd /usr/src/linux
-make menuconfig
-make &amp;amp;&amp;amp; make modules_install
-make install&lt;/blockquote&gt;
+&lt;p&gt;cd /usr/src/linux&lt;/p&gt;
+&lt;p&gt;make menuconfig&lt;/p&gt;
+&lt;p&gt;make &amp;amp;&amp;amp; make modules_install&lt;/p&gt;
+&lt;p&gt;make install&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Le kernel est maintenant compilé.&lt;/p&gt;
 &lt;p&gt;Maintenant il faut mettre à jour grub.&lt;/p&gt;
 &lt;blockquote&gt;
