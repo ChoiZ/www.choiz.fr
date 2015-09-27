@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="http://www.choiz.fr/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="http://www.choiz.fr/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="http://www.choiz.fr/theme/css/font-awesome.min.css">
+  <link href="http://www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+<meta name="author" content="choiz" />
+<meta name="description" content="Pour mettre à jour Gentoo j'utilise différentes commandes. Dans un premier temps je fais la mise à jour d'eix : eix-sync Ensuite : emerge -pvuDN world -p ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche également les différents flags (N = new (not yet installed), U = updating ..." />
+<meta name="keywords" content="update, mise à jour, gentoo, eix, emerge">
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:title" content="Mettre à jour Gentoo"/>
+<meta property="og:description" content="Pour mettre à jour Gentoo j'utilise différentes commandes. Dans un premier temps je fais la mise à jour d'eix : eix-sync Ensuite : emerge -pvuDN world -p ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche également les différents flags (N = new (not yet installed), U = updating ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2015-09-27 14:04:13+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://www.choiz.fr/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="update"/>
+<meta property="article:tag" content="mise à jour"/>
+<meta property="article:tag" content="gentoo"/>
+<meta property="article:tag" content="eix"/>
+<meta property="article:tag" content="emerge"/>
+<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">  <title>ChoiZ &ndash; Mettre à jour Gentoo</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://www.choiz.fr">
+        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="Blog de François LASSERRE, ingénieur informatique." title="Blog de François LASSERRE, ingénieur informatique.">
+      </a>
+      <div>
+          <a href="http://www.choiz.fr">Blog de François LASSERRE, ingénieur informatique.</a>
+      </div>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</p>
+      <p>J'ai fondé plusieurs webradios depuis l'an 2000, actuellement je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="2015-09-27-mettre-a-jour-gentoo">Mettre à jour Gentoo</h1>
+    <p>Posté le dim. 27 septembre 2015</p>
+  </header>
+  <div>
+    <p>Pour mettre à jour Gentoo j'utilise différentes commandes.</p>
+<p>Dans un premier temps je fais la mise à jour d'eix :</p>
+<blockquote>
+eix-sync</blockquote>
+<p>Ensuite :</p>
+<blockquote>
+emerge -pvuDN world</blockquote>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-p</span></kbd></td>
+<td>ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche également les différents flags (N = new (not yet installed), U = updating (to another version) etc…)</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v</span></kbd></td>
+<td>ou --verbose, mode verbeux.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-u</span></kbd></td>
+<td>ou --update, met à jour les programmes dans la meilleur version disponible.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-D</span></kbd></td>
+<td>ou --deep, met à jour les dépendances des programmes si nécessaire.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-N</span></kbd></td>
+<td>ou --newuse, met à jour les programmes dont le &quot;USE&quot; a été modifié depuis son installation.</td></tr>
+</tbody>
+</table>
+<p>Une fois la liste des programmes et ses modifications vérifiée nous pouvons lancer la mise à jour :</p>
+<blockquote>
+emerge -vuDN world</blockquote>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://www.choiz.fr/tag/update.html">update</a>
+      <a href="http://www.choiz.fr/tag/mise-a-jour.html">mise à jour</a>
+      <a href="http://www.choiz.fr/tag/gentoo.html">gentoo</a>
+      <a href="http://www.choiz.fr/tag/eix.html">eix</a>
+      <a href="http://www.choiz.fr/tag/emerge.html">emerge</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Mettre à jour Gentoo",
+  "headline": "Mettre à jour Gentoo",
+  "datePublished": "2015-09-27 14:04:13+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "http://www.choiz.fr/author/choiz.html"
+  },
+  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "url": "http://www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html",
+  "description": "Pour mettre à jour Gentoo j'utilise différentes commandes. Dans un premier temps je fais la mise à jour d'eix : eix-sync Ensuite : emerge -pvuDN world -p ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche également les différents flags (N = new (not yet installed), U = updating ..."
+}
+</script></body>
+</html>

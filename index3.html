@@ -55,6 +55,39 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2014-03-05-git-diff-multiligne.html#2014-03-05-git-diff-multiligne">Git diff multiligne</a></h2>
+    <p>
+      Posté le mer. 05 mars 2014 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/diff.html">diff</a>,      <a href="http://www.choiz.fr/tag/wrap.html">wrap</a>,      <a href="http://www.choiz.fr/tag/multiline.html">multiline</a>,      <a href="http://www.choiz.fr/tag/multiligne.html">multiligne</a>,      <a href="http://www.choiz.fr/tag/less.html">less</a>,      <a href="http://www.choiz.fr/tag/config.html">config</a>,      <a href="http://www.choiz.fr/tag/gitconfig.html">gitconfig</a>    </p>
+  </header>
+  <div>
+      <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
+ligne…</p>
+<p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais
+pas entièrement…).</p>
+<p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu
+que ma ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
+<p>Mon fichier texte ressemble à ceci :</p>
+<p><tt class="docutils literal">ligne avec un peu de texte ici nous avons 66 caractères affichés.</tt></p>
+<p>Or, quand je fais un diff on ne voit pas tous les caractères</p>
+<pre class="literal-block">
+$ git diff HEAD~1 HEADdiff --git a/test.txt b/test.txtnew file mode 100644index 0000000..235a891--- /dev/null+++ b/test.txt&#64;&#64; -0,0 +1 &#64;&#64;+ligne avec un peu de texte ici nous avons 66 caractè\ No newline at end of file
+</pre>
+<p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=&quot;&quot;</em> &nbsp;avant la
+commande <em>git diff</em> soit ajouter dans son fichier de config git :</p>
+<p><tt class="docutils literal">git config <span class="pre">--global</span> core.pager &quot;less <span class="pre">-r&quot;</span></tt></p>
+<p>Voila ce que ça donne avec GIT_PAGER</p>
+<p><tt class="docutils literal"><span class="pre">GIT_PAGER=&quot;&quot;</span> git diff HEAD~1 HEAD</tt></p>
+<pre class="literal-block">
+diff --git a/test.txt b/test.txtnew file mode 100644index 0000000..235a891--- /dev/null+++ b/test.txt&#64;&#64; -0,0 +1 &#64;&#64;+ligne avec un peu de texte ici nous avons 66 caractères affichés.\ No newline at end of file
+</pre>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html#2014-03-04-création-dune-clé-usb-xubuntu-sur-mac">Création d'une clé usb xubuntu sur mac</a></h2>
     <p>
       Posté le mar. 04 mars 2014 &#8226;
@@ -314,46 +347,6 @@ error: pathspec 'preprod' did not match any file(s) known to git.
 <pre class="literal-block">
 Branch preprod set up to track remote branch preprod from origin.
 Switched to a new branch 'preprod'
-</pre>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2013-09-29-connaitre-le-code-réponse-http-avec-curl.html#2013-09-29-connaitre-le-code-réponse-http-avec-curl">Connaitre le code réponse HTTP avec curl</a></h2>
-    <p>
-      Posté le dim. 29 septembre 2013 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/curl.html">curl</a>,      <a href="http://www.choiz.fr/tag/http.html">http</a>,      <a href="http://www.choiz.fr/tag/response.html">response</a>,      <a href="http://www.choiz.fr/tag/code.html">code</a>,      <a href="http://www.choiz.fr/tag/301.html">301</a>,      <a href="http://www.choiz.fr/tag/302.html">302</a>,      <a href="http://www.choiz.fr/tag/404.html">404</a>,      <a href="http://www.choiz.fr/tag/200.html">200</a>    </p>
-  </header>
-  <div>
-      <p>Pour connaitre le code réponse HTTP il suffit de faire :</p>
-<p><tt class="docutils literal">curl <span class="pre">-IL</span> url</tt></p>
-<p>Voici l'exemble avec tumblr.com :</p>
-<p><tt class="docutils literal">curl <span class="pre">-IL</span> <span class="pre">http://tumblr.com</span></tt></p>
-<pre class="literal-block">
-HTTP/1.1 301 Moved Permanently
-Content-length: 0
-Location: http://www.tumblr.com/
-Connection: close
-
-HTTP/1.1 302 Moved Temporarily
-Server: nginx
-Date: Sun, 29 Sep 2013 17:06:40 GMT
-Content-Type: text/html
-Connection: close
-P3P: CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;
-Location: https://www.tumblr.com/
-
-HTTP/1.1 200 OK
-Server: nginx
-Date: Sun, 29 Sep 2013 17:06:42 GMT
-Content-Type: text/html; charset=utf-8
-Connection: keep-alive
-Vary: Accept-Encoding
-P3P: CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;
-Set-Cookie: tmgioct=52485e21d628b00096885790; expires=Wed, 27-Sep-2023 17:06:41 GMT; path=/; httponly
 </pre>
 
   </div>

@@ -55,6 +55,35 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html#2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git">Initialiser des sous-modules en cascade dans git</a></h2>
+    <p>
+      Posté le dim. 25 janvier 2015 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/submodule.html">submodule</a>,      <a href="http://www.choiz.fr/tag/update.html">update</a>,      <a href="http://www.choiz.fr/tag/init.html">init</a>,      <a href="http://www.choiz.fr/tag/recursive.html">recursive</a>    </p>
+  </header>
+  <div>
+      <p>Pour initialiser les sous-modules dans git j'utilise la commande
+suivante :</p>
+<p><tt class="docutils literal">git submodule init</tt></p>
+<p>Ensuite je dois faire un update des sous-modules pour charger le contenu
+:</p>
+<p><tt class="docutils literal">git submodule update</tt></p>
+<p>Pour faire les deux en même temps (init + update) vous pouvez faire :</p>
+<p><tt class="docutils literal">git submodule update <span class="pre">--init</span></tt></p>
+<p>Imaginons maintenant que vous avez des sous-modules dans d'autres
+sous-modules. Exemple dans mon dépot
+<a class="reference external" href="https://www.github.com/ChoiZ/dotfiles.git">dotfiles</a> j'ai mon dépot
+<a class="reference external" href="https://www.github.com/ChoiZ/vim-config.git">vim</a> et dedans des
+sous-modules avec les plugins de vim. Pour initialiser, mettre à jour et
+le tout en cascade (dans tous les dossiers et sous-dossiers) il faut
+faire :</p>
+<p><tt class="docutils literal">git submodule update <span class="pre">--init</span> <span class="pre">--recursive</span></tt></p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2015-01-24-êtes-vous-à-lheure-et-votre-serveur.html#2015-01-24-êtes-vous-à-lheure-et-votre-serveur">Êtes-vous à l'heure&nbsp;? (Et votre serveur ?)</a></h2>
     <p>
       Posté le sam. 24 janvier 2015 &#8226;
@@ -271,39 +300,6 @@ machine à distance.</div>
 <p>Il suffit ensuite d'ouvrir dans un éditeur texte (type vi) le fichier
 pour voir les paquets installés / déinstallés. Et réinstaller avec sudo
 apt-get install le ou les paquets manquants.</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2014-03-05-git-diff-multiligne.html#2014-03-05-git-diff-multiligne">Git diff multiligne</a></h2>
-    <p>
-      Posté le mer. 05 mars 2014 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/diff.html">diff</a>,      <a href="http://www.choiz.fr/tag/wrap.html">wrap</a>,      <a href="http://www.choiz.fr/tag/multiline.html">multiline</a>,      <a href="http://www.choiz.fr/tag/multiligne.html">multiligne</a>,      <a href="http://www.choiz.fr/tag/less.html">less</a>,      <a href="http://www.choiz.fr/tag/config.html">config</a>,      <a href="http://www.choiz.fr/tag/gitconfig.html">gitconfig</a>    </p>
-  </header>
-  <div>
-      <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
-ligne…</p>
-<p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais
-pas entièrement…).</p>
-<p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu
-que ma ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
-<p>Mon fichier texte ressemble à ceci :</p>
-<p><tt class="docutils literal">ligne avec un peu de texte ici nous avons 66 caractères affichés.</tt></p>
-<p>Or, quand je fais un diff on ne voit pas tous les caractères</p>
-<pre class="literal-block">
-$ git diff HEAD~1 HEADdiff --git a/test.txt b/test.txtnew file mode 100644index 0000000..235a891--- /dev/null+++ b/test.txt&#64;&#64; -0,0 +1 &#64;&#64;+ligne avec un peu de texte ici nous avons 66 caractè\ No newline at end of file
-</pre>
-<p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=&quot;&quot;</em> &nbsp;avant la
-commande <em>git diff</em> soit ajouter dans son fichier de config git :</p>
-<p><tt class="docutils literal">git config <span class="pre">--global</span> core.pager &quot;less <span class="pre">-r&quot;</span></tt></p>
-<p>Voila ce que ça donne avec GIT_PAGER</p>
-<p><tt class="docutils literal"><span class="pre">GIT_PAGER=&quot;&quot;</span> git diff HEAD~1 HEAD</tt></p>
-<pre class="literal-block">
-diff --git a/test.txt b/test.txtnew file mode 100644index 0000000..235a891--- /dev/null+++ b/test.txt&#64;&#64; -0,0 +1 &#64;&#64;+ligne avec un peu de texte ici nous avons 66 caractères affichés.\ No newline at end of file
-</pre>
 
   </div>
 </article>

@@ -55,6 +55,46 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2013-09-29-connaitre-le-code-réponse-http-avec-curl.html#2013-09-29-connaitre-le-code-réponse-http-avec-curl">Connaitre le code réponse HTTP avec curl</a></h2>
+    <p>
+      Posté le dim. 29 septembre 2013 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/curl.html">curl</a>,      <a href="http://www.choiz.fr/tag/http.html">http</a>,      <a href="http://www.choiz.fr/tag/response.html">response</a>,      <a href="http://www.choiz.fr/tag/code.html">code</a>,      <a href="http://www.choiz.fr/tag/301.html">301</a>,      <a href="http://www.choiz.fr/tag/302.html">302</a>,      <a href="http://www.choiz.fr/tag/404.html">404</a>,      <a href="http://www.choiz.fr/tag/200.html">200</a>    </p>
+  </header>
+  <div>
+      <p>Pour connaitre le code réponse HTTP il suffit de faire :</p>
+<p><tt class="docutils literal">curl <span class="pre">-IL</span> url</tt></p>
+<p>Voici l'exemble avec tumblr.com :</p>
+<p><tt class="docutils literal">curl <span class="pre">-IL</span> <span class="pre">http://tumblr.com</span></tt></p>
+<pre class="literal-block">
+HTTP/1.1 301 Moved Permanently
+Content-length: 0
+Location: http://www.tumblr.com/
+Connection: close
+
+HTTP/1.1 302 Moved Temporarily
+Server: nginx
+Date: Sun, 29 Sep 2013 17:06:40 GMT
+Content-Type: text/html
+Connection: close
+P3P: CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;
+Location: https://www.tumblr.com/
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 29 Sep 2013 17:06:42 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Vary: Accept-Encoding
+P3P: CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;
+Set-Cookie: tmgioct=52485e21d628b00096885790; expires=Wed, 27-Sep-2023 17:06:41 GMT; path=/; httponly
+</pre>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html#2013-07-16-passer-de-svn-à-git">Passer de svn à git</a></h2>
     <p>
       Posté le mar. 16 juillet 2013 &#8226;
@@ -447,106 +487,6 @@ Français</a>&nbsp;qui est fascinant.</div>
 que vos motivations &amp; tips si vous en avez c'est toujours bon à
 prendre ;)</div>
 </div>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html#2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x">Faire un ssh-copy-id sur Mac OS X</a></h2>
-    <p>
-      Posté le dim. 30 septembre 2012 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/ssh-copy-id.html">ssh-copy-id</a>,      <a href="http://www.choiz.fr/tag/mac-os-x.html">mac os x</a>,      <a href="http://www.choiz.fr/tag/copy-ssh-key.html">copy ssh key</a>,      <a href="http://www.choiz.fr/tag/copier-cle-ssh.html">copier clé ssh</a>,      <a href="http://www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="http://www.choiz.fr/tag/copy-id.html">copy-id</a>    </p>
-  </header>
-  <div>
-      <p>Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
-avez dû vous rendre compte que, même si openssh est installé nativement,
-cette commande n’est pas disponible.</p>
-<p>Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
-peut la rendre disponible facilement en quelques étapes.
-Créer un fichier &quot;ssh-copy-id&quot; dans le dossier &quot;/usr/bin/&quot; avec ce
-contenu :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">#!/bin/sh</div>
-<div class="line"># Shell script to install your public key on a remote machine</div>
-<div class="line"># Takes the remote machine name as an argument.</div>
-<div class="line"># Obviously, the remote machine must accept password authentication,</div>
-<div class="line"># or one of the other keys in your ssh-agent, for this to work.</div>
-<div class="line"><br /></div>
-<div class="line">ID_FILE=&quot;${HOME}/.ssh/id_rsa.pub&quot;</div>
-<div class="line"><br /></div>
-<div class="line">if [ &quot;-i&quot; = &quot;$1&quot; ]; then</div>
-<div class="line-block">
-<div class="line">shift</div>
-<div class="line"># check if we have 2 parameters left, if so the first is the new ID file</div>
-<div class="line">if [ -n &quot;$2&quot; ]; then</div>
-<div class="line-block">
-<div class="line">if expr &quot;$1&quot; : &quot;.*.pub&quot; &gt; /dev/null ; then</div>
-<div class="line-block">
-<div class="line">ID_FILE=&quot;$1&quot;</div>
-</div>
-<div class="line">else</div>
-<div class="line-block">
-<div class="line">ID_FILE=&quot;$1.pub&quot;</div>
-</div>
-<div class="line">fi</div>
-<div class="line">shift         # and this should leave $1 as the target name</div>
-</div>
-<div class="line">fi</div>
-</div>
-<div class="line">else</div>
-<div class="line-block">
-<div class="line">if [ x$SSH_AUTH_SOCK != x ] ; then</div>
-<div class="line-block">
-<div class="line">GET_ID=&quot;$GET_ID ssh-add -L&quot;</div>
-</div>
-<div class="line">fi</div>
-</div>
-<div class="line">fi</div>
-<div class="line"><br /></div>
-<div class="line">if [ -z &quot;<cite>eval $GET_ID</cite>&quot; ] &amp;&amp; [ -r &quot;${ID_FILE}&quot; ] ; then</div>
-<div class="line-block">
-<div class="line">GET_ID=&quot;cat ${ID_FILE}&quot;</div>
-</div>
-<div class="line">fi</div>
-<div class="line"><br /></div>
-<div class="line">if [ -z &quot;<cite>eval $GET_ID</cite>&quot; ]; then</div>
-<div class="line-block">
-<div class="line">echo &quot;$0: ERROR: No identities found&quot; &gt;&amp;2</div>
-<div class="line">exit 1</div>
-</div>
-<div class="line">fi</div>
-<div class="line"><br /></div>
-<div class="line">if [ &quot;$#&quot; -lt 1 ] || [ &quot;$1&quot; = &quot;-h&quot; ] || [ &quot;$1&quot; = &quot;--help&quot; ]; then</div>
-<div class="line-block">
-<div class="line">echo &quot;Usage: $0 [-i [identity_file]] [user&#64;]machine&quot; &gt;&amp;2</div>
-<div class="line">exit 1</div>
-</div>
-<div class="line">fi</div>
-<div class="line"><br /></div>
-<div class="line">{ eval &quot;$GET_ID&quot; ; } | ssh $1 &quot;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys&quot; || exit 1</div>
-<div class="line"><br /></div>
-<div class="line">cat &lt;&lt;EOF</div>
-<div class="line">Now try logging into the machine, with &quot;ssh '$1'&quot;, and check in:</div>
-<div class="line"><br /></div>
-<div class="line-block">
-<div class="line">.ssh/authorized_keys</div>
-<div class="line"><br /></div>
-</div>
-<div class="line">to make sure we haven't added extra keys that you weren't expecting.</div>
-<div class="line"><br /></div>
-<div class="line">EOF</div>
-</div>
-</blockquote>
-<p>Il ne reste qu'a donner les droits au fichier :</p>
-<blockquote>
-$ chmod 755 /usr/bin/ssh-copy-id</blockquote>
-<p>Vous pouvez maintenant copier votre clé ssh sur un serveur distant en
-tapant :</p>
-<blockquote>
-ssh-copy-id -i id_rsa.pub <a class="reference external" href="mailto:user&#64;machine.distante">user&#64;machine.distante</a></blockquote>
 
   </div>
 </article>

@@ -55,6 +55,106 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html#2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x">Faire un ssh-copy-id sur Mac OS X</a></h2>
+    <p>
+      Posté le dim. 30 septembre 2012 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/ssh-copy-id.html">ssh-copy-id</a>,      <a href="http://www.choiz.fr/tag/mac-os-x.html">mac os x</a>,      <a href="http://www.choiz.fr/tag/copy-ssh-key.html">copy ssh key</a>,      <a href="http://www.choiz.fr/tag/copier-cle-ssh.html">copier clé ssh</a>,      <a href="http://www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="http://www.choiz.fr/tag/copy-id.html">copy-id</a>    </p>
+  </header>
+  <div>
+      <p>Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
+avez dû vous rendre compte que, même si openssh est installé nativement,
+cette commande n’est pas disponible.</p>
+<p>Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
+peut la rendre disponible facilement en quelques étapes.
+Créer un fichier &quot;ssh-copy-id&quot; dans le dossier &quot;/usr/bin/&quot; avec ce
+contenu :</p>
+<blockquote>
+<div class="line-block">
+<div class="line">#!/bin/sh</div>
+<div class="line"># Shell script to install your public key on a remote machine</div>
+<div class="line"># Takes the remote machine name as an argument.</div>
+<div class="line"># Obviously, the remote machine must accept password authentication,</div>
+<div class="line"># or one of the other keys in your ssh-agent, for this to work.</div>
+<div class="line"><br /></div>
+<div class="line">ID_FILE=&quot;${HOME}/.ssh/id_rsa.pub&quot;</div>
+<div class="line"><br /></div>
+<div class="line">if [ &quot;-i&quot; = &quot;$1&quot; ]; then</div>
+<div class="line-block">
+<div class="line">shift</div>
+<div class="line"># check if we have 2 parameters left, if so the first is the new ID file</div>
+<div class="line">if [ -n &quot;$2&quot; ]; then</div>
+<div class="line-block">
+<div class="line">if expr &quot;$1&quot; : &quot;.*.pub&quot; &gt; /dev/null ; then</div>
+<div class="line-block">
+<div class="line">ID_FILE=&quot;$1&quot;</div>
+</div>
+<div class="line">else</div>
+<div class="line-block">
+<div class="line">ID_FILE=&quot;$1.pub&quot;</div>
+</div>
+<div class="line">fi</div>
+<div class="line">shift         # and this should leave $1 as the target name</div>
+</div>
+<div class="line">fi</div>
+</div>
+<div class="line">else</div>
+<div class="line-block">
+<div class="line">if [ x$SSH_AUTH_SOCK != x ] ; then</div>
+<div class="line-block">
+<div class="line">GET_ID=&quot;$GET_ID ssh-add -L&quot;</div>
+</div>
+<div class="line">fi</div>
+</div>
+<div class="line">fi</div>
+<div class="line"><br /></div>
+<div class="line">if [ -z &quot;<cite>eval $GET_ID</cite>&quot; ] &amp;&amp; [ -r &quot;${ID_FILE}&quot; ] ; then</div>
+<div class="line-block">
+<div class="line">GET_ID=&quot;cat ${ID_FILE}&quot;</div>
+</div>
+<div class="line">fi</div>
+<div class="line"><br /></div>
+<div class="line">if [ -z &quot;<cite>eval $GET_ID</cite>&quot; ]; then</div>
+<div class="line-block">
+<div class="line">echo &quot;$0: ERROR: No identities found&quot; &gt;&amp;2</div>
+<div class="line">exit 1</div>
+</div>
+<div class="line">fi</div>
+<div class="line"><br /></div>
+<div class="line">if [ &quot;$#&quot; -lt 1 ] || [ &quot;$1&quot; = &quot;-h&quot; ] || [ &quot;$1&quot; = &quot;--help&quot; ]; then</div>
+<div class="line-block">
+<div class="line">echo &quot;Usage: $0 [-i [identity_file]] [user&#64;]machine&quot; &gt;&amp;2</div>
+<div class="line">exit 1</div>
+</div>
+<div class="line">fi</div>
+<div class="line"><br /></div>
+<div class="line">{ eval &quot;$GET_ID&quot; ; } | ssh $1 &quot;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys&quot; || exit 1</div>
+<div class="line"><br /></div>
+<div class="line">cat &lt;&lt;EOF</div>
+<div class="line">Now try logging into the machine, with &quot;ssh '$1'&quot;, and check in:</div>
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line">.ssh/authorized_keys</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">to make sure we haven't added extra keys that you weren't expecting.</div>
+<div class="line"><br /></div>
+<div class="line">EOF</div>
+</div>
+</blockquote>
+<p>Il ne reste qu'a donner les droits au fichier :</p>
+<blockquote>
+$ chmod 755 /usr/bin/ssh-copy-id</blockquote>
+<p>Vous pouvez maintenant copier votre clé ssh sur un serveur distant en
+tapant :</p>
+<blockquote>
+ssh-copy-id -i id_rsa.pub <a class="reference external" href="mailto:user&#64;machine.distante">user&#64;machine.distante</a></blockquote>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2012-09-29-ma-configuration-iterm2.html#2012-09-29-ma-configuration-iterm2">Ma configuration iTerm2</a></h2>
     <p>
       Posté le sam. 29 septembre 2012 &#8226;
@@ -500,36 +600,6 @@ Tags :
 | # .swp (Vim)
 | *.swp
 </pre>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html#2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh">Créer paire de clé pour se connecter en SSH</a></h2>
-    <p>
-      Posté le ven. 13 janvier 2012 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/cle-publique.html">clé publique</a>,      <a href="http://www.choiz.fr/tag/cle-privee.html">clé privée</a>,      <a href="http://www.choiz.fr/tag/connexion-ssh.html">connexion ssh</a>,      <a href="http://www.choiz.fr/tag/authorized_keys.html">authorized_keys</a>,      <a href="http://www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="http://www.choiz.fr/tag/ssh.html">.ssh</a>    </p>
-  </header>
-  <div>
-      <p>On commence par ouvrir un terminal puis on tape :</p>
-<blockquote>
-$ ssh-keygen -t dsa -b 1024</blockquote>
-<p>Enter file in which to save the key (/Users/choiz/.ssh/id_dsa):</p>
-<div class="line-block">
-<div class="line">En général je garde le fichier id_rsa donc je tape &quot;enter&quot; sinon vous
-pouvez spécifier un autre chemin ainsi qu'un autre fichier.</div>
-</div>
-<p>Enter passphrase (empty for no passphrase):</p>
-<p>Ici on tape un mot de passe si on en veut un lors de la connexion aux
-différents hosts. En général j'en défini un.</p>
-<p>Pour finir on copie la clé sur le serveur soit via scp :</p>
-<blockquote>
-scp ~/.ssh/id_dsa.pub <a class="reference external" href="mailto:user&#64;ip">user&#64;ip</a>:~/.ssh/authorized_keys/</blockquote>
-<p>ou via ssh-copy-id :</p>
-<blockquote>
-ssh-copy-id -i ~/.ssh/id_dsa.pub <a class="reference external" href="mailto:user&#64;ip">user&#64;ip</a></blockquote>
 
   </div>
 </article>
