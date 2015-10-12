@@ -19,14 +19,14 @@
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="fr_FR"/>
 <meta property="og:url" content="http://www.choiz.fr"/>
-<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">
+<meta property="og:image" content="avatar.png">
   <title>ChoiZ</title>
 </head>
 <body>
   <aside>
     <div>
       <a href="http://www.choiz.fr">
-        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="Blog de François LASSERRE, ingénieur informatique." title="Blog de François LASSERRE, ingénieur informatique.">
+        <img src="avatar.png" alt="Blog de François LASSERRE, ingénieur informatique." title="Blog de François LASSERRE, ingénieur informatique.">
       </a>
       <div>
           <a href="http://www.choiz.fr">Blog de François LASSERRE, ingénieur informatique.</a>
@@ -55,9 +55,36 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2014-03-08-réparer-ubuntu-après-un-apt-get-remove-de-trop.html#2014-03-08-réparer-ubuntu-après-un-apt-get-remove-de-trop">Réparer ubuntu après un apt-get remove… de trop</a></h2>
+    <p>
+      Posté le Sam 08 mars 2014 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="http://www.choiz.fr/tag/ubuntu.html">ubuntu</a>,      <a href="http://www.choiz.fr/tag/xfce.html">xfce</a>,      <a href="http://www.choiz.fr/tag/ecran-gris.html">écran gris</a>,      <a href="http://www.choiz.fr/tag/apt-get-remove.html">apt-get remove</a>,      <a href="http://www.choiz.fr/tag/reparation.html">réparation</a>    </p>
+  </header>
+  <div>
+      <p>En voulant modifier xscreensaver par i3lock j'ai supprimé des paquets
+non utilisés (jeux etc…).</p>
+<div class="line-block">
+<div class="line">J'ai malheureusement supprimé un peu (trop) de paquets tel que
+(xfdesktop4 et xfce4-panel).</div>
+<div class="line">Au démarrage de x, une fois identifié, un écran gris s'affiche et rien
+d'autre. Heureusement grâce à mon access SSH je peux me connecter à la
+machine à distance.</div>
+</div>
+<p>Pour voir la liste des paquets déinstallés j'ai donc fait :</p>
+<p><tt class="docutils literal">dpkg <span class="pre">--get-selections</span> &gt; <span class="pre">liste-des-paquets</span></tt></p>
+<p>Il suffit ensuite d'ouvrir dans un éditeur texte (type vi) le fichier
+pour voir les paquets installés / déinstallés. Et réinstaller avec sudo
+apt-get install le ou les paquets manquants.</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2014-03-05-git-diff-multiligne.html#2014-03-05-git-diff-multiligne">Git diff multiligne</a></h2>
     <p>
-      Posté le mer. 05 mars 2014 &#8226;
+      Posté le Mer 05 mars 2014 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/diff.html">diff</a>,      <a href="http://www.choiz.fr/tag/wrap.html">wrap</a>,      <a href="http://www.choiz.fr/tag/multiline.html">multiline</a>,      <a href="http://www.choiz.fr/tag/multiligne.html">multiligne</a>,      <a href="http://www.choiz.fr/tag/less.html">less</a>,      <a href="http://www.choiz.fr/tag/config.html">config</a>,      <a href="http://www.choiz.fr/tag/gitconfig.html">gitconfig</a>    </p>
   </header>
@@ -90,7 +117,7 @@ diff --git a/test.txt b/test.txtnew file mode 100644index 0000000..235a891--- /d
   <header>
     <h2><a href="http://www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html#2014-03-04-création-dune-clé-usb-xubuntu-sur-mac">Création d'une clé usb xubuntu sur mac</a></h2>
     <p>
-      Posté le mar. 04 mars 2014 &#8226;
+      Posté le Mar 04 mars 2014 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/cle-usb.html">clé usb</a>,      <a href="http://www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="http://www.choiz.fr/tag/mac.html">mac</a>,      <a href="http://www.choiz.fr/tag/terminal.html">terminal</a>,      <a href="http://www.choiz.fr/tag/ubuntu.html">ubuntu</a>    </p>
   </header>
@@ -134,7 +161,7 @@ Disk /dev/disk2 ejected
   <header>
     <h2><a href="http://www.choiz.fr/2014-02-06-git-cherry-pick.html#2014-02-06-git-cherry-pick">git cherry-pick</a></h2>
     <p>
-      Posté le jeu. 06 février 2014 &#8226;
+      Posté le Jeu 06 février 2014 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/cherry-pick.html">cherry-pick</a>,      <a href="http://www.choiz.fr/tag/commit.html">commit</a>,      <a href="http://www.choiz.fr/tag/branch.html">branch</a>    </p>
   </header>
@@ -152,7 +179,7 @@ branche actuelle.</p>
   <header>
     <h2><a href="http://www.choiz.fr/2014-02-06-nouveau-thème.html#2014-02-06-nouveau-thème">Nouveau thème</a></h2>
     <p>
-      Posté le jeu. 06 février 2014 &#8226;
+      Posté le Jeu 06 février 2014 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/theme.html">thème</a>,      <a href="http://www.choiz.fr/tag/tumblr.html">tumblr</a>    </p>
   </header>
@@ -174,7 +201,7 @@ Tags :
   <header>
     <h2><a href="http://www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html#2014-01-19-suppression-dun-caractère-unicode-dans-vim">Suppression d'un caractère unicode dans Vim</a></h2>
     <p>
-      Posté le dim. 19 janvier 2014 &#8226;
+      Posté le Dim 19 janvier 2014 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/vim.html">vim</a>,      <a href="http://www.choiz.fr/tag/unicode.html">unicode</a>,      <a href="http://www.choiz.fr/tag/char.html">char</a>,      <a href="http://www.choiz.fr/tag/suppression.html">suppression</a>,      <a href="http://www.choiz.fr/tag/caractere.html">caractère</a>    </p>
   </header>
@@ -197,7 +224,7 @@ second pour dire la fin de ce qu'on remplace).</p>
   <header>
     <h2><a href="http://www.choiz.fr/2013-11-13-crontab-e-files.html#2013-11-13-crontab-e-files">crontab -e file(s)</a></h2>
     <p>
-      Posté le mer. 13 novembre 2013 &#8226;
+      Posté le Mer 13 novembre 2013 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/crontab-e.html">crontab -e</a>,      <a href="http://www.choiz.fr/tag/crontab.html">crontab</a>,      <a href="http://www.choiz.fr/tag/files.html">files</a>,      <a href="http://www.choiz.fr/tag/file.html">file</a>,      <a href="http://www.choiz.fr/tag/varspoolcroncrontabs.html">/var/spool/cron/crontabs</a>,      <a href="http://www.choiz.fr/tag/varspoolcron.html">/var/spool/cron</a>,      <a href="http://www.choiz.fr/tag/user.html">user</a>    </p>
   </header>
@@ -214,7 +241,7 @@ debian, a voir sur d'autres distribs)</p>
   <header>
     <h2><a href="http://www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html#2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers">Chmod 755 sur les dossiers et 644&nbsp;sur les fichiers</a></h2>
     <p>
-      Posté le mar. 12 novembre 2013 &#8226;
+      Posté le Mar 12 novembre 2013 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/chmod.html">chmod</a>,      <a href="http://www.choiz.fr/tag/755.html">755</a>,      <a href="http://www.choiz.fr/tag/644.html">644</a>,      <a href="http://www.choiz.fr/tag/folder.html">folder</a>,      <a href="http://www.choiz.fr/tag/file.html">file</a>,      <a href="http://www.choiz.fr/tag/folders.html">folders</a>,      <a href="http://www.choiz.fr/tag/files.html">files</a>,      <a href="http://www.choiz.fr/tag/pwd.html">pwd</a>,      <a href="http://www.choiz.fr/tag/find.html">find</a>    </p>
   </header>
@@ -247,7 +274,7 @@ temps de faire un article la dessus, voilà qui est fait.</p>
   <header>
     <h2><a href="http://www.choiz.fr/2013-11-03-icônes-favicon-apple-touch-icon.html#2013-11-03-icônes-favicon-apple-touch-icon">Icônes / Favicon / Apple-touch-icon</a></h2>
     <p>
-      Posté le dim. 03 novembre 2013 &#8226;
+      Posté le Dim 03 novembre 2013 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/cli.html">cli</a>,      <a href="http://www.choiz.fr/tag/imagemagick.html">imagemagick</a>,      <a href="http://www.choiz.fr/tag/android.html">android</a>,      <a href="http://www.choiz.fr/tag/ios.html">ios</a>,      <a href="http://www.choiz.fr/tag/apple.html">apple</a>,      <a href="http://www.choiz.fr/tag/icons.html">icons</a>,      <a href="http://www.choiz.fr/tag/icon.html">icon</a>,      <a href="http://www.choiz.fr/tag/favicon.html">favicon</a>,      <a href="http://www.choiz.fr/tag/apple-touch-icon.html">apple-touch-icon</a>,      <a href="http://www.choiz.fr/tag/precomposed.html">precomposed</a>,      <a href="http://www.choiz.fr/tag/html.html">html</a>    </p>
   </header>
@@ -303,7 +330,7 @@ href=&quot;touch-icon-ipad-retina.png&quot;&gt;</div>
   <header>
     <h2><a href="http://www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html#2013-10-14-installer-jshint-sur-mac">Installer jshint sur mac</a></h2>
     <p>
-      Posté le lun. 14 octobre 2013 &#8226;
+      Posté le Lun 14 octobre 2013 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/jshint.html">jshint</a>,      <a href="http://www.choiz.fr/tag/mac.html">mac</a>,      <a href="http://www.choiz.fr/tag/setup.html">setup</a>,      <a href="http://www.choiz.fr/tag/npm.html">npm</a>,      <a href="http://www.choiz.fr/tag/nodejs.html">nodejs</a>    </p>
   </header>
@@ -316,38 +343,6 @@ sudo npm install -g jshint</blockquote>
 préciser tout le chemin a chaque fois :</p>
 <blockquote>
 ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint</blockquote>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2013-10-01-git-se-déplacer-dans-une-branche-distante.html#2013-10-01-git-se-déplacer-dans-une-branche-distante">Git se déplacer dans une branche distante</a></h2>
-    <p>
-      Posté le mar. 01 octobre 2013 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/checkout.html">checkout</a>,      <a href="http://www.choiz.fr/tag/fetch.html">fetch</a>,      <a href="http://www.choiz.fr/tag/origin.html">origin</a>,      <a href="http://www.choiz.fr/tag/checkout-b.html">checkout -b</a>,      <a href="http://www.choiz.fr/tag/branch.html">branch</a>,      <a href="http://www.choiz.fr/tag/remote.html">remote</a>    </p>
-  </header>
-  <div>
-      <div class="line-block">
-<div class="line">J'utilise des branches tel que prod, preprod pour mes projets et en
-local il m'arrive de vouloir aller sur ses branches.</div>
-<div class="line">Je fais donc :</div>
-</div>
-<p><tt class="docutils literal">git checkout preprod</tt></p>
-<p>Et j'ai l'erreur suivante :</p>
-<pre class="literal-block">
-error: pathspec 'preprod' did not match any file(s) known to git.
-</pre>
-<p>Je vais mettre a jour mon origin :</p>
-<p><tt class="docutils literal">git fetch origin</tt></p>
-<p>Maintenant je veux ma branche distante en lui précisant l'origin :</p>
-<p><tt class="docutils literal">git checkout <span class="pre">-b</span> preprod origin/preprod</tt></p>
-<p>Et j'ai bien ma branche en local comme git me l'indique :</p>
-<pre class="literal-block">
-Branch preprod set up to track remote branch preprod from origin.
-Switched to a new branch 'preprod'
-</pre>
 
   </div>
 </article>
@@ -371,7 +366,7 @@ Switched to a new branch 'preprod'
   "@type" : "Blog",
   "name": " ChoiZ ",
   "url" : "http://www.choiz.fr",
-  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "image": "avatar.png",
   "description": ""
 }
 </script></body>

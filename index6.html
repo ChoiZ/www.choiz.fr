@@ -19,14 +19,14 @@
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="fr_FR"/>
 <meta property="og:url" content="http://www.choiz.fr"/>
-<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">
+<meta property="og:image" content="avatar.png">
   <title>ChoiZ</title>
 </head>
 <body>
   <aside>
     <div>
       <a href="http://www.choiz.fr">
-        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="Blog de François LASSERRE, ingénieur informatique." title="Blog de François LASSERRE, ingénieur informatique.">
+        <img src="avatar.png" alt="Blog de François LASSERRE, ingénieur informatique." title="Blog de François LASSERRE, ingénieur informatique.">
       </a>
       <div>
           <a href="http://www.choiz.fr">Blog de François LASSERRE, ingénieur informatique.</a>
@@ -55,9 +55,78 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html#2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore">Git mes fichiers de config gitconfig / gitignore</a></h2>
+    <p>
+      Posté le Mar 31 janvier 2012 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/gitconfig.html">gitconfig</a>,      <a href="http://www.choiz.fr/tag/gitignore.html">gitignore</a>,      <a href="http://www.choiz.fr/tag/git-color.html">git color</a>,      <a href="http://www.choiz.fr/tag/git-tools.html">git tools</a>,      <a href="http://www.choiz.fr/tag/git-alias.html">git alias</a>,      <a href="http://www.choiz.fr/tag/git-merge.html">git merge</a>,      <a href="http://www.choiz.fr/tag/git-diff.html">git diff</a>,      <a href="http://www.choiz.fr/tag/git-editor.html">git editor</a>,      <a href="http://www.choiz.fr/tag/git-excludesfile.html">git excludesfile</a>    </p>
+  </header>
+  <div>
+      <p>Fichier .gitconfig</p>
+<blockquote>
+<div class="line-block">
+<div class="line">[user]</div>
+<div class="line-block">
+<div class="line">name = François LASSERRE</div>
+<div class="line">email = <a class="reference external" href="mailto:mon&#64;email.fr">mon&#64;email.fr</a></div>
+</div>
+<div class="line">[diff]</div>
+<div class="line-block">
+<div class="line">tool = vimdiff</div>
+</div>
+<div class="line">[color]</div>
+<div class="line-block">
+<div class="line">branch = auto</div>
+<div class="line">diff = auto</div>
+<div class="line">status = auto</div>
+<div class="line">interactive = auto</div>
+<div class="line">ui = true</div>
+</div>
+<div class="line">[alias]</div>
+<div class="line-block">
+<div class="line">br = branch</div>
+<div class="line">ci = commit -a</div>
+<div class="line">co = checkout</div>
+<div class="line">sh = show --color-words</div>
+<div class="line">st = status</div>
+<div class="line">last = cat-file commit HEAD</div>
+<div class="line">tree = log --graph --oneline --decorate</div>
+<div class="line">graph = log --graph --decorate</div>
+<div class="line">pom = push origin master</div>
+</div>
+<div class="line">[core]</div>
+<div class="line-block">
+<div class="line">excludesfile = ~/.gitignore</div>
+<div class="line">editor = vim</div>
+</div>
+<div class="line">[merge]</div>
+<div class="line-block">
+<div class="line">tool = vimdiff</div>
+</div>
+</div>
+</blockquote>
+<p>Fichier .gitignore</p>
+<pre class="literal-block">
+| # Ignore files from git
+|
+| # ._ files (Mac Os X)
+| ._*
+|
+| # .DS_STORE (Mac Os X)
+| .DS_STORE
+|
+| # .swp (Vim)
+| *.swp
+</pre>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html#2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh">Créer paire de clé pour se connecter en SSH</a></h2>
     <p>
-      Posté le ven. 13 janvier 2012 &#8226;
+      Posté le Ven 13 janvier 2012 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/cle-publique.html">clé publique</a>,      <a href="http://www.choiz.fr/tag/cle-privee.html">clé privée</a>,      <a href="http://www.choiz.fr/tag/connexion-ssh.html">connexion ssh</a>,      <a href="http://www.choiz.fr/tag/authorized_keys.html">authorized_keys</a>,      <a href="http://www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="http://www.choiz.fr/tag/ssh.html">.ssh</a>    </p>
   </header>
@@ -87,7 +156,7 @@ ssh-copy-id -i ~/.ssh/id_dsa.pub <a class="reference external" href="mailto:user
   <header>
     <h2><a href="http://www.choiz.fr/2011-12-08-bug-firefox-avec-une-iframe-blanche.html#2011-12-08-bug-firefox-avec-une-iframe-blanche">Bug Firefox avec une iFrame blanche</a></h2>
     <p>
-      Posté le jeu. 08 décembre 2011 &#8226;
+      Posté le Jeu 08 décembre 2011 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/firefox.html">Firefox</a>,      <a href="http://www.choiz.fr/tag/bug.html">Bug</a>,      <a href="http://www.choiz.fr/tag/iframe.html">iFrame</a>,      <a href="http://www.choiz.fr/tag/displaynone.html">display:none</a>,      <a href="http://www.choiz.fr/tag/css.html">css</a>,      <a href="http://www.choiz.fr/tag/white-iframe.html">white iframe</a>    </p>
   </header>
@@ -111,7 +180,7 @@ affiche le div en display:block.</p>
   <header>
     <h2><a href="http://www.choiz.fr/2011-12-04-php-gettext-debian.html#2011-12-04-php-gettext-debian">PHP + Gettext + Debian</a></h2>
     <p>
-      Posté le dim. 04 décembre 2011 &#8226;
+      Posté le Dim 04 décembre 2011 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/mo.html">.mo</a>,      <a href="http://www.choiz.fr/tag/po.html">.po</a>,      <a href="http://www.choiz.fr/tag/etclocale.html">/etc/locale</a>,      <a href="http://www.choiz.fr/tag/lc_all.html">LC_ALL</a>,      <a href="http://www.choiz.fr/tag/gettext.html">gettext</a>,      <a href="http://www.choiz.fr/tag/php.html">php</a>,      <a href="http://www.choiz.fr/tag/php-gettext.html">php-gettext</a>,      <a href="http://www.choiz.fr/tag/setlocale.html">setlocale</a>,      <a href="http://www.choiz.fr/tag/xgettext.html">xgettext</a>    </p>
   </header>
@@ -213,7 +282,7 @@ web :</p>
   <header>
     <h2><a href="http://www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html#2011-12-02-clavier-apple-sur-debian">Clavier Apple sur debian</a></h2>
     <p>
-      Posté le ven. 02 décembre 2011 &#8226;
+      Posté le Ven 02 décembre 2011 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/clavier.html">Clavier</a>,      <a href="http://www.choiz.fr/tag/apple.html">Apple</a>,      <a href="http://www.choiz.fr/tag/mapage.html">Mapage</a>,      <a href="http://www.choiz.fr/tag/debian.html">Debian</a>,      <a href="http://www.choiz.fr/tag/linux.html">Linux</a>,      <a href="http://www.choiz.fr/tag/keyboard.html">Keyboard</a>,      <a href="http://www.choiz.fr/tag/mac.html">Mac</a>,      <a href="http://www.choiz.fr/tag/mac-keyboard.html">Mac Keyboard</a>    </p>
   </header>
@@ -258,7 +327,7 @@ désactiver le layout par defaut du système.</p>
   <header>
     <h2><a href="http://www.choiz.fr/2011-12-01-dual-screen-sur-xfce.html#2011-12-01-dual-screen-sur-xfce">Dual screen sur xfce</a></h2>
     <p>
-      Posté le jeu. 01 décembre 2011 &#8226;
+      Posté le Jeu 01 décembre 2011 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/xfce.html">xfce</a>,      <a href="http://www.choiz.fr/tag/dualscreen.html">dualscreen</a>,      <a href="http://www.choiz.fr/tag/dual.html">dual</a>,      <a href="http://www.choiz.fr/tag/screen.html">screen</a>,      <a href="http://www.choiz.fr/tag/xfce.html">xfce</a>,      <a href="http://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
@@ -277,7 +346,7 @@ le ARandR pour configurer les deux écrans.</p>
   <header>
     <h2><a href="http://www.choiz.fr/2011-11-30-flash-sous-debian.html#2011-11-30-flash-sous-debian">Flash sous Debian</a></h2>
     <p>
-      Posté le mer. 30 novembre 2011 &#8226;
+      Posté le Mer 30 novembre 2011 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/flash.html">Flash</a>,      <a href="http://www.choiz.fr/tag/debian.html">Debian</a>,      <a href="http://www.choiz.fr/tag/deezer.html">Deezer</a>,      <a href="http://www.choiz.fr/tag/firefox.html">Firefox</a>,      <a href="http://www.choiz.fr/tag/flashplugin.html">flashplugin</a>,      <a href="http://www.choiz.fr/tag/source.html">source</a>,      <a href="http://www.choiz.fr/tag/apt.html">apt</a>,      <a href="http://www.choiz.fr/tag/soucelist.html">souce.list</a>,      <a href="http://www.choiz.fr/tag/non-free.html">non-free</a>,      <a href="http://www.choiz.fr/tag/contrib.html">contrib</a>    </p>
   </header>
@@ -306,7 +375,7 @@ Deezer.</p>
   <header>
     <h2><a href="http://www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html#2011-11-02-voir-les-fichiers-cachés-sur-lion">Voir les fichiers cachés sur Lion</a></h2>
     <p>
-      Posté le mer. 02 novembre 2011 &#8226;
+      Posté le Mer 02 novembre 2011 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/fichiers.html">fichiers</a>,      <a href="http://www.choiz.fr/tag/caches.html">cachés</a>,      <a href="http://www.choiz.fr/tag/hidden.html">hidden</a>,      <a href="http://www.choiz.fr/tag/files.html">files</a>,      <a href="http://www.choiz.fr/tag/lion.html">lion</a>,      <a href="http://www.choiz.fr/tag/defaults.html">defaults</a>,      <a href="http://www.choiz.fr/tag/appleshowallfiles.html">AppleShowAllFiles</a>,      <a href="http://www.choiz.fr/tag/finder.html">Finder</a>    </p>
   </header>
@@ -325,7 +394,7 @@ Tags :
   <header>
     <h2><a href="http://www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Insérer un # au début de chaque ligne d'un fichier avec vim</a></h2>
     <p>
-      Posté le mer. 05 octobre 2011 &#8226;
+      Posté le Mer 05 octobre 2011 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/vim.html">Vim</a>,      <a href="http://www.choiz.fr/tag/search.html">search</a>,      <a href="http://www.choiz.fr/tag/replace.html">replace</a>,      <a href="http://www.choiz.fr/tag/line.html">line</a>,      <a href="http://www.choiz.fr/tag/add.html">add</a>,      <a href="http://www.choiz.fr/tag/ligne.html">ligne</a>,      <a href="http://www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="http://www.choiz.fr/tag/file.html">file</a>,      <a href="http://www.choiz.fr/tag/remplace.html">remplace</a>,      <a href="http://www.choiz.fr/tag/ajout.html">ajout</a>    </p>
   </header>
@@ -347,7 +416,7 @@ on voulais la fin de la ligne) et # le caractère que je veux remplacer</p>
   <header>
     <h2><a href="http://www.choiz.fr/2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html#2011-09-18-plusieurs-comptes-skype-sur-le-même-mac">Plusieurs comptes Skype sur le même Mac !</a></h2>
     <p>
-      Posté le dim. 18 septembre 2011 &#8226;
+      Posté le Dim 18 septembre 2011 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/skype.html">Skype</a>,      <a href="http://www.choiz.fr/tag/multiutilisateur.html">Multiutilisateur</a>,      <a href="http://www.choiz.fr/tag/mac.html">Mac</a>,      <a href="http://www.choiz.fr/tag/macos.html">MacOs</a>,      <a href="http://www.choiz.fr/tag/mac-os-x.html">Mac os x</a>,      <a href="http://www.choiz.fr/tag/osx.html">OsX</a>,      <a href="http://www.choiz.fr/tag/skype-mac.html">Skype Mac</a>,      <a href="http://www.choiz.fr/tag/multi.html">Multi</a>,      <a href="http://www.choiz.fr/tag/compte.html">Compte</a>,      <a href="http://www.choiz.fr/tag/another-copy.html">Another copy</a>,      <a href="http://www.choiz.fr/tag/another-copy-of-skype.html">Another copy of Skype</a>    </p>
   </header>
@@ -373,36 +442,6 @@ password (ou autre suivant le mot de passe de l'utilisateur).</blockquote>
 <p>Ce qui devrait lancer une seconde instance de Skype.</p>
 
   </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login.html#2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login">Profil sur viadeo sans avoir la fenêtre de login</a></h2>
-    <p>
-      Posté le dim. 18 septembre 2011 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/viadeo.html">viadeo</a>,      <a href="http://www.choiz.fr/tag/javascript.html">javascript</a>,      <a href="http://www.choiz.fr/tag/js.html">js</a>,      <a href="http://www.choiz.fr/tag/code.html">code</a>,      <a href="http://www.choiz.fr/tag/login.html">login</a>,      <a href="http://www.choiz.fr/tag/profil.html">profil</a>,      <a href="http://www.choiz.fr/tag/identifie.html">identifié</a>,      <a href="http://www.choiz.fr/tag/firebug.html">firebug</a>    </p>
-  </header>
-  <div>
-      <div class="line-block">
-<div class="line">J'ai voulu plusieurs fois voir un profil sur Viadeo sans forcement
-être identifié. Lorsque l'on déplace la souris ou que l'on scroll une
-autre page s'affiche.</div>
-<div class="line">Exemple sur <a class="reference external" href="http://www.viadeo.com/fr/profile/francois.lasserre1">ma page
-viadeo</a>.</div>
-<div class="line">Pour empécher d'avoir la page de login il faut modifier une fonction
-Javascript. Avec un outil tel que
-<a class="reference external" href="http://www.getfirebug.com">Firebug</a> vous pouvez modifier le code
-Javascript du site.</div>
-<div class="line">Ouvrir firebug en mode console et modifier la fonction createJoin() !</div>
-<div class="line">Dans la console a coté de &quot;&gt;&gt;&gt;&quot; il suffit de taper :</div>
-</div>
-<blockquote>
-function createJoin() { false; }</blockquote>
-<p>Avec ce code on modifie le contenu de la fonction createJoin() par false
-(plutôt que le code par defaut qui ouvre la fenêtre d'identification).</p>
-
-  </div>
 </article>
 
   <div class="pagination">
@@ -424,7 +463,7 @@ function createJoin() { false; }</blockquote>
   "@type" : "Blog",
   "name": " ChoiZ ",
   "url" : "http://www.choiz.fr",
-  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "image": "avatar.png",
   "description": ""
 }
 </script></body>

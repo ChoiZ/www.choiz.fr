@@ -19,14 +19,14 @@
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="fr_FR"/>
 <meta property="og:url" content="http://www.choiz.fr"/>
-<meta property="og:image" content="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png">
+<meta property="og:image" content="avatar.png">
   <title>ChoiZ</title>
 </head>
 <body>
   <aside>
     <div>
       <a href="http://www.choiz.fr">
-        <img src="http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png" alt="Blog de François LASSERRE, ingénieur informatique." title="Blog de François LASSERRE, ingénieur informatique.">
+        <img src="avatar.png" alt="Blog de François LASSERRE, ingénieur informatique." title="Blog de François LASSERRE, ingénieur informatique.">
       </a>
       <div>
           <a href="http://www.choiz.fr">Blog de François LASSERRE, ingénieur informatique.</a>
@@ -55,9 +55,41 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2013-10-01-git-se-déplacer-dans-une-branche-distante.html#2013-10-01-git-se-déplacer-dans-une-branche-distante">Git se déplacer dans une branche distante</a></h2>
+    <p>
+      Posté le Mar 01 octobre 2013 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/checkout.html">checkout</a>,      <a href="http://www.choiz.fr/tag/fetch.html">fetch</a>,      <a href="http://www.choiz.fr/tag/origin.html">origin</a>,      <a href="http://www.choiz.fr/tag/checkout-b.html">checkout -b</a>,      <a href="http://www.choiz.fr/tag/branch.html">branch</a>,      <a href="http://www.choiz.fr/tag/remote.html">remote</a>    </p>
+  </header>
+  <div>
+      <div class="line-block">
+<div class="line">J'utilise des branches tel que prod, preprod pour mes projets et en
+local il m'arrive de vouloir aller sur ses branches.</div>
+<div class="line">Je fais donc :</div>
+</div>
+<p><tt class="docutils literal">git checkout preprod</tt></p>
+<p>Et j'ai l'erreur suivante :</p>
+<pre class="literal-block">
+error: pathspec 'preprod' did not match any file(s) known to git.
+</pre>
+<p>Je vais mettre a jour mon origin :</p>
+<p><tt class="docutils literal">git fetch origin</tt></p>
+<p>Maintenant je veux ma branche distante en lui précisant l'origin :</p>
+<p><tt class="docutils literal">git checkout <span class="pre">-b</span> preprod origin/preprod</tt></p>
+<p>Et j'ai bien ma branche en local comme git me l'indique :</p>
+<pre class="literal-block">
+Branch preprod set up to track remote branch preprod from origin.
+Switched to a new branch 'preprod'
+</pre>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2013-09-29-connaitre-le-code-réponse-http-avec-curl.html#2013-09-29-connaitre-le-code-réponse-http-avec-curl">Connaitre le code réponse HTTP avec curl</a></h2>
     <p>
-      Posté le dim. 29 septembre 2013 &#8226;
+      Posté le Dim 29 septembre 2013 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/curl.html">curl</a>,      <a href="http://www.choiz.fr/tag/http.html">http</a>,      <a href="http://www.choiz.fr/tag/response.html">response</a>,      <a href="http://www.choiz.fr/tag/code.html">code</a>,      <a href="http://www.choiz.fr/tag/301.html">301</a>,      <a href="http://www.choiz.fr/tag/302.html">302</a>,      <a href="http://www.choiz.fr/tag/404.html">404</a>,      <a href="http://www.choiz.fr/tag/200.html">200</a>    </p>
   </header>
@@ -97,7 +129,7 @@ Set-Cookie: tmgioct=52485e21d628b00096885790; expires=Wed, 27-Sep-2023 17:06:41 
   <header>
     <h2><a href="http://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html#2013-07-16-passer-de-svn-à-git">Passer de svn à git</a></h2>
     <p>
-      Posté le mar. 16 juillet 2013 &#8226;
+      Posté le Mar 16 juillet 2013 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/svn-to-git.html">svn to git</a>,      <a href="http://www.choiz.fr/tag/svn.html">svn</a>,      <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/migate.html">migate</a>,      <a href="http://www.choiz.fr/tag/git-svn-clone.html">git svn clone</a>,      <a href="http://www.choiz.fr/tag/authors.html">authors</a>,      <a href="http://www.choiz.fr/tag/tags.html">tags</a>    </p>
   </header>
@@ -140,7 +172,7 @@ pour différentes commandes ;)</p>
   <header>
     <h2><a href="http://www.choiz.fr/2013-06-22-export-import-avec-postgresql.html#2013-06-22-export-import-avec-postgresql">Export / Import avec PostgreSQL</a></h2>
     <p>
-      Posté le sam. 22 juin 2013 &#8226;
+      Posté le Sam 22 juin 2013 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/postgresql.html">postgreSQL</a>,      <a href="http://www.choiz.fr/tag/pg_dump.html">pg_dump</a>,      <a href="http://www.choiz.fr/tag/psql.html">psql</a>,      <a href="http://www.choiz.fr/tag/import.html">import</a>,      <a href="http://www.choiz.fr/tag/export.html">export</a>,      <a href="http://www.choiz.fr/tag/dump.html">dump</a>,      <a href="http://www.choiz.fr/tag/sql.html">sql</a>    </p>
   </header>
@@ -164,7 +196,7 @@ pg_dump <em>mabase</em> &gt; <em>dump_base</em>.sql</blockquote>
   <header>
     <h2><a href="http://www.choiz.fr/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html#2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre">Git déplacer mon dernier commit sur une autre branche</a></h2>
     <p>
-      Posté le sam. 22 juin 2013 &#8226;
+      Posté le Sam 22 juin 2013 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/reset.html">reset</a>,      <a href="http://www.choiz.fr/tag/checkout.html">checkout</a>,      <a href="http://www.choiz.fr/tag/merge.html">merge</a>,      <a href="http://www.choiz.fr/tag/branch.html">branch</a>,      <a href="http://www.choiz.fr/tag/commit.html">commit</a>    </p>
   </header>
@@ -251,7 +283,7 @@ git log :</p>
   <header>
     <h2><a href="http://www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html#2013-06-21-installation-disque-dur-seagate-4to-debian">Installation disque dur Seagate 4To Debian</a></h2>
     <p>
-      Posté le ven. 21 juin 2013 &#8226;
+      Posté le Ven 21 juin 2013 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/debian.html">debian</a>,      <a href="http://www.choiz.fr/tag/disque-dur.html">disque dur</a>,      <a href="http://www.choiz.fr/tag/4to.html">4To</a>,      <a href="http://www.choiz.fr/tag/partition.html">partition</a>,      <a href="http://www.choiz.fr/tag/fs.html">fs</a>,      <a href="http://www.choiz.fr/tag/config_efi_partition.html">config_efi_partition</a>,      <a href="http://www.choiz.fr/tag/fdisk.html">fdisk</a>,      <a href="http://www.choiz.fr/tag/parted.html">parted</a>,      <a href="http://www.choiz.fr/tag/gpt.html">gpt</a>,      <a href="http://www.choiz.fr/tag/mkfs.html">mkfs</a>    </p>
   </header>
@@ -349,7 +381,7 @@ fichiers&nbsp;: complété
   <header>
     <h2><a href="http://www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html#2013-06-10-toujours-afficher-le-protocole-dans-firefox">Toujours afficher le protocole dans Firefox</a></h2>
     <p>
-      Posté le lun. 10 juin 2013 &#8226;
+      Posté le Lun 10 juin 2013 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/firefox.html">firefox</a>,      <a href="http://www.choiz.fr/tag/config.html">config</a>,      <a href="http://www.choiz.fr/tag/http.html">http</a>,      <a href="http://www.choiz.fr/tag/urlbar.html">urlbar</a>,      <a href="http://www.choiz.fr/tag/browser.html">browser</a>    </p>
   </header>
@@ -372,7 +404,7 @@ fois <a class="reference external" href="http://">http://</a>…</p>
   <header>
     <h2><a href="http://www.choiz.fr/2013-05-29-latin1-utf-8.html#2013-05-29-latin1-utf-8">Latin1 &lt;-&gt; UTF-8</a></h2>
     <p>
-      Posté le mer. 29 mai 2013 &#8226;
+      Posté le Mer 29 mai 2013 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/php.html">PHP</a>,      <a href="http://www.choiz.fr/tag/latin1.html">LATIN1</a>,      <a href="http://www.choiz.fr/tag/utf-8.html">UTF-8</a>,      <a href="http://www.choiz.fr/tag/mysql.html">MYSQL</a>,      <a href="http://www.choiz.fr/tag/encoding.html">ENCODING</a>,      <a href="http://www.choiz.fr/tag/charset.html">CHARSET</a>,      <a href="http://www.choiz.fr/tag/mysqldump.html">mysqldump</a>    </p>
   </header>
@@ -414,7 +446,7 @@ pour le dernier tips.</p>
   <header>
     <h2><a href="http://www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html#2013-03-04-typematrix-sous-mac-os-x">TypeMatrix sous Mac Os X</a></h2>
     <p>
-      Posté le lun. 04 mars 2013 &#8226;
+      Posté le Lun 04 mars 2013 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/typematrix.html">TypeMatrix</a>,      <a href="http://www.choiz.fr/tag/2030.html">2030</a>,      <a href="http://www.choiz.fr/tag/usb.html">USB</a>,      <a href="http://www.choiz.fr/tag/mac.html">mac</a>,      <a href="http://www.choiz.fr/tag/cut.html">cut</a>,      <a href="http://www.choiz.fr/tag/copy.html">copy</a>,      <a href="http://www.choiz.fr/tag/paste.html">paste</a>,      <a href="http://www.choiz.fr/tag/couper.html">couper</a>,      <a href="http://www.choiz.fr/tag/copier.html">copier</a>,      <a href="http://www.choiz.fr/tag/coller.html">coller</a>    </p>
   </header>
@@ -442,7 +474,7 @@ avec la prise en charge des touches couper, copier et coller.</p>
   <header>
     <h2><a href="http://www.choiz.fr/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html#2013-02-12-logiciels-de-gestion-de-versions-svn-git">Logiciels de gestion de versions (Svn, Git, Mercurial)</a></h2>
     <p>
-      Posté le mar. 12 février 2013 &#8226;
+      Posté le Mar 12 février 2013 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/mercurial.html">mercurial</a>,      <a href="http://www.choiz.fr/tag/svn.html">svn</a>,      <a href="http://www.choiz.fr/tag/migration.html">migration</a>,      <a href="http://www.choiz.fr/tag/svn-to-git.html">svn to git</a>,      <a href="http://www.choiz.fr/tag/mercurial-to-git.html">mercurial to git</a>,      <a href="http://www.choiz.fr/tag/hg-to-git.html">hg to git</a>,      <a href="http://www.choiz.fr/tag/hg.html">hg</a>    </p>
   </header>
@@ -453,40 +485,6 @@ migrer sur git car disponible sur github ainsi que sur bitbucket.</p>
 git</a>.</p>
 <p>Egalement un autre tutoriel en anglais pour passer <a class="reference external" href="http://hivelogic.com/articles/converting-from-mercurial-to-git">de mercurial à
 git</a>.</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2012-12-27-bépo-11ème-jour.html#2012-12-27-bépo-11ème-jour">Bépo 11ème jour !</a></h2>
-    <p>
-      Posté le jeu. 27 décembre 2012 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/bepo.html">bépo</a>,      <a href="http://www.choiz.fr/tag/dvorak-fr.html">dvorak fr</a>,      <a href="http://www.choiz.fr/tag/dvorak.html">dvorak</a>,      <a href="http://www.choiz.fr/tag/clavier.html">clavier</a>,      <a href="http://www.choiz.fr/tag/ergonomique.html">ergonomique</a>,      <a href="http://www.choiz.fr/tag/typematrix.html">typematrix</a>,      <a href="http://www.choiz.fr/tag/azerty.html">azerty</a>,      <a href="http://www.choiz.fr/tag/disposition.html">disposition</a>,      <a href="http://www.choiz.fr/tag/libre.html">libre</a>    </p>
-  </header>
-  <div>
-      <div class="line-block">
-<div class="line">Depuis maintenant 11 jours je me suis mis au
-<a class="reference external" href="http://bepo.fr/">bépo</a>.&nbsp;J'ai gardé mes différents résultats, ce
-qui vas me permettre de faire une courbe de progression de mon
-apprentissage.</div>
-<div class="line">Sachant qu'au second jour j'arrivais à taper environ 10,2 mots par
-minute, aujourd'hui je suis à 24,4 mots par minutes...</div>
-</div>
-<div class="line-block">
-<div class="line">J'ai commandé deux claviers
-ergonomiques&nbsp;<a class="reference external" href="http://www.typematrix.com/">typematrix</a>,&nbsp;sans
-marquage sur les touches ainsi que 2 skins : un en
-<a class="reference external" href="http://fr.wikipedia.org/wiki/AZERTY">azerty</a> et un en
-<a class="reference external" href="http://bepo.fr">bépo</a>. Pour info je m'entraine généralement 2 fois
-par jour quand j'ai le temps environ 1/2 heure. Je m'intéresse pas mal
-au sujet et je vous recommande de lire le <a class="reference external" href="http://bepo.fr/wiki/DVZine">dvzine en
-Français</a>&nbsp;qui est fascinant.</div>
-<div class="line">Dites-moi si vous aussi vous voulez passer au bépo ou dvorak, ainsi
-que vos motivations &amp; tips si vous en avez c'est toujours bon à
-prendre ;)</div>
-</div>
 
   </div>
 </article>
@@ -510,7 +508,7 @@ prendre ;)</div>
   "@type" : "Blog",
   "name": " ChoiZ ",
   "url" : "http://www.choiz.fr",
-  "image": "http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png",
+  "image": "avatar.png",
   "description": ""
 }
 </script></body>
