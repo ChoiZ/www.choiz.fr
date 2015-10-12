@@ -8,7 +8,7 @@ SITEURL = u'http://localhost:8000'
 SITETITLE = u'Blog de François LASSERRE, ingénieur informatique.'
 SITESUBTITLE = 'Je suis Français, ingénieur informatique, j\'aime le développement web, les logiciels libres et l\'informatique.'
 SITESUBTITLE2 = 'J\'ai fondé plusieurs webradios depuis l\'an 2000, actuellement je fais parti de l\'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.'
-SITELOGO = u'http://33.media.tumblr.com/avatar_93efe3b6ac00_128.png'
+SITELOGO = u'avatar.png'
 
 FAVICON = SITEURL + '/favicon.ico'
 ROBOTS = 'index, follow'
@@ -50,8 +50,8 @@ SOCIAL = (
 
 DEFAULT_PAGINATION = 10
 
-STATIC_PATHS = ['extra/CNAME']
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
+STATIC_PATHS = ['extra/CNAME','extra/avatar.png']
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},'extra/avatar.png': {'path': 'avatar.png'}}
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
