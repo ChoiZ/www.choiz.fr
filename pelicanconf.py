@@ -51,7 +51,11 @@ SOCIAL = (
 DEFAULT_PAGINATION = 10
 
 STATIC_PATHS = ['extra/CNAME','extra/avatar.png']
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},'extra/avatar.png': {'path': 'avatar.png'}}
+EXTRA_PATH_METADATA = {
+    'extra/CNAME': {'path': 'CNAME'},
+    'extra/avatar.png': {'path': 'avatar.png'},
+    'extra/README.md': {'path': 'README.md'}
+}
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
