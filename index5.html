@@ -55,6 +55,25 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html#2013-02-12-logiciels-de-gestion-de-versions-svn-git">Logiciels de gestion de versions (Svn, Git, Mercurial)</a></h2>
+    <p>
+      Posté le Mar 12 février 2013 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/mercurial.html">mercurial</a>,      <a href="http://www.choiz.fr/tag/svn.html">svn</a>,      <a href="http://www.choiz.fr/tag/migration.html">migration</a>,      <a href="http://www.choiz.fr/tag/svn-to-git.html">svn to git</a>,      <a href="http://www.choiz.fr/tag/mercurial-to-git.html">mercurial to git</a>,      <a href="http://www.choiz.fr/tag/hg-to-git.html">hg to git</a>,      <a href="http://www.choiz.fr/tag/hg.html">hg</a>    </p>
+  </header>
+  <div>
+      <p>J'ai différents projet sous svn, git et mercurial. J'ai pour but de tout
+migrer sur git car disponible sur github ainsi que sur bitbucket.</p>
+<p>J'ai trouvé un <a class="reference external" href="http://www.yterium.net/Migrer-un-projet-SVN-vers-GIT">trés bon tutoriel pour migrer un projet svn à
+git</a>.</p>
+<p>Egalement un autre tutoriel en anglais pour passer <a class="reference external" href="http://hivelogic.com/articles/converting-from-mercurial-to-git">de mercurial à
+git</a>.</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2012-12-27-bépo-11ème-jour.html#2012-12-27-bépo-11ème-jour">Bépo 11ème jour !</a></h2>
     <p>
       Posté le Jeu 27 décembre 2012 &#8226;
@@ -492,79 +511,6 @@ correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
 <p>Ou renomer tous mes fichiers .WAV en .wav etc...</p>
 <p><tt class="docutils literal">rename <span class="pre">&quot;s/\.WAV/\.wav/g&quot;</span> *.WAV</tt></p>
 <p>A vous de modifier l'expression régulière !</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2012-04-13-update-gitconfig.html#2012-04-13-update-gitconfig">Update .gitconfig</a></h2>
-    <p>
-      Posté le Ven 13 avril 2012 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/gitconfig.html">gitconfig</a>,      <a href="http://www.choiz.fr/tag/git-pull.html">git pull</a>,      <a href="http://www.choiz.fr/tag/git-push.html">git push</a>,      <a href="http://www.choiz.fr/tag/git-diff.html">git diff</a>,      <a href="http://www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="http://www.choiz.fr/tag/stash.html">stash</a>    </p>
-  </header>
-  <div>
-      <p>Ajout du pull, push, diff et surtout stash ;)</p>
-<blockquote>
-<div class="line-block">
-<div class="line">[user]</div>
-<div class="line-block">
-<div class="line">name = François LASSERRE</div>
-<div class="line">email = <a class="reference external" href="mailto:mon&#64;email.fr">mon&#64;email.fr</a></div>
-</div>
-<div class="line">[diff]</div>
-<div class="line-block">
-<div class="line">tool = vimdiff</div>
-</div>
-<div class="line">[color]</div>
-<div class="line-block">
-<div class="line">branch = auto</div>
-<div class="line">diff = auto</div>
-<div class="line">status = auto</div>
-<div class="line">interactive = auto</div>
-<div class="line">ui = true</div>
-</div>
-<div class="line">[alias]</div>
-<div class="line-block">
-<div class="line">br = branch</div>
-<div class="line">ci = commit -a</div>
-<div class="line">co = checkout</div>
-<div class="line">sh = show --color-words</div>
-<div class="line">st = status</div>
-<div class="line">di = diff</div>
-<div class="line">ph = push</div>
-<div class="line">pl = pull</div>
-<div class="line">sta = stash</div>
-<div class="line">stalist = stash list</div>
-<div class="line">stast = stash list</div>
-<div class="line">stapp = stash pop</div>
-<div class="line">starm = stash drop</div>
-<div class="line">last = cat-file commit HEAD</div>
-<div class="line">graph = log --graph --decorate</div>
-<div class="line">tree = log --graph --oneline --decorate</div>
-<div class="line">pom = push origin master</div>
-<div class="line">logs = log --stat</div>
-<div class="line">currentbranch = &quot;!git branch | grep ^* | cut -d &quot; &quot; -f 2&quot;</div>
-</div>
-<div class="line">[core]</div>
-<div class="line-block">
-<div class="line">excludesfile = ~/.gitignore</div>
-</div>
-<div class="line">editor = vim</div>
-<div class="line-block">
-<div class="line">filemode = false</div>
-</div>
-<div class="line">[merge]</div>
-<div class="line-block">
-<div class="line">tool = vimdiff</div>
-</div>
-<div class="line">[http]</div>
-<div class="line-block">
-<div class="line">#sslverify = false|</div>
-</div>
-</div>
-</blockquote>
 
   </div>
 </article>

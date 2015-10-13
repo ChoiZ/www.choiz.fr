@@ -55,6 +55,28 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html#2015-10-13-vagrant-faire-un-reseau-prive">Vagrant faire un réseau privé</a></h2>
+    <p>
+      Posté le Lun 12 octobre 2015 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/vagrant.html">vagrant</a>,      <a href="http://www.choiz.fr/tag/reseau.html">réseau</a>,      <a href="http://www.choiz.fr/tag/prive.html">privé</a>,      <a href="http://www.choiz.fr/tag/private.html">private</a>,      <a href="http://www.choiz.fr/tag/network.html">network</a>    </p>
+  </header>
+  <div>
+      <p>J'utilise plusieurs machines virtuelles avec vagrant, une avec un backoffice et une avec une API.</p>
+<p>J'ai donc du faire un réseau privé dans vagrant pour que le BO communique avec l'API.</p>
+<p>Il suffit de modifier la configuration de la vm #1 et d'ajouter :</p>
+<blockquote>
+config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.1&quot;</blockquote>
+<p>Et dans la configuration de la vm #2 d'ajouter :</p>
+<blockquote>
+config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.2&quot;</blockquote>
+<p>Votre vm #1 peut (suite au redémarrage des deux vm vagrant) communiquer avec votre vm #2 directement avec l'ip <cite>192.168.10.2</cite>.</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2015-10-12-des-commentaires-efficaces.html#2015-10-12-des-commentaires-efficaces">Des commentaires efficaces</a></h2>
     <p>
       Posté le Lun 12 octobre 2015 &#8226;
@@ -398,53 +420,6 @@ vagrant-bin-1.7.3)</p>
 <p><tt class="docutils literal"><span class="pre">eix-update</span></tt></p>
 <p>Maintenant avec eix vagrant nous avons la ligne vagrant-bin et donc nous
 pouvons installer vagrant-1.7.3 via emerge.</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html#2015-07-18-ma-config-clevo-w650sz-i7-4910mq">Ma config : Clevo w650sz i7 4910MQ</a></h2>
-    <p>
-      Posté le Sam 18 juillet 2015 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/clevo.html">clevo</a>,      <a href="http://www.choiz.fr/tag/clevo-w650.html">clevo w650</a>,      <a href="http://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="http://www.choiz.fr/tag/ethernet.html">ethernet</a>,      <a href="http://www.choiz.fr/tag/realtek.html">realtek</a>,      <a href="http://www.choiz.fr/tag/audio.html">audio</a>,      <a href="http://www.choiz.fr/tag/hdaudio.html">hdaudio</a>,      <a href="http://www.choiz.fr/tag/achat.html">achat</a>,      <a href="http://www.choiz.fr/tag/i7-4910mq.html">i7 4910MQ</a>,      <a href="http://www.choiz.fr/tag/msata.html">mSata</a>    </p>
-  </header>
-  <div>
-      <p>Ayant vendu mon Macbook Air 13″ il y a quelques mois, j’ai pris le temps
-de comparer les différents portables. La marque Taïwanaise clevo propose
-des machines avec ou sans OS (gain d’une centaine d’euros pour Windows).</p>
-<p>J’ai donc commandé chez <a class="reference external" href="http://www.clevo.fr">Anyware</a> un w650sz avec
-un i7 4910MQ (qui a un score sur
-<a class="reference external" href="http://www.cpubenchmark.net/cpu.php?cpu=Intel+Core+i7-4910MQ+%40+2.90GHz">cpubenchmark</a>
-plutôt remarquable).</p>
-<div class="line-block">
-<div class="line">Je l’ai commandé sans ram, sans disque dur, avec un rack pour disque
-dur à la place d’un graveur dvd ou autre cd, sans extension de garanti
-pour un peu moins de 1000€ (il y avait une réduction de 5% et frais de
-port gratuit). J’ai commandé mes barrettes de ram et mon mSata
-ailleurs, car les marques en stock ne me plaisaient pas. <em>Note
-l’équipe de Anyware est bien sympa (ils ont enlevé les 2Go de ram qui
-m’étaient inutiles donc non facturé)</em> Plutôt que payer 2Go de ram et
-ne jamais les utiliser… J’ai donc ajouté 2 barrettes de 8Go ainsi
-qu’un mSata de 128Go pour un peu moins de 200€.</div>
-</div>
-<p>J’ai utilisé cette machine 2 jours, pour l’instant et elle est parfaite
-pour mon utilisation. L’écran 1080p sur un 15″ est appréciable (un poil
-petit pour certains). Pour moi c’est parfait, avec mon iiyama 27″ j’ai
-un dualscreen en 2x1080p ce qui est mieux que ma config précédente avec
-un écran en 1080p et l’autre avec une résolution moindre…</p>
-<div class="line-block">
-<div class="line">Pour la compilation de chrome qui prenait 2/3h à elle seule sur mon
-ancien laptop, en 45mn c’était fait avec d’autres grosses applications
-tel que gimp ou darktable…</div>
-</div>
-<p>Pour l’instant rien a redire sur cette machine.</p>
-<div class="line-block">
-<div class="line">Voici les modules a activer dans le noyau pour le réseau et le son :</div>
-<div class="line">- Realtek 8169 gigabit ethernet support</div>
-<div class="line">- Build Analog Device HD-audio codec support</div>
-</div>
 
   </div>
 </article>

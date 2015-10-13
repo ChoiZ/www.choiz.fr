@@ -20,7 +20,7 @@
 <meta property="og:locale" content="fr_FR"/>
 <meta property="og:url" content="http://www.choiz.fr"/>
 <meta property="og:image" content="avatar.png">
-  <title>ChoiZ &ndash; Auteurs</title>
+  <title>ChoiZ</title>
 </head>
 <body>
   <aside>
@@ -55,18 +55,50 @@
 
 <article>
   <header>
-    <h1>Auteurs</h1>
+    <h2><a href="http://www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html#2010-07-12-limiter-la-bande-passante-sous-mac-os-x">Limiter la bande passante sous Mac Os X</a></h2>
+    <p>
+      Posté le Lun 12 juillet 2010 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/limit-brandwith.html">Limit Brandwith</a>,      <a href="http://www.choiz.fr/tag/limitation-bande-passante.html">Limitation Bande Passante</a>,      <a href="http://www.choiz.fr/tag/mac-os.html">Mac Os</a>,      <a href="http://www.choiz.fr/tag/mac-os-x.html">Mac Os X</a>,      <a href="http://www.choiz.fr/tag/tuyau.html">Tuyau</a>,      <a href="http://www.choiz.fr/tag/tuyau-virtuel.html">Tuyau Virtuel</a>,      <a href="http://www.choiz.fr/tag/limit-brandwidth.html">Limit Brandwidth</a>    </p>
   </header>
   <div>
-    <ul class="list">
-      <li><a href="http://www.choiz.fr/author/choiz.html">choiz</a> (81)</li>
-    </ul>
+      <p>Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
+virtuel en console.</p>
+<p>Ici on créer un tuyau virtuel de 1Mbit/s.</p>
+<p><tt class="docutils literal">sudo ipfw pipe 1 config bw 1Mbit/s</tt></p>
+<p>On applique ce tuyau au port 80 (pour le téléchargement de fichier via
+un navigateur par exemple).</p>
+<p><tt class="docutils literal">sudo ipfw add 1 pipe 1 proto tcp <span class="pre">src-port</span> 80</tt></p>
+<p>Pour voir le tuyau :</p>
+<p><tt class="docutils literal">sudo ipfw pipe show</tt></p>
+<p>Pour supprimer la règle du port 80 :</p>
+<p><tt class="docutils literal">sudo ipfw del 1</tt></p>
+<p>Pour supprimer le tuyau :</p>
+<p><tt class="docutils literal">sudo ipfw pipe 1 delete</tt></p>
+<p>Bien entendu on peut créer plusieurs tuyau et plusieurs règles
+différentes avec le même tuyau ;)</p>
+
   </div>
 </article>
+
+  <div class="pagination">
+      <a class="btn float-right" href="http://www.choiz.fr/index8.html">
+        Nouveaux articles <i class="fa fa-angle-right"></i>
+      </a>
+  </div>
 
     <footer>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-</body>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " ChoiZ ",
+  "url" : "http://www.choiz.fr",
+  "image": "avatar.png",
+  "description": ""
+}
+</script></body>
 </html>

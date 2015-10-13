@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="http://www.choiz.fr/" rel="alternate"></link><link href="http://www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>http://www.choiz.fr/</id><updated>2015-10-12T13:44:15+02:00</updated><entry><title>Des commentaires efficaces</title><link href="http://www.choiz.fr/2015-10-12-des-commentaires-efficaces.html" rel="alternate"></link><updated>2015-10-12T13:44:15+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-10-12:2015-10-12-des-commentaires-efficaces.html</id><summary type="html">&lt;p&gt;Dans mes fichiers de test j'utilise souvent des commentaires pour tester qu'une fonctionnalité de code.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="http://www.choiz.fr/" rel="alternate"></link><link href="http://www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>http://www.choiz.fr/</id><updated>2015-10-12T18:21:02+02:00</updated><entry><title>Vagrant faire un réseau privé</title><link href="http://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html" rel="alternate"></link><updated>2015-10-12T18:21:02+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-10-12:2015-10-13-vagrant-faire-un-reseau-prive.html</id><summary type="html">&lt;p&gt;J'utilise plusieurs machines virtuelles avec vagrant, une avec un backoffice et une avec une API.&lt;/p&gt;
+&lt;p&gt;J'ai donc du faire un réseau privé dans vagrant pour que le BO communique avec l'API.&lt;/p&gt;
+&lt;p&gt;Il suffit de modifier la configuration de la vm #1 et d'ajouter :&lt;/p&gt;
+&lt;blockquote&gt;
+config.vm.network &amp;quot;private_network&amp;quot;, ip: &amp;quot;192.168.10.1&amp;quot;&lt;/blockquote&gt;
+&lt;p&gt;Et dans la configuration de la vm #2 d'ajouter :&lt;/p&gt;
+&lt;blockquote&gt;
+config.vm.network &amp;quot;private_network&amp;quot;, ip: &amp;quot;192.168.10.2&amp;quot;&lt;/blockquote&gt;
+&lt;p&gt;Votre vm #1 peut (suite au redémarrage des deux vm vagrant) communiquer avec votre vm #2 directement avec l'ip &lt;cite&gt;192.168.10.2&lt;/cite&gt;.&lt;/p&gt;
+</summary><category term="vagrant"></category><category term="réseau"></category><category term="privé"></category><category term="private"></category><category term="network"></category></entry><entry><title>Des commentaires efficaces</title><link href="http://www.choiz.fr/2015-10-12-des-commentaires-efficaces.html" rel="alternate"></link><updated>2015-10-12T13:44:15+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-10-12:2015-10-12-des-commentaires-efficaces.html</id><summary type="html">&lt;p&gt;Dans mes fichiers de test j'utilise souvent des commentaires pour tester qu'une fonctionnalité de code.&lt;/p&gt;
 &lt;p&gt;Par exemple pour tester une api :&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;// Obtenir le livre #1&lt;/p&gt;

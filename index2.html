@@ -55,6 +55,53 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html#2015-07-18-ma-config-clevo-w650sz-i7-4910mq">Ma config : Clevo w650sz i7 4910MQ</a></h2>
+    <p>
+      Posté le Sam 18 juillet 2015 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/clevo.html">clevo</a>,      <a href="http://www.choiz.fr/tag/clevo-w650.html">clevo w650</a>,      <a href="http://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="http://www.choiz.fr/tag/ethernet.html">ethernet</a>,      <a href="http://www.choiz.fr/tag/realtek.html">realtek</a>,      <a href="http://www.choiz.fr/tag/audio.html">audio</a>,      <a href="http://www.choiz.fr/tag/hdaudio.html">hdaudio</a>,      <a href="http://www.choiz.fr/tag/achat.html">achat</a>,      <a href="http://www.choiz.fr/tag/i7-4910mq.html">i7 4910MQ</a>,      <a href="http://www.choiz.fr/tag/msata.html">mSata</a>    </p>
+  </header>
+  <div>
+      <p>Ayant vendu mon Macbook Air 13″ il y a quelques mois, j’ai pris le temps
+de comparer les différents portables. La marque Taïwanaise clevo propose
+des machines avec ou sans OS (gain d’une centaine d’euros pour Windows).</p>
+<p>J’ai donc commandé chez <a class="reference external" href="http://www.clevo.fr">Anyware</a> un w650sz avec
+un i7 4910MQ (qui a un score sur
+<a class="reference external" href="http://www.cpubenchmark.net/cpu.php?cpu=Intel+Core+i7-4910MQ+%40+2.90GHz">cpubenchmark</a>
+plutôt remarquable).</p>
+<div class="line-block">
+<div class="line">Je l’ai commandé sans ram, sans disque dur, avec un rack pour disque
+dur à la place d’un graveur dvd ou autre cd, sans extension de garanti
+pour un peu moins de 1000€ (il y avait une réduction de 5% et frais de
+port gratuit). J’ai commandé mes barrettes de ram et mon mSata
+ailleurs, car les marques en stock ne me plaisaient pas. <em>Note
+l’équipe de Anyware est bien sympa (ils ont enlevé les 2Go de ram qui
+m’étaient inutiles donc non facturé)</em> Plutôt que payer 2Go de ram et
+ne jamais les utiliser… J’ai donc ajouté 2 barrettes de 8Go ainsi
+qu’un mSata de 128Go pour un peu moins de 200€.</div>
+</div>
+<p>J’ai utilisé cette machine 2 jours, pour l’instant et elle est parfaite
+pour mon utilisation. L’écran 1080p sur un 15″ est appréciable (un poil
+petit pour certains). Pour moi c’est parfait, avec mon iiyama 27″ j’ai
+un dualscreen en 2x1080p ce qui est mieux que ma config précédente avec
+un écran en 1080p et l’autre avec une résolution moindre…</p>
+<div class="line-block">
+<div class="line">Pour la compilation de chrome qui prenait 2/3h à elle seule sur mon
+ancien laptop, en 45mn c’était fait avec d’autres grosses applications
+tel que gimp ou darktable…</div>
+</div>
+<p>Pour l’instant rien a redire sur cette machine.</p>
+<div class="line-block">
+<div class="line">Voici les modules a activer dans le noyau pour le réseau et le son :</div>
+<div class="line">- Realtek 8169 gigabit ethernet support</div>
+<div class="line">- Build Analog Device HD-audio codec support</div>
+</div>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune.html#2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune">Comment récupérer le contenu d’un fichier d’une autre branche avec GIT ?</a></h2>
     <p>
       Posté le Ven 20 mars 2015 &#8226;
@@ -260,36 +307,6 @@ page qui n'est pas en HTTPS.</p>
 : <a class="reference external" href="http://www.mon-formulaire.fr">http://www.mon-formulaire.fr</a></p>
 <p>Dans ce cas l'affichage du formulaire est sécurisé, mais l'envoi des
 données ne l'est pas vu que l'action est en http.</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html#2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement">imapfilter ou comment filtrer ses mails facilement</a></h2>
-    <p>
-      Posté le Mar 11 mars 2014 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/imapfilter.html">imapfilter</a>,      <a href="http://www.choiz.fr/tag/mail.html">mail</a>,      <a href="http://www.choiz.fr/tag/filter.html">filter</a>,      <a href="http://www.choiz.fr/tag/imap.html">imap</a>    </p>
-  </header>
-  <div>
-      <p>Installer imapfilter via apt par exemple :</p>
-<p><tt class="docutils literal"><span class="pre">apt-get</span> install imapfilter</tt></p>
-<p>Se rendre dans le dossier de configuration :</p>
-<p><tt class="docutils literal">cd <span class="pre">~/.imapfilter</span></tt></p>
-<p>Créer un fichier config.lua</p>
-<p><tt class="docutils literal">touch config.lua</tt></p>
-<p>Maintenant je décide de faire un fichier de configuration par boite
-email.</p>
-<p>Ici gmail :</p>
-<p><tt class="docutils literal">cat &gt; gmail.lua &lt;&lt;EOFgmail = IMAP <span class="pre">{&nbsp;&nbsp;&nbsp;</span> server = <span class="pre">'imap.gmail.com',&nbsp;&nbsp;&nbsp;</span> username = <span class="pre">'mail&#64;gmail.com',&nbsp;&nbsp;&nbsp;</span> password = <span class="pre">'mon_mot_de_passe',&nbsp;&nbsp;&nbsp;</span> ssl = <span class="pre">'ssl3',}EOF</span></tt></p>
-<p>Et un pour Yahoo :</p>
-<p><tt class="docutils literal">cat &gt; yahoo.lua &lt;&lt;EOFyahoo = IMAP <span class="pre">{&nbsp;&nbsp;&nbsp;</span> server = <span class="pre">'imap.yahoo.com',&nbsp;&nbsp;&nbsp;</span> username = <span class="pre">'mail&#64;yahoo.com',&nbsp;&nbsp;&nbsp;</span> password = <span class="pre">'mon_mot_de_passe',&nbsp;&nbsp;&nbsp;</span> ssl = <span class="pre">'ssl3',}EOF</span></tt></p>
-<p>Ajouter nos boites dans le fichier de config avec des filtres :</p>
-<p><tt class="docutils literal">if_dir = <span class="pre">os.getenv('HOME')</span> .. <span class="pre">'/.imapfilter/'--</span> on inclus nos comptes imap…dofile(if_dir .. <span class="pre">&quot;gmail.lua&quot;)dofile(if_dir</span> .. <span class="pre">&quot;yahoo.lua&quot;)--</span> nos optionsoptions.timeout = <span class="pre">120--</span> filtres pour le compte gmail (on copie les messages non lus dans la boite <span class="pre">&quot;nouveaux&quot;)nonlugmail=gmail.INBOX:is_unseen()nonlugmail:copy_message(gmail['nouveaux'])--</span> filtres pour le compte yahoo (on supprime tous les messages <span class="pre">lus)del_read_yahoo=yahoo.INBOX:is_seen()del_read_yahoo:delete_messages()</span></tt></p>
-<p>Maintenant c'est à vous de faire vos propres filtres. Une fois
-configuré, lancer imapfilter simplement depuis le terminal :</p>
-<p><tt class="docutils literal">imapfilter</tt></p>
 
   </div>
 </article>

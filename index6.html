@@ -55,6 +55,79 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2012-04-13-update-gitconfig.html#2012-04-13-update-gitconfig">Update .gitconfig</a></h2>
+    <p>
+      Posté le Ven 13 avril 2012 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/gitconfig.html">gitconfig</a>,      <a href="http://www.choiz.fr/tag/git-pull.html">git pull</a>,      <a href="http://www.choiz.fr/tag/git-push.html">git push</a>,      <a href="http://www.choiz.fr/tag/git-diff.html">git diff</a>,      <a href="http://www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="http://www.choiz.fr/tag/stash.html">stash</a>    </p>
+  </header>
+  <div>
+      <p>Ajout du pull, push, diff et surtout stash ;)</p>
+<blockquote>
+<div class="line-block">
+<div class="line">[user]</div>
+<div class="line-block">
+<div class="line">name = François LASSERRE</div>
+<div class="line">email = <a class="reference external" href="mailto:mon&#64;email.fr">mon&#64;email.fr</a></div>
+</div>
+<div class="line">[diff]</div>
+<div class="line-block">
+<div class="line">tool = vimdiff</div>
+</div>
+<div class="line">[color]</div>
+<div class="line-block">
+<div class="line">branch = auto</div>
+<div class="line">diff = auto</div>
+<div class="line">status = auto</div>
+<div class="line">interactive = auto</div>
+<div class="line">ui = true</div>
+</div>
+<div class="line">[alias]</div>
+<div class="line-block">
+<div class="line">br = branch</div>
+<div class="line">ci = commit -a</div>
+<div class="line">co = checkout</div>
+<div class="line">sh = show --color-words</div>
+<div class="line">st = status</div>
+<div class="line">di = diff</div>
+<div class="line">ph = push</div>
+<div class="line">pl = pull</div>
+<div class="line">sta = stash</div>
+<div class="line">stalist = stash list</div>
+<div class="line">stast = stash list</div>
+<div class="line">stapp = stash pop</div>
+<div class="line">starm = stash drop</div>
+<div class="line">last = cat-file commit HEAD</div>
+<div class="line">graph = log --graph --decorate</div>
+<div class="line">tree = log --graph --oneline --decorate</div>
+<div class="line">pom = push origin master</div>
+<div class="line">logs = log --stat</div>
+<div class="line">currentbranch = &quot;!git branch | grep ^* | cut -d &quot; &quot; -f 2&quot;</div>
+</div>
+<div class="line">[core]</div>
+<div class="line-block">
+<div class="line">excludesfile = ~/.gitignore</div>
+</div>
+<div class="line">editor = vim</div>
+<div class="line-block">
+<div class="line">filemode = false</div>
+</div>
+<div class="line">[merge]</div>
+<div class="line-block">
+<div class="line">tool = vimdiff</div>
+</div>
+<div class="line">[http]</div>
+<div class="line-block">
+<div class="line">#sslverify = false|</div>
+</div>
+</div>
+</blockquote>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html#2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore">Git mes fichiers de config gitconfig / gitignore</a></h2>
     <p>
       Posté le Mar 31 janvier 2012 &#8226;
@@ -408,38 +481,6 @@ fichier avec vim :</p>
 <p><tt class="docutils literal"><span class="pre">s/^/#/</span></tt></p>
 <p>s pour search (en fait il cherche et remplace) ^ le début de ligne ($ si
 on voulais la fin de la ligne) et # le caractère que je veux remplacer</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html#2011-09-18-plusieurs-comptes-skype-sur-le-même-mac">Plusieurs comptes Skype sur le même Mac !</a></h2>
-    <p>
-      Posté le Dim 18 septembre 2011 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/skype.html">Skype</a>,      <a href="http://www.choiz.fr/tag/multiutilisateur.html">Multiutilisateur</a>,      <a href="http://www.choiz.fr/tag/mac.html">Mac</a>,      <a href="http://www.choiz.fr/tag/macos.html">MacOs</a>,      <a href="http://www.choiz.fr/tag/mac-os-x.html">Mac os x</a>,      <a href="http://www.choiz.fr/tag/osx.html">OsX</a>,      <a href="http://www.choiz.fr/tag/skype-mac.html">Skype Mac</a>,      <a href="http://www.choiz.fr/tag/multi.html">Multi</a>,      <a href="http://www.choiz.fr/tag/compte.html">Compte</a>,      <a href="http://www.choiz.fr/tag/another-copy.html">Another copy</a>,      <a href="http://www.choiz.fr/tag/another-copy-of-skype.html">Another copy of Skype</a>    </p>
-  </header>
-  <div>
-      <p>Comment lancer plusieurs comptes Skype avec le même Mac ?</p>
-<p><img alt="image0" src="http://media.tumblr.com/tumblr_lrqn73WCUg1qzr4hx.png" /></p>
-<div class="line-block">
-<div class="line">Créer un compte utilisateur dans les préférences systèmes &gt;
-utilisateurs. Par exemple l'utilisateur : &quot;skype&quot; avec comme mot de
-passe &quot;password&quot;.</div>
-<div class="line">Ensuite ouvrir un terminal (dans spotlight tapez terminal).</div>
-<div class="line">Dans ce terminal faire :</div>
-</div>
-<blockquote>
-su skype (ou &quot;su nomdutilisateur&quot; en fonction de l'utilisateur
-créé).</blockquote>
-<p>Password:</p>
-<blockquote>
-password (ou autre suivant le mot de passe de l'utilisateur).</blockquote>
-<p>Puis tapez :</p>
-<blockquote>
-/Applications/Skype.app/Contents/MacOS/Skype</blockquote>
-<p>Ce qui devrait lancer une seconde instance de Skype.</p>
 
   </div>
 </article>
