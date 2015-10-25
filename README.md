@@ -3,7 +3,10 @@ choiz.github.io
 
 Personnal blog available on: http://www.choiz.fr
 
-- Create a new post on ```content/``` folder
+- Create a new post on ```content/``` folder using command:
+```python
+py write.py
+```
 
 - Test localy with command:
 ```bash
