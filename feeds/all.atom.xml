@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="http://www.choiz.fr/" rel="alternate"></link><link href="http://www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>http://www.choiz.fr/</id><updated>2015-10-13T18:21:02+02:00</updated><entry><title>Vagrant faire un réseau privé</title><link href="http://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html" rel="alternate"></link><updated>2015-10-13T18:21:02+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-10-13:2015-10-13-vagrant-faire-un-reseau-prive.html</id><summary type="html">&lt;p&gt;J'utilise plusieurs machines virtuelles avec vagrant, une avec un backoffice et une avec une API.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="http://www.choiz.fr/" rel="alternate"></link><link href="http://www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>http://www.choiz.fr/</id><updated>2015-10-25T14:02:17+01:00</updated><entry><title>Gentoo Navigateur Web par Défaut</title><link href="http://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html" rel="alternate"></link><updated>2015-10-25T14:02:17+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-10-25:2015-10-25-gentoo-navigateur-web-par-defaut.html</id><summary type="html">&lt;p&gt;Sur ma machine &amp;quot;links&amp;quot; était le navigateur web par défaut.
+Il est pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il est préférable d'utiliser un navigateur tel que Firefox.&lt;/p&gt;
+&lt;p&gt;Voici la commande pour voir le navigateur par défaut pour les url utilisants le protocole &amp;quot;http&amp;quot; :&lt;/p&gt;
+&lt;blockquote&gt;
+xdg-mime query default x-scheme-handler/http&lt;/blockquote&gt;
+&lt;p&gt;Et voici la commande pour le &amp;quot;https&amp;quot; :&lt;/p&gt;
+&lt;blockquote&gt;
+xdg-mime query default x-scheme-handler/https&lt;/blockquote&gt;
+&lt;p&gt;Pour changer le navigateur par défaut par Firefox il suffit d'executer ses deux commandes :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;xdg-mime default firefox.desktop x-scheme-handler/http&lt;/p&gt;
+&lt;p&gt;xdg-mime default firefox.desktop x-scheme-handler/https&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary><category term="gentoo"></category><category term="web"></category><category term="browser"></category><category term="default"></category><category term="navigateur"></category></entry><entry><title>Vagrant faire un réseau privé</title><link href="http://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html" rel="alternate"></link><updated>2015-10-13T18:21:02+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-10-13:2015-10-13-vagrant-faire-un-reseau-prive.html</id><summary type="html">&lt;p&gt;J'utilise plusieurs machines virtuelles avec vagrant, une avec un backoffice et une avec une API.&lt;/p&gt;
 &lt;p&gt;J'ai donc du faire un réseau privé dans vagrant pour que le BO communique avec l'API.&lt;/p&gt;
 &lt;p&gt;Il suffit de modifier la configuration de la vm #1 et d'ajouter :&lt;/p&gt;
 &lt;blockquote&gt;

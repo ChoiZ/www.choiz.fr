@@ -55,9 +55,43 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2015-07-19-gentoo-utilisation-de-layman-eix.html#2015-07-19-gentoo-utilisation-de-layman-eix">Gentoo utilisation de layman &amp; eix</a></h2>
+    <p>
+      Posté le dim. 19 juillet 2015 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/depot.html">dépôt</a>,      <a href="http://www.choiz.fr/tag/repos.html">repos</a>,      <a href="http://www.choiz.fr/tag/layman.html">layman</a>,      <a href="http://www.choiz.fr/tag/eix.html">eix</a>,      <a href="http://www.choiz.fr/tag/emerge.html">emerge</a>,      <a href="http://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="http://www.choiz.fr/tag/vagrant-bin.html">vagrant-bin</a>,      <a href="http://www.choiz.fr/tag/overlay.html">overlay</a>    </p>
+  </header>
+  <div>
+      <p>Certains programmes n’étant pas en dernière version dans les dépôts
+gentoo l’utilisation de layman peut faciliter la vie.</p>
+<p>Étant à la recherche de vagrant, la seule version disponible à ce jour
+sur gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de
+vagrant je me rend compte que nous sommes à la version 1.7.3.</p>
+<p>J’ai donc trouvé un overlay avec vagrant-bin version 1.7.3 :
+<a class="reference external" href="http://gpo.zugaina.org/app-emulation/vagrant-bin">http://gpo.zugaina.org/app-emulation/vagrant-bin</a></p>
+<p>Pour utiliser cette overlay nous avons besoin de layman.</p>
+<p>Installation :</p>
+<p><tt class="docutils literal">emerge <span class="pre">-a</span> layman</tt></p>
+<p><tt class="docutils literal">echo &quot;source /usr/portage/local/layman/make.conf&quot; &gt;&gt; /etc/make.conf</tt></p>
+<p>Pour afficher tous les overlays disponible :</p>
+<p><tt class="docutils literal">layman <span class="pre">-L</span></tt></p>
+<p>Ajouter l’overlay stefantalpalaru (dans lequel nous avons
+vagrant-bin-1.7.3)</p>
+<p><tt class="docutils literal">layman <span class="pre">-f</span> <span class="pre">-a&nbsp;stefantalpalaru</span></tt></p>
+<p>Maintenant si on recherche dans eix “vagrant” rien n’a changé.</p>
+<p>Il faut mettre à jour eix :</p>
+<p><tt class="docutils literal"><span class="pre">eix-update</span></tt></p>
+<p>Maintenant avec eix vagrant nous avons la ligne vagrant-bin et donc nous
+pouvons installer vagrant-1.7.3 via emerge.</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html#2015-07-18-ma-config-clevo-w650sz-i7-4910mq">Ma config : Clevo w650sz i7 4910MQ</a></h2>
     <p>
-      Posté le Sam 18 juillet 2015 &#8226;
+      Posté le sam. 18 juillet 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/clevo.html">clevo</a>,      <a href="http://www.choiz.fr/tag/clevo-w650.html">clevo w650</a>,      <a href="http://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="http://www.choiz.fr/tag/ethernet.html">ethernet</a>,      <a href="http://www.choiz.fr/tag/realtek.html">realtek</a>,      <a href="http://www.choiz.fr/tag/audio.html">audio</a>,      <a href="http://www.choiz.fr/tag/hdaudio.html">hdaudio</a>,      <a href="http://www.choiz.fr/tag/achat.html">achat</a>,      <a href="http://www.choiz.fr/tag/i7-4910mq.html">i7 4910MQ</a>,      <a href="http://www.choiz.fr/tag/msata.html">mSata</a>    </p>
   </header>
@@ -104,7 +138,7 @@ tel que gimp ou darktable…</div>
   <header>
     <h2><a href="http://www.choiz.fr/2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune.html#2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune">Comment récupérer le contenu d’un fichier d’une autre branche avec GIT ?</a></h2>
     <p>
-      Posté le Ven 20 mars 2015 &#8226;
+      Posté le ven. 20 mars 2015 &#8226;
     </p>
   </header>
   <div>
@@ -121,7 +155,7 @@ tel que gimp ou darktable…</div>
   <header>
     <h2><a href="http://www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html#2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git">Initialiser des sous-modules en cascade dans git</a></h2>
     <p>
-      Posté le Dim 25 janvier 2015 &#8226;
+      Posté le dim. 25 janvier 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/submodule.html">submodule</a>,      <a href="http://www.choiz.fr/tag/update.html">update</a>,      <a href="http://www.choiz.fr/tag/init.html">init</a>,      <a href="http://www.choiz.fr/tag/recursive.html">recursive</a>    </p>
   </header>
@@ -150,7 +184,7 @@ faire :</p>
   <header>
     <h2><a href="http://www.choiz.fr/2015-01-24-êtes-vous-à-lheure-et-votre-serveur.html#2015-01-24-êtes-vous-à-lheure-et-votre-serveur">Êtes-vous à l'heure&nbsp;? (Et votre serveur ?)</a></h2>
     <p>
-      Posté le Sam 24 janvier 2015 &#8226;
+      Posté le sam. 24 janvier 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/ntpdate.html">ntpdate</a>,      <a href="http://www.choiz.fr/tag/debian.html">debian</a>,      <a href="http://www.choiz.fr/tag/ntp.html">ntp</a>,      <a href="http://www.choiz.fr/tag/time.html">time</a>    </p>
   </header>
@@ -171,7 +205,7 @@ serveurs sont à l'heure.</p>
   <header>
     <h2><a href="http://www.choiz.fr/2014-12-08-recherche-dans-le-code-source-avec-git.html#2014-12-08-recherche-dans-le-code-source-avec-git">Recherche dans le code source avec git</a></h2>
     <p>
-      Posté le Lun 08 décembre 2014 &#8226;
+      Posté le lun. 08 décembre 2014 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/search.html">search</a>,      <a href="http://www.choiz.fr/tag/source.html">source</a>,      <a href="http://www.choiz.fr/tag/code.html">code</a>,      <a href="http://www.choiz.fr/tag/log.html">log</a>    </p>
   </header>
@@ -187,7 +221,7 @@ précise, j'utilise la commande suivante :</p>
   <header>
     <h2><a href="http://www.choiz.fr/2014-11-08-écriture-dun-rapport-de-bug.html#2014-11-08-écriture-dun-rapport-de-bug">Écriture d'un rapport de bug</a></h2>
     <p>
-      Posté le Sam 08 novembre 2014 &#8226;
+      Posté le sam. 08 novembre 2014 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/ecriture-rapport-de-bug.html">Écriture rapport de bug</a>,      <a href="http://www.choiz.fr/tag/rapport-de-bug.html">Rapport de bug</a>,      <a href="http://www.choiz.fr/tag/bug-report.html">bug report</a>,      <a href="http://www.choiz.fr/tag/bug.html">bug</a>    </p>
   </header>
@@ -221,7 +255,7 @@ pour écrire un bon rapport de bug.</p>
   <header>
     <h2><a href="http://www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html#2014-05-06-faire-un-patch-de-x-commits-avec-git">Faire un patch de &quot;x&quot; commit(s) avec git</a></h2>
     <p>
-      Posté le Mar 06 mai 2014 &#8226;
+      Posté le mar. 06 mai 2014 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/patch.html">patch</a>,      <a href="http://www.choiz.fr/tag/commit.html">commit</a>    </p>
   </header>
@@ -241,7 +275,7 @@ c0004 -- dernier commitc0003 -- avant dernier commitc0002 -- second commitc0001 
   <header>
     <h2><a href="http://www.choiz.fr/2014-03-21-installation-de-skype-64-sur-debian.html#2014-03-21-installation-de-skype-64-sur-debian">Installation de Skype 64 sur Debian</a></h2>
     <p>
-      Posté le Ven 21 mars 2014 &#8226;
+      Posté le ven. 21 mars 2014 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/skype.html">Skype</a>,      <a href="http://www.choiz.fr/tag/debian.html">Debian</a>,      <a href="http://www.choiz.fr/tag/installation-de-skype.html">Installation de Skype</a>,      <a href="http://www.choiz.fr/tag/skype-debian-64.html">Skype Debian 64</a>,      <a href="http://www.choiz.fr/tag/debian-64.html">Debian 64</a>    </p>
   </header>
@@ -264,7 +298,7 @@ Tags :
   <header>
     <h2><a href="http://www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html#2014-03-21-installation-de-firefox-sur-debian">Installation de Firefox sur Debian</a></h2>
     <p>
-      Posté le Ven 21 mars 2014 &#8226;
+      Posté le ven. 21 mars 2014 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/firefox.html">Firefox</a>,      <a href="http://www.choiz.fr/tag/mozilla.html">Mozilla</a>,      <a href="http://www.choiz.fr/tag/debian.html">Debian</a>,      <a href="http://www.choiz.fr/tag/installation-de-firefox.html">Installation de Firefox</a>,      <a href="http://www.choiz.fr/tag/firefox-sur-debian.html">Firefox sur Debian</a>    </p>
   </header>
@@ -276,37 +310,6 @@ mozilla</a>.</p>
 <p>Créer un lien symbolique avec :</p>
 <p><tt class="docutils literal">ls <span class="pre">-sf</span> /opt/firefox/firefox /usr/bin/firefox</tt></p>
 <p>Et voilà.</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html#2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page">Firebug champs mot de passe présents sur une page non sécurisée</a></h2>
-    <p>
-      Posté le Mar 18 mars 2014 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/firebug.html">firebug</a>,      <a href="http://www.choiz.fr/tag/http.html">http</a>,      <a href="http://www.choiz.fr/tag/https.html">https</a>,      <a href="http://www.choiz.fr/tag/formulaire.html">formulaire</a>,      <a href="http://www.choiz.fr/tag/warning.html">warning</a>,      <a href="http://www.choiz.fr/tag/mot-de-passe.html">mot de passe</a>,      <a href="http://www.choiz.fr/tag/password.html">password</a>,      <a href="http://www.choiz.fr/tag/action.html">action</a>,      <a href="http://www.choiz.fr/tag/form.html">form</a>    </p>
-  </header>
-  <div>
-      <p>Dans mon firebug des &quot;warnings&quot; s'affichent :</p>
-<pre class="literal-block">
-Champs mot de passe présents sur une page non sécurisée (http://). Cela représente un risque de sécurité permettant le vol d'identifiants de connexion.
-</pre>
-<p>Ainsi que :</p>
-<pre class="literal-block">
-Champs mot de passe présents dans un formulaire possédant une action de formulaire non sécurisée (http://). Cela représente un risque de sécurité permettant le vol d'identifiants de connexion.
-</pre>
-<p>La première indications informe que vous n'êtes pas sur un site
-utilisant le HTTPS. Lorsque vous allez remplir le champs &quot;password&quot;
-celui-ci sera envoyé en clair sur le réseau.</p>
-<p>La seconde indication informe que l'action du formulaire envoi sur une
-page qui n'est pas en HTTPS.</p>
-<p>Vous pouvez avoir votre formulaire sur l'url :
-<a class="reference external" href="https://www.mon-formulaire.fr">https://www.mon-formulaire.fr</a> et dans l'action de votre formulaire avoir
-: <a class="reference external" href="http://www.mon-formulaire.fr">http://www.mon-formulaire.fr</a></p>
-<p>Dans ce cas l'affichage du formulaire est sécurisé, mais l'envoi des
-données ne l'est pas vu que l'action est en http.</p>
 
   </div>
 </article>
