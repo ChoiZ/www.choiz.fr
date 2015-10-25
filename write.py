@@ -29,7 +29,7 @@ header = """%(title)s
 
 """ % (post)
 
-out_file = 'content/%s.md' % (post['slug'])
+out_file = 'content/%s.rst' % (post['slug'])
 
 try:
     with open(out_file) as f:
