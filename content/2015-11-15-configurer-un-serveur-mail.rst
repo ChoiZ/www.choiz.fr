@@ -271,6 +271,16 @@ Maintenant il faut dire a postfix que nous avons modifier nos fichiers virtuels 
     postmap /etc/postfix/virtual_domains
     postmap /etc/postfix/virtual_mailbox
 
+Editer /etc/postfix/master.cf : ::
+
+    smtp    inet    n   -   -   -   -   smtpd   -v
+    submission inet n - n - - smtpd
+     -o smtpd_tls_security_level=encrypt
+     -o smtpd_sasl_auth_enable=yes
+    urd inet n - n - - smtpd
+     -o smtpd_tls_wrappermode=yes
+     -o smtpd_sasl_auth_enable=yes
+
 Puis redemarrer postfix : ::
 
     /etc/init.d/postfix restart
