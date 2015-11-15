@@ -338,6 +338,16 @@ postmap /etc/postfix/virtual_alias
 postmap /etc/postfix/virtual_domains
 postmap /etc/postfix/virtual_mailbox
 </pre>
+<p>Editer /etc/postfix/master.cf :</p>
+<pre class="literal-block">
+smtp    inet    n   -   -   -   -   smtpd   -v
+submission inet n - n - - smtpd
+ -o smtpd_tls_security_level=encrypt
+ -o smtpd_sasl_auth_enable=yes
+urd inet n - n - - smtpd
+ -o smtpd_tls_wrappermode=yes
+ -o smtpd_sasl_auth_enable=yes
+</pre>
 <p>Puis redemarrer postfix :</p>
 <pre class="literal-block">
 /etc/init.d/postfix restart

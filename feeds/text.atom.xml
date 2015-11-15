@@ -270,6 +270,16 @@ postmap /etc/postfix/virtual_alias
 postmap /etc/postfix/virtual_domains
 postmap /etc/postfix/virtual_mailbox
 &lt;/pre&gt;
+&lt;p&gt;Editer /etc/postfix/master.cf :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+smtp    inet    n   -   -   -   -   smtpd   -v
+submission inet n - n - - smtpd
+ -o smtpd_tls_security_level=encrypt
+ -o smtpd_sasl_auth_enable=yes
+urd inet n - n - - smtpd
+ -o smtpd_tls_wrappermode=yes
+ -o smtpd_sasl_auth_enable=yes
+&lt;/pre&gt;
 &lt;p&gt;Puis redemarrer postfix :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 /etc/init.d/postfix restart
