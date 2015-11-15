@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="http://www.choiz.fr/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="http://www.choiz.fr/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="http://www.choiz.fr/theme/css/font-awesome.min.css">
+  <link href="http://www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+<meta name="author" content="choiz" />
+<meta name="description" content="Installation d'un serveur mail complet et à jour sous debian jessie (8.2). Pour commencer nous allons créer des entrées DNS. Nous créons un MX pour les mails avec une priorité de 1, un sous domaine "mail" qui pointe vers l'adresse ipv4 de votre serveur et un sous ..." />
+<meta name="keywords" content="mail, postfix, dovecot, dns">
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:title" content="Configurer un serveur mail"/>
+<meta property="og:description" content="Installation d'un serveur mail complet et à jour sous debian jessie (8.2). Pour commencer nous allons créer des entrées DNS. Nous créons un MX pour les mails avec une priorité de 1, un sous domaine "mail" qui pointe vers l'adresse ipv4 de votre serveur et un sous ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2015-11-15 17:11:23+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://www.choiz.fr/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="mail"/>
+<meta property="article:tag" content="postfix"/>
+<meta property="article:tag" content="dovecot"/>
+<meta property="article:tag" content="dns"/>
+<meta property="og:image" content="avatar.png">  <title>ChoiZ &ndash; Configurer un serveur mail</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://www.choiz.fr">
+        <img src="avatar.png" alt="Blog de François LASSERRE, ingénieur informatique." title="Blog de François LASSERRE, ingénieur informatique.">
+      </a>
+      <div>
+          <a href="http://www.choiz.fr">Blog de François LASSERRE, ingénieur informatique.</a>
+      </div>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</p>
+      <p>J'ai fondé plusieurs webradios depuis l'an 2000, actuellement je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="2015-11-15-configurer-un-serveur-mail">Configurer un serveur mail</h1>
+    <p>Posté le dim. 15 novembre 2015</p>
+  </header>
+  <div>
+    <p>Installation d'un serveur mail complet et à jour sous debian jessie (8.2).</p>
+<p>Pour commencer nous allons créer des entrées DNS.</p>
+<p>Nous créons un MX pour les mails avec une priorité de 1, un sous domaine &quot;mail&quot; qui pointe vers l'adresse ipv4 de votre serveur et un sous domaine webmail qui pointe sur le sous domaine mail.</p>
+<pre class="literal-block">
+votredomaine.com.           MX      1   mail.votredomaine.com.
+mail.votredomaine.com.      A           ip.v4.du.serveur
+webmail.votredomaine.com.   CNAME       mail.votredomaine.com.
+</pre>
+<p>Maintenant installons postfix et dovecot-imapd :</p>
+<pre class="literal-block">
+apt-get install postfix dovecot-imapd
+</pre>
+<p>Configurer le serveur de messagerie comme &quot;Site Internet&quot;, puis en nom de courrier indiquer &quot;mail.votredomaine.com&quot;.</p>
+<p>Créer un dossier ssl dans dovecot :</p>
+<pre class="literal-block">
+mkdir /etc/dovecot/ssl &amp;&amp; cd /etc/dovecot/ssl
+</pre>
+<p>Créer un certificat ssl :</p>
+<pre class="literal-block">
+openssl req -new -newkey rsa:2048 -nodes -keyout certificat.key -out certificat.csr
+</pre>
+<p>Puis répondre aux différentes questions pour ma part j'ai répondu :</p>
+<pre class="literal-block">
+FR
+(vide)
+Paris
+votredomaine
+IT
+mail.votredomaine.com
+contact&#64;votredomaine.com
+(vide)
+(vide)
+</pre>
+<p>Ensuite :</p>
+<pre class="literal-block">
+openssl x509 -req -days 365 -in certificat.csr -signkey certificat.key -out certificat.crt
+</pre>
+<p>Puis :</p>
+<pre class="literal-block">
+cat certificat.key certificat.crt &gt; certificat.pem
+</pre>
+<p>Créer le groupe et l'utilisateur vmail :</p>
+<pre class="literal-block">
+groupadd -g 5000 vmail
+useradd -m -d /var/vmail -s /bin/false -u 5000 -g vmail vmail
+</pre>
+<p>Ajouter dans /etc/dovecot/dovecot.conf</p>
+<pre class="literal-block">
+listen = ip.v4.du.server
+</pre>
+<p>Editer /etc/dovecot/conf.d/10-auth.conf</p>
+<pre class="literal-block">
+disable_plaintext_auth = yes
+auth_username_format = %Lu
+#!include auth-system.conf.ext
+!include auth-passwdfile.conf.ext
+</pre>
+<p>Editer /etc/dovecot/conf.d/10-logging.conf</p>
+<pre class="literal-block">
+auth_verbose = yes
+mail_debug = yes
+</pre>
+<p>Editer /etc/dovecot/conf.d/10-ssl.conf</p>
+<pre class="literal-block">
+ssl = required
+ssl_cert = &lt;/etc/dovecot/ssl/certificat.pem
+ssl_key = &lt;/etc/dovecot/ssl/certificat.key
+</pre>
+<p>Editer /etc/dovecot/conf.d/15-mailboxes.conf</p>
+<pre class="literal-block">
+mailbox Drafts {
+    auto = subscribe
+    special_use = \Drafts
+}
+
+mailbox Junk {
+    auto = subscribe
+    special_use = \Junk
+}
+
+mailbox Trash {
+    auto = subscribe
+    special_use = \Trash
+}
+
+mailbox Sent {
+    auto = subscribe
+    special_use = \Sent
+}
+
+#mailbox &quot;Sent Messages&quot; {
+#    special_use = \Sent
+#}
+</pre>
+<p>Editer /etc/dovecot/conf.d/auth-passwdfile.conf.ext</p>
+<pre class="literal-block">
+passdb {
+    driver = passwd-file
+    args = scheme=MD5 username_format=%u /etc/dovecot/users
+}
+
+userdb {
+    driver = passwd-file
+    args = username_format=%u /etc/dovecot/users
+    default_fields = uid=5000 gid=5000 home=/var/vmail/%d mail=maildir:~/%u
+}
+</pre>
+<p>Créer le fichier /etc/dovecot/users</p>
+<pre class="literal-block">
+touch /etc/dovecot/users
+</pre>
+<p>Puis pour chaque mail créer un enregistrement :</p>
+<pre class="literal-block">
+adresse&#64;votredomaine.com:motdepassemd5:::::::
+</pre>
+<p>Le format est le suivant :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Champ</th>
+<th class="head">Valeur</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Adresse email</td>
+<td><a class="reference external" href="mailto:adresse&#64;votredomaine.com">adresse&#64;votredomaine.com</a></td>
+</tr>
+<tr><td>Mot de passe (MD5)</td>
+<td>motdepassemd5</td>
+</tr>
+<tr><td>uid</td>
+<td>déjà défini dans auth-passwdfile</td>
+</tr>
+<tr><td>gid</td>
+<td>déjà défini dans auth-passwdfile</td>
+</tr>
+<tr><td>home directory</td>
+<td>déjà défini dans auth-passwdfile</td>
+</tr>
+<tr><td>mail directory</td>
+<td>déjà défini dans auth-passwdfile</td>
+</tr>
+</tbody>
+</table>
+<p>Tester votre utilisateur grâce à la commande :</p>
+<pre class="literal-block">
+doveadm user adresse&#64;votredomaine.com
+</pre>
+<p>Ce qui devrait afficher :</p>
+<pre class="literal-block">
+field   value
+uid     5000
+gid     5000
+home    /var/vmail/votredomaine.com
+mail    maildir:~/adresse&#64;votredomaine.com
+</pre>
+<p>Démarrer dovecot :</p>
+<pre class="literal-block">
+/etc/init.d/dovecot start
+</pre>
+<p>Tester la connexion :</p>
+<pre class="literal-block">
+openssl s_client -connect ip.v4.du.server:993
+</pre>
+<p>Si vous avez &quot;* OK [CAPABILITY …] Dovecot ready.
+Vous pouvez vous authentifier :</p>
+<pre class="literal-block">
+. LOGIN adresse&#64;votredomaine.com motdepasseenclair
+</pre>
+<p>C'est fini pour dovecot.</p>
+<p>Prochaine étape postfix !</p>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://www.choiz.fr/tag/mail.html">mail</a>
+      <a href="http://www.choiz.fr/tag/postfix.html">postfix</a>
+      <a href="http://www.choiz.fr/tag/dovecot.html">dovecot</a>
+      <a href="http://www.choiz.fr/tag/dns.html">dns</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Configurer un serveur mail",
+  "headline": "Configurer un serveur mail",
+  "datePublished": "2015-11-15 17:11:23+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "http://www.choiz.fr/author/choiz.html"
+  },
+  "image": "avatar.png",
+  "url": "http://www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html",
+  "description": "Installation d'un serveur mail complet et à jour sous debian jessie (8.2). Pour commencer nous allons créer des entrées DNS. Nous créons un MX pour les mails avec une priorité de 1, un sous domaine "mail" qui pointe vers l'adresse ipv4 de votre serveur et un sous ..."
+}
+</script></body>
+</html>

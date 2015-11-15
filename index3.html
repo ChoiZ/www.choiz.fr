@@ -55,6 +55,26 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html#2014-03-21-installation-de-firefox-sur-debian">Installation de Firefox sur Debian</a></h2>
+    <p>
+      Posté le ven. 21 mars 2014 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/firefox.html">Firefox</a>,      <a href="http://www.choiz.fr/tag/mozilla.html">Mozilla</a>,      <a href="http://www.choiz.fr/tag/debian.html">Debian</a>,      <a href="http://www.choiz.fr/tag/installation-de-firefox.html">Installation de Firefox</a>,      <a href="http://www.choiz.fr/tag/firefox-sur-debian.html">Firefox sur Debian</a>    </p>
+  </header>
+  <div>
+      <p>Télécharger la dernière version de Firefox sur <a class="reference external" href="http://www.mozilla.org/">le site de
+mozilla</a>.</p>
+<p>Décompresser l'archive dans :</p>
+<p><tt class="docutils literal">/opt/firefox/</tt></p>
+<p>Créer un lien symbolique avec :</p>
+<p><tt class="docutils literal">ls <span class="pre">-sf</span> /opt/firefox/firefox /usr/bin/firefox</tt></p>
+<p>Et voilà.</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html#2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page">Firebug champs mot de passe présents sur une page non sécurisée</a></h2>
     <p>
       Posté le mar. 18 mars 2014 &#8226;
@@ -294,39 +314,6 @@ Tags :
 <p>C'est une bonne question n'est-ce pas ?</p>
 <p>La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
 debian, a voir sur d'autres distribs)</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html#2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers">Chmod 755 sur les dossiers et 644&nbsp;sur les fichiers</a></h2>
-    <p>
-      Posté le mar. 12 novembre 2013 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/chmod.html">chmod</a>,      <a href="http://www.choiz.fr/tag/755.html">755</a>,      <a href="http://www.choiz.fr/tag/644.html">644</a>,      <a href="http://www.choiz.fr/tag/folder.html">folder</a>,      <a href="http://www.choiz.fr/tag/file.html">file</a>,      <a href="http://www.choiz.fr/tag/folders.html">folders</a>,      <a href="http://www.choiz.fr/tag/files.html">files</a>,      <a href="http://www.choiz.fr/tag/pwd.html">pwd</a>,      <a href="http://www.choiz.fr/tag/find.html">find</a>    </p>
-  </header>
-  <div>
-      <p>C'est toujours la galère lorsque l'on veut que tout soit clean au niveau
-des permissions des dossiers / fichiers.</p>
-<p>Souvent la première chose que l'on fait : on va dans chaque dossier et
-on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
-dossiers ça va mais quand on en a 40… on utilise une autre technique !</p>
-<p>J'utilise pour les dossiers :</p>
-<blockquote>
-$ find `pwd` -type d -exec chmod 755 {} \;</blockquote>
-<p>et pour les fichiers :</p>
-<blockquote>
-$ find `pwd` -type f -exec chmod 644 {} \;</blockquote>
-<p>Avec `pwd` je vais partir du dossier actuel et remplacer tous les
-droits des fichiers et dossiers enfants. Vous pouvez remplacer par un
-autre chemin par exemple :</p>
-<blockquote>
-<p>find /home/choiz/ -type d -exec chmod 755 {} \;</p>
-<p>find /home/choiz/ -type f -exec chmod 644 {} \;</p>
-</blockquote>
-<p>PS : Je ne découvre pas ces commandes, je n'avais juste jamais pris le
-temps de faire un article la dessus, voilà qui est fait.</p>
 
   </div>
 </article>

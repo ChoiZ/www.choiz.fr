@@ -55,6 +55,25 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html#2011-11-02-voir-les-fichiers-cachés-sur-lion">Voir les fichiers cachés sur Lion</a></h2>
+    <p>
+      Posté le mer. 02 novembre 2011 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/fichiers.html">fichiers</a>,      <a href="http://www.choiz.fr/tag/caches.html">cachés</a>,      <a href="http://www.choiz.fr/tag/hidden.html">hidden</a>,      <a href="http://www.choiz.fr/tag/files.html">files</a>,      <a href="http://www.choiz.fr/tag/lion.html">lion</a>,      <a href="http://www.choiz.fr/tag/defaults.html">defaults</a>,      <a href="http://www.choiz.fr/tag/appleshowallfiles.html">AppleShowAllFiles</a>,      <a href="http://www.choiz.fr/tag/finder.html">Finder</a>    </p>
+  </header>
+  <div>
+      <p>Dans un terminal :</p>
+<blockquote>
+<p>defaults write com.apple.Finder AppleShowAllFiles TRUE</p>
+<p>killall Finder</p>
+</blockquote>
+<p>Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Insérer un # au début de chaque ligne d'un fichier avec vim</a></h2>
     <p>
       Posté le mer. 05 octobre 2011 &#8226;
@@ -295,32 +314,6 @@ Tags :
 defaults write com.apple.desktopservices DSDontWriteNetworkStores
 true</blockquote>
 <p>Redemarrez le mac.</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2011-06-30-elément-cliqué-en-js.html#2011-06-30-elément-cliqué-en-js">Elément cliqué en js</a></h2>
-    <p>
-      Posté le jeu. 30 juin 2011 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/js.html">js</a>,      <a href="http://www.choiz.fr/tag/element.html">element</a>,      <a href="http://www.choiz.fr/tag/click.html">click</a>,      <a href="http://www.choiz.fr/tag/javascript.html">javascript</a>,      <a href="http://www.choiz.fr/tag/html.html">html</a>    </p>
-  </header>
-  <div>
-      <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de
-javascript :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">function checkclick(e) {</div>
-<div class="line">&nbsp;&nbsp;&nbsp; e = e || window.event;</div>
-<div class="line">&nbsp;&nbsp;&nbsp; var o = e.target || e.srcElement;</div>
-<div class="line">&nbsp;&nbsp;&nbsp; console.log(o);</div>
-<div class="line">}</div>
-<div class="line">document.onclick=checkclick;</div>
-</div>
-</blockquote>
-<p>Pratique pour du debug ;)</p>
 
   </div>
 </article>

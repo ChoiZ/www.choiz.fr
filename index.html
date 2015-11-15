@@ -55,6 +55,193 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html#2015-11-15-configurer-un-serveur-mail">Configurer un serveur mail</a></h2>
+    <p>
+      Posté le dim. 15 novembre 2015 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/mail.html">mail</a>,      <a href="http://www.choiz.fr/tag/postfix.html">postfix</a>,      <a href="http://www.choiz.fr/tag/dovecot.html">dovecot</a>,      <a href="http://www.choiz.fr/tag/dns.html">dns</a>    </p>
+  </header>
+  <div>
+      <p>Installation d'un serveur mail complet et à jour sous debian jessie (8.2).</p>
+<p>Pour commencer nous allons créer des entrées DNS.</p>
+<p>Nous créons un MX pour les mails avec une priorité de 1, un sous domaine &quot;mail&quot; qui pointe vers l'adresse ipv4 de votre serveur et un sous domaine webmail qui pointe sur le sous domaine mail.</p>
+<pre class="literal-block">
+votredomaine.com.           MX      1   mail.votredomaine.com.
+mail.votredomaine.com.      A           ip.v4.du.serveur
+webmail.votredomaine.com.   CNAME       mail.votredomaine.com.
+</pre>
+<p>Maintenant installons postfix et dovecot-imapd :</p>
+<pre class="literal-block">
+apt-get install postfix dovecot-imapd
+</pre>
+<p>Configurer le serveur de messagerie comme &quot;Site Internet&quot;, puis en nom de courrier indiquer &quot;mail.votredomaine.com&quot;.</p>
+<p>Créer un dossier ssl dans dovecot :</p>
+<pre class="literal-block">
+mkdir /etc/dovecot/ssl &amp;&amp; cd /etc/dovecot/ssl
+</pre>
+<p>Créer un certificat ssl :</p>
+<pre class="literal-block">
+openssl req -new -newkey rsa:2048 -nodes -keyout certificat.key -out certificat.csr
+</pre>
+<p>Puis répondre aux différentes questions pour ma part j'ai répondu :</p>
+<pre class="literal-block">
+FR
+(vide)
+Paris
+votredomaine
+IT
+mail.votredomaine.com
+contact&#64;votredomaine.com
+(vide)
+(vide)
+</pre>
+<p>Ensuite :</p>
+<pre class="literal-block">
+openssl x509 -req -days 365 -in certificat.csr -signkey certificat.key -out certificat.crt
+</pre>
+<p>Puis :</p>
+<pre class="literal-block">
+cat certificat.key certificat.crt &gt; certificat.pem
+</pre>
+<p>Créer le groupe et l'utilisateur vmail :</p>
+<pre class="literal-block">
+groupadd -g 5000 vmail
+useradd -m -d /var/vmail -s /bin/false -u 5000 -g vmail vmail
+</pre>
+<p>Ajouter dans /etc/dovecot/dovecot.conf</p>
+<pre class="literal-block">
+listen = ip.v4.du.server
+</pre>
+<p>Editer /etc/dovecot/conf.d/10-auth.conf</p>
+<pre class="literal-block">
+disable_plaintext_auth = yes
+auth_username_format = %Lu
+#!include auth-system.conf.ext
+!include auth-passwdfile.conf.ext
+</pre>
+<p>Editer /etc/dovecot/conf.d/10-logging.conf</p>
+<pre class="literal-block">
+auth_verbose = yes
+mail_debug = yes
+</pre>
+<p>Editer /etc/dovecot/conf.d/10-ssl.conf</p>
+<pre class="literal-block">
+ssl = required
+ssl_cert = &lt;/etc/dovecot/ssl/certificat.pem
+ssl_key = &lt;/etc/dovecot/ssl/certificat.key
+</pre>
+<p>Editer /etc/dovecot/conf.d/15-mailboxes.conf</p>
+<pre class="literal-block">
+mailbox Drafts {
+    auto = subscribe
+    special_use = \Drafts
+}
+
+mailbox Junk {
+    auto = subscribe
+    special_use = \Junk
+}
+
+mailbox Trash {
+    auto = subscribe
+    special_use = \Trash
+}
+
+mailbox Sent {
+    auto = subscribe
+    special_use = \Sent
+}
+
+#mailbox &quot;Sent Messages&quot; {
+#    special_use = \Sent
+#}
+</pre>
+<p>Editer /etc/dovecot/conf.d/auth-passwdfile.conf.ext</p>
+<pre class="literal-block">
+passdb {
+    driver = passwd-file
+    args = scheme=MD5 username_format=%u /etc/dovecot/users
+}
+
+userdb {
+    driver = passwd-file
+    args = username_format=%u /etc/dovecot/users
+    default_fields = uid=5000 gid=5000 home=/var/vmail/%d mail=maildir:~/%u
+}
+</pre>
+<p>Créer le fichier /etc/dovecot/users</p>
+<pre class="literal-block">
+touch /etc/dovecot/users
+</pre>
+<p>Puis pour chaque mail créer un enregistrement :</p>
+<pre class="literal-block">
+adresse&#64;votredomaine.com:motdepassemd5:::::::
+</pre>
+<p>Le format est le suivant :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Champ</th>
+<th class="head">Valeur</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Adresse email</td>
+<td><a class="reference external" href="mailto:adresse&#64;votredomaine.com">adresse&#64;votredomaine.com</a></td>
+</tr>
+<tr><td>Mot de passe (MD5)</td>
+<td>motdepassemd5</td>
+</tr>
+<tr><td>uid</td>
+<td>déjà défini dans auth-passwdfile</td>
+</tr>
+<tr><td>gid</td>
+<td>déjà défini dans auth-passwdfile</td>
+</tr>
+<tr><td>home directory</td>
+<td>déjà défini dans auth-passwdfile</td>
+</tr>
+<tr><td>mail directory</td>
+<td>déjà défini dans auth-passwdfile</td>
+</tr>
+</tbody>
+</table>
+<p>Tester votre utilisateur grâce à la commande :</p>
+<pre class="literal-block">
+doveadm user adresse&#64;votredomaine.com
+</pre>
+<p>Ce qui devrait afficher :</p>
+<pre class="literal-block">
+field   value
+uid     5000
+gid     5000
+home    /var/vmail/votredomaine.com
+mail    maildir:~/adresse&#64;votredomaine.com
+</pre>
+<p>Démarrer dovecot :</p>
+<pre class="literal-block">
+/etc/init.d/dovecot start
+</pre>
+<p>Tester la connexion :</p>
+<pre class="literal-block">
+openssl s_client -connect ip.v4.du.server:993
+</pre>
+<p>Si vous avez &quot;* OK [CAPABILITY …] Dovecot ready.
+Vous pouvez vous authentifier :</p>
+<pre class="literal-block">
+. LOGIN adresse&#64;votredomaine.com motdepasseenclair
+</pre>
+<p>C'est fini pour dovecot.</p>
+<p>Prochaine étape postfix !</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html#2015-10-25-gentoo-navigateur-web-par-defaut">Gentoo Navigateur Web par Défaut</a></h2>
     <p>
       Posté le dim. 25 octobre 2015 &#8226;
@@ -371,48 +558,6 @@ une quantité &quot;1&quot;, &quot;2&quot;, ou toute autre lettre défini tel qu
 est &quot;shift&quot;. Que ça soit le &quot;shift&quot; droit ou gauche il ne fais jamais
 d'action spécifique à ma connaissance.</p>
 
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html#2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec">Récupérer le master depuis le remote origin avec git</a></h2>
-    <p>
-      Posté le ven. 07 août 2015 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/origin.html">origin</a>,      <a href="http://www.choiz.fr/tag/remote.html">remote</a>,      <a href="http://www.choiz.fr/tag/master.html">master</a>,      <a href="http://www.choiz.fr/tag/branch.html">branch</a>,      <a href="http://www.choiz.fr/tag/checkout.html">checkout</a>,      <a href="http://www.choiz.fr/tag/track.html">track</a>    </p>
-  </header>
-  <div>
-      <div class="line-block">
-<div class="line">Dans certains projets j’utilise git avec plusieurs remote, par exemple
-:</div>
-</div>
-<div class="line-block">
-<div class="line">- un remote “origin” se trouve sur un serveur perso.</div>
-</div>
-<div class="line-block">
-<div class="line">- un remote “github” qui lui est sur github.com.</div>
-</div>
-</p><p>Quand je vais sur le master il m’arrive d’avoir ce message :</p>
-</p><pre class="literal-block">
-&quot;your branch is up-to-date with “github/master”.&quot;
-</pre>
-</p><p>Je préfèrerai que ma branche soit à jour avec mon origin/master et non
-github/master.</p>
-</p><p>La solution que j’ai trouvé est la suivante :</p>
-</p><ol class="arabic simple">
-<li>supprimer ma branche master locale :</li>
-</ol>
-</p><p><tt class="docutils literal">git branch <span class="pre">-d</span> master</tt></p>
-<ol class="arabic simple" start="2">
-<li>récupèrer mon master depuis le remote origin :</li>
-</ol>
-</p><p><tt class="docutils literal">git checkout <span class="pre">-t</span> <span class="pre">-b</span> master origin/master</tt></p>
-<p>Pour info :</p>
-</p><p>-t ou --track pour rattacher à l’origin/master</p>
-</p><p>-b pour créer ma nouvelle branche “master”</p>
-</p><p>Plus d’info avec man git-checkout ;-)</p>
-</p>
   </div>
 </article>
 

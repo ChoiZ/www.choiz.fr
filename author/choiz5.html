@@ -55,6 +55,28 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2013-05-29-latin1-utf-8.html#2013-05-29-latin1-utf-8">Latin1 &lt;-&gt; UTF-8</a></h2>
+    <p>
+      Posté le mer. 29 mai 2013 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/php.html">PHP</a>,      <a href="http://www.choiz.fr/tag/latin1.html">LATIN1</a>,      <a href="http://www.choiz.fr/tag/utf-8.html">UTF-8</a>,      <a href="http://www.choiz.fr/tag/mysql.html">MYSQL</a>,      <a href="http://www.choiz.fr/tag/encoding.html">ENCODING</a>,      <a href="http://www.choiz.fr/tag/charset.html">CHARSET</a>,      <a href="http://www.choiz.fr/tag/mysqldump.html">mysqldump</a>    </p>
+  </header>
+  <div>
+      <p>Voilà une solution simple pour convertir une base de donnée en Latin1
+vers de l'UTF-8.</p>
+<p>Utiliser mysqldump avec les options suivantes :</p>
+<p><tt class="docutils literal"><span class="pre">--default-character-set=utf8</span></tt></p>
+<p>et</p>
+<p><tt class="docutils literal"><span class="pre">--skip-set-charset</span></tt></p>
+<p>Voilà la commande&nbsp;complète :</p>
+<p><tt class="docutils literal">mysqldump <span class="pre">-u</span> user <span class="pre">-p</span> base table <span class="pre">--default-character-set=utf8</span> <span class="pre">--skip-set-charset</span> &gt; base_table.sql</tt></p>
+<p>Ensuite en utilisant vim je fais un rechercher / remplacer ...</p>
+      <a class="btn" href="http://www.choiz.fr/2013-05-29-latin1-utf-8.html#2013-05-29-latin1-utf-8">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html#2013-03-04-typematrix-sous-mac-os-x">TypeMatrix sous Mac Os X</a></h2>
     <p>
       Posté le lun. 04 mars 2013 &#8226;
@@ -241,28 +263,6 @@ There is a screen on:
 <p>Habituellement je détache mon &quot;Screen&quot; mais cette fois j'ai oublié.</p>
 <p>Pour &quot;détacher&quot; / &quot;réattacher&quot; mon &quot;Screen&quot; j'ai du faire la commande ...</p>
       <a class="btn" href="http://www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html#2012-04-18-reprendre-la-main-sur-un-screen-pas-detached">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html#2012-04-14-utilisation-des-branches-et-de-git-stash">Utilisation des branches et de git stash</a></h2>
-    <p>
-      Posté le sam. 14 avril 2012 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="http://www.choiz.fr/tag/git-stash-pop.html">git stash pop</a>,      <a href="http://www.choiz.fr/tag/git-stash-list.html">git stash list</a>,      <a href="http://www.choiz.fr/tag/git-branch.html">git branch</a>,      <a href="http://www.choiz.fr/tag/git-checkout.html">git checkout</a>    </p>
-  </header>
-  <div>
-      <div class="line-block">
-<div class="line">Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
-sur une branche qui sont pas a commiter dans l'immédiat.</div>
-<div class="line">J'utilise donc git stash, voyons voir comment l'utiliser simplement.</div>
-</div>
-<p>On regarde l'état du status et des branches : (git status / git branch)</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$ git ...</div></div></blockquote>
-      <a class="btn" href="http://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html#2012-04-14-utilisation-des-branches-et-de-git-stash">Lire la suite</a>
   </div>
 </article>
 

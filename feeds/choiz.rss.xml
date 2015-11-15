@@ -1,5 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChoiZ</title><link>http://www.choiz.fr/</link><description>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</description><atom:link href="http://www.choiz.fr/feeds/choiz.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 25 Oct 2015 14:02:17 +0100</lastBuildDate><item><title>Gentoo Navigateur Web par Défaut</title><link>http://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html</link><description>&lt;p&gt;Sur ma machine &amp;quot;links&amp;quot; était le navigateur web par défaut.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChoiZ</title><link>http://www.choiz.fr/</link><description>Je suis Français, ingénieur informatique, j'aime le développement web, les logiciels libres et l'informatique.</description><atom:link href="http://www.choiz.fr/feeds/choiz.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 15 Nov 2015 17:11:23 +0100</lastBuildDate><item><title>Configurer un serveur mail</title><link>http://www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html</link><description>&lt;p&gt;Installation d'un serveur mail complet et à jour sous debian jessie (8.2).&lt;/p&gt;
+&lt;p&gt;Pour commencer nous allons créer des entrées DNS.&lt;/p&gt;
+&lt;p&gt;Nous créons un MX pour les mails avec une priorité de 1, un sous domaine &amp;quot;mail&amp;quot; qui pointe vers l'adresse ipv4 de votre serveur et un sous domaine webmail qui pointe sur le sous domaine mail.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+votredomaine.com.           MX      1   mail.votredomaine.com.
+mail.votredomaine.com.      A           ip.v4.du.serveur
+webmail.votredomaine.com.   CNAME       mail.votredomaine.com.
+&lt;/pre&gt;
+&lt;p&gt;Maintenant installons postfix et dovecot-imapd :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+apt-get install postfix dovecot-imapd
+&lt;/pre&gt;
+&lt;p&gt;Configurer le serveur de messagerie comme &amp;quot;Site Internet&amp;quot;, puis en nom de courrier indiquer &amp;quot;mail.votredomaine.com&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Créer un dossier ssl dans dovecot :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+mkdir /etc/dovecot/ssl &amp;amp;&amp;amp; cd /etc/dovecot/ssl
+&lt;/pre&gt;
+&lt;p&gt;Créer un certificat ssl :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+openssl req -new -newkey rsa:2048 -nodes -keyout certificat.key -out certificat.csr
+&lt;/pre&gt;
+&lt;p&gt;Puis répondre aux différentes questions pour ma part j'ai répondu :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+FR
+(vide)
+Paris
+votredomaine
+IT
+mail.votredomaine.com
+contact&amp;#64;votredomaine.com
+(vide)
+(vide)
+&lt;/pre&gt;
+&lt;p&gt;Ensuite :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+openssl x509 -req -days 365 -in certificat.csr -signkey certificat.key -out certificat.crt
+&lt;/pre&gt;
+&lt;p&gt;Puis :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cat certificat.key certificat.crt &amp;gt; certificat.pem
+&lt;/pre&gt;
+&lt;p&gt;Créer le groupe et l'utilisateur vmail :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+groupadd -g 5000 vmail
+useradd -m -d /var/vmail -s /bin/false -u 5000 -g vmail vmail
+&lt;/pre&gt;
+&lt;p&gt;Ajouter dans /etc/dovecot/dovecot.conf&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+listen = ip.v4.du.server
+&lt;/pre&gt;
+&lt;p&gt;Editer /etc/dovecot/conf.d/10-auth.conf&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+disable_plaintext_auth = yes
+auth_username_format = %Lu
+#!include auth-system.conf.ext
+!include auth-passwdfile.conf.ext
+&lt;/pre&gt;
+&lt;p&gt;Editer /etc/dovecot/conf.d/10-logging.conf&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+auth_verbose = yes
+mail_debug = yes
+&lt;/pre&gt;
+&lt;p&gt;Editer /etc/dovecot/conf.d/10-ssl.conf&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+ssl = required
+ssl_cert = &amp;lt;/etc/dovecot/ssl/certificat.pem
+ssl_key = &amp;lt;/etc/dovecot/ssl/certificat.key
+&lt;/pre&gt;
+&lt;p&gt;Editer /etc/dovecot/conf.d/15-mailboxes.conf&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+mailbox Drafts {
+    auto = subscribe
+    special_use = \Drafts
+}
+
+mailbox Junk {
+    auto = subscribe
+    special_use = \Junk
+}
+
+mailbox Trash {
+    auto = subscribe
+    special_use = \Trash
+}
+
+mailbox Sent {
+    auto = subscribe
+    special_use = \Sent
+}
+
+#mailbox &amp;quot;Sent Messages&amp;quot; {
+#    special_use = \Sent
+#}
+&lt;/pre&gt;
+&lt;p&gt;Editer /etc/dovecot/conf.d/auth-passwdfile.conf.ext&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+passdb {
+    driver = passwd-file
+    args = scheme=MD5 username_format=%u /etc/dovecot/users
+}
+
+userdb {
+    driver = passwd-file
+    args = username_format=%u /etc/dovecot/users
+    default_fields = uid=5000 gid=5000 home=/var/vmail/%d mail=maildir:~/%u
+}
+&lt;/pre&gt;
+&lt;p&gt;Créer le fichier /etc/dovecot/users&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+touch /etc/dovecot/users
+&lt;/pre&gt;
+&lt;p&gt;Puis pour chaque mail créer un enregistrement :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+adresse&amp;#64;votredomaine.com:motdepassemd5:::::::
+&lt;/pre&gt;
+&lt;p&gt;Le format est le suivant :&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="36%" /&gt;
+&lt;col width="64%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;Champ&lt;/th&gt;
+&lt;th class="head"&gt;Valeur&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;Adresse email&lt;/td&gt;
+&lt;td&gt;&lt;a class="reference external" href="mailto:adresse&amp;#64;votredomaine.com"&gt;adresse&amp;#64;votredomaine.com&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Mot de passe (MD5)&lt;/td&gt;
+&lt;td&gt;motdepassemd5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;uid&lt;/td&gt;
+&lt;td&gt;déjà défini dans auth-passwdfile&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;gid&lt;/td&gt;
+&lt;td&gt;déjà défini dans auth-passwdfile&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;home directory&lt;/td&gt;
+&lt;td&gt;déjà défini dans auth-passwdfile&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;mail directory&lt;/td&gt;
+&lt;td&gt;déjà défini dans auth-passwdfile&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Tester votre utilisateur grâce à la commande :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+doveadm user adresse&amp;#64;votredomaine.com
+&lt;/pre&gt;
+&lt;p&gt;Ce qui devrait afficher :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+field   value
+uid     5000
+gid     5000
+home    /var/vmail/votredomaine.com
+mail    maildir:~/adresse&amp;#64;votredomaine.com
+&lt;/pre&gt;
+&lt;p&gt;Démarrer dovecot :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/etc/init.d/dovecot start
+&lt;/pre&gt;
+&lt;p&gt;Tester la connexion :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+openssl s_client -connect ip.v4.du.server:993
+&lt;/pre&gt;
+&lt;p&gt;Si vous avez &amp;quot;* OK [CAPABILITY …] Dovecot ready.
+Vous pouvez vous authentifier :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+. LOGIN adresse&amp;#64;votredomaine.com motdepasseenclair
+&lt;/pre&gt;
+&lt;p&gt;C'est fini pour dovecot.&lt;/p&gt;
+&lt;p&gt;Prochaine étape postfix !&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 15 Nov 2015 17:11:23 +0100</pubDate><guid>tag:www.choiz.fr,2015-11-15:2015-11-15-configurer-un-serveur-mail.html</guid><category>mail</category><category>postfix</category><category>dovecot</category><category>dns</category></item><item><title>Gentoo Navigateur Web par Défaut</title><link>http://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html</link><description>&lt;p&gt;Sur ma machine &amp;quot;links&amp;quot; était le navigateur web par défaut.
 Il est pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il est préférable d'utiliser un navigateur tel que Firefox.&lt;/p&gt;
 &lt;p&gt;Voici la commande pour voir le navigateur par défaut pour les url utilisants le protocole &amp;quot;http&amp;quot; :&lt;/p&gt;
 &lt;blockquote&gt;
