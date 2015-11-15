@@ -3,11 +3,12 @@
 &lt;div class="section" id="configuration-des-dns"&gt;
 &lt;h2&gt;Configuration des DNS&lt;/h2&gt;
 &lt;p&gt;Pour commencer nous allons créer des entrées DNS.&lt;/p&gt;
-&lt;p&gt;Nous créons un MX pour les mails avec une priorité de 1, un sous domaine &amp;quot;mail&amp;quot; qui pointe vers l'adresse ipv4 de votre serveur et un sous domaine webmail qui pointe sur le sous domaine mail.&lt;/p&gt;
+&lt;p&gt;Nous créons un MX pour les mails avec une priorité de 1, un sous domaine &amp;quot;mail&amp;quot; qui pointe vers l'adresse ipv4 de votre serveur, d'un sous domaine webmail qui pointe sur le sous domaine mail et d'un enregistrement SPF&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 votredomaine.com.           MX      1   mail.votredomaine.com.
 mail.votredomaine.com.      A           ip.v4.du.serveur
 webmail.votredomaine.com.   CNAME       mail.votredomaine.com.
+votredomain.com.            SPF         &amp;quot;v=spf1 ip4:ip.v4.du.server ~all&amp;quot;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="installation-des-paquets"&gt;
