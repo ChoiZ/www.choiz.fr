@@ -9,6 +9,9 @@ Configurer un serveur mail
 
 Installation d'un serveur mail complet et à jour sous debian jessie (8.2).
 
+Configuration des DNS
+=====================
+
 Pour commencer nous allons créer des entrées DNS.
 
 Nous créons un MX pour les mails avec une priorité de 1, un sous domaine "mail" qui pointe vers l'adresse ipv4 de votre serveur et un sous domaine webmail qui pointe sur le sous domaine mail. ::
@@ -17,11 +20,17 @@ Nous créons un MX pour les mails avec une priorité de 1, un sous domaine "mail
     mail.votredomaine.com.      A           ip.v4.du.serveur
     webmail.votredomaine.com.   CNAME       mail.votredomaine.com.
 
-Maintenant installons postfix et dovecot-imapd : ::
+Installation des paquets
+========================
 
-    apt-get install postfix dovecot-imapd
+Maintenant installons postfix dovecot-imapd et sasl2-bin : ::
+
+    apt-get install postfix dovecot-imapd sasl2-bin
 
 Configurer le serveur de messagerie comme "Site Internet", puis en nom de courrier indiquer "mail.votredomaine.com".
+
+Configuration de dovecot
+========================
 
 Créer un dossier ssl dans dovecot : ::
 
@@ -71,6 +80,14 @@ Editer /etc/dovecot/conf.d/10-logging.conf ::
 
     auth_verbose = yes
     mail_debug = yes
+
+Editer /etc/dovecot/conf.d/10-master.conf ::
+
+    unix_listener /var/spool/postfix/private/auth {
+      mode = 0666
+      user = postfix
+      group = postfix
+    }
 
 Editer /etc/dovecot/conf.d/10-ssl.conf ::
 
@@ -170,4 +187,91 @@ Vous pouvez vous authentifier : ::
 
 C'est fini pour dovecot.
 
-Prochaine étape postfix !
+Configuration de sasl
+=====================
+
+Editer /etc/default/saslauthd : ::
+
+    START=yes
+    OPTIONS="-m /var/spool/postfix/var/run/saslauthd"
+
+Puis lancer : ::
+
+    /etc/init.d/saslauthd start
+
+C'est fini pour sasl
+
+Configuration de postfix
+========================
+
+Editer /etc/postfix/main.cf : :::
+
+    smtpd_banner = $myhostname ESMTP $mail_name
+    smtpd_tls_cert_file=/etc/dovecot/ssl/certificat.pem
+    smtpd_tls_key_file=/etc/dovecot/ssl/certificat.key
+    mynetworks = 127.0.0.0/8 ip.v4.du.server
+
+    virtual_mailbox_domains = votredomaine.com, autredomaine.com
+    virtual_mailbox_base = /var/vmail
+    virtual_mailbox_maps = hash:/etc/postfix/virtual_mailbox
+    virtual_minimum_uid = 100
+    virtual_uid_maps = static:5000
+    virtual_gid_maps = static:5000
+    virtual_alias_maps = hash:/etc/postfix/virtual_alias
+
+    smtpd_sasl_auth_enable = yes
+    smtpd_sasl_type = dovecot
+    smtpd_sasl_path = private/auth
+    smtpd_sasl_security_options = noanonymous
+    smtpd_sasl_tls_security_options = noanonymous
+    smtpd_sasl_local_domain = $myhostname
+
+    broken_sasl_auth_clients = yes
+
+    smtpd_helo_restrictions = reject_unknown_helo_hostname
+    smtpd_sender_restrictions = permit_sasl_authenticated reject_unknown_sender_domain
+    smtpd_recipient_restrictions = permit_sasl_authenticated permit_mynetworks reject_unauth_destination
+    smtpd_enforce_tls = yes
+    smtpd_tls_auth_only = yes
+    smtpd_tls_ask_ccert = no
+    smtpd_tls_received_header = yes
+
+Créer /etc/postfix/virtual_alias : ::
+
+    touch /etc/postfix/virtual_alias
+
+Pour créer un alias, éditer /etc/postfix/virtual_alias : ::
+
+    alias@votredomaine.com          destination@votredomaine.com
+
+Créer /etc/postfix/virtual_domains : ::
+
+    touch /etc/postfix/virtual_domains
+
+Pour gérer vos domaines, éditer /etc/postfix/virtual_domains : ::
+
+    votredomaine.com                OK
+    votredeuxiemedomaine.com        OK
+
+Créer /etc/postfix/virtual_mailbox : ::
+
+    touch /etc/postfix/virtual_mailbox
+
+Pour créer un comte mail, éditer /etc/postfix/virtual_mailbox : ::
+
+    email@votredomaine.com          votredomaine.com/email@votredomaine.com/
+    linus@torvald.com               torvald.com/linus@torvald.com/
+
+N'oubliez pas lors de la création de nouveau comptes mail d'éditer /etc/dovecot/users ;-)
+
+Maintenant il faut dire a postfix que nous avons modifier nos fichiers virtuels : ::
+
+    postmap /etc/postfix/virtual_alias
+    postmap /etc/postfix/virtual_domains
+    postmap /etc/postfix/virtual_mailbox
+
+Puis redemarrer postfix : ::
+
+    /etc/init.d/postfix restart
+
+Fin de la configuration de postfix
