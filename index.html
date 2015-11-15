@@ -63,6 +63,8 @@ Tags :
   </header>
   <div>
       <p>Installation d'un serveur mail complet et à jour sous debian jessie (8.2).</p>
+<div class="section" id="configuration-des-dns">
+<h2>Configuration des DNS</h2>
 <p>Pour commencer nous allons créer des entrées DNS.</p>
 <p>Nous créons un MX pour les mails avec une priorité de 1, un sous domaine &quot;mail&quot; qui pointe vers l'adresse ipv4 de votre serveur et un sous domaine webmail qui pointe sur le sous domaine mail.</p>
 <pre class="literal-block">
@@ -70,11 +72,17 @@ votredomaine.com.           MX      1   mail.votredomaine.com.
 mail.votredomaine.com.      A           ip.v4.du.serveur
 webmail.votredomaine.com.   CNAME       mail.votredomaine.com.
 </pre>
-<p>Maintenant installons postfix et dovecot-imapd :</p>
+</div>
+<div class="section" id="installation-des-paquets">
+<h2>Installation des paquets</h2>
+<p>Maintenant installons postfix dovecot-imapd et sasl2-bin :</p>
 <pre class="literal-block">
-apt-get install postfix dovecot-imapd
+apt-get install postfix dovecot-imapd sasl2-bin
 </pre>
 <p>Configurer le serveur de messagerie comme &quot;Site Internet&quot;, puis en nom de courrier indiquer &quot;mail.votredomaine.com&quot;.</p>
+</div>
+<div class="section" id="configuration-de-dovecot">
+<h2>Configuration de dovecot</h2>
 <p>Créer un dossier ssl dans dovecot :</p>
 <pre class="literal-block">
 mkdir /etc/dovecot/ssl &amp;&amp; cd /etc/dovecot/ssl
@@ -123,6 +131,14 @@ auth_username_format = %Lu
 <pre class="literal-block">
 auth_verbose = yes
 mail_debug = yes
+</pre>
+<p>Editer /etc/dovecot/conf.d/10-master.conf</p>
+<pre class="literal-block">
+unix_listener /var/spool/postfix/private/auth {
+  mode = 0666
+  user = postfix
+  group = postfix
+}
 </pre>
 <p>Editer /etc/dovecot/conf.d/10-ssl.conf</p>
 <pre class="literal-block">
@@ -235,7 +251,93 @@ Vous pouvez vous authentifier :</p>
 . LOGIN adresse&#64;votredomaine.com motdepasseenclair
 </pre>
 <p>C'est fini pour dovecot.</p>
-<p>Prochaine étape postfix !</p>
+</div>
+<div class="section" id="configuration-de-sasl">
+<h2>Configuration de sasl</h2>
+<p>Editer /etc/default/saslauthd :</p>
+<pre class="literal-block">
+START=yes
+OPTIONS=&quot;-m /var/spool/postfix/var/run/saslauthd&quot;
+</pre>
+<p>Puis lancer :</p>
+<pre class="literal-block">
+/etc/init.d/saslauthd start
+</pre>
+<p>C'est fini pour sasl</p>
+</div>
+<div class="section" id="configuration-de-postfix">
+<h2>Configuration de postfix</h2>
+<p>Editer /etc/postfix/main.cf : ::</p>
+<pre class="literal-block">
+smtpd_banner = $myhostname ESMTP $mail_name
+smtpd_tls_cert_file=/etc/dovecot/ssl/certificat.pem
+smtpd_tls_key_file=/etc/dovecot/ssl/certificat.key
+mynetworks = 127.0.0.0/8 ip.v4.du.server
+
+virtual_mailbox_domains = votredomaine.com, autredomaine.com
+virtual_mailbox_base = /var/vmail
+virtual_mailbox_maps = hash:/etc/postfix/virtual_mailbox
+virtual_minimum_uid = 100
+virtual_uid_maps = static:5000
+virtual_gid_maps = static:5000
+virtual_alias_maps = hash:/etc/postfix/virtual_alias
+
+smtpd_sasl_auth_enable = yes
+smtpd_sasl_type = dovecot
+smtpd_sasl_path = private/auth
+smtpd_sasl_security_options = noanonymous
+smtpd_sasl_tls_security_options = noanonymous
+smtpd_sasl_local_domain = $myhostname
+
+broken_sasl_auth_clients = yes
+
+smtpd_helo_restrictions = reject_unknown_helo_hostname
+smtpd_sender_restrictions = permit_sasl_authenticated reject_unknown_sender_domain
+smtpd_recipient_restrictions = permit_sasl_authenticated permit_mynetworks reject_unauth_destination
+smtpd_enforce_tls = yes
+smtpd_tls_auth_only = yes
+smtpd_tls_ask_ccert = no
+smtpd_tls_received_header = yes
+</pre>
+<p>Créer /etc/postfix/virtual_alias :</p>
+<pre class="literal-block">
+touch /etc/postfix/virtual_alias
+</pre>
+<p>Pour créer un alias, éditer /etc/postfix/virtual_alias :</p>
+<pre class="literal-block">
+alias&#64;votredomaine.com          destination&#64;votredomaine.com
+</pre>
+<p>Créer /etc/postfix/virtual_domains :</p>
+<pre class="literal-block">
+touch /etc/postfix/virtual_domains
+</pre>
+<p>Pour gérer vos domaines, éditer /etc/postfix/virtual_domains :</p>
+<pre class="literal-block">
+votredomaine.com                OK
+votredeuxiemedomaine.com        OK
+</pre>
+<p>Créer /etc/postfix/virtual_mailbox :</p>
+<pre class="literal-block">
+touch /etc/postfix/virtual_mailbox
+</pre>
+<p>Pour créer un comte mail, éditer /etc/postfix/virtual_mailbox :</p>
+<pre class="literal-block">
+email&#64;votredomaine.com          votredomaine.com/email&#64;votredomaine.com/
+linus&#64;torvald.com               torvald.com/linus&#64;torvald.com/
+</pre>
+<p>N'oubliez pas lors de la création de nouveau comptes mail d'éditer /etc/dovecot/users ;-)</p>
+<p>Maintenant il faut dire a postfix que nous avons modifier nos fichiers virtuels :</p>
+<pre class="literal-block">
+postmap /etc/postfix/virtual_alias
+postmap /etc/postfix/virtual_domains
+postmap /etc/postfix/virtual_mailbox
+</pre>
+<p>Puis redemarrer postfix :</p>
+<pre class="literal-block">
+/etc/init.d/postfix restart
+</pre>
+<p>Fin de la configuration de postfix</p>
+</div>
 
   </div>
   <hr />

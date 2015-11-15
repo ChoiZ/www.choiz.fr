@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="http://www.choiz.fr/" rel="alternate"></link><link href="http://www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>http://www.choiz.fr/</id><updated>2015-11-15T17:11:23+01:00</updated><entry><title>Configurer un serveur mail</title><link href="http://www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html" rel="alternate"></link><updated>2015-11-15T17:11:23+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-11-15:2015-11-15-configurer-un-serveur-mail.html</id><summary type="html">&lt;p&gt;Installation d'un serveur mail complet et à jour sous debian jessie (8.2).&lt;/p&gt;
+&lt;div class="section" id="configuration-des-dns"&gt;
+&lt;h2&gt;Configuration des DNS&lt;/h2&gt;
 &lt;p&gt;Pour commencer nous allons créer des entrées DNS.&lt;/p&gt;
 &lt;p&gt;Nous créons un MX pour les mails avec une priorité de 1, un sous domaine &amp;quot;mail&amp;quot; qui pointe vers l'adresse ipv4 de votre serveur et un sous domaine webmail qui pointe sur le sous domaine mail.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -7,11 +9,17 @@ votredomaine.com.           MX      1   mail.votredomaine.com.
 mail.votredomaine.com.      A           ip.v4.du.serveur
 webmail.votredomaine.com.   CNAME       mail.votredomaine.com.
 &lt;/pre&gt;
-&lt;p&gt;Maintenant installons postfix et dovecot-imapd :&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="installation-des-paquets"&gt;
+&lt;h2&gt;Installation des paquets&lt;/h2&gt;
+&lt;p&gt;Maintenant installons postfix dovecot-imapd et sasl2-bin :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-apt-get install postfix dovecot-imapd
+apt-get install postfix dovecot-imapd sasl2-bin
 &lt;/pre&gt;
 &lt;p&gt;Configurer le serveur de messagerie comme &amp;quot;Site Internet&amp;quot;, puis en nom de courrier indiquer &amp;quot;mail.votredomaine.com&amp;quot;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="configuration-de-dovecot"&gt;
+&lt;h2&gt;Configuration de dovecot&lt;/h2&gt;
 &lt;p&gt;Créer un dossier ssl dans dovecot :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 mkdir /etc/dovecot/ssl &amp;amp;&amp;amp; cd /etc/dovecot/ssl
@@ -60,6 +68,14 @@ auth_username_format = %Lu
 &lt;pre class="literal-block"&gt;
 auth_verbose = yes
 mail_debug = yes
+&lt;/pre&gt;
+&lt;p&gt;Editer /etc/dovecot/conf.d/10-master.conf&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+unix_listener /var/spool/postfix/private/auth {
+  mode = 0666
+  user = postfix
+  group = postfix
+}
 &lt;/pre&gt;
 &lt;p&gt;Editer /etc/dovecot/conf.d/10-ssl.conf&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -172,7 +188,93 @@ Vous pouvez vous authentifier :&lt;/p&gt;
 . LOGIN adresse&amp;#64;votredomaine.com motdepasseenclair
 &lt;/pre&gt;
 &lt;p&gt;C'est fini pour dovecot.&lt;/p&gt;
-&lt;p&gt;Prochaine étape postfix !&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="configuration-de-sasl"&gt;
+&lt;h2&gt;Configuration de sasl&lt;/h2&gt;
+&lt;p&gt;Editer /etc/default/saslauthd :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+START=yes
+OPTIONS=&amp;quot;-m /var/spool/postfix/var/run/saslauthd&amp;quot;
+&lt;/pre&gt;
+&lt;p&gt;Puis lancer :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/etc/init.d/saslauthd start
+&lt;/pre&gt;
+&lt;p&gt;C'est fini pour sasl&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="configuration-de-postfix"&gt;
+&lt;h2&gt;Configuration de postfix&lt;/h2&gt;
+&lt;p&gt;Editer /etc/postfix/main.cf : ::&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+smtpd_banner = $myhostname ESMTP $mail_name
+smtpd_tls_cert_file=/etc/dovecot/ssl/certificat.pem
+smtpd_tls_key_file=/etc/dovecot/ssl/certificat.key
+mynetworks = 127.0.0.0/8 ip.v4.du.server
+
+virtual_mailbox_domains = votredomaine.com, autredomaine.com
+virtual_mailbox_base = /var/vmail
+virtual_mailbox_maps = hash:/etc/postfix/virtual_mailbox
+virtual_minimum_uid = 100
+virtual_uid_maps = static:5000
+virtual_gid_maps = static:5000
+virtual_alias_maps = hash:/etc/postfix/virtual_alias
+
+smtpd_sasl_auth_enable = yes
+smtpd_sasl_type = dovecot
+smtpd_sasl_path = private/auth
+smtpd_sasl_security_options = noanonymous
+smtpd_sasl_tls_security_options = noanonymous
+smtpd_sasl_local_domain = $myhostname
+
+broken_sasl_auth_clients = yes
+
+smtpd_helo_restrictions = reject_unknown_helo_hostname
+smtpd_sender_restrictions = permit_sasl_authenticated reject_unknown_sender_domain
+smtpd_recipient_restrictions = permit_sasl_authenticated permit_mynetworks reject_unauth_destination
+smtpd_enforce_tls = yes
+smtpd_tls_auth_only = yes
+smtpd_tls_ask_ccert = no
+smtpd_tls_received_header = yes
+&lt;/pre&gt;
+&lt;p&gt;Créer /etc/postfix/virtual_alias :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+touch /etc/postfix/virtual_alias
+&lt;/pre&gt;
+&lt;p&gt;Pour créer un alias, éditer /etc/postfix/virtual_alias :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+alias&amp;#64;votredomaine.com          destination&amp;#64;votredomaine.com
+&lt;/pre&gt;
+&lt;p&gt;Créer /etc/postfix/virtual_domains :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+touch /etc/postfix/virtual_domains
+&lt;/pre&gt;
+&lt;p&gt;Pour gérer vos domaines, éditer /etc/postfix/virtual_domains :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+votredomaine.com                OK
+votredeuxiemedomaine.com        OK
+&lt;/pre&gt;
+&lt;p&gt;Créer /etc/postfix/virtual_mailbox :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+touch /etc/postfix/virtual_mailbox
+&lt;/pre&gt;
+&lt;p&gt;Pour créer un comte mail, éditer /etc/postfix/virtual_mailbox :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+email&amp;#64;votredomaine.com          votredomaine.com/email&amp;#64;votredomaine.com/
+linus&amp;#64;torvald.com               torvald.com/linus&amp;#64;torvald.com/
+&lt;/pre&gt;
+&lt;p&gt;N'oubliez pas lors de la création de nouveau comptes mail d'éditer /etc/dovecot/users ;-)&lt;/p&gt;
+&lt;p&gt;Maintenant il faut dire a postfix que nous avons modifier nos fichiers virtuels :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+postmap /etc/postfix/virtual_alias
+postmap /etc/postfix/virtual_domains
+postmap /etc/postfix/virtual_mailbox
+&lt;/pre&gt;
+&lt;p&gt;Puis redemarrer postfix :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/etc/init.d/postfix restart
+&lt;/pre&gt;
+&lt;p&gt;Fin de la configuration de postfix&lt;/p&gt;
+&lt;/div&gt;
 </summary><category term="mail"></category><category term="postfix"></category><category term="dovecot"></category><category term="dns"></category></entry><entry><title>Gentoo Navigateur Web par Défaut</title><link href="http://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html" rel="alternate"></link><updated>2015-10-25T14:02:17+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-10-25:2015-10-25-gentoo-navigateur-web-par-defaut.html</id><summary type="html">&lt;p&gt;Sur ma machine &amp;quot;links&amp;quot; était le navigateur web par défaut.
 Il est pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il est préférable d'utiliser un navigateur tel que Firefox.&lt;/p&gt;
 &lt;p&gt;Voici la commande pour voir le navigateur par défaut pour les url utilisants le protocole &amp;quot;http&amp;quot; :&lt;/p&gt;
