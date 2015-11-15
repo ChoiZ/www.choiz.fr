@@ -14,11 +14,12 @@ Configuration des DNS
 
 Pour commencer nous allons créer des entrées DNS.
 
-Nous créons un MX pour les mails avec une priorité de 1, un sous domaine "mail" qui pointe vers l'adresse ipv4 de votre serveur et un sous domaine webmail qui pointe sur le sous domaine mail. ::
+Nous créons un MX pour les mails avec une priorité de 1, un sous domaine "mail" qui pointe vers l'adresse ipv4 de votre serveur, d'un sous domaine webmail qui pointe sur le sous domaine mail et d'un enregistrement SPF ::
 
     votredomaine.com.           MX      1   mail.votredomaine.com.
     mail.votredomaine.com.      A           ip.v4.du.serveur
     webmail.votredomaine.com.   CNAME       mail.votredomaine.com.
+    votredomain.com.            SPF         "v=spf1 ip4:ip.v4.du.server ~all"
 
 Installation des paquets
 ========================
