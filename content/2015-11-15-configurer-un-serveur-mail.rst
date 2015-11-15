@@ -275,4 +275,6 @@ Puis redemarrer postfix : ::
 
     /etc/init.d/postfix restart
 
-Fin de la configuration de postfix
+Fin de la configuration de postfix.
+
+Vous pouvez maintenant tester votre serveur mail ainsi que la qualité de votre serveur sur le site http://www.mail-tester.com
