@@ -274,7 +274,8 @@ postmap /etc/postfix/virtual_mailbox
 &lt;pre class="literal-block"&gt;
 /etc/init.d/postfix restart
 &lt;/pre&gt;
-&lt;p&gt;Fin de la configuration de postfix&lt;/p&gt;
+&lt;p&gt;Fin de la configuration de postfix.&lt;/p&gt;
+&lt;p&gt;Vous pouvez maintenant tester votre serveur mail ainsi que la qualité de votre serveur sur le site &lt;a class="reference external" href="http://www.mail-tester.com"&gt;http://www.mail-tester.com&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 </summary><category term="mail"></category><category term="postfix"></category><category term="dovecot"></category><category term="dns"></category></entry><entry><title>Gentoo Navigateur Web par Défaut</title><link href="http://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html" rel="alternate"></link><updated>2015-10-25T14:02:17+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-10-25:2015-10-25-gentoo-navigateur-web-par-defaut.html</id><summary type="html">&lt;p&gt;Sur ma machine &amp;quot;links&amp;quot; était le navigateur web par défaut.
 Il est pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il est préférable d'utiliser un navigateur tel que Firefox.&lt;/p&gt;
