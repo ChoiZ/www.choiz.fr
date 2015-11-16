@@ -232,10 +232,12 @@ Editer /etc/postfix/main.cf : :::
     smtpd_helo_restrictions = reject_unknown_helo_hostname
     smtpd_sender_restrictions = permit_sasl_authenticated reject_unknown_sender_domain
     smtpd_recipient_restrictions = permit_sasl_authenticated permit_mynetworks reject_unauth_destination
-    smtpd_enforce_tls = yes
-    smtpd_tls_auth_only = yes
+
+    smtpd_enforce_tls = no
+    smtpd_tls_auth_only = no
     smtpd_tls_ask_ccert = no
     smtpd_tls_received_header = yes
+    tls_random_source = dev:/dev/urandom
 
 Créer /etc/postfix/virtual_alias : ::
 
@@ -274,12 +276,18 @@ Maintenant il faut dire a postfix que nous avons modifier nos fichiers virtuels 
 Editer /etc/postfix/master.cf : ::
 
     smtp    inet    n   -   -   -   -   smtpd   -v
+     -o smtpd_tls_cert_file=/etc/dovecot/ssl/certificat.pem
+     -o smtpd_tls_key_file=/etc/dovecot/ssl/certificat.key
     submission inet n - n - - smtpd
      -o smtpd_tls_security_level=encrypt
      -o smtpd_sasl_auth_enable=yes
     urd inet n - n - - smtpd
      -o smtpd_tls_wrappermode=yes
      -o smtpd_sasl_auth_enable=yes
+    smtps   inet    n   -   -   -   -   smtpd   -v
+     -o smtpd_tls_wrappermode=yes
+     -o smtpd_tls_cert_file=/etc/dovecot/ssl/certificat.pem
+     -o smtpd_tls_key_file=/etc/dovecot/ssl/certificat.key
 
 Puis redemarrer postfix : ::
 
