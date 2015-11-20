@@ -15,7 +15,7 @@ votredomain.com.            SPF         &amp;quot;v=spf1 ip4:ip.v4.du.server ~al
 &lt;h2&gt;Installation des paquets&lt;/h2&gt;
 &lt;p&gt;Maintenant installons postfix dovecot-imapd et sasl2-bin :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-apt-get install postfix dovecot-imapd sasl2-bin
+apt-get install postfix dovecot-imapd sasl2-bin php5-curl
 &lt;/pre&gt;
 &lt;p&gt;Configurer le serveur de messagerie comme &amp;quot;Site Internet&amp;quot;, puis en nom de courrier indiquer &amp;quot;mail.votredomaine.com&amp;quot;.&lt;/p&gt;
 &lt;/div&gt;
@@ -295,7 +295,124 @@ smtps   inet    n   -   -   -   -   smtpd   -v
 &lt;p&gt;Fin de la configuration de postfix.&lt;/p&gt;
 &lt;p&gt;Vous pouvez maintenant tester votre serveur mail ainsi que la qualité de votre serveur sur le site &lt;a class="reference external" href="http://www.mail-tester.com"&gt;http://www.mail-tester.com&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="mail"></category><category term="postfix"></category><category term="dovecot"></category><category term="dns"></category></entry><entry><title>Gentoo Navigateur Web par Défaut</title><link href="http://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html" rel="alternate"></link><updated>2015-10-25T14:02:17+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-10-25:2015-10-25-gentoo-navigateur-web-par-defaut.html</id><summary type="html">&lt;p&gt;Sur ma machine &amp;quot;links&amp;quot; était le navigateur web par défaut.
+&lt;div class="section" id="installation-d-un-webmail-rainloop"&gt;
+&lt;h2&gt;Installation d'un webmail rainloop&lt;/h2&gt;
+&lt;p&gt;Créer un dossier pour votre webmail :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+mkdir -p /var/www/webmail/public &amp;amp;&amp;amp; cd /var/www/webmail/public
+&lt;/pre&gt;
+&lt;p&gt;Télécharger rainloop :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+wget http://repository.rainloop.net/v2/webmail/rainloop-community-latest.zip
+&lt;/pre&gt;
+&lt;p&gt;Décompresser rainloop :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+unzip rainloop*.zip &amp;amp;&amp;amp; rm -rf rainloop*.zip
+&lt;/pre&gt;
+&lt;p&gt;Modifier les droits :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+chown -R www-data:www-data /var/www/webmail
+find . -type f -exec chmod 644 {} \;
+find . -type d -exec chmod 755 {} \;
+&lt;/pre&gt;
+&lt;p&gt;Créer un vhost pour apache dans &lt;cite&gt;/etc/apache2/site-enabled/001-webmail.domain.com.conf&lt;/cite&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;lt;VirtualHost *:80&amp;gt;
+    ServerAdmin contact&amp;#64;domain.com
+    ServerName mail.domain.com
+
+    DocumentRoot /var/www/webmail/public
+    &amp;lt;Directory /var/www/webmail/public&amp;gt;
+        Options FollowSymLinks
+        #Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    &amp;lt;/Directory&amp;gt;
+
+    &amp;lt;Directory /var/www/webmail/public/data&amp;gt;
+        Options -FollowSymLinks
+        AllowOverride None
+        Order allow,deny
+        Deny from all
+    &amp;lt;/Directory&amp;gt;
+
+    ErrorLog ${APACHE_LOG_DIR}/webmail_error.log
+
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
+
+    CustomLog ${APACHE_LOG_DIR}/webmail_access.log combined
+&amp;lt;/VirtualHost&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;N'oubliez pas de redémarrer apache :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/etc/init.d/apache2 restart
+&lt;/pre&gt;
+&lt;p&gt;Pour configurer rainloop se rendre sur : &lt;a class="reference external" href="http://mail.domain.com/?admin"&gt;http://mail.domain.com/?admin&lt;/a&gt;
+======== ================
+Login    admin
+======== ================
+Password 12345
+======== ================&lt;/p&gt;
+&lt;p&gt;Changer la langue et votre mot de passe (dans &lt;cite&gt;security&lt;/cite&gt;).&lt;/p&gt;
+&lt;p&gt;Puis dans &lt;cite&gt;domains&lt;/cite&gt; configurez votre nom de domaine en cliquant sur &lt;cite&gt;+ Add domain&lt;/cite&gt;&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="31%" /&gt;
+&lt;col width="69%" /&gt;
+&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;Name&lt;/td&gt;
+&lt;td&gt;domaine.com&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="31%" /&gt;
+&lt;col width="69%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;IMAP&lt;/th&gt;
+&lt;th class="head"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;Server&lt;/td&gt;
+&lt;td&gt;mail.domain.com&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Secure&lt;/td&gt;
+&lt;td&gt;SSL/TLS&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="31%" /&gt;
+&lt;col width="69%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;SMTP&lt;/th&gt;
+&lt;th class="head"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;Server&lt;/td&gt;
+&lt;td&gt;mail.domain.com&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Secure&lt;/td&gt;
+&lt;td&gt;SSL/TLS&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Puis &lt;cite&gt;+ Add&lt;/cite&gt;&lt;/p&gt;
+&lt;p&gt;Je supprime tous les autres domaines (gmail etc…)&lt;/p&gt;
+&lt;p&gt;Ensuite j'active les plugins, et les packages : X-Originating-IP, Black list et White list.&lt;/p&gt;
+&lt;p&gt;Maintenant rendez-vous sur : &lt;a class="reference external" href="http://mail.domain.com"&gt;http://mail.domain.com&lt;/a&gt; et identifiez-vous avec votre login et mot de passe.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="mail"></category><category term="postfix"></category><category term="dovecot"></category><category term="dns"></category><category term="ssl"></category><category term="rainloop"></category><category term="webmail"></category></entry><entry><title>Gentoo Navigateur Web par Défaut</title><link href="http://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html" rel="alternate"></link><updated>2015-10-25T14:02:17+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-10-25:2015-10-25-gentoo-navigateur-web-par-defaut.html</id><summary type="html">&lt;p&gt;Sur ma machine &amp;quot;links&amp;quot; était le navigateur web par défaut.
 Il est pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il est préférable d'utiliser un navigateur tel que Firefox.&lt;/p&gt;
 &lt;p&gt;Voici la commande pour voir le navigateur par défaut pour les url utilisants le protocole &amp;quot;http&amp;quot; :&lt;/p&gt;
 &lt;blockquote&gt;

@@ -57,9 +57,9 @@
   <header>
     <h2><a href="http://www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html#2015-11-15-configurer-un-serveur-mail">Configurer un serveur mail</a></h2>
     <p>
-      Posté le dim. 15 novembre 2015 &#8226;
+      Posté le Dim 15 novembre 2015 &#8226;
 Tags :
-      <a href="http://www.choiz.fr/tag/mail.html">mail</a>,      <a href="http://www.choiz.fr/tag/postfix.html">postfix</a>,      <a href="http://www.choiz.fr/tag/dovecot.html">dovecot</a>,      <a href="http://www.choiz.fr/tag/dns.html">dns</a>    </p>
+      <a href="http://www.choiz.fr/tag/mail.html">mail</a>,      <a href="http://www.choiz.fr/tag/postfix.html">postfix</a>,      <a href="http://www.choiz.fr/tag/dovecot.html">dovecot</a>,      <a href="http://www.choiz.fr/tag/dns.html">dns</a>,      <a href="http://www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="http://www.choiz.fr/tag/rainloop.html">rainloop</a>,      <a href="http://www.choiz.fr/tag/webmail.html">webmail</a>    </p>
   </header>
   <div>
       <p>Installation d'un serveur mail complet et à jour sous debian jessie (8.2).</p>
@@ -78,7 +78,7 @@ votredomain.com.            SPF         &quot;v=spf1 ip4:ip.v4.du.server ~all&qu
 <h2>Installation des paquets</h2>
 <p>Maintenant installons postfix dovecot-imapd et sasl2-bin :</p>
 <pre class="literal-block">
-apt-get install postfix dovecot-imapd sasl2-bin
+apt-get install postfix dovecot-imapd sasl2-bin php5-curl
 </pre>
 <p>Configurer le serveur de messagerie comme &quot;Site Internet&quot;, puis en nom de courrier indiquer &quot;mail.votredomaine.com&quot;.</p>
 </div>
@@ -358,6 +358,123 @@ smtps   inet    n   -   -   -   -   smtpd   -v
 <p>Fin de la configuration de postfix.</p>
 <p>Vous pouvez maintenant tester votre serveur mail ainsi que la qualité de votre serveur sur le site <a class="reference external" href="http://www.mail-tester.com">http://www.mail-tester.com</a></p>
 </div>
+<div class="section" id="installation-d-un-webmail-rainloop">
+<h2>Installation d'un webmail rainloop</h2>
+<p>Créer un dossier pour votre webmail :</p>
+<pre class="literal-block">
+mkdir -p /var/www/webmail/public &amp;&amp; cd /var/www/webmail/public
+</pre>
+<p>Télécharger rainloop :</p>
+<pre class="literal-block">
+wget http://repository.rainloop.net/v2/webmail/rainloop-community-latest.zip
+</pre>
+<p>Décompresser rainloop :</p>
+<pre class="literal-block">
+unzip rainloop*.zip &amp;&amp; rm -rf rainloop*.zip
+</pre>
+<p>Modifier les droits :</p>
+<pre class="literal-block">
+chown -R www-data:www-data /var/www/webmail
+find . -type f -exec chmod 644 {} \;
+find . -type d -exec chmod 755 {} \;
+</pre>
+<p>Créer un vhost pour apache dans <cite>/etc/apache2/site-enabled/001-webmail.domain.com.conf</cite></p>
+<pre class="literal-block">
+&lt;VirtualHost *:80&gt;
+    ServerAdmin contact&#64;domain.com
+    ServerName mail.domain.com
+
+    DocumentRoot /var/www/webmail/public
+    &lt;Directory /var/www/webmail/public&gt;
+        Options FollowSymLinks
+        #Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    &lt;/Directory&gt;
+
+    &lt;Directory /var/www/webmail/public/data&gt;
+        Options -FollowSymLinks
+        AllowOverride None
+        Order allow,deny
+        Deny from all
+    &lt;/Directory&gt;
+
+    ErrorLog ${APACHE_LOG_DIR}/webmail_error.log
+
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
+
+    CustomLog ${APACHE_LOG_DIR}/webmail_access.log combined
+&lt;/VirtualHost&gt;
+</pre>
+<p>N'oubliez pas de redémarrer apache :</p>
+<pre class="literal-block">
+/etc/init.d/apache2 restart
+</pre>
+<p>Pour configurer rainloop se rendre sur : <a class="reference external" href="http://mail.domain.com/?admin">http://mail.domain.com/?admin</a>
+======== ================
+Login    admin
+======== ================
+Password 12345
+======== ================</p>
+<p>Changer la langue et votre mot de passe (dans <cite>security</cite>).</p>
+<p>Puis dans <cite>domains</cite> configurez votre nom de domaine en cliquant sur <cite>+ Add domain</cite></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>Name</td>
+<td>domaine.com</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">IMAP</th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Server</td>
+<td>mail.domain.com</td>
+</tr>
+<tr><td>Secure</td>
+<td>SSL/TLS</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">SMTP</th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Server</td>
+<td>mail.domain.com</td>
+</tr>
+<tr><td>Secure</td>
+<td>SSL/TLS</td>
+</tr>
+</tbody>
+</table>
+<p>Puis <cite>+ Add</cite></p>
+<p>Je supprime tous les autres domaines (gmail etc…)</p>
+<p>Ensuite j'active les plugins, et les packages : X-Originating-IP, Black list et White list.</p>
+<p>Maintenant rendez-vous sur : <a class="reference external" href="http://mail.domain.com">http://mail.domain.com</a> et identifiez-vous avec votre login et mot de passe.</p>
+</div>
 
   </div>
   <hr />
@@ -366,7 +483,7 @@ smtps   inet    n   -   -   -   -   smtpd   -v
   <header>
     <h2><a href="http://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html#2015-10-25-gentoo-navigateur-web-par-defaut">Gentoo Navigateur Web par Défaut</a></h2>
     <p>
-      Posté le dim. 25 octobre 2015 &#8226;
+      Posté le Dim 25 octobre 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="http://www.choiz.fr/tag/web.html">web</a>,      <a href="http://www.choiz.fr/tag/browser.html">browser</a>,      <a href="http://www.choiz.fr/tag/default.html">default</a>,      <a href="http://www.choiz.fr/tag/navigateur.html">navigateur</a>    </p>
   </header>
@@ -392,7 +509,7 @@ xdg-mime query default x-scheme-handler/https</blockquote>
   <header>
     <h2><a href="http://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html#2015-10-13-vagrant-faire-un-reseau-prive">Vagrant faire un réseau privé</a></h2>
     <p>
-      Posté le mar. 13 octobre 2015 &#8226;
+      Posté le Mar 13 octobre 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/vagrant.html">vagrant</a>,      <a href="http://www.choiz.fr/tag/reseau.html">réseau</a>,      <a href="http://www.choiz.fr/tag/prive.html">privé</a>,      <a href="http://www.choiz.fr/tag/private.html">private</a>,      <a href="http://www.choiz.fr/tag/network.html">network</a>    </p>
   </header>
@@ -414,7 +531,7 @@ config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.2&quot;</blo
   <header>
     <h2><a href="http://www.choiz.fr/2015-10-12-des-commentaires-efficaces.html#2015-10-12-des-commentaires-efficaces">Des commentaires efficaces</a></h2>
     <p>
-      Posté le lun. 12 octobre 2015 &#8226;
+      Posté le Lun 12 octobre 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/commentaire.html">commentaire</a>,      <a href="http://www.choiz.fr/tag/code.html">code</a>,      <a href="http://www.choiz.fr/tag/efficace.html">efficace</a>    </p>
   </header>
@@ -456,7 +573,7 @@ Tags :
   <header>
     <h2><a href="http://www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html#2015-09-27-mettre-a-jour-gentoo">Mettre à jour Gentoo</a></h2>
     <p>
-      Posté le dim. 27 septembre 2015 &#8226;
+      Posté le Dim 27 septembre 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/update.html">update</a>,      <a href="http://www.choiz.fr/tag/mise-a-jour.html">mise à jour</a>,      <a href="http://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="http://www.choiz.fr/tag/eix.html">eix</a>,      <a href="http://www.choiz.fr/tag/emerge.html">emerge</a>    </p>
   </header>
@@ -500,7 +617,7 @@ emerge -vuDN world</blockquote>
   <header>
     <h2><a href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html#2015-09-06-compilation-kernel-gentoo">Compilation Kernel Gentoo</a></h2>
     <p>
-      Posté le dim. 06 septembre 2015 &#8226;
+      Posté le Dim 06 septembre 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/compilation.html">compilation</a>,      <a href="http://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="http://www.choiz.fr/tag/gentoo.html">gentoo</a>    </p>
   </header>
@@ -529,7 +646,7 @@ reboot</blockquote>
   <header>
     <h2><a href="http://www.choiz.fr/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html#2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz">Compression Décompression tar.gz tar.bz2 tar.xz</a></h2>
     <p>
-      Posté le dim. 30 août 2015 &#8226;
+      Posté le Dim 30 août 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/targz.html">tar.gz</a>,      <a href="http://www.choiz.fr/tag/tarbz2.html">tar.bz2</a>,      <a href="http://www.choiz.fr/tag/tarxz.html">tar.xz</a>,      <a href="http://www.choiz.fr/tag/tar.html">tar</a>,      <a href="http://www.choiz.fr/tag/gz.html">gz</a>,      <a href="http://www.choiz.fr/tag/gzip.html">gzip</a>,      <a href="http://www.choiz.fr/tag/bz2.html">bz2</a>,      <a href="http://www.choiz.fr/tag/xz.html">xz</a>,      <a href="http://www.choiz.fr/tag/lzma.html">lzma</a>    </p>
   </header>
@@ -605,7 +722,7 @@ tar --xz -xvf archive.tar.xz</blockquote>
   <header>
     <h2><a href="http://www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html#2015-08-25-suppression-des-branches-distantes-inexistantes">Suppression des branches distantes inexistantes</a></h2>
     <p>
-      Posté le mar. 25 août 2015 &#8226;
+      Posté le Mar 25 août 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/branch.html">branch</a>,      <a href="http://www.choiz.fr/tag/remote.html">remote</a>,      <a href="http://www.choiz.fr/tag/prune.html">prune</a>,      <a href="http://www.choiz.fr/tag/origin.html">origin</a>    </p>
   </header>
@@ -643,7 +760,7 @@ Tags :
   <header>
     <h2><a href="http://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html#2015-08-20-migration-de-tumblr-a-pelican">Migration de Tumblr à Pelican</a></h2>
     <p>
-      Posté le jeu. 20 août 2015 &#8226;
+      Posté le Jeu 20 août 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/tumblr.html">tumblr</a>,      <a href="http://www.choiz.fr/tag/migration.html">migration</a>,      <a href="http://www.choiz.fr/tag/pelican.html">pelican</a>,      <a href="http://www.choiz.fr/tag/site.html">site</a>,      <a href="http://www.choiz.fr/tag/static.html">static</a>,      <a href="http://www.choiz.fr/tag/python.html">python</a>    </p>
   </header>
@@ -660,7 +777,7 @@ Depuis cette date je n'avais pas pris le temps de m'occuper de la migration de m
   <header>
     <h2><a href="http://www.choiz.fr/2015-08-08-touche-pour-sortir-sa-machine-de-veille.html#2015-08-08-touche-pour-sortir-sa-machine-de-veille">Touche pour sortir sa machine de veille</a></h2>
     <p>
-      Posté le sam. 08 août 2015 &#8226;
+      Posté le Sam 08 août 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/touche.html">touche</a>,      <a href="http://www.choiz.fr/tag/sortie.html">sortie</a>,      <a href="http://www.choiz.fr/tag/veille.html">veille</a>,      <a href="http://www.choiz.fr/tag/ordinateur.html">ordinateur</a>,      <a href="http://www.choiz.fr/tag/shift.html">shift</a>,      <a href="http://www.choiz.fr/tag/clavier.html">clavier</a>    </p>
   </header>

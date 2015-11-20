@@ -13,7 +13,7 @@
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
 <meta name="description" content="Installation d'un serveur mail complet et à jour sous debian jessie (8.2). Configuration des DNS Pour commencer nous allons créer des entrées DNS. Nous créons un MX pour les mails avec une priorité de 1, un sous domaine "mail" qui pointe vers l'adresse ipv4 de votre serveur ..." />
-<meta name="keywords" content="mail, postfix, dovecot, dns">
+<meta name="keywords" content="mail, postfix, dovecot, dns, ssl, rainloop, webmail">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Configurer un serveur mail"/>
 <meta property="og:description" content="Installation d'un serveur mail complet et à jour sous debian jessie (8.2). Configuration des DNS Pour commencer nous allons créer des entrées DNS. Nous créons un MX pour les mails avec une priorité de 1, un sous domaine "mail" qui pointe vers l'adresse ipv4 de votre serveur ..."/>
@@ -28,6 +28,9 @@
 <meta property="article:tag" content="postfix"/>
 <meta property="article:tag" content="dovecot"/>
 <meta property="article:tag" content="dns"/>
+<meta property="article:tag" content="ssl"/>
+<meta property="article:tag" content="rainloop"/>
+<meta property="article:tag" content="webmail"/>
 <meta property="og:image" content="avatar.png">  <title>ChoiZ &ndash; Configurer un serveur mail</title>
 </head>
 <body>
@@ -64,7 +67,7 @@
 <article>
   <header>
     <h1 id="2015-11-15-configurer-un-serveur-mail">Configurer un serveur mail</h1>
-    <p>Posté le dim. 15 novembre 2015</p>
+    <p>Posté le Dim 15 novembre 2015</p>
   </header>
   <div>
     <p>Installation d'un serveur mail complet et à jour sous debian jessie (8.2).</p>
@@ -83,7 +86,7 @@ votredomain.com.            SPF         &quot;v=spf1 ip4:ip.v4.du.server ~all&qu
 <h2>Installation des paquets</h2>
 <p>Maintenant installons postfix dovecot-imapd et sasl2-bin :</p>
 <pre class="literal-block">
-apt-get install postfix dovecot-imapd sasl2-bin
+apt-get install postfix dovecot-imapd sasl2-bin php5-curl
 </pre>
 <p>Configurer le serveur de messagerie comme &quot;Site Internet&quot;, puis en nom de courrier indiquer &quot;mail.votredomaine.com&quot;.</p>
 </div>
@@ -363,6 +366,123 @@ smtps   inet    n   -   -   -   -   smtpd   -v
 <p>Fin de la configuration de postfix.</p>
 <p>Vous pouvez maintenant tester votre serveur mail ainsi que la qualité de votre serveur sur le site <a class="reference external" href="http://www.mail-tester.com">http://www.mail-tester.com</a></p>
 </div>
+<div class="section" id="installation-d-un-webmail-rainloop">
+<h2>Installation d'un webmail rainloop</h2>
+<p>Créer un dossier pour votre webmail :</p>
+<pre class="literal-block">
+mkdir -p /var/www/webmail/public &amp;&amp; cd /var/www/webmail/public
+</pre>
+<p>Télécharger rainloop :</p>
+<pre class="literal-block">
+wget http://repository.rainloop.net/v2/webmail/rainloop-community-latest.zip
+</pre>
+<p>Décompresser rainloop :</p>
+<pre class="literal-block">
+unzip rainloop*.zip &amp;&amp; rm -rf rainloop*.zip
+</pre>
+<p>Modifier les droits :</p>
+<pre class="literal-block">
+chown -R www-data:www-data /var/www/webmail
+find . -type f -exec chmod 644 {} \;
+find . -type d -exec chmod 755 {} \;
+</pre>
+<p>Créer un vhost pour apache dans <cite>/etc/apache2/site-enabled/001-webmail.domain.com.conf</cite></p>
+<pre class="literal-block">
+&lt;VirtualHost *:80&gt;
+    ServerAdmin contact&#64;domain.com
+    ServerName mail.domain.com
+
+    DocumentRoot /var/www/webmail/public
+    &lt;Directory /var/www/webmail/public&gt;
+        Options FollowSymLinks
+        #Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    &lt;/Directory&gt;
+
+    &lt;Directory /var/www/webmail/public/data&gt;
+        Options -FollowSymLinks
+        AllowOverride None
+        Order allow,deny
+        Deny from all
+    &lt;/Directory&gt;
+
+    ErrorLog ${APACHE_LOG_DIR}/webmail_error.log
+
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
+
+    CustomLog ${APACHE_LOG_DIR}/webmail_access.log combined
+&lt;/VirtualHost&gt;
+</pre>
+<p>N'oubliez pas de redémarrer apache :</p>
+<pre class="literal-block">
+/etc/init.d/apache2 restart
+</pre>
+<p>Pour configurer rainloop se rendre sur : <a class="reference external" href="http://mail.domain.com/?admin">http://mail.domain.com/?admin</a>
+======== ================
+Login    admin
+======== ================
+Password 12345
+======== ================</p>
+<p>Changer la langue et votre mot de passe (dans <cite>security</cite>).</p>
+<p>Puis dans <cite>domains</cite> configurez votre nom de domaine en cliquant sur <cite>+ Add domain</cite></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>Name</td>
+<td>domaine.com</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">IMAP</th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Server</td>
+<td>mail.domain.com</td>
+</tr>
+<tr><td>Secure</td>
+<td>SSL/TLS</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">SMTP</th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Server</td>
+<td>mail.domain.com</td>
+</tr>
+<tr><td>Secure</td>
+<td>SSL/TLS</td>
+</tr>
+</tbody>
+</table>
+<p>Puis <cite>+ Add</cite></p>
+<p>Je supprime tous les autres domaines (gmail etc…)</p>
+<p>Ensuite j'active les plugins, et les packages : X-Originating-IP, Black list et White list.</p>
+<p>Maintenant rendez-vous sur : <a class="reference external" href="http://mail.domain.com">http://mail.domain.com</a> et identifiez-vous avec votre login et mot de passe.</p>
+</div>
 
   </div>
   <div class="tag-cloud">
@@ -371,6 +491,9 @@ smtps   inet    n   -   -   -   -   smtpd   -v
       <a href="http://www.choiz.fr/tag/postfix.html">postfix</a>
       <a href="http://www.choiz.fr/tag/dovecot.html">dovecot</a>
       <a href="http://www.choiz.fr/tag/dns.html">dns</a>
+      <a href="http://www.choiz.fr/tag/ssl.html">ssl</a>
+      <a href="http://www.choiz.fr/tag/rainloop.html">rainloop</a>
+      <a href="http://www.choiz.fr/tag/webmail.html">webmail</a>
     </p>
   </div>
 </article>
