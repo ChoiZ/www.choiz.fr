@@ -350,12 +350,23 @@ find . -type d -exec chmod 755 {} \;
 &lt;pre class="literal-block"&gt;
 /etc/init.d/apache2 restart
 &lt;/pre&gt;
-&lt;p&gt;Pour configurer rainloop se rendre sur : &lt;a class="reference external" href="http://mail.domain.com/?admin"&gt;http://mail.domain.com/?admin&lt;/a&gt;
-======== ================
-Login    admin
-======== ================
-Password 12345
-======== ================&lt;/p&gt;
+&lt;p&gt;Pour configurer rainloop se rendre sur : &lt;a class="reference external" href="http://mail.domain.com/?admin"&gt;http://mail.domain.com/?admin&lt;/a&gt;&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="33%" /&gt;
+&lt;col width="67%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;Login&lt;/th&gt;
+&lt;th class="head"&gt;admin&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;Password&lt;/td&gt;
+&lt;td&gt;12345&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;p&gt;Changer la langue et votre mot de passe (dans &lt;cite&gt;security&lt;/cite&gt;).&lt;/p&gt;
 &lt;p&gt;Puis dans &lt;cite&gt;domains&lt;/cite&gt; configurez votre nom de domaine en cliquant sur &lt;cite&gt;+ Add domain&lt;/cite&gt;&lt;/p&gt;
 &lt;table border="1" class="docutils"&gt;
