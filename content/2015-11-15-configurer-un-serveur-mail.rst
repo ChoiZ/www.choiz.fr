@@ -354,6 +354,7 @@ N'oubliez pas de redémarrer apache : ::
     /etc/init.d/apache2 restart
 
 Pour configurer rainloop se rendre sur : http://mail.domain.com/?admin
+
 ======== ================
 Login    admin
 ======== ================
