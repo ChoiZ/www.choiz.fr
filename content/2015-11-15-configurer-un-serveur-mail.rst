@@ -3,7 +3,7 @@ Configurer un serveur mail
 :date: 2015-11-15 17:11:23
 :author: choiz
 :category: text
-:tags: mail, postfix, dovecot, dns
+:tags: mail, postfix, dovecot, dns, ssl, rainloop, webmail
 :slug: 2015-11-15-configurer-un-serveur-mail
 :status: published
 
@@ -26,7 +26,7 @@ Installation des paquets
 
 Maintenant installons postfix dovecot-imapd et sasl2-bin : ::
 
-    apt-get install postfix dovecot-imapd sasl2-bin
+    apt-get install postfix dovecot-imapd sasl2-bin php5-curl
 
 Configurer le serveur de messagerie comme "Site Internet", puis en nom de courrier indiquer "mail.votredomaine.com".
 
@@ -296,3 +296,94 @@ Puis redemarrer postfix : ::
 Fin de la configuration de postfix.
 
 Vous pouvez maintenant tester votre serveur mail ainsi que la qualité de votre serveur sur le site http://www.mail-tester.com
+
+Installation d'un webmail rainloop
+==================================
+
+Créer un dossier pour votre webmail : ::
+
+    mkdir -p /var/www/webmail/public && cd /var/www/webmail/public
+
+Télécharger rainloop : ::
+
+    wget http://repository.rainloop.net/v2/webmail/rainloop-community-latest.zip
+
+Décompresser rainloop : ::
+
+    unzip rainloop*.zip && rm -rf rainloop*.zip
+
+Modifier les droits : ::
+
+    chown -R www-data:www-data /var/www/webmail
+    find . -type f -exec chmod 644 {} \;
+    find . -type d -exec chmod 755 {} \;
+
+Créer un vhost pour apache dans `/etc/apache2/site-enabled/001-webmail.domain.com.conf` ::
+
+    <VirtualHost *:80>
+        ServerAdmin contact@domain.com
+        ServerName mail.domain.com
+
+        DocumentRoot /var/www/webmail/public
+        <Directory /var/www/webmail/public>
+            Options FollowSymLinks
+            #Options Indexes FollowSymLinks MultiViews
+            AllowOverride All
+            Order allow,deny
+            allow from all
+        </Directory>
+
+        <Directory /var/www/webmail/public/data>
+            Options -FollowSymLinks
+            AllowOverride None
+            Order allow,deny
+            Deny from all
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/webmail_error.log
+
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel warn
+
+        CustomLog ${APACHE_LOG_DIR}/webmail_access.log combined
+    </VirtualHost>
+
+N'oubliez pas de redémarrer apache : ::
+
+    /etc/init.d/apache2 restart
+
+Pour configurer rainloop se rendre sur : http://mail.domain.com/?admin
+======== ================
+Login    admin
+======== ================
+Password 12345
+======== ================
+
+Changer la langue et votre mot de passe (dans `security`).
+
+Puis dans `domains` configurez votre nom de domaine en cliquant sur `+ Add domain`
+
+============ ===========================
+Name         domaine.com
+============ ===========================
+IMAP
+============ ===========================
+Server       mail.domain.com
+------------ ---------------------------
+Secure       SSL/TLS
+============ ===========================
+SMTP
+============ ===========================
+Server       mail.domain.com
+------------ ---------------------------
+Secure       SSL/TLS
+============ ===========================
+
+Puis `+ Add`
+
+Je supprime tous les autres domaines (gmail etc…)
+
+Ensuite j'active les plugins, et les packages : X-Originating-IP, Black list et White list.
+
+Maintenant rendez-vous sur : http://mail.domain.com et identifiez-vous avec votre login et mot de passe.
