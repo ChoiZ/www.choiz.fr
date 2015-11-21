@@ -8,7 +8,7 @@ Import VM avec Virtualbox
 :status: published
 
 J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
-donc un fichier ova_ Maintenant comment l'importer sur VirtualBox ?
+donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?
 
 Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper : ::
 
