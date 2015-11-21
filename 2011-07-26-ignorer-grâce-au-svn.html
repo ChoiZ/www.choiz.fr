@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Il existe plusieurs solutions pour ignorer des fichiers sur un svn : svn propset svn:ignore ou dans la configuration du svn dans ~/.subversion/config le global-ignores Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou l'on se trouve actuellement il suffit d'executer la commande ..." />
+<meta name="description" content="Il existe plusieurs solutions pour ignorer des fichiers sur un svn : svn propset svn:ignore Ou dans la configuration du svn dans ~/.subversion/config le global-ignores Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou l'on se trouve actuellement il suffit d'executer la commande ..." />
 <meta name="keywords" content="svn, ignore, fichier, file, folder, dossier, .DS_Store, ._*, ._, .swp, Vim, Mac Os">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Ignorer grâce au SVN"/>
-<meta property="og:description" content="Il existe plusieurs solutions pour ignorer des fichiers sur un svn : svn propset svn:ignore ou dans la configuration du svn dans ~/.subversion/config le global-ignores Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou l'on se trouve actuellement il suffit d'executer la commande ..."/>
+<meta property="og:description" content="Il existe plusieurs solutions pour ignorer des fichiers sur un svn : svn propset svn:ignore Ou dans la configuration du svn dans ~/.subversion/config le global-ignores Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou l'on se trouve actuellement il suffit d'executer la commande ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html"/>
 <meta property="og:type" content="article"/>
@@ -75,22 +75,27 @@
   </header>
   <div>
     <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<p><em>svn propset svn:ignore</em> ou dans la configuration du svn dans
-<em>~/.subversion/config</em> le <em>global-ignores</em></p>
-<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
+<pre class="literal-block">
+svn propset svn:ignore
+</pre>
+<p>Ou dans la configuration du svn dans <cite>~/.subversion/config</cite> le <cite>global-ignores</cite></p>
+<p>Pour ignorer tous les fichiers qui commencent par <cite>._</cite> dans le dossier ou
 l'on se trouve actuellement il suffit d'executer la commande svn
 suivante :</p>
-<blockquote>
-svn propset svn:ignore &quot;._*&quot; .</blockquote>
-<p>Par contre si on veut ignorer tous les fichiers qui commencent par ._
+<pre class="literal-block">
+svn propset svn:ignore &quot;._*&quot; .
+</pre>
+<p>Par contre si on veut ignorer tous les fichiers qui commencent par <cite>._</cite>
 dans tous les dossiers (et sous dossiers) du svn il faut éditer le
-fichier <em>~/.subversion/config</em> et d'éditer la ligne suivante :</p>
-<blockquote>
-global-ignores = ._*</blockquote>
-<p>On peut également ajouter d'autres fichiers a ignorer tel que les .swp
-de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci :</p>
-<blockquote>
-global-ignores = ._* .DS_STORE *.swp</blockquote>
+fichier <cite>~/.subversion/config</cite> et d'éditer la ligne suivante :</p>
+<pre class="literal-block">
+global-ignores = ._*
+</pre>
+<p>On peut également ajouter d'autres fichiers a ignorer tel que les <cite>.swp</cite>
+de Vim ou les <cite>.DS_STORE</cite> de Mac OS en remplaçant comme ceci :</p>
+<pre class="literal-block">
+global-ignores = ._* .DS_STORE *.swp
+</pre>
 
   </div>
   <div class="tag-cloud">
@@ -130,7 +135,7 @@ global-ignores = ._* .DS_STORE *.swp</blockquote>
   },
   "image": "avatar.png",
   "url": "http://www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html",
-  "description": "Il existe plusieurs solutions pour ignorer des fichiers sur un svn : svn propset svn:ignore ou dans la configuration du svn dans ~/.subversion/config le global-ignores Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou l'on se trouve actuellement il suffit d'executer la commande ..."
+  "description": "Il existe plusieurs solutions pour ignorer des fichiers sur un svn : svn propset svn:ignore Ou dans la configuration du svn dans ~/.subversion/config le global-ignores Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou l'on se trouve actuellement il suffit d'executer la commande ..."
 }
 </script></body>
 </html>

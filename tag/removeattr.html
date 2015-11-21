@@ -61,18 +61,15 @@ Tags :
       <a href="http://www.choiz.fr/tag/code.html">code</a>,      <a href="http://www.choiz.fr/tag/js.html">js</a>,      <a href="http://www.choiz.fr/tag/jquery.html">jquery</a>,      <a href="http://www.choiz.fr/tag/attr.html">attr()</a>,      <a href="http://www.choiz.fr/tag/click.html">click()</a>,      <a href="http://www.choiz.fr/tag/removeattr.html">removeAttr()</a>    </p>
   </header>
   <div>
-      <p>Après avoir perdu 2h... le attr() de jQuery [STRIKEOUT:fonctionne pas
-avec l'attribut &quot;onclick&quot;] truc super quoi !</p>
-<p>Edit : en jQuery pour modifier le contenu d'un onclick il faut faire
+      <p>Après avoir perdu 2h…
+J'ai découvert que la methode attr() de jQuery fonctionne pas
+avec l'attribut &quot;onclick&quot;…</p>
+<p>Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.</p>
 <p>Remplacer donc :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">var mavar&nbsp; = 'fonctionAffichage();';</div>
-<div class="line">$(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);</div>
-</div>
-</blockquote>
-<p>Par ...</p>
+<pre class="literal-block">
+var mavar = 'fonctionAffichage();';
+$(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar ...</pre>
       <a class="btn" href="http://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html#2011-01-07-jquery-attr-avec-onclick-par-click">Lire la suite</a>
   </div>
 </article>

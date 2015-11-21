@@ -62,9 +62,11 @@ Tags :
   </header>
   <div>
       <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<p><em>svn propset svn:ignore</em> ou dans la configuration du svn dans
-<em>~/.subversion/config</em> le <em>global-ignores</em></p>
-<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
+<pre class="literal-block">
+svn propset svn:ignore
+</pre>
+<p>Ou dans la configuration du svn dans <cite>~/.subversion/config</cite> le <cite>global-ignores</cite></p>
+<p>Pour ignorer tous les fichiers qui commencent par <cite>._</cite> dans le dossier ou
 l'on se trouve actuellement il suffit d'executer la commande ...</p>
       <a class="btn" href="http://www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html#2011-07-26-ignorer-grâce-au-svn">Lire la suite</a>
   </div>
@@ -79,11 +81,11 @@ Tags :
       <a href="http://www.choiz.fr/tag/mac-dsstore.html">Mac .DsStore</a>,      <a href="http://www.choiz.fr/tag/mac.html">Mac</a>,      <a href="http://www.choiz.fr/tag/ds_store.html">.DS_Store</a>    </p>
   </header>
   <div>
-      <p>Dans une console sur votre mac tappez :</p>
-<blockquote>
-defaults write com.apple.desktopservices DSDontWriteNetworkStores
-true</blockquote>
-<p>Redemarrez le mac.</p>
+      <p>Dans une console sur votre Mac :</p>
+<pre class="literal-block">
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+</pre>
+<p>Puis redémarrez le mac.</p>
 
       <a class="btn" href="http://www.choiz.fr/2011-07-05-suppression-des-dsstore.html#2011-07-05-suppression-des-dsstore">Lire la suite</a>
   </div>

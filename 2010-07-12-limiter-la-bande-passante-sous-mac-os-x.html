@@ -69,12 +69,12 @@
     <p>Posté le lun. 12 juillet 2010</p>
   </header>
   <div>
-    <p>Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
-virtuel en console.</p>
+    <p>Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau virtuel
+en console.</p>
 <p>Ici on créer un tuyau virtuel de 1Mbit/s.</p>
 <p><tt class="docutils literal">sudo ipfw pipe 1 config bw 1Mbit/s</tt></p>
-<p>On applique ce tuyau au port 80 (pour le téléchargement de fichier via
-un navigateur par exemple).</p>
+<p>On applique ce tuyau au port 80 (pour le téléchargement de fichier via un
+navigateur par exemple).</p>
 <p><tt class="docutils literal">sudo ipfw add 1 pipe 1 proto tcp <span class="pre">src-port</span> 80</tt></p>
 <p>Pour voir le tuyau :</p>
 <p><tt class="docutils literal">sudo ipfw pipe show</tt></p>
@@ -82,8 +82,6 @@ un navigateur par exemple).</p>
 <p><tt class="docutils literal">sudo ipfw del 1</tt></p>
 <p>Pour supprimer le tuyau :</p>
 <p><tt class="docutils literal">sudo ipfw pipe 1 delete</tt></p>
-<p>Bien entendu on peut créer plusieurs tuyau et plusieurs règles
-différentes avec le même tuyau ;)</p>
 
   </div>
   <div class="tag-cloud">

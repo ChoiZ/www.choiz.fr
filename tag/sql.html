@@ -88,16 +88,12 @@ Tags :
       <a href="http://www.choiz.fr/tag/mysql.html">Mysql</a>,      <a href="http://www.choiz.fr/tag/mysqldump.html">Mysqldump</a>,      <a href="http://www.choiz.fr/tag/database.html">Database</a>,      <a href="http://www.choiz.fr/tag/migration.html">Migration</a>,      <a href="http://www.choiz.fr/tag/dump-sql.html">Dump Sql</a>,      <a href="http://www.choiz.fr/tag/sql.html">Sql</a>    </p>
   </header>
   <div>
-      <p>Pour faire mes migrations de base de donnée j'utilise en ligne de
-commande mysqldump et mysql.</p>
-<div class="line-block">
-<div class="line">Dans un premier temps je sauve ma base <strong>*database*</strong> dans le fichier
-<strong>*fichierdump.sql*</strong></div>
-<div class="line">J'utilise l'utilisateur mysql : <strong>*utilisateur*</strong> avec son mot de
-passe <strong>*p4ssw0rd*</strong></div>
-</div>
-<blockquote>
-$ mysqldump -u utilisateur -p p4ssw0rd database &gt; fichierdump ...</blockquote>
+      <p>Pour faire mes migrations de base de donnée j'utilise en ligne de commande
+mysqldump et mysql.</p>
+<p>Dans un premier temps je sauve ma base <cite>database</cite> dans le fichier <cite>dump.sql</cite>
+J'utilise l'utilisateur mysql : <cite>utilisateur</cite> avec son mot de passe <cite>p4ss</cite></p>
+<pre class="literal-block">
+mysqldump -u utilisateur -p p4ss database &gt; dump ...</pre>
       <a class="btn" href="http://www.choiz.fr/2011-05-14-migration-dune-base-de-donnée-mysql.html#2011-05-14-migration-dune-base-de-donnée-mysql">Lire la suite</a>
   </div>
 </article>

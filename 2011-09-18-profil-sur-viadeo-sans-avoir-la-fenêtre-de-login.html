@@ -70,23 +70,19 @@
     <p>Posté le dim. 18 septembre 2011</p>
   </header>
   <div>
-    <div class="line-block">
-<div class="line">J'ai voulu plusieurs fois voir un profil sur Viadeo sans forcement
-être identifié. Lorsque l'on déplace la souris ou que l'on scroll une
-autre page s'affiche.</div>
-<div class="line">Exemple sur <a class="reference external" href="http://www.viadeo.com/fr/profile/francois.lasserre1">ma page
-viadeo</a>.</div>
-<div class="line">Pour empécher d'avoir la page de login il faut modifier une fonction
-Javascript. Avec un outil tel que
-<a class="reference external" href="http://www.getfirebug.com">Firebug</a> vous pouvez modifier le code
-Javascript du site.</div>
-<div class="line">Ouvrir firebug en mode console et modifier la fonction createJoin() !</div>
-<div class="line">Dans la console a coté de &quot;&gt;&gt;&gt;&quot; il suffit de taper :</div>
-</div>
-<blockquote>
-function createJoin() { false; }</blockquote>
-<p>Avec ce code on modifie le contenu de la fonction createJoin() par false
-(plutôt que le code par defaut qui ouvre la fenêtre d'identification).</p>
+    <p>J'ai voulu plusieurs fois voir un profil sur Viadeo sans forcement être
+identifié. Lorsque l'on déplace la souris ou que l'on scroll une autre page
+s'affiche.  Exemple sur <a class="reference external" href="http://www.viadeo.com/fr/profile/francois.lasserre1">ma page viadeo</a>.  Pour empécher d'avoir
+la page de login il faut modifier une fonction Javascript. Avec un outil tel que
+<a class="reference external" href="http://www.getfirebug.com">Firebug</a> vous pouvez modifier le code Javascript
+du site (localement). Ouvrir firebug en mode console et modifier la fonction
+createJoin() !
+Dans la console a coté de &quot;&gt;&gt;&gt;&quot; il suffit de taper :</p>
+<pre class="literal-block">
+function createJoin() { false; }
+</pre>
+<p>Avec ce code on modifie le contenu de la fonction createJoin() par false (plutôt
+que le code par defaut qui ouvre la fenêtre d'identification).</p>
 
   </div>
   <div class="tag-cloud">

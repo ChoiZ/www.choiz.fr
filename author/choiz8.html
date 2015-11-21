@@ -54,25 +54,6 @@
 
 <article>
   <header>
-    <h2><a href="http://www.choiz.fr/2011-07-05-suppression-des-dsstore.html#2011-07-05-suppression-des-dsstore">Suppression des .DS_Store</a></h2>
-    <p>
-      Posté le mar. 05 juillet 2011 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/mac-dsstore.html">Mac .DsStore</a>,      <a href="http://www.choiz.fr/tag/mac.html">Mac</a>,      <a href="http://www.choiz.fr/tag/ds_store.html">.DS_Store</a>    </p>
-  </header>
-  <div>
-      <p>Dans une console sur votre mac tappez :</p>
-<blockquote>
-defaults write com.apple.desktopservices DSDontWriteNetworkStores
-true</blockquote>
-<p>Redemarrez le mac.</p>
-
-      <a class="btn" href="http://www.choiz.fr/2011-07-05-suppression-des-dsstore.html#2011-07-05-suppression-des-dsstore">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
     <h2><a href="http://www.choiz.fr/2011-06-30-elément-cliqué-en-js.html#2011-06-30-elément-cliqué-en-js">Elément cliqué en js</a></h2>
     <p>
       Posté le jeu. 30 juin 2011 &#8226;
@@ -80,19 +61,16 @@ Tags :
       <a href="http://www.choiz.fr/tag/js.html">js</a>,      <a href="http://www.choiz.fr/tag/element.html">element</a>,      <a href="http://www.choiz.fr/tag/click.html">click</a>,      <a href="http://www.choiz.fr/tag/javascript.html">javascript</a>,      <a href="http://www.choiz.fr/tag/html.html">html</a>    </p>
   </header>
   <div>
-      <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de
-javascript :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">function checkclick(e) {</div>
-<div class="line">&nbsp;&nbsp;&nbsp; e = e || window.event;</div>
-<div class="line">&nbsp;&nbsp;&nbsp; var o = e.target || e.srcElement;</div>
-<div class="line">&nbsp;&nbsp;&nbsp; console.log(o);</div>
-<div class="line">}</div>
-<div class="line">document.onclick=checkclick;</div>
-</div>
-</blockquote>
-<p>Pratique pour du debug ;)</p>
+      <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :</p>
+<pre class="literal-block">
+function checkclick(e) {
+    e = e || window.event;
+    var o = e.target || e.srcElement;
+    console.log(o);
+}
+document.onclick=checkclick;
+</pre>
+<p>Pratique pour faire du débug.</p>
 
       <a class="btn" href="http://www.choiz.fr/2011-06-30-elément-cliqué-en-js.html#2011-06-30-elément-cliqué-en-js">Lire la suite</a>
   </div>
@@ -107,15 +85,12 @@ Tags :
       <a href="http://www.choiz.fr/tag/patch.html">Patch</a>,      <a href="http://www.choiz.fr/tag/commande.html">Commande</a>,      <a href="http://www.choiz.fr/tag/terminal.html">Terminal</a>,      <a href="http://www.choiz.fr/tag/diff.html">Diff</a>,      <a href="http://www.choiz.fr/tag/version.html">Version</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line">Patch permet de &quot;patcher&quot; un fichier, dossier, projet ! Pratique
-lorsque vous distribuez du code et que vous voulez le mettre à jour.</div>
-<div class="line">Comment l'utiliser ? Dans un premier temps nous allons faire un
-différentiel de notre version actuelle du projet et de la nouvelle
-version (celle patchée).</div>
-</div>
-<blockquote>
-diff -u version1 ...</blockquote>
+      <p>Patch permet de &quot;patcher&quot; un fichier, dossier, projet ! Pratique lorsque vous
+distribuez du code et que vous voulez le mettre à jour.  Comment l'utiliser ?
+Dans un premier temps nous allons faire un différentiel de notre version
+actuelle du projet et de la nouvelle version (celle patchée).</p>
+<pre class="literal-block">
+diff -u version1 ...</pre>
       <a class="btn" href="http://www.choiz.fr/2011-05-30-patch-diff.html#2011-05-30-patch-diff">Lire la suite</a>
   </div>
   <hr />
@@ -129,19 +104,26 @@ Tags :
       <a href="http://www.choiz.fr/tag/vim.html">vim</a>,      <a href="http://www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="http://www.choiz.fr/tag/editeur.html">editeur</a>,      <a href="http://www.choiz.fr/tag/texte.html">texte</a>,      <a href="http://www.choiz.fr/tag/terminal.html">terminal</a>,      <a href="http://www.choiz.fr/tag/commande.html">commande</a>,      <a href="http://www.choiz.fr/tag/split.html">split</a>,      <a href="http://www.choiz.fr/tag/vsplit.html">vsplit</a>,      <a href="http://www.choiz.fr/tag/window.html">window</a>,      <a href="http://www.choiz.fr/tag/colonnes.html">colonnes</a>,      <a href="http://www.choiz.fr/tag/cols.html">cols</a>,      <a href="http://www.choiz.fr/tag/columns.html">columns</a>    </p>
   </header>
   <div>
-      <p>Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
-pouvoir ouvrir plusieurs fichiers en même temps.</p>
+      <p>Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour pouvoir
+ouvrir plusieurs fichiers en même temps.</p>
 <p>Pour celà il utilises 2 méthodes soit :</p>
-<ol class="arabic simple">
-<li>la division de la fenêtre horizontal en utilisant</li>
+<ol class="arabic">
+<li><p class="first">la division de la fenêtre horizontal en utilisant</p>
+<pre class="literal-block">
+:split
+</pre>
+</li>
 </ol>
-<p><tt class="docutils literal">:split</tt></p>
 <p>ou</p>
-<p><tt class="docutils literal">:new</tt></p>
+<pre class="literal-block">
+:new
+</pre>
 <p>et ensuite</p>
-<p><tt class="docutils literal">:e le_fichier_a_ouvrir</tt></p>
-<ol class="arabic simple" start="2">
-<li>la division de la fenêtre verticalement ...</li></ol>
+<pre class="literal-block">
+:e le_fichier_a_ouvrir
+</pre>
+<ol class="arabic" start="2">
+<li><p class="first">la division de la fenêtre verticalement ...</p></li></ol>
       <a class="btn" href="http://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html#2011-05-29-split-vsplit-dans-vim">Lire la suite</a>
   </div>
   <hr />
@@ -155,17 +137,14 @@ Tags :
       <a href="http://www.choiz.fr/tag/vim.html">Vim</a>,      <a href="http://www.choiz.fr/tag/diff.html">Diff</a>,      <a href="http://www.choiz.fr/tag/difference.html">Différence</a>,      <a href="http://www.choiz.fr/tag/fichiers.html">Fichiers</a>,      <a href="http://www.choiz.fr/tag/editeur.html">Editeur</a>,      <a href="http://www.choiz.fr/tag/texte.html">Texte</a>,      <a href="http://www.choiz.fr/tag/terminal.html">Terminal</a>,      <a href="http://www.choiz.fr/tag/console.html">Console</a>,      <a href="http://www.choiz.fr/tag/commande.html">Commande</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line">J'ai souvent besoin de voir les différences entre plusieurs
-fichiers... J'utilise souvent la commande diff dans un terminal, mais
-mon éditeur texte favoris &quot;Vim&quot; sait aussi trés bien faire un
-différentiel.</div>
-<div class="line">Utilisation avec le terminal :</div>
-</div>
-<blockquote>
-$ diff fichier1 fichier2</blockquote>
-<p>Celui-ci retournera les différences directement dans le terminal (pas
-pratique ...</p>
+      <p>J'ai souvent besoin de voir les différences entre plusieurs fichiers...
+J'utilise souvent la commande diff dans un terminal, mais mon éditeur texte
+favoris &quot;Vim&quot; sait aussi trés bien faire un différentiel. Utilisation avec le
+terminal :</p>
+<pre class="literal-block">
+diff fichier1 fichier2
+</pre>
+<p>Celui-ci retournera les différences directement dans le terminal (pas pratique ...</p>
       <a class="btn" href="http://www.choiz.fr/2011-05-19-différences-entre-des-fichiers-avec-vim.html#2011-05-19-différences-entre-des-fichiers-avec-vim">Lire la suite</a>
   </div>
   <hr />
@@ -179,16 +158,12 @@ Tags :
       <a href="http://www.choiz.fr/tag/mysql.html">Mysql</a>,      <a href="http://www.choiz.fr/tag/mysqldump.html">Mysqldump</a>,      <a href="http://www.choiz.fr/tag/database.html">Database</a>,      <a href="http://www.choiz.fr/tag/migration.html">Migration</a>,      <a href="http://www.choiz.fr/tag/dump-sql.html">Dump Sql</a>,      <a href="http://www.choiz.fr/tag/sql.html">Sql</a>    </p>
   </header>
   <div>
-      <p>Pour faire mes migrations de base de donnée j'utilise en ligne de
-commande mysqldump et mysql.</p>
-<div class="line-block">
-<div class="line">Dans un premier temps je sauve ma base <strong>*database*</strong> dans le fichier
-<strong>*fichierdump.sql*</strong></div>
-<div class="line">J'utilise l'utilisateur mysql : <strong>*utilisateur*</strong> avec son mot de
-passe <strong>*p4ssw0rd*</strong></div>
-</div>
-<blockquote>
-$ mysqldump -u utilisateur -p p4ssw0rd database &gt; fichierdump ...</blockquote>
+      <p>Pour faire mes migrations de base de donnée j'utilise en ligne de commande
+mysqldump et mysql.</p>
+<p>Dans un premier temps je sauve ma base <cite>database</cite> dans le fichier <cite>dump.sql</cite>
+J'utilise l'utilisateur mysql : <cite>utilisateur</cite> avec son mot de passe <cite>p4ss</cite></p>
+<pre class="literal-block">
+mysqldump -u utilisateur -p p4ss database &gt; dump ...</pre>
       <a class="btn" href="http://www.choiz.fr/2011-05-14-migration-dune-base-de-donnée-mysql.html#2011-05-14-migration-dune-base-de-donnée-mysql">Lire la suite</a>
   </div>
   <hr />
@@ -202,12 +177,13 @@ Tags :
       <a href="http://www.choiz.fr/tag/php.html">PHP</a>,      <a href="http://www.choiz.fr/tag/vim.html">Vim</a>,      <a href="http://www.choiz.fr/tag/vi.html">Vi</a>,      <a href="http://www.choiz.fr/tag/console.html">Console</a>,      <a href="http://www.choiz.fr/tag/mac.html">Mac</a>,      <a href="http://www.choiz.fr/tag/linux.html">Linux</a>    </p>
   </header>
   <div>
-      <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
-dans la console je tape la commande :</p>
-<blockquote>
-php -l fichier_a_tester.php</blockquote>
-<p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
-Pour la faire il suffit de faire &quot;ESC&quot; pour passer en mode ...</p>
+      <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement dans la
+console je tape la commande :</p>
+<pre class="literal-block">
+php -l fichier_a_tester.php
+</pre>
+<p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim). Pour la
+faire il suffit de faire &quot;ESC&quot; pour passer en mode ...</p>
       <a class="btn" href="http://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html#2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php">Lire la suite</a>
   </div>
   <hr />
@@ -221,12 +197,10 @@ Tags :
       <a href="http://www.choiz.fr/tag/vim.html">vim</a>,      <a href="http://www.choiz.fr/tag/config.html">config</a>,      <a href="http://www.choiz.fr/tag/vimrc.html">.vimrc</a>,      <a href="http://www.choiz.fr/tag/plugin.html">plugin</a>,      <a href="http://www.choiz.fr/tag/vim-plugin.html">vim plugin</a>,      <a href="http://www.choiz.fr/tag/surround.html">surround</a>,      <a href="http://www.choiz.fr/tag/surroundvim.html">surround.vim</a>,      <a href="http://www.choiz.fr/tag/tags.html">tags</a>,      <a href="http://www.choiz.fr/tag/html.html">html</a>    </p>
   </header>
   <div>
-      <p>J'ai ajouté quelques plugins dans ma configuration de Vim dont :
-surround.vim.</p>
-<p>Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un
-texte.</p>
+      <p>J'ai ajouté quelques plugins dans ma configuration de Vim dont : surround.vim.</p>
+<p>Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un texte.</p>
 <p>Comment l'utiliser ?</p>
-<p><tt class="docutils literal">VS&lt;b&gt;</tt> permet d'ajouter les balises &lt;b&gt; et &lt;/b&gt; avant et apres la
+<p><tt class="docutils literal">VS&lt;b&gt;</tt> permet d'ajouter les balises <cite>&lt;b&gt;</cite> et <cite>&lt;/b&gt;</cite> avant et apres la
 ligne courante et d'indenter ...</p>
       <a class="btn" href="http://www.choiz.fr/2011-04-09-surround-avec-vim.html#2011-04-09-surround-avec-vim">Lire la suite</a>
   </div>
@@ -241,8 +215,10 @@ Tags :
       <a href="http://www.choiz.fr/tag/paamayim-nekudotayim.html">Paamayim Nekudotayim</a>,      <a href="http://www.choiz.fr/tag/operateur-de-resolution-de-portee.html">opérateur de résolution de portée</a>,      <a href="http://www.choiz.fr/tag/.html">::</a>,      <a href="http://www.choiz.fr/tag/php.html">PHP</a>,      <a href="http://www.choiz.fr/tag/error.html">Error</a>,      <a href="http://www.choiz.fr/tag/erreur.html">Erreur</a>    </p>
   </header>
   <div>
-      <p>Voilà a quoi correspond cette erreur pour ceux qui demandent :</p>
-<p><tt class="docutils literal">Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695</tt></p>
+      <p>Voilà à quoi correspond cette erreur pour ceux qui demandent :</p>
+<pre class="literal-block">
+Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695
+</pre>
 <p>Le Paamayim Nekudotayim est l'opérateur de résolution de portée.</p>
 <p><a class="reference external" href="http://fr.php.net/manual/fr/language.oop5.paamayim-nekudotayim.php">Dans la doc
 PHP</a>
@@ -263,24 +239,44 @@ Tags :
   </header>
   <div>
       <p>Faire un système de protection (tel que htaccess) direct dans un fichier
-php :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">&lt;?php</div>
-<div class="line">if (!empty($_SERVER[&quot;PHP_AUTH_USER&quot;]) &amp;&amp;
+PHP :</p>
+<pre class="literal-block">
+&lt;?php
+if (!empty($_SERVER[&quot;PHP_AUTH_USER&quot;]) &amp;&amp;
 $_SERVER[&quot;PHP_AUTH_USER&quot;] == &quot;login&quot; &amp;&amp;
-$_SERVER[&quot;PHP_AUTH_PW&quot;] == &quot;password&quot;) {</div>
-<div class="line">&nbsp;&nbsp;&nbsp; // code protégé ici</div>
-<div class="line">} else {</div>
-<div class="line">&nbsp;&nbsp;&nbsp; header('WWW-Authenticate: Basic realm=&quot;Restricted area&quot;');</div>
-<div class="line">&nbsp;&nbsp;&nbsp; header('HTTP/1.0 401 Unauthorized');</div>
-<div class="line">&nbsp;&nbsp;&nbsp; exit('Access Denied');</div>
-<div class="line">}</div>
-<div class="line">?&gt;</div>
-</div>
-</blockquote>
+$_SERVER[&quot;PHP_AUTH_PW&quot;] == &quot;password&quot;) {
+    // code protégé ici
+} else {
+    header('WWW-Authenticate: Basic realm=&quot;Restricted area&quot;');
+    header('HTTP/1.0 401 Unauthorized');
+    exit('Access Denied');
+}
+?&gt;
+</pre>
 
       <a class="btn" href="http://www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html#2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html#2011-01-07-jquery-attr-avec-onclick-par-click">jQuery attr() avec onclick par click()</a></h2>
+    <p>
+      Posté le ven. 07 janvier 2011 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/code.html">code</a>,      <a href="http://www.choiz.fr/tag/js.html">js</a>,      <a href="http://www.choiz.fr/tag/jquery.html">jquery</a>,      <a href="http://www.choiz.fr/tag/attr.html">attr()</a>,      <a href="http://www.choiz.fr/tag/click.html">click()</a>,      <a href="http://www.choiz.fr/tag/removeattr.html">removeAttr()</a>    </p>
+  </header>
+  <div>
+      <p>Après avoir perdu 2h…
+J'ai découvert que la methode attr() de jQuery fonctionne pas
+avec l'attribut &quot;onclick&quot;…</p>
+<p>Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
+.attr('onClick','valeur') ou faire de la façon suivante.</p>
+<p>Remplacer donc :</p>
+<pre class="literal-block">
+var mavar = 'fonctionAffichage();';
+$(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar ...</pre>
+      <a class="btn" href="http://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html#2011-01-07-jquery-attr-avec-onclick-par-click">Lire la suite</a>
   </div>
 </article>
 

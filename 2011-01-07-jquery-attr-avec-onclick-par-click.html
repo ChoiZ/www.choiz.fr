@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Après avoir perdu 2h... le attr() de jQuery [STRIKEOUT:fonctionne pas avec l'attribut "onclick"] truc super quoi ! Edit : en jQuery pour modifier le contenu d'un onclick il faut faire .attr('onClick','valeur') ou faire de la façon suivante. Remplacer donc : var mavar  = 'fonctionAffichage();'; $("#code").attr("onclick","mavar"); Par ..." />
+<meta name="description" content="Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery fonctionne pas avec l'attribut "onclick"… Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire .attr('onClick','valeur') ou faire de la façon suivante. Remplacer donc : var mavar = 'fonctionAffichage();'; $("#code").attr("onclick","mavar ..." />
 <meta name="keywords" content="code, js, jquery, attr(), click(), removeAttr()">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="jQuery attr() avec onclick par click()"/>
-<meta property="og:description" content="Après avoir perdu 2h... le attr() de jQuery [STRIKEOUT:fonctionne pas avec l'attribut "onclick"] truc super quoi ! Edit : en jQuery pour modifier le contenu d'un onclick il faut faire .attr('onClick','valeur') ou faire de la façon suivante. Remplacer donc : var mavar  = 'fonctionAffichage();'; $("#code").attr("onclick","mavar"); Par ..."/>
+<meta property="og:description" content="Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery fonctionne pas avec l'attribut "onclick"… Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire .attr('onClick','valeur') ou faire de la façon suivante. Remplacer donc : var mavar = 'fonctionAffichage();'; $("#code").attr("onclick","mavar ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html"/>
 <meta property="og:type" content="article"/>
@@ -68,23 +68,21 @@
     <p>Posté le ven. 07 janvier 2011</p>
   </header>
   <div>
-    <p>Après avoir perdu 2h... le attr() de jQuery [STRIKEOUT:fonctionne pas
-avec l'attribut &quot;onclick&quot;] truc super quoi !</p>
-<p>Edit : en jQuery pour modifier le contenu d'un onclick il faut faire
+    <p>Après avoir perdu 2h…
+J'ai découvert que la methode attr() de jQuery fonctionne pas
+avec l'attribut &quot;onclick&quot;…</p>
+<p>Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.</p>
 <p>Remplacer donc :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">var mavar&nbsp; = 'fonctionAffichage();';</div>
-<div class="line">$(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+var mavar = 'fonctionAffichage();';
+$(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
+</pre>
 <p>Par :</p>
-<blockquote>
-<p>var mavar&nbsp; = 'fonctionAffichage();';</p>
-<p>$(&quot;#code&quot;).removeAttr('onclick').click(function() { eval(mavar); }
-);</p>
-</blockquote>
+<pre class="literal-block">
+var mavar = 'fonctionAffichage();';
+$(&quot;#code&quot;).removeAttr('onclick').click(function() { eval(mavar); });
+</pre>
 
   </div>
   <div class="tag-cloud">
@@ -118,7 +116,7 @@ avec l'attribut &quot;onclick&quot;] truc super quoi !</p>
   },
   "image": "avatar.png",
   "url": "http://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html",
-  "description": "Après avoir perdu 2h... le attr() de jQuery [STRIKEOUT:fonctionne pas avec l'attribut "onclick"] truc super quoi ! Edit : en jQuery pour modifier le contenu d'un onclick il faut faire .attr('onClick','valeur') ou faire de la façon suivante. Remplacer donc : var mavar  = 'fonctionAffichage();'; $("#code").attr("onclick","mavar"); Par ..."
+  "description": "Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery fonctionne pas avec l'attribut "onclick"… Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire .attr('onClick','valeur') ou faire de la façon suivante. Remplacer donc : var mavar = 'fonctionAffichage();'; $("#code").attr("onclick","mavar ..."
 }
 </script></body>
 </html>

@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Depuis le temps que je bosse avec un clavier Apple [STRIKEOUT:j'ai] mes doigts on eu le temps de s'habituer au mapage du clavier. Il y a beaucoup de différences entre un clavier AZERTY de PC et un clavier AZERTY de Mac. Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées ..." />
+<meta name="description" content="Depuis le temps que je bosse avec un clavier Apple je me suis habitué au mapage clavier Mac. Il y a beaucoup de différences entre un clavier AZERTY de PC et un clavier AZERTY de Mac. Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à des endroits complétement différents. J'ai donc ..." />
 <meta name="keywords" content="Clavier, Apple, Mapage, Debian, Linux, Keyboard, Mac, Mac Keyboard">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Clavier Apple sur debian"/>
-<meta property="og:description" content="Depuis le temps que je bosse avec un clavier Apple [STRIKEOUT:j'ai] mes doigts on eu le temps de s'habituer au mapage du clavier. Il y a beaucoup de différences entre un clavier AZERTY de PC et un clavier AZERTY de Mac. Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées ..."/>
+<meta property="og:description" content="Depuis le temps que je bosse avec un clavier Apple je me suis habitué au mapage clavier Mac. Il y a beaucoup de différences entre un clavier AZERTY de PC et un clavier AZERTY de Mac. Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à des endroits complétement différents. J'ai donc ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html"/>
 <meta property="og:type" content="article"/>
@@ -70,32 +70,41 @@
     <p>Posté le ven. 02 décembre 2011</p>
   </header>
   <div>
-    <div class="line-block">
-<div class="line">Depuis le temps que je bosse avec un clavier Apple [STRIKEOUT:j'ai]
-mes doigts on eu le temps de s'habituer au mapage du clavier. Il y a
-beaucoup de différences entre un clavier AZERTY de PC et un clavier
-AZERTY de Mac.</div>
-<div class="line">Les touches : &#64; # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
-des endroits complétement différents.</div>
-</div>
-<p>Pour modifier la configuration faire en console :</p>
-<blockquote>
-<p>dpkg-reconfigure keyboard-console</p>
-<p>Select keymap from arch list</p>
-<p>azerty</p>
-<p>French</p>
-<p>Apple USB</p>
-<p>dpkg-reconfigure keyboard-configuration</p>
-<p>model: Apple</p>
-<p>layout: France - Macintosh</p>
-<p>Key for AltGr: No AltGr Key</p>
-<p>Compose key: Right Alt (AltGr)</p>
-<p>Use Control+Alt+Backspace to terminate the X server? no</p>
-</blockquote>
+    <p>Depuis le temps que je bosse avec un clavier Apple je me suis habitué au mapage
+clavier Mac.
+Il y a beaucoup de différences entre un clavier AZERTY de PC et un
+clavier AZERTY de Mac.</p>
+<p>Les touches : <cite>&#64;</cite> <cite>#</cite> <cite>~</cite> <cite>| (pipe)</cite> <cite>=</cite> <cite>+</cite> <cite>-</cite> <cite>_</cite> <cite>!</cite> <cite>(</cite> <cite>)</cite> <cite>{</cite> <cite>}</cite> <cite>[</cite> <cite>]</cite>
+sont disposées à des endroits complétement différents.</p>
+<p>J'ai donc décidé de modifier la configuration de debian pour prendre en compte
+un clavier mac.</p>
+<pre class="literal-block">
+dpkg-reconfigure keyboard-console
+
+Select keymap from arch list
+
+azerty
+
+French
+
+Apple USB
+
+dpkg-reconfigure keyboard-configuration
+
+model: Apple
+
+layout: France - Macintosh
+
+Key for AltGr: No AltGr Key
+
+Compose key: Right Alt (AltGr)
+
+Use Control+Alt+Backspace to terminate the X server? no
+</pre>
 <p>J'ai choisi un clavier Apple, Français Mac, sans touche AltGr, avec
 comme touche de fonctionnalité secondaire &quot;Alt droit&quot;. Malheureusement
 je n'ai pas réussi a mapper l'Alt de gauche pour avoir la même fonction
-qu'à droite...</p>
+qu'à droite…</p>
 <p>Et ensuite j'ai indiqué que je ne voulais pas pouvoir quitter le server
 X avec la combinaison de touche Control+Alt+Backspace.</p>
 <p>Si ceci ne fonctionne pas il faut se rendre dans la configuration du
@@ -137,7 +146,7 @@ désactiver le layout par defaut du système.</p>
   },
   "image": "avatar.png",
   "url": "http://www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html",
-  "description": "Depuis le temps que je bosse avec un clavier Apple [STRIKEOUT:j'ai] mes doigts on eu le temps de s'habituer au mapage du clavier. Il y a beaucoup de différences entre un clavier AZERTY de PC et un clavier AZERTY de Mac. Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées ..."
+  "description": "Depuis le temps que je bosse avec un clavier Apple je me suis habitué au mapage clavier Mac. Il y a beaucoup de différences entre un clavier AZERTY de PC et un clavier AZERTY de Mac. Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à des endroits complétement différents. J'ai donc ..."
 }
 </script></body>
 </html>

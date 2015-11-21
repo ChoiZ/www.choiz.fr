@@ -73,40 +73,40 @@
     <p>Posté le lun. 25 octobre 2010</p>
   </header>
   <div>
-    <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
-informations dans vos projets il suffit de taper cette commande :</p>
-<blockquote>
-svn propset svn:keywords &quot;Id&quot; index.php</blockquote>
+    <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres informations dans
+vos projets il suffit de taper cette commande :</p>
+<pre class="literal-block">
+svn propset svn:keywords &quot;Id&quot; index.php
+</pre>
 <p>Ce qui permet d'ajouter le keyword &quot;Id&quot; sur le fichier index.php</p>
 <p>Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :</p>
-<blockquote>
-$Id:$</blockquote>
-<p>Une fois le fichier comité vous obtiendrez :</p>
-<blockquote>
-$Id: ajax_modif.php 481 2010-10-25 12:02:50Z choiz $</blockquote>
+<pre class="literal-block">
+$Id:$
+</pre>
+<p>Une fois le fichier versionné vous obtiendrez :</p>
+<pre class="literal-block">
+$Id: ajax\_modif.php 481 2010-10-25 12:02:50Z choiz $
+</pre>
 <p>D'autres keywords sont disponible tel que :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$Revision:$</div>
-<div class="line">$Date:$</div>
-<div class="line">$Author:$</div>
-<div class="line">$URL:$</div>
-</div>
-</blockquote>
-<p>Vous pouvez les ajouter les uns a la suite des autres par exemple pour
-notre fichier index.php je veux ajouter les 4 keywords précédents grâce
-à la commande :</p>
-<blockquote>
-svn propset svn:keywords &quot;Revision Date Author URL&quot; index.php</blockquote>
+<pre class="literal-block">
+$Revision:$
+$Date:$
+$Author:$
+$URL:$
+</pre>
+<p>Vous pouvez les ajouter les uns à la suite des autres par exemple pour notre
+fichier index.php je veux ajouter les 4 keywords précédents grâce à la commande
+:</p>
+<pre class="literal-block">
+svn propset svn:keywords &quot;Revision Date Author URL&quot; index.php
+</pre>
 <p>Ce qui affichera :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">&nbsp;$Revision: 481 $</div>
-<div class="line">&nbsp;$Date: 2010-10-25 14:02:50 +0200 (lun., 25 oct. 2010) $</div>
-<div class="line">&nbsp;$Author: choiz $</div>
-<div class="line">&nbsp;$URL: svn://svn.choiz.fr/projet/branches/prod/index.php $</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+$Revision: 481 $
+$Date: 2010-10-25 14:02:50 +0200 (lun., 25 oct. 2010) $
+$Author: choiz $
+$URL: svn://svn.choiz.fr/projet/branches/prod/index.php $
+</pre>
 
   </div>
   <div class="tag-cloud">

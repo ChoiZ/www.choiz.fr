@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript : function checkclick(e) {     e = e || window.event;     var o = e.target || e.srcElement;     console.log(o); } document.onclick=checkclick; Pratique pour du debug ;)" />
+<meta name="description" content="Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript : function checkclick(e) { e = e || window.event; var o = e.target || e.srcElement; console.log(o); } document.onclick=checkclick; Pratique pour faire du débug." />
 <meta name="keywords" content="js, element, click, javascript, html">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Elément cliqué en js"/>
-<meta property="og:description" content="Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript : function checkclick(e) {     e = e || window.event;     var o = e.target || e.srcElement;     console.log(o); } document.onclick=checkclick; Pratique pour du debug ;)"/>
+<meta property="og:description" content="Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript : function checkclick(e) { e = e || window.event; var o = e.target || e.srcElement; console.log(o); } document.onclick=checkclick; Pratique pour faire du débug."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://www.choiz.fr/2011-06-30-elément-cliqué-en-js.html"/>
 <meta property="og:type" content="article"/>
@@ -67,19 +67,16 @@
     <p>Posté le jeu. 30 juin 2011</p>
   </header>
   <div>
-    <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de
-javascript :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">function checkclick(e) {</div>
-<div class="line">&nbsp;&nbsp;&nbsp; e = e || window.event;</div>
-<div class="line">&nbsp;&nbsp;&nbsp; var o = e.target || e.srcElement;</div>
-<div class="line">&nbsp;&nbsp;&nbsp; console.log(o);</div>
-<div class="line">}</div>
-<div class="line">document.onclick=checkclick;</div>
-</div>
-</blockquote>
-<p>Pratique pour du debug ;)</p>
+    <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :</p>
+<pre class="literal-block">
+function checkclick(e) {
+    e = e || window.event;
+    var o = e.target || e.srcElement;
+    console.log(o);
+}
+document.onclick=checkclick;
+</pre>
+<p>Pratique pour faire du débug.</p>
 
   </div>
   <div class="tag-cloud">
@@ -112,7 +109,7 @@ javascript :</p>
   },
   "image": "avatar.png",
   "url": "http://www.choiz.fr/2011-06-30-elément-cliqué-en-js.html",
-  "description": "Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript : function checkclick(e) {     e = e || window.event;     var o = e.target || e.srcElement;     console.log(o); } document.onclick=checkclick; Pratique pour du debug ;)"
+  "description": "Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript : function checkclick(e) { e = e || window.event; var o = e.target || e.srcElement; console.log(o); } document.onclick=checkclick; Pratique pour faire du débug."
 }
 </script></body>
 </html>

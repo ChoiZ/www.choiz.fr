@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre site en php il faut télécharger le package php-gettext ainsi que d'autres outils tel que xgettext ou msgfmt : # apt-get install php-gettext # apt-get install xgettext ..." />
+<meta name="description" content="J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre site en php il faut télécharger le package php-gettext ainsi que d'autres outils tel que xgettext ou msgfmt : apt-get install php-gettext apt-get install xgettext ..." />
 <meta name="keywords" content=".mo, .po, /etc/locale, LC_ALL, gettext, php, php-gettext, setlocale, xgettext">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="PHP + Gettext + Debian"/>
-<meta property="og:description" content="J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre site en php il faut télécharger le package php-gettext ainsi que d'autres outils tel que xgettext ou msgfmt : # apt-get install php-gettext # apt-get install xgettext ..."/>
+<meta property="og:description" content="J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre site en php il faut télécharger le package php-gettext ainsi que d'autres outils tel que xgettext ou msgfmt : apt-get install php-gettext apt-get install xgettext ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://www.choiz.fr/2011-12-04-php-gettext-debian.html"/>
 <meta property="og:type" content="article"/>
@@ -71,95 +71,85 @@
     <p>Posté le dim. 04 décembre 2011</p>
   </header>
   <div>
-    <div class="line-block">
-<div class="line">J'utilise maintenant php-gettext pour mes traductions. C'est plus
-facile en utilisant des outils tel que pootle ou poedit.</div>
-<div class="line">Pour utiliser gettext sur votre site en php il faut télécharger le
-package php-gettext ainsi que d'autres outils tel que xgettext ou
-msgfmt :</div>
-</div>
-<blockquote>
-<p># apt-get install php-gettext</p>
-<p># apt-get install xgettext</p>
-<p># apt-get install msgfmt</p>
-</blockquote>
-<p>Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
+    <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
+utilisant des outils tel que pootle ou poedit.  Pour utiliser gettext sur votre
+site en php il faut télécharger le package php-gettext ainsi que d'autres outils
+tel que xgettext ou msgfmt :</p>
+<pre class="literal-block">
+apt-get install php-gettext
+
+apt-get install xgettext
+
+apt-get install msgfmt
+</pre>
+<p>Ensuite il faut modifier le fichier <cite>/etc/locale.gen</cite> et enlever les
 commentaires devant les langues qui vont sont à traduire par exemple :
 Allemand, Anglais, Espagnol, Français &amp; Suédois :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">de_DE.UTF-8 UTF-8</div>
-<div class="line">en_GB.UTF-8 UTF-8</div>
-<div class="line">es_ES.UTF-8 UTF-8</div>
-<div class="line">fr_FR.UTF-8 UTF-8</div>
-<div class="line">sv_SE.UTF-8 UTF-8</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+de_DE.UTF-8 UTF-8
+en_GB.UTF-8 UTF-8
+es_ES.UTF-8 UTF-8
+fr_FR.UTF-8 UTF-8
+sv_SE.UTF-8 UTF-8
+</pre>
 <p>Puis regénérer les locales :</p>
-<blockquote>
-# locale-gen</blockquote>
+<pre class="literal-block">
+locale-gen
+</pre>
 <p>Ensuite il faut définir votre chemin pour les traductions par exemple :</p>
-<blockquote>
-lang/fr_FR/LC_ALL/domaine.mo</blockquote>
+<pre class="literal-block">
+lang/fr_FR/LC_ALL/domaine.mo
+</pre>
 <p>Puis dans votre fichier php de configuration :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">&lt;?php</div>
-<div class="line">// configuration de la langue</div>
-<div class="line">$lang_path = &quot;./lang&quot;; // Chemin des fichiers le langue</div>
-<div class="line">$lang = 'fr_FR'; // Langue a afficher</div>
-<div class="line">$lang_encode = &quot;UTF-8&quot;; // Encodage du fichier</div>
-<div class="line">$lang_LC = &quot;LC_ALL&quot;; // LC_MESSAGE etc...</div>
-<div class="line">$lang_file = &quot;domaine&quot;; // Nom du fichier de langue</div>
-<div class="line">putenv(&quot;LANG=&quot;.$lang);</div>
-<div class="line">setlocale($lang_LC, $lang.&quot;.&quot;.$lang_encode);</div>
-<div class="line">bindtextdomain($lang_file,$lang_path);</div>
-<div class="line">bindtextdomain_codeset($lang_file,$lang_encode);</div>
-<div class="line">textdomain($lang_path);</div>
-<div class="line">?&gt;</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+&lt;?php
+// configuration de la langue
+$lang_path = &quot;./lang&quot;; // Chemin des fichiers le langue
+$lang = 'fr_FR'; // Langue a afficher
+$lang_encode = &quot;UTF-8&quot;; // Encodage du fichier
+$lang_LC = &quot;LC_ALL&quot;; // LC_MESSAGE etc…
+$lang_file = &quot;domaine&quot;; // Nom du fichier de langue
+putenv(&quot;LANG=&quot;.$lang);
+setlocale($lang_LC, $lang.&quot;.&quot;.$lang_encode);
+bindtextdomain($lang_file,$lang_path);
+bindtextdomain_codeset($lang_file,$lang_encode);
+textdomain($lang_path);
+?&gt;
+</pre>
 <p>Puis faites le test en affichant dans un fichier php le texte &quot;hello&quot;</p>
-<blockquote>
-<div class="line-block">
-<div class="line">&lt;?php</div>
-<div class="line">// on inclus la config...</div>
-<div class="line">include_once('config.php');</div>
-<div class="line">echo _('hello');</div>
-<div class="line">?&gt;</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+&lt;?php
+// on inclus la config…
+include_once('config.php');
+echo _('hello');
+?&gt;
+</pre>
 <p>Pour générer un fichier .mo a partir d'un fichier .po :</p>
-<blockquote>
-msgfmt domaine.po -o domaine.mo</blockquote>
-<p>Pour générer un fichier .po a partir de fichier php avec du gettext,
-faire un fichier texte avec tous vos fichiers php ou on doit récupérer
-le gettext.</p>
+<pre class="literal-block">
+msgfmt domaine.po -o domaine.mo
+</pre>
+<p>Pour générer un fichier .po a partir de fichier php avec du gettext, faire un
+fichier texte avec tous vos fichiers php ou on doit récupérer le gettext.</p>
 <p>Exemple listing_gettext.txt tel que :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">index.php</div>
-<div class="line">contact.php</div>
-<div class="line">etc...</div>
-</div>
-</blockquote>
-<p>Ensuite il faut faire la commande suivante pour générer le fichier
-domaine.po dans le dossier lang/ depuis notre fichier texte avec les php
-:</p>
-<blockquote>
+<pre class="literal-block">
+index.php
+contact.php
+etc…
+</pre>
+<p>Ensuite il faut faire la commande suivante pour générer le fichier domaine.po
+dans le dossier lang/ depuis notre fichier texte avec les php :</p>
+<pre class="literal-block">
 xgettext -d domaine -p lang/ -k_ --from-code=UTF-8 -f
-listing_gettext.txt</blockquote>
-<p>Pour finir voilà le path des fichiers .po et .mo dans mon application
-web :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">lang/fr_FR/LC_ALL/domaine.po</div>
-<div class="line">lang/fr_FR/LC_ALL/domaine.mo</div>
-<div class="line">lang/en_GB/LC_ALL/domaine.po</div>
-<div class="line">lang/en_GB/LC_ALL/domaine.mo</div>
-<div class="line">...</div>
-</div>
-</blockquote>
+listing_gettext.txt
+</pre>
+<p>Pour finir voilà le path des fichiers .po et .mo dans mon application web :</p>
+<pre class="literal-block">
+lang/fr_FR/LC_ALL/domaine.po
+lang/fr_FR/LC_ALL/domaine.mo
+lang/en_GB/LC_ALL/domaine.po
+lang/en_GB/LC_ALL/domaine.mo
+…
+</pre>
 
   </div>
   <div class="tag-cloud">
@@ -196,7 +186,7 @@ web :</p>
   },
   "image": "avatar.png",
   "url": "http://www.choiz.fr/2011-12-04-php-gettext-debian.html",
-  "description": "J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre site en php il faut télécharger le package php-gettext ainsi que d'autres outils tel que xgettext ou msgfmt : # apt-get install php-gettext # apt-get install xgettext ..."
+  "description": "J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre site en php il faut télécharger le package php-gettext ainsi que d'autres outils tel que xgettext ou msgfmt : apt-get install php-gettext apt-get install xgettext ..."
 }
 </script></body>
 </html>

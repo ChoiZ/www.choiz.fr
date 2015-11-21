@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="J'ai réinstallé mon serveur il n'y a pas si longtemps avec Samba. Editer le fichier de configuration : vi /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : ### Global ### [global] ## Identification ## workgroup = WORKGROUP netbios name = %h server string = Serveur samba %h security = user public = yes ## Log ..." />
+<meta name="description" content="Configuration d'un serveur samba. Editer le fichier de configuration /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : | ### Global ### | [global] | ## Identification ## | workgroup = WORKGROUP | netbios name = %h | server string = Serveur samba %h | security = user | public = yes | ## Log ## | log file = /var/log/samba/log.%m | max log size ..." />
 <meta name="keywords" content="Linux, Samba, config, configuration, Partage, Sharing">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Partage Samba !"/>
-<meta property="og:description" content="J'ai réinstallé mon serveur il n'y a pas si longtemps avec Samba. Editer le fichier de configuration : vi /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : ### Global ### [global] ## Identification ## workgroup = WORKGROUP netbios name = %h server string = Serveur samba %h security = user public = yes ## Log ..."/>
+<meta property="og:description" content="Configuration d'un serveur samba. Editer le fichier de configuration /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : | ### Global ### | [global] | ## Identification ## | workgroup = WORKGROUP | netbios name = %h | server string = Serveur samba %h | security = user | public = yes | ## Log ## | log file = /var/log/samba/log.%m | max log size ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://www.choiz.fr/2011-08-17-partage-samba.html"/>
 <meta property="og:type" content="article"/>
@@ -68,51 +68,50 @@
     <p>Posté le mer. 17 août 2011</p>
   </header>
   <div>
-    <div class="line-block">
-<div class="line">J'ai réinstallé mon serveur il n'y a pas si longtemps avec Samba.</div>
-<div class="line">Editer le fichier de configuration :</div>
-</div>
-<blockquote>
-vi /etc/samba/smb.conf</blockquote>
-<p>Voici le contenu de mon fichier de configuration :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">### Global ###</div>
-<div class="line">[global]</div>
-<div class="line">## Identification ##</div>
-<div class="line">workgroup = WORKGROUP</div>
-<div class="line">netbios name = %h</div>
-<div class="line">server string = Serveur samba %h</div>
-<div class="line">security = user</div>
-<div class="line">public = yes</div>
-<div class="line">## Log ##</div>
-<div class="line">log file = /var/log/samba/log.%m</div>
-<div class="line">max log size = 1000</div>
-<div class="line">## Auth ##</div>
-<div class="line">encrypt passwords = true</div>
-<div class="line">smb passwd file = /etc/samba/smbpasswd</div>
-<div class="line">### Share ###</div>
-<div class="line">[choiz]</div>
-<div class="line">path = /home/choiz/samba</div>
-<div class="line">read only = no</div>
-<div class="line">writeable = yes</div>
-<div class="line">valid users = choiz</div>
-<div class="line">comment = partage de choiz</div>
-<div class="line">[partagereadonly]</div>
-<div class="line">path = /home/partageread</div>
-<div class="line">read only = yes</div>
-<div class="line">writeable = no</div>
-<div class="line">valid users = choiz, &#64;group</div>
-<div class="line">comment = partage en lecture pour choiz et le groupe &quot;group&quot;</div>
-</div>
-</blockquote>
+    <p>Configuration d'un serveur samba.
+Editer le fichier de configuration <cite>/etc/samba/smb.conf</cite>
+Voici le contenu de mon fichier de configuration :</p>
+<pre class="literal-block">
+| ### Global ###
+| [global]
+| ## Identification ##
+| workgroup = WORKGROUP
+| netbios name = %h
+| server string = Serveur samba %h
+| security = user
+| public = yes
+| ## Log ##
+| log file = /var/log/samba/log.%m
+| max log size = 1000
+| ## Auth ##
+| encrypt passwords = true
+| smb passwd file = /etc/samba/smbpasswd
+| ### Share ###
+| [choiz]
+| path = /home/choiz/samba
+| read only = no
+| writeable = yes
+| valid users = choiz
+| comment = partage de choiz
+| [partagereadonly]
+| path = /home/partageread
+| read only = yes
+| writeable = no
+| valid users = choiz, &#64;group
+| comment = partage en lecture pour choiz et le groupe &quot;group&quot;
+</pre>
 <p>Maintenant il faut créer notre utilisateur &quot;choiz&quot; grâce à :</p>
-<blockquote>
-smbpasswd -a choiz</blockquote>
-<p>Pour les groupes samba utilise les groupes unix.</p>
-<p>N'oubliez pas de redémarrer le service Samba !</p>
-<blockquote>
-/etc/init.d/samba restart</blockquote>
+<pre class="literal-block">
+smbpasswd -a choiz
+</pre>
+<p>Pour les groupes samba utilise les groupes unix. A vous de voir si vous voulez
+gérer votre partage samba utilisateur par utilisateur ou directement avec des
+groupes.</p>
+<p>N'oubliez pas de redémarrer le service Samba avant de tester depuis votre client
+le partage de fichiers !</p>
+<pre class="literal-block">
+/etc/init.d/samba restart
+</pre>
 
   </div>
   <div class="tag-cloud">
@@ -146,7 +145,7 @@ smbpasswd -a choiz</blockquote>
   },
   "image": "avatar.png",
   "url": "http://www.choiz.fr/2011-08-17-partage-samba.html",
-  "description": "J'ai réinstallé mon serveur il n'y a pas si longtemps avec Samba. Editer le fichier de configuration : vi /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : ### Global ### [global] ## Identification ## workgroup = WORKGROUP netbios name = %h server string = Serveur samba %h security = user public = yes ## Log ..."
+  "description": "Configuration d'un serveur samba. Editer le fichier de configuration /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : | ### Global ### | [global] | ## Identification ## | workgroup = WORKGROUP | netbios name = %h | server string = Serveur samba %h | security = user | public = yes | ## Log ## | log file = /var/log/samba/log.%m | max log size ..."
 }
 </script></body>
 </html>

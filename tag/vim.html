@@ -111,15 +111,15 @@ Tags :
       <a href="http://www.choiz.fr/tag/vim.html">Vim</a>,      <a href="http://www.choiz.fr/tag/search.html">search</a>,      <a href="http://www.choiz.fr/tag/replace.html">replace</a>,      <a href="http://www.choiz.fr/tag/line.html">line</a>,      <a href="http://www.choiz.fr/tag/add.html">add</a>,      <a href="http://www.choiz.fr/tag/ligne.html">ligne</a>,      <a href="http://www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="http://www.choiz.fr/tag/file.html">file</a>,      <a href="http://www.choiz.fr/tag/remplace.html">remplace</a>,      <a href="http://www.choiz.fr/tag/ajout.html">ajout</a>    </p>
   </header>
   <div>
-      <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un
-fichier avec vim :</p>
-<p><tt class="docutils literal"><span class="pre">:1,$s/^/#/</span></tt></p>
+      <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un fichier avec
+vim :</p>
+<pre class="literal-block">
+:1,$s/^/#/
+</pre>
 <p>Explications :</p>
-<p><tt class="docutils literal">:1,$</tt></p>
-<p>Selection des ligne 1 à $ ($ étant la dernière).</p>
-<p><tt class="docutils literal"><span class="pre">s/^/#/</span></tt></p>
-<p>s pour search (en fait il cherche et remplace) ^ le début de ligne ($ si
-on voulais la fin de la ligne ...</p>
+<p><cite>:1,$</cite> Sélection des ligne 1 à $ ($ étant la dernière).</p>
+<p><cite>s/^/#/</cite> <cite>s</cite> pour search <cite>^</cite> indique le début de ligne <cite>/</cite> sépare ma recherche
+par ce que l'on remplace <cite>#</cite> est le caractère que ...</p>
       <a class="btn" href="http://www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Lire la suite</a>
   </div>
   <hr />
@@ -134,9 +134,11 @@ Tags :
   </header>
   <div>
       <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<p><em>svn propset svn:ignore</em> ou dans la configuration du svn dans
-<em>~/.subversion/config</em> le <em>global-ignores</em></p>
-<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
+<pre class="literal-block">
+svn propset svn:ignore
+</pre>
+<p>Ou dans la configuration du svn dans <cite>~/.subversion/config</cite> le <cite>global-ignores</cite></p>
+<p>Pour ignorer tous les fichiers qui commencent par <cite>._</cite> dans le dossier ou
 l'on se trouve actuellement il suffit d'executer la commande ...</p>
       <a class="btn" href="http://www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html#2011-07-26-ignorer-grâce-au-svn">Lire la suite</a>
   </div>
@@ -151,19 +153,26 @@ Tags :
       <a href="http://www.choiz.fr/tag/vim.html">vim</a>,      <a href="http://www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="http://www.choiz.fr/tag/editeur.html">editeur</a>,      <a href="http://www.choiz.fr/tag/texte.html">texte</a>,      <a href="http://www.choiz.fr/tag/terminal.html">terminal</a>,      <a href="http://www.choiz.fr/tag/commande.html">commande</a>,      <a href="http://www.choiz.fr/tag/split.html">split</a>,      <a href="http://www.choiz.fr/tag/vsplit.html">vsplit</a>,      <a href="http://www.choiz.fr/tag/window.html">window</a>,      <a href="http://www.choiz.fr/tag/colonnes.html">colonnes</a>,      <a href="http://www.choiz.fr/tag/cols.html">cols</a>,      <a href="http://www.choiz.fr/tag/columns.html">columns</a>    </p>
   </header>
   <div>
-      <p>Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
-pouvoir ouvrir plusieurs fichiers en même temps.</p>
+      <p>Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour pouvoir
+ouvrir plusieurs fichiers en même temps.</p>
 <p>Pour celà il utilises 2 méthodes soit :</p>
-<ol class="arabic simple">
-<li>la division de la fenêtre horizontal en utilisant</li>
+<ol class="arabic">
+<li><p class="first">la division de la fenêtre horizontal en utilisant</p>
+<pre class="literal-block">
+:split
+</pre>
+</li>
 </ol>
-<p><tt class="docutils literal">:split</tt></p>
 <p>ou</p>
-<p><tt class="docutils literal">:new</tt></p>
+<pre class="literal-block">
+:new
+</pre>
 <p>et ensuite</p>
-<p><tt class="docutils literal">:e le_fichier_a_ouvrir</tt></p>
-<ol class="arabic simple" start="2">
-<li>la division de la fenêtre verticalement ...</li></ol>
+<pre class="literal-block">
+:e le_fichier_a_ouvrir
+</pre>
+<ol class="arabic" start="2">
+<li><p class="first">la division de la fenêtre verticalement ...</p></li></ol>
       <a class="btn" href="http://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html#2011-05-29-split-vsplit-dans-vim">Lire la suite</a>
   </div>
   <hr />
@@ -177,17 +186,14 @@ Tags :
       <a href="http://www.choiz.fr/tag/vim.html">Vim</a>,      <a href="http://www.choiz.fr/tag/diff.html">Diff</a>,      <a href="http://www.choiz.fr/tag/difference.html">Différence</a>,      <a href="http://www.choiz.fr/tag/fichiers.html">Fichiers</a>,      <a href="http://www.choiz.fr/tag/editeur.html">Editeur</a>,      <a href="http://www.choiz.fr/tag/texte.html">Texte</a>,      <a href="http://www.choiz.fr/tag/terminal.html">Terminal</a>,      <a href="http://www.choiz.fr/tag/console.html">Console</a>,      <a href="http://www.choiz.fr/tag/commande.html">Commande</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line">J'ai souvent besoin de voir les différences entre plusieurs
-fichiers... J'utilise souvent la commande diff dans un terminal, mais
-mon éditeur texte favoris &quot;Vim&quot; sait aussi trés bien faire un
-différentiel.</div>
-<div class="line">Utilisation avec le terminal :</div>
-</div>
-<blockquote>
-$ diff fichier1 fichier2</blockquote>
-<p>Celui-ci retournera les différences directement dans le terminal (pas
-pratique ...</p>
+      <p>J'ai souvent besoin de voir les différences entre plusieurs fichiers...
+J'utilise souvent la commande diff dans un terminal, mais mon éditeur texte
+favoris &quot;Vim&quot; sait aussi trés bien faire un différentiel. Utilisation avec le
+terminal :</p>
+<pre class="literal-block">
+diff fichier1 fichier2
+</pre>
+<p>Celui-ci retournera les différences directement dans le terminal (pas pratique ...</p>
       <a class="btn" href="http://www.choiz.fr/2011-05-19-différences-entre-des-fichiers-avec-vim.html#2011-05-19-différences-entre-des-fichiers-avec-vim">Lire la suite</a>
   </div>
   <hr />
@@ -201,12 +207,13 @@ Tags :
       <a href="http://www.choiz.fr/tag/php.html">PHP</a>,      <a href="http://www.choiz.fr/tag/vim.html">Vim</a>,      <a href="http://www.choiz.fr/tag/vi.html">Vi</a>,      <a href="http://www.choiz.fr/tag/console.html">Console</a>,      <a href="http://www.choiz.fr/tag/mac.html">Mac</a>,      <a href="http://www.choiz.fr/tag/linux.html">Linux</a>    </p>
   </header>
   <div>
-      <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
-dans la console je tape la commande :</p>
-<blockquote>
-php -l fichier_a_tester.php</blockquote>
-<p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
-Pour la faire il suffit de faire &quot;ESC&quot; pour passer en mode ...</p>
+      <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement dans la
+console je tape la commande :</p>
+<pre class="literal-block">
+php -l fichier_a_tester.php
+</pre>
+<p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim). Pour la
+faire il suffit de faire &quot;ESC&quot; pour passer en mode ...</p>
       <a class="btn" href="http://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html#2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php">Lire la suite</a>
   </div>
   <hr />
@@ -220,12 +227,10 @@ Tags :
       <a href="http://www.choiz.fr/tag/vim.html">vim</a>,      <a href="http://www.choiz.fr/tag/config.html">config</a>,      <a href="http://www.choiz.fr/tag/vimrc.html">.vimrc</a>,      <a href="http://www.choiz.fr/tag/plugin.html">plugin</a>,      <a href="http://www.choiz.fr/tag/vim-plugin.html">vim plugin</a>,      <a href="http://www.choiz.fr/tag/surround.html">surround</a>,      <a href="http://www.choiz.fr/tag/surroundvim.html">surround.vim</a>,      <a href="http://www.choiz.fr/tag/tags.html">tags</a>,      <a href="http://www.choiz.fr/tag/html.html">html</a>    </p>
   </header>
   <div>
-      <p>J'ai ajouté quelques plugins dans ma configuration de Vim dont :
-surround.vim.</p>
-<p>Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un
-texte.</p>
+      <p>J'ai ajouté quelques plugins dans ma configuration de Vim dont : surround.vim.</p>
+<p>Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un texte.</p>
 <p>Comment l'utiliser ?</p>
-<p><tt class="docutils literal">VS&lt;b&gt;</tt> permet d'ajouter les balises &lt;b&gt; et &lt;/b&gt; avant et apres la
+<p><tt class="docutils literal">VS&lt;b&gt;</tt> permet d'ajouter les balises <cite>&lt;b&gt;</cite> et <cite>&lt;/b&gt;</cite> avant et apres la
 ligne courante et d'indenter ...</p>
       <a class="btn" href="http://www.choiz.fr/2011-04-09-surround-avec-vim.html#2011-04-09-surround-avec-vim">Lire la suite</a>
   </div>

@@ -120,24 +120,21 @@ Tags :
       <a href="http://www.choiz.fr/tag/linux.html">Linux</a>,      <a href="http://www.choiz.fr/tag/samba.html">Samba</a>,      <a href="http://www.choiz.fr/tag/config.html">config</a>,      <a href="http://www.choiz.fr/tag/configuration.html">configuration</a>,      <a href="http://www.choiz.fr/tag/partage.html">Partage</a>,      <a href="http://www.choiz.fr/tag/sharing.html">Sharing</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line">J'ai réinstallé mon serveur il n'y a pas si longtemps avec Samba.</div>
-<div class="line">Editer le fichier de configuration :</div>
-</div>
-<blockquote>
-vi /etc/samba/smb.conf</blockquote>
-<p>Voici le contenu de mon fichier de configuration :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">### Global ###</div>
-<div class="line">[global]</div>
-<div class="line">## Identification ##</div>
-<div class="line">workgroup = WORKGROUP</div>
-<div class="line">netbios name = %h</div>
-<div class="line">server string = Serveur samba %h</div>
-<div class="line">security = user</div>
-<div class="line">public = yes</div>
-<div class="line">## Log ...</div></div></blockquote>
+      <p>Configuration d'un serveur samba.
+Editer le fichier de configuration <cite>/etc/samba/smb.conf</cite>
+Voici le contenu de mon fichier de configuration :</p>
+<pre class="literal-block">
+| ### Global ###
+| [global]
+| ## Identification ##
+| workgroup = WORKGROUP
+| netbios name = %h
+| server string = Serveur samba %h
+| security = user
+| public = yes
+| ## Log ##
+| log file = /var/log/samba/log.%m
+| max log size ...</pre>
       <a class="btn" href="http://www.choiz.fr/2011-08-17-partage-samba.html#2011-08-17-partage-samba">Lire la suite</a>
   </div>
   <hr />
@@ -151,12 +148,10 @@ Tags :
       <a href="http://www.choiz.fr/tag/vim.html">vim</a>,      <a href="http://www.choiz.fr/tag/config.html">config</a>,      <a href="http://www.choiz.fr/tag/vimrc.html">.vimrc</a>,      <a href="http://www.choiz.fr/tag/plugin.html">plugin</a>,      <a href="http://www.choiz.fr/tag/vim-plugin.html">vim plugin</a>,      <a href="http://www.choiz.fr/tag/surround.html">surround</a>,      <a href="http://www.choiz.fr/tag/surroundvim.html">surround.vim</a>,      <a href="http://www.choiz.fr/tag/tags.html">tags</a>,      <a href="http://www.choiz.fr/tag/html.html">html</a>    </p>
   </header>
   <div>
-      <p>J'ai ajouté quelques plugins dans ma configuration de Vim dont :
-surround.vim.</p>
-<p>Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un
-texte.</p>
+      <p>J'ai ajouté quelques plugins dans ma configuration de Vim dont : surround.vim.</p>
+<p>Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un texte.</p>
 <p>Comment l'utiliser ?</p>
-<p><tt class="docutils literal">VS&lt;b&gt;</tt> permet d'ajouter les balises &lt;b&gt; et &lt;/b&gt; avant et apres la
+<p><tt class="docutils literal">VS&lt;b&gt;</tt> permet d'ajouter les balises <cite>&lt;b&gt;</cite> et <cite>&lt;/b&gt;</cite> avant et apres la
 ligne courante et d'indenter ...</p>
       <a class="btn" href="http://www.choiz.fr/2011-04-09-surround-avec-vim.html#2011-04-09-surround-avec-vim">Lire la suite</a>
   </div>

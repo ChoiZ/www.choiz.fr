@@ -61,14 +61,10 @@ Tags :
       <a href="http://www.choiz.fr/tag/viadeo.html">viadeo</a>,      <a href="http://www.choiz.fr/tag/javascript.html">javascript</a>,      <a href="http://www.choiz.fr/tag/js.html">js</a>,      <a href="http://www.choiz.fr/tag/code.html">code</a>,      <a href="http://www.choiz.fr/tag/login.html">login</a>,      <a href="http://www.choiz.fr/tag/profil.html">profil</a>,      <a href="http://www.choiz.fr/tag/identifie.html">identifié</a>,      <a href="http://www.choiz.fr/tag/firebug.html">firebug</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line">J'ai voulu plusieurs fois voir un profil sur Viadeo sans forcement
-être identifié. Lorsque l'on déplace la souris ou que l'on scroll une
-autre page s'affiche.</div>
-<div class="line">Exemple sur <a class="reference external" href="http://www.viadeo.com/fr/profile/francois.lasserre1">ma page
-viadeo</a>.</div>
-<div class="line">Pour empécher d'avoir la page de login il faut modifier une fonction
-Javascript. Avec ...</div></div>
+      <p>J'ai voulu plusieurs fois voir un profil sur Viadeo sans forcement être
+identifié. Lorsque l'on déplace la souris ou que l'on scroll une autre page
+s'affiche.  Exemple sur <a class="reference external" href="http://www.viadeo.com/fr/profile/francois.lasserre1">ma page viadeo</a>.  Pour empécher d'avoir
+la page de login il faut modifier une fonction Javascript. Avec ...</p>
       <a class="btn" href="http://www.choiz.fr/2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login.html#2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login">Lire la suite</a>
   </div>
   <hr />
@@ -82,11 +78,9 @@ Tags :
       <a href="http://www.choiz.fr/tag/code.html">Code</a>,      <a href="http://www.choiz.fr/tag/js.html">js</a>,      <a href="http://www.choiz.fr/tag/html.html">html</a>,      <a href="http://www.choiz.fr/tag/css.html">css</a>,      <a href="http://www.choiz.fr/tag/xhtml.html">xhtml</a>,      <a href="http://www.choiz.fr/tag/javascript.html">javascript</a>,      <a href="http://www.choiz.fr/tag/sites.html">sites</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line"><a class="reference external" href="http://www.jsfiddle.net/">http://www.jsfiddle.net/</a> Pratique pour tester un code html / css / js</div>
-<div class="line"><a class="reference external" href="http://www.jsperf.com/">http://www.jsperf.com/</a> Pour faire des performances de code js</div>
-<div class="line"><a class="reference external" href="http://www.pastebin.com/">http://www.pastebin.com/</a> Pour copier coller du code facilement</div>
-</div>
+      <p><a class="reference external" href="http://www.jsfiddle.net/">http://www.jsfiddle.net/</a> Pratique pour tester un code html / css / js</p>
+<p><a class="reference external" href="http://www.jsperf.com/">http://www.jsperf.com/</a> Pour faire des performances de code js</p>
+<p><a class="reference external" href="http://www.pastebin.com/">http://www.pastebin.com/</a> Pour copier coller du code facilement</p>
 
       <a class="btn" href="http://www.choiz.fr/2011-08-09-liens-utiles.html#2011-08-09-liens-utiles">Lire la suite</a>
   </div>
@@ -101,19 +95,16 @@ Tags :
       <a href="http://www.choiz.fr/tag/js.html">js</a>,      <a href="http://www.choiz.fr/tag/element.html">element</a>,      <a href="http://www.choiz.fr/tag/click.html">click</a>,      <a href="http://www.choiz.fr/tag/javascript.html">javascript</a>,      <a href="http://www.choiz.fr/tag/html.html">html</a>    </p>
   </header>
   <div>
-      <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de
-javascript :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">function checkclick(e) {</div>
-<div class="line">&nbsp;&nbsp;&nbsp; e = e || window.event;</div>
-<div class="line">&nbsp;&nbsp;&nbsp; var o = e.target || e.srcElement;</div>
-<div class="line">&nbsp;&nbsp;&nbsp; console.log(o);</div>
-<div class="line">}</div>
-<div class="line">document.onclick=checkclick;</div>
-</div>
-</blockquote>
-<p>Pratique pour du debug ;)</p>
+      <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :</p>
+<pre class="literal-block">
+function checkclick(e) {
+    e = e || window.event;
+    var o = e.target || e.srcElement;
+    console.log(o);
+}
+document.onclick=checkclick;
+</pre>
+<p>Pratique pour faire du débug.</p>
 
       <a class="btn" href="http://www.choiz.fr/2011-06-30-elément-cliqué-en-js.html#2011-06-30-elément-cliqué-en-js">Lire la suite</a>
   </div>

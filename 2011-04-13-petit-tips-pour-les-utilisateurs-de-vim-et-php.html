@@ -68,21 +68,20 @@
     <p>Posté le mer. 13 avril 2011</p>
   </header>
   <div>
-    <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
-dans la console je tape la commande :</p>
-<blockquote>
-php -l fichier_a_tester.php</blockquote>
-<p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
-Pour la faire il suffit de faire &quot;ESC&quot; pour passer en mode commande de
-VIM puis :</p>
-<blockquote>
-:!php -l %</blockquote>
+    <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement dans la
+console je tape la commande :</p>
+<pre class="literal-block">
+php -l fichier_a_tester.php
+</pre>
+<p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim). Pour la
+faire il suffit de faire &quot;ESC&quot; pour passer en mode commande de VIM puis :</p>
+<pre class="literal-block">
+:!php -l %
+</pre>
 <p>Ce qui produira exactement le même résultat qu'en console.</p>
-<div class="line-block">
-<div class="line"><strong>:!</strong> (permet l'execution d'une commande système dans vim)</div>
-<div class="line">ensuite <strong>php -l</strong></div>
-<div class="line"><strong>%</strong> (recupere le nom du fichier courant avec le path complet)</div>
-</div>
+<p><cite>:!</cite> (permet l'execution d'une commande système dans vim)</p>
+<p>Ensuite <cite>php -l</cite> pour PHP lint</p>
+<p><cite>%</cite> (récupère le nom du fichier courant avec le path complet)</p>
 
   </div>
   <div class="tag-cloud">

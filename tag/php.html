@@ -89,16 +89,14 @@ Tags :
       <a href="http://www.choiz.fr/tag/mo.html">.mo</a>,      <a href="http://www.choiz.fr/tag/po.html">.po</a>,      <a href="http://www.choiz.fr/tag/etclocale.html">/etc/locale</a>,      <a href="http://www.choiz.fr/tag/lc_all.html">LC_ALL</a>,      <a href="http://www.choiz.fr/tag/gettext.html">gettext</a>,      <a href="http://www.choiz.fr/tag/php.html">php</a>,      <a href="http://www.choiz.fr/tag/php-gettext.html">php-gettext</a>,      <a href="http://www.choiz.fr/tag/setlocale.html">setlocale</a>,      <a href="http://www.choiz.fr/tag/xgettext.html">xgettext</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line">J'utilise maintenant php-gettext pour mes traductions. C'est plus
-facile en utilisant des outils tel que pootle ou poedit.</div>
-<div class="line">Pour utiliser gettext sur votre site en php il faut télécharger le
-package php-gettext ainsi que d'autres outils tel que xgettext ou
-msgfmt :</div>
-</div>
-<blockquote>
-<p># apt-get install php-gettext</p>
-<p># apt-get install xgettext ...</p></blockquote>
+      <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
+utilisant des outils tel que pootle ou poedit.  Pour utiliser gettext sur votre
+site en php il faut télécharger le package php-gettext ainsi que d'autres outils
+tel que xgettext ou msgfmt :</p>
+<pre class="literal-block">
+apt-get install php-gettext
+
+apt-get install xgettext ...</pre>
       <a class="btn" href="http://www.choiz.fr/2011-12-04-php-gettext-debian.html#2011-12-04-php-gettext-debian">Lire la suite</a>
   </div>
   <hr />
@@ -112,12 +110,13 @@ Tags :
       <a href="http://www.choiz.fr/tag/php.html">PHP</a>,      <a href="http://www.choiz.fr/tag/vim.html">Vim</a>,      <a href="http://www.choiz.fr/tag/vi.html">Vi</a>,      <a href="http://www.choiz.fr/tag/console.html">Console</a>,      <a href="http://www.choiz.fr/tag/mac.html">Mac</a>,      <a href="http://www.choiz.fr/tag/linux.html">Linux</a>    </p>
   </header>
   <div>
-      <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
-dans la console je tape la commande :</p>
-<blockquote>
-php -l fichier_a_tester.php</blockquote>
-<p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
-Pour la faire il suffit de faire &quot;ESC&quot; pour passer en mode ...</p>
+      <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement dans la
+console je tape la commande :</p>
+<pre class="literal-block">
+php -l fichier_a_tester.php
+</pre>
+<p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim). Pour la
+faire il suffit de faire &quot;ESC&quot; pour passer en mode ...</p>
       <a class="btn" href="http://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html#2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php">Lire la suite</a>
   </div>
   <hr />
@@ -131,8 +130,10 @@ Tags :
       <a href="http://www.choiz.fr/tag/paamayim-nekudotayim.html">Paamayim Nekudotayim</a>,      <a href="http://www.choiz.fr/tag/operateur-de-resolution-de-portee.html">opérateur de résolution de portée</a>,      <a href="http://www.choiz.fr/tag/.html">::</a>,      <a href="http://www.choiz.fr/tag/php.html">PHP</a>,      <a href="http://www.choiz.fr/tag/error.html">Error</a>,      <a href="http://www.choiz.fr/tag/erreur.html">Erreur</a>    </p>
   </header>
   <div>
-      <p>Voilà a quoi correspond cette erreur pour ceux qui demandent :</p>
-<p><tt class="docutils literal">Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695</tt></p>
+      <p>Voilà à quoi correspond cette erreur pour ceux qui demandent :</p>
+<pre class="literal-block">
+Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695
+</pre>
 <p>Le Paamayim Nekudotayim est l'opérateur de résolution de portée.</p>
 <p><a class="reference external" href="http://fr.php.net/manual/fr/language.oop5.paamayim-nekudotayim.php">Dans la doc
 PHP</a>
@@ -153,22 +154,20 @@ Tags :
   </header>
   <div>
       <p>Faire un système de protection (tel que htaccess) direct dans un fichier
-php :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">&lt;?php</div>
-<div class="line">if (!empty($_SERVER[&quot;PHP_AUTH_USER&quot;]) &amp;&amp;
+PHP :</p>
+<pre class="literal-block">
+&lt;?php
+if (!empty($_SERVER[&quot;PHP_AUTH_USER&quot;]) &amp;&amp;
 $_SERVER[&quot;PHP_AUTH_USER&quot;] == &quot;login&quot; &amp;&amp;
-$_SERVER[&quot;PHP_AUTH_PW&quot;] == &quot;password&quot;) {</div>
-<div class="line">&nbsp;&nbsp;&nbsp; // code protégé ici</div>
-<div class="line">} else {</div>
-<div class="line">&nbsp;&nbsp;&nbsp; header('WWW-Authenticate: Basic realm=&quot;Restricted area&quot;');</div>
-<div class="line">&nbsp;&nbsp;&nbsp; header('HTTP/1.0 401 Unauthorized');</div>
-<div class="line">&nbsp;&nbsp;&nbsp; exit('Access Denied');</div>
-<div class="line">}</div>
-<div class="line">?&gt;</div>
-</div>
-</blockquote>
+$_SERVER[&quot;PHP_AUTH_PW&quot;] == &quot;password&quot;) {
+    // code protégé ici
+} else {
+    header('WWW-Authenticate: Basic realm=&quot;Restricted area&quot;');
+    header('HTTP/1.0 401 Unauthorized');
+    exit('Access Denied');
+}
+?&gt;
+</pre>
 
       <a class="btn" href="http://www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html#2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php">Lire la suite</a>
   </div>
@@ -183,10 +182,11 @@ Tags :
       <a href="http://www.choiz.fr/tag/svn.html">SVN</a>,      <a href="http://www.choiz.fr/tag/subversion.html">Subversion</a>,      <a href="http://www.choiz.fr/tag/keyword.html">Keyword</a>,      <a href="http://www.choiz.fr/tag/id.html">Id</a>,      <a href="http://www.choiz.fr/tag/revision.html">Revision</a>,      <a href="http://www.choiz.fr/tag/date.html">Date</a>,      <a href="http://www.choiz.fr/tag/author.html">Author</a>,      <a href="http://www.choiz.fr/tag/url.html">URL</a>,      <a href="http://www.choiz.fr/tag/php.html">PHP</a>,      <a href="http://www.choiz.fr/tag/code.html">Code</a>,      <a href="http://www.choiz.fr/tag/subversion.html">Subversion</a>    </p>
   </header>
   <div>
-      <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
-informations dans vos projets il suffit de taper cette commande :</p>
-<blockquote>
-svn propset svn:keywords &quot;Id&quot; index.php</blockquote>
+      <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres informations dans
+vos projets il suffit de taper cette commande :</p>
+<pre class="literal-block">
+svn propset svn:keywords &quot;Id&quot; index.php
+</pre>
 <p>Ce qui permet d'ajouter le keyword &quot;Id&quot; sur le fichier index.php</p>
 <p>Pour afficher l'Id dans votre fichier index ...</p>
       <a class="btn" href="http://www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html#2010-10-25-commande-svn-pour-ajouter-des-keywords">Lire la suite</a>

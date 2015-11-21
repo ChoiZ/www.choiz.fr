@@ -1904,417 +1904,410 @@ scp ~/.ssh/id_dsa.pub &lt;a class="reference external" href="mailto:user&amp;#64
 &lt;p&gt;ou via ssh-copy-id :&lt;/p&gt;
 &lt;blockquote&gt;
 ssh-copy-id -i ~/.ssh/id_dsa.pub &lt;a class="reference external" href="mailto:user&amp;#64;ip"&gt;user&amp;#64;ip&lt;/a&gt;&lt;/blockquote&gt;
-</summary><category term="clé publique"></category><category term="clé privée"></category><category term="connexion ssh"></category><category term="authorized_keys"></category><category term="ssh"></category><category term=".ssh"></category></entry><entry><title>Bug Firefox avec une iFrame blanche</title><link href="http://www.choiz.fr/2011-12-08-bug-firefox-avec-une-iframe-blanche.html" rel="alternate"></link><updated>2011-12-08T15:32:08+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-12-08:2011-12-08-bug-firefox-avec-une-iframe-blanche.html</id><summary type="html">&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;Lors de l'utilisation de div et d'iFrame sous Firefox un bug étrange
-apparait.&lt;/div&gt;
-&lt;div class="line"&gt;Quand une iFrame est affiché dans un div qui a la propriété css&lt;/div&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-display:none;&lt;/blockquote&gt;
-&lt;p&gt;Lors de l'affichage de ce div en remplaçant le display:none par
-display:block le contenu de l'iframe reste vide (blanche). Pour résoudre
-ce probleme il faut modifier l'attribut src de l'iframe lorsque l'on
-affiche le div en display:block.&lt;/p&gt;
-</summary><category term="Firefox"></category><category term="Bug"></category><category term="iFrame"></category><category term="display:none"></category><category term="css"></category><category term="white iframe"></category></entry><entry><title>PHP + Gettext + Debian</title><link href="http://www.choiz.fr/2011-12-04-php-gettext-debian.html" rel="alternate"></link><updated>2011-12-04T19:10:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-12-04:2011-12-04-php-gettext-debian.html</id><summary type="html">&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;J'utilise maintenant php-gettext pour mes traductions. C'est plus
-facile en utilisant des outils tel que pootle ou poedit.&lt;/div&gt;
-&lt;div class="line"&gt;Pour utiliser gettext sur votre site en php il faut télécharger le
-package php-gettext ainsi que d'autres outils tel que xgettext ou
-msgfmt :&lt;/div&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;# apt-get install php-gettext&lt;/p&gt;
-&lt;p&gt;# apt-get install xgettext&lt;/p&gt;
-&lt;p&gt;# apt-get install msgfmt&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
+</summary><category term="clé publique"></category><category term="clé privée"></category><category term="connexion ssh"></category><category term="authorized_keys"></category><category term="ssh"></category><category term=".ssh"></category></entry><entry><title>PHP + Gettext + Debian</title><link href="http://www.choiz.fr/2011-12-04-php-gettext-debian.html" rel="alternate"></link><updated>2011-12-04T19:10:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-12-04:2011-12-04-php-gettext-debian.html</id><summary type="html">&lt;p&gt;J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
+utilisant des outils tel que pootle ou poedit.  Pour utiliser gettext sur votre
+site en php il faut télécharger le package php-gettext ainsi que d'autres outils
+tel que xgettext ou msgfmt :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+apt-get install php-gettext
+
+apt-get install xgettext
+
+apt-get install msgfmt
+&lt;/pre&gt;
+&lt;p&gt;Ensuite il faut modifier le fichier &lt;cite&gt;/etc/locale.gen&lt;/cite&gt; et enlever les
 commentaires devant les langues qui vont sont à traduire par exemple :
 Allemand, Anglais, Espagnol, Français &amp;amp; Suédois :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;de_DE.UTF-8 UTF-8&lt;/div&gt;
-&lt;div class="line"&gt;en_GB.UTF-8 UTF-8&lt;/div&gt;
-&lt;div class="line"&gt;es_ES.UTF-8 UTF-8&lt;/div&gt;
-&lt;div class="line"&gt;fr_FR.UTF-8 UTF-8&lt;/div&gt;
-&lt;div class="line"&gt;sv_SE.UTF-8 UTF-8&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+de_DE.UTF-8 UTF-8
+en_GB.UTF-8 UTF-8
+es_ES.UTF-8 UTF-8
+fr_FR.UTF-8 UTF-8
+sv_SE.UTF-8 UTF-8
+&lt;/pre&gt;
 &lt;p&gt;Puis regénérer les locales :&lt;/p&gt;
-&lt;blockquote&gt;
-# locale-gen&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+locale-gen
+&lt;/pre&gt;
 &lt;p&gt;Ensuite il faut définir votre chemin pour les traductions par exemple :&lt;/p&gt;
-&lt;blockquote&gt;
-lang/fr_FR/LC_ALL/domaine.mo&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+lang/fr_FR/LC_ALL/domaine.mo
+&lt;/pre&gt;
 &lt;p&gt;Puis dans votre fichier php de configuration :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;&amp;lt;?php&lt;/div&gt;
-&lt;div class="line"&gt;// configuration de la langue&lt;/div&gt;
-&lt;div class="line"&gt;$lang_path = &amp;quot;./lang&amp;quot;; // Chemin des fichiers le langue&lt;/div&gt;
-&lt;div class="line"&gt;$lang = 'fr_FR'; // Langue a afficher&lt;/div&gt;
-&lt;div class="line"&gt;$lang_encode = &amp;quot;UTF-8&amp;quot;; // Encodage du fichier&lt;/div&gt;
-&lt;div class="line"&gt;$lang_LC = &amp;quot;LC_ALL&amp;quot;; // LC_MESSAGE etc...&lt;/div&gt;
-&lt;div class="line"&gt;$lang_file = &amp;quot;domaine&amp;quot;; // Nom du fichier de langue&lt;/div&gt;
-&lt;div class="line"&gt;putenv(&amp;quot;LANG=&amp;quot;.$lang);&lt;/div&gt;
-&lt;div class="line"&gt;setlocale($lang_LC, $lang.&amp;quot;.&amp;quot;.$lang_encode);&lt;/div&gt;
-&lt;div class="line"&gt;bindtextdomain($lang_file,$lang_path);&lt;/div&gt;
-&lt;div class="line"&gt;bindtextdomain_codeset($lang_file,$lang_encode);&lt;/div&gt;
-&lt;div class="line"&gt;textdomain($lang_path);&lt;/div&gt;
-&lt;div class="line"&gt;?&amp;gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;lt;?php
+// configuration de la langue
+$lang_path = &amp;quot;./lang&amp;quot;; // Chemin des fichiers le langue
+$lang = 'fr_FR'; // Langue a afficher
+$lang_encode = &amp;quot;UTF-8&amp;quot;; // Encodage du fichier
+$lang_LC = &amp;quot;LC_ALL&amp;quot;; // LC_MESSAGE etc…
+$lang_file = &amp;quot;domaine&amp;quot;; // Nom du fichier de langue
+putenv(&amp;quot;LANG=&amp;quot;.$lang);
+setlocale($lang_LC, $lang.&amp;quot;.&amp;quot;.$lang_encode);
+bindtextdomain($lang_file,$lang_path);
+bindtextdomain_codeset($lang_file,$lang_encode);
+textdomain($lang_path);
+?&amp;gt;
+&lt;/pre&gt;
 &lt;p&gt;Puis faites le test en affichant dans un fichier php le texte &amp;quot;hello&amp;quot;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;&amp;lt;?php&lt;/div&gt;
-&lt;div class="line"&gt;// on inclus la config...&lt;/div&gt;
-&lt;div class="line"&gt;include_once('config.php');&lt;/div&gt;
-&lt;div class="line"&gt;echo _('hello');&lt;/div&gt;
-&lt;div class="line"&gt;?&amp;gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;lt;?php
+// on inclus la config…
+include_once('config.php');
+echo _('hello');
+?&amp;gt;
+&lt;/pre&gt;
 &lt;p&gt;Pour générer un fichier .mo a partir d'un fichier .po :&lt;/p&gt;
-&lt;blockquote&gt;
-msgfmt domaine.po -o domaine.mo&lt;/blockquote&gt;
-&lt;p&gt;Pour générer un fichier .po a partir de fichier php avec du gettext,
-faire un fichier texte avec tous vos fichiers php ou on doit récupérer
-le gettext.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+msgfmt domaine.po -o domaine.mo
+&lt;/pre&gt;
+&lt;p&gt;Pour générer un fichier .po a partir de fichier php avec du gettext, faire un
+fichier texte avec tous vos fichiers php ou on doit récupérer le gettext.&lt;/p&gt;
 &lt;p&gt;Exemple listing_gettext.txt tel que :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;index.php&lt;/div&gt;
-&lt;div class="line"&gt;contact.php&lt;/div&gt;
-&lt;div class="line"&gt;etc...&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Ensuite il faut faire la commande suivante pour générer le fichier
-domaine.po dans le dossier lang/ depuis notre fichier texte avec les php
-:&lt;/p&gt;
-&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+index.php
+contact.php
+etc…
+&lt;/pre&gt;
+&lt;p&gt;Ensuite il faut faire la commande suivante pour générer le fichier domaine.po
+dans le dossier lang/ depuis notre fichier texte avec les php :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
 xgettext -d domaine -p lang/ -k_ --from-code=UTF-8 -f
-listing_gettext.txt&lt;/blockquote&gt;
-&lt;p&gt;Pour finir voilà le path des fichiers .po et .mo dans mon application
-web :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;lang/fr_FR/LC_ALL/domaine.po&lt;/div&gt;
-&lt;div class="line"&gt;lang/fr_FR/LC_ALL/domaine.mo&lt;/div&gt;
-&lt;div class="line"&gt;lang/en_GB/LC_ALL/domaine.po&lt;/div&gt;
-&lt;div class="line"&gt;lang/en_GB/LC_ALL/domaine.mo&lt;/div&gt;
-&lt;div class="line"&gt;...&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-</summary><category term=".mo"></category><category term=".po"></category><category term="/etc/locale"></category><category term="LC_ALL"></category><category term="gettext"></category><category term="php"></category><category term="php-gettext"></category><category term="setlocale"></category><category term="xgettext"></category></entry><entry><title>Clavier Apple sur debian</title><link href="http://www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html" rel="alternate"></link><updated>2011-12-02T00:14:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-12-02:2011-12-02-clavier-apple-sur-debian.html</id><summary type="html">&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;Depuis le temps que je bosse avec un clavier Apple [STRIKEOUT:j'ai]
-mes doigts on eu le temps de s'habituer au mapage du clavier. Il y a
-beaucoup de différences entre un clavier AZERTY de PC et un clavier
-AZERTY de Mac.&lt;/div&gt;
-&lt;div class="line"&gt;Les touches : &amp;#64; # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
-des endroits complétement différents.&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Pour modifier la configuration faire en console :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;dpkg-reconfigure keyboard-console&lt;/p&gt;
-&lt;p&gt;Select keymap from arch list&lt;/p&gt;
-&lt;p&gt;azerty&lt;/p&gt;
-&lt;p&gt;French&lt;/p&gt;
-&lt;p&gt;Apple USB&lt;/p&gt;
-&lt;p&gt;dpkg-reconfigure keyboard-configuration&lt;/p&gt;
-&lt;p&gt;model: Apple&lt;/p&gt;
-&lt;p&gt;layout: France - Macintosh&lt;/p&gt;
-&lt;p&gt;Key for AltGr: No AltGr Key&lt;/p&gt;
-&lt;p&gt;Compose key: Right Alt (AltGr)&lt;/p&gt;
-&lt;p&gt;Use Control+Alt+Backspace to terminate the X server? no&lt;/p&gt;
-&lt;/blockquote&gt;
+listing_gettext.txt
+&lt;/pre&gt;
+&lt;p&gt;Pour finir voilà le path des fichiers .po et .mo dans mon application web :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+lang/fr_FR/LC_ALL/domaine.po
+lang/fr_FR/LC_ALL/domaine.mo
+lang/en_GB/LC_ALL/domaine.po
+lang/en_GB/LC_ALL/domaine.mo
+…
+&lt;/pre&gt;
+</summary><category term=".mo"></category><category term=".po"></category><category term="/etc/locale"></category><category term="LC_ALL"></category><category term="gettext"></category><category term="php"></category><category term="php-gettext"></category><category term="setlocale"></category><category term="xgettext"></category></entry><entry><title>Clavier Apple sur debian</title><link href="http://www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html" rel="alternate"></link><updated>2011-12-02T00:14:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-12-02:2011-12-02-clavier-apple-sur-debian.html</id><summary type="html">&lt;p&gt;Depuis le temps que je bosse avec un clavier Apple je me suis habitué au mapage
+clavier Mac.
+Il y a beaucoup de différences entre un clavier AZERTY de PC et un
+clavier AZERTY de Mac.&lt;/p&gt;
+&lt;p&gt;Les touches : &lt;cite&gt;&amp;#64;&lt;/cite&gt; &lt;cite&gt;#&lt;/cite&gt; &lt;cite&gt;~&lt;/cite&gt; &lt;cite&gt;| (pipe)&lt;/cite&gt; &lt;cite&gt;=&lt;/cite&gt; &lt;cite&gt;+&lt;/cite&gt; &lt;cite&gt;-&lt;/cite&gt; &lt;cite&gt;_&lt;/cite&gt; &lt;cite&gt;!&lt;/cite&gt; &lt;cite&gt;(&lt;/cite&gt; &lt;cite&gt;)&lt;/cite&gt; &lt;cite&gt;{&lt;/cite&gt; &lt;cite&gt;}&lt;/cite&gt; &lt;cite&gt;[&lt;/cite&gt; &lt;cite&gt;]&lt;/cite&gt;
+sont disposées à des endroits complétement différents.&lt;/p&gt;
+&lt;p&gt;J'ai donc décidé de modifier la configuration de debian pour prendre en compte
+un clavier mac.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+dpkg-reconfigure keyboard-console
+
+Select keymap from arch list
+
+azerty
+
+French
+
+Apple USB
+
+dpkg-reconfigure keyboard-configuration
+
+model: Apple
+
+layout: France - Macintosh
+
+Key for AltGr: No AltGr Key
+
+Compose key: Right Alt (AltGr)
+
+Use Control+Alt+Backspace to terminate the X server? no
+&lt;/pre&gt;
 &lt;p&gt;J'ai choisi un clavier Apple, Français Mac, sans touche AltGr, avec
 comme touche de fonctionnalité secondaire &amp;quot;Alt droit&amp;quot;. Malheureusement
 je n'ai pas réussi a mapper l'Alt de gauche pour avoir la même fonction
-qu'à droite...&lt;/p&gt;
+qu'à droite…&lt;/p&gt;
 &lt;p&gt;Et ensuite j'ai indiqué que je ne voulais pas pouvoir quitter le server
 X avec la combinaison de touche Control+Alt+Backspace.&lt;/p&gt;
 &lt;p&gt;Si ceci ne fonctionne pas il faut se rendre dans la configuration du
 clavier de votre gestionnaire de fenêtre (xfce: dans mon cas). Puis
 désactiver le layout par defaut du système.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image0" src="http://media.tumblr.com/tumblr_lvjsbrOL8E1qzr4hx.png" /&gt;&lt;/p&gt;
-</summary><category term="Clavier"></category><category term="Apple"></category><category term="Mapage"></category><category term="Debian"></category><category term="Linux"></category><category term="Keyboard"></category><category term="Mac"></category><category term="Mac Keyboard"></category></entry><entry><title>Dual screen sur xfce</title><link href="http://www.choiz.fr/2011-12-01-dual-screen-sur-xfce.html" rel="alternate"></link><updated>2011-12-01T12:14:16+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-12-01:2011-12-01-dual-screen-sur-xfce.html</id><summary type="html">&lt;p&gt;Un petit package bien pratique pour configurer le dual screen sur xfce
-se nomme : arandr&lt;/p&gt;
-&lt;blockquote&gt;
-apt-get install arandr&lt;/blockquote&gt;
-&lt;p&gt;Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez
-le ARandR pour configurer les deux écrans.&lt;/p&gt;
-</summary><category term="xfce"></category><category term="dualscreen"></category><category term="dual"></category><category term="screen"></category><category term="xfce"></category><category term="linux"></category></entry><entry><title>Flash sous Debian</title><link href="http://www.choiz.fr/2011-11-30-flash-sous-debian.html" rel="alternate"></link><updated>2011-11-30T22:52:56+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-11-30:2011-11-30-flash-sous-debian.html</id><summary type="html">&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;Lors de l'installation de debian j'ai eu la surprise en ouvrant
-Firefox que Deezer ne fonctionne pas !&lt;/div&gt;
-&lt;div class="line"&gt;Il faut donc télécharger le package flashplugin-nonfree en procédant
-comme ceci :&lt;/div&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-vi /etc/apt/source.list&lt;/blockquote&gt;
-&lt;p&gt;ajouter contrib non-free aux différentes sources (sauf security)&lt;/p&gt;
-&lt;p&gt;puis faire :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;apt-get update&lt;/p&gt;
-&lt;p&gt;apt-get install flashplugin-nonfree&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;En relançant Firefox j'ai bel et bien flash player fonctionnel sur
-Deezer.&lt;/p&gt;
+</summary><category term="Clavier"></category><category term="Apple"></category><category term="Mapage"></category><category term="Debian"></category><category term="Linux"></category><category term="Keyboard"></category><category term="Mac"></category><category term="Mac Keyboard"></category></entry><entry><title>Dual screen sur xfce</title><link href="http://www.choiz.fr/2011-12-01-dual-screen-sur-xfce.html" rel="alternate"></link><updated>2011-12-01T12:14:16+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-12-01:2011-12-01-dual-screen-sur-xfce.html</id><summary type="html">&lt;p&gt;Un petit package bien pratique pour configurer le dual screen sur xfce se nomme
+: arandr&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+apt-get install arandr
+&lt;/pre&gt;
+&lt;p&gt;Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez le ARandR
+pour configurer les deux écrans.&lt;/p&gt;
+</summary><category term="xfce"></category><category term="dualscreen"></category><category term="dual"></category><category term="screen"></category><category term="xfce"></category><category term="linux"></category></entry><entry><title>Flash sous Debian</title><link href="http://www.choiz.fr/2011-11-30-flash-sous-debian.html" rel="alternate"></link><updated>2011-11-30T22:52:56+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-11-30:2011-11-30-flash-sous-debian.html</id><summary type="html">&lt;p&gt;Lors de l'installation de Debian sur mon poste au travail j'ai eu la surprise en
+ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant chez Deezer c'est un
+peu problèmatique.&lt;/p&gt;
+&lt;p&gt;J'ai donc téléchargé le package flashplugin-nonfree en procédant comme ceci :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+vi /etc/apt/source.list
+&lt;/pre&gt;
+&lt;p&gt;Ajouter contrib non-free aux différentes sources (sauf security)
+puis :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+apt-get update
+
+apt-get install flashplugin-nonfree
+&lt;/pre&gt;
+&lt;p&gt;En relançant Firefox j'ai bien flash player fonctionnel sur Deezer.&lt;/p&gt;
+&lt;p&gt;Le package flashplugin étant nonfree Debian ne l'inclus pas directement lors de
+l'installation.&lt;/p&gt;
 </summary><category term="Flash"></category><category term="Debian"></category><category term="Deezer"></category><category term="Firefox"></category><category term="flashplugin"></category><category term="source"></category><category term="apt"></category><category term="souce.list"></category><category term="non-free"></category><category term="contrib"></category></entry><entry><title>Voir les fichiers cachés sur Lion</title><link href="http://www.choiz.fr/2011-11-02-voir-les-fichiers-cach%C3%A9s-sur-lion.html" rel="alternate"></link><updated>2011-11-02T11:17:12+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-11-02:2011-11-02-voir-les-fichiers-cachés-sur-lion.html</id><summary type="html">&lt;p&gt;Dans un terminal :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;defaults write com.apple.Finder AppleShowAllFiles TRUE&lt;/p&gt;
-&lt;p&gt;killall Finder&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés&lt;/p&gt;
-</summary><category term="fichiers"></category><category term="cachés"></category><category term="hidden"></category><category term="files"></category><category term="lion"></category><category term="defaults"></category><category term="AppleShowAllFiles"></category><category term="Finder"></category></entry><entry><title>Insérer un # au début de chaque ligne d'un fichier avec vim</title><link href="http://www.choiz.fr/2011-10-05-ins%C3%A9rer-un-au-d%C3%A9but-de-chaque-ligne-dun-fichier.html" rel="alternate"></link><updated>2011-10-05T00:42:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-10-05:2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html</id><summary type="html">&lt;p&gt;Voilà la commande pour ajouter un # au début de chaque ligne d'un
-fichier avec vim :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;:1,$s/^/#/&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+defaults write com.apple.Finder AppleShowAllFiles TRUE
+
+killall Finder
+&lt;/pre&gt;
+&lt;p&gt;Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés.&lt;/p&gt;
+</summary><category term="fichiers"></category><category term="cachés"></category><category term="hidden"></category><category term="files"></category><category term="lion"></category><category term="defaults"></category><category term="AppleShowAllFiles"></category><category term="Finder"></category></entry><entry><title>Insérer un # au début de chaque ligne d'un fichier avec vim</title><link href="http://www.choiz.fr/2011-10-05-ins%C3%A9rer-un-au-d%C3%A9but-de-chaque-ligne-dun-fichier.html" rel="alternate"></link><updated>2011-10-05T00:42:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-10-05:2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html</id><summary type="html">&lt;p&gt;Voilà la commande pour ajouter un # au début de chaque ligne d'un fichier avec
+vim :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:1,$s/^/#/
+&lt;/pre&gt;
 &lt;p&gt;Explications :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;:1,$&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;Selection des ligne 1 à $ ($ étant la dernière).&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;s/^/#/&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;s pour search (en fait il cherche et remplace) ^ le début de ligne ($ si
-on voulais la fin de la ligne) et # le caractère que je veux remplacer&lt;/p&gt;
+&lt;p&gt;&lt;cite&gt;:1,$&lt;/cite&gt; Sélection des ligne 1 à $ ($ étant la dernière).&lt;/p&gt;
+&lt;p&gt;&lt;cite&gt;s/^/#/&lt;/cite&gt; &lt;cite&gt;s&lt;/cite&gt; pour search &lt;cite&gt;^&lt;/cite&gt; indique le début de ligne &lt;cite&gt;/&lt;/cite&gt; sépare ma recherche
+par ce que l'on remplace &lt;cite&gt;#&lt;/cite&gt; est le caractère que je veux remplacer&lt;/p&gt;
 </summary><category term="Vim"></category><category term="search"></category><category term="replace"></category><category term="line"></category><category term="add"></category><category term="ligne"></category><category term="fichier"></category><category term="file"></category><category term="remplace"></category><category term="ajout"></category></entry><entry><title>Plusieurs comptes Skype sur le même Mac !</title><link href="http://www.choiz.fr/2011-09-18-plusieurs-comptes-skype-sur-le-m%C3%AAme-mac.html" rel="alternate"></link><updated>2011-09-18T23:47:53+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-09-18:2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html</id><summary type="html">&lt;p&gt;Comment lancer plusieurs comptes Skype avec le même Mac ?&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image0" src="http://media.tumblr.com/tumblr_lrqn73WCUg1qzr4hx.png" /&gt;&lt;/p&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;Créer un compte utilisateur dans les préférences systèmes &amp;gt;
-utilisateurs. Par exemple l'utilisateur : &amp;quot;skype&amp;quot; avec comme mot de
-passe &amp;quot;password&amp;quot;.&lt;/div&gt;
-&lt;div class="line"&gt;Ensuite ouvrir un terminal (dans spotlight tapez terminal).&lt;/div&gt;
-&lt;div class="line"&gt;Dans ce terminal faire :&lt;/div&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-su skype (ou &amp;quot;su nomdutilisateur&amp;quot; en fonction de l'utilisateur
-créé).&lt;/blockquote&gt;
-&lt;p&gt;Password:&lt;/p&gt;
-&lt;blockquote&gt;
-password (ou autre suivant le mot de passe de l'utilisateur).&lt;/blockquote&gt;
-&lt;p&gt;Puis tapez :&lt;/p&gt;
-&lt;blockquote&gt;
-/Applications/Skype.app/Contents/MacOS/Skype&lt;/blockquote&gt;
+&lt;p&gt;Créer un compte utilisateur dans les préférences systèmes &amp;gt; utilisateurs. Par
+exemple l'utilisateur : &amp;quot;skype&amp;quot; avec comme mot de passe &amp;quot;password&amp;quot;.
+Ensuite ouvrir un terminal (dans spotlight tapez terminal).
+Puis :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+su skype (ou &amp;quot;su nomdutilisateur&amp;quot; en fonction de l'utilisateur créé).
+
+Password:
+
+password (ou autre suivant le mot de passe de l'utilisateur).
+&lt;/pre&gt;
+&lt;p&gt;Puis :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/Applications/Skype.app/Contents/MacOS/Skype
+&lt;/pre&gt;
 &lt;p&gt;Ce qui devrait lancer une seconde instance de Skype.&lt;/p&gt;
-</summary><category term="Skype"></category><category term="Multiutilisateur"></category><category term="Mac"></category><category term="MacOs"></category><category term="Mac os x"></category><category term="OsX"></category><category term="Skype Mac"></category><category term="Multi"></category><category term="Compte"></category><category term="Another copy"></category><category term="Another copy of Skype"></category></entry><entry><title>Profil sur viadeo sans avoir la fenêtre de login</title><link href="http://www.choiz.fr/2011-09-18-profil-sur-viadeo-sans-avoir-la-fen%C3%AAtre-de-login.html" rel="alternate"></link><updated>2011-09-18T22:54:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-09-18:2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login.html</id><summary type="html">&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;J'ai voulu plusieurs fois voir un profil sur Viadeo sans forcement
-être identifié. Lorsque l'on déplace la souris ou que l'on scroll une
-autre page s'affiche.&lt;/div&gt;
-&lt;div class="line"&gt;Exemple sur &lt;a class="reference external" href="http://www.viadeo.com/fr/profile/francois.lasserre1"&gt;ma page
-viadeo&lt;/a&gt;.&lt;/div&gt;
-&lt;div class="line"&gt;Pour empécher d'avoir la page de login il faut modifier une fonction
-Javascript. Avec un outil tel que
-&lt;a class="reference external" href="http://www.getfirebug.com"&gt;Firebug&lt;/a&gt; vous pouvez modifier le code
-Javascript du site.&lt;/div&gt;
-&lt;div class="line"&gt;Ouvrir firebug en mode console et modifier la fonction createJoin() !&lt;/div&gt;
-&lt;div class="line"&gt;Dans la console a coté de &amp;quot;&amp;gt;&amp;gt;&amp;gt;&amp;quot; il suffit de taper :&lt;/div&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-function createJoin() { false; }&lt;/blockquote&gt;
-&lt;p&gt;Avec ce code on modifie le contenu de la fonction createJoin() par false
-(plutôt que le code par defaut qui ouvre la fenêtre d'identification).&lt;/p&gt;
+</summary><category term="Skype"></category><category term="Multiutilisateur"></category><category term="Mac"></category><category term="MacOs"></category><category term="Mac os x"></category><category term="OsX"></category><category term="Skype Mac"></category><category term="Multi"></category><category term="Compte"></category><category term="Another copy"></category><category term="Another copy of Skype"></category></entry><entry><title>Profil sur viadeo sans avoir la fenêtre de login</title><link href="http://www.choiz.fr/2011-09-18-profil-sur-viadeo-sans-avoir-la-fen%C3%AAtre-de-login.html" rel="alternate"></link><updated>2011-09-18T22:54:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-09-18:2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login.html</id><summary type="html">&lt;p&gt;J'ai voulu plusieurs fois voir un profil sur Viadeo sans forcement être
+identifié. Lorsque l'on déplace la souris ou que l'on scroll une autre page
+s'affiche.  Exemple sur &lt;a class="reference external" href="http://www.viadeo.com/fr/profile/francois.lasserre1"&gt;ma page viadeo&lt;/a&gt;.  Pour empécher d'avoir
+la page de login il faut modifier une fonction Javascript. Avec un outil tel que
+&lt;a class="reference external" href="http://www.getfirebug.com"&gt;Firebug&lt;/a&gt; vous pouvez modifier le code Javascript
+du site (localement). Ouvrir firebug en mode console et modifier la fonction
+createJoin() !
+Dans la console a coté de &amp;quot;&amp;gt;&amp;gt;&amp;gt;&amp;quot; il suffit de taper :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+function createJoin() { false; }
+&lt;/pre&gt;
+&lt;p&gt;Avec ce code on modifie le contenu de la fonction createJoin() par false (plutôt
+que le code par defaut qui ouvre la fenêtre d'identification).&lt;/p&gt;
 </summary><category term="viadeo"></category><category term="javascript"></category><category term="js"></category><category term="code"></category><category term="login"></category><category term="profil"></category><category term="identifié"></category><category term="firebug"></category></entry><entry><title>Développement web avec Safari</title><link href="http://www.choiz.fr/2011-09-05-d%C3%A9veloppement-web-avec-safari.html" rel="alternate"></link><updated>2011-09-05T09:53:22+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-09-05:2011-09-05-développement-web-avec-safari.html</id><summary type="html">&lt;p&gt;Pour activer l'inspecteur web tapez dans le terminal :&lt;/p&gt;
-&lt;blockquote&gt;
-defaults write com.apple.Safari WebKitDeveloperExtras -bool true&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+defaults write com.apple.Safari WebKitDeveloperExtras -bool true
+&lt;/pre&gt;
 &lt;p&gt;Redémarrez Safari et maintenant vous pouvez inspecter les éléments de
 vos pages web.&lt;/p&gt;
 </summary><category term="Safari"></category><category term="Dev"></category><category term="Web"></category><category term="WebDev"></category><category term="Développement"></category></entry><entry><title>Import VM avec Virtualbox</title><link href="http://www.choiz.fr/2011-09-02-import-vm-avec-virtualbox.html" rel="alternate"></link><updated>2011-09-02T19:28:28+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-09-02:2011-09-02-import-vm-avec-virtualbox.html</id><summary type="html">&lt;p&gt;J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
-donc un fichier ova... Maintenant comment l'importer sur VirtualBox ?&lt;/p&gt;
+donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?&lt;/p&gt;
 &lt;p&gt;Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper :&lt;/p&gt;
-&lt;blockquote&gt;
-VBoxManage import votrefichier.ova&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+VBoxManage import votrefichier.ova
+&lt;/pre&gt;
 &lt;p&gt;Maintenant lors du prochain démarrage de votre VirtualBox vous devez
 avoir la machine virtuelle importée !&lt;/p&gt;
-</summary><category term="VirtualBox"></category><category term="Import"></category><category term="VirtualMachine"></category><category term="Virtual"></category><category term="Machine"></category><category term="Ova"></category><category term="VBoxManage"></category></entry><entry><title>Partage Samba !</title><link href="http://www.choiz.fr/2011-08-17-partage-samba.html" rel="alternate"></link><updated>2011-08-17T20:41:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-17:2011-08-17-partage-samba.html</id><summary type="html">&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;J'ai réinstallé mon serveur il n'y a pas si longtemps avec Samba.&lt;/div&gt;
-&lt;div class="line"&gt;Editer le fichier de configuration :&lt;/div&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-vi /etc/samba/smb.conf&lt;/blockquote&gt;
-&lt;p&gt;Voici le contenu de mon fichier de configuration :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;### Global ###&lt;/div&gt;
-&lt;div class="line"&gt;[global]&lt;/div&gt;
-&lt;div class="line"&gt;## Identification ##&lt;/div&gt;
-&lt;div class="line"&gt;workgroup = WORKGROUP&lt;/div&gt;
-&lt;div class="line"&gt;netbios name = %h&lt;/div&gt;
-&lt;div class="line"&gt;server string = Serveur samba %h&lt;/div&gt;
-&lt;div class="line"&gt;security = user&lt;/div&gt;
-&lt;div class="line"&gt;public = yes&lt;/div&gt;
-&lt;div class="line"&gt;## Log ##&lt;/div&gt;
-&lt;div class="line"&gt;log file = /var/log/samba/log.%m&lt;/div&gt;
-&lt;div class="line"&gt;max log size = 1000&lt;/div&gt;
-&lt;div class="line"&gt;## Auth ##&lt;/div&gt;
-&lt;div class="line"&gt;encrypt passwords = true&lt;/div&gt;
-&lt;div class="line"&gt;smb passwd file = /etc/samba/smbpasswd&lt;/div&gt;
-&lt;div class="line"&gt;### Share ###&lt;/div&gt;
-&lt;div class="line"&gt;[choiz]&lt;/div&gt;
-&lt;div class="line"&gt;path = /home/choiz/samba&lt;/div&gt;
-&lt;div class="line"&gt;read only = no&lt;/div&gt;
-&lt;div class="line"&gt;writeable = yes&lt;/div&gt;
-&lt;div class="line"&gt;valid users = choiz&lt;/div&gt;
-&lt;div class="line"&gt;comment = partage de choiz&lt;/div&gt;
-&lt;div class="line"&gt;[partagereadonly]&lt;/div&gt;
-&lt;div class="line"&gt;path = /home/partageread&lt;/div&gt;
-&lt;div class="line"&gt;read only = yes&lt;/div&gt;
-&lt;div class="line"&gt;writeable = no&lt;/div&gt;
-&lt;div class="line"&gt;valid users = choiz, &amp;#64;group&lt;/div&gt;
-&lt;div class="line"&gt;comment = partage en lecture pour choiz et le groupe &amp;quot;group&amp;quot;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
+</summary><category term="VirtualBox"></category><category term="Import"></category><category term="VirtualMachine"></category><category term="Virtual"></category><category term="Machine"></category><category term="Ova"></category><category term="VBoxManage"></category></entry><entry><title>Partage Samba !</title><link href="http://www.choiz.fr/2011-08-17-partage-samba.html" rel="alternate"></link><updated>2011-08-17T20:41:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-17:2011-08-17-partage-samba.html</id><summary type="html">&lt;p&gt;Configuration d'un serveur samba.
+Editer le fichier de configuration &lt;cite&gt;/etc/samba/smb.conf&lt;/cite&gt;
+Voici le contenu de mon fichier de configuration :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+| ### Global ###
+| [global]
+| ## Identification ##
+| workgroup = WORKGROUP
+| netbios name = %h
+| server string = Serveur samba %h
+| security = user
+| public = yes
+| ## Log ##
+| log file = /var/log/samba/log.%m
+| max log size = 1000
+| ## Auth ##
+| encrypt passwords = true
+| smb passwd file = /etc/samba/smbpasswd
+| ### Share ###
+| [choiz]
+| path = /home/choiz/samba
+| read only = no
+| writeable = yes
+| valid users = choiz
+| comment = partage de choiz
+| [partagereadonly]
+| path = /home/partageread
+| read only = yes
+| writeable = no
+| valid users = choiz, &amp;#64;group
+| comment = partage en lecture pour choiz et le groupe &amp;quot;group&amp;quot;
+&lt;/pre&gt;
 &lt;p&gt;Maintenant il faut créer notre utilisateur &amp;quot;choiz&amp;quot; grâce à :&lt;/p&gt;
-&lt;blockquote&gt;
-smbpasswd -a choiz&lt;/blockquote&gt;
-&lt;p&gt;Pour les groupes samba utilise les groupes unix.&lt;/p&gt;
-&lt;p&gt;N'oubliez pas de redémarrer le service Samba !&lt;/p&gt;
-&lt;blockquote&gt;
-/etc/init.d/samba restart&lt;/blockquote&gt;
-</summary><category term="Linux"></category><category term="Samba"></category><category term="config"></category><category term="configuration"></category><category term="Partage"></category><category term="Sharing"></category></entry><entry><title>Liens utiles</title><link href="http://www.choiz.fr/2011-08-09-liens-utiles.html" rel="alternate"></link><updated>2011-08-09T21:03:05+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-09:2011-08-09-liens-utiles.html</id><summary type="html">&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;&lt;a class="reference external" href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/div&gt;
-&lt;div class="line"&gt;&lt;a class="reference external" href="http://www.jsperf.com/"&gt;http://www.jsperf.com/&lt;/a&gt; Pour faire des performances de code js&lt;/div&gt;
-&lt;div class="line"&gt;&lt;a class="reference external" href="http://www.pastebin.com/"&gt;http://www.pastebin.com/&lt;/a&gt; Pour copier coller du code facilement&lt;/div&gt;
-&lt;/div&gt;
+&lt;pre class="literal-block"&gt;
+smbpasswd -a choiz
+&lt;/pre&gt;
+&lt;p&gt;Pour les groupes samba utilise les groupes unix. A vous de voir si vous voulez
+gérer votre partage samba utilisateur par utilisateur ou directement avec des
+groupes.&lt;/p&gt;
+&lt;p&gt;N'oubliez pas de redémarrer le service Samba avant de tester depuis votre client
+le partage de fichiers !&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/etc/init.d/samba restart
+&lt;/pre&gt;
+</summary><category term="Linux"></category><category term="Samba"></category><category term="config"></category><category term="configuration"></category><category term="Partage"></category><category term="Sharing"></category></entry><entry><title>Liens utiles</title><link href="http://www.choiz.fr/2011-08-09-liens-utiles.html" rel="alternate"></link><updated>2011-08-09T21:03:05+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-09:2011-08-09-liens-utiles.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.jsperf.com/"&gt;http://www.jsperf.com/&lt;/a&gt; Pour faire des performances de code js&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.pastebin.com/"&gt;http://www.pastebin.com/&lt;/a&gt; Pour copier coller du code facilement&lt;/p&gt;
 </summary><category term="Code"></category><category term="js"></category><category term="html"></category><category term="css"></category><category term="xhtml"></category><category term="javascript"></category><category term="sites"></category></entry><entry><title>Ignorer grâce au SVN</title><link href="http://www.choiz.fr/2011-07-26-ignorer-gr%C3%A2ce-au-svn.html" rel="alternate"></link><updated>2011-07-26T18:53:21+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-07-26:2011-07-26-ignorer-grâce-au-svn.html</id><summary type="html">&lt;p&gt;Il existe plusieurs solutions pour ignorer des fichiers sur un svn :&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;svn propset svn:ignore&lt;/em&gt; ou dans la configuration du svn dans
-&lt;em&gt;~/.subversion/config&lt;/em&gt; le &lt;em&gt;global-ignores&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
+&lt;pre class="literal-block"&gt;
+svn propset svn:ignore
+&lt;/pre&gt;
+&lt;p&gt;Ou dans la configuration du svn dans &lt;cite&gt;~/.subversion/config&lt;/cite&gt; le &lt;cite&gt;global-ignores&lt;/cite&gt;&lt;/p&gt;
+&lt;p&gt;Pour ignorer tous les fichiers qui commencent par &lt;cite&gt;._&lt;/cite&gt; dans le dossier ou
 l'on se trouve actuellement il suffit d'executer la commande svn
 suivante :&lt;/p&gt;
-&lt;blockquote&gt;
-svn propset svn:ignore &amp;quot;._*&amp;quot; .&lt;/blockquote&gt;
-&lt;p&gt;Par contre si on veut ignorer tous les fichiers qui commencent par ._
+&lt;pre class="literal-block"&gt;
+svn propset svn:ignore &amp;quot;._*&amp;quot; .
+&lt;/pre&gt;
+&lt;p&gt;Par contre si on veut ignorer tous les fichiers qui commencent par &lt;cite&gt;._&lt;/cite&gt;
 dans tous les dossiers (et sous dossiers) du svn il faut éditer le
-fichier &lt;em&gt;~/.subversion/config&lt;/em&gt; et d'éditer la ligne suivante :&lt;/p&gt;
-&lt;blockquote&gt;
-global-ignores = ._*&lt;/blockquote&gt;
-&lt;p&gt;On peut également ajouter d'autres fichiers a ignorer tel que les .swp
-de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci :&lt;/p&gt;
-&lt;blockquote&gt;
-global-ignores = ._* .DS_STORE *.swp&lt;/blockquote&gt;
-</summary><category term="svn"></category><category term="ignore"></category><category term="fichier"></category><category term="file"></category><category term="folder"></category><category term="dossier"></category><category term=".DS_Store"></category><category term="._*"></category><category term="._"></category><category term=".swp"></category><category term="Vim"></category><category term="Mac Os"></category></entry><entry><title>Suppression des .DS_Store</title><link href="http://www.choiz.fr/2011-07-05-suppression-des-dsstore.html" rel="alternate"></link><updated>2011-07-05T18:01:40+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-07-05:2011-07-05-suppression-des-dsstore.html</id><summary type="html">&lt;p&gt;Dans une console sur votre mac tappez :&lt;/p&gt;
-&lt;blockquote&gt;
-defaults write com.apple.desktopservices DSDontWriteNetworkStores
-true&lt;/blockquote&gt;
-&lt;p&gt;Redemarrez le mac.&lt;/p&gt;
-</summary><category term="Mac .DsStore"></category><category term="Mac"></category><category term=".DS_Store"></category></entry><entry><title>Elément cliqué en js</title><link href="http://www.choiz.fr/2011-06-30-el%C3%A9ment-cliqu%C3%A9-en-js.html" rel="alternate"></link><updated>2011-06-30T16:55:59+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-06-30:2011-06-30-elément-cliqué-en-js.html</id><summary type="html">&lt;p&gt;Pour savoir quel élément est cliqué j'utilise ce petit bout de
-javascript :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;function checkclick(e) {&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; e = e || window.event;&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; var o = e.target || e.srcElement;&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; console.log(o);&lt;/div&gt;
-&lt;div class="line"&gt;}&lt;/div&gt;
-&lt;div class="line"&gt;document.onclick=checkclick;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Pratique pour du debug ;)&lt;/p&gt;
-</summary><category term="js"></category><category term="element"></category><category term="click"></category><category term="javascript"></category><category term="html"></category></entry><entry><title>Patch &amp; diff</title><link href="http://www.choiz.fr/2011-05-30-patch-diff.html" rel="alternate"></link><updated>2011-05-30T06:00:06+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-30:2011-05-30-patch-diff.html</id><summary type="html">&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;Patch permet de &amp;quot;patcher&amp;quot; un fichier, dossier, projet ! Pratique
-lorsque vous distribuez du code et que vous voulez le mettre à jour.&lt;/div&gt;
-&lt;div class="line"&gt;Comment l'utiliser ? Dans un premier temps nous allons faire un
-différentiel de notre version actuelle du projet et de la nouvelle
-version (celle patchée).&lt;/div&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-diff -u version1.php version2.php &amp;gt; mon_patch&lt;/blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;notre fichier de patch est &amp;quot;mon_patch&amp;quot; si vous ouvrez celui-ci vous
-aurez le différentiel entre les deux fichier. Comment le lire ? Les
-lignes avec des + devant sont les nouvelles lignes celles avec des -
-sont celles a supprimer. C'est pas plus difficile que ça !&lt;/div&gt;
-&lt;div class="line"&gt;Maintenant j'applique mon patch sur mon fichier version1.php grâce à
-la commande suivante :&lt;/div&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-patch -p0 &amp;lt; mon_patch&lt;/blockquote&gt;
-</summary><category term="Patch"></category><category term="Commande"></category><category term="Terminal"></category><category term="Diff"></category><category term="Version"></category></entry><entry><title>Split &amp; Vsplit dans vim</title><link href="http://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html" rel="alternate"></link><updated>2011-05-29T17:16:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-29:2011-05-29-split-vsplit-dans-vim.html</id><summary type="html">&lt;p&gt;Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
-pouvoir ouvrir plusieurs fichiers en même temps.&lt;/p&gt;
+fichier &lt;cite&gt;~/.subversion/config&lt;/cite&gt; et d'éditer la ligne suivante :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+global-ignores = ._*
+&lt;/pre&gt;
+&lt;p&gt;On peut également ajouter d'autres fichiers a ignorer tel que les &lt;cite&gt;.swp&lt;/cite&gt;
+de Vim ou les &lt;cite&gt;.DS_STORE&lt;/cite&gt; de Mac OS en remplaçant comme ceci :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+global-ignores = ._* .DS_STORE *.swp
+&lt;/pre&gt;
+</summary><category term="svn"></category><category term="ignore"></category><category term="fichier"></category><category term="file"></category><category term="folder"></category><category term="dossier"></category><category term=".DS_Store"></category><category term="._*"></category><category term="._"></category><category term=".swp"></category><category term="Vim"></category><category term="Mac Os"></category></entry><entry><title>Suppression des .DS_Store</title><link href="http://www.choiz.fr/2011-07-05-suppression-des-dsstore.html" rel="alternate"></link><updated>2011-07-05T18:01:40+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-07-05:2011-07-05-suppression-des-dsstore.html</id><summary type="html">&lt;p&gt;Dans une console sur votre Mac :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+&lt;/pre&gt;
+&lt;p&gt;Puis redémarrez le mac.&lt;/p&gt;
+</summary><category term="Mac .DsStore"></category><category term="Mac"></category><category term=".DS_Store"></category></entry><entry><title>Elément cliqué en js</title><link href="http://www.choiz.fr/2011-06-30-el%C3%A9ment-cliqu%C3%A9-en-js.html" rel="alternate"></link><updated>2011-06-30T16:55:59+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-06-30:2011-06-30-elément-cliqué-en-js.html</id><summary type="html">&lt;p&gt;Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+function checkclick(e) {
+    e = e || window.event;
+    var o = e.target || e.srcElement;
+    console.log(o);
+}
+document.onclick=checkclick;
+&lt;/pre&gt;
+&lt;p&gt;Pratique pour faire du débug.&lt;/p&gt;
+</summary><category term="js"></category><category term="element"></category><category term="click"></category><category term="javascript"></category><category term="html"></category></entry><entry><title>Patch &amp; diff</title><link href="http://www.choiz.fr/2011-05-30-patch-diff.html" rel="alternate"></link><updated>2011-05-30T06:00:06+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-30:2011-05-30-patch-diff.html</id><summary type="html">&lt;p&gt;Patch permet de &amp;quot;patcher&amp;quot; un fichier, dossier, projet ! Pratique lorsque vous
+distribuez du code et que vous voulez le mettre à jour.  Comment l'utiliser ?
+Dans un premier temps nous allons faire un différentiel de notre version
+actuelle du projet et de la nouvelle version (celle patchée).&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+diff -u version1.php version2.php &amp;gt; mon_patch
+&lt;/pre&gt;
+&lt;p&gt;Notre fichier de patch est &amp;quot;mon_patch&amp;quot; si vous ouvrez celui-ci vous aurez le
+différentiel entre les deux fichier. Comment le lire ? Les lignes avec des &lt;cite&gt;+&lt;/cite&gt;
+devant sont les nouvelles lignes celles avec des &lt;cite&gt;-&lt;/cite&gt; sont celles a supprimer.
+Ce n'est pas plus difficile que ça !
+Maintenant j'applique mon patch sur mon fichier version1.php grâce à la commande
+suivante :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+patch -p0 &amp;lt; mon_patch
+&lt;/pre&gt;
+</summary><category term="Patch"></category><category term="Commande"></category><category term="Terminal"></category><category term="Diff"></category><category term="Version"></category></entry><entry><title>Split &amp; Vsplit dans vim</title><link href="http://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html" rel="alternate"></link><updated>2011-05-29T17:16:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-29:2011-05-29-split-vsplit-dans-vim.html</id><summary type="html">&lt;p&gt;Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour pouvoir
+ouvrir plusieurs fichiers en même temps.&lt;/p&gt;
 &lt;p&gt;Pour celà il utilises 2 méthodes soit :&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;la division de la fenêtre horizontal en utilisant&lt;/li&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;la division de la fenêtre horizontal en utilisant&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:split
+&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;:split&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;ou&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;:new&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:new
+&lt;/pre&gt;
 &lt;p&gt;et ensuite&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;:e le_fichier_a_ouvrir&lt;/tt&gt;&lt;/p&gt;
-&lt;ol class="arabic simple" start="2"&gt;
-&lt;li&gt;la division de la fenêtre verticalement en utilisant&lt;/li&gt;
+&lt;pre class="literal-block"&gt;
+:e le_fichier_a_ouvrir
+&lt;/pre&gt;
+&lt;ol class="arabic" start="2"&gt;
+&lt;li&gt;&lt;p class="first"&gt;la division de la fenêtre verticalement en utilisant&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:vsplit
+&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;:vsplit&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;puis&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;:e le_fichier_a_ouvrir&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;Et comme lors de l'utilisation du diff (CTRL + W puis W) pour changer de
-fenêtre (gauche à droite ou droite à gauche ou haut en bas ou bas en
-haut) ou bien en utilisant (CTRL + W puis une fléche directionnelle).&lt;/p&gt;
-&lt;p&gt;Pour agrandir ou réduire la fenêtre courante utiliser CTRL + W (puis &amp;gt;
-si vous êtes sur votre fenêtre de droite pour ajouter une colonne, si
-vous êtes sur la fenêtre de gauche ceci supprimera une colonne et vis
-versa avec &amp;lt;) vous pouvez également ajouter / supprimer 5... 10 ou n
-colonnes avec :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;5&amp;gt;&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;10&amp;gt;&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;ou &lt;tt class="docutils literal"&gt;n&amp;gt;&lt;/tt&gt;&lt;/p&gt;
-</summary><category term="vim"></category><category term="fichier"></category><category term="editeur"></category><category term="texte"></category><category term="terminal"></category><category term="commande"></category><category term="split"></category><category term="vsplit"></category><category term="window"></category><category term="colonnes"></category><category term="cols"></category><category term="columns"></category></entry><entry><title>Différences entre des fichiers avec Vim</title><link href="http://www.choiz.fr/2011-05-19-diff%C3%A9rences-entre-des-fichiers-avec-vim.html" rel="alternate"></link><updated>2011-05-19T23:32:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-19:2011-05-19-différences-entre-des-fichiers-avec-vim.html</id><summary type="html">&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;J'ai souvent besoin de voir les différences entre plusieurs
-fichiers... J'utilise souvent la commande diff dans un terminal, mais
-mon éditeur texte favoris &amp;quot;Vim&amp;quot; sait aussi trés bien faire un
-différentiel.&lt;/div&gt;
-&lt;div class="line"&gt;Utilisation avec le terminal :&lt;/div&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-$ diff fichier1 fichier2&lt;/blockquote&gt;
-&lt;p&gt;Celui-ci retournera les différences directement dans le terminal (pas
-pratique pour l'édition).&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:e le_fichier_a_ouvrir
+&lt;/pre&gt;
+&lt;p&gt;Et comme lors de l'utilisation du diff (CTRL + W puis W) pour changer de fenêtre
+(gauche à droite ou droite à gauche ou haut en bas ou bas en haut) ou bien en
+utilisant (CTRL + W puis une fléche directionnelle).&lt;/p&gt;
+&lt;p&gt;Pour agrandir ou réduire la fenêtre courante utiliser CTRL + W (puis &amp;gt; si vous
+êtes sur votre fenêtre de droite pour ajouter une colonne, si vous êtes sur la
+fenêtre de gauche ceci supprimera une colonne et vis versa avec &amp;lt;) vous pouvez
+également ajouter / supprimer 5 ou 10 colonnes avec :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+5&amp;gt;
+
+10&amp;gt;
+&lt;/pre&gt;
+</summary><category term="vim"></category><category term="fichier"></category><category term="editeur"></category><category term="texte"></category><category term="terminal"></category><category term="commande"></category><category term="split"></category><category term="vsplit"></category><category term="window"></category><category term="colonnes"></category><category term="cols"></category><category term="columns"></category></entry><entry><title>Différences entre des fichiers avec Vim</title><link href="http://www.choiz.fr/2011-05-19-diff%C3%A9rences-entre-des-fichiers-avec-vim.html" rel="alternate"></link><updated>2011-05-19T23:32:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-19:2011-05-19-différences-entre-des-fichiers-avec-vim.html</id><summary type="html">&lt;p&gt;J'ai souvent besoin de voir les différences entre plusieurs fichiers...
+J'utilise souvent la commande diff dans un terminal, mais mon éditeur texte
+favoris &amp;quot;Vim&amp;quot; sait aussi trés bien faire un différentiel. Utilisation avec le
+terminal :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+diff fichier1 fichier2
+&lt;/pre&gt;
+&lt;p&gt;Celui-ci retournera les différences directement dans le terminal (pas pratique
+pour l'édition).&lt;/p&gt;
 &lt;p&gt;Utilisation avec vim :&lt;/p&gt;
-&lt;blockquote&gt;
-$ vim -d fichier1 fichier2&lt;/blockquote&gt;
-&lt;p&gt;Ensuite il suffit d'utiliser (CTRL + W puis W) pour changer de fenêtre
-(gauche à droite ou droite à gauche) ou bien en utilisant (CTRL + W puis
-fléche de droite ou gauche) suivant la direction ou on veut aller ;)&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+vim -d fichier1 fichier2
+&lt;/pre&gt;
+&lt;p&gt;Ensuite il suffit d'utiliser (CTRL + W puis W) pour changer de fenêtre (gauche à
+droite ou droite à gauche) ou bien en utilisant (CTRL + W puis fléche de droite
+ou gauche) suivant la direction ou on veut aller.&lt;/p&gt;
 &lt;p&gt;Pour le reste des commandes reportez-vous au &lt;a class="reference external" href="http://matrix.samizdat.net/pratique/documentation/guide-survie-VI.html"&gt;guide de survie de
 vi&lt;/a&gt;
 !&lt;/p&gt;
-</summary><category term="Vim"></category><category term="Diff"></category><category term="Différence"></category><category term="Fichiers"></category><category term="Editeur"></category><category term="Texte"></category><category term="Terminal"></category><category term="Console"></category><category term="Commande"></category></entry><entry><title>Migration d'une base de donnée Mysql</title><link href="http://www.choiz.fr/2011-05-14-migration-dune-base-de-donn%C3%A9e-mysql.html" rel="alternate"></link><updated>2011-05-14T13:21:17+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-14:2011-05-14-migration-dune-base-de-donnée-mysql.html</id><summary type="html">&lt;p&gt;Pour faire mes migrations de base de donnée j'utilise en ligne de
-commande mysqldump et mysql.&lt;/p&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;Dans un premier temps je sauve ma base &lt;strong&gt;*database*&lt;/strong&gt; dans le fichier
-&lt;strong&gt;*fichierdump.sql*&lt;/strong&gt;&lt;/div&gt;
-&lt;div class="line"&gt;J'utilise l'utilisateur mysql : &lt;strong&gt;*utilisateur*&lt;/strong&gt; avec son mot de
-passe &lt;strong&gt;*p4ssw0rd*&lt;/strong&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-$ mysqldump -u utilisateur -p p4ssw0rd database &amp;gt; fichierdump.sql&lt;/blockquote&gt;
-&lt;p&gt;Une fois que j'ai mon fichier &lt;strong&gt;*fichierdump.sql*&lt;/strong&gt; je le met sur la
-nouvelle machine. Ensuite j'execute la commande suivante :&lt;/p&gt;
-&lt;blockquote&gt;
-$ mysql -u utilisateur -pp4ssw0rd database &amp;lt; fichierdump.sql&lt;/blockquote&gt;
-</summary><category term="Mysql"></category><category term="Mysqldump"></category><category term="Database"></category><category term="Migration"></category><category term="Dump Sql"></category><category term="Sql"></category></entry><entry><title>Petit tips pour les utilisateurs de VIM et PHP</title><link href="http://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html" rel="alternate"></link><updated>2011-04-13T13:59:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-04-13:2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html</id><summary type="html">&lt;p&gt;Lorsque je code en PHP, pour tester si il y a des erreurs généralement
-dans la console je tape la commande :&lt;/p&gt;
-&lt;blockquote&gt;
-php -l fichier_a_tester.php&lt;/blockquote&gt;
-&lt;p&gt;Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
-Pour la faire il suffit de faire &amp;quot;ESC&amp;quot; pour passer en mode commande de
-VIM puis :&lt;/p&gt;
-&lt;blockquote&gt;
-:!php -l %&lt;/blockquote&gt;
+</summary><category term="Vim"></category><category term="Diff"></category><category term="Différence"></category><category term="Fichiers"></category><category term="Editeur"></category><category term="Texte"></category><category term="Terminal"></category><category term="Console"></category><category term="Commande"></category></entry><entry><title>Migration d'une base de donnée Mysql</title><link href="http://www.choiz.fr/2011-05-14-migration-dune-base-de-donn%C3%A9e-mysql.html" rel="alternate"></link><updated>2011-05-14T13:21:17+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-14:2011-05-14-migration-dune-base-de-donnée-mysql.html</id><summary type="html">&lt;p&gt;Pour faire mes migrations de base de donnée j'utilise en ligne de commande
+mysqldump et mysql.&lt;/p&gt;
+&lt;p&gt;Dans un premier temps je sauve ma base &lt;cite&gt;database&lt;/cite&gt; dans le fichier &lt;cite&gt;dump.sql&lt;/cite&gt;
+J'utilise l'utilisateur mysql : &lt;cite&gt;utilisateur&lt;/cite&gt; avec son mot de passe &lt;cite&gt;p4ss&lt;/cite&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+mysqldump -u utilisateur -p p4ss database &amp;gt; dump.sql
+&lt;/pre&gt;
+&lt;p&gt;Une fois que j'ai mon fichier &lt;cite&gt;dump.sql&lt;/cite&gt; je le met sur la nouvelle machine, puis
+j'execute la commande suivante :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+mysql -u utilisateur -pp4ss database &amp;lt; fichierdump.sql
+&lt;/pre&gt;
+</summary><category term="Mysql"></category><category term="Mysqldump"></category><category term="Database"></category><category term="Migration"></category><category term="Dump Sql"></category><category term="Sql"></category></entry><entry><title>Petit tips pour les utilisateurs de VIM et PHP</title><link href="http://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html" rel="alternate"></link><updated>2011-04-13T13:59:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-04-13:2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html</id><summary type="html">&lt;p&gt;Lorsque je code en PHP, pour tester si il y a des erreurs généralement dans la
+console je tape la commande :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+php -l fichier_a_tester.php
+&lt;/pre&gt;
+&lt;p&gt;Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim). Pour la
+faire il suffit de faire &amp;quot;ESC&amp;quot; pour passer en mode commande de VIM puis :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:!php -l %
+&lt;/pre&gt;
 &lt;p&gt;Ce qui produira exactement le même résultat qu'en console.&lt;/p&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;&lt;strong&gt;:!&lt;/strong&gt; (permet l'execution d'une commande système dans vim)&lt;/div&gt;
-&lt;div class="line"&gt;ensuite &lt;strong&gt;php -l&lt;/strong&gt;&lt;/div&gt;
-&lt;div class="line"&gt;&lt;strong&gt;%&lt;/strong&gt; (recupere le nom du fichier courant avec le path complet)&lt;/div&gt;
-&lt;/div&gt;
-</summary><category term="PHP"></category><category term="Vim"></category><category term="Vi"></category><category term="Console"></category><category term="Mac"></category><category term="Linux"></category></entry><entry><title>Surround avec Vim</title><link href="http://www.choiz.fr/2011-04-09-surround-avec-vim.html" rel="alternate"></link><updated>2011-04-09T19:37:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-04-09:2011-04-09-surround-avec-vim.html</id><summary type="html">&lt;p&gt;J'ai ajouté quelques plugins dans ma configuration de Vim dont :
-surround.vim.&lt;/p&gt;
-&lt;p&gt;Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un
-texte.&lt;/p&gt;
+&lt;p&gt;&lt;cite&gt;:!&lt;/cite&gt; (permet l'execution d'une commande système dans vim)&lt;/p&gt;
+&lt;p&gt;Ensuite &lt;cite&gt;php -l&lt;/cite&gt; pour PHP lint&lt;/p&gt;
+&lt;p&gt;&lt;cite&gt;%&lt;/cite&gt; (récupère le nom du fichier courant avec le path complet)&lt;/p&gt;
+</summary><category term="PHP"></category><category term="Vim"></category><category term="Vi"></category><category term="Console"></category><category term="Mac"></category><category term="Linux"></category></entry><entry><title>Surround avec Vim</title><link href="http://www.choiz.fr/2011-04-09-surround-avec-vim.html" rel="alternate"></link><updated>2011-04-09T19:37:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-04-09:2011-04-09-surround-avec-vim.html</id><summary type="html">&lt;p&gt;J'ai ajouté quelques plugins dans ma configuration de Vim dont : surround.vim.&lt;/p&gt;
+&lt;p&gt;Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un texte.&lt;/p&gt;
 &lt;p&gt;Comment l'utiliser ?&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;VS&amp;lt;b&amp;gt;&lt;/tt&gt; permet d'ajouter les balises &amp;lt;b&amp;gt; et &amp;lt;/b&amp;gt; avant et apres la
+&lt;p&gt;&lt;tt class="docutils literal"&gt;VS&amp;lt;b&amp;gt;&lt;/tt&gt; permet d'ajouter les balises &lt;cite&gt;&amp;lt;b&amp;gt;&lt;/cite&gt; et &lt;cite&gt;&amp;lt;/b&amp;gt;&lt;/cite&gt; avant et apres la
 ligne courante et d'indenter celle-ci.&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;vims&amp;lt;a&amp;gt;&lt;/tt&gt; permet d'ajouter le tag &amp;lt;a&amp;gt;&amp;lt;/a&amp;gt; autour du mot sur lequel
+&lt;p&gt;&lt;tt class="docutils literal"&gt;vims&amp;lt;a&amp;gt;&lt;/tt&gt; permet d'ajouter le tag &lt;cite&gt;&amp;lt;a&amp;gt;&lt;/cite&gt; &lt;cite&gt;&amp;lt;/a&amp;gt;&lt;/cite&gt; autour du mot sur lequel
 vous vous trouvez.&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;cst&amp;lt;b&amp;gt;&lt;/tt&gt; permet de changer le tag &amp;lt;a&amp;gt; (change surround tag) par &amp;lt;b&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;cst&amp;lt;b&amp;gt;&lt;/tt&gt; permet de changer le tag &lt;cite&gt;&amp;lt;a&amp;gt;&lt;/cite&gt; (change surround tag) par &lt;cite&gt;&amp;lt;b&amp;gt;&lt;/cite&gt;&lt;/p&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;dst&lt;/tt&gt; permet de supprimer le tag&lt;/p&gt;
-</summary><category term="vim"></category><category term="config"></category><category term=".vimrc"></category><category term="plugin"></category><category term="vim plugin"></category><category term="surround"></category><category term="surround.vim"></category><category term="tags"></category><category term="html"></category></entry><entry><title>T_PAAMAYIM_NEKUDOTAYIM</title><link href="http://www.choiz.fr/2011-03-08-tpaamayimnekudotayim.html" rel="alternate"></link><updated>2011-03-08T16:17:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-03-08:2011-03-08-tpaamayimnekudotayim.html</id><summary type="html">&lt;p&gt;Voilà a quoi correspond cette erreur pour ceux qui demandent :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695&lt;/tt&gt;&lt;/p&gt;
+</summary><category term="vim"></category><category term="config"></category><category term=".vimrc"></category><category term="plugin"></category><category term="vim plugin"></category><category term="surround"></category><category term="surround.vim"></category><category term="tags"></category><category term="html"></category></entry><entry><title>T_PAAMAYIM_NEKUDOTAYIM</title><link href="http://www.choiz.fr/2011-03-08-tpaamayimnekudotayim.html" rel="alternate"></link><updated>2011-03-08T16:17:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-03-08:2011-03-08-tpaamayimnekudotayim.html</id><summary type="html">&lt;p&gt;Voilà à quoi correspond cette erreur pour ceux qui demandent :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695
+&lt;/pre&gt;
 &lt;p&gt;Le Paamayim Nekudotayim est l'opérateur de résolution de portée.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://fr.php.net/manual/fr/language.oop5.paamayim-nekudotayim.php"&gt;Dans la doc
 PHP&lt;/a&gt;
@@ -2324,96 +2317,87 @@ ou, en termes plus simples, le symbole &amp;quot;double deux-points&amp;quot; (:
 fournit un moyen d'accéder aux membres
 `statics &amp;lt;http://fr.php.net/manual/fr/language.oop5.static.php&amp;gt;`__ ou
 `constants &amp;lt;http://fr.php.net/manual/fr/language.oop5.constants.php&amp;gt;`__.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Comme on dit &amp;quot;RTFM&amp;quot; hein ;)&lt;/p&gt;
 </summary><category term="Paamayim Nekudotayim"></category><category term="opérateur de résolution de portée"></category><category term="::"></category><category term="PHP"></category><category term="Error"></category><category term="Erreur"></category></entry><entry><title>Protection de fichier tel qu'un htaccess en PHP</title><link href="http://www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html" rel="alternate"></link><updated>2011-02-11T15:40:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-02-11:2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html</id><summary type="html">&lt;p&gt;Faire un système de protection (tel que htaccess) direct dans un fichier
-php :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;&amp;lt;?php&lt;/div&gt;
-&lt;div class="line"&gt;if (!empty($_SERVER[&amp;quot;PHP_AUTH_USER&amp;quot;]) &amp;amp;&amp;amp;
+PHP :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;lt;?php
+if (!empty($_SERVER[&amp;quot;PHP_AUTH_USER&amp;quot;]) &amp;amp;&amp;amp;
 $_SERVER[&amp;quot;PHP_AUTH_USER&amp;quot;] == &amp;quot;login&amp;quot; &amp;amp;&amp;amp;
-$_SERVER[&amp;quot;PHP_AUTH_PW&amp;quot;] == &amp;quot;password&amp;quot;) {&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; // code protégé ici&lt;/div&gt;
-&lt;div class="line"&gt;} else {&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; header('WWW-Authenticate: Basic realm=&amp;quot;Restricted area&amp;quot;');&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; header('HTTP/1.0 401 Unauthorized');&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; exit('Access Denied');&lt;/div&gt;
-&lt;div class="line"&gt;}&lt;/div&gt;
-&lt;div class="line"&gt;?&amp;gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-</summary><category term="php"></category><category term="htaccess"></category><category term="htpasswd"></category><category term="protection"></category><category term="fichier"></category><category term="authenticate"></category><category term="auth"></category></entry><entry><title>jQuery attr() avec onclick par click()</title><link href="http://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html" rel="alternate"></link><updated>2011-01-07T16:43:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-01-07:2011-01-07-jquery-attr-avec-onclick-par-click.html</id><summary type="html">&lt;p&gt;Après avoir perdu 2h... le attr() de jQuery [STRIKEOUT:fonctionne pas
-avec l'attribut &amp;quot;onclick&amp;quot;] truc super quoi !&lt;/p&gt;
-&lt;p&gt;Edit : en jQuery pour modifier le contenu d'un onclick il faut faire
+$_SERVER[&amp;quot;PHP_AUTH_PW&amp;quot;] == &amp;quot;password&amp;quot;) {
+    // code protégé ici
+} else {
+    header('WWW-Authenticate: Basic realm=&amp;quot;Restricted area&amp;quot;');
+    header('HTTP/1.0 401 Unauthorized');
+    exit('Access Denied');
+}
+?&amp;gt;
+&lt;/pre&gt;
+</summary><category term="php"></category><category term="htaccess"></category><category term="htpasswd"></category><category term="protection"></category><category term="fichier"></category><category term="authenticate"></category><category term="auth"></category></entry><entry><title>jQuery attr() avec onclick par click()</title><link href="http://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html" rel="alternate"></link><updated>2011-01-07T16:43:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-01-07:2011-01-07-jquery-attr-avec-onclick-par-click.html</id><summary type="html">&lt;p&gt;Après avoir perdu 2h…
+J'ai découvert que la methode attr() de jQuery fonctionne pas
+avec l'attribut &amp;quot;onclick&amp;quot;…&lt;/p&gt;
+&lt;p&gt;Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.&lt;/p&gt;
 &lt;p&gt;Remplacer donc :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;var mavar&amp;nbsp; = 'fonctionAffichage();';&lt;/div&gt;
-&lt;div class="line"&gt;$(&amp;quot;#code&amp;quot;).attr(&amp;quot;onclick&amp;quot;,&amp;quot;mavar&amp;quot;);&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+var mavar = 'fonctionAffichage();';
+$(&amp;quot;#code&amp;quot;).attr(&amp;quot;onclick&amp;quot;,&amp;quot;mavar&amp;quot;);
+&lt;/pre&gt;
 &lt;p&gt;Par :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;var mavar&amp;nbsp; = 'fonctionAffichage();';&lt;/p&gt;
-&lt;p&gt;$(&amp;quot;#code&amp;quot;).removeAttr('onclick').click(function() { eval(mavar); }
-);&lt;/p&gt;
-&lt;/blockquote&gt;
-</summary><category term="code"></category><category term="js"></category><category term="jquery"></category><category term="attr()"></category><category term="click()"></category><category term="removeAttr()"></category></entry><entry><title>Commande SVN pour ajouter des keywords</title><link href="http://www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html" rel="alternate"></link><updated>2010-10-25T14:27:33+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2010-10-25:2010-10-25-commande-svn-pour-ajouter-des-keywords.html</id><summary type="html">&lt;p&gt;Pour ajouter le numéro de révision ainsi que pas mal d'autres
-informations dans vos projets il suffit de taper cette commande :&lt;/p&gt;
-&lt;blockquote&gt;
-svn propset svn:keywords &amp;quot;Id&amp;quot; index.php&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+var mavar = 'fonctionAffichage();';
+$(&amp;quot;#code&amp;quot;).removeAttr('onclick').click(function() { eval(mavar); });
+&lt;/pre&gt;
+</summary><category term="code"></category><category term="js"></category><category term="jquery"></category><category term="attr()"></category><category term="click()"></category><category term="removeAttr()"></category></entry><entry><title>Commande SVN pour ajouter des keywords</title><link href="http://www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html" rel="alternate"></link><updated>2010-10-25T14:27:33+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2010-10-25:2010-10-25-commande-svn-pour-ajouter-des-keywords.html</id><summary type="html">&lt;p&gt;Pour ajouter le numéro de révision ainsi que pas mal d'autres informations dans
+vos projets il suffit de taper cette commande :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+svn propset svn:keywords &amp;quot;Id&amp;quot; index.php
+&lt;/pre&gt;
 &lt;p&gt;Ce qui permet d'ajouter le keyword &amp;quot;Id&amp;quot; sur le fichier index.php&lt;/p&gt;
 &lt;p&gt;Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :&lt;/p&gt;
-&lt;blockquote&gt;
-$Id:$&lt;/blockquote&gt;
-&lt;p&gt;Une fois le fichier comité vous obtiendrez :&lt;/p&gt;
-&lt;blockquote&gt;
-$Id: ajax_modif.php 481 2010-10-25 12:02:50Z choiz $&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+$Id:$
+&lt;/pre&gt;
+&lt;p&gt;Une fois le fichier versionné vous obtiendrez :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$Id: ajax\_modif.php 481 2010-10-25 12:02:50Z choiz $
+&lt;/pre&gt;
 &lt;p&gt;D'autres keywords sont disponible tel que :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;$Revision:$&lt;/div&gt;
-&lt;div class="line"&gt;$Date:$&lt;/div&gt;
-&lt;div class="line"&gt;$Author:$&lt;/div&gt;
-&lt;div class="line"&gt;$URL:$&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Vous pouvez les ajouter les uns a la suite des autres par exemple pour
-notre fichier index.php je veux ajouter les 4 keywords précédents grâce
-à la commande :&lt;/p&gt;
-&lt;blockquote&gt;
-svn propset svn:keywords &amp;quot;Revision Date Author URL&amp;quot; index.php&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+$Revision:$
+$Date:$
+$Author:$
+$URL:$
+&lt;/pre&gt;
+&lt;p&gt;Vous pouvez les ajouter les uns à la suite des autres par exemple pour notre
+fichier index.php je veux ajouter les 4 keywords précédents grâce à la commande
+:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+svn propset svn:keywords &amp;quot;Revision Date Author URL&amp;quot; index.php
+&lt;/pre&gt;
 &lt;p&gt;Ce qui affichera :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;&amp;nbsp;$Revision: 481 $&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;$Date: 2010-10-25 14:02:50 +0200 (lun., 25 oct. 2010) $&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;$Author: choiz $&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;$URL: svn://svn.choiz.fr/projet/branches/prod/index.php $&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+$Revision: 481 $
+$Date: 2010-10-25 14:02:50 +0200 (lun., 25 oct. 2010) $
+$Author: choiz $
+$URL: svn://svn.choiz.fr/projet/branches/prod/index.php $
+&lt;/pre&gt;
 </summary><category term="SVN"></category><category term="Subversion"></category><category term="Keyword"></category><category term="Id"></category><category term="Revision"></category><category term="Date"></category><category term="Author"></category><category term="URL"></category><category term="PHP"></category><category term="Code"></category><category term="Subversion"></category></entry><entry><title>Impression de commandes entre balise &lt;pre&gt;</title><link href="http://www.choiz.fr/2010-09-15-impression-de-commandes-entre-balise-pre.html" rel="alternate"></link><updated>2010-09-15T15:43:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2010-09-15:2010-09-15-impression-de-commandes-entre-balise-pre.html</id><summary type="html">&lt;p&gt;J'ai toujours eu pas mal de soucis lors d'impression de différentes
-documentations...&lt;/p&gt;
-&lt;p&gt;J'utilise souvent la balise &amp;lt;pre&amp;gt; pour les lignes de commandes et il n'y
-a pas de retour à la ligne fait automatiquement pour cela un petit css
-permet de faire les retours à la ligne lorsque la page est trop grande.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;pre {&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; white-space: pre-wrap; /* CSS2.1 compliant */&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; white-space: -moz-pre-wrap; /* Mozilla-based browsers */&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; white-space: o-pre-wrap; /* Opera 7+ */&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; word-wrap: break-word;&lt;/div&gt;
-&lt;div class="line"&gt;}&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-</summary><category term="Balise"></category><category term="hml"></category><category term="Balise Pre"></category><category term="Pre"></category><category term="Print"></category><category term="Impression"></category><category term="CSS"></category></entry><entry><title>Limiter la bande passante sous Mac Os X</title><link href="http://www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html" rel="alternate"></link><updated>2010-07-12T11:59:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2010-07-12:2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html</id><summary type="html">&lt;p&gt;Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
-virtuel en console.&lt;/p&gt;
+documentations…&lt;/p&gt;
+&lt;p&gt;J'utilise souvent la balise &amp;lt;pre&amp;gt; pour les lignes de commandes et il n'y a pas
+de retour à la ligne fait automatiquement pour cela un petit css permet de faire
+les retours à la ligne lorsque la page est trop grande.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+&lt;/pre&gt;
+</summary><category term="Balise"></category><category term="hml"></category><category term="Balise Pre"></category><category term="Pre"></category><category term="Print"></category><category term="Impression"></category><category term="CSS"></category></entry><entry><title>Limiter la bande passante sous Mac Os X</title><link href="http://www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html" rel="alternate"></link><updated>2010-07-12T11:59:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2010-07-12:2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html</id><summary type="html">&lt;p&gt;Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau virtuel
+en console.&lt;/p&gt;
 &lt;p&gt;Ici on créer un tuyau virtuel de 1Mbit/s.&lt;/p&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;sudo ipfw pipe 1 config bw 1Mbit/s&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;On applique ce tuyau au port 80 (pour le téléchargement de fichier via
-un navigateur par exemple).&lt;/p&gt;
+&lt;p&gt;On applique ce tuyau au port 80 (pour le téléchargement de fichier via un
+navigateur par exemple).&lt;/p&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;sudo ipfw add 1 pipe 1 proto tcp &lt;span class="pre"&gt;src-port&lt;/span&gt; 80&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;Pour voir le tuyau :&lt;/p&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;sudo ipfw pipe show&lt;/tt&gt;&lt;/p&gt;
@@ -2421,6 +2405,4 @@ un navigateur par exemple).&lt;/p&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;sudo ipfw del 1&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;Pour supprimer le tuyau :&lt;/p&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;sudo ipfw pipe 1 delete&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;Bien entendu on peut créer plusieurs tuyau et plusieurs règles
-différentes avec le même tuyau ;)&lt;/p&gt;
 </summary><category term="Limit Brandwith"></category><category term="Limitation Bande Passante"></category><category term="Mac Os"></category><category term="Mac Os X"></category><category term="Tuyau"></category><category term="Tuyau Virtuel"></category><category term="Limit Brandwidth"></category></entry></feed>

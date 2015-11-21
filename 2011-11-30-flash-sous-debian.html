@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Lors de l'installation de debian j'ai eu la surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Il faut donc télécharger le package flashplugin-nonfree en procédant comme ceci : vi /etc/apt/source.list ajouter contrib non-free aux différentes sources (sauf security) puis faire : apt-get update apt-get install flashplugin-nonfree ..." />
+<meta name="description" content="Lors de l'installation de Debian sur mon poste au travail j'ai eu la surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant chez Deezer c'est un peu problèmatique. J'ai donc téléchargé le package flashplugin-nonfree en procédant comme ceci : vi /etc/apt/source.list Ajouter contrib ..." />
 <meta name="keywords" content="Flash, Debian, Deezer, Firefox, flashplugin, source, apt, souce.list, non-free, contrib">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Flash sous Debian"/>
-<meta property="og:description" content="Lors de l'installation de debian j'ai eu la surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Il faut donc télécharger le package flashplugin-nonfree en procédant comme ceci : vi /etc/apt/source.list ajouter contrib non-free aux différentes sources (sauf security) puis faire : apt-get update apt-get install flashplugin-nonfree ..."/>
+<meta property="og:description" content="Lors de l'installation de Debian sur mon poste au travail j'ai eu la surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant chez Deezer c'est un peu problèmatique. J'ai donc téléchargé le package flashplugin-nonfree en procédant comme ceci : vi /etc/apt/source.list Ajouter contrib ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://www.choiz.fr/2011-11-30-flash-sous-debian.html"/>
 <meta property="og:type" content="article"/>
@@ -72,22 +72,23 @@
     <p>Posté le mer. 30 novembre 2011</p>
   </header>
   <div>
-    <div class="line-block">
-<div class="line">Lors de l'installation de debian j'ai eu la surprise en ouvrant
-Firefox que Deezer ne fonctionne pas !</div>
-<div class="line">Il faut donc télécharger le package flashplugin-nonfree en procédant
-comme ceci :</div>
-</div>
-<blockquote>
-vi /etc/apt/source.list</blockquote>
-<p>ajouter contrib non-free aux différentes sources (sauf security)</p>
-<p>puis faire :</p>
-<blockquote>
-<p>apt-get update</p>
-<p>apt-get install flashplugin-nonfree</p>
-</blockquote>
-<p>En relançant Firefox j'ai bel et bien flash player fonctionnel sur
-Deezer.</p>
+    <p>Lors de l'installation de Debian sur mon poste au travail j'ai eu la surprise en
+ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant chez Deezer c'est un
+peu problèmatique.</p>
+<p>J'ai donc téléchargé le package flashplugin-nonfree en procédant comme ceci :</p>
+<pre class="literal-block">
+vi /etc/apt/source.list
+</pre>
+<p>Ajouter contrib non-free aux différentes sources (sauf security)
+puis :</p>
+<pre class="literal-block">
+apt-get update
+
+apt-get install flashplugin-nonfree
+</pre>
+<p>En relançant Firefox j'ai bien flash player fonctionnel sur Deezer.</p>
+<p>Le package flashplugin étant nonfree Debian ne l'inclus pas directement lors de
+l'installation.</p>
 
   </div>
   <div class="tag-cloud">
@@ -125,7 +126,7 @@ Deezer.</p>
   },
   "image": "avatar.png",
   "url": "http://www.choiz.fr/2011-11-30-flash-sous-debian.html",
-  "description": "Lors de l'installation de debian j'ai eu la surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Il faut donc télécharger le package flashplugin-nonfree en procédant comme ceci : vi /etc/apt/source.list ajouter contrib non-free aux différentes sources (sauf security) puis faire : apt-get update apt-get install flashplugin-nonfree ..."
+  "description": "Lors de l'installation de Debian sur mon poste au travail j'ai eu la surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant chez Deezer c'est un peu problèmatique. J'ai donc téléchargé le package flashplugin-nonfree en procédant comme ceci : vi /etc/apt/source.list Ajouter contrib ..."
 }
 </script></body>
 </html>

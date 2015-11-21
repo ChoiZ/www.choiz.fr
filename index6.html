@@ -417,30 +417,6 @@ ssh-copy-id -i ~/.ssh/id_dsa.pub <a class="reference external" href="mailto:user
 </article>
 <article>
   <header>
-    <h2><a href="http://www.choiz.fr/2011-12-08-bug-firefox-avec-une-iframe-blanche.html#2011-12-08-bug-firefox-avec-une-iframe-blanche">Bug Firefox avec une iFrame blanche</a></h2>
-    <p>
-      Posté le jeu. 08 décembre 2011 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/firefox.html">Firefox</a>,      <a href="http://www.choiz.fr/tag/bug.html">Bug</a>,      <a href="http://www.choiz.fr/tag/iframe.html">iFrame</a>,      <a href="http://www.choiz.fr/tag/displaynone.html">display:none</a>,      <a href="http://www.choiz.fr/tag/css.html">css</a>,      <a href="http://www.choiz.fr/tag/white-iframe.html">white iframe</a>    </p>
-  </header>
-  <div>
-      <div class="line-block">
-<div class="line">Lors de l'utilisation de div et d'iFrame sous Firefox un bug étrange
-apparait.</div>
-<div class="line">Quand une iFrame est affiché dans un div qui a la propriété css</div>
-</div>
-<blockquote>
-display:none;</blockquote>
-<p>Lors de l'affichage de ce div en remplaçant le display:none par
-display:block le contenu de l'iframe reste vide (blanche). Pour résoudre
-ce probleme il faut modifier l'attribut src de l'iframe lorsque l'on
-affiche le div en display:block.</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
     <h2><a href="http://www.choiz.fr/2011-12-04-php-gettext-debian.html#2011-12-04-php-gettext-debian">PHP + Gettext + Debian</a></h2>
     <p>
       Posté le dim. 04 décembre 2011 &#8226;
@@ -448,95 +424,85 @@ Tags :
       <a href="http://www.choiz.fr/tag/mo.html">.mo</a>,      <a href="http://www.choiz.fr/tag/po.html">.po</a>,      <a href="http://www.choiz.fr/tag/etclocale.html">/etc/locale</a>,      <a href="http://www.choiz.fr/tag/lc_all.html">LC_ALL</a>,      <a href="http://www.choiz.fr/tag/gettext.html">gettext</a>,      <a href="http://www.choiz.fr/tag/php.html">php</a>,      <a href="http://www.choiz.fr/tag/php-gettext.html">php-gettext</a>,      <a href="http://www.choiz.fr/tag/setlocale.html">setlocale</a>,      <a href="http://www.choiz.fr/tag/xgettext.html">xgettext</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line">J'utilise maintenant php-gettext pour mes traductions. C'est plus
-facile en utilisant des outils tel que pootle ou poedit.</div>
-<div class="line">Pour utiliser gettext sur votre site en php il faut télécharger le
-package php-gettext ainsi que d'autres outils tel que xgettext ou
-msgfmt :</div>
-</div>
-<blockquote>
-<p># apt-get install php-gettext</p>
-<p># apt-get install xgettext</p>
-<p># apt-get install msgfmt</p>
-</blockquote>
-<p>Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
+      <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
+utilisant des outils tel que pootle ou poedit.  Pour utiliser gettext sur votre
+site en php il faut télécharger le package php-gettext ainsi que d'autres outils
+tel que xgettext ou msgfmt :</p>
+<pre class="literal-block">
+apt-get install php-gettext
+
+apt-get install xgettext
+
+apt-get install msgfmt
+</pre>
+<p>Ensuite il faut modifier le fichier <cite>/etc/locale.gen</cite> et enlever les
 commentaires devant les langues qui vont sont à traduire par exemple :
 Allemand, Anglais, Espagnol, Français &amp; Suédois :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">de_DE.UTF-8 UTF-8</div>
-<div class="line">en_GB.UTF-8 UTF-8</div>
-<div class="line">es_ES.UTF-8 UTF-8</div>
-<div class="line">fr_FR.UTF-8 UTF-8</div>
-<div class="line">sv_SE.UTF-8 UTF-8</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+de_DE.UTF-8 UTF-8
+en_GB.UTF-8 UTF-8
+es_ES.UTF-8 UTF-8
+fr_FR.UTF-8 UTF-8
+sv_SE.UTF-8 UTF-8
+</pre>
 <p>Puis regénérer les locales :</p>
-<blockquote>
-# locale-gen</blockquote>
+<pre class="literal-block">
+locale-gen
+</pre>
 <p>Ensuite il faut définir votre chemin pour les traductions par exemple :</p>
-<blockquote>
-lang/fr_FR/LC_ALL/domaine.mo</blockquote>
+<pre class="literal-block">
+lang/fr_FR/LC_ALL/domaine.mo
+</pre>
 <p>Puis dans votre fichier php de configuration :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">&lt;?php</div>
-<div class="line">// configuration de la langue</div>
-<div class="line">$lang_path = &quot;./lang&quot;; // Chemin des fichiers le langue</div>
-<div class="line">$lang = 'fr_FR'; // Langue a afficher</div>
-<div class="line">$lang_encode = &quot;UTF-8&quot;; // Encodage du fichier</div>
-<div class="line">$lang_LC = &quot;LC_ALL&quot;; // LC_MESSAGE etc...</div>
-<div class="line">$lang_file = &quot;domaine&quot;; // Nom du fichier de langue</div>
-<div class="line">putenv(&quot;LANG=&quot;.$lang);</div>
-<div class="line">setlocale($lang_LC, $lang.&quot;.&quot;.$lang_encode);</div>
-<div class="line">bindtextdomain($lang_file,$lang_path);</div>
-<div class="line">bindtextdomain_codeset($lang_file,$lang_encode);</div>
-<div class="line">textdomain($lang_path);</div>
-<div class="line">?&gt;</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+&lt;?php
+// configuration de la langue
+$lang_path = &quot;./lang&quot;; // Chemin des fichiers le langue
+$lang = 'fr_FR'; // Langue a afficher
+$lang_encode = &quot;UTF-8&quot;; // Encodage du fichier
+$lang_LC = &quot;LC_ALL&quot;; // LC_MESSAGE etc…
+$lang_file = &quot;domaine&quot;; // Nom du fichier de langue
+putenv(&quot;LANG=&quot;.$lang);
+setlocale($lang_LC, $lang.&quot;.&quot;.$lang_encode);
+bindtextdomain($lang_file,$lang_path);
+bindtextdomain_codeset($lang_file,$lang_encode);
+textdomain($lang_path);
+?&gt;
+</pre>
 <p>Puis faites le test en affichant dans un fichier php le texte &quot;hello&quot;</p>
-<blockquote>
-<div class="line-block">
-<div class="line">&lt;?php</div>
-<div class="line">// on inclus la config...</div>
-<div class="line">include_once('config.php');</div>
-<div class="line">echo _('hello');</div>
-<div class="line">?&gt;</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+&lt;?php
+// on inclus la config…
+include_once('config.php');
+echo _('hello');
+?&gt;
+</pre>
 <p>Pour générer un fichier .mo a partir d'un fichier .po :</p>
-<blockquote>
-msgfmt domaine.po -o domaine.mo</blockquote>
-<p>Pour générer un fichier .po a partir de fichier php avec du gettext,
-faire un fichier texte avec tous vos fichiers php ou on doit récupérer
-le gettext.</p>
+<pre class="literal-block">
+msgfmt domaine.po -o domaine.mo
+</pre>
+<p>Pour générer un fichier .po a partir de fichier php avec du gettext, faire un
+fichier texte avec tous vos fichiers php ou on doit récupérer le gettext.</p>
 <p>Exemple listing_gettext.txt tel que :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">index.php</div>
-<div class="line">contact.php</div>
-<div class="line">etc...</div>
-</div>
-</blockquote>
-<p>Ensuite il faut faire la commande suivante pour générer le fichier
-domaine.po dans le dossier lang/ depuis notre fichier texte avec les php
-:</p>
-<blockquote>
+<pre class="literal-block">
+index.php
+contact.php
+etc…
+</pre>
+<p>Ensuite il faut faire la commande suivante pour générer le fichier domaine.po
+dans le dossier lang/ depuis notre fichier texte avec les php :</p>
+<pre class="literal-block">
 xgettext -d domaine -p lang/ -k_ --from-code=UTF-8 -f
-listing_gettext.txt</blockquote>
-<p>Pour finir voilà le path des fichiers .po et .mo dans mon application
-web :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">lang/fr_FR/LC_ALL/domaine.po</div>
-<div class="line">lang/fr_FR/LC_ALL/domaine.mo</div>
-<div class="line">lang/en_GB/LC_ALL/domaine.po</div>
-<div class="line">lang/en_GB/LC_ALL/domaine.mo</div>
-<div class="line">...</div>
-</div>
-</blockquote>
+listing_gettext.txt
+</pre>
+<p>Pour finir voilà le path des fichiers .po et .mo dans mon application web :</p>
+<pre class="literal-block">
+lang/fr_FR/LC_ALL/domaine.po
+lang/fr_FR/LC_ALL/domaine.mo
+lang/en_GB/LC_ALL/domaine.po
+lang/en_GB/LC_ALL/domaine.mo
+…
+</pre>
 
   </div>
   <hr />
@@ -550,32 +516,41 @@ Tags :
       <a href="http://www.choiz.fr/tag/clavier.html">Clavier</a>,      <a href="http://www.choiz.fr/tag/apple.html">Apple</a>,      <a href="http://www.choiz.fr/tag/mapage.html">Mapage</a>,      <a href="http://www.choiz.fr/tag/debian.html">Debian</a>,      <a href="http://www.choiz.fr/tag/linux.html">Linux</a>,      <a href="http://www.choiz.fr/tag/keyboard.html">Keyboard</a>,      <a href="http://www.choiz.fr/tag/mac.html">Mac</a>,      <a href="http://www.choiz.fr/tag/mac-keyboard.html">Mac Keyboard</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line">Depuis le temps que je bosse avec un clavier Apple [STRIKEOUT:j'ai]
-mes doigts on eu le temps de s'habituer au mapage du clavier. Il y a
-beaucoup de différences entre un clavier AZERTY de PC et un clavier
-AZERTY de Mac.</div>
-<div class="line">Les touches : &#64; # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
-des endroits complétement différents.</div>
-</div>
-<p>Pour modifier la configuration faire en console :</p>
-<blockquote>
-<p>dpkg-reconfigure keyboard-console</p>
-<p>Select keymap from arch list</p>
-<p>azerty</p>
-<p>French</p>
-<p>Apple USB</p>
-<p>dpkg-reconfigure keyboard-configuration</p>
-<p>model: Apple</p>
-<p>layout: France - Macintosh</p>
-<p>Key for AltGr: No AltGr Key</p>
-<p>Compose key: Right Alt (AltGr)</p>
-<p>Use Control+Alt+Backspace to terminate the X server? no</p>
-</blockquote>
+      <p>Depuis le temps que je bosse avec un clavier Apple je me suis habitué au mapage
+clavier Mac.
+Il y a beaucoup de différences entre un clavier AZERTY de PC et un
+clavier AZERTY de Mac.</p>
+<p>Les touches : <cite>&#64;</cite> <cite>#</cite> <cite>~</cite> <cite>| (pipe)</cite> <cite>=</cite> <cite>+</cite> <cite>-</cite> <cite>_</cite> <cite>!</cite> <cite>(</cite> <cite>)</cite> <cite>{</cite> <cite>}</cite> <cite>[</cite> <cite>]</cite>
+sont disposées à des endroits complétement différents.</p>
+<p>J'ai donc décidé de modifier la configuration de debian pour prendre en compte
+un clavier mac.</p>
+<pre class="literal-block">
+dpkg-reconfigure keyboard-console
+
+Select keymap from arch list
+
+azerty
+
+French
+
+Apple USB
+
+dpkg-reconfigure keyboard-configuration
+
+model: Apple
+
+layout: France - Macintosh
+
+Key for AltGr: No AltGr Key
+
+Compose key: Right Alt (AltGr)
+
+Use Control+Alt+Backspace to terminate the X server? no
+</pre>
 <p>J'ai choisi un clavier Apple, Français Mac, sans touche AltGr, avec
 comme touche de fonctionnalité secondaire &quot;Alt droit&quot;. Malheureusement
 je n'ai pas réussi a mapper l'Alt de gauche pour avoir la même fonction
-qu'à droite...</p>
+qu'à droite…</p>
 <p>Et ensuite j'ai indiqué que je ne voulais pas pouvoir quitter le server
 X avec la combinaison de touche Control+Alt+Backspace.</p>
 <p>Si ceci ne fonctionne pas il faut se rendre dans la configuration du
@@ -595,12 +570,43 @@ Tags :
       <a href="http://www.choiz.fr/tag/xfce.html">xfce</a>,      <a href="http://www.choiz.fr/tag/dualscreen.html">dualscreen</a>,      <a href="http://www.choiz.fr/tag/dual.html">dual</a>,      <a href="http://www.choiz.fr/tag/screen.html">screen</a>,      <a href="http://www.choiz.fr/tag/xfce.html">xfce</a>,      <a href="http://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
-      <p>Un petit package bien pratique pour configurer le dual screen sur xfce
-se nomme : arandr</p>
-<blockquote>
-apt-get install arandr</blockquote>
-<p>Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez
-le ARandR pour configurer les deux écrans.</p>
+      <p>Un petit package bien pratique pour configurer le dual screen sur xfce se nomme
+: arandr</p>
+<pre class="literal-block">
+apt-get install arandr
+</pre>
+<p>Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez le ARandR
+pour configurer les deux écrans.</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://www.choiz.fr/2011-11-30-flash-sous-debian.html#2011-11-30-flash-sous-debian">Flash sous Debian</a></h2>
+    <p>
+      Posté le mer. 30 novembre 2011 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/flash.html">Flash</a>,      <a href="http://www.choiz.fr/tag/debian.html">Debian</a>,      <a href="http://www.choiz.fr/tag/deezer.html">Deezer</a>,      <a href="http://www.choiz.fr/tag/firefox.html">Firefox</a>,      <a href="http://www.choiz.fr/tag/flashplugin.html">flashplugin</a>,      <a href="http://www.choiz.fr/tag/source.html">source</a>,      <a href="http://www.choiz.fr/tag/apt.html">apt</a>,      <a href="http://www.choiz.fr/tag/soucelist.html">souce.list</a>,      <a href="http://www.choiz.fr/tag/non-free.html">non-free</a>,      <a href="http://www.choiz.fr/tag/contrib.html">contrib</a>    </p>
+  </header>
+  <div>
+      <p>Lors de l'installation de Debian sur mon poste au travail j'ai eu la surprise en
+ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant chez Deezer c'est un
+peu problèmatique.</p>
+<p>J'ai donc téléchargé le package flashplugin-nonfree en procédant comme ceci :</p>
+<pre class="literal-block">
+vi /etc/apt/source.list
+</pre>
+<p>Ajouter contrib non-free aux différentes sources (sauf security)
+puis :</p>
+<pre class="literal-block">
+apt-get update
+
+apt-get install flashplugin-nonfree
+</pre>
+<p>En relançant Firefox j'ai bien flash player fonctionnel sur Deezer.</p>
+<p>Le package flashplugin étant nonfree Debian ne l'inclus pas directement lors de
+l'installation.</p>
 
   </div>
 </article>

@@ -98,9 +98,11 @@ Tags :
   </header>
   <div>
       <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<p><em>svn propset svn:ignore</em> ou dans la configuration du svn dans
-<em>~/.subversion/config</em> le <em>global-ignores</em></p>
-<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
+<pre class="literal-block">
+svn propset svn:ignore
+</pre>
+<p>Ou dans la configuration du svn dans <cite>~/.subversion/config</cite> le <cite>global-ignores</cite></p>
+<p>Pour ignorer tous les fichiers qui commencent par <cite>._</cite> dans le dossier ou
 l'on se trouve actuellement il suffit d'executer la commande ...</p>
       <a class="btn" href="http://www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html#2011-07-26-ignorer-grâce-au-svn">Lire la suite</a>
   </div>
@@ -115,10 +117,11 @@ Tags :
       <a href="http://www.choiz.fr/tag/svn.html">SVN</a>,      <a href="http://www.choiz.fr/tag/subversion.html">Subversion</a>,      <a href="http://www.choiz.fr/tag/keyword.html">Keyword</a>,      <a href="http://www.choiz.fr/tag/id.html">Id</a>,      <a href="http://www.choiz.fr/tag/revision.html">Revision</a>,      <a href="http://www.choiz.fr/tag/date.html">Date</a>,      <a href="http://www.choiz.fr/tag/author.html">Author</a>,      <a href="http://www.choiz.fr/tag/url.html">URL</a>,      <a href="http://www.choiz.fr/tag/php.html">PHP</a>,      <a href="http://www.choiz.fr/tag/code.html">Code</a>,      <a href="http://www.choiz.fr/tag/subversion.html">Subversion</a>    </p>
   </header>
   <div>
-      <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
-informations dans vos projets il suffit de taper cette commande :</p>
-<blockquote>
-svn propset svn:keywords &quot;Id&quot; index.php</blockquote>
+      <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres informations dans
+vos projets il suffit de taper cette commande :</p>
+<pre class="literal-block">
+svn propset svn:keywords &quot;Id&quot; index.php
+</pre>
 <p>Ce qui permet d'ajouter le keyword &quot;Id&quot; sur le fichier index.php</p>
 <p>Pour afficher l'Id dans votre fichier index ...</p>
       <a class="btn" href="http://www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html#2010-10-25-commande-svn-pour-ajouter-des-keywords">Lire la suite</a>
