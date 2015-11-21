@@ -1209,8 +1209,8 @@ temps de faire la migration de svn à git !&lt;/p&gt;
 &lt;p&gt;J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais
 voici donc ma procédure :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-svn log --quiet 'svn://svn.mondomaine/monprojet' \| grep &amp;quot;^r&amp;quot; \| awk
-'{print $3}' \| sort \| uniq \| awk '{ print $1&amp;quot; = &amp;quot;$1&amp;quot;
+svn log --quiet 'svn://svn.mondomaine/monprojet' | grep &amp;quot;^r&amp;quot; | awk
+'{print $3}' | sort | uniq | awk '{ print $1&amp;quot; = &amp;quot;$1&amp;quot;
 &amp;lt;&amp;quot;$1&amp;quot;&amp;#64;mondomaine&amp;gt;&amp;quot; }' &amp;gt; authors.txt
 &lt;/pre&gt;
 &lt;p&gt;J'ai ensuite édité authors.txt pour remplacer nos différents pseudos par nos
@@ -1223,9 +1223,9 @@ git svn clone 'svn://svn.mondomaine/monprojet' --no-metadata
 &lt;/pre&gt;
 &lt;p&gt;Si vous avez des tags dans svn, vous pouvez les mettre dans git :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-git branch -r \| sed -rne 's, \*tags/([^&amp;#64;]+)$,\\1,p' \| while read
+git branch -r | sed -rne 's, \*tags/([^&amp;#64;]+)$,\\1,p' | while read
 tag; do echo &amp;quot;git tag $tag 'tags/${tag}^'; git branch -r -d
-tags/$tag&amp;quot;; done \| sh
+tags/$tag&amp;quot;; done | sh
 &lt;/pre&gt;
 &lt;p&gt;Pour finir ajoutez votre dépot distant :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -1237,16 +1237,16 @@ git push -u origin --tags
 pour différentes commandes ;)&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 16 Jul 2013 22:37:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-07-16:2013-07-16-passer-de-svn-à-git.html</guid><category>svn to git</category><category>svn</category><category>git</category><category>migate</category><category>git svn clone</category><category>authors</category><category>tags</category></item><item><title>Export / Import avec PostgreSQL</title><link>http://www.choiz.fr/2013-06-22-export-import-avec-postgresql.html</link><description>&lt;p&gt;Pour exporter une table spécifique d'une base :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-pg\_dump *mabase* --table=*matable* &amp;gt; *dump\_base\_table*.sql
+pg_dump *mabase* --table=*matable* &amp;gt; *dump_base_table*.sql
 &lt;/pre&gt;
 &lt;p&gt;Pour exporter une base :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-pg\_dump *mabase* &amp;gt; *dump\_base*.sql
+pg_dump *mabase* &amp;gt; *dump_base*.sql
 &lt;/pre&gt;
 &lt;p&gt;Pour importer un dump dans une base :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-psql *base* &amp;lt; *dump\_base\_table*.sql
-psql *base* &amp;lt; *dump\_base*.sql
+psql *base* &amp;lt; *dump_base_table*.sql
+psql *base* &amp;lt; *dump_base*.sql
 &lt;/pre&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 22 Jun 2013 19:57:41 +0200</pubDate><guid>tag:www.choiz.fr,2013-06-22:2013-06-22-export-import-avec-postgresql.html</guid><category>postgreSQL</category><category>pg_dump</category><category>psql</category><category>import</category><category>export</category><category>dump</category><category>sql</category></item><item><title>Git déplacer mon dernier commit sur une autre branche</title><link>http://www.choiz.fr/2013-06-22-git-d%C3%A9placer-mon-dernier-commit-sur-une-autre.html</link><description>&lt;p&gt;J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
 &lt;em&gt;master&lt;/em&gt;… Généralement je fais toujours une branche pour les modifications,
@@ -1256,7 +1256,7 @@ dessus…&lt;/p&gt;
 devait être dessus devait être A et je devais avoir B-C dans ma branche
 &lt;em&gt;debug_redirect&lt;/em&gt;. Voici un schéma de la situation :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-debug\_redirect
+debug_redirect
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;↓
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;A-B-C
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;↑
@@ -1264,13 +1264,13 @@ debug\_redirect
 &lt;/pre&gt;
 &lt;p&gt;Je dois donc soit mettre a jour ma branche &lt;em&gt;debug_redirect&lt;/em&gt;.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-git checkout debug\_redirect
+git checkout debug_redirect
 
 git merge master
 &lt;/pre&gt;
 &lt;p&gt;Ce qui donne :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-debug\_redirect
+debug_redirect
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;↓
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;A-B-C
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;↑
@@ -1284,33 +1284,33 @@ git reset --hard HEAD~2
 &lt;/pre&gt;
 &lt;p&gt;Ce qui donne :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-&amp;nbsp;&amp;nbsp;debug\_redirect
+&amp;nbsp;&amp;nbsp;debug_redirect
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;↓
 &amp;nbsp;&amp;nbsp;A-B-C
 &amp;nbsp;&amp;nbsp;↑
 master
 &lt;/pre&gt;
-&lt;p&gt;Maintenant que j'ai fixé mon bug sur ma branche&amp;nbsp;&lt;em&gt;debug_redirect&lt;/em&gt; je peux le
+&lt;p&gt;Maintenant que j'ai fixé mon bug sur ma branche&amp;nbsp; &lt;em&gt;debug_redirect&lt;/em&gt; je peux le
 merger avec le &lt;em&gt;master&lt;/em&gt;.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-git merge debug\_redirect --no-ff
+git merge debug_redirect --no-ff
 &lt;/pre&gt;
 &lt;p&gt;Résultat :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;B-C&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;debug\_redirect
-&amp;nbsp;&amp;nbsp;/&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;\\
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;B-C&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;debug_redirect
+&amp;nbsp;&amp;nbsp;/&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;\
 A&amp;nbsp;-&amp;nbsp;-&amp;nbsp;-&amp;nbsp;-&amp;nbsp;D&amp;nbsp;&amp;nbsp;&amp;nbsp;master
 &lt;/pre&gt;
 &lt;p&gt;Pour voir vos commits par branche vous pouvez aussi utiliser la commande git log
 :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 git log --graph --oneline --decorate
-\*&amp;nbsp;&amp;nbsp; 4c677ac (HEAD, master) Merge branch 'debug\_redirect'
-\|\\
-\| \* 90e7a7a (debug\_redirect) Fix another bug on redirect
-\| \* 40ae981 Fix the redirect bug
-\|/
-\* 4e06ff4 initial commit
+*&amp;nbsp;&amp;nbsp; 4c677ac (HEAD, master) Merge branch 'debug_redirect'
+|\
+| * 90e7a7a (debug_redirect) Fix another bug on redirect
+| * 40ae981 Fix the redirect bug
+|/
+* 4e06ff4 initial commit
 &lt;/pre&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 22 Jun 2013 13:07:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-06-22:2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html</guid><category>git</category><category>reset</category><category>checkout</category><category>merge</category><category>branch</category><category>commit</category></item><item><title>Installation disque dur Seagate 4To Debian</title><link>http://www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html</link><description>&lt;p&gt;J'ai investi dans un gros disque dur de 4To pour mes sauvegardes (Fichiers
 persos, photos, vidéos…).  J'ai donc formaté mon disque avec « Fdisk » et j'ai
@@ -1482,130 +1482,93 @@ prise en charge des touches couper, copier et coller.&lt;/p&gt;
 sur git car disponible sur github ainsi que sur bitbucket.&lt;/p&gt;
 &lt;p&gt;J'ai trouvé un &lt;a class="reference external" href="http://www.yterium.net/Migrer-un-projet-SVN-vers-GIT"&gt;trés bon tutoriel pour migrer un projet svn à git&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Egalement un autre tutoriel en anglais pour passer &lt;a class="reference external" href="http://hivelogic.com/articles/converting-from-mercurial-to-git"&gt;de mercurial à git&lt;/a&gt;.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 12 Feb 2013 13:26:00 +0100</pubDate><guid>tag:www.choiz.fr,2013-02-12:2013-02-12-logiciels-de-gestion-de-versions-svn-git.html</guid><category>git</category><category>mercurial</category><category>svn</category><category>migration</category><category>svn to git</category><category>mercurial to git</category><category>hg to git</category><category>hg</category></item><item><title>Bépo 11ème jour !</title><link>http://www.choiz.fr/2012-12-27-b%C3%A9po-11%C3%A8me-jour.html</link><description>&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;Depuis maintenant 11 jours je me suis mis au
-&lt;a class="reference external" href="http://bepo.fr/"&gt;bépo&lt;/a&gt;.&amp;nbsp;J'ai gardé mes différents résultats, ce
-qui vas me permettre de faire une courbe de progression de mon
-apprentissage.&lt;/div&gt;
-&lt;div class="line"&gt;Sachant qu'au second jour j'arrivais à taper environ 10,2 mots par
-minute, aujourd'hui je suis à 24,4 mots par minutes...&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;J'ai commandé deux claviers
-ergonomiques&amp;nbsp;&lt;a class="reference external" href="http://www.typematrix.com/"&gt;typematrix&lt;/a&gt;,&amp;nbsp;sans
-marquage sur les touches ainsi que 2 skins : un en
-&lt;a class="reference external" href="http://fr.wikipedia.org/wiki/AZERTY"&gt;azerty&lt;/a&gt; et un en
-&lt;a class="reference external" href="http://bepo.fr"&gt;bépo&lt;/a&gt;. Pour info je m'entraine généralement 2 fois
-par jour quand j'ai le temps environ 1/2 heure. Je m'intéresse pas mal
-au sujet et je vous recommande de lire le &lt;a class="reference external" href="http://bepo.fr/wiki/DVZine"&gt;dvzine en
-Français&lt;/a&gt;&amp;nbsp;qui est fascinant.&lt;/div&gt;
-&lt;div class="line"&gt;Dites-moi si vous aussi vous voulez passer au bépo ou dvorak, ainsi
-que vos motivations &amp;amp; tips si vous en avez c'est toujours bon à
-prendre ;)&lt;/div&gt;
-&lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 27 Dec 2012 21:26:00 +0100</pubDate><guid>tag:www.choiz.fr,2012-12-27:2012-12-27-bépo-11ème-jour.html</guid><category>bépo</category><category>dvorak fr</category><category>dvorak</category><category>clavier</category><category>ergonomique</category><category>typematrix</category><category>azerty</category><category>disposition</category><category>libre</category></item><item><title>Faire un ssh-copy-id sur Mac OS X</title><link>http://www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html</link><description>&lt;p&gt;Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
-avez dû vous rendre compte que, même si openssh est installé nativement,
-cette commande n’est pas disponible.&lt;/p&gt;
-&lt;p&gt;Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
-peut la rendre disponible facilement en quelques étapes.
-Créer un fichier &amp;quot;ssh-copy-id&amp;quot; dans le dossier &amp;quot;/usr/bin/&amp;quot; avec ce
-contenu :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;#!/bin/sh&lt;/div&gt;
-&lt;div class="line"&gt;# Shell script to install your public key on a remote machine&lt;/div&gt;
-&lt;div class="line"&gt;# Takes the remote machine name as an argument.&lt;/div&gt;
-&lt;div class="line"&gt;# Obviously, the remote machine must accept password authentication,&lt;/div&gt;
-&lt;div class="line"&gt;# or one of the other keys in your ssh-agent, for this to work.&lt;/div&gt;
-&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;div class="line"&gt;ID_FILE=&amp;quot;${HOME}/.ssh/id_rsa.pub&amp;quot;&lt;/div&gt;
-&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;div class="line"&gt;if [ &amp;quot;-i&amp;quot; = &amp;quot;$1&amp;quot; ]; then&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;shift&lt;/div&gt;
-&lt;div class="line"&gt;# check if we have 2 parameters left, if so the first is the new ID file&lt;/div&gt;
-&lt;div class="line"&gt;if [ -n &amp;quot;$2&amp;quot; ]; then&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;if expr &amp;quot;$1&amp;quot; : &amp;quot;.*.pub&amp;quot; &amp;gt; /dev/null ; then&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;ID_FILE=&amp;quot;$1&amp;quot;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;else&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;ID_FILE=&amp;quot;$1.pub&amp;quot;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;fi&lt;/div&gt;
-&lt;div class="line"&gt;shift         # and this should leave $1 as the target name&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;fi&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;else&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;if [ x$SSH_AUTH_SOCK != x ] ; then&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;GET_ID=&amp;quot;$GET_ID ssh-add -L&amp;quot;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;fi&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;fi&lt;/div&gt;
-&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;div class="line"&gt;if [ -z &amp;quot;&lt;cite&gt;eval $GET_ID&lt;/cite&gt;&amp;quot; ] &amp;amp;&amp;amp; [ -r &amp;quot;${ID_FILE}&amp;quot; ] ; then&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;GET_ID=&amp;quot;cat ${ID_FILE}&amp;quot;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;fi&lt;/div&gt;
-&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;div class="line"&gt;if [ -z &amp;quot;&lt;cite&gt;eval $GET_ID&lt;/cite&gt;&amp;quot; ]; then&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;echo &amp;quot;$0: ERROR: No identities found&amp;quot; &amp;gt;&amp;amp;2&lt;/div&gt;
-&lt;div class="line"&gt;exit 1&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;fi&lt;/div&gt;
-&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;div class="line"&gt;if [ &amp;quot;$#&amp;quot; -lt 1 ] || [ &amp;quot;$1&amp;quot; = &amp;quot;-h&amp;quot; ] || [ &amp;quot;$1&amp;quot; = &amp;quot;--help&amp;quot; ]; then&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;echo &amp;quot;Usage: $0 [-i [identity_file]] [user&amp;#64;]machine&amp;quot; &amp;gt;&amp;amp;2&lt;/div&gt;
-&lt;div class="line"&gt;exit 1&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;fi&lt;/div&gt;
-&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;div class="line"&gt;{ eval &amp;quot;$GET_ID&amp;quot; ; } | ssh $1 &amp;quot;umask 077; test -d .ssh || mkdir .ssh ; cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;quot; || exit 1&lt;/div&gt;
-&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;div class="line"&gt;cat &amp;lt;&amp;lt;EOF&lt;/div&gt;
-&lt;div class="line"&gt;Now try logging into the machine, with &amp;quot;ssh '$1'&amp;quot;, and check in:&lt;/div&gt;
-&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;.ssh/authorized_keys&lt;/div&gt;
-&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;to make sure we haven't added extra keys that you weren't expecting.&lt;/div&gt;
-&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;div class="line"&gt;EOF&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 12 Feb 2013 13:26:00 +0100</pubDate><guid>tag:www.choiz.fr,2013-02-12:2013-02-12-logiciels-de-gestion-de-versions-svn-git.html</guid><category>git</category><category>mercurial</category><category>svn</category><category>migration</category><category>svn to git</category><category>mercurial to git</category><category>hg to git</category><category>hg</category></item><item><title>Bépo 11ème jour !</title><link>http://www.choiz.fr/2012-12-27-b%C3%A9po-11%C3%A8me-jour.html</link><description>&lt;p&gt;Depuis maintenant 11 jours je me suis mis au &lt;a class="reference external" href="http://bepo.fr/"&gt;bépo&lt;/a&gt;. J'ai
+gardé mes différents résultats, ce qui vas me permettre de faire une courbe de
+progression de mon apprentissage.&lt;/p&gt;
+&lt;p&gt;Sachant qu'au second jour j'arrivais à taper environ 10,2 mots par minute,
+aujourd'hui je suis à 24,4 mots par minute…&lt;/p&gt;
+&lt;p&gt;J'ai commandé deux claviers ergonomiques &lt;a class="reference external" href="http://www.typematrix.com/"&gt;typematrix&lt;/a&gt;, sans marquage sur les touches ainsi que 2 skins
+: un en &lt;a class="reference external" href="http://fr.wikipedia.org/wiki/AZERTY"&gt;azerty&lt;/a&gt; et un en &lt;a class="reference external" href="http://bepo.fr"&gt;bépo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Pour info je m'entraine généralement 2 fois par jour quand j'ai le temps environ
+1/2 heure. Je m'intéresse pas mal au sujet et je vous recommande de lire le
+&lt;a class="reference external" href="http://bepo.fr/wiki/DVZine"&gt;dvzine en Français&lt;/a&gt; qui est fascinant.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 27 Dec 2012 21:26:00 +0100</pubDate><guid>tag:www.choiz.fr,2012-12-27:2012-12-27-bépo-11ème-jour.html</guid><category>bépo</category><category>dvorak fr</category><category>dvorak</category><category>clavier</category><category>ergonomique</category><category>typematrix</category><category>azerty</category><category>disposition</category><category>libre</category></item><item><title>Faire un ssh-copy-id sur Mac OS X</title><link>http://www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html</link><description>&lt;p&gt;Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous avez dû
+vous rendre compte que, même si openssh est installé nativement, cette commande
+n’est pas disponible.&lt;/p&gt;
+&lt;p&gt;Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on peut la
+rendre disponible facilement en quelques étapes.  Créer un fichier &amp;quot;ssh-copy-id&amp;quot;
+dans le dossier &amp;quot;/usr/bin/&amp;quot; avec ce contenu :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+#!/bin/sh
+# Shell script to install your public key on a remote machine
+# Takes the remote machine name as an argument.
+# Obviously, the remote machine must accept password authentication,
+# or one of the other keys in your ssh-agent, for this to work.
+
+ID_FILE=&amp;quot;${HOME}/.ssh/id_rsa.pub&amp;quot;
+
+if [ &amp;quot;-i&amp;quot; = &amp;quot;$1&amp;quot; ]; then
+  shift
+  # check if we have 2 parameters left, if so the first is the new ID file
+  if [ -n &amp;quot;$2&amp;quot; ]; then
+    if expr &amp;quot;$1&amp;quot; : &amp;quot;.*\.pub&amp;quot; &amp;gt; /dev/null ; then
+      ID_FILE=&amp;quot;$1&amp;quot;
+    else
+      ID_FILE=&amp;quot;$1.pub&amp;quot;
+    fi
+    shift         # and this should leave $1 as the target name
+  fi
+else
+  if [ x$SSH_AUTH_SOCK != x ] ; then
+    GET_ID=&amp;quot;$GET_ID ssh-add -L&amp;quot;
+  fi
+fi
+
+if [ -z &amp;quot;`eval $GET_ID`&amp;quot; ] &amp;amp;&amp;amp; [ -r &amp;quot;${ID_FILE}&amp;quot; ] ; then
+  GET_ID=&amp;quot;cat ${ID_FILE}&amp;quot;
+fi
+
+if [ -z &amp;quot;`eval $GET_ID`&amp;quot; ]; then
+  echo &amp;quot;$0: ERROR: No identities found&amp;quot; &amp;gt;&amp;amp;2
+  exit 1
+fi
+
+if [ &amp;quot;$#&amp;quot; -lt 1 ] || [ &amp;quot;$1&amp;quot; = &amp;quot;-h&amp;quot; ] || [ &amp;quot;$1&amp;quot; = &amp;quot;--help&amp;quot; ]; then
+  echo &amp;quot;Usage: $0 [-i [identity_file]] [user&amp;#64;]machine&amp;quot; &amp;gt;&amp;amp;2
+  exit 1
+fi
+
+{ eval &amp;quot;$GET_ID&amp;quot; ; } | ssh $1 &amp;quot;umask 077; test -d .ssh || mkdir .ssh ; cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;quot; || exit 1
+
+cat &amp;lt;&amp;lt;EOF
+Now try logging into the machine, with &amp;quot;ssh '$1'&amp;quot;, and check in:
+
+  .ssh/authorized_keys
+
+to make sure we haven't added extra keys that you weren't expecting.
+
+EOF
+&lt;/pre&gt;
 &lt;p&gt;Il ne reste qu'a donner les droits au fichier :&lt;/p&gt;
-&lt;blockquote&gt;
-$ chmod 755 /usr/bin/ssh-copy-id&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+chmod 755 /usr/bin/ssh-copy-id
+&lt;/pre&gt;
 &lt;p&gt;Vous pouvez maintenant copier votre clé ssh sur un serveur distant en
 tapant :&lt;/p&gt;
-&lt;blockquote&gt;
-ssh-copy-id -i id_rsa.pub &lt;a class="reference external" href="mailto:user&amp;#64;machine.distante"&gt;user&amp;#64;machine.distante&lt;/a&gt;&lt;/blockquote&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 30 Sep 2012 11:50:54 +0200</pubDate><guid>tag:www.choiz.fr,2012-09-30:2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html</guid><category>ssh-copy-id</category><category>mac os x</category><category>copy ssh key</category><category>copier clé ssh</category><category>ssh</category><category>copy-id</category></item><item><title>Ma configuration iTerm2</title><link>http://www.choiz.fr/2012-09-29-ma-configuration-iterm2.html</link><description>&lt;p&gt;Depuis quelques jours j'utilise iTerm2 et je trouve ce terminal sous Mac
-Os X vraiment au top !&lt;/p&gt;
-&lt;p&gt;J'ai un clavier Apple Usb avec le pavé numérique il faut donc modifier
-les préférences d'iTerm2.&lt;/p&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;iTerm &amp;gt; Préférences (ou&amp;nbsp;⌘&amp;nbsp;,) puis dans Profiles &amp;gt; Keys et en bas &amp;quot;Load
-Preset...&amp;quot; et choisir &amp;quot;xterm with Numeric Keypad&amp;quot;.&lt;/div&gt;
-&lt;div class="line"&gt;Ce n'est pas tout malheureusement.&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;La touche &amp;quot;enter&amp;quot; du pavé numérique ne fonctionne pas il faut donc
-cliquer sur &amp;quot;+&amp;quot; et dans Keyboard Shortcut: appuyer sur la touche et
-&amp;quot;↩&amp;quot; doit apparaitre. Dans Action: choisir &amp;quot;Send Hex Code&amp;quot; et taper
-&amp;quot;0xd&amp;quot;.&lt;/div&gt;
-&lt;div class="line"&gt;J'ai également ajouter 2&amp;nbsp;raccourcis&amp;nbsp;bien pratiques :&lt;/div&gt;
-&lt;/div&gt;
+&lt;pre class="literal-block"&gt;
+ssh-copy-id -i id_rsa.pub user&amp;#64;machine.distante
+&lt;/pre&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 30 Sep 2012 11:50:54 +0200</pubDate><guid>tag:www.choiz.fr,2012-09-30:2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html</guid><category>ssh-copy-id</category><category>mac os x</category><category>copy ssh key</category><category>copier clé ssh</category><category>ssh</category><category>copy-id</category></item><item><title>Ma configuration iTerm2</title><link>http://www.choiz.fr/2012-09-29-ma-configuration-iterm2.html</link><description>&lt;p&gt;Depuis quelques jours j'utilise iTerm2 et je trouve ce terminal sous Mac Os X
+vraiment au top !&lt;/p&gt;
+&lt;p&gt;J'ai un clavier Apple Usb avec le pavé numérique il faut donc modifier les
+préférences d'iTerm2.&lt;/p&gt;
+&lt;p&gt;iTerm &amp;gt; Préférences (ou&amp;nbsp;⌘&amp;nbsp;,) puis dans Profiles &amp;gt; Keys et en bas &amp;quot;Load
+Preset...&amp;quot; et choisir &amp;quot;xterm with Numeric Keypad&amp;quot;.  Ce n'est pas tout
+malheureusement.&lt;/p&gt;
+&lt;p&gt;La touche &amp;quot;enter&amp;quot; du pavé numérique ne fonctionne pas il faut donc cliquer sur
+&amp;quot;+&amp;quot; et dans Keyboard Shortcut: appuyer sur la touche et &amp;quot;↩&amp;quot; doit apparaitre.
+Dans Action: choisir &amp;quot;Send Hex Code&amp;quot; et taper &amp;quot;0xd&amp;quot;.&lt;/p&gt;
+&lt;p&gt;J'ai également ajouter 2 raccourcis bien pratiques :&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&amp;quot;alt et fleche de gauche&amp;quot; soit &amp;quot;⌥←&amp;quot; avec le code &amp;quot;[H&amp;quot; permet de revenir au debut de la ligne de commande que l'on tape (pratique si on oublie un argument).&lt;/li&gt;
 &lt;li&gt;&amp;quot;alt et fleche de droite&amp;quot; soit &amp;quot;⌥→&amp;quot; avec le code &amp;quot;[F&amp;quot; pour aller à la fin de la ligne.&lt;/li&gt;

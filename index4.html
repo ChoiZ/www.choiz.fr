@@ -266,8 +266,8 @@ temps de faire la migration de svn à git !</p>
 <p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais
 voici donc ma procédure :</p>
 <pre class="literal-block">
-svn log --quiet 'svn://svn.mondomaine/monprojet' \| grep &quot;^r&quot; \| awk
-'{print $3}' \| sort \| uniq \| awk '{ print $1&quot; = &quot;$1&quot;
+svn log --quiet 'svn://svn.mondomaine/monprojet' | grep &quot;^r&quot; | awk
+'{print $3}' | sort | uniq | awk '{ print $1&quot; = &quot;$1&quot;
 &lt;&quot;$1&quot;&#64;mondomaine&gt;&quot; }' &gt; authors.txt
 </pre>
 <p>J'ai ensuite édité authors.txt pour remplacer nos différents pseudos par nos
@@ -280,9 +280,9 @@ git svn clone 'svn://svn.mondomaine/monprojet' --no-metadata
 </pre>
 <p>Si vous avez des tags dans svn, vous pouvez les mettre dans git :</p>
 <pre class="literal-block">
-git branch -r \| sed -rne 's, \*tags/([^&#64;]+)$,\\1,p' \| while read
+git branch -r | sed -rne 's, \*tags/([^&#64;]+)$,\\1,p' | while read
 tag; do echo &quot;git tag $tag 'tags/${tag}^'; git branch -r -d
-tags/$tag&quot;; done \| sh
+tags/$tag&quot;; done | sh
 </pre>
 <p>Pour finir ajoutez votre dépot distant :</p>
 <pre class="literal-block">
@@ -307,16 +307,16 @@ Tags :
   <div>
       <p>Pour exporter une table spécifique d'une base :</p>
 <pre class="literal-block">
-pg\_dump *mabase* --table=*matable* &gt; *dump\_base\_table*.sql
+pg_dump *mabase* --table=*matable* &gt; *dump_base_table*.sql
 </pre>
 <p>Pour exporter une base :</p>
 <pre class="literal-block">
-pg\_dump *mabase* &gt; *dump\_base*.sql
+pg_dump *mabase* &gt; *dump_base*.sql
 </pre>
 <p>Pour importer un dump dans une base :</p>
 <pre class="literal-block">
-psql *base* &lt; *dump\_base\_table*.sql
-psql *base* &lt; *dump\_base*.sql
+psql *base* &lt; *dump_base_table*.sql
+psql *base* &lt; *dump_base*.sql
 </pre>
 
   </div>
@@ -339,7 +339,7 @@ dessus…</p>
 devait être dessus devait être A et je devais avoir B-C dans ma branche
 <em>debug_redirect</em>. Voici un schéma de la situation :</p>
 <pre class="literal-block">
-debug\_redirect
+debug_redirect
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A-B-C
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑
@@ -347,13 +347,13 @@ debug\_redirect
 </pre>
 <p>Je dois donc soit mettre a jour ma branche <em>debug_redirect</em>.</p>
 <pre class="literal-block">
-git checkout debug\_redirect
+git checkout debug_redirect
 
 git merge master
 </pre>
 <p>Ce qui donne :</p>
 <pre class="literal-block">
-debug\_redirect
+debug_redirect
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
 &nbsp;&nbsp;&nbsp;&nbsp;A-B-C
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑
@@ -367,33 +367,33 @@ git reset --hard HEAD~2
 </pre>
 <p>Ce qui donne :</p>
 <pre class="literal-block">
-&nbsp;&nbsp;debug\_redirect
+&nbsp;&nbsp;debug_redirect
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
 &nbsp;&nbsp;A-B-C
 &nbsp;&nbsp;↑
 master
 </pre>
-<p>Maintenant que j'ai fixé mon bug sur ma branche&nbsp;<em>debug_redirect</em> je peux le
+<p>Maintenant que j'ai fixé mon bug sur ma branche&nbsp; <em>debug_redirect</em> je peux le
 merger avec le <em>master</em>.</p>
 <pre class="literal-block">
-git merge debug\_redirect --no-ff
+git merge debug_redirect --no-ff
 </pre>
 <p>Résultat :</p>
 <pre class="literal-block">
-&nbsp;&nbsp;&nbsp;&nbsp;B-C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug\_redirect
-&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\
+&nbsp;&nbsp;&nbsp;&nbsp;B-C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug_redirect
+&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
 A&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;D&nbsp;&nbsp;&nbsp;master
 </pre>
 <p>Pour voir vos commits par branche vous pouvez aussi utiliser la commande git log
 :</p>
 <pre class="literal-block">
 git log --graph --oneline --decorate
-\*&nbsp;&nbsp; 4c677ac (HEAD, master) Merge branch 'debug\_redirect'
-\|\\
-\| \* 90e7a7a (debug\_redirect) Fix another bug on redirect
-\| \* 40ae981 Fix the redirect bug
-\|/
-\* 4e06ff4 initial commit
+*&nbsp;&nbsp; 4c677ac (HEAD, master) Merge branch 'debug_redirect'
+|\
+| * 90e7a7a (debug_redirect) Fix another bug on redirect
+| * 40ae981 Fix the redirect bug
+|/
+* 4e06ff4 initial commit
 </pre>
 
   </div>

@@ -76,7 +76,7 @@ dessus…</p>
 devait être dessus devait être A et je devais avoir B-C dans ma branche
 <em>debug_redirect</em>. Voici un schéma de la situation :</p>
 <pre class="literal-block">
-debug\_redirect
+debug_redirect
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A-B-C
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑
@@ -84,13 +84,13 @@ debug\_redirect
 </pre>
 <p>Je dois donc soit mettre a jour ma branche <em>debug_redirect</em>.</p>
 <pre class="literal-block">
-git checkout debug\_redirect
+git checkout debug_redirect
 
 git merge master
 </pre>
 <p>Ce qui donne :</p>
 <pre class="literal-block">
-debug\_redirect
+debug_redirect
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
 &nbsp;&nbsp;&nbsp;&nbsp;A-B-C
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑
@@ -104,33 +104,33 @@ git reset --hard HEAD~2
 </pre>
 <p>Ce qui donne :</p>
 <pre class="literal-block">
-&nbsp;&nbsp;debug\_redirect
+&nbsp;&nbsp;debug_redirect
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
 &nbsp;&nbsp;A-B-C
 &nbsp;&nbsp;↑
 master
 </pre>
-<p>Maintenant que j'ai fixé mon bug sur ma branche&nbsp;<em>debug_redirect</em> je peux le
+<p>Maintenant que j'ai fixé mon bug sur ma branche&nbsp; <em>debug_redirect</em> je peux le
 merger avec le <em>master</em>.</p>
 <pre class="literal-block">
-git merge debug\_redirect --no-ff
+git merge debug_redirect --no-ff
 </pre>
 <p>Résultat :</p>
 <pre class="literal-block">
-&nbsp;&nbsp;&nbsp;&nbsp;B-C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug\_redirect
-&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\
+&nbsp;&nbsp;&nbsp;&nbsp;B-C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug_redirect
+&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
 A&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;D&nbsp;&nbsp;&nbsp;master
 </pre>
 <p>Pour voir vos commits par branche vous pouvez aussi utiliser la commande git log
 :</p>
 <pre class="literal-block">
 git log --graph --oneline --decorate
-\*&nbsp;&nbsp; 4c677ac (HEAD, master) Merge branch 'debug\_redirect'
-\|\\
-\| \* 90e7a7a (debug\_redirect) Fix another bug on redirect
-\| \* 40ae981 Fix the redirect bug
-\|/
-\* 4e06ff4 initial commit
+*&nbsp;&nbsp; 4c677ac (HEAD, master) Merge branch 'debug_redirect'
+|\
+| * 90e7a7a (debug_redirect) Fix another bug on redirect
+| * 40ae981 Fix the redirect bug
+|/
+* 4e06ff4 initial commit
 </pre>
 
   </div>

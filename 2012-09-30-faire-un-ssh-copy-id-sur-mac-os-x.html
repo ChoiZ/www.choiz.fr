@@ -68,93 +68,72 @@
     <p>Posté le dim. 30 septembre 2012</p>
   </header>
   <div>
-    <p>Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
-avez dû vous rendre compte que, même si openssh est installé nativement,
-cette commande n’est pas disponible.</p>
-<p>Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
-peut la rendre disponible facilement en quelques étapes.
-Créer un fichier &quot;ssh-copy-id&quot; dans le dossier &quot;/usr/bin/&quot; avec ce
-contenu :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">#!/bin/sh</div>
-<div class="line"># Shell script to install your public key on a remote machine</div>
-<div class="line"># Takes the remote machine name as an argument.</div>
-<div class="line"># Obviously, the remote machine must accept password authentication,</div>
-<div class="line"># or one of the other keys in your ssh-agent, for this to work.</div>
-<div class="line"><br /></div>
-<div class="line">ID_FILE=&quot;${HOME}/.ssh/id_rsa.pub&quot;</div>
-<div class="line"><br /></div>
-<div class="line">if [ &quot;-i&quot; = &quot;$1&quot; ]; then</div>
-<div class="line-block">
-<div class="line">shift</div>
-<div class="line"># check if we have 2 parameters left, if so the first is the new ID file</div>
-<div class="line">if [ -n &quot;$2&quot; ]; then</div>
-<div class="line-block">
-<div class="line">if expr &quot;$1&quot; : &quot;.*.pub&quot; &gt; /dev/null ; then</div>
-<div class="line-block">
-<div class="line">ID_FILE=&quot;$1&quot;</div>
-</div>
-<div class="line">else</div>
-<div class="line-block">
-<div class="line">ID_FILE=&quot;$1.pub&quot;</div>
-</div>
-<div class="line">fi</div>
-<div class="line">shift         # and this should leave $1 as the target name</div>
-</div>
-<div class="line">fi</div>
-</div>
-<div class="line">else</div>
-<div class="line-block">
-<div class="line">if [ x$SSH_AUTH_SOCK != x ] ; then</div>
-<div class="line-block">
-<div class="line">GET_ID=&quot;$GET_ID ssh-add -L&quot;</div>
-</div>
-<div class="line">fi</div>
-</div>
-<div class="line">fi</div>
-<div class="line"><br /></div>
-<div class="line">if [ -z &quot;<cite>eval $GET_ID</cite>&quot; ] &amp;&amp; [ -r &quot;${ID_FILE}&quot; ] ; then</div>
-<div class="line-block">
-<div class="line">GET_ID=&quot;cat ${ID_FILE}&quot;</div>
-</div>
-<div class="line">fi</div>
-<div class="line"><br /></div>
-<div class="line">if [ -z &quot;<cite>eval $GET_ID</cite>&quot; ]; then</div>
-<div class="line-block">
-<div class="line">echo &quot;$0: ERROR: No identities found&quot; &gt;&amp;2</div>
-<div class="line">exit 1</div>
-</div>
-<div class="line">fi</div>
-<div class="line"><br /></div>
-<div class="line">if [ &quot;$#&quot; -lt 1 ] || [ &quot;$1&quot; = &quot;-h&quot; ] || [ &quot;$1&quot; = &quot;--help&quot; ]; then</div>
-<div class="line-block">
-<div class="line">echo &quot;Usage: $0 [-i [identity_file]] [user&#64;]machine&quot; &gt;&amp;2</div>
-<div class="line">exit 1</div>
-</div>
-<div class="line">fi</div>
-<div class="line"><br /></div>
-<div class="line">{ eval &quot;$GET_ID&quot; ; } | ssh $1 &quot;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys&quot; || exit 1</div>
-<div class="line"><br /></div>
-<div class="line">cat &lt;&lt;EOF</div>
-<div class="line">Now try logging into the machine, with &quot;ssh '$1'&quot;, and check in:</div>
-<div class="line"><br /></div>
-<div class="line-block">
-<div class="line">.ssh/authorized_keys</div>
-<div class="line"><br /></div>
-</div>
-<div class="line">to make sure we haven't added extra keys that you weren't expecting.</div>
-<div class="line"><br /></div>
-<div class="line">EOF</div>
-</div>
-</blockquote>
+    <p>Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous avez dû
+vous rendre compte que, même si openssh est installé nativement, cette commande
+n’est pas disponible.</p>
+<p>Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on peut la
+rendre disponible facilement en quelques étapes.  Créer un fichier &quot;ssh-copy-id&quot;
+dans le dossier &quot;/usr/bin/&quot; avec ce contenu :</p>
+<pre class="literal-block">
+#!/bin/sh
+# Shell script to install your public key on a remote machine
+# Takes the remote machine name as an argument.
+# Obviously, the remote machine must accept password authentication,
+# or one of the other keys in your ssh-agent, for this to work.
+
+ID_FILE=&quot;${HOME}/.ssh/id_rsa.pub&quot;
+
+if [ &quot;-i&quot; = &quot;$1&quot; ]; then
+  shift
+  # check if we have 2 parameters left, if so the first is the new ID file
+  if [ -n &quot;$2&quot; ]; then
+    if expr &quot;$1&quot; : &quot;.*\.pub&quot; &gt; /dev/null ; then
+      ID_FILE=&quot;$1&quot;
+    else
+      ID_FILE=&quot;$1.pub&quot;
+    fi
+    shift         # and this should leave $1 as the target name
+  fi
+else
+  if [ x$SSH_AUTH_SOCK != x ] ; then
+    GET_ID=&quot;$GET_ID ssh-add -L&quot;
+  fi
+fi
+
+if [ -z &quot;`eval $GET_ID`&quot; ] &amp;&amp; [ -r &quot;${ID_FILE}&quot; ] ; then
+  GET_ID=&quot;cat ${ID_FILE}&quot;
+fi
+
+if [ -z &quot;`eval $GET_ID`&quot; ]; then
+  echo &quot;$0: ERROR: No identities found&quot; &gt;&amp;2
+  exit 1
+fi
+
+if [ &quot;$#&quot; -lt 1 ] || [ &quot;$1&quot; = &quot;-h&quot; ] || [ &quot;$1&quot; = &quot;--help&quot; ]; then
+  echo &quot;Usage: $0 [-i [identity_file]] [user&#64;]machine&quot; &gt;&amp;2
+  exit 1
+fi
+
+{ eval &quot;$GET_ID&quot; ; } | ssh $1 &quot;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys&quot; || exit 1
+
+cat &lt;&lt;EOF
+Now try logging into the machine, with &quot;ssh '$1'&quot;, and check in:
+
+  .ssh/authorized_keys
+
+to make sure we haven't added extra keys that you weren't expecting.
+
+EOF
+</pre>
 <p>Il ne reste qu'a donner les droits au fichier :</p>
-<blockquote>
-$ chmod 755 /usr/bin/ssh-copy-id</blockquote>
+<pre class="literal-block">
+chmod 755 /usr/bin/ssh-copy-id
+</pre>
 <p>Vous pouvez maintenant copier votre clé ssh sur un serveur distant en
 tapant :</p>
-<blockquote>
-ssh-copy-id -i id_rsa.pub <a class="reference external" href="mailto:user&#64;machine.distante">user&#64;machine.distante</a></blockquote>
+<pre class="literal-block">
+ssh-copy-id -i id_rsa.pub user&#64;machine.distante
+</pre>
 
   </div>
   <div class="tag-cloud">

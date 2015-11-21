@@ -192,27 +192,16 @@ Tags :
       <a href="http://www.choiz.fr/tag/bepo.html">bépo</a>,      <a href="http://www.choiz.fr/tag/dvorak-fr.html">dvorak fr</a>,      <a href="http://www.choiz.fr/tag/dvorak.html">dvorak</a>,      <a href="http://www.choiz.fr/tag/clavier.html">clavier</a>,      <a href="http://www.choiz.fr/tag/ergonomique.html">ergonomique</a>,      <a href="http://www.choiz.fr/tag/typematrix.html">typematrix</a>,      <a href="http://www.choiz.fr/tag/azerty.html">azerty</a>,      <a href="http://www.choiz.fr/tag/disposition.html">disposition</a>,      <a href="http://www.choiz.fr/tag/libre.html">libre</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line">Depuis maintenant 11 jours je me suis mis au
-<a class="reference external" href="http://bepo.fr/">bépo</a>.&nbsp;J'ai gardé mes différents résultats, ce
-qui vas me permettre de faire une courbe de progression de mon
-apprentissage.</div>
-<div class="line">Sachant qu'au second jour j'arrivais à taper environ 10,2 mots par
-minute, aujourd'hui je suis à 24,4 mots par minutes...</div>
-</div>
-<div class="line-block">
-<div class="line">J'ai commandé deux claviers
-ergonomiques&nbsp;<a class="reference external" href="http://www.typematrix.com/">typematrix</a>,&nbsp;sans
-marquage sur les touches ainsi que 2 skins : un en
-<a class="reference external" href="http://fr.wikipedia.org/wiki/AZERTY">azerty</a> et un en
-<a class="reference external" href="http://bepo.fr">bépo</a>. Pour info je m'entraine généralement 2 fois
-par jour quand j'ai le temps environ 1/2 heure. Je m'intéresse pas mal
-au sujet et je vous recommande de lire le <a class="reference external" href="http://bepo.fr/wiki/DVZine">dvzine en
-Français</a>&nbsp;qui est fascinant.</div>
-<div class="line">Dites-moi si vous aussi vous voulez passer au bépo ou dvorak, ainsi
-que vos motivations &amp; tips si vous en avez c'est toujours bon à
-prendre ;)</div>
-</div>
+      <p>Depuis maintenant 11 jours je me suis mis au <a class="reference external" href="http://bepo.fr/">bépo</a>. J'ai
+gardé mes différents résultats, ce qui vas me permettre de faire une courbe de
+progression de mon apprentissage.</p>
+<p>Sachant qu'au second jour j'arrivais à taper environ 10,2 mots par minute,
+aujourd'hui je suis à 24,4 mots par minute…</p>
+<p>J'ai commandé deux claviers ergonomiques <a class="reference external" href="http://www.typematrix.com/">typematrix</a>, sans marquage sur les touches ainsi que 2 skins
+: un en <a class="reference external" href="http://fr.wikipedia.org/wiki/AZERTY">azerty</a> et un en <a class="reference external" href="http://bepo.fr">bépo</a>.</p>
+<p>Pour info je m'entraine généralement 2 fois par jour quand j'ai le temps environ
+1/2 heure. Je m'intéresse pas mal au sujet et je vous recommande de lire le
+<a class="reference external" href="http://bepo.fr/wiki/DVZine">dvzine en Français</a> qui est fascinant.</p>
 
   </div>
   <hr />
@@ -226,93 +215,72 @@ Tags :
       <a href="http://www.choiz.fr/tag/ssh-copy-id.html">ssh-copy-id</a>,      <a href="http://www.choiz.fr/tag/mac-os-x.html">mac os x</a>,      <a href="http://www.choiz.fr/tag/copy-ssh-key.html">copy ssh key</a>,      <a href="http://www.choiz.fr/tag/copier-cle-ssh.html">copier clé ssh</a>,      <a href="http://www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="http://www.choiz.fr/tag/copy-id.html">copy-id</a>    </p>
   </header>
   <div>
-      <p>Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
-avez dû vous rendre compte que, même si openssh est installé nativement,
-cette commande n’est pas disponible.</p>
-<p>Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
-peut la rendre disponible facilement en quelques étapes.
-Créer un fichier &quot;ssh-copy-id&quot; dans le dossier &quot;/usr/bin/&quot; avec ce
-contenu :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">#!/bin/sh</div>
-<div class="line"># Shell script to install your public key on a remote machine</div>
-<div class="line"># Takes the remote machine name as an argument.</div>
-<div class="line"># Obviously, the remote machine must accept password authentication,</div>
-<div class="line"># or one of the other keys in your ssh-agent, for this to work.</div>
-<div class="line"><br /></div>
-<div class="line">ID_FILE=&quot;${HOME}/.ssh/id_rsa.pub&quot;</div>
-<div class="line"><br /></div>
-<div class="line">if [ &quot;-i&quot; = &quot;$1&quot; ]; then</div>
-<div class="line-block">
-<div class="line">shift</div>
-<div class="line"># check if we have 2 parameters left, if so the first is the new ID file</div>
-<div class="line">if [ -n &quot;$2&quot; ]; then</div>
-<div class="line-block">
-<div class="line">if expr &quot;$1&quot; : &quot;.*.pub&quot; &gt; /dev/null ; then</div>
-<div class="line-block">
-<div class="line">ID_FILE=&quot;$1&quot;</div>
-</div>
-<div class="line">else</div>
-<div class="line-block">
-<div class="line">ID_FILE=&quot;$1.pub&quot;</div>
-</div>
-<div class="line">fi</div>
-<div class="line">shift         # and this should leave $1 as the target name</div>
-</div>
-<div class="line">fi</div>
-</div>
-<div class="line">else</div>
-<div class="line-block">
-<div class="line">if [ x$SSH_AUTH_SOCK != x ] ; then</div>
-<div class="line-block">
-<div class="line">GET_ID=&quot;$GET_ID ssh-add -L&quot;</div>
-</div>
-<div class="line">fi</div>
-</div>
-<div class="line">fi</div>
-<div class="line"><br /></div>
-<div class="line">if [ -z &quot;<cite>eval $GET_ID</cite>&quot; ] &amp;&amp; [ -r &quot;${ID_FILE}&quot; ] ; then</div>
-<div class="line-block">
-<div class="line">GET_ID=&quot;cat ${ID_FILE}&quot;</div>
-</div>
-<div class="line">fi</div>
-<div class="line"><br /></div>
-<div class="line">if [ -z &quot;<cite>eval $GET_ID</cite>&quot; ]; then</div>
-<div class="line-block">
-<div class="line">echo &quot;$0: ERROR: No identities found&quot; &gt;&amp;2</div>
-<div class="line">exit 1</div>
-</div>
-<div class="line">fi</div>
-<div class="line"><br /></div>
-<div class="line">if [ &quot;$#&quot; -lt 1 ] || [ &quot;$1&quot; = &quot;-h&quot; ] || [ &quot;$1&quot; = &quot;--help&quot; ]; then</div>
-<div class="line-block">
-<div class="line">echo &quot;Usage: $0 [-i [identity_file]] [user&#64;]machine&quot; &gt;&amp;2</div>
-<div class="line">exit 1</div>
-</div>
-<div class="line">fi</div>
-<div class="line"><br /></div>
-<div class="line">{ eval &quot;$GET_ID&quot; ; } | ssh $1 &quot;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys&quot; || exit 1</div>
-<div class="line"><br /></div>
-<div class="line">cat &lt;&lt;EOF</div>
-<div class="line">Now try logging into the machine, with &quot;ssh '$1'&quot;, and check in:</div>
-<div class="line"><br /></div>
-<div class="line-block">
-<div class="line">.ssh/authorized_keys</div>
-<div class="line"><br /></div>
-</div>
-<div class="line">to make sure we haven't added extra keys that you weren't expecting.</div>
-<div class="line"><br /></div>
-<div class="line">EOF</div>
-</div>
-</blockquote>
+      <p>Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous avez dû
+vous rendre compte que, même si openssh est installé nativement, cette commande
+n’est pas disponible.</p>
+<p>Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on peut la
+rendre disponible facilement en quelques étapes.  Créer un fichier &quot;ssh-copy-id&quot;
+dans le dossier &quot;/usr/bin/&quot; avec ce contenu :</p>
+<pre class="literal-block">
+#!/bin/sh
+# Shell script to install your public key on a remote machine
+# Takes the remote machine name as an argument.
+# Obviously, the remote machine must accept password authentication,
+# or one of the other keys in your ssh-agent, for this to work.
+
+ID_FILE=&quot;${HOME}/.ssh/id_rsa.pub&quot;
+
+if [ &quot;-i&quot; = &quot;$1&quot; ]; then
+  shift
+  # check if we have 2 parameters left, if so the first is the new ID file
+  if [ -n &quot;$2&quot; ]; then
+    if expr &quot;$1&quot; : &quot;.*\.pub&quot; &gt; /dev/null ; then
+      ID_FILE=&quot;$1&quot;
+    else
+      ID_FILE=&quot;$1.pub&quot;
+    fi
+    shift         # and this should leave $1 as the target name
+  fi
+else
+  if [ x$SSH_AUTH_SOCK != x ] ; then
+    GET_ID=&quot;$GET_ID ssh-add -L&quot;
+  fi
+fi
+
+if [ -z &quot;`eval $GET_ID`&quot; ] &amp;&amp; [ -r &quot;${ID_FILE}&quot; ] ; then
+  GET_ID=&quot;cat ${ID_FILE}&quot;
+fi
+
+if [ -z &quot;`eval $GET_ID`&quot; ]; then
+  echo &quot;$0: ERROR: No identities found&quot; &gt;&amp;2
+  exit 1
+fi
+
+if [ &quot;$#&quot; -lt 1 ] || [ &quot;$1&quot; = &quot;-h&quot; ] || [ &quot;$1&quot; = &quot;--help&quot; ]; then
+  echo &quot;Usage: $0 [-i [identity_file]] [user&#64;]machine&quot; &gt;&amp;2
+  exit 1
+fi
+
+{ eval &quot;$GET_ID&quot; ; } | ssh $1 &quot;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys&quot; || exit 1
+
+cat &lt;&lt;EOF
+Now try logging into the machine, with &quot;ssh '$1'&quot;, and check in:
+
+  .ssh/authorized_keys
+
+to make sure we haven't added extra keys that you weren't expecting.
+
+EOF
+</pre>
 <p>Il ne reste qu'a donner les droits au fichier :</p>
-<blockquote>
-$ chmod 755 /usr/bin/ssh-copy-id</blockquote>
+<pre class="literal-block">
+chmod 755 /usr/bin/ssh-copy-id
+</pre>
 <p>Vous pouvez maintenant copier votre clé ssh sur un serveur distant en
 tapant :</p>
-<blockquote>
-ssh-copy-id -i id_rsa.pub <a class="reference external" href="mailto:user&#64;machine.distante">user&#64;machine.distante</a></blockquote>
+<pre class="literal-block">
+ssh-copy-id -i id_rsa.pub user&#64;machine.distante
+</pre>
 
   </div>
   <hr />
@@ -326,22 +294,17 @@ Tags :
       <a href="http://www.choiz.fr/tag/iterm2.html">iTerm2</a>,      <a href="http://www.choiz.fr/tag/config.html">config</a>,      <a href="http://www.choiz.fr/tag/keypad.html">keypad</a>,      <a href="http://www.choiz.fr/tag/numeric.html">numeric</a>,      <a href="http://www.choiz.fr/tag/enter.html">enter</a>,      <a href="http://www.choiz.fr/tag/-.html">⌥→</a>,      <a href="http://www.choiz.fr/tag/-.html">⌥←</a>,      <a href="http://www.choiz.fr/tag/-.html">↩</a>,      <a href="http://www.choiz.fr/tag/shortcut.html">shortcut</a>,      <a href="http://www.choiz.fr/tag/clavier.html">clavier</a>,      <a href="http://www.choiz.fr/tag/pave-numerique.html">pavé numérique</a>,      <a href="http://www.choiz.fr/tag/configuration-iterm2.html">configuration iTerm2</a>    </p>
   </header>
   <div>
-      <p>Depuis quelques jours j'utilise iTerm2 et je trouve ce terminal sous Mac
-Os X vraiment au top !</p>
-<p>J'ai un clavier Apple Usb avec le pavé numérique il faut donc modifier
-les préférences d'iTerm2.</p>
-<div class="line-block">
-<div class="line">iTerm &gt; Préférences (ou&nbsp;⌘&nbsp;,) puis dans Profiles &gt; Keys et en bas &quot;Load
-Preset...&quot; et choisir &quot;xterm with Numeric Keypad&quot;.</div>
-<div class="line">Ce n'est pas tout malheureusement.</div>
-</div>
-<div class="line-block">
-<div class="line">La touche &quot;enter&quot; du pavé numérique ne fonctionne pas il faut donc
-cliquer sur &quot;+&quot; et dans Keyboard Shortcut: appuyer sur la touche et
-&quot;↩&quot; doit apparaitre. Dans Action: choisir &quot;Send Hex Code&quot; et taper
-&quot;0xd&quot;.</div>
-<div class="line">J'ai également ajouter 2&nbsp;raccourcis&nbsp;bien pratiques :</div>
-</div>
+      <p>Depuis quelques jours j'utilise iTerm2 et je trouve ce terminal sous Mac Os X
+vraiment au top !</p>
+<p>J'ai un clavier Apple Usb avec le pavé numérique il faut donc modifier les
+préférences d'iTerm2.</p>
+<p>iTerm &gt; Préférences (ou&nbsp;⌘&nbsp;,) puis dans Profiles &gt; Keys et en bas &quot;Load
+Preset...&quot; et choisir &quot;xterm with Numeric Keypad&quot;.  Ce n'est pas tout
+malheureusement.</p>
+<p>La touche &quot;enter&quot; du pavé numérique ne fonctionne pas il faut donc cliquer sur
+&quot;+&quot; et dans Keyboard Shortcut: appuyer sur la touche et &quot;↩&quot; doit apparaitre.
+Dans Action: choisir &quot;Send Hex Code&quot; et taper &quot;0xd&quot;.</p>
+<p>J'ai également ajouter 2 raccourcis bien pratiques :</p>
 <ul class="simple">
 <li>&quot;alt et fleche de gauche&quot; soit &quot;⌥←&quot; avec le code &quot;[H&quot; permet de revenir au debut de la ligne de commande que l'on tape (pratique si on oublie un argument).</li>
 <li>&quot;alt et fleche de droite&quot; soit &quot;⌥→&quot; avec le code &quot;[F&quot; pour aller à la fin de la ligne.</li>

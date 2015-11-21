@@ -199,7 +199,7 @@ temps de faire la migration de svn à git !</p>
 <p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais
 voici donc ma procédure :</p>
 <pre class="literal-block">
-svn log --quiet 'svn://svn.mondomaine/monprojet' \| grep ...</pre>
+svn log --quiet 'svn://svn.mondomaine/monprojet' | grep ...</pre>
       <a class="btn" href="http://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html#2013-07-16-passer-de-svn-à-git">Lire la suite</a>
   </div>
   <hr />
@@ -215,16 +215,16 @@ Tags :
   <div>
       <p>Pour exporter une table spécifique d'une base :</p>
 <pre class="literal-block">
-pg\_dump *mabase* --table=*matable* &gt; *dump\_base\_table*.sql
+pg_dump *mabase* --table=*matable* &gt; *dump_base_table*.sql
 </pre>
 <p>Pour exporter une base :</p>
 <pre class="literal-block">
-pg\_dump *mabase* &gt; *dump\_base*.sql
+pg_dump *mabase* &gt; *dump_base*.sql
 </pre>
 <p>Pour importer un dump dans une base :</p>
 <pre class="literal-block">
-psql *base* &lt; *dump\_base\_table*.sql
-psql *base* &lt; *dump\_base*.sql
+psql *base* &lt; *dump_base_table*.sql
+psql *base* &lt; *dump_base*.sql
 </pre>
 
       <a class="btn" href="http://www.choiz.fr/2013-06-22-export-import-avec-postgresql.html#2013-06-22-export-import-avec-postgresql">Lire la suite</a>
