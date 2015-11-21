@@ -7,16 +7,16 @@ Mon fichier .gitignore
 :slug: 2012-08-13-mon-fichier-gitignore
 :status: published
 
-Voilà mon petit fichier .gitignore
+Voilà mon petit fichier .gitignore ::
 
-    | # Ignore files from git
-    |
-    | # ._ files (Mac Os X)
-    | ._*
-    |
-    | # .DS_STORE (Mac Os X)
-    | .DS_STORE
-    |
-    | # .swp (Vim)
-    | \*.swp
+    # Ignore files from git
+    
+    # ._ files (Mac Os X)
+    ._*
+    
+    # .DS_STORE (Mac Os X)
+    .DS_STORE
+    
+    # .swp (Vim)
+    *.swp
 
