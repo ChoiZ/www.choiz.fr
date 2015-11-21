@@ -15,13 +15,12 @@ Pour pouvoir le supprimer j'ai utilisé la commande suivante : ::
 
     :%s/\%U2028//g
 
-Décortiquons la commande :
+Décortiquons la commande : ::
 
-`:%s/` Recherche et remplace dans tout le fichier
+    `:%s/` Recherche et remplace dans tout le fichier
 
-`\%U2028` Le caractère que l'on recherche unicode "2028"
+    `\%U2028` Le caractère que l'on recherche unicode "2028"
 
-`//` par rien (1er slash sépare la recherche par ce qu'on remplace, le
-second pour dire la fin de ce qu'on remplace).
+    `//` par rien (1er slash sépare la recherche par ce qu'on remplace, le second pour dire la fin de ce qu'on remplace).
 
-`g` dans tout le fichier (global).
+    `g` dans tout le fichier (global).
