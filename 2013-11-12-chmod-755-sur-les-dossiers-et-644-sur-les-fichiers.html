@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="C'est toujours la galère lorsque l'on veut que tout soit clean au niveau des permissions des dossiers / fichiers. Souvent la première chose que l'on fait : on va dans chaque dossier et on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2 ..." />
+<meta name="description" content="C'est toujours la galère lorsque l'on veut que tout soit propre au niveau des permissions des dossiers / fichiers. Souvent la première chose que l'on fait : on va dans chaque dossier et on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2 ..." />
 <meta name="keywords" content="chmod, 755, 644, folder, file, folders, files, pwd, find">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Chmod 755 sur les dossiers et 644&nbsp;sur les fichiers"/>
-<meta property="og:description" content="C'est toujours la galère lorsque l'on veut que tout soit clean au niveau des permissions des dossiers / fichiers. Souvent la première chose que l'on fait : on va dans chaque dossier et on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2 ..."/>
+<meta property="og:description" content="C'est toujours la galère lorsque l'on veut que tout soit propre au niveau des permissions des dossiers / fichiers. Souvent la première chose que l'on fait : on va dans chaque dossier et on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2 ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html"/>
 <meta property="og:type" content="article"/>
@@ -71,26 +71,27 @@
     <p>Posté le mar. 12 novembre 2013</p>
   </header>
   <div>
-    <p>C'est toujours la galère lorsque l'on veut que tout soit clean au niveau
-des permissions des dossiers / fichiers.</p>
-<p>Souvent la première chose que l'on fait : on va dans chaque dossier et
-on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
-dossiers ça va mais quand on en a 40… on utilise une autre technique !</p>
+    <p>C'est toujours la galère lorsque l'on veut que tout soit propre au niveau des
+permissions des dossiers / fichiers.</p>
+<p>Souvent la première chose que l'on fait : on va dans chaque dossier et on
+vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2 dossiers ça
+va mais quand on en a 40… on utilise une autre technique !</p>
 <p>J'utilise pour les dossiers :</p>
-<blockquote>
-$ find `pwd` -type d -exec chmod 755 {} \;</blockquote>
+<pre class="literal-block">
+$ find \`pwd\` -type d -exec chmod 755 {} \\;
+</pre>
 <p>et pour les fichiers :</p>
-<blockquote>
-$ find `pwd` -type f -exec chmod 644 {} \;</blockquote>
-<p>Avec `pwd` je vais partir du dossier actuel et remplacer tous les
-droits des fichiers et dossiers enfants. Vous pouvez remplacer par un
-autre chemin par exemple :</p>
-<blockquote>
-<p>find /home/choiz/ -type d -exec chmod 755 {} \;</p>
-<p>find /home/choiz/ -type f -exec chmod 644 {} \;</p>
-</blockquote>
-<p>PS : Je ne découvre pas ces commandes, je n'avais juste jamais pris le
-temps de faire un article la dessus, voilà qui est fait.</p>
+<pre class="literal-block">
+$ find \`pwd\` -type f -exec chmod 644 {} \\;
+</pre>
+<p>Avec `pwd` je vais partir du dossier actuel et remplacer tous les droits des
+fichiers et dossiers enfants. Vous pouvez remplacer par un autre chemin par
+exemple :</p>
+<pre class="literal-block">
+find /home/choiz/ -type d -exec chmod 755 {} \\;
+
+find /home/choiz/ -type f -exec chmod 644 {} \\;
+</pre>
 
   </div>
   <div class="tag-cloud">
@@ -127,7 +128,7 @@ temps de faire un article la dessus, voilà qui est fait.</p>
   },
   "image": "avatar.png",
   "url": "http://www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html",
-  "description": "C'est toujours la galère lorsque l'on veut que tout soit clean au niveau des permissions des dossiers / fichiers. Souvent la première chose que l'on fait : on va dans chaque dossier et on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2 ..."
+  "description": "C'est toujours la galère lorsque l'on veut que tout soit propre au niveau des permissions des dossiers / fichiers. Souvent la première chose que l'on fait : on va dans chaque dossier et on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2 ..."
 }
 </script></body>
 </html>

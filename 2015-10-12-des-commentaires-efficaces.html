@@ -65,34 +65,39 @@
     <p>Posté le lun. 12 octobre 2015</p>
   </header>
   <div>
-    <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester qu'une fonctionnalité de code.</p>
+    <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester qu'une
+fonctionnalité de code.</p>
 <p>Par exemple pour tester une api :</p>
-<blockquote>
-<p>// Obtenir le livre #1</p>
-<p>api_get('books/1');</p>
-<p>// Ajouter un livre</p>
-<p>api_add('books', $datas);</p>
-</blockquote>
+<pre class="literal-block">
+// Obtenir le livre #1
+api_get('books/1');
+
+// Ajouter un livre
+api_add('books', $datas);
+</pre>
 <p>Je test généralement chaque élément séparement.</p>
 <p>Pour tester la première portion de mon code :</p>
-<blockquote>
-<p>//* Obtenir le livre #1</p>
-<p>api_get('books/1');</p>
-<p>//*/</p>
-<p>/* Ajouter un livre</p>
-<p>api_add('books', $datas);</p>
-<p>//*/</p>
-</blockquote>
+<pre class="literal-block">
+//* Obtenir le livre #1
+api_get('books/1');
+//\*/
+
+/* Ajouter un livre
+api_add('books', $datas);
+//\*/
+</pre>
 <p>Pour tester la seconde portion de mon code :</p>
-<blockquote>
-<p>/* Obtenir le livre #1</p>
-<p>api_get('books/1');</p>
-<p>//*/</p>
-<p>//* Ajouter un livre</p>
-<p>api_add('books', $datas);</p>
-<p>//*/</p>
-</blockquote>
-<p>Il me suffit d'ajouter ou d'enlever un slash sur le premier commentaire pour commenter ou non tout le bloc.</p>
+<pre class="literal-block">
+/* Obtenir le livre #1
+api_get('books/1');
+//\*/
+
+//* Ajouter un livre
+api_add('books', $datas);
+//\*/
+</pre>
+<p>Il me suffit d'ajouter ou d'enlever un slash sur le premier commentaire pour
+commenter ou non tout le bloc.</p>
 <p>Ce n'est pas forcément très lisible donc je fais ça uniquement pour mes tests.</p>
 
   </div>

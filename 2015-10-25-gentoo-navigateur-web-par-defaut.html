@@ -68,18 +68,23 @@
   </header>
   <div>
     <p>Sur ma machine &quot;links&quot; était le navigateur web par défaut.
-Il est pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il est préférable d'utiliser un navigateur tel que Firefox.</p>
-<p>Voici la commande pour voir le navigateur par défaut pour les url utilisants le protocole &quot;http&quot; :</p>
-<blockquote>
-xdg-mime query default x-scheme-handler/http</blockquote>
+Il est pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
+est préférable d'utiliser un navigateur tel que Firefox.</p>
+<p>Voici la commande pour voir le navigateur par défaut pour les url utilisants le
+protocole &quot;http&quot; :</p>
+<pre class="literal-block">
+xdg-mime query default x-scheme-handler/http
+</pre>
 <p>Et voici la commande pour le &quot;https&quot; :</p>
-<blockquote>
-xdg-mime query default x-scheme-handler/https</blockquote>
-<p>Pour changer le navigateur par défaut par Firefox il suffit d'executer ses deux commandes :</p>
-<blockquote>
-<p>xdg-mime default firefox.desktop x-scheme-handler/http</p>
-<p>xdg-mime default firefox.desktop x-scheme-handler/https</p>
-</blockquote>
+<pre class="literal-block">
+xdg-mime query default x-scheme-handler/https
+</pre>
+<p>Pour changer le navigateur par défaut par Firefox il suffit d'executer ses deux
+commandes :</p>
+<pre class="literal-block">
+xdg-mime default firefox.desktop x-scheme-handler/http
+xdg-mime default firefox.desktop x-scheme-handler/https
+</pre>
 
   </div>
   <div class="tag-cloud">

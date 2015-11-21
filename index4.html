@@ -78,26 +78,27 @@ Tags :
       <a href="http://www.choiz.fr/tag/chmod.html">chmod</a>,      <a href="http://www.choiz.fr/tag/755.html">755</a>,      <a href="http://www.choiz.fr/tag/644.html">644</a>,      <a href="http://www.choiz.fr/tag/folder.html">folder</a>,      <a href="http://www.choiz.fr/tag/file.html">file</a>,      <a href="http://www.choiz.fr/tag/folders.html">folders</a>,      <a href="http://www.choiz.fr/tag/files.html">files</a>,      <a href="http://www.choiz.fr/tag/pwd.html">pwd</a>,      <a href="http://www.choiz.fr/tag/find.html">find</a>    </p>
   </header>
   <div>
-      <p>C'est toujours la galère lorsque l'on veut que tout soit clean au niveau
-des permissions des dossiers / fichiers.</p>
-<p>Souvent la première chose que l'on fait : on va dans chaque dossier et
-on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
-dossiers ça va mais quand on en a 40… on utilise une autre technique !</p>
+      <p>C'est toujours la galère lorsque l'on veut que tout soit propre au niveau des
+permissions des dossiers / fichiers.</p>
+<p>Souvent la première chose que l'on fait : on va dans chaque dossier et on
+vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2 dossiers ça
+va mais quand on en a 40… on utilise une autre technique !</p>
 <p>J'utilise pour les dossiers :</p>
-<blockquote>
-$ find `pwd` -type d -exec chmod 755 {} \;</blockquote>
+<pre class="literal-block">
+$ find \`pwd\` -type d -exec chmod 755 {} \\;
+</pre>
 <p>et pour les fichiers :</p>
-<blockquote>
-$ find `pwd` -type f -exec chmod 644 {} \;</blockquote>
-<p>Avec `pwd` je vais partir du dossier actuel et remplacer tous les
-droits des fichiers et dossiers enfants. Vous pouvez remplacer par un
-autre chemin par exemple :</p>
-<blockquote>
-<p>find /home/choiz/ -type d -exec chmod 755 {} \;</p>
-<p>find /home/choiz/ -type f -exec chmod 644 {} \;</p>
-</blockquote>
-<p>PS : Je ne découvre pas ces commandes, je n'avais juste jamais pris le
-temps de faire un article la dessus, voilà qui est fait.</p>
+<pre class="literal-block">
+$ find \`pwd\` -type f -exec chmod 644 {} \\;
+</pre>
+<p>Avec `pwd` je vais partir du dossier actuel et remplacer tous les droits des
+fichiers et dossiers enfants. Vous pouvez remplacer par un autre chemin par
+exemple :</p>
+<pre class="literal-block">
+find /home/choiz/ -type d -exec chmod 755 {} \\;
+
+find /home/choiz/ -type f -exec chmod 644 {} \\;
+</pre>
 
   </div>
   <hr />

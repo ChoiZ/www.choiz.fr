@@ -63,12 +63,16 @@ Tags :
   <div>
       <p>Voici mon historique des commits :</p>
 <pre class="literal-block">
-c0004 -- dernier commitc0003 -- avant dernier commitc0002 -- second commitc0001 -- premier commit
+c0004 -- dernier commit
+c0003 -- avant dernier commit
+c0002 -- second commit
+c0001 -- premier commit
 </pre>
 <p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire :</p>
-<p><tt class="docutils literal">git <span class="pre">format-patch</span> <span class="pre">-2</span> c0002 <span class="pre">--stdout</span> &gt; mon.patch</tt></p>
-<p>le &quot;-2&quot; sert à récupérer 2 commits à partir du commit c0002.</p>
-
+<pre class="literal-block">
+git format-patch -2 c0002 --stdout &gt; mon.patch
+</pre>
+<p>le &quot;-2&quot; sert à récupérer 2 commits à partir du commit ...</p>
       <a class="btn" href="http://www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html#2014-05-06-faire-un-patch-de-x-commits-avec-git">Lire la suite</a>
   </div>
   <hr />

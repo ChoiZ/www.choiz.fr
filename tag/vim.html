@@ -62,13 +62,17 @@ Tags :
   </header>
   <div>
       <p>J'étais à la recherche de se caractère unicode dans vim :</p>
-</p><p><tt class="docutils literal">&lt;U+2028&gt;</tt></p>
-</p><p>Pour pouvoir le supprimer j'ai utilisé la commande suivante :</p>
-</p><p><tt class="docutils literal"><span class="pre">:%s/\%U2028//g</span></tt></p>
-</p><p>Décortiquons la commande :</p>
-</p><p><tt class="docutils literal">:%s/</tt> Recherche et remplace dans tout le fichier</p>
-</p><p><tt class="docutils literal">\%U2028</tt> Le caractère que l'on recherche unicode &quot;2028&quot;</p>
-</p><p><tt class="docutils literal">//</tt> par rien (1er slash ...</p>
+<pre class="literal-block">
+&lt;U+2028&gt;
+</pre>
+<p>Pour pouvoir le supprimer j'ai utilisé la commande suivante :</p>
+<pre class="literal-block">
+:%s/\%U2028//g
+</pre>
+<p>Décortiquons la commande :</p>
+<p><cite>:%s/</cite> Recherche et remplace dans tout le fichier</p>
+<p><cite>%U2028</cite> Le caractère que l'on recherche unicode &quot;2028&quot;</p>
+<p><cite>//</cite> par rien (1er slash ...</p>
       <a class="btn" href="http://www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html#2014-01-19-suppression-dun-caractère-unicode-dans-vim">Lire la suite</a>
   </div>
   <hr />

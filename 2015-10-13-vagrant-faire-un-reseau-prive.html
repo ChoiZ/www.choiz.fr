@@ -67,15 +67,20 @@
     <p>Posté le mar. 13 octobre 2015</p>
   </header>
   <div>
-    <p>J'utilise plusieurs machines virtuelles avec vagrant, une avec un backoffice et une avec une API.</p>
-<p>J'ai donc du faire un réseau privé dans vagrant pour que le BO communique avec l'API.</p>
+    <p>J'utilise plusieurs machines virtuelles avec vagrant, une avec un backoffice et
+une avec une API.</p>
+<p>J'ai donc du faire un réseau privé dans vagrant pour que le BO communique avec
+l'API.</p>
 <p>Il suffit de modifier la configuration de la vm #1 et d'ajouter :</p>
-<blockquote>
-config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.1&quot;</blockquote>
+<pre class="literal-block">
+config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.1&quot;
+</pre>
 <p>Et dans la configuration de la vm #2 d'ajouter :</p>
-<blockquote>
-config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.2&quot;</blockquote>
-<p>Votre vm #1 peut (suite au redémarrage des deux vm vagrant) communiquer avec votre vm #2 directement avec l'ip <cite>192.168.10.2</cite>.</p>
+<pre class="literal-block">
+config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.2&quot;
+</pre>
+<p>Votre vm #1 peut (suite au redémarrage des deux vm vagrant) communiquer avec
+votre vm #2 directement avec l'ip <cite>192.168.10.2</cite>.</p>
 
   </div>
   <div class="tag-cloud">

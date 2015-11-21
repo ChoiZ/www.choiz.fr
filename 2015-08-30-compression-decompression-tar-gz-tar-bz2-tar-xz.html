@@ -71,16 +71,20 @@
     <p>Posté le dim. 30 août 2015</p>
   </header>
   <div>
-    <p>J'ai toujours du mal pour décompresser un fichier de type &quot;tar.bz2&quot; ou &quot;tar.xz&quot;. Je n'ai pas encore trouvé le moyen de me souvenir de la syntaxe…</p>
+    <p>J'ai toujours du mal pour décompresser un fichier de type &quot;tar.bz2&quot; ou &quot;tar.xz&quot;.
+Je n'ai pas encore trouvé le moyen de me souvenir de la syntaxe…</p>
 <div class="section" id="tar-gz">
 <h2>tar.gz</h2>
-<p>Pour les fichiers <strong>tar.gz</strong> j'arrive parfaitement à compresser ou décompresser ce format exemple :</p>
+<p>Pour les fichiers <strong>tar.gz</strong> j'arrive parfaitement à compresser ou décompresser
+ce format exemple :</p>
 <p>On compresse avec :</p>
-<blockquote>
-tar -cvzf archive.tar.gz dossier_a_compresser/</blockquote>
+<pre class="literal-block">
+tar -cvzf archive.tar.gz dossier_a_compresser/
+</pre>
 <p>On décompresse avec :</p>
-<blockquote>
-tar -xvzf archive.tar.gz</blockquote>
+<pre class="literal-block">
+tar -xvzf archive.tar.gz
+</pre>
 <p>Il suffit de retenir :</p>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
@@ -103,36 +107,46 @@ tar -xvzf archive.tar.gz</blockquote>
 </div>
 <div class="section" id="tar-bz2">
 <h2>tar.bz2</h2>
-<p>Pour les <strong>tar.bz2</strong> je ne sais JAMAIS qu'il faut remplacer &quot;z&quot; de gizip par &quot;j&quot; de Bzip… (la lettre &quot;b&quot; étant sans doute utilisé avant que le bzip n'apparaisse).
-L'alternative est d'utiliser &quot;--bzip&quot;</p>
+<p>Pour les <strong>tar.bz2</strong> je ne sais JAMAIS qu'il faut remplacer &quot;z&quot; de gizip par &quot;j&quot;
+de Bzip… (la lettre &quot;b&quot; étant sans doute utilisé avant que le bzip
+n'apparaisse). L'alternative est d'utiliser &quot;--bzip&quot;</p>
 <p>On compresse avec :</p>
-<blockquote>
-tar -cvjf archive.tar.bz2 dossier_a_compresser/</blockquote>
+<pre class="literal-block">
+tar -cvjf archive.tar.bz2 dossier_a_compresser/
+</pre>
 <p>Ou :</p>
-<blockquote>
-tar --bzip2 -cvf archive.tar.bz2 dossier_a_compresser/</blockquote>
+<pre class="literal-block">
+tar --bzip2 -cvf archive.tar.bz2 dossier_a_compresser/
+</pre>
 <p>On décompresse avec :</p>
-<blockquote>
-tar -xvjf archive.tar.bz2</blockquote>
+<pre class="literal-block">
+tar -xvjf archive.tar.bz2
+</pre>
 <p>Ou :</p>
-<blockquote>
-tar --bzip2 -xvf archive.tar.bz2</blockquote>
+<pre class="literal-block">
+tar --bzip2 -xvf archive.tar.bz2
+</pre>
 </div>
 <div class="section" id="tar-xz">
 <h2>tar.xz</h2>
-<p>Pour ce qui est de Lzma ou le <strong>tar.xz</strong> c'est un &quot;J&quot; majuscule cette fois ou d'utiliser &quot;--xz&quot;.</p>
+<p>Pour ce qui est de Lzma ou le <strong>tar.xz</strong> c'est un &quot;J&quot; majuscule cette fois ou
+d'utiliser &quot;--xz&quot;.</p>
 <p>On compresse avec :</p>
-<blockquote>
-tar -cvJf archive.tar.xz dossier_a_compresser/</blockquote>
+<pre class="literal-block">
+tar -cvJf archive.tar.xz dossier_a_compresser/
+</pre>
 <p>Ou :</p>
-<blockquote>
-tar --xz -cvf archive.tar.xz dossier_a_compresser/</blockquote>
+<pre class="literal-block">
+tar --xz -cvf archive.tar.xz dossier_a_compresser/
+</pre>
 <p>On décompresse avec :</p>
-<blockquote>
-tar -xvJf archive.tar.xz</blockquote>
+<pre class="literal-block">
+tar -xvJf archive.tar.xz
+</pre>
 <p>Ou :</p>
-<blockquote>
-tar --xz -xvf archive.tar.xz</blockquote>
+<pre class="literal-block">
+tar --xz -xvf archive.tar.xz
+</pre>
 </div>
 
   </div>

@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Dans certains projets j’utilise git avec plusieurs remote, par exemple : - un remote “origin” se trouve sur un serveur perso. - un remote “github” qui lui est sur github.com. Quand je vais sur le master il m’arrive d’avoir ce message : "your branch is up-to-date with “github/master”." Je ..." />
+<meta name="description" content="Dans certains projets j’utilise git avec plusieurs remote, par exemple : un remote “origin” se trouve sur un serveur perso. un remote “github” qui lui est sur github.com. Quand je vais sur le master il m’arrive d’avoir ce message : "your branch is up-to-date with “github/master”." Je ..." />
 <meta name="keywords" content="git, origin, remote, master, branch, checkout, track">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Récupérer le master depuis le remote origin avec git"/>
-<meta property="og:description" content="Dans certains projets j’utilise git avec plusieurs remote, par exemple : - un remote “origin” se trouve sur un serveur perso. - un remote “github” qui lui est sur github.com. Quand je vais sur le master il m’arrive d’avoir ce message : "your branch is up-to-date with “github/master”." Je ..."/>
+<meta property="og:description" content="Dans certains projets j’utilise git avec plusieurs remote, par exemple : un remote “origin” se trouve sur un serveur perso. un remote “github” qui lui est sur github.com. Quand je vais sur le master il m’arrive d’avoir ce message : "your branch is up-to-date with “github/master”." Je ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://www.choiz.fr/2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html"/>
 <meta property="og:type" content="article"/>
@@ -69,36 +69,35 @@
     <p>Posté le ven. 07 août 2015</p>
   </header>
   <div>
-    <div class="line-block">
-<div class="line">Dans certains projets j’utilise git avec plusieurs remote, par exemple
-:</div>
-</div>
-<div class="line-block">
-<div class="line">- un remote “origin” se trouve sur un serveur perso.</div>
-</div>
-<div class="line-block">
-<div class="line">- un remote “github” qui lui est sur github.com.</div>
-</div>
-</p><p>Quand je vais sur le master il m’arrive d’avoir ce message :</p>
-</p><pre class="literal-block">
+    <p>Dans certains projets j’utilise git avec plusieurs remote, par exemple :</p>
+<ul class="simple">
+<li>un remote “origin” se trouve sur un serveur perso.</li>
+<li>un remote “github” qui lui est sur github.com.</li>
+</ul>
+<p>Quand je vais sur le master il m’arrive d’avoir ce message :</p>
+<pre class="literal-block">
 &quot;your branch is up-to-date with “github/master”.&quot;
 </pre>
-</p><p>Je préfèrerai que ma branche soit à jour avec mon origin/master et non
+<p>Je préfèrerai que ma branche soit à jour avec mon origin/master et non
 github/master.</p>
-</p><p>La solution que j’ai trouvé est la suivante :</p>
-</p><ol class="arabic simple">
-<li>supprimer ma branche master locale :</li>
+<p>La solution que j’ai trouvé est la suivante :</p>
+<ol class="arabic">
+<li><p class="first">supprimer ma branche master locale :</p>
+<pre class="literal-block">
+git branch -d master
+</pre>
+</li>
+<li><p class="first">récupèrer mon master depuis le remote origin :</p>
+<pre class="literal-block">
+git checkout -t -b master origin/master
+</pre>
+</li>
 </ol>
-</p><p><tt class="docutils literal">git branch <span class="pre">-d</span> master</tt></p>
-<ol class="arabic simple" start="2">
-<li>récupèrer mon master depuis le remote origin :</li>
-</ol>
-</p><p><tt class="docutils literal">git checkout <span class="pre">-t</span> <span class="pre">-b</span> master origin/master</tt></p>
 <p>Pour info :</p>
-</p><p>-t ou --track pour rattacher à l’origin/master</p>
-</p><p>-b pour créer ma nouvelle branche “master”</p>
-</p><p>Plus d’info avec man git-checkout ;-)</p>
-</p>
+<p>-t ou --track pour rattacher à l’origin/master</p>
+<p>-b pour créer ma nouvelle branche “master”</p>
+<p>Plus d’info avec man git-checkout ;-)</p>
+
   </div>
   <div class="tag-cloud">
     <p>
@@ -132,7 +131,7 @@ github/master.</p>
   },
   "image": "avatar.png",
   "url": "http://www.choiz.fr/2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html",
-  "description": "Dans certains projets j’utilise git avec plusieurs remote, par exemple : - un remote “origin” se trouve sur un serveur perso. - un remote “github” qui lui est sur github.com. Quand je vais sur le master il m’arrive d’avoir ce message : "your branch is up-to-date with “github/master”." Je ..."
+  "description": "Dans certains projets j’utilise git avec plusieurs remote, par exemple : un remote “origin” se trouve sur un serveur perso. un remote “github” qui lui est sur github.com. Quand je vais sur le master il m’arrive d’avoir ce message : "your branch is up-to-date with “github/master”." Je ..."
 }
 </script></body>
 </html>

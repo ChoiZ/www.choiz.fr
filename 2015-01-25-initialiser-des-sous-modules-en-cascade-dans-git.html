@@ -67,22 +67,26 @@
     <p>Posté le dim. 25 janvier 2015</p>
   </header>
   <div>
-    <p>Pour initialiser les sous-modules dans git j'utilise la commande
-suivante :</p>
-<p><tt class="docutils literal">git submodule init</tt></p>
-<p>Ensuite je dois faire un update des sous-modules pour charger le contenu
-:</p>
-<p><tt class="docutils literal">git submodule update</tt></p>
+    <p>Pour initialiser les sous-modules dans git j'utilise la commande suivante :</p>
+<pre class="literal-block">
+git submodule init
+</pre>
+<p>Ensuite je dois faire un update des sous-modules pour charger le contenu :</p>
+<pre class="literal-block">
+git submodule update
+</pre>
 <p>Pour faire les deux en même temps (init + update) vous pouvez faire :</p>
-<p><tt class="docutils literal">git submodule update <span class="pre">--init</span></tt></p>
-<p>Imaginons maintenant que vous avez des sous-modules dans d'autres
-sous-modules. Exemple dans mon dépot
-<a class="reference external" href="https://www.github.com/ChoiZ/dotfiles.git">dotfiles</a> j'ai mon dépot
-<a class="reference external" href="https://www.github.com/ChoiZ/vim-config.git">vim</a> et dedans des
-sous-modules avec les plugins de vim. Pour initialiser, mettre à jour et
-le tout en cascade (dans tous les dossiers et sous-dossiers) il faut
-faire :</p>
-<p><tt class="docutils literal">git submodule update <span class="pre">--init</span> <span class="pre">--recursive</span></tt></p>
+<pre class="literal-block">
+git submodule update --init
+</pre>
+<p>Imaginons maintenant que vous avez des sous-modules dans d'autres sous-modules.
+Exemple dans mon dépot <a class="reference external" href="https://www.github.com/ChoiZ/dotfiles.git">dotfiles</a>
+j'ai mon dépot <a class="reference external" href="https://www.github.com/ChoiZ/vim-config.git">vim</a> et dedans
+des sous-modules avec les plugins de vim. Pour initialiser, mettre à jour et le
+tout en cascade (dans tous les dossiers et sous-dossiers) il faut faire :</p>
+<pre class="literal-block">
+git submodule update --init --recursive
+</pre>
 
   </div>
   <div class="tag-cloud">

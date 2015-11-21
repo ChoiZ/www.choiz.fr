@@ -77,21 +77,16 @@ Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/origin.html">origin</a>,      <a href="http://www.choiz.fr/tag/remote.html">remote</a>,      <a href="http://www.choiz.fr/tag/master.html">master</a>,      <a href="http://www.choiz.fr/tag/branch.html">branch</a>,      <a href="http://www.choiz.fr/tag/checkout.html">checkout</a>,      <a href="http://www.choiz.fr/tag/track.html">track</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line">Dans certains projets j’utilise git avec plusieurs remote, par exemple
-:</div>
-</div>
-<div class="line-block">
-<div class="line">- un remote “origin” se trouve sur un serveur perso.</div>
-</div>
-<div class="line-block">
-<div class="line">- un remote “github” qui lui est sur github.com.</div>
-</div>
-</p><p>Quand je vais sur le master il m’arrive d’avoir ce message :</p>
-</p><pre class="literal-block">
+      <p>Dans certains projets j’utilise git avec plusieurs remote, par exemple :</p>
+<ul class="simple">
+<li>un remote “origin” se trouve sur un serveur perso.</li>
+<li>un remote “github” qui lui est sur github.com.</li>
+</ul>
+<p>Quand je vais sur le master il m’arrive d’avoir ce message :</p>
+<pre class="literal-block">
 &quot;your branch is up-to-date with “github/master”.&quot;
 </pre>
-</p><p>Je ...</p>
+<p>Je ...</p>
       <a class="btn" href="http://www.choiz.fr/2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html#2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec">Lire la suite</a>
   </div>
   <hr />
@@ -105,14 +100,18 @@ Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/submodule.html">submodule</a>,      <a href="http://www.choiz.fr/tag/update.html">update</a>,      <a href="http://www.choiz.fr/tag/init.html">init</a>,      <a href="http://www.choiz.fr/tag/recursive.html">recursive</a>    </p>
   </header>
   <div>
-      <p>Pour initialiser les sous-modules dans git j'utilise la commande
-suivante :</p>
-<p><tt class="docutils literal">git submodule init</tt></p>
-<p>Ensuite je dois faire un update des sous-modules pour charger le contenu
-:</p>
-<p><tt class="docutils literal">git submodule update</tt></p>
+      <p>Pour initialiser les sous-modules dans git j'utilise la commande suivante :</p>
+<pre class="literal-block">
+git submodule init
+</pre>
+<p>Ensuite je dois faire un update des sous-modules pour charger le contenu :</p>
+<pre class="literal-block">
+git submodule update
+</pre>
 <p>Pour faire les deux en même temps (init + update) vous pouvez faire :</p>
-<p><tt class="docutils literal">git submodule update <span class="pre">--init</span></tt></p>
+<pre class="literal-block">
+git submodule update --init
+</pre>
 <p>Imaginons maintenant que vous avez ...</p>
       <a class="btn" href="http://www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html#2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git">Lire la suite</a>
   </div>
@@ -127,9 +126,11 @@ Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/search.html">search</a>,      <a href="http://www.choiz.fr/tag/source.html">source</a>,      <a href="http://www.choiz.fr/tag/code.html">code</a>,      <a href="http://www.choiz.fr/tag/log.html">log</a>    </p>
   </header>
   <div>
-      <p>Pour rechercher directement dans le code source une modification
-précise, j'utilise la commande suivante :</p>
-<p><tt class="docutils literal">git log <span class="pre">-p</span> <span class="pre">-S</span> 'display'</tt></p>
+      <p>Pour rechercher directement dans le code source une modification précise,
+j'utilise la commande suivante :</p>
+<pre class="literal-block">
+git log -p -S 'display'
+</pre>
 
       <a class="btn" href="http://www.choiz.fr/2014-12-08-recherche-dans-le-code-source-avec-git.html#2014-12-08-recherche-dans-le-code-source-avec-git">Lire la suite</a>
   </div>
@@ -146,12 +147,16 @@ Tags :
   <div>
       <p>Voici mon historique des commits :</p>
 <pre class="literal-block">
-c0004 -- dernier commitc0003 -- avant dernier commitc0002 -- second commitc0001 -- premier commit
+c0004 -- dernier commit
+c0003 -- avant dernier commit
+c0002 -- second commit
+c0001 -- premier commit
 </pre>
 <p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire :</p>
-<p><tt class="docutils literal">git <span class="pre">format-patch</span> <span class="pre">-2</span> c0002 <span class="pre">--stdout</span> &gt; mon.patch</tt></p>
-<p>le &quot;-2&quot; sert à récupérer 2 commits à partir du commit c0002.</p>
-
+<pre class="literal-block">
+git format-patch -2 c0002 --stdout &gt; mon.patch
+</pre>
+<p>le &quot;-2&quot; sert à récupérer 2 commits à partir du commit ...</p>
       <a class="btn" href="http://www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html#2014-05-06-faire-un-patch-de-x-commits-avec-git">Lire la suite</a>
   </div>
   <hr />
@@ -165,12 +170,10 @@ Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/diff.html">diff</a>,      <a href="http://www.choiz.fr/tag/wrap.html">wrap</a>,      <a href="http://www.choiz.fr/tag/multiline.html">multiline</a>,      <a href="http://www.choiz.fr/tag/multiligne.html">multiligne</a>,      <a href="http://www.choiz.fr/tag/less.html">less</a>,      <a href="http://www.choiz.fr/tag/config.html">config</a>,      <a href="http://www.choiz.fr/tag/gitconfig.html">gitconfig</a>    </p>
   </header>
   <div>
-      <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
-ligne…</p>
-<p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais
-pas entièrement…).</p>
-<p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu
-que ...</p>
+      <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une ligne…</p>
+<p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais pas
+entièrement…).</p>
+<p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu que ...</p>
       <a class="btn" href="http://www.choiz.fr/2014-03-05-git-diff-multiligne.html#2014-03-05-git-diff-multiligne">Lire la suite</a>
   </div>
   <hr />
@@ -186,10 +189,12 @@ Tags :
   <div>
       <p>J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
 messages sur cherry-pick sans savoir ce que c'était.</p>
-</p><p>git cherry-pick permet d'appliquer un commit sur la branche sur la
+<p>git cherry-pick permet d'appliquer un commit sur la branche sur la
 branche actuelle.</p>
-</p><p><tt class="docutils literal">git <span class="pre">cherry-pick</span> c4a99776</tt></p>
-</p>
+<pre class="literal-block">
+git cherry-pick c4a99776
+</pre>
+
       <a class="btn" href="http://www.choiz.fr/2014-02-06-git-cherry-pick.html#2014-02-06-git-cherry-pick">Lire la suite</a>
   </div>
   <hr />

@@ -73,7 +73,9 @@
 <div class="section" id="configuration-des-dns">
 <h2>Configuration des DNS</h2>
 <p>Pour commencer nous allons créer des entrées DNS.</p>
-<p>Nous créons un MX pour les mails avec une priorité de 1, un sous domaine &quot;mail&quot; qui pointe vers l'adresse ipv4 de votre serveur, d'un sous domaine webmail qui pointe sur le sous domaine mail et d'un enregistrement SPF</p>
+<p>Nous créons un MX pour les mails avec une priorité de 1, un sous domaine &quot;mail&quot;
+qui pointe vers l'adresse ipv4 de votre serveur, d'un sous domaine webmail qui
+pointe sur le sous domaine mail et d'un enregistrement SPF</p>
 <pre class="literal-block">
 votredomaine.com.           MX      1   mail.votredomaine.com.
 mail.votredomaine.com.      A           ip.v4.du.serveur
@@ -87,7 +89,8 @@ votredomain.com.            SPF         &quot;v=spf1 ip4:ip.v4.du.server ~all&qu
 <pre class="literal-block">
 apt-get install postfix dovecot-imapd sasl2-bin php5-curl
 </pre>
-<p>Configurer le serveur de messagerie comme &quot;Site Internet&quot;, puis en nom de courrier indiquer &quot;mail.votredomaine.com&quot;.</p>
+<p>Configurer le serveur de messagerie comme &quot;Site Internet&quot;, puis en nom de
+courrier indiquer &quot;mail.votredomaine.com&quot;.</p>
 </div>
 <div class="section" id="configuration-de-dovecot">
 <h2>Configuration de dovecot</h2>
@@ -335,8 +338,10 @@ touch /etc/postfix/virtual_mailbox
 email&#64;votredomaine.com          votredomaine.com/email&#64;votredomaine.com/
 linus&#64;torvald.com               torvald.com/linus&#64;torvald.com/
 </pre>
-<p>N'oubliez pas lors de la création de nouveau comptes mail d'éditer /etc/dovecot/users ;-)</p>
-<p>Maintenant il faut dire a postfix que nous avons modifier nos fichiers virtuels :</p>
+<p>N'oubliez pas lors de la création de nouveau comptes mail d'éditer
+/etc/dovecot/users ;-)</p>
+<p>Maintenant il faut dire a postfix que nous avons modifier nos fichiers virtuels
+:</p>
 <pre class="literal-block">
 postmap /etc/postfix/virtual_alias
 postmap /etc/postfix/virtual_domains
@@ -363,7 +368,8 @@ smtps   inet    n   -   -   -   -   smtpd   -v
 /etc/init.d/postfix restart
 </pre>
 <p>Fin de la configuration de postfix.</p>
-<p>Vous pouvez maintenant tester votre serveur mail ainsi que la qualité de votre serveur sur le site <a class="reference external" href="http://www.mail-tester.com">http://www.mail-tester.com</a></p>
+<p>Vous pouvez maintenant tester votre serveur mail ainsi que la qualité de votre
+serveur sur le site <a class="reference external" href="http://www.mail-tester.com">http://www.mail-tester.com</a></p>
 </div>
 <div class="section" id="installation-d-un-webmail-rainloop">
 <h2>Installation d'un webmail rainloop</h2>
@@ -385,7 +391,8 @@ chown -R www-data:www-data /var/www/webmail
 find . -type f -exec chmod 644 {} \;
 find . -type d -exec chmod 755 {} \;
 </pre>
-<p>Créer un vhost pour apache dans <cite>/etc/apache2/site-enabled/001-webmail.domain.com.conf</cite></p>
+<p>Créer un vhost pour apache dans
+<cite>/etc/apache2/site-enabled/001-webmail.domain.com.conf</cite></p>
 <pre class="literal-block">
 &lt;VirtualHost *:80&gt;
     ServerAdmin contact&#64;domain.com
@@ -438,7 +445,8 @@ find . -type d -exec chmod 755 {} \;
 </tbody>
 </table>
 <p>Changer la langue et votre mot de passe (dans <cite>security</cite>).</p>
-<p>Puis dans <cite>domains</cite> configurez votre nom de domaine en cliquant sur <cite>+ Add domain</cite></p>
+<p>Puis dans <cite>domains</cite> configurez votre nom de domaine en cliquant sur <cite>+ Add
+domain</cite></p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="31%" />
@@ -490,8 +498,10 @@ find . -type d -exec chmod 755 {} \;
 </table>
 <p>Puis <cite>+ Add</cite></p>
 <p>Je supprime tous les autres domaines (gmail etc…)</p>
-<p>Ensuite j'active les plugins, et les packages : X-Originating-IP, Black list et White list.</p>
-<p>Maintenant rendez-vous sur : <a class="reference external" href="http://mail.domain.com">http://mail.domain.com</a> et identifiez-vous avec votre login et mot de passe.</p>
+<p>Ensuite j'active les plugins, et les packages : X-Originating-IP, Black list et
+White list.</p>
+<p>Maintenant rendez-vous sur : <a class="reference external" href="http://mail.domain.com">http://mail.domain.com</a> et identifiez-vous avec
+votre login et mot de passe.</p>
 </div>
 
   </div>

@@ -70,25 +70,43 @@
     <p>Posté le mer. 05 mars 2014</p>
   </header>
   <div>
-    <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
-ligne…</p>
-<p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais
-pas entièrement…).</p>
-<p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu
-que ma ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
+    <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une ligne…</p>
+<p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais pas
+entièrement…).</p>
+<p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu que ma
+ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
 <p>Mon fichier texte ressemble à ceci :</p>
-<p><tt class="docutils literal">ligne avec un peu de texte ici nous avons 66 caractères affichés.</tt></p>
+<pre class="literal-block">
+ligne avec un peu de texte ici nous avons 66 caractères affichés.
+</pre>
 <p>Or, quand je fais un diff on ne voit pas tous les caractères</p>
 <pre class="literal-block">
-$ git diff HEAD~1 HEADdiff --git a/test.txt b/test.txtnew file mode 100644index 0000000..235a891--- /dev/null+++ b/test.txt&#64;&#64; -0,0 +1 &#64;&#64;+ligne avec un peu de texte ici nous avons 66 caractè\ No newline at end of file
+git diff HEAD~1 HEAD
+diff --git a/test.txt b/test.txt
+new file mode 100644
+index 0000000..235a891
+--- /dev/null
++++ b/test.txt
+&#64;&#64; -0,0 +1 &#64;&#64;
++ligne avec un peu de texte ici nous avons 66 caractè\
+No newline at end of file
 </pre>
-<p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=&quot;&quot;</em> &nbsp;avant la
+<p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=&quot;&quot;</em> avant la
 commande <em>git diff</em> soit ajouter dans son fichier de config git :</p>
-<p><tt class="docutils literal">git config <span class="pre">--global</span> core.pager &quot;less <span class="pre">-r&quot;</span></tt></p>
-<p>Voila ce que ça donne avec GIT_PAGER</p>
-<p><tt class="docutils literal"><span class="pre">GIT_PAGER=&quot;&quot;</span> git diff HEAD~1 HEAD</tt></p>
 <pre class="literal-block">
-diff --git a/test.txt b/test.txtnew file mode 100644index 0000000..235a891--- /dev/null+++ b/test.txt&#64;&#64; -0,0 +1 &#64;&#64;+ligne avec un peu de texte ici nous avons 66 caractères affichés.\ No newline at end of file
+git config --global core.pager &quot;less -r&quot;
+</pre>
+<p>Voilà ce que ça donne avec GIT_PAGER</p>
+<pre class="literal-block">
+GIT_PAGER=&quot;&quot; git diff HEAD~1 HEAD
+diff --git a/test.txt b/test.txt
+new file mode 100644
+index 0000000..235a891
+--- /dev/null
++++ b/test.txt
+&#64;&#64; -0,0 +1 &#64;&#64;
++ligne avec un peu de texte ici nous avons 66 caractères affichés.\
+No newline at end of file
 </pre>
 
   </div>

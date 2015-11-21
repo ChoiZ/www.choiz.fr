@@ -61,7 +61,8 @@ Tags :
       <a href="http://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="http://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="http://www.choiz.fr/tag/upgrade.html">upgrade</a>,      <a href="http://www.choiz.fr/tag/noyaux.html">noyaux</a>,      <a href="http://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
-      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre pour le mettre à jour vers la version : 4.3.0.</p>
+      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre
+pour le mettre à jour vers la version : 4.3.0.</p>
 <p>Je liste les différents noyaux gentoo disponibles :</p>
 <pre class="literal-block">
 eix sys-kernel/gentoo-sources
@@ -70,8 +71,10 @@ eix sys-kernel/gentoo-sources
 <pre class="literal-block">
 emerge -a =sys-kernel/gentoo-sources-4.3.0
 </pre>
-<p>Une fois téléchargé, il faut modifier le lien symbolique <cite>/usr/src/linux</cite> grâce à eselect.</p>
-<p>J'affiche la liste des noyaux (celui actuellement selectionné est suivi d'une étoile) :</p>
+<p>Une fois téléchargé, il faut modifier le lien symbolique <cite>/usr/src/linux</cite> grâce
+à eselect.</p>
+<p>J'affiche la liste des noyaux (celui actuellement selectionné est suivi d'une
+étoile) :</p>
 <pre class="literal-block">
 eselect kernel list
 
@@ -82,7 +85,8 @@ eselect kernel list
 <pre class="literal-block">
 eselect kernel set 2
 </pre>
-<p>Maintenant que vous avez selectionné votre noyau, copier le fichier &quot;.config&quot; de votre noyau précédent (pour conserver vos réglages de compilation)</p>
+<p>Maintenant que vous avez selectionné votre noyau, copier le fichier &quot;.config&quot; de
+votre noyau précédent (pour conserver vos réglages de compilation)</p>
 <pre class="literal-block">
 cp /usr/src/linux-4.2.0-gentoo/.config /usr/src/linux
 </pre>
@@ -104,7 +108,9 @@ Tags :
 <div class="section" id="configuration-des-dns">
 <h2>Configuration des DNS</h2>
 <p>Pour commencer nous allons créer des entrées DNS.</p>
-<p>Nous créons un MX pour les mails avec une priorité de 1, un sous domaine &quot;mail&quot; qui pointe vers l'adresse ipv4 de votre serveur, d'un sous domaine webmail qui pointe sur le sous domaine mail et d'un enregistrement SPF</p>
+<p>Nous créons un MX pour les mails avec une priorité de 1, un sous domaine &quot;mail&quot;
+qui pointe vers l'adresse ipv4 de votre serveur, d'un sous domaine webmail qui
+pointe sur le sous domaine mail et d'un enregistrement SPF</p>
 <pre class="literal-block">
 votredomaine.com.           MX      1   mail.votredomaine.com.
 mail.votredomaine.com.      A           ip.v4.du.serveur
@@ -118,7 +124,8 @@ votredomain.com.            SPF         &quot;v=spf1 ip4:ip.v4.du.server ~all&qu
 <pre class="literal-block">
 apt-get install postfix dovecot-imapd sasl2-bin php5-curl
 </pre>
-<p>Configurer le serveur de messagerie comme &quot;Site Internet&quot;, puis en nom de courrier indiquer &quot;mail.votredomaine.com&quot;.</p>
+<p>Configurer le serveur de messagerie comme &quot;Site Internet&quot;, puis en nom de
+courrier indiquer &quot;mail.votredomaine.com&quot;.</p>
 </div>
 <div class="section" id="configuration-de-dovecot">
 <h2>Configuration de dovecot</h2>
@@ -366,8 +373,10 @@ touch /etc/postfix/virtual_mailbox
 email&#64;votredomaine.com          votredomaine.com/email&#64;votredomaine.com/
 linus&#64;torvald.com               torvald.com/linus&#64;torvald.com/
 </pre>
-<p>N'oubliez pas lors de la création de nouveau comptes mail d'éditer /etc/dovecot/users ;-)</p>
-<p>Maintenant il faut dire a postfix que nous avons modifier nos fichiers virtuels :</p>
+<p>N'oubliez pas lors de la création de nouveau comptes mail d'éditer
+/etc/dovecot/users ;-)</p>
+<p>Maintenant il faut dire a postfix que nous avons modifier nos fichiers virtuels
+:</p>
 <pre class="literal-block">
 postmap /etc/postfix/virtual_alias
 postmap /etc/postfix/virtual_domains
@@ -394,7 +403,8 @@ smtps   inet    n   -   -   -   -   smtpd   -v
 /etc/init.d/postfix restart
 </pre>
 <p>Fin de la configuration de postfix.</p>
-<p>Vous pouvez maintenant tester votre serveur mail ainsi que la qualité de votre serveur sur le site <a class="reference external" href="http://www.mail-tester.com">http://www.mail-tester.com</a></p>
+<p>Vous pouvez maintenant tester votre serveur mail ainsi que la qualité de votre
+serveur sur le site <a class="reference external" href="http://www.mail-tester.com">http://www.mail-tester.com</a></p>
 </div>
 <div class="section" id="installation-d-un-webmail-rainloop">
 <h2>Installation d'un webmail rainloop</h2>
@@ -416,7 +426,8 @@ chown -R www-data:www-data /var/www/webmail
 find . -type f -exec chmod 644 {} \;
 find . -type d -exec chmod 755 {} \;
 </pre>
-<p>Créer un vhost pour apache dans <cite>/etc/apache2/site-enabled/001-webmail.domain.com.conf</cite></p>
+<p>Créer un vhost pour apache dans
+<cite>/etc/apache2/site-enabled/001-webmail.domain.com.conf</cite></p>
 <pre class="literal-block">
 &lt;VirtualHost *:80&gt;
     ServerAdmin contact&#64;domain.com
@@ -469,7 +480,8 @@ find . -type d -exec chmod 755 {} \;
 </tbody>
 </table>
 <p>Changer la langue et votre mot de passe (dans <cite>security</cite>).</p>
-<p>Puis dans <cite>domains</cite> configurez votre nom de domaine en cliquant sur <cite>+ Add domain</cite></p>
+<p>Puis dans <cite>domains</cite> configurez votre nom de domaine en cliquant sur <cite>+ Add
+domain</cite></p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="31%" />
@@ -521,8 +533,10 @@ find . -type d -exec chmod 755 {} \;
 </table>
 <p>Puis <cite>+ Add</cite></p>
 <p>Je supprime tous les autres domaines (gmail etc…)</p>
-<p>Ensuite j'active les plugins, et les packages : X-Originating-IP, Black list et White list.</p>
-<p>Maintenant rendez-vous sur : <a class="reference external" href="http://mail.domain.com">http://mail.domain.com</a> et identifiez-vous avec votre login et mot de passe.</p>
+<p>Ensuite j'active les plugins, et les packages : X-Originating-IP, Black list et
+White list.</p>
+<p>Maintenant rendez-vous sur : <a class="reference external" href="http://mail.domain.com">http://mail.domain.com</a> et identifiez-vous avec
+votre login et mot de passe.</p>
 </div>
 
   </div>
@@ -538,18 +552,23 @@ Tags :
   </header>
   <div>
       <p>Sur ma machine &quot;links&quot; était le navigateur web par défaut.
-Il est pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il est préférable d'utiliser un navigateur tel que Firefox.</p>
-<p>Voici la commande pour voir le navigateur par défaut pour les url utilisants le protocole &quot;http&quot; :</p>
-<blockquote>
-xdg-mime query default x-scheme-handler/http</blockquote>
+Il est pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
+est préférable d'utiliser un navigateur tel que Firefox.</p>
+<p>Voici la commande pour voir le navigateur par défaut pour les url utilisants le
+protocole &quot;http&quot; :</p>
+<pre class="literal-block">
+xdg-mime query default x-scheme-handler/http
+</pre>
 <p>Et voici la commande pour le &quot;https&quot; :</p>
-<blockquote>
-xdg-mime query default x-scheme-handler/https</blockquote>
-<p>Pour changer le navigateur par défaut par Firefox il suffit d'executer ses deux commandes :</p>
-<blockquote>
-<p>xdg-mime default firefox.desktop x-scheme-handler/http</p>
-<p>xdg-mime default firefox.desktop x-scheme-handler/https</p>
-</blockquote>
+<pre class="literal-block">
+xdg-mime query default x-scheme-handler/https
+</pre>
+<p>Pour changer le navigateur par défaut par Firefox il suffit d'executer ses deux
+commandes :</p>
+<pre class="literal-block">
+xdg-mime default firefox.desktop x-scheme-handler/http
+xdg-mime default firefox.desktop x-scheme-handler/https
+</pre>
 
   </div>
   <hr />
@@ -563,15 +582,20 @@ Tags :
       <a href="http://www.choiz.fr/tag/vagrant.html">vagrant</a>,      <a href="http://www.choiz.fr/tag/reseau.html">réseau</a>,      <a href="http://www.choiz.fr/tag/prive.html">privé</a>,      <a href="http://www.choiz.fr/tag/private.html">private</a>,      <a href="http://www.choiz.fr/tag/network.html">network</a>    </p>
   </header>
   <div>
-      <p>J'utilise plusieurs machines virtuelles avec vagrant, une avec un backoffice et une avec une API.</p>
-<p>J'ai donc du faire un réseau privé dans vagrant pour que le BO communique avec l'API.</p>
+      <p>J'utilise plusieurs machines virtuelles avec vagrant, une avec un backoffice et
+une avec une API.</p>
+<p>J'ai donc du faire un réseau privé dans vagrant pour que le BO communique avec
+l'API.</p>
 <p>Il suffit de modifier la configuration de la vm #1 et d'ajouter :</p>
-<blockquote>
-config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.1&quot;</blockquote>
+<pre class="literal-block">
+config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.1&quot;
+</pre>
 <p>Et dans la configuration de la vm #2 d'ajouter :</p>
-<blockquote>
-config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.2&quot;</blockquote>
-<p>Votre vm #1 peut (suite au redémarrage des deux vm vagrant) communiquer avec votre vm #2 directement avec l'ip <cite>192.168.10.2</cite>.</p>
+<pre class="literal-block">
+config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.2&quot;
+</pre>
+<p>Votre vm #1 peut (suite au redémarrage des deux vm vagrant) communiquer avec
+votre vm #2 directement avec l'ip <cite>192.168.10.2</cite>.</p>
 
   </div>
   <hr />
@@ -585,34 +609,39 @@ Tags :
       <a href="http://www.choiz.fr/tag/commentaire.html">commentaire</a>,      <a href="http://www.choiz.fr/tag/code.html">code</a>,      <a href="http://www.choiz.fr/tag/efficace.html">efficace</a>    </p>
   </header>
   <div>
-      <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester qu'une fonctionnalité de code.</p>
+      <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester qu'une
+fonctionnalité de code.</p>
 <p>Par exemple pour tester une api :</p>
-<blockquote>
-<p>// Obtenir le livre #1</p>
-<p>api_get('books/1');</p>
-<p>// Ajouter un livre</p>
-<p>api_add('books', $datas);</p>
-</blockquote>
+<pre class="literal-block">
+// Obtenir le livre #1
+api_get('books/1');
+
+// Ajouter un livre
+api_add('books', $datas);
+</pre>
 <p>Je test généralement chaque élément séparement.</p>
 <p>Pour tester la première portion de mon code :</p>
-<blockquote>
-<p>//* Obtenir le livre #1</p>
-<p>api_get('books/1');</p>
-<p>//*/</p>
-<p>/* Ajouter un livre</p>
-<p>api_add('books', $datas);</p>
-<p>//*/</p>
-</blockquote>
+<pre class="literal-block">
+//* Obtenir le livre #1
+api_get('books/1');
+//\*/
+
+/* Ajouter un livre
+api_add('books', $datas);
+//\*/
+</pre>
 <p>Pour tester la seconde portion de mon code :</p>
-<blockquote>
-<p>/* Obtenir le livre #1</p>
-<p>api_get('books/1');</p>
-<p>//*/</p>
-<p>//* Ajouter un livre</p>
-<p>api_add('books', $datas);</p>
-<p>//*/</p>
-</blockquote>
-<p>Il me suffit d'ajouter ou d'enlever un slash sur le premier commentaire pour commenter ou non tout le bloc.</p>
+<pre class="literal-block">
+/* Obtenir le livre #1
+api_get('books/1');
+//\*/
+
+//* Ajouter un livre
+api_add('books', $datas);
+//\*/
+</pre>
+<p>Il me suffit d'ajouter ou d'enlever un slash sur le premier commentaire pour
+commenter ou non tout le bloc.</p>
 <p>Ce n'est pas forcément très lisible donc je fais ça uniquement pour mes tests.</p>
 
   </div>
@@ -629,11 +658,13 @@ Tags :
   <div>
       <p>Pour mettre à jour Gentoo j'utilise différentes commandes.</p>
 <p>Dans un premier temps je fais la mise à jour d'eix :</p>
-<blockquote>
-eix-sync</blockquote>
+<pre class="literal-block">
+eix-sync
+</pre>
 <p>Ensuite :</p>
-<blockquote>
-emerge -pvuDN world</blockquote>
+<pre class="literal-block">
+emerge -pvuDN world
+</pre>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -655,9 +686,11 @@ emerge -pvuDN world</blockquote>
 <td>ou --newuse, met à jour les programmes dont le &quot;USE&quot; a été modifié depuis son installation.</td></tr>
 </tbody>
 </table>
-<p>Une fois la liste des programmes et ses modifications vérifiée nous pouvons lancer la mise à jour :</p>
-<blockquote>
-emerge -vuDN world</blockquote>
+<p>Une fois la liste des programmes et ses modifications vérifiée nous pouvons
+lancer la mise à jour :</p>
+<pre class="literal-block">
+emerge -vuDN world
+</pre>
 
   </div>
   <hr />
@@ -672,20 +705,26 @@ Tags :
   </header>
   <div>
       <p>Pour compiler le kernel sous gentoo :</p>
-<blockquote>
-<p>cd /usr/src/linux</p>
-<p>make menuconfig</p>
-<p>make &amp;&amp; make modules_install</p>
-<p>make install</p>
-</blockquote>
+<pre class="literal-block">
+cd /usr/src/linux
+
+make menuconfig
+
+make &amp;&amp; make modules_install
+
+make install
+</pre>
 <p>Le kernel est maintenant compilé.</p>
 <p>Maintenant il faut mettre à jour grub.</p>
-<blockquote>
-grub2-mkconfig -o /boot/grub/grub.cfg</blockquote>
-<p>Puis lancer <cite>uname -a</cite> qui affiche le kernel actuellement utilisé ainsi que le nombre de compilation.</p>
+<pre class="literal-block">
+grub2-mkconfig -o /boot/grub/grub.cfg
+</pre>
+<p>Puis lancer <cite>uname -a</cite> qui affiche le kernel actuellement utilisé ainsi que le
+nombre de compilation.</p>
 <p>Il faut maintenant redémarrer la machine :</p>
-<blockquote>
-reboot</blockquote>
+<pre class="literal-block">
+reboot
+</pre>
 <p>Au final vérifier avec <cite>uname -a</cite> si le bon kernel est chargé.</p>
 
   </div>
@@ -700,16 +739,20 @@ Tags :
       <a href="http://www.choiz.fr/tag/targz.html">tar.gz</a>,      <a href="http://www.choiz.fr/tag/tarbz2.html">tar.bz2</a>,      <a href="http://www.choiz.fr/tag/tarxz.html">tar.xz</a>,      <a href="http://www.choiz.fr/tag/tar.html">tar</a>,      <a href="http://www.choiz.fr/tag/gz.html">gz</a>,      <a href="http://www.choiz.fr/tag/gzip.html">gzip</a>,      <a href="http://www.choiz.fr/tag/bz2.html">bz2</a>,      <a href="http://www.choiz.fr/tag/xz.html">xz</a>,      <a href="http://www.choiz.fr/tag/lzma.html">lzma</a>    </p>
   </header>
   <div>
-      <p>J'ai toujours du mal pour décompresser un fichier de type &quot;tar.bz2&quot; ou &quot;tar.xz&quot;. Je n'ai pas encore trouvé le moyen de me souvenir de la syntaxe…</p>
+      <p>J'ai toujours du mal pour décompresser un fichier de type &quot;tar.bz2&quot; ou &quot;tar.xz&quot;.
+Je n'ai pas encore trouvé le moyen de me souvenir de la syntaxe…</p>
 <div class="section" id="tar-gz">
 <h2>tar.gz</h2>
-<p>Pour les fichiers <strong>tar.gz</strong> j'arrive parfaitement à compresser ou décompresser ce format exemple :</p>
+<p>Pour les fichiers <strong>tar.gz</strong> j'arrive parfaitement à compresser ou décompresser
+ce format exemple :</p>
 <p>On compresse avec :</p>
-<blockquote>
-tar -cvzf archive.tar.gz dossier_a_compresser/</blockquote>
+<pre class="literal-block">
+tar -cvzf archive.tar.gz dossier_a_compresser/
+</pre>
 <p>On décompresse avec :</p>
-<blockquote>
-tar -xvzf archive.tar.gz</blockquote>
+<pre class="literal-block">
+tar -xvzf archive.tar.gz
+</pre>
 <p>Il suffit de retenir :</p>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
@@ -732,36 +775,46 @@ tar -xvzf archive.tar.gz</blockquote>
 </div>
 <div class="section" id="tar-bz2">
 <h2>tar.bz2</h2>
-<p>Pour les <strong>tar.bz2</strong> je ne sais JAMAIS qu'il faut remplacer &quot;z&quot; de gizip par &quot;j&quot; de Bzip… (la lettre &quot;b&quot; étant sans doute utilisé avant que le bzip n'apparaisse).
-L'alternative est d'utiliser &quot;--bzip&quot;</p>
+<p>Pour les <strong>tar.bz2</strong> je ne sais JAMAIS qu'il faut remplacer &quot;z&quot; de gizip par &quot;j&quot;
+de Bzip… (la lettre &quot;b&quot; étant sans doute utilisé avant que le bzip
+n'apparaisse). L'alternative est d'utiliser &quot;--bzip&quot;</p>
 <p>On compresse avec :</p>
-<blockquote>
-tar -cvjf archive.tar.bz2 dossier_a_compresser/</blockquote>
+<pre class="literal-block">
+tar -cvjf archive.tar.bz2 dossier_a_compresser/
+</pre>
 <p>Ou :</p>
-<blockquote>
-tar --bzip2 -cvf archive.tar.bz2 dossier_a_compresser/</blockquote>
+<pre class="literal-block">
+tar --bzip2 -cvf archive.tar.bz2 dossier_a_compresser/
+</pre>
 <p>On décompresse avec :</p>
-<blockquote>
-tar -xvjf archive.tar.bz2</blockquote>
+<pre class="literal-block">
+tar -xvjf archive.tar.bz2
+</pre>
 <p>Ou :</p>
-<blockquote>
-tar --bzip2 -xvf archive.tar.bz2</blockquote>
+<pre class="literal-block">
+tar --bzip2 -xvf archive.tar.bz2
+</pre>
 </div>
 <div class="section" id="tar-xz">
 <h2>tar.xz</h2>
-<p>Pour ce qui est de Lzma ou le <strong>tar.xz</strong> c'est un &quot;J&quot; majuscule cette fois ou d'utiliser &quot;--xz&quot;.</p>
+<p>Pour ce qui est de Lzma ou le <strong>tar.xz</strong> c'est un &quot;J&quot; majuscule cette fois ou
+d'utiliser &quot;--xz&quot;.</p>
 <p>On compresse avec :</p>
-<blockquote>
-tar -cvJf archive.tar.xz dossier_a_compresser/</blockquote>
+<pre class="literal-block">
+tar -cvJf archive.tar.xz dossier_a_compresser/
+</pre>
 <p>Ou :</p>
-<blockquote>
-tar --xz -cvf archive.tar.xz dossier_a_compresser/</blockquote>
+<pre class="literal-block">
+tar --xz -cvf archive.tar.xz dossier_a_compresser/
+</pre>
 <p>On décompresse avec :</p>
-<blockquote>
-tar -xvJf archive.tar.xz</blockquote>
+<pre class="literal-block">
+tar -xvJf archive.tar.xz
+</pre>
 <p>Ou :</p>
-<blockquote>
-tar --xz -xvf archive.tar.xz</blockquote>
+<pre class="literal-block">
+tar --xz -xvf archive.tar.xz
+</pre>
 </div>
 
   </div>
@@ -815,9 +868,12 @@ Tags :
   </header>
   <div>
       <p>J'ai testé pelican, lors de mon voyage à Bruxelles en Thalys le 15 Août 2014.
-Depuis cette date je n'avais pas pris le temps de m'occuper de la migration de mon blog de tumblr vers pelican.</p>
-<p><a class="reference external" href="http://blog.getpelican.com/">Pelican</a> est un générateur de site statique, il est pratique pour la gestion des articles tel que mon blog.</p>
-<p>Il suffit de créer un fichier texte avec le contenu de l'article et l'envoyer sur github pour que celui-ci soit publié.</p>
+Depuis cette date je n'avais pas pris le temps de m'occuper de la migration de
+mon blog de tumblr vers pelican.</p>
+<p><a class="reference external" href="http://blog.getpelican.com/">Pelican</a> est un générateur de site statique, il est pratique pour la gestion
+des articles tel que mon blog.</p>
+<p>Il suffit de créer un fichier texte avec le contenu de l'article et l'envoyer
+sur github pour que celui-ci soit publié.</p>
 
   </div>
 </article>

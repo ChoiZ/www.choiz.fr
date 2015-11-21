@@ -61,7 +61,8 @@ Tags :
       <a href="http://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="http://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="http://www.choiz.fr/tag/upgrade.html">upgrade</a>,      <a href="http://www.choiz.fr/tag/noyaux.html">noyaux</a>,      <a href="http://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
-      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre pour le mettre à jour vers la version : 4.3.0.</p>
+      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre
+pour le mettre à jour vers la version : 4.3.0.</p>
 <p>Je liste les différents noyaux gentoo disponibles :</p>
 <pre class="literal-block">
 eix sys-kernel/gentoo-sources
@@ -85,17 +86,22 @@ Tags :
   </header>
   <div>
       <p>Pour compiler le kernel sous gentoo :</p>
-<blockquote>
-<p>cd /usr/src/linux</p>
-<p>make menuconfig</p>
-<p>make &amp;&amp; make modules_install</p>
-<p>make install</p>
-</blockquote>
+<pre class="literal-block">
+cd /usr/src/linux
+
+make menuconfig
+
+make &amp;&amp; make modules_install
+
+make install
+</pre>
 <p>Le kernel est maintenant compilé.</p>
 <p>Maintenant il faut mettre à jour grub.</p>
-<blockquote>
-grub2-mkconfig -o /boot/grub/grub.cfg</blockquote>
-<p>Puis lancer <cite>uname -a</cite> qui affiche le kernel actuellement utilisé ainsi que le nombre de ...</p>
+<pre class="literal-block">
+grub2-mkconfig -o /boot/grub/grub.cfg
+</pre>
+<p>Puis lancer <cite>uname -a</cite> qui affiche le kernel actuellement utilisé ainsi que le
+nombre de ...</p>
       <a class="btn" href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html#2015-09-06-compilation-kernel-gentoo">Lire la suite</a>
   </div>
   <hr />
@@ -109,11 +115,10 @@ Tags :
       <a href="http://www.choiz.fr/tag/clevo.html">clevo</a>,      <a href="http://www.choiz.fr/tag/clevo-w650.html">clevo w650</a>,      <a href="http://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="http://www.choiz.fr/tag/ethernet.html">ethernet</a>,      <a href="http://www.choiz.fr/tag/realtek.html">realtek</a>,      <a href="http://www.choiz.fr/tag/audio.html">audio</a>,      <a href="http://www.choiz.fr/tag/hdaudio.html">hdaudio</a>,      <a href="http://www.choiz.fr/tag/achat.html">achat</a>,      <a href="http://www.choiz.fr/tag/i7-4910mq.html">i7 4910MQ</a>,      <a href="http://www.choiz.fr/tag/msata.html">mSata</a>    </p>
   </header>
   <div>
-      <p>Ayant vendu mon Macbook Air 13″ il y a quelques mois, j’ai pris le temps
-de comparer les différents portables. La marque Taïwanaise clevo propose
-des machines avec ou sans OS (gain d’une centaine d’euros pour Windows).</p>
-<p>J’ai donc commandé chez <a class="reference external" href="http://www.clevo.fr">Anyware</a> un w650sz avec
-un ...</p>
+      <p>Ayant vendu mon Macbook Air 13&quot; il y a quelques mois, j'ai pris le temps
+de comparer les différents portables. La marque Taïwanaise &quot;clevo&quot; propose des
+machines avec ou sans OS (gain d'une centaine d'euros pour Windows).</p>
+<p>J'ai donc commandé chez <a class="reference external" href="http://www.clevo.fr">Anyware</a> un w650sz avec un ...</p>
       <a class="btn" href="http://www.choiz.fr/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html#2015-07-18-ma-config-clevo-w650sz-i7-4910mq">Lire la suite</a>
   </div>
 </article>

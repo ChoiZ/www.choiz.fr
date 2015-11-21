@@ -63,8 +63,7 @@ Tags :
   <div>
       <p>Je suis à l'heure, et mes serveurs le sont également (normalement).</p>
 <p>Normalement oui, mais le serveur NTP que j'utilisais ne répond plus… Mes
-serveurs ont donc 1mn30 de retard pour l'un, et 40mn de retard pour
-l'autre !</p>
+serveurs ont donc 1mn30 de retard pour l'un, et 40mn de retard pour l'autre !</p>
 <p>J'utilisais ntpdate avec le serveur de l'université ...</p>
       <a class="btn" href="http://www.choiz.fr/2015-01-24-êtes-vous-à-lheure-et-votre-serveur.html#2015-01-24-êtes-vous-à-lheure-et-votre-serveur">Lire la suite</a>
   </div>
@@ -79,14 +78,18 @@ Tags :
       <a href="http://www.choiz.fr/tag/skype.html">Skype</a>,      <a href="http://www.choiz.fr/tag/debian.html">Debian</a>,      <a href="http://www.choiz.fr/tag/installation-de-skype.html">Installation de Skype</a>,      <a href="http://www.choiz.fr/tag/skype-debian-64.html">Skype Debian 64</a>,      <a href="http://www.choiz.fr/tag/debian-64.html">Debian 64</a>    </p>
   </header>
   <div>
-      <p>Télécharger la dernière version de <a class="reference external" href="http://www.skype.com">Skype</a>
-(Debian 7.0 [multiarch]).</p>
+      <p>Télécharger la dernière version de <a class="reference external" href="http://www.skype.com">Skype</a> (Debian 7.0
+[multiarch]).</p>
 <p>Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait.</p>
-<p><tt class="docutils literal">dpkg <span class="pre">--add-architecture</span> i386</tt></p>
-<p>Puis mettre à jour les paquets</p>
-<p><tt class="docutils literal"><span class="pre">apt-get</span> update</tt></p>
-<p><tt class="docutils literal"><span class="pre">apt-get</span> upgrade</tt></p>
-<p><tt class="docutils literal"><span class="pre">apt-get</span> install <span class="pre">-f</span></tt></p>
+<pre class="literal-block">
+dpkg --add-architecture i386
+</pre>
+<p>Puis mettre à jour les paquets :</p>
+<pre class="literal-block">
+apt-get update
+apt-get upgrade
+apt-get install -f
+</pre>
 <p>Installer Skype en n'oubliant pas de remplacer &quot;x&quot; par la bonne ...</p>
       <a class="btn" href="http://www.choiz.fr/2014-03-21-installation-de-skype-64-sur-debian.html#2014-03-21-installation-de-skype-64-sur-debian">Lire la suite</a>
   </div>
@@ -101,13 +104,15 @@ Tags :
       <a href="http://www.choiz.fr/tag/firefox.html">Firefox</a>,      <a href="http://www.choiz.fr/tag/mozilla.html">Mozilla</a>,      <a href="http://www.choiz.fr/tag/debian.html">Debian</a>,      <a href="http://www.choiz.fr/tag/installation-de-firefox.html">Installation de Firefox</a>,      <a href="http://www.choiz.fr/tag/firefox-sur-debian.html">Firefox sur Debian</a>    </p>
   </header>
   <div>
-      <p>Télécharger la dernière version de Firefox sur <a class="reference external" href="http://www.mozilla.org/">le site de
-mozilla</a>.</p>
+      <p>Télécharger la dernière version de Firefox sur <a class="reference external" href="http://www.mozilla.org/">le site de mozilla</a>.</p>
 <p>Décompresser l'archive dans :</p>
-<p><tt class="docutils literal">/opt/firefox/</tt></p>
+<pre class="literal-block">
+/opt/firefox/
+</pre>
 <p>Créer un lien symbolique avec :</p>
-<p><tt class="docutils literal">ls <span class="pre">-sf</span> /opt/firefox/firefox /usr/bin/firefox</tt></p>
-<p>Et voilà.</p>
+<pre class="literal-block">
+ls -sf /opt/firefox/firefox /usr/bin/firefox
+</pre>
 
       <a class="btn" href="http://www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html#2014-03-21-installation-de-firefox-sur-debian">Lire la suite</a>
   </div>

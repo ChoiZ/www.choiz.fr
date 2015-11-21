@@ -66,20 +66,26 @@
   </header>
   <div>
     <p>Pour compiler le kernel sous gentoo :</p>
-<blockquote>
-<p>cd /usr/src/linux</p>
-<p>make menuconfig</p>
-<p>make &amp;&amp; make modules_install</p>
-<p>make install</p>
-</blockquote>
+<pre class="literal-block">
+cd /usr/src/linux
+
+make menuconfig
+
+make &amp;&amp; make modules_install
+
+make install
+</pre>
 <p>Le kernel est maintenant compilé.</p>
 <p>Maintenant il faut mettre à jour grub.</p>
-<blockquote>
-grub2-mkconfig -o /boot/grub/grub.cfg</blockquote>
-<p>Puis lancer <cite>uname -a</cite> qui affiche le kernel actuellement utilisé ainsi que le nombre de compilation.</p>
+<pre class="literal-block">
+grub2-mkconfig -o /boot/grub/grub.cfg
+</pre>
+<p>Puis lancer <cite>uname -a</cite> qui affiche le kernel actuellement utilisé ainsi que le
+nombre de compilation.</p>
 <p>Il faut maintenant redémarrer la machine :</p>
-<blockquote>
-reboot</blockquote>
+<pre class="literal-block">
+reboot
+</pre>
 <p>Au final vérifier avec <cite>uname -a</cite> si le bon kernel est chargé.</p>
 
   </div>

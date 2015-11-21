@@ -67,7 +67,8 @@
     <p>Posté le sam. 21 novembre 2015</p>
   </header>
   <div>
-    <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre pour le mettre à jour vers la version : 4.3.0.</p>
+    <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre
+pour le mettre à jour vers la version : 4.3.0.</p>
 <p>Je liste les différents noyaux gentoo disponibles :</p>
 <pre class="literal-block">
 eix sys-kernel/gentoo-sources
@@ -76,8 +77,10 @@ eix sys-kernel/gentoo-sources
 <pre class="literal-block">
 emerge -a =sys-kernel/gentoo-sources-4.3.0
 </pre>
-<p>Une fois téléchargé, il faut modifier le lien symbolique <cite>/usr/src/linux</cite> grâce à eselect.</p>
-<p>J'affiche la liste des noyaux (celui actuellement selectionné est suivi d'une étoile) :</p>
+<p>Une fois téléchargé, il faut modifier le lien symbolique <cite>/usr/src/linux</cite> grâce
+à eselect.</p>
+<p>J'affiche la liste des noyaux (celui actuellement selectionné est suivi d'une
+étoile) :</p>
 <pre class="literal-block">
 eselect kernel list
 
@@ -88,7 +91,8 @@ eselect kernel list
 <pre class="literal-block">
 eselect kernel set 2
 </pre>
-<p>Maintenant que vous avez selectionné votre noyau, copier le fichier &quot;.config&quot; de votre noyau précédent (pour conserver vos réglages de compilation)</p>
+<p>Maintenant que vous avez selectionné votre noyau, copier le fichier &quot;.config&quot; de
+votre noyau précédent (pour conserver vos réglages de compilation)</p>
 <pre class="literal-block">
 cp /usr/src/linux-4.2.0-gentoo/.config /usr/src/linux
 </pre>

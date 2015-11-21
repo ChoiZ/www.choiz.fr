@@ -61,14 +61,16 @@ Tags :
       <a href="http://www.choiz.fr/tag/commentaire.html">commentaire</a>,      <a href="http://www.choiz.fr/tag/code.html">code</a>,      <a href="http://www.choiz.fr/tag/efficace.html">efficace</a>    </p>
   </header>
   <div>
-      <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester qu'une fonctionnalité de code.</p>
+      <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester qu'une
+fonctionnalité de code.</p>
 <p>Par exemple pour tester une api :</p>
-<blockquote>
-<p>// Obtenir le livre #1</p>
-<p>api_get('books/1');</p>
-<p>// Ajouter un livre</p>
-<p>api_add('books', $datas);</p>
-</blockquote>
+<pre class="literal-block">
+// Obtenir le livre #1
+api_get('books/1');
+
+// Ajouter un livre
+api_add('books', $datas);
+</pre>
 <p>Je test généralement chaque élément séparement.</p>
 <p>Pour tester la première portion de mon code ...</p>
       <a class="btn" href="http://www.choiz.fr/2015-10-12-des-commentaires-efficaces.html#2015-10-12-des-commentaires-efficaces">Lire la suite</a>

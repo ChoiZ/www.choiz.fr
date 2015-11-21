@@ -61,7 +61,8 @@ Tags :
       <a href="http://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="http://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="http://www.choiz.fr/tag/upgrade.html">upgrade</a>,      <a href="http://www.choiz.fr/tag/noyaux.html">noyaux</a>,      <a href="http://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
-      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre pour le mettre à jour vers la version : 4.3.0.</p>
+      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre
+pour le mettre à jour vers la version : 4.3.0.</p>
 <p>Je liste les différents noyaux gentoo disponibles :</p>
 <pre class="literal-block">
 eix sys-kernel/gentoo-sources
@@ -85,7 +86,8 @@ Tags :
   </header>
   <div>
       <p>Sur ma machine &quot;links&quot; était le navigateur web par défaut.
-Il est pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il est préférable d'utiliser un navigateur tel que Firefox.</p>
+Il est pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
+est préférable d'utiliser un navigateur tel que Firefox.</p>
 <p>Voici la commande pour voir le navigateur par défaut pour les url utilisants ...</p>
       <a class="btn" href="http://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html#2015-10-25-gentoo-navigateur-web-par-defaut">Lire la suite</a>
   </div>
@@ -102,11 +104,13 @@ Tags :
   <div>
       <p>Pour mettre à jour Gentoo j'utilise différentes commandes.</p>
 <p>Dans un premier temps je fais la mise à jour d'eix :</p>
-<blockquote>
-eix-sync</blockquote>
+<pre class="literal-block">
+eix-sync
+</pre>
 <p>Ensuite :</p>
-<blockquote>
-emerge -pvuDN world</blockquote>
+<pre class="literal-block">
+emerge -pvuDN world
+</pre>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -128,17 +132,22 @@ Tags :
   </header>
   <div>
       <p>Pour compiler le kernel sous gentoo :</p>
-<blockquote>
-<p>cd /usr/src/linux</p>
-<p>make menuconfig</p>
-<p>make &amp;&amp; make modules_install</p>
-<p>make install</p>
-</blockquote>
+<pre class="literal-block">
+cd /usr/src/linux
+
+make menuconfig
+
+make &amp;&amp; make modules_install
+
+make install
+</pre>
 <p>Le kernel est maintenant compilé.</p>
 <p>Maintenant il faut mettre à jour grub.</p>
-<blockquote>
-grub2-mkconfig -o /boot/grub/grub.cfg</blockquote>
-<p>Puis lancer <cite>uname -a</cite> qui affiche le kernel actuellement utilisé ainsi que le nombre de ...</p>
+<pre class="literal-block">
+grub2-mkconfig -o /boot/grub/grub.cfg
+</pre>
+<p>Puis lancer <cite>uname -a</cite> qui affiche le kernel actuellement utilisé ainsi que le
+nombre de ...</p>
       <a class="btn" href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html#2015-09-06-compilation-kernel-gentoo">Lire la suite</a>
   </div>
   <hr />
@@ -154,9 +163,9 @@ Tags :
   <div>
       <p>Certains programmes n’étant pas en dernière version dans les dépôts
 gentoo l’utilisation de layman peut faciliter la vie.</p>
-<p>Étant à la recherche de vagrant, la seule version disponible à ce jour
-sur gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de
-vagrant je me rend ...</p>
+<p>Étant à la recherche de vagrant, la seule version disponible à ce jour sur
+gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de vagrant je me
+rend ...</p>
       <a class="btn" href="http://www.choiz.fr/2015-07-19-gentoo-utilisation-de-layman-eix.html#2015-07-19-gentoo-utilisation-de-layman-eix">Lire la suite</a>
   </div>
 </article>

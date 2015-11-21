@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Installer imapfilter via apt par exemple : apt-get install imapfilter Se rendre dans le dossier de configuration : cd ~/.imapfilter Créer un fichier config.lua touch config.lua Maintenant je décide de faire un fichier de configuration par boite email. Ici gmail : cat > gmail.lua <<EOFgmail = IMAP {    server = 'imap.gmail.com',    username ..." />
+<meta name="description" content="Installer imapfilter via apt par exemple : apt-get install imapfilter Se rendre dans le dossier de configuration : cd ~/.imapfilter Créer un fichier config.lua touch config.lua Maintenant je décide de faire un fichier de configuration par boite email. Ici gmail : cat > gmail.lua <<EOF gmail = IMAP { server = 'imap.gmail.com ..." />
 <meta name="keywords" content="imapfilter, mail, filter, imap">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="imapfilter ou comment filtrer ses mails facilement"/>
-<meta property="og:description" content="Installer imapfilter via apt par exemple : apt-get install imapfilter Se rendre dans le dossier de configuration : cd ~/.imapfilter Créer un fichier config.lua touch config.lua Maintenant je décide de faire un fichier de configuration par boite email. Ici gmail : cat > gmail.lua <<EOFgmail = IMAP {    server = 'imap.gmail.com',    username ..."/>
+<meta property="og:description" content="Installer imapfilter via apt par exemple : apt-get install imapfilter Se rendre dans le dossier de configuration : cd ~/.imapfilter Créer un fichier config.lua touch config.lua Maintenant je décide de faire un fichier de configuration par boite email. Ici gmail : cat > gmail.lua <<EOF gmail = IMAP { server = 'imap.gmail.com ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html"/>
 <meta property="og:type" content="article"/>
@@ -67,22 +67,60 @@
   </header>
   <div>
     <p>Installer imapfilter via apt par exemple :</p>
-<p><tt class="docutils literal"><span class="pre">apt-get</span> install imapfilter</tt></p>
+<pre class="literal-block">
+apt-get install imapfilter
+</pre>
 <p>Se rendre dans le dossier de configuration :</p>
-<p><tt class="docutils literal">cd <span class="pre">~/.imapfilter</span></tt></p>
+<pre class="literal-block">
+cd ~/.imapfilter
+</pre>
 <p>Créer un fichier config.lua</p>
-<p><tt class="docutils literal">touch config.lua</tt></p>
-<p>Maintenant je décide de faire un fichier de configuration par boite
-email.</p>
+<pre class="literal-block">
+touch config.lua
+</pre>
+<p>Maintenant je décide de faire un fichier de configuration par boite email.</p>
 <p>Ici gmail :</p>
-<p><tt class="docutils literal">cat &gt; gmail.lua &lt;&lt;EOFgmail = IMAP <span class="pre">{&nbsp;&nbsp;&nbsp;</span> server = <span class="pre">'imap.gmail.com',&nbsp;&nbsp;&nbsp;</span> username = <span class="pre">'mail&#64;gmail.com',&nbsp;&nbsp;&nbsp;</span> password = <span class="pre">'mon_mot_de_passe',&nbsp;&nbsp;&nbsp;</span> ssl = <span class="pre">'ssl3',}EOF</span></tt></p>
+<pre class="literal-block">
+cat &gt; gmail.lua &lt;&lt;EOF
+gmail = IMAP {
+    server = 'imap.gmail.com',
+    username = 'mail&#64;gmail.com',
+    password = 'mon_mot_de_passe',
+    ssl = 'ssl3',
+}
+EOF
+</pre>
 <p>Et un pour Yahoo :</p>
-<p><tt class="docutils literal">cat &gt; yahoo.lua &lt;&lt;EOFyahoo = IMAP <span class="pre">{&nbsp;&nbsp;&nbsp;</span> server = <span class="pre">'imap.yahoo.com',&nbsp;&nbsp;&nbsp;</span> username = <span class="pre">'mail&#64;yahoo.com',&nbsp;&nbsp;&nbsp;</span> password = <span class="pre">'mon_mot_de_passe',&nbsp;&nbsp;&nbsp;</span> ssl = <span class="pre">'ssl3',}EOF</span></tt></p>
+<pre class="literal-block">
+cat &gt; yahoo.lua &lt;&lt;EOF
+yahoo = IMAP {
+    server = 'imap.yahoo.com',
+    username = 'mail&#64;yahoo.com',
+    password = 'mon_mot_de_passe',
+    ssl = 'ssl3',
+}
+EOF
+</pre>
 <p>Ajouter nos boites dans le fichier de config avec des filtres :</p>
-<p><tt class="docutils literal">if_dir = <span class="pre">os.getenv('HOME')</span> .. <span class="pre">'/.imapfilter/'--</span> on inclus nos comptes imap…dofile(if_dir .. <span class="pre">&quot;gmail.lua&quot;)dofile(if_dir</span> .. <span class="pre">&quot;yahoo.lua&quot;)--</span> nos optionsoptions.timeout = <span class="pre">120--</span> filtres pour le compte gmail (on copie les messages non lus dans la boite <span class="pre">&quot;nouveaux&quot;)nonlugmail=gmail.INBOX:is_unseen()nonlugmail:copy_message(gmail['nouveaux'])--</span> filtres pour le compte yahoo (on supprime tous les messages <span class="pre">lus)del_read_yahoo=yahoo.INBOX:is_seen()del_read_yahoo:delete_messages()</span></tt></p>
-<p>Maintenant c'est à vous de faire vos propres filtres. Une fois
-configuré, lancer imapfilter simplement depuis le terminal :</p>
-<p><tt class="docutils literal">imapfilter</tt></p>
+<pre class="literal-block">
+if_dir = os.getenv('HOME') .. '/.imapfilter/'
+-- on inclus nos comptes imap…
+dofile(if_dir .. &quot;gmail.lua&quot;)
+dofile(if_dir .. &quot;yahoo.lua&quot;)
+-- nos options
+options.timeout = 120
+-- filtres pour le compte gmail (on copie les messages non lus dans la boite &quot;nouveaux&quot;)
+nonlugmail=gmail.INBOX:is_unseen()
+nonlugmail:copy_message(gmail['nouveaux'])
+-- filtres pour le compte yahoo (on supprime tous les messages lus)
+del_read_yahoo=yahoo.INBOX:is_seen()
+del_read_yahoo:delete_messages()
+</pre>
+<p>Maintenant c'est à vous de faire vos propres filtres. Une fois configuré, lancer
+imapfilter simplement depuis le terminal :</p>
+<pre class="literal-block">
+imapfilter
+</pre>
 
   </div>
   <div class="tag-cloud">
@@ -114,7 +152,7 @@ configuré, lancer imapfilter simplement depuis le terminal :</p>
   },
   "image": "avatar.png",
   "url": "http://www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html",
-  "description": "Installer imapfilter via apt par exemple : apt-get install imapfilter Se rendre dans le dossier de configuration : cd ~/.imapfilter Créer un fichier config.lua touch config.lua Maintenant je décide de faire un fichier de configuration par boite email. Ici gmail : cat > gmail.lua <<EOFgmail = IMAP {    server = 'imap.gmail.com',    username ..."
+  "description": "Installer imapfilter via apt par exemple : apt-get install imapfilter Se rendre dans le dossier de configuration : cd ~/.imapfilter Créer un fichier config.lua touch config.lua Maintenant je décide de faire un fichier de configuration par boite email. Ici gmail : cat > gmail.lua <<EOF gmail = IMAP { server = 'imap.gmail.com ..."
 }
 </script></body>
 </html>

@@ -68,20 +68,19 @@
     <p>Posté le sam. 08 mars 2014</p>
   </header>
   <div>
-    <p>En voulant modifier xscreensaver par i3lock j'ai supprimé des paquets
-non utilisés (jeux etc…).</p>
-<div class="line-block">
-<div class="line">J'ai malheureusement supprimé un peu (trop) de paquets tel que
-(xfdesktop4 et xfce4-panel).</div>
-<div class="line">Au démarrage de x, une fois identifié, un écran gris s'affiche et rien
-d'autre. Heureusement grâce à mon access SSH je peux me connecter à la
-machine à distance.</div>
-</div>
+    <p>En voulant modifier xscreensaver par i3lock j'ai supprimé des paquets non
+utilisés (jeux etc…).</p>
+<p>J'ai malheureusement supprimé un peu (trop) de paquets tel que (xfdesktop4 et
+xfce4-panel).  Au démarrage de x, une fois identifié, un écran gris s'affiche et
+rien d'autre. Heureusement grâce à mon access SSH je peux me connecter à la
+machine à distance.</p>
 <p>Pour voir la liste des paquets déinstallés j'ai donc fait :</p>
-<p><tt class="docutils literal">dpkg <span class="pre">--get-selections</span> &gt; <span class="pre">liste-des-paquets</span></tt></p>
-<p>Il suffit ensuite d'ouvrir dans un éditeur texte (type vi) le fichier
-pour voir les paquets installés / déinstallés. Et réinstaller avec sudo
-apt-get install le ou les paquets manquants.</p>
+<pre class="literal-block">
+dpkg --get-selections &gt; liste-des-paquets
+</pre>
+<p>Il suffit ensuite d'ouvrir dans un éditeur texte (type vi) le fichier pour voir
+les paquets installés / déinstallés. Et réinstaller avec sudo apt-get install le
+ou les paquets manquants.</p>
 
   </div>
   <div class="tag-cloud">
