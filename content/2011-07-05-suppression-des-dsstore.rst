@@ -7,10 +7,8 @@ Suppression des .DS_Store
 :slug: 2011-07-05-suppression-des-dsstore
 :status: published
 
-Dans une console sur votre mac tappez :
+Dans une console sur votre Mac : ::
 
-    defaults write com.apple.desktopservices DSDontWriteNetworkStores
-    true
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 
-Redemarrez le mac.
-
+Puis redémarrez le mac.

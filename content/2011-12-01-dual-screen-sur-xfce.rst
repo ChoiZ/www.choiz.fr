@@ -7,11 +7,10 @@ Dual screen sur xfce
 :slug: 2011-12-01-dual-screen-sur-xfce
 :status: published
 
-Un petit package bien pratique pour configurer le dual screen sur xfce
-se nomme : arandr
+Un petit package bien pratique pour configurer le dual screen sur xfce se nomme
+: arandr ::
 
     apt-get install arandr
 
-Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez
-le ARandR pour configurer les deux écrans.
-
+Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez le ARandR
+pour configurer les deux écrans.

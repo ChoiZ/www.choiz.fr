@@ -7,14 +7,16 @@ Clavier Apple sur debian
 :slug: 2011-12-02-clavier-apple-sur-debian
 :status: published
 
-| Depuis le temps que je bosse avec un clavier Apple [STRIKEOUT:j'ai]
-  mes doigts on eu le temps de s'habituer au mapage du clavier. Il y a
-  beaucoup de différences entre un clavier AZERTY de PC et un clavier
-  AZERTY de Mac.
-| Les touches : @ # ~ \| (pipe) = + - \_ ! ( ) { } [ ] sont disposées à
-  des endroits complétement différents.
+Depuis le temps que je bosse avec un clavier Apple je me suis habitué au mapage
+clavier Mac.
+Il y a beaucoup de différences entre un clavier AZERTY de PC et un
+clavier AZERTY de Mac.
 
-Pour modifier la configuration faire en console :
+Les touches : `@` `#` `~` `| (pipe)` `=` `+` `-` `_` `!` `(` `)` `{` `}` `[` `]`
+sont disposées à des endroits complétement différents.
+
+J'ai donc décidé de modifier la configuration de debian pour prendre en compte
+un clavier mac. ::
 
     dpkg-reconfigure keyboard-console
 
@@ -41,7 +43,7 @@ Pour modifier la configuration faire en console :
 J'ai choisi un clavier Apple, Français Mac, sans touche AltGr, avec
 comme touche de fonctionnalité secondaire "Alt droit". Malheureusement
 je n'ai pas réussi a mapper l'Alt de gauche pour avoir la même fonction
-qu'à droite...
+qu'à droite…
 
 Et ensuite j'ai indiqué que je ne voulais pas pouvoir quitter le server
 X avec la combinaison de touche Control+Alt+Backspace.

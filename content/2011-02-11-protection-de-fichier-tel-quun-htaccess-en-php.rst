@@ -8,17 +8,17 @@ Protection de fichier tel qu'un htaccess en PHP
 :status: published
 
 Faire un système de protection (tel que htaccess) direct dans un fichier
-php :
+PHP : ::
 
-    | <?php
-    | if (!empty($\_SERVER["PHP\_AUTH\_USER"]) &&
-      $\_SERVER["PHP\_AUTH\_USER"] == "login" &&
-      $\_SERVER["PHP\_AUTH\_PW"] == "password") {
-    |     // code protégé ici
-    | } else {
-    |     header('WWW-Authenticate: Basic realm="Restricted area"');
-    |     header('HTTP/1.0 401 Unauthorized');
-    |     exit('Access Denied');
-    | }
-    | ?>
+    <?php
+    if (!empty($_SERVER["PHP_AUTH_USER"]) &&
+    $_SERVER["PHP_AUTH_USER"] == "login" &&
+    $_SERVER["PHP_AUTH_PW"] == "password") {
+        // code protégé ici
+    } else {
+        header('WWW-Authenticate: Basic realm="Restricted area"');
+        header('HTTP/1.0 401 Unauthorized');
+        exit('Access Denied');
+    }
+    ?>
 

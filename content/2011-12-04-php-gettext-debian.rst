@@ -7,86 +7,82 @@ PHP + Gettext + Debian
 :slug: 2011-12-04-php-gettext-debian
 :status: published
 
-| J'utilise maintenant php-gettext pour mes traductions. C'est plus
-  facile en utilisant des outils tel que pootle ou poedit.
-| Pour utiliser gettext sur votre site en php il faut télécharger le
-  package php-gettext ainsi que d'autres outils tel que xgettext ou
-  msgfmt :
+J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
+utilisant des outils tel que pootle ou poedit.  Pour utiliser gettext sur votre
+site en php il faut télécharger le package php-gettext ainsi que d'autres outils
+tel que xgettext ou msgfmt : ::
 
-    # apt-get install php-gettext
+    apt-get install php-gettext
 
-    # apt-get install xgettext
+    apt-get install xgettext
 
-    # apt-get install msgfmt
+    apt-get install msgfmt
 
-Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
+Ensuite il faut modifier le fichier `/etc/locale.gen` et enlever les
 commentaires devant les langues qui vont sont à traduire par exemple :
-Allemand, Anglais, Espagnol, Français & Suédois :
+Allemand, Anglais, Espagnol, Français & Suédois : ::
 
-    | de\_DE.UTF-8 UTF-8
-    | en\_GB.UTF-8 UTF-8
-    | es\_ES.UTF-8 UTF-8
-    | fr\_FR.UTF-8 UTF-8
-    | sv\_SE.UTF-8 UTF-8
+    de_DE.UTF-8 UTF-8
+    en_GB.UTF-8 UTF-8
+    es_ES.UTF-8 UTF-8
+    fr_FR.UTF-8 UTF-8
+    sv_SE.UTF-8 UTF-8
 
-Puis regénérer les locales :
+Puis regénérer les locales : ::
 
-    # locale-gen
+    locale-gen
 
-Ensuite il faut définir votre chemin pour les traductions par exemple :
+Ensuite il faut définir votre chemin pour les traductions par exemple : ::
 
-    lang/fr\_FR/LC\_ALL/domaine.mo
+    lang/fr_FR/LC_ALL/domaine.mo
 
-Puis dans votre fichier php de configuration :
+Puis dans votre fichier php de configuration : ::
 
-    | <?php
-    | // configuration de la langue
-    | $lang\_path = "./lang"; // Chemin des fichiers le langue
-    | $lang = 'fr\_FR'; // Langue a afficher
-    | $lang\_encode = "UTF-8"; // Encodage du fichier
-    | $lang\_LC = "LC\_ALL"; // LC\_MESSAGE etc...
-    | $lang\_file = "domaine"; // Nom du fichier de langue
-    | putenv("LANG=".$lang);
-    | setlocale($lang\_LC, $lang.".".$lang\_encode);
-    | bindtextdomain($lang\_file,$lang\_path);
-    | bindtextdomain\_codeset($lang\_file,$lang\_encode);
-    | textdomain($lang\_path);
-    | ?>
+    <?php
+    // configuration de la langue
+    $lang_path = "./lang"; // Chemin des fichiers le langue
+    $lang = 'fr_FR'; // Langue a afficher
+    $lang_encode = "UTF-8"; // Encodage du fichier
+    $lang_LC = "LC_ALL"; // LC_MESSAGE etc…
+    $lang_file = "domaine"; // Nom du fichier de langue
+    putenv("LANG=".$lang);
+    setlocale($lang_LC, $lang.".".$lang_encode);
+    bindtextdomain($lang_file,$lang_path);
+    bindtextdomain_codeset($lang_file,$lang_encode);
+    textdomain($lang_path);
+    ?>
 
-Puis faites le test en affichant dans un fichier php le texte "hello"
+Puis faites le test en affichant dans un fichier php le texte "hello" ::
 
-    | <?php
-    | // on inclus la config...
-    | include\_once('config.php');
-    | echo \_('hello');
-    | ?>
+    <?php
+    // on inclus la config…
+    include_once('config.php');
+    echo _('hello');
+    ?>
 
-Pour générer un fichier .mo a partir d'un fichier .po :
+Pour générer un fichier .mo a partir d'un fichier .po : ::
 
     msgfmt domaine.po -o domaine.mo
 
-Pour générer un fichier .po a partir de fichier php avec du gettext,
-faire un fichier texte avec tous vos fichiers php ou on doit récupérer
-le gettext.
+Pour générer un fichier .po a partir de fichier php avec du gettext, faire un
+fichier texte avec tous vos fichiers php ou on doit récupérer le gettext.
 
-Exemple listing\_gettext.txt tel que :
+Exemple listing_gettext.txt tel que : ::
 
-    | index.php
-    | contact.php
-    | etc...
+    index.php
+    contact.php
+    etc…
 
-Ensuite il faut faire la commande suivante pour générer le fichier
-domaine.po dans le dossier lang/ depuis notre fichier texte avec les php
-:
+Ensuite il faut faire la commande suivante pour générer le fichier domaine.po
+dans le dossier lang/ depuis notre fichier texte avec les php : ::
 
-    xgettext -d domaine -p lang/ -k\_ --from-code=UTF-8 -f
-    listing\_gettext.txt
+    xgettext -d domaine -p lang/ -k_ --from-code=UTF-8 -f
+    listing_gettext.txt
 
-Pour finir voilà le path des fichiers .po et .mo dans mon application
-web :
+Pour finir voilà le path des fichiers .po et .mo dans mon application web : ::
 
-    | lang/fr\_FR/LC\_ALL/domaine.po
-    | lang/fr\_FR/LC\_ALL/domaine.mo
-    | lang/en\_GB/LC\_ALL/domaine.po
-    | lang/en\_GB/LC\_ALL/domaine.mo
-    | ...
+    lang/fr_FR/LC_ALL/domaine.po
+    lang/fr_FR/LC_ALL/domaine.mo
+    lang/en_GB/LC_ALL/domaine.po
+    lang/en_GB/LC_ALL/domaine.mo
+    …

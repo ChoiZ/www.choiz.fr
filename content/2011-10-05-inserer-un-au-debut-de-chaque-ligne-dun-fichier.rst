@@ -7,19 +7,14 @@ Insérer un # au début de chaque ligne d'un fichier avec vim
 :slug: 2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier
 :status: published
 
-Voilà la commande pour ajouter un # au début de chaque ligne d'un
-fichier avec vim :
+Voilà la commande pour ajouter un # au début de chaque ligne d'un fichier avec
+vim : ::
 
-``:1,$s/^/#/``
+    :1,$s/^/#/
 
 Explications :
 
-``:1,$``
+`:1,$` Sélection des ligne 1 à $ ($ étant la dernière).
 
-Selection des ligne 1 à $ ($ étant la dernière).
-
-``s/^/#/``
-
-s pour search (en fait il cherche et remplace) ^ le début de ligne ($ si
-on voulais la fin de la ligne) et # le caractère que je veux remplacer
-
+`s/^/#/` `s` pour search `^` indique le début de ligne `/` sépare ma recherche
+par ce que l'on remplace `#` est le caractère que je veux remplacer

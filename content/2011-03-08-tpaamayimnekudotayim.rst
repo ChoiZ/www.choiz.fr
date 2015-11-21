@@ -7,9 +7,9 @@ T_PAAMAYIM_NEKUDOTAYIM
 :slug: 2011-03-08-tpaamayimnekudotayim
 :status: published
 
-Voilà a quoi correspond cette erreur pour ceux qui demandent :
+Voilà à quoi correspond cette erreur pour ceux qui demandent : ::
 
-``Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695``
+    Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695
 
 Le Paamayim Nekudotayim est l'opérateur de résolution de portée.
 
@@ -22,6 +22,3 @@ ou, en termes plus simples, le symbole "double deux-points" (::),
 fournit un moyen d'accéder aux membres
 `statics <http://fr.php.net/manual/fr/language.oop5.static.php>`__ ou
 `constants <http://fr.php.net/manual/fr/language.oop5.constants.php>`__.*
-
-Comme on dit "RTFM" hein ;)
-

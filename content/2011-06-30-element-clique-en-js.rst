@@ -7,15 +7,13 @@ Elément cliqué en js
 :slug: 2011-06-30-elément-cliqué-en-js
 :status: published
 
-Pour savoir quel élément est cliqué j'utilise ce petit bout de
-javascript :
+Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript : ::
 
-    | function checkclick(e) {
-    |     e = e \|\| window.event;
-    |     var o = e.target \|\| e.srcElement;
-    |     console.log(o);
-    | }
-    | document.onclick=checkclick;
+    function checkclick(e) {
+        e = e || window.event;
+        var o = e.target || e.srcElement;
+        console.log(o);
+    }
+    document.onclick=checkclick;
 
-Pratique pour du debug ;)
-
+Pratique pour faire du débug.

@@ -7,18 +7,15 @@ Migration d'une base de donnée Mysql
 :slug: 2011-05-14-migration-dune-base-de-donnée-mysql
 :status: published
 
-Pour faire mes migrations de base de donnée j'utilise en ligne de
-commande mysqldump et mysql.
+Pour faire mes migrations de base de donnée j'utilise en ligne de commande
+mysqldump et mysql.
 
-| Dans un premier temps je sauve ma base ***database*** dans le fichier
-  ***fichierdump.sql***
-| J'utilise l'utilisateur mysql : ***utilisateur*** avec son mot de
-  passe ***p4ssw0rd***
+Dans un premier temps je sauve ma base `database` dans le fichier `dump.sql`
+J'utilise l'utilisateur mysql : `utilisateur` avec son mot de passe `p4ss` ::
 
-    $ mysqldump -u utilisateur -p p4ssw0rd database > fichierdump.sql
+    mysqldump -u utilisateur -p p4ss database > dump.sql
 
-Une fois que j'ai mon fichier ***fichierdump.sql*** je le met sur la
-nouvelle machine. Ensuite j'execute la commande suivante :
+Une fois que j'ai mon fichier `dump.sql` je le met sur la nouvelle machine, puis
+j'execute la commande suivante : ::
 
-    $ mysql -u utilisateur -pp4ssw0rd database < fichierdump.sql
-
+    mysql -u utilisateur -pp4ss database < fichierdump.sql

@@ -7,12 +7,9 @@ Partage Samba !
 :slug: 2011-08-17-partage-samba
 :status: published
 
-| J'ai réinstallé mon serveur il n'y a pas si longtemps avec Samba. 
-| Editer le fichier de configuration :
-
-    vi /etc/samba/smb.conf
-
-Voici le contenu de mon fichier de configuration :
+Configuration d'un serveur samba.
+Editer le fichier de configuration `/etc/samba/smb.conf`
+Voici le contenu de mon fichier de configuration : ::
 
     | ### Global ###
     | [global]
@@ -42,13 +39,15 @@ Voici le contenu de mon fichier de configuration :
     | valid users = choiz, @group
     | comment = partage en lecture pour choiz et le groupe "group"
 
-Maintenant il faut créer notre utilisateur "choiz" grâce à :
+Maintenant il faut créer notre utilisateur "choiz" grâce à : ::
 
     smbpasswd -a choiz
 
-Pour les groupes samba utilise les groupes unix.
+Pour les groupes samba utilise les groupes unix. A vous de voir si vous voulez
+gérer votre partage samba utilisateur par utilisateur ou directement avec des
+groupes.
 
-N'oubliez pas de redémarrer le service Samba !
+N'oubliez pas de redémarrer le service Samba avant de tester depuis votre client
+le partage de fichiers ! ::
 
     /etc/init.d/samba restart
-
