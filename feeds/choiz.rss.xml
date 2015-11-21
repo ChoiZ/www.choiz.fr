@@ -1607,7 +1607,7 @@ chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------
 git show stash&amp;#64;{0}:chemin/vers/mon/fichier.js
 &lt;/pre&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 06 Jul 2012 17:56:00 +0200</pubDate><guid>tag:www.choiz.fr,2012-07-06:2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis.html</guid><category>git</category><category>stash</category><category>content</category><category>file</category><category>file content</category><category>git stash</category><category>show</category></item><item><title>Ajout dans mon .vimrc de matchadd() &amp; highlight</title><link>http://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html</link><description>&lt;p&gt;Petit ajout dans mon fichier .vimrc&lt;/p&gt;
-&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
 &amp;quot; Highlight To do list with green background
 highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
 highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
@@ -1618,7 +1618,8 @@ highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
 :call matchadd('Notice','[N|n][O|o][T|t][I|i][C|c][E|e]')
 :call matchadd('Notice','[N|n][O|o][T|t][E|e]')
 :call matchadd('Fixme','[F|f][I|i][X|x][M|m][E|e]')
-:call matchadd('Fixme','[F|f][I|i][X|x] [M|m][E|e]')&lt;/blockquote&gt;
+:call matchadd('Fixme','[F|f][I|i][X|x] [M|m][E|e]')
+&lt;/pre&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 27 Apr 2012 15:11:26 +0200</pubDate><guid>tag:www.choiz.fr,2012-04-27:2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html</guid><category>vimrc</category><category>vim</category><category>config file</category><category>.vimrc</category><category>todo</category><category>notice</category><category>fixme</category><category>highlight</category><category>matchadd</category></item><item><title>Reprendre la main sur un Screen pas "detached"</title><link>http://www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html</link><description>&lt;p&gt;Lorsque j'ai voulu &amp;quot;réattacher&amp;quot; mon &amp;quot;Screen&amp;quot; j'ai eu le message suivant :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 There is a screen on:
