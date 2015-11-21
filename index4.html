@@ -63,8 +63,8 @@ Tags :
   <div>
       <p>Ou se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?</p>
 <p>C'est une bonne question n'est-ce pas ?</p>
-<p>La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
-debian, a voir sur d'autres distribs)</p>
+<p>La réponse si vous êtes root est : <cite>/var/spool/cron/crontabs/root</cite> (sur debian,
+a voir sur d'autres distribs)</p>
 
   </div>
   <hr />
@@ -118,43 +118,32 @@ appareils mobiles avec image magick.</p>
 la transparence &quot;icon512.png&quot;.</p>
 <p>Je veux faire une favicon en 16x16px, 32x32px 48x48px et 64x64px le tout
 dans un seul fichier favicon.ico.</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$ convert icon512.png \</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;-bordercolor white -border 0 \</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;\( -clone 0 -resize 16x16 \) \</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;\( -clone 0 -resize 32x32 \) \</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;\( -clone 0 -resize 48x48 \) \</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;\( -clone 0 -resize 64x64 \) \</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;-delete 0 -alpha off favicon.ico</div>
-</div>
-</blockquote>
-<p>Ensuite je veux faire mes icônes pour les appareils mobiles : Android,
-Apple etc…</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$ convert icon512.png -resize x60 touch-icon-iphone.png</div>
-<div class="line">$ convert icon512.png -resize x76 touch-icon-ipad.png</div>
-<div class="line">$ convert icon512.png -resize x120 touch-icon-iphone-retina.png</div>
-<div class="line">$ convert icon512.png -resize x152 touch-icon-ipad-retina.png</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+convert icon512.png \
+    -bordercolor white -border 0 \
+    \( -clone 0 -resize 16x16 \) \
+    \( -clone 0 -resize 32x32 \) \
+    \( -clone 0 -resize 48x48 \) \
+    \( -clone 0 -resize 64x64 \) \
+    -delete 0 -alpha off favicon.ico
+</pre>
+<p>Ensuite je veux faire mes icônes pour les appareils mobiles : Android, Apple
+etc…</p>
+<pre class="literal-block">
+convert icon512.png -resize x60 touch-icon-iphone.png
+convert icon512.png -resize x76 touch-icon-ipad.png
+convert icon512.png -resize x120 touch-icon-iphone-retina.png
+convert icon512.png -resize x152 touch-icon-ipad-retina.png
+</pre>
 <p>Maintenant il faut ajouter dans notre page html entre les balises head :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;</div>
-<div class="line">&lt;link rel=&quot;apple-touch-icon-precomposed&quot;
-href=&quot;touch-icon-iphone.png&quot;&gt;</div>
-<div class="line">&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;76x76&quot;
-href=&quot;touch-icon-ipad.png&quot;&gt;</div>
-<div class="line">&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;120x120&quot;
-href=&quot;touch-icon-iphone-retina.png&quot;&gt;</div>
-<div class="line">&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;152x152&quot;
-href=&quot;touch-icon-ipad-retina.png&quot;&gt;</div>
-</div>
-</blockquote>
-<p>A noter les appareils Android utilisent aussi les images
-&quot;apple-touch-icon&quot;.</p>
+<pre class="literal-block">
+&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;touch-icon-iphone.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;76x76&quot; href=&quot;touch-icon-ipad.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;120x120&quot; href=&quot;touch-icon-iphone-retina.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;152x152&quot; href=&quot;touch-icon-ipad-retina.png&quot;&gt;
+</pre>
+<p>A noter les appareils Android utilisent aussi les images &quot;apple-touch-icon&quot;.</p>
 
   </div>
   <hr />

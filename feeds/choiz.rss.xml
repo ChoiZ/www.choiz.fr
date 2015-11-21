@@ -1073,15 +1073,19 @@ git cherry-pick c4a99776
 :%s/\%U2028//g
 &lt;/pre&gt;
 &lt;p&gt;Décortiquons la commande :&lt;/p&gt;
-&lt;p&gt;&lt;cite&gt;:%s/&lt;/cite&gt; Recherche et remplace dans tout le fichier&lt;/p&gt;
-&lt;p&gt;&lt;cite&gt;%U2028&lt;/cite&gt; Le caractère que l'on recherche unicode &amp;quot;2028&amp;quot;&lt;/p&gt;
-&lt;p&gt;&lt;cite&gt;//&lt;/cite&gt; par rien (1er slash sépare la recherche par ce qu'on remplace, le
-second pour dire la fin de ce qu'on remplace).&lt;/p&gt;
-&lt;p&gt;&lt;cite&gt;g&lt;/cite&gt; dans tout le fichier (global).&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+`:%s/` Recherche et remplace dans tout le fichier
+
+`\%U2028` Le caractère que l'on recherche unicode &amp;quot;2028&amp;quot;
+
+`//` par rien (1er slash sépare la recherche par ce qu'on remplace, le second pour dire la fin de ce qu'on remplace).
+
+`g` dans tout le fichier (global).
+&lt;/pre&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 19 Jan 2014 17:06:00 +0100</pubDate><guid>tag:www.choiz.fr,2014-01-19:2014-01-19-suppression-dun-caractère-unicode-dans-vim.html</guid><category>vim</category><category>unicode</category><category>char</category><category>suppression</category><category>caractère</category></item><item><title>crontab -e file(s)</title><link>http://www.choiz.fr/2013-11-13-crontab-e-files.html</link><description>&lt;p&gt;Ou se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?&lt;/p&gt;
 &lt;p&gt;C'est une bonne question n'est-ce pas ?&lt;/p&gt;
-&lt;p&gt;La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
-debian, a voir sur d'autres distribs)&lt;/p&gt;
+&lt;p&gt;La réponse si vous êtes root est : &lt;cite&gt;/var/spool/cron/crontabs/root&lt;/cite&gt; (sur debian,
+a voir sur d'autres distribs)&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 13 Nov 2013 21:13:34 +0100</pubDate><guid>tag:www.choiz.fr,2013-11-13:2013-11-13-crontab-e-files.html</guid><category>crontab -e</category><category>crontab</category><category>files</category><category>file</category><category>/var/spool/cron/crontabs</category><category>/var/spool/cron</category><category>user</category></item><item><title>Chmod 755 sur les dossiers et 644 sur les fichiers</title><link>http://www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html</link><description>&lt;p&gt;C'est toujours la galère lorsque l'on veut que tout soit propre au niveau des
 permissions des dossiers / fichiers.&lt;/p&gt;
 &lt;p&gt;Souvent la première chose que l'on fait : on va dans chaque dossier et on
@@ -1109,43 +1113,32 @@ appareils mobiles avec image magick.&lt;/p&gt;
 la transparence &amp;quot;icon512.png&amp;quot;.&lt;/p&gt;
 &lt;p&gt;Je veux faire une favicon en 16x16px, 32x32px 48x48px et 64x64px le tout
 dans un seul fichier favicon.ico.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;$ convert icon512.png \&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;-bordercolor white -border 0 \&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;\( -clone 0 -resize 16x16 \) \&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;\( -clone 0 -resize 32x32 \) \&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;\( -clone 0 -resize 48x48 \) \&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;\( -clone 0 -resize 64x64 \) \&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;-delete 0 -alpha off favicon.ico&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Ensuite je veux faire mes icônes pour les appareils mobiles : Android,
-Apple etc…&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;$ convert icon512.png -resize x60 touch-icon-iphone.png&lt;/div&gt;
-&lt;div class="line"&gt;$ convert icon512.png -resize x76 touch-icon-ipad.png&lt;/div&gt;
-&lt;div class="line"&gt;$ convert icon512.png -resize x120 touch-icon-iphone-retina.png&lt;/div&gt;
-&lt;div class="line"&gt;$ convert icon512.png -resize x152 touch-icon-ipad-retina.png&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+convert icon512.png \
+    -bordercolor white -border 0 \
+    \( -clone 0 -resize 16x16 \) \
+    \( -clone 0 -resize 32x32 \) \
+    \( -clone 0 -resize 48x48 \) \
+    \( -clone 0 -resize 64x64 \) \
+    -delete 0 -alpha off favicon.ico
+&lt;/pre&gt;
+&lt;p&gt;Ensuite je veux faire mes icônes pour les appareils mobiles : Android, Apple
+etc…&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+convert icon512.png -resize x60 touch-icon-iphone.png
+convert icon512.png -resize x76 touch-icon-ipad.png
+convert icon512.png -resize x120 touch-icon-iphone-retina.png
+convert icon512.png -resize x152 touch-icon-ipad-retina.png
+&lt;/pre&gt;
 &lt;p&gt;Maintenant il faut ajouter dans notre page html entre les balises head :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;&amp;lt;link rel=&amp;quot;shortcut icon&amp;quot; type=&amp;quot;image/x-icon&amp;quot; href=&amp;quot;favicon.ico&amp;quot;&amp;gt;&lt;/div&gt;
-&lt;div class="line"&gt;&amp;lt;link rel=&amp;quot;apple-touch-icon-precomposed&amp;quot;
-href=&amp;quot;touch-icon-iphone.png&amp;quot;&amp;gt;&lt;/div&gt;
-&lt;div class="line"&gt;&amp;lt;link rel=&amp;quot;apple-touch-icon-precomposed&amp;quot; sizes=&amp;quot;76x76&amp;quot;
-href=&amp;quot;touch-icon-ipad.png&amp;quot;&amp;gt;&lt;/div&gt;
-&lt;div class="line"&gt;&amp;lt;link rel=&amp;quot;apple-touch-icon-precomposed&amp;quot; sizes=&amp;quot;120x120&amp;quot;
-href=&amp;quot;touch-icon-iphone-retina.png&amp;quot;&amp;gt;&lt;/div&gt;
-&lt;div class="line"&gt;&amp;lt;link rel=&amp;quot;apple-touch-icon-precomposed&amp;quot; sizes=&amp;quot;152x152&amp;quot;
-href=&amp;quot;touch-icon-ipad-retina.png&amp;quot;&amp;gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;A noter les appareils Android utilisent aussi les images
-&amp;quot;apple-touch-icon&amp;quot;.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;lt;link rel=&amp;quot;shortcut icon&amp;quot; type=&amp;quot;image/x-icon&amp;quot; href=&amp;quot;favicon.ico&amp;quot;&amp;gt;
+&amp;lt;link rel=&amp;quot;apple-touch-icon-precomposed&amp;quot; href=&amp;quot;touch-icon-iphone.png&amp;quot;&amp;gt;
+&amp;lt;link rel=&amp;quot;apple-touch-icon-precomposed&amp;quot; sizes=&amp;quot;76x76&amp;quot; href=&amp;quot;touch-icon-ipad.png&amp;quot;&amp;gt;
+&amp;lt;link rel=&amp;quot;apple-touch-icon-precomposed&amp;quot; sizes=&amp;quot;120x120&amp;quot; href=&amp;quot;touch-icon-iphone-retina.png&amp;quot;&amp;gt;
+&amp;lt;link rel=&amp;quot;apple-touch-icon-precomposed&amp;quot; sizes=&amp;quot;152x152&amp;quot; href=&amp;quot;touch-icon-ipad-retina.png&amp;quot;&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;A noter les appareils Android utilisent aussi les images &amp;quot;apple-touch-icon&amp;quot;.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 03 Nov 2013 14:11:02 +0100</pubDate><guid>tag:www.choiz.fr,2013-11-03:2013-11-03-icônes-favicon-apple-touch-icon.html</guid><category>cli</category><category>imagemagick</category><category>android</category><category>ios</category><category>apple</category><category>icons</category><category>icon</category><category>favicon</category><category>apple-touch-icon</category><category>precomposed</category><category>html</category></item><item><title>Installer jshint sur mac</title><link>http://www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html</link><description>&lt;p&gt;Installation via npm de jshint (-g pour installer pour tous les
 utilisateurs) :&lt;/p&gt;
 &lt;blockquote&gt;

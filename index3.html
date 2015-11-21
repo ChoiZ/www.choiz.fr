@@ -388,11 +388,15 @@ Tags :
 :%s/\%U2028//g
 </pre>
 <p>Décortiquons la commande :</p>
-<p><cite>:%s/</cite> Recherche et remplace dans tout le fichier</p>
-<p><cite>%U2028</cite> Le caractère que l'on recherche unicode &quot;2028&quot;</p>
-<p><cite>//</cite> par rien (1er slash sépare la recherche par ce qu'on remplace, le
-second pour dire la fin de ce qu'on remplace).</p>
-<p><cite>g</cite> dans tout le fichier (global).</p>
+<pre class="literal-block">
+`:%s/` Recherche et remplace dans tout le fichier
+
+`\%U2028` Le caractère que l'on recherche unicode &quot;2028&quot;
+
+`//` par rien (1er slash sépare la recherche par ce qu'on remplace, le second pour dire la fin de ce qu'on remplace).
+
+`g` dans tout le fichier (global).
+</pre>
 
   </div>
 </article>
