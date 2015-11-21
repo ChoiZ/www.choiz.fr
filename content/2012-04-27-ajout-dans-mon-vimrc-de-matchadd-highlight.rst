@@ -7,7 +7,7 @@ Ajout dans mon .vimrc de matchadd() & highlight
 :slug: 2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight
 :status: published
 
-Petit ajout dans mon fichier .vimrc
+Petit ajout dans mon fichier .vimrc ::
 
     " Highlight To do list with green background
     highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
