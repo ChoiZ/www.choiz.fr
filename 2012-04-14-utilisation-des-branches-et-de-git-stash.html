@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc git stash, voyons voir comment l'utiliser simplement. On regarde l'état du status et des branches : (git status / git branch) $ git ..." />
+<meta name="description" content="Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc git stash, voyons voir comment l'utiliser simplement. On regarde l'état du status et des branches git status # On branch master ..." />
 <meta name="keywords" content="git, git stash, git stash pop, git stash list, git branch, git checkout">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Utilisation des branches et de git stash"/>
-<meta property="og:description" content="Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc git stash, voyons voir comment l'utiliser simplement. On regarde l'état du status et des branches : (git status / git branch) $ git ..."/>
+<meta property="og:description" content="Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc git stash, voyons voir comment l'utiliser simplement. On regarde l'état du status et des branches git status # On branch master ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html"/>
 <meta property="og:type" content="article"/>
@@ -68,134 +68,104 @@
     <p>Posté le sam. 14 avril 2012</p>
   </header>
   <div>
-    <div class="line-block">
-<div class="line">Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
-sur une branche qui sont pas a commiter dans l'immédiat.</div>
-<div class="line">J'utilise donc git stash, voyons voir comment l'utiliser simplement.</div>
-</div>
-<p>On regarde l'état du status et des branches : (git status / git branch)</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$ git st</div>
-<div class="line"># On branch master</div>
-<div class="line">nothing to commit (working directory clean)</div>
-</div>
-<div class="line-block">
-<div class="line">$ git br</div>
-<div class="line">* master</div>
-</div>
-</blockquote>
-<p>Je travail sur la branche master et je n'ai pas d'autre branche. Je vais
-donc faire une branche API pour mon projet.</p>
-<blockquote>
-<p>$ git br API</p>
-<p>$ git br</p>
-<div class="line-block">
-<div class="line">&nbsp; API</div>
-<div class="line">* master</div>
-</div>
-</blockquote>
-<p>Maintenant je vais changer de branche (git checkout) pour être sur ma
+    <p>Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers sur une
+branche qui sont pas a commiter dans l'immédiat. J'utilise donc git stash,
+voyons voir comment l'utiliser simplement.</p>
+<p>On regarde l'état du status et des branches</p>
+<pre class="literal-block">
+git status
+# On branch master
+nothing to commit (working directory clean)
+
+$ git branch
+* master
+</pre>
+<p>Je travail sur la branche master et je n'ai pas d'autre branche. Je vais donc
+faire une branche API pour mon projet.</p>
+<pre class="literal-block">
+git branch API
+
+git branch
+  API
+  * master
+</pre>
+<p>Maintenant je vais changer de branche <cite>git checkout</cite> pour être sur ma
 branche API et modifier les fichiers sur cette branche.</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$ git co API</div>
-<div class="line">Switched to branch 'API'</div>
-<div class="line">$ git br</div>
-<div class="line">* API</div>
-<div class="line">&nbsp; master</div>
-</div>
-</blockquote>
-<p>Ok maintenant je vais modifier un mon fichier manage.py sur ma branche
-API.</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$ git st</div>
-<div class="line"># On branch API</div>
-<div class="line"># Changes not staged for commit:</div>
-<div class="line">#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</div>
-<div class="line">#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working
-directory)</div>
-<div class="line">#</div>
-<div class="line">#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py</div>
-<div class="line">#</div>
-<div class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</div>
-</div>
-</blockquote>
-<p>Si je veux revenir sur mon master, sans avoir la modification du
-manage.py je vais devoir utiliser git stash (qui sauvegardera mes
+<pre class="literal-block">
+git checkout API
+Switched to branch 'API'
+
+git branch
+* API
+  master
+</pre>
+<p>Maintenant je vais modifier un mon fichier manage.py sur ma branche API.</p>
+<pre class="literal-block">
+git status
+# On branch API
+# Changes not staged for commit:
+#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+#
+#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py
+#
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</pre>
+<p>Si je veux revenir sur mon master, sans avoir la modification du manage.py je
+vais devoir utiliser git stash (qui sauvegardera mes
 modifications du manage.py)</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$ git sta</div>
-<div class="line">Saved working directory and index state WIP on API: 8b6342d Fix
-register.py</div>
-<div class="line">HEAD is now at 8b6342d Fix register.py</div>
-</div>
-<div class="line-block">
-<div class="line">$ git st</div>
-<div class="line"># On branch API</div>
-<div class="line">nothing to commit (working directory clean)</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+git stash
+Saved working directory and index state WIP on API: 8b6342d Fix register.py
+HEAD is now at 8b6342d Fix register.py
+
+$ git status
+# On branch API
+nothing to commit (working directory clean)
+</pre>
 <p>Maintenant que notre branche est propre on peut changer de branche
 revenir sur le master par exemple.</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$ git co master</div>
-<div class="line">Switched to branch 'master'</div>
-</div>
-<div class="line-block">
-<div class="line">$ git st</div>
-<div class="line"># On branch master</div>
-<div class="line">nothing to commit (working directory clean)</div>
-</div>
-</blockquote>
-<p>On peut donc travailler tranquillement sur la branche master. Puis
-revenir sur notre branche API, lister les stash (git stash list)
-récupérer les modifications précédentes (git stash pop).</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$ git co API</div>
-<div class="line">Switched to branch 'API'</div>
-</div>
-<div class="line-block">
-<div class="line">$ git stast</div>
-<div class="line"><a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>}: WIP on API: 8b6342d Fix register.py</div>
-</div>
-<div class="line-block">
-<div class="line">$ git stapp</div>
-<div class="line"># On branch API</div>
-<div class="line"># Changes not staged for commit:</div>
-<div class="line">#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</div>
-<div class="line">#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working
-directory)</div>
-<div class="line">#</div>
-<div class="line">#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py</div>
-<div class="line">#</div>
-<div class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</div>
-<div class="line">Dropped <a class="reference external" href="mailto:refs/stash&#64;{0">refs/stash&#64;{0</a>} (533906a52b923a8960fa0f6fdf17a288c94f233a)</div>
-</div>
-<div class="line-block">
-<div class="line">$ git st</div>
-<div class="line"># On branch API</div>
-<div class="line"># Changes not staged for commit:</div>
-<div class="line">#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</div>
-<div class="line">#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working
-directory)</div>
-<div class="line">#</div>
-<div class="line">#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py</div>
-<div class="line">#</div>
-<div class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</div>
-</div>
-</blockquote>
-<p>Maintenant je peux continuer les modifications sur ma branche API
-réutilise git stash si besoin ou les commiter, merger ma branche...</p>
-<p>/!\ Attention les commandes git st, git co, git br, git sta, git stapp
-sont des alias qui se trouvent dans mon fichier .gitconfig (voir les
-billets précédents) /!\</p>
-<p>git stash (sauve le travail dans un stash) mon alias = git sta</p>
-<p>git stash list (liste les stash) mon alias = git stast (ou git stalist)</p>
+<pre class="literal-block">
+$ git checkout master
+Switched to branch 'master'
+
+$ git status
+# On branch master
+nothing to commit (working directory clean)
+</pre>
+<p>On peut donc travailler tranquillement sur la branche master. Puis revenir sur
+notre branche API, lister les stash <cite>git stash list</cite> récupérer les modifications
+précédentes <cite>git stash pop</cite>.</p>
+<pre class="literal-block">
+git checkout API
+Switched to branch 'API'
+
+git stash list
+stash&#64;{0}: WIP on API: 8b6342d Fix register.py
+
+git stash pop
+# On branch API
+# Changes not staged for commit:
+#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+#
+#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py
+#
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+Dropped refs/stash&#64;{0} (533906a52b923a8960fa0f6fdf17a288c94f233a)
+
+$ git status
+# On branch API
+# Changes not staged for commit:
+#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+#
+#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py
+#
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</pre>
+<p>Maintenant je peux continuer les modifications sur ma branche API réutilise git
+stash si besoin ou les commiter, merger ma branche…</p>
 <p>git stash pop (récupére le dernier stash enregistré <a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>},
 l'applique et le supprime de la liste) mon alias = git stapp</p>
 <p>git stash apply (récupére le dernier stash enregistré <a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>} et
@@ -234,7 +204,7 @@ l'applique)</p>
   },
   "image": "avatar.png",
   "url": "http://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html",
-  "description": "Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc git stash, voyons voir comment l'utiliser simplement. On regarde l'état du status et des branches : (git status / git branch) $ git ..."
+  "description": "Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc git stash, voyons voir comment l'utiliser simplement. On regarde l'état du status et des branches git status # On branch master ..."
 }
 </script></body>
 </html>

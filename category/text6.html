@@ -61,11 +61,11 @@ Tags :
       <a href="http://www.choiz.fr/tag/attached.html">attached</a>,      <a href="http://www.choiz.fr/tag/detached.html">detached</a>,      <a href="http://www.choiz.fr/tag/detacher.html">détacher</a>,      <a href="http://www.choiz.fr/tag/screen.html">screen</a>,      <a href="http://www.choiz.fr/tag/reattacher.html">réattacher</a>,      <a href="http://www.choiz.fr/tag/linux.html">linux</a>,      <a href="http://www.choiz.fr/tag/cli.html">cli</a>    </p>
   </header>
   <div>
-      <p>Lorsque j'ai voulu &quot;réattacher&quot; mon &quot;Screen&quot; j'ai eu le message suivant
-:</p>
-<blockquote>
+      <p>Lorsque j'ai voulu &quot;réattacher&quot; mon &quot;Screen&quot; j'ai eu le message suivant :</p>
+<pre class="literal-block">
 There is a screen on:
-1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)</blockquote>
+1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)
+</pre>
 <p>Habituellement je détache mon &quot;Screen&quot; mais cette fois j'ai oublié.</p>
 <p>Pour &quot;détacher&quot; / &quot;réattacher&quot; mon &quot;Screen&quot; j'ai du faire la commande ...</p>
       <a class="btn" href="http://www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html#2012-04-18-reprendre-la-main-sur-un-screen-pas-detached">Lire la suite</a>
@@ -81,15 +81,13 @@ Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="http://www.choiz.fr/tag/git-stash-pop.html">git stash pop</a>,      <a href="http://www.choiz.fr/tag/git-stash-list.html">git stash list</a>,      <a href="http://www.choiz.fr/tag/git-branch.html">git branch</a>,      <a href="http://www.choiz.fr/tag/git-checkout.html">git checkout</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line">Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
-sur une branche qui sont pas a commiter dans l'immédiat.</div>
-<div class="line">J'utilise donc git stash, voyons voir comment l'utiliser simplement.</div>
-</div>
-<p>On regarde l'état du status et des branches : (git status / git branch)</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$ git ...</div></div></blockquote>
+      <p>Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers sur une
+branche qui sont pas a commiter dans l'immédiat. J'utilise donc git stash,
+voyons voir comment l'utiliser simplement.</p>
+<p>On regarde l'état du status et des branches</p>
+<pre class="literal-block">
+git status
+# On branch master ...</pre>
       <a class="btn" href="http://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html#2012-04-14-utilisation-des-branches-et-de-git-stash">Lire la suite</a>
   </div>
   <hr />
@@ -103,13 +101,15 @@ Tags :
       <a href="http://www.choiz.fr/tag/cli.html">CLI</a>,      <a href="http://www.choiz.fr/tag/rename.html">rename</a>,      <a href="http://www.choiz.fr/tag/renommer.html">renommer</a>,      <a href="http://www.choiz.fr/tag/fichiers.html">fichiers</a>,      <a href="http://www.choiz.fr/tag/wav.html">wav</a>,      <a href="http://www.choiz.fr/tag/wav.html">WAV</a>    </p>
   </header>
   <div>
-      <p>Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
-correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
-&quot;rename&quot;.</p>
+      <p>Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers correct. Sous
+linux pour renomer plusieurs fichiers avec bash j'utilise &quot;rename&quot;.</p>
 <p>Exemple je veux supprimer tous les espaces d'un fichier :</p>
-<p><tt class="docutils literal">rename &quot;s/ <span class="pre">*//g&quot;</span> *.*</tt></p>
-<p>Ou renomer tous mes fichiers .WAV en .wav etc...</p>
-<p><tt class="docutils literal">rename <span class="pre">&quot;s/\.WAV ...</span></tt></p>
+<pre class="literal-block">
+rename &quot;s/ *//g&quot; *.*
+</pre>
+<p>Ou renomer tous mes fichiers .WAV en .wav etc…</p>
+<pre class="literal-block">
+rename &quot;s/\.WAV ...</pre>
       <a class="btn" href="http://www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html#2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande">Lire la suite</a>
   </div>
   <hr />
@@ -123,37 +123,29 @@ Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/gitconfig.html">gitconfig</a>,      <a href="http://www.choiz.fr/tag/git-pull.html">git pull</a>,      <a href="http://www.choiz.fr/tag/git-push.html">git push</a>,      <a href="http://www.choiz.fr/tag/git-diff.html">git diff</a>,      <a href="http://www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="http://www.choiz.fr/tag/stash.html">stash</a>    </p>
   </header>
   <div>
-      <p>Ajout du pull, push, diff et surtout stash ;)</p>
-<blockquote>
-<div class="line-block">
-<div class="line">[user]</div>
-<div class="line-block">
-<div class="line">name = François LASSERRE</div>
-<div class="line">email = <a class="reference external" href="mailto:mon&#64;email.fr">mon&#64;email.fr</a></div>
-</div>
-<div class="line">[diff]</div>
-<div class="line-block">
-<div class="line">tool = vimdiff</div>
-</div>
-<div class="line">[color]</div>
-<div class="line-block">
-<div class="line">branch = auto</div>
-<div class="line">diff = auto</div>
-<div class="line">status = auto</div>
-<div class="line">interactive = auto</div>
-<div class="line">ui = true</div>
-</div>
-<div class="line">[alias]</div>
-<div class="line-block">
-<div class="line">br = branch</div>
-<div class="line">ci = commit -a</div>
-<div class="line">co = checkout</div>
-<div class="line">sh = show --color-words</div>
-<div class="line">st = status</div>
-<div class="line">di = diff</div>
-<div class="line">ph = push</div>
-<div class="line">pl = pull</div>
-<div class="line">sta ...</div></div></div></blockquote>
+      <p>Ajout du pull, push, diff et surtout stash</p>
+<pre class="literal-block">
+[user]
+  name = François LASSERRE
+  email = mon&#64;email.fr
+[diff]
+  tool = vimdiff
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  interactive = auto
+  ui = true
+[alias]
+  br = branch
+  ci = commit -a
+  co = checkout
+  sh = show --color-words
+  st = status
+  di = diff
+  ph = push
+  pl = pull
+  sta ...</pre>
       <a class="btn" href="http://www.choiz.fr/2012-04-13-update-gitconfig.html#2012-04-13-update-gitconfig">Lire la suite</a>
   </div>
   <hr />
@@ -168,35 +160,27 @@ Tags :
   </header>
   <div>
       <p>Fichier .gitconfig</p>
-<blockquote>
-<div class="line-block">
-<div class="line">[user]</div>
-<div class="line-block">
-<div class="line">name = François LASSERRE</div>
-<div class="line">email = <a class="reference external" href="mailto:mon&#64;email.fr">mon&#64;email.fr</a></div>
-</div>
-<div class="line">[diff]</div>
-<div class="line-block">
-<div class="line">tool = vimdiff</div>
-</div>
-<div class="line">[color]</div>
-<div class="line-block">
-<div class="line">branch = auto</div>
-<div class="line">diff = auto</div>
-<div class="line">status = auto</div>
-<div class="line">interactive = auto</div>
-<div class="line">ui = true</div>
-</div>
-<div class="line">[alias]</div>
-<div class="line-block">
-<div class="line">br = branch</div>
-<div class="line">ci = commit -a</div>
-<div class="line">co = checkout</div>
-<div class="line">sh = show --color-words</div>
-<div class="line">st = status</div>
-<div class="line">last = cat-file commit HEAD</div>
-<div class="line">tree = log --graph --oneline --decorate</div>
-<div class="line">graph = log --graph --decorate ...</div></div></div></blockquote>
+<pre class="literal-block">
+[user]
+    name = François LASSERRE
+    email = mon&#64;email.fr
+[diff]
+    tool = vimdiff
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+    interactive = auto
+    ui = true
+[alias]
+    br = branch
+    ci = commit -a
+    co = checkout
+    sh = show --color-words
+    st = status
+    last = cat-file commit HEAD
+    tree = log --graph --oneline --decorate
+    graph = log --graph --decorate ...</pre>
       <a class="btn" href="http://www.choiz.fr/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html#2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore">Lire la suite</a>
   </div>
   <hr />
@@ -211,14 +195,15 @@ Tags :
   </header>
   <div>
       <p>On commence par ouvrir un terminal puis on tape :</p>
-<blockquote>
-$ ssh-keygen -t dsa -b 1024</blockquote>
-<p>Enter file in which to save the key (/Users/choiz/.ssh/id_dsa):</p>
-<div class="line-block">
-<div class="line">En général je garde le fichier id_rsa donc je tape &quot;enter&quot; sinon vous
-pouvez spécifier un autre chemin ainsi qu'un autre fichier.</div>
-</div>
-<p>Enter ...</p>
+<pre class="literal-block">
+ssh-keygen -t dsa -b 1024
+
+Enter file in which to save the key (/Users/choiz/.ssh/id_dsa):
+</pre>
+<p>En général je garde le fichier id_rsa donc je tape &quot;enter&quot; sinon vous pouvez
+spécifier un autre chemin ainsi qu'un autre fichier.</p>
+<pre class="literal-block">
+Enter ...</pre>
       <a class="btn" href="http://www.choiz.fr/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html#2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh">Lire la suite</a>
   </div>
   <hr />

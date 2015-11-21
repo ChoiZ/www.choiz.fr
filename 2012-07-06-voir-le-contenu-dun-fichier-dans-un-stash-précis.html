@@ -70,20 +70,25 @@
   </header>
   <div>
     <p>Pour lister les stash :</p>
-<p><tt class="docutils literal">git stash list</tt></p>
-<blockquote>
-<a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>}: WIP on BranchName: 5d8a556 Edit file.js
-<a class="reference external" href="mailto:stash&#64;{1">stash&#64;{1</a>}: WIP on&nbsp;BranchName: 66dfe78 Edit file.css
+<pre class="literal-block">
+git stash list
+
+stash&#64;{0}: WIP on BranchName: 5d8a556 Edit file.js
+stash&#64;{1}: WIP on&nbsp;BranchName: 66dfe78 Edit file.css
 …
-<a class="reference external" href="mailto:stash&#64;{5">stash&#64;{5</a>}: WIP on&nbsp;BranchName: 3bb67ff Add file.css file.js</blockquote>
+stash&#64;{5}: WIP on&nbsp;BranchName: 3bb67ff Add file.css file.js
+</pre>
 <p>Pour voir le contenu d'un stash :</p>
-<p><tt class="docutils literal">git stash show</tt></p>
-<blockquote>
-<a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>} chemin/vers/mon/fichier.js | 199 ++++++++++++++++++++++++++--------
-chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------</blockquote>
-<p>Pour voir le contenu de &quot;chemin/vers/mon/fichier.js&quot; qui est dans le
-stash{0}</p>
-<p><tt class="docutils literal">git show <span class="pre">stash&#64;{0}:chemin/vers/mon/fichier.js</span></tt></p>
+<pre class="literal-block">
+git stash show
+
+stash&#64;{0} chemin/vers/mon/fichier.js | 199 ++++++++++++++++++++++++++--------
+chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------
+</pre>
+<p>Pour voir le contenu de &quot;chemin/vers/mon/fichier.js&quot; qui est dans le stash{0}</p>
+<pre class="literal-block">
+git show stash&#64;{0}:chemin/vers/mon/fichier.js
+</pre>
 
   </div>
   <div class="tag-cloud">

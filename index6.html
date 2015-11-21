@@ -61,16 +61,16 @@ Tags :
       <a href="http://www.choiz.fr/tag/attached.html">attached</a>,      <a href="http://www.choiz.fr/tag/detached.html">detached</a>,      <a href="http://www.choiz.fr/tag/detacher.html">détacher</a>,      <a href="http://www.choiz.fr/tag/screen.html">screen</a>,      <a href="http://www.choiz.fr/tag/reattacher.html">réattacher</a>,      <a href="http://www.choiz.fr/tag/linux.html">linux</a>,      <a href="http://www.choiz.fr/tag/cli.html">cli</a>    </p>
   </header>
   <div>
-      <p>Lorsque j'ai voulu &quot;réattacher&quot; mon &quot;Screen&quot; j'ai eu le message suivant
-:</p>
-<blockquote>
+      <p>Lorsque j'ai voulu &quot;réattacher&quot; mon &quot;Screen&quot; j'ai eu le message suivant :</p>
+<pre class="literal-block">
 There is a screen on:
-1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)</blockquote>
+1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)
+</pre>
 <p>Habituellement je détache mon &quot;Screen&quot; mais cette fois j'ai oublié.</p>
-<p>Pour &quot;détacher&quot; / &quot;réattacher&quot; mon &quot;Screen&quot; j'ai du faire la commande
-suivante :</p>
-<blockquote>
-$ screen -dRR</blockquote>
+<p>Pour &quot;détacher&quot; / &quot;réattacher&quot; mon &quot;Screen&quot; j'ai du faire la commande suivante :</p>
+<pre class="literal-block">
+screen -dRR
+</pre>
 <p>Je note car c'est toujours bon à savoir :)</p>
 
   </div>
@@ -85,134 +85,104 @@ Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="http://www.choiz.fr/tag/git-stash-pop.html">git stash pop</a>,      <a href="http://www.choiz.fr/tag/git-stash-list.html">git stash list</a>,      <a href="http://www.choiz.fr/tag/git-branch.html">git branch</a>,      <a href="http://www.choiz.fr/tag/git-checkout.html">git checkout</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line">Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
-sur une branche qui sont pas a commiter dans l'immédiat.</div>
-<div class="line">J'utilise donc git stash, voyons voir comment l'utiliser simplement.</div>
-</div>
-<p>On regarde l'état du status et des branches : (git status / git branch)</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$ git st</div>
-<div class="line"># On branch master</div>
-<div class="line">nothing to commit (working directory clean)</div>
-</div>
-<div class="line-block">
-<div class="line">$ git br</div>
-<div class="line">* master</div>
-</div>
-</blockquote>
-<p>Je travail sur la branche master et je n'ai pas d'autre branche. Je vais
-donc faire une branche API pour mon projet.</p>
-<blockquote>
-<p>$ git br API</p>
-<p>$ git br</p>
-<div class="line-block">
-<div class="line">&nbsp; API</div>
-<div class="line">* master</div>
-</div>
-</blockquote>
-<p>Maintenant je vais changer de branche (git checkout) pour être sur ma
+      <p>Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers sur une
+branche qui sont pas a commiter dans l'immédiat. J'utilise donc git stash,
+voyons voir comment l'utiliser simplement.</p>
+<p>On regarde l'état du status et des branches</p>
+<pre class="literal-block">
+git status
+# On branch master
+nothing to commit (working directory clean)
+
+$ git branch
+* master
+</pre>
+<p>Je travail sur la branche master et je n'ai pas d'autre branche. Je vais donc
+faire une branche API pour mon projet.</p>
+<pre class="literal-block">
+git branch API
+
+git branch
+  API
+  * master
+</pre>
+<p>Maintenant je vais changer de branche <cite>git checkout</cite> pour être sur ma
 branche API et modifier les fichiers sur cette branche.</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$ git co API</div>
-<div class="line">Switched to branch 'API'</div>
-<div class="line">$ git br</div>
-<div class="line">* API</div>
-<div class="line">&nbsp; master</div>
-</div>
-</blockquote>
-<p>Ok maintenant je vais modifier un mon fichier manage.py sur ma branche
-API.</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$ git st</div>
-<div class="line"># On branch API</div>
-<div class="line"># Changes not staged for commit:</div>
-<div class="line">#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</div>
-<div class="line">#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working
-directory)</div>
-<div class="line">#</div>
-<div class="line">#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py</div>
-<div class="line">#</div>
-<div class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</div>
-</div>
-</blockquote>
-<p>Si je veux revenir sur mon master, sans avoir la modification du
-manage.py je vais devoir utiliser git stash (qui sauvegardera mes
+<pre class="literal-block">
+git checkout API
+Switched to branch 'API'
+
+git branch
+* API
+  master
+</pre>
+<p>Maintenant je vais modifier un mon fichier manage.py sur ma branche API.</p>
+<pre class="literal-block">
+git status
+# On branch API
+# Changes not staged for commit:
+#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+#
+#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py
+#
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</pre>
+<p>Si je veux revenir sur mon master, sans avoir la modification du manage.py je
+vais devoir utiliser git stash (qui sauvegardera mes
 modifications du manage.py)</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$ git sta</div>
-<div class="line">Saved working directory and index state WIP on API: 8b6342d Fix
-register.py</div>
-<div class="line">HEAD is now at 8b6342d Fix register.py</div>
-</div>
-<div class="line-block">
-<div class="line">$ git st</div>
-<div class="line"># On branch API</div>
-<div class="line">nothing to commit (working directory clean)</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+git stash
+Saved working directory and index state WIP on API: 8b6342d Fix register.py
+HEAD is now at 8b6342d Fix register.py
+
+$ git status
+# On branch API
+nothing to commit (working directory clean)
+</pre>
 <p>Maintenant que notre branche est propre on peut changer de branche
 revenir sur le master par exemple.</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$ git co master</div>
-<div class="line">Switched to branch 'master'</div>
-</div>
-<div class="line-block">
-<div class="line">$ git st</div>
-<div class="line"># On branch master</div>
-<div class="line">nothing to commit (working directory clean)</div>
-</div>
-</blockquote>
-<p>On peut donc travailler tranquillement sur la branche master. Puis
-revenir sur notre branche API, lister les stash (git stash list)
-récupérer les modifications précédentes (git stash pop).</p>
-<blockquote>
-<div class="line-block">
-<div class="line">$ git co API</div>
-<div class="line">Switched to branch 'API'</div>
-</div>
-<div class="line-block">
-<div class="line">$ git stast</div>
-<div class="line"><a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>}: WIP on API: 8b6342d Fix register.py</div>
-</div>
-<div class="line-block">
-<div class="line">$ git stapp</div>
-<div class="line"># On branch API</div>
-<div class="line"># Changes not staged for commit:</div>
-<div class="line">#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</div>
-<div class="line">#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working
-directory)</div>
-<div class="line">#</div>
-<div class="line">#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py</div>
-<div class="line">#</div>
-<div class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</div>
-<div class="line">Dropped <a class="reference external" href="mailto:refs/stash&#64;{0">refs/stash&#64;{0</a>} (533906a52b923a8960fa0f6fdf17a288c94f233a)</div>
-</div>
-<div class="line-block">
-<div class="line">$ git st</div>
-<div class="line"># On branch API</div>
-<div class="line"># Changes not staged for commit:</div>
-<div class="line">#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</div>
-<div class="line">#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working
-directory)</div>
-<div class="line">#</div>
-<div class="line">#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py</div>
-<div class="line">#</div>
-<div class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</div>
-</div>
-</blockquote>
-<p>Maintenant je peux continuer les modifications sur ma branche API
-réutilise git stash si besoin ou les commiter, merger ma branche...</p>
-<p>/!\ Attention les commandes git st, git co, git br, git sta, git stapp
-sont des alias qui se trouvent dans mon fichier .gitconfig (voir les
-billets précédents) /!\</p>
-<p>git stash (sauve le travail dans un stash) mon alias = git sta</p>
-<p>git stash list (liste les stash) mon alias = git stast (ou git stalist)</p>
+<pre class="literal-block">
+$ git checkout master
+Switched to branch 'master'
+
+$ git status
+# On branch master
+nothing to commit (working directory clean)
+</pre>
+<p>On peut donc travailler tranquillement sur la branche master. Puis revenir sur
+notre branche API, lister les stash <cite>git stash list</cite> récupérer les modifications
+précédentes <cite>git stash pop</cite>.</p>
+<pre class="literal-block">
+git checkout API
+Switched to branch 'API'
+
+git stash list
+stash&#64;{0}: WIP on API: 8b6342d Fix register.py
+
+git stash pop
+# On branch API
+# Changes not staged for commit:
+#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+#
+#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py
+#
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+Dropped refs/stash&#64;{0} (533906a52b923a8960fa0f6fdf17a288c94f233a)
+
+$ git status
+# On branch API
+# Changes not staged for commit:
+#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+#
+#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py
+#
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</pre>
+<p>Maintenant je peux continuer les modifications sur ma branche API réutilise git
+stash si besoin ou les commiter, merger ma branche…</p>
 <p>git stash pop (récupére le dernier stash enregistré <a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>},
 l'applique et le supprime de la liste) mon alias = git stapp</p>
 <p>git stash apply (récupére le dernier stash enregistré <a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>} et
@@ -231,13 +201,16 @@ Tags :
       <a href="http://www.choiz.fr/tag/cli.html">CLI</a>,      <a href="http://www.choiz.fr/tag/rename.html">rename</a>,      <a href="http://www.choiz.fr/tag/renommer.html">renommer</a>,      <a href="http://www.choiz.fr/tag/fichiers.html">fichiers</a>,      <a href="http://www.choiz.fr/tag/wav.html">wav</a>,      <a href="http://www.choiz.fr/tag/wav.html">WAV</a>    </p>
   </header>
   <div>
-      <p>Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
-correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
-&quot;rename&quot;.</p>
+      <p>Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers correct. Sous
+linux pour renomer plusieurs fichiers avec bash j'utilise &quot;rename&quot;.</p>
 <p>Exemple je veux supprimer tous les espaces d'un fichier :</p>
-<p><tt class="docutils literal">rename &quot;s/ <span class="pre">*//g&quot;</span> *.*</tt></p>
-<p>Ou renomer tous mes fichiers .WAV en .wav etc...</p>
-<p><tt class="docutils literal">rename <span class="pre">&quot;s/\.WAV/\.wav/g&quot;</span> *.WAV</tt></p>
+<pre class="literal-block">
+rename &quot;s/ *//g&quot; *.*
+</pre>
+<p>Ou renomer tous mes fichiers .WAV en .wav etc…</p>
+<pre class="literal-block">
+rename &quot;s/\.WAV/\.wav/g&quot; *.WAV
+</pre>
 <p>A vous de modifier l'expression régulière !</p>
 
   </div>
@@ -252,66 +225,48 @@ Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/gitconfig.html">gitconfig</a>,      <a href="http://www.choiz.fr/tag/git-pull.html">git pull</a>,      <a href="http://www.choiz.fr/tag/git-push.html">git push</a>,      <a href="http://www.choiz.fr/tag/git-diff.html">git diff</a>,      <a href="http://www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="http://www.choiz.fr/tag/stash.html">stash</a>    </p>
   </header>
   <div>
-      <p>Ajout du pull, push, diff et surtout stash ;)</p>
-<blockquote>
-<div class="line-block">
-<div class="line">[user]</div>
-<div class="line-block">
-<div class="line">name = François LASSERRE</div>
-<div class="line">email = <a class="reference external" href="mailto:mon&#64;email.fr">mon&#64;email.fr</a></div>
-</div>
-<div class="line">[diff]</div>
-<div class="line-block">
-<div class="line">tool = vimdiff</div>
-</div>
-<div class="line">[color]</div>
-<div class="line-block">
-<div class="line">branch = auto</div>
-<div class="line">diff = auto</div>
-<div class="line">status = auto</div>
-<div class="line">interactive = auto</div>
-<div class="line">ui = true</div>
-</div>
-<div class="line">[alias]</div>
-<div class="line-block">
-<div class="line">br = branch</div>
-<div class="line">ci = commit -a</div>
-<div class="line">co = checkout</div>
-<div class="line">sh = show --color-words</div>
-<div class="line">st = status</div>
-<div class="line">di = diff</div>
-<div class="line">ph = push</div>
-<div class="line">pl = pull</div>
-<div class="line">sta = stash</div>
-<div class="line">stalist = stash list</div>
-<div class="line">stast = stash list</div>
-<div class="line">stapp = stash pop</div>
-<div class="line">starm = stash drop</div>
-<div class="line">last = cat-file commit HEAD</div>
-<div class="line">graph = log --graph --decorate</div>
-<div class="line">tree = log --graph --oneline --decorate</div>
-<div class="line">pom = push origin master</div>
-<div class="line">logs = log --stat</div>
-<div class="line">currentbranch = &quot;!git branch | grep ^* | cut -d &quot; &quot; -f 2&quot;</div>
-</div>
-<div class="line">[core]</div>
-<div class="line-block">
-<div class="line">excludesfile = ~/.gitignore</div>
-</div>
-<div class="line">editor = vim</div>
-<div class="line-block">
-<div class="line">filemode = false</div>
-</div>
-<div class="line">[merge]</div>
-<div class="line-block">
-<div class="line">tool = vimdiff</div>
-</div>
-<div class="line">[http]</div>
-<div class="line-block">
-<div class="line">#sslverify = false|</div>
-</div>
-</div>
-</blockquote>
+      <p>Ajout du pull, push, diff et surtout stash</p>
+<pre class="literal-block">
+[user]
+  name = François LASSERRE
+  email = mon&#64;email.fr
+[diff]
+  tool = vimdiff
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  interactive = auto
+  ui = true
+[alias]
+  br = branch
+  ci = commit -a
+  co = checkout
+  sh = show --color-words
+  st = status
+  di = diff
+  ph = push
+  pl = pull
+  sta = stash
+  stalist = stash list
+  stast = stash list
+  stapp = stash pop
+  starm = stash drop
+  last = cat-file commit HEAD
+  graph = log --graph --decorate
+  tree = log --graph --oneline --decorate
+  pom = push origin master
+  logs = log --stat
+  currentbranch = &quot;!git branch | grep ^* | cut -d \&quot; \&quot; -f 2&quot;
+[core]
+  excludesfile = ~/.gitignore
+editor = vim
+  filemode = false
+[merge]
+  tool = vimdiff
+[http]
+  #sslverify = false|
+</pre>
 
   </div>
   <hr />
@@ -326,60 +281,46 @@ Tags :
   </header>
   <div>
       <p>Fichier .gitconfig</p>
-<blockquote>
-<div class="line-block">
-<div class="line">[user]</div>
-<div class="line-block">
-<div class="line">name = François LASSERRE</div>
-<div class="line">email = <a class="reference external" href="mailto:mon&#64;email.fr">mon&#64;email.fr</a></div>
-</div>
-<div class="line">[diff]</div>
-<div class="line-block">
-<div class="line">tool = vimdiff</div>
-</div>
-<div class="line">[color]</div>
-<div class="line-block">
-<div class="line">branch = auto</div>
-<div class="line">diff = auto</div>
-<div class="line">status = auto</div>
-<div class="line">interactive = auto</div>
-<div class="line">ui = true</div>
-</div>
-<div class="line">[alias]</div>
-<div class="line-block">
-<div class="line">br = branch</div>
-<div class="line">ci = commit -a</div>
-<div class="line">co = checkout</div>
-<div class="line">sh = show --color-words</div>
-<div class="line">st = status</div>
-<div class="line">last = cat-file commit HEAD</div>
-<div class="line">tree = log --graph --oneline --decorate</div>
-<div class="line">graph = log --graph --decorate</div>
-<div class="line">pom = push origin master</div>
-</div>
-<div class="line">[core]</div>
-<div class="line-block">
-<div class="line">excludesfile = ~/.gitignore</div>
-<div class="line">editor = vim</div>
-</div>
-<div class="line">[merge]</div>
-<div class="line-block">
-<div class="line">tool = vimdiff</div>
-</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+[user]
+    name = François LASSERRE
+    email = mon&#64;email.fr
+[diff]
+    tool = vimdiff
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+    interactive = auto
+    ui = true
+[alias]
+    br = branch
+    ci = commit -a
+    co = checkout
+    sh = show --color-words
+    st = status
+    last = cat-file commit HEAD
+    tree = log --graph --oneline --decorate
+    graph = log --graph --decorate
+    pom = push origin master
+[core]
+    excludesfile = ~/.gitignore
+    editor = vim
+[merge]
+    tool = vimdiff
+</pre>
 <p>Fichier .gitignore</p>
 <pre class="literal-block">
-| # Ignore files from git
-|
-| # ._ files (Mac Os X)
-| ._*
-|
-| # .DS_STORE (Mac Os X)
-| .DS_STORE
-|
-| # .swp (Vim)
-| *.swp
+# Ignore files from git
+
+# ._ files (Mac Os X)
+._*
+
+# .DS_STORE (Mac Os X)
+.DS_STORE
+
+# .swp (Vim)
+*.swp
 </pre>
 
   </div>
@@ -395,22 +336,26 @@ Tags :
   </header>
   <div>
       <p>On commence par ouvrir un terminal puis on tape :</p>
-<blockquote>
-$ ssh-keygen -t dsa -b 1024</blockquote>
-<p>Enter file in which to save the key (/Users/choiz/.ssh/id_dsa):</p>
-<div class="line-block">
-<div class="line">En général je garde le fichier id_rsa donc je tape &quot;enter&quot; sinon vous
-pouvez spécifier un autre chemin ainsi qu'un autre fichier.</div>
-</div>
-<p>Enter passphrase (empty for no passphrase):</p>
+<pre class="literal-block">
+ssh-keygen -t dsa -b 1024
+
+Enter file in which to save the key (/Users/choiz/.ssh/id_dsa):
+</pre>
+<p>En général je garde le fichier id_rsa donc je tape &quot;enter&quot; sinon vous pouvez
+spécifier un autre chemin ainsi qu'un autre fichier.</p>
+<pre class="literal-block">
+Enter passphrase (empty for no passphrase):
+</pre>
 <p>Ici on tape un mot de passe si on en veut un lors de la connexion aux
 différents hosts. En général j'en défini un.</p>
 <p>Pour finir on copie la clé sur le serveur soit via scp :</p>
-<blockquote>
-scp ~/.ssh/id_dsa.pub <a class="reference external" href="mailto:user&#64;ip">user&#64;ip</a>:~/.ssh/authorized_keys/</blockquote>
+<pre class="literal-block">
+scp ~/.ssh/id\_dsa.pub user&#64;ip:~/.ssh/authorized\_keys/
+</pre>
 <p>ou via ssh-copy-id :</p>
-<blockquote>
-ssh-copy-id -i ~/.ssh/id_dsa.pub <a class="reference external" href="mailto:user&#64;ip">user&#64;ip</a></blockquote>
+<pre class="literal-block">
+ssh-copy-id -i ~/.ssh/id\_dsa.pub user&#64;ip
+</pre>
 
   </div>
   <hr />

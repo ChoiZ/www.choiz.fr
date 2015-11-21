@@ -97,20 +97,18 @@ Tags :
   </header>
   <div>
       <p>Voilà mon petit fichier .gitignore</p>
-<blockquote>
-<div class="line-block">
-<div class="line"># Ignore files from git</div>
-<div class="line"><br /></div>
-<div class="line"># ._ files (Mac Os X)</div>
-<div class="line">._*</div>
-<div class="line"><br /></div>
-<div class="line"># .DS_STORE (Mac Os X)</div>
-<div class="line">.DS_STORE</div>
-<div class="line"><br /></div>
-<div class="line"># .swp (Vim)</div>
-<div class="line">*.swp</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+# Ignore files from git
+
+# ._ files (Mac Os X)
+._*
+
+# .DS_STORE (Mac Os X)
+.DS_STORE
+
+# .swp (Vim)
+*.swp
+</pre>
 
       <a class="btn" href="http://www.choiz.fr/2012-08-13-mon-fichier-gitignore.html#2012-08-13-mon-fichier-gitignore">Lire la suite</a>
   </div>
@@ -126,16 +124,19 @@ Tags :
   </header>
   <div>
       <p>Pour lister les stash :</p>
-<p><tt class="docutils literal">git stash list</tt></p>
-<blockquote>
-<a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>}: WIP on BranchName: 5d8a556 Edit file.js
-<a class="reference external" href="mailto:stash&#64;{1">stash&#64;{1</a>}: WIP on&nbsp;BranchName: 66dfe78 Edit file.css
+<pre class="literal-block">
+git stash list
+
+stash&#64;{0}: WIP on BranchName: 5d8a556 Edit file.js
+stash&#64;{1}: WIP on&nbsp;BranchName: 66dfe78 Edit file.css
 …
-<a class="reference external" href="mailto:stash&#64;{5">stash&#64;{5</a>}: WIP on&nbsp;BranchName: 3bb67ff Add file.css file.js</blockquote>
+stash&#64;{5}: WIP on&nbsp;BranchName: 3bb67ff Add file.css file.js
+</pre>
 <p>Pour voir le contenu d'un stash :</p>
-<p><tt class="docutils literal">git stash show</tt></p>
-<blockquote>
-<a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>} chemin/vers ...</blockquote>
+<pre class="literal-block">
+git stash show
+
+stash&#64;{0} chemin/vers ...</pre>
       <a class="btn" href="http://www.choiz.fr/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis.html#2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis">Lire la suite</a>
   </div>
   <hr />

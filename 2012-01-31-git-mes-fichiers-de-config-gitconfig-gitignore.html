@@ -73,60 +73,46 @@
   </header>
   <div>
     <p>Fichier .gitconfig</p>
-<blockquote>
-<div class="line-block">
-<div class="line">[user]</div>
-<div class="line-block">
-<div class="line">name = François LASSERRE</div>
-<div class="line">email = <a class="reference external" href="mailto:mon&#64;email.fr">mon&#64;email.fr</a></div>
-</div>
-<div class="line">[diff]</div>
-<div class="line-block">
-<div class="line">tool = vimdiff</div>
-</div>
-<div class="line">[color]</div>
-<div class="line-block">
-<div class="line">branch = auto</div>
-<div class="line">diff = auto</div>
-<div class="line">status = auto</div>
-<div class="line">interactive = auto</div>
-<div class="line">ui = true</div>
-</div>
-<div class="line">[alias]</div>
-<div class="line-block">
-<div class="line">br = branch</div>
-<div class="line">ci = commit -a</div>
-<div class="line">co = checkout</div>
-<div class="line">sh = show --color-words</div>
-<div class="line">st = status</div>
-<div class="line">last = cat-file commit HEAD</div>
-<div class="line">tree = log --graph --oneline --decorate</div>
-<div class="line">graph = log --graph --decorate</div>
-<div class="line">pom = push origin master</div>
-</div>
-<div class="line">[core]</div>
-<div class="line-block">
-<div class="line">excludesfile = ~/.gitignore</div>
-<div class="line">editor = vim</div>
-</div>
-<div class="line">[merge]</div>
-<div class="line-block">
-<div class="line">tool = vimdiff</div>
-</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+[user]
+    name = François LASSERRE
+    email = mon&#64;email.fr
+[diff]
+    tool = vimdiff
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+    interactive = auto
+    ui = true
+[alias]
+    br = branch
+    ci = commit -a
+    co = checkout
+    sh = show --color-words
+    st = status
+    last = cat-file commit HEAD
+    tree = log --graph --oneline --decorate
+    graph = log --graph --decorate
+    pom = push origin master
+[core]
+    excludesfile = ~/.gitignore
+    editor = vim
+[merge]
+    tool = vimdiff
+</pre>
 <p>Fichier .gitignore</p>
 <pre class="literal-block">
-| # Ignore files from git
-|
-| # ._ files (Mac Os X)
-| ._*
-|
-| # .DS_STORE (Mac Os X)
-| .DS_STORE
-|
-| # .swp (Vim)
-| *.swp
+# Ignore files from git
+
+# ._ files (Mac Os X)
+._*
+
+# .DS_STORE (Mac Os X)
+.DS_STORE
+
+# .swp (Vim)
+*.swp
 </pre>
 
   </div>

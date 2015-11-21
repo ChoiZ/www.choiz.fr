@@ -1574,336 +1574,281 @@ Dans Action: choisir &amp;quot;Send Hex Code&amp;quot; et taper &amp;quot;0xd&am
 &lt;li&gt;&amp;quot;alt et fleche de droite&amp;quot; soit &amp;quot;⌥→&amp;quot; avec le code &amp;quot;[F&amp;quot; pour aller à la fin de la ligne.&lt;/li&gt;
 &lt;/ul&gt;
 </summary><category term="iTerm2"></category><category term="config"></category><category term="keypad"></category><category term="numeric"></category><category term="enter"></category><category term="⌥→"></category><category term="⌥←"></category><category term="↩"></category><category term="shortcut"></category><category term="clavier"></category><category term="pavé numérique"></category><category term="configuration iTerm2"></category></entry><entry><title>Mon fichier .gitignore</title><link href="http://www.choiz.fr/2012-08-13-mon-fichier-gitignore.html" rel="alternate"></link><updated>2012-08-13T11:06:31+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-08-13:2012-08-13-mon-fichier-gitignore.html</id><summary type="html">&lt;p&gt;Voilà mon petit fichier .gitignore&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;# Ignore files from git&lt;/div&gt;
-&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;div class="line"&gt;# ._ files (Mac Os X)&lt;/div&gt;
-&lt;div class="line"&gt;._*&lt;/div&gt;
-&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;div class="line"&gt;# .DS_STORE (Mac Os X)&lt;/div&gt;
-&lt;div class="line"&gt;.DS_STORE&lt;/div&gt;
-&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
-&lt;div class="line"&gt;# .swp (Vim)&lt;/div&gt;
-&lt;div class="line"&gt;*.swp&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+# Ignore files from git
+
+# ._ files (Mac Os X)
+._*
+
+# .DS_STORE (Mac Os X)
+.DS_STORE
+
+# .swp (Vim)
+*.swp
+&lt;/pre&gt;
 </summary><category term="git"></category><category term="gitignore"></category><category term=".gitignore"></category><category term="file"></category><category term="fichier"></category></entry><entry><title>Voir le contenu d'un fichier dans un stash précis (git)</title><link href="http://www.choiz.fr/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-pr%C3%A9cis.html" rel="alternate"></link><updated>2012-07-06T17:56:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-07-06:2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis.html</id><summary type="html">&lt;p&gt;Pour lister les stash :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;git stash list&lt;/tt&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;a class="reference external" href="mailto:stash&amp;#64;{0"&gt;stash&amp;#64;{0&lt;/a&gt;}: WIP on BranchName: 5d8a556 Edit file.js
-&lt;a class="reference external" href="mailto:stash&amp;#64;{1"&gt;stash&amp;#64;{1&lt;/a&gt;}: WIP on&amp;nbsp;BranchName: 66dfe78 Edit file.css
+&lt;pre class="literal-block"&gt;
+git stash list
+
+stash&amp;#64;{0}: WIP on BranchName: 5d8a556 Edit file.js
+stash&amp;#64;{1}: WIP on&amp;nbsp;BranchName: 66dfe78 Edit file.css
 …
-&lt;a class="reference external" href="mailto:stash&amp;#64;{5"&gt;stash&amp;#64;{5&lt;/a&gt;}: WIP on&amp;nbsp;BranchName: 3bb67ff Add file.css file.js&lt;/blockquote&gt;
+stash&amp;#64;{5}: WIP on&amp;nbsp;BranchName: 3bb67ff Add file.css file.js
+&lt;/pre&gt;
 &lt;p&gt;Pour voir le contenu d'un stash :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;git stash show&lt;/tt&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;a class="reference external" href="mailto:stash&amp;#64;{0"&gt;stash&amp;#64;{0&lt;/a&gt;} chemin/vers/mon/fichier.js | 199 ++++++++++++++++++++++++++--------
-chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------&lt;/blockquote&gt;
-&lt;p&gt;Pour voir le contenu de &amp;quot;chemin/vers/mon/fichier.js&amp;quot; qui est dans le
-stash{0}&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;git show &lt;span class="pre"&gt;stash&amp;#64;{0}:chemin/vers/mon/fichier.js&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+git stash show
+
+stash&amp;#64;{0} chemin/vers/mon/fichier.js | 199 ++++++++++++++++++++++++++--------
+chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------
+&lt;/pre&gt;
+&lt;p&gt;Pour voir le contenu de &amp;quot;chemin/vers/mon/fichier.js&amp;quot; qui est dans le stash{0}&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+git show stash&amp;#64;{0}:chemin/vers/mon/fichier.js
+&lt;/pre&gt;
 </summary><category term="git"></category><category term="stash"></category><category term="content"></category><category term="file"></category><category term="file content"></category><category term="git stash"></category><category term="show"></category></entry><entry><title>Ajout dans mon .vimrc de matchadd() &amp; highlight</title><link href="http://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html" rel="alternate"></link><updated>2012-04-27T15:11:26+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-04-27:2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html</id><summary type="html">&lt;p&gt;Petit ajout dans mon fichier .vimrc&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;&amp;quot; Highlight To do list with green background&lt;/div&gt;
-&lt;div class="line"&gt;highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green&lt;/div&gt;
-&lt;div class="line"&gt;highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue&lt;/div&gt;
-&lt;div class="line"&gt;highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red&lt;/div&gt;
-&lt;div class="line"&gt;&amp;quot; Match todolist, notice, fixme&lt;/div&gt;
-&lt;div class="line"&gt;:call matchadd('Todo','[T|t][O|o][D|d][O|o]')&lt;/div&gt;
-&lt;div class="line"&gt;:call matchadd('Todo','[T|t][O|o] [D|d][O|o]')&lt;/div&gt;
-&lt;div class="line"&gt;:call matchadd('Notice','[N|n][O|o][T|t][I|i][C|c][E|e]')&lt;/div&gt;
-&lt;div class="line"&gt;:call matchadd('Notice','[N|n][O|o][T|t][E|e]')&lt;/div&gt;
-&lt;div class="line"&gt;:call matchadd('Fixme','[F|f][I|i][X|x][M|m][E|e]')&lt;/div&gt;
-&lt;div class="line"&gt;:call matchadd('Fixme','[F|f][I|i][X|x] [M|m][E|e]')&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-</summary><category term="vimrc"></category><category term="vim"></category><category term="config file"></category><category term=".vimrc"></category><category term="todo"></category><category term="notice"></category><category term="fixme"></category><category term="highlight"></category><category term="matchadd"></category></entry><entry><title>Reprendre la main sur un Screen pas "detached"</title><link href="http://www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html" rel="alternate"></link><updated>2012-04-18T01:39:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-04-18:2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html</id><summary type="html">&lt;p&gt;Lorsque j'ai voulu &amp;quot;réattacher&amp;quot; mon &amp;quot;Screen&amp;quot; j'ai eu le message suivant
-:&lt;/p&gt;
-&lt;blockquote&gt;
+&amp;quot; Highlight To do list with green background
+highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
+highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
+highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
+&amp;quot; Match todolist, notice, fixme
+:call matchadd('Todo','[T|t][O|o][D|d][O|o]')
+:call matchadd('Todo','[T|t][O|o] [D|d][O|o]')
+:call matchadd('Notice','[N|n][O|o][T|t][I|i][C|c][E|e]')
+:call matchadd('Notice','[N|n][O|o][T|t][E|e]')
+:call matchadd('Fixme','[F|f][I|i][X|x][M|m][E|e]')
+:call matchadd('Fixme','[F|f][I|i][X|x] [M|m][E|e]')&lt;/blockquote&gt;
+</summary><category term="vimrc"></category><category term="vim"></category><category term="config file"></category><category term=".vimrc"></category><category term="todo"></category><category term="notice"></category><category term="fixme"></category><category term="highlight"></category><category term="matchadd"></category></entry><entry><title>Reprendre la main sur un Screen pas "detached"</title><link href="http://www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html" rel="alternate"></link><updated>2012-04-18T01:39:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-04-18:2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html</id><summary type="html">&lt;p&gt;Lorsque j'ai voulu &amp;quot;réattacher&amp;quot; mon &amp;quot;Screen&amp;quot; j'ai eu le message suivant :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
 There is a screen on:
-1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)&lt;/blockquote&gt;
+1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)
+&lt;/pre&gt;
 &lt;p&gt;Habituellement je détache mon &amp;quot;Screen&amp;quot; mais cette fois j'ai oublié.&lt;/p&gt;
-&lt;p&gt;Pour &amp;quot;détacher&amp;quot; / &amp;quot;réattacher&amp;quot; mon &amp;quot;Screen&amp;quot; j'ai du faire la commande
-suivante :&lt;/p&gt;
-&lt;blockquote&gt;
-$ screen -dRR&lt;/blockquote&gt;
+&lt;p&gt;Pour &amp;quot;détacher&amp;quot; / &amp;quot;réattacher&amp;quot; mon &amp;quot;Screen&amp;quot; j'ai du faire la commande suivante :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+screen -dRR
+&lt;/pre&gt;
 &lt;p&gt;Je note car c'est toujours bon à savoir :)&lt;/p&gt;
-</summary><category term="attached"></category><category term="detached"></category><category term="détacher"></category><category term="screen"></category><category term="réattacher"></category><category term="linux"></category><category term="cli"></category></entry><entry><title>Utilisation des branches et de git stash</title><link href="http://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html" rel="alternate"></link><updated>2012-04-14T16:32:42+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-04-14:2012-04-14-utilisation-des-branches-et-de-git-stash.html</id><summary type="html">&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
-sur une branche qui sont pas a commiter dans l'immédiat.&lt;/div&gt;
-&lt;div class="line"&gt;J'utilise donc git stash, voyons voir comment l'utiliser simplement.&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;On regarde l'état du status et des branches : (git status / git branch)&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;$ git st&lt;/div&gt;
-&lt;div class="line"&gt;# On branch master&lt;/div&gt;
-&lt;div class="line"&gt;nothing to commit (working directory clean)&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;$ git br&lt;/div&gt;
-&lt;div class="line"&gt;* master&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Je travail sur la branche master et je n'ai pas d'autre branche. Je vais
-donc faire une branche API pour mon projet.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ git br API&lt;/p&gt;
-&lt;p&gt;$ git br&lt;/p&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;&amp;nbsp; API&lt;/div&gt;
-&lt;div class="line"&gt;* master&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Maintenant je vais changer de branche (git checkout) pour être sur ma
+</summary><category term="attached"></category><category term="detached"></category><category term="détacher"></category><category term="screen"></category><category term="réattacher"></category><category term="linux"></category><category term="cli"></category></entry><entry><title>Utilisation des branches et de git stash</title><link href="http://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html" rel="alternate"></link><updated>2012-04-14T16:32:42+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-04-14:2012-04-14-utilisation-des-branches-et-de-git-stash.html</id><summary type="html">&lt;p&gt;Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers sur une
+branche qui sont pas a commiter dans l'immédiat. J'utilise donc git stash,
+voyons voir comment l'utiliser simplement.&lt;/p&gt;
+&lt;p&gt;On regarde l'état du status et des branches&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+git status
+# On branch master
+nothing to commit (working directory clean)
+
+$ git branch
+* master
+&lt;/pre&gt;
+&lt;p&gt;Je travail sur la branche master et je n'ai pas d'autre branche. Je vais donc
+faire une branche API pour mon projet.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+git branch API
+
+git branch
+  API
+  * master
+&lt;/pre&gt;
+&lt;p&gt;Maintenant je vais changer de branche &lt;cite&gt;git checkout&lt;/cite&gt; pour être sur ma
 branche API et modifier les fichiers sur cette branche.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;$ git co API&lt;/div&gt;
-&lt;div class="line"&gt;Switched to branch 'API'&lt;/div&gt;
-&lt;div class="line"&gt;$ git br&lt;/div&gt;
-&lt;div class="line"&gt;* API&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp; master&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Ok maintenant je vais modifier un mon fichier manage.py sur ma branche
-API.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;$ git st&lt;/div&gt;
-&lt;div class="line"&gt;# On branch API&lt;/div&gt;
-&lt;div class="line"&gt;# Changes not staged for commit:&lt;/div&gt;
-&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp; (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed)&lt;/div&gt;
-&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp; (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working
-directory)&lt;/div&gt;
-&lt;div class="line"&gt;#&lt;/div&gt;
-&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp;&amp;nbsp; modified:&amp;nbsp;&amp;nbsp; manage.py&lt;/div&gt;
-&lt;div class="line"&gt;#&lt;/div&gt;
-&lt;div class="line"&gt;no changes added to commit (use &amp;quot;git add&amp;quot; and/or &amp;quot;git commit -a&amp;quot;)&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Si je veux revenir sur mon master, sans avoir la modification du
-manage.py je vais devoir utiliser git stash (qui sauvegardera mes
+&lt;pre class="literal-block"&gt;
+git checkout API
+Switched to branch 'API'
+
+git branch
+* API
+  master
+&lt;/pre&gt;
+&lt;p&gt;Maintenant je vais modifier un mon fichier manage.py sur ma branche API.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+git status
+# On branch API
+# Changes not staged for commit:
+#&amp;nbsp;&amp;nbsp; (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed)
+#&amp;nbsp;&amp;nbsp; (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working directory)
+#
+#&amp;nbsp;&amp;nbsp;&amp;nbsp; modified:&amp;nbsp;&amp;nbsp; manage.py
+#
+no changes added to commit (use &amp;quot;git add&amp;quot; and/or &amp;quot;git commit -a&amp;quot;)
+&lt;/pre&gt;
+&lt;p&gt;Si je veux revenir sur mon master, sans avoir la modification du manage.py je
+vais devoir utiliser git stash (qui sauvegardera mes
 modifications du manage.py)&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;$ git sta&lt;/div&gt;
-&lt;div class="line"&gt;Saved working directory and index state WIP on API: 8b6342d Fix
-register.py&lt;/div&gt;
-&lt;div class="line"&gt;HEAD is now at 8b6342d Fix register.py&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;$ git st&lt;/div&gt;
-&lt;div class="line"&gt;# On branch API&lt;/div&gt;
-&lt;div class="line"&gt;nothing to commit (working directory clean)&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+git stash
+Saved working directory and index state WIP on API: 8b6342d Fix register.py
+HEAD is now at 8b6342d Fix register.py
+
+$ git status
+# On branch API
+nothing to commit (working directory clean)
+&lt;/pre&gt;
 &lt;p&gt;Maintenant que notre branche est propre on peut changer de branche
 revenir sur le master par exemple.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;$ git co master&lt;/div&gt;
-&lt;div class="line"&gt;Switched to branch 'master'&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;$ git st&lt;/div&gt;
-&lt;div class="line"&gt;# On branch master&lt;/div&gt;
-&lt;div class="line"&gt;nothing to commit (working directory clean)&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;On peut donc travailler tranquillement sur la branche master. Puis
-revenir sur notre branche API, lister les stash (git stash list)
-récupérer les modifications précédentes (git stash pop).&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;$ git co API&lt;/div&gt;
-&lt;div class="line"&gt;Switched to branch 'API'&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;$ git stast&lt;/div&gt;
-&lt;div class="line"&gt;&lt;a class="reference external" href="mailto:stash&amp;#64;{0"&gt;stash&amp;#64;{0&lt;/a&gt;}: WIP on API: 8b6342d Fix register.py&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;$ git stapp&lt;/div&gt;
-&lt;div class="line"&gt;# On branch API&lt;/div&gt;
-&lt;div class="line"&gt;# Changes not staged for commit:&lt;/div&gt;
-&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp; (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed)&lt;/div&gt;
-&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp; (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working
-directory)&lt;/div&gt;
-&lt;div class="line"&gt;#&lt;/div&gt;
-&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp;&amp;nbsp; modified:&amp;nbsp;&amp;nbsp; manage.py&lt;/div&gt;
-&lt;div class="line"&gt;#&lt;/div&gt;
-&lt;div class="line"&gt;no changes added to commit (use &amp;quot;git add&amp;quot; and/or &amp;quot;git commit -a&amp;quot;)&lt;/div&gt;
-&lt;div class="line"&gt;Dropped &lt;a class="reference external" href="mailto:refs/stash&amp;#64;{0"&gt;refs/stash&amp;#64;{0&lt;/a&gt;} (533906a52b923a8960fa0f6fdf17a288c94f233a)&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;$ git st&lt;/div&gt;
-&lt;div class="line"&gt;# On branch API&lt;/div&gt;
-&lt;div class="line"&gt;# Changes not staged for commit:&lt;/div&gt;
-&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp; (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed)&lt;/div&gt;
-&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp; (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working
-directory)&lt;/div&gt;
-&lt;div class="line"&gt;#&lt;/div&gt;
-&lt;div class="line"&gt;#&amp;nbsp;&amp;nbsp;&amp;nbsp; modified:&amp;nbsp;&amp;nbsp; manage.py&lt;/div&gt;
-&lt;div class="line"&gt;#&lt;/div&gt;
-&lt;div class="line"&gt;no changes added to commit (use &amp;quot;git add&amp;quot; and/or &amp;quot;git commit -a&amp;quot;)&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Maintenant je peux continuer les modifications sur ma branche API
-réutilise git stash si besoin ou les commiter, merger ma branche...&lt;/p&gt;
-&lt;p&gt;/!\ Attention les commandes git st, git co, git br, git sta, git stapp
-sont des alias qui se trouvent dans mon fichier .gitconfig (voir les
-billets précédents) /!\&lt;/p&gt;
-&lt;p&gt;git stash (sauve le travail dans un stash) mon alias = git sta&lt;/p&gt;
-&lt;p&gt;git stash list (liste les stash) mon alias = git stast (ou git stalist)&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ git checkout master
+Switched to branch 'master'
+
+$ git status
+# On branch master
+nothing to commit (working directory clean)
+&lt;/pre&gt;
+&lt;p&gt;On peut donc travailler tranquillement sur la branche master. Puis revenir sur
+notre branche API, lister les stash &lt;cite&gt;git stash list&lt;/cite&gt; récupérer les modifications
+précédentes &lt;cite&gt;git stash pop&lt;/cite&gt;.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+git checkout API
+Switched to branch 'API'
+
+git stash list
+stash&amp;#64;{0}: WIP on API: 8b6342d Fix register.py
+
+git stash pop
+# On branch API
+# Changes not staged for commit:
+#&amp;nbsp;&amp;nbsp; (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed)
+#&amp;nbsp;&amp;nbsp; (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working directory)
+#
+#&amp;nbsp;&amp;nbsp;&amp;nbsp; modified:&amp;nbsp;&amp;nbsp; manage.py
+#
+no changes added to commit (use &amp;quot;git add&amp;quot; and/or &amp;quot;git commit -a&amp;quot;)
+Dropped refs/stash&amp;#64;{0} (533906a52b923a8960fa0f6fdf17a288c94f233a)
+
+$ git status
+# On branch API
+# Changes not staged for commit:
+#&amp;nbsp;&amp;nbsp; (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed)
+#&amp;nbsp;&amp;nbsp; (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working directory)
+#
+#&amp;nbsp;&amp;nbsp;&amp;nbsp; modified:&amp;nbsp;&amp;nbsp; manage.py
+#
+no changes added to commit (use &amp;quot;git add&amp;quot; and/or &amp;quot;git commit -a&amp;quot;)
+&lt;/pre&gt;
+&lt;p&gt;Maintenant je peux continuer les modifications sur ma branche API réutilise git
+stash si besoin ou les commiter, merger ma branche…&lt;/p&gt;
 &lt;p&gt;git stash pop (récupére le dernier stash enregistré &lt;a class="reference external" href="mailto:stash&amp;#64;{0"&gt;stash&amp;#64;{0&lt;/a&gt;},
 l'applique et le supprime de la liste) mon alias = git stapp&lt;/p&gt;
 &lt;p&gt;git stash apply (récupére le dernier stash enregistré &lt;a class="reference external" href="mailto:stash&amp;#64;{0"&gt;stash&amp;#64;{0&lt;/a&gt;} et
 l'applique)&lt;/p&gt;
 &lt;p&gt;Et pour rien n'oublier (RTFM) : man git stash&lt;/p&gt;
-</summary><category term="git"></category><category term="git stash"></category><category term="git stash pop"></category><category term="git stash list"></category><category term="git branch"></category><category term="git checkout"></category></entry><entry><title>Renomer des fichiers en CLI (ligne de commande)</title><link href="http://www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html" rel="alternate"></link><updated>2012-04-14T16:02:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-04-14:2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html</id><summary type="html">&lt;p&gt;Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
-correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
-&amp;quot;rename&amp;quot;.&lt;/p&gt;
+</summary><category term="git"></category><category term="git stash"></category><category term="git stash pop"></category><category term="git stash list"></category><category term="git branch"></category><category term="git checkout"></category></entry><entry><title>Renomer des fichiers en CLI (ligne de commande)</title><link href="http://www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html" rel="alternate"></link><updated>2012-04-14T16:02:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-04-14:2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html</id><summary type="html">&lt;p&gt;Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers correct. Sous
+linux pour renomer plusieurs fichiers avec bash j'utilise &amp;quot;rename&amp;quot;.&lt;/p&gt;
 &lt;p&gt;Exemple je veux supprimer tous les espaces d'un fichier :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;rename &amp;quot;s/ &lt;span class="pre"&gt;*//g&amp;quot;&lt;/span&gt; *.*&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;Ou renomer tous mes fichiers .WAV en .wav etc...&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;rename &lt;span class="pre"&gt;&amp;quot;s/\.WAV/\.wav/g&amp;quot;&lt;/span&gt; *.WAV&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+rename &amp;quot;s/ *//g&amp;quot; *.*
+&lt;/pre&gt;
+&lt;p&gt;Ou renomer tous mes fichiers .WAV en .wav etc…&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+rename &amp;quot;s/\.WAV/\.wav/g&amp;quot; *.WAV
+&lt;/pre&gt;
 &lt;p&gt;A vous de modifier l'expression régulière !&lt;/p&gt;
-</summary><category term="CLI"></category><category term="rename"></category><category term="renommer"></category><category term="fichiers"></category><category term="wav"></category><category term="WAV"></category></entry><entry><title>Update .gitconfig</title><link href="http://www.choiz.fr/2012-04-13-update-gitconfig.html" rel="alternate"></link><updated>2012-04-13T12:00:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-04-13:2012-04-13-update-gitconfig.html</id><summary type="html">&lt;p&gt;Ajout du pull, push, diff et surtout stash ;)&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;[user]&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;name = François LASSERRE&lt;/div&gt;
-&lt;div class="line"&gt;email = &lt;a class="reference external" href="mailto:mon&amp;#64;email.fr"&gt;mon&amp;#64;email.fr&lt;/a&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;[diff]&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;tool = vimdiff&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;[color]&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;branch = auto&lt;/div&gt;
-&lt;div class="line"&gt;diff = auto&lt;/div&gt;
-&lt;div class="line"&gt;status = auto&lt;/div&gt;
-&lt;div class="line"&gt;interactive = auto&lt;/div&gt;
-&lt;div class="line"&gt;ui = true&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;[alias]&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;br = branch&lt;/div&gt;
-&lt;div class="line"&gt;ci = commit -a&lt;/div&gt;
-&lt;div class="line"&gt;co = checkout&lt;/div&gt;
-&lt;div class="line"&gt;sh = show --color-words&lt;/div&gt;
-&lt;div class="line"&gt;st = status&lt;/div&gt;
-&lt;div class="line"&gt;di = diff&lt;/div&gt;
-&lt;div class="line"&gt;ph = push&lt;/div&gt;
-&lt;div class="line"&gt;pl = pull&lt;/div&gt;
-&lt;div class="line"&gt;sta = stash&lt;/div&gt;
-&lt;div class="line"&gt;stalist = stash list&lt;/div&gt;
-&lt;div class="line"&gt;stast = stash list&lt;/div&gt;
-&lt;div class="line"&gt;stapp = stash pop&lt;/div&gt;
-&lt;div class="line"&gt;starm = stash drop&lt;/div&gt;
-&lt;div class="line"&gt;last = cat-file commit HEAD&lt;/div&gt;
-&lt;div class="line"&gt;graph = log --graph --decorate&lt;/div&gt;
-&lt;div class="line"&gt;tree = log --graph --oneline --decorate&lt;/div&gt;
-&lt;div class="line"&gt;pom = push origin master&lt;/div&gt;
-&lt;div class="line"&gt;logs = log --stat&lt;/div&gt;
-&lt;div class="line"&gt;currentbranch = &amp;quot;!git branch | grep ^* | cut -d &amp;quot; &amp;quot; -f 2&amp;quot;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;[core]&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;excludesfile = ~/.gitignore&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;editor = vim&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;filemode = false&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;[merge]&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;tool = vimdiff&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;[http]&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;#sslverify = false|&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
+</summary><category term="CLI"></category><category term="rename"></category><category term="renommer"></category><category term="fichiers"></category><category term="wav"></category><category term="WAV"></category></entry><entry><title>Update .gitconfig</title><link href="http://www.choiz.fr/2012-04-13-update-gitconfig.html" rel="alternate"></link><updated>2012-04-13T12:00:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-04-13:2012-04-13-update-gitconfig.html</id><summary type="html">&lt;p&gt;Ajout du pull, push, diff et surtout stash&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[user]
+  name = François LASSERRE
+  email = mon&amp;#64;email.fr
+[diff]
+  tool = vimdiff
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  interactive = auto
+  ui = true
+[alias]
+  br = branch
+  ci = commit -a
+  co = checkout
+  sh = show --color-words
+  st = status
+  di = diff
+  ph = push
+  pl = pull
+  sta = stash
+  stalist = stash list
+  stast = stash list
+  stapp = stash pop
+  starm = stash drop
+  last = cat-file commit HEAD
+  graph = log --graph --decorate
+  tree = log --graph --oneline --decorate
+  pom = push origin master
+  logs = log --stat
+  currentbranch = &amp;quot;!git branch | grep ^* | cut -d \&amp;quot; \&amp;quot; -f 2&amp;quot;
+[core]
+  excludesfile = ~/.gitignore
+editor = vim
+  filemode = false
+[merge]
+  tool = vimdiff
+[http]
+  #sslverify = false|
+&lt;/pre&gt;
 </summary><category term="git"></category><category term="gitconfig"></category><category term="git pull"></category><category term="git push"></category><category term="git diff"></category><category term="git stash"></category><category term="stash"></category></entry><entry><title>Git mes fichiers de config gitconfig / gitignore</title><link href="http://www.choiz.fr/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html" rel="alternate"></link><updated>2012-01-31T10:34:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-01-31:2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html</id><summary type="html">&lt;p&gt;Fichier .gitconfig&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;[user]&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;name = François LASSERRE&lt;/div&gt;
-&lt;div class="line"&gt;email = &lt;a class="reference external" href="mailto:mon&amp;#64;email.fr"&gt;mon&amp;#64;email.fr&lt;/a&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;[diff]&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;tool = vimdiff&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;[color]&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;branch = auto&lt;/div&gt;
-&lt;div class="line"&gt;diff = auto&lt;/div&gt;
-&lt;div class="line"&gt;status = auto&lt;/div&gt;
-&lt;div class="line"&gt;interactive = auto&lt;/div&gt;
-&lt;div class="line"&gt;ui = true&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;[alias]&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;br = branch&lt;/div&gt;
-&lt;div class="line"&gt;ci = commit -a&lt;/div&gt;
-&lt;div class="line"&gt;co = checkout&lt;/div&gt;
-&lt;div class="line"&gt;sh = show --color-words&lt;/div&gt;
-&lt;div class="line"&gt;st = status&lt;/div&gt;
-&lt;div class="line"&gt;last = cat-file commit HEAD&lt;/div&gt;
-&lt;div class="line"&gt;tree = log --graph --oneline --decorate&lt;/div&gt;
-&lt;div class="line"&gt;graph = log --graph --decorate&lt;/div&gt;
-&lt;div class="line"&gt;pom = push origin master&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;[core]&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;excludesfile = ~/.gitignore&lt;/div&gt;
-&lt;div class="line"&gt;editor = vim&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="line"&gt;[merge]&lt;/div&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;tool = vimdiff&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+[user]
+    name = François LASSERRE
+    email = mon&amp;#64;email.fr
+[diff]
+    tool = vimdiff
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+    interactive = auto
+    ui = true
+[alias]
+    br = branch
+    ci = commit -a
+    co = checkout
+    sh = show --color-words
+    st = status
+    last = cat-file commit HEAD
+    tree = log --graph --oneline --decorate
+    graph = log --graph --decorate
+    pom = push origin master
+[core]
+    excludesfile = ~/.gitignore
+    editor = vim
+[merge]
+    tool = vimdiff
+&lt;/pre&gt;
 &lt;p&gt;Fichier .gitignore&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-| # Ignore files from git
-|
-| # ._ files (Mac Os X)
-| ._*
-|
-| # .DS_STORE (Mac Os X)
-| .DS_STORE
-|
-| # .swp (Vim)
-| *.swp
+# Ignore files from git
+
+# ._ files (Mac Os X)
+._*
+
+# .DS_STORE (Mac Os X)
+.DS_STORE
+
+# .swp (Vim)
+*.swp
 &lt;/pre&gt;
 </summary><category term="git"></category><category term="gitconfig"></category><category term="gitignore"></category><category term="git color"></category><category term="git tools"></category><category term="git alias"></category><category term="git merge"></category><category term="git diff"></category><category term="git editor"></category><category term="git excludesfile"></category></entry><entry><title>Créer paire de clé pour se connecter en SSH</title><link href="http://www.choiz.fr/2012-01-13-cr%C3%A9er-paire-de-cl%C3%A9-pour-se-connecter-en-ssh.html" rel="alternate"></link><updated>2012-01-13T10:05:18+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-01-13:2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html</id><summary type="html">&lt;p&gt;On commence par ouvrir un terminal puis on tape :&lt;/p&gt;
-&lt;blockquote&gt;
-$ ssh-keygen -t dsa -b 1024&lt;/blockquote&gt;
-&lt;p&gt;Enter file in which to save the key (/Users/choiz/.ssh/id_dsa):&lt;/p&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;En général je garde le fichier id_rsa donc je tape &amp;quot;enter&amp;quot; sinon vous
-pouvez spécifier un autre chemin ainsi qu'un autre fichier.&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Enter passphrase (empty for no passphrase):&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+ssh-keygen -t dsa -b 1024
+
+Enter file in which to save the key (/Users/choiz/.ssh/id_dsa):
+&lt;/pre&gt;
+&lt;p&gt;En général je garde le fichier id_rsa donc je tape &amp;quot;enter&amp;quot; sinon vous pouvez
+spécifier un autre chemin ainsi qu'un autre fichier.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Enter passphrase (empty for no passphrase):
+&lt;/pre&gt;
 &lt;p&gt;Ici on tape un mot de passe si on en veut un lors de la connexion aux
 différents hosts. En général j'en défini un.&lt;/p&gt;
 &lt;p&gt;Pour finir on copie la clé sur le serveur soit via scp :&lt;/p&gt;
-&lt;blockquote&gt;
-scp ~/.ssh/id_dsa.pub &lt;a class="reference external" href="mailto:user&amp;#64;ip"&gt;user&amp;#64;ip&lt;/a&gt;:~/.ssh/authorized_keys/&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+scp ~/.ssh/id\_dsa.pub user&amp;#64;ip:~/.ssh/authorized\_keys/
+&lt;/pre&gt;
 &lt;p&gt;ou via ssh-copy-id :&lt;/p&gt;
-&lt;blockquote&gt;
-ssh-copy-id -i ~/.ssh/id_dsa.pub &lt;a class="reference external" href="mailto:user&amp;#64;ip"&gt;user&amp;#64;ip&lt;/a&gt;&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+ssh-copy-id -i ~/.ssh/id\_dsa.pub user&amp;#64;ip
+&lt;/pre&gt;
 </summary><category term="clé publique"></category><category term="clé privée"></category><category term="connexion ssh"></category><category term="authorized_keys"></category><category term="ssh"></category><category term=".ssh"></category></entry><entry><title>PHP + Gettext + Debian</title><link href="http://www.choiz.fr/2011-12-04-php-gettext-debian.html" rel="alternate"></link><updated>2011-12-04T19:10:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-12-04:2011-12-04-php-gettext-debian.html</id><summary type="html">&lt;p&gt;J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
 utilisant des outils tel que pootle ou poedit.  Pour utiliser gettext sur votre
 site en php il faut télécharger le package php-gettext ainsi que d'autres outils

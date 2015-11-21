@@ -323,20 +323,18 @@ Tags :
   </header>
   <div>
       <p>Voilà mon petit fichier .gitignore</p>
-<blockquote>
-<div class="line-block">
-<div class="line"># Ignore files from git</div>
-<div class="line"><br /></div>
-<div class="line"># ._ files (Mac Os X)</div>
-<div class="line">._*</div>
-<div class="line"><br /></div>
-<div class="line"># .DS_STORE (Mac Os X)</div>
-<div class="line">.DS_STORE</div>
-<div class="line"><br /></div>
-<div class="line"># .swp (Vim)</div>
-<div class="line">*.swp</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+# Ignore files from git
+
+# ._ files (Mac Os X)
+._*
+
+# .DS_STORE (Mac Os X)
+.DS_STORE
+
+# .swp (Vim)
+*.swp
+</pre>
 
   </div>
   <hr />
@@ -351,20 +349,25 @@ Tags :
   </header>
   <div>
       <p>Pour lister les stash :</p>
-<p><tt class="docutils literal">git stash list</tt></p>
-<blockquote>
-<a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>}: WIP on BranchName: 5d8a556 Edit file.js
-<a class="reference external" href="mailto:stash&#64;{1">stash&#64;{1</a>}: WIP on&nbsp;BranchName: 66dfe78 Edit file.css
+<pre class="literal-block">
+git stash list
+
+stash&#64;{0}: WIP on BranchName: 5d8a556 Edit file.js
+stash&#64;{1}: WIP on&nbsp;BranchName: 66dfe78 Edit file.css
 …
-<a class="reference external" href="mailto:stash&#64;{5">stash&#64;{5</a>}: WIP on&nbsp;BranchName: 3bb67ff Add file.css file.js</blockquote>
+stash&#64;{5}: WIP on&nbsp;BranchName: 3bb67ff Add file.css file.js
+</pre>
 <p>Pour voir le contenu d'un stash :</p>
-<p><tt class="docutils literal">git stash show</tt></p>
-<blockquote>
-<a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>} chemin/vers/mon/fichier.js | 199 ++++++++++++++++++++++++++--------
-chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------</blockquote>
-<p>Pour voir le contenu de &quot;chemin/vers/mon/fichier.js&quot; qui est dans le
-stash{0}</p>
-<p><tt class="docutils literal">git show <span class="pre">stash&#64;{0}:chemin/vers/mon/fichier.js</span></tt></p>
+<pre class="literal-block">
+git stash show
+
+stash&#64;{0} chemin/vers/mon/fichier.js | 199 ++++++++++++++++++++++++++--------
+chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------
+</pre>
+<p>Pour voir le contenu de &quot;chemin/vers/mon/fichier.js&quot; qui est dans le stash{0}</p>
+<pre class="literal-block">
+git show stash&#64;{0}:chemin/vers/mon/fichier.js
+</pre>
 
   </div>
   <hr />
@@ -380,20 +383,17 @@ Tags :
   <div>
       <p>Petit ajout dans mon fichier .vimrc</p>
 <blockquote>
-<div class="line-block">
-<div class="line">&quot; Highlight To do list with green background</div>
-<div class="line">highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green</div>
-<div class="line">highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue</div>
-<div class="line">highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red</div>
-<div class="line">&quot; Match todolist, notice, fixme</div>
-<div class="line">:call matchadd('Todo','[T|t][O|o][D|d][O|o]')</div>
-<div class="line">:call matchadd('Todo','[T|t][O|o] [D|d][O|o]')</div>
-<div class="line">:call matchadd('Notice','[N|n][O|o][T|t][I|i][C|c][E|e]')</div>
-<div class="line">:call matchadd('Notice','[N|n][O|o][T|t][E|e]')</div>
-<div class="line">:call matchadd('Fixme','[F|f][I|i][X|x][M|m][E|e]')</div>
-<div class="line">:call matchadd('Fixme','[F|f][I|i][X|x] [M|m][E|e]')</div>
-</div>
-</blockquote>
+&quot; Highlight To do list with green background
+highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
+highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
+highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
+&quot; Match todolist, notice, fixme
+:call matchadd('Todo','[T|t][O|o][D|d][O|o]')
+:call matchadd('Todo','[T|t][O|o] [D|d][O|o]')
+:call matchadd('Notice','[N|n][O|o][T|t][I|i][C|c][E|e]')
+:call matchadd('Notice','[N|n][O|o][T|t][E|e]')
+:call matchadd('Fixme','[F|f][I|i][X|x][M|m][E|e]')
+:call matchadd('Fixme','[F|f][I|i][X|x] [M|m][E|e]')</blockquote>
 
   </div>
 </article>
