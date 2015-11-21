@@ -115,14 +115,18 @@ Tags :
       <a href="http://www.choiz.fr/tag/jshint.html">jshint</a>,      <a href="http://www.choiz.fr/tag/mac.html">mac</a>,      <a href="http://www.choiz.fr/tag/setup.html">setup</a>,      <a href="http://www.choiz.fr/tag/npm.html">npm</a>,      <a href="http://www.choiz.fr/tag/nodejs.html">nodejs</a>    </p>
   </header>
   <div>
-      <p>Installation via npm de jshint (-g pour installer pour tous les
-utilisateurs) :</p>
-<blockquote>
-sudo npm install -g jshint</blockquote>
-<p>Faire un lien symbolique pour pouvoir utiliser directement jshint sans
-préciser tout le chemin a chaque fois :</p>
-<blockquote>
-ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint</blockquote>
+      <dl class="docutils">
+<dt>Installation via npm de jshint (-g pour installer pour tous les utilisateurs) :</dt>
+<dd><pre class="first last literal-block">
+sudo npm install -g jshint
+</pre>
+</dd>
+</dl>
+<p>Faire un lien symbolique pour pouvoir utiliser directement jshint sans préciser
+tout le chemin a chaque fois :</p>
+<pre class="literal-block">
+ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
+</pre>
 
       <a class="btn" href="http://www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html#2013-10-14-installer-jshint-sur-mac">Lire la suite</a>
   </div>
@@ -137,17 +141,16 @@ Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/checkout.html">checkout</a>,      <a href="http://www.choiz.fr/tag/fetch.html">fetch</a>,      <a href="http://www.choiz.fr/tag/origin.html">origin</a>,      <a href="http://www.choiz.fr/tag/checkout-b.html">checkout -b</a>,      <a href="http://www.choiz.fr/tag/branch.html">branch</a>,      <a href="http://www.choiz.fr/tag/remote.html">remote</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line">J'utilise des branches tel que prod, preprod pour mes projets et en
-local il m'arrive de vouloir aller sur ses branches.</div>
-<div class="line">Je fais donc :</div>
-</div>
-<p><tt class="docutils literal">git checkout preprod</tt></p>
+      <p>J'utilise des branches tel que prod, preprod pour mes projets et en local il
+m'arrive de vouloir aller sur ses branches.</p>
+<pre class="literal-block">
+git checkout preprod
+</pre>
 <p>Et j'ai l'erreur suivante :</p>
 <pre class="literal-block">
 error: pathspec 'preprod' did not match any file(s) known to git.
 </pre>
-<p>Je vais mettre ...</p>
+<p>Je vais mettre a jour mon ...</p>
       <a class="btn" href="http://www.choiz.fr/2013-10-01-git-se-déplacer-dans-une-branche-distante.html#2013-10-01-git-se-déplacer-dans-une-branche-distante">Lire la suite</a>
   </div>
   <hr />
@@ -162,9 +165,13 @@ Tags :
   </header>
   <div>
       <p>Pour connaitre le code réponse HTTP il suffit de faire :</p>
-<p><tt class="docutils literal">curl <span class="pre">-IL</span> url</tt></p>
+<pre class="literal-block">
+curl -IL url
+</pre>
 <p>Voici l'exemble avec tumblr.com :</p>
-<p><tt class="docutils literal">curl <span class="pre">-IL</span> <span class="pre">http://tumblr.com</span></tt></p>
+<pre class="literal-block">
+curl -IL http://tumblr.com
+</pre>
 <pre class="literal-block">
 HTTP/1.1 301 Moved Permanently
 Content-length: 0
@@ -187,12 +194,12 @@ Tags :
       <a href="http://www.choiz.fr/tag/svn-to-git.html">svn to git</a>,      <a href="http://www.choiz.fr/tag/svn.html">svn</a>,      <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/migate.html">migate</a>,      <a href="http://www.choiz.fr/tag/git-svn-clone.html">git svn clone</a>,      <a href="http://www.choiz.fr/tag/authors.html">authors</a>,      <a href="http://www.choiz.fr/tag/tags.html">tags</a>    </p>
   </header>
   <div>
-      <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn.
-Il est temps de faire la migration de svn à git !</p>
-<p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
-voulais voici donc ma procédure :</p>
-<blockquote>
-svn log --quiet 'svn://svn.mondomaine/monprojet' | grep ...</blockquote>
+      <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est
+temps de faire la migration de svn à git !</p>
+<p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais
+voici donc ma procédure :</p>
+<pre class="literal-block">
+svn log --quiet 'svn://svn.mondomaine/monprojet' \| grep ...</pre>
       <a class="btn" href="http://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html#2013-07-16-passer-de-svn-à-git">Lire la suite</a>
   </div>
   <hr />
@@ -207,16 +214,18 @@ Tags :
   </header>
   <div>
       <p>Pour exporter une table spécifique d'une base :</p>
-<blockquote>
-pg_dump <em>mabase</em> --table=*matable* &gt; <em>dump_base_table</em>.sql</blockquote>
+<pre class="literal-block">
+pg\_dump *mabase* --table=*matable* &gt; *dump\_base\_table*.sql
+</pre>
 <p>Pour exporter une base :</p>
-<blockquote>
-pg_dump <em>mabase</em> &gt; <em>dump_base</em>.sql</blockquote>
+<pre class="literal-block">
+pg\_dump *mabase* &gt; *dump\_base*.sql
+</pre>
 <p>Pour importer un dump dans une base :</p>
-<blockquote>
-<p>psql <em>base</em> &lt; <em>dump_base_table</em>.sql</p>
-<p>psql <em>base</em> &lt; <em>dump_base</em>.sql</p>
-</blockquote>
+<pre class="literal-block">
+psql *base* &lt; *dump\_base\_table*.sql
+psql *base* &lt; *dump\_base*.sql
+</pre>
 
       <a class="btn" href="http://www.choiz.fr/2013-06-22-export-import-avec-postgresql.html#2013-06-22-export-import-avec-postgresql">Lire la suite</a>
   </div>
@@ -232,11 +241,10 @@ Tags :
   </header>
   <div>
       <p>J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
-<em>master</em>… Généralement je fais toujours une branche pour les
-modifications, cette fois j'avais créé cette branche <em>debug_redirect</em>
-mais je n'étais pas dessus…</p>
-<div class="line-block">
-<div class="line">Je me suis retrouvé avec les commits A-B-C sur mon <em>master ...</em></div></div>
+<em>master</em>… Généralement je fais toujours une branche pour les modifications,
+cette fois j'avais créé cette branche <em>debug_redirect</em> mais je n'étais pas
+dessus…</p>
+<p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master ...</em></p>
       <a class="btn" href="http://www.choiz.fr/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html#2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre">Lire la suite</a>
   </div>
   <hr />
@@ -250,12 +258,9 @@ Tags :
       <a href="http://www.choiz.fr/tag/debian.html">debian</a>,      <a href="http://www.choiz.fr/tag/disque-dur.html">disque dur</a>,      <a href="http://www.choiz.fr/tag/4to.html">4To</a>,      <a href="http://www.choiz.fr/tag/partition.html">partition</a>,      <a href="http://www.choiz.fr/tag/fs.html">fs</a>,      <a href="http://www.choiz.fr/tag/config_efi_partition.html">config_efi_partition</a>,      <a href="http://www.choiz.fr/tag/fdisk.html">fdisk</a>,      <a href="http://www.choiz.fr/tag/parted.html">parted</a>,      <a href="http://www.choiz.fr/tag/gpt.html">gpt</a>,      <a href="http://www.choiz.fr/tag/mkfs.html">mkfs</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line">J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
-(Fichiers persos, photos, vidéos…).</div>
-<div class="line">J'ai donc formaté mon disque avec « Fdisk » et j'ai eu le message
-suivant :</div>
-</div>
+      <p>J'ai investi dans un gros disque dur de 4To pour mes sauvegardes (Fichiers
+persos, photos, vidéos…).  J'ai donc formaté mon disque avec « Fdisk » et j'ai
+eu le message suivant :</p>
 <pre class="literal-block">
 Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
 

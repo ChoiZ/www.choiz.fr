@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est temps de faire la migration de svn à git ! J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais voici donc ma procédure : svn log --quiet 'svn://svn.mondomaine/monprojet' | grep ..." />
+<meta name="description" content="Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est temps de faire la migration de svn à git ! J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais voici donc ma procédure : svn log --quiet 'svn://svn.mondomaine/monprojet' \| grep ..." />
 <meta name="keywords" content="svn to git, svn, git, migate, git svn clone, authors, tags">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Passer de svn à git"/>
-<meta property="og:description" content="Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est temps de faire la migration de svn à git ! J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais voici donc ma procédure : svn log --quiet 'svn://svn.mondomaine/monprojet' | grep ..."/>
+<meta property="og:description" content="Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est temps de faire la migration de svn à git ! J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais voici donc ma procédure : svn log --quiet 'svn://svn.mondomaine/monprojet' \| grep ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html"/>
 <meta property="og:type" content="article"/>
@@ -69,33 +69,34 @@
     <p>Posté le mar. 16 juillet 2013</p>
   </header>
   <div>
-    <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn.
-Il est temps de faire la migration de svn à git !</p>
-<p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
-voulais voici donc ma procédure :</p>
-<blockquote>
-svn log --quiet 'svn://svn.mondomaine/monprojet' | grep &quot;^r&quot; | awk
-'{print $3}' | sort | uniq | awk '{ print $1&quot; = &quot;$1&quot;
-&lt;&quot;$1&quot;&#64;mondomaine&gt;&quot; }' &gt; authors.txt</blockquote>
-<p>J'ai ensuite édité authors.txt pour remplacer nos différents pseudos par
-nos prénoms et noms et j'ai vérifier les adresses e-mails.</p>
-<p>Puis j'ai git svn clone :</p>
-<blockquote>
+    <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est
+temps de faire la migration de svn à git !</p>
+<p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais
+voici donc ma procédure :</p>
+<pre class="literal-block">
+svn log --quiet 'svn://svn.mondomaine/monprojet' \| grep &quot;^r&quot; \| awk
+'{print $3}' \| sort \| uniq \| awk '{ print $1&quot; = &quot;$1&quot;
+&lt;&quot;$1&quot;&#64;mondomaine&gt;&quot; }' &gt; authors.txt
+</pre>
+<p>J'ai ensuite édité authors.txt pour remplacer nos différents pseudos par nos
+prénoms et noms puis j'ai vérifié les adresses e-mails.</p>
+<p>Puis j'ai utilisé <cite>git svn clone</cite></p>
+<pre class="literal-block">
 git svn clone 'svn://svn.mondomaine/monprojet' --no-metadata
 --authors-file=authors.txt --tags=tags --branches=branches
---trunk=trunk monprojet</blockquote>
+--trunk=trunk monprojet
+</pre>
 <p>Si vous avez des tags dans svn, vous pouvez les mettre dans git :</p>
-<blockquote>
-git branch -r | sed -rne 's, *tags/([^&#64;]+)$,\1,p' | while read
+<pre class="literal-block">
+git branch -r \| sed -rne 's, \*tags/([^&#64;]+)$,\\1,p' \| while read
 tag; do echo &quot;git tag $tag 'tags/${tag}^'; git branch -r -d
-tags/$tag&quot;; done | sh</blockquote>
+tags/$tag&quot;; done \| sh
+</pre>
 <p>Pour finir ajoutez votre dépot distant :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">git remote add origin <a class="reference external" href="mailto:git&#64;git.mondomaine">git&#64;git.mondomaine</a>:/monprojet.git</div>
-<div class="line">git push -u origin --tags</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+git remote add origin git&#64;git.mondomaine:/monprojet.git
+git push -u origin --tags
+</pre>
 <p>Merci à
 <a class="reference external" href="http://bazoud.com/articles/2010-12-11-migration-de-svn-vers-git-en-4-etapes/index.html">Bazoud</a>
 pour différentes commandes ;)</p>
@@ -133,7 +134,7 @@ pour différentes commandes ;)</p>
   },
   "image": "avatar.png",
   "url": "http://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html",
-  "description": "Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est temps de faire la migration de svn à git ! J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais voici donc ma procédure : svn log --quiet 'svn://svn.mondomaine/monprojet' | grep ..."
+  "description": "Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est temps de faire la migration de svn à git ! J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais voici donc ma procédure : svn log --quiet 'svn://svn.mondomaine/monprojet' \| grep ..."
 }
 </script></body>
 </html>

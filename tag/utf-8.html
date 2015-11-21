@@ -61,14 +61,20 @@ Tags :
       <a href="http://www.choiz.fr/tag/php.html">PHP</a>,      <a href="http://www.choiz.fr/tag/latin1.html">LATIN1</a>,      <a href="http://www.choiz.fr/tag/utf-8.html">UTF-8</a>,      <a href="http://www.choiz.fr/tag/mysql.html">MYSQL</a>,      <a href="http://www.choiz.fr/tag/encoding.html">ENCODING</a>,      <a href="http://www.choiz.fr/tag/charset.html">CHARSET</a>,      <a href="http://www.choiz.fr/tag/mysqldump.html">mysqldump</a>    </p>
   </header>
   <div>
-      <p>Voilà une solution simple pour convertir une base de donnée en Latin1
-vers de l'UTF-8.</p>
+      <p>Voilà une solution simple pour convertir une base de donnée en Latin1 vers de
+l'UTF-8.</p>
 <p>Utiliser mysqldump avec les options suivantes :</p>
-<p><tt class="docutils literal"><span class="pre">--default-character-set=utf8</span></tt></p>
+<pre class="literal-block">
+--default-character-set=utf8
+</pre>
 <p>et</p>
-<p><tt class="docutils literal"><span class="pre">--skip-set-charset</span></tt></p>
+<pre class="literal-block">
+--skip-set-charset
+</pre>
 <p>Voilà la commande&nbsp;complète :</p>
-<p><tt class="docutils literal">mysqldump <span class="pre">-u</span> user <span class="pre">-p</span> base table <span class="pre">--default-character-set=utf8</span> <span class="pre">--skip-set-charset</span> &gt; base_table.sql</tt></p>
+<pre class="literal-block">
+mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
+</pre>
 <p>Ensuite en utilisant vim je fais un rechercher / remplacer ...</p>
       <a class="btn" href="http://www.choiz.fr/2013-05-29-latin1-utf-8.html#2013-05-29-latin1-utf-8">Lire la suite</a>
   </div>

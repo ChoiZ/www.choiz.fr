@@ -62,16 +62,18 @@ Tags :
   </header>
   <div>
       <p>Pour exporter une table spécifique d'une base :</p>
-<blockquote>
-pg_dump <em>mabase</em> --table=*matable* &gt; <em>dump_base_table</em>.sql</blockquote>
+<pre class="literal-block">
+pg\_dump *mabase* --table=*matable* &gt; *dump\_base\_table*.sql
+</pre>
 <p>Pour exporter une base :</p>
-<blockquote>
-pg_dump <em>mabase</em> &gt; <em>dump_base</em>.sql</blockquote>
+<pre class="literal-block">
+pg\_dump *mabase* &gt; *dump\_base*.sql
+</pre>
 <p>Pour importer un dump dans une base :</p>
-<blockquote>
-<p>psql <em>base</em> &lt; <em>dump_base_table</em>.sql</p>
-<p>psql <em>base</em> &lt; <em>dump_base</em>.sql</p>
-</blockquote>
+<pre class="literal-block">
+psql *base* &lt; *dump\_base\_table*.sql
+psql *base* &lt; *dump\_base*.sql
+</pre>
 
       <a class="btn" href="http://www.choiz.fr/2013-06-22-export-import-avec-postgresql.html#2013-06-22-export-import-avec-postgresql">Lire la suite</a>
   </div>

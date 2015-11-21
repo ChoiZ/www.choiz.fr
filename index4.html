@@ -157,14 +157,18 @@ Tags :
       <a href="http://www.choiz.fr/tag/jshint.html">jshint</a>,      <a href="http://www.choiz.fr/tag/mac.html">mac</a>,      <a href="http://www.choiz.fr/tag/setup.html">setup</a>,      <a href="http://www.choiz.fr/tag/npm.html">npm</a>,      <a href="http://www.choiz.fr/tag/nodejs.html">nodejs</a>    </p>
   </header>
   <div>
-      <p>Installation via npm de jshint (-g pour installer pour tous les
-utilisateurs) :</p>
-<blockquote>
-sudo npm install -g jshint</blockquote>
-<p>Faire un lien symbolique pour pouvoir utiliser directement jshint sans
-préciser tout le chemin a chaque fois :</p>
-<blockquote>
-ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint</blockquote>
+      <dl class="docutils">
+<dt>Installation via npm de jshint (-g pour installer pour tous les utilisateurs) :</dt>
+<dd><pre class="first last literal-block">
+sudo npm install -g jshint
+</pre>
+</dd>
+</dl>
+<p>Faire un lien symbolique pour pouvoir utiliser directement jshint sans préciser
+tout le chemin a chaque fois :</p>
+<pre class="literal-block">
+ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
+</pre>
 
   </div>
   <hr />
@@ -178,20 +182,23 @@ Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/checkout.html">checkout</a>,      <a href="http://www.choiz.fr/tag/fetch.html">fetch</a>,      <a href="http://www.choiz.fr/tag/origin.html">origin</a>,      <a href="http://www.choiz.fr/tag/checkout-b.html">checkout -b</a>,      <a href="http://www.choiz.fr/tag/branch.html">branch</a>,      <a href="http://www.choiz.fr/tag/remote.html">remote</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line">J'utilise des branches tel que prod, preprod pour mes projets et en
-local il m'arrive de vouloir aller sur ses branches.</div>
-<div class="line">Je fais donc :</div>
-</div>
-<p><tt class="docutils literal">git checkout preprod</tt></p>
+      <p>J'utilise des branches tel que prod, preprod pour mes projets et en local il
+m'arrive de vouloir aller sur ses branches.</p>
+<pre class="literal-block">
+git checkout preprod
+</pre>
 <p>Et j'ai l'erreur suivante :</p>
 <pre class="literal-block">
 error: pathspec 'preprod' did not match any file(s) known to git.
 </pre>
 <p>Je vais mettre a jour mon origin :</p>
-<p><tt class="docutils literal">git fetch origin</tt></p>
+<pre class="literal-block">
+git fetch origin
+</pre>
 <p>Maintenant je veux ma branche distante en lui précisant l'origin :</p>
-<p><tt class="docutils literal">git checkout <span class="pre">-b</span> preprod origin/preprod</tt></p>
+<pre class="literal-block">
+git checkout -b preprod origin/preprod
+</pre>
 <p>Et j'ai bien ma branche en local comme git me l'indique :</p>
 <pre class="literal-block">
 Branch preprod set up to track remote branch preprod from origin.
@@ -211,9 +218,13 @@ Tags :
   </header>
   <div>
       <p>Pour connaitre le code réponse HTTP il suffit de faire :</p>
-<p><tt class="docutils literal">curl <span class="pre">-IL</span> url</tt></p>
+<pre class="literal-block">
+curl -IL url
+</pre>
 <p>Voici l'exemble avec tumblr.com :</p>
-<p><tt class="docutils literal">curl <span class="pre">-IL</span> <span class="pre">http://tumblr.com</span></tt></p>
+<pre class="literal-block">
+curl -IL http://tumblr.com
+</pre>
 <pre class="literal-block">
 HTTP/1.1 301 Moved Permanently
 Content-length: 0
@@ -250,33 +261,34 @@ Tags :
       <a href="http://www.choiz.fr/tag/svn-to-git.html">svn to git</a>,      <a href="http://www.choiz.fr/tag/svn.html">svn</a>,      <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/migate.html">migate</a>,      <a href="http://www.choiz.fr/tag/git-svn-clone.html">git svn clone</a>,      <a href="http://www.choiz.fr/tag/authors.html">authors</a>,      <a href="http://www.choiz.fr/tag/tags.html">tags</a>    </p>
   </header>
   <div>
-      <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn.
-Il est temps de faire la migration de svn à git !</p>
-<p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
-voulais voici donc ma procédure :</p>
-<blockquote>
-svn log --quiet 'svn://svn.mondomaine/monprojet' | grep &quot;^r&quot; | awk
-'{print $3}' | sort | uniq | awk '{ print $1&quot; = &quot;$1&quot;
-&lt;&quot;$1&quot;&#64;mondomaine&gt;&quot; }' &gt; authors.txt</blockquote>
-<p>J'ai ensuite édité authors.txt pour remplacer nos différents pseudos par
-nos prénoms et noms et j'ai vérifier les adresses e-mails.</p>
-<p>Puis j'ai git svn clone :</p>
-<blockquote>
+      <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est
+temps de faire la migration de svn à git !</p>
+<p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais
+voici donc ma procédure :</p>
+<pre class="literal-block">
+svn log --quiet 'svn://svn.mondomaine/monprojet' \| grep &quot;^r&quot; \| awk
+'{print $3}' \| sort \| uniq \| awk '{ print $1&quot; = &quot;$1&quot;
+&lt;&quot;$1&quot;&#64;mondomaine&gt;&quot; }' &gt; authors.txt
+</pre>
+<p>J'ai ensuite édité authors.txt pour remplacer nos différents pseudos par nos
+prénoms et noms puis j'ai vérifié les adresses e-mails.</p>
+<p>Puis j'ai utilisé <cite>git svn clone</cite></p>
+<pre class="literal-block">
 git svn clone 'svn://svn.mondomaine/monprojet' --no-metadata
 --authors-file=authors.txt --tags=tags --branches=branches
---trunk=trunk monprojet</blockquote>
+--trunk=trunk monprojet
+</pre>
 <p>Si vous avez des tags dans svn, vous pouvez les mettre dans git :</p>
-<blockquote>
-git branch -r | sed -rne 's, *tags/([^&#64;]+)$,\1,p' | while read
+<pre class="literal-block">
+git branch -r \| sed -rne 's, \*tags/([^&#64;]+)$,\\1,p' \| while read
 tag; do echo &quot;git tag $tag 'tags/${tag}^'; git branch -r -d
-tags/$tag&quot;; done | sh</blockquote>
+tags/$tag&quot;; done \| sh
+</pre>
 <p>Pour finir ajoutez votre dépot distant :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">git remote add origin <a class="reference external" href="mailto:git&#64;git.mondomaine">git&#64;git.mondomaine</a>:/monprojet.git</div>
-<div class="line">git push -u origin --tags</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+git remote add origin git&#64;git.mondomaine:/monprojet.git
+git push -u origin --tags
+</pre>
 <p>Merci à
 <a class="reference external" href="http://bazoud.com/articles/2010-12-11-migration-de-svn-vers-git-en-4-etapes/index.html">Bazoud</a>
 pour différentes commandes ;)</p>
@@ -294,16 +306,18 @@ Tags :
   </header>
   <div>
       <p>Pour exporter une table spécifique d'une base :</p>
-<blockquote>
-pg_dump <em>mabase</em> --table=*matable* &gt; <em>dump_base_table</em>.sql</blockquote>
+<pre class="literal-block">
+pg\_dump *mabase* --table=*matable* &gt; *dump\_base\_table*.sql
+</pre>
 <p>Pour exporter une base :</p>
-<blockquote>
-pg_dump <em>mabase</em> &gt; <em>dump_base</em>.sql</blockquote>
+<pre class="literal-block">
+pg\_dump *mabase* &gt; *dump\_base*.sql
+</pre>
 <p>Pour importer un dump dans une base :</p>
-<blockquote>
-<p>psql <em>base</em> &lt; <em>dump_base_table</em>.sql</p>
-<p>psql <em>base</em> &lt; <em>dump_base</em>.sql</p>
-</blockquote>
+<pre class="literal-block">
+psql *base* &lt; *dump\_base\_table*.sql
+psql *base* &lt; *dump\_base*.sql
+</pre>
 
   </div>
   <hr />
@@ -318,79 +332,69 @@ Tags :
   </header>
   <div>
       <p>J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
-<em>master</em>… Généralement je fais toujours une branche pour les
-modifications, cette fois j'avais créé cette branche <em>debug_redirect</em>
-mais je n'étais pas dessus…</p>
-<div class="line-block">
-<div class="line">Je me suis retrouvé avec les commits A-B-C sur mon <em>master</em>. Or le
-seul qui devait être dessus devait être A et je devais avoir B-C dans
-ma branche <em>debug_redirect</em>.</div>
-<div class="line">Voici un schéma de la situation :</div>
-</div>
-<blockquote>
-<div class="line-block">
-<div class="line">debug_redirect</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↓</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A-B-C</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↑</div>
-<div class="line">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; master</div>
-</div>
-</blockquote>
+<em>master</em>… Généralement je fais toujours une branche pour les modifications,
+cette fois j'avais créé cette branche <em>debug_redirect</em> mais je n'étais pas
+dessus…</p>
+<p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master</em>. Or le seul qui
+devait être dessus devait être A et je devais avoir B-C dans ma branche
+<em>debug_redirect</em>. Voici un schéma de la situation :</p>
+<pre class="literal-block">
+debug\_redirect
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A-B-C
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master
+</pre>
 <p>Je dois donc soit mettre a jour ma branche <em>debug_redirect</em>.</p>
-<blockquote>
-<p>$ git checkout debug_redirect</p>
-<p>$ git merge master</p>
-</blockquote>
+<pre class="literal-block">
+git checkout debug\_redirect
+
+git merge master
+</pre>
 <p>Ce qui donne :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">debug_redirect</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↓</div>
-<div class="line">&nbsp;&nbsp;&nbsp; A-B-C</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↑</div>
-<div class="line">&nbsp;&nbsp; master</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+debug\_redirect
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
+&nbsp;&nbsp;&nbsp;&nbsp;A-B-C
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master
+</pre>
 <p>Il me reste qu'a retourner sur le <em>master</em> et revenir à la version A.</p>
-<blockquote>
-<p>$ git checkout master</p>
-<p>$ git reset --hard HEAD~2</p>
-</blockquote>
+<pre class="literal-block">
+git checkout master
+
+git reset --hard HEAD~2
+</pre>
 <p>Ce qui donne :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp; debug_redirect</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; ↓</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp; A-B-C</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp; ↑</div>
-<div class="line">master</div>
-</div>
-</blockquote>
-<p>Maintenant que j'ai fixé mon bug sur ma branche&nbsp;<em>debug_redirect</em> je
-peux le merger avec le <em>master</em>.</p>
-<blockquote>
-$ git merge debug_redirect --no-ff</blockquote>
+<pre class="literal-block">
+&nbsp;&nbsp;debug\_redirect
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
+&nbsp;&nbsp;A-B-C
+&nbsp;&nbsp;↑
+master
+</pre>
+<p>Maintenant que j'ai fixé mon bug sur ma branche&nbsp;<em>debug_redirect</em> je peux le
+merger avec le <em>master</em>.</p>
+<pre class="literal-block">
+git merge debug\_redirect --no-ff
+</pre>
 <p>Résultat :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B-C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; debug_redirect</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp; A - - - - D&nbsp;&nbsp; master</div>
-</div>
-</blockquote>
-<p>Pour voir vos commits par branche vous pouvez aussi utiliser la commande
-git log :</p>
-<blockquote>
-<p>$ git log --graph --oneline --decorate</p>
-<div class="line-block">
-<div class="line">*&nbsp;&nbsp; 4c677ac (HEAD, master) Merge branch 'debug_redirect'</div>
-<div class="line">|\</div>
-<div class="line">| * 90e7a7a (debug_redirect) Fix another bug on redirect</div>
-<div class="line">| * 40ae981 Fix the redirect bug</div>
-<div class="line">|/</div>
-<div class="line">* 4e06ff4 initial commit</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+&nbsp;&nbsp;&nbsp;&nbsp;B-C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug\_redirect
+&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\
+A&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;D&nbsp;&nbsp;&nbsp;master
+</pre>
+<p>Pour voir vos commits par branche vous pouvez aussi utiliser la commande git log
+:</p>
+<pre class="literal-block">
+git log --graph --oneline --decorate
+\*&nbsp;&nbsp; 4c677ac (HEAD, master) Merge branch 'debug\_redirect'
+\|\\
+\| \* 90e7a7a (debug\_redirect) Fix another bug on redirect
+\| \* 40ae981 Fix the redirect bug
+\|/
+\* 4e06ff4 initial commit
+</pre>
 
   </div>
   <hr />
@@ -404,12 +408,9 @@ Tags :
       <a href="http://www.choiz.fr/tag/debian.html">debian</a>,      <a href="http://www.choiz.fr/tag/disque-dur.html">disque dur</a>,      <a href="http://www.choiz.fr/tag/4to.html">4To</a>,      <a href="http://www.choiz.fr/tag/partition.html">partition</a>,      <a href="http://www.choiz.fr/tag/fs.html">fs</a>,      <a href="http://www.choiz.fr/tag/config_efi_partition.html">config_efi_partition</a>,      <a href="http://www.choiz.fr/tag/fdisk.html">fdisk</a>,      <a href="http://www.choiz.fr/tag/parted.html">parted</a>,      <a href="http://www.choiz.fr/tag/gpt.html">gpt</a>,      <a href="http://www.choiz.fr/tag/mkfs.html">mkfs</a>    </p>
   </header>
   <div>
-      <div class="line-block">
-<div class="line">J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
-(Fichiers persos, photos, vidéos…).</div>
-<div class="line">J'ai donc formaté mon disque avec « Fdisk » et j'ai eu le message
-suivant :</div>
-</div>
+      <p>J'ai investi dans un gros disque dur de 4To pour mes sauvegardes (Fichiers
+persos, photos, vidéos…).  J'ai donc formaté mon disque avec « Fdisk » et j'ai
+eu le message suivant :</p>
 <pre class="literal-block">
 Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
 
@@ -418,36 +419,43 @@ DOS partition table format can not be used on drives for volumes
 larger than (2199023255040 bytes) for 512-byte sectors. Use parted(1) and GUID
 partition table format (GPT).
 </pre>
-<p>J'ai donc vérifié si j'avais dans le noyau l'option
-CONFIG_EFI_PARTITION active :</p>
-<p><tt class="docutils literal"># cat <span class="pre">&quot;/boot/config-`uname</span> <span class="pre">-r`&quot;</span> | grep CONFIG_EFI_PARTITION</tt></p>
+<p>J'ai donc vérifié si j'avais dans le noyau l'option CONFIG_EFI_PARTITION
+active :</p>
 <pre class="literal-block">
+cat &quot;/boot/config-`uname -r`&quot; | grep CONFIG_EFI_PARTITION
+
 CONFIG_EFI_PARTITION=y
 </pre>
-<p>C'était le cas, donc j'ai un autre problème… C'est « Fdisk » qui pose
-problème. Avec ma version (2.20.1) on peut faire une partition maximum
-de 2To.</p>
+<p>C'était le cas, donc j'ai un autre problème… C'est « Fdisk » qui pose problème.
+Avec ma version (2.20.1) on peut faire une partition maximum de 2To.</p>
 <p>Donc je me relance dans le partitionnement avec « parted ».</p>
-<p>Note : mon disque est en /dev/sdd n'oubliez pas de modifier les
-commandes en fonction de votre configuration.</p>
-<p><tt class="docutils literal"># parted /dev/sdd</tt></p>
+<p>Note : mon disque est en /dev/sdd n'oubliez pas de modifier les commandes en
+fonction de votre configuration.</p>
 <pre class="literal-block">
+parted /dev/sdd
+
 GNU Parted 2.3
 Using /dev/sdd
 Welcome to GNU Parted! Type 'help' to view a list of commands.
 </pre>
 <p>Définir le label GPT qui permet de faire des partition &gt; 2To.</p>
-<p><tt class="docutils literal">mklabel gpt</tt></p>
 <pre class="literal-block">
+mklabel gpt
+
 Warning: The existing disk label on /dev/sdd will be destroyed and all data on this disk will be lost. Do you want to continue?
 Yes/No?
+
+yes
+unit TB
 </pre>
-<p><tt class="docutils literal">yes</tt> <tt class="docutils literal">unit TB</tt></p>
 <p>Faire la partition de 4To</p>
-<p><tt class="docutils literal">mkpart primary 0.00TB 4.00TB</tt></p>
-<p>Vérifier</p>
-<p><tt class="docutils literal">print</tt></p>
 <pre class="literal-block">
+mkpart primary 0.00TB 4.00TB
+</pre>
+<p>Vérifier</p>
+<pre class="literal-block">
+print
+
 Model: ATA ST4000DM000-1F21 (scsi)
 Disk /dev/sdd: 4001GB
 Sector size (logical/physical): 512B/4096B
@@ -457,13 +465,15 @@ Number&nbsp; Start&nbsp;&nbsp; End&nbsp;&nbsp;&nbsp;&nbsp; Size&nbsp;&nbsp;&nbsp
 &nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1049kB&nbsp; 4001GB&nbsp; 4001GB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; primary
 </pre>
 <p>Quitter « parted »</p>
-<p><tt class="docutils literal">quit</tt></p>
 <pre class="literal-block">
+quit
+
 Information: You may need to update /etc/fstab.
 </pre>
 <p>Formater la partition avec un système de fichiers donné :</p>
-<p><tt class="docutils literal"># mkfs.ext4 /dev/sdd1</tt></p>
 <pre class="literal-block">
+mkfs.ext4 /dev/sdd1
+
 mke2fs 1.42.5 (29-Jul-2012)
 Étiquette de système de fichiers=
 Type de système d'exploitation&nbsp;: Linux

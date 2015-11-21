@@ -1139,37 +1139,48 @@ convert icon512.png -resize x152 touch-icon-ipad-retina.png
 &amp;lt;link rel=&amp;quot;apple-touch-icon-precomposed&amp;quot; sizes=&amp;quot;152x152&amp;quot; href=&amp;quot;touch-icon-ipad-retina.png&amp;quot;&amp;gt;
 &lt;/pre&gt;
 &lt;p&gt;A noter les appareils Android utilisent aussi les images &amp;quot;apple-touch-icon&amp;quot;.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 03 Nov 2013 14:11:02 +0100</pubDate><guid>tag:www.choiz.fr,2013-11-03:2013-11-03-icônes-favicon-apple-touch-icon.html</guid><category>cli</category><category>imagemagick</category><category>android</category><category>ios</category><category>apple</category><category>icons</category><category>icon</category><category>favicon</category><category>apple-touch-icon</category><category>precomposed</category><category>html</category></item><item><title>Installer jshint sur mac</title><link>http://www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html</link><description>&lt;p&gt;Installation via npm de jshint (-g pour installer pour tous les
-utilisateurs) :&lt;/p&gt;
-&lt;blockquote&gt;
-sudo npm install -g jshint&lt;/blockquote&gt;
-&lt;p&gt;Faire un lien symbolique pour pouvoir utiliser directement jshint sans
-préciser tout le chemin a chaque fois :&lt;/p&gt;
-&lt;blockquote&gt;
-ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint&lt;/blockquote&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 14 Oct 2013 12:41:08 +0200</pubDate><guid>tag:www.choiz.fr,2013-10-14:2013-10-14-installer-jshint-sur-mac.html</guid><category>jshint</category><category>mac</category><category>setup</category><category>npm</category><category>nodejs</category></item><item><title>Git se déplacer dans une branche distante</title><link>http://www.choiz.fr/2013-10-01-git-se-d%C3%A9placer-dans-une-branche-distante.html</link><description>&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;J'utilise des branches tel que prod, preprod pour mes projets et en
-local il m'arrive de vouloir aller sur ses branches.&lt;/div&gt;
-&lt;div class="line"&gt;Je fais donc :&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;git checkout preprod&lt;/tt&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 03 Nov 2013 14:11:02 +0100</pubDate><guid>tag:www.choiz.fr,2013-11-03:2013-11-03-icônes-favicon-apple-touch-icon.html</guid><category>cli</category><category>imagemagick</category><category>android</category><category>ios</category><category>apple</category><category>icons</category><category>icon</category><category>favicon</category><category>apple-touch-icon</category><category>precomposed</category><category>html</category></item><item><title>Installer jshint sur mac</title><link>http://www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html</link><description>&lt;dl class="docutils"&gt;
+&lt;dt&gt;Installation via npm de jshint (-g pour installer pour tous les utilisateurs) :&lt;/dt&gt;
+&lt;dd&gt;&lt;pre class="first last literal-block"&gt;
+sudo npm install -g jshint
+&lt;/pre&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;Faire un lien symbolique pour pouvoir utiliser directement jshint sans préciser
+tout le chemin a chaque fois :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
+&lt;/pre&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 14 Oct 2013 12:41:08 +0200</pubDate><guid>tag:www.choiz.fr,2013-10-14:2013-10-14-installer-jshint-sur-mac.html</guid><category>jshint</category><category>mac</category><category>setup</category><category>npm</category><category>nodejs</category></item><item><title>Git se déplacer dans une branche distante</title><link>http://www.choiz.fr/2013-10-01-git-se-d%C3%A9placer-dans-une-branche-distante.html</link><description>&lt;p&gt;J'utilise des branches tel que prod, preprod pour mes projets et en local il
+m'arrive de vouloir aller sur ses branches.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+git checkout preprod
+&lt;/pre&gt;
 &lt;p&gt;Et j'ai l'erreur suivante :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 error: pathspec 'preprod' did not match any file(s) known to git.
 &lt;/pre&gt;
 &lt;p&gt;Je vais mettre a jour mon origin :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;git fetch origin&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+git fetch origin
+&lt;/pre&gt;
 &lt;p&gt;Maintenant je veux ma branche distante en lui précisant l'origin :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;git checkout &lt;span class="pre"&gt;-b&lt;/span&gt; preprod origin/preprod&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+git checkout -b preprod origin/preprod
+&lt;/pre&gt;
 &lt;p&gt;Et j'ai bien ma branche en local comme git me l'indique :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 Branch preprod set up to track remote branch preprod from origin.
 Switched to a new branch 'preprod'
 &lt;/pre&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 01 Oct 2013 13:51:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-10-01:2013-10-01-git-se-déplacer-dans-une-branche-distante.html</guid><category>git</category><category>checkout</category><category>fetch</category><category>origin</category><category>checkout -b</category><category>branch</category><category>remote</category></item><item><title>Connaitre le code réponse HTTP avec curl</title><link>http://www.choiz.fr/2013-09-29-connaitre-le-code-r%C3%A9ponse-http-avec-curl.html</link><description>&lt;p&gt;Pour connaitre le code réponse HTTP il suffit de faire :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;curl &lt;span class="pre"&gt;-IL&lt;/span&gt; url&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+curl -IL url
+&lt;/pre&gt;
 &lt;p&gt;Voici l'exemble avec tumblr.com :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;curl &lt;span class="pre"&gt;-IL&lt;/span&gt; &lt;span class="pre"&gt;http://tumblr.com&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+curl -IL http://tumblr.com
+&lt;/pre&gt;
 &lt;pre class="literal-block"&gt;
 HTTP/1.1 301 Moved Permanently
 Content-length: 0
@@ -1193,127 +1204,117 @@ Vary: Accept-Encoding
 P3P: CP=&amp;quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&amp;quot;
 Set-Cookie: tmgioct=52485e21d628b00096885790; expires=Wed, 27-Sep-2023 17:06:41 GMT; path=/; httponly
 &lt;/pre&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 29 Sep 2013 19:10:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-09-29:2013-09-29-connaitre-le-code-réponse-http-avec-curl.html</guid><category>curl</category><category>http</category><category>response</category><category>code</category><category>301</category><category>302</category><category>404</category><category>200</category></item><item><title>Passer de svn à git</title><link>http://www.choiz.fr/2013-07-16-passer-de-svn-%C3%A0-git.html</link><description>&lt;p&gt;Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn.
-Il est temps de faire la migration de svn à git !&lt;/p&gt;
-&lt;p&gt;J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
-voulais voici donc ma procédure :&lt;/p&gt;
-&lt;blockquote&gt;
-svn log --quiet 'svn://svn.mondomaine/monprojet' | grep &amp;quot;^r&amp;quot; | awk
-'{print $3}' | sort | uniq | awk '{ print $1&amp;quot; = &amp;quot;$1&amp;quot;
-&amp;lt;&amp;quot;$1&amp;quot;&amp;#64;mondomaine&amp;gt;&amp;quot; }' &amp;gt; authors.txt&lt;/blockquote&gt;
-&lt;p&gt;J'ai ensuite édité authors.txt pour remplacer nos différents pseudos par
-nos prénoms et noms et j'ai vérifier les adresses e-mails.&lt;/p&gt;
-&lt;p&gt;Puis j'ai git svn clone :&lt;/p&gt;
-&lt;blockquote&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 29 Sep 2013 19:10:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-09-29:2013-09-29-connaitre-le-code-réponse-http-avec-curl.html</guid><category>curl</category><category>http</category><category>response</category><category>code</category><category>301</category><category>302</category><category>404</category><category>200</category></item><item><title>Passer de svn à git</title><link>http://www.choiz.fr/2013-07-16-passer-de-svn-%C3%A0-git.html</link><description>&lt;p&gt;Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est
+temps de faire la migration de svn à git !&lt;/p&gt;
+&lt;p&gt;J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais
+voici donc ma procédure :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+svn log --quiet 'svn://svn.mondomaine/monprojet' \| grep &amp;quot;^r&amp;quot; \| awk
+'{print $3}' \| sort \| uniq \| awk '{ print $1&amp;quot; = &amp;quot;$1&amp;quot;
+&amp;lt;&amp;quot;$1&amp;quot;&amp;#64;mondomaine&amp;gt;&amp;quot; }' &amp;gt; authors.txt
+&lt;/pre&gt;
+&lt;p&gt;J'ai ensuite édité authors.txt pour remplacer nos différents pseudos par nos
+prénoms et noms puis j'ai vérifié les adresses e-mails.&lt;/p&gt;
+&lt;p&gt;Puis j'ai utilisé &lt;cite&gt;git svn clone&lt;/cite&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
 git svn clone 'svn://svn.mondomaine/monprojet' --no-metadata
 --authors-file=authors.txt --tags=tags --branches=branches
---trunk=trunk monprojet&lt;/blockquote&gt;
+--trunk=trunk monprojet
+&lt;/pre&gt;
 &lt;p&gt;Si vous avez des tags dans svn, vous pouvez les mettre dans git :&lt;/p&gt;
-&lt;blockquote&gt;
-git branch -r | sed -rne 's, *tags/([^&amp;#64;]+)$,\1,p' | while read
+&lt;pre class="literal-block"&gt;
+git branch -r \| sed -rne 's, \*tags/([^&amp;#64;]+)$,\\1,p' \| while read
 tag; do echo &amp;quot;git tag $tag 'tags/${tag}^'; git branch -r -d
-tags/$tag&amp;quot;; done | sh&lt;/blockquote&gt;
+tags/$tag&amp;quot;; done \| sh
+&lt;/pre&gt;
 &lt;p&gt;Pour finir ajoutez votre dépot distant :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;git remote add origin &lt;a class="reference external" href="mailto:git&amp;#64;git.mondomaine"&gt;git&amp;#64;git.mondomaine&lt;/a&gt;:/monprojet.git&lt;/div&gt;
-&lt;div class="line"&gt;git push -u origin --tags&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+git remote add origin git&amp;#64;git.mondomaine:/monprojet.git
+git push -u origin --tags
+&lt;/pre&gt;
 &lt;p&gt;Merci à
 &lt;a class="reference external" href="http://bazoud.com/articles/2010-12-11-migration-de-svn-vers-git-en-4-etapes/index.html"&gt;Bazoud&lt;/a&gt;
 pour différentes commandes ;)&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 16 Jul 2013 22:37:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-07-16:2013-07-16-passer-de-svn-à-git.html</guid><category>svn to git</category><category>svn</category><category>git</category><category>migate</category><category>git svn clone</category><category>authors</category><category>tags</category></item><item><title>Export / Import avec PostgreSQL</title><link>http://www.choiz.fr/2013-06-22-export-import-avec-postgresql.html</link><description>&lt;p&gt;Pour exporter une table spécifique d'une base :&lt;/p&gt;
-&lt;blockquote&gt;
-pg_dump &lt;em&gt;mabase&lt;/em&gt; --table=*matable* &amp;gt; &lt;em&gt;dump_base_table&lt;/em&gt;.sql&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+pg\_dump *mabase* --table=*matable* &amp;gt; *dump\_base\_table*.sql
+&lt;/pre&gt;
 &lt;p&gt;Pour exporter une base :&lt;/p&gt;
-&lt;blockquote&gt;
-pg_dump &lt;em&gt;mabase&lt;/em&gt; &amp;gt; &lt;em&gt;dump_base&lt;/em&gt;.sql&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+pg\_dump *mabase* &amp;gt; *dump\_base*.sql
+&lt;/pre&gt;
 &lt;p&gt;Pour importer un dump dans une base :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;psql &lt;em&gt;base&lt;/em&gt; &amp;lt; &lt;em&gt;dump_base_table&lt;/em&gt;.sql&lt;/p&gt;
-&lt;p&gt;psql &lt;em&gt;base&lt;/em&gt; &amp;lt; &lt;em&gt;dump_base&lt;/em&gt;.sql&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+psql *base* &amp;lt; *dump\_base\_table*.sql
+psql *base* &amp;lt; *dump\_base*.sql
+&lt;/pre&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 22 Jun 2013 19:57:41 +0200</pubDate><guid>tag:www.choiz.fr,2013-06-22:2013-06-22-export-import-avec-postgresql.html</guid><category>postgreSQL</category><category>pg_dump</category><category>psql</category><category>import</category><category>export</category><category>dump</category><category>sql</category></item><item><title>Git déplacer mon dernier commit sur une autre branche</title><link>http://www.choiz.fr/2013-06-22-git-d%C3%A9placer-mon-dernier-commit-sur-une-autre.html</link><description>&lt;p&gt;J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
-&lt;em&gt;master&lt;/em&gt;… Généralement je fais toujours une branche pour les
-modifications, cette fois j'avais créé cette branche &lt;em&gt;debug_redirect&lt;/em&gt;
-mais je n'étais pas dessus…&lt;/p&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;Je me suis retrouvé avec les commits A-B-C sur mon &lt;em&gt;master&lt;/em&gt;. Or le
-seul qui devait être dessus devait être A et je devais avoir B-C dans
-ma branche &lt;em&gt;debug_redirect&lt;/em&gt;.&lt;/div&gt;
-&lt;div class="line"&gt;Voici un schéma de la situation :&lt;/div&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;debug_redirect&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ↓&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; A-B-C&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ↑&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; master&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
+&lt;em&gt;master&lt;/em&gt;… Généralement je fais toujours une branche pour les modifications,
+cette fois j'avais créé cette branche &lt;em&gt;debug_redirect&lt;/em&gt; mais je n'étais pas
+dessus…&lt;/p&gt;
+&lt;p&gt;Je me suis retrouvé avec les commits A-B-C sur mon &lt;em&gt;master&lt;/em&gt;. Or le seul qui
+devait être dessus devait être A et je devais avoir B-C dans ma branche
+&lt;em&gt;debug_redirect&lt;/em&gt;. Voici un schéma de la situation :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+debug\_redirect
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;↓
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;A-B-C
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;↑
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;master
+&lt;/pre&gt;
 &lt;p&gt;Je dois donc soit mettre a jour ma branche &lt;em&gt;debug_redirect&lt;/em&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ git checkout debug_redirect&lt;/p&gt;
-&lt;p&gt;$ git merge master&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+git checkout debug\_redirect
+
+git merge master
+&lt;/pre&gt;
 &lt;p&gt;Ce qui donne :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;debug_redirect&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ↓&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; A-B-C&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ↑&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp; master&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+debug\_redirect
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;↓
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;A-B-C
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;↑
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;master
+&lt;/pre&gt;
 &lt;p&gt;Il me reste qu'a retourner sur le &lt;em&gt;master&lt;/em&gt; et revenir à la version A.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ git checkout master&lt;/p&gt;
-&lt;p&gt;$ git reset --hard HEAD~2&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+git checkout master
+
+git reset --hard HEAD~2
+&lt;/pre&gt;
 &lt;p&gt;Ce qui donne :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; debug_redirect&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; ↓&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; A-B-C&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ↑&lt;/div&gt;
-&lt;div class="line"&gt;master&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Maintenant que j'ai fixé mon bug sur ma branche&amp;nbsp;&lt;em&gt;debug_redirect&lt;/em&gt; je
-peux le merger avec le &lt;em&gt;master&lt;/em&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-$ git merge debug_redirect --no-ff&lt;/blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;nbsp;&amp;nbsp;debug\_redirect
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;↓
+&amp;nbsp;&amp;nbsp;A-B-C
+&amp;nbsp;&amp;nbsp;↑
+master
+&lt;/pre&gt;
+&lt;p&gt;Maintenant que j'ai fixé mon bug sur ma branche&amp;nbsp;&lt;em&gt;debug_redirect&lt;/em&gt; je peux le
+merger avec le &lt;em&gt;master&lt;/em&gt;.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+git merge debug\_redirect --no-ff
+&lt;/pre&gt;
 &lt;p&gt;Résultat :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; B-C&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; debug_redirect&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; /&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;\&lt;/div&gt;
-&lt;div class="line"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; A - - - - D&amp;nbsp;&amp;nbsp; master&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Pour voir vos commits par branche vous pouvez aussi utiliser la commande
-git log :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ git log --graph --oneline --decorate&lt;/p&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;*&amp;nbsp;&amp;nbsp; 4c677ac (HEAD, master) Merge branch 'debug_redirect'&lt;/div&gt;
-&lt;div class="line"&gt;|\&lt;/div&gt;
-&lt;div class="line"&gt;| * 90e7a7a (debug_redirect) Fix another bug on redirect&lt;/div&gt;
-&lt;div class="line"&gt;| * 40ae981 Fix the redirect bug&lt;/div&gt;
-&lt;div class="line"&gt;|/&lt;/div&gt;
-&lt;div class="line"&gt;* 4e06ff4 initial commit&lt;/div&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 22 Jun 2013 13:07:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-06-22:2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html</guid><category>git</category><category>reset</category><category>checkout</category><category>merge</category><category>branch</category><category>commit</category></item><item><title>Installation disque dur Seagate 4To Debian</title><link>http://www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html</link><description>&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
-(Fichiers persos, photos, vidéos…).&lt;/div&gt;
-&lt;div class="line"&gt;J'ai donc formaté mon disque avec « Fdisk » et j'ai eu le message
-suivant :&lt;/div&gt;
-&lt;/div&gt;
+&lt;pre class="literal-block"&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;B-C&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;debug\_redirect
+&amp;nbsp;&amp;nbsp;/&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;\\
+A&amp;nbsp;-&amp;nbsp;-&amp;nbsp;-&amp;nbsp;-&amp;nbsp;D&amp;nbsp;&amp;nbsp;&amp;nbsp;master
+&lt;/pre&gt;
+&lt;p&gt;Pour voir vos commits par branche vous pouvez aussi utiliser la commande git log
+:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+git log --graph --oneline --decorate
+\*&amp;nbsp;&amp;nbsp; 4c677ac (HEAD, master) Merge branch 'debug\_redirect'
+\|\\
+\| \* 90e7a7a (debug\_redirect) Fix another bug on redirect
+\| \* 40ae981 Fix the redirect bug
+\|/
+\* 4e06ff4 initial commit
+&lt;/pre&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 22 Jun 2013 13:07:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-06-22:2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html</guid><category>git</category><category>reset</category><category>checkout</category><category>merge</category><category>branch</category><category>commit</category></item><item><title>Installation disque dur Seagate 4To Debian</title><link>http://www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html</link><description>&lt;p&gt;J'ai investi dans un gros disque dur de 4To pour mes sauvegardes (Fichiers
+persos, photos, vidéos…).  J'ai donc formaté mon disque avec « Fdisk » et j'ai
+eu le message suivant :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
 
@@ -1322,36 +1323,43 @@ DOS partition table format can not be used on drives for volumes
 larger than (2199023255040 bytes) for 512-byte sectors. Use parted(1) and GUID
 partition table format (GPT).
 &lt;/pre&gt;
-&lt;p&gt;J'ai donc vérifié si j'avais dans le noyau l'option
-CONFIG_EFI_PARTITION active :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;# cat &lt;span class="pre"&gt;&amp;quot;/boot/config-`uname&lt;/span&gt; &lt;span class="pre"&gt;-r`&amp;quot;&lt;/span&gt; | grep CONFIG_EFI_PARTITION&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;J'ai donc vérifié si j'avais dans le noyau l'option CONFIG_EFI_PARTITION
+active :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
+cat &amp;quot;/boot/config-`uname -r`&amp;quot; | grep CONFIG_EFI_PARTITION
+
 CONFIG_EFI_PARTITION=y
 &lt;/pre&gt;
-&lt;p&gt;C'était le cas, donc j'ai un autre problème… C'est « Fdisk » qui pose
-problème. Avec ma version (2.20.1) on peut faire une partition maximum
-de 2To.&lt;/p&gt;
+&lt;p&gt;C'était le cas, donc j'ai un autre problème… C'est « Fdisk » qui pose problème.
+Avec ma version (2.20.1) on peut faire une partition maximum de 2To.&lt;/p&gt;
 &lt;p&gt;Donc je me relance dans le partitionnement avec « parted ».&lt;/p&gt;
-&lt;p&gt;Note : mon disque est en /dev/sdd n'oubliez pas de modifier les
-commandes en fonction de votre configuration.&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;# parted /dev/sdd&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Note : mon disque est en /dev/sdd n'oubliez pas de modifier les commandes en
+fonction de votre configuration.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
+parted /dev/sdd
+
 GNU Parted 2.3
 Using /dev/sdd
 Welcome to GNU Parted! Type 'help' to view a list of commands.
 &lt;/pre&gt;
 &lt;p&gt;Définir le label GPT qui permet de faire des partition &amp;gt; 2To.&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;mklabel gpt&lt;/tt&gt;&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
+mklabel gpt
+
 Warning: The existing disk label on /dev/sdd will be destroyed and all data on this disk will be lost. Do you want to continue?
 Yes/No?
+
+yes
+unit TB
 &lt;/pre&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;yes&lt;/tt&gt; &lt;tt class="docutils literal"&gt;unit TB&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;Faire la partition de 4To&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;mkpart primary 0.00TB 4.00TB&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;Vérifier&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;print&lt;/tt&gt;&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
+mkpart primary 0.00TB 4.00TB
+&lt;/pre&gt;
+&lt;p&gt;Vérifier&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+print
+
 Model: ATA ST4000DM000-1F21 (scsi)
 Disk /dev/sdd: 4001GB
 Sector size (logical/physical): 512B/4096B
@@ -1361,13 +1369,15 @@ Number&amp;nbsp; Start&amp;nbsp;&amp;nbsp; End&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp
 &amp;nbsp;1&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 1049kB&amp;nbsp; 4001GB&amp;nbsp; 4001GB&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; primary
 &lt;/pre&gt;
 &lt;p&gt;Quitter « parted »&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;quit&lt;/tt&gt;&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
+quit
+
 Information: You may need to update /etc/fstab.
 &lt;/pre&gt;
 &lt;p&gt;Formater la partition avec un système de fichiers donné :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;# mkfs.ext4 /dev/sdd1&lt;/tt&gt;&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
+mkfs.ext4 /dev/sdd1
+
 mke2fs 1.42.5 (29-Jul-2012)
 Étiquette de système de fichiers=
 Type de système d'exploitation&amp;nbsp;: Linux
@@ -1393,66 +1403,85 @@ Création du journal (32768 blocs)&amp;nbsp;: complété
 fichiers&amp;nbsp;: complété
 &lt;/pre&gt;
 &lt;p&gt;Il ne reste plus qu'a monter la partition et éditer le fstab ;)&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 21 Jun 2013 00:30:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-06-21:2013-06-21-installation-disque-dur-seagate-4to-debian.html</guid><category>debian</category><category>disque dur</category><category>4To</category><category>partition</category><category>fs</category><category>config_efi_partition</category><category>fdisk</category><category>parted</category><category>gpt</category><category>mkfs</category></item><item><title>Toujours afficher le protocole dans Firefox</title><link>http://www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html</link><description>&lt;p&gt;Souvent lorsque je copie/colle une url depuis firefox j'ajoute &lt;a class="reference external" href="http://"&gt;http://&lt;/a&gt;
-or lors de la copie celui-ci est copié… Je me retrouve donc avec deux
-fois &lt;a class="reference external" href="http://"&gt;http://&lt;/a&gt;…&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 21 Jun 2013 00:30:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-06-21:2013-06-21-installation-disque-dur-seagate-4to-debian.html</guid><category>debian</category><category>disque dur</category><category>4To</category><category>partition</category><category>fs</category><category>config_efi_partition</category><category>fdisk</category><category>parted</category><category>gpt</category><category>mkfs</category></item><item><title>Toujours afficher le protocole dans Firefox</title><link>http://www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html</link><description>&lt;p&gt;Souvent lorsque je copie/colle une url depuis firefox j'ajoute &lt;a class="reference external" href="http://"&gt;http://&lt;/a&gt; or lors
+de la copie celui-ci est copié… Je me retrouve donc avec deux fois &lt;a class="reference external" href="http://"&gt;http://&lt;/a&gt;…&lt;/p&gt;
 &lt;p&gt;Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :&lt;/p&gt;
 &lt;p&gt;Ecrire dans la barre d'adresse :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;about:config&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+about:config
+&lt;/pre&gt;
 &lt;p&gt;Rechercher :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;browser.urlbar.trimURLs&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+browser.urlbar.trimURLs
+&lt;/pre&gt;
 &lt;p&gt;Modifier la valeur par :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;false&lt;/tt&gt;&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 10 Jun 2013 14:22:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-06-10:2013-06-10-toujours-afficher-le-protocole-dans-firefox.html</guid><category>firefox</category><category>config</category><category>http</category><category>urlbar</category><category>browser</category></item><item><title>Latin1 &lt;-&gt; UTF-8</title><link>http://www.choiz.fr/2013-05-29-latin1-utf-8.html</link><description>&lt;p&gt;Voilà une solution simple pour convertir une base de donnée en Latin1
-vers de l'UTF-8.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+false
+&lt;/pre&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 10 Jun 2013 14:22:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-06-10:2013-06-10-toujours-afficher-le-protocole-dans-firefox.html</guid><category>firefox</category><category>config</category><category>http</category><category>urlbar</category><category>browser</category></item><item><title>Latin1 &lt;-&gt; UTF-8</title><link>http://www.choiz.fr/2013-05-29-latin1-utf-8.html</link><description>&lt;p&gt;Voilà une solution simple pour convertir une base de donnée en Latin1 vers de
+l'UTF-8.&lt;/p&gt;
 &lt;p&gt;Utiliser mysqldump avec les options suivantes :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--default-character-set=utf8&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+--default-character-set=utf8
+&lt;/pre&gt;
 &lt;p&gt;et&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--skip-set-charset&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+--skip-set-charset
+&lt;/pre&gt;
 &lt;p&gt;Voilà la commande&amp;nbsp;complète :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;mysqldump &lt;span class="pre"&gt;-u&lt;/span&gt; user &lt;span class="pre"&gt;-p&lt;/span&gt; base table &lt;span class="pre"&gt;--default-character-set=utf8&lt;/span&gt; &lt;span class="pre"&gt;--skip-set-charset&lt;/span&gt; &amp;gt; base_table.sql&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;Ensuite en utilisant vim je fais un rechercher / remplacer des
-différents latin1 en utf-8.&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;vim dump_base_table.sql&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &amp;gt; base_table.sql
+&lt;/pre&gt;
+&lt;p&gt;Ensuite en utilisant vim je fais un rechercher / remplacer des différents latin1
+en utf-8.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+vim dump_base_table.sql
+&lt;/pre&gt;
 &lt;p&gt;Et en mode commande :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;:%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/
+&lt;/pre&gt;
 &lt;p&gt;et&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;:%s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:%s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/
+&lt;/pre&gt;
 &lt;p&gt;on enregistre et quitte le fichier avec :wq (ou sinon avec ZZ).&lt;/p&gt;
 &lt;p&gt;Maintenant on réimporte la table grâce à mysql :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;mysql &lt;span class="pre"&gt;-u&lt;/span&gt; user &lt;span class="pre"&gt;-p&lt;/span&gt; base &amp;lt; dump_base_table.sql&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+mysql -u user -p base &amp;lt; dump_base_table.sql
+&lt;/pre&gt;
 &lt;p&gt;il reste a vérifier si les champs sont bien en UTF-8.&lt;/p&gt;
-&lt;p&gt;Ici une table « table » avec une colonne « col » on ajoute un&amp;nbsp;caractère
+&lt;p&gt;Ici une table « table » avec une colonne « col » on ajoute un caractère
 accentué.&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;INSERT INTO table &lt;span class="pre"&gt;VALUES(&amp;quot;é&amp;quot;);&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+INSERT INTO table VALUES(&amp;quot;é&amp;quot;);
+&lt;/pre&gt;
 &lt;p&gt;Maintenant on regarde la taille de la colonne :&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;SELECT col, length(col) FROM table;&lt;/tt&gt;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+SELECT `col`, length(`col`) FROM `table`;
+&lt;/pre&gt;
 &lt;p&gt;Si la taille = 1 le caractère est enregistré en latin1… si c'est 2 c'est
 bien de l'UTF-8 car sauvé sur 2 octets.&lt;/p&gt;
 &lt;p&gt;Merci à &lt;a class="reference external" href="http://agopian.info/blog/mysql-mysqldump-et-php-convertir-de-latin1-vers-utf8.html"&gt;Mathieu
 Agopian&lt;/a&gt;
 pour le dernier tips.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 29 May 2013 16:32:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-05-29:2013-05-29-latin1-utf-8.html</guid><category>PHP</category><category>LATIN1</category><category>UTF-8</category><category>MYSQL</category><category>ENCODING</category><category>CHARSET</category><category>mysqldump</category></item><item><title>TypeMatrix sous Mac Os X</title><link>http://www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html</link><description>&lt;p&gt;J'ai chez moi comme au travail un clavier TypeMatrix 2030 USB.&lt;/p&gt;
-&lt;p&gt;Sur mac il faut &lt;a class="reference external" href="http://download.tuxfamily.org/dvorak/macosx/fr-dvorak-bepo-macosx-1.0rc2.dmg"&gt;télécharger le
-pilote&lt;/a&gt;,
+&lt;p&gt;Sur mac il faut &lt;a class="reference external" href="http://download.tuxfamily.org/dvorak/macosx/fr-dvorak-bepo-macosx-1.0rc2.dmg"&gt;télécharger le pilote&lt;/a&gt;,
 puis copier le fichier fr-dvorak-bepo.bundle dans le dossier
 /Bibliothèque/Keyboard Layouts/&lt;/p&gt;
 &lt;p&gt;Note : si vous installez le pilote dans le dossier de votre utilisateur
-(~/Bibliothèque/Keyboard Layouts/) vous ne pourrez pas utiliser le
-mappage à l'ouverture de session…&lt;/p&gt;
-&lt;p&gt;Pour utiliser les touches couper, copier,coller, j'utilise
-&lt;a class="reference external" href="http://pqrs.org/macosx/keyremap4macbook/"&gt;keyremap4macbook&lt;/a&gt;&amp;nbsp;(qui
-fonctionne aussi sur iMac etc…). L'installer puis redémarrer. Dans les
-préférences dans l'onglet &amp;quot;change key&amp;quot; recherchez &amp;quot;Use PC Style
-Copy/Paste #3bis&amp;quot; et&amp;nbsp;sélectionnez&amp;nbsp;l'option proposée.&lt;/p&gt;
-&lt;p&gt;Vous pouvez maintenant utiliser votre TypeMatrix en Bépo sur Mac Os X
-avec la prise en charge des touches couper, copier et coller.&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 04 Mar 2013 13:08:09 +0100</pubDate><guid>tag:www.choiz.fr,2013-03-04:2013-03-04-typematrix-sous-mac-os-x.html</guid><category>TypeMatrix</category><category>2030</category><category>USB</category><category>mac</category><category>cut</category><category>copy</category><category>paste</category><category>couper</category><category>copier</category><category>coller</category></item><item><title>Logiciels de gestion de versions (Svn, Git, Mercurial)</title><link>http://www.choiz.fr/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html</link><description>&lt;p&gt;J'ai différents projet sous svn, git et mercurial. J'ai pour but de tout
-migrer sur git car disponible sur github ainsi que sur bitbucket.&lt;/p&gt;
-&lt;p&gt;J'ai trouvé un &lt;a class="reference external" href="http://www.yterium.net/Migrer-un-projet-SVN-vers-GIT"&gt;trés bon tutoriel pour migrer un projet svn à
-git&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Egalement un autre tutoriel en anglais pour passer &lt;a class="reference external" href="http://hivelogic.com/articles/converting-from-mercurial-to-git"&gt;de mercurial à
-git&lt;/a&gt;.&lt;/p&gt;
+(~/Bibliothèque/Keyboard Layouts/) vous ne pourrez pas utiliser le mappage à
+l'ouverture de session…&lt;/p&gt;
+&lt;p&gt;Pour utiliser les touches couper, copier,coller, j'utilise &lt;a class="reference external" href="http://pqrs.org/macosx/keyremap4macbook/"&gt;keyremap4macbook&lt;/a&gt; (qui fonctionne aussi sur iMac
+etc…). L'installer puis redémarrer. Dans les préférences dans l'onglet &amp;quot;change
+key&amp;quot; recherchez &amp;quot;Use PC Style Copy/Paste #3bis&amp;quot; et sélectionnez l'option
+proposée.&lt;/p&gt;
+&lt;p&gt;Vous pouvez maintenant utiliser votre TypeMatrix en Bépo sur Mac Os X avec la
+prise en charge des touches couper, copier et coller.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 04 Mar 2013 13:08:09 +0100</pubDate><guid>tag:www.choiz.fr,2013-03-04:2013-03-04-typematrix-sous-mac-os-x.html</guid><category>TypeMatrix</category><category>2030</category><category>USB</category><category>mac</category><category>cut</category><category>copy</category><category>paste</category><category>couper</category><category>copier</category><category>coller</category></item><item><title>Logiciels de gestion de versions (Svn, Git, Mercurial)</title><link>http://www.choiz.fr/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html</link><description>&lt;p&gt;J'ai différents projet sous svn, git et mercurial. J'ai pour but de tout migrer
+sur git car disponible sur github ainsi que sur bitbucket.&lt;/p&gt;
+&lt;p&gt;J'ai trouvé un &lt;a class="reference external" href="http://www.yterium.net/Migrer-un-projet-SVN-vers-GIT"&gt;trés bon tutoriel pour migrer un projet svn à git&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Egalement un autre tutoriel en anglais pour passer &lt;a class="reference external" href="http://hivelogic.com/articles/converting-from-mercurial-to-git"&gt;de mercurial à git&lt;/a&gt;.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 12 Feb 2013 13:26:00 +0100</pubDate><guid>tag:www.choiz.fr,2013-02-12:2013-02-12-logiciels-de-gestion-de-versions-svn-git.html</guid><category>git</category><category>mercurial</category><category>svn</category><category>migration</category><category>svn to git</category><category>mercurial to git</category><category>hg to git</category><category>hg</category></item><item><title>Bépo 11ème jour !</title><link>http://www.choiz.fr/2012-12-27-b%C3%A9po-11%C3%A8me-jour.html</link><description>&lt;div class="line-block"&gt;
 &lt;div class="line"&gt;Depuis maintenant 11 jours je me suis mis au
 &lt;a class="reference external" href="http://bepo.fr/"&gt;bépo&lt;/a&gt;.&amp;nbsp;J'ai gardé mes différents résultats, ce

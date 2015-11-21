@@ -69,79 +69,69 @@
   </header>
   <div>
     <p>J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
-<em>master</em>… Généralement je fais toujours une branche pour les
-modifications, cette fois j'avais créé cette branche <em>debug_redirect</em>
-mais je n'étais pas dessus…</p>
-<div class="line-block">
-<div class="line">Je me suis retrouvé avec les commits A-B-C sur mon <em>master</em>. Or le
-seul qui devait être dessus devait être A et je devais avoir B-C dans
-ma branche <em>debug_redirect</em>.</div>
-<div class="line">Voici un schéma de la situation :</div>
-</div>
-<blockquote>
-<div class="line-block">
-<div class="line">debug_redirect</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↓</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A-B-C</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↑</div>
-<div class="line">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; master</div>
-</div>
-</blockquote>
+<em>master</em>… Généralement je fais toujours une branche pour les modifications,
+cette fois j'avais créé cette branche <em>debug_redirect</em> mais je n'étais pas
+dessus…</p>
+<p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master</em>. Or le seul qui
+devait être dessus devait être A et je devais avoir B-C dans ma branche
+<em>debug_redirect</em>. Voici un schéma de la situation :</p>
+<pre class="literal-block">
+debug\_redirect
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A-B-C
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master
+</pre>
 <p>Je dois donc soit mettre a jour ma branche <em>debug_redirect</em>.</p>
-<blockquote>
-<p>$ git checkout debug_redirect</p>
-<p>$ git merge master</p>
-</blockquote>
+<pre class="literal-block">
+git checkout debug\_redirect
+
+git merge master
+</pre>
 <p>Ce qui donne :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">debug_redirect</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↓</div>
-<div class="line">&nbsp;&nbsp;&nbsp; A-B-C</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↑</div>
-<div class="line">&nbsp;&nbsp; master</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+debug\_redirect
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
+&nbsp;&nbsp;&nbsp;&nbsp;A-B-C
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master
+</pre>
 <p>Il me reste qu'a retourner sur le <em>master</em> et revenir à la version A.</p>
-<blockquote>
-<p>$ git checkout master</p>
-<p>$ git reset --hard HEAD~2</p>
-</blockquote>
+<pre class="literal-block">
+git checkout master
+
+git reset --hard HEAD~2
+</pre>
 <p>Ce qui donne :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp; debug_redirect</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; ↓</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp; A-B-C</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp; ↑</div>
-<div class="line">master</div>
-</div>
-</blockquote>
-<p>Maintenant que j'ai fixé mon bug sur ma branche&nbsp;<em>debug_redirect</em> je
-peux le merger avec le <em>master</em>.</p>
-<blockquote>
-$ git merge debug_redirect --no-ff</blockquote>
+<pre class="literal-block">
+&nbsp;&nbsp;debug\_redirect
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
+&nbsp;&nbsp;A-B-C
+&nbsp;&nbsp;↑
+master
+</pre>
+<p>Maintenant que j'ai fixé mon bug sur ma branche&nbsp;<em>debug_redirect</em> je peux le
+merger avec le <em>master</em>.</p>
+<pre class="literal-block">
+git merge debug\_redirect --no-ff
+</pre>
 <p>Résultat :</p>
-<blockquote>
-<div class="line-block">
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B-C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; debug_redirect</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\</div>
-<div class="line">&nbsp;&nbsp;&nbsp;&nbsp; A - - - - D&nbsp;&nbsp; master</div>
-</div>
-</blockquote>
-<p>Pour voir vos commits par branche vous pouvez aussi utiliser la commande
-git log :</p>
-<blockquote>
-<p>$ git log --graph --oneline --decorate</p>
-<div class="line-block">
-<div class="line">*&nbsp;&nbsp; 4c677ac (HEAD, master) Merge branch 'debug_redirect'</div>
-<div class="line">|\</div>
-<div class="line">| * 90e7a7a (debug_redirect) Fix another bug on redirect</div>
-<div class="line">| * 40ae981 Fix the redirect bug</div>
-<div class="line">|/</div>
-<div class="line">* 4e06ff4 initial commit</div>
-</div>
-</blockquote>
+<pre class="literal-block">
+&nbsp;&nbsp;&nbsp;&nbsp;B-C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug\_redirect
+&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\
+A&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;D&nbsp;&nbsp;&nbsp;master
+</pre>
+<p>Pour voir vos commits par branche vous pouvez aussi utiliser la commande git log
+:</p>
+<pre class="literal-block">
+git log --graph --oneline --decorate
+\*&nbsp;&nbsp; 4c677ac (HEAD, master) Merge branch 'debug\_redirect'
+\|\\
+\| \* 90e7a7a (debug\_redirect) Fix another bug on redirect
+\| \* 40ae981 Fix the redirect bug
+\|/
+\* 4e06ff4 initial commit
+</pre>
 
   </div>
   <div class="tag-cloud">
