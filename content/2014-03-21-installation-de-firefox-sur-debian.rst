@@ -7,16 +7,13 @@ Installation de Firefox sur Debian
 :slug: 2014-03-21-installation-de-firefox-sur-debian
 :status: published
 
-Télécharger la dernière version de Firefox sur `le site de
-mozilla <http://www.mozilla.org/>`__.
+Télécharger la dernière version de Firefox sur `le site de mozilla
+<http://www.mozilla.org/>`__.
 
-Décompresser l'archive dans :
+Décompresser l'archive dans : ::
 
-``/opt/firefox/``
+    /opt/firefox/
 
-Créer un lien symbolique avec :
+Créer un lien symbolique avec : ::
 
-``ls -sf /opt/firefox/firefox /usr/bin/firefox``
-
-Et voilà.
-
+    ls -sf /opt/firefox/firefox /usr/bin/firefox
