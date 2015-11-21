@@ -10,7 +10,7 @@ Split & Vsplit dans vim
 Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour pouvoir
 ouvrir plusieurs fichiers en même temps.
 
-Pour celà il utilises 2 méthodes soit : ::
+Pour celà il utilises 2 méthodes soit :
 
 1) la division de la fenêtre horizontal en utilisant ::
 
