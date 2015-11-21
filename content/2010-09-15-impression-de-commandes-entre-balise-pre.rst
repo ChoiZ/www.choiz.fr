@@ -8,16 +8,14 @@ Impression de commandes entre balise <pre>
 :status: published
 
 J'ai toujours eu pas mal de soucis lors d'impression de différentes
-documentations...
+documentations…
 
-J'utilise souvent la balise <pre> pour les lignes de commandes et il n'y
-a pas de retour à la ligne fait automatiquement pour cela un petit css
-permet de faire les retours à la ligne lorsque la page est trop grande.
+J'utilise souvent la balise <pre> pour les lignes de commandes et il n'y a pas
+de retour à la ligne fait automatiquement pour cela un petit css permet de faire
+les retours à la ligne lorsque la page est trop grande. ::
 
-    | pre {
-    |         white-space: pre-wrap; /\* CSS2.1 compliant \*/
-    |         white-space: -moz-pre-wrap; /\* Mozilla-based browsers \*/
-    |         white-space: o-pre-wrap; /\* Opera 7+ \*/
-    |         word-wrap: break-word;
-    | }
+    pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
 
