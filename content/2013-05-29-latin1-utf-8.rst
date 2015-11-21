@@ -7,50 +7,50 @@ Latin1 <-> UTF-8
 :slug: 2013-05-29-latin1-utf-8
 :status: published
 
-Voilà une solution simple pour convertir une base de donnée en Latin1
-vers de l'UTF-8.
+Voilà une solution simple pour convertir une base de donnée en Latin1 vers de
+l'UTF-8.
 
-Utiliser mysqldump avec les options suivantes :
+Utiliser mysqldump avec les options suivantes : ::
 
-``--default-character-set=utf8``
+    --default-character-set=utf8
 
-et
+et ::
 
-``--skip-set-charset``
+    --skip-set-charset
 
-Voilà la commande complète :
+Voilà la commande complète : ::
 
-``mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset > base_table.sql``
+    mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset > base_table.sql
 
-Ensuite en utilisant vim je fais un rechercher / remplacer des
-différents latin1 en utf-8.
+Ensuite en utilisant vim je fais un rechercher / remplacer des différents latin1
+en utf-8. ::
 
-``vim dump_base_table.sql``
+    vim dump_base_table.sql
 
-Et en mode commande :
+Et en mode commande : ::
 
-``:%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/``
+    :%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/
 
-et
+et ::
 
-``:%s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/``
+    :%s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/
 
 on enregistre et quitte le fichier avec :wq (ou sinon avec ZZ).
 
-Maintenant on réimporte la table grâce à mysql :
+Maintenant on réimporte la table grâce à mysql : ::
 
-``mysql -u user -p base < dump_base_table.sql``
+    mysql -u user -p base < dump_base_table.sql
 
 il reste a vérifier si les champs sont bien en UTF-8.
 
-Ici une table « table » avec une colonne « col » on ajoute un caractère
-accentué.
+Ici une table « table » avec une colonne « col » on ajoute un caractère
+accentué. ::
 
-``INSERT INTO table VALUES("é");``
+    INSERT INTO table VALUES("é");
 
-Maintenant on regarde la taille de la colonne :
+Maintenant on regarde la taille de la colonne : ::
 
-``SELECT col, length(col) FROM table;``
+    SELECT `col`, length(`col`) FROM `table`;
 
 Si la taille = 1 le caractère est enregistré en latin1… si c'est 2 c'est
 bien de l'UTF-8 car sauvé sur 2 octets.
@@ -58,4 +58,3 @@ bien de l'UTF-8 car sauvé sur 2 octets.
 Merci à `Mathieu
 Agopian <http://agopian.info/blog/mysql-mysqldump-et-php-convertir-de-latin1-vers-utf8.html>`__
 pour le dernier tips.
-

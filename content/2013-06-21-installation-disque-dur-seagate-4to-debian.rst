@@ -7,12 +7,9 @@ Installation disque dur Seagate 4To Debian
 :slug: 2013-06-21-installation-disque-dur-seagate-4to-debian
 :status: published
 
-| J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
-  (Fichiers persos, photos, vidéos…).
-| J'ai donc formaté mon disque avec « Fdisk » et j'ai eu le message
-  suivant :
-
-::
+J'ai investi dans un gros disque dur de 4To pour mes sauvegardes (Fichiers
+persos, photos, vidéos…).  J'ai donc formaté mon disque avec « Fdisk » et j'ai
+eu le message suivant : ::
 
     Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
 
@@ -21,52 +18,44 @@ Installation disque dur Seagate 4To Debian
     larger than (2199023255040 bytes) for 512-byte sectors. Use parted(1) and GUID
     partition table format (GPT).
 
-J'ai donc vérifié si j'avais dans le noyau l'option
-CONFIG\_EFI\_PARTITION active :
+J'ai donc vérifié si j'avais dans le noyau l'option CONFIG\_EFI\_PARTITION
+active : ::
 
-``# cat "/boot/config-`uname -r`" | grep CONFIG_EFI_PARTITION``
-
-::
+    cat "/boot/config-`uname -r`" | grep CONFIG_EFI_PARTITION
 
     CONFIG_EFI_PARTITION=y
 
-C'était le cas, donc j'ai un autre problème… C'est « Fdisk » qui pose
-problème. Avec ma version (2.20.1) on peut faire une partition maximum
-de 2To.
+C'était le cas, donc j'ai un autre problème… C'est « Fdisk » qui pose problème.
+Avec ma version (2.20.1) on peut faire une partition maximum de 2To.
 
 Donc je me relance dans le partitionnement avec « parted ».
 
-Note : mon disque est en /dev/sdd n'oubliez pas de modifier les
-commandes en fonction de votre configuration.
+Note : mon disque est en /dev/sdd n'oubliez pas de modifier les commandes en
+fonction de votre configuration. ::
 
-``# parted /dev/sdd``
-
-::
+    parted /dev/sdd
 
     GNU Parted 2.3
     Using /dev/sdd
     Welcome to GNU Parted! Type 'help' to view a list of commands.
 
-Définir le label GPT qui permet de faire des partition > 2To.
+Définir le label GPT qui permet de faire des partition > 2To.  ::
 
-``mklabel gpt``
-
-::
+    mklabel gpt
 
     Warning: The existing disk label on /dev/sdd will be destroyed and all data on this disk will be lost. Do you want to continue?
     Yes/No?
 
-``yes`` ``unit TB``
+    yes
+    unit TB
 
-Faire la partition de 4To
+Faire la partition de 4To ::
 
-``mkpart primary 0.00TB 4.00TB``
+    mkpart primary 0.00TB 4.00TB
 
-Vérifier
+Vérifier ::
 
-``print``
-
-::
+    print
 
     Model: ATA ST4000DM000-1F21 (scsi)
     Disk /dev/sdd: 4001GB
@@ -76,19 +65,15 @@ Vérifier
     Number  Start   End     Size    File system  Name     Flags
      1      1049kB  4001GB  4001GB               primary
 
-Quitter « parted »
+Quitter « parted » ::
 
-``quit``
-
-::
+    quit
 
     Information: You may need to update /etc/fstab.
 
-Formater la partition avec un système de fichiers donné :
+Formater la partition avec un système de fichiers donné : ::
 
-``# mkfs.ext4 /dev/sdd1``
-
-::
+    mkfs.ext4 /dev/sdd1
 
     mke2fs 1.42.5 (29-Jul-2012)
     Étiquette de système de fichiers=
@@ -108,11 +93,10 @@ Formater la partition avec un système de fichiers donné :
         4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
         102400000, 214990848, 512000000, 550731776, 644972544
 
-    Allocation des tables de groupe : complété                       
-    Écriture des tables d'i-noeuds : complété                       
+    Allocation des tables de groupe : complété
+    Écriture des tables d'i-noeuds : complété
     Création du journal (32768 blocs) : complété
     Écriture des superblocs et de l'information de comptabilité du système de
-    fichiers : complété  
+    fichiers : complété
 
 Il ne reste plus qu'a monter la partition et éditer le fstab ;)
-
