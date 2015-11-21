@@ -14,7 +14,9 @@ Configuration des DNS
 
 Pour commencer nous allons créer des entrées DNS.
 
-Nous créons un MX pour les mails avec une priorité de 1, un sous domaine "mail" qui pointe vers l'adresse ipv4 de votre serveur, d'un sous domaine webmail qui pointe sur le sous domaine mail et d'un enregistrement SPF ::
+Nous créons un MX pour les mails avec une priorité de 1, un sous domaine "mail"
+qui pointe vers l'adresse ipv4 de votre serveur, d'un sous domaine webmail qui
+pointe sur le sous domaine mail et d'un enregistrement SPF ::
 
     votredomaine.com.           MX      1   mail.votredomaine.com.
     mail.votredomaine.com.      A           ip.v4.du.serveur
@@ -28,7 +30,8 @@ Maintenant installons postfix dovecot-imapd et sasl2-bin : ::
 
     apt-get install postfix dovecot-imapd sasl2-bin php5-curl
 
-Configurer le serveur de messagerie comme "Site Internet", puis en nom de courrier indiquer "mail.votredomaine.com".
+Configurer le serveur de messagerie comme "Site Internet", puis en nom de
+courrier indiquer "mail.votredomaine.com".
 
 Configuration de dovecot
 ========================
@@ -265,9 +268,11 @@ Pour créer un comte mail, éditer /etc/postfix/virtual_mailbox : ::
     email@votredomaine.com          votredomaine.com/email@votredomaine.com/
     linus@torvald.com               torvald.com/linus@torvald.com/
 
-N'oubliez pas lors de la création de nouveau comptes mail d'éditer /etc/dovecot/users ;-)
+N'oubliez pas lors de la création de nouveau comptes mail d'éditer
+/etc/dovecot/users ;-)
 
-Maintenant il faut dire a postfix que nous avons modifier nos fichiers virtuels : ::
+Maintenant il faut dire a postfix que nous avons modifier nos fichiers virtuels
+: ::
 
     postmap /etc/postfix/virtual_alias
     postmap /etc/postfix/virtual_domains
@@ -295,7 +300,8 @@ Puis redemarrer postfix : ::
 
 Fin de la configuration de postfix.
 
-Vous pouvez maintenant tester votre serveur mail ainsi que la qualité de votre serveur sur le site http://www.mail-tester.com
+Vous pouvez maintenant tester votre serveur mail ainsi que la qualité de votre
+serveur sur le site http://www.mail-tester.com
 
 Installation d'un webmail rainloop
 ==================================
@@ -318,7 +324,8 @@ Modifier les droits : ::
     find . -type f -exec chmod 644 {} \;
     find . -type d -exec chmod 755 {} \;
 
-Créer un vhost pour apache dans `/etc/apache2/site-enabled/001-webmail.domain.com.conf` ::
+Créer un vhost pour apache dans
+`/etc/apache2/site-enabled/001-webmail.domain.com.conf` ::
 
     <VirtualHost *:80>
         ServerAdmin contact@domain.com
@@ -363,7 +370,8 @@ Password 12345
 
 Changer la langue et votre mot de passe (dans `security`).
 
-Puis dans `domains` configurez votre nom de domaine en cliquant sur `+ Add domain`
+Puis dans `domains` configurez votre nom de domaine en cliquant sur `+ Add
+domain`
 
 ============ ===========================
 Name         domaine.com
@@ -389,6 +397,8 @@ Puis `+ Add`
 
 Je supprime tous les autres domaines (gmail etc…)
 
-Ensuite j'active les plugins, et les packages : X-Originating-IP, Black list et White list.
+Ensuite j'active les plugins, et les packages : X-Originating-IP, Black list et
+White list.
 
-Maintenant rendez-vous sur : http://mail.domain.com et identifiez-vous avec votre login et mot de passe.
+Maintenant rendez-vous sur : http://mail.domain.com et identifiez-vous avec
+votre login et mot de passe.

@@ -7,19 +7,20 @@ Compression Décompression tar.gz tar.bz2 tar.xz
 :slug: 2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz
 :status: published
 
-
-J'ai toujours du mal pour décompresser un fichier de type "tar.bz2" ou "tar.xz". Je n'ai pas encore trouvé le moyen de me souvenir de la syntaxe…
+J'ai toujours du mal pour décompresser un fichier de type "tar.bz2" ou "tar.xz".
+Je n'ai pas encore trouvé le moyen de me souvenir de la syntaxe…
 
 tar.gz
 ======
 
-Pour les fichiers **tar.gz** j'arrive parfaitement à compresser ou décompresser ce format exemple :
+Pour les fichiers **tar.gz** j'arrive parfaitement à compresser ou décompresser
+ce format exemple :
 
-On compresse avec :
+On compresse avec : ::
 
     tar -cvzf archive.tar.gz dossier_a_compresser/
 
-On décompresse avec :
+On décompresse avec : ::
 
     tar -xvzf archive.tar.gz
 
@@ -33,22 +34,23 @@ Il suffit de retenir :
 tar.bz2
 =======
 
-Pour les **tar.bz2** je ne sais JAMAIS qu'il faut remplacer "z" de gizip par "j" de Bzip… (la lettre "b" étant sans doute utilisé avant que le bzip n'apparaisse).
-L'alternative est d'utiliser "--bzip"
+Pour les **tar.bz2** je ne sais JAMAIS qu'il faut remplacer "z" de gizip par "j"
+de Bzip… (la lettre "b" étant sans doute utilisé avant que le bzip
+n'apparaisse). L'alternative est d'utiliser "--bzip"
 
-On compresse avec :
+On compresse avec : ::
 
     tar -cvjf archive.tar.bz2 dossier_a_compresser/
 
-Ou :
+Ou : ::
 
     tar --bzip2 -cvf archive.tar.bz2 dossier_a_compresser/
 
-On décompresse avec :
+On décompresse avec : ::
 
     tar -xvjf archive.tar.bz2
 
-Ou :
+Ou : ::
 
     tar --bzip2 -xvf archive.tar.bz2
 
@@ -56,21 +58,21 @@ Ou :
 tar.xz
 ======
 
-Pour ce qui est de Lzma ou le **tar.xz** c'est un "J" majuscule cette fois ou d'utiliser "--xz".
+Pour ce qui est de Lzma ou le **tar.xz** c'est un "J" majuscule cette fois ou
+d'utiliser "--xz".
 
-On compresse avec :
+On compresse avec : ::
 
     tar -cvJf archive.tar.xz dossier_a_compresser/
 
-Ou :
+Ou : ::
 
     tar --xz -cvf archive.tar.xz dossier_a_compresser/
 
-On décompresse avec :
+On décompresse avec : ::
 
     tar -xvJf archive.tar.xz
 
-Ou :
+Ou : ::
 
     tar --xz -xvf archive.tar.xz
-
