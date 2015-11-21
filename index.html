@@ -55,9 +55,48 @@
 
 <article>
   <header>
+    <h2><a href="http://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html#2015-11-21-mise-a-jour-d-un-kernel-gentoo">Mise à jour d'un kernel gentoo</a></h2>
+    <p>
+      Posté le sam. 21 novembre 2015 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="http://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="http://www.choiz.fr/tag/upgrade.html">upgrade</a>,      <a href="http://www.choiz.fr/tag/noyaux.html">noyaux</a>,      <a href="http://www.choiz.fr/tag/linux.html">linux</a>    </p>
+  </header>
+  <div>
+      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre pour le mettre à jour vers la version : 4.3.0.</p>
+<p>Je liste les différents noyaux gentoo disponibles :</p>
+<pre class="literal-block">
+eix sys-kernel/gentoo-sources
+</pre>
+<p>Je télécharge le noyau 4.3.0 :</p>
+<pre class="literal-block">
+emerge -a =sys-kernel/gentoo-sources-4.3.0
+</pre>
+<p>Une fois téléchargé, il faut modifier le lien symbolique <cite>/usr/src/linux</cite> grâce à eselect.</p>
+<p>J'affiche la liste des noyaux (celui actuellement selectionné est suivi d'une étoile) :</p>
+<pre class="literal-block">
+eselect kernel list
+
+[1]     linux-4.2.0-gentoo *
+[2]     linux-4.3.0-gentoo
+</pre>
+<p>Pour selectionner notre noyau 4.3.0 il faut utiliser :</p>
+<pre class="literal-block">
+eselect kernel set 2
+</pre>
+<p>Maintenant que vous avez selectionné votre noyau, copier le fichier &quot;.config&quot; de votre noyau précédent (pour conserver vos réglages de compilation)</p>
+<pre class="literal-block">
+cp /usr/src/linux-4.2.0-gentoo/.config /usr/src/linux
+</pre>
+<p>Puis <a class="reference external" href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">compiler votre kernel</a>.</p>
+
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html#2015-11-15-configurer-un-serveur-mail">Configurer un serveur mail</a></h2>
     <p>
-      Posté le Dim 15 novembre 2015 &#8226;
+      Posté le dim. 15 novembre 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/mail.html">mail</a>,      <a href="http://www.choiz.fr/tag/postfix.html">postfix</a>,      <a href="http://www.choiz.fr/tag/dovecot.html">dovecot</a>,      <a href="http://www.choiz.fr/tag/dns.html">dns</a>,      <a href="http://www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="http://www.choiz.fr/tag/rainloop.html">rainloop</a>,      <a href="http://www.choiz.fr/tag/webmail.html">webmail</a>    </p>
   </header>
@@ -494,7 +533,7 @@ find . -type d -exec chmod 755 {} \;
   <header>
     <h2><a href="http://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html#2015-10-25-gentoo-navigateur-web-par-defaut">Gentoo Navigateur Web par Défaut</a></h2>
     <p>
-      Posté le Dim 25 octobre 2015 &#8226;
+      Posté le dim. 25 octobre 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="http://www.choiz.fr/tag/web.html">web</a>,      <a href="http://www.choiz.fr/tag/browser.html">browser</a>,      <a href="http://www.choiz.fr/tag/default.html">default</a>,      <a href="http://www.choiz.fr/tag/navigateur.html">navigateur</a>    </p>
   </header>
@@ -520,7 +559,7 @@ xdg-mime query default x-scheme-handler/https</blockquote>
   <header>
     <h2><a href="http://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html#2015-10-13-vagrant-faire-un-reseau-prive">Vagrant faire un réseau privé</a></h2>
     <p>
-      Posté le Mar 13 octobre 2015 &#8226;
+      Posté le mar. 13 octobre 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/vagrant.html">vagrant</a>,      <a href="http://www.choiz.fr/tag/reseau.html">réseau</a>,      <a href="http://www.choiz.fr/tag/prive.html">privé</a>,      <a href="http://www.choiz.fr/tag/private.html">private</a>,      <a href="http://www.choiz.fr/tag/network.html">network</a>    </p>
   </header>
@@ -542,7 +581,7 @@ config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.2&quot;</blo
   <header>
     <h2><a href="http://www.choiz.fr/2015-10-12-des-commentaires-efficaces.html#2015-10-12-des-commentaires-efficaces">Des commentaires efficaces</a></h2>
     <p>
-      Posté le Lun 12 octobre 2015 &#8226;
+      Posté le lun. 12 octobre 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/commentaire.html">commentaire</a>,      <a href="http://www.choiz.fr/tag/code.html">code</a>,      <a href="http://www.choiz.fr/tag/efficace.html">efficace</a>    </p>
   </header>
@@ -584,7 +623,7 @@ Tags :
   <header>
     <h2><a href="http://www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html#2015-09-27-mettre-a-jour-gentoo">Mettre à jour Gentoo</a></h2>
     <p>
-      Posté le Dim 27 septembre 2015 &#8226;
+      Posté le dim. 27 septembre 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/update.html">update</a>,      <a href="http://www.choiz.fr/tag/mise-a-jour.html">mise à jour</a>,      <a href="http://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="http://www.choiz.fr/tag/eix.html">eix</a>,      <a href="http://www.choiz.fr/tag/emerge.html">emerge</a>    </p>
   </header>
@@ -628,7 +667,7 @@ emerge -vuDN world</blockquote>
   <header>
     <h2><a href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html#2015-09-06-compilation-kernel-gentoo">Compilation Kernel Gentoo</a></h2>
     <p>
-      Posté le Dim 06 septembre 2015 &#8226;
+      Posté le dim. 06 septembre 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/compilation.html">compilation</a>,      <a href="http://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="http://www.choiz.fr/tag/gentoo.html">gentoo</a>    </p>
   </header>
@@ -657,7 +696,7 @@ reboot</blockquote>
   <header>
     <h2><a href="http://www.choiz.fr/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html#2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz">Compression Décompression tar.gz tar.bz2 tar.xz</a></h2>
     <p>
-      Posté le Dim 30 août 2015 &#8226;
+      Posté le dim. 30 août 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/targz.html">tar.gz</a>,      <a href="http://www.choiz.fr/tag/tarbz2.html">tar.bz2</a>,      <a href="http://www.choiz.fr/tag/tarxz.html">tar.xz</a>,      <a href="http://www.choiz.fr/tag/tar.html">tar</a>,      <a href="http://www.choiz.fr/tag/gz.html">gz</a>,      <a href="http://www.choiz.fr/tag/gzip.html">gzip</a>,      <a href="http://www.choiz.fr/tag/bz2.html">bz2</a>,      <a href="http://www.choiz.fr/tag/xz.html">xz</a>,      <a href="http://www.choiz.fr/tag/lzma.html">lzma</a>    </p>
   </header>
@@ -733,7 +772,7 @@ tar --xz -xvf archive.tar.xz</blockquote>
   <header>
     <h2><a href="http://www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html#2015-08-25-suppression-des-branches-distantes-inexistantes">Suppression des branches distantes inexistantes</a></h2>
     <p>
-      Posté le Mar 25 août 2015 &#8226;
+      Posté le mar. 25 août 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/git.html">git</a>,      <a href="http://www.choiz.fr/tag/branch.html">branch</a>,      <a href="http://www.choiz.fr/tag/remote.html">remote</a>,      <a href="http://www.choiz.fr/tag/prune.html">prune</a>,      <a href="http://www.choiz.fr/tag/origin.html">origin</a>    </p>
   </header>
@@ -771,7 +810,7 @@ Tags :
   <header>
     <h2><a href="http://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html#2015-08-20-migration-de-tumblr-a-pelican">Migration de Tumblr à Pelican</a></h2>
     <p>
-      Posté le Jeu 20 août 2015 &#8226;
+      Posté le jeu. 20 août 2015 &#8226;
 Tags :
       <a href="http://www.choiz.fr/tag/tumblr.html">tumblr</a>,      <a href="http://www.choiz.fr/tag/migration.html">migration</a>,      <a href="http://www.choiz.fr/tag/pelican.html">pelican</a>,      <a href="http://www.choiz.fr/tag/site.html">site</a>,      <a href="http://www.choiz.fr/tag/static.html">static</a>,      <a href="http://www.choiz.fr/tag/python.html">python</a>    </p>
   </header>
@@ -780,33 +819,6 @@ Tags :
 Depuis cette date je n'avais pas pris le temps de m'occuper de la migration de mon blog de tumblr vers pelican.</p>
 <p><a class="reference external" href="http://blog.getpelican.com/">Pelican</a> est un générateur de site statique, il est pratique pour la gestion des articles tel que mon blog.</p>
 <p>Il suffit de créer un fichier texte avec le contenu de l'article et l'envoyer sur github pour que celui-ci soit publié.</p>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://www.choiz.fr/2015-08-08-touche-pour-sortir-sa-machine-de-veille.html#2015-08-08-touche-pour-sortir-sa-machine-de-veille">Touche pour sortir sa machine de veille</a></h2>
-    <p>
-      Posté le Sam 08 août 2015 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/touche.html">touche</a>,      <a href="http://www.choiz.fr/tag/sortie.html">sortie</a>,      <a href="http://www.choiz.fr/tag/veille.html">veille</a>,      <a href="http://www.choiz.fr/tag/ordinateur.html">ordinateur</a>,      <a href="http://www.choiz.fr/tag/shift.html">shift</a>,      <a href="http://www.choiz.fr/tag/clavier.html">clavier</a>    </p>
-  </header>
-  <div>
-      <p>Il y a quelques années, pour sortir ma machine de veille j'utilisais la
-touche &quot;enter&quot; ou &quot;escape&quot;.</p>
-<p>Ça fonctionne, sauf que si vous êtes dans un programme d'installation
-qui demande une confirmation (formater tout le disque par exemple), en
-appuyant sur &quot;enter&quot; vous allez confirmer le formatage.</p>
-<p>Avec la touche escape vous allez généralement annuler une action que
-l'on vous demande.</p>
-<p>Même problème avec toutes les autres touches : &quot;espace&quot; confirme
-généralement, &quot;o&quot; pour &quot;oui&quot;, &quot;y&quot; pour &quot;yes&quot;, &quot;n&quot; pour &quot;no&quot; ou &quot;non&quot;, ou
-une quantité &quot;1&quot;, &quot;2&quot;, ou toute autre lettre défini tel que &quot;a&quot; pour
-&quot;annuler&quot;, &quot;c&quot; pour &quot;cancel&quot;…</p>
-<p>Bref la seule touche que j'utilise pour sortir mon ordinateur de veille
-est &quot;shift&quot;. Que ça soit le &quot;shift&quot; droit ou gauche il ne fais jamais
-d'action spécifique à ma connaissance.</p>
 
   </div>
 </article>

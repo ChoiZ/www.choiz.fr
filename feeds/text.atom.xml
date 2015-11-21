@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="http://www.choiz.fr/" rel="alternate"></link><link href="http://www.choiz.fr/feeds/text.atom.xml" rel="self"></link><id>http://www.choiz.fr/</id><updated>2015-11-15T17:11:23+01:00</updated><entry><title>Configurer un serveur mail</title><link href="http://www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html" rel="alternate"></link><updated>2015-11-15T17:11:23+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-11-15:2015-11-15-configurer-un-serveur-mail.html</id><summary type="html">&lt;p&gt;Installation d'un serveur mail complet et à jour sous debian jessie (8.2).&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="http://www.choiz.fr/" rel="alternate"></link><link href="http://www.choiz.fr/feeds/text.atom.xml" rel="self"></link><id>http://www.choiz.fr/</id><updated>2015-11-21T13:50:44+01:00</updated><entry><title>Mise à jour d'un kernel gentoo</title><link href="http://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html" rel="alternate"></link><updated>2015-11-21T13:50:44+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-11-21:2015-11-21-mise-a-jour-d-un-kernel-gentoo.html</id><summary type="html">&lt;p&gt;Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre pour le mettre à jour vers la version : 4.3.0.&lt;/p&gt;
+&lt;p&gt;Je liste les différents noyaux gentoo disponibles :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+eix sys-kernel/gentoo-sources
+&lt;/pre&gt;
+&lt;p&gt;Je télécharge le noyau 4.3.0 :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+emerge -a =sys-kernel/gentoo-sources-4.3.0
+&lt;/pre&gt;
+&lt;p&gt;Une fois téléchargé, il faut modifier le lien symbolique &lt;cite&gt;/usr/src/linux&lt;/cite&gt; grâce à eselect.&lt;/p&gt;
+&lt;p&gt;J'affiche la liste des noyaux (celui actuellement selectionné est suivi d'une étoile) :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+eselect kernel list
+
+[1]     linux-4.2.0-gentoo *
+[2]     linux-4.3.0-gentoo
+&lt;/pre&gt;
+&lt;p&gt;Pour selectionner notre noyau 4.3.0 il faut utiliser :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+eselect kernel set 2
+&lt;/pre&gt;
+&lt;p&gt;Maintenant que vous avez selectionné votre noyau, copier le fichier &amp;quot;.config&amp;quot; de votre noyau précédent (pour conserver vos réglages de compilation)&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cp /usr/src/linux-4.2.0-gentoo/.config /usr/src/linux
+&lt;/pre&gt;
+&lt;p&gt;Puis &lt;a class="reference external" href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html"&gt;compiler votre kernel&lt;/a&gt;.&lt;/p&gt;
+</summary><category term="gentoo"></category><category term="kernel"></category><category term="upgrade"></category><category term="noyaux"></category><category term="linux"></category></entry><entry><title>Configurer un serveur mail</title><link href="http://www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html" rel="alternate"></link><updated>2015-11-15T17:11:23+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-11-15:2015-11-15-configurer-un-serveur-mail.html</id><summary type="html">&lt;p&gt;Installation d'un serveur mail complet et à jour sous debian jessie (8.2).&lt;/p&gt;
 &lt;div class="section" id="configuration-des-dns"&gt;
 &lt;h2&gt;Configuration des DNS&lt;/h2&gt;
 &lt;p&gt;Pour commencer nous allons créer des entrées DNS.&lt;/p&gt;
