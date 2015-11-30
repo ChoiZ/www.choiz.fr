@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChoiZ</title><link>http://www.choiz.fr/</link><description>Je suis ingénieur informaticien, j'aime le développement, le streaming, l'Internet…&lt;br&gt;&lt;br&gt;Depuis l'an 2000, j'ai fondé plusieurs webradios (Radio-Psylone, Live9 ou encore AddictRadio).&lt;br&gt;Je fais parti de l'équipe de &lt;a href="http://www.lagrosseradio.com"&gt;La Grosse Radio&lt;/a&gt;.</description><atom:link href="http://www.choiz.fr/feeds/choiz-doogaille.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 30 Nov 2015 21:18:07 +0100</lastBuildDate><item><title>PHP + Gettext + Debian</title><link>http://www.choiz.fr/2011-12-04-php-gettext-debian.html</link><description>&lt;p&gt;J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
-utilisant des outils tel que pootle ou poedit.  Pour utiliser gettext sur votre
-site en php il faut télécharger le package php-gettext ainsi que d'autres outils
-tel que xgettext ou msgfmt :&lt;/p&gt;
+utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre
+site en php il faut télécharger le package php-gettext :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 apt-get install php-gettext
-
-apt-get install xgettext
-
-apt-get install msgfmt
 &lt;/pre&gt;
 &lt;p&gt;Ensuite il faut modifier le fichier &lt;cite&gt;/etc/locale.gen&lt;/cite&gt; et enlever les
 commentaires devant les langues qui vont sont à traduire par exemple :
@@ -81,5 +76,7 @@ lang/fr_FR/LC_MESSAGES/domaine.mo
 lang/en_GB/LC_MESSAGES/domaine.po
 lang/en_GB/LC_MESSAGES/domaine.mo
 &lt;/pre&gt;
+&lt;p&gt;N'oubliez pas de redémarrer votre serveur web pour que les changements soient
+pris en compte.&lt;/p&gt;
 &lt;p&gt;Mise à jour le 30 Novembre 2015 par &lt;a class="reference external" href="http://www.github.com/doogaille"&gt;doogaille&lt;/a&gt;.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz, doogaille</dc:creator><pubDate>Mon, 30 Nov 2015 21:18:07 +0100</pubDate><guid>tag:www.choiz.fr,2011-12-04:2011-12-04-php-gettext-debian.html</guid><category>.mo</category><category>.po</category><category>/etc/locale</category><category>LC_ALL</category><category>gettext</category><category>php</category><category>php-gettext</category><category>setlocale</category><category>xgettext</category></item></channel></rss>

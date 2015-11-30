@@ -1851,15 +1851,10 @@ scp ~/.ssh/id\_dsa.pub user&amp;#64;ip:~/.ssh/authorized\_keys/
 ssh-copy-id -i ~/.ssh/id\_dsa.pub user&amp;#64;ip
 &lt;/pre&gt;
 </summary><category term="clé publique"></category><category term="clé privée"></category><category term="connexion ssh"></category><category term="authorized_keys"></category><category term="ssh"></category><category term=".ssh"></category></entry><entry><title>PHP + Gettext + Debian</title><link href="http://www.choiz.fr/2011-12-04-php-gettext-debian.html" rel="alternate"></link><updated>2015-11-30T21:18:07+01:00</updated><author><name>choiz, doogaille</name></author><id>tag:www.choiz.fr,2011-12-04:2011-12-04-php-gettext-debian.html</id><summary type="html">&lt;p&gt;J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
-utilisant des outils tel que pootle ou poedit.  Pour utiliser gettext sur votre
-site en php il faut télécharger le package php-gettext ainsi que d'autres outils
-tel que xgettext ou msgfmt :&lt;/p&gt;
+utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre
+site en php il faut télécharger le package php-gettext :&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 apt-get install php-gettext
-
-apt-get install xgettext
-
-apt-get install msgfmt
 &lt;/pre&gt;
 &lt;p&gt;Ensuite il faut modifier le fichier &lt;cite&gt;/etc/locale.gen&lt;/cite&gt; et enlever les
 commentaires devant les langues qui vont sont à traduire par exemple :
@@ -1932,6 +1927,8 @@ lang/fr_FR/LC_MESSAGES/domaine.mo
 lang/en_GB/LC_MESSAGES/domaine.po
 lang/en_GB/LC_MESSAGES/domaine.mo
 &lt;/pre&gt;
+&lt;p&gt;N'oubliez pas de redémarrer votre serveur web pour que les changements soient
+pris en compte.&lt;/p&gt;
 &lt;p&gt;Mise à jour le 30 Novembre 2015 par &lt;a class="reference external" href="http://www.github.com/doogaille"&gt;doogaille&lt;/a&gt;.&lt;/p&gt;
 </summary><category term=".mo"></category><category term=".po"></category><category term="/etc/locale"></category><category term="LC_ALL"></category><category term="gettext"></category><category term="php"></category><category term="php-gettext"></category><category term="setlocale"></category><category term="xgettext"></category></entry><entry><title>Clavier Apple sur debian</title><link href="http://www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html" rel="alternate"></link><updated>2011-12-02T00:14:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-12-02:2011-12-02-clavier-apple-sur-debian.html</id><summary type="html">&lt;p&gt;Depuis le temps que je bosse avec un clavier Apple je me suis habitué au mapage
 clavier Mac.

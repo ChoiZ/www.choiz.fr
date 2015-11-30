@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz, doogaille" />
-<meta name="description" content="J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre site en php il faut télécharger le package php-gettext ainsi que d'autres outils tel que xgettext ou msgfmt : apt-get install php-gettext apt-get install xgettext ..." />
+<meta name="description" content="J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre site en php il faut télécharger le package php-gettext : apt-get install php-gettext Ensuite il faut modifier le fichier /etc/locale.gen et enlever les commentaires ..." />
 <meta name="keywords" content=".mo, .po, /etc/locale, LC_ALL, gettext, php, php-gettext, setlocale, xgettext">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="PHP + Gettext + Debian"/>
-<meta property="og:description" content="J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre site en php il faut télécharger le package php-gettext ainsi que d'autres outils tel que xgettext ou msgfmt : apt-get install php-gettext apt-get install xgettext ..."/>
+<meta property="og:description" content="J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre site en php il faut télécharger le package php-gettext : apt-get install php-gettext Ensuite il faut modifier le fichier /etc/locale.gen et enlever les commentaires ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://www.choiz.fr/2011-12-04-php-gettext-debian.html"/>
 <meta property="og:type" content="article"/>
@@ -72,15 +72,10 @@
   </header>
   <div>
     <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
-utilisant des outils tel que pootle ou poedit.  Pour utiliser gettext sur votre
-site en php il faut télécharger le package php-gettext ainsi que d'autres outils
-tel que xgettext ou msgfmt :</p>
+utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre
+site en php il faut télécharger le package php-gettext :</p>
 <pre class="literal-block">
 apt-get install php-gettext
-
-apt-get install xgettext
-
-apt-get install msgfmt
 </pre>
 <p>Ensuite il faut modifier le fichier <cite>/etc/locale.gen</cite> et enlever les
 commentaires devant les langues qui vont sont à traduire par exemple :
@@ -153,6 +148,8 @@ lang/fr_FR/LC_MESSAGES/domaine.mo
 lang/en_GB/LC_MESSAGES/domaine.po
 lang/en_GB/LC_MESSAGES/domaine.mo
 </pre>
+<p>N'oubliez pas de redémarrer votre serveur web pour que les changements soient
+pris en compte.</p>
 <p>Mise à jour le 30 Novembre 2015 par <a class="reference external" href="http://www.github.com/doogaille">doogaille</a>.</p>
 
   </div>
@@ -190,7 +187,7 @@ lang/en_GB/LC_MESSAGES/domaine.mo
   },
   "image": "avatar.png",
   "url": "http://www.choiz.fr/2011-12-04-php-gettext-debian.html",
-  "description": "J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre site en php il faut télécharger le package php-gettext ainsi que d'autres outils tel que xgettext ou msgfmt : apt-get install php-gettext apt-get install xgettext ..."
+  "description": "J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre site en php il faut télécharger le package php-gettext : apt-get install php-gettext Ensuite il faut modifier le fichier /etc/locale.gen et enlever les commentaires ..."
 }
 </script></body>
 </html>

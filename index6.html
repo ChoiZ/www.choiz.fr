@@ -370,15 +370,10 @@ Tags :
   </header>
   <div>
       <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
-utilisant des outils tel que pootle ou poedit.  Pour utiliser gettext sur votre
-site en php il faut télécharger le package php-gettext ainsi que d'autres outils
-tel que xgettext ou msgfmt :</p>
+utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre
+site en php il faut télécharger le package php-gettext :</p>
 <pre class="literal-block">
 apt-get install php-gettext
-
-apt-get install xgettext
-
-apt-get install msgfmt
 </pre>
 <p>Ensuite il faut modifier le fichier <cite>/etc/locale.gen</cite> et enlever les
 commentaires devant les langues qui vont sont à traduire par exemple :
@@ -451,6 +446,8 @@ lang/fr_FR/LC_MESSAGES/domaine.mo
 lang/en_GB/LC_MESSAGES/domaine.po
 lang/en_GB/LC_MESSAGES/domaine.mo
 </pre>
+<p>N'oubliez pas de redémarrer votre serveur web pour que les changements soient
+pris en compte.</p>
 <p>Mise à jour le 30 Novembre 2015 par <a class="reference external" href="http://www.github.com/doogaille">doogaille</a>.</p>
 
   </div>
