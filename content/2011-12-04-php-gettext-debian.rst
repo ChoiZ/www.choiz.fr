@@ -1,11 +1,11 @@
-PHP + Gettext + Debian ou MacOs
-###############################
+PHP + Gettext + Debian
+######################
 :date: 2011-12-04 19:10:00
 :modified: 2015-11-30 21:18:07
 :author: choiz, doogaille
 :category: text
 :tags: .mo, .po, /etc/locale, LC_ALL, gettext, php, php-gettext, setlocale, xgettext
-:slug: 2011-12-04-php-gettext-debian-ou-macos
+:slug: 2011-12-04-php-gettext-debian
 :status: published
 
 J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
@@ -91,4 +91,4 @@ Pour finir voilà le path des fichiers .po et .mo dans mon application web : ::
     lang/en_GB/LC_MESSAGES/domaine.po
     lang/en_GB/LC_MESSAGES/domaine.mo
 
-Mise à jour le 30 Novembre 2015 par `doogaille http://www.github.com/doogaille`_.
+Mise à jour le 30 Novembre 2015 par `doogaille <http://www.github.com/doogaille>`__.
