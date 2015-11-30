@@ -9,15 +9,10 @@ PHP + Gettext + Debian
 :status: published
 
 J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
-utilisant des outils tel que pootle ou poedit.  Pour utiliser gettext sur votre
-site en php il faut télécharger le package php-gettext ainsi que d'autres outils
-tel que xgettext ou msgfmt : ::
+utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre
+site en php il faut télécharger le package php-gettext : ::
 
     apt-get install php-gettext
-
-    apt-get install xgettext
-
-    apt-get install msgfmt
 
 Ensuite il faut modifier le fichier `/etc/locale.gen` et enlever les
 commentaires devant les langues qui vont sont à traduire par exemple :
@@ -90,5 +85,8 @@ Pour finir voilà le path des fichiers .po et .mo dans mon application web : ::
     lang/fr_FR/LC_MESSAGES/domaine.mo
     lang/en_GB/LC_MESSAGES/domaine.po
     lang/en_GB/LC_MESSAGES/domaine.mo
+
+N'oubliez pas de redémarrer votre serveur web pour que les changements soient
+pris en compte.
 
 Mise à jour le 30 Novembre 2015 par `doogaille <http://www.github.com/doogaille>`__.
