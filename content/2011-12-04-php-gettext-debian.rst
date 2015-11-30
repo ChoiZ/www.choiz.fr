@@ -81,7 +81,7 @@ Exemple listing_gettext.txt tel que : ::
 Ensuite il faut faire la commande suivante pour générer le fichier domaine.po
 dans le dossier lang/ depuis notre fichier texte avec les php : ::
 
-    cd MON_JOLI_PROJET/ && find . -iname "*.php" | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
+    find . -iname "*.php" | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
 
 Pour finir voilà le path des fichiers .po et .mo dans mon application web : ::
 
@@ -89,4 +89,5 @@ Pour finir voilà le path des fichiers .po et .mo dans mon application web : ::
     lang/fr_FR/LC_MESSAGES/domaine.mo
     lang/en_GB/LC_MESSAGES/domaine.po
     lang/en_GB/LC_MESSAGES/domaine.mo
-    …
+
+Mise à jour le 30 Novembre 2015 par `doogaille http://www.github.com/doogaille`_.
