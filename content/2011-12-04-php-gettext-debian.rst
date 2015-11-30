@@ -34,22 +34,25 @@ Puis regénérer les locales : ::
 
 Ensuite il faut définir votre chemin pour les traductions par exemple : ::
 
-    lang/fr_FR/LC_ALL/domaine.mo
+    lang/fr_FR/LC_MESSAGES/domaine.mo
 
 Puis dans votre fichier php de configuration : ::
 
     <?php
     // configuration de la langue
+    $lang = "fr_FR"; // Langue a afficher
+    $lang_encode = "utf8"; // Encodage du fichier (ATTENTION: utf-8 != utf8)
     $lang_path = "./lang"; // Chemin des fichiers le langue
-    $lang = 'fr_FR'; // Langue a afficher
-    $lang_encode = "UTF-8"; // Encodage du fichier
-    $lang_LC = "LC_ALL"; // LC_MESSAGE etc…
     $lang_file = "domaine"; // Nom du fichier de langue
-    putenv("LANG=".$lang);
-    setlocale($lang_LC, $lang.".".$lang_encode);
+        
+    putenv("LANG=".$lang.".".$lang_encode);
+    putenv("LANGUAGE=".$lang.".".$lang_encode);
+    setlocale(LC_MESSAGES, $lang.".".$lang_encode);
     bindtextdomain($lang_file,$lang_path);
-    bindtextdomain_codeset($lang_file,$lang_encode);
-    textdomain($lang_path);
+    if(function_exists('bind_textdomain_codeset')) {
+        bind_textdomain_codeset($lang_file,$lang_encode);
+    }
+    textdomain($lang_file);
     ?>
 
 Puis faites le test en affichant dans un fichier php le texte "hello" ::
@@ -76,13 +79,12 @@ Exemple listing_gettext.txt tel que : ::
 Ensuite il faut faire la commande suivante pour générer le fichier domaine.po
 dans le dossier lang/ depuis notre fichier texte avec les php : ::
 
-    xgettext -d domaine -p lang/ -k_ --from-code=UTF-8 -f
-    listing_gettext.txt
+    cd MON_JOLI_PROJET/ && find . -iname "*.php" | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
 
 Pour finir voilà le path des fichiers .po et .mo dans mon application web : ::
 
-    lang/fr_FR/LC_ALL/domaine.po
-    lang/fr_FR/LC_ALL/domaine.mo
-    lang/en_GB/LC_ALL/domaine.po
-    lang/en_GB/LC_ALL/domaine.mo
+    lang/fr_FR/LC_MESSAGES/domaine.po
+    lang/fr_FR/LC_MESSAGES/domaine.mo
+    lang/en_GB/LC_MESSAGES/domaine.po
+    lang/en_GB/LC_MESSAGES/domaine.mo
     …
