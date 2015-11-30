@@ -40,18 +40,20 @@ Puis dans votre fichier php de configuration : ::
 
     <?php
     // configuration de la langue
-    $lang = "fr_FR"; // Langue a afficher
-    $lang_encode = "utf8"; // Encodage du fichier (ATTENTION: utf-8 != utf8)
-    $lang_path = "./lang"; // Chemin des fichiers le langue
-    $lang_file = "domaine"; // Nom du fichier de langue
-        
-    putenv("LANG=".$lang.".".$lang_encode);
-    putenv("LANGUAGE=".$lang.".".$lang_encode);
-    setlocale(LC_MESSAGES, $lang.".".$lang_encode);
-    bindtextdomain($lang_file,$lang_path);
-    if(function_exists('bind_textdomain_codeset')) {
-        bind_textdomain_codeset($lang_file,$lang_encode);
+    $lang = 'fr_FR'; // Langue a afficher
+    $lang_encode = 'utf8'; // Encodage du fichier
+    $lang_path = './lang'; // Chemin des fichiers de langue
+    $lang_file = 'domaine'; // Nom du fichier de langue
+
+    putenv('LANG='.$lang.'.'.$lang_encode);
+    putenv('LANGUAGE='.$lang.'.'.$lang_encode);
+    setlocale(LC_MESSAGES, $lang.'.'.$lang_encode);
+    bindtextdomain($lang_file, $lang_path);
+
+    if (function_exists('bind_textdomain_codeset')) {
+        bind_textdomain_codeset($lang_file, $lang_encode);
     }
+
     textdomain($lang_file);
     ?>
 
