@@ -1,10 +1,11 @@
-PHP + Gettext + Debian
-######################
+PHP + Gettext + Debian ou MacOs
+###############################
 :date: 2011-12-04 19:10:00
-:author: choiz
+:modified: 2015-11-30 21:18:07
+:author: choiz, doogaille
 :category: text
 :tags: .mo, .po, /etc/locale, LC_ALL, gettext, php, php-gettext, setlocale, xgettext
-:slug: 2011-12-04-php-gettext-debian
+:slug: 2011-12-04-php-gettext-debian-ou-macos
 :status: published
 
 J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
