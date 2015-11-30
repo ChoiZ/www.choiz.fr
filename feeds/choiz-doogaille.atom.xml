@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="http://www.choiz.fr/" rel="alternate"></link><link href="http://www.choiz.fr/feeds/choiz-doogaille.atom.xml" rel="self"></link><id>http://www.choiz.fr/</id><updated>2015-11-30T21:18:07+01:00</updated><entry><title>PHP + Gettext + Debian</title><link href="http://www.choiz.fr/2011-12-04-php-gettext-debian.html" rel="alternate"></link><updated>2015-11-30T21:18:07+01:00</updated><author><name>choiz, doogaille</name></author><id>tag:www.choiz.fr,2011-12-04:2011-12-04-php-gettext-debian.html</id><summary type="html">&lt;p&gt;J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
+utilisant des outils tel que pootle ou poedit.  Pour utiliser gettext sur votre
+site en php il faut télécharger le package php-gettext ainsi que d'autres outils
+tel que xgettext ou msgfmt :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+apt-get install php-gettext
+
+apt-get install xgettext
+
+apt-get install msgfmt
+&lt;/pre&gt;
+&lt;p&gt;Ensuite il faut modifier le fichier &lt;cite&gt;/etc/locale.gen&lt;/cite&gt; et enlever les
+commentaires devant les langues qui vont sont à traduire par exemple :
+Allemand, Anglais, Espagnol, Français &amp;amp; Suédois :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+de_DE.UTF-8 UTF-8
+en_GB.UTF-8 UTF-8
+es_ES.UTF-8 UTF-8
+fr_FR.UTF-8 UTF-8
+sv_SE.UTF-8 UTF-8
+&lt;/pre&gt;
+&lt;p&gt;Puis regénérer les locales :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+locale-gen
+&lt;/pre&gt;
+&lt;p&gt;Ensuite il faut définir votre chemin pour les traductions par exemple :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+lang/fr_FR/LC_MESSAGES/domaine.mo
+&lt;/pre&gt;
+&lt;p&gt;Puis dans votre fichier php de configuration :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;lt;?php
+// configuration de la langue
+$lang = 'fr_FR'; // Langue a afficher
+$lang_encode = 'utf8'; // Encodage du fichier
+$lang_path = './lang'; // Chemin des fichiers de langue
+$lang_file = 'domaine'; // Nom du fichier de langue
+
+putenv('LANG='.$lang.'.'.$lang_encode);
+putenv('LANGUAGE='.$lang.'.'.$lang_encode);
+setlocale(LC_MESSAGES, $lang.'.'.$lang_encode);
+bindtextdomain($lang_file, $lang_path);
+
+if (function_exists('bind_textdomain_codeset')) {
+    bind_textdomain_codeset($lang_file, $lang_encode);
+}
+
+textdomain($lang_file);
+?&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;Puis faites le test en affichant dans un fichier php le texte &amp;quot;hello&amp;quot;&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;lt;?php
+// on inclus la config…
+include_once('config.php');
+echo _('hello');
+?&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;Pour générer un fichier .mo a partir d'un fichier .po :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+msgfmt domaine.po -o domaine.mo
+&lt;/pre&gt;
+&lt;p&gt;Pour générer un fichier .po a partir de fichier php avec du gettext, faire un
+fichier texte avec tous vos fichiers php ou on doit récupérer le gettext.&lt;/p&gt;
+&lt;p&gt;Exemple listing_gettext.txt tel que :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+index.php
+contact.php
+etc…
+&lt;/pre&gt;
+&lt;p&gt;Ensuite il faut faire la commande suivante pour générer le fichier domaine.po
+dans le dossier lang/ depuis notre fichier texte avec les php :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+find . -iname &amp;quot;*.php&amp;quot; | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
+&lt;/pre&gt;
+&lt;p&gt;Pour finir voilà le path des fichiers .po et .mo dans mon application web :&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+lang/fr_FR/LC_MESSAGES/domaine.po
+lang/fr_FR/LC_MESSAGES/domaine.mo
+lang/en_GB/LC_MESSAGES/domaine.po
+lang/en_GB/LC_MESSAGES/domaine.mo
+&lt;/pre&gt;
+&lt;p&gt;Mise à jour le 30 Novembre 2015 par &lt;a class="reference external" href="http://www.github.com/doogaille"&gt;doogaille&lt;/a&gt;.&lt;/p&gt;
+</summary><category term=".mo"></category><category term=".po"></category><category term="/etc/locale"></category><category term="LC_ALL"></category><category term="gettext"></category><category term="php"></category><category term="php-gettext"></category><category term="setlocale"></category><category term="xgettext"></category></entry></feed>

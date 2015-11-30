@@ -54,27 +54,6 @@
 
 <article>
   <header>
-    <h2><a href="http://www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html#2011-11-02-voir-les-fichiers-cachés-sur-lion">Voir les fichiers cachés sur Lion</a></h2>
-    <p>
-      Posté le mer. 02 novembre 2011 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/fichiers.html">fichiers</a>,      <a href="http://www.choiz.fr/tag/caches.html">cachés</a>,      <a href="http://www.choiz.fr/tag/hidden.html">hidden</a>,      <a href="http://www.choiz.fr/tag/files.html">files</a>,      <a href="http://www.choiz.fr/tag/lion.html">lion</a>,      <a href="http://www.choiz.fr/tag/defaults.html">defaults</a>,      <a href="http://www.choiz.fr/tag/appleshowallfiles.html">AppleShowAllFiles</a>,      <a href="http://www.choiz.fr/tag/finder.html">Finder</a>    </p>
-  </header>
-  <div>
-      <p>Dans un terminal :</p>
-<pre class="literal-block">
-defaults write com.apple.Finder AppleShowAllFiles TRUE
-
-killall Finder
-</pre>
-<p>Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés.</p>
-
-      <a class="btn" href="http://www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html#2011-11-02-voir-les-fichiers-cachés-sur-lion">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
     <h2><a href="http://www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Insérer un # au début de chaque ligne d'un fichier avec vim</a></h2>
     <p>
       Posté le mer. 05 octobre 2011 &#8226;
@@ -256,6 +235,30 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 <p>Puis redémarrez le mac.</p>
 
       <a class="btn" href="http://www.choiz.fr/2011-07-05-suppression-des-dsstore.html#2011-07-05-suppression-des-dsstore">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://www.choiz.fr/2011-06-30-elément-cliqué-en-js.html#2011-06-30-elément-cliqué-en-js">Elément cliqué en js</a></h2>
+    <p>
+      Posté le jeu. 30 juin 2011 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/js.html">js</a>,      <a href="http://www.choiz.fr/tag/element.html">element</a>,      <a href="http://www.choiz.fr/tag/click.html">click</a>,      <a href="http://www.choiz.fr/tag/javascript.html">javascript</a>,      <a href="http://www.choiz.fr/tag/html.html">html</a>    </p>
+  </header>
+  <div>
+      <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :</p>
+<pre class="literal-block">
+function checkclick(e) {
+    e = e || window.event;
+    var o = e.target || e.srcElement;
+    console.log(o);
+}
+document.onclick=checkclick;
+</pre>
+<p>Pratique pour faire du débug.</p>
+
+      <a class="btn" href="http://www.choiz.fr/2011-06-30-elément-cliqué-en-js.html#2011-06-30-elément-cliqué-en-js">Lire la suite</a>
   </div>
 </article>
 

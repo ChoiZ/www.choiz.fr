@@ -396,22 +396,27 @@ locale-gen
 </pre>
 <p>Ensuite il faut définir votre chemin pour les traductions par exemple :</p>
 <pre class="literal-block">
-lang/fr_FR/LC_ALL/domaine.mo
+lang/fr_FR/LC_MESSAGES/domaine.mo
 </pre>
 <p>Puis dans votre fichier php de configuration :</p>
 <pre class="literal-block">
 &lt;?php
 // configuration de la langue
-$lang_path = &quot;./lang&quot;; // Chemin des fichiers le langue
 $lang = 'fr_FR'; // Langue a afficher
-$lang_encode = &quot;UTF-8&quot;; // Encodage du fichier
-$lang_LC = &quot;LC_ALL&quot;; // LC_MESSAGE etc…
-$lang_file = &quot;domaine&quot;; // Nom du fichier de langue
-putenv(&quot;LANG=&quot;.$lang);
-setlocale($lang_LC, $lang.&quot;.&quot;.$lang_encode);
-bindtextdomain($lang_file,$lang_path);
-bindtextdomain_codeset($lang_file,$lang_encode);
-textdomain($lang_path);
+$lang_encode = 'utf8'; // Encodage du fichier
+$lang_path = './lang'; // Chemin des fichiers de langue
+$lang_file = 'domaine'; // Nom du fichier de langue
+
+putenv('LANG='.$lang.'.'.$lang_encode);
+putenv('LANGUAGE='.$lang.'.'.$lang_encode);
+setlocale(LC_MESSAGES, $lang.'.'.$lang_encode);
+bindtextdomain($lang_file, $lang_path);
+
+if (function_exists('bind_textdomain_codeset')) {
+    bind_textdomain_codeset($lang_file, $lang_encode);
+}
+
+textdomain($lang_file);
 ?&gt;
 </pre>
 <p>Puis faites le test en affichant dans un fichier php le texte &quot;hello&quot;</p>
@@ -437,17 +442,16 @@ etc…
 <p>Ensuite il faut faire la commande suivante pour générer le fichier domaine.po
 dans le dossier lang/ depuis notre fichier texte avec les php :</p>
 <pre class="literal-block">
-xgettext -d domaine -p lang/ -k_ --from-code=UTF-8 -f
-listing_gettext.txt
+find . -iname &quot;*.php&quot; | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
 </pre>
 <p>Pour finir voilà le path des fichiers .po et .mo dans mon application web :</p>
 <pre class="literal-block">
-lang/fr_FR/LC_ALL/domaine.po
-lang/fr_FR/LC_ALL/domaine.mo
-lang/en_GB/LC_ALL/domaine.po
-lang/en_GB/LC_ALL/domaine.mo
-…
+lang/fr_FR/LC_MESSAGES/domaine.po
+lang/fr_FR/LC_MESSAGES/domaine.mo
+lang/en_GB/LC_MESSAGES/domaine.po
+lang/en_GB/LC_MESSAGES/domaine.mo
 </pre>
+<p>Mise à jour le 30 Novembre 2015 par <a class="reference external" href="http://www.github.com/doogaille">doogaille</a>.</p>
 
   </div>
   <hr />

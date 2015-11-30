@@ -210,27 +210,6 @@ Enter ...</pre>
 </article>
 <article>
   <header>
-    <h2><a href="http://www.choiz.fr/2011-12-04-php-gettext-debian.html#2011-12-04-php-gettext-debian">PHP + Gettext + Debian</a></h2>
-    <p>
-      Posté le dim. 04 décembre 2011 &#8226;
-Tags :
-      <a href="http://www.choiz.fr/tag/mo.html">.mo</a>,      <a href="http://www.choiz.fr/tag/po.html">.po</a>,      <a href="http://www.choiz.fr/tag/etclocale.html">/etc/locale</a>,      <a href="http://www.choiz.fr/tag/lc_all.html">LC_ALL</a>,      <a href="http://www.choiz.fr/tag/gettext.html">gettext</a>,      <a href="http://www.choiz.fr/tag/php.html">php</a>,      <a href="http://www.choiz.fr/tag/php-gettext.html">php-gettext</a>,      <a href="http://www.choiz.fr/tag/setlocale.html">setlocale</a>,      <a href="http://www.choiz.fr/tag/xgettext.html">xgettext</a>    </p>
-  </header>
-  <div>
-      <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
-utilisant des outils tel que pootle ou poedit.  Pour utiliser gettext sur votre
-site en php il faut télécharger le package php-gettext ainsi que d'autres outils
-tel que xgettext ou msgfmt :</p>
-<pre class="literal-block">
-apt-get install php-gettext
-
-apt-get install xgettext ...</pre>
-      <a class="btn" href="http://www.choiz.fr/2011-12-04-php-gettext-debian.html#2011-12-04-php-gettext-debian">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
     <h2><a href="http://www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html#2011-12-02-clavier-apple-sur-debian">Clavier Apple sur debian</a></h2>
     <p>
       Posté le ven. 02 décembre 2011 &#8226;
@@ -288,6 +267,27 @@ vi /etc/apt/source.list
 </pre>
 <p>Ajouter contrib ...</p>
       <a class="btn" href="http://www.choiz.fr/2011-11-30-flash-sous-debian.html#2011-11-30-flash-sous-debian">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="http://www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html#2011-11-02-voir-les-fichiers-cachés-sur-lion">Voir les fichiers cachés sur Lion</a></h2>
+    <p>
+      Posté le mer. 02 novembre 2011 &#8226;
+Tags :
+      <a href="http://www.choiz.fr/tag/fichiers.html">fichiers</a>,      <a href="http://www.choiz.fr/tag/caches.html">cachés</a>,      <a href="http://www.choiz.fr/tag/hidden.html">hidden</a>,      <a href="http://www.choiz.fr/tag/files.html">files</a>,      <a href="http://www.choiz.fr/tag/lion.html">lion</a>,      <a href="http://www.choiz.fr/tag/defaults.html">defaults</a>,      <a href="http://www.choiz.fr/tag/appleshowallfiles.html">AppleShowAllFiles</a>,      <a href="http://www.choiz.fr/tag/finder.html">Finder</a>    </p>
+  </header>
+  <div>
+      <p>Dans un terminal :</p>
+<pre class="literal-block">
+defaults write com.apple.Finder AppleShowAllFiles TRUE
+
+killall Finder
+</pre>
+<p>Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés.</p>
+
+      <a class="btn" href="http://www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html#2011-11-02-voir-les-fichiers-cachés-sur-lion">Lire la suite</a>
   </div>
 </article>
 
