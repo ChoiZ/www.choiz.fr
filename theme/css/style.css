@@ -40,11 +40,11 @@ body {
   line-height: 1.2em;
 }
 a {
-  color: #0099CB;
+  color: #0099cb;
   text-decoration: none;
 }
 a:hover {
-  color: #22BBED;
+  color: #22bbed;
 }
 hr {
   color: #eeeeee;
@@ -64,11 +64,9 @@ aside {
 }
 aside a {
   color: #ffffff;
-  text-decoration: underline;
 }
 aside a:hover {
   color: #eeeeee;
-  text-decoration: none;
 }
 aside div {
   padding: 20px;
@@ -212,7 +210,7 @@ main footer p {
   font-size: 11px;
 }
 .tag-cloud a {
-  background-color: #0099CB;
+  background-color: #0099cb;
   padding: .2em .6em .2em;
   font-size: .74em;
   line-height: 1;
@@ -223,10 +221,10 @@ main footer p {
   border-radius: .25em;
 }
 .tag-cloud a:hover {
-  background-color: #22BBED;
+  background-color: #22bbed;
 }
 a.btn {
-  background-color: #0099CB;
+  background-color: #0099cb;
   padding: .4em .6em;
   font-size: .9em;
   line-height: 1;
@@ -237,7 +235,7 @@ a.btn {
   border-radius: .25em;
 }
 a.btn:hover {
-  background-color: #22BBED;
+  background-color: #22bbed;
 }
 .center {
   text-align: center;
@@ -317,7 +315,7 @@ ul.social a.sc-envelope-o {
 }
 @media screen and (min-width: 768px) {
   aside {
-    width: 30%;
+    width: 25%;
     height: 100%;
     position: fixed;
     top: 0;
@@ -335,10 +333,10 @@ ul.social a.sc-envelope-o {
     padding-top: 32px;
   }
   main {
-    width: 70%;
+    width: 75%;
     position: absolute;
     top: 10%;
-    left: 30%;
+    left: 25%;
     overflow-x: hidden;
     overflow-y: hidden;
   }
