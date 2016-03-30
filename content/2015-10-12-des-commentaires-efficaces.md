@@ -1,3 +1,24 @@
+Des commentaires efficaces
+==========================
+
+date  
+2015-10-12 13:44:15
+
+author  
+choiz
+
+category  
+text
+
+tags  
+commentaire, code, efficace
+
+slug  
+2015-10-12-des-commentaires-efficaces
+
+status  
+published
+
 Dans mes fichiers de test j'utilise souvent des commentaires pour tester
 qu'une fonctionnalité de code.
 

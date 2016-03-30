@@ -1,3 +1,24 @@
+Récupérer le master depuis le remote origin avec git
+====================================================
+
+date  
+2015-08-07 17:33:07
+
+author  
+choiz
+
+category  
+text
+
+tags  
+git, origin, remote, master, branch, checkout, track
+
+slug  
+2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec
+
+status  
+published
+
 Dans certains projets j’utilise git avec plusieurs remote, par exemple :
 
 -   un remote “origin” se trouve sur un serveur perso.

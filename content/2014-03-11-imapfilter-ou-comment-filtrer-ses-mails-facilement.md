@@ -1,3 +1,24 @@
+imapfilter ou comment filtrer ses mails facilement
+==================================================
+
+date  
+2014-03-11 13:54:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+imapfilter, mail, filter, imap
+
+slug  
+2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement
+
+status  
+published
+
 Installer imapfilter via apt par exemple : :
 
     apt-get install imapfilter

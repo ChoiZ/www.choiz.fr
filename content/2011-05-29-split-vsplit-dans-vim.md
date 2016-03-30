@@ -1,3 +1,25 @@
+Split & Vsplit dans vim
+=======================
+
+date  
+2011-05-29 17:16:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+vim, fichier, editeur, texte, terminal, commande, split, vsplit, window,
+colonnes, cols, columns
+
+slug  
+2011-05-29-split-vsplit-dans-vim
+
+status  
+published
+
 Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
 pouvoir ouvrir plusieurs fichiers en même temps.
 

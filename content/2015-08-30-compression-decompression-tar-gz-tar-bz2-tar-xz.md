@@ -1,9 +1,30 @@
+Compression Décompression tar.gz tar.bz2 tar.xz
+===============================================
+
+date  
+2015-08-30 11:47:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+tar.gz, tar.bz2, tar.xz, tar, gz, gzip, bz2, xz, lzma
+
+slug  
+2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz
+
+status  
+published
+
 J'ai toujours du mal pour décompresser un fichier de type "tar.bz2" ou
 "tar.xz". Je n'ai pas encore trouvé le moyen de me souvenir de la
 syntaxe…
 
 tar.gz
-======
+------
 
 Pour les fichiers **tar.gz** j'arrive parfaitement à compresser ou
 décompresser ce format exemple :
@@ -22,7 +43,7 @@ Il suffit de retenir :
 verbeux. -z pour le "gzip" d'ou le ".gz". -f pour spécifier le fichier.
 
 tar.bz2
-=======
+-------
 
 Pour les **tar.bz2** je ne sais JAMAIS qu'il faut remplacer "z" de gizip
 par "j" de Bzip… (la lettre "b" étant sans doute utilisé avant que le
@@ -45,7 +66,7 @@ Ou : :
     tar --bzip2 -xvf archive.tar.bz2
 
 tar.xz
-======
+------
 
 Pour ce qui est de Lzma ou le **tar.xz** c'est un "J" majuscule cette
 fois ou d'utiliser "--xz".

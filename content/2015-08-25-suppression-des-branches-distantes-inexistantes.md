@@ -1,3 +1,24 @@
+Suppression des branches distantes inexistantes
+===============================================
+
+date  
+2015-08-25 13:43:05
+
+author  
+choiz
+
+category  
+text
+
+tags  
+git, branch, remote, prune, origin
+
+slug  
+2015-08-25-suppression-des-branches-distantes-inexistantes
+
+status  
+published
+
 Lors d'un developpement j'ai créé une branche "add\_namespace" qui m'a
 permis d'ajouté des namespaces a différents fichiers PHP.
 

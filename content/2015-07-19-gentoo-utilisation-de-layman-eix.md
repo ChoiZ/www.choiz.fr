@@ -1,3 +1,24 @@
+Gentoo utilisation de layman & eix
+==================================
+
+date  
+2015-07-19 10:54:55
+
+author  
+choiz
+
+category  
+text
+
+tags  
+dépôt, repos, layman, eix, emerge, gentoo, vagrant-bin, overlay
+
+slug  
+2015-07-19-gentoo-utilisation-de-layman-eix
+
+status  
+published
+
 Certains programmes n’étant pas en dernière version dans les dépôts
 gentoo l’utilisation de layman peut faciliter la vie.
 

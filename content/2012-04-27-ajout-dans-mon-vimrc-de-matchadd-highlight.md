@@ -1,3 +1,25 @@
+Ajout dans mon .vimrc de matchadd() & highlight
+===============================================
+
+date  
+2012-04-27 15:11:26
+
+author  
+choiz
+
+category  
+text
+
+tags  
+vimrc, vim, config file, .vimrc, todo, notice, fixme, highlight,
+matchadd
+
+slug  
+2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight
+
+status  
+published
+
 Petit ajout dans mon fichier .vimrc :
 
     " Highlight To do list with green background

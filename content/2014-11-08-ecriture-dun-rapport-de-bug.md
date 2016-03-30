@@ -1,3 +1,24 @@
+Écriture d'un rapport de bug
+============================
+
+date  
+2014-11-08 16:55:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+Écriture rapport de bug, Rapport de bug, bug report, bug
+
+slug  
+2014-11-08-écriture-dun-rapport-de-bug
+
+status  
+published
+
 Étant développeur, j'ai très souvent des rapports de bug, qui peuvent
 être précis, ou moins suivant la personne.
 

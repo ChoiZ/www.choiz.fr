@@ -1,3 +1,24 @@
+Impression de commandes entre balise &lt;pre&gt;
+================================================
+
+date  
+2010-09-15 15:43:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+Balise, hml, Balise Pre, Pre, Print, Impression, CSS
+
+slug  
+2010-09-15-impression-de-commandes-entre-balise-pre
+
+status  
+published
+
 J'ai toujours eu pas mal de soucis lors d'impression de différentes
 documentations…
 

@@ -1,3 +1,25 @@
+Ma config : Clevo w650sz i7 4910MQ
+==================================
+
+date  
+2015-07-18 12:21:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+clevo, clevo w650, kernel, ethernet, realtek, audio, hdaudio, achat, i7
+4910MQ, mSata
+
+slug  
+2015-07-18-ma-config-clevo-w650sz-i7-4910mq
+
+status  
+published
+
 Ayant vendu mon Macbook Air 13" il y a quelques mois, j'ai pris le temps
 de comparer les différents portables. La marque Taïwanaise "clevo"
 propose des machines avec ou sans OS (gain d'une centaine d'euros pour

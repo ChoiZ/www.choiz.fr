@@ -1,3 +1,24 @@
+Création d'une clé usb xubuntu sur mac
+======================================
+
+date  
+2014-03-04 14:10:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+clé usb, xubuntu, mac, terminal, ubuntu
+
+slug  
+2014-03-04-création-dune-clé-usb-xubuntu-sur-mac
+
+status  
+published
+
 Dans le terminal sur votre mac : :
 
     diskutil list

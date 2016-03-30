@@ -1,3 +1,24 @@
+Mettre à jour Gentoo
+====================
+
+date  
+2015-09-27 14:04:13
+
+author  
+choiz
+
+category  
+text
+
+tags  
+update, mise à jour, gentoo, eix, emerge
+
+slug  
+2015-09-27-mettre-a-jour-gentoo
+
+status  
+published
+
 Pour mettre à jour Gentoo j'utilise différentes commandes.
 
 Dans un premier temps je fais la mise à jour d'eix : :

@@ -1,3 +1,24 @@
+Passer de svn à git
+===================
+
+date  
+2013-07-16 22:37:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+svn to git, svn, git, migate, git svn clone, authors, tags
+
+slug  
+2013-07-16-passer-de-svn-à-git
+
+status  
+published
+
 Sur le projet Addictradio nous utilisons encore un de nos dépot avec
 svn. Il est temps de faire la migration de svn à git !
 

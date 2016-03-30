@@ -1,3 +1,24 @@
+Faire un ssh-copy-id sur Mac OS X
+=================================
+
+date  
+2012-09-30 11:50:54
+
+author  
+choiz
+
+category  
+text
+
+tags  
+ssh-copy-id, mac os x, copy ssh key, copier clé ssh, ssh, copy-id
+
+slug  
+2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x
+
+status  
+published
+
 Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
 avez dû vous rendre compte que, même si openssh est installé nativement,
 cette commande n’est pas disponible.

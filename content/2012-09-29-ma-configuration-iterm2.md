@@ -1,3 +1,25 @@
+Ma configuration iTerm2
+=======================
+
+date  
+2012-09-29 16:27:52
+
+author  
+choiz
+
+category  
+text
+
+tags  
+iTerm2, config, keypad, numeric, enter, ⌥→, ⌥←, ↩, shortcut, clavier,
+pavé numérique, configuration iTerm2
+
+slug  
+2012-09-29-ma-configuration-iterm2
+
+status  
+published
+
 Depuis quelques jours j'utilise iTerm2 et je trouve ce terminal sous Mac
 Os X vraiment au top !
 
@@ -19,3 +41,4 @@ J'ai également ajouter 2 raccourcis bien pratiques :
     on oublie un argument).
 -   "alt et fleche de droite" soit "⌥→" avec le code "\[F" pour aller à
     la fin de la ligne.
+

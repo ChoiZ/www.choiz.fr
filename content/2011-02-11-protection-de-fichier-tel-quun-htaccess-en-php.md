@@ -1,3 +1,24 @@
+Protection de fichier tel qu'un htaccess en PHP
+===============================================
+
+date  
+2011-02-11 15:40:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+php, htaccess, htpasswd, protection, fichier, authenticate, auth
+
+slug  
+2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php
+
+status  
+published
+
 Faire un système de protection (tel que htaccess) direct dans un fichier
 PHP : :
 

@@ -1,3 +1,25 @@
+Ignorer grâce au SVN
+====================
+
+date  
+2011-07-26 18:53:21
+
+author  
+choiz
+
+category  
+text
+
+tags  
+svn, ignore, fichier, file, folder, dossier, .DS\_Store, .\_\*, .\_,
+.swp, Vim, Mac Os
+
+slug  
+2011-07-26-ignorer-grâce-au-svn
+
+status  
+published
+
 Il existe plusieurs solutions pour ignorer des fichiers sur un svn : :
 
     svn propset svn:ignore

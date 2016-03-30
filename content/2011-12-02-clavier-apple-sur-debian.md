@@ -1,3 +1,24 @@
+Clavier Apple sur debian
+========================
+
+date  
+2011-12-02 00:14:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+Clavier, Apple, Mapage, Debian, Linux, Keyboard, Mac, Mac Keyboard
+
+slug  
+2011-12-02-clavier-apple-sur-debian
+
+status  
+published
+
 Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
 mapage clavier Mac. Il y a beaucoup de différences entre un clavier
 AZERTY de PC et un clavier AZERTY de Mac.

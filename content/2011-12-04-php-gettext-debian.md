@@ -1,3 +1,28 @@
+PHP + Gettext + Debian
+======================
+
+date  
+2011-12-04 19:10:00
+
+modified  
+2015-11-30 21:18:07
+
+author  
+choiz, doogaille
+
+category  
+text
+
+tags  
+.mo, .po, /etc/locale, LC\_ALL, gettext, php, php-gettext, setlocale,
+xgettext
+
+slug  
+2011-12-04-php-gettext-debian
+
+status  
+published
+
 J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
 en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext
 sur votre site en php il faut télécharger le package php-gettext : :

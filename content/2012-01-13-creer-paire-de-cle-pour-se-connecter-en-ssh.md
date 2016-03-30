@@ -1,3 +1,24 @@
+Créer paire de clé pour se connecter en SSH
+===========================================
+
+date  
+2012-01-13 10:05:18
+
+author  
+choiz
+
+category  
+text
+
+tags  
+clé publique, clé privée, connexion ssh, authorized\_keys, ssh, .ssh
+
+slug  
+2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh
+
+status  
+published
+
 On commence par ouvrir un terminal puis on tape : :
 
     ssh-keygen -t dsa -b 1024

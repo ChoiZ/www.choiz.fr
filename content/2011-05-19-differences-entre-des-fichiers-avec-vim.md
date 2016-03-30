@@ -1,3 +1,25 @@
+Différences entre des fichiers avec Vim
+=======================================
+
+date  
+2011-05-19 23:32:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+Vim, Diff, Différence, Fichiers, Editeur, Texte, Terminal, Console,
+Commande
+
+slug  
+2011-05-19-différences-entre-des-fichiers-avec-vim
+
+status  
+published
+
 J'ai souvent besoin de voir les différences entre plusieurs fichiers...
 J'utilise souvent la commande diff dans un terminal, mais mon éditeur
 texte favoris "Vim" sait aussi trés bien faire un différentiel.

@@ -1,3 +1,24 @@
+Chmod 755 sur les dossiers et 644 sur les fichiers
+==================================================
+
+date  
+2013-11-12 20:47:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+chmod, 755, 644, folder, file, folders, files, pwd, find
+
+slug  
+2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers
+
+status  
+published
+
 C'est toujours la galère lorsque l'on veut que tout soit propre au
 niveau des permissions des dossiers / fichiers.
 

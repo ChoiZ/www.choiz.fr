@@ -1,3 +1,24 @@
+Gentoo Navigateur Web par Défaut
+================================
+
+date  
+2015-10-25 14:02:17
+
+author  
+choiz
+
+category  
+text
+
+tags  
+gentoo, web, browser, default, navigateur
+
+slug  
+2015-10-25-gentoo-navigateur-web-par-defaut
+
+status  
+published
+
 Sur ma machine "links" était le navigateur web par défaut. Il est
 pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
 est préférable d'utiliser un navigateur tel que Firefox.

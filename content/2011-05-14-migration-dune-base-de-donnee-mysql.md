@@ -1,3 +1,24 @@
+Migration d'une base de donnée Mysql
+====================================
+
+date  
+2011-05-14 13:21:17
+
+author  
+choiz
+
+category  
+text
+
+tags  
+Mysql, Mysqldump, Database, Migration, Dump Sql, Sql
+
+slug  
+2011-05-14-migration-dune-base-de-donnée-mysql
+
+status  
+published
+
 Pour faire mes migrations de base de donnée j'utilise en ligne de
 commande mysqldump et mysql.
 

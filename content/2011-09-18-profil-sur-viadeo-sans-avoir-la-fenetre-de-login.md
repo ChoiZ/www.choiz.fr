@@ -1,3 +1,24 @@
+Profil sur viadeo sans avoir la fenêtre de login
+================================================
+
+date  
+2011-09-18 22:54:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+viadeo, javascript, js, code, login, profil, identifié, firebug
+
+slug  
+2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login
+
+status  
+published
+
 J'ai voulu plusieurs fois voir un profil sur Viadeo sans forcement être
 identifié. Lorsque l'on déplace la souris ou que l'on scroll une autre
 page s'affiche. Exemple sur [ma page

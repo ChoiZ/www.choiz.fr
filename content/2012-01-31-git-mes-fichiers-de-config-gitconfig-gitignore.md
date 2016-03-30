@@ -1,3 +1,25 @@
+Git mes fichiers de config gitconfig / gitignore
+================================================
+
+date  
+2012-01-31 10:34:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+git, gitconfig, gitignore, git color, git tools, git alias, git merge,
+git diff, git editor, git excludesfile
+
+slug  
+2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore
+
+status  
+published
+
 Fichier .gitconfig :
 
     [user]

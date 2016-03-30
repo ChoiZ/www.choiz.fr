@@ -1,3 +1,24 @@
+Réparer ubuntu après un apt-get remove… de trop
+===============================================
+
+date  
+2014-03-08 13:34:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+xubuntu, ubuntu, xfce, écran gris, apt-get remove, réparation
+
+slug  
+2014-03-08-réparer-ubuntu-après-un-apt-get-remove-de-trop
+
+status  
+published
+
 En voulant modifier xscreensaver par i3lock j'ai supprimé des paquets
 non utilisés (jeux etc…).
 

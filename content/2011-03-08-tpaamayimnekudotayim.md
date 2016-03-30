@@ -1,3 +1,25 @@
+T\_PAAMAYIM\_NEKUDOTAYIM
+========================
+
+date  
+2011-03-08 16:17:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+Paamayim Nekudotayim, opérateur de résolution de portée, ::, PHP, Error,
+Erreur
+
+slug  
+2011-03-08-tpaamayimnekudotayim
+
+status  
+published
+
 Voilà à quoi correspond cette erreur pour ceux qui demandent : :
 
     Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695

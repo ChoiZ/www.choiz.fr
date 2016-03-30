@@ -1,3 +1,25 @@
+Installation disque dur Seagate 4To Debian
+==========================================
+
+date  
+2013-06-21 00:30:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+debian, disque dur, 4To, partition, fs, config\_efi\_partition, fdisk,
+parted, gpt, mkfs
+
+slug  
+2013-06-21-installation-disque-dur-seagate-4to-debian
+
+status  
+published
+
 J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
 (Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec «
 Fdisk » et j'ai eu le message suivant : :

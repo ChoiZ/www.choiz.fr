@@ -1,3 +1,24 @@
+Faire un patch de "x" commit(s) avec git
+========================================
+
+date  
+2014-05-06 11:21:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+git, patch, commit
+
+slug  
+2014-05-06-faire-un-patch-de-x-commits-avec-git
+
+status  
+published
+
 Voici mon historique des commits : :
 
     c0004 -- dernier commit

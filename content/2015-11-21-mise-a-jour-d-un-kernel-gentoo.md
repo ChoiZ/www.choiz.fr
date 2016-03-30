@@ -1,3 +1,24 @@
+Mise à jour d'un kernel gentoo
+==============================
+
+date  
+2015-11-21 13:50:44
+
+author  
+choiz
+
+category  
+text
+
+tags  
+gentoo, kernel, upgrade, noyaux, linux
+
+slug  
+2015-11-21-mise-a-jour-d-un-kernel-gentoo
+
+status  
+published
+
 Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
 suivre pour le mettre à jour vers la version : 4.3.0.
 

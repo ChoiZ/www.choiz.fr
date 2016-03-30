@@ -1,3 +1,24 @@
+Utilisation des branches et de git stash
+========================================
+
+date  
+2012-04-14 16:32:42
+
+author  
+choiz
+
+category  
+text
+
+tags  
+git, git stash, git stash pop, git stash list, git branch, git checkout
+
+slug  
+2012-04-14-utilisation-des-branches-et-de-git-stash
+
+status  
+published
+
 Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
 sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc
 git stash, voyons voir comment l'utiliser simplement.

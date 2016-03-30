@@ -1,8 +1,29 @@
+Configurer un serveur mail
+==========================
+
+date  
+2015-11-15 17:11:23
+
+author  
+choiz
+
+category  
+text
+
+tags  
+mail, postfix, dovecot, dns, ssl, rainloop, webmail
+
+slug  
+2015-11-15-configurer-un-serveur-mail
+
+status  
+published
+
 Installation d'un serveur mail complet et à jour sous debian jessie
 (8.2).
 
 Configuration des DNS
-=====================
+---------------------
 
 Pour commencer nous allons créer des entrées DNS.
 
@@ -17,7 +38,7 @@ enregistrement SPF :
     votredomain.com.            SPF         "v=spf1 ip4:ip.v4.du.server ~all"
 
 Installation des paquets
-========================
+------------------------
 
 Maintenant installons postfix dovecot-imapd et sasl2-bin : :
 
@@ -27,7 +48,7 @@ Configurer le serveur de messagerie comme "Site Internet", puis en nom
 de courrier indiquer "mail.votredomaine.com".
 
 Configuration de dovecot
-========================
+------------------------
 
 Créer un dossier ssl dans dovecot : :
 
@@ -229,7 +250,7 @@ authentifier : :
 C'est fini pour dovecot.
 
 Configuration de sasl
-=====================
+---------------------
 
 Editer /etc/default/saslauthd : :
 
@@ -243,7 +264,7 @@ Puis lancer : :
 C'est fini pour sasl
 
 Configuration de postfix
-========================
+------------------------
 
 Editer /etc/postfix/main.cf : ::
 
@@ -341,7 +362,7 @@ Vous pouvez maintenant tester votre serveur mail ainsi que la qualité de
 votre serveur sur le site <http://www.mail-tester.com>
 
 Installation d'un webmail rainloop
-==================================
+----------------------------------
 
 Créer un dossier pour votre webmail : :
 

@@ -1,3 +1,24 @@
+Suppression d'un caractère unicode dans Vim
+===========================================
+
+date  
+2014-01-19 17:06:00
+
+author  
+choiz
+
+category  
+text
+
+tags  
+vim, unicode, char, suppression, caractère
+
+slug  
+2014-01-19-suppression-dun-caractère-unicode-dans-vim
+
+status  
+published
+
 J'étais à la recherche de se caractère unicode dans vim : :
 
     <U+2028>
