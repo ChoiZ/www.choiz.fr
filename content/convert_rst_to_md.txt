@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# Convert all .rst files to .md
-
-for file in `ls |grep rst|cut -d '.' -f 1`;
-do
-    `pandoc $file".rst" --from rst --to markdown_strict -s -o $file".md"`;
-done;
