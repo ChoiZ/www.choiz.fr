@@ -1,0 +1,12 @@
+Voilà mon petit fichier .gitignore :
+
+    # Ignore files from git
+
+    # ._ files (Mac Os X)
+    ._*
+
+    # .DS_STORE (Mac Os X)
+    .DS_STORE
+
+    # .swp (Vim)
+    *.swp
