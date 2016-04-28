@@ -17,23 +17,22 @@ post['date'] = datetime.now().strftime('%Y-%m-%d')
 post['time'] = datetime.now().strftime('%H:%M:%S')
 post['tags'] = raw_input('Tags (like: gentoo, linux...): ')
 
-header = """%(title)s
-############################
-:date: %(date)s %(time)s
-:author: choiz
-:category: text
-:tags: %(tags)s
-:slug: %(slug)s
-:status: published
+header = """Title: %(title)s
+Date: %(date)s %(time)s
+Author: choiz
+Category: text
+Tags: %(tags)s
+Slug: %(slug)s
+Status: published
 
 
 """ % (post)
 
-out_file = 'content/%s.rst' % (post['slug'])
+out_file = 'content/%s.md' % (post['slug'])
 
 try:
     with open(out_file) as f:
-        out_file = 'content/%s.rst' % (uuid4())
+        out_file = 'content/%s.md' % (uuid4())
         print('The specified output file exists. Writing to %s' % out_file)
 except:
     pass
