@@ -1,23 +1,10 @@
-Compilation Kernel Gentoo
-=========================
-
-date  
-2015-09-06 11:48:24
-
-author  
-choiz
-
-category  
-text
-
-tags  
-compilation, kernel, gentoo
-
-slug  
-2015-09-06-compilation-kernel-gentoo
-
-status  
-published
+Title: Compilation Kernel Gentoo
+Date: 2015-09-06 11:48:24
+Author: choiz
+Category: text
+Tags: compilation, kernel, gentoo
+Slug: 2015-09-06-compilation-kernel-gentoo
+Status: published
 
 Pour compiler le kernel sous gentoo : :
 

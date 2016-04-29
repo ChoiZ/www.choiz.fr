@@ -1,23 +1,10 @@
-Touche pour sortir sa machine de veille
-=======================================
-
-date  
-2015-08-08 09:17:25
-
-author  
-choiz
-
-category  
-text
-
-tags  
-touche, sortie, veille, ordinateur, shift, clavier
-
-slug  
-2015-08-08-touche-pour-sortir-sa-machine-de-veille
-
-status  
-published
+Title: Touche pour sortir sa machine de veille
+Date: 2015-08-08 09:17:25
+Author: choiz
+Category: text
+Tags: touche, sortie, veille, ordinateur, shift, clavier
+Slug: 2015-08-08-touche-pour-sortir-sa-machine-de-veille
+Status: published
 
 Il y a quelques années, pour sortir ma machine de veille j'utilisais la
 touche "enter" ou "escape".

@@ -1,23 +1,10 @@
-Migration de Tumblr à Pelican
-=============================
-
-date  
-2015-08-20 22:03:40
-
-author  
-choiz
-
-category  
-text
-
-tags  
-tumblr, migration, pelican, site, static, python
-
-slug  
-2015-08-20-migration-de-tumblr-a-pelican
-
-status  
-published
+Title: Migration de Tumblr à Pelican
+Date: 2015-08-20 22:03:40
+Author: choiz
+Category: text
+Tags: tumblr, migration, pelican, site, static, python
+Slug: 2015-08-20-migration-de-tumblr-a-pelican
+Status: published
 
 J'ai testé pelican, lors de mon voyage à Bruxelles en Thalys le 15 Août
 2014. Depuis cette date je n'avais pas pris le temps de m'occuper de la

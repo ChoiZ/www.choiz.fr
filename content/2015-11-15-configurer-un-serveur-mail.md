@@ -1,23 +1,10 @@
-Configurer un serveur mail
-==========================
-
-date  
-2015-11-15 17:11:23
-
-author  
-choiz
-
-category  
-text
-
-tags  
-mail, postfix, dovecot, dns, ssl, rainloop, webmail
-
-slug  
-2015-11-15-configurer-un-serveur-mail
-
-status  
-published
+Title: Configurer un serveur mail
+Date: 2015-11-15 17:11:23
+Author: choiz
+Category: text
+Tags: mail, postfix, dovecot, dns, ssl, rainloop, webmail
+Slug: 2015-11-15-configurer-un-serveur-mail
+Status: published
 
 Installation d'un serveur mail complet et à jour sous debian jessie
 (8.2).

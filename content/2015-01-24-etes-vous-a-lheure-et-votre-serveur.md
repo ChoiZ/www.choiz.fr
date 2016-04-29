@@ -1,23 +1,10 @@
-Êtes-vous à l'heure ? (Et votre serveur ?)
-==========================================
-
-date  
-2015-01-24 16:54:00
-
-author  
-choiz
-
-category  
-text
-
-tags  
-ntpdate, debian, ntp, time
-
-slug  
-2015-01-24-êtes-vous-à-lheure-et-votre-serveur
-
-status  
-published
+Title: Êtes-vous à l'heure ? (Et votre serveur ?)
+Date: 2015-01-24 16:54:00
+Author: choiz
+Category: text
+Tags: ntpdate, debian, ntp, time
+Slug: 2015-01-24-êtes-vous-à-lheure-et-votre-serveur
+Status: published
 
 Je suis à l'heure, et mes serveurs le sont également (normalement).
 

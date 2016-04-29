@@ -1,23 +1,10 @@
-Compression Décompression tar.gz tar.bz2 tar.xz
-===============================================
-
-date  
-2015-08-30 11:47:00
-
-author  
-choiz
-
-category  
-text
-
-tags  
-tar.gz, tar.bz2, tar.xz, tar, gz, gzip, bz2, xz, lzma
-
-slug  
-2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz
-
-status  
-published
+Title: Compression Décompression tar.gz tar.bz2 tar.xz
+Date: 2015-08-30 11:47:00
+Author: choiz
+Category: text
+Tags: tar.gz, tar.bz2, tar.xz, tar, gz, gzip, bz2, xz, lzma
+Slug: 2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz
+Status: published
 
 J'ai toujours du mal pour décompresser un fichier de type "tar.bz2" ou
 "tar.xz". Je n'ai pas encore trouvé le moyen de me souvenir de la

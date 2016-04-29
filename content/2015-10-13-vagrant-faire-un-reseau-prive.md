@@ -1,23 +1,10 @@
-Vagrant faire un réseau privé
-=============================
-
-date  
-2015-10-13 18:21:02
-
-author  
-choiz
-
-category  
-text
-
-tags  
-vagrant, réseau, privé, private, network
-
-slug  
-2015-10-13-vagrant-faire-un-reseau-prive
-
-status  
-published
+Title: Vagrant faire un réseau privé
+Date: 2015-10-13 18:21:02
+Author: choiz
+Category: text
+Tags: vagrant, réseau, privé, private, network
+Slug: 2015-10-13-vagrant-faire-un-reseau-prive
+Status: published
 
 J'utilise plusieurs machines virtuelles avec vagrant, une avec un
 backoffice et une avec une API.
