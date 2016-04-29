@@ -1,24 +1,10 @@
-Installation disque dur Seagate 4To Debian
-==========================================
-
-date  
-2013-06-21 00:30:00
-
-author  
-choiz
-
-category  
-text
-
-tags  
-debian, disque dur, 4To, partition, fs, config\_efi\_partition, fdisk,
-parted, gpt, mkfs
-
-slug  
-2013-06-21-installation-disque-dur-seagate-4to-debian
-
-status  
-published
+Title: Installation disque dur Seagate 4To Debian
+Date: 2013-06-21 00:30:00
+Author: choiz
+Category: text
+Tags: debian, disque dur, 4To, partition, fs, config\_efi\_partition, fdisk, parted, gpt, mkfs
+Slug: 2013-06-21-installation-disque-dur-seagate-4to-debian
+Status: published
 
 J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
 (Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec «

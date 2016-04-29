@@ -1,23 +1,10 @@
-Clavier Apple sur debian
-========================
-
-date  
-2011-12-02 00:14:00
-
-author  
-choiz
-
-category  
-text
-
-tags  
-Clavier, Apple, Mapage, Debian, Linux, Keyboard, Mac, Mac Keyboard
-
-slug  
-2011-12-02-clavier-apple-sur-debian
-
-status  
-published
+Title: Clavier Apple sur debian
+Date: 2011-12-02 00:14:00
+Author: choiz
+Category: text
+Tags: Clavier, Apple, Mapage, Debian, Linux, Keyboard, Mac, Mac Keyboard
+Slug: 2011-12-02-clavier-apple-sur-debian
+Status: published
 
 Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
 mapage clavier Mac. Il y a beaucoup de différences entre un clavier

@@ -1,23 +1,10 @@
-Git se déplacer dans une branche distante
-=========================================
-
-date  
-2013-10-01 13:51:00
-
-author  
-choiz
-
-category  
-text
-
-tags  
-git, checkout, fetch, origin, checkout -b, branch, remote
-
-slug  
-2013-10-01-git-se-déplacer-dans-une-branche-distante
-
-status  
-published
+Title: Git se déplacer dans une branche distante
+Date: 2013-10-01 13:51:00
+Author: choiz
+Category: text
+Tags: git, checkout, fetch, origin, checkout -b, branch, remote
+Slug: 2013-10-01-git-se-déplacer-dans-une-branche-distante
+Status: published
 
 J'utilise des branches tel que prod, preprod pour mes projets et en
 local il m'arrive de vouloir aller sur ses branches. :

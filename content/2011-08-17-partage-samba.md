@@ -1,23 +1,10 @@
-Partage Samba !
-===============
-
-date  
-2011-08-17 20:41:00
-
-author  
-choiz
-
-category  
-text
-
-tags  
-Linux, Samba, config, configuration, Partage, Sharing
-
-slug  
-2011-08-17-partage-samba
-
-status  
-published
+Title: Partage Samba !
+Date: 2011-08-17 20:41:00
+Author: choiz
+Category: text
+Tags: Linux, Samba, config, configuration, Partage, Sharing
+Slug: 2011-08-17-partage-samba
+Status: published
 
 Configuration d'un serveur samba. Editer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : :

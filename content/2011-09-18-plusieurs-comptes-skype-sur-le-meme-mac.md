@@ -1,24 +1,10 @@
-Plusieurs comptes Skype sur le même Mac !
-=========================================
-
-date  
-2011-09-18 23:47:53
-
-author  
-choiz
-
-category  
-text
-
-tags  
-Skype, Multiutilisateur, Mac, MacOs, Mac os x, OsX, Skype Mac, Multi,
-Compte, Another copy, Another copy of Skype
-
-slug  
-2011-09-18-plusieurs-comptes-skype-sur-le-même-mac
-
-status  
-published
+Title: Plusieurs comptes Skype sur le même Mac !
+Date: 2011-09-18 23:47:53
+Author: choiz
+Category: text
+Tags: Skype, Multiutilisateur, Mac, MacOs, Mac os x, OsX, Skype Mac, Multi, Compte, Another copy, Another copy of Skype
+Slug: 2011-09-18-plusieurs-comptes-skype-sur-le-même-mac
+Status: published
 
 Comment lancer plusieurs comptes Skype avec le même Mac ?
 

@@ -1,24 +1,10 @@
-Limiter la bande passante sous Mac Os X
-=======================================
-
-date  
-2010-07-12 11:59:00
-
-author  
-choiz
-
-category  
-text
-
-tags  
-Limit Brandwith, Limitation Bande Passante, Mac Os, Mac Os X, Tuyau,
-Tuyau Virtuel, Limit Brandwidth
-
-slug  
-2010-07-12-limiter-la-bande-passante-sous-mac-os-x
-
-status  
-published
+Title: Limiter la bande passante sous Mac Os X
+Date: 2010-07-12 11:59:00
+Author: choiz
+Category: text
+Tags: Limit Brandwith, Limitation Bande Passante, Mac Os, Mac Os X, Tuyau, Tuyau Virtuel, Limit Brandwidth
+Slug: 2010-07-12-limiter-la-bande-passante-sous-mac-os-x
+Status: published
 
 Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
 virtuel en console.

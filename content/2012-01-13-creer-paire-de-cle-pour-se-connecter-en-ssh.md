@@ -1,29 +1,16 @@
-Créer paire de clé pour se connecter en SSH
-===========================================
+Title: Créer paire de clé pour se connecter en SSH
+Date: 2012-01-13 10:05:18
+Author: choiz
+Category: text
+Tags: clé publique, clé privée, connexion ssh, authorized\_keys, ssh, .ssh
+Slug: 2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh
+Status: published
 
-date  
-2012-01-13 10:05:18
+On commence par ouvrir un terminal puis on tape :
 
-author  
-choiz
+    ssh-keygen -t rsa -b 1024
 
-category  
-text
-
-tags  
-clé publique, clé privée, connexion ssh, authorized\_keys, ssh, .ssh
-
-slug  
-2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh
-
-status  
-published
-
-On commence par ouvrir un terminal puis on tape : :
-
-    ssh-keygen -t dsa -b 1024
-
-    Enter file in which to save the key (/Users/choiz/.ssh/id_dsa):
+    Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
 
 En général je garde le fichier id\_rsa donc je tape "enter" sinon vous
 pouvez spécifier un autre chemin ainsi qu'un autre fichier. :
@@ -35,8 +22,8 @@ différents hosts. En général j'en défini un.
 
 Pour finir on copie la clé sur le serveur soit via scp : :
 
-    scp ~/.ssh/id\_dsa.pub user@ip:~/.ssh/authorized\_keys/
+    scp ~/.ssh/id\_rsa.pub user@ip:~/.ssh/authorized\_keys/
 
 ou via ssh-copy-id : :
 
-    ssh-copy-id -i ~/.ssh/id\_dsa.pub user@ip
+    ssh-copy-id -i ~/.ssh/id\_rsa.pub user@ip

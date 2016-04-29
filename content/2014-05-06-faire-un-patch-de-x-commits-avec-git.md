@@ -1,23 +1,10 @@
-Faire un patch de "x" commit(s) avec git
-========================================
-
-date  
-2014-05-06 11:21:00
-
-author  
-choiz
-
-category  
-text
-
-tags  
-git, patch, commit
-
-slug  
-2014-05-06-faire-un-patch-de-x-commits-avec-git
-
-status  
-published
+Title: Faire un patch de "x" commit(s) avec git
+Date: 2014-05-06 11:21:00
+Author: choiz
+Category: text
+Tags: git, patch, commit
+Slug: 2014-05-06-faire-un-patch-de-x-commits-avec-git
+Status: published
 
 Voici mon historique des commits : :
 

@@ -1,23 +1,10 @@
-Mon fichier .gitignore
-======================
-
-date  
-2012-08-13 11:06:31
-
-author  
-choiz
-
-category  
-text
-
-tags  
-git, gitignore, .gitignore, file, fichier
-
-slug  
-2012-08-13-mon-fichier-gitignore
-
-status  
-published
+Title: Mon fichier .gitignore
+Date: 2012-08-13 11:06:31
+Author: choiz
+Category: text
+Tags: git, gitignore, .gitignore, file, fichier
+Slug: 2012-08-13-mon-fichier-gitignore
+Status: published
 
 Voilà mon petit fichier .gitignore :
 

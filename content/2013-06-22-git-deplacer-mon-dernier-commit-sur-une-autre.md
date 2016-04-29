@@ -1,23 +1,10 @@
-Git déplacer mon dernier commit sur une autre branche
-=====================================================
-
-date  
-2013-06-22 13:07:00
-
-author  
-choiz
-
-category  
-text
-
-tags  
-git, reset, checkout, merge, branch, commit
-
-slug  
-2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre
-
-status  
-published
+Title: Git déplacer mon dernier commit sur une autre branche
+Date: 2013-06-22 13:07:00
+Author: choiz
+Category: text
+Tags: git, reset, checkout, merge, branch, commit
+Slug: 2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre
+Status: published
 
 J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
 *master*… Généralement je fais toujours une branche pour les

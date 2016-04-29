@@ -1,24 +1,10 @@
-Ajout dans mon .vimrc de matchadd() & highlight
-===============================================
-
-date  
-2012-04-27 15:11:26
-
-author  
-choiz
-
-category  
-text
-
-tags  
-vimrc, vim, config file, .vimrc, todo, notice, fixme, highlight,
-matchadd
-
-slug  
-2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight
-
-status  
-published
+Title: Ajout dans mon .vimrc de matchadd() & highlight
+Date: 2012-04-27 15:11:26
+Author: choiz
+Category: text
+Tags: vimrc, vim, config file, .vimrc, todo, notice, fixme, highlight, matchadd
+Slug: 2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight
+Status: published
 
 Petit ajout dans mon fichier .vimrc :
 

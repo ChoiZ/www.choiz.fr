@@ -1,24 +1,10 @@
-Icônes / Favicon / Apple-touch-icon
-===================================
-
-date  
-2013-11-03 14:11:02
-
-author  
-choiz
-
-category  
-text
-
-tags  
-cli, imagemagick, android, ios, apple, icons, icon, favicon,
-apple-touch-icon, precomposed, html
-
-slug  
-2013-11-03-icônes-favicon-apple-touch-icon
-
-status  
-published
+Title: Icônes / Favicon / Apple-touch-icon
+Date: 2013-11-03 14:11:02
+Author: choiz
+Category: text
+Tags: cli, imagemagick, android, ios, apple, icons, icon, favicon, apple-touch-icon, precomposed, html
+Slug: 2013-11-03-icônes-favicon-apple-touch-icon
+Status: published
 
 Voici comment faire facilement sa favicon et ses icônes pour les
 appareils mobiles avec image magick.

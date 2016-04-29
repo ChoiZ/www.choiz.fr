@@ -1,23 +1,10 @@
-Petit tips pour les utilisateurs de VIM et PHP
-==============================================
-
-date  
-2011-04-13 13:59:00
-
-author  
-choiz
-
-category  
-text
-
-tags  
-PHP, Vim, Vi, Console, Mac, Linux
-
-slug  
-2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php
-
-status  
-published
+Title: Petit tips pour les utilisateurs de VIM et PHP
+Date: 2011-04-13 13:59:00
+Author: choiz
+Category: text
+Tags: PHP, Vim, Vi, Console, Mac, Linux
+Slug: 2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php
+Status: published
 
 Lorsque je code en PHP, pour tester si il y a des erreurs généralement
 dans la console je tape la commande : :

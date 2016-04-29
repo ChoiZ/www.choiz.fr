@@ -1,23 +1,10 @@
-TypeMatrix sous Mac Os X
-========================
-
-date  
-2013-03-04 13:08:09
-
-author  
-choiz
-
-category  
-text
-
-tags  
-TypeMatrix, 2030, USB, mac, cut, copy, paste, couper, copier, coller
-
-slug  
-2013-03-04-typematrix-sous-mac-os-x
-
-status  
-published
+Title: TypeMatrix sous Mac Os X
+Date: 2013-03-04 13:08:09
+Author: choiz
+Category: text
+Tags: TypeMatrix, 2030, USB, mac, cut, copy, paste, couper, copier, coller
+Slug: 2013-03-04-typematrix-sous-mac-os-x
+Status: published
 
 J'ai chez moi comme au travail un clavier TypeMatrix 2030 USB.
 

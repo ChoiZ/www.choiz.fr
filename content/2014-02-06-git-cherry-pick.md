@@ -1,23 +1,10 @@
-git cherry-pick
-===============
-
-date  
-2014-02-06 23:11:30
-
-author  
-choiz
-
-category  
-text
-
-tags  
-git, cherry-pick, commit, branch
-
-slug  
-2014-02-06-git-cherry-pick
-
-status  
-published
+Title: git cherry-pick
+Date: 2014-02-06 23:11:30
+Author: choiz
+Category: text
+Tags: git, cherry-pick, commit, branch
+Slug: 2014-02-06-git-cherry-pick
+Status: published
 
 J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
 messages sur cherry-pick sans savoir ce que c'était.

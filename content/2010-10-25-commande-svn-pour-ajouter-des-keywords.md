@@ -1,24 +1,10 @@
-Commande SVN pour ajouter des keywords
-======================================
-
-date  
-2010-10-25 14:27:33
-
-author  
-choiz
-
-category  
-text
-
-tags  
-SVN, Subversion, Keyword, Id, Revision, Date, Author, URL, PHP, Code,
-Subversion
-
-slug  
-2010-10-25-commande-svn-pour-ajouter-des-keywords
-
-status  
-published
+Title: Commande SVN pour ajouter des keywords
+Date: 2010-10-25 14:27:33
+Author: choiz
+Category: text
+Tags: SVN, Subversion, Keyword, Id, Revision, Date, Author, URL, PHP, Code, Subversion
+Slug: 2010-10-25-commande-svn-pour-ajouter-des-keywords
+Status: published
 
 Pour ajouter le numéro de révision ainsi que pas mal d'autres
 informations dans vos projets il suffit de taper cette commande : :

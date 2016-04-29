@@ -1,24 +1,10 @@
-Surround avec Vim
-=================
-
-date  
-2011-04-09 19:37:00
-
-author  
-choiz
-
-category  
-text
-
-tags  
-vim, config, .vimrc, plugin, vim plugin, surround, surround.vim, tags,
-html
-
-slug  
-2011-04-09-surround-avec-vim
-
-status  
-published
+Title: Surround avec Vim
+Date: 2011-04-09 19:37:00
+Author: choiz
+Category: text
+Tags: vim, config, .vimrc, plugin, vim plugin, surround, surround.vim, tags, html
+Slug: 2011-04-09-surround-avec-vim
+Status: published
 
 J'ai ajouté quelques plugins dans ma configuration de Vim dont :
 surround.vim.

@@ -1,23 +1,10 @@
-Dual screen sur xfce
-====================
-
-date  
-2011-12-01 12:14:16
-
-author  
-choiz
-
-category  
-text
-
-tags  
-xfce, dualscreen, dual, screen, xfce, linux
-
-slug  
-2011-12-01-dual-screen-sur-xfce
-
-status  
-published
+Title: Dual screen sur xfce
+Date: 2011-12-01 12:14:16
+Author: choiz
+Category: text
+Tags: xfce, dualscreen, dual, screen, xfce, linux
+Slug: 2011-12-01-dual-screen-sur-xfce
+Status: published
 
 Un petit package bien pratique pour configurer le dual screen sur xfce
 se nomme : arandr :

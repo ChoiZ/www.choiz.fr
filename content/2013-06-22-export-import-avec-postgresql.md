@@ -1,23 +1,10 @@
-Export / Import avec PostgreSQL
-===============================
-
-date  
-2013-06-22 19:57:41
-
-author  
-choiz
-
-category  
-text
-
-tags  
-postgreSQL, pg\_dump, psql, import, export, dump, sql
-
-slug  
-2013-06-22-export-import-avec-postgresql
-
-status  
-published
+Title: Export / Import avec PostgreSQL
+Date: 2013-06-22 19:57:41
+Author: choiz
+Category: text
+Tags: postgreSQL, pg\_dump, psql, import, export, dump, sql
+Slug: 2013-06-22-export-import-avec-postgresql
+Status: published
 
 Pour exporter une table spécifique d'une base : :
 

@@ -1,24 +1,10 @@
-Bépo 11ème jour !
-=================
-
-date  
-2012-12-27 21:26:00
-
-author  
-choiz
-
-category  
-text
-
-tags  
-bépo, dvorak fr, dvorak, clavier, ergonomique, typematrix, azerty,
-disposition, libre
-
-slug  
-2012-12-27-bépo-11ème-jour
-
-status  
-published
+Title: Bépo 11ème jour !
+Date: 2012-12-27 21:26:00
+Author: choiz
+Category: text
+Tags: bépo, dvorak fr, dvorak, clavier, ergonomique, typematrix, azerty, disposition, libre
+Slug: 2012-12-27-bépo-11ème-jour
+Status: published
 
 Depuis maintenant 11 jours je me suis mis au [bépo](http://bepo.fr/).
 J'ai gardé mes différents résultats, ce qui vas me permettre de faire

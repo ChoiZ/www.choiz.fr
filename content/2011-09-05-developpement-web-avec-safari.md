@@ -1,23 +1,10 @@
-Développement web avec Safari
-=============================
-
-date  
-2011-09-05 09:53:22
-
-author  
-choiz
-
-category  
-text
-
-tags  
-Safari, Dev, Web, WebDev, Développement
-
-slug  
-2011-09-05-développement-web-avec-safari
-
-status  
-published
+Title: Développement web avec Safari
+Date: 2011-09-05 09:53:22
+Author: choiz
+Category: text
+Tags: Safari, Dev, Web, WebDev, Développement
+Slug: 2011-09-05-développement-web-avec-safari
+Status: published
 
 Pour activer l'inspecteur web tapez dans le terminal : :
 

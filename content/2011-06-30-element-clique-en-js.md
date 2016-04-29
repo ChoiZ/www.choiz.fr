@@ -1,26 +1,12 @@
-Elément cliqué en js
-====================
+Title: Elément cliqué en js
+Date: 2011-06-30 16:55:59
+Author: choiz
+Category: text
+Tags: js, element, click, javascript, html
+Slug: 2011-06-30-elément-cliqué-en-js
+Status: published
 
-date  
-2011-06-30 16:55:59
-
-author  
-choiz
-
-category  
-text
-
-tags  
-js, element, click, javascript, html
-
-slug  
-2011-06-30-elément-cliqué-en-js
-
-status  
-published
-
-Pour savoir quel élément est cliqué j'utilise ce petit bout de
-javascript : :
+Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :
 
     function checkclick(e) {
         e = e || window.event;

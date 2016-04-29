@@ -1,23 +1,10 @@
-Update .gitconfig
-=================
-
-date  
-2012-04-13 12:00:00
-
-author  
-choiz
-
-category  
-text
-
-tags  
-git, gitconfig, git pull, git push, git diff, git stash, stash
-
-slug  
-2012-04-13-update-gitconfig
-
-status  
-published
+Title: Update .gitconfig
+Date: 2012-04-13 12:00:00
+Author: choiz
+Category: text
+Tags: git, gitconfig, git pull, git push, git diff, git stash, stash
+Slug: 2012-04-13-update-gitconfig
+Status: published
 
 Ajout du pull, push, diff et surtout stash :
 

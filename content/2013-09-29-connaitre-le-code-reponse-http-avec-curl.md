@@ -1,23 +1,10 @@
-Connaitre le code réponse HTTP avec curl
-========================================
-
-date  
-2013-09-29 19:10:00
-
-author  
-choiz
-
-category  
-text
-
-tags  
-curl, http, response, code, 301, 302, 404, 200
-
-slug  
-2013-09-29-connaitre-le-code-réponse-http-avec-curl
-
-status  
-published
+Title: Connaitre le code réponse HTTP avec curl
+Date: 2013-09-29 19:10:00
+Author: choiz
+Category: text
+Tags: curl, http, response, code, 301, 302, 404, 200
+Slug: 2013-09-29-connaitre-le-code-réponse-http-avec-curl
+Status: published
 
 Pour connaitre le code réponse HTTP il suffit de faire : :
 

@@ -1,23 +1,10 @@
-Patch & diff
-============
-
-date  
-2011-05-30 06:00:06
-
-author  
-choiz
-
-category  
-text
-
-tags  
-Patch, Commande, Terminal, Diff, Version
-
-slug  
-2011-05-30-patch-diff
-
-status  
-published
+Title: Patch & diff
+Date: 2011-05-30 06:00:06
+Author: choiz
+Category: text
+Tags: Patch, Commande, Terminal, Diff, Version
+Slug: 2011-05-30-patch-diff
+Status: published
 
 Patch permet de "patcher" un fichier, dossier, projet ! Pratique lorsque
 vous distribuez du code et que vous voulez le mettre à jour. Comment
