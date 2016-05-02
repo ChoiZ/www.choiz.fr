@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="On commence par ouvrir un terminal puis on tape : ssh-keygen -t dsa -b 1024 Enter file in which to save the key (/Users/choiz/.ssh/id_dsa): En général je garde le fichier id_rsa donc je tape "enter" sinon vous pouvez spécifier un autre chemin ainsi qu'un autre fichier. Enter ..." />
-<meta name="keywords" content="clé publique, clé privée, connexion ssh, authorized_keys, ssh, .ssh">
+<meta name="description" content="On commence par ouvrir un terminal puis on tape : ssh-keygen -t rsa -b 1024 Enter file in which to save the key (/Users/choiz/.ssh/id_rsa): En général je garde le fichier id_rsa donc je tape "enter" sinon vous pouvez spécifier un autre chemin ainsi qu'un autre fichier. : Enter ..." />
+<meta name="keywords" content="clé publique, clé privée, connexion ssh, authorized\_keys, ssh, .ssh">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Créer paire de clé pour se connecter en SSH"/>
-<meta property="og:description" content="On commence par ouvrir un terminal puis on tape : ssh-keygen -t dsa -b 1024 Enter file in which to save the key (/Users/choiz/.ssh/id_dsa): En général je garde le fichier id_rsa donc je tape "enter" sinon vous pouvez spécifier un autre chemin ainsi qu'un autre fichier. Enter ..."/>
+<meta property="og:description" content="On commence par ouvrir un terminal puis on tape : ssh-keygen -t rsa -b 1024 Enter file in which to save the key (/Users/choiz/.ssh/id_rsa): En général je garde le fichier id_rsa donc je tape "enter" sinon vous pouvez spécifier un autre chemin ainsi qu'un autre fichier. : Enter ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html"/>
 <meta property="og:type" content="article"/>
@@ -27,7 +27,7 @@
 <meta property="article:tag" content="clé publique"/>
 <meta property="article:tag" content="clé privée"/>
 <meta property="article:tag" content="connexion ssh"/>
-<meta property="article:tag" content="authorized_keys"/>
+<meta property="article:tag" content="authorized\_keys"/>
 <meta property="article:tag" content="ssh"/>
 <meta property="article:tag" content=".ssh"/>
 <meta property="og:image" content="avatar.png">  <title>ChoiZ &ndash; Créer paire de clé pour se connecter en SSH</title>
@@ -69,34 +69,35 @@
   </header>
   <div>
     <p>On commence par ouvrir un terminal puis on tape :</p>
-<pre class="literal-block">
-ssh-keygen -t dsa -b 1024
+<div class="highlight"><pre>ssh-keygen -t rsa -b 1024
 
-Enter file in which to save the key (/Users/choiz/.ssh/id_dsa):
-</pre>
-<p>En général je garde le fichier id_rsa donc je tape &quot;enter&quot; sinon vous pouvez
-spécifier un autre chemin ainsi qu'un autre fichier.</p>
-<pre class="literal-block">
-Enter passphrase (empty for no passphrase):
-</pre>
+Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
+</pre></div>
+
+
+<p>En général je garde le fichier id_rsa donc je tape "enter" sinon vous
+pouvez spécifier un autre chemin ainsi qu'un autre fichier. :</p>
+<div class="highlight"><pre>Enter passphrase (empty for no passphrase):
+</pre></div>
+
+
 <p>Ici on tape un mot de passe si on en veut un lors de la connexion aux
 différents hosts. En général j'en défini un.</p>
-<p>Pour finir on copie la clé sur le serveur soit via scp :</p>
-<pre class="literal-block">
-scp ~/.ssh/id\_dsa.pub user&#64;ip:~/.ssh/authorized\_keys/
-</pre>
-<p>ou via ssh-copy-id :</p>
-<pre class="literal-block">
-ssh-copy-id -i ~/.ssh/id\_dsa.pub user&#64;ip
-</pre>
+<p>Pour finir on copie la clé sur le serveur soit via scp : :</p>
+<div class="highlight"><pre>scp ~/.ssh/id\_rsa.pub user@ip:~/.ssh/authorized\_keys/
+</pre></div>
 
+
+<p>ou via ssh-copy-id : :</p>
+<div class="highlight"><pre>ssh-copy-id -i ~/.ssh/id\_rsa.pub user@ip
+</pre></div>
   </div>
   <div class="tag-cloud">
     <p>
       <a href="//www.choiz.fr/tag/cle-publique.html">clé publique</a>
       <a href="//www.choiz.fr/tag/cle-privee.html">clé privée</a>
       <a href="//www.choiz.fr/tag/connexion-ssh.html">connexion ssh</a>
-      <a href="//www.choiz.fr/tag/authorized_keys.html">authorized_keys</a>
+      <a href="//www.choiz.fr/tag/authorized_keys.html">authorized\_keys</a>
       <a href="//www.choiz.fr/tag/ssh.html">ssh</a>
       <a href="//www.choiz.fr/tag/ssh.html">.ssh</a>
     </p>
@@ -122,7 +123,7 @@ ssh-copy-id -i ~/.ssh/id\_dsa.pub user&#64;ip
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html",
-  "description": "On commence par ouvrir un terminal puis on tape : ssh-keygen -t dsa -b 1024 Enter file in which to save the key (/Users/choiz/.ssh/id_dsa): En général je garde le fichier id_rsa donc je tape "enter" sinon vous pouvez spécifier un autre chemin ainsi qu'un autre fichier. Enter ..."
+  "description": "On commence par ouvrir un terminal puis on tape : ssh-keygen -t rsa -b 1024 Enter file in which to save the key (/Users/choiz/.ssh/id_rsa): En général je garde le fichier id_rsa donc je tape "enter" sinon vous pouvez spécifier un autre chemin ainsi qu'un autre fichier. : Enter ..."
 }
 </script></body>
 </html>

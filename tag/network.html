@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,13 +61,12 @@ Tags :
       <a href="//www.choiz.fr/tag/vagrant.html">vagrant</a>,      <a href="//www.choiz.fr/tag/reseau.html">réseau</a>,      <a href="//www.choiz.fr/tag/prive.html">privé</a>,      <a href="//www.choiz.fr/tag/private.html">private</a>,      <a href="//www.choiz.fr/tag/network.html">network</a>    </p>
   </header>
   <div>
-      <p>J'utilise plusieurs machines virtuelles avec vagrant, une avec un backoffice et
-une avec une API.</p>
-<p>J'ai donc du faire un réseau privé dans vagrant pour que le BO communique avec
-l'API.</p>
-<p>Il suffit de modifier la configuration de la vm #1 et d'ajouter :</p>
-<pre class="literal-block">
-config.vm.network ...</pre>
+      <p>J'utilise plusieurs machines virtuelles avec vagrant, une avec un
+backoffice et une avec une API.</p>
+<p>J'ai donc du faire un réseau privé dans vagrant pour que le BO
+communique avec l'API.</p>
+<p>Il suffit de modifier la configuration de la vm #1 et d'ajouter : :</p>
+<div class="highlight"><pre>config.vm.network ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html#2015-10-13-vagrant-faire-un-reseau-prive">Lire la suite</a>
   </div>
 </article>

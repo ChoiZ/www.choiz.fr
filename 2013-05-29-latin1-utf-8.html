@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Voilà une solution simple pour convertir une base de donnée en Latin1 vers de l'UTF-8. Utiliser mysqldump avec les options suivantes : --default-character-set=utf8 et --skip-set-charset Voilà la commande complète : mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset > base_table.sql Ensuite en utilisant vim je fais un rechercher / remplacer ..." />
+<meta name="description" content="Voilà une solution simple pour convertir une base de donnée en Latin1 vers de l'UTF-8. Utiliser mysqldump avec les options suivantes : : --default-character-set=utf8 et : --skip-set-charset Voilà la commande complète : : mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset > base_table.sql Ensuite en utilisant vim je fais un rechercher / remplacer ..." />
 <meta name="keywords" content="PHP, LATIN1, UTF-8, MYSQL, ENCODING, CHARSET, mysqldump">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Latin1 &lt;-&gt; UTF-8"/>
-<meta property="og:description" content="Voilà une solution simple pour convertir une base de donnée en Latin1 vers de l'UTF-8. Utiliser mysqldump avec les options suivantes : --default-character-set=utf8 et --skip-set-charset Voilà la commande complète : mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset > base_table.sql Ensuite en utilisant vim je fais un rechercher / remplacer ..."/>
+<meta property="og:description" content="Voilà une solution simple pour convertir une base de donnée en Latin1 vers de l'UTF-8. Utiliser mysqldump avec les options suivantes : : --default-character-set=utf8 et : --skip-set-charset Voilà la commande complète : : mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset > base_table.sql Ensuite en utilisant vim je fais un rechercher / remplacer ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2013-05-29-latin1-utf-8.html"/>
 <meta property="og:type" content="article"/>
@@ -69,54 +69,62 @@
     <p>Posté le mer. 29 mai 2013</p>
   </header>
   <div>
-    <p>Voilà une solution simple pour convertir une base de donnée en Latin1 vers de
-l'UTF-8.</p>
-<p>Utiliser mysqldump avec les options suivantes :</p>
-<pre class="literal-block">
---default-character-set=utf8
-</pre>
-<p>et</p>
-<pre class="literal-block">
---skip-set-charset
-</pre>
-<p>Voilà la commande&nbsp;complète :</p>
-<pre class="literal-block">
-mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
-</pre>
-<p>Ensuite en utilisant vim je fais un rechercher / remplacer des différents latin1
-en utf-8.</p>
-<pre class="literal-block">
-vim dump_base_table.sql
-</pre>
-<p>Et en mode commande :</p>
-<pre class="literal-block">
-:%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/
-</pre>
-<p>et</p>
-<pre class="literal-block">
-:%s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/
-</pre>
+    <p>Voilà une solution simple pour convertir une base de donnée en Latin1
+vers de l'UTF-8.</p>
+<p>Utiliser mysqldump avec les options suivantes : :</p>
+<div class="highlight"><pre>--default-character-set=utf8
+</pre></div>
+
+
+<p>et :</p>
+<div class="highlight"><pre>--skip-set-charset
+</pre></div>
+
+
+<p>Voilà la commande complète : :</p>
+<div class="highlight"><pre>mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
+</pre></div>
+
+
+<p>Ensuite en utilisant vim je fais un rechercher / remplacer des
+différents latin1 en utf-8. :</p>
+<div class="highlight"><pre>vim dump_base_table.sql
+</pre></div>
+
+
+<p>Et en mode commande : :</p>
+<div class="highlight"><pre>:%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/
+</pre></div>
+
+
+<p>et :</p>
+<div class="highlight"><pre>:%s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/
+</pre></div>
+
+
 <p>on enregistre et quitte le fichier avec :wq (ou sinon avec ZZ).</p>
-<p>Maintenant on réimporte la table grâce à mysql :</p>
-<pre class="literal-block">
-mysql -u user -p base &lt; dump_base_table.sql
-</pre>
+<p>Maintenant on réimporte la table grâce à mysql : :</p>
+<div class="highlight"><pre>mysql -u user -p base &lt; dump_base_table.sql
+</pre></div>
+
+
 <p>il reste a vérifier si les champs sont bien en UTF-8.</p>
 <p>Ici une table « table » avec une colonne « col » on ajoute un caractère
-accentué.</p>
-<pre class="literal-block">
-INSERT INTO table VALUES(&quot;é&quot;);
-</pre>
-<p>Maintenant on regarde la taille de la colonne :</p>
-<pre class="literal-block">
-SELECT `col`, length(`col`) FROM `table`;
-</pre>
+accentué. :</p>
+<div class="highlight"><pre>INSERT INTO table VALUES(&quot;é&quot;);
+</pre></div>
+
+
+<p>Maintenant on regarde la taille de la colonne : :</p>
+<div class="highlight"><pre>SELECT `col`, length(`col`) FROM `table`;
+</pre></div>
+
+
 <p>Si la taille = 1 le caractère est enregistré en latin1… si c'est 2 c'est
 bien de l'UTF-8 car sauvé sur 2 octets.</p>
-<p>Merci à <a class="reference external" href="http://agopian.info/blog/mysql-mysqldump-et-php-convertir-de-latin1-vers-utf8.html">Mathieu
+<p>Merci à <a href="http://agopian.info/blog/mysql-mysqldump-et-php-convertir-de-latin1-vers-utf8.html">Mathieu
 Agopian</a>
 pour le dernier tips.</p>
-
   </div>
   <div class="tag-cloud">
     <p>
@@ -150,7 +158,7 @@ pour le dernier tips.</p>
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2013-05-29-latin1-utf-8.html",
-  "description": "Voilà une solution simple pour convertir une base de donnée en Latin1 vers de l'UTF-8. Utiliser mysqldump avec les options suivantes : --default-character-set=utf8 et --skip-set-charset Voilà la commande complète : mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset > base_table.sql Ensuite en utilisant vim je fais un rechercher / remplacer ..."
+  "description": "Voilà une solution simple pour convertir une base de donnée en Latin1 vers de l'UTF-8. Utiliser mysqldump avec les options suivantes : : --default-character-set=utf8 et : --skip-set-charset Voilà la commande complète : : mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset > base_table.sql Ensuite en utilisant vim je fais un rechercher / remplacer ..."
 }
 </script></body>
 </html>

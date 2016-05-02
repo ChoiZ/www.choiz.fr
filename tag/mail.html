@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,12 +61,12 @@ Tags :
       <a href="//www.choiz.fr/tag/mail.html">mail</a>,      <a href="//www.choiz.fr/tag/postfix.html">postfix</a>,      <a href="//www.choiz.fr/tag/dovecot.html">dovecot</a>,      <a href="//www.choiz.fr/tag/dns.html">dns</a>,      <a href="//www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="//www.choiz.fr/tag/rainloop.html">rainloop</a>,      <a href="//www.choiz.fr/tag/webmail.html">webmail</a>    </p>
   </header>
   <div>
-      <p>Installation d'un serveur mail complet et à jour sous debian jessie (8.2).</p>
-<div class="section" id="configuration-des-dns">
+      <p>Installation d'un serveur mail complet et à jour sous debian jessie
+(8.2).</p>
 <h2>Configuration des DNS</h2>
 <p>Pour commencer nous allons créer des entrées DNS.</p>
-<p>Nous créons un MX pour les mails avec une priorité de 1, un sous domaine &quot;mail&quot;
-qui pointe vers l'adresse ipv4 de votre serveur ...</p></div>
+<p>Nous créons un MX pour les mails avec une priorité de 1, un sous domaine
+"mail" qui pointe vers l'adresse ipv4 de votre serveur ...</p>
       <a class="btn" href="//www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html#2015-11-15-configurer-un-serveur-mail">Lire la suite</a>
   </div>
   <hr />
@@ -80,24 +80,27 @@ Tags :
       <a href="//www.choiz.fr/tag/imapfilter.html">imapfilter</a>,      <a href="//www.choiz.fr/tag/mail.html">mail</a>,      <a href="//www.choiz.fr/tag/filter.html">filter</a>,      <a href="//www.choiz.fr/tag/imap.html">imap</a>    </p>
   </header>
   <div>
-      <p>Installer imapfilter via apt par exemple :</p>
-<pre class="literal-block">
-apt-get install imapfilter
-</pre>
-<p>Se rendre dans le dossier de configuration :</p>
-<pre class="literal-block">
-cd ~/.imapfilter
-</pre>
-<p>Créer un fichier config.lua</p>
-<pre class="literal-block">
-touch config.lua
-</pre>
-<p>Maintenant je décide de faire un fichier de configuration par boite email.</p>
-<p>Ici gmail :</p>
-<pre class="literal-block">
-cat &gt; gmail.lua &lt;&lt;EOF
+      <p>Installer imapfilter via apt par exemple : :</p>
+<div class="highlight"><pre>apt-get install imapfilter
+</pre></div>
+
+
+<p>Se rendre dans le dossier de configuration : :</p>
+<div class="highlight"><pre>cd ~/.imapfilter
+</pre></div>
+
+
+<p>Créer un fichier config.lua :</p>
+<div class="highlight"><pre>touch config.lua
+</pre></div>
+
+
+<p>Maintenant je décide de faire un fichier de configuration par boite
+email.</p>
+<p>Ici gmail : :</p>
+<div class="highlight"><pre>cat &gt; gmail.lua &lt;&lt;EOF
 gmail = IMAP {
-    server = 'imap.gmail.com ...</pre>
+    server = &#39;imap.gmail.com ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html#2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement">Lire la suite</a>
   </div>
 </article>

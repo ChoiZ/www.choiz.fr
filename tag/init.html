@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,18 +61,24 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/submodule.html">submodule</a>,      <a href="//www.choiz.fr/tag/update.html">update</a>,      <a href="//www.choiz.fr/tag/init.html">init</a>,      <a href="//www.choiz.fr/tag/recursive.html">recursive</a>    </p>
   </header>
   <div>
-      <p>Pour initialiser les sous-modules dans git j'utilise la commande suivante :</p>
-<pre class="literal-block">
-git submodule init
-</pre>
-<p>Ensuite je dois faire un update des sous-modules pour charger le contenu :</p>
-<pre class="literal-block">
-git submodule update
-</pre>
-<p>Pour faire les deux en même temps (init + update) vous pouvez faire :</p>
-<pre class="literal-block">
-git submodule update --init
-</pre>
+      <p>Pour initialiser les sous-modules dans git j'utilise la commande
+suivante : :</p>
+<div class="highlight"><pre>git submodule init
+</pre></div>
+
+
+<dl>
+<dt>Ensuite je dois faire un update des sous-modules pour charger le contenu</dt>
+<dd>
+<p>:</p>
+<p>git submodule update</p>
+</dd>
+</dl>
+<p>Pour faire les deux en même temps (init + update) vous pouvez faire : :</p>
+<div class="highlight"><pre>git submodule update --init
+</pre></div>
+
+
 <p>Imaginons maintenant que vous avez ...</p>
       <a class="btn" href="//www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html#2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git">Lire la suite</a>
   </div>

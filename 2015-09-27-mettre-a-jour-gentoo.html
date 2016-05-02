@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Pour mettre à jour Gentoo j'utilise différentes commandes. Dans un premier temps je fais la mise à jour d'eix : eix-sync Ensuite : emerge -pvuDN world -p ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche également les différents flags (N = new (not yet installed), U = updating ..." />
+<meta name="description" content="Pour mettre à jour Gentoo j'utilise différentes commandes. Dans un premier temps je fais la mise à jour d'eix : : eix-sync Ensuite : : emerge -pvuDN world -p ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche également les différents flags (N = new (not yet installed), U = updating ..." />
 <meta name="keywords" content="update, mise à jour, gentoo, eix, emerge">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Mettre à jour Gentoo"/>
-<meta property="og:description" content="Pour mettre à jour Gentoo j'utilise différentes commandes. Dans un premier temps je fais la mise à jour d'eix : eix-sync Ensuite : emerge -pvuDN world -p ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche également les différents flags (N = new (not yet installed), U = updating ..."/>
+<meta property="og:description" content="Pour mettre à jour Gentoo j'utilise différentes commandes. Dans un premier temps je fais la mise à jour d'eix : : eix-sync Ensuite : : emerge -pvuDN world -p ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche également les différents flags (N = new (not yet installed), U = updating ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html"/>
 <meta property="og:type" content="article"/>
@@ -68,41 +68,27 @@
   </header>
   <div>
     <p>Pour mettre à jour Gentoo j'utilise différentes commandes.</p>
-<p>Dans un premier temps je fais la mise à jour d'eix :</p>
-<pre class="literal-block">
-eix-sync
-</pre>
-<p>Ensuite :</p>
-<pre class="literal-block">
-emerge -pvuDN world
-</pre>
-<table class="docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-p</span></kbd></td>
-<td>ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche également les différents flags (N = new (not yet installed), U = updating (to another version) etc…)</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-v</span></kbd></td>
-<td>ou --verbose, mode verbeux.</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-u</span></kbd></td>
-<td>ou --update, met à jour les programmes dans la meilleur version disponible.</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-D</span></kbd></td>
-<td>ou --deep, met à jour les dépendances des programmes si nécessaire.</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-N</span></kbd></td>
-<td>ou --newuse, met à jour les programmes dont le &quot;USE&quot; a été modifié depuis son installation.</td></tr>
-</tbody>
-</table>
-<p>Une fois la liste des programmes et ses modifications vérifiée nous pouvons
-lancer la mise à jour :</p>
-<pre class="literal-block">
-emerge -vuDN world
-</pre>
+<p>Dans un premier temps je fais la mise à jour d'eix : :</p>
+<div class="highlight"><pre>eix-sync
+</pre></div>
 
+
+<p>Ensuite : :</p>
+<div class="highlight"><pre>emerge -pvuDN world
+</pre></div>
+
+
+<p>-p ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche
+également les différents flags (N = new (not yet installed), U =
+updating (to another version) etc…) -v ou --verbose, mode verbeux. -u ou
+--update, met à jour les programmes dans la meilleur version disponible.
+-D ou --deep, met à jour les dépendances des programmes si nécessaire.
+-N ou --newuse, met à jour les programmes dont le "USE" a été modifié
+depuis son installation.</p>
+<p>Une fois la liste des programmes et ses modifications vérifiée nous
+pouvons lancer la mise à jour : :</p>
+<div class="highlight"><pre>emerge -vuDN world
+</pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -134,7 +120,7 @@ emerge -vuDN world
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html",
-  "description": "Pour mettre à jour Gentoo j'utilise différentes commandes. Dans un premier temps je fais la mise à jour d'eix : eix-sync Ensuite : emerge -pvuDN world -p ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche également les différents flags (N = new (not yet installed), U = updating ..."
+  "description": "Pour mettre à jour Gentoo j'utilise différentes commandes. Dans un premier temps je fais la mise à jour d'eix : : eix-sync Ensuite : : emerge -pvuDN world -p ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche également les différents flags (N = new (not yet installed), U = updating ..."
 }
 </script></body>
 </html>

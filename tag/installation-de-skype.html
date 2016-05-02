@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,19 +61,22 @@ Tags :
       <a href="//www.choiz.fr/tag/skype.html">Skype</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/installation-de-skype.html">Installation de Skype</a>,      <a href="//www.choiz.fr/tag/skype-debian-64.html">Skype Debian 64</a>,      <a href="//www.choiz.fr/tag/debian-64.html">Debian 64</a>    </p>
   </header>
   <div>
-      <p>Télécharger la dernière version de <a class="reference external" href="http://www.skype.com">Skype</a> (Debian 7.0
-[multiarch]).</p>
-<p>Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait.</p>
-<pre class="literal-block">
-dpkg --add-architecture i386
-</pre>
-<p>Puis mettre à jour les paquets :</p>
-<pre class="literal-block">
-apt-get update
+      <p>Télécharger la dernière version de <a href="http://www.skype.com">Skype</a> (Debian
+7.0 [multiarch]).</p>
+<p>Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. :</p>
+<div class="highlight"><pre>dpkg --add-architecture i386
+</pre></div>
+
+
+<p>Puis mettre à jour les paquets : :</p>
+<div class="highlight"><pre>apt-get update
 apt-get upgrade
 apt-get install -f
-</pre>
-<p>Installer Skype en n'oubliant pas de remplacer &quot;x&quot; par la bonne ...</p>
+</pre></div>
+
+
+<dl>
+<dt>Installer Skype en n'oubliant pas de remplacer "x" par la bonne ...</dt></dl>
       <a class="btn" href="//www.choiz.fr/2014-03-21-installation-de-skype-64-sur-debian.html#2014-03-21-installation-de-skype-64-sur-debian">Lire la suite</a>
   </div>
 </article>

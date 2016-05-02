@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,11 +61,11 @@ Tags :
       <a href="//www.choiz.fr/tag/ssh-copy-id.html">ssh-copy-id</a>,      <a href="//www.choiz.fr/tag/mac-os-x.html">mac os x</a>,      <a href="//www.choiz.fr/tag/copy-ssh-key.html">copy ssh key</a>,      <a href="//www.choiz.fr/tag/copier-cle-ssh.html">copier clé ssh</a>,      <a href="//www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="//www.choiz.fr/tag/copy-id.html">copy-id</a>    </p>
   </header>
   <div>
-      <p>Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous avez dû
-vous rendre compte que, même si openssh est installé nativement, cette commande
-n’est pas disponible.</p>
-<p>Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on peut la
-rendre disponible ...</p>
+      <p>Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
+avez dû vous rendre compte que, même si openssh est installé nativement,
+cette commande n’est pas disponible.</p>
+<p>Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
+peut la rendre disponible ...</p>
       <a class="btn" href="//www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html#2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x">Lire la suite</a>
   </div>
   <hr />
@@ -76,19 +76,19 @@ rendre disponible ...</p>
     <p>
       Posté le ven. 13 janvier 2012 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/cle-publique.html">clé publique</a>,      <a href="//www.choiz.fr/tag/cle-privee.html">clé privée</a>,      <a href="//www.choiz.fr/tag/connexion-ssh.html">connexion ssh</a>,      <a href="//www.choiz.fr/tag/authorized_keys.html">authorized_keys</a>,      <a href="//www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="//www.choiz.fr/tag/ssh.html">.ssh</a>    </p>
+      <a href="//www.choiz.fr/tag/cle-publique.html">clé publique</a>,      <a href="//www.choiz.fr/tag/cle-privee.html">clé privée</a>,      <a href="//www.choiz.fr/tag/connexion-ssh.html">connexion ssh</a>,      <a href="//www.choiz.fr/tag/authorized_keys.html">authorized\_keys</a>,      <a href="//www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="//www.choiz.fr/tag/ssh.html">.ssh</a>    </p>
   </header>
   <div>
       <p>On commence par ouvrir un terminal puis on tape :</p>
-<pre class="literal-block">
-ssh-keygen -t dsa -b 1024
+<div class="highlight"><pre>ssh-keygen -t rsa -b 1024
 
-Enter file in which to save the key (/Users/choiz/.ssh/id_dsa):
-</pre>
-<p>En général je garde le fichier id_rsa donc je tape &quot;enter&quot; sinon vous pouvez
-spécifier un autre chemin ainsi qu'un autre fichier.</p>
-<pre class="literal-block">
-Enter ...</pre>
+Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
+</pre></div>
+
+
+<p>En général je garde le fichier id_rsa donc je tape "enter" sinon vous
+pouvez spécifier un autre chemin ainsi qu'un autre fichier. :</p>
+<div class="highlight"><pre>Enter ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html#2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh">Lire la suite</a>
   </div>
   <hr />
@@ -99,19 +99,19 @@ Enter ...</pre>
     <p>
       Posté le ven. 13 janvier 2012 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/cle-publique.html">clé publique</a>,      <a href="//www.choiz.fr/tag/cle-privee.html">clé privée</a>,      <a href="//www.choiz.fr/tag/connexion-ssh.html">connexion ssh</a>,      <a href="//www.choiz.fr/tag/authorized_keys.html">authorized_keys</a>,      <a href="//www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="//www.choiz.fr/tag/ssh.html">.ssh</a>    </p>
+      <a href="//www.choiz.fr/tag/cle-publique.html">clé publique</a>,      <a href="//www.choiz.fr/tag/cle-privee.html">clé privée</a>,      <a href="//www.choiz.fr/tag/connexion-ssh.html">connexion ssh</a>,      <a href="//www.choiz.fr/tag/authorized_keys.html">authorized\_keys</a>,      <a href="//www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="//www.choiz.fr/tag/ssh.html">.ssh</a>    </p>
   </header>
   <div>
       <p>On commence par ouvrir un terminal puis on tape :</p>
-<pre class="literal-block">
-ssh-keygen -t dsa -b 1024
+<div class="highlight"><pre>ssh-keygen -t rsa -b 1024
 
-Enter file in which to save the key (/Users/choiz/.ssh/id_dsa):
-</pre>
-<p>En général je garde le fichier id_rsa donc je tape &quot;enter&quot; sinon vous pouvez
-spécifier un autre chemin ainsi qu'un autre fichier.</p>
-<pre class="literal-block">
-Enter ...</pre>
+Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
+</pre></div>
+
+
+<p>En général je garde le fichier id_rsa donc je tape "enter" sinon vous
+pouvez spécifier un autre chemin ainsi qu'un autre fichier. :</p>
+<div class="highlight"><pre>Enter ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html#2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh">Lire la suite</a>
   </div>
 </article>

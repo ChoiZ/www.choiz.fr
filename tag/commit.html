@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -54,25 +54,27 @@
 
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html#2014-05-06-faire-un-patch-de-x-commits-avec-git">Faire un patch de &quot;x&quot; commit(s) avec git</a></h2>
+    <h2><a href="//www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html#2014-05-06-faire-un-patch-de-x-commits-avec-git">Faire un patch de "x" commit(s) avec git</a></h2>
     <p>
       Posté le mar. 06 mai 2014 &#8226;
 Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/patch.html">patch</a>,      <a href="//www.choiz.fr/tag/commit.html">commit</a>    </p>
   </header>
   <div>
-      <p>Voici mon historique des commits :</p>
-<pre class="literal-block">
-c0004 -- dernier commit
+      <p>Voici mon historique des commits : :</p>
+<div class="highlight"><pre>c0004 -- dernier commit
 c0003 -- avant dernier commit
 c0002 -- second commit
 c0001 -- premier commit
-</pre>
-<p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire :</p>
-<pre class="literal-block">
-git format-patch -2 c0002 --stdout &gt; mon.patch
-</pre>
-<p>le &quot;-2&quot; sert à récupérer 2 commits à partir du commit ...</p>
+</pre></div>
+
+
+<p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire : :</p>
+<div class="highlight"><pre>git format-patch -2 c0002 --stdout &gt; mon.patch
+</pre></div>
+
+
+<p>le "-2" sert à récupérer 2 commits à partir du commit ...</p>
       <a class="btn" href="//www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html#2014-05-06-faire-un-patch-de-x-commits-avec-git">Lire la suite</a>
   </div>
   <hr />
@@ -89,11 +91,9 @@ Tags :
       <p>J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
 messages sur cherry-pick sans savoir ce que c'était.</p>
 <p>git cherry-pick permet d'appliquer un commit sur la branche sur la
-branche actuelle.</p>
-<pre class="literal-block">
-git cherry-pick c4a99776
-</pre>
-
+branche actuelle. :</p>
+<div class="highlight"><pre>git cherry-pick c4a99776
+</pre></div>
       <a class="btn" href="//www.choiz.fr/2014-02-06-git-cherry-pick.html#2014-02-06-git-cherry-pick">Lire la suite</a>
   </div>
   <hr />
@@ -108,9 +108,9 @@ Tags :
   </header>
   <div>
       <p>J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
-<em>master</em>… Généralement je fais toujours une branche pour les modifications,
-cette fois j'avais créé cette branche <em>debug_redirect</em> mais je n'étais pas
-dessus…</p>
+<em>master</em>… Généralement je fais toujours une branche pour les
+modifications, cette fois j'avais créé cette branche <em>debug_redirect</em>
+mais je n'étais pas dessus…</p>
 <p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master ...</em></p>
       <a class="btn" href="//www.choiz.fr/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html#2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre">Lire la suite</a>
   </div>

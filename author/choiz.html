@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -54,6 +54,23 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html#2016-04-28-passage-en-ssl-du-blog">Passage en SSL du blog</a></h2>
+    <p>
+      Posté le jeu. 28 avril 2016 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/blog-ssl-https-github-page.html">blog ssl https github page</a>    </p>
+  </header>
+  <div>
+      <p>J'utilise pelican sur github pour écrire mon blog depuis quelques temps, voir les
+articles précédents sur le sujet.</p>
+<p>J'ai décidé de passer le blog en https, avec un certificat gratuit let's encrypt.</p>
+<p>Pour mettre en place un certificat SSL sur "github page" il faut avoir un serveur ...</p>
+      <a class="btn" href="//www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html#2016-04-28-passage-en-ssl-du-blog">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html#2015-11-21-mise-a-jour-d-un-kernel-gentoo">Mise à jour d'un kernel gentoo</a></h2>
     <p>
       Posté le sam. 21 novembre 2015 &#8226;
@@ -61,16 +78,18 @@ Tags :
       <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="//www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="//www.choiz.fr/tag/upgrade.html">upgrade</a>,      <a href="//www.choiz.fr/tag/noyaux.html">noyaux</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
-      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre
-pour le mettre à jour vers la version : 4.3.0.</p>
-<p>Je liste les différents noyaux gentoo disponibles :</p>
-<pre class="literal-block">
-eix sys-kernel/gentoo-sources
-</pre>
-<p>Je télécharge le noyau 4.3.0 :</p>
-<pre class="literal-block">
-emerge -a =sys-kernel/gentoo-sources-4.3.0
-</pre>
+      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
+suivre pour le mettre à jour vers la version : 4.3.0.</p>
+<p>Je liste les différents noyaux gentoo disponibles : :</p>
+<div class="highlight"><pre>eix sys-kernel/gentoo-sources
+</pre></div>
+
+
+<p>Je télécharge le noyau 4.3.0 : :</p>
+<div class="highlight"><pre>emerge -a =sys-kernel/gentoo-sources-4.3.0
+</pre></div>
+
+
 <p>Une ...</p>
       <a class="btn" href="//www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html#2015-11-21-mise-a-jour-d-un-kernel-gentoo">Lire la suite</a>
   </div>
@@ -85,12 +104,12 @@ Tags :
       <a href="//www.choiz.fr/tag/mail.html">mail</a>,      <a href="//www.choiz.fr/tag/postfix.html">postfix</a>,      <a href="//www.choiz.fr/tag/dovecot.html">dovecot</a>,      <a href="//www.choiz.fr/tag/dns.html">dns</a>,      <a href="//www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="//www.choiz.fr/tag/rainloop.html">rainloop</a>,      <a href="//www.choiz.fr/tag/webmail.html">webmail</a>    </p>
   </header>
   <div>
-      <p>Installation d'un serveur mail complet et à jour sous debian jessie (8.2).</p>
-<div class="section" id="configuration-des-dns">
+      <p>Installation d'un serveur mail complet et à jour sous debian jessie
+(8.2).</p>
 <h2>Configuration des DNS</h2>
 <p>Pour commencer nous allons créer des entrées DNS.</p>
-<p>Nous créons un MX pour les mails avec une priorité de 1, un sous domaine &quot;mail&quot;
-qui pointe vers l'adresse ipv4 de votre serveur ...</p></div>
+<p>Nous créons un MX pour les mails avec une priorité de 1, un sous domaine
+"mail" qui pointe vers l'adresse ipv4 de votre serveur ...</p>
       <a class="btn" href="//www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html#2015-11-15-configurer-un-serveur-mail">Lire la suite</a>
   </div>
   <hr />
@@ -104,10 +123,11 @@ Tags :
       <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="//www.choiz.fr/tag/web.html">web</a>,      <a href="//www.choiz.fr/tag/browser.html">browser</a>,      <a href="//www.choiz.fr/tag/default.html">default</a>,      <a href="//www.choiz.fr/tag/navigateur.html">navigateur</a>    </p>
   </header>
   <div>
-      <p>Sur ma machine &quot;links&quot; était le navigateur web par défaut.
-Il est pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
+      <p>Sur ma machine "links" était le navigateur web par défaut. Il est
+pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
 est préférable d'utiliser un navigateur tel que Firefox.</p>
-<p>Voici la commande pour voir le navigateur par défaut pour les url utilisants ...</p>
+<p>Voici la commande pour voir le navigateur par défaut pour les url
+utilisants ...</p>
       <a class="btn" href="//www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html#2015-10-25-gentoo-navigateur-web-par-defaut">Lire la suite</a>
   </div>
   <hr />
@@ -121,13 +141,12 @@ Tags :
       <a href="//www.choiz.fr/tag/vagrant.html">vagrant</a>,      <a href="//www.choiz.fr/tag/reseau.html">réseau</a>,      <a href="//www.choiz.fr/tag/prive.html">privé</a>,      <a href="//www.choiz.fr/tag/private.html">private</a>,      <a href="//www.choiz.fr/tag/network.html">network</a>    </p>
   </header>
   <div>
-      <p>J'utilise plusieurs machines virtuelles avec vagrant, une avec un backoffice et
-une avec une API.</p>
-<p>J'ai donc du faire un réseau privé dans vagrant pour que le BO communique avec
-l'API.</p>
-<p>Il suffit de modifier la configuration de la vm #1 et d'ajouter :</p>
-<pre class="literal-block">
-config.vm.network ...</pre>
+      <p>J'utilise plusieurs machines virtuelles avec vagrant, une avec un
+backoffice et une avec une API.</p>
+<p>J'ai donc du faire un réseau privé dans vagrant pour que le BO
+communique avec l'API.</p>
+<p>Il suffit de modifier la configuration de la vm #1 et d'ajouter : :</p>
+<div class="highlight"><pre>config.vm.network ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html#2015-10-13-vagrant-faire-un-reseau-prive">Lire la suite</a>
   </div>
   <hr />
@@ -141,16 +160,17 @@ Tags :
       <a href="//www.choiz.fr/tag/commentaire.html">commentaire</a>,      <a href="//www.choiz.fr/tag/code.html">code</a>,      <a href="//www.choiz.fr/tag/efficace.html">efficace</a>    </p>
   </header>
   <div>
-      <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester qu'une
-fonctionnalité de code.</p>
-<p>Par exemple pour tester une api :</p>
-<pre class="literal-block">
-// Obtenir le livre #1
-api_get('books/1');
+      <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester
+qu'une fonctionnalité de code.</p>
+<p>Par exemple pour tester une api : :</p>
+<div class="highlight"><pre><span class="x">// Obtenir le livre </span><span class="err">#</span><span class="x">1</span>
+<span class="x">api_get(&#39;books/1&#39;);</span>
 
-// Ajouter un livre
-api_add('books', $datas);
-</pre>
+<span class="x">// Ajouter un livre</span>
+<span class="x">api_add(&#39;books&#39;, </span><span class="p">$</span><span class="nv">datas</span><span class="x">);</span>
+</pre></div>
+
+
 <p>Je test généralement chaque élément séparement.</p>
 <p>Pour tester la première portion de mon code ...</p>
       <a class="btn" href="//www.choiz.fr/2015-10-12-des-commentaires-efficaces.html#2015-10-12-des-commentaires-efficaces">Lire la suite</a>
@@ -167,21 +187,19 @@ Tags :
   </header>
   <div>
       <p>Pour mettre à jour Gentoo j'utilise différentes commandes.</p>
-<p>Dans un premier temps je fais la mise à jour d'eix :</p>
-<pre class="literal-block">
-eix-sync
-</pre>
-<p>Ensuite :</p>
-<pre class="literal-block">
-emerge -pvuDN world
-</pre>
-<table class="docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-p</span></kbd></td>
-<td>ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche également les différents flags (N = new (not yet installed), U = updating ...</td></tr></tbody></table>
+<p>Dans un premier temps je fais la mise à jour d'eix : :</p>
+<div class="highlight"><pre>eix-sync
+</pre></div>
+
+
+<p>Ensuite : :</p>
+<div class="highlight"><pre>emerge -pvuDN world
+</pre></div>
+
+
+<p>-p ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche
+également les différents flags (N = new (not yet installed), U =
+updating ...</p>
       <a class="btn" href="//www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html#2015-09-27-mettre-a-jour-gentoo">Lire la suite</a>
   </div>
   <hr />
@@ -195,23 +213,25 @@ Tags :
       <a href="//www.choiz.fr/tag/compilation.html">compilation</a>,      <a href="//www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>    </p>
   </header>
   <div>
-      <p>Pour compiler le kernel sous gentoo :</p>
-<pre class="literal-block">
-cd /usr/src/linux
+      <p>Pour compiler le kernel sous gentoo : :</p>
+<div class="highlight"><pre>cd /usr/src/linux
 
 make menuconfig
 
 make &amp;&amp; make modules_install
 
 make install
-</pre>
+</pre></div>
+
+
 <p>Le kernel est maintenant compilé.</p>
-<p>Maintenant il faut mettre à jour grub.</p>
-<pre class="literal-block">
-grub2-mkconfig -o /boot/grub/grub.cfg
-</pre>
-<p>Puis lancer <cite>uname -a</cite> qui affiche le kernel actuellement utilisé ainsi que le
-nombre de ...</p>
+<p>Maintenant il faut mettre à jour grub. :</p>
+<div class="highlight"><pre>grub2-mkconfig -o /boot/grub/grub.cfg
+</pre></div>
+
+
+<p>Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi
+que le nombre de ...</p>
       <a class="btn" href="//www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html#2015-09-06-compilation-kernel-gentoo">Lire la suite</a>
   </div>
   <hr />
@@ -225,13 +245,13 @@ Tags :
       <a href="//www.choiz.fr/tag/targz.html">tar.gz</a>,      <a href="//www.choiz.fr/tag/tarbz2.html">tar.bz2</a>,      <a href="//www.choiz.fr/tag/tarxz.html">tar.xz</a>,      <a href="//www.choiz.fr/tag/tar.html">tar</a>,      <a href="//www.choiz.fr/tag/gz.html">gz</a>,      <a href="//www.choiz.fr/tag/gzip.html">gzip</a>,      <a href="//www.choiz.fr/tag/bz2.html">bz2</a>,      <a href="//www.choiz.fr/tag/xz.html">xz</a>,      <a href="//www.choiz.fr/tag/lzma.html">lzma</a>    </p>
   </header>
   <div>
-      <p>J'ai toujours du mal pour décompresser un fichier de type &quot;tar.bz2&quot; ou &quot;tar.xz&quot;.
-Je n'ai pas encore trouvé le moyen de me souvenir de la syntaxe…</p>
-<div class="section" id="tar-gz">
+      <p>J'ai toujours du mal pour décompresser un fichier de type "tar.bz2" ou
+"tar.xz". Je n'ai pas encore trouvé le moyen de me souvenir de la
+syntaxe…</p>
 <h2>tar.gz</h2>
-<p>Pour les fichiers <strong>tar.gz</strong> j'arrive parfaitement à compresser ou décompresser
-ce format exemple :</p>
-<p>On compresse avec ...</p></div>
+<p>Pour les fichiers <strong>tar.gz</strong> j'arrive parfaitement à compresser ou
+décompresser ce format exemple :</p>
+<p>On compresse avec ...</p>
       <a class="btn" href="//www.choiz.fr/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html#2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz">Lire la suite</a>
   </div>
   <hr />
@@ -245,27 +265,12 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/branch.html">branch</a>,      <a href="//www.choiz.fr/tag/remote.html">remote</a>,      <a href="//www.choiz.fr/tag/prune.html">prune</a>,      <a href="//www.choiz.fr/tag/origin.html">origin</a>    </p>
   </header>
   <div>
-      <p>Lors d'un developpement j'ai créé une branche &quot;add_namespace&quot; qui m'a permis d'ajouté des namespaces a différents fichiers PHP.</p>
-<p>Une fois la modification faite j'ai envoyé ma branche sur l'origin, en faisant un &quot;pull request&quot; (github) ou &quot;merge request&quot; (gitlab).</p>
+      <p>Lors d'un developpement j'ai créé une branche "add_namespace" qui m'a
+permis d'ajouté des namespaces a différents fichiers PHP.</p>
+<p>Une fois la modification faite j'ai envoyé ma branche sur l'origin, en
+faisant un "pull request" (github) ou "merge request" (gitlab).</p>
 <p>Un autre développeur a accepté ...</p>
       <a class="btn" href="//www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html#2015-08-25-suppression-des-branches-distantes-inexistantes">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html#2015-08-20-migration-de-tumblr-a-pelican">Migration de Tumblr à Pelican</a></h2>
-    <p>
-      Posté le jeu. 20 août 2015 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/tumblr.html">tumblr</a>,      <a href="//www.choiz.fr/tag/migration.html">migration</a>,      <a href="//www.choiz.fr/tag/pelican.html">pelican</a>,      <a href="//www.choiz.fr/tag/site.html">site</a>,      <a href="//www.choiz.fr/tag/static.html">static</a>,      <a href="//www.choiz.fr/tag/python.html">python</a>    </p>
-  </header>
-  <div>
-      <p>J'ai testé pelican, lors de mon voyage à Bruxelles en Thalys le 15 Août 2014.
-Depuis cette date je n'avais pas pris le temps de m'occuper de la migration de
-mon blog de tumblr vers pelican.</p>
-<p><a class="reference external" href="http://blog.getpelican.com/">Pelican</a> est un générateur de site statique, il est pratique pour ...</p>
-      <a class="btn" href="//www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html#2015-08-20-migration-de-tumblr-a-pelican">Lire la suite</a>
   </div>
 </article>
 

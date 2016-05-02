@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -69,22 +69,19 @@
     <p>Posté le ven. 11 février 2011</p>
   </header>
   <div>
-    <p>Faire un système de protection (tel que htaccess) direct dans un fichier
-PHP :</p>
-<pre class="literal-block">
-&lt;?php
-if (!empty($_SERVER[&quot;PHP_AUTH_USER&quot;]) &amp;&amp;
-$_SERVER[&quot;PHP_AUTH_USER&quot;] == &quot;login&quot; &amp;&amp;
-$_SERVER[&quot;PHP_AUTH_PW&quot;] == &quot;password&quot;) {
-    // code protégé ici
-} else {
-    header('WWW-Authenticate: Basic realm=&quot;Restricted area&quot;');
-    header('HTTP/1.0 401 Unauthorized');
-    exit('Access Denied');
-}
-?&gt;
-</pre>
-
+    <p>Faire un système de protection (tel que htaccess) direct dans un fichier PHP :</p>
+<div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_USER&quot;</span><span class="p">])</span> <span class="o">&amp;&amp;</span>
+<span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_USER&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;login&quot;</span> <span class="o">&amp;&amp;</span>
+<span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_PW&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// code protégé ici</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;WWW-Authenticate: Basic realm=&quot;Restricted area&quot;&#39;</span><span class="p">);</span>
+    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;HTTP/1.0 401 Unauthorized&#39;</span><span class="p">);</span>
+    <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;Access Denied&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</pre></div>
   </div>
   <div class="tag-cloud">
     <p>

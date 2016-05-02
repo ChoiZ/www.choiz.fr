@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Télécharger la dernière version de Skype (Debian 7.0 [multiarch]). Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. dpkg --add-architecture i386 Puis mettre à jour les paquets : apt-get update apt-get upgrade apt-get install -f Installer Skype en n'oubliant pas de remplacer "x" par la bonne ..." />
+<meta name="description" content="Télécharger la dernière version de Skype (Debian 7.0 [multiarch]). Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. : dpkg --add-architecture i386 Puis mettre à jour les paquets : : apt-get update apt-get upgrade apt-get install -f Installer Skype en n'oubliant pas de remplacer "x" par la bonne ..." />
 <meta name="keywords" content="Skype, Debian, Installation de Skype, Skype Debian 64, Debian 64">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Installation de Skype 64 sur Debian"/>
-<meta property="og:description" content="Télécharger la dernière version de Skype (Debian 7.0 [multiarch]). Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. dpkg --add-architecture i386 Puis mettre à jour les paquets : apt-get update apt-get upgrade apt-get install -f Installer Skype en n'oubliant pas de remplacer "x" par la bonne ..."/>
+<meta property="og:description" content="Télécharger la dernière version de Skype (Debian 7.0 [multiarch]). Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. : dpkg --add-architecture i386 Puis mettre à jour les paquets : : apt-get update apt-get upgrade apt-get install -f Installer Skype en n'oubliant pas de remplacer "x" par la bonne ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2014-03-21-installation-de-skype-64-sur-debian.html"/>
 <meta property="og:type" content="article"/>
@@ -67,23 +67,27 @@
     <p>Posté le ven. 21 mars 2014</p>
   </header>
   <div>
-    <p>Télécharger la dernière version de <a class="reference external" href="http://www.skype.com">Skype</a> (Debian 7.0
-[multiarch]).</p>
-<p>Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait.</p>
-<pre class="literal-block">
-dpkg --add-architecture i386
-</pre>
-<p>Puis mettre à jour les paquets :</p>
-<pre class="literal-block">
-apt-get update
+    <p>Télécharger la dernière version de <a href="http://www.skype.com">Skype</a> (Debian
+7.0 [multiarch]).</p>
+<p>Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. :</p>
+<div class="highlight"><pre>dpkg --add-architecture i386
+</pre></div>
+
+
+<p>Puis mettre à jour les paquets : :</p>
+<div class="highlight"><pre>apt-get update
 apt-get upgrade
 apt-get install -f
-</pre>
-<p>Installer Skype en n'oubliant pas de remplacer &quot;x&quot; par la bonne version :</p>
-<pre class="literal-block">
-dpkg -i skype-debian_x_i386.deb
-</pre>
+</pre></div>
 
+
+<dl>
+<dt>Installer Skype en n'oubliant pas de remplacer "x" par la bonne version</dt>
+<dd>
+<p>:</p>
+<p>dpkg -i skype-debian_x_i386.deb</p>
+</dd>
+</dl>
   </div>
   <div class="tag-cloud">
     <p>
@@ -115,7 +119,7 @@ dpkg -i skype-debian_x_i386.deb
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2014-03-21-installation-de-skype-64-sur-debian.html",
-  "description": "Télécharger la dernière version de Skype (Debian 7.0 [multiarch]). Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. dpkg --add-architecture i386 Puis mettre à jour les paquets : apt-get update apt-get upgrade apt-get install -f Installer Skype en n'oubliant pas de remplacer "x" par la bonne ..."
+  "description": "Télécharger la dernière version de Skype (Debian 7.0 [multiarch]). Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. : dpkg --add-architecture i386 Puis mettre à jour les paquets : : apt-get update apt-get upgrade apt-get install -f Installer Skype en n'oubliant pas de remplacer "x" par la bonne ..."
 }
 </script></body>
 </html>

@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,34 +61,33 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/search.html">search</a>,      <a href="//www.choiz.fr/tag/source.html">source</a>,      <a href="//www.choiz.fr/tag/code.html">code</a>,      <a href="//www.choiz.fr/tag/log.html">log</a>    </p>
   </header>
   <div>
-      <p>Pour rechercher directement dans le code source une modification précise,
-j'utilise la commande suivante :</p>
-<pre class="literal-block">
-git log -p -S 'display'
-</pre>
-
+      <p>Pour rechercher directement dans le code source une modification
+précise, j'utilise la commande suivante : :</p>
+<div class="highlight"><pre>git log -p -S &#39;display&#39;
+</pre></div>
       <a class="btn" href="//www.choiz.fr/2014-12-08-recherche-dans-le-code-source-avec-git.html#2014-12-08-recherche-dans-le-code-source-avec-git">Lire la suite</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Insérer un # au début de chaque ligne d'un fichier avec vim</a></h2>
+    <h2><a href="//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Insérer un \# au début de chaque ligne d'un fichier avec vim</a></h2>
     <p>
       Posté le mer. 05 octobre 2011 &#8226;
 Tags :
       <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/search.html">search</a>,      <a href="//www.choiz.fr/tag/replace.html">replace</a>,      <a href="//www.choiz.fr/tag/line.html">line</a>,      <a href="//www.choiz.fr/tag/add.html">add</a>,      <a href="//www.choiz.fr/tag/ligne.html">ligne</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/remplace.html">remplace</a>,      <a href="//www.choiz.fr/tag/ajout.html">ajout</a>    </p>
   </header>
   <div>
-      <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un fichier avec
-vim :</p>
-<pre class="literal-block">
-:1,$s/^/#/
-</pre>
+      <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un
+fichier avec vim : :</p>
+<div class="highlight"><pre><span class="x">:1,</span><span class="p">$</span><span class="nv">s</span><span class="x">/^/</span><span class="err">#</span><span class="x">/</span>
+</pre></div>
+
+
 <p>Explications :</p>
-<p><cite>:1,$</cite> Sélection des ligne 1 à $ ($ étant la dernière).</p>
-<p><cite>s/^/#/</cite> <cite>s</cite> pour search <cite>^</cite> indique le début de ligne <cite>/</cite> sépare ma recherche
-par ce que l'on remplace <cite>#</cite> est le caractère que ...</p>
+<p>:1,$ Sélection des ligne 1 à $ ($ étant la dernière).</p>
+<p>s/^/#/ s pour search ^ indique le début de ligne / sépare ma recherche
+par ce que l'on remplace # est le caractère que ...</p>
       <a class="btn" href="//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Lire la suite</a>
   </div>
 </article>

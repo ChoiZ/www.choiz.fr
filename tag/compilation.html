@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,23 +61,25 @@ Tags :
       <a href="//www.choiz.fr/tag/compilation.html">compilation</a>,      <a href="//www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>    </p>
   </header>
   <div>
-      <p>Pour compiler le kernel sous gentoo :</p>
-<pre class="literal-block">
-cd /usr/src/linux
+      <p>Pour compiler le kernel sous gentoo : :</p>
+<div class="highlight"><pre>cd /usr/src/linux
 
 make menuconfig
 
 make &amp;&amp; make modules_install
 
 make install
-</pre>
+</pre></div>
+
+
 <p>Le kernel est maintenant compilé.</p>
-<p>Maintenant il faut mettre à jour grub.</p>
-<pre class="literal-block">
-grub2-mkconfig -o /boot/grub/grub.cfg
-</pre>
-<p>Puis lancer <cite>uname -a</cite> qui affiche le kernel actuellement utilisé ainsi que le
-nombre de ...</p>
+<p>Maintenant il faut mettre à jour grub. :</p>
+<div class="highlight"><pre>grub2-mkconfig -o /boot/grub/grub.cfg
+</pre></div>
+
+
+<p>Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi
+que le nombre de ...</p>
       <a class="btn" href="//www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html#2015-09-06-compilation-kernel-gentoo">Lire la suite</a>
   </div>
 </article>

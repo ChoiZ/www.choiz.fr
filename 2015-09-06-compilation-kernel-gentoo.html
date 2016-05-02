@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Pour compiler le kernel sous gentoo : cd /usr/src/linux make menuconfig make && make modules_install make install Le kernel est maintenant compilé. Maintenant il faut mettre à jour grub. grub2-mkconfig -o /boot/grub/grub.cfg Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi que le nombre de ..." />
+<meta name="description" content="Pour compiler le kernel sous gentoo : : cd /usr/src/linux make menuconfig make && make modules_install make install Le kernel est maintenant compilé. Maintenant il faut mettre à jour grub. : grub2-mkconfig -o /boot/grub/grub.cfg Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi que le nombre de ..." />
 <meta name="keywords" content="compilation, kernel, gentoo">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Compilation Kernel Gentoo"/>
-<meta property="og:description" content="Pour compiler le kernel sous gentoo : cd /usr/src/linux make menuconfig make && make modules_install make install Le kernel est maintenant compilé. Maintenant il faut mettre à jour grub. grub2-mkconfig -o /boot/grub/grub.cfg Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi que le nombre de ..."/>
+<meta property="og:description" content="Pour compiler le kernel sous gentoo : : cd /usr/src/linux make menuconfig make && make modules_install make install Le kernel est maintenant compilé. Maintenant il faut mettre à jour grub. : grub2-mkconfig -o /boot/grub/grub.cfg Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi que le nombre de ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html"/>
 <meta property="og:type" content="article"/>
@@ -65,29 +65,31 @@
     <p>Posté le dim. 06 septembre 2015</p>
   </header>
   <div>
-    <p>Pour compiler le kernel sous gentoo :</p>
-<pre class="literal-block">
-cd /usr/src/linux
+    <p>Pour compiler le kernel sous gentoo : :</p>
+<div class="highlight"><pre>cd /usr/src/linux
 
 make menuconfig
 
 make &amp;&amp; make modules_install
 
 make install
-</pre>
-<p>Le kernel est maintenant compilé.</p>
-<p>Maintenant il faut mettre à jour grub.</p>
-<pre class="literal-block">
-grub2-mkconfig -o /boot/grub/grub.cfg
-</pre>
-<p>Puis lancer <cite>uname -a</cite> qui affiche le kernel actuellement utilisé ainsi que le
-nombre de compilation.</p>
-<p>Il faut maintenant redémarrer la machine :</p>
-<pre class="literal-block">
-reboot
-</pre>
-<p>Au final vérifier avec <cite>uname -a</cite> si le bon kernel est chargé.</p>
+</pre></div>
 
+
+<p>Le kernel est maintenant compilé.</p>
+<p>Maintenant il faut mettre à jour grub. :</p>
+<div class="highlight"><pre>grub2-mkconfig -o /boot/grub/grub.cfg
+</pre></div>
+
+
+<p>Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi
+que le nombre de compilation.</p>
+<p>Il faut maintenant redémarrer la machine : :</p>
+<div class="highlight"><pre>reboot
+</pre></div>
+
+
+<p>Au final vérifier avec uname -a si le bon kernel est chargé.</p>
   </div>
   <div class="tag-cloud">
     <p>
@@ -117,7 +119,7 @@ reboot
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html",
-  "description": "Pour compiler le kernel sous gentoo : cd /usr/src/linux make menuconfig make && make modules_install make install Le kernel est maintenant compilé. Maintenant il faut mettre à jour grub. grub2-mkconfig -o /boot/grub/grub.cfg Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi que le nombre de ..."
+  "description": "Pour compiler le kernel sous gentoo : : cd /usr/src/linux make menuconfig make && make modules_install make install Le kernel est maintenant compilé. Maintenant il faut mettre à jour grub. : grub2-mkconfig -o /boot/grub/grub.cfg Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi que le nombre de ..."
 }
 </script></body>
 </html>

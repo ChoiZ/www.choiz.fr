@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,16 +61,18 @@ Tags :
       <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="//www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="//www.choiz.fr/tag/upgrade.html">upgrade</a>,      <a href="//www.choiz.fr/tag/noyaux.html">noyaux</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
-      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre
-pour le mettre à jour vers la version : 4.3.0.</p>
-<p>Je liste les différents noyaux gentoo disponibles :</p>
-<pre class="literal-block">
-eix sys-kernel/gentoo-sources
-</pre>
-<p>Je télécharge le noyau 4.3.0 :</p>
-<pre class="literal-block">
-emerge -a =sys-kernel/gentoo-sources-4.3.0
-</pre>
+      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
+suivre pour le mettre à jour vers la version : 4.3.0.</p>
+<p>Je liste les différents noyaux gentoo disponibles : :</p>
+<div class="highlight"><pre>eix sys-kernel/gentoo-sources
+</pre></div>
+
+
+<p>Je télécharge le noyau 4.3.0 : :</p>
+<div class="highlight"><pre>emerge -a =sys-kernel/gentoo-sources-4.3.0
+</pre></div>
+
+
 <p>Une ...</p>
       <a class="btn" href="//www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html#2015-11-21-mise-a-jour-d-un-kernel-gentoo">Lire la suite</a>
   </div>
@@ -85,23 +87,25 @@ Tags :
       <a href="//www.choiz.fr/tag/compilation.html">compilation</a>,      <a href="//www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>    </p>
   </header>
   <div>
-      <p>Pour compiler le kernel sous gentoo :</p>
-<pre class="literal-block">
-cd /usr/src/linux
+      <p>Pour compiler le kernel sous gentoo : :</p>
+<div class="highlight"><pre>cd /usr/src/linux
 
 make menuconfig
 
 make &amp;&amp; make modules_install
 
 make install
-</pre>
+</pre></div>
+
+
 <p>Le kernel est maintenant compilé.</p>
-<p>Maintenant il faut mettre à jour grub.</p>
-<pre class="literal-block">
-grub2-mkconfig -o /boot/grub/grub.cfg
-</pre>
-<p>Puis lancer <cite>uname -a</cite> qui affiche le kernel actuellement utilisé ainsi que le
-nombre de ...</p>
+<p>Maintenant il faut mettre à jour grub. :</p>
+<div class="highlight"><pre>grub2-mkconfig -o /boot/grub/grub.cfg
+</pre></div>
+
+
+<p>Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi
+que le nombre de ...</p>
       <a class="btn" href="//www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html#2015-09-06-compilation-kernel-gentoo">Lire la suite</a>
   </div>
   <hr />
@@ -115,10 +119,11 @@ Tags :
       <a href="//www.choiz.fr/tag/clevo.html">clevo</a>,      <a href="//www.choiz.fr/tag/clevo-w650.html">clevo w650</a>,      <a href="//www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="//www.choiz.fr/tag/ethernet.html">ethernet</a>,      <a href="//www.choiz.fr/tag/realtek.html">realtek</a>,      <a href="//www.choiz.fr/tag/audio.html">audio</a>,      <a href="//www.choiz.fr/tag/hdaudio.html">hdaudio</a>,      <a href="//www.choiz.fr/tag/achat.html">achat</a>,      <a href="//www.choiz.fr/tag/i7-4910mq.html">i7 4910MQ</a>,      <a href="//www.choiz.fr/tag/msata.html">mSata</a>    </p>
   </header>
   <div>
-      <p>Ayant vendu mon Macbook Air 13&quot; il y a quelques mois, j'ai pris le temps
-de comparer les différents portables. La marque Taïwanaise &quot;clevo&quot; propose des
-machines avec ou sans OS (gain d'une centaine d'euros pour Windows).</p>
-<p>J'ai donc commandé chez <a class="reference external" href="http://www.clevo.fr">Anyware</a> un w650sz avec un ...</p>
+      <p>Ayant vendu mon Macbook Air 13" il y a quelques mois, j'ai pris le temps
+de comparer les différents portables. La marque Taïwanaise "clevo"
+propose des machines avec ou sans OS (gain d'une centaine d'euros pour
+Windows).</p>
+<p>J'ai donc commandé chez <a href="http://www.clevo.fr">Anyware</a> un w650sz avec un ...</p>
       <a class="btn" href="//www.choiz.fr/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html#2015-07-18-ma-config-clevo-w650sz-i7-4910mq">Lire la suite</a>
   </div>
 </article>

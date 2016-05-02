@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Petit ajout dans mon fichier .vimrc " Highlight To do list with green background highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red " Match todolist, notice, fixme :call matchadd('Todo ..." />
+<meta name="description" content="Petit ajout dans mon fichier .vimrc : " Highlight To do list with green background highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red " Match todolist, notice, fixme :call matchadd('Todo ..." />
 <meta name="keywords" content="vimrc, vim, config file, .vimrc, todo, notice, fixme, highlight, matchadd">
 <meta property="og:site_name" content="ChoiZ"/>
-<meta property="og:title" content="Ajout dans mon .vimrc de matchadd() &amp; highlight"/>
-<meta property="og:description" content="Petit ajout dans mon fichier .vimrc " Highlight To do list with green background highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red " Match todolist, notice, fixme :call matchadd('Todo ..."/>
+<meta property="og:title" content="Ajout dans mon .vimrc de matchadd() & highlight"/>
+<meta property="og:description" content="Petit ajout dans mon fichier .vimrc : " Highlight To do list with green background highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red " Match todolist, notice, fixme :call matchadd('Todo ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html"/>
 <meta property="og:type" content="article"/>
@@ -33,7 +33,7 @@
 <meta property="article:tag" content="fixme"/>
 <meta property="article:tag" content="highlight"/>
 <meta property="article:tag" content="matchadd"/>
-<meta property="og:image" content="avatar.png">  <title>ChoiZ &ndash; Ajout dans mon .vimrc de matchadd() &amp; highlight</title>
+<meta property="og:image" content="avatar.png">  <title>ChoiZ &ndash; Ajout dans mon .vimrc de matchadd() & highlight</title>
 </head>
 <body>
   <aside>
@@ -67,25 +67,23 @@
 
 <article>
   <header>
-    <h1 id="2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight">Ajout dans mon .vimrc de matchadd() &amp; highlight</h1>
+    <h1 id="2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight">Ajout dans mon .vimrc de matchadd() & highlight</h1>
     <p>Posté le ven. 27 avril 2012</p>
   </header>
   <div>
-    <p>Petit ajout dans mon fichier .vimrc</p>
-<pre class="literal-block">
-&quot; Highlight To do list with green background
+    <p>Petit ajout dans mon fichier .vimrc :</p>
+<div class="highlight"><pre>&quot; Highlight To do list with green background
 highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
 highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
 highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
 &quot; Match todolist, notice, fixme
-:call matchadd('Todo','[T|t][O|o][D|d][O|o]')
-:call matchadd('Todo','[T|t][O|o] [D|d][O|o]')
-:call matchadd('Notice','[N|n][O|o][T|t][I|i][C|c][E|e]')
-:call matchadd('Notice','[N|n][O|o][T|t][E|e]')
-:call matchadd('Fixme','[F|f][I|i][X|x][M|m][E|e]')
-:call matchadd('Fixme','[F|f][I|i][X|x] [M|m][E|e]')
-</pre>
-
+:call matchadd(&#39;Todo&#39;,&#39;[T|t][O|o][D|d][O|o]&#39;)
+:call matchadd(&#39;Todo&#39;,&#39;[T|t][O|o] [D|d][O|o]&#39;)
+:call matchadd(&#39;Notice&#39;,&#39;[N|n][O|o][T|t][I|i][C|c][E|e]&#39;)
+:call matchadd(&#39;Notice&#39;,&#39;[N|n][O|o][T|t][E|e]&#39;)
+:call matchadd(&#39;Fixme&#39;,&#39;[F|f][I|i][X|x][M|m][E|e]&#39;)
+:call matchadd(&#39;Fixme&#39;,&#39;[F|f][I|i][X|x] [M|m][E|e]&#39;)
+</pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -110,8 +108,8 @@ highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "name": "Ajout dans mon .vimrc de matchadd() &amp; highlight",
-  "headline": "Ajout dans mon .vimrc de matchadd() &amp; highlight",
+  "name": "Ajout dans mon .vimrc de matchadd() & highlight",
+  "headline": "Ajout dans mon .vimrc de matchadd() & highlight",
   "datePublished": "2012-04-27 15:11:26+02:00",
   "dateModified": "",
   "author": {
@@ -121,7 +119,7 @@ highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html",
-  "description": "Petit ajout dans mon fichier .vimrc " Highlight To do list with green background highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red " Match todolist, notice, fixme :call matchadd('Todo ..."
+  "description": "Petit ajout dans mon fichier .vimrc : " Highlight To do list with green background highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red " Match todolist, notice, fixme :call matchadd('Todo ..."
 }
 </script></body>
 </html>

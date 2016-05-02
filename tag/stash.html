@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,20 +61,20 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/stash.html">stash</a>,      <a href="//www.choiz.fr/tag/content.html">content</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/file-content.html">file content</a>,      <a href="//www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="//www.choiz.fr/tag/show.html">show</a>    </p>
   </header>
   <div>
-      <p>Pour lister les stash :</p>
-<pre class="literal-block">
-git stash list
+      <p>Pour lister les stash : :</p>
+<div class="highlight"><pre>git stash list
 
-stash&#64;{0}: WIP on BranchName: 5d8a556 Edit file.js
-stash&#64;{1}: WIP on&nbsp;BranchName: 66dfe78 Edit file.css
+stash@{0}: WIP on BranchName: 5d8a556 Edit file.js
+stash@{1}: WIP on BranchName: 66dfe78 Edit file.css
 …
-stash&#64;{5}: WIP on&nbsp;BranchName: 3bb67ff Add file.css file.js
-</pre>
-<p>Pour voir le contenu d'un stash :</p>
-<pre class="literal-block">
-git stash show
+stash@{5}: WIP on BranchName: 3bb67ff Add file.css file.js
+</pre></div>
 
-stash&#64;{0} chemin/vers ...</pre>
+
+<p>Pour voir le contenu d'un stash : :</p>
+<div class="highlight"><pre>git stash show
+
+stash@{0} chemin/vers ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis.html#2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis">Lire la suite</a>
   </div>
   <hr />
@@ -88,29 +88,28 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/gitconfig.html">gitconfig</a>,      <a href="//www.choiz.fr/tag/git-pull.html">git pull</a>,      <a href="//www.choiz.fr/tag/git-push.html">git push</a>,      <a href="//www.choiz.fr/tag/git-diff.html">git diff</a>,      <a href="//www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="//www.choiz.fr/tag/stash.html">stash</a>    </p>
   </header>
   <div>
-      <p>Ajout du pull, push, diff et surtout stash</p>
-<pre class="literal-block">
-[user]
-  name = François LASSERRE
-  email = mon&#64;email.fr
-[diff]
-  tool = vimdiff
-[color]
-  branch = auto
-  diff = auto
-  status = auto
-  interactive = auto
-  ui = true
-[alias]
-  br = branch
-  ci = commit -a
-  co = checkout
-  sh = show --color-words
-  st = status
-  di = diff
-  ph = push
-  pl = pull
-  sta ...</pre>
+      <p>Ajout du pull, push, diff et surtout stash :</p>
+<div class="highlight"><pre><span class="k">[user]</span>
+  <span class="na">name</span> <span class="o">=</span> <span class="s">François LASSERRE</span>
+<span class="s">  email = mon@email.fr</span>
+<span class="k">[diff]</span>
+  <span class="na">tool</span> <span class="o">=</span> <span class="s">vimdiff</span>
+<span class="k">[color]</span>
+  <span class="na">branch</span> <span class="o">=</span> <span class="s">auto</span>
+<span class="s">  diff = auto</span>
+<span class="s">  status = auto</span>
+<span class="s">  interactive = auto</span>
+<span class="s">  ui = true</span>
+<span class="k">[alias]</span>
+  <span class="na">br</span> <span class="o">=</span> <span class="s">branch</span>
+<span class="s">  ci = commit -a</span>
+<span class="s">  co = checkout</span>
+<span class="s">  sh = show --color-words</span>
+<span class="s">  st = status</span>
+<span class="s">  di = diff</span>
+<span class="s">  ph = push</span>
+<span class="s">  pl = pull</span>
+<span class="s">  sta ...</span></pre></div>
       <a class="btn" href="//www.choiz.fr/2012-04-13-update-gitconfig.html#2012-04-13-update-gitconfig">Lire la suite</a>
   </div>
 </article>

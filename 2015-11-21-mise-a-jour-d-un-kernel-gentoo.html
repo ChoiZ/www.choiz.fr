@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre pour le mettre à jour vers la version : 4.3.0. Je liste les différents noyaux gentoo disponibles : eix sys-kernel/gentoo-sources Je télécharge le noyau 4.3.0 : emerge -a =sys-kernel/gentoo-sources-4.3.0 Une ..." />
+<meta name="description" content="Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre pour le mettre à jour vers la version : 4.3.0. Je liste les différents noyaux gentoo disponibles : : eix sys-kernel/gentoo-sources Je télécharge le noyau 4.3.0 : : emerge -a =sys-kernel/gentoo-sources-4.3.0 Une ..." />
 <meta name="keywords" content="gentoo, kernel, upgrade, noyaux, linux">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Mise à jour d'un kernel gentoo"/>
-<meta property="og:description" content="Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre pour le mettre à jour vers la version : 4.3.0. Je liste les différents noyaux gentoo disponibles : eix sys-kernel/gentoo-sources Je télécharge le noyau 4.3.0 : emerge -a =sys-kernel/gentoo-sources-4.3.0 Une ..."/>
+<meta property="og:description" content="Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre pour le mettre à jour vers la version : 4.3.0. Je liste les différents noyaux gentoo disponibles : : eix sys-kernel/gentoo-sources Je télécharge le noyau 4.3.0 : : emerge -a =sys-kernel/gentoo-sources-4.3.0 Une ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html"/>
 <meta property="og:type" content="article"/>
@@ -67,37 +67,43 @@
     <p>Posté le sam. 21 novembre 2015</p>
   </header>
   <div>
-    <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre
-pour le mettre à jour vers la version : 4.3.0.</p>
-<p>Je liste les différents noyaux gentoo disponibles :</p>
-<pre class="literal-block">
-eix sys-kernel/gentoo-sources
-</pre>
-<p>Je télécharge le noyau 4.3.0 :</p>
-<pre class="literal-block">
-emerge -a =sys-kernel/gentoo-sources-4.3.0
-</pre>
-<p>Une fois téléchargé, il faut modifier le lien symbolique <cite>/usr/src/linux</cite> grâce
-à eselect.</p>
-<p>J'affiche la liste des noyaux (celui actuellement selectionné est suivi d'une
-étoile) :</p>
-<pre class="literal-block">
-eselect kernel list
+    <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
+suivre pour le mettre à jour vers la version : 4.3.0.</p>
+<p>Je liste les différents noyaux gentoo disponibles : :</p>
+<div class="highlight"><pre>eix sys-kernel/gentoo-sources
+</pre></div>
+
+
+<p>Je télécharge le noyau 4.3.0 : :</p>
+<div class="highlight"><pre>emerge -a =sys-kernel/gentoo-sources-4.3.0
+</pre></div>
+
+
+<p>Une fois téléchargé, il faut modifier le lien symbolique /usr/src/linux
+grâce à eselect.</p>
+<p>J'affiche la liste des noyaux (celui actuellement selectionné est suivi
+d'une étoile) : :</p>
+<div class="highlight"><pre>eselect kernel list
 
 [1]     linux-4.2.0-gentoo *
 [2]     linux-4.3.0-gentoo
-</pre>
-<p>Pour selectionner notre noyau 4.3.0 il faut utiliser :</p>
-<pre class="literal-block">
-eselect kernel set 2
-</pre>
-<p>Maintenant que vous avez selectionné votre noyau, copier le fichier &quot;.config&quot; de
-votre noyau précédent (pour conserver vos réglages de compilation)</p>
-<pre class="literal-block">
-cp /usr/src/linux-4.2.0-gentoo/.config /usr/src/linux
-</pre>
-<p>Puis <a class="reference external" href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">compiler votre kernel</a>.</p>
+</pre></div>
 
+
+<p>Pour selectionner notre noyau 4.3.0 il faut utiliser : :</p>
+<div class="highlight"><pre>eselect kernel set 2
+</pre></div>
+
+
+<p>Maintenant que vous avez selectionné votre noyau, copier le fichier
+".config" de votre noyau précédent (pour conserver vos réglages de
+compilation) :</p>
+<div class="highlight"><pre>cp /usr/src/linux-4.2.0-gentoo/.config /usr/src/linux
+</pre></div>
+
+
+<p>Puis <a href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">compiler votre
+kernel</a>.</p>
   </div>
   <div class="tag-cloud">
     <p>
@@ -129,7 +135,7 @@ cp /usr/src/linux-4.2.0-gentoo/.config /usr/src/linux
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html",
-  "description": "Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre pour le mettre à jour vers la version : 4.3.0. Je liste les différents noyaux gentoo disponibles : eix sys-kernel/gentoo-sources Je télécharge le noyau 4.3.0 : emerge -a =sys-kernel/gentoo-sources-4.3.0 Une ..."
+  "description": "Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a suivre pour le mettre à jour vers la version : 4.3.0. Je liste les différents noyaux gentoo disponibles : : eix sys-kernel/gentoo-sources Je télécharge le noyau 4.3.0 : : emerge -a =sys-kernel/gentoo-sources-4.3.0 Une ..."
 }
 </script></body>
 </html>

@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,20 +61,23 @@ Tags :
       <a href="//www.choiz.fr/tag/php.html">PHP</a>,      <a href="//www.choiz.fr/tag/latin1.html">LATIN1</a>,      <a href="//www.choiz.fr/tag/utf-8.html">UTF-8</a>,      <a href="//www.choiz.fr/tag/mysql.html">MYSQL</a>,      <a href="//www.choiz.fr/tag/encoding.html">ENCODING</a>,      <a href="//www.choiz.fr/tag/charset.html">CHARSET</a>,      <a href="//www.choiz.fr/tag/mysqldump.html">mysqldump</a>    </p>
   </header>
   <div>
-      <p>Voilà une solution simple pour convertir une base de donnée en Latin1 vers de
-l'UTF-8.</p>
-<p>Utiliser mysqldump avec les options suivantes :</p>
-<pre class="literal-block">
---default-character-set=utf8
-</pre>
-<p>et</p>
-<pre class="literal-block">
---skip-set-charset
-</pre>
-<p>Voilà la commande&nbsp;complète :</p>
-<pre class="literal-block">
-mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
-</pre>
+      <p>Voilà une solution simple pour convertir une base de donnée en Latin1
+vers de l'UTF-8.</p>
+<p>Utiliser mysqldump avec les options suivantes : :</p>
+<div class="highlight"><pre>--default-character-set=utf8
+</pre></div>
+
+
+<p>et :</p>
+<div class="highlight"><pre>--skip-set-charset
+</pre></div>
+
+
+<p>Voilà la commande complète : :</p>
+<div class="highlight"><pre>mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
+</pre></div>
+
+
 <p>Ensuite en utilisant vim je fais un rechercher / remplacer ...</p>
       <a class="btn" href="//www.choiz.fr/2013-05-29-latin1-utf-8.html#2013-05-29-latin1-utf-8">Lire la suite</a>
   </div>
@@ -89,12 +92,11 @@ Tags :
       <a href="//www.choiz.fr/tag/mysql.html">Mysql</a>,      <a href="//www.choiz.fr/tag/mysqldump.html">Mysqldump</a>,      <a href="//www.choiz.fr/tag/database.html">Database</a>,      <a href="//www.choiz.fr/tag/migration.html">Migration</a>,      <a href="//www.choiz.fr/tag/dump-sql.html">Dump Sql</a>,      <a href="//www.choiz.fr/tag/sql.html">Sql</a>    </p>
   </header>
   <div>
-      <p>Pour faire mes migrations de base de donnée j'utilise en ligne de commande
-mysqldump et mysql.</p>
-<p>Dans un premier temps je sauve ma base <cite>database</cite> dans le fichier <cite>dump.sql</cite>
-J'utilise l'utilisateur mysql : <cite>utilisateur</cite> avec son mot de passe <cite>p4ss</cite></p>
-<pre class="literal-block">
-mysqldump -u utilisateur -p p4ss database &gt; dump ...</pre>
+      <p>Pour faire mes migrations de base de donnée j'utilise en ligne de
+commande mysqldump et mysql.</p>
+<p>Dans un premier temps je sauve ma base database dans le fichier dump.sql
+J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss :</p>
+<div class="highlight"><pre>mysqldump -u utilisateur -p p4ss database &gt; dump ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2011-05-14-migration-dune-base-de-donnée-mysql.html#2011-05-14-migration-dune-base-de-donnée-mysql">Lire la suite</a>
   </div>
 </article>

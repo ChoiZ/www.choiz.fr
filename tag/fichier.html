@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,9 +61,8 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/gitignore.html">gitignore</a>,      <a href="//www.choiz.fr/tag/gitignore.html">.gitignore</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>    </p>
   </header>
   <div>
-      <p>Voilà mon petit fichier .gitignore</p>
-<pre class="literal-block">
-# Ignore files from git
+      <p>Voilà mon petit fichier .gitignore :</p>
+<div class="highlight"><pre># Ignore files from git
 
 # ._ files (Mac Os X)
 ._*
@@ -73,30 +72,30 @@ Tags :
 
 # .swp (Vim)
 *.swp
-</pre>
-
+</pre></div>
       <a class="btn" href="//www.choiz.fr/2012-08-13-mon-fichier-gitignore.html#2012-08-13-mon-fichier-gitignore">Lire la suite</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Insérer un # au début de chaque ligne d'un fichier avec vim</a></h2>
+    <h2><a href="//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Insérer un \# au début de chaque ligne d'un fichier avec vim</a></h2>
     <p>
       Posté le mer. 05 octobre 2011 &#8226;
 Tags :
       <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/search.html">search</a>,      <a href="//www.choiz.fr/tag/replace.html">replace</a>,      <a href="//www.choiz.fr/tag/line.html">line</a>,      <a href="//www.choiz.fr/tag/add.html">add</a>,      <a href="//www.choiz.fr/tag/ligne.html">ligne</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/remplace.html">remplace</a>,      <a href="//www.choiz.fr/tag/ajout.html">ajout</a>    </p>
   </header>
   <div>
-      <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un fichier avec
-vim :</p>
-<pre class="literal-block">
-:1,$s/^/#/
-</pre>
+      <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un
+fichier avec vim : :</p>
+<div class="highlight"><pre><span class="x">:1,</span><span class="p">$</span><span class="nv">s</span><span class="x">/^/</span><span class="err">#</span><span class="x">/</span>
+</pre></div>
+
+
 <p>Explications :</p>
-<p><cite>:1,$</cite> Sélection des ligne 1 à $ ($ étant la dernière).</p>
-<p><cite>s/^/#/</cite> <cite>s</cite> pour search <cite>^</cite> indique le début de ligne <cite>/</cite> sépare ma recherche
-par ce que l'on remplace <cite>#</cite> est le caractère que ...</p>
+<p>:1,$ Sélection des ligne 1 à $ ($ étant la dernière).</p>
+<p>s/^/#/ s pour search ^ indique le début de ligne / sépare ma recherche
+par ce que l'on remplace # est le caractère que ...</p>
       <a class="btn" href="//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Lire la suite</a>
   </div>
   <hr />
@@ -107,15 +106,17 @@ par ce que l'on remplace <cite>#</cite> est le caractère que ...</p>
     <p>
       Posté le mar. 26 juillet 2011 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/svn.html">svn</a>,      <a href="//www.choiz.fr/tag/ignore.html">ignore</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/folder.html">folder</a>,      <a href="//www.choiz.fr/tag/dossier.html">dossier</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS_Store</a>,      <a href="//www.choiz.fr/tag/_.html">._*</a>,      <a href="//www.choiz.fr/tag/_.html">._</a>,      <a href="//www.choiz.fr/tag/swp.html">.swp</a>,      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/mac-os.html">Mac Os</a>    </p>
+      <a href="//www.choiz.fr/tag/svn.html">svn</a>,      <a href="//www.choiz.fr/tag/ignore.html">ignore</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/folder.html">folder</a>,      <a href="//www.choiz.fr/tag/dossier.html">dossier</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS\_Store</a>,      <a href="//www.choiz.fr/tag/_.html">.\_\*</a>,      <a href="//www.choiz.fr/tag/_.html">.\_</a>,      <a href="//www.choiz.fr/tag/swp.html">.swp</a>,      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/mac-os.html">Mac Os</a>    </p>
   </header>
   <div>
-      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<pre class="literal-block">
-svn propset svn:ignore
-</pre>
-<p>Ou dans la configuration du svn dans <cite>~/.subversion/config</cite> le <cite>global-ignores</cite></p>
-<p>Pour ignorer tous les fichiers qui commencent par <cite>._</cite> dans le dossier ou
+      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn : :</p>
+<div class="highlight"><pre>svn propset svn:ignore
+</pre></div>
+
+
+<p>Ou dans la configuration du svn dans ~/.subversion/config le
+global-ignores</p>
+<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
 l'on se trouve actuellement il suffit d'executer la commande ...</p>
       <a class="btn" href="//www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html#2011-07-26-ignorer-grâce-au-svn">Lire la suite</a>
   </div>
@@ -123,33 +124,35 @@ l'on se trouve actuellement il suffit d'executer la commande ...</p>
 </article>
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html#2011-05-29-split-vsplit-dans-vim">Split &amp; Vsplit dans vim</a></h2>
+    <h2><a href="//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html#2011-05-29-split-vsplit-dans-vim">Split & Vsplit dans vim</a></h2>
     <p>
       Posté le dim. 29 mai 2011 &#8226;
 Tags :
       <a href="//www.choiz.fr/tag/vim.html">vim</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/editeur.html">editeur</a>,      <a href="//www.choiz.fr/tag/texte.html">texte</a>,      <a href="//www.choiz.fr/tag/terminal.html">terminal</a>,      <a href="//www.choiz.fr/tag/commande.html">commande</a>,      <a href="//www.choiz.fr/tag/split.html">split</a>,      <a href="//www.choiz.fr/tag/vsplit.html">vsplit</a>,      <a href="//www.choiz.fr/tag/window.html">window</a>,      <a href="//www.choiz.fr/tag/colonnes.html">colonnes</a>,      <a href="//www.choiz.fr/tag/cols.html">cols</a>,      <a href="//www.choiz.fr/tag/columns.html">columns</a>    </p>
   </header>
   <div>
-      <p>Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour pouvoir
-ouvrir plusieurs fichiers en même temps.</p>
+      <p>Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
+pouvoir ouvrir plusieurs fichiers en même temps.</p>
 <p>Pour celà il utilises 2 méthodes soit :</p>
-<ol class="arabic">
-<li><p class="first">la division de la fenêtre horizontal en utilisant</p>
-<pre class="literal-block">
-:split
-</pre>
+<ol>
+<li>la division de la fenêtre horizontal en utilisant :<div class="highlight"><pre>:split
+</pre></div>
+
+
 </li>
 </ol>
-<p>ou</p>
-<pre class="literal-block">
-:new
-</pre>
-<p>et ensuite</p>
-<pre class="literal-block">
-:e le_fichier_a_ouvrir
-</pre>
-<ol class="arabic" start="2">
-<li><p class="first">la division de la fenêtre verticalement ...</p></li></ol>
+<p>ou :</p>
+<div class="highlight"><pre>:new
+</pre></div>
+
+
+<p>et ensuite :</p>
+<div class="highlight"><pre>:e le_fichier_a_ouvrir
+</pre></div>
+
+
+<ol>
+<li>la division de la fenêtre verticalement ...</li></ol>
       <a class="btn" href="//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html#2011-05-29-split-vsplit-dans-vim">Lire la suite</a>
   </div>
   <hr />
@@ -163,22 +166,19 @@ Tags :
       <a href="//www.choiz.fr/tag/php.html">php</a>,      <a href="//www.choiz.fr/tag/htaccess.html">htaccess</a>,      <a href="//www.choiz.fr/tag/htpasswd.html">htpasswd</a>,      <a href="//www.choiz.fr/tag/protection.html">protection</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/authenticate.html">authenticate</a>,      <a href="//www.choiz.fr/tag/auth.html">auth</a>    </p>
   </header>
   <div>
-      <p>Faire un système de protection (tel que htaccess) direct dans un fichier
-PHP :</p>
-<pre class="literal-block">
-&lt;?php
-if (!empty($_SERVER[&quot;PHP_AUTH_USER&quot;]) &amp;&amp;
-$_SERVER[&quot;PHP_AUTH_USER&quot;] == &quot;login&quot; &amp;&amp;
-$_SERVER[&quot;PHP_AUTH_PW&quot;] == &quot;password&quot;) {
-    // code protégé ici
-} else {
-    header('WWW-Authenticate: Basic realm=&quot;Restricted area&quot;');
-    header('HTTP/1.0 401 Unauthorized');
-    exit('Access Denied');
-}
-?&gt;
-</pre>
-
+      <p>Faire un système de protection (tel que htaccess) direct dans un fichier PHP :</p>
+<div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_USER&quot;</span><span class="p">])</span> <span class="o">&amp;&amp;</span>
+<span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_USER&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;login&quot;</span> <span class="o">&amp;&amp;</span>
+<span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_PW&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// code protégé ici</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;WWW-Authenticate: Basic realm=&quot;Restricted area&quot;&#39;</span><span class="p">);</span>
+    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;HTTP/1.0 401 Unauthorized&#39;</span><span class="p">);</span>
+    <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;Access Denied&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</pre></div>
       <a class="btn" href="//www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html#2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php">Lire la suite</a>
   </div>
 </article>

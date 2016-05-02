@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -15,7 +15,7 @@
 <meta name="description" content="Certains programmes n’étant pas en dernière version dans les dépôts gentoo l’utilisation de layman peut faciliter la vie. Étant à la recherche de vagrant, la seule version disponible à ce jour sur gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de vagrant je me rend ..." />
 <meta name="keywords" content="dépôt, repos, layman, eix, emerge, gentoo, vagrant-bin, overlay">
 <meta property="og:site_name" content="ChoiZ"/>
-<meta property="og:title" content="Gentoo utilisation de layman &amp; eix"/>
+<meta property="og:title" content="Gentoo utilisation de layman & eix"/>
 <meta property="og:description" content="Certains programmes n’étant pas en dernière version dans les dépôts gentoo l’utilisation de layman peut faciliter la vie. Étant à la recherche de vagrant, la seule version disponible à ce jour sur gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de vagrant je me rend ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2015-07-19-gentoo-utilisation-de-layman-eix.html"/>
@@ -32,7 +32,7 @@
 <meta property="article:tag" content="gentoo"/>
 <meta property="article:tag" content="vagrant-bin"/>
 <meta property="article:tag" content="overlay"/>
-<meta property="og:image" content="avatar.png">  <title>ChoiZ &ndash; Gentoo utilisation de layman &amp; eix</title>
+<meta property="og:image" content="avatar.png">  <title>ChoiZ &ndash; Gentoo utilisation de layman & eix</title>
 </head>
 <body>
   <aside>
@@ -66,40 +66,44 @@
 
 <article>
   <header>
-    <h1 id="2015-07-19-gentoo-utilisation-de-layman-eix">Gentoo utilisation de layman &amp; eix</h1>
+    <h1 id="2015-07-19-gentoo-utilisation-de-layman-eix">Gentoo utilisation de layman & eix</h1>
     <p>Posté le dim. 19 juillet 2015</p>
   </header>
   <div>
     <p>Certains programmes n’étant pas en dernière version dans les dépôts
 gentoo l’utilisation de layman peut faciliter la vie.</p>
-<p>Étant à la recherche de vagrant, la seule version disponible à ce jour sur
-gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de vagrant je me
-rend compte que nous sommes à la version 1.7.3.</p>
+<p>Étant à la recherche de vagrant, la seule version disponible à ce jour
+sur gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de
+vagrant je me rend compte que nous sommes à la version 1.7.3.</p>
 <p>J’ai donc trouvé un overlay avec vagrant-bin version 1.7.3 :
-<a class="reference external" href="http://gpo.zugaina.org/app-emulation/vagrant-bin">http://gpo.zugaina.org/app-emulation/vagrant-bin</a></p>
+<a href="http://gpo.zugaina.org/app-emulation/vagrant-bin">http://gpo.zugaina.org/app-emulation/vagrant-bin</a></p>
 <p>Pour utiliser cette overlay nous avons besoin de layman.</p>
-<p>Installation :</p>
-<pre class="literal-block">
-emerge -a layman
+<p>Installation : :</p>
+<div class="highlight"><pre>emerge -a layman
 
 echo &quot;source /usr/portage/local/layman/make.conf&quot; &gt;&gt; /etc/make.conf
-</pre>
-<p>Pour afficher tous les overlays disponible :</p>
-<pre class="literal-block">
-layman -L
-</pre>
-<p>Ajouter l’overlay stefantalpalaru (dans lequel nous avons vagrant-bin-1.7.3)</p>
-<pre class="literal-block">
-layman -f -a stefantalpalaru
-</pre>
-<p>Maintenant si on recherche dans eix “vagrant” rien n’a changé.</p>
-<p>Il faut mettre à jour eix :</p>
-<pre class="literal-block">
-eix-update
-</pre>
-<p>Maintenant avec eix vagrant nous avons la ligne vagrant-bin et donc nous pouvons
-installer vagrant-1.7.3 via emerge.</p>
+</pre></div>
 
+
+<p>Pour afficher tous les overlays disponible : :</p>
+<div class="highlight"><pre>layman -L
+</pre></div>
+
+
+<p>Ajouter l’overlay stefantalpalaru (dans lequel nous avons
+vagrant-bin-1.7.3) :</p>
+<div class="highlight"><pre>layman -f -a stefantalpalaru
+</pre></div>
+
+
+<p>Maintenant si on recherche dans eix “vagrant” rien n’a changé.</p>
+<p>Il faut mettre à jour eix : :</p>
+<div class="highlight"><pre>eix-update
+</pre></div>
+
+
+<p>Maintenant avec eix vagrant nous avons la ligne vagrant-bin et donc nous
+pouvons installer vagrant-1.7.3 via emerge.</p>
   </div>
   <div class="tag-cloud">
     <p>
@@ -123,8 +127,8 @@ installer vagrant-1.7.3 via emerge.</p>
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "name": "Gentoo utilisation de layman &amp; eix",
-  "headline": "Gentoo utilisation de layman &amp; eix",
+  "name": "Gentoo utilisation de layman & eix",
+  "headline": "Gentoo utilisation de layman & eix",
   "datePublished": "2015-07-19 10:54:55+02:00",
   "dateModified": "",
   "author": {

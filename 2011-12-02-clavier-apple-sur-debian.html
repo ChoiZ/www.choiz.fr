@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -70,16 +70,14 @@
     <p>Posté le ven. 02 décembre 2011</p>
   </header>
   <div>
-    <p>Depuis le temps que je bosse avec un clavier Apple je me suis habitué au mapage
-clavier Mac.
-Il y a beaucoup de différences entre un clavier AZERTY de PC et un
-clavier AZERTY de Mac.</p>
-<p>Les touches : <cite>&#64;</cite> <cite>#</cite> <cite>~</cite> <cite>| (pipe)</cite> <cite>=</cite> <cite>+</cite> <cite>-</cite> <cite>_</cite> <cite>!</cite> <cite>(</cite> <cite>)</cite> <cite>{</cite> <cite>}</cite> <cite>[</cite> <cite>]</cite>
-sont disposées à des endroits complétement différents.</p>
-<p>J'ai donc décidé de modifier la configuration de debian pour prendre en compte
-un clavier mac.</p>
-<pre class="literal-block">
-dpkg-reconfigure keyboard-console
+    <p>Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
+mapage clavier Mac. Il y a beaucoup de différences entre un clavier
+AZERTY de PC et un clavier AZERTY de Mac.</p>
+<p>Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
+des endroits complétement différents.</p>
+<p>J'ai donc décidé de modifier la configuration de debian pour prendre en
+compte un clavier mac. :</p>
+<div class="highlight"><pre>dpkg-reconfigure keyboard-console
 
 Select keymap from arch list
 
@@ -100,9 +98,11 @@ Key for AltGr: No AltGr Key
 Compose key: Right Alt (AltGr)
 
 Use Control+Alt+Backspace to terminate the X server? no
-</pre>
+</pre></div>
+
+
 <p>J'ai choisi un clavier Apple, Français Mac, sans touche AltGr, avec
-comme touche de fonctionnalité secondaire &quot;Alt droit&quot;. Malheureusement
+comme touche de fonctionnalité secondaire "Alt droit". Malheureusement
 je n'ai pas réussi a mapper l'Alt de gauche pour avoir la même fonction
 qu'à droite…</p>
 <p>Et ensuite j'ai indiqué que je ne voulais pas pouvoir quitter le server
@@ -111,7 +111,6 @@ X avec la combinaison de touche Control+Alt+Backspace.</p>
 clavier de votre gestionnaire de fenêtre (xfce: dans mon cas). Puis
 désactiver le layout par defaut du système.</p>
 <p><img alt="image0" src="http://media.tumblr.com/tumblr_lvjsbrOL8E1qzr4hx.png" /></p>
-
   </div>
   <div class="tag-cloud">
     <p>

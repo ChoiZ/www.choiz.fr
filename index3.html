@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -54,6 +54,32 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html#2014-05-06-faire-un-patch-de-x-commits-avec-git">Faire un patch de "x" commit(s) avec git</a></h2>
+    <p>
+      Posté le mar. 06 mai 2014 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/patch.html">patch</a>,      <a href="//www.choiz.fr/tag/commit.html">commit</a>    </p>
+  </header>
+  <div>
+      <p>Voici mon historique des commits : :</p>
+<div class="highlight"><pre>c0004 -- dernier commit
+c0003 -- avant dernier commit
+c0002 -- second commit
+c0001 -- premier commit
+</pre></div>
+
+
+<p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire : :</p>
+<div class="highlight"><pre>git format-patch -2 c0002 --stdout &gt; mon.patch
+</pre></div>
+
+
+<p>le "-2" sert à récupérer 2 commits à partir du commit c0002.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2014-03-21-installation-de-skype-64-sur-debian.html#2014-03-21-installation-de-skype-64-sur-debian">Installation de Skype 64 sur Debian</a></h2>
     <p>
       Posté le ven. 21 mars 2014 &#8226;
@@ -61,45 +87,60 @@ Tags :
       <a href="//www.choiz.fr/tag/skype.html">Skype</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/installation-de-skype.html">Installation de Skype</a>,      <a href="//www.choiz.fr/tag/skype-debian-64.html">Skype Debian 64</a>,      <a href="//www.choiz.fr/tag/debian-64.html">Debian 64</a>    </p>
   </header>
   <div>
-      <p>Télécharger la dernière version de <a class="reference external" href="http://www.skype.com">Skype</a> (Debian 7.0
-[multiarch]).</p>
-<p>Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait.</p>
-<pre class="literal-block">
-dpkg --add-architecture i386
-</pre>
-<p>Puis mettre à jour les paquets :</p>
-<pre class="literal-block">
-apt-get update
+      <p>Télécharger la dernière version de <a href="http://www.skype.com">Skype</a> (Debian
+7.0 [multiarch]).</p>
+<p>Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. :</p>
+<div class="highlight"><pre>dpkg --add-architecture i386
+</pre></div>
+
+
+<p>Puis mettre à jour les paquets : :</p>
+<div class="highlight"><pre>apt-get update
 apt-get upgrade
 apt-get install -f
-</pre>
-<p>Installer Skype en n'oubliant pas de remplacer &quot;x&quot; par la bonne version :</p>
-<pre class="literal-block">
-dpkg -i skype-debian_x_i386.deb
-</pre>
+</pre></div>
 
+
+<dl>
+<dt>Installer Skype en n'oubliant pas de remplacer "x" par la bonne version</dt>
+<dd>
+<p>:</p>
+<p>dpkg -i skype-debian_x_i386.deb</p>
+</dd>
+</dl>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html#2014-03-21-installation-de-firefox-sur-debian">Installation de Firefox sur Debian</a></h2>
+    <h2><a href="//www.choiz.fr/installation-de-firefox-sur-debian.html#installation-de-firefox-sur-debian">Installation de Firefox sur Debian</a></h2>
     <p>
       Posté le ven. 21 mars 2014 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/firefox.html">Firefox</a>,      <a href="//www.choiz.fr/tag/mozilla.html">Mozilla</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/installation-de-firefox.html">Installation de Firefox</a>,      <a href="//www.choiz.fr/tag/firefox-sur-debian.html">Firefox sur Debian</a>    </p>
+    </p>
   </header>
   <div>
-      <p>Télécharger la dernière version de Firefox sur <a class="reference external" href="http://www.mozilla.org/">le site de mozilla</a>.</p>
-<p>Décompresser l'archive dans :</p>
-<pre class="literal-block">
-/opt/firefox/
-</pre>
-<p>Créer un lien symbolique avec :</p>
-<pre class="literal-block">
-ls -sf /opt/firefox/firefox /usr/bin/firefox
-</pre>
+      <p>date<br />
+2014-03-21 01:14:41
+author<br />
+choiz
+category<br />
+text
+tags<br />
+Firefox, Mozilla, Debian, Installation de Firefox, Firefox sur Debian
+slug<br />
+2014-03-21-installation-de-firefox-sur-debian
+status<br />
+published</p>
+<p>Télécharger la dernière version de Firefox sur <a href="http://www.mozilla.org/">le site de
+mozilla</a>.</p>
+<p>Décompresser l'archive dans : :</p>
+<div class="highlight"><pre>/opt/firefox/
+</pre></div>
 
+
+<p>Créer un lien symbolique avec : :</p>
+<div class="highlight"><pre>ls -sf /opt/firefox/firefox /usr/bin/firefox
+</pre></div>
   </div>
   <hr />
 </article>
@@ -112,28 +153,30 @@ Tags :
       <a href="//www.choiz.fr/tag/firebug.html">firebug</a>,      <a href="//www.choiz.fr/tag/http.html">http</a>,      <a href="//www.choiz.fr/tag/https.html">https</a>,      <a href="//www.choiz.fr/tag/formulaire.html">formulaire</a>,      <a href="//www.choiz.fr/tag/warning.html">warning</a>,      <a href="//www.choiz.fr/tag/mot-de-passe.html">mot de passe</a>,      <a href="//www.choiz.fr/tag/password.html">password</a>,      <a href="//www.choiz.fr/tag/action.html">action</a>,      <a href="//www.choiz.fr/tag/form.html">form</a>    </p>
   </header>
   <div>
-      <p>Dans mon firebug des &quot;warnings&quot; s'affichent :</p>
-<pre class="literal-block">
-Champs mot de passe présents sur une page non sécurisée (http://). Cela
-représente un risque de sécurité permettant le vol d'identifiants de
+      <p>Dans mon firebug des "warnings" s'affichent : :</p>
+<div class="highlight"><pre>Champs mot de passe présents sur une page non sécurisée (http://). Cela
+représente un risque de sécurité permettant le vol d&#39;identifiants de
 connexion.
-</pre>
-<p>Ainsi que :</p>
-<pre class="literal-block">
-Champs mot de passe présents dans un formulaire possédant une action de
-formulaire non sécurisée (http://). Cela représente un risque de sécurité
-permettant le vol d'identifiants de connexion.
-</pre>
-<p>La première indications informe que vous n'êtes pas sur un site utilisant le
-HTTPS. Lorsque vous allez remplir le champs &quot;password&quot; celui-ci sera envoyé en
-clair sur le réseau.</p>
-<p>La seconde indication informe que l'action du formulaire envoi sur une page qui
-n'est pas en HTTPS.</p>
-<p>Vous pouvez avoir votre formulaire sur l'url : <a class="reference external" href="https://www.mon-formulaire.fr">https://www.mon-formulaire.fr</a> et
-dans l'action de votre formulaire avoir : <a class="reference external" href="http://www.mon-formulaire.fr">http://www.mon-formulaire.fr</a></p>
-<p>Dans ce cas l'affichage du formulaire est sécurisé, mais l'envoi des données ne
-l'est pas vu que l'action est en http.</p>
+</pre></div>
 
+
+<p>Ainsi que : :</p>
+<div class="highlight"><pre>Champs mot de passe présents dans un formulaire possédant une action de
+formulaire non sécurisée (http://). Cela représente un risque de sécurité
+permettant le vol d&#39;identifiants de connexion.
+</pre></div>
+
+
+<p>La première indications informe que vous n'êtes pas sur un site
+utilisant le HTTPS. Lorsque vous allez remplir le champs "password"
+celui-ci sera envoyé en clair sur le réseau.</p>
+<p>La seconde indication informe que l'action du formulaire envoi sur une
+page qui n'est pas en HTTPS.</p>
+<p>Vous pouvez avoir votre formulaire sur l'url :
+<a href="https://www.mon-formulaire.fr">https://www.mon-formulaire.fr</a> et dans l'action de votre formulaire
+avoir : <a href="http://www.mon-formulaire.fr">http://www.mon-formulaire.fr</a></p>
+<p>Dans ce cas l'affichage du formulaire est sécurisé, mais l'envoi des
+données ne l'est pas vu que l'action est en http.</p>
   </div>
   <hr />
 </article>
@@ -146,44 +189,49 @@ Tags :
       <a href="//www.choiz.fr/tag/imapfilter.html">imapfilter</a>,      <a href="//www.choiz.fr/tag/mail.html">mail</a>,      <a href="//www.choiz.fr/tag/filter.html">filter</a>,      <a href="//www.choiz.fr/tag/imap.html">imap</a>    </p>
   </header>
   <div>
-      <p>Installer imapfilter via apt par exemple :</p>
-<pre class="literal-block">
-apt-get install imapfilter
-</pre>
-<p>Se rendre dans le dossier de configuration :</p>
-<pre class="literal-block">
-cd ~/.imapfilter
-</pre>
-<p>Créer un fichier config.lua</p>
-<pre class="literal-block">
-touch config.lua
-</pre>
-<p>Maintenant je décide de faire un fichier de configuration par boite email.</p>
-<p>Ici gmail :</p>
-<pre class="literal-block">
-cat &gt; gmail.lua &lt;&lt;EOF
+      <p>Installer imapfilter via apt par exemple : :</p>
+<div class="highlight"><pre>apt-get install imapfilter
+</pre></div>
+
+
+<p>Se rendre dans le dossier de configuration : :</p>
+<div class="highlight"><pre>cd ~/.imapfilter
+</pre></div>
+
+
+<p>Créer un fichier config.lua :</p>
+<div class="highlight"><pre>touch config.lua
+</pre></div>
+
+
+<p>Maintenant je décide de faire un fichier de configuration par boite
+email.</p>
+<p>Ici gmail : :</p>
+<div class="highlight"><pre>cat &gt; gmail.lua &lt;&lt;EOF
 gmail = IMAP {
-    server = 'imap.gmail.com',
-    username = 'mail&#64;gmail.com',
-    password = 'mon_mot_de_passe',
-    ssl = 'ssl3',
+    server = &#39;imap.gmail.com&#39;,
+    username = &#39;mail@gmail.com&#39;,
+    password = &#39;mon_mot_de_passe&#39;,
+    ssl = &#39;ssl3&#39;,
 }
 EOF
-</pre>
-<p>Et un pour Yahoo :</p>
-<pre class="literal-block">
-cat &gt; yahoo.lua &lt;&lt;EOF
+</pre></div>
+
+
+<p>Et un pour Yahoo : :</p>
+<div class="highlight"><pre>cat &gt; yahoo.lua &lt;&lt;EOF
 yahoo = IMAP {
-    server = 'imap.yahoo.com',
-    username = 'mail&#64;yahoo.com',
-    password = 'mon_mot_de_passe',
-    ssl = 'ssl3',
+    server = &#39;imap.yahoo.com&#39;,
+    username = &#39;mail@yahoo.com&#39;,
+    password = &#39;mon_mot_de_passe&#39;,
+    ssl = &#39;ssl3&#39;,
 }
 EOF
-</pre>
-<p>Ajouter nos boites dans le fichier de config avec des filtres :</p>
-<pre class="literal-block">
-if_dir = os.getenv('HOME') .. '/.imapfilter/'
+</pre></div>
+
+
+<p>Ajouter nos boites dans le fichier de config avec des filtres : :</p>
+<div class="highlight"><pre>if_dir = os.getenv(&#39;HOME&#39;) .. &#39;/.imapfilter/&#39;
 -- on inclus nos comptes imap…
 dofile(if_dir .. &quot;gmail.lua&quot;)
 dofile(if_dir .. &quot;yahoo.lua&quot;)
@@ -191,17 +239,17 @@ dofile(if_dir .. &quot;yahoo.lua&quot;)
 options.timeout = 120
 -- filtres pour le compte gmail (on copie les messages non lus dans la boite &quot;nouveaux&quot;)
 nonlugmail=gmail.INBOX:is_unseen()
-nonlugmail:copy_message(gmail['nouveaux'])
+nonlugmail:copy_message(gmail[&#39;nouveaux&#39;])
 -- filtres pour le compte yahoo (on supprime tous les messages lus)
 del_read_yahoo=yahoo.INBOX:is_seen()
 del_read_yahoo:delete_messages()
-</pre>
-<p>Maintenant c'est à vous de faire vos propres filtres. Une fois configuré, lancer
-imapfilter simplement depuis le terminal :</p>
-<pre class="literal-block">
-imapfilter
-</pre>
+</pre></div>
 
+
+<p>Maintenant c'est à vous de faire vos propres filtres. Une fois
+configuré, lancer imapfilter simplement depuis le terminal : :</p>
+<div class="highlight"><pre>imapfilter
+</pre></div>
   </div>
   <hr />
 </article>
@@ -214,20 +262,20 @@ Tags :
       <a href="//www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="//www.choiz.fr/tag/ubuntu.html">ubuntu</a>,      <a href="//www.choiz.fr/tag/xfce.html">xfce</a>,      <a href="//www.choiz.fr/tag/ecran-gris.html">écran gris</a>,      <a href="//www.choiz.fr/tag/apt-get-remove.html">apt-get remove</a>,      <a href="//www.choiz.fr/tag/reparation.html">réparation</a>    </p>
   </header>
   <div>
-      <p>En voulant modifier xscreensaver par i3lock j'ai supprimé des paquets non
-utilisés (jeux etc…).</p>
-<p>J'ai malheureusement supprimé un peu (trop) de paquets tel que (xfdesktop4 et
-xfce4-panel).  Au démarrage de x, une fois identifié, un écran gris s'affiche et
-rien d'autre. Heureusement grâce à mon access SSH je peux me connecter à la
-machine à distance.</p>
-<p>Pour voir la liste des paquets déinstallés j'ai donc fait :</p>
-<pre class="literal-block">
-dpkg --get-selections &gt; liste-des-paquets
-</pre>
-<p>Il suffit ensuite d'ouvrir dans un éditeur texte (type vi) le fichier pour voir
-les paquets installés / déinstallés. Et réinstaller avec sudo apt-get install le
-ou les paquets manquants.</p>
+      <p>En voulant modifier xscreensaver par i3lock j'ai supprimé des paquets
+non utilisés (jeux etc…).</p>
+<p>J'ai malheureusement supprimé un peu (trop) de paquets tel que
+(xfdesktop4 et xfce4-panel). Au démarrage de x, une fois identifié, un
+écran gris s'affiche et rien d'autre. Heureusement grâce à mon access
+SSH je peux me connecter à la machine à distance.</p>
+<p>Pour voir la liste des paquets déinstallés j'ai donc fait : :</p>
+<div class="highlight"><pre>dpkg --get-selections &gt; liste-des-paquets
+</pre></div>
 
+
+<p>Il suffit ensuite d'ouvrir dans un éditeur texte (type vi) le fichier
+pour voir les paquets installés / déinstallés. Et réinstaller avec sudo
+apt-get install le ou les paquets manquants.</p>
   </div>
   <hr />
 </article>
@@ -240,45 +288,47 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/diff.html">diff</a>,      <a href="//www.choiz.fr/tag/wrap.html">wrap</a>,      <a href="//www.choiz.fr/tag/multiline.html">multiline</a>,      <a href="//www.choiz.fr/tag/multiligne.html">multiligne</a>,      <a href="//www.choiz.fr/tag/less.html">less</a>,      <a href="//www.choiz.fr/tag/config.html">config</a>,      <a href="//www.choiz.fr/tag/gitconfig.html">gitconfig</a>    </p>
   </header>
   <div>
-      <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une ligne…</p>
-<p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais pas
-entièrement…).</p>
-<p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu que ma
-ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
-<p>Mon fichier texte ressemble à ceci :</p>
-<pre class="literal-block">
-ligne avec un peu de texte ici nous avons 66 caractères affichés.
-</pre>
-<p>Or, quand je fais un diff on ne voit pas tous les caractères</p>
-<pre class="literal-block">
-git diff HEAD~1 HEAD
+      <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
+ligne…</p>
+<p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais
+pas entièrement…).</p>
+<p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu
+que ma ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
+<p>Mon fichier texte ressemble à ceci : :</p>
+<div class="highlight"><pre>ligne avec un peu de texte ici nous avons 66 caractères affichés.
+</pre></div>
+
+
+<p>Or, quand je fais un diff on ne voit pas tous les caractères :</p>
+<div class="highlight"><pre>git diff HEAD~1 HEAD
 diff --git a/test.txt b/test.txt
 new file mode 100644
 index 0000000..235a891
 --- /dev/null
 +++ b/test.txt
-&#64;&#64; -0,0 +1 &#64;&#64;
+@@ -0,0 +1 @@
 +ligne avec un peu de texte ici nous avons 66 caractè\
 No newline at end of file
-</pre>
-<p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=&quot;&quot;</em> avant la
-commande <em>git diff</em> soit ajouter dans son fichier de config git :</p>
-<pre class="literal-block">
-git config --global core.pager &quot;less -r&quot;
-</pre>
-<p>Voilà ce que ça donne avec GIT_PAGER</p>
-<pre class="literal-block">
-GIT_PAGER=&quot;&quot; git diff HEAD~1 HEAD
+</pre></div>
+
+
+<p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=""</em> avant la
+commande <em>git diff</em> soit ajouter dans son fichier de config git : :</p>
+<div class="highlight"><pre>git config --global core.pager &quot;less -r&quot;
+</pre></div>
+
+
+<p>Voilà ce que ça donne avec GIT_PAGER :</p>
+<div class="highlight"><pre>GIT_PAGER=&quot;&quot; git diff HEAD~1 HEAD
 diff --git a/test.txt b/test.txt
 new file mode 100644
 index 0000000..235a891
 --- /dev/null
 +++ b/test.txt
-&#64;&#64; -0,0 +1 &#64;&#64;
+@@ -0,0 +1 @@
 +ligne avec un peu de texte ici nous avons 66 caractères affichés.\
 No newline at end of file
-</pre>
-
+</pre></div>
   </div>
   <hr />
 </article>
@@ -291,42 +341,44 @@ Tags :
       <a href="//www.choiz.fr/tag/cle-usb.html">clé usb</a>,      <a href="//www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="//www.choiz.fr/tag/mac.html">mac</a>,      <a href="//www.choiz.fr/tag/terminal.html">terminal</a>,      <a href="//www.choiz.fr/tag/ubuntu.html">ubuntu</a>    </p>
   </header>
   <div>
-      <p>Dans le terminal sur votre mac :</p>
-<pre class="literal-block">
-diskutil list
-</pre>
+      <p>Dans le terminal sur votre mac : :</p>
+<div class="highlight"><pre>diskutil list
+</pre></div>
+
+
 <p>Qui permet de lister vos disque dur / clés usb etc…</p>
-<p>ici ma clé usb est disk2.</p>
-<pre class="literal-block">
-/dev/disk2
+<p>ici ma clé usb est disk2. :</p>
+<div class="highlight"><pre>/dev/disk2
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:     FDisk_partition_scheme                        *8.1 GB     disk2
    1:                      Linux                         4.0 GB     disk2s1
    2:                 Linux_Swap                         4.1 GB     disk2s5
-</pre>
-<p>Démontez la clé.</p>
-<pre class="literal-block">
-diskutil unmountDisk /dev/disk2
+</pre></div>
+
+
+<p>Démontez la clé. :</p>
+<div class="highlight"><pre>diskutil unmountDisk /dev/disk2
 
 Unmount of all volumes on disk2 was successful
-</pre>
+</pre></div>
+
+
 <p>Maintenant on copie xubuntu depuis notre dossier téléchargements vers
-cette clé usb :</p>
-<pre class="literal-block">
-sudo dd if=~/Downloads/xubuntu-13.10-desktop-i386.iso of=/dev/rdisk2 bs=1m
+cette clé usb : :</p>
+<div class="highlight"><pre>sudo dd if=~/Downloads/xubuntu-13.10-desktop-i386.iso of=/dev/rdisk2 bs=1m
 
 Password:
 834+0 records in
 834+0 records out
 874512384 bytes transferred in 137.915395 secs (6340934 bytes/sec)
-</pre>
-<p>Puis on éjecte proprement la clé usb</p>
-<pre class="literal-block">
-diskutil eject /dev/disk2
+</pre></div>
+
+
+<p>Puis on éjecte proprement la clé usb :</p>
+<div class="highlight"><pre>diskutil eject /dev/disk2
 
 Disk /dev/disk2 ejected
-</pre>
-
+</pre></div>
   </div>
   <hr />
 </article>
@@ -342,11 +394,9 @@ Tags :
       <p>J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
 messages sur cherry-pick sans savoir ce que c'était.</p>
 <p>git cherry-pick permet d'appliquer un commit sur la branche sur la
-branche actuelle.</p>
-<pre class="literal-block">
-git cherry-pick c4a99776
-</pre>
-
+branche actuelle. :</p>
+<div class="highlight"><pre>git cherry-pick c4a99776
+</pre></div>
   </div>
   <hr />
 </article>
@@ -360,44 +410,12 @@ Tags :
   </header>
   <div>
       <p>Je n'avais pas mis à jour mon thème depuis bien longtemps.</p>
-<dl class="docutils">
-<dt>C'est maintenant chose faite avec ce nouveau thème !</dt>
-<dd><img alt="nouveau thème" src="https://31.media.tumblr.com/d0896de0a038122cee44adbfaeb7e90c/tumblr_inline_n0lh2qig1i1qzr4hx.png" /></dd>
-<dt>Voici l'ancien thème en souvenir.</dt>
-<dd><img alt="ancien thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr_inline_n0lh2l5LOi1qzr4hx.png" /></dd>
-</dl>
-
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html#2014-01-19-suppression-dun-caractère-unicode-dans-vim">Suppression d'un caractère unicode dans Vim</a></h2>
-    <p>
-      Posté le dim. 19 janvier 2014 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/vim.html">vim</a>,      <a href="//www.choiz.fr/tag/unicode.html">unicode</a>,      <a href="//www.choiz.fr/tag/char.html">char</a>,      <a href="//www.choiz.fr/tag/suppression.html">suppression</a>,      <a href="//www.choiz.fr/tag/caractere.html">caractère</a>    </p>
-  </header>
-  <div>
-      <p>J'étais à la recherche de se caractère unicode dans vim :</p>
-<pre class="literal-block">
-&lt;U+2028&gt;
-</pre>
-<p>Pour pouvoir le supprimer j'ai utilisé la commande suivante :</p>
-<pre class="literal-block">
-:%s/\%U2028//g
-</pre>
-<p>Décortiquons la commande :</p>
-<pre class="literal-block">
-`:%s/` Recherche et remplace dans tout le fichier
-
-`\%U2028` Le caractère que l'on recherche unicode &quot;2028&quot;
-
-`//` par rien (1er slash sépare la recherche par ce qu'on remplace, le second pour dire la fin de ce qu'on remplace).
-
-`g` dans tout le fichier (global).
-</pre>
-
+<p>C'est maintenant chose faite avec ce nouveau thème !
+<img alt="nouveau
+thème" src="https://31.media.tumblr.com/d0896de0a038122cee44adbfaeb7e90c/tumblr_inline_n0lh2qig1i1qzr4hx.png" /></p>
+<p>Voici l'ancien thème en souvenir.
+<img alt="ancien
+thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr_inline_n0lh2l5LOi1qzr4hx.png" /></p>
   </div>
 </article>
 

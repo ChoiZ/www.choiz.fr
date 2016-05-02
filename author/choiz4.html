@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -63,26 +63,25 @@ Tags :
   <div>
       <p>Ou se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?</p>
 <p>C'est une bonne question n'est-ce pas ?</p>
-<p>La réponse si vous êtes root est : <cite>/var/spool/cron/crontabs/root</cite> (sur debian,
-a voir sur d'autres distribs)</p>
-
+<p>La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
+debian, a voir sur d'autres distribs)</p>
       <a class="btn" href="//www.choiz.fr/2013-11-13-crontab-e-files.html#2013-11-13-crontab-e-files">Lire la suite</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html#2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers">Chmod 755 sur les dossiers et 644&nbsp;sur les fichiers</a></h2>
+    <h2><a href="//www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html#2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers">Chmod 755 sur les dossiers et 644 sur les fichiers</a></h2>
     <p>
       Posté le mar. 12 novembre 2013 &#8226;
 Tags :
       <a href="//www.choiz.fr/tag/chmod.html">chmod</a>,      <a href="//www.choiz.fr/tag/755.html">755</a>,      <a href="//www.choiz.fr/tag/644.html">644</a>,      <a href="//www.choiz.fr/tag/folder.html">folder</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/folders.html">folders</a>,      <a href="//www.choiz.fr/tag/files.html">files</a>,      <a href="//www.choiz.fr/tag/pwd.html">pwd</a>,      <a href="//www.choiz.fr/tag/find.html">find</a>    </p>
   </header>
   <div>
-      <p>C'est toujours la galère lorsque l'on veut que tout soit propre au niveau des
-permissions des dossiers / fichiers.</p>
-<p>Souvent la première chose que l'on fait : on va dans chaque dossier et on
-vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2 ...</p>
+      <p>C'est toujours la galère lorsque l'on veut que tout soit propre au
+niveau des permissions des dossiers / fichiers.</p>
+<p>Souvent la première chose que l'on fait : on va dans chaque dossier et
+on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2 ...</p>
       <a class="btn" href="//www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html#2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers">Lire la suite</a>
   </div>
   <hr />
@@ -99,7 +98,7 @@ Tags :
       <p>Voici comment faire facilement sa favicon et ses icônes pour les
 appareils mobiles avec image magick.</p>
 <p>Mon icône de base est en 512x512px au format png avec prise en charge de
-la transparence &quot;icon512.png&quot;.</p>
+la transparence "icon512.png".</p>
 <p>Je veux faire une favicon en 16x16px, 32x32px 48x48px et 64x64px le tout
 dans un ...</p>
       <a class="btn" href="//www.choiz.fr/2013-11-03-icônes-favicon-apple-touch-icon.html#2013-11-03-icônes-favicon-apple-touch-icon">Lire la suite</a>
@@ -115,19 +114,12 @@ Tags :
       <a href="//www.choiz.fr/tag/jshint.html">jshint</a>,      <a href="//www.choiz.fr/tag/mac.html">mac</a>,      <a href="//www.choiz.fr/tag/setup.html">setup</a>,      <a href="//www.choiz.fr/tag/npm.html">npm</a>,      <a href="//www.choiz.fr/tag/nodejs.html">nodejs</a>    </p>
   </header>
   <div>
-      <dl class="docutils">
-<dt>Installation via npm de jshint (-g pour installer pour tous les utilisateurs) :</dt>
-<dd><pre class="first last literal-block">
-sudo npm install -g jshint
-</pre>
-</dd>
-</dl>
-<p>Faire un lien symbolique pour pouvoir utiliser directement jshint sans préciser
-tout le chemin a chaque fois :</p>
-<pre class="literal-block">
-ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
-</pre>
-
+      <p>Installation via npm de jshint (-g pour installer pour tous les utilisateurs) :
+    sudo npm install -g jshint</p>
+<p>Faire un lien symbolique pour pouvoir utiliser directement jshint sans
+préciser tout le chemin a chaque fois : :</p>
+<div class="highlight"><pre>ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
+</pre></div>
       <a class="btn" href="//www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html#2013-10-14-installer-jshint-sur-mac">Lire la suite</a>
   </div>
   <hr />
@@ -141,15 +133,17 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/checkout.html">checkout</a>,      <a href="//www.choiz.fr/tag/fetch.html">fetch</a>,      <a href="//www.choiz.fr/tag/origin.html">origin</a>,      <a href="//www.choiz.fr/tag/checkout-b.html">checkout -b</a>,      <a href="//www.choiz.fr/tag/branch.html">branch</a>,      <a href="//www.choiz.fr/tag/remote.html">remote</a>    </p>
   </header>
   <div>
-      <p>J'utilise des branches tel que prod, preprod pour mes projets et en local il
-m'arrive de vouloir aller sur ses branches.</p>
-<pre class="literal-block">
-git checkout preprod
-</pre>
-<p>Et j'ai l'erreur suivante :</p>
-<pre class="literal-block">
-error: pathspec 'preprod' did not match any file(s) known to git.
-</pre>
+      <p>J'utilise des branches tel que prod, preprod pour mes projets et en
+local il m'arrive de vouloir aller sur ses branches. :</p>
+<div class="highlight"><pre>git checkout preprod
+</pre></div>
+
+
+<p>Et j'ai l'erreur suivante : :</p>
+<div class="highlight"><pre><span class="n">error</span><span class="o">:</span> <span class="n">pathspec</span> <span class="s1">&#39;preprod&#39;</span> <span class="n">did</span> <span class="n">not</span> <span class="n">match</span> <span class="n">any</span> <span class="n">file</span><span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="n">known</span> <span class="n">to</span> <span class="n">git</span><span class="o">.</span>
+</pre></div>
+
+
 <p>Je vais mettre a jour mon ...</p>
       <a class="btn" href="//www.choiz.fr/2013-10-01-git-se-déplacer-dans-une-branche-distante.html#2013-10-01-git-se-déplacer-dans-une-branche-distante">Lire la suite</a>
   </div>
@@ -164,23 +158,22 @@ Tags :
       <a href="//www.choiz.fr/tag/curl.html">curl</a>,      <a href="//www.choiz.fr/tag/http.html">http</a>,      <a href="//www.choiz.fr/tag/response.html">response</a>,      <a href="//www.choiz.fr/tag/code.html">code</a>,      <a href="//www.choiz.fr/tag/301.html">301</a>,      <a href="//www.choiz.fr/tag/302.html">302</a>,      <a href="//www.choiz.fr/tag/404.html">404</a>,      <a href="//www.choiz.fr/tag/200.html">200</a>    </p>
   </header>
   <div>
-      <p>Pour connaitre le code réponse HTTP il suffit de faire :</p>
-<pre class="literal-block">
-curl -IL url
-</pre>
-<p>Voici l'exemble avec tumblr.com :</p>
-<pre class="literal-block">
-curl -IL http://tumblr.com
-</pre>
-<pre class="literal-block">
-HTTP/1.1 301 Moved Permanently
-Content-length: 0
-Location: http://www.tumblr.com/
-Connection: close
+      <p>Pour connaitre le code réponse HTTP il suffit de faire : :</p>
+<div class="highlight"><pre>curl -IL url
+</pre></div>
 
-HTTP/1.1 302 Moved Temporarily
-Server: nginx
-Date: Sun, 29 ...</pre>
+
+<p>Voici l'exemble avec tumblr.com : :</p>
+<div class="highlight"><pre><span class="nt">curl</span> <span class="nt">-IL</span> <span class="nt">http</span><span class="o">://</span><span class="nt">tumblr</span><span class="nc">.com</span>
+
+<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="nc">.1</span> <span class="nt">301</span> <span class="nt">Moved</span> <span class="nt">Permanently</span>
+<span class="nt">Content-length</span><span class="o">:</span> <span class="nt">0</span>
+<span class="nt">Location</span><span class="o">:</span> <span class="nt">http</span><span class="o">://</span><span class="nt">www</span><span class="nc">.tumblr.com</span><span class="o">/</span>
+<span class="nt">Connection</span><span class="o">:</span> <span class="nt">close</span>
+
+<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="nc">.1</span> <span class="nt">302</span> <span class="nt">Moved</span> <span class="nt">Temporarily</span>
+<span class="nt">Server</span><span class="o">:</span> <span class="nt">nginx</span>
+<span class="nt">Date</span><span class="o">:</span> <span class="nt">Sun</span><span class="o">,</span> <span class="nt">29 ...</span></pre></div>
       <a class="btn" href="//www.choiz.fr/2013-09-29-connaitre-le-code-réponse-http-avec-curl.html#2013-09-29-connaitre-le-code-réponse-http-avec-curl">Lire la suite</a>
   </div>
   <hr />
@@ -194,12 +187,11 @@ Tags :
       <a href="//www.choiz.fr/tag/svn-to-git.html">svn to git</a>,      <a href="//www.choiz.fr/tag/svn.html">svn</a>,      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/migate.html">migate</a>,      <a href="//www.choiz.fr/tag/git-svn-clone.html">git svn clone</a>,      <a href="//www.choiz.fr/tag/authors.html">authors</a>,      <a href="//www.choiz.fr/tag/tags.html">tags</a>    </p>
   </header>
   <div>
-      <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est
-temps de faire la migration de svn à git !</p>
-<p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais
-voici donc ma procédure :</p>
-<pre class="literal-block">
-svn log --quiet 'svn://svn.mondomaine/monprojet' | grep ...</pre>
+      <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec
+svn. Il est temps de faire la migration de svn à git !</p>
+<p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
+voulais voici donc ma procédure : :</p>
+<div class="highlight"><pre>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2013-07-16-passer-de-svn-à-git.html#2013-07-16-passer-de-svn-à-git">Lire la suite</a>
   </div>
   <hr />
@@ -210,23 +202,23 @@ svn log --quiet 'svn://svn.mondomaine/monprojet' | grep ...</pre>
     <p>
       Posté le sam. 22 juin 2013 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/postgresql.html">postgreSQL</a>,      <a href="//www.choiz.fr/tag/pg_dump.html">pg_dump</a>,      <a href="//www.choiz.fr/tag/psql.html">psql</a>,      <a href="//www.choiz.fr/tag/import.html">import</a>,      <a href="//www.choiz.fr/tag/export.html">export</a>,      <a href="//www.choiz.fr/tag/dump.html">dump</a>,      <a href="//www.choiz.fr/tag/sql.html">sql</a>    </p>
+      <a href="//www.choiz.fr/tag/postgresql.html">postgreSQL</a>,      <a href="//www.choiz.fr/tag/pg_dump.html">pg\_dump</a>,      <a href="//www.choiz.fr/tag/psql.html">psql</a>,      <a href="//www.choiz.fr/tag/import.html">import</a>,      <a href="//www.choiz.fr/tag/export.html">export</a>,      <a href="//www.choiz.fr/tag/dump.html">dump</a>,      <a href="//www.choiz.fr/tag/sql.html">sql</a>    </p>
   </header>
   <div>
-      <p>Pour exporter une table spécifique d'une base :</p>
-<pre class="literal-block">
-pg_dump *mabase* --table=*matable* &gt; *dump_base_table*.sql
-</pre>
-<p>Pour exporter une base :</p>
-<pre class="literal-block">
-pg_dump *mabase* &gt; *dump_base*.sql
-</pre>
-<p>Pour importer un dump dans une base :</p>
-<pre class="literal-block">
-psql *base* &lt; *dump_base_table*.sql
-psql *base* &lt; *dump_base*.sql
-</pre>
+      <p>Pour exporter une table spécifique d'une base : :</p>
+<div class="highlight"><pre>pg_dump *mabase* --table=*matable* &gt; *dump_base_table*.sql
+</pre></div>
 
+
+<p>Pour exporter une base : :</p>
+<div class="highlight"><pre>pg_dump *mabase* &gt; *dump_base*.sql
+</pre></div>
+
+
+<p>Pour importer un dump dans une base : :</p>
+<div class="highlight"><pre>psql *base* &lt; *dump_base_table*.sql
+psql *base* &lt; *dump_base*.sql
+</pre></div>
       <a class="btn" href="//www.choiz.fr/2013-06-22-export-import-avec-postgresql.html#2013-06-22-export-import-avec-postgresql">Lire la suite</a>
   </div>
   <hr />
@@ -241,9 +233,9 @@ Tags :
   </header>
   <div>
       <p>J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
-<em>master</em>… Généralement je fais toujours une branche pour les modifications,
-cette fois j'avais créé cette branche <em>debug_redirect</em> mais je n'étais pas
-dessus…</p>
+<em>master</em>… Généralement je fais toujours une branche pour les
+modifications, cette fois j'avais créé cette branche <em>debug_redirect</em>
+mais je n'étais pas dessus…</p>
 <p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master ...</em></p>
       <a class="btn" href="//www.choiz.fr/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html#2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre">Lire la suite</a>
   </div>
@@ -255,16 +247,15 @@ dessus…</p>
     <p>
       Posté le ven. 21 juin 2013 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/debian.html">debian</a>,      <a href="//www.choiz.fr/tag/disque-dur.html">disque dur</a>,      <a href="//www.choiz.fr/tag/4to.html">4To</a>,      <a href="//www.choiz.fr/tag/partition.html">partition</a>,      <a href="//www.choiz.fr/tag/fs.html">fs</a>,      <a href="//www.choiz.fr/tag/config_efi_partition.html">config_efi_partition</a>,      <a href="//www.choiz.fr/tag/fdisk.html">fdisk</a>,      <a href="//www.choiz.fr/tag/parted.html">parted</a>,      <a href="//www.choiz.fr/tag/gpt.html">gpt</a>,      <a href="//www.choiz.fr/tag/mkfs.html">mkfs</a>    </p>
+      <a href="//www.choiz.fr/tag/debian.html">debian</a>,      <a href="//www.choiz.fr/tag/disque-dur.html">disque dur</a>,      <a href="//www.choiz.fr/tag/4to.html">4To</a>,      <a href="//www.choiz.fr/tag/partition.html">partition</a>,      <a href="//www.choiz.fr/tag/fs.html">fs</a>,      <a href="//www.choiz.fr/tag/config_efi_partition.html">config\_efi\_partition</a>,      <a href="//www.choiz.fr/tag/fdisk.html">fdisk</a>,      <a href="//www.choiz.fr/tag/parted.html">parted</a>,      <a href="//www.choiz.fr/tag/gpt.html">gpt</a>,      <a href="//www.choiz.fr/tag/mkfs.html">mkfs</a>    </p>
   </header>
   <div>
-      <p>J'ai investi dans un gros disque dur de 4To pour mes sauvegardes (Fichiers
-persos, photos, vidéos…).  J'ai donc formaté mon disque avec « Fdisk » et j'ai
-eu le message suivant :</p>
-<pre class="literal-block">
-Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
+      <p>J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
+(Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec «
+Fdisk » et j'ai eu le message suivant : :</p>
+<div class="highlight"><pre><span class="n">Warning</span><span class="o">:</span> <span class="n">invalid</span> <span class="n">flag</span> <span class="mh">0x0000</span> <span class="n">of</span> <span class="n">partition</span> <span class="n">table</span> <span class="mi">4</span> <span class="n">will</span> <span class="n">be</span> <span class="n">corrected</span> <span class="n">by</span> <span class="n">w</span><span class="o">(</span><span class="n">rite</span><span class="o">)</span>
 
-WARNING: The size of ...</pre>
+<span class="n">WARNING</span><span class="o">:</span> <span class="n">The</span> <span class="n">size</span> <span class="n">of ...</span></pre></div>
       <a class="btn" href="//www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html#2013-06-21-installation-disque-dur-seagate-4to-debian">Lire la suite</a>
   </div>
 </article>

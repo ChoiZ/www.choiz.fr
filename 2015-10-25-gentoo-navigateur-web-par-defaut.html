@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -67,25 +67,25 @@
     <p>Posté le dim. 25 octobre 2015</p>
   </header>
   <div>
-    <p>Sur ma machine &quot;links&quot; était le navigateur web par défaut.
-Il est pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
+    <p>Sur ma machine "links" était le navigateur web par défaut. Il est
+pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
 est préférable d'utiliser un navigateur tel que Firefox.</p>
-<p>Voici la commande pour voir le navigateur par défaut pour les url utilisants le
-protocole &quot;http&quot; :</p>
-<pre class="literal-block">
-xdg-mime query default x-scheme-handler/http
-</pre>
-<p>Et voici la commande pour le &quot;https&quot; :</p>
-<pre class="literal-block">
-xdg-mime query default x-scheme-handler/https
-</pre>
-<p>Pour changer le navigateur par défaut par Firefox il suffit d'executer ses deux
-commandes :</p>
-<pre class="literal-block">
-xdg-mime default firefox.desktop x-scheme-handler/http
-xdg-mime default firefox.desktop x-scheme-handler/https
-</pre>
+<p>Voici la commande pour voir le navigateur par défaut pour les url
+utilisants le protocole "http" : :</p>
+<div class="highlight"><pre>xdg-mime query default x-scheme-handler/http
+</pre></div>
 
+
+<p>Et voici la commande pour le "https" : :</p>
+<div class="highlight"><pre>xdg-mime query default x-scheme-handler/https
+</pre></div>
+
+
+<p>Pour changer le navigateur par défaut par Firefox il suffit d'executer
+ses deux commandes : :</p>
+<div class="highlight"><pre>xdg-mime default firefox.desktop x-scheme-handler/http
+xdg-mime default firefox.desktop x-scheme-handler/https
+</pre></div>
   </div>
   <div class="tag-cloud">
     <p>

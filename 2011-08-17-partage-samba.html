@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Configuration d'un serveur samba. Editer le fichier de configuration /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : | ### Global ### | [global] | ## Identification ## | workgroup = WORKGROUP | netbios name = %h | server string = Serveur samba %h | security = user | public = yes | ## Log ## | log file = /var/log/samba/log.%m | max log size ..." />
+<meta name="description" content="Configuration d'un serveur samba. Editer le fichier de configuration /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : : | ### Global ### | [global] | ## Identification ## | workgroup = WORKGROUP | netbios name = %h | server string = Serveur samba %h | security = user | public = yes | ## Log ## | log file = /var/log/samba/log.%m | max log size ..." />
 <meta name="keywords" content="Linux, Samba, config, configuration, Partage, Sharing">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Partage Samba !"/>
-<meta property="og:description" content="Configuration d'un serveur samba. Editer le fichier de configuration /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : | ### Global ### | [global] | ## Identification ## | workgroup = WORKGROUP | netbios name = %h | server string = Serveur samba %h | security = user | public = yes | ## Log ## | log file = /var/log/samba/log.%m | max log size ..."/>
+<meta property="og:description" content="Configuration d'un serveur samba. Editer le fichier de configuration /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : : | ### Global ### | [global] | ## Identification ## | workgroup = WORKGROUP | netbios name = %h | server string = Serveur samba %h | security = user | public = yes | ## Log ## | log file = /var/log/samba/log.%m | max log size ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2011-08-17-partage-samba.html"/>
 <meta property="og:type" content="article"/>
@@ -68,11 +68,9 @@
     <p>Posté le mer. 17 août 2011</p>
   </header>
   <div>
-    <p>Configuration d'un serveur samba.
-Editer le fichier de configuration <cite>/etc/samba/smb.conf</cite>
-Voici le contenu de mon fichier de configuration :</p>
-<pre class="literal-block">
-| ### Global ###
+    <p>Configuration d'un serveur samba. Editer le fichier de configuration
+/etc/samba/smb.conf Voici le contenu de mon fichier de configuration : :</p>
+<div class="highlight"><pre>| ### Global ###
 | [global]
 | ## Identification ##
 | workgroup = WORKGROUP
@@ -97,22 +95,23 @@ Voici le contenu de mon fichier de configuration :</p>
 | path = /home/partageread
 | read only = yes
 | writeable = no
-| valid users = choiz, &#64;group
+| valid users = choiz, @group
 | comment = partage en lecture pour choiz et le groupe &quot;group&quot;
-</pre>
-<p>Maintenant il faut créer notre utilisateur &quot;choiz&quot; grâce à :</p>
-<pre class="literal-block">
-smbpasswd -a choiz
-</pre>
-<p>Pour les groupes samba utilise les groupes unix. A vous de voir si vous voulez
-gérer votre partage samba utilisateur par utilisateur ou directement avec des
-groupes.</p>
-<p>N'oubliez pas de redémarrer le service Samba avant de tester depuis votre client
-le partage de fichiers !</p>
-<pre class="literal-block">
-/etc/init.d/samba restart
-</pre>
+</pre></div>
 
+
+<p>Maintenant il faut créer notre utilisateur "choiz" grâce à : :</p>
+<div class="highlight"><pre>smbpasswd -a choiz
+</pre></div>
+
+
+<p>Pour les groupes samba utilise les groupes unix. A vous de voir si vous
+voulez gérer votre partage samba utilisateur par utilisateur ou
+directement avec des groupes.</p>
+<p>N'oubliez pas de redémarrer le service Samba avant de tester depuis
+votre client le partage de fichiers ! :</p>
+<div class="highlight"><pre>/etc/init.d/samba restart
+</pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -145,7 +144,7 @@ le partage de fichiers !</p>
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2011-08-17-partage-samba.html",
-  "description": "Configuration d'un serveur samba. Editer le fichier de configuration /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : | ### Global ### | [global] | ## Identification ## | workgroup = WORKGROUP | netbios name = %h | server string = Serveur samba %h | security = user | public = yes | ## Log ## | log file = /var/log/samba/log.%m | max log size ..."
+  "description": "Configuration d'un serveur samba. Editer le fichier de configuration /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : : | ### Global ### | [global] | ## Identification ## | workgroup = WORKGROUP | netbios name = %h | server string = Serveur samba %h | security = user | public = yes | ## Log ## | log file = /var/log/samba/log.%m | max log size ..."
 }
 </script></body>
 </html>

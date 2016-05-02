@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,15 +61,16 @@ Tags :
       <a href="//www.choiz.fr/tag/cli.html">CLI</a>,      <a href="//www.choiz.fr/tag/rename.html">rename</a>,      <a href="//www.choiz.fr/tag/renommer.html">renommer</a>,      <a href="//www.choiz.fr/tag/fichiers.html">fichiers</a>,      <a href="//www.choiz.fr/tag/wav.html">wav</a>,      <a href="//www.choiz.fr/tag/wav.html">WAV</a>    </p>
   </header>
   <div>
-      <p>Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers correct. Sous
-linux pour renomer plusieurs fichiers avec bash j'utilise &quot;rename&quot;.</p>
-<p>Exemple je veux supprimer tous les espaces d'un fichier :</p>
-<pre class="literal-block">
-rename &quot;s/ *//g&quot; *.*
-</pre>
-<p>Ou renomer tous mes fichiers .WAV en .wav etc…</p>
-<pre class="literal-block">
-rename &quot;s/\.WAV ...</pre>
+      <p>Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
+correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
+"rename".</p>
+<p>Exemple je veux supprimer tous les espaces d'un fichier : :</p>
+<div class="highlight"><pre>rename &quot;s/ *//g&quot; *.*
+</pre></div>
+
+
+<p>Ou renomer tous mes fichiers .WAV en .wav etc… :</p>
+<div class="highlight"><pre>rename &quot;s/\.WAV ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html#2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande">Lire la suite</a>
   </div>
   <hr />
@@ -83,14 +84,14 @@ Tags :
       <a href="//www.choiz.fr/tag/fichiers.html">fichiers</a>,      <a href="//www.choiz.fr/tag/caches.html">cachés</a>,      <a href="//www.choiz.fr/tag/hidden.html">hidden</a>,      <a href="//www.choiz.fr/tag/files.html">files</a>,      <a href="//www.choiz.fr/tag/lion.html">lion</a>,      <a href="//www.choiz.fr/tag/defaults.html">defaults</a>,      <a href="//www.choiz.fr/tag/appleshowallfiles.html">AppleShowAllFiles</a>,      <a href="//www.choiz.fr/tag/finder.html">Finder</a>    </p>
   </header>
   <div>
-      <p>Dans un terminal :</p>
-<pre class="literal-block">
-defaults write com.apple.Finder AppleShowAllFiles TRUE
+      <p>Dans un terminal : :</p>
+<div class="highlight"><pre>defaults write com.apple.Finder AppleShowAllFiles TRUE
 
 killall Finder
-</pre>
-<p>Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés.</p>
+</pre></div>
 
+
+<p>Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés.</p>
       <a class="btn" href="//www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html#2011-11-02-voir-les-fichiers-cachés-sur-lion">Lire la suite</a>
   </div>
   <hr />
@@ -105,13 +106,15 @@ Tags :
   </header>
   <div>
       <p>J'ai souvent besoin de voir les différences entre plusieurs fichiers...
-J'utilise souvent la commande diff dans un terminal, mais mon éditeur texte
-favoris &quot;Vim&quot; sait aussi trés bien faire un différentiel. Utilisation avec le
-terminal :</p>
-<pre class="literal-block">
-diff fichier1 fichier2
-</pre>
-<p>Celui-ci retournera les différences directement dans le terminal (pas pratique ...</p>
+J'utilise souvent la commande diff dans un terminal, mais mon éditeur
+texte favoris "Vim" sait aussi trés bien faire un différentiel.
+Utilisation avec le terminal : :</p>
+<div class="highlight"><pre><span class="gh">diff fichier1 fichier2</span>
+</pre></div>
+
+
+<p>Celui-ci retournera les différences directement dans le terminal (pas
+pratique ...</p>
       <a class="btn" href="//www.choiz.fr/2011-05-19-différences-entre-des-fichiers-avec-vim.html#2011-05-19-différences-entre-des-fichiers-avec-vim">Lire la suite</a>
   </div>
 </article>

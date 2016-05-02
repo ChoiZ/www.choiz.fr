@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,15 +61,13 @@ Tags :
       <a href="//www.choiz.fr/tag/code.html">code</a>,      <a href="//www.choiz.fr/tag/js.html">js</a>,      <a href="//www.choiz.fr/tag/jquery.html">jquery</a>,      <a href="//www.choiz.fr/tag/attr.html">attr()</a>,      <a href="//www.choiz.fr/tag/click.html">click()</a>,      <a href="//www.choiz.fr/tag/removeattr.html">removeAttr()</a>    </p>
   </header>
   <div>
-      <p>Après avoir perdu 2h…
-J'ai découvert que la methode attr() de jQuery fonctionne pas
-avec l'attribut &quot;onclick&quot;…</p>
+      <p>Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery
+fonctionne pas avec l'attribut "onclick"…</p>
 <p>Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.</p>
-<p>Remplacer donc :</p>
-<pre class="literal-block">
-var mavar = 'fonctionAffichage();';
-$(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar ...</pre>
+<p>Remplacer donc : :</p>
+<div class="highlight"><pre>var mavar = &#39;fonctionAffichage();&#39;;
+$(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html#2011-01-07-jquery-attr-avec-onclick-par-click">Lire la suite</a>
   </div>
 </article>

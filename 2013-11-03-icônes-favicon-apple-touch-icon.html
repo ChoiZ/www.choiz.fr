@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -76,36 +76,40 @@
     <p>Voici comment faire facilement sa favicon et ses icônes pour les
 appareils mobiles avec image magick.</p>
 <p>Mon icône de base est en 512x512px au format png avec prise en charge de
-la transparence &quot;icon512.png&quot;.</p>
+la transparence "icon512.png".</p>
 <p>Je veux faire une favicon en 16x16px, 32x32px 48x48px et 64x64px le tout
-dans un seul fichier favicon.ico.</p>
-<pre class="literal-block">
-convert icon512.png \
+dans un seul fichier favicon.ico. :</p>
+<div class="highlight"><pre>convert icon512.png \
     -bordercolor white -border 0 \
     \( -clone 0 -resize 16x16 \) \
     \( -clone 0 -resize 32x32 \) \
     \( -clone 0 -resize 48x48 \) \
     \( -clone 0 -resize 64x64 \) \
     -delete 0 -alpha off favicon.ico
-</pre>
-<p>Ensuite je veux faire mes icônes pour les appareils mobiles : Android, Apple
-etc…</p>
-<pre class="literal-block">
-convert icon512.png -resize x60 touch-icon-iphone.png
+</pre></div>
+
+
+<p>Ensuite je veux faire mes icônes pour les appareils mobiles : Android,
+Apple etc… :</p>
+<div class="highlight"><pre>convert icon512.png -resize x60 touch-icon-iphone.png
 convert icon512.png -resize x76 touch-icon-ipad.png
 convert icon512.png -resize x120 touch-icon-iphone-retina.png
 convert icon512.png -resize x152 touch-icon-ipad-retina.png
-</pre>
-<p>Maintenant il faut ajouter dans notre page html entre les balises head :</p>
-<pre class="literal-block">
-&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;
+</pre></div>
+
+
+<p>Maintenant il faut ajouter dans notre page html entre les balises head :
+:</p>
+<div class="highlight"><pre>&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;touch-icon-iphone.png&quot;&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;76x76&quot; href=&quot;touch-icon-ipad.png&quot;&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;120x120&quot; href=&quot;touch-icon-iphone-retina.png&quot;&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;152x152&quot; href=&quot;touch-icon-ipad-retina.png&quot;&gt;
-</pre>
-<p>A noter les appareils Android utilisent aussi les images &quot;apple-touch-icon&quot;.</p>
+</pre></div>
 
+
+<p>A noter les appareils Android utilisent aussi les images
+"apple-touch-icon".</p>
   </div>
   <div class="tag-cloud">
     <p>

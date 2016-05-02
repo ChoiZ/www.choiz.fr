@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,64 +61,65 @@ Tags :
       <a href="//www.choiz.fr/tag/vim.html">vim</a>,      <a href="//www.choiz.fr/tag/unicode.html">unicode</a>,      <a href="//www.choiz.fr/tag/char.html">char</a>,      <a href="//www.choiz.fr/tag/suppression.html">suppression</a>,      <a href="//www.choiz.fr/tag/caractere.html">caractère</a>    </p>
   </header>
   <div>
-      <p>J'étais à la recherche de se caractère unicode dans vim :</p>
-<pre class="literal-block">
-&lt;U+2028&gt;
-</pre>
-<p>Pour pouvoir le supprimer j'ai utilisé la commande suivante :</p>
-<pre class="literal-block">
-:%s/\%U2028//g
-</pre>
-<p>Décortiquons la commande :</p>
-<pre class="literal-block">
-`:%s/` Recherche et remplace dans tout le fichier
+      <p>J'étais à la recherche de se caractère unicode dans vim : :</p>
+<div class="highlight"><pre>&lt;U+2028&gt;
+</pre></div>
 
-`\%U2028` Le caractère que l'on recherche unicode &quot;2028&quot;
 
-`//` par rien (1er slash ...</pre>
+<p>Pour pouvoir le supprimer j'ai utilisé la commande suivante : :</p>
+<div class="highlight"><pre>:%s/\%U2028//g
+</pre></div>
+
+
+<p>Décortiquons la commande : :</p>
+<div class="highlight"><pre>`:%s/` Recherche et remplace dans tout le fichier
+
+`\%U2028` Le caractère que l&#39;on recherche unicode &quot;2028&quot;
+
+`//` par rien (1er slash ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html#2014-01-19-suppression-dun-caractère-unicode-dans-vim">Lire la suite</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html#2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight">Ajout dans mon .vimrc de matchadd() &amp; highlight</a></h2>
+    <h2><a href="//www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html#2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight">Ajout dans mon .vimrc de matchadd() & highlight</a></h2>
     <p>
       Posté le ven. 27 avril 2012 &#8226;
 Tags :
       <a href="//www.choiz.fr/tag/vimrc.html">vimrc</a>,      <a href="//www.choiz.fr/tag/vim.html">vim</a>,      <a href="//www.choiz.fr/tag/config-file.html">config file</a>,      <a href="//www.choiz.fr/tag/vimrc.html">.vimrc</a>,      <a href="//www.choiz.fr/tag/todo.html">todo</a>,      <a href="//www.choiz.fr/tag/notice.html">notice</a>,      <a href="//www.choiz.fr/tag/fixme.html">fixme</a>,      <a href="//www.choiz.fr/tag/highlight.html">highlight</a>,      <a href="//www.choiz.fr/tag/matchadd.html">matchadd</a>    </p>
   </header>
   <div>
-      <p>Petit ajout dans mon fichier .vimrc</p>
-<pre class="literal-block">
-&quot; Highlight To do list with green background
+      <p>Petit ajout dans mon fichier .vimrc :</p>
+<div class="highlight"><pre>&quot; Highlight To do list with green background
 highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
 highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
 highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
 &quot; Match todolist, notice, fixme
-:call matchadd('Todo ...</pre>
+:call matchadd(&#39;Todo ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html#2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight">Lire la suite</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Insérer un # au début de chaque ligne d'un fichier avec vim</a></h2>
+    <h2><a href="//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Insérer un \# au début de chaque ligne d'un fichier avec vim</a></h2>
     <p>
       Posté le mer. 05 octobre 2011 &#8226;
 Tags :
       <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/search.html">search</a>,      <a href="//www.choiz.fr/tag/replace.html">replace</a>,      <a href="//www.choiz.fr/tag/line.html">line</a>,      <a href="//www.choiz.fr/tag/add.html">add</a>,      <a href="//www.choiz.fr/tag/ligne.html">ligne</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/remplace.html">remplace</a>,      <a href="//www.choiz.fr/tag/ajout.html">ajout</a>    </p>
   </header>
   <div>
-      <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un fichier avec
-vim :</p>
-<pre class="literal-block">
-:1,$s/^/#/
-</pre>
+      <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un
+fichier avec vim : :</p>
+<div class="highlight"><pre><span class="x">:1,</span><span class="p">$</span><span class="nv">s</span><span class="x">/^/</span><span class="err">#</span><span class="x">/</span>
+</pre></div>
+
+
 <p>Explications :</p>
-<p><cite>:1,$</cite> Sélection des ligne 1 à $ ($ étant la dernière).</p>
-<p><cite>s/^/#/</cite> <cite>s</cite> pour search <cite>^</cite> indique le début de ligne <cite>/</cite> sépare ma recherche
-par ce que l'on remplace <cite>#</cite> est le caractère que ...</p>
+<p>:1,$ Sélection des ligne 1 à $ ($ étant la dernière).</p>
+<p>s/^/#/ s pour search ^ indique le début de ligne / sépare ma recherche
+par ce que l'on remplace # est le caractère que ...</p>
       <a class="btn" href="//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Lire la suite</a>
   </div>
   <hr />
@@ -129,15 +130,17 @@ par ce que l'on remplace <cite>#</cite> est le caractère que ...</p>
     <p>
       Posté le mar. 26 juillet 2011 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/svn.html">svn</a>,      <a href="//www.choiz.fr/tag/ignore.html">ignore</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/folder.html">folder</a>,      <a href="//www.choiz.fr/tag/dossier.html">dossier</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS_Store</a>,      <a href="//www.choiz.fr/tag/_.html">._*</a>,      <a href="//www.choiz.fr/tag/_.html">._</a>,      <a href="//www.choiz.fr/tag/swp.html">.swp</a>,      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/mac-os.html">Mac Os</a>    </p>
+      <a href="//www.choiz.fr/tag/svn.html">svn</a>,      <a href="//www.choiz.fr/tag/ignore.html">ignore</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/folder.html">folder</a>,      <a href="//www.choiz.fr/tag/dossier.html">dossier</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS\_Store</a>,      <a href="//www.choiz.fr/tag/_.html">.\_\*</a>,      <a href="//www.choiz.fr/tag/_.html">.\_</a>,      <a href="//www.choiz.fr/tag/swp.html">.swp</a>,      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/mac-os.html">Mac Os</a>    </p>
   </header>
   <div>
-      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<pre class="literal-block">
-svn propset svn:ignore
-</pre>
-<p>Ou dans la configuration du svn dans <cite>~/.subversion/config</cite> le <cite>global-ignores</cite></p>
-<p>Pour ignorer tous les fichiers qui commencent par <cite>._</cite> dans le dossier ou
+      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn : :</p>
+<div class="highlight"><pre>svn propset svn:ignore
+</pre></div>
+
+
+<p>Ou dans la configuration du svn dans ~/.subversion/config le
+global-ignores</p>
+<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
 l'on se trouve actuellement il suffit d'executer la commande ...</p>
       <a class="btn" href="//www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html#2011-07-26-ignorer-grâce-au-svn">Lire la suite</a>
   </div>
@@ -145,33 +148,35 @@ l'on se trouve actuellement il suffit d'executer la commande ...</p>
 </article>
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html#2011-05-29-split-vsplit-dans-vim">Split &amp; Vsplit dans vim</a></h2>
+    <h2><a href="//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html#2011-05-29-split-vsplit-dans-vim">Split & Vsplit dans vim</a></h2>
     <p>
       Posté le dim. 29 mai 2011 &#8226;
 Tags :
       <a href="//www.choiz.fr/tag/vim.html">vim</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/editeur.html">editeur</a>,      <a href="//www.choiz.fr/tag/texte.html">texte</a>,      <a href="//www.choiz.fr/tag/terminal.html">terminal</a>,      <a href="//www.choiz.fr/tag/commande.html">commande</a>,      <a href="//www.choiz.fr/tag/split.html">split</a>,      <a href="//www.choiz.fr/tag/vsplit.html">vsplit</a>,      <a href="//www.choiz.fr/tag/window.html">window</a>,      <a href="//www.choiz.fr/tag/colonnes.html">colonnes</a>,      <a href="//www.choiz.fr/tag/cols.html">cols</a>,      <a href="//www.choiz.fr/tag/columns.html">columns</a>    </p>
   </header>
   <div>
-      <p>Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour pouvoir
-ouvrir plusieurs fichiers en même temps.</p>
+      <p>Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
+pouvoir ouvrir plusieurs fichiers en même temps.</p>
 <p>Pour celà il utilises 2 méthodes soit :</p>
-<ol class="arabic">
-<li><p class="first">la division de la fenêtre horizontal en utilisant</p>
-<pre class="literal-block">
-:split
-</pre>
+<ol>
+<li>la division de la fenêtre horizontal en utilisant :<div class="highlight"><pre>:split
+</pre></div>
+
+
 </li>
 </ol>
-<p>ou</p>
-<pre class="literal-block">
-:new
-</pre>
-<p>et ensuite</p>
-<pre class="literal-block">
-:e le_fichier_a_ouvrir
-</pre>
-<ol class="arabic" start="2">
-<li><p class="first">la division de la fenêtre verticalement ...</p></li></ol>
+<p>ou :</p>
+<div class="highlight"><pre>:new
+</pre></div>
+
+
+<p>et ensuite :</p>
+<div class="highlight"><pre>:e le_fichier_a_ouvrir
+</pre></div>
+
+
+<ol>
+<li>la division de la fenêtre verticalement ...</li></ol>
       <a class="btn" href="//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html#2011-05-29-split-vsplit-dans-vim">Lire la suite</a>
   </div>
   <hr />
@@ -186,13 +191,15 @@ Tags :
   </header>
   <div>
       <p>J'ai souvent besoin de voir les différences entre plusieurs fichiers...
-J'utilise souvent la commande diff dans un terminal, mais mon éditeur texte
-favoris &quot;Vim&quot; sait aussi trés bien faire un différentiel. Utilisation avec le
-terminal :</p>
-<pre class="literal-block">
-diff fichier1 fichier2
-</pre>
-<p>Celui-ci retournera les différences directement dans le terminal (pas pratique ...</p>
+J'utilise souvent la commande diff dans un terminal, mais mon éditeur
+texte favoris "Vim" sait aussi trés bien faire un différentiel.
+Utilisation avec le terminal : :</p>
+<div class="highlight"><pre><span class="gh">diff fichier1 fichier2</span>
+</pre></div>
+
+
+<p>Celui-ci retournera les différences directement dans le terminal (pas
+pratique ...</p>
       <a class="btn" href="//www.choiz.fr/2011-05-19-différences-entre-des-fichiers-avec-vim.html#2011-05-19-différences-entre-des-fichiers-avec-vim">Lire la suite</a>
   </div>
   <hr />
@@ -206,13 +213,14 @@ Tags :
       <a href="//www.choiz.fr/tag/php.html">PHP</a>,      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/vi.html">Vi</a>,      <a href="//www.choiz.fr/tag/console.html">Console</a>,      <a href="//www.choiz.fr/tag/mac.html">Mac</a>,      <a href="//www.choiz.fr/tag/linux.html">Linux</a>    </p>
   </header>
   <div>
-      <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement dans la
-console je tape la commande :</p>
-<pre class="literal-block">
-php -l fichier_a_tester.php
-</pre>
-<p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim). Pour la
-faire il suffit de faire &quot;ESC&quot; pour passer en mode ...</p>
+      <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
+dans la console je tape la commande : :</p>
+<div class="highlight"><pre>php -l fichier_a_tester.php
+</pre></div>
+
+
+<p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
+Pour la faire il suffit de faire "ESC" pour passer en mode ...</p>
       <a class="btn" href="//www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html#2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php">Lire la suite</a>
   </div>
   <hr />
@@ -226,11 +234,13 @@ Tags :
       <a href="//www.choiz.fr/tag/vim.html">vim</a>,      <a href="//www.choiz.fr/tag/config.html">config</a>,      <a href="//www.choiz.fr/tag/vimrc.html">.vimrc</a>,      <a href="//www.choiz.fr/tag/plugin.html">plugin</a>,      <a href="//www.choiz.fr/tag/vim-plugin.html">vim plugin</a>,      <a href="//www.choiz.fr/tag/surround.html">surround</a>,      <a href="//www.choiz.fr/tag/surroundvim.html">surround.vim</a>,      <a href="//www.choiz.fr/tag/tags.html">tags</a>,      <a href="//www.choiz.fr/tag/html.html">html</a>    </p>
   </header>
   <div>
-      <p>J'ai ajouté quelques plugins dans ma configuration de Vim dont : surround.vim.</p>
-<p>Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un texte.</p>
+      <p>J'ai ajouté quelques plugins dans ma configuration de Vim dont :
+surround.vim.</p>
+<p>Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un
+texte.</p>
 <p>Comment l'utiliser ?</p>
-<p><tt class="docutils literal">VS&lt;b&gt;</tt> permet d'ajouter les balises <cite>&lt;b&gt;</cite> et <cite>&lt;/b&gt;</cite> avant et apres la
-ligne courante et d'indenter ...</p>
+<p><code>VS&lt;b&gt;</code> permet d'ajouter les balises &lt;b&gt; et &lt;/b&gt; avant et
+apres la ligne courante et d'indenter ...</p>
       <a class="btn" href="//www.choiz.fr/2011-04-09-surround-avec-vim.html#2011-04-09-surround-avec-vim">Lire la suite</a>
   </div>
 </article>

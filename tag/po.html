@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -58,16 +58,17 @@
     <p>
       Posté le dim. 04 décembre 2011 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/mo.html">.mo</a>,      <a href="//www.choiz.fr/tag/po.html">.po</a>,      <a href="//www.choiz.fr/tag/etclocale.html">/etc/locale</a>,      <a href="//www.choiz.fr/tag/lc_all.html">LC_ALL</a>,      <a href="//www.choiz.fr/tag/gettext.html">gettext</a>,      <a href="//www.choiz.fr/tag/php.html">php</a>,      <a href="//www.choiz.fr/tag/php-gettext.html">php-gettext</a>,      <a href="//www.choiz.fr/tag/setlocale.html">setlocale</a>,      <a href="//www.choiz.fr/tag/xgettext.html">xgettext</a>    </p>
+      <a href="//www.choiz.fr/tag/mo.html">.mo</a>,      <a href="//www.choiz.fr/tag/po.html">.po</a>,      <a href="//www.choiz.fr/tag/etclocale.html">/etc/locale</a>,      <a href="//www.choiz.fr/tag/lc_all.html">LC\_ALL</a>,      <a href="//www.choiz.fr/tag/gettext.html">gettext</a>,      <a href="//www.choiz.fr/tag/php.html">php</a>,      <a href="//www.choiz.fr/tag/php-gettext.html">php-gettext</a>,      <a href="//www.choiz.fr/tag/setlocale.html">setlocale</a>,      <a href="//www.choiz.fr/tag/xgettext.html">xgettext</a>    </p>
   </header>
   <div>
-      <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
-utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre
-site en php il faut télécharger le package php-gettext :</p>
-<pre class="literal-block">
-apt-get install php-gettext
-</pre>
-<p>Ensuite il faut modifier le fichier <cite>/etc/locale.gen</cite> et enlever les
+      <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
+en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext
+sur votre site en php il faut télécharger le package php-gettext : :</p>
+<div class="highlight"><pre>apt-get install php-gettext
+</pre></div>
+
+
+<p>Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
 commentaires ...</p>
       <a class="btn" href="//www.choiz.fr/2011-12-04-php-gettext-debian.html#2011-12-04-php-gettext-debian">Lire la suite</a>
   </div>

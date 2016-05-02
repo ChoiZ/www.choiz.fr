@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Voici mon historique des commits : c0004 -- dernier commit c0003 -- avant dernier commit c0002 -- second commit c0001 -- premier commit Je veux faire un patch du commit c0001 et c0002 je dois donc faire : git format-patch -2 c0002 --stdout > mon.patch le "-2" sert à récupérer 2 commits à partir du commit ..." />
+<meta name="description" content="Voici mon historique des commits : : c0004 -- dernier commit c0003 -- avant dernier commit c0002 -- second commit c0001 -- premier commit Je veux faire un patch du commit c0001 et c0002 je dois donc faire : : git format-patch -2 c0002 --stdout > mon.patch le "-2" sert à récupérer 2 commits à partir du commit ..." />
 <meta name="keywords" content="git, patch, commit">
 <meta property="og:site_name" content="ChoiZ"/>
-<meta property="og:title" content="Faire un patch de &quot;x&quot; commit(s) avec git"/>
-<meta property="og:description" content="Voici mon historique des commits : c0004 -- dernier commit c0003 -- avant dernier commit c0002 -- second commit c0001 -- premier commit Je veux faire un patch du commit c0001 et c0002 je dois donc faire : git format-patch -2 c0002 --stdout > mon.patch le "-2" sert à récupérer 2 commits à partir du commit ..."/>
+<meta property="og:title" content="Faire un patch de "x" commit(s) avec git"/>
+<meta property="og:description" content="Voici mon historique des commits : : c0004 -- dernier commit c0003 -- avant dernier commit c0002 -- second commit c0001 -- premier commit Je veux faire un patch du commit c0001 et c0002 je dois donc faire : : git format-patch -2 c0002 --stdout > mon.patch le "-2" sert à récupérer 2 commits à partir du commit ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html"/>
 <meta property="og:type" content="article"/>
@@ -27,7 +27,7 @@
 <meta property="article:tag" content="git"/>
 <meta property="article:tag" content="patch"/>
 <meta property="article:tag" content="commit"/>
-<meta property="og:image" content="avatar.png">  <title>ChoiZ &ndash; Faire un patch de &quot;x&quot; commit(s) avec git</title>
+<meta property="og:image" content="avatar.png">  <title>ChoiZ &ndash; Faire un patch de "x" commit(s) avec git</title>
 </head>
 <body>
   <aside>
@@ -61,23 +61,24 @@
 
 <article>
   <header>
-    <h1 id="2014-05-06-faire-un-patch-de-x-commits-avec-git">Faire un patch de &quot;x&quot; commit(s) avec git</h1>
+    <h1 id="2014-05-06-faire-un-patch-de-x-commits-avec-git">Faire un patch de "x" commit(s) avec git</h1>
     <p>Posté le mar. 06 mai 2014</p>
   </header>
   <div>
-    <p>Voici mon historique des commits :</p>
-<pre class="literal-block">
-c0004 -- dernier commit
+    <p>Voici mon historique des commits : :</p>
+<div class="highlight"><pre>c0004 -- dernier commit
 c0003 -- avant dernier commit
 c0002 -- second commit
 c0001 -- premier commit
-</pre>
-<p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire :</p>
-<pre class="literal-block">
-git format-patch -2 c0002 --stdout &gt; mon.patch
-</pre>
-<p>le &quot;-2&quot; sert à récupérer 2 commits à partir du commit c0002.</p>
+</pre></div>
 
+
+<p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire : :</p>
+<div class="highlight"><pre>git format-patch -2 c0002 --stdout &gt; mon.patch
+</pre></div>
+
+
+<p>le "-2" sert à récupérer 2 commits à partir du commit c0002.</p>
   </div>
   <div class="tag-cloud">
     <p>
@@ -96,8 +97,8 @@ git format-patch -2 c0002 --stdout &gt; mon.patch
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "name": "Faire un patch de &quot;x&quot; commit(s) avec git",
-  "headline": "Faire un patch de &quot;x&quot; commit(s) avec git",
+  "name": "Faire un patch de "x" commit(s) avec git",
+  "headline": "Faire un patch de "x" commit(s) avec git",
   "datePublished": "2014-05-06 11:21:00+02:00",
   "dateModified": "",
   "author": {
@@ -107,7 +108,7 @@ git format-patch -2 c0002 --stdout &gt; mon.patch
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html",
-  "description": "Voici mon historique des commits : c0004 -- dernier commit c0003 -- avant dernier commit c0002 -- second commit c0001 -- premier commit Je veux faire un patch du commit c0001 et c0002 je dois donc faire : git format-patch -2 c0002 --stdout > mon.patch le "-2" sert à récupérer 2 commits à partir du commit ..."
+  "description": "Voici mon historique des commits : : c0004 -- dernier commit c0003 -- avant dernier commit c0002 -- second commit c0001 -- premier commit Je veux faire un patch du commit c0001 et c0002 je dois donc faire : : git format-patch -2 c0002 --stdout > mon.patch le "-2" sert à récupérer 2 commits à partir du commit ..."
 }
 </script></body>
 </html>

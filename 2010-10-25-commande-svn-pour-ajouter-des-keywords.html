@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Pour ajouter le numéro de révision ainsi que pas mal d'autres informations dans vos projets il suffit de taper cette commande : svn propset svn:keywords "Id" index.php Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php Pour afficher l'Id dans votre fichier index ..." />
+<meta name="description" content="Pour ajouter le numéro de révision ainsi que pas mal d'autres informations dans vos projets il suffit de taper cette commande : : svn propset svn:keywords "Id" index.php Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php Pour afficher l'Id dans votre fichier index ..." />
 <meta name="keywords" content="SVN, Subversion, Keyword, Id, Revision, Date, Author, URL, PHP, Code, Subversion">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Commande SVN pour ajouter des keywords"/>
-<meta property="og:description" content="Pour ajouter le numéro de révision ainsi que pas mal d'autres informations dans vos projets il suffit de taper cette commande : svn propset svn:keywords "Id" index.php Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php Pour afficher l'Id dans votre fichier index ..."/>
+<meta property="og:description" content="Pour ajouter le numéro de révision ainsi que pas mal d'autres informations dans vos projets il suffit de taper cette commande : : svn propset svn:keywords "Id" index.php Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php Pour afficher l'Id dans votre fichier index ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html"/>
 <meta property="og:type" content="article"/>
@@ -73,41 +73,45 @@
     <p>Posté le lun. 25 octobre 2010</p>
   </header>
   <div>
-    <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres informations dans
-vos projets il suffit de taper cette commande :</p>
-<pre class="literal-block">
-svn propset svn:keywords &quot;Id&quot; index.php
-</pre>
-<p>Ce qui permet d'ajouter le keyword &quot;Id&quot; sur le fichier index.php</p>
-<p>Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :</p>
-<pre class="literal-block">
-$Id:$
-</pre>
-<p>Une fois le fichier versionné vous obtiendrez :</p>
-<pre class="literal-block">
-$Id: ajax\_modif.php 481 2010-10-25 12:02:50Z choiz $
-</pre>
-<p>D'autres keywords sont disponible tel que :</p>
-<pre class="literal-block">
-$Revision:$
-$Date:$
-$Author:$
-$URL:$
-</pre>
-<p>Vous pouvez les ajouter les uns à la suite des autres par exemple pour notre
-fichier index.php je veux ajouter les 4 keywords précédents grâce à la commande
-:</p>
-<pre class="literal-block">
-svn propset svn:keywords &quot;Revision Date Author URL&quot; index.php
-</pre>
-<p>Ce qui affichera :</p>
-<pre class="literal-block">
-$Revision: 481 $
-$Date: 2010-10-25 14:02:50 +0200 (lun., 25 oct. 2010) $
-$Author: choiz $
-$URL: svn://svn.choiz.fr/projet/branches/prod/index.php $
-</pre>
+    <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
+informations dans vos projets il suffit de taper cette commande : :</p>
+<div class="highlight"><pre>svn propset svn:keywords &quot;Id&quot; index.php
+</pre></div>
 
+
+<p>Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php</p>
+<p>Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :
+:</p>
+<div class="highlight"><pre><span class="p">$</span><span class="nv">Id</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
+</pre></div>
+
+
+<p>Une fois le fichier versionné vous obtiendrez : :</p>
+<div class="highlight"><pre><span class="p">$</span><span class="nv">Id</span><span class="x">: ajax\_modif.php 481 2010-10-25 12:02:50Z choiz </span><span class="p">$</span><span class="x"></span>
+</pre></div>
+
+
+<p>D'autres keywords sont disponible tel que : :</p>
+<div class="highlight"><pre><span class="p">$</span><span class="nv">Revision</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
+<span class="p">$</span><span class="nv">Date</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
+<span class="p">$</span><span class="nv">Author</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
+<span class="p">$</span><span class="nv">URL</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
+</pre></div>
+
+
+<p>Vous pouvez les ajouter les uns à la suite des autres par exemple pour
+notre fichier index.php je veux ajouter les 4 keywords précédents grâce
+à la commande : :</p>
+<div class="highlight"><pre>svn propset svn:keywords &quot;Revision Date Author URL&quot; index.php
+</pre></div>
+
+
+<p>Ce qui affichera : :</p>
+<div class="highlight"><pre><span class="p">$</span><span class="nv">Revision</span><span class="x">: 481 </span><span class="p">$</span><span class="x"></span>
+<span class="p">$</span><span class="nv">Date</span><span class="x">: 2010-10-25 14:02:50 +0200 (lun., 25 oct. 2010) </span><span class="p">$</span><span class="x"></span>
+<span class="p">$</span><span class="nv">Author</span><span class="x">: choiz </span><span class="p">$</span><span class="x"></span>
+<span class="p">$</span><span class="nv">URL</span><span class="x">: svn://svn.choiz.fr/projet/branches/prod/index.php </span><span class="p">$</span><span class="x"></span>
+</pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -145,7 +149,7 @@ $URL: svn://svn.choiz.fr/projet/branches/prod/index.php $
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html",
-  "description": "Pour ajouter le numéro de révision ainsi que pas mal d'autres informations dans vos projets il suffit de taper cette commande : svn propset svn:keywords "Id" index.php Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php Pour afficher l'Id dans votre fichier index ..."
+  "description": "Pour ajouter le numéro de révision ainsi que pas mal d'autres informations dans vos projets il suffit de taper cette commande : : svn propset svn:keywords "Id" index.php Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php Pour afficher l'Id dans votre fichier index ..."
 }
 </script></body>
 </html>

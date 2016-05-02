@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,12 +61,11 @@ Tags :
       <a href="//www.choiz.fr/tag/svn-to-git.html">svn to git</a>,      <a href="//www.choiz.fr/tag/svn.html">svn</a>,      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/migate.html">migate</a>,      <a href="//www.choiz.fr/tag/git-svn-clone.html">git svn clone</a>,      <a href="//www.choiz.fr/tag/authors.html">authors</a>,      <a href="//www.choiz.fr/tag/tags.html">tags</a>    </p>
   </header>
   <div>
-      <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est
-temps de faire la migration de svn à git !</p>
-<p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais
-voici donc ma procédure :</p>
-<pre class="literal-block">
-svn log --quiet 'svn://svn.mondomaine/monprojet' | grep ...</pre>
+      <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec
+svn. Il est temps de faire la migration de svn à git !</p>
+<p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
+voulais voici donc ma procédure : :</p>
+<div class="highlight"><pre>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2013-07-16-passer-de-svn-à-git.html#2013-07-16-passer-de-svn-à-git">Lire la suite</a>
   </div>
   <hr />
@@ -80,10 +79,11 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/mercurial.html">mercurial</a>,      <a href="//www.choiz.fr/tag/svn.html">svn</a>,      <a href="//www.choiz.fr/tag/migration.html">migration</a>,      <a href="//www.choiz.fr/tag/svn-to-git.html">svn to git</a>,      <a href="//www.choiz.fr/tag/mercurial-to-git.html">mercurial to git</a>,      <a href="//www.choiz.fr/tag/hg-to-git.html">hg to git</a>,      <a href="//www.choiz.fr/tag/hg.html">hg</a>    </p>
   </header>
   <div>
-      <p>J'ai différents projet sous svn, git et mercurial. J'ai pour but de tout migrer
-sur git car disponible sur github ainsi que sur bitbucket.</p>
-<p>J'ai trouvé un <a class="reference external" href="http://www.yterium.net/Migrer-un-projet-SVN-vers-GIT">trés bon tutoriel pour migrer un projet svn à git</a>.</p>
-<p>Egalement un autre tutoriel en anglais pour passer <a class="reference external" href="http://hivelogic.com/articles/converting-from-mercurial-to-git">de mercurial ...</a></p>
+      <p>J'ai différents projet sous svn, git et mercurial. J'ai pour but de tout
+migrer sur git car disponible sur github ainsi que sur bitbucket.</p>
+<p>J'ai trouvé un <a href="http://www.yterium.net/Migrer-un-projet-SVN-vers-GIT">trés bon tutoriel pour migrer un projet svn à
+git</a>.</p>
+<p>Egalement un autre tutoriel en anglais pour passer <a href="http://hivelogic.com/articles/converting-from-mercurial-to-git">de mercurial ...</a></p>
       <a class="btn" href="//www.choiz.fr/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html#2013-02-12-logiciels-de-gestion-de-versions-svn-git">Lire la suite</a>
   </div>
   <hr />
@@ -94,15 +94,17 @@ sur git car disponible sur github ainsi que sur bitbucket.</p>
     <p>
       Posté le mar. 26 juillet 2011 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/svn.html">svn</a>,      <a href="//www.choiz.fr/tag/ignore.html">ignore</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/folder.html">folder</a>,      <a href="//www.choiz.fr/tag/dossier.html">dossier</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS_Store</a>,      <a href="//www.choiz.fr/tag/_.html">._*</a>,      <a href="//www.choiz.fr/tag/_.html">._</a>,      <a href="//www.choiz.fr/tag/swp.html">.swp</a>,      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/mac-os.html">Mac Os</a>    </p>
+      <a href="//www.choiz.fr/tag/svn.html">svn</a>,      <a href="//www.choiz.fr/tag/ignore.html">ignore</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/folder.html">folder</a>,      <a href="//www.choiz.fr/tag/dossier.html">dossier</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS\_Store</a>,      <a href="//www.choiz.fr/tag/_.html">.\_\*</a>,      <a href="//www.choiz.fr/tag/_.html">.\_</a>,      <a href="//www.choiz.fr/tag/swp.html">.swp</a>,      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/mac-os.html">Mac Os</a>    </p>
   </header>
   <div>
-      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<pre class="literal-block">
-svn propset svn:ignore
-</pre>
-<p>Ou dans la configuration du svn dans <cite>~/.subversion/config</cite> le <cite>global-ignores</cite></p>
-<p>Pour ignorer tous les fichiers qui commencent par <cite>._</cite> dans le dossier ou
+      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn : :</p>
+<div class="highlight"><pre>svn propset svn:ignore
+</pre></div>
+
+
+<p>Ou dans la configuration du svn dans ~/.subversion/config le
+global-ignores</p>
+<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
 l'on se trouve actuellement il suffit d'executer la commande ...</p>
       <a class="btn" href="//www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html#2011-07-26-ignorer-grâce-au-svn">Lire la suite</a>
   </div>
@@ -117,12 +119,13 @@ Tags :
       <a href="//www.choiz.fr/tag/svn.html">SVN</a>,      <a href="//www.choiz.fr/tag/subversion.html">Subversion</a>,      <a href="//www.choiz.fr/tag/keyword.html">Keyword</a>,      <a href="//www.choiz.fr/tag/id.html">Id</a>,      <a href="//www.choiz.fr/tag/revision.html">Revision</a>,      <a href="//www.choiz.fr/tag/date.html">Date</a>,      <a href="//www.choiz.fr/tag/author.html">Author</a>,      <a href="//www.choiz.fr/tag/url.html">URL</a>,      <a href="//www.choiz.fr/tag/php.html">PHP</a>,      <a href="//www.choiz.fr/tag/code.html">Code</a>,      <a href="//www.choiz.fr/tag/subversion.html">Subversion</a>    </p>
   </header>
   <div>
-      <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres informations dans
-vos projets il suffit de taper cette commande :</p>
-<pre class="literal-block">
-svn propset svn:keywords &quot;Id&quot; index.php
-</pre>
-<p>Ce qui permet d'ajouter le keyword &quot;Id&quot; sur le fichier index.php</p>
+      <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
+informations dans vos projets il suffit de taper cette commande : :</p>
+<div class="highlight"><pre>svn propset svn:keywords &quot;Id&quot; index.php
+</pre></div>
+
+
+<p>Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php</p>
 <p>Pour afficher l'Id dans votre fichier index ...</p>
       <a class="btn" href="//www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html#2010-10-25-commande-svn-pour-ajouter-des-keywords">Lire la suite</a>
   </div>

@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -69,70 +69,75 @@
   </header>
   <div>
     <p>J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
-<em>master</em>… Généralement je fais toujours une branche pour les modifications,
-cette fois j'avais créé cette branche <em>debug_redirect</em> mais je n'étais pas
-dessus…</p>
-<p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master</em>. Or le seul qui
-devait être dessus devait être A et je devais avoir B-C dans ma branche
-<em>debug_redirect</em>. Voici un schéma de la situation :</p>
-<pre class="literal-block">
-debug_redirect
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A-B-C
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master
-</pre>
-<p>Je dois donc soit mettre a jour ma branche <em>debug_redirect</em>.</p>
-<pre class="literal-block">
-git checkout debug_redirect
+<em>master</em>… Généralement je fais toujours une branche pour les
+modifications, cette fois j'avais créé cette branche <em>debug_redirect</em>
+mais je n'étais pas dessus…</p>
+<p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master</em>. Or le seul
+qui devait être dessus devait être A et je devais avoir B-C dans ma
+branche <em>debug_redirect</em>. Voici un schéma de la situation : :</p>
+<div class="highlight"><pre>debug_redirect
+          ↓
+          A-B-C
+              ↑
+             master
+</pre></div>
+
+
+<p>Je dois donc soit mettre a jour ma branche <em>debug_redirect</em>. :</p>
+<div class="highlight"><pre>git checkout debug_redirect
 
 git merge master
-</pre>
-<p>Ce qui donne :</p>
-<pre class="literal-block">
-debug_redirect
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
-&nbsp;&nbsp;&nbsp;&nbsp;A-B-C
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master
-</pre>
-<p>Il me reste qu'a retourner sur le <em>master</em> et revenir à la version A.</p>
-<pre class="literal-block">
-git checkout master
+</pre></div>
+
+
+<p>Ce qui donne : :</p>
+<div class="highlight"><pre>debug_redirect
+        ↓
+    A-B-C
+        ↑
+      master
+</pre></div>
+
+
+<p>Il me reste qu'a retourner sur le <em>master</em> et revenir à la version A. :</p>
+<div class="highlight"><pre>git checkout master
 
 git reset --hard HEAD~2
-</pre>
-<p>Ce qui donne :</p>
-<pre class="literal-block">
-&nbsp;&nbsp;debug_redirect
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓
-&nbsp;&nbsp;A-B-C
-&nbsp;&nbsp;↑
+</pre></div>
+
+
+<p>Ce qui donne : :</p>
+<div class="highlight"><pre>  debug_redirect
+      ↓
+  A-B-C
+  ↑
 master
-</pre>
-<p>Maintenant que j'ai fixé mon bug sur ma branche&nbsp; <em>debug_redirect</em> je peux le
-merger avec le <em>master</em>.</p>
-<pre class="literal-block">
-git merge debug_redirect --no-ff
-</pre>
-<p>Résultat :</p>
-<pre class="literal-block">
-&nbsp;&nbsp;&nbsp;&nbsp;B-C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug_redirect
-&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
-A&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;D&nbsp;&nbsp;&nbsp;master
-</pre>
-<p>Pour voir vos commits par branche vous pouvez aussi utiliser la commande git log
-:</p>
-<pre class="literal-block">
-git log --graph --oneline --decorate
-*&nbsp;&nbsp; 4c677ac (HEAD, master) Merge branch 'debug_redirect'
-|\
+</pre></div>
+
+
+<p>Maintenant que j'ai fixé mon bug sur ma branche  <em>debug_redirect</em> je
+peux le merger avec le <em>master</em>. :</p>
+<div class="highlight"><pre>git merge debug_redirect --no-ff
+</pre></div>
+
+
+<p>Résultat : :</p>
+<div class="highlight"><pre>         B-C      debug_redirect
+       /     \
+     A - - - - D   master
+</pre></div>
+
+
+<p>Pour voir vos commits par branche vous pouvez aussi utiliser la commande
+git log : :</p>
+<div class="highlight"><pre>git log --graph --oneline --decorate
+*   4c677ac (HEAD, master) Merge branch &#39;debug_redirect&#39;
+|\ 
 | * 90e7a7a (debug_redirect) Fix another bug on redirect
 | * 40ae981 Fix the redirect bug
-|/
+|/ 
 * 4e06ff4 initial commit
-</pre>
-
+</pre></div>
   </div>
   <div class="tag-cloud">
     <p>

@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,8 +61,10 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/branch.html">branch</a>,      <a href="//www.choiz.fr/tag/remote.html">remote</a>,      <a href="//www.choiz.fr/tag/prune.html">prune</a>,      <a href="//www.choiz.fr/tag/origin.html">origin</a>    </p>
   </header>
   <div>
-      <p>Lors d'un developpement j'ai créé une branche &quot;add_namespace&quot; qui m'a permis d'ajouté des namespaces a différents fichiers PHP.</p>
-<p>Une fois la modification faite j'ai envoyé ma branche sur l'origin, en faisant un &quot;pull request&quot; (github) ou &quot;merge request&quot; (gitlab).</p>
+      <p>Lors d'un developpement j'ai créé une branche "add_namespace" qui m'a
+permis d'ajouté des namespaces a différents fichiers PHP.</p>
+<p>Une fois la modification faite j'ai envoyé ma branche sur l'origin, en
+faisant un "pull request" (github) ou "merge request" (gitlab).</p>
 <p>Un autre développeur a accepté ...</p>
       <a class="btn" href="//www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html#2015-08-25-suppression-des-branches-distantes-inexistantes">Lire la suite</a>
   </div>
@@ -78,14 +80,15 @@ Tags :
   </header>
   <div>
       <p>Dans certains projets j’utilise git avec plusieurs remote, par exemple :</p>
-<ul class="simple">
+<ul>
 <li>un remote “origin” se trouve sur un serveur perso.</li>
 <li>un remote “github” qui lui est sur github.com.</li>
 </ul>
-<p>Quand je vais sur le master il m’arrive d’avoir ce message :</p>
-<pre class="literal-block">
-&quot;your branch is up-to-date with “github/master”.&quot;
-</pre>
+<p>Quand je vais sur le master il m’arrive d’avoir ce message : :</p>
+<div class="highlight"><pre>&quot;your branch is up-to-date with “github/master”.&quot;
+</pre></div>
+
+
 <p>Je ...</p>
       <a class="btn" href="//www.choiz.fr/2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html#2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec">Lire la suite</a>
   </div>
@@ -100,15 +103,17 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/checkout.html">checkout</a>,      <a href="//www.choiz.fr/tag/fetch.html">fetch</a>,      <a href="//www.choiz.fr/tag/origin.html">origin</a>,      <a href="//www.choiz.fr/tag/checkout-b.html">checkout -b</a>,      <a href="//www.choiz.fr/tag/branch.html">branch</a>,      <a href="//www.choiz.fr/tag/remote.html">remote</a>    </p>
   </header>
   <div>
-      <p>J'utilise des branches tel que prod, preprod pour mes projets et en local il
-m'arrive de vouloir aller sur ses branches.</p>
-<pre class="literal-block">
-git checkout preprod
-</pre>
-<p>Et j'ai l'erreur suivante :</p>
-<pre class="literal-block">
-error: pathspec 'preprod' did not match any file(s) known to git.
-</pre>
+      <p>J'utilise des branches tel que prod, preprod pour mes projets et en
+local il m'arrive de vouloir aller sur ses branches. :</p>
+<div class="highlight"><pre>git checkout preprod
+</pre></div>
+
+
+<p>Et j'ai l'erreur suivante : :</p>
+<div class="highlight"><pre><span class="n">error</span><span class="o">:</span> <span class="n">pathspec</span> <span class="s1">&#39;preprod&#39;</span> <span class="n">did</span> <span class="n">not</span> <span class="n">match</span> <span class="n">any</span> <span class="n">file</span><span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="n">known</span> <span class="n">to</span> <span class="n">git</span><span class="o">.</span>
+</pre></div>
+
+
 <p>Je vais mettre a jour mon ...</p>
       <a class="btn" href="//www.choiz.fr/2013-10-01-git-se-déplacer-dans-une-branche-distante.html#2013-10-01-git-se-déplacer-dans-une-branche-distante">Lire la suite</a>
   </div>

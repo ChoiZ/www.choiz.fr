@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Pour faire mes migrations de base de donnée j'utilise en ligne de commande mysqldump et mysql. Dans un premier temps je sauve ma base database dans le fichier dump.sql J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss mysqldump -u utilisateur -p p4ss database > dump ..." />
+<meta name="description" content="Pour faire mes migrations de base de donnée j'utilise en ligne de commande mysqldump et mysql. Dans un premier temps je sauve ma base database dans le fichier dump.sql J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss : mysqldump -u utilisateur -p p4ss database > dump ..." />
 <meta name="keywords" content="Mysql, Mysqldump, Database, Migration, Dump Sql, Sql">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Migration d'une base de donnée Mysql"/>
-<meta property="og:description" content="Pour faire mes migrations de base de donnée j'utilise en ligne de commande mysqldump et mysql. Dans un premier temps je sauve ma base database dans le fichier dump.sql J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss mysqldump -u utilisateur -p p4ss database > dump ..."/>
+<meta property="og:description" content="Pour faire mes migrations de base de donnée j'utilise en ligne de commande mysqldump et mysql. Dans un premier temps je sauve ma base database dans le fichier dump.sql J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss : mysqldump -u utilisateur -p p4ss database > dump ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2011-05-14-migration-dune-base-de-donnée-mysql.html"/>
 <meta property="og:type" content="article"/>
@@ -68,19 +68,18 @@
     <p>Posté le sam. 14 mai 2011</p>
   </header>
   <div>
-    <p>Pour faire mes migrations de base de donnée j'utilise en ligne de commande
-mysqldump et mysql.</p>
-<p>Dans un premier temps je sauve ma base <cite>database</cite> dans le fichier <cite>dump.sql</cite>
-J'utilise l'utilisateur mysql : <cite>utilisateur</cite> avec son mot de passe <cite>p4ss</cite></p>
-<pre class="literal-block">
-mysqldump -u utilisateur -p p4ss database &gt; dump.sql
-</pre>
-<p>Une fois que j'ai mon fichier <cite>dump.sql</cite> je le met sur la nouvelle machine, puis
-j'execute la commande suivante :</p>
-<pre class="literal-block">
-mysql -u utilisateur -pp4ss database &lt; fichierdump.sql
-</pre>
+    <p>Pour faire mes migrations de base de donnée j'utilise en ligne de
+commande mysqldump et mysql.</p>
+<p>Dans un premier temps je sauve ma base database dans le fichier dump.sql
+J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss :</p>
+<div class="highlight"><pre>mysqldump -u utilisateur -p p4ss database &gt; dump.sql
+</pre></div>
 
+
+<p>Une fois que j'ai mon fichier dump.sql je le met sur la nouvelle
+machine, puis j'execute la commande suivante : :</p>
+<div class="highlight"><pre>mysql -u utilisateur -pp4ss database &lt; fichierdump.sql
+</pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -113,7 +112,7 @@ mysql -u utilisateur -pp4ss database &lt; fichierdump.sql
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2011-05-14-migration-dune-base-de-donnée-mysql.html",
-  "description": "Pour faire mes migrations de base de donnée j'utilise en ligne de commande mysqldump et mysql. Dans un premier temps je sauve ma base database dans le fichier dump.sql J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss mysqldump -u utilisateur -p p4ss database > dump ..."
+  "description": "Pour faire mes migrations de base de donnée j'utilise en ligne de commande mysqldump et mysql. Dans un premier temps je sauve ma base database dans le fichier dump.sql J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss : mysqldump -u utilisateur -p p4ss database > dump ..."
 }
 </script></body>
 </html>

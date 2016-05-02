@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Fichier .gitconfig [user] name = François LASSERRE email = mon@email.fr [diff] tool = vimdiff [color] branch = auto diff = auto status = auto interactive = auto ui = true [alias] br = branch ci = commit -a co = checkout sh = show --color-words st = status last = cat-file commit HEAD tree = log --graph --oneline --decorate graph = log --graph --decorate ..." />
+<meta name="description" content="Fichier .gitconfig : [user] name = François LASSERRE email = mon@email.fr [diff] tool = vimdiff [color] branch = auto diff = auto status = auto interactive = auto ui = true [alias] br = branch ci = commit -a co = checkout sh = show --color-words st = status last = cat-file commit HEAD tree = log --graph --oneline --decorate graph = log --graph --decorate ..." />
 <meta name="keywords" content="git, gitconfig, gitignore, git color, git tools, git alias, git merge, git diff, git editor, git excludesfile">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Git mes fichiers de config gitconfig / gitignore"/>
-<meta property="og:description" content="Fichier .gitconfig [user] name = François LASSERRE email = mon@email.fr [diff] tool = vimdiff [color] branch = auto diff = auto status = auto interactive = auto ui = true [alias] br = branch ci = commit -a co = checkout sh = show --color-words st = status last = cat-file commit HEAD tree = log --graph --oneline --decorate graph = log --graph --decorate ..."/>
+<meta property="og:description" content="Fichier .gitconfig : [user] name = François LASSERRE email = mon@email.fr [diff] tool = vimdiff [color] branch = auto diff = auto status = auto interactive = auto ui = true [alias] br = branch ci = commit -a co = checkout sh = show --color-words st = status last = cat-file commit HEAD tree = log --graph --oneline --decorate graph = log --graph --decorate ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html"/>
 <meta property="og:type" content="article"/>
@@ -72,38 +72,38 @@
     <p>Posté le mar. 31 janvier 2012</p>
   </header>
   <div>
-    <p>Fichier .gitconfig</p>
-<pre class="literal-block">
-[user]
-    name = François LASSERRE
-    email = mon&#64;email.fr
-[diff]
-    tool = vimdiff
-[color]
-    branch = auto
-    diff = auto
-    status = auto
-    interactive = auto
-    ui = true
-[alias]
-    br = branch
-    ci = commit -a
-    co = checkout
-    sh = show --color-words
-    st = status
-    last = cat-file commit HEAD
-    tree = log --graph --oneline --decorate
-    graph = log --graph --decorate
-    pom = push origin master
-[core]
-    excludesfile = ~/.gitignore
-    editor = vim
-[merge]
-    tool = vimdiff
-</pre>
-<p>Fichier .gitignore</p>
-<pre class="literal-block">
-# Ignore files from git
+    <p>Fichier .gitconfig :</p>
+<div class="highlight"><pre><span class="k">[user]</span>
+    <span class="na">name</span> <span class="o">=</span> <span class="s">François LASSERRE</span>
+<span class="s">    email = mon@email.fr</span>
+<span class="k">[diff]</span>
+    <span class="na">tool</span> <span class="o">=</span> <span class="s">vimdiff</span>
+<span class="k">[color]</span>
+    <span class="na">branch</span> <span class="o">=</span> <span class="s">auto</span>
+<span class="s">    diff = auto</span>
+<span class="s">    status = auto</span>
+<span class="s">    interactive = auto</span>
+<span class="s">    ui = true</span>
+<span class="k">[alias]</span>
+    <span class="na">br</span> <span class="o">=</span> <span class="s">branch</span>
+<span class="s">    ci = commit -a</span>
+<span class="s">    co = checkout</span>
+<span class="s">    sh = show --color-words</span>
+<span class="s">    st = status</span>
+<span class="s">    last = cat-file commit HEAD</span>
+<span class="s">    tree = log --graph --oneline --decorate</span>
+<span class="s">    graph = log --graph --decorate</span>
+<span class="s">    pom = push origin master</span>
+<span class="k">[core]</span>
+    <span class="na">excludesfile</span> <span class="o">=</span> <span class="s">~/.gitignore</span>
+<span class="s">    editor = vim</span>
+<span class="k">[merge]</span>
+    <span class="na">tool</span> <span class="o">=</span> <span class="s">vimdiff</span>
+</pre></div>
+
+
+<p>Fichier .gitignore :</p>
+<div class="highlight"><pre># Ignore files from git
 
 # ._ files (Mac Os X)
 ._*
@@ -113,8 +113,7 @@
 
 # .swp (Vim)
 *.swp
-</pre>
-
+</pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -151,7 +150,7 @@
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html",
-  "description": "Fichier .gitconfig [user] name = François LASSERRE email = mon@email.fr [diff] tool = vimdiff [color] branch = auto diff = auto status = auto interactive = auto ui = true [alias] br = branch ci = commit -a co = checkout sh = show --color-words st = status last = cat-file commit HEAD tree = log --graph --oneline --decorate graph = log --graph --decorate ..."
+  "description": "Fichier .gitconfig : [user] name = François LASSERRE email = mon@email.fr [diff] tool = vimdiff [color] branch = auto diff = auto status = auto interactive = auto ui = true [alias] br = branch ci = commit -a co = checkout sh = show --color-words st = status last = cat-file commit HEAD tree = log --graph --oneline --decorate graph = log --graph --decorate ..."
 }
 </script></body>
 </html>

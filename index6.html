@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -54,25 +54,51 @@
 
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html#2012-04-18-reprendre-la-main-sur-un-screen-pas-detached">Reprendre la main sur un Screen pas &quot;detached&quot;</a></h2>
+    <h2><a href="//www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html#2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight">Ajout dans mon .vimrc de matchadd() & highlight</a></h2>
+    <p>
+      Posté le ven. 27 avril 2012 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/vimrc.html">vimrc</a>,      <a href="//www.choiz.fr/tag/vim.html">vim</a>,      <a href="//www.choiz.fr/tag/config-file.html">config file</a>,      <a href="//www.choiz.fr/tag/vimrc.html">.vimrc</a>,      <a href="//www.choiz.fr/tag/todo.html">todo</a>,      <a href="//www.choiz.fr/tag/notice.html">notice</a>,      <a href="//www.choiz.fr/tag/fixme.html">fixme</a>,      <a href="//www.choiz.fr/tag/highlight.html">highlight</a>,      <a href="//www.choiz.fr/tag/matchadd.html">matchadd</a>    </p>
+  </header>
+  <div>
+      <p>Petit ajout dans mon fichier .vimrc :</p>
+<div class="highlight"><pre>&quot; Highlight To do list with green background
+highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
+highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
+highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
+&quot; Match todolist, notice, fixme
+:call matchadd(&#39;Todo&#39;,&#39;[T|t][O|o][D|d][O|o]&#39;)
+:call matchadd(&#39;Todo&#39;,&#39;[T|t][O|o] [D|d][O|o]&#39;)
+:call matchadd(&#39;Notice&#39;,&#39;[N|n][O|o][T|t][I|i][C|c][E|e]&#39;)
+:call matchadd(&#39;Notice&#39;,&#39;[N|n][O|o][T|t][E|e]&#39;)
+:call matchadd(&#39;Fixme&#39;,&#39;[F|f][I|i][X|x][M|m][E|e]&#39;)
+:call matchadd(&#39;Fixme&#39;,&#39;[F|f][I|i][X|x] [M|m][E|e]&#39;)
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html#2012-04-18-reprendre-la-main-sur-un-screen-pas-detached">Reprendre la main sur un Screen pas "detached"</a></h2>
     <p>
       Posté le mer. 18 avril 2012 &#8226;
 Tags :
       <a href="//www.choiz.fr/tag/attached.html">attached</a>,      <a href="//www.choiz.fr/tag/detached.html">detached</a>,      <a href="//www.choiz.fr/tag/detacher.html">détacher</a>,      <a href="//www.choiz.fr/tag/screen.html">screen</a>,      <a href="//www.choiz.fr/tag/reattacher.html">réattacher</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>,      <a href="//www.choiz.fr/tag/cli.html">cli</a>    </p>
   </header>
   <div>
-      <p>Lorsque j'ai voulu &quot;réattacher&quot; mon &quot;Screen&quot; j'ai eu le message suivant :</p>
-<pre class="literal-block">
-There is a screen on:
+      <p>Lorsque j'ai voulu "réattacher" mon "Screen" j'ai eu le message suivant :</p>
+<div class="highlight"><pre>There is a screen on:
 1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)
-</pre>
-<p>Habituellement je détache mon &quot;Screen&quot; mais cette fois j'ai oublié.</p>
-<p>Pour &quot;détacher&quot; / &quot;réattacher&quot; mon &quot;Screen&quot; j'ai du faire la commande suivante :</p>
-<pre class="literal-block">
-screen -dRR
-</pre>
-<p>Je note car c'est toujours bon à savoir :)</p>
+</pre></div>
 
+
+<p>Habituellement je détache mon "Screen" mais cette fois j'ai oublié.</p>
+<p>Pour "détacher" / "réattacher" mon "Screen" j'ai du faire la commande suivante :</p>
+<div class="highlight"><pre>screen -dRR
+</pre></div>
+
+
+<p>Je note car c'est toujours bon à savoir :)</p>
   </div>
   <hr />
 </article>
@@ -85,110 +111,118 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="//www.choiz.fr/tag/git-stash-pop.html">git stash pop</a>,      <a href="//www.choiz.fr/tag/git-stash-list.html">git stash list</a>,      <a href="//www.choiz.fr/tag/git-branch.html">git branch</a>,      <a href="//www.choiz.fr/tag/git-checkout.html">git checkout</a>    </p>
   </header>
   <div>
-      <p>Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers sur une
-branche qui sont pas a commiter dans l'immédiat. J'utilise donc git stash,
-voyons voir comment l'utiliser simplement.</p>
-<p>On regarde l'état du status et des branches</p>
-<pre class="literal-block">
-git status
+      <p>Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
+sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc
+git stash, voyons voir comment l'utiliser simplement.</p>
+<p>On regarde l'état du status et des branches :</p>
+<div class="highlight"><pre>git status
 # On branch master
 nothing to commit (working directory clean)
 
 $ git branch
 * master
-</pre>
-<p>Je travail sur la branche master et je n'ai pas d'autre branche. Je vais donc
-faire une branche API pour mon projet.</p>
-<pre class="literal-block">
-git branch API
+</pre></div>
+
+
+<p>Je travail sur la branche master et je n'ai pas d'autre branche. Je vais
+donc faire une branche API pour mon projet. :</p>
+<div class="highlight"><pre>git branch API
 
 git branch
   API
   * master
-</pre>
-<p>Maintenant je vais changer de branche <cite>git checkout</cite> pour être sur ma
-branche API et modifier les fichiers sur cette branche.</p>
-<pre class="literal-block">
-git checkout API
-Switched to branch 'API'
+</pre></div>
+
+
+<p>Maintenant je vais changer de branche git checkout pour être sur ma
+branche API et modifier les fichiers sur cette branche. :</p>
+<div class="highlight"><pre>git checkout API
+Switched to branch &#39;API&#39;
 
 git branch
 * API
   master
-</pre>
-<p>Maintenant je vais modifier un mon fichier manage.py sur ma branche API.</p>
-<pre class="literal-block">
-git status
+</pre></div>
+
+
+<p>Maintenant je vais modifier un mon fichier manage.py sur ma branche API.
+:</p>
+<div class="highlight"><pre>git status
 # On branch API
 # Changes not staged for commit:
-#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
 #
-#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py
+#    modified:   manage.py
 #
 no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</pre>
-<p>Si je veux revenir sur mon master, sans avoir la modification du manage.py je
-vais devoir utiliser git stash (qui sauvegardera mes
-modifications du manage.py)</p>
-<pre class="literal-block">
-git stash
+</pre></div>
+
+
+<p>Si je veux revenir sur mon master, sans avoir la modification du
+manage.py je vais devoir utiliser git stash (qui sauvegardera mes
+modifications du manage.py) :</p>
+<div class="highlight"><pre>git stash
 Saved working directory and index state WIP on API: 8b6342d Fix register.py
 HEAD is now at 8b6342d Fix register.py
 
 $ git status
 # On branch API
 nothing to commit (working directory clean)
-</pre>
-<p>Maintenant que notre branche est propre on peut changer de branche
-revenir sur le master par exemple.</p>
-<pre class="literal-block">
-$ git checkout master
-Switched to branch 'master'
+</pre></div>
 
-$ git status
-# On branch master
-nothing to commit (working directory clean)
-</pre>
-<p>On peut donc travailler tranquillement sur la branche master. Puis revenir sur
-notre branche API, lister les stash <cite>git stash list</cite> récupérer les modifications
-précédentes <cite>git stash pop</cite>.</p>
-<pre class="literal-block">
-git checkout API
-Switched to branch 'API'
+
+<p>Maintenant que notre branche est propre on peut changer de branche
+revenir sur le master par exemple. :</p>
+<div class="highlight"><pre><span class="nv">$ </span>git checkout master
+Switched to branch <span class="s1">&#39;master&#39;</span>
+
+<span class="nv">$ </span>git status
+<span class="c"># On branch master</span>
+nothing to commit <span class="o">(</span>working directory clean<span class="o">)</span>
+</pre></div>
+
+
+<p>On peut donc travailler tranquillement sur la branche master. Puis
+revenir sur notre branche API, lister les stash git stash list récupérer
+les modifications précédentes git stash pop. :</p>
+<div class="highlight"><pre>git checkout API
+Switched to branch &#39;API&#39;
 
 git stash list
-stash&#64;{0}: WIP on API: 8b6342d Fix register.py
+stash@{0}: WIP on API: 8b6342d Fix register.py
 
 git stash pop
 # On branch API
 # Changes not staged for commit:
-#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
 #
-#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py
+#    modified:   manage.py
 #
 no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-Dropped refs/stash&#64;{0} (533906a52b923a8960fa0f6fdf17a288c94f233a)
+Dropped refs/stash@{0} (533906a52b923a8960fa0f6fdf17a288c94f233a)
 
 $ git status
 # On branch API
 # Changes not staged for commit:
-#&nbsp;&nbsp; (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-#&nbsp;&nbsp; (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
 #
-#&nbsp;&nbsp;&nbsp; modified:&nbsp;&nbsp; manage.py
+#    modified:   manage.py
 #
 no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</pre>
-<p>Maintenant je peux continuer les modifications sur ma branche API réutilise git
-stash si besoin ou les commiter, merger ma branche…</p>
-<p>git stash pop (récupére le dernier stash enregistré <a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>},
-l'applique et le supprime de la liste) mon alias = git stapp</p>
-<p>git stash apply (récupére le dernier stash enregistré <a class="reference external" href="mailto:stash&#64;{0">stash&#64;{0</a>} et
-l'applique)</p>
-<p>Et pour rien n'oublier (RTFM) : man git stash</p>
+</pre></div>
 
+
+<p>Maintenant je peux continuer les modifications sur ma branche API
+réutilise git stash si besoin ou les commiter, merger ma branche…</p>
+<p>git stash pop (récupére le dernier stash enregistré
+<a href="mailto:stash@{0}">stash@{0}</a>, l'applique et le supprime de la liste)
+mon alias = git stapp</p>
+<p>git stash apply (récupére le dernier stash enregistré
+<a href="mailto:stash@{0">stash@{0</a>} et l'applique)</p>
+<p>Et pour rien n'oublier (RTFM) : man git stash</p>
   </div>
   <hr />
 </article>
@@ -201,18 +235,20 @@ Tags :
       <a href="//www.choiz.fr/tag/cli.html">CLI</a>,      <a href="//www.choiz.fr/tag/rename.html">rename</a>,      <a href="//www.choiz.fr/tag/renommer.html">renommer</a>,      <a href="//www.choiz.fr/tag/fichiers.html">fichiers</a>,      <a href="//www.choiz.fr/tag/wav.html">wav</a>,      <a href="//www.choiz.fr/tag/wav.html">WAV</a>    </p>
   </header>
   <div>
-      <p>Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers correct. Sous
-linux pour renomer plusieurs fichiers avec bash j'utilise &quot;rename&quot;.</p>
-<p>Exemple je veux supprimer tous les espaces d'un fichier :</p>
-<pre class="literal-block">
-rename &quot;s/ *//g&quot; *.*
-</pre>
-<p>Ou renomer tous mes fichiers .WAV en .wav etc…</p>
-<pre class="literal-block">
-rename &quot;s/\.WAV/\.wav/g&quot; *.WAV
-</pre>
-<p>A vous de modifier l'expression régulière !</p>
+      <p>Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
+correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
+"rename".</p>
+<p>Exemple je veux supprimer tous les espaces d'un fichier : :</p>
+<div class="highlight"><pre>rename &quot;s/ *//g&quot; *.*
+</pre></div>
 
+
+<p>Ou renomer tous mes fichiers .WAV en .wav etc… :</p>
+<div class="highlight"><pre>rename &quot;s/\.WAV/\.wav/g&quot; *.WAV
+</pre></div>
+
+
+<p>A vous de modifier l'expression régulière !</p>
   </div>
   <hr />
 </article>
@@ -225,49 +261,47 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/gitconfig.html">gitconfig</a>,      <a href="//www.choiz.fr/tag/git-pull.html">git pull</a>,      <a href="//www.choiz.fr/tag/git-push.html">git push</a>,      <a href="//www.choiz.fr/tag/git-diff.html">git diff</a>,      <a href="//www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="//www.choiz.fr/tag/stash.html">stash</a>    </p>
   </header>
   <div>
-      <p>Ajout du pull, push, diff et surtout stash</p>
-<pre class="literal-block">
-[user]
-  name = François LASSERRE
-  email = mon&#64;email.fr
-[diff]
-  tool = vimdiff
-[color]
-  branch = auto
-  diff = auto
-  status = auto
-  interactive = auto
-  ui = true
-[alias]
-  br = branch
-  ci = commit -a
-  co = checkout
-  sh = show --color-words
-  st = status
-  di = diff
-  ph = push
-  pl = pull
-  sta = stash
-  stalist = stash list
-  stast = stash list
-  stapp = stash pop
-  starm = stash drop
-  last = cat-file commit HEAD
-  graph = log --graph --decorate
-  tree = log --graph --oneline --decorate
-  pom = push origin master
-  logs = log --stat
-  currentbranch = &quot;!git branch | grep ^* | cut -d \&quot; \&quot; -f 2&quot;
-[core]
-  excludesfile = ~/.gitignore
-editor = vim
-  filemode = false
-[merge]
-  tool = vimdiff
-[http]
-  #sslverify = false|
-</pre>
-
+      <p>Ajout du pull, push, diff et surtout stash :</p>
+<div class="highlight"><pre><span class="k">[user]</span>
+  <span class="na">name</span> <span class="o">=</span> <span class="s">François LASSERRE</span>
+<span class="s">  email = mon@email.fr</span>
+<span class="k">[diff]</span>
+  <span class="na">tool</span> <span class="o">=</span> <span class="s">vimdiff</span>
+<span class="k">[color]</span>
+  <span class="na">branch</span> <span class="o">=</span> <span class="s">auto</span>
+<span class="s">  diff = auto</span>
+<span class="s">  status = auto</span>
+<span class="s">  interactive = auto</span>
+<span class="s">  ui = true</span>
+<span class="k">[alias]</span>
+  <span class="na">br</span> <span class="o">=</span> <span class="s">branch</span>
+<span class="s">  ci = commit -a</span>
+<span class="s">  co = checkout</span>
+<span class="s">  sh = show --color-words</span>
+<span class="s">  st = status</span>
+<span class="s">  di = diff</span>
+<span class="s">  ph = push</span>
+<span class="s">  pl = pull</span>
+<span class="s">  sta = stash</span>
+<span class="s">  stalist = stash list</span>
+<span class="s">  stast = stash list</span>
+<span class="s">  stapp = stash pop</span>
+<span class="s">  starm = stash drop</span>
+<span class="s">  last = cat-file commit HEAD</span>
+<span class="s">  graph = log --graph --decorate</span>
+<span class="s">  tree = log --graph --oneline --decorate</span>
+<span class="s">  pom = push origin master</span>
+<span class="s">  logs = log --stat</span>
+<span class="s">  currentbranch = &quot;!git branch | grep ^* | cut -d \&quot; \&quot; -f 2&quot;</span>
+<span class="k">[core]</span>
+  <span class="na">excludesfile</span> <span class="o">=</span> <span class="s">~/.gitignore</span>
+<span class="na">editor</span> <span class="o">=</span> <span class="s">vim</span>
+<span class="s">  filemode = false</span>
+<span class="k">[merge]</span>
+  <span class="na">tool</span> <span class="o">=</span> <span class="s">vimdiff</span>
+<span class="k">[http]</span>
+  <span class="c1">#sslverify = false|</span>
+</pre></div>
   </div>
   <hr />
 </article>
@@ -280,38 +314,38 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/gitconfig.html">gitconfig</a>,      <a href="//www.choiz.fr/tag/gitignore.html">gitignore</a>,      <a href="//www.choiz.fr/tag/git-color.html">git color</a>,      <a href="//www.choiz.fr/tag/git-tools.html">git tools</a>,      <a href="//www.choiz.fr/tag/git-alias.html">git alias</a>,      <a href="//www.choiz.fr/tag/git-merge.html">git merge</a>,      <a href="//www.choiz.fr/tag/git-diff.html">git diff</a>,      <a href="//www.choiz.fr/tag/git-editor.html">git editor</a>,      <a href="//www.choiz.fr/tag/git-excludesfile.html">git excludesfile</a>    </p>
   </header>
   <div>
-      <p>Fichier .gitconfig</p>
-<pre class="literal-block">
-[user]
-    name = François LASSERRE
-    email = mon&#64;email.fr
-[diff]
-    tool = vimdiff
-[color]
-    branch = auto
-    diff = auto
-    status = auto
-    interactive = auto
-    ui = true
-[alias]
-    br = branch
-    ci = commit -a
-    co = checkout
-    sh = show --color-words
-    st = status
-    last = cat-file commit HEAD
-    tree = log --graph --oneline --decorate
-    graph = log --graph --decorate
-    pom = push origin master
-[core]
-    excludesfile = ~/.gitignore
-    editor = vim
-[merge]
-    tool = vimdiff
-</pre>
-<p>Fichier .gitignore</p>
-<pre class="literal-block">
-# Ignore files from git
+      <p>Fichier .gitconfig :</p>
+<div class="highlight"><pre><span class="k">[user]</span>
+    <span class="na">name</span> <span class="o">=</span> <span class="s">François LASSERRE</span>
+<span class="s">    email = mon@email.fr</span>
+<span class="k">[diff]</span>
+    <span class="na">tool</span> <span class="o">=</span> <span class="s">vimdiff</span>
+<span class="k">[color]</span>
+    <span class="na">branch</span> <span class="o">=</span> <span class="s">auto</span>
+<span class="s">    diff = auto</span>
+<span class="s">    status = auto</span>
+<span class="s">    interactive = auto</span>
+<span class="s">    ui = true</span>
+<span class="k">[alias]</span>
+    <span class="na">br</span> <span class="o">=</span> <span class="s">branch</span>
+<span class="s">    ci = commit -a</span>
+<span class="s">    co = checkout</span>
+<span class="s">    sh = show --color-words</span>
+<span class="s">    st = status</span>
+<span class="s">    last = cat-file commit HEAD</span>
+<span class="s">    tree = log --graph --oneline --decorate</span>
+<span class="s">    graph = log --graph --decorate</span>
+<span class="s">    pom = push origin master</span>
+<span class="k">[core]</span>
+    <span class="na">excludesfile</span> <span class="o">=</span> <span class="s">~/.gitignore</span>
+<span class="s">    editor = vim</span>
+<span class="k">[merge]</span>
+    <span class="na">tool</span> <span class="o">=</span> <span class="s">vimdiff</span>
+</pre></div>
+
+
+<p>Fichier .gitignore :</p>
+<div class="highlight"><pre># Ignore files from git
 
 # ._ files (Mac Os X)
 ._*
@@ -321,8 +355,7 @@ Tags :
 
 # .swp (Vim)
 *.swp
-</pre>
-
+</pre></div>
   </div>
   <hr />
 </article>
@@ -332,31 +365,32 @@ Tags :
     <p>
       Posté le ven. 13 janvier 2012 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/cle-publique.html">clé publique</a>,      <a href="//www.choiz.fr/tag/cle-privee.html">clé privée</a>,      <a href="//www.choiz.fr/tag/connexion-ssh.html">connexion ssh</a>,      <a href="//www.choiz.fr/tag/authorized_keys.html">authorized_keys</a>,      <a href="//www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="//www.choiz.fr/tag/ssh.html">.ssh</a>    </p>
+      <a href="//www.choiz.fr/tag/cle-publique.html">clé publique</a>,      <a href="//www.choiz.fr/tag/cle-privee.html">clé privée</a>,      <a href="//www.choiz.fr/tag/connexion-ssh.html">connexion ssh</a>,      <a href="//www.choiz.fr/tag/authorized_keys.html">authorized\_keys</a>,      <a href="//www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="//www.choiz.fr/tag/ssh.html">.ssh</a>    </p>
   </header>
   <div>
       <p>On commence par ouvrir un terminal puis on tape :</p>
-<pre class="literal-block">
-ssh-keygen -t dsa -b 1024
+<div class="highlight"><pre>ssh-keygen -t rsa -b 1024
 
-Enter file in which to save the key (/Users/choiz/.ssh/id_dsa):
-</pre>
-<p>En général je garde le fichier id_rsa donc je tape &quot;enter&quot; sinon vous pouvez
-spécifier un autre chemin ainsi qu'un autre fichier.</p>
-<pre class="literal-block">
-Enter passphrase (empty for no passphrase):
-</pre>
+Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
+</pre></div>
+
+
+<p>En général je garde le fichier id_rsa donc je tape "enter" sinon vous
+pouvez spécifier un autre chemin ainsi qu'un autre fichier. :</p>
+<div class="highlight"><pre>Enter passphrase (empty for no passphrase):
+</pre></div>
+
+
 <p>Ici on tape un mot de passe si on en veut un lors de la connexion aux
 différents hosts. En général j'en défini un.</p>
-<p>Pour finir on copie la clé sur le serveur soit via scp :</p>
-<pre class="literal-block">
-scp ~/.ssh/id\_dsa.pub user&#64;ip:~/.ssh/authorized\_keys/
-</pre>
-<p>ou via ssh-copy-id :</p>
-<pre class="literal-block">
-ssh-copy-id -i ~/.ssh/id\_dsa.pub user&#64;ip
-</pre>
+<p>Pour finir on copie la clé sur le serveur soit via scp : :</p>
+<div class="highlight"><pre>scp ~/.ssh/id\_rsa.pub user@ip:~/.ssh/authorized\_keys/
+</pre></div>
 
+
+<p>ou via ssh-copy-id : :</p>
+<div class="highlight"><pre>ssh-copy-id -i ~/.ssh/id\_rsa.pub user@ip
+</pre></div>
   </div>
   <hr />
 </article>
@@ -366,90 +400,105 @@ ssh-copy-id -i ~/.ssh/id\_dsa.pub user&#64;ip
     <p>
       Posté le dim. 04 décembre 2011 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/mo.html">.mo</a>,      <a href="//www.choiz.fr/tag/po.html">.po</a>,      <a href="//www.choiz.fr/tag/etclocale.html">/etc/locale</a>,      <a href="//www.choiz.fr/tag/lc_all.html">LC_ALL</a>,      <a href="//www.choiz.fr/tag/gettext.html">gettext</a>,      <a href="//www.choiz.fr/tag/php.html">php</a>,      <a href="//www.choiz.fr/tag/php-gettext.html">php-gettext</a>,      <a href="//www.choiz.fr/tag/setlocale.html">setlocale</a>,      <a href="//www.choiz.fr/tag/xgettext.html">xgettext</a>    </p>
+      <a href="//www.choiz.fr/tag/mo.html">.mo</a>,      <a href="//www.choiz.fr/tag/po.html">.po</a>,      <a href="//www.choiz.fr/tag/etclocale.html">/etc/locale</a>,      <a href="//www.choiz.fr/tag/lc_all.html">LC\_ALL</a>,      <a href="//www.choiz.fr/tag/gettext.html">gettext</a>,      <a href="//www.choiz.fr/tag/php.html">php</a>,      <a href="//www.choiz.fr/tag/php-gettext.html">php-gettext</a>,      <a href="//www.choiz.fr/tag/setlocale.html">setlocale</a>,      <a href="//www.choiz.fr/tag/xgettext.html">xgettext</a>    </p>
   </header>
   <div>
-      <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en
-utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre
-site en php il faut télécharger le package php-gettext :</p>
-<pre class="literal-block">
-apt-get install php-gettext
-</pre>
-<p>Ensuite il faut modifier le fichier <cite>/etc/locale.gen</cite> et enlever les
+      <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
+en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext
+sur votre site en php il faut télécharger le package php-gettext : :</p>
+<div class="highlight"><pre>apt-get install php-gettext
+</pre></div>
+
+
+<p>Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
 commentaires devant les langues qui vont sont à traduire par exemple :
-Allemand, Anglais, Espagnol, Français &amp; Suédois :</p>
-<pre class="literal-block">
-de_DE.UTF-8 UTF-8
+Allemand, Anglais, Espagnol, Français &amp; Suédois : :</p>
+<div class="highlight"><pre>de_DE.UTF-8 UTF-8
 en_GB.UTF-8 UTF-8
 es_ES.UTF-8 UTF-8
 fr_FR.UTF-8 UTF-8
 sv_SE.UTF-8 UTF-8
-</pre>
-<p>Puis regénérer les locales :</p>
-<pre class="literal-block">
-locale-gen
-</pre>
-<p>Ensuite il faut définir votre chemin pour les traductions par exemple :</p>
-<pre class="literal-block">
-lang/fr_FR/LC_MESSAGES/domaine.mo
-</pre>
-<p>Puis dans votre fichier php de configuration :</p>
-<pre class="literal-block">
-&lt;?php
-// configuration de la langue
-$lang = 'fr_FR'; // Langue a afficher
-$lang_encode = 'utf8'; // Encodage du fichier
-$lang_path = './lang'; // Chemin des fichiers de langue
-$lang_file = 'domaine'; // Nom du fichier de langue
+</pre></div>
 
-putenv('LANG='.$lang.'.'.$lang_encode);
-putenv('LANGUAGE='.$lang.'.'.$lang_encode);
-setlocale(LC_MESSAGES, $lang.'.'.$lang_encode);
-bindtextdomain($lang_file, $lang_path);
 
-if (function_exists('bind_textdomain_codeset')) {
-    bind_textdomain_codeset($lang_file, $lang_encode);
-}
+<p>Puis regénérer les locales : :</p>
+<div class="highlight"><pre>locale-gen
+</pre></div>
 
-textdomain($lang_file);
-?&gt;
-</pre>
-<p>Puis faites le test en affichant dans un fichier php le texte &quot;hello&quot;</p>
-<pre class="literal-block">
-&lt;?php
-// on inclus la config…
-include_once('config.php');
-echo _('hello');
-?&gt;
-</pre>
-<p>Pour générer un fichier .mo a partir d'un fichier .po :</p>
-<pre class="literal-block">
-msgfmt domaine.po -o domaine.mo
-</pre>
-<p>Pour générer un fichier .po a partir de fichier php avec du gettext, faire un
-fichier texte avec tous vos fichiers php ou on doit récupérer le gettext.</p>
-<p>Exemple listing_gettext.txt tel que :</p>
-<pre class="literal-block">
-index.php
+
+<p>Ensuite il faut définir votre chemin pour les traductions par exemple :
+:</p>
+<div class="highlight"><pre>lang/fr_FR/LC_MESSAGES/domaine.mo
+</pre></div>
+
+
+<p>Puis dans votre fichier php de configuration : :</p>
+<div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="c1">// configuration de la langue</span>
+<span class="nv">$lang</span> <span class="o">=</span> <span class="s1">&#39;fr_FR&#39;</span><span class="p">;</span> <span class="c1">// Langue a afficher</span>
+<span class="nv">$lang_encode</span> <span class="o">=</span> <span class="s1">&#39;utf8&#39;</span><span class="p">;</span> <span class="c1">// Encodage du fichier</span>
+<span class="nv">$lang_path</span> <span class="o">=</span> <span class="s1">&#39;./lang&#39;</span><span class="p">;</span> <span class="c1">// Chemin des fichiers de langue</span>
+<span class="nv">$lang_file</span> <span class="o">=</span> <span class="s1">&#39;domaine&#39;</span><span class="p">;</span> <span class="c1">// Nom du fichier de langue</span>
+
+<span class="nb">putenv</span><span class="p">(</span><span class="s1">&#39;LANG=&#39;</span><span class="o">.</span><span class="nv">$lang</span><span class="o">.</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="nv">$lang_encode</span><span class="p">);</span>
+<span class="nb">putenv</span><span class="p">(</span><span class="s1">&#39;LANGUAGE=&#39;</span><span class="o">.</span><span class="nv">$lang</span><span class="o">.</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="nv">$lang_encode</span><span class="p">);</span>
+<span class="nb">setlocale</span><span class="p">(</span><span class="nx">LC_MESSAGES</span><span class="p">,</span> <span class="nv">$lang</span><span class="o">.</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="nv">$lang_encode</span><span class="p">);</span>
+<span class="nb">bindtextdomain</span><span class="p">(</span><span class="nv">$lang_file</span><span class="p">,</span> <span class="nv">$lang_path</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">function_exists</span><span class="p">(</span><span class="s1">&#39;bind_textdomain_codeset&#39;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nb">bind_textdomain_codeset</span><span class="p">(</span><span class="nv">$lang_file</span><span class="p">,</span> <span class="nv">$lang_encode</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nb">textdomain</span><span class="p">(</span><span class="nv">$lang_file</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+
+
+<p>Puis faites le test en affichant dans un fichier php le texte "hello" :</p>
+<div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="c1">// on inclus la config…</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">&#39;config.php&#39;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nx">_</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+
+
+<p>Pour générer un fichier .mo a partir d'un fichier .po : :</p>
+<div class="highlight"><pre>msgfmt domaine.po -o domaine.mo
+</pre></div>
+
+
+<p>Pour générer un fichier .po a partir de fichier php avec du gettext,
+faire un fichier texte avec tous vos fichiers php ou on doit récupérer
+le gettext.</p>
+<p>Exemple listing_gettext.txt tel que : :</p>
+<div class="highlight"><pre>index.php
 contact.php
 etc…
-</pre>
-<p>Ensuite il faut faire la commande suivante pour générer le fichier domaine.po
-dans le dossier lang/ depuis notre fichier texte avec les php :</p>
-<pre class="literal-block">
-find . -iname &quot;*.php&quot; | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
-</pre>
-<p>Pour finir voilà le path des fichiers .po et .mo dans mon application web :</p>
-<pre class="literal-block">
-lang/fr_FR/LC_MESSAGES/domaine.po
+</pre></div>
+
+
+<dl>
+<dt>Ensuite il faut faire la commande suivante pour générer le fichier</dt>
+<dt>domaine.po dans le dossier lang/ depuis notre fichier texte avec les php</dt>
+<dd>
+<p>:</p>
+<p>find . -iname "*.php" | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/</p>
+</dd>
+</dl>
+<p>Pour finir voilà le path des fichiers .po et .mo dans mon application
+web : :</p>
+<div class="highlight"><pre>lang/fr_FR/LC_MESSAGES/domaine.po
 lang/fr_FR/LC_MESSAGES/domaine.mo
 lang/en_GB/LC_MESSAGES/domaine.po
 lang/en_GB/LC_MESSAGES/domaine.mo
-</pre>
-<p>N'oubliez pas de redémarrer votre serveur web pour que les changements soient
-pris en compte.</p>
-<p>Mise à jour le 30 Novembre 2015 par <a class="reference external" href="http://www.github.com/doogaille">doogaille</a>.</p>
+</pre></div>
 
+
+<p>N'oubliez pas de redémarrer votre serveur web pour que les changements
+soient pris en compte.</p>
+<p>Mise à jour le 30 Novembre 2015 par
+<a href="http://www.github.com/doogaille">doogaille</a>.</p>
   </div>
   <hr />
 </article>
@@ -462,16 +511,14 @@ Tags :
       <a href="//www.choiz.fr/tag/clavier.html">Clavier</a>,      <a href="//www.choiz.fr/tag/apple.html">Apple</a>,      <a href="//www.choiz.fr/tag/mapage.html">Mapage</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/linux.html">Linux</a>,      <a href="//www.choiz.fr/tag/keyboard.html">Keyboard</a>,      <a href="//www.choiz.fr/tag/mac.html">Mac</a>,      <a href="//www.choiz.fr/tag/mac-keyboard.html">Mac Keyboard</a>    </p>
   </header>
   <div>
-      <p>Depuis le temps que je bosse avec un clavier Apple je me suis habitué au mapage
-clavier Mac.
-Il y a beaucoup de différences entre un clavier AZERTY de PC et un
-clavier AZERTY de Mac.</p>
-<p>Les touches : <cite>&#64;</cite> <cite>#</cite> <cite>~</cite> <cite>| (pipe)</cite> <cite>=</cite> <cite>+</cite> <cite>-</cite> <cite>_</cite> <cite>!</cite> <cite>(</cite> <cite>)</cite> <cite>{</cite> <cite>}</cite> <cite>[</cite> <cite>]</cite>
-sont disposées à des endroits complétement différents.</p>
-<p>J'ai donc décidé de modifier la configuration de debian pour prendre en compte
-un clavier mac.</p>
-<pre class="literal-block">
-dpkg-reconfigure keyboard-console
+      <p>Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
+mapage clavier Mac. Il y a beaucoup de différences entre un clavier
+AZERTY de PC et un clavier AZERTY de Mac.</p>
+<p>Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
+des endroits complétement différents.</p>
+<p>J'ai donc décidé de modifier la configuration de debian pour prendre en
+compte un clavier mac. :</p>
+<div class="highlight"><pre>dpkg-reconfigure keyboard-console
 
 Select keymap from arch list
 
@@ -492,9 +539,11 @@ Key for AltGr: No AltGr Key
 Compose key: Right Alt (AltGr)
 
 Use Control+Alt+Backspace to terminate the X server? no
-</pre>
+</pre></div>
+
+
 <p>J'ai choisi un clavier Apple, Français Mac, sans touche AltGr, avec
-comme touche de fonctionnalité secondaire &quot;Alt droit&quot;. Malheureusement
+comme touche de fonctionnalité secondaire "Alt droit". Malheureusement
 je n'ai pas réussi a mapper l'Alt de gauche pour avoir la même fonction
 qu'à droite…</p>
 <p>Et ensuite j'ai indiqué que je ne voulais pas pouvoir quitter le server
@@ -503,7 +552,6 @@ X avec la combinaison de touche Control+Alt+Backspace.</p>
 clavier de votre gestionnaire de fenêtre (xfce: dans mon cas). Puis
 désactiver le layout par defaut du système.</p>
 <p><img alt="image0" src="http://media.tumblr.com/tumblr_lvjsbrOL8E1qzr4hx.png" /></p>
-
   </div>
   <hr />
 </article>
@@ -516,44 +564,14 @@ Tags :
       <a href="//www.choiz.fr/tag/xfce.html">xfce</a>,      <a href="//www.choiz.fr/tag/dualscreen.html">dualscreen</a>,      <a href="//www.choiz.fr/tag/dual.html">dual</a>,      <a href="//www.choiz.fr/tag/screen.html">screen</a>,      <a href="//www.choiz.fr/tag/xfce.html">xfce</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
-      <p>Un petit package bien pratique pour configurer le dual screen sur xfce se nomme
-: arandr</p>
-<pre class="literal-block">
-apt-get install arandr
-</pre>
-<p>Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez le ARandR
-pour configurer les deux écrans.</p>
+      <p>Un petit package bien pratique pour configurer le dual screen sur xfce
+se nomme : arandr :</p>
+<div class="highlight"><pre>apt-get install arandr
+</pre></div>
 
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-11-30-flash-sous-debian.html#2011-11-30-flash-sous-debian">Flash sous Debian</a></h2>
-    <p>
-      Posté le mer. 30 novembre 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/flash.html">Flash</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/deezer.html">Deezer</a>,      <a href="//www.choiz.fr/tag/firefox.html">Firefox</a>,      <a href="//www.choiz.fr/tag/flashplugin.html">flashplugin</a>,      <a href="//www.choiz.fr/tag/source.html">source</a>,      <a href="//www.choiz.fr/tag/apt.html">apt</a>,      <a href="//www.choiz.fr/tag/soucelist.html">souce.list</a>,      <a href="//www.choiz.fr/tag/non-free.html">non-free</a>,      <a href="//www.choiz.fr/tag/contrib.html">contrib</a>    </p>
-  </header>
-  <div>
-      <p>Lors de l'installation de Debian sur mon poste au travail j'ai eu la surprise en
-ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant chez Deezer c'est un
-peu problèmatique.</p>
-<p>J'ai donc téléchargé le package flashplugin-nonfree en procédant comme ceci :</p>
-<pre class="literal-block">
-vi /etc/apt/source.list
-</pre>
-<p>Ajouter contrib non-free aux différentes sources (sauf security)
-puis :</p>
-<pre class="literal-block">
-apt-get update
 
-apt-get install flashplugin-nonfree
-</pre>
-<p>En relançant Firefox j'ai bien flash player fonctionnel sur Deezer.</p>
-<p>Le package flashplugin étant nonfree Debian ne l'inclus pas directement lors de
-l'installation.</p>
-
+<p>Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez
+le ARandR pour configurer les deux écrans.</p>
   </div>
 </article>
 

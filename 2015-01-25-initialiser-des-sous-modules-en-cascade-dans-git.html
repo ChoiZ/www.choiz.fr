@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Pour initialiser les sous-modules dans git j'utilise la commande suivante : git submodule init Ensuite je dois faire un update des sous-modules pour charger le contenu : git submodule update Pour faire les deux en même temps (init + update) vous pouvez faire : git submodule update --init Imaginons maintenant que vous avez ..." />
+<meta name="description" content="Pour initialiser les sous-modules dans git j'utilise la commande suivante : : git submodule init Ensuite je dois faire un update des sous-modules pour charger le contenu : git submodule update Pour faire les deux en même temps (init + update) vous pouvez faire : : git submodule update --init Imaginons maintenant que vous avez ..." />
 <meta name="keywords" content="git, submodule, update, init, recursive">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Initialiser des sous-modules en cascade dans git"/>
-<meta property="og:description" content="Pour initialiser les sous-modules dans git j'utilise la commande suivante : git submodule init Ensuite je dois faire un update des sous-modules pour charger le contenu : git submodule update Pour faire les deux en même temps (init + update) vous pouvez faire : git submodule update --init Imaginons maintenant que vous avez ..."/>
+<meta property="og:description" content="Pour initialiser les sous-modules dans git j'utilise la commande suivante : : git submodule init Ensuite je dois faire un update des sous-modules pour charger le contenu : git submodule update Pour faire les deux en même temps (init + update) vous pouvez faire : : git submodule update --init Imaginons maintenant que vous avez ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html"/>
 <meta property="og:type" content="article"/>
@@ -67,27 +67,33 @@
     <p>Posté le dim. 25 janvier 2015</p>
   </header>
   <div>
-    <p>Pour initialiser les sous-modules dans git j'utilise la commande suivante :</p>
-<pre class="literal-block">
-git submodule init
-</pre>
-<p>Ensuite je dois faire un update des sous-modules pour charger le contenu :</p>
-<pre class="literal-block">
-git submodule update
-</pre>
-<p>Pour faire les deux en même temps (init + update) vous pouvez faire :</p>
-<pre class="literal-block">
-git submodule update --init
-</pre>
-<p>Imaginons maintenant que vous avez des sous-modules dans d'autres sous-modules.
-Exemple dans mon dépot <a class="reference external" href="https://www.github.com/ChoiZ/dotfiles.git">dotfiles</a>
-j'ai mon dépot <a class="reference external" href="https://www.github.com/ChoiZ/vim-config.git">vim</a> et dedans
-des sous-modules avec les plugins de vim. Pour initialiser, mettre à jour et le
-tout en cascade (dans tous les dossiers et sous-dossiers) il faut faire :</p>
-<pre class="literal-block">
-git submodule update --init --recursive
-</pre>
+    <p>Pour initialiser les sous-modules dans git j'utilise la commande
+suivante : :</p>
+<div class="highlight"><pre>git submodule init
+</pre></div>
 
+
+<dl>
+<dt>Ensuite je dois faire un update des sous-modules pour charger le contenu</dt>
+<dd>
+<p>:</p>
+<p>git submodule update</p>
+</dd>
+</dl>
+<p>Pour faire les deux en même temps (init + update) vous pouvez faire : :</p>
+<div class="highlight"><pre>git submodule update --init
+</pre></div>
+
+
+<p>Imaginons maintenant que vous avez des sous-modules dans d'autres
+sous-modules. Exemple dans mon dépot
+<a href="https://www.github.com/ChoiZ/dotfiles.git">dotfiles</a> j'ai mon dépot
+<a href="https://www.github.com/ChoiZ/vim-config.git">vim</a> et dedans des
+sous-modules avec les plugins de vim. Pour initialiser, mettre à jour et
+le tout en cascade (dans tous les dossiers et sous-dossiers) il faut
+faire : :</p>
+<div class="highlight"><pre>git submodule update --init --recursive
+</pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -119,7 +125,7 @@ git submodule update --init --recursive
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html",
-  "description": "Pour initialiser les sous-modules dans git j'utilise la commande suivante : git submodule init Ensuite je dois faire un update des sous-modules pour charger le contenu : git submodule update Pour faire les deux en même temps (init + update) vous pouvez faire : git submodule update --init Imaginons maintenant que vous avez ..."
+  "description": "Pour initialiser les sous-modules dans git j'utilise la commande suivante : : git submodule init Ensuite je dois faire un update des sous-modules pour charger le contenu : git submodule update Pour faire les deux en même temps (init + update) vous pouvez faire : : git submodule update --init Imaginons maintenant que vous avez ..."
 }
 </script></body>
 </html>

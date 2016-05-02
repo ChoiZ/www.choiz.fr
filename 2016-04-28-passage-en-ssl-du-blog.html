@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
+  <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+<meta name="author" content="choiz" />
+<meta name="description" content="J'utilise pelican sur github pour écrire mon blog depuis quelques temps, voir les articles précédents sur le sujet. J'ai décidé de passer le blog en https, avec un certificat gratuit let's encrypt. Pour mettre en place un certificat SSL sur "github page" il faut avoir un serveur ..." />
+<meta name="keywords" content="blog ssl https github page">
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:title" content="Passage en SSL du blog"/>
+<meta property="og:description" content="J'utilise pelican sur github pour écrire mon blog depuis quelques temps, voir les articles précédents sur le sujet. J'ai décidé de passer le blog en https, avec un certificat gratuit let's encrypt. Pour mettre en place un certificat SSL sur "github page" il faut avoir un serveur ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="//www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-04-28 22:17:11+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="//www.choiz.fr/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="blog ssl https github page"/>
+<meta property="og:image" content="avatar.png">  <title>ChoiZ &ndash; Passage en SSL du blog</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="//www.choiz.fr">
+        <img src="avatar.png" alt="Blog de François LASSERRE" title="Blog de François LASSERRE">
+      </a>
+      <div>
+          <a href="//www.choiz.fr">Blog de François LASSERRE</a>
+      </div>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis ingénieur informaticien, j'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios (Radio-Psylone, Live9 ou encore AddictRadio).<br>Je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="2016-04-28-passage-en-ssl-du-blog">Passage en SSL du blog</h1>
+    <p>Posté le jeu. 28 avril 2016</p>
+  </header>
+  <div>
+    <p>J'utilise pelican sur github pour écrire mon blog depuis quelques temps, voir les
+articles précédents sur le sujet.</p>
+<p>J'ai décidé de passer le blog en https, avec un certificat gratuit let's encrypt.</p>
+<p>Pour mettre en place un certificat SSL sur "github page" il faut avoir un serveur web qui
+fait reverse proxy. J'utilise donc apache avec la configuration suivante :</p>
+<ul>
+<li>Un vhost pour "choiz.fr" qui redirige le port 80 de "choiz.fr" vers le 443 de "www.choiz.fr".</li>
+<li>Un vhost pour "choiz.fr" qui redirige le port 443 (avec un certificat ssl
+valide) de "choiz.fr" vers le 443 de
+"www.choiz.fr".</li>
+<li>Un vhost pour "www.choiz.fr" qui redirige le port 80 de "www.choiz.fr" vers
+le 443 de "www.choiz.fr".</li>
+<li>Et un vhost avec le certificat SSL ainsi que le reverse proxy qui fait croire a
+github que je tape directement l'url "http://choiz.github.io".</li>
+</ul>
+<p>Ici la configuration du dernier vhost :</p>
+<div class="highlight"><pre><span class="nt">&lt;IfModule</span> <span class="err">mod_ssl.c</span><span class="nt">&gt;</span>
+<span class="nt">&lt;VirtualHost</span> <span class="err">*:443</span><span class="nt">&gt;</span>
+    ServerName www.choiz.fr
+
+    SSLProxyEngine On
+    ProxyRequests Off
+    ProxyPreserveHost Off
+    ProxyPass / https://choiz.github.io/
+    ProxyPassReverse / https://choiz.github.io/
+    ProxyPassReverse / http://choiz.github.io/
+
+    # puis la config du SSL
+    SSLEngine On
+    SSLCertificateFile …
+    SSLCertificateKeyFile …
+<span class="nt">&lt;/VirtualHost&gt;</span>
+<span class="nt">&lt;/IfModule&gt;</span>
+</pre></div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="//www.choiz.fr/tag/blog-ssl-https-github-page.html">blog ssl https github page</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Passage en SSL du blog",
+  "headline": "Passage en SSL du blog",
+  "datePublished": "2016-04-28 22:17:11+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "//www.choiz.fr/author/choiz.html"
+  },
+  "image": "avatar.png",
+  "url": "//www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html",
+  "description": "J'utilise pelican sur github pour écrire mon blog depuis quelques temps, voir les articles précédents sur le sujet. J'ai décidé de passer le blog en https, avec un certificat gratuit let's encrypt. Pour mettre en place un certificat SSL sur "github page" il faut avoir un serveur ..."
+}
+</script></body>
+</html>

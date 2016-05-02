@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,12 +61,10 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/search.html">search</a>,      <a href="//www.choiz.fr/tag/source.html">source</a>,      <a href="//www.choiz.fr/tag/code.html">code</a>,      <a href="//www.choiz.fr/tag/log.html">log</a>    </p>
   </header>
   <div>
-      <p>Pour rechercher directement dans le code source une modification précise,
-j'utilise la commande suivante :</p>
-<pre class="literal-block">
-git log -p -S 'display'
-</pre>
-
+      <p>Pour rechercher directement dans le code source une modification
+précise, j'utilise la commande suivante : :</p>
+<div class="highlight"><pre>git log -p -S &#39;display&#39;
+</pre></div>
       <a class="btn" href="//www.choiz.fr/2014-12-08-recherche-dans-le-code-source-avec-git.html#2014-12-08-recherche-dans-le-code-source-avec-git">Lire la suite</a>
   </div>
   <hr />
@@ -80,13 +78,15 @@ Tags :
       <a href="//www.choiz.fr/tag/flash.html">Flash</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/deezer.html">Deezer</a>,      <a href="//www.choiz.fr/tag/firefox.html">Firefox</a>,      <a href="//www.choiz.fr/tag/flashplugin.html">flashplugin</a>,      <a href="//www.choiz.fr/tag/source.html">source</a>,      <a href="//www.choiz.fr/tag/apt.html">apt</a>,      <a href="//www.choiz.fr/tag/soucelist.html">souce.list</a>,      <a href="//www.choiz.fr/tag/non-free.html">non-free</a>,      <a href="//www.choiz.fr/tag/contrib.html">contrib</a>    </p>
   </header>
   <div>
-      <p>Lors de l'installation de Debian sur mon poste au travail j'ai eu la surprise en
-ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant chez Deezer c'est un
-peu problèmatique.</p>
-<p>J'ai donc téléchargé le package flashplugin-nonfree en procédant comme ceci :</p>
-<pre class="literal-block">
-vi /etc/apt/source.list
-</pre>
+      <p>Lors de l'installation de Debian sur mon poste au travail j'ai eu la
+surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
+chez Deezer c'est un peu problèmatique.</p>
+<p>J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
+ceci : :</p>
+<div class="highlight"><pre>vi /etc/apt/source.list
+</pre></div>
+
+
 <p>Ajouter contrib ...</p>
       <a class="btn" href="//www.choiz.fr/2011-11-30-flash-sous-debian.html#2011-11-30-flash-sous-debian">Lire la suite</a>
   </div>

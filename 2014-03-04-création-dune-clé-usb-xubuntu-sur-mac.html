@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Dans le terminal sur votre mac : diskutil list Qui permet de lister vos disque dur / clés usb etc… ici ma clé usb est disk2. /dev/disk2 #: TYPE NAME SIZE IDENTIFIER 0: FDisk_partition_scheme *8.1 GB disk2 1: Linux 4.0 GB disk2s1 2: Linux_Swap 4.1 GB disk2s5 Démontez la ..." />
+<meta name="description" content="Dans le terminal sur votre mac : : diskutil list Qui permet de lister vos disque dur / clés usb etc… ici ma clé usb est disk2. : /dev/disk2 #: TYPE NAME SIZE IDENTIFIER 0: FDisk_partition_scheme *8.1 GB disk2 1: Linux 4.0 GB disk2s1 2: Linux_Swap 4.1 GB disk2s5 Démontez la ..." />
 <meta name="keywords" content="clé usb, xubuntu, mac, terminal, ubuntu">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Création d'une clé usb xubuntu sur mac"/>
-<meta property="og:description" content="Dans le terminal sur votre mac : diskutil list Qui permet de lister vos disque dur / clés usb etc… ici ma clé usb est disk2. /dev/disk2 #: TYPE NAME SIZE IDENTIFIER 0: FDisk_partition_scheme *8.1 GB disk2 1: Linux 4.0 GB disk2s1 2: Linux_Swap 4.1 GB disk2s5 Démontez la ..."/>
+<meta property="og:description" content="Dans le terminal sur votre mac : : diskutil list Qui permet de lister vos disque dur / clés usb etc… ici ma clé usb est disk2. : /dev/disk2 #: TYPE NAME SIZE IDENTIFIER 0: FDisk_partition_scheme *8.1 GB disk2 1: Linux 4.0 GB disk2s1 2: Linux_Swap 4.1 GB disk2s5 Démontez la ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html"/>
 <meta property="og:type" content="article"/>
@@ -67,42 +67,44 @@
     <p>Posté le mar. 04 mars 2014</p>
   </header>
   <div>
-    <p>Dans le terminal sur votre mac :</p>
-<pre class="literal-block">
-diskutil list
-</pre>
+    <p>Dans le terminal sur votre mac : :</p>
+<div class="highlight"><pre>diskutil list
+</pre></div>
+
+
 <p>Qui permet de lister vos disque dur / clés usb etc…</p>
-<p>ici ma clé usb est disk2.</p>
-<pre class="literal-block">
-/dev/disk2
+<p>ici ma clé usb est disk2. :</p>
+<div class="highlight"><pre>/dev/disk2
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:     FDisk_partition_scheme                        *8.1 GB     disk2
    1:                      Linux                         4.0 GB     disk2s1
    2:                 Linux_Swap                         4.1 GB     disk2s5
-</pre>
-<p>Démontez la clé.</p>
-<pre class="literal-block">
-diskutil unmountDisk /dev/disk2
+</pre></div>
+
+
+<p>Démontez la clé. :</p>
+<div class="highlight"><pre>diskutil unmountDisk /dev/disk2
 
 Unmount of all volumes on disk2 was successful
-</pre>
+</pre></div>
+
+
 <p>Maintenant on copie xubuntu depuis notre dossier téléchargements vers
-cette clé usb :</p>
-<pre class="literal-block">
-sudo dd if=~/Downloads/xubuntu-13.10-desktop-i386.iso of=/dev/rdisk2 bs=1m
+cette clé usb : :</p>
+<div class="highlight"><pre>sudo dd if=~/Downloads/xubuntu-13.10-desktop-i386.iso of=/dev/rdisk2 bs=1m
 
 Password:
 834+0 records in
 834+0 records out
 874512384 bytes transferred in 137.915395 secs (6340934 bytes/sec)
-</pre>
-<p>Puis on éjecte proprement la clé usb</p>
-<pre class="literal-block">
-diskutil eject /dev/disk2
+</pre></div>
+
+
+<p>Puis on éjecte proprement la clé usb :</p>
+<div class="highlight"><pre>diskutil eject /dev/disk2
 
 Disk /dev/disk2 ejected
-</pre>
-
+</pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -134,7 +136,7 @@ Disk /dev/disk2 ejected
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html",
-  "description": "Dans le terminal sur votre mac : diskutil list Qui permet de lister vos disque dur / clés usb etc… ici ma clé usb est disk2. /dev/disk2 #: TYPE NAME SIZE IDENTIFIER 0: FDisk_partition_scheme *8.1 GB disk2 1: Linux 4.0 GB disk2s1 2: Linux_Swap 4.1 GB disk2s5 Démontez la ..."
+  "description": "Dans le terminal sur votre mac : : diskutil list Qui permet de lister vos disque dur / clés usb etc… ici ma clé usb est disk2. : /dev/disk2 #: TYPE NAME SIZE IDENTIFIER 0: FDisk_partition_scheme *8.1 GB disk2 1: Linux 4.0 GB disk2s1 2: Linux_Swap 4.1 GB disk2s5 Démontez la ..."
 }
 </script></body>
 </html>

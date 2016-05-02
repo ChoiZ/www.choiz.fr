@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -69,20 +69,19 @@
     <p>Posté le lun. 12 juillet 2010</p>
   </header>
   <div>
-    <p>Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau virtuel
-en console.</p>
+    <p>Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
+virtuel en console.</p>
 <p>Ici on créer un tuyau virtuel de 1Mbit/s.</p>
-<p><tt class="docutils literal">sudo ipfw pipe 1 config bw 1Mbit/s</tt></p>
-<p>On applique ce tuyau au port 80 (pour le téléchargement de fichier via un
-navigateur par exemple).</p>
-<p><tt class="docutils literal">sudo ipfw add 1 pipe 1 proto tcp <span class="pre">src-port</span> 80</tt></p>
+<p><code>sudo ipfw pipe 1 config bw 1Mbit/s</code></p>
+<p>On applique ce tuyau au port 80 (pour le téléchargement de fichier via
+un navigateur par exemple).</p>
+<p><code>sudo ipfw add 1 pipe 1 proto tcp src-port 80</code></p>
 <p>Pour voir le tuyau :</p>
-<p><tt class="docutils literal">sudo ipfw pipe show</tt></p>
+<p><code>sudo ipfw pipe show</code></p>
 <p>Pour supprimer la règle du port 80 :</p>
-<p><tt class="docutils literal">sudo ipfw del 1</tt></p>
+<p><code>sudo ipfw del 1</code></p>
 <p>Pour supprimer le tuyau :</p>
-<p><tt class="docutils literal">sudo ipfw pipe 1 delete</tt></p>
-
+<p><code>sudo ipfw pipe 1 delete</code></p>
   </div>
   <div class="tag-cloud">
     <p>

@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,11 +61,9 @@ Tags :
       <a href="//www.choiz.fr/tag/linux.html">Linux</a>,      <a href="//www.choiz.fr/tag/samba.html">Samba</a>,      <a href="//www.choiz.fr/tag/config.html">config</a>,      <a href="//www.choiz.fr/tag/configuration.html">configuration</a>,      <a href="//www.choiz.fr/tag/partage.html">Partage</a>,      <a href="//www.choiz.fr/tag/sharing.html">Sharing</a>    </p>
   </header>
   <div>
-      <p>Configuration d'un serveur samba.
-Editer le fichier de configuration <cite>/etc/samba/smb.conf</cite>
-Voici le contenu de mon fichier de configuration :</p>
-<pre class="literal-block">
-| ### Global ###
+      <p>Configuration d'un serveur samba. Editer le fichier de configuration
+/etc/samba/smb.conf Voici le contenu de mon fichier de configuration : :</p>
+<div class="highlight"><pre>| ### Global ###
 | [global]
 | ## Identification ##
 | workgroup = WORKGROUP
@@ -75,7 +73,7 @@ Voici le contenu de mon fichier de configuration :</p>
 | public = yes
 | ## Log ##
 | log file = /var/log/samba/log.%m
-| max log size ...</pre>
+| max log size ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2011-08-17-partage-samba.html#2011-08-17-partage-samba">Lire la suite</a>
   </div>
 </article>

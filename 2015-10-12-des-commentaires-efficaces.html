@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Dans mes fichiers de test j'utilise souvent des commentaires pour tester qu'une fonctionnalité de code. Par exemple pour tester une api : // Obtenir le livre #1 api_get('books/1'); // Ajouter un livre api_add('books', $datas); Je test généralement chaque élément séparement. Pour tester la première portion de mon code ..." />
+<meta name="description" content="Dans mes fichiers de test j'utilise souvent des commentaires pour tester qu'une fonctionnalité de code. Par exemple pour tester une api : : // Obtenir le livre #1 api_get('books/1'); // Ajouter un livre api_add('books', $datas); Je test généralement chaque élément séparement. Pour tester la première portion de mon code ..." />
 <meta name="keywords" content="commentaire, code, efficace">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Des commentaires efficaces"/>
-<meta property="og:description" content="Dans mes fichiers de test j'utilise souvent des commentaires pour tester qu'une fonctionnalité de code. Par exemple pour tester une api : // Obtenir le livre #1 api_get('books/1'); // Ajouter un livre api_add('books', $datas); Je test généralement chaque élément séparement. Pour tester la première portion de mon code ..."/>
+<meta property="og:description" content="Dans mes fichiers de test j'utilise souvent des commentaires pour tester qu'une fonctionnalité de code. Par exemple pour tester une api : : // Obtenir le livre #1 api_get('books/1'); // Ajouter un livre api_add('books', $datas); Je test généralement chaque élément séparement. Pour tester la première portion de mon code ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2015-10-12-des-commentaires-efficaces.html"/>
 <meta property="og:type" content="article"/>
@@ -65,41 +65,44 @@
     <p>Posté le lun. 12 octobre 2015</p>
   </header>
   <div>
-    <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester qu'une
-fonctionnalité de code.</p>
-<p>Par exemple pour tester une api :</p>
-<pre class="literal-block">
-// Obtenir le livre #1
-api_get('books/1');
+    <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester
+qu'une fonctionnalité de code.</p>
+<p>Par exemple pour tester une api : :</p>
+<div class="highlight"><pre><span class="x">// Obtenir le livre </span><span class="err">#</span><span class="x">1</span>
+<span class="x">api_get(&#39;books/1&#39;);</span>
 
-// Ajouter un livre
-api_add('books', $datas);
-</pre>
+<span class="x">// Ajouter un livre</span>
+<span class="x">api_add(&#39;books&#39;, </span><span class="p">$</span><span class="nv">datas</span><span class="x">);</span>
+</pre></div>
+
+
 <p>Je test généralement chaque élément séparement.</p>
-<p>Pour tester la première portion de mon code :</p>
-<pre class="literal-block">
-//* Obtenir le livre #1
-api_get('books/1');
-//\*/
+<p>Pour tester la première portion de mon code : :</p>
+<div class="highlight"><pre><span class="x">//* Obtenir le livre </span><span class="err">#</span><span class="x">1</span>
+<span class="x">api_get(&#39;books/1&#39;);</span>
+<span class="x">//\*/</span>
 
-/* Ajouter un livre
-api_add('books', $datas);
-//\*/
-</pre>
-<p>Pour tester la seconde portion de mon code :</p>
-<pre class="literal-block">
-/* Obtenir le livre #1
-api_get('books/1');
-//\*/
+<span class="x">/* Ajouter un livre</span>
+<span class="x">api_add(&#39;books&#39;, </span><span class="p">$</span><span class="nv">datas</span><span class="x">);</span>
+<span class="x">//\*/</span>
+</pre></div>
 
-//* Ajouter un livre
-api_add('books', $datas);
-//\*/
-</pre>
-<p>Il me suffit d'ajouter ou d'enlever un slash sur le premier commentaire pour
-commenter ou non tout le bloc.</p>
-<p>Ce n'est pas forcément très lisible donc je fais ça uniquement pour mes tests.</p>
 
+<p>Pour tester la seconde portion de mon code : :</p>
+<div class="highlight"><pre><span class="cm">/* Obtenir le livre #1</span>
+<span class="cm">api_get(&#39;books/1&#39;);</span>
+<span class="cm">//\*/</span><span class="w"></span>
+
+<span class="o">//*</span><span class="w"> </span>Ajouter<span class="w"> </span>un<span class="w"> </span>livre<span class="w"></span>
+api_add<span class="o">(</span><span class="s">&#39;books&#39;</span><span class="o">,</span><span class="w"> </span><span class="err">$</span>datas<span class="o">)</span><span class="err">;</span><span class="w"></span>
+<span class="o">//\*/</span><span class="w"></span>
+</pre></div>
+
+
+<p>Il me suffit d'ajouter ou d'enlever un slash sur le premier commentaire
+pour commenter ou non tout le bloc.</p>
+<p>Ce n'est pas forcément très lisible donc je fais ça uniquement pour mes
+tests.</p>
   </div>
   <div class="tag-cloud">
     <p>
@@ -129,7 +132,7 @@ commenter ou non tout le bloc.</p>
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2015-10-12-des-commentaires-efficaces.html",
-  "description": "Dans mes fichiers de test j'utilise souvent des commentaires pour tester qu'une fonctionnalité de code. Par exemple pour tester une api : // Obtenir le livre #1 api_get('books/1'); // Ajouter un livre api_add('books', $datas); Je test généralement chaque élément séparement. Pour tester la première portion de mon code ..."
+  "description": "Dans mes fichiers de test j'utilise souvent des commentaires pour tester qu'une fonctionnalité de code. Par exemple pour tester une api : : // Obtenir le livre #1 api_get('books/1'); // Ajouter un livre api_add('books', $datas); Je test généralement chaque élément séparement. Pour tester la première portion de mon code ..."
 }
 </script></body>
 </html>

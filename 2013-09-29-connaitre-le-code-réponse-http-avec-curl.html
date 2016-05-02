@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Pour connaitre le code réponse HTTP il suffit de faire : curl -IL url Voici l'exemble avec tumblr.com : curl -IL http://tumblr.com HTTP/1.1 301 Moved Permanently Content-length: 0 Location: http://www.tumblr.com/ Connection: close HTTP/1.1 302 Moved Temporarily Server: nginx Date: Sun, 29 ..." />
+<meta name="description" content="Pour connaitre le code réponse HTTP il suffit de faire : : curl -IL url Voici l'exemble avec tumblr.com : : curl -IL http://tumblr.com HTTP/1.1 301 Moved Permanently Content-length: 0 Location: http://www.tumblr.com/ Connection: close HTTP/1.1 302 Moved Temporarily Server: nginx Date: Sun, 29 ..." />
 <meta name="keywords" content="curl, http, response, code, 301, 302, 404, 200">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Connaitre le code réponse HTTP avec curl"/>
-<meta property="og:description" content="Pour connaitre le code réponse HTTP il suffit de faire : curl -IL url Voici l'exemble avec tumblr.com : curl -IL http://tumblr.com HTTP/1.1 301 Moved Permanently Content-length: 0 Location: http://www.tumblr.com/ Connection: close HTTP/1.1 302 Moved Temporarily Server: nginx Date: Sun, 29 ..."/>
+<meta property="og:description" content="Pour connaitre le code réponse HTTP il suffit de faire : : curl -IL url Voici l'exemble avec tumblr.com : : curl -IL http://tumblr.com HTTP/1.1 301 Moved Permanently Content-length: 0 Location: http://www.tumblr.com/ Connection: close HTTP/1.1 302 Moved Temporarily Server: nginx Date: Sun, 29 ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2013-09-29-connaitre-le-code-réponse-http-avec-curl.html"/>
 <meta property="og:type" content="article"/>
@@ -70,38 +70,36 @@
     <p>Posté le dim. 29 septembre 2013</p>
   </header>
   <div>
-    <p>Pour connaitre le code réponse HTTP il suffit de faire :</p>
-<pre class="literal-block">
-curl -IL url
-</pre>
-<p>Voici l'exemble avec tumblr.com :</p>
-<pre class="literal-block">
-curl -IL http://tumblr.com
-</pre>
-<pre class="literal-block">
-HTTP/1.1 301 Moved Permanently
-Content-length: 0
-Location: http://www.tumblr.com/
-Connection: close
+    <p>Pour connaitre le code réponse HTTP il suffit de faire : :</p>
+<div class="highlight"><pre>curl -IL url
+</pre></div>
 
-HTTP/1.1 302 Moved Temporarily
-Server: nginx
-Date: Sun, 29 Sep 2013 17:06:40 GMT
-Content-Type: text/html
-Connection: close
-P3P: CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;
-Location: https://www.tumblr.com/
 
-HTTP/1.1 200 OK
-Server: nginx
-Date: Sun, 29 Sep 2013 17:06:42 GMT
-Content-Type: text/html; charset=utf-8
-Connection: keep-alive
-Vary: Accept-Encoding
-P3P: CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;
-Set-Cookie: tmgioct=52485e21d628b00096885790; expires=Wed, 27-Sep-2023 17:06:41 GMT; path=/; httponly
-</pre>
+<p>Voici l'exemble avec tumblr.com : :</p>
+<div class="highlight"><pre><span class="nt">curl</span> <span class="nt">-IL</span> <span class="nt">http</span><span class="o">://</span><span class="nt">tumblr</span><span class="nc">.com</span>
 
+<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="nc">.1</span> <span class="nt">301</span> <span class="nt">Moved</span> <span class="nt">Permanently</span>
+<span class="nt">Content-length</span><span class="o">:</span> <span class="nt">0</span>
+<span class="nt">Location</span><span class="o">:</span> <span class="nt">http</span><span class="o">://</span><span class="nt">www</span><span class="nc">.tumblr.com</span><span class="o">/</span>
+<span class="nt">Connection</span><span class="o">:</span> <span class="nt">close</span>
+
+<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="nc">.1</span> <span class="nt">302</span> <span class="nt">Moved</span> <span class="nt">Temporarily</span>
+<span class="nt">Server</span><span class="o">:</span> <span class="nt">nginx</span>
+<span class="nt">Date</span><span class="o">:</span> <span class="nt">Sun</span><span class="o">,</span> <span class="nt">29</span> <span class="nt">Sep</span> <span class="nt">2013</span> <span class="nt">17</span><span class="nd">:06:40</span> <span class="nt">GMT</span>
+<span class="nt">Content-Type</span><span class="o">:</span> <span class="nt">text</span><span class="o">/</span><span class="nt">html</span>
+<span class="nt">Connection</span><span class="o">:</span> <span class="nt">close</span>
+<span class="nt">P3P</span><span class="o">:</span> <span class="nt">CP</span><span class="o">=</span><span class="s2">&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;</span>
+<span class="nt">Location</span><span class="o">:</span> <span class="nt">https</span><span class="o">://</span><span class="nt">www</span><span class="nc">.tumblr.com</span><span class="o">/</span>
+
+<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="nc">.1</span> <span class="nt">200</span> <span class="nt">OK</span>
+<span class="nt">Server</span><span class="o">:</span> <span class="nt">nginx</span>
+<span class="nt">Date</span><span class="o">:</span> <span class="nt">Sun</span><span class="o">,</span> <span class="nt">29</span> <span class="nt">Sep</span> <span class="nt">2013</span> <span class="nt">17</span><span class="nd">:06:42</span> <span class="nt">GMT</span>
+<span class="nt">Content-Type</span><span class="o">:</span> <span class="nt">text</span><span class="o">/</span><span class="nt">html</span><span class="o">;</span> <span class="nt">charset</span><span class="o">=</span><span class="nt">utf-8</span>
+<span class="nt">Connection</span><span class="o">:</span> <span class="nt">keep-alive</span>
+<span class="nt">Vary</span><span class="o">:</span> <span class="nt">Accept-Encoding</span>
+<span class="nt">P3P</span><span class="o">:</span> <span class="nt">CP</span><span class="o">=</span><span class="s2">&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;</span>
+<span class="nt">Set-Cookie</span><span class="o">:</span> <span class="nt">tmgioct</span><span class="o">=</span><span class="nt">52485e21d628b00096885790</span><span class="o">;</span> <span class="nt">expires</span><span class="o">=</span><span class="nt">Wed</span><span class="o">,</span> <span class="nt">27-Sep-2023</span> <span class="nt">17</span><span class="nd">:06:41</span> <span class="nt">GMT</span><span class="o">;</span> <span class="nt">path</span><span class="o">=/;</span> <span class="nt">httponly</span>
+</pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -136,7 +134,7 @@ Set-Cookie: tmgioct=52485e21d628b00096885790; expires=Wed, 27-Sep-2023 17:06:41 
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2013-09-29-connaitre-le-code-réponse-http-avec-curl.html",
-  "description": "Pour connaitre le code réponse HTTP il suffit de faire : curl -IL url Voici l'exemble avec tumblr.com : curl -IL http://tumblr.com HTTP/1.1 301 Moved Permanently Content-length: 0 Location: http://www.tumblr.com/ Connection: close HTTP/1.1 302 Moved Temporarily Server: nginx Date: Sun, 29 ..."
+  "description": "Pour connaitre le code réponse HTTP il suffit de faire : : curl -IL url Voici l'exemble avec tumblr.com : : curl -IL http://tumblr.com HTTP/1.1 301 Moved Permanently Content-length: 0 Location: http://www.tumblr.com/ Connection: close HTTP/1.1 302 Moved Temporarily Server: nginx Date: Sun, 29 ..."
 }
 </script></body>
 </html>

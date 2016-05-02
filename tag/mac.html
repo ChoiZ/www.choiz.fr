@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,19 +61,21 @@ Tags :
       <a href="//www.choiz.fr/tag/cle-usb.html">clé usb</a>,      <a href="//www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="//www.choiz.fr/tag/mac.html">mac</a>,      <a href="//www.choiz.fr/tag/terminal.html">terminal</a>,      <a href="//www.choiz.fr/tag/ubuntu.html">ubuntu</a>    </p>
   </header>
   <div>
-      <p>Dans le terminal sur votre mac :</p>
-<pre class="literal-block">
-diskutil list
-</pre>
+      <p>Dans le terminal sur votre mac : :</p>
+<div class="highlight"><pre>diskutil list
+</pre></div>
+
+
 <p>Qui permet de lister vos disque dur / clés usb etc…</p>
-<p>ici ma clé usb est disk2.</p>
-<pre class="literal-block">
-/dev/disk2
+<p>ici ma clé usb est disk2. :</p>
+<div class="highlight"><pre>/dev/disk2
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:     FDisk_partition_scheme                        *8.1 GB     disk2
    1:                      Linux                         4.0 GB     disk2s1
    2:                 Linux_Swap                         4.1 GB     disk2s5
-</pre>
+</pre></div>
+
+
 <p>Démontez la ...</p>
       <a class="btn" href="//www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html#2014-03-04-création-dune-clé-usb-xubuntu-sur-mac">Lire la suite</a>
   </div>
@@ -88,19 +90,12 @@ Tags :
       <a href="//www.choiz.fr/tag/jshint.html">jshint</a>,      <a href="//www.choiz.fr/tag/mac.html">mac</a>,      <a href="//www.choiz.fr/tag/setup.html">setup</a>,      <a href="//www.choiz.fr/tag/npm.html">npm</a>,      <a href="//www.choiz.fr/tag/nodejs.html">nodejs</a>    </p>
   </header>
   <div>
-      <dl class="docutils">
-<dt>Installation via npm de jshint (-g pour installer pour tous les utilisateurs) :</dt>
-<dd><pre class="first last literal-block">
-sudo npm install -g jshint
-</pre>
-</dd>
-</dl>
-<p>Faire un lien symbolique pour pouvoir utiliser directement jshint sans préciser
-tout le chemin a chaque fois :</p>
-<pre class="literal-block">
-ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
-</pre>
-
+      <p>Installation via npm de jshint (-g pour installer pour tous les utilisateurs) :
+    sudo npm install -g jshint</p>
+<p>Faire un lien symbolique pour pouvoir utiliser directement jshint sans
+préciser tout le chemin a chaque fois : :</p>
+<div class="highlight"><pre>ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
+</pre></div>
       <a class="btn" href="//www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html#2013-10-14-installer-jshint-sur-mac">Lire la suite</a>
   </div>
   <hr />
@@ -115,7 +110,8 @@ Tags :
   </header>
   <div>
       <p>J'ai chez moi comme au travail un clavier TypeMatrix 2030 USB.</p>
-<p>Sur mac il faut <a class="reference external" href="http://download.tuxfamily.org/dvorak/macosx/fr-dvorak-bepo-macosx-1.0rc2.dmg">télécharger le pilote</a>,
+<p>Sur mac il faut <a href="http://download.tuxfamily.org/dvorak/macosx/fr-dvorak-bepo-macosx-1.0rc2.dmg">télécharger le
+pilote</a>,
 puis copier le fichier fr-dvorak-bepo.bundle dans le dossier
 /Bibliothèque/Keyboard Layouts/</p>
 <p>Note : si vous installez le pilote dans le dossier de votre utilisateur
@@ -133,12 +129,11 @@ Tags :
       <a href="//www.choiz.fr/tag/clavier.html">Clavier</a>,      <a href="//www.choiz.fr/tag/apple.html">Apple</a>,      <a href="//www.choiz.fr/tag/mapage.html">Mapage</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/linux.html">Linux</a>,      <a href="//www.choiz.fr/tag/keyboard.html">Keyboard</a>,      <a href="//www.choiz.fr/tag/mac.html">Mac</a>,      <a href="//www.choiz.fr/tag/mac-keyboard.html">Mac Keyboard</a>    </p>
   </header>
   <div>
-      <p>Depuis le temps que je bosse avec un clavier Apple je me suis habitué au mapage
-clavier Mac.
-Il y a beaucoup de différences entre un clavier AZERTY de PC et un
-clavier AZERTY de Mac.</p>
-<p>Les touches : <cite>&#64;</cite> <cite>#</cite> <cite>~</cite> <cite>| (pipe)</cite> <cite>=</cite> <cite>+</cite> <cite>-</cite> <cite>_</cite> <cite>!</cite> <cite>(</cite> <cite>)</cite> <cite>{</cite> <cite>}</cite> <cite>[</cite> <cite>]</cite>
-sont disposées à des endroits complétement différents.</p>
+      <p>Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
+mapage clavier Mac. Il y a beaucoup de différences entre un clavier
+AZERTY de PC et un clavier AZERTY de Mac.</p>
+<p>Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
+des endroits complétement différents.</p>
 <p>J'ai donc ...</p>
       <a class="btn" href="//www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html#2011-12-02-clavier-apple-sur-debian">Lire la suite</a>
   </div>
@@ -155,33 +150,32 @@ Tags :
   <div>
       <p>Comment lancer plusieurs comptes Skype avec le même Mac ?</p>
 <p><img alt="image0" src="http://media.tumblr.com/tumblr_lrqn73WCUg1qzr4hx.png" /></p>
-<p>Créer un compte utilisateur dans les préférences systèmes &gt; utilisateurs. Par
-exemple l'utilisateur : &quot;skype&quot; avec comme mot de passe &quot;password&quot;.
-Ensuite ouvrir un terminal (dans spotlight tapez terminal).
-Puis :</p>
-<pre class="literal-block">
-su skype (ou &quot;su nomdutilisateur&quot; en fonction de l'utilisateur créé).
+<p>Créer un compte utilisateur dans les préférences systèmes &gt;
+utilisateurs. Par exemple l'utilisateur : "skype" avec comme mot de
+passe "password". Ensuite ouvrir un terminal (dans spotlight tapez
+terminal). Puis : :</p>
+<div class="highlight"><pre>su skype (ou &quot;su nomdutilisateur&quot; en fonction de l&#39;utilisateur créé).
 
-Password ...</pre>
+Password ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html#2011-09-18-plusieurs-comptes-skype-sur-le-même-mac">Lire la suite</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2011-07-05-suppression-des-dsstore.html#2011-07-05-suppression-des-dsstore">Suppression des .DS_Store</a></h2>
+    <h2><a href="//www.choiz.fr/2011-07-05-suppression-des-dsstore.html#2011-07-05-suppression-des-dsstore">Suppression des .DS\_Store</a></h2>
     <p>
       Posté le mar. 05 juillet 2011 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/mac-dsstore.html">Mac .DsStore</a>,      <a href="//www.choiz.fr/tag/mac.html">Mac</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS_Store</a>    </p>
+      <a href="//www.choiz.fr/tag/mac-dsstore.html">Mac .DsStore</a>,      <a href="//www.choiz.fr/tag/mac.html">Mac</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS\_Store</a>    </p>
   </header>
   <div>
-      <p>Dans une console sur votre Mac :</p>
-<pre class="literal-block">
-defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-</pre>
-<p>Puis redémarrez le mac.</p>
+      <p>Dans une console sur votre Mac : :</p>
+<div class="highlight"><pre>defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+</pre></div>
 
+
+<p>Puis redémarrez le mac.</p>
       <a class="btn" href="//www.choiz.fr/2011-07-05-suppression-des-dsstore.html#2011-07-05-suppression-des-dsstore">Lire la suite</a>
   </div>
   <hr />
@@ -195,13 +189,14 @@ Tags :
       <a href="//www.choiz.fr/tag/php.html">PHP</a>,      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/vi.html">Vi</a>,      <a href="//www.choiz.fr/tag/console.html">Console</a>,      <a href="//www.choiz.fr/tag/mac.html">Mac</a>,      <a href="//www.choiz.fr/tag/linux.html">Linux</a>    </p>
   </header>
   <div>
-      <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement dans la
-console je tape la commande :</p>
-<pre class="literal-block">
-php -l fichier_a_tester.php
-</pre>
-<p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim). Pour la
-faire il suffit de faire &quot;ESC&quot; pour passer en mode ...</p>
+      <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
+dans la console je tape la commande : :</p>
+<div class="highlight"><pre>php -l fichier_a_tester.php
+</pre></div>
+
+
+<p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
+Pour la faire il suffit de faire "ESC" pour passer en mode ...</p>
       <a class="btn" href="//www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html#2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php">Lire la suite</a>
   </div>
 </article>

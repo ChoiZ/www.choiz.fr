@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -67,9 +67,12 @@
     <p>Posté le mar. 25 août 2015</p>
   </header>
   <div>
-    <p>Lors d'un developpement j'ai créé une branche &quot;add_namespace&quot; qui m'a permis d'ajouté des namespaces a différents fichiers PHP.</p>
-<p>Une fois la modification faite j'ai envoyé ma branche sur l'origin, en faisant un &quot;pull request&quot; (github) ou &quot;merge request&quot; (gitlab).</p>
-<p>Un autre développeur a accepté mon pull request (il a donc mergé la branche) et a supprimé ma branche de l'origine.</p>
+    <p>Lors d'un developpement j'ai créé une branche "add_namespace" qui m'a
+permis d'ajouté des namespaces a différents fichiers PHP.</p>
+<p>Une fois la modification faite j'ai envoyé ma branche sur l'origin, en
+faisant un "pull request" (github) ou "merge request" (gitlab).</p>
+<p>Un autre développeur a accepté mon pull request (il a donc mergé la
+branche) et a supprimé ma branche de l'origine.</p>
 <p>Sur mon environnement je vois toujours cette branche.</p>
 <blockquote>
 <p>git branch -a</p>
@@ -78,12 +81,13 @@
 <p>remote/origin/add_namespace</p>
 <p>remote/origin/master</p>
 </blockquote>
-<p>Pour pouvoir effacer cette branche dans le remote, il suffit de tapper la commande :</p>
+<p>Pour pouvoir effacer cette branche dans le remote, il suffit de tapper
+la commande :</p>
 <blockquote>
 <p>git remote prune origin</p>
 <p>Élimination de origin</p>
-<p>URL : <a class="reference external" href="mailto:git&#64;git.mondomain.com">git&#64;git.mondomain.com</a>:mondepot.git</p>
-<p>&nbsp;* [éliminé] origin/add_namespace</p>
+<p>URL : <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#46;&#109;&#111;&#110;&#100;&#111;&#109;&#97;&#105;&#110;&#46;&#99;&#111;&#109;">&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#46;&#109;&#111;&#110;&#100;&#111;&#109;&#97;&#105;&#110;&#46;&#99;&#111;&#109;</a>:mondepot.git</p>
+<p>* [éliminé] origin/add_namespace</p>
 </blockquote>
 <p>Maintenant, vérifions que tout est propre :</p>
 <blockquote>
@@ -92,7 +96,6 @@
 <p>remote/origin/HEAD -&gt; origin/master</p>
 <p>remote/origin/master</p>
 </blockquote>
-
   </div>
   <div class="tag-cloud">
     <p>

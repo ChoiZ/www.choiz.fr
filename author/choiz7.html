@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -54,22 +54,23 @@
 
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Insérer un # au début de chaque ligne d'un fichier avec vim</a></h2>
+    <h2><a href="//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Insérer un \# au début de chaque ligne d'un fichier avec vim</a></h2>
     <p>
       Posté le mer. 05 octobre 2011 &#8226;
 Tags :
       <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/search.html">search</a>,      <a href="//www.choiz.fr/tag/replace.html">replace</a>,      <a href="//www.choiz.fr/tag/line.html">line</a>,      <a href="//www.choiz.fr/tag/add.html">add</a>,      <a href="//www.choiz.fr/tag/ligne.html">ligne</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/remplace.html">remplace</a>,      <a href="//www.choiz.fr/tag/ajout.html">ajout</a>    </p>
   </header>
   <div>
-      <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un fichier avec
-vim :</p>
-<pre class="literal-block">
-:1,$s/^/#/
-</pre>
+      <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un
+fichier avec vim : :</p>
+<div class="highlight"><pre><span class="x">:1,</span><span class="p">$</span><span class="nv">s</span><span class="x">/^/</span><span class="err">#</span><span class="x">/</span>
+</pre></div>
+
+
 <p>Explications :</p>
-<p><cite>:1,$</cite> Sélection des ligne 1 à $ ($ étant la dernière).</p>
-<p><cite>s/^/#/</cite> <cite>s</cite> pour search <cite>^</cite> indique le début de ligne <cite>/</cite> sépare ma recherche
-par ce que l'on remplace <cite>#</cite> est le caractère que ...</p>
+<p>:1,$ Sélection des ligne 1 à $ ($ étant la dernière).</p>
+<p>s/^/#/ s pour search ^ indique le début de ligne / sépare ma recherche
+par ce que l'on remplace # est le caractère que ...</p>
       <a class="btn" href="//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Lire la suite</a>
   </div>
   <hr />
@@ -85,14 +86,13 @@ Tags :
   <div>
       <p>Comment lancer plusieurs comptes Skype avec le même Mac ?</p>
 <p><img alt="image0" src="http://media.tumblr.com/tumblr_lrqn73WCUg1qzr4hx.png" /></p>
-<p>Créer un compte utilisateur dans les préférences systèmes &gt; utilisateurs. Par
-exemple l'utilisateur : &quot;skype&quot; avec comme mot de passe &quot;password&quot;.
-Ensuite ouvrir un terminal (dans spotlight tapez terminal).
-Puis :</p>
-<pre class="literal-block">
-su skype (ou &quot;su nomdutilisateur&quot; en fonction de l'utilisateur créé).
+<p>Créer un compte utilisateur dans les préférences systèmes &gt;
+utilisateurs. Par exemple l'utilisateur : "skype" avec comme mot de
+passe "password". Ensuite ouvrir un terminal (dans spotlight tapez
+terminal). Puis : :</p>
+<div class="highlight"><pre>su skype (ou &quot;su nomdutilisateur&quot; en fonction de l&#39;utilisateur créé).
 
-Password ...</pre>
+Password ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html#2011-09-18-plusieurs-comptes-skype-sur-le-même-mac">Lire la suite</a>
   </div>
   <hr />
@@ -107,9 +107,11 @@ Tags :
   </header>
   <div>
       <p>J'ai voulu plusieurs fois voir un profil sur Viadeo sans forcement être
-identifié. Lorsque l'on déplace la souris ou que l'on scroll une autre page
-s'affiche.  Exemple sur <a class="reference external" href="http://www.viadeo.com/fr/profile/francois.lasserre1">ma page viadeo</a>.  Pour empécher d'avoir
-la page de login il faut modifier une fonction Javascript. Avec ...</p>
+identifié. Lorsque l'on déplace la souris ou que l'on scroll une autre
+page s'affiche. Exemple sur <a href="http://www.viadeo.com/fr/profile/francois.lasserre1">ma page
+viadeo</a>. Pour
+empécher d'avoir la page de login il faut modifier une fonction
+Javascript. Avec ...</p>
       <a class="btn" href="//www.choiz.fr/2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login.html#2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login">Lire la suite</a>
   </div>
   <hr />
@@ -123,13 +125,13 @@ Tags :
       <a href="//www.choiz.fr/tag/safari.html">Safari</a>,      <a href="//www.choiz.fr/tag/dev.html">Dev</a>,      <a href="//www.choiz.fr/tag/web.html">Web</a>,      <a href="//www.choiz.fr/tag/webdev.html">WebDev</a>,      <a href="//www.choiz.fr/tag/developpement.html">Développement</a>    </p>
   </header>
   <div>
-      <p>Pour activer l'inspecteur web tapez dans le terminal :</p>
-<pre class="literal-block">
-defaults write com.apple.Safari WebKitDeveloperExtras -bool true
-</pre>
+      <p>Pour activer l'inspecteur web tapez dans le terminal : :</p>
+<div class="highlight"><pre>defaults write com.apple.Safari WebKitDeveloperExtras -bool true
+</pre></div>
+
+
 <p>Redémarrez Safari et maintenant vous pouvez inspecter les éléments de
 vos pages web.</p>
-
       <a class="btn" href="//www.choiz.fr/2011-09-05-développement-web-avec-safari.html#2011-09-05-développement-web-avec-safari">Lire la suite</a>
   </div>
   <hr />
@@ -145,10 +147,11 @@ Tags :
   <div>
       <p>J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
 donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?</p>
-<p>Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper :</p>
-<pre class="literal-block">
-VBoxManage import votrefichier.ova
-</pre>
+<p>Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper : :</p>
+<div class="highlight"><pre><span class="n">VBoxManage</span> <span class="kn">import</span> <span class="nn">votrefichier.ova</span>
+</pre></div>
+
+
 <p>Maintenant lors du prochain démarrage de votre ...</p>
       <a class="btn" href="//www.choiz.fr/2011-09-02-import-vm-avec-virtualbox.html#2011-09-02-import-vm-avec-virtualbox">Lire la suite</a>
   </div>
@@ -163,11 +166,9 @@ Tags :
       <a href="//www.choiz.fr/tag/linux.html">Linux</a>,      <a href="//www.choiz.fr/tag/samba.html">Samba</a>,      <a href="//www.choiz.fr/tag/config.html">config</a>,      <a href="//www.choiz.fr/tag/configuration.html">configuration</a>,      <a href="//www.choiz.fr/tag/partage.html">Partage</a>,      <a href="//www.choiz.fr/tag/sharing.html">Sharing</a>    </p>
   </header>
   <div>
-      <p>Configuration d'un serveur samba.
-Editer le fichier de configuration <cite>/etc/samba/smb.conf</cite>
-Voici le contenu de mon fichier de configuration :</p>
-<pre class="literal-block">
-| ### Global ###
+      <p>Configuration d'un serveur samba. Editer le fichier de configuration
+/etc/samba/smb.conf Voici le contenu de mon fichier de configuration : :</p>
+<div class="highlight"><pre>| ### Global ###
 | [global]
 | ## Identification ##
 | workgroup = WORKGROUP
@@ -177,7 +178,7 @@ Voici le contenu de mon fichier de configuration :</p>
 | public = yes
 | ## Log ##
 | log file = /var/log/samba/log.%m
-| max log size ...</pre>
+| max log size ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2011-08-17-partage-samba.html#2011-08-17-partage-samba">Lire la suite</a>
   </div>
   <hr />
@@ -191,10 +192,9 @@ Tags :
       <a href="//www.choiz.fr/tag/code.html">Code</a>,      <a href="//www.choiz.fr/tag/js.html">js</a>,      <a href="//www.choiz.fr/tag/html.html">html</a>,      <a href="//www.choiz.fr/tag/css.html">css</a>,      <a href="//www.choiz.fr/tag/xhtml.html">xhtml</a>,      <a href="//www.choiz.fr/tag/javascript.html">javascript</a>,      <a href="//www.choiz.fr/tag/sites.html">sites</a>    </p>
   </header>
   <div>
-      <p><a class="reference external" href="http://www.jsfiddle.net/">http://www.jsfiddle.net/</a> Pratique pour tester un code html / css / js</p>
-<p><a class="reference external" href="http://www.jsperf.com/">http://www.jsperf.com/</a> Pour faire des performances de code js</p>
-<p><a class="reference external" href="http://www.pastebin.com/">http://www.pastebin.com/</a> Pour copier coller du code facilement</p>
-
+      <p><a href="http://www.jsfiddle.net/">http://www.jsfiddle.net/</a> Pratique pour tester un code html / css / js</p>
+<p><a href="http://www.jsperf.com/">http://www.jsperf.com/</a> Pour faire des performances de code js</p>
+<p><a href="http://www.pastebin.com/">http://www.pastebin.com/</a> Pour copier coller du code facilement</p>
       <a class="btn" href="//www.choiz.fr/2011-08-09-liens-utiles.html#2011-08-09-liens-utiles">Lire la suite</a>
   </div>
   <hr />
@@ -205,15 +205,17 @@ Tags :
     <p>
       Posté le mar. 26 juillet 2011 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/svn.html">svn</a>,      <a href="//www.choiz.fr/tag/ignore.html">ignore</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/folder.html">folder</a>,      <a href="//www.choiz.fr/tag/dossier.html">dossier</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS_Store</a>,      <a href="//www.choiz.fr/tag/_.html">._*</a>,      <a href="//www.choiz.fr/tag/_.html">._</a>,      <a href="//www.choiz.fr/tag/swp.html">.swp</a>,      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/mac-os.html">Mac Os</a>    </p>
+      <a href="//www.choiz.fr/tag/svn.html">svn</a>,      <a href="//www.choiz.fr/tag/ignore.html">ignore</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/folder.html">folder</a>,      <a href="//www.choiz.fr/tag/dossier.html">dossier</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS\_Store</a>,      <a href="//www.choiz.fr/tag/_.html">.\_\*</a>,      <a href="//www.choiz.fr/tag/_.html">.\_</a>,      <a href="//www.choiz.fr/tag/swp.html">.swp</a>,      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/mac-os.html">Mac Os</a>    </p>
   </header>
   <div>
-      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<pre class="literal-block">
-svn propset svn:ignore
-</pre>
-<p>Ou dans la configuration du svn dans <cite>~/.subversion/config</cite> le <cite>global-ignores</cite></p>
-<p>Pour ignorer tous les fichiers qui commencent par <cite>._</cite> dans le dossier ou
+      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn : :</p>
+<div class="highlight"><pre>svn propset svn:ignore
+</pre></div>
+
+
+<p>Ou dans la configuration du svn dans ~/.subversion/config le
+global-ignores</p>
+<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
 l'on se trouve actuellement il suffit d'executer la commande ...</p>
       <a class="btn" href="//www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html#2011-07-26-ignorer-grâce-au-svn">Lire la suite</a>
   </div>
@@ -221,19 +223,19 @@ l'on se trouve actuellement il suffit d'executer la commande ...</p>
 </article>
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2011-07-05-suppression-des-dsstore.html#2011-07-05-suppression-des-dsstore">Suppression des .DS_Store</a></h2>
+    <h2><a href="//www.choiz.fr/2011-07-05-suppression-des-dsstore.html#2011-07-05-suppression-des-dsstore">Suppression des .DS\_Store</a></h2>
     <p>
       Posté le mar. 05 juillet 2011 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/mac-dsstore.html">Mac .DsStore</a>,      <a href="//www.choiz.fr/tag/mac.html">Mac</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS_Store</a>    </p>
+      <a href="//www.choiz.fr/tag/mac-dsstore.html">Mac .DsStore</a>,      <a href="//www.choiz.fr/tag/mac.html">Mac</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS\_Store</a>    </p>
   </header>
   <div>
-      <p>Dans une console sur votre Mac :</p>
-<pre class="literal-block">
-defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-</pre>
-<p>Puis redémarrez le mac.</p>
+      <p>Dans une console sur votre Mac : :</p>
+<div class="highlight"><pre>defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+</pre></div>
 
+
+<p>Puis redémarrez le mac.</p>
       <a class="btn" href="//www.choiz.fr/2011-07-05-suppression-des-dsstore.html#2011-07-05-suppression-des-dsstore">Lire la suite</a>
   </div>
   <hr />
@@ -248,16 +250,16 @@ Tags :
   </header>
   <div>
       <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :</p>
-<pre class="literal-block">
-function checkclick(e) {
-    e = e || window.event;
-    var o = e.target || e.srcElement;
-    console.log(o);
-}
-document.onclick=checkclick;
-</pre>
-<p>Pratique pour faire du débug.</p>
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">checkclick</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">e</span> <span class="o">=</span> <span class="nx">e</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">event</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span> <span class="o">||</span> <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">o</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">onclick</span><span class="o">=</span><span class="nx">checkclick</span><span class="p">;</span>
+</pre></div>
 
+
+<p>Pratique pour faire du débug.</p>
       <a class="btn" href="//www.choiz.fr/2011-06-30-elément-cliqué-en-js.html#2011-06-30-elément-cliqué-en-js">Lire la suite</a>
   </div>
 </article>

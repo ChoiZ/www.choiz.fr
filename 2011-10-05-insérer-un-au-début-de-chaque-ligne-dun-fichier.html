@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Voilà la commande pour ajouter un # au début de chaque ligne d'un fichier avec vim : :1,$s/^/#/ Explications : :1,$ Sélection des ligne 1 à $ ($ étant la dernière). s/^/#/ s pour search ^ indique le début de ligne / sépare ma recherche par ce que l'on remplace # est le caractère que ..." />
+<meta name="description" content="Voilà la commande pour ajouter un # au début de chaque ligne d'un fichier avec vim : : :1,$s/^/#/ Explications : :1,$ Sélection des ligne 1 à $ ($ étant la dernière). s/^/#/ s pour search ^ indique le début de ligne / sépare ma recherche par ce que l'on remplace # est le caractère que ..." />
 <meta name="keywords" content="Vim, search, replace, line, add, ligne, fichier, file, remplace, ajout">
 <meta property="og:site_name" content="ChoiZ"/>
-<meta property="og:title" content="Insérer un # au début de chaque ligne d'un fichier avec vim"/>
-<meta property="og:description" content="Voilà la commande pour ajouter un # au début de chaque ligne d'un fichier avec vim : :1,$s/^/#/ Explications : :1,$ Sélection des ligne 1 à $ ($ étant la dernière). s/^/#/ s pour search ^ indique le début de ligne / sépare ma recherche par ce que l'on remplace # est le caractère que ..."/>
+<meta property="og:title" content="Insérer un \# au début de chaque ligne d'un fichier avec vim"/>
+<meta property="og:description" content="Voilà la commande pour ajouter un # au début de chaque ligne d'un fichier avec vim : : :1,$s/^/#/ Explications : :1,$ Sélection des ligne 1 à $ ($ étant la dernière). s/^/#/ s pour search ^ indique le début de ligne / sépare ma recherche par ce que l'on remplace # est le caractère que ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html"/>
 <meta property="og:type" content="article"/>
@@ -34,7 +34,7 @@
 <meta property="article:tag" content="file"/>
 <meta property="article:tag" content="remplace"/>
 <meta property="article:tag" content="ajout"/>
-<meta property="og:image" content="avatar.png">  <title>ChoiZ &ndash; Insérer un # au début de chaque ligne d'un fichier avec vim</title>
+<meta property="og:image" content="avatar.png">  <title>ChoiZ &ndash; Insérer un \# au début de chaque ligne d'un fichier avec vim</title>
 </head>
 <body>
   <aside>
@@ -68,20 +68,20 @@
 
 <article>
   <header>
-    <h1 id="2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Insérer un # au début de chaque ligne d'un fichier avec vim</h1>
+    <h1 id="2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier">Insérer un \# au début de chaque ligne d'un fichier avec vim</h1>
     <p>Posté le mer. 05 octobre 2011</p>
   </header>
   <div>
-    <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un fichier avec
-vim :</p>
-<pre class="literal-block">
-:1,$s/^/#/
-</pre>
-<p>Explications :</p>
-<p><cite>:1,$</cite> Sélection des ligne 1 à $ ($ étant la dernière).</p>
-<p><cite>s/^/#/</cite> <cite>s</cite> pour search <cite>^</cite> indique le début de ligne <cite>/</cite> sépare ma recherche
-par ce que l'on remplace <cite>#</cite> est le caractère que je veux remplacer</p>
+    <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un
+fichier avec vim : :</p>
+<div class="highlight"><pre><span class="x">:1,</span><span class="p">$</span><span class="nv">s</span><span class="x">/^/</span><span class="err">#</span><span class="x">/</span>
+</pre></div>
 
+
+<p>Explications :</p>
+<p>:1,$ Sélection des ligne 1 à $ ($ étant la dernière).</p>
+<p>s/^/#/ s pour search ^ indique le début de ligne / sépare ma recherche
+par ce que l'on remplace # est le caractère que je veux remplacer</p>
   </div>
   <div class="tag-cloud">
     <p>
@@ -107,8 +107,8 @@ par ce que l'on remplace <cite>#</cite> est le caractère que je veux remplacer<
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "name": "Insérer un # au début de chaque ligne d'un fichier avec vim",
-  "headline": "Insérer un # au début de chaque ligne d'un fichier avec vim",
+  "name": "Insérer un \# au début de chaque ligne d'un fichier avec vim",
+  "headline": "Insérer un \# au début de chaque ligne d'un fichier avec vim",
   "datePublished": "2011-10-05 00:42:00+02:00",
   "dateModified": "",
   "author": {
@@ -118,7 +118,7 @@ par ce que l'on remplace <cite>#</cite> est le caractère que je veux remplacer<
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html",
-  "description": "Voilà la commande pour ajouter un # au début de chaque ligne d'un fichier avec vim : :1,$s/^/#/ Explications : :1,$ Sélection des ligne 1 à $ ($ étant la dernière). s/^/#/ s pour search ^ indique le début de ligne / sépare ma recherche par ce que l'on remplace # est le caractère que ..."
+  "description": "Voilà la commande pour ajouter un # au début de chaque ligne d'un fichier avec vim : : :1,$s/^/#/ Explications : :1,$ Sélection des ligne 1 à $ ($ étant la dernière). s/^/#/ s pour search ^ indique le début de ligne / sépare ma recherche par ce que l'on remplace # est le caractère que ..."
 }
 </script></body>
 </html>

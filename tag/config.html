@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,10 +61,12 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/diff.html">diff</a>,      <a href="//www.choiz.fr/tag/wrap.html">wrap</a>,      <a href="//www.choiz.fr/tag/multiline.html">multiline</a>,      <a href="//www.choiz.fr/tag/multiligne.html">multiligne</a>,      <a href="//www.choiz.fr/tag/less.html">less</a>,      <a href="//www.choiz.fr/tag/config.html">config</a>,      <a href="//www.choiz.fr/tag/gitconfig.html">gitconfig</a>    </p>
   </header>
   <div>
-      <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une ligne…</p>
-<p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais pas
-entièrement…).</p>
-<p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu que ...</p>
+      <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
+ligne…</p>
+<p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais
+pas entièrement…).</p>
+<p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu
+que ...</p>
       <a class="btn" href="//www.choiz.fr/2014-03-05-git-diff-multiligne.html#2014-03-05-git-diff-multiligne">Lire la suite</a>
   </div>
   <hr />
@@ -78,16 +80,17 @@ Tags :
       <a href="//www.choiz.fr/tag/firefox.html">firefox</a>,      <a href="//www.choiz.fr/tag/config.html">config</a>,      <a href="//www.choiz.fr/tag/http.html">http</a>,      <a href="//www.choiz.fr/tag/urlbar.html">urlbar</a>,      <a href="//www.choiz.fr/tag/browser.html">browser</a>    </p>
   </header>
   <div>
-      <p>Souvent lorsque je copie/colle une url depuis firefox j'ajoute <a class="reference external" href="http://">http://</a> or lors
-de la copie celui-ci est copié… Je me retrouve donc avec deux fois <a class="reference external" href="http://">http://</a>…</p>
+      <p>Souvent lorsque je copie/colle une url depuis firefox j'ajoute <a href="http://">http://</a>
+or lors de la copie celui-ci est copié… Je me retrouve donc avec deux
+fois <a href="http://">http://</a>…</p>
 <p>Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :</p>
-<p>Ecrire dans la barre d'adresse :</p>
-<pre class="literal-block">
-about:config
-</pre>
-<p>Rechercher :</p>
-<pre class="literal-block">
-browser.urlbar ...</pre>
+<p>Ecrire dans la barre d'adresse : :</p>
+<div class="highlight"><pre><span class="n">about</span><span class="o">:</span><span class="n">config</span>
+</pre></div>
+
+
+<p>Rechercher : :</p>
+<div class="highlight"><pre>browser.urlbar ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html#2013-06-10-toujours-afficher-le-protocole-dans-firefox">Lire la suite</a>
   </div>
   <hr />
@@ -101,12 +104,12 @@ Tags :
       <a href="//www.choiz.fr/tag/iterm2.html">iTerm2</a>,      <a href="//www.choiz.fr/tag/config.html">config</a>,      <a href="//www.choiz.fr/tag/keypad.html">keypad</a>,      <a href="//www.choiz.fr/tag/numeric.html">numeric</a>,      <a href="//www.choiz.fr/tag/enter.html">enter</a>,      <a href="//www.choiz.fr/tag/-.html">⌥→</a>,      <a href="//www.choiz.fr/tag/-.html">⌥←</a>,      <a href="//www.choiz.fr/tag/-.html">↩</a>,      <a href="//www.choiz.fr/tag/shortcut.html">shortcut</a>,      <a href="//www.choiz.fr/tag/clavier.html">clavier</a>,      <a href="//www.choiz.fr/tag/pave-numerique.html">pavé numérique</a>,      <a href="//www.choiz.fr/tag/configuration-iterm2.html">configuration iTerm2</a>    </p>
   </header>
   <div>
-      <p>Depuis quelques jours j'utilise iTerm2 et je trouve ce terminal sous Mac Os X
-vraiment au top !</p>
-<p>J'ai un clavier Apple Usb avec le pavé numérique il faut donc modifier les
-préférences d'iTerm2.</p>
-<p>iTerm &gt; Préférences (ou&nbsp;⌘&nbsp;,) puis dans Profiles &gt; Keys et en bas &quot;Load
-Preset...&quot; et choisir ...</p>
+      <p>Depuis quelques jours j'utilise iTerm2 et je trouve ce terminal sous Mac
+Os X vraiment au top !</p>
+<p>J'ai un clavier Apple Usb avec le pavé numérique il faut donc modifier
+les préférences d'iTerm2.</p>
+<p>iTerm &gt; Préférences (ou ⌘ ,) puis dans Profiles &gt; Keys et en bas
+"Load Preset..." et choisir ...</p>
       <a class="btn" href="//www.choiz.fr/2012-09-29-ma-configuration-iterm2.html#2012-09-29-ma-configuration-iterm2">Lire la suite</a>
   </div>
   <hr />
@@ -120,11 +123,9 @@ Tags :
       <a href="//www.choiz.fr/tag/linux.html">Linux</a>,      <a href="//www.choiz.fr/tag/samba.html">Samba</a>,      <a href="//www.choiz.fr/tag/config.html">config</a>,      <a href="//www.choiz.fr/tag/configuration.html">configuration</a>,      <a href="//www.choiz.fr/tag/partage.html">Partage</a>,      <a href="//www.choiz.fr/tag/sharing.html">Sharing</a>    </p>
   </header>
   <div>
-      <p>Configuration d'un serveur samba.
-Editer le fichier de configuration <cite>/etc/samba/smb.conf</cite>
-Voici le contenu de mon fichier de configuration :</p>
-<pre class="literal-block">
-| ### Global ###
+      <p>Configuration d'un serveur samba. Editer le fichier de configuration
+/etc/samba/smb.conf Voici le contenu de mon fichier de configuration : :</p>
+<div class="highlight"><pre>| ### Global ###
 | [global]
 | ## Identification ##
 | workgroup = WORKGROUP
@@ -134,7 +135,7 @@ Voici le contenu de mon fichier de configuration :</p>
 | public = yes
 | ## Log ##
 | log file = /var/log/samba/log.%m
-| max log size ...</pre>
+| max log size ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2011-08-17-partage-samba.html#2011-08-17-partage-samba">Lire la suite</a>
   </div>
   <hr />
@@ -148,11 +149,13 @@ Tags :
       <a href="//www.choiz.fr/tag/vim.html">vim</a>,      <a href="//www.choiz.fr/tag/config.html">config</a>,      <a href="//www.choiz.fr/tag/vimrc.html">.vimrc</a>,      <a href="//www.choiz.fr/tag/plugin.html">plugin</a>,      <a href="//www.choiz.fr/tag/vim-plugin.html">vim plugin</a>,      <a href="//www.choiz.fr/tag/surround.html">surround</a>,      <a href="//www.choiz.fr/tag/surroundvim.html">surround.vim</a>,      <a href="//www.choiz.fr/tag/tags.html">tags</a>,      <a href="//www.choiz.fr/tag/html.html">html</a>    </p>
   </header>
   <div>
-      <p>J'ai ajouté quelques plugins dans ma configuration de Vim dont : surround.vim.</p>
-<p>Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un texte.</p>
+      <p>J'ai ajouté quelques plugins dans ma configuration de Vim dont :
+surround.vim.</p>
+<p>Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un
+texte.</p>
 <p>Comment l'utiliser ?</p>
-<p><tt class="docutils literal">VS&lt;b&gt;</tt> permet d'ajouter les balises <cite>&lt;b&gt;</cite> et <cite>&lt;/b&gt;</cite> avant et apres la
-ligne courante et d'indenter ...</p>
+<p><code>VS&lt;b&gt;</code> permet d'ajouter les balises &lt;b&gt; et &lt;/b&gt; avant et
+apres la ligne courante et d'indenter ...</p>
       <a class="btn" href="//www.choiz.fr/2011-04-09-surround-avec-vim.html#2011-04-09-surround-avec-vim">Lire la suite</a>
   </div>
 </article>

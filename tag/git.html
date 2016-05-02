@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,8 +61,10 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/branch.html">branch</a>,      <a href="//www.choiz.fr/tag/remote.html">remote</a>,      <a href="//www.choiz.fr/tag/prune.html">prune</a>,      <a href="//www.choiz.fr/tag/origin.html">origin</a>    </p>
   </header>
   <div>
-      <p>Lors d'un developpement j'ai créé une branche &quot;add_namespace&quot; qui m'a permis d'ajouté des namespaces a différents fichiers PHP.</p>
-<p>Une fois la modification faite j'ai envoyé ma branche sur l'origin, en faisant un &quot;pull request&quot; (github) ou &quot;merge request&quot; (gitlab).</p>
+      <p>Lors d'un developpement j'ai créé une branche "add_namespace" qui m'a
+permis d'ajouté des namespaces a différents fichiers PHP.</p>
+<p>Une fois la modification faite j'ai envoyé ma branche sur l'origin, en
+faisant un "pull request" (github) ou "merge request" (gitlab).</p>
 <p>Un autre développeur a accepté ...</p>
       <a class="btn" href="//www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html#2015-08-25-suppression-des-branches-distantes-inexistantes">Lire la suite</a>
   </div>
@@ -78,14 +80,15 @@ Tags :
   </header>
   <div>
       <p>Dans certains projets j’utilise git avec plusieurs remote, par exemple :</p>
-<ul class="simple">
+<ul>
 <li>un remote “origin” se trouve sur un serveur perso.</li>
 <li>un remote “github” qui lui est sur github.com.</li>
 </ul>
-<p>Quand je vais sur le master il m’arrive d’avoir ce message :</p>
-<pre class="literal-block">
-&quot;your branch is up-to-date with “github/master”.&quot;
-</pre>
+<p>Quand je vais sur le master il m’arrive d’avoir ce message : :</p>
+<div class="highlight"><pre>&quot;your branch is up-to-date with “github/master”.&quot;
+</pre></div>
+
+
 <p>Je ...</p>
       <a class="btn" href="//www.choiz.fr/2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html#2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec">Lire la suite</a>
   </div>
@@ -100,18 +103,24 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/submodule.html">submodule</a>,      <a href="//www.choiz.fr/tag/update.html">update</a>,      <a href="//www.choiz.fr/tag/init.html">init</a>,      <a href="//www.choiz.fr/tag/recursive.html">recursive</a>    </p>
   </header>
   <div>
-      <p>Pour initialiser les sous-modules dans git j'utilise la commande suivante :</p>
-<pre class="literal-block">
-git submodule init
-</pre>
-<p>Ensuite je dois faire un update des sous-modules pour charger le contenu :</p>
-<pre class="literal-block">
-git submodule update
-</pre>
-<p>Pour faire les deux en même temps (init + update) vous pouvez faire :</p>
-<pre class="literal-block">
-git submodule update --init
-</pre>
+      <p>Pour initialiser les sous-modules dans git j'utilise la commande
+suivante : :</p>
+<div class="highlight"><pre>git submodule init
+</pre></div>
+
+
+<dl>
+<dt>Ensuite je dois faire un update des sous-modules pour charger le contenu</dt>
+<dd>
+<p>:</p>
+<p>git submodule update</p>
+</dd>
+</dl>
+<p>Pour faire les deux en même temps (init + update) vous pouvez faire : :</p>
+<div class="highlight"><pre>git submodule update --init
+</pre></div>
+
+
 <p>Imaginons maintenant que vous avez ...</p>
       <a class="btn" href="//www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html#2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git">Lire la suite</a>
   </div>
@@ -126,37 +135,37 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/search.html">search</a>,      <a href="//www.choiz.fr/tag/source.html">source</a>,      <a href="//www.choiz.fr/tag/code.html">code</a>,      <a href="//www.choiz.fr/tag/log.html">log</a>    </p>
   </header>
   <div>
-      <p>Pour rechercher directement dans le code source une modification précise,
-j'utilise la commande suivante :</p>
-<pre class="literal-block">
-git log -p -S 'display'
-</pre>
-
+      <p>Pour rechercher directement dans le code source une modification
+précise, j'utilise la commande suivante : :</p>
+<div class="highlight"><pre>git log -p -S &#39;display&#39;
+</pre></div>
       <a class="btn" href="//www.choiz.fr/2014-12-08-recherche-dans-le-code-source-avec-git.html#2014-12-08-recherche-dans-le-code-source-avec-git">Lire la suite</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html#2014-05-06-faire-un-patch-de-x-commits-avec-git">Faire un patch de &quot;x&quot; commit(s) avec git</a></h2>
+    <h2><a href="//www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html#2014-05-06-faire-un-patch-de-x-commits-avec-git">Faire un patch de "x" commit(s) avec git</a></h2>
     <p>
       Posté le mar. 06 mai 2014 &#8226;
 Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/patch.html">patch</a>,      <a href="//www.choiz.fr/tag/commit.html">commit</a>    </p>
   </header>
   <div>
-      <p>Voici mon historique des commits :</p>
-<pre class="literal-block">
-c0004 -- dernier commit
+      <p>Voici mon historique des commits : :</p>
+<div class="highlight"><pre>c0004 -- dernier commit
 c0003 -- avant dernier commit
 c0002 -- second commit
 c0001 -- premier commit
-</pre>
-<p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire :</p>
-<pre class="literal-block">
-git format-patch -2 c0002 --stdout &gt; mon.patch
-</pre>
-<p>le &quot;-2&quot; sert à récupérer 2 commits à partir du commit ...</p>
+</pre></div>
+
+
+<p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire : :</p>
+<div class="highlight"><pre>git format-patch -2 c0002 --stdout &gt; mon.patch
+</pre></div>
+
+
+<p>le "-2" sert à récupérer 2 commits à partir du commit ...</p>
       <a class="btn" href="//www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html#2014-05-06-faire-un-patch-de-x-commits-avec-git">Lire la suite</a>
   </div>
   <hr />
@@ -170,10 +179,12 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/diff.html">diff</a>,      <a href="//www.choiz.fr/tag/wrap.html">wrap</a>,      <a href="//www.choiz.fr/tag/multiline.html">multiline</a>,      <a href="//www.choiz.fr/tag/multiligne.html">multiligne</a>,      <a href="//www.choiz.fr/tag/less.html">less</a>,      <a href="//www.choiz.fr/tag/config.html">config</a>,      <a href="//www.choiz.fr/tag/gitconfig.html">gitconfig</a>    </p>
   </header>
   <div>
-      <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une ligne…</p>
-<p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais pas
-entièrement…).</p>
-<p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu que ...</p>
+      <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
+ligne…</p>
+<p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais
+pas entièrement…).</p>
+<p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu
+que ...</p>
       <a class="btn" href="//www.choiz.fr/2014-03-05-git-diff-multiligne.html#2014-03-05-git-diff-multiligne">Lire la suite</a>
   </div>
   <hr />
@@ -190,11 +201,9 @@ Tags :
       <p>J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
 messages sur cherry-pick sans savoir ce que c'était.</p>
 <p>git cherry-pick permet d'appliquer un commit sur la branche sur la
-branche actuelle.</p>
-<pre class="literal-block">
-git cherry-pick c4a99776
-</pre>
-
+branche actuelle. :</p>
+<div class="highlight"><pre>git cherry-pick c4a99776
+</pre></div>
       <a class="btn" href="//www.choiz.fr/2014-02-06-git-cherry-pick.html#2014-02-06-git-cherry-pick">Lire la suite</a>
   </div>
   <hr />
@@ -208,15 +217,17 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/checkout.html">checkout</a>,      <a href="//www.choiz.fr/tag/fetch.html">fetch</a>,      <a href="//www.choiz.fr/tag/origin.html">origin</a>,      <a href="//www.choiz.fr/tag/checkout-b.html">checkout -b</a>,      <a href="//www.choiz.fr/tag/branch.html">branch</a>,      <a href="//www.choiz.fr/tag/remote.html">remote</a>    </p>
   </header>
   <div>
-      <p>J'utilise des branches tel que prod, preprod pour mes projets et en local il
-m'arrive de vouloir aller sur ses branches.</p>
-<pre class="literal-block">
-git checkout preprod
-</pre>
-<p>Et j'ai l'erreur suivante :</p>
-<pre class="literal-block">
-error: pathspec 'preprod' did not match any file(s) known to git.
-</pre>
+      <p>J'utilise des branches tel que prod, preprod pour mes projets et en
+local il m'arrive de vouloir aller sur ses branches. :</p>
+<div class="highlight"><pre>git checkout preprod
+</pre></div>
+
+
+<p>Et j'ai l'erreur suivante : :</p>
+<div class="highlight"><pre><span class="n">error</span><span class="o">:</span> <span class="n">pathspec</span> <span class="s1">&#39;preprod&#39;</span> <span class="n">did</span> <span class="n">not</span> <span class="n">match</span> <span class="n">any</span> <span class="n">file</span><span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="n">known</span> <span class="n">to</span> <span class="n">git</span><span class="o">.</span>
+</pre></div>
+
+
 <p>Je vais mettre a jour mon ...</p>
       <a class="btn" href="//www.choiz.fr/2013-10-01-git-se-déplacer-dans-une-branche-distante.html#2013-10-01-git-se-déplacer-dans-une-branche-distante">Lire la suite</a>
   </div>
@@ -231,12 +242,11 @@ Tags :
       <a href="//www.choiz.fr/tag/svn-to-git.html">svn to git</a>,      <a href="//www.choiz.fr/tag/svn.html">svn</a>,      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/migate.html">migate</a>,      <a href="//www.choiz.fr/tag/git-svn-clone.html">git svn clone</a>,      <a href="//www.choiz.fr/tag/authors.html">authors</a>,      <a href="//www.choiz.fr/tag/tags.html">tags</a>    </p>
   </header>
   <div>
-      <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est
-temps de faire la migration de svn à git !</p>
-<p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais
-voici donc ma procédure :</p>
-<pre class="literal-block">
-svn log --quiet 'svn://svn.mondomaine/monprojet' | grep ...</pre>
+      <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec
+svn. Il est temps de faire la migration de svn à git !</p>
+<p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
+voulais voici donc ma procédure : :</p>
+<div class="highlight"><pre>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2013-07-16-passer-de-svn-à-git.html#2013-07-16-passer-de-svn-à-git">Lire la suite</a>
   </div>
   <hr />
@@ -251,9 +261,9 @@ Tags :
   </header>
   <div>
       <p>J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
-<em>master</em>… Généralement je fais toujours une branche pour les modifications,
-cette fois j'avais créé cette branche <em>debug_redirect</em> mais je n'étais pas
-dessus…</p>
+<em>master</em>… Généralement je fais toujours une branche pour les
+modifications, cette fois j'avais créé cette branche <em>debug_redirect</em>
+mais je n'étais pas dessus…</p>
 <p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master ...</em></p>
       <a class="btn" href="//www.choiz.fr/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html#2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre">Lire la suite</a>
   </div>

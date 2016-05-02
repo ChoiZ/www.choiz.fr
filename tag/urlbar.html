@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -61,16 +61,17 @@ Tags :
       <a href="//www.choiz.fr/tag/firefox.html">firefox</a>,      <a href="//www.choiz.fr/tag/config.html">config</a>,      <a href="//www.choiz.fr/tag/http.html">http</a>,      <a href="//www.choiz.fr/tag/urlbar.html">urlbar</a>,      <a href="//www.choiz.fr/tag/browser.html">browser</a>    </p>
   </header>
   <div>
-      <p>Souvent lorsque je copie/colle une url depuis firefox j'ajoute <a class="reference external" href="http://">http://</a> or lors
-de la copie celui-ci est copié… Je me retrouve donc avec deux fois <a class="reference external" href="http://">http://</a>…</p>
+      <p>Souvent lorsque je copie/colle une url depuis firefox j'ajoute <a href="http://">http://</a>
+or lors de la copie celui-ci est copié… Je me retrouve donc avec deux
+fois <a href="http://">http://</a>…</p>
 <p>Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :</p>
-<p>Ecrire dans la barre d'adresse :</p>
-<pre class="literal-block">
-about:config
-</pre>
-<p>Rechercher :</p>
-<pre class="literal-block">
-browser.urlbar ...</pre>
+<p>Ecrire dans la barre d'adresse : :</p>
+<div class="highlight"><pre><span class="n">about</span><span class="o">:</span><span class="n">config</span>
+</pre></div>
+
+
+<p>Rechercher : :</p>
+<div class="highlight"><pre>browser.urlbar ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html#2013-06-10-toujours-afficher-le-protocole-dans-firefox">Lire la suite</a>
   </div>
 </article>

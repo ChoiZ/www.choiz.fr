@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -62,28 +62,26 @@ Tags :
   </header>
   <div>
       <p>Pour mettre à jour Gentoo j'utilise différentes commandes.</p>
-<p>Dans un premier temps je fais la mise à jour d'eix :</p>
-<pre class="literal-block">
-eix-sync
-</pre>
-<p>Ensuite :</p>
-<pre class="literal-block">
-emerge -pvuDN world
-</pre>
-<table class="docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-p</span></kbd></td>
-<td>ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche également les différents flags (N = new (not yet installed), U = updating ...</td></tr></tbody></table>
+<p>Dans un premier temps je fais la mise à jour d'eix : :</p>
+<div class="highlight"><pre>eix-sync
+</pre></div>
+
+
+<p>Ensuite : :</p>
+<div class="highlight"><pre>emerge -pvuDN world
+</pre></div>
+
+
+<p>-p ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche
+également les différents flags (N = new (not yet installed), U =
+updating ...</p>
       <a class="btn" href="//www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html#2015-09-27-mettre-a-jour-gentoo">Lire la suite</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2015-07-19-gentoo-utilisation-de-layman-eix.html#2015-07-19-gentoo-utilisation-de-layman-eix">Gentoo utilisation de layman &amp; eix</a></h2>
+    <h2><a href="//www.choiz.fr/2015-07-19-gentoo-utilisation-de-layman-eix.html#2015-07-19-gentoo-utilisation-de-layman-eix">Gentoo utilisation de layman & eix</a></h2>
     <p>
       Posté le dim. 19 juillet 2015 &#8226;
 Tags :
@@ -92,9 +90,9 @@ Tags :
   <div>
       <p>Certains programmes n’étant pas en dernière version dans les dépôts
 gentoo l’utilisation de layman peut faciliter la vie.</p>
-<p>Étant à la recherche de vagrant, la seule version disponible à ce jour sur
-gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de vagrant je me
-rend ...</p>
+<p>Étant à la recherche de vagrant, la seule version disponible à ce jour
+sur gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de
+vagrant je me rend ...</p>
       <a class="btn" href="//www.choiz.fr/2015-07-19-gentoo-utilisation-de-layman-eix.html#2015-07-19-gentoo-utilisation-de-layman-eix">Lire la suite</a>
   </div>
 </article>

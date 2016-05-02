@@ -6,17 +6,17 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Dans mon firebug des "warnings" s'affichent : Champs mot de passe présents sur une page non sécurisée (http://). Cela représente un risque de sécurité permettant le vol d'identifiants de connexion. Ainsi que : Champs mot de passe présents dans un formulaire possédant une action de formulaire non sécurisée (http://). Cela ..." />
+<meta name="description" content="Dans mon firebug des "warnings" s'affichent : : Champs mot de passe présents sur une page non sécurisée (http://). Cela représente un risque de sécurité permettant le vol d'identifiants de connexion. Ainsi que : : Champs mot de passe présents dans un formulaire possédant une action de formulaire non sécurisée (http://). Cela ..." />
 <meta name="keywords" content="firebug, http, https, formulaire, warning, mot de passe, password, action, form">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Firebug champs mot de passe présents sur une page non sécurisée"/>
-<meta property="og:description" content="Dans mon firebug des "warnings" s'affichent : Champs mot de passe présents sur une page non sécurisée (http://). Cela représente un risque de sécurité permettant le vol d'identifiants de connexion. Ainsi que : Champs mot de passe présents dans un formulaire possédant une action de formulaire non sécurisée (http://). Cela ..."/>
+<meta property="og:description" content="Dans mon firebug des "warnings" s'affichent : : Champs mot de passe présents sur une page non sécurisée (http://). Cela représente un risque de sécurité permettant le vol d'identifiants de connexion. Ainsi que : : Champs mot de passe présents dans un formulaire possédant une action de formulaire non sécurisée (http://). Cela ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html"/>
 <meta property="og:type" content="article"/>
@@ -71,28 +71,30 @@
     <p>Posté le mar. 18 mars 2014</p>
   </header>
   <div>
-    <p>Dans mon firebug des &quot;warnings&quot; s'affichent :</p>
-<pre class="literal-block">
-Champs mot de passe présents sur une page non sécurisée (http://). Cela
-représente un risque de sécurité permettant le vol d'identifiants de
+    <p>Dans mon firebug des "warnings" s'affichent : :</p>
+<div class="highlight"><pre>Champs mot de passe présents sur une page non sécurisée (http://). Cela
+représente un risque de sécurité permettant le vol d&#39;identifiants de
 connexion.
-</pre>
-<p>Ainsi que :</p>
-<pre class="literal-block">
-Champs mot de passe présents dans un formulaire possédant une action de
-formulaire non sécurisée (http://). Cela représente un risque de sécurité
-permettant le vol d'identifiants de connexion.
-</pre>
-<p>La première indications informe que vous n'êtes pas sur un site utilisant le
-HTTPS. Lorsque vous allez remplir le champs &quot;password&quot; celui-ci sera envoyé en
-clair sur le réseau.</p>
-<p>La seconde indication informe que l'action du formulaire envoi sur une page qui
-n'est pas en HTTPS.</p>
-<p>Vous pouvez avoir votre formulaire sur l'url : <a class="reference external" href="https://www.mon-formulaire.fr">https://www.mon-formulaire.fr</a> et
-dans l'action de votre formulaire avoir : <a class="reference external" href="http://www.mon-formulaire.fr">http://www.mon-formulaire.fr</a></p>
-<p>Dans ce cas l'affichage du formulaire est sécurisé, mais l'envoi des données ne
-l'est pas vu que l'action est en http.</p>
+</pre></div>
 
+
+<p>Ainsi que : :</p>
+<div class="highlight"><pre>Champs mot de passe présents dans un formulaire possédant une action de
+formulaire non sécurisée (http://). Cela représente un risque de sécurité
+permettant le vol d&#39;identifiants de connexion.
+</pre></div>
+
+
+<p>La première indications informe que vous n'êtes pas sur un site
+utilisant le HTTPS. Lorsque vous allez remplir le champs "password"
+celui-ci sera envoyé en clair sur le réseau.</p>
+<p>La seconde indication informe que l'action du formulaire envoi sur une
+page qui n'est pas en HTTPS.</p>
+<p>Vous pouvez avoir votre formulaire sur l'url :
+<a href="https://www.mon-formulaire.fr">https://www.mon-formulaire.fr</a> et dans l'action de votre formulaire
+avoir : <a href="http://www.mon-formulaire.fr">http://www.mon-formulaire.fr</a></p>
+<p>Dans ce cas l'affichage du formulaire est sécurisé, mais l'envoi des
+données ne l'est pas vu que l'action est en http.</p>
   </div>
   <div class="tag-cloud">
     <p>
@@ -128,7 +130,7 @@ l'est pas vu que l'action est en http.</p>
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html",
-  "description": "Dans mon firebug des "warnings" s'affichent : Champs mot de passe présents sur une page non sécurisée (http://). Cela représente un risque de sécurité permettant le vol d'identifiants de connexion. Ainsi que : Champs mot de passe présents dans un formulaire possédant une action de formulaire non sécurisée (http://). Cela ..."
+  "description": "Dans mon firebug des "warnings" s'affichent : : Champs mot de passe présents sur une page non sécurisée (http://). Cela représente un risque de sécurité permettant le vol d'identifiants de connexion. Ainsi que : : Champs mot de passe présents dans un formulaire possédant une action de formulaire non sécurisée (http://). Cela ..."
 }
 </script></body>
 </html>

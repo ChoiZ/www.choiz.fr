@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/misc.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2014-03-21T00:00:00+01:00</updated><entry><title>Installation de Firefox sur Debian</title><link href="//www.choiz.fr/installation-de-firefox-sur-debian.html" rel="alternate"></link><updated>2014-03-21T00:00:00+01:00</updated><author><name>François LASSERRE</name></author><id>tag:www.choiz.fr,2014-03-21:installation-de-firefox-sur-debian.html</id><summary type="html">&lt;p&gt;date&lt;br /&gt;
+2014-03-21 01:14:41
+author&lt;br /&gt;
+choiz
+category&lt;br /&gt;
+text
+tags&lt;br /&gt;
+Firefox, Mozilla, Debian, Installation de Firefox, Firefox sur Debian
+slug&lt;br /&gt;
+2014-03-21-installation-de-firefox-sur-debian
+status&lt;br /&gt;
+published&lt;/p&gt;
+&lt;p&gt;Télécharger la dernière version de Firefox sur &lt;a href="http://www.mozilla.org/"&gt;le site de
+mozilla&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Décompresser l'archive dans : :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;/opt/firefox/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Créer un lien symbolique avec : :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;ls -sf /opt/firefox/firefox /usr/bin/firefox
+&lt;/pre&gt;&lt;/div&gt;</summary></entry></feed>

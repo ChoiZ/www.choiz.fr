@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -70,45 +70,47 @@
     <p>Posté le mer. 05 mars 2014</p>
   </header>
   <div>
-    <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une ligne…</p>
-<p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais pas
-entièrement…).</p>
-<p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu que ma
-ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
-<p>Mon fichier texte ressemble à ceci :</p>
-<pre class="literal-block">
-ligne avec un peu de texte ici nous avons 66 caractères affichés.
-</pre>
-<p>Or, quand je fais un diff on ne voit pas tous les caractères</p>
-<pre class="literal-block">
-git diff HEAD~1 HEAD
+    <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
+ligne…</p>
+<p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais
+pas entièrement…).</p>
+<p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu
+que ma ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
+<p>Mon fichier texte ressemble à ceci : :</p>
+<div class="highlight"><pre>ligne avec un peu de texte ici nous avons 66 caractères affichés.
+</pre></div>
+
+
+<p>Or, quand je fais un diff on ne voit pas tous les caractères :</p>
+<div class="highlight"><pre>git diff HEAD~1 HEAD
 diff --git a/test.txt b/test.txt
 new file mode 100644
 index 0000000..235a891
 --- /dev/null
 +++ b/test.txt
-&#64;&#64; -0,0 +1 &#64;&#64;
+@@ -0,0 +1 @@
 +ligne avec un peu de texte ici nous avons 66 caractè\
 No newline at end of file
-</pre>
-<p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=&quot;&quot;</em> avant la
-commande <em>git diff</em> soit ajouter dans son fichier de config git :</p>
-<pre class="literal-block">
-git config --global core.pager &quot;less -r&quot;
-</pre>
-<p>Voilà ce que ça donne avec GIT_PAGER</p>
-<pre class="literal-block">
-GIT_PAGER=&quot;&quot; git diff HEAD~1 HEAD
+</pre></div>
+
+
+<p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=""</em> avant la
+commande <em>git diff</em> soit ajouter dans son fichier de config git : :</p>
+<div class="highlight"><pre>git config --global core.pager &quot;less -r&quot;
+</pre></div>
+
+
+<p>Voilà ce que ça donne avec GIT_PAGER :</p>
+<div class="highlight"><pre>GIT_PAGER=&quot;&quot; git diff HEAD~1 HEAD
 diff --git a/test.txt b/test.txt
 new file mode 100644
 index 0000000..235a891
 --- /dev/null
 +++ b/test.txt
-&#64;&#64; -0,0 +1 &#64;&#64;
+@@ -0,0 +1 @@
 +ligne avec un peu de texte ici nous avons 66 caractères affichés.\
 No newline at end of file
-</pre>
-
+</pre></div>
   </div>
   <div class="tag-cloud">
     <p>

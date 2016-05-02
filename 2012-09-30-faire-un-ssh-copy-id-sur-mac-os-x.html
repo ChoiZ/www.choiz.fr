@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:8000/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -68,73 +68,121 @@
     <p>Posté le dim. 30 septembre 2012</p>
   </header>
   <div>
-    <p>Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous avez dû
-vous rendre compte que, même si openssh est installé nativement, cette commande
-n’est pas disponible.</p>
-<p>Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on peut la
-rendre disponible facilement en quelques étapes.  Créer un fichier &quot;ssh-copy-id&quot;
-dans le dossier &quot;/usr/bin/&quot; avec ce contenu :</p>
-<pre class="literal-block">
-#!/bin/sh
-# Shell script to install your public key on a remote machine
-# Takes the remote machine name as an argument.
-# Obviously, the remote machine must accept password authentication,
-# or one of the other keys in your ssh-agent, for this to work.
+    <p>Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
+avez dû vous rendre compte que, même si openssh est installé nativement,
+cette commande n’est pas disponible.</p>
+<p>Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
+peut la rendre disponible facilement en quelques étapes. Créer un
+fichier "ssh-copy-id" dans le dossier "/usr/bin/" avec ce contenu : :</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/bin/sh</span>
+<span class="c"># Shell script to install your public key on a remote machine</span>
+<span class="c"># Takes the remote machine name as an argument.</span>
+<span class="c"># Obviously, the remote machine must accept password authentication,</span>
+<span class="c"># or one of the other keys in your ssh-agent, for this to work.</span>
 
-ID_FILE=&quot;${HOME}/.ssh/id_rsa.pub&quot;
+<span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.ssh/id_rsa.pub&quot;</span>
 
-if [ &quot;-i&quot; = &quot;$1&quot; ]; then
-  shift
-  # check if we have 2 parameters left, if so the first is the new ID file
-  if [ -n &quot;$2&quot; ]; then
-    if expr &quot;$1&quot; : &quot;.*\.pub&quot; &gt; /dev/null ; then
-      ID_FILE=&quot;$1&quot;
-    else
-      ID_FILE=&quot;$1.pub&quot;
-    fi
-    shift         # and this should leave $1 as the target name
-  fi
-else
-  if [ x$SSH_AUTH_SOCK != x ] ; then
-    GET_ID=&quot;$GET_ID ssh-add -L&quot;
-  fi
-fi
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;-i&quot;</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nb">shift</span>
+  <span class="c"># check if we have 2 parameters left, if so the first is the new ID file</span>
+  <span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="k">if</span> expr <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> : <span class="s2">&quot;.*\.pub&quot;</span> &gt; /dev/null <span class="p">;</span> <span class="k">then</span>
+      <span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+    <span class="k">else</span>
+      <span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">.pub&quot;</span>
+    <span class="k">fi</span>
+    <span class="nb">shift</span>         <span class="c"># and this should leave $1 as the target name</span>
+  <span class="k">fi</span>
+<span class="k">else</span>
+  <span class="k">if</span> <span class="o">[</span> x<span class="nv">$SSH_AUTH_SOCK</span> !<span class="o">=</span> x <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+    <span class="nv">GET_ID</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$GET_ID</span><span class="s2"> ssh-add -L&quot;</span>
+  <span class="k">fi</span>
+<span class="k">fi</span>
 
-if [ -z &quot;`eval $GET_ID`&quot; ] &amp;&amp; [ -r &quot;${ID_FILE}&quot; ] ; then
-  GET_ID=&quot;cat ${ID_FILE}&quot;
-fi
+<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;`eval </span><span class="nv">$GET_ID</span><span class="s2">`&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> -r <span class="s2">&quot;</span><span class="si">${</span><span class="nv">ID_FILE</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+  <span class="nv">GET_ID</span><span class="o">=</span><span class="s2">&quot;cat </span><span class="si">${</span><span class="nv">ID_FILE</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
 
-if [ -z &quot;`eval $GET_ID`&quot; ]; then
-  echo &quot;$0: ERROR: No identities found&quot; &gt;&amp;2
-  exit 1
-fi
+<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;`eval </span><span class="nv">$GET_ID</span><span class="s2">`&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">: ERROR: No identities found&quot;</span> &gt;<span class="p">&amp;</span>2
+  <span class="nb">exit </span>1
+<span class="k">fi</span>
 
-if [ &quot;$#&quot; -lt 1 ] || [ &quot;$1&quot; = &quot;-h&quot; ] || [ &quot;$1&quot; = &quot;--help&quot; ]; then
-  echo &quot;Usage: $0 [-i [identity_file]] [user&#64;]machine&quot; &gt;&amp;2
-  exit 1
-fi
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$#&quot;</span><span class="s2"> -lt 1 ] || [ &quot;</span><span class="nv">$1</span><span class="s2">&quot; = &quot;</span>-h<span class="s2">&quot; ] || [ &quot;</span><span class="nv">$1</span><span class="s2">&quot; = &quot;</span>--help<span class="s2">&quot; ]; then</span>
+<span class="s2">  echo &quot;</span>Usage: <span class="nv">$0</span> <span class="o">[</span>-i <span class="o">[</span>identity_file<span class="o">]]</span> <span class="o">[</span>user@<span class="o">]</span>machine<span class="s2">&quot; &gt;&amp;2</span>
+<span class="s2">  exit 1</span>
+<span class="s2">fi</span>
 
-{ eval &quot;$GET_ID&quot; ; } | ssh $1 &quot;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys&quot; || exit 1
+<span class="s2">{ eval &quot;</span><span class="nv">$GET_ID</span><span class="s2">&quot; ; } | ssh </span><span class="nv">$1</span><span class="s2"> &quot;</span><span class="nb">umask </span>077<span class="p">;</span> <span class="nb">test</span> -d .ssh <span class="o">||</span> mkdir .ssh <span class="p">;</span> cat &gt;&gt; .ssh/authorized_keys<span class="s2">&quot; || exit 1</span>
 
-cat &lt;&lt;EOF
-Now try logging into the machine, with &quot;ssh '$1'&quot;, and check in:
+<span class="s2">cat &lt;&lt;EOF</span>
+<span class="s2">Now try logging into the machine, with &quot;</span>ssh <span class="s1">&#39;$1&#39;</span><span class="s2">&quot;, and check in:</span>
 
-  .ssh/authorized_keys
+<span class="s2">  .ssh/authorized_keys</span>
 
-to make sure we haven't added extra keys that you weren't expecting.
+<span class="s2">to make sure we haven&#39;t added extra keys that you weren&#39;t expecting.</span>
 
-EOF
-</pre>
-<p>Il ne reste qu'a donner les droits au fichier :</p>
-<pre class="literal-block">
-chmod 755 /usr/bin/ssh-copy-id
-</pre>
+<span class="s2">EOF</span>
+</pre></div>
+</td></tr></table>
+
+<p>Il ne reste qu'a donner les droits au fichier : :</p>
+<div class="highlight"><pre>chmod 755 /usr/bin/ssh-copy-id
+</pre></div>
+
+
 <p>Vous pouvez maintenant copier votre clé ssh sur un serveur distant en
-tapant :</p>
-<pre class="literal-block">
-ssh-copy-id -i id_rsa.pub user&#64;machine.distante
-</pre>
-
+tapant : :</p>
+<div class="highlight"><pre>ssh-copy-id -i id_rsa.pub user@machine.distante
+</pre></div>
   </div>
   <div class="tag-cloud">
     <p>
