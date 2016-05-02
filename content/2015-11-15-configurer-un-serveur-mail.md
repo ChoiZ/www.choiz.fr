@@ -6,8 +6,7 @@ Tags: mail, postfix, dovecot, dns, ssl, rainloop, webmail
 Slug: 2015-11-15-configurer-un-serveur-mail
 Status: published
 
-Installation d'un serveur mail complet et à jour sous debian jessie
-(8.2).
+Installation d'un serveur mail complet et à jour sous debian jessie (8.2).
 
 Configuration des DNS
 ---------------------

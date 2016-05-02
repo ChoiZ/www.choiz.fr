@@ -38,7 +38,7 @@ tel que gimp ou darktable…
 
 Pour l'instant rien a redire sur cette machine.
 
-Voici les modules a activer dans le noyau pour le réseau et le son : :
+Voici les modules a activer dans le noyau pour le réseau et le son :
 
     Realtek 8169 gigabit ethernet support
     Build Analog Device HD-audio codec support

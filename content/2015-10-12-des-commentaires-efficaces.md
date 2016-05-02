@@ -9,35 +9,41 @@ Status: published
 Dans mes fichiers de test j'utilise souvent des commentaires pour tester
 qu'une fonctionnalité de code.
 
-Par exemple pour tester une api : :
+Par exemple pour tester une api :
 
-    // Obtenir le livre #1
-    api_get('books/1');
+```
+// Obtenir le livre #1
+api_get('books/1');
 
-    // Ajouter un livre
-    api_add('books', $datas);
+// Ajouter un livre
+api_add('books', $datas);
+```
 
 Je test généralement chaque élément séparement.
 
-Pour tester la première portion de mon code : :
+Pour tester la première portion de mon code :
 
-    //* Obtenir le livre #1
-    api_get('books/1');
-    //\*/
+```
+//* Obtenir le livre #1
+api_get('books/1');
+//*/
 
-    /* Ajouter un livre
-    api_add('books', $datas);
-    //\*/
+/* Ajouter un livre
+api_add('books', $datas);
+//*/
+```
 
-Pour tester la seconde portion de mon code : :
+Pour tester la seconde portion de mon code :
 
-    /* Obtenir le livre #1
-    api_get('books/1');
-    //\*/
+```
+/* Obtenir le livre #1
+api_get('books/1');
+//*/
 
-    //* Ajouter un livre
-    api_add('books', $datas);
-    //\*/
+//* Ajouter un livre
+api_add('books', $datas);
+//*/
+```
 
 Il me suffit d'ajouter ou d'enlever un slash sur le premier commentaire
 pour commenter ou non tout le bloc.

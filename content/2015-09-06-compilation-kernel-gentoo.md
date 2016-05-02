@@ -6,7 +6,7 @@ Tags: compilation, kernel, gentoo
 Slug: 2015-09-06-compilation-kernel-gentoo
 Status: published
 
-Pour compiler le kernel sous gentoo : :
+Pour compiler le kernel sous gentoo :
 
     cd /usr/src/linux
 
@@ -25,7 +25,7 @@ Maintenant il faut mettre à jour grub. :
 Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi
 que le nombre de compilation.
 
-Il faut maintenant redémarrer la machine : :
+Il faut maintenant redémarrer la machine :
 
     reboot
 

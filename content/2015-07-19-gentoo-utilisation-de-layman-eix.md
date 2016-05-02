@@ -18,13 +18,13 @@ J’ai donc trouvé un overlay avec vagrant-bin version 1.7.3 :
 
 Pour utiliser cette overlay nous avons besoin de layman.
 
-Installation : :
+Installation :
 
     emerge -a layman
 
     echo "source /usr/portage/local/layman/make.conf" >> /etc/make.conf
 
-Pour afficher tous les overlays disponible : :
+Pour afficher tous les overlays disponible :
 
     layman -L
 
@@ -35,7 +35,7 @@ vagrant-bin-1.7.3) :
 
 Maintenant si on recherche dans eix “vagrant” rien n’a changé.
 
-Il faut mettre à jour eix : :
+Il faut mettre à jour eix :
 
     eix-update
 

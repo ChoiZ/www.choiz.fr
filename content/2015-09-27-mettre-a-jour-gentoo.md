@@ -8,11 +8,11 @@ Status: published
 
 Pour mettre à jour Gentoo j'utilise différentes commandes.
 
-Dans un premier temps je fais la mise à jour d'eix : :
+Dans un premier temps je fais la mise à jour d'eix :
 
     eix-sync
 
-Ensuite : :
+Ensuite :
 
     emerge -pvuDN world
 
@@ -25,6 +25,6 @@ updating (to another version) etc…) -v ou --verbose, mode verbeux. -u ou
 depuis son installation.
 
 Une fois la liste des programmes et ses modifications vérifiée nous
-pouvons lancer la mise à jour : :
+pouvons lancer la mise à jour :
 
     emerge -vuDN world

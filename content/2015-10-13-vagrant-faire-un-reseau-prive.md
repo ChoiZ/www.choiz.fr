@@ -12,11 +12,11 @@ backoffice et une avec une API.
 J'ai donc du faire un réseau privé dans vagrant pour que le BO
 communique avec l'API.
 
-Il suffit de modifier la configuration de la vm \#1 et d'ajouter : :
+Il suffit de modifier la configuration de la vm \#1 et d'ajouter :
 
     config.vm.network "private_network", ip: "192.168.10.1"
 
-Et dans la configuration de la vm \#2 d'ajouter : :
+Et dans la configuration de la vm \#2 d'ajouter :
 
     config.vm.network "private_network", ip: "192.168.10.2"
 
