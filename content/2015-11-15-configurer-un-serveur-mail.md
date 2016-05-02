@@ -27,7 +27,7 @@ enregistrement SPF :
 Installation des paquets
 ------------------------
 
-Maintenant installons postfix dovecot-imapd et sasl2-bin : :
+Maintenant installons postfix dovecot-imapd et sasl2-bin :
 
     apt-get install postfix dovecot-imapd sasl2-bin php5-curl
 
@@ -37,15 +37,15 @@ de courrier indiquer "mail.votredomaine.com".
 Configuration de dovecot
 ------------------------
 
-Créer un dossier ssl dans dovecot : :
+Créer un dossier ssl dans dovecot :
 
     mkdir /etc/dovecot/ssl && cd /etc/dovecot/ssl
 
-Créer un certificat ssl : :
+Créer un certificat ssl :
 
     openssl req -new -newkey rsa:2048 -nodes -keyout certificat.key -out certificat.csr
 
-Puis répondre aux différentes questions pour ma part j'ai répondu : :
+Puis répondre aux différentes questions pour ma part j'ai répondu :
 
     FR
     (vide)
@@ -57,15 +57,15 @@ Puis répondre aux différentes questions pour ma part j'ai répondu : :
     (vide)
     (vide)
 
-Ensuite : :
+Ensuite :
 
     openssl x509 -req -days 365 -in certificat.csr -signkey certificat.key -out certificat.crt
 
-Puis : :
+Puis :
 
     cat certificat.key certificat.crt > certificat.pem
 
-Créer le groupe et l'utilisateur vmail : :
+Créer le groupe et l'utilisateur vmail :
 
     groupadd -g 5000 vmail
     useradd -m -d /var/vmail -s /bin/false -u 5000 -g vmail vmail
@@ -143,7 +143,7 @@ Créer le fichier /etc/dovecot/users :
 
     touch /etc/dovecot/users
 
-Puis pour chaque mail créer un enregistrement : :
+Puis pour chaque mail créer un enregistrement :
 
     adresse@votredomaine.com:motdepassemd5:::::::
 
@@ -166,41 +166,21 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 // -->
 </script><noscript>&#x61;&#100;&#114;&#x65;&#x73;&#x73;&#x65;&#32;&#x61;&#116;&#32;&#118;&#x6f;&#116;&#114;&#x65;&#100;&#x6f;&#x6d;&#x61;&#x69;&#110;&#x65;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;</noscript></td>
 </tr>
-<tr class="even">
-<td align="left">------------------</td>
-<td align="left">--------------------------------</td>
-</tr>
 <tr class="odd">
 <td align="left">Mot de passe (MD5)</td>
 <td align="left">motdepassemd5</td>
-</tr>
-<tr class="even">
-<td align="left">------------------</td>
-<td align="left">--------------------------------</td>
 </tr>
 <tr class="odd">
 <td align="left">uid</td>
 <td align="left">déjà défini dans auth-passwdfile</td>
 </tr>
-<tr class="even">
-<td align="left">------------------</td>
-<td align="left">--------------------------------</td>
-</tr>
 <tr class="odd">
 <td align="left">gid</td>
 <td align="left">déjà défini dans auth-passwdfile</td>
 </tr>
-<tr class="even">
-<td align="left">------------------</td>
-<td align="left">--------------------------------</td>
-</tr>
 <tr class="odd">
 <td align="left">home directory</td>
 <td align="left">déjà défini dans auth-passwdfile</td>
-</tr>
-<tr class="even">
-<td align="left">------------------</td>
-<td align="left">--------------------------------</td>
 </tr>
 <tr class="odd">
 <td align="left">mail directory</td>
@@ -209,11 +189,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 </tbody>
 </table>
 
-Tester votre utilisateur grâce à la commande : :
+Tester votre utilisateur grâce à la commande :
 
     doveadm user adresse@votredomaine.com
 
-Ce qui devrait afficher : :
+Ce qui devrait afficher :
 
     field   value
     uid     5000
@@ -221,16 +201,16 @@ Ce qui devrait afficher : :
     home    /var/vmail/votredomaine.com
     mail    maildir:~/adresse@votredomaine.com
 
-Démarrer dovecot : :
+Démarrer dovecot :
 
     /etc/init.d/dovecot start
 
-Tester la connexion : :
+Tester la connexion :
 
     openssl s_client -connect ip.v4.du.server:993
 
 Si vous avez "\* OK \[CAPABILITY …\] Dovecot ready. Vous pouvez vous
-authentifier : :
+authentifier :
 
     . LOGIN adresse@votredomaine.com motdepasseenclair
 
@@ -239,12 +219,12 @@ C'est fini pour dovecot.
 Configuration de sasl
 ---------------------
 
-Editer /etc/default/saslauthd : :
+Editer /etc/default/saslauthd :
 
     START=yes
     OPTIONS="-m /var/spool/postfix/var/run/saslauthd"
 
-Puis lancer : :
+Puis lancer :
 
     /etc/init.d/saslauthd start
 
@@ -253,7 +233,7 @@ C'est fini pour sasl
 Configuration de postfix
 ------------------------
 
-Editer /etc/postfix/main.cf : ::
+Editer /etc/postfix/main.cf ::
 
     smtpd_banner = $myhostname ESMTP $mail_name
     smtpd_tls_cert_file=/etc/dovecot/ssl/certificat.pem
@@ -287,28 +267,28 @@ Editer /etc/postfix/main.cf : ::
     smtpd_tls_received_header = yes
     tls_random_source = dev:/dev/urandom
 
-Créer /etc/postfix/virtual\_alias : :
+Créer /etc/postfix/virtual\_alias :
 
     touch /etc/postfix/virtual_alias
 
-Pour créer un alias, éditer /etc/postfix/virtual\_alias : :
+Pour créer un alias, éditer /etc/postfix/virtual\_alias :
 
     alias@votredomaine.com          destination@votredomaine.com
 
-Créer /etc/postfix/virtual\_domains : :
+Créer /etc/postfix/virtual\_domains :
 
     touch /etc/postfix/virtual_domains
 
-Pour gérer vos domaines, éditer /etc/postfix/virtual\_domains : :
+Pour gérer vos domaines, éditer /etc/postfix/virtual\_domains :
 
     votredomaine.com                OK
     votredeuxiemedomaine.com        OK
 
-Créer /etc/postfix/virtual\_mailbox : :
+Créer /etc/postfix/virtual\_mailbox :
 
     touch /etc/postfix/virtual_mailbox
 
-Pour créer un comte mail, éditer /etc/postfix/virtual\_mailbox : :
+Pour créer un comte mail, éditer /etc/postfix/virtual\_mailbox :
 
     email@votredomaine.com          votredomaine.com/email@votredomaine.com/
     linus@torvald.com               torvald.com/linus@torvald.com/
@@ -317,13 +297,13 @@ N'oubliez pas lors de la création de nouveau comptes mail d'éditer
 /etc/dovecot/users ;-)
 
 Maintenant il faut dire a postfix que nous avons modifier nos fichiers
-virtuels : :
+virtuels :
 
     postmap /etc/postfix/virtual_alias
     postmap /etc/postfix/virtual_domains
     postmap /etc/postfix/virtual_mailbox
 
-Editer /etc/postfix/master.cf : :
+Editer /etc/postfix/master.cf :
 
     smtp    inet    n   -   -   -   -   smtpd   -v
      -o smtpd_tls_cert_file=/etc/dovecot/ssl/certificat.pem
@@ -339,7 +319,7 @@ Editer /etc/postfix/master.cf : :
      -o smtpd_tls_cert_file=/etc/dovecot/ssl/certificat.pem
      -o smtpd_tls_key_file=/etc/dovecot/ssl/certificat.key
 
-Puis redemarrer postfix : :
+Puis redemarrer postfix :
 
     /etc/init.d/postfix restart
 
@@ -351,19 +331,19 @@ votre serveur sur le site <http://www.mail-tester.com>
 Installation d'un webmail rainloop
 ----------------------------------
 
-Créer un dossier pour votre webmail : :
+Créer un dossier pour votre webmail :
 
     mkdir -p /var/www/webmail/public && cd /var/www/webmail/public
 
-Télécharger rainloop : :
+Télécharger rainloop :
 
     wget http://repository.rainloop.net/v2/webmail/rainloop-community-latest.zip
 
-Décompresser rainloop : :
+Décompresser rainloop :
 
     unzip rainloop*.zip && rm -rf rainloop*.zip
 
-Modifier les droits : :
+Modifier les droits :
 
     chown -R www-data:www-data /var/www/webmail
     find . -type f -exec chmod 644 {} \;
@@ -401,7 +381,7 @@ Créer un vhost pour apache dans
         CustomLog ${APACHE_LOG_DIR}/webmail_access.log combined
     </VirtualHost>
 
-N'oubliez pas de redémarrer apache : :
+N'oubliez pas de redémarrer apache :
 
     /etc/init.d/apache2 restart
 
@@ -435,25 +415,13 @@ domain
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">============</td>
-<td align="left">===========================</td>
-</tr>
 <tr class="even">
 <td align="left">IMAP</td>
 <td align="left"></td>
 </tr>
-<tr class="odd">
-<td align="left">============</td>
-<td align="left">===========================</td>
-</tr>
 <tr class="even">
 <td align="left">Server</td>
 <td align="left">mail.domain.com</td>
-</tr>
-<tr class="odd">
-<td align="left">------------</td>
-<td align="left">---------------------------</td>
 </tr>
 <tr class="even">
 <td align="left">Secure</td>
@@ -473,10 +441,6 @@ domain
 <tr class="odd">
 <td align="left">Server</td>
 <td align="left">mail.domain.com</td>
-</tr>
-<tr class="even">
-<td align="left">------------</td>
-<td align="left">---------------------------</td>
 </tr>
 <tr class="odd">
 <td align="left">Secure</td>
