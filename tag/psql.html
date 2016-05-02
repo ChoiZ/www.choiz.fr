@@ -61,17 +61,17 @@ Tags :
       <a href="//www.choiz.fr/tag/postgresql.html">postgreSQL</a>,      <a href="//www.choiz.fr/tag/pg_dump.html">pg\_dump</a>,      <a href="//www.choiz.fr/tag/psql.html">psql</a>,      <a href="//www.choiz.fr/tag/import.html">import</a>,      <a href="//www.choiz.fr/tag/export.html">export</a>,      <a href="//www.choiz.fr/tag/dump.html">dump</a>,      <a href="//www.choiz.fr/tag/sql.html">sql</a>    </p>
   </header>
   <div>
-      <p>Pour exporter une table spécifique d'une base : :</p>
+      <p>Pour exporter une table spécifique d'une base :</p>
 <div class="highlight"><pre>pg_dump *mabase* --table=*matable* &gt; *dump_base_table*.sql
 </pre></div>
 
 
-<p>Pour exporter une base : :</p>
+<p>Pour exporter une base :</p>
 <div class="highlight"><pre>pg_dump *mabase* &gt; *dump_base*.sql
 </pre></div>
 
 
-<p>Pour importer un dump dans une base : :</p>
+<p>Pour importer un dump dans une base :</p>
 <div class="highlight"><pre>psql *base* &lt; *dump_base_table*.sql
 psql *base* &lt; *dump_base*.sql
 </pre></div>

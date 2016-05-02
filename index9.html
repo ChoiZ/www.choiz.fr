@@ -65,13 +65,13 @@ Tags :
 fonctionne pas avec l'attribut "onclick"…</p>
 <p>Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.</p>
-<p>Remplacer donc : :</p>
+<p>Remplacer donc :</p>
 <div class="highlight"><pre>var mavar = &#39;fonctionAffichage();&#39;;
 $(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
 </pre></div>
 
 
-<p>Par : :</p>
+<p>Par :</p>
 <div class="highlight"><pre><span class="kd">var</span> <span class="nx">mavar</span> <span class="o">=</span> <span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span>
 <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">&#39;onclick&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nb">eval</span><span class="p">(</span><span class="nx">mavar</span><span class="p">);</span> <span class="p">});</span>
 </pre></div>
@@ -88,24 +88,23 @@ Tags :
   </header>
   <div>
       <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
-informations dans vos projets il suffit de taper cette commande : :</p>
+informations dans vos projets il suffit de taper cette commande :</p>
 <div class="highlight"><pre>svn propset svn:keywords &quot;Id&quot; index.php
 </pre></div>
 
 
 <p>Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php</p>
-<p>Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :
-:</p>
+<p>Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :</p>
 <div class="highlight"><pre><span class="p">$</span><span class="nv">Id</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
 </pre></div>
 
 
-<p>Une fois le fichier versionné vous obtiendrez : :</p>
+<p>Une fois le fichier versionné vous obtiendrez :</p>
 <div class="highlight"><pre><span class="p">$</span><span class="nv">Id</span><span class="x">: ajax\_modif.php 481 2010-10-25 12:02:50Z choiz </span><span class="p">$</span><span class="x"></span>
 </pre></div>
 
 
-<p>D'autres keywords sont disponible tel que : :</p>
+<p>D'autres keywords sont disponible tel que :</p>
 <div class="highlight"><pre><span class="p">$</span><span class="nv">Revision</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
 <span class="p">$</span><span class="nv">Date</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
 <span class="p">$</span><span class="nv">Author</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
@@ -115,12 +114,12 @@ informations dans vos projets il suffit de taper cette commande : :</p>
 
 <p>Vous pouvez les ajouter les uns à la suite des autres par exemple pour
 notre fichier index.php je veux ajouter les 4 keywords précédents grâce
-à la commande : :</p>
+à la commande :</p>
 <div class="highlight"><pre>svn propset svn:keywords &quot;Revision Date Author URL&quot; index.php
 </pre></div>
 
 
-<p>Ce qui affichera : :</p>
+<p>Ce qui affichera :</p>
 <div class="highlight"><pre><span class="p">$</span><span class="nv">Revision</span><span class="x">: 481 </span><span class="p">$</span><span class="x"></span>
 <span class="p">$</span><span class="nv">Date</span><span class="x">: 2010-10-25 14:02:50 +0200 (lun., 25 oct. 2010) </span><span class="p">$</span><span class="x"></span>
 <span class="p">$</span><span class="nv">Author</span><span class="x">: choiz </span><span class="p">$</span><span class="x"></span>

@@ -34,12 +34,12 @@ github que je tape directement l'url "http://choiz.github.io".&lt;/li&gt;
 &lt;span class="nt"&gt;&amp;lt;/IfModule&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 28 Apr 2016 22:17:11 +0200</pubDate><guid>tag:www.choiz.fr,2016-04-28:2016-04-28-passage-en-ssl-du-blog.html</guid><category>blog ssl https github page</category></item><item><title>Mise à jour d'un kernel gentoo</title><link>//www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html</link><description>&lt;p&gt;Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
 suivre pour le mettre à jour vers la version : 4.3.0.&lt;/p&gt;
-&lt;p&gt;Je liste les différents noyaux gentoo disponibles : :&lt;/p&gt;
+&lt;p&gt;Je liste les différents noyaux gentoo disponibles :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;eix sys-kernel/gentoo-sources
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Je télécharge le noyau 4.3.0 : :&lt;/p&gt;
+&lt;p&gt;Je télécharge le noyau 4.3.0 :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;emerge -a =sys-kernel/gentoo-sources-4.3.0
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -47,7 +47,7 @@ suivre pour le mettre à jour vers la version : 4.3.0.&lt;/p&gt;
 &lt;p&gt;Une fois téléchargé, il faut modifier le lien symbolique /usr/src/linux
 grâce à eselect.&lt;/p&gt;
 &lt;p&gt;J'affiche la liste des noyaux (celui actuellement selectionné est suivi
-d'une étoile) : :&lt;/p&gt;
+d'une étoile) :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;eselect kernel list
 
 [1]     linux-4.2.0-gentoo *
@@ -55,7 +55,7 @@ d'une étoile) : :&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Pour selectionner notre noyau 4.3.0 il faut utiliser : :&lt;/p&gt;
+&lt;p&gt;Pour selectionner notre noyau 4.3.0 il faut utiliser :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;eselect kernel set 2
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -68,8 +68,7 @@ compilation) :&lt;/p&gt;
 
 
 &lt;p&gt;Puis &lt;a href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html"&gt;compiler votre
-kernel&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 21 Nov 2015 13:50:44 +0100</pubDate><guid>tag:www.choiz.fr,2015-11-21:2015-11-21-mise-a-jour-d-un-kernel-gentoo.html</guid><category>gentoo</category><category>kernel</category><category>upgrade</category><category>noyaux</category><category>linux</category></item><item><title>Configurer un serveur mail</title><link>//www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html</link><description>&lt;p&gt;Installation d'un serveur mail complet et à jour sous debian jessie
-(8.2).&lt;/p&gt;
+kernel&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 21 Nov 2015 13:50:44 +0100</pubDate><guid>tag:www.choiz.fr,2015-11-21:2015-11-21-mise-a-jour-d-un-kernel-gentoo.html</guid><category>gentoo</category><category>kernel</category><category>upgrade</category><category>noyaux</category><category>linux</category></item><item><title>Configurer un serveur mail</title><link>//www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html</link><description>&lt;p&gt;Installation d'un serveur mail complet et à jour sous debian jessie (8.2).&lt;/p&gt;
 &lt;h2&gt;Configuration des DNS&lt;/h2&gt;
 &lt;p&gt;Pour commencer nous allons créer des entrées DNS.&lt;/p&gt;
 &lt;p&gt;Nous créons un MX pour les mails avec une priorité de 1, un sous domaine
@@ -536,30 +535,30 @@ avec votre login et mot de passe.&lt;/p&gt;</description><dc:creator xmlns:dc="h
 pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
 est préférable d'utiliser un navigateur tel que Firefox.&lt;/p&gt;
 &lt;p&gt;Voici la commande pour voir le navigateur par défaut pour les url
-utilisants le protocole "http" : :&lt;/p&gt;
+utilisants le protocole "http" :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;xdg-mime query default x-scheme-handler/http
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Et voici la commande pour le "https" : :&lt;/p&gt;
+&lt;p&gt;Et voici la commande pour le "https" :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;xdg-mime query default x-scheme-handler/https
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Pour changer le navigateur par défaut par Firefox il suffit d'executer
-ses deux commandes : :&lt;/p&gt;
+ses deux commandes :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;xdg-mime default firefox.desktop x-scheme-handler/http
 xdg-mime default firefox.desktop x-scheme-handler/https
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 25 Oct 2015 14:02:17 +0100</pubDate><guid>tag:www.choiz.fr,2015-10-25:2015-10-25-gentoo-navigateur-web-par-defaut.html</guid><category>gentoo</category><category>web</category><category>browser</category><category>default</category><category>navigateur</category></item><item><title>Vagrant faire un réseau privé</title><link>//www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html</link><description>&lt;p&gt;J'utilise plusieurs machines virtuelles avec vagrant, une avec un
 backoffice et une avec une API.&lt;/p&gt;
 &lt;p&gt;J'ai donc du faire un réseau privé dans vagrant pour que le BO
 communique avec l'API.&lt;/p&gt;
-&lt;p&gt;Il suffit de modifier la configuration de la vm #1 et d'ajouter : :&lt;/p&gt;
+&lt;p&gt;Il suffit de modifier la configuration de la vm #1 et d'ajouter :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;config.vm.network &amp;quot;private_network&amp;quot;, ip: &amp;quot;192.168.10.1&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Et dans la configuration de la vm #2 d'ajouter : :&lt;/p&gt;
+&lt;p&gt;Et dans la configuration de la vm #2 d'ajouter :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;config.vm.network &amp;quot;private_network&amp;quot;, ip: &amp;quot;192.168.10.2&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -567,7 +566,7 @@ communique avec l'API.&lt;/p&gt;
 &lt;p&gt;Votre vm #1 peut (suite au redémarrage des deux vm vagrant) communiquer
 avec votre vm #2 directement avec l'ip 192.168.10.2.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 13 Oct 2015 18:21:02 +0200</pubDate><guid>tag:www.choiz.fr,2015-10-13:2015-10-13-vagrant-faire-un-reseau-prive.html</guid><category>vagrant</category><category>réseau</category><category>privé</category><category>private</category><category>network</category></item><item><title>Des commentaires efficaces</title><link>//www.choiz.fr/2015-10-12-des-commentaires-efficaces.html</link><description>&lt;p&gt;Dans mes fichiers de test j'utilise souvent des commentaires pour tester
 qu'une fonctionnalité de code.&lt;/p&gt;
-&lt;p&gt;Par exemple pour tester une api : :&lt;/p&gt;
+&lt;p&gt;Par exemple pour tester une api :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="x"&gt;// Obtenir le livre &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="x"&gt;1&lt;/span&gt;
 &lt;span class="x"&gt;api_get(&amp;#39;books/1&amp;#39;);&lt;/span&gt;
 
@@ -577,25 +576,25 @@ qu'une fonctionnalité de code.&lt;/p&gt;
 
 
 &lt;p&gt;Je test généralement chaque élément séparement.&lt;/p&gt;
-&lt;p&gt;Pour tester la première portion de mon code : :&lt;/p&gt;
+&lt;p&gt;Pour tester la première portion de mon code :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="x"&gt;//* Obtenir le livre &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="x"&gt;1&lt;/span&gt;
 &lt;span class="x"&gt;api_get(&amp;#39;books/1&amp;#39;);&lt;/span&gt;
-&lt;span class="x"&gt;//\*/&lt;/span&gt;
+&lt;span class="x"&gt;//*/&lt;/span&gt;
 
 &lt;span class="x"&gt;/* Ajouter un livre&lt;/span&gt;
 &lt;span class="x"&gt;api_add(&amp;#39;books&amp;#39;, &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;datas&lt;/span&gt;&lt;span class="x"&gt;);&lt;/span&gt;
-&lt;span class="x"&gt;//\*/&lt;/span&gt;
+&lt;span class="x"&gt;//*/&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Pour tester la seconde portion de mon code : :&lt;/p&gt;
+&lt;p&gt;Pour tester la seconde portion de mon code :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cm"&gt;/* Obtenir le livre #1&lt;/span&gt;
 &lt;span class="cm"&gt;api_get(&amp;#39;books/1&amp;#39;);&lt;/span&gt;
-&lt;span class="cm"&gt;//\*/&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="cm"&gt;//*/&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
 &lt;span class="o"&gt;//*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Ajouter&lt;span class="w"&gt; &lt;/span&gt;un&lt;span class="w"&gt; &lt;/span&gt;livre&lt;span class="w"&gt;&lt;/span&gt;
 api_add&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;books&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;datas&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="err"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="o"&gt;//\*/&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="o"&gt;//*/&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -603,12 +602,12 @@ api_add&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;books&
 pour commenter ou non tout le bloc.&lt;/p&gt;
 &lt;p&gt;Ce n'est pas forcément très lisible donc je fais ça uniquement pour mes
 tests.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 12 Oct 2015 13:44:15 +0200</pubDate><guid>tag:www.choiz.fr,2015-10-12:2015-10-12-des-commentaires-efficaces.html</guid><category>commentaire</category><category>code</category><category>efficace</category></item><item><title>Mettre à jour Gentoo</title><link>//www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html</link><description>&lt;p&gt;Pour mettre à jour Gentoo j'utilise différentes commandes.&lt;/p&gt;
-&lt;p&gt;Dans un premier temps je fais la mise à jour d'eix : :&lt;/p&gt;
+&lt;p&gt;Dans un premier temps je fais la mise à jour d'eix :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;eix-sync
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ensuite : :&lt;/p&gt;
+&lt;p&gt;Ensuite :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;emerge -pvuDN world
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -621,9 +620,9 @@ updating (to another version) etc…) -v ou --verbose, mode verbeux. -u ou
 -N ou --newuse, met à jour les programmes dont le "USE" a été modifié
 depuis son installation.&lt;/p&gt;
 &lt;p&gt;Une fois la liste des programmes et ses modifications vérifiée nous
-pouvons lancer la mise à jour : :&lt;/p&gt;
+pouvons lancer la mise à jour :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;emerge -vuDN world
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 27 Sep 2015 14:04:13 +0200</pubDate><guid>tag:www.choiz.fr,2015-09-27:2015-09-27-mettre-a-jour-gentoo.html</guid><category>update</category><category>mise à jour</category><category>gentoo</category><category>eix</category><category>emerge</category></item><item><title>Compilation Kernel Gentoo</title><link>//www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html</link><description>&lt;p&gt;Pour compiler le kernel sous gentoo : :&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 27 Sep 2015 14:04:13 +0200</pubDate><guid>tag:www.choiz.fr,2015-09-27:2015-09-27-mettre-a-jour-gentoo.html</guid><category>update</category><category>mise à jour</category><category>gentoo</category><category>eix</category><category>emerge</category></item><item><title>Compilation Kernel Gentoo</title><link>//www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html</link><description>&lt;p&gt;Pour compiler le kernel sous gentoo :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;cd /usr/src/linux
 
 make menuconfig
@@ -642,7 +641,7 @@ make install
 
 &lt;p&gt;Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi
 que le nombre de compilation.&lt;/p&gt;
-&lt;p&gt;Il faut maintenant redémarrer la machine : :&lt;/p&gt;
+&lt;p&gt;Il faut maintenant redémarrer la machine :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;reboot
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -653,12 +652,12 @@ syntaxe…&lt;/p&gt;
 &lt;h2&gt;tar.gz&lt;/h2&gt;
 &lt;p&gt;Pour les fichiers &lt;strong&gt;tar.gz&lt;/strong&gt; j'arrive parfaitement à compresser ou
 décompresser ce format exemple :&lt;/p&gt;
-&lt;p&gt;On compresse avec : :&lt;/p&gt;
+&lt;p&gt;On compresse avec :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;tar -cvzf archive.tar.gz dossier_a_compresser/
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;On décompresse avec : :&lt;/p&gt;
+&lt;p&gt;On décompresse avec :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;tar -xvzf archive.tar.gz
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -670,22 +669,22 @@ verbeux. -z pour le "gzip" d'ou le ".gz". -f pour spécifier le fichier.&lt;/p&g
 &lt;p&gt;Pour les &lt;strong&gt;tar.bz2&lt;/strong&gt; je ne sais JAMAIS qu'il faut remplacer "z" de gizip
 par "j" de Bzip… (la lettre "b" étant sans doute utilisé avant que le
 bzip n'apparaisse). L'alternative est d'utiliser "--bzip"&lt;/p&gt;
-&lt;p&gt;On compresse avec : :&lt;/p&gt;
+&lt;p&gt;On compresse avec :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;tar -cvjf archive.tar.bz2 dossier_a_compresser/
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ou : :&lt;/p&gt;
+&lt;p&gt;Ou :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;tar --bzip2 -cvf archive.tar.bz2 dossier_a_compresser/
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;On décompresse avec : :&lt;/p&gt;
+&lt;p&gt;On décompresse avec :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;tar -xvjf archive.tar.bz2
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ou : :&lt;/p&gt;
+&lt;p&gt;Ou :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;tar --bzip2 -xvf archive.tar.bz2
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -693,22 +692,22 @@ bzip n'apparaisse). L'alternative est d'utiliser "--bzip"&lt;/p&gt;
 &lt;h2&gt;tar.xz&lt;/h2&gt;
 &lt;p&gt;Pour ce qui est de Lzma ou le &lt;strong&gt;tar.xz&lt;/strong&gt; c'est un "J" majuscule cette
 fois ou d'utiliser "--xz".&lt;/p&gt;
-&lt;p&gt;On compresse avec : :&lt;/p&gt;
+&lt;p&gt;On compresse avec :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;tar -cvJf archive.tar.xz dossier_a_compresser/
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ou : :&lt;/p&gt;
+&lt;p&gt;Ou :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;tar --xz -cvf archive.tar.xz dossier_a_compresser/
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;On décompresse avec : :&lt;/p&gt;
+&lt;p&gt;On décompresse avec :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;tar -xvJf archive.tar.xz
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ou : :&lt;/p&gt;
+&lt;p&gt;Ou :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;tar --xz -xvf archive.tar.xz
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 30 Aug 2015 11:47:00 +0200</pubDate><guid>tag:www.choiz.fr,2015-08-30:2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html</guid><category>tar.gz</category><category>tar.bz2</category><category>tar.xz</category><category>tar</category><category>gz</category><category>gzip</category><category>bz2</category><category>xz</category><category>lzma</category></item><item><title>Suppression des branches distantes inexistantes</title><link>//www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html</link><description>&lt;p&gt;Lors d'un developpement j'ai créé une branche "add_namespace" qui m'a
 permis d'ajouté des namespaces a différents fichiers PHP.&lt;/p&gt;
@@ -762,7 +761,7 @@ d'action spécifique à ma connaissance ;-)&lt;/p&gt;</description><dc:creator x
 &lt;li&gt;un remote “origin” se trouve sur un serveur perso.&lt;/li&gt;
 &lt;li&gt;un remote “github” qui lui est sur github.com.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Quand je vais sur le master il m’arrive d’avoir ce message : :&lt;/p&gt;
+&lt;p&gt;Quand je vais sur le master il m’arrive d’avoir ce message :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&amp;quot;your branch is up-to-date with “github/master”.&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -772,14 +771,14 @@ github/master.&lt;/p&gt;
 &lt;p&gt;La solution que j’ai trouvé est la suivante :&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;supprimer ma branche master locale : :&lt;/p&gt;
+&lt;p&gt;supprimer ma branche master locale :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git branch -d master
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;récupèrer mon master depuis le remote origin : :&lt;/p&gt;
+&lt;p&gt;récupèrer mon master depuis le remote origin :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git checkout -t -b master origin/master
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -797,14 +796,14 @@ vagrant je me rend compte que nous sommes à la version 1.7.3.&lt;/p&gt;
 &lt;p&gt;J’ai donc trouvé un overlay avec vagrant-bin version 1.7.3 :
 &lt;a href="http://gpo.zugaina.org/app-emulation/vagrant-bin"&gt;http://gpo.zugaina.org/app-emulation/vagrant-bin&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Pour utiliser cette overlay nous avons besoin de layman.&lt;/p&gt;
-&lt;p&gt;Installation : :&lt;/p&gt;
+&lt;p&gt;Installation :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;emerge -a layman
 
 echo &amp;quot;source /usr/portage/local/layman/make.conf&amp;quot; &amp;gt;&amp;gt; /etc/make.conf
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Pour afficher tous les overlays disponible : :&lt;/p&gt;
+&lt;p&gt;Pour afficher tous les overlays disponible :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;layman -L
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -816,7 +815,7 @@ vagrant-bin-1.7.3) :&lt;/p&gt;
 
 
 &lt;p&gt;Maintenant si on recherche dans eix “vagrant” rien n’a changé.&lt;/p&gt;
-&lt;p&gt;Il faut mettre à jour eix : :&lt;/p&gt;
+&lt;p&gt;Il faut mettre à jour eix :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;eix-update
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -848,31 +847,29 @@ moindre…&lt;/p&gt;
 ancien laptop, en 45mn c'était fait avec d'autres grosses applications
 tel que gimp ou darktable…&lt;/p&gt;
 &lt;p&gt;Pour l'instant rien a redire sur cette machine.&lt;/p&gt;
-&lt;p&gt;Voici les modules a activer dans le noyau pour le réseau et le son : :&lt;/p&gt;
+&lt;p&gt;Voici les modules a activer dans le noyau pour le réseau et le son :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;Realtek 8169 gigabit ethernet support
 Build Analog Device HD-audio codec support
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 18 Jul 2015 12:21:00 +0200</pubDate><guid>tag:www.choiz.fr,2015-07-18:2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html</guid><category>clevo</category><category>clevo w650</category><category>kernel</category><category>ethernet</category><category>realtek</category><category>audio</category><category>hdaudio</category><category>achat</category><category>i7 4910MQ</category><category>mSata</category></item><item><title>Comment récupérer le contenu d’un fichier d’une autre branche avec GIT ?</title><link>//www.choiz.fr/2015-03-20-comment-r%C3%A9cup%C3%A9rer-le-contenu-dun-fichier-dune-autre-branche.html</link><description>&lt;p&gt;Il suffit d’utiliser git show.&lt;/p&gt;
-&lt;p&gt;La commande : :&lt;/p&gt;
+&lt;p&gt;La commande :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git show branch_name:filename
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Exemple : :&lt;/p&gt;
+&lt;p&gt;Exemple :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git show reset_password:/templates/reset_password.tmpl
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 20 Mar 2015 15:27:23 +0100</pubDate><guid>tag:www.choiz.fr,2015-03-20:2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune-autre-branche.html</guid></item><item><title>Initialiser des sous-modules en cascade dans git</title><link>//www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html</link><description>&lt;p&gt;Pour initialiser les sous-modules dans git j'utilise la commande
-suivante : :&lt;/p&gt;
+suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git submodule init
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;dl&gt;
-&lt;dt&gt;Ensuite je dois faire un update des sous-modules pour charger le contenu&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;:&lt;/p&gt;
-&lt;p&gt;git submodule update&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;p&gt;Pour faire les deux en même temps (init + update) vous pouvez faire : :&lt;/p&gt;
+&lt;p&gt;Ensuite je dois faire un update des sous-modules pour charger le contenu :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git submodule update
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pour faire les deux en même temps (init + update) vous pouvez faire :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git submodule update --init
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -883,7 +880,7 @@ sous-modules. Exemple dans mon dépot
 &lt;a href="https://www.github.com/ChoiZ/vim-config.git"&gt;vim&lt;/a&gt; et dedans des
 sous-modules avec les plugins de vim. Pour initialiser, mettre à jour et
 le tout en cascade (dans tous les dossiers et sous-dossiers) il faut
-faire : :&lt;/p&gt;
+faire :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git submodule update --init --recursive
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 25 Jan 2015 11:17:00 +0100</pubDate><guid>tag:www.choiz.fr,2015-01-25:2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html</guid><category>git</category><category>submodule</category><category>update</category><category>init</category><category>recursive</category></item><item><title>Êtes-vous à l'heure ? (Et votre serveur ?)</title><link>//www.choiz.fr/2015-01-24-%C3%AAtes-vous-%C3%A0-lheure-et-votre-serveur.html</link><description>&lt;p&gt;Je suis à l'heure, et mes serveurs le sont également (normalement).&lt;/p&gt;
 &lt;p&gt;Normalement oui, mais le serveur NTP que j'utilisais ne répond plus… Mes
@@ -893,7 +890,7 @@ l'autre !&lt;/p&gt;
 (ntp.unice.fr).&lt;/p&gt;
 &lt;p&gt;J'ai donc installé ntp grâce aux paquets debian, et maintenant mes
 serveurs sont à l'heure.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 24 Jan 2015 16:54:00 +0100</pubDate><guid>tag:www.choiz.fr,2015-01-24:2015-01-24-êtes-vous-à-lheure-et-votre-serveur.html</guid><category>ntpdate</category><category>debian</category><category>ntp</category><category>time</category></item><item><title>Recherche dans le code source avec git</title><link>//www.choiz.fr/2014-12-08-recherche-dans-le-code-source-avec-git.html</link><description>&lt;p&gt;Pour rechercher directement dans le code source une modification
-précise, j'utilise la commande suivante : :&lt;/p&gt;
+précise, j'utilise la commande suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git log -p -S &amp;#39;display&amp;#39;
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 08 Dec 2014 18:22:11 +0100</pubDate><guid>tag:www.choiz.fr,2014-12-08:2014-12-08-recherche-dans-le-code-source-avec-git.html</guid><category>git</category><category>search</category><category>source</category><category>code</category><category>log</category></item><item><title>Écriture d'un rapport de bug</title><link>//www.choiz.fr/2014-11-08-%C3%A9criture-dun-rapport-de-bug.html</link><description>&lt;p&gt;Étant développeur, j'ai très souvent des rapports de bug, qui peuvent
 être précis, ou moins suivant la personne.&lt;/p&gt;
@@ -915,7 +912,7 @@ donc du temps et il ne vous perturbe pas dans votre travail (donc vous
 en gagnez aussi).&lt;/p&gt;
 &lt;p&gt;Je vous invite également à lire &lt;a href="http://www.chiark.greenend.org.uk/~sgtatham/bugs-fr.html"&gt;cet
 article&lt;/a&gt; pour
-écrire un bon rapport de bug.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 08 Nov 2014 16:55:00 +0100</pubDate><guid>tag:www.choiz.fr,2014-11-08:2014-11-08-écriture-dun-rapport-de-bug.html</guid><category>Écriture rapport de bug</category><category>Rapport de bug</category><category>bug report</category><category>bug</category></item><item><title>Faire un patch de "x" commit(s) avec git</title><link>//www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html</link><description>&lt;p&gt;Voici mon historique des commits : :&lt;/p&gt;
+écrire un bon rapport de bug.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 08 Nov 2014 16:55:00 +0100</pubDate><guid>tag:www.choiz.fr,2014-11-08:2014-11-08-écriture-dun-rapport-de-bug.html</guid><category>Écriture rapport de bug</category><category>Rapport de bug</category><category>bug report</category><category>bug</category></item><item><title>Faire un patch de "x" commit(s) avec git</title><link>//www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html</link><description>&lt;p&gt;Voici mon historique des commits :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;c0004 -- dernier commit
 c0003 -- avant dernier commit
 c0002 -- second commit
@@ -923,7 +920,7 @@ c0001 -- premier commit
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Je veux faire un patch du commit c0001 et c0002 je dois donc faire : :&lt;/p&gt;
+&lt;p&gt;Je veux faire un patch du commit c0001 et c0002 je dois donc faire :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git format-patch -2 c0002 --stdout &amp;gt; mon.patch
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -935,27 +932,32 @@ c0001 -- premier commit
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Puis mettre à jour les paquets : :&lt;/p&gt;
+&lt;p&gt;Puis mettre à jour les paquets :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;apt-get update
 apt-get upgrade
 apt-get install -f
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;dl&gt;
-&lt;dt&gt;Installer Skype en n'oubliant pas de remplacer "x" par la bonne version&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;:&lt;/p&gt;
-&lt;p&gt;dpkg -i skype-debian_x_i386.deb&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 21 Mar 2014 01:32:18 +0100</pubDate><guid>tag:www.choiz.fr,2014-03-21:2014-03-21-installation-de-skype-64-sur-debian.html</guid><category>Skype</category><category>Debian</category><category>Installation de Skype</category><category>Skype Debian 64</category><category>Debian 64</category></item><item><title>Firebug champs mot de passe présents sur une page non sécurisée</title><link>//www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-pr%C3%A9sents-sur-une-page.html</link><description>&lt;p&gt;Dans mon firebug des "warnings" s'affichent : :&lt;/p&gt;
+&lt;p&gt;Installer Skype en n'oubliant pas de remplacer "x" par la bonne version :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;dpkg -i skype-debian_x_i386.deb
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 21 Mar 2014 01:32:18 +0100</pubDate><guid>tag:www.choiz.fr,2014-03-21:2014-03-21-installation-de-skype-64-sur-debian.html</guid><category>Skype</category><category>Debian</category><category>Installation de Skype</category><category>Skype Debian 64</category><category>Debian 64</category></item><item><title>Installation de Firefox sur Debian</title><link>//www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html</link><description>&lt;p&gt;Télécharger la dernière version de Firefox sur &lt;a href="http://www.mozilla.org/"&gt;le site de
+mozilla&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Décompresser l'archive dans :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;/opt/firefox/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Créer un lien symbolique avec :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;ls -sf /opt/firefox/firefox /usr/bin/firefox
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 21 Mar 2014 01:14:41 +0100</pubDate><guid>tag:www.choiz.fr,2014-03-21:2014-03-21-installation-de-firefox-sur-debian.html</guid><category>Firefox</category><category>Mozilla</category><category>Debian</category><category>Installation de Firefox</category><category>Firefox sur Debian</category></item><item><title>Firebug champs mot de passe présents sur une page non sécurisée</title><link>//www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-pr%C3%A9sents-sur-une-page.html</link><description>&lt;p&gt;Dans mon firebug des "warnings" s'affichent :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;Champs mot de passe présents sur une page non sécurisée (http://). Cela
 représente un risque de sécurité permettant le vol d&amp;#39;identifiants de
 connexion.
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ainsi que : :&lt;/p&gt;
+&lt;p&gt;Ainsi que :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;Champs mot de passe présents dans un formulaire possédant une action de
 formulaire non sécurisée (http://). Cela représente un risque de sécurité
 permettant le vol d&amp;#39;identifiants de connexion.
@@ -971,12 +973,12 @@ page qui n'est pas en HTTPS.&lt;/p&gt;
 &lt;a href="https://www.mon-formulaire.fr"&gt;https://www.mon-formulaire.fr&lt;/a&gt; et dans l'action de votre formulaire
 avoir : &lt;a href="http://www.mon-formulaire.fr"&gt;http://www.mon-formulaire.fr&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Dans ce cas l'affichage du formulaire est sécurisé, mais l'envoi des
-données ne l'est pas vu que l'action est en http.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 18 Mar 2014 10:11:00 +0100</pubDate><guid>tag:www.choiz.fr,2014-03-18:2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html</guid><category>firebug</category><category>http</category><category>https</category><category>formulaire</category><category>warning</category><category>mot de passe</category><category>password</category><category>action</category><category>form</category></item><item><title>imapfilter ou comment filtrer ses mails facilement</title><link>//www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html</link><description>&lt;p&gt;Installer imapfilter via apt par exemple : :&lt;/p&gt;
+données ne l'est pas vu que l'action est en http.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 18 Mar 2014 10:11:00 +0100</pubDate><guid>tag:www.choiz.fr,2014-03-18:2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html</guid><category>firebug</category><category>http</category><category>https</category><category>formulaire</category><category>warning</category><category>mot de passe</category><category>password</category><category>action</category><category>form</category></item><item><title>imapfilter ou comment filtrer ses mails facilement</title><link>//www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html</link><description>&lt;p&gt;Installer imapfilter via apt par exemple :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;apt-get install imapfilter
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Se rendre dans le dossier de configuration : :&lt;/p&gt;
+&lt;p&gt;Se rendre dans le dossier de configuration :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;cd ~/.imapfilter
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -988,7 +990,7 @@ données ne l'est pas vu que l'action est en http.&lt;/p&gt;</description><dc:cr
 
 &lt;p&gt;Maintenant je décide de faire un fichier de configuration par boite
 email.&lt;/p&gt;
-&lt;p&gt;Ici gmail : :&lt;/p&gt;
+&lt;p&gt;Ici gmail :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;cat &amp;gt; gmail.lua &amp;lt;&amp;lt;EOF
 gmail = IMAP {
     server = &amp;#39;imap.gmail.com&amp;#39;,
@@ -1000,7 +1002,7 @@ EOF
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Et un pour Yahoo : :&lt;/p&gt;
+&lt;p&gt;Et un pour Yahoo :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;cat &amp;gt; yahoo.lua &amp;lt;&amp;lt;EOF
 yahoo = IMAP {
     server = &amp;#39;imap.yahoo.com&amp;#39;,
@@ -1012,7 +1014,7 @@ EOF
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ajouter nos boites dans le fichier de config avec des filtres : :&lt;/p&gt;
+&lt;p&gt;Ajouter nos boites dans le fichier de config avec des filtres :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;if_dir = os.getenv(&amp;#39;HOME&amp;#39;) .. &amp;#39;/.imapfilter/&amp;#39;
 -- on inclus nos comptes imap…
 dofile(if_dir .. &amp;quot;gmail.lua&amp;quot;)
@@ -1029,7 +1031,7 @@ del_read_yahoo:delete_messages()
 
 
 &lt;p&gt;Maintenant c'est à vous de faire vos propres filtres. Une fois
-configuré, lancer imapfilter simplement depuis le terminal : :&lt;/p&gt;
+configuré, lancer imapfilter simplement depuis le terminal :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;imapfilter
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 11 Mar 2014 13:54:00 +0100</pubDate><guid>tag:www.choiz.fr,2014-03-11:2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html</guid><category>imapfilter</category><category>mail</category><category>filter</category><category>imap</category></item><item><title>Réparer ubuntu après un apt-get remove… de trop</title><link>//www.choiz.fr/2014-03-08-r%C3%A9parer-ubuntu-apr%C3%A8s-un-apt-get-remove-de-trop.html</link><description>&lt;p&gt;En voulant modifier xscreensaver par i3lock j'ai supprimé des paquets
 non utilisés (jeux etc…).&lt;/p&gt;
@@ -1037,7 +1039,7 @@ non utilisés (jeux etc…).&lt;/p&gt;
 (xfdesktop4 et xfce4-panel). Au démarrage de x, une fois identifié, un
 écran gris s'affiche et rien d'autre. Heureusement grâce à mon access
 SSH je peux me connecter à la machine à distance.&lt;/p&gt;
-&lt;p&gt;Pour voir la liste des paquets déinstallés j'ai donc fait : :&lt;/p&gt;
+&lt;p&gt;Pour voir la liste des paquets déinstallés j'ai donc fait :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;dpkg --get-selections &amp;gt; liste-des-paquets
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1050,7 +1052,7 @@ ligne…&lt;/p&gt;
 pas entièrement…).&lt;/p&gt;
 &lt;p&gt;J'ai donc refais un &lt;em&gt;git diff&lt;/em&gt; dans mon terminal et je me suis aperçu
 que ma ligne qui devait être sur plusieurs lignes ne l'était pas…&lt;/p&gt;
-&lt;p&gt;Mon fichier texte ressemble à ceci : :&lt;/p&gt;
+&lt;p&gt;Mon fichier texte ressemble à ceci :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;ligne avec un peu de texte ici nous avons 66 caractères affichés.
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1069,7 +1071,7 @@ No newline at end of file
 
 
 &lt;p&gt;Pour résoudre ce problème il faut soit ajouter &lt;em&gt;GIT_PAGER=""&lt;/em&gt; avant la
-commande &lt;em&gt;git diff&lt;/em&gt; soit ajouter dans son fichier de config git : :&lt;/p&gt;
+commande &lt;em&gt;git diff&lt;/em&gt; soit ajouter dans son fichier de config git :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git config --global core.pager &amp;quot;less -r&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1084,7 +1086,7 @@ index 0000000..235a891
 @@ -0,0 +1 @@
 +ligne avec un peu de texte ici nous avons 66 caractères affichés.\
 No newline at end of file
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 05 Mar 2014 12:56:00 +0100</pubDate><guid>tag:www.choiz.fr,2014-03-05:2014-03-05-git-diff-multiligne.html</guid><category>git</category><category>diff</category><category>wrap</category><category>multiline</category><category>multiligne</category><category>less</category><category>config</category><category>gitconfig</category></item><item><title>Création d'une clé usb xubuntu sur mac</title><link>//www.choiz.fr/2014-03-04-cr%C3%A9ation-dune-cl%C3%A9-usb-xubuntu-sur-mac.html</link><description>&lt;p&gt;Dans le terminal sur votre mac : :&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 05 Mar 2014 12:56:00 +0100</pubDate><guid>tag:www.choiz.fr,2014-03-05:2014-03-05-git-diff-multiligne.html</guid><category>git</category><category>diff</category><category>wrap</category><category>multiline</category><category>multiligne</category><category>less</category><category>config</category><category>gitconfig</category></item><item><title>Création d'une clé usb xubuntu sur mac</title><link>//www.choiz.fr/2014-03-04-cr%C3%A9ation-dune-cl%C3%A9-usb-xubuntu-sur-mac.html</link><description>&lt;p&gt;Dans le terminal sur votre mac :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;diskutil list
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1107,7 +1109,7 @@ Unmount of all volumes on disk2 was successful
 
 
 &lt;p&gt;Maintenant on copie xubuntu depuis notre dossier téléchargements vers
-cette clé usb : :&lt;/p&gt;
+cette clé usb :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;sudo dd if=~/Downloads/xubuntu-13.10-desktop-i386.iso of=/dev/rdisk2 bs=1m
 
 Password:
@@ -1124,7 +1126,7 @@ Disk /dev/disk2 ejected
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 04 Mar 2014 14:10:00 +0100</pubDate><guid>tag:www.choiz.fr,2014-03-04:2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html</guid><category>clé usb</category><category>xubuntu</category><category>mac</category><category>terminal</category><category>ubuntu</category></item><item><title>git cherry-pick</title><link>//www.choiz.fr/2014-02-06-git-cherry-pick.html</link><description>&lt;p&gt;J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
 messages sur cherry-pick sans savoir ce que c'était.&lt;/p&gt;
 &lt;p&gt;git cherry-pick permet d'appliquer un commit sur la branche sur la
-branche actuelle. :&lt;/p&gt;
+branche actuelle.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git cherry-pick c4a99776
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 06 Feb 2014 23:11:30 +0100</pubDate><guid>tag:www.choiz.fr,2014-02-06:2014-02-06-git-cherry-pick.html</guid><category>git</category><category>cherry-pick</category><category>commit</category><category>branch</category></item><item><title>Nouveau thème</title><link>//www.choiz.fr/2014-02-06-nouveau-th%C3%A8me.html</link><description>&lt;p&gt;Je n'avais pas mis à jour mon thème depuis bien longtemps.&lt;/p&gt;
 &lt;p&gt;C'est maintenant chose faite avec ce nouveau thème !
@@ -1132,17 +1134,17 @@ branche actuelle. :&lt;/p&gt;
 thème" src="https://31.media.tumblr.com/d0896de0a038122cee44adbfaeb7e90c/tumblr_inline_n0lh2qig1i1qzr4hx.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Voici l'ancien thème en souvenir.
 &lt;img alt="ancien
-thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr_inline_n0lh2l5LOi1qzr4hx.png" /&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 06 Feb 2014 23:03:00 +0100</pubDate><guid>tag:www.choiz.fr,2014-02-06:2014-02-06-nouveau-thème.html</guid><category>thème</category><category>tumblr</category></item><item><title>Suppression d'un caractère unicode dans Vim</title><link>//www.choiz.fr/2014-01-19-suppression-dun-caract%C3%A8re-unicode-dans-vim.html</link><description>&lt;p&gt;J'étais à la recherche de se caractère unicode dans vim : :&lt;/p&gt;
+thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr_inline_n0lh2l5LOi1qzr4hx.png" /&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 06 Feb 2014 23:03:00 +0100</pubDate><guid>tag:www.choiz.fr,2014-02-06:2014-02-06-nouveau-thème.html</guid><category>thème</category><category>tumblr</category></item><item><title>Suppression d'un caractère unicode dans Vim</title><link>//www.choiz.fr/2014-01-19-suppression-dun-caract%C3%A8re-unicode-dans-vim.html</link><description>&lt;p&gt;J'étais à la recherche de se caractère unicode dans vim :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&amp;lt;U+2028&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Pour pouvoir le supprimer j'ai utilisé la commande suivante : :&lt;/p&gt;
+&lt;p&gt;Pour pouvoir le supprimer j'ai utilisé la commande suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;:%s/\%U2028//g
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Décortiquons la commande : :&lt;/p&gt;
+&lt;p&gt;Décortiquons la commande :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;`:%s/` Recherche et remplace dans tout le fichier
 
 `\%U2028` Le caractère que l&amp;#39;on recherche unicode &amp;quot;2028&amp;quot;
@@ -1158,19 +1160,19 @@ niveau des permissions des dossiers / fichiers.&lt;/p&gt;
 &lt;p&gt;Souvent la première chose que l'on fait : on va dans chaque dossier et
 on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
 dossiers ça va mais quand on en a 40… on utilise une autre technique !&lt;/p&gt;
-&lt;p&gt;J'utilise pour les dossiers : :&lt;/p&gt;
+&lt;p&gt;J'utilise pour les dossiers :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;find &lt;span class="se"&gt;\`&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="se"&gt;\`&lt;/span&gt; -type d -exec chmod &lt;span class="m"&gt;755&lt;/span&gt; &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;et pour les fichiers : :&lt;/p&gt;
+&lt;p&gt;et pour les fichiers :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;find &lt;span class="se"&gt;\`&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="se"&gt;\`&lt;/span&gt; -type f -exec chmod &lt;span class="m"&gt;644&lt;/span&gt; &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Avec `pwd` je vais partir du dossier actuel et remplacer tous les
 droits des fichiers et dossiers enfants. Vous pouvez remplacer par un
-autre chemin par exemple : :&lt;/p&gt;
+autre chemin par exemple :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;find /home/choiz/ -type d -exec chmod 755 {} \\;
 
 find /home/choiz/ -type f -exec chmod 644 {} \\;
@@ -1199,8 +1201,7 @@ convert icon512.png -resize x152 touch-icon-ipad-retina.png
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Maintenant il faut ajouter dans notre page html entre les balises head :
-:&lt;/p&gt;
+&lt;p&gt;Maintenant il faut ajouter dans notre page html entre les balises head :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&amp;lt;link rel=&amp;quot;shortcut icon&amp;quot; type=&amp;quot;image/x-icon&amp;quot; href=&amp;quot;favicon.ico&amp;quot;&amp;gt;
 &amp;lt;link rel=&amp;quot;apple-touch-icon-precomposed&amp;quot; href=&amp;quot;touch-icon-iphone.png&amp;quot;&amp;gt;
 &amp;lt;link rel=&amp;quot;apple-touch-icon-precomposed&amp;quot; sizes=&amp;quot;76x76&amp;quot; href=&amp;quot;touch-icon-ipad.png&amp;quot;&amp;gt;
@@ -1213,38 +1214,38 @@ convert icon512.png -resize x152 touch-icon-ipad-retina.png
 "apple-touch-icon".&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 03 Nov 2013 14:11:02 +0100</pubDate><guid>tag:www.choiz.fr,2013-11-03:2013-11-03-icônes-favicon-apple-touch-icon.html</guid><category>cli</category><category>imagemagick</category><category>android</category><category>ios</category><category>apple</category><category>icons</category><category>icon</category><category>favicon</category><category>apple-touch-icon</category><category>precomposed</category><category>html</category></item><item><title>Installer jshint sur mac</title><link>//www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html</link><description>&lt;p&gt;Installation via npm de jshint (-g pour installer pour tous les utilisateurs) :
     sudo npm install -g jshint&lt;/p&gt;
 &lt;p&gt;Faire un lien symbolique pour pouvoir utiliser directement jshint sans
-préciser tout le chemin a chaque fois : :&lt;/p&gt;
+préciser tout le chemin a chaque fois :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 14 Oct 2013 12:41:08 +0200</pubDate><guid>tag:www.choiz.fr,2013-10-14:2013-10-14-installer-jshint-sur-mac.html</guid><category>jshint</category><category>mac</category><category>setup</category><category>npm</category><category>nodejs</category></item><item><title>Git se déplacer dans une branche distante</title><link>//www.choiz.fr/2013-10-01-git-se-d%C3%A9placer-dans-une-branche-distante.html</link><description>&lt;p&gt;J'utilise des branches tel que prod, preprod pour mes projets et en
-local il m'arrive de vouloir aller sur ses branches. :&lt;/p&gt;
+local il m'arrive de vouloir aller sur ses branches :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git checkout preprod
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Et j'ai l'erreur suivante : :&lt;/p&gt;
+&lt;p&gt;Et j'ai l'erreur suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pathspec&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;preprod&amp;#39;&lt;/span&gt; &lt;span class="n"&gt;did&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;match&lt;/span&gt; &lt;span class="n"&gt;any&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="n"&gt;known&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Je vais mettre a jour mon origin : :&lt;/p&gt;
+&lt;p&gt;Je vais mettre a jour mon origin :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git fetch origin
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Maintenant je veux ma branche distante en lui précisant l'origin : :&lt;/p&gt;
+&lt;p&gt;Maintenant je veux ma branche distante en lui précisant l'origin :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git checkout -b preprod origin/preprod
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Et j'ai bien ma branche en local comme git me l'indique : :&lt;/p&gt;
+&lt;p&gt;Et j'ai bien ma branche en local comme git me l'indique :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;Branch preprod set up to track remote branch preprod from origin.
 Switched to a new branch &amp;#39;preprod&amp;#39;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 01 Oct 2013 13:51:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-10-01:2013-10-01-git-se-déplacer-dans-une-branche-distante.html</guid><category>git</category><category>checkout</category><category>fetch</category><category>origin</category><category>checkout -b</category><category>branch</category><category>remote</category></item><item><title>Connaitre le code réponse HTTP avec curl</title><link>//www.choiz.fr/2013-09-29-connaitre-le-code-r%C3%A9ponse-http-avec-curl.html</link><description>&lt;p&gt;Pour connaitre le code réponse HTTP il suffit de faire : :&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 01 Oct 2013 13:51:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-10-01:2013-10-01-git-se-déplacer-dans-une-branche-distante.html</guid><category>git</category><category>checkout</category><category>fetch</category><category>origin</category><category>checkout -b</category><category>branch</category><category>remote</category></item><item><title>Connaitre le code réponse HTTP avec curl</title><link>//www.choiz.fr/2013-09-29-connaitre-le-code-r%C3%A9ponse-http-avec-curl.html</link><description>&lt;p&gt;Pour connaitre le code réponse HTTP il suffit de faire :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;curl -IL url
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Voici l'exemble avec tumblr.com : :&lt;/p&gt;
+&lt;p&gt;Voici l'exemble avec tumblr.com :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;curl&lt;/span&gt; &lt;span class="nt"&gt;-IL&lt;/span&gt; &lt;span class="nt"&gt;http&lt;/span&gt;&lt;span class="o"&gt;://&lt;/span&gt;&lt;span class="nt"&gt;tumblr&lt;/span&gt;&lt;span class="nc"&gt;.com&lt;/span&gt;
 
 &lt;span class="nt"&gt;HTTP&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;1&lt;/span&gt;&lt;span class="nc"&gt;.1&lt;/span&gt; &lt;span class="nt"&gt;301&lt;/span&gt; &lt;span class="nt"&gt;Moved&lt;/span&gt; &lt;span class="nt"&gt;Permanently&lt;/span&gt;
@@ -1271,7 +1272,7 @@ Switched to a new branch &amp;#39;preprod&amp;#39;
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 29 Sep 2013 19:10:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-09-29:2013-09-29-connaitre-le-code-réponse-http-avec-curl.html</guid><category>curl</category><category>http</category><category>response</category><category>code</category><category>301</category><category>302</category><category>404</category><category>200</category></item><item><title>Passer de svn à git</title><link>//www.choiz.fr/2013-07-16-passer-de-svn-%C3%A0-git.html</link><description>&lt;p&gt;Sur le projet Addictradio nous utilisons encore un de nos dépot avec
 svn. Il est temps de faire la migration de svn à git !&lt;/p&gt;
 &lt;p&gt;J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
-voulais voici donc ma procédure : :&lt;/p&gt;
+voulais voici donc ma procédure :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;svn log --quiet &amp;#39;svn://svn.mondomaine/monprojet&amp;#39; | grep &amp;quot;^r&amp;quot; | awk
 &amp;#39;{print $3}&amp;#39; | sort | uniq | awk &amp;#39;{ print $1&amp;quot; = &amp;quot;$1&amp;quot;
 &amp;lt;&amp;quot;$1&amp;quot;@mondomaine&amp;gt;&amp;quot; }&amp;#39; &amp;gt; authors.txt
@@ -1287,14 +1288,14 @@ nos prénoms et noms puis j'ai vérifié les adresses e-mails.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Si vous avez des tags dans svn, vous pouvez les mettre dans git : :&lt;/p&gt;
+&lt;p&gt;Si vous avez des tags dans svn, vous pouvez les mettre dans git :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git branch -r | sed -rne &amp;#39;s, \*tags/([^@]+)$,\\1,p&amp;#39; | while read
 tag; do echo &amp;quot;git tag &lt;span class="nv"&gt;$tag&lt;/span&gt; &amp;#39;tags/&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;tag&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;^&amp;#39;; git branch -r -d
 tags/&lt;span class="nv"&gt;$tag&lt;/span&gt;&amp;quot;; done | sh
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Pour finir ajoutez votre dépot distant : :&lt;/p&gt;
+&lt;p&gt;Pour finir ajoutez votre dépot distant :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git remote add origin git@git.mondomaine:/monprojet.git
 git push -u origin --tags
 &lt;/pre&gt;&lt;/div&gt;
@@ -1302,17 +1303,17 @@ git push -u origin --tags
 
 &lt;p&gt;Merci à
 &lt;a href="http://bazoud.com/articles/2010-12-11-migration-de-svn-vers-git-en-4-etapes/index.html"&gt;Bazoud&lt;/a&gt;
-pour différentes commandes ;)&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 16 Jul 2013 22:37:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-07-16:2013-07-16-passer-de-svn-à-git.html</guid><category>svn to git</category><category>svn</category><category>git</category><category>migate</category><category>git svn clone</category><category>authors</category><category>tags</category></item><item><title>Export / Import avec PostgreSQL</title><link>//www.choiz.fr/2013-06-22-export-import-avec-postgresql.html</link><description>&lt;p&gt;Pour exporter une table spécifique d'une base : :&lt;/p&gt;
+pour différentes commandes ;)&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 16 Jul 2013 22:37:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-07-16:2013-07-16-passer-de-svn-à-git.html</guid><category>svn to git</category><category>svn</category><category>git</category><category>migate</category><category>git svn clone</category><category>authors</category><category>tags</category></item><item><title>Export / Import avec PostgreSQL</title><link>//www.choiz.fr/2013-06-22-export-import-avec-postgresql.html</link><description>&lt;p&gt;Pour exporter une table spécifique d'une base :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;pg_dump *mabase* --table=*matable* &amp;gt; *dump_base_table*.sql
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Pour exporter une base : :&lt;/p&gt;
+&lt;p&gt;Pour exporter une base :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;pg_dump *mabase* &amp;gt; *dump_base*.sql
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Pour importer un dump dans une base : :&lt;/p&gt;
+&lt;p&gt;Pour importer un dump dans une base :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;psql *base* &amp;lt; *dump_base_table*.sql
 psql *base* &amp;lt; *dump_base*.sql
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 22 Jun 2013 19:57:41 +0200</pubDate><guid>tag:www.choiz.fr,2013-06-22:2013-06-22-export-import-avec-postgresql.html</guid><category>postgreSQL</category><category>pg\_dump</category><category>psql</category><category>import</category><category>export</category><category>dump</category><category>sql</category></item><item><title>Git déplacer mon dernier commit sur une autre branche</title><link>//www.choiz.fr/2013-06-22-git-d%C3%A9placer-mon-dernier-commit-sur-une-autre.html</link><description>&lt;p&gt;J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
@@ -1321,7 +1322,7 @@ modifications, cette fois j'avais créé cette branche &lt;em&gt;debug_redirect&
 mais je n'étais pas dessus…&lt;/p&gt;
 &lt;p&gt;Je me suis retrouvé avec les commits A-B-C sur mon &lt;em&gt;master&lt;/em&gt;. Or le seul
 qui devait être dessus devait être A et je devais avoir B-C dans ma
-branche &lt;em&gt;debug_redirect&lt;/em&gt;. Voici un schéma de la situation : :&lt;/p&gt;
+branche &lt;em&gt;debug_redirect&lt;/em&gt;. Voici un schéma de la situation :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;debug_redirect
           ↓
           A-B-C
@@ -1337,7 +1338,7 @@ git merge master
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ce qui donne : :&lt;/p&gt;
+&lt;p&gt;Ce qui donne :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;debug_redirect
         ↓
     A-B-C
@@ -1353,7 +1354,7 @@ git reset --hard HEAD~2
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ce qui donne : :&lt;/p&gt;
+&lt;p&gt;Ce qui donne :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;  debug_redirect
       ↓
   A-B-C
@@ -1368,7 +1369,7 @@ peux le merger avec le &lt;em&gt;master&lt;/em&gt;. :&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Résultat : :&lt;/p&gt;
+&lt;p&gt;Résultat :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;         B-C      debug_redirect
        /     \
      A - - - - D   master
@@ -1376,7 +1377,7 @@ peux le merger avec le &lt;em&gt;master&lt;/em&gt;. :&lt;/p&gt;
 
 
 &lt;p&gt;Pour voir vos commits par branche vous pouvez aussi utiliser la commande
-git log : :&lt;/p&gt;
+git log :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git log --graph --oneline --decorate
 *   4c677ac (HEAD, master) Merge branch &amp;#39;debug_redirect&amp;#39;
 |\ 
@@ -1386,7 +1387,7 @@ git log : :&lt;/p&gt;
 * 4e06ff4 initial commit
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 22 Jun 2013 13:07:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-06-22:2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html</guid><category>git</category><category>reset</category><category>checkout</category><category>merge</category><category>branch</category><category>commit</category></item><item><title>Installation disque dur Seagate 4To Debian</title><link>//www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html</link><description>&lt;p&gt;J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
 (Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec «
-Fdisk » et j'ai eu le message suivant : :&lt;/p&gt;
+Fdisk » et j'ai eu le message suivant :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Warning&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;invalid&lt;/span&gt; &lt;span class="n"&gt;flag&lt;/span&gt; &lt;span class="mh"&gt;0x0000&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;partition&lt;/span&gt; &lt;span class="n"&gt;table&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;corrected&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt; &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rite&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 
 &lt;span class="n"&gt;WARNING&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt; &lt;span class="n"&gt;disk&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="mf"&gt;4.0&lt;/span&gt; &lt;span class="n"&gt;TB&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4000787030016&lt;/span&gt; &lt;span class="n"&gt;bytes&lt;/span&gt;&lt;span class="o"&gt;).&lt;/span&gt;
@@ -1397,7 +1398,7 @@ Fdisk » et j'ai eu le message suivant : :&lt;/p&gt;
 
 
 &lt;p&gt;J'ai donc vérifié si j'avais dans le noyau l'option
-CONFIG_EFI_PARTITION active : :&lt;/p&gt;
+CONFIG_EFI_PARTITION active :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;cat &amp;quot;/boot/config-`uname -r`&amp;quot; | grep CONFIG_EFI_PARTITION
 
 CONFIG_EFI_PARTITION=y
@@ -1454,7 +1455,7 @@ Information: You may need to update /etc/fstab.
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Formater la partition avec un système de fichiers donné : :&lt;/p&gt;
+&lt;p&gt;Formater la partition avec un système de fichiers donné :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;mkfs.ext4 /dev/sdd1
 
 mke2fs 1.42.5 (29-Jul-2012)
@@ -1487,21 +1488,21 @@ fichiers : complété
 or lors de la copie celui-ci est copié… Je me retrouve donc avec deux
 fois &lt;a href="http://"&gt;http://&lt;/a&gt;…&lt;/p&gt;
 &lt;p&gt;Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :&lt;/p&gt;
-&lt;p&gt;Ecrire dans la barre d'adresse : :&lt;/p&gt;
+&lt;p&gt;Ecrire dans la barre d'adresse :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;about&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Rechercher : :&lt;/p&gt;
+&lt;p&gt;Rechercher :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;browser.urlbar.trimURLs
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Modifier la valeur par : :&lt;/p&gt;
+&lt;p&gt;Modifier la valeur par :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;false
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 10 Jun 2013 14:22:00 +0200</pubDate><guid>tag:www.choiz.fr,2013-06-10:2013-06-10-toujours-afficher-le-protocole-dans-firefox.html</guid><category>firefox</category><category>config</category><category>http</category><category>urlbar</category><category>browser</category></item><item><title>Latin1 &lt;-&gt; UTF-8</title><link>//www.choiz.fr/2013-05-29-latin1-utf-8.html</link><description>&lt;p&gt;Voilà une solution simple pour convertir une base de donnée en Latin1
 vers de l'UTF-8.&lt;/p&gt;
-&lt;p&gt;Utiliser mysqldump avec les options suivantes : :&lt;/p&gt;
+&lt;p&gt;Utiliser mysqldump avec les options suivantes :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;--default-character-set=utf8
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1511,7 +1512,7 @@ vers de l'UTF-8.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Voilà la commande complète : :&lt;/p&gt;
+&lt;p&gt;Voilà la commande complète :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &amp;gt; base_table.sql
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1522,7 +1523,7 @@ différents latin1 en utf-8. :&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Et en mode commande : :&lt;/p&gt;
+&lt;p&gt;Et en mode commande :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;:%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1533,7 +1534,7 @@ différents latin1 en utf-8. :&lt;/p&gt;
 
 
 &lt;p&gt;on enregistre et quitte le fichier avec :wq (ou sinon avec ZZ).&lt;/p&gt;
-&lt;p&gt;Maintenant on réimporte la table grâce à mysql : :&lt;/p&gt;
+&lt;p&gt;Maintenant on réimporte la table grâce à mysql :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;mysql -u user -p base &amp;lt; dump_base_table.sql
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1545,7 +1546,7 @@ accentué. :&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Maintenant on regarde la taille de la colonne : :&lt;/p&gt;
+&lt;p&gt;Maintenant on regarde la taille de la colonne :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;SELECT `col`, length(`col`) FROM `table`;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1590,7 +1591,7 @@ avez dû vous rendre compte que, même si openssh est installé nativement,
 cette commande n’est pas disponible.&lt;/p&gt;
 &lt;p&gt;Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
 peut la rendre disponible facilement en quelques étapes. Créer un
-fichier "ssh-copy-id" dans le dossier "/usr/bin/" avec ce contenu : :&lt;/p&gt;
+fichier "ssh-copy-id" dans le dossier "/usr/bin/" avec ce contenu :&lt;/p&gt;
 &lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
  2
  3
@@ -1691,13 +1692,13 @@ fichier "ssh-copy-id" dans le dossier "/usr/bin/" avec ce contenu : :&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;p&gt;Il ne reste qu'a donner les droits au fichier : :&lt;/p&gt;
+&lt;p&gt;Il ne reste qu'a donner les droits au fichier :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;chmod 755 /usr/bin/ssh-copy-id
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Vous pouvez maintenant copier votre clé ssh sur un serveur distant en
-tapant : :&lt;/p&gt;
+tapant :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;ssh-copy-id -i id_rsa.pub user@machine.distante
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 30 Sep 2012 11:50:54 +0200</pubDate><guid>tag:www.choiz.fr,2012-09-30:2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html</guid><category>ssh-copy-id</category><category>mac os x</category><category>copy ssh key</category><category>copier clé ssh</category><category>ssh</category><category>copy-id</category></item><item><title>Ma configuration iTerm2</title><link>//www.choiz.fr/2012-09-29-ma-configuration-iterm2.html</link><description>&lt;p&gt;Depuis quelques jours j'utilise iTerm2 et je trouve ce terminal sous Mac
 Os X vraiment au top !&lt;/p&gt;
@@ -1727,7 +1728,7 @@ doit apparaitre. Dans Action: choisir "Send Hex Code" et taper "0xd".&lt;/p&gt;
 
 # .swp (Vim)
 *.swp
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 13 Aug 2012 11:06:31 +0200</pubDate><guid>tag:www.choiz.fr,2012-08-13:2012-08-13-mon-fichier-gitignore.html</guid><category>git</category><category>gitignore</category><category>.gitignore</category><category>file</category><category>fichier</category></item><item><title>Voir le contenu d'un fichier dans un stash précis (git)</title><link>//www.choiz.fr/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-pr%C3%A9cis.html</link><description>&lt;p&gt;Pour lister les stash : :&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 13 Aug 2012 11:06:31 +0200</pubDate><guid>tag:www.choiz.fr,2012-08-13:2012-08-13-mon-fichier-gitignore.html</guid><category>git</category><category>gitignore</category><category>.gitignore</category><category>file</category><category>fichier</category></item><item><title>Voir le contenu d'un fichier dans un stash précis (git)</title><link>//www.choiz.fr/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-pr%C3%A9cis.html</link><description>&lt;p&gt;Pour lister les stash :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git stash list
 
 stash@{0}: WIP on BranchName: 5d8a556 Edit file.js
@@ -1737,7 +1738,7 @@ stash@{5}: WIP on BranchName: 3bb67ff Add file.css file.js
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Pour voir le contenu d'un stash : :&lt;/p&gt;
+&lt;p&gt;Pour voir le contenu d'un stash :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git stash show
 
 stash@{0} chemin/vers/mon/fichier.js | 199 ++++++++++++++++++++++++++--------
@@ -1886,7 +1887,7 @@ mon alias = git stapp&lt;/p&gt;
 &lt;p&gt;Et pour rien n'oublier (RTFM) : man git stash&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 14 Apr 2012 16:32:42 +0200</pubDate><guid>tag:www.choiz.fr,2012-04-14:2012-04-14-utilisation-des-branches-et-de-git-stash.html</guid><category>git</category><category>git stash</category><category>git stash pop</category><category>git stash list</category><category>git branch</category><category>git checkout</category></item><item><title>Renomer des fichiers en CLI (ligne de commande)</title><link>//www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html</link><description>&lt;p&gt;Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
 correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
 "rename".&lt;/p&gt;
-&lt;p&gt;Exemple je veux supprimer tous les espaces d'un fichier : :&lt;/p&gt;
+&lt;p&gt;Exemple je veux supprimer tous les espaces d'un fichier :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;rename &amp;quot;s/ *//g&amp;quot; *.*
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1992,12 +1993,12 @@ pouvez spécifier un autre chemin ainsi qu'un autre fichier. :&lt;/p&gt;
 
 &lt;p&gt;Ici on tape un mot de passe si on en veut un lors de la connexion aux
 différents hosts. En général j'en défini un.&lt;/p&gt;
-&lt;p&gt;Pour finir on copie la clé sur le serveur soit via scp : :&lt;/p&gt;
+&lt;p&gt;Pour finir on copie la clé sur le serveur soit via scp :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;scp ~/.ssh/id\_rsa.pub user@ip:~/.ssh/authorized\_keys/
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;ou via ssh-copy-id : :&lt;/p&gt;
+&lt;p&gt;ou via ssh-copy-id :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;ssh-copy-id -i ~/.ssh/id\_rsa.pub user@ip
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 13 Jan 2012 10:05:18 +0100</pubDate><guid>tag:www.choiz.fr,2012-01-13:2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html</guid><category>clé publique</category><category>clé privée</category><category>connexion ssh</category><category>authorized\_keys</category><category>ssh</category><category>.ssh</category></item><item><title>Clavier Apple sur debian</title><link>//www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html</link><description>&lt;p&gt;Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
 mapage clavier Mac. Il y a beaucoup de différences entre un clavier
@@ -2050,13 +2051,12 @@ le ARandR pour configurer les deux écrans.&lt;/p&gt;</description><dc:creator x
 surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
 chez Deezer c'est un peu problèmatique.&lt;/p&gt;
 &lt;p&gt;J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
-ceci : :&lt;/p&gt;
+ceci :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;vi /etc/apt/source.list
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ajouter contrib non-free aux différentes sources (sauf security) puis :
-:&lt;/p&gt;
+&lt;p&gt;Ajouter contrib non-free aux différentes sources (sauf security) puis :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;apt-get update
 
 apt-get install flashplugin-nonfree
@@ -2065,7 +2065,7 @@ apt-get install flashplugin-nonfree
 
 &lt;p&gt;En relançant Firefox j'ai bien flash player fonctionnel sur Deezer.&lt;/p&gt;
 &lt;p&gt;Le package flashplugin étant nonfree Debian ne l'inclus pas directement
-lors de l'installation.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 30 Nov 2011 22:52:56 +0100</pubDate><guid>tag:www.choiz.fr,2011-11-30:2011-11-30-flash-sous-debian.html</guid><category>Flash</category><category>Debian</category><category>Deezer</category><category>Firefox</category><category>flashplugin</category><category>source</category><category>apt</category><category>souce.list</category><category>non-free</category><category>contrib</category></item><item><title>Voir les fichiers cachés sur Lion</title><link>//www.choiz.fr/2011-11-02-voir-les-fichiers-cach%C3%A9s-sur-lion.html</link><description>&lt;p&gt;Dans un terminal : :&lt;/p&gt;
+lors de l'installation.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 30 Nov 2011 22:52:56 +0100</pubDate><guid>tag:www.choiz.fr,2011-11-30:2011-11-30-flash-sous-debian.html</guid><category>Flash</category><category>Debian</category><category>Deezer</category><category>Firefox</category><category>flashplugin</category><category>source</category><category>apt</category><category>souce.list</category><category>non-free</category><category>contrib</category></item><item><title>Voir les fichiers cachés sur Lion</title><link>//www.choiz.fr/2011-11-02-voir-les-fichiers-cach%C3%A9s-sur-lion.html</link><description>&lt;p&gt;Dans un terminal :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;defaults write com.apple.Finder AppleShowAllFiles TRUE
 
 killall Finder
@@ -2073,7 +2073,7 @@ killall Finder
 
 
 &lt;p&gt;Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 02 Nov 2011 11:17:12 +0100</pubDate><guid>tag:www.choiz.fr,2011-11-02:2011-11-02-voir-les-fichiers-cachés-sur-lion.html</guid><category>fichiers</category><category>cachés</category><category>hidden</category><category>files</category><category>lion</category><category>defaults</category><category>AppleShowAllFiles</category><category>Finder</category></item><item><title>Insérer un \# au début de chaque ligne d'un fichier avec vim</title><link>//www.choiz.fr/2011-10-05-ins%C3%A9rer-un-au-d%C3%A9but-de-chaque-ligne-dun-fichier.html</link><description>&lt;p&gt;Voilà la commande pour ajouter un # au début de chaque ligne d'un
-fichier avec vim : :&lt;/p&gt;
+fichier avec vim :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="x"&gt;:1,&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;s&lt;/span&gt;&lt;span class="x"&gt;/^/&lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="x"&gt;/&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -2086,7 +2086,7 @@ par ce que l'on remplace # est le caractère que je veux remplacer&lt;/p&gt;</de
 &lt;p&gt;Créer un compte utilisateur dans les préférences systèmes &amp;gt;
 utilisateurs. Par exemple l'utilisateur : "skype" avec comme mot de
 passe "password". Ensuite ouvrir un terminal (dans spotlight tapez
-terminal). Puis : :&lt;/p&gt;
+terminal). Puis :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;su skype (ou &amp;quot;su nomdutilisateur&amp;quot; en fonction de l&amp;#39;utilisateur créé).
 
 Password:
@@ -2095,7 +2095,7 @@ password (ou autre suivant le mot de passe de l&amp;#39;utilisateur).
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Puis : :&lt;/p&gt;
+&lt;p&gt;Puis :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;/Applications/Skype.app/Contents/MacOS/Skype
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -2108,13 +2108,13 @@ empécher d'avoir la page de login il faut modifier une fonction
 Javascript. Avec un outil tel que &lt;a href="http://www.getfirebug.com"&gt;Firebug&lt;/a&gt;
 vous pouvez modifier le code Javascript du site (localement). Ouvrir
 firebug en mode console et modifier la fonction createJoin() ! Dans la
-console a coté de "&amp;gt;&amp;gt;&amp;gt;" il suffit de taper : :&lt;/p&gt;
+console a coté de "&amp;gt;&amp;gt;&amp;gt;" il suffit de taper :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;createJoin&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Avec ce code on modifie le contenu de la fonction createJoin() par false
-(plutôt que le code par defaut qui ouvre la fenêtre d'identification).&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 18 Sep 2011 22:54:00 +0200</pubDate><guid>tag:www.choiz.fr,2011-09-18:2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login.html</guid><category>viadeo</category><category>javascript</category><category>js</category><category>code</category><category>login</category><category>profil</category><category>identifié</category><category>firebug</category></item><item><title>Développement web avec Safari</title><link>//www.choiz.fr/2011-09-05-d%C3%A9veloppement-web-avec-safari.html</link><description>&lt;p&gt;Pour activer l'inspecteur web tapez dans le terminal : :&lt;/p&gt;
+(plutôt que le code par defaut qui ouvre la fenêtre d'identification).&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 18 Sep 2011 22:54:00 +0200</pubDate><guid>tag:www.choiz.fr,2011-09-18:2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login.html</guid><category>viadeo</category><category>javascript</category><category>js</category><category>code</category><category>login</category><category>profil</category><category>identifié</category><category>firebug</category></item><item><title>Développement web avec Safari</title><link>//www.choiz.fr/2011-09-05-d%C3%A9veloppement-web-avec-safari.html</link><description>&lt;p&gt;Pour activer l'inspecteur web tapez dans le terminal :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;defaults write com.apple.Safari WebKitDeveloperExtras -bool true
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -2122,14 +2122,14 @@ console a coté de "&amp;gt;&amp;gt;&amp;gt;" il suffit de taper : :&lt;/p&gt;
 &lt;p&gt;Redémarrez Safari et maintenant vous pouvez inspecter les éléments de
 vos pages web.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 05 Sep 2011 09:53:22 +0200</pubDate><guid>tag:www.choiz.fr,2011-09-05:2011-09-05-développement-web-avec-safari.html</guid><category>Safari</category><category>Dev</category><category>Web</category><category>WebDev</category><category>Développement</category></item><item><title>Import VM avec Virtualbox</title><link>//www.choiz.fr/2011-09-02-import-vm-avec-virtualbox.html</link><description>&lt;p&gt;J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
 donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?&lt;/p&gt;
-&lt;p&gt;Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper : :&lt;/p&gt;
+&lt;p&gt;Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;VBoxManage&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;votrefichier.ova&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Maintenant lors du prochain démarrage de votre VirtualBox vous devez
 avoir la machine virtuelle importée !&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 02 Sep 2011 19:28:28 +0200</pubDate><guid>tag:www.choiz.fr,2011-09-02:2011-09-02-import-vm-avec-virtualbox.html</guid><category>VirtualBox</category><category>Import</category><category>VirtualMachine</category><category>Virtual</category><category>Machine</category><category>Ova</category><category>VBoxManage</category></item><item><title>Partage Samba !</title><link>//www.choiz.fr/2011-08-17-partage-samba.html</link><description>&lt;p&gt;Configuration d'un serveur samba. Editer le fichier de configuration
-/etc/samba/smb.conf Voici le contenu de mon fichier de configuration : :&lt;/p&gt;
+/etc/samba/smb.conf Voici le contenu de mon fichier de configuration :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;| ### Global ###
 | [global]
 | ## Identification ##
@@ -2160,7 +2160,7 @@ avoir la machine virtuelle importée !&lt;/p&gt;</description><dc:creator xmlns:
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Maintenant il faut créer notre utilisateur "choiz" grâce à : :&lt;/p&gt;
+&lt;p&gt;Maintenant il faut créer notre utilisateur "choiz" grâce à :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;smbpasswd -a choiz
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -2173,7 +2173,7 @@ votre client le partage de fichiers ! :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;/etc/init.d/samba restart
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 17 Aug 2011 20:41:00 +0200</pubDate><guid>tag:www.choiz.fr,2011-08-17:2011-08-17-partage-samba.html</guid><category>Linux</category><category>Samba</category><category>config</category><category>configuration</category><category>Partage</category><category>Sharing</category></item><item><title>Liens utiles</title><link>//www.choiz.fr/2011-08-09-liens-utiles.html</link><description>&lt;p&gt;&lt;a href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.jsperf.com/"&gt;http://www.jsperf.com/&lt;/a&gt; Pour faire des performances de code js&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.pastebin.com/"&gt;http://www.pastebin.com/&lt;/a&gt; Pour copier coller du code facilement&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 09 Aug 2011 21:03:05 +0200</pubDate><guid>tag:www.choiz.fr,2011-08-09:2011-08-09-liens-utiles.html</guid><category>Code</category><category>js</category><category>html</category><category>css</category><category>xhtml</category><category>javascript</category><category>sites</category></item><item><title>Ignorer grâce au SVN</title><link>//www.choiz.fr/2011-07-26-ignorer-gr%C3%A2ce-au-svn.html</link><description>&lt;p&gt;Il existe plusieurs solutions pour ignorer des fichiers sur un svn : :&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.pastebin.com/"&gt;http://www.pastebin.com/&lt;/a&gt; Pour copier coller du code facilement&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 09 Aug 2011 21:03:05 +0200</pubDate><guid>tag:www.choiz.fr,2011-08-09:2011-08-09-liens-utiles.html</guid><category>Code</category><category>js</category><category>html</category><category>css</category><category>xhtml</category><category>javascript</category><category>sites</category></item><item><title>Ignorer grâce au SVN</title><link>//www.choiz.fr/2011-07-26-ignorer-gr%C3%A2ce-au-svn.html</link><description>&lt;p&gt;Il existe plusieurs solutions pour ignorer des fichiers sur un svn :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;svn propset svn:ignore
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -2182,22 +2182,22 @@ votre client le partage de fichiers ! :&lt;/p&gt;
 global-ignores&lt;/p&gt;
 &lt;p&gt;Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
 l'on se trouve actuellement il suffit d'executer la commande svn
-suivante : :&lt;/p&gt;
+suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;svn propset svn:ignore &amp;quot;._*&amp;quot; .
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Par contre si on veut ignorer tous les fichiers qui commencent par ._
 dans tous les dossiers (et sous dossiers) du svn il faut éditer le
-fichier ~/.subversion/config et d'éditer la ligne suivante : :&lt;/p&gt;
+fichier ~/.subversion/config et d'éditer la ligne suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;global-ignores = ._*
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;On peut également ajouter d'autres fichiers a ignorer tel que les .swp
-de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci : :&lt;/p&gt;
+de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;global-ignores = ._* .DS_STORE *.swp
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 26 Jul 2011 18:53:21 +0200</pubDate><guid>tag:www.choiz.fr,2011-07-26:2011-07-26-ignorer-grâce-au-svn.html</guid><category>svn</category><category>ignore</category><category>fichier</category><category>file</category><category>folder</category><category>dossier</category><category>.DS\_Store</category><category>.\_\*</category><category>.\_</category><category>.swp</category><category>Vim</category><category>Mac Os</category></item><item><title>Suppression des .DS\_Store</title><link>//www.choiz.fr/2011-07-05-suppression-des-dsstore.html</link><description>&lt;p&gt;Dans une console sur votre Mac : :&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 26 Jul 2011 18:53:21 +0200</pubDate><guid>tag:www.choiz.fr,2011-07-26:2011-07-26-ignorer-grâce-au-svn.html</guid><category>svn</category><category>ignore</category><category>fichier</category><category>file</category><category>folder</category><category>dossier</category><category>.DS\_Store</category><category>.\_\*</category><category>.\_</category><category>.swp</category><category>Vim</category><category>Mac Os</category></item><item><title>Suppression des .DS\_Store</title><link>//www.choiz.fr/2011-07-05-suppression-des-dsstore.html</link><description>&lt;p&gt;Dans une console sur votre Mac :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -2226,7 +2226,7 @@ aurez le différentiel entre les deux fichier. Comment le lire ? Les
 lignes avec des + devant sont les nouvelles lignes celles avec des -
 sont celles a supprimer. Ce n'est pas plus difficile que ça ! Maintenant
 j'applique mon patch sur mon fichier version1.php grâce à la commande
-suivante : :&lt;/p&gt;
+suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;patch -p0 &amp;lt; mon_patch
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 30 May 2011 06:00:06 +0200</pubDate><guid>tag:www.choiz.fr,2011-05-30:2011-05-30-patch-diff.html</guid><category>Patch</category><category>Commande</category><category>Terminal</category><category>Diff</category><category>Version</category></item><item><title>Split &amp; Vsplit dans vim</title><link>//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html</link><description>&lt;p&gt;Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
 pouvoir ouvrir plusieurs fichiers en même temps.&lt;/p&gt;
@@ -2267,21 +2267,21 @@ haut) ou bien en utilisant (CTRL + W puis une fléche directionnelle).&lt;/p&gt;
 &amp;gt; si vous êtes sur votre fenêtre de droite pour ajouter une colonne,
 si vous êtes sur la fenêtre de gauche ceci supprimera une colonne et vis
 versa avec &amp;lt;) vous pouvez également ajouter / supprimer 5 ou 10
-colonnes avec : :&lt;/p&gt;
+colonnes avec :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;5&amp;gt;
 
 10&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 29 May 2011 17:16:00 +0200</pubDate><guid>tag:www.choiz.fr,2011-05-29:2011-05-29-split-vsplit-dans-vim.html</guid><category>vim</category><category>fichier</category><category>editeur</category><category>texte</category><category>terminal</category><category>commande</category><category>split</category><category>vsplit</category><category>window</category><category>colonnes</category><category>cols</category><category>columns</category></item><item><title>Différences entre des fichiers avec Vim</title><link>//www.choiz.fr/2011-05-19-diff%C3%A9rences-entre-des-fichiers-avec-vim.html</link><description>&lt;p&gt;J'ai souvent besoin de voir les différences entre plusieurs fichiers...
 J'utilise souvent la commande diff dans un terminal, mais mon éditeur
 texte favoris "Vim" sait aussi trés bien faire un différentiel.
-Utilisation avec le terminal : :&lt;/p&gt;
+Utilisation avec le terminal :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="gh"&gt;diff fichier1 fichier2&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Celui-ci retournera les différences directement dans le terminal (pas
 pratique pour l'édition).&lt;/p&gt;
-&lt;p&gt;Utilisation avec vim : :&lt;/p&gt;
+&lt;p&gt;Utilisation avec vim :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;vim -d fichier1 fichier2
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -2300,17 +2300,17 @@ J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss :&lt;/p&g
 
 
 &lt;p&gt;Une fois que j'ai mon fichier dump.sql je le met sur la nouvelle
-machine, puis j'execute la commande suivante : :&lt;/p&gt;
+machine, puis j'execute la commande suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;mysql -u utilisateur -pp4ss database &amp;lt; fichierdump.sql
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 14 May 2011 13:21:17 +0200</pubDate><guid>tag:www.choiz.fr,2011-05-14:2011-05-14-migration-dune-base-de-donnée-mysql.html</guid><category>Mysql</category><category>Mysqldump</category><category>Database</category><category>Migration</category><category>Dump Sql</category><category>Sql</category></item><item><title>Petit tips pour les utilisateurs de VIM et PHP</title><link>//www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html</link><description>&lt;p&gt;Lorsque je code en PHP, pour tester si il y a des erreurs généralement
-dans la console je tape la commande : :&lt;/p&gt;
+dans la console je tape la commande :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;php -l fichier_a_tester.php
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
 Pour la faire il suffit de faire "ESC" pour passer en mode commande de
-VIM puis : :&lt;/p&gt;
+VIM puis :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;:!php -l %
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -2356,34 +2356,33 @@ fournit un moyen d'accéder aux membres
 fonctionne pas avec l'attribut "onclick"…&lt;/p&gt;
 &lt;p&gt;Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.&lt;/p&gt;
-&lt;p&gt;Remplacer donc : :&lt;/p&gt;
+&lt;p&gt;Remplacer donc :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;var mavar = &amp;#39;fonctionAffichage();&amp;#39;;
 $(&amp;quot;#code&amp;quot;).attr(&amp;quot;onclick&amp;quot;,&amp;quot;mavar&amp;quot;);
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Par : :&lt;/p&gt;
+&lt;p&gt;Par :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;mavar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;fonctionAffichage();&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;#code&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;removeAttr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;onclick&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;click&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nb"&gt;eval&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;mavar&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="p"&gt;});&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 07 Jan 2011 16:43:00 +0100</pubDate><guid>tag:www.choiz.fr,2011-01-07:2011-01-07-jquery-attr-avec-onclick-par-click.html</guid><category>code</category><category>js</category><category>jquery</category><category>attr()</category><category>click()</category><category>removeAttr()</category></item><item><title>Commande SVN pour ajouter des keywords</title><link>//www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html</link><description>&lt;p&gt;Pour ajouter le numéro de révision ainsi que pas mal d'autres
-informations dans vos projets il suffit de taper cette commande : :&lt;/p&gt;
+informations dans vos projets il suffit de taper cette commande :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;svn propset svn:keywords &amp;quot;Id&amp;quot; index.php
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php&lt;/p&gt;
-&lt;p&gt;Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :
-:&lt;/p&gt;
+&lt;p&gt;Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;Id&lt;/span&gt;&lt;span class="x"&gt;:&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Une fois le fichier versionné vous obtiendrez : :&lt;/p&gt;
+&lt;p&gt;Une fois le fichier versionné vous obtiendrez :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;Id&lt;/span&gt;&lt;span class="x"&gt;: ajax\_modif.php 481 2010-10-25 12:02:50Z choiz &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;D'autres keywords sont disponible tel que : :&lt;/p&gt;
+&lt;p&gt;D'autres keywords sont disponible tel que :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;Revision&lt;/span&gt;&lt;span class="x"&gt;:&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;Date&lt;/span&gt;&lt;span class="x"&gt;:&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;Author&lt;/span&gt;&lt;span class="x"&gt;:&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
@@ -2393,12 +2392,12 @@ informations dans vos projets il suffit de taper cette commande : :&lt;/p&gt;
 
 &lt;p&gt;Vous pouvez les ajouter les uns à la suite des autres par exemple pour
 notre fichier index.php je veux ajouter les 4 keywords précédents grâce
-à la commande : :&lt;/p&gt;
+à la commande :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;svn propset svn:keywords &amp;quot;Revision Date Author URL&amp;quot; index.php
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ce qui affichera : :&lt;/p&gt;
+&lt;p&gt;Ce qui affichera :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;Revision&lt;/span&gt;&lt;span class="x"&gt;: 481 &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;Date&lt;/span&gt;&lt;span class="x"&gt;: 2010-10-25 14:02:50 +0200 (lun., 25 oct. 2010) &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;Author&lt;/span&gt;&lt;span class="x"&gt;: choiz &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;

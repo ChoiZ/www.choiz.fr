@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Pour initialiser les sous-modules dans git j'utilise la commande suivante : : git submodule init Ensuite je dois faire un update des sous-modules pour charger le contenu : git submodule update Pour faire les deux en même temps (init + update) vous pouvez faire : : git submodule update --init Imaginons maintenant que vous avez ..." />
+<meta name="description" content="Pour initialiser les sous-modules dans git j'utilise la commande suivante : git submodule init Ensuite je dois faire un update des sous-modules pour charger le contenu : git submodule update Pour faire les deux en même temps (init + update) vous pouvez faire : git submodule update --init Imaginons maintenant que vous avez ..." />
 <meta name="keywords" content="git, submodule, update, init, recursive">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Initialiser des sous-modules en cascade dans git"/>
-<meta property="og:description" content="Pour initialiser les sous-modules dans git j'utilise la commande suivante : : git submodule init Ensuite je dois faire un update des sous-modules pour charger le contenu : git submodule update Pour faire les deux en même temps (init + update) vous pouvez faire : : git submodule update --init Imaginons maintenant que vous avez ..."/>
+<meta property="og:description" content="Pour initialiser les sous-modules dans git j'utilise la commande suivante : git submodule init Ensuite je dois faire un update des sous-modules pour charger le contenu : git submodule update Pour faire les deux en même temps (init + update) vous pouvez faire : git submodule update --init Imaginons maintenant que vous avez ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html"/>
 <meta property="og:type" content="article"/>
@@ -68,19 +68,17 @@
   </header>
   <div>
     <p>Pour initialiser les sous-modules dans git j'utilise la commande
-suivante : :</p>
+suivante :</p>
 <div class="highlight"><pre>git submodule init
 </pre></div>
 
 
-<dl>
-<dt>Ensuite je dois faire un update des sous-modules pour charger le contenu</dt>
-<dd>
-<p>:</p>
-<p>git submodule update</p>
-</dd>
-</dl>
-<p>Pour faire les deux en même temps (init + update) vous pouvez faire : :</p>
+<p>Ensuite je dois faire un update des sous-modules pour charger le contenu :</p>
+<div class="highlight"><pre>git submodule update
+</pre></div>
+
+
+<p>Pour faire les deux en même temps (init + update) vous pouvez faire :</p>
 <div class="highlight"><pre>git submodule update --init
 </pre></div>
 
@@ -91,7 +89,7 @@ sous-modules. Exemple dans mon dépot
 <a href="https://www.github.com/ChoiZ/vim-config.git">vim</a> et dedans des
 sous-modules avec les plugins de vim. Pour initialiser, mettre à jour et
 le tout en cascade (dans tous les dossiers et sous-dossiers) il faut
-faire : :</p>
+faire :</p>
 <div class="highlight"><pre>git submodule update --init --recursive
 </pre></div>
   </div>
@@ -125,7 +123,7 @@ faire : :</p>
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html",
-  "description": "Pour initialiser les sous-modules dans git j'utilise la commande suivante : : git submodule init Ensuite je dois faire un update des sous-modules pour charger le contenu : git submodule update Pour faire les deux en même temps (init + update) vous pouvez faire : : git submodule update --init Imaginons maintenant que vous avez ..."
+  "description": "Pour initialiser les sous-modules dans git j'utilise la commande suivante : git submodule init Ensuite je dois faire un update des sous-modules pour charger le contenu : git submodule update Pour faire les deux en même temps (init + update) vous pouvez faire : git submodule update --init Imaginons maintenant que vous avez ..."
 }
 </script></body>
 </html>

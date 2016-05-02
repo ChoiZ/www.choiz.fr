@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="J'utilise plusieurs machines virtuelles avec vagrant, une avec un backoffice et une avec une API. J'ai donc du faire un réseau privé dans vagrant pour que le BO communique avec l'API. Il suffit de modifier la configuration de la vm #1 et d'ajouter : : config.vm.network ..." />
+<meta name="description" content="J'utilise plusieurs machines virtuelles avec vagrant, une avec un backoffice et une avec une API. J'ai donc du faire un réseau privé dans vagrant pour que le BO communique avec l'API. Il suffit de modifier la configuration de la vm #1 et d'ajouter : config.vm.network ..." />
 <meta name="keywords" content="vagrant, réseau, privé, private, network">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Vagrant faire un réseau privé"/>
-<meta property="og:description" content="J'utilise plusieurs machines virtuelles avec vagrant, une avec un backoffice et une avec une API. J'ai donc du faire un réseau privé dans vagrant pour que le BO communique avec l'API. Il suffit de modifier la configuration de la vm #1 et d'ajouter : : config.vm.network ..."/>
+<meta property="og:description" content="J'utilise plusieurs machines virtuelles avec vagrant, une avec un backoffice et une avec une API. J'ai donc du faire un réseau privé dans vagrant pour que le BO communique avec l'API. Il suffit de modifier la configuration de la vm #1 et d'ajouter : config.vm.network ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html"/>
 <meta property="og:type" content="article"/>
@@ -71,12 +71,12 @@
 backoffice et une avec une API.</p>
 <p>J'ai donc du faire un réseau privé dans vagrant pour que le BO
 communique avec l'API.</p>
-<p>Il suffit de modifier la configuration de la vm #1 et d'ajouter : :</p>
+<p>Il suffit de modifier la configuration de la vm #1 et d'ajouter :</p>
 <div class="highlight"><pre>config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.1&quot;
 </pre></div>
 
 
-<p>Et dans la configuration de la vm #2 d'ajouter : :</p>
+<p>Et dans la configuration de la vm #2 d'ajouter :</p>
 <div class="highlight"><pre>config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.2&quot;
 </pre></div>
 
@@ -114,7 +114,7 @@ avec votre vm #2 directement avec l'ip 192.168.10.2.</p>
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html",
-  "description": "J'utilise plusieurs machines virtuelles avec vagrant, une avec un backoffice et une avec une API. J'ai donc du faire un réseau privé dans vagrant pour que le BO communique avec l'API. Il suffit de modifier la configuration de la vm #1 et d'ajouter : : config.vm.network ..."
+  "description": "J'utilise plusieurs machines virtuelles avec vagrant, une avec un backoffice et une avec une API. J'ai donc du faire un réseau privé dans vagrant pour que le BO communique avec l'API. Il suffit de modifier la configuration de la vm #1 et d'ajouter : config.vm.network ..."
 }
 </script></body>
 </html>

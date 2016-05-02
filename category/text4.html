@@ -54,6 +54,35 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html#2014-01-19-suppression-dun-caractère-unicode-dans-vim">Suppression d'un caractère unicode dans Vim</a></h2>
+    <p>
+      Posté le dim. 19 janvier 2014 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/vim.html">vim</a>,      <a href="//www.choiz.fr/tag/unicode.html">unicode</a>,      <a href="//www.choiz.fr/tag/char.html">char</a>,      <a href="//www.choiz.fr/tag/suppression.html">suppression</a>,      <a href="//www.choiz.fr/tag/caractere.html">caractère</a>    </p>
+  </header>
+  <div>
+      <p>J'étais à la recherche de se caractère unicode dans vim :</p>
+<div class="highlight"><pre>&lt;U+2028&gt;
+</pre></div>
+
+
+<p>Pour pouvoir le supprimer j'ai utilisé la commande suivante :</p>
+<div class="highlight"><pre>:%s/\%U2028//g
+</pre></div>
+
+
+<p>Décortiquons la commande :</p>
+<div class="highlight"><pre>`:%s/` Recherche et remplace dans tout le fichier
+
+`\%U2028` Le caractère que l&#39;on recherche unicode &quot;2028&quot;
+
+`//` par rien (1er slash ...</pre></div>
+      <a class="btn" href="//www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html#2014-01-19-suppression-dun-caractère-unicode-dans-vim">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2013-11-13-crontab-e-files.html#2013-11-13-crontab-e-files">crontab -e file(s)</a></h2>
     <p>
       Posté le mer. 13 novembre 2013 &#8226;
@@ -117,7 +146,7 @@ Tags :
       <p>Installation via npm de jshint (-g pour installer pour tous les utilisateurs) :
     sudo npm install -g jshint</p>
 <p>Faire un lien symbolique pour pouvoir utiliser directement jshint sans
-préciser tout le chemin a chaque fois : :</p>
+préciser tout le chemin a chaque fois :</p>
 <div class="highlight"><pre>ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
 </pre></div>
       <a class="btn" href="//www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html#2013-10-14-installer-jshint-sur-mac">Lire la suite</a>
@@ -134,12 +163,12 @@ Tags :
   </header>
   <div>
       <p>J'utilise des branches tel que prod, preprod pour mes projets et en
-local il m'arrive de vouloir aller sur ses branches. :</p>
+local il m'arrive de vouloir aller sur ses branches :</p>
 <div class="highlight"><pre>git checkout preprod
 </pre></div>
 
 
-<p>Et j'ai l'erreur suivante : :</p>
+<p>Et j'ai l'erreur suivante :</p>
 <div class="highlight"><pre><span class="n">error</span><span class="o">:</span> <span class="n">pathspec</span> <span class="s1">&#39;preprod&#39;</span> <span class="n">did</span> <span class="n">not</span> <span class="n">match</span> <span class="n">any</span> <span class="n">file</span><span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="n">known</span> <span class="n">to</span> <span class="n">git</span><span class="o">.</span>
 </pre></div>
 
@@ -158,12 +187,12 @@ Tags :
       <a href="//www.choiz.fr/tag/curl.html">curl</a>,      <a href="//www.choiz.fr/tag/http.html">http</a>,      <a href="//www.choiz.fr/tag/response.html">response</a>,      <a href="//www.choiz.fr/tag/code.html">code</a>,      <a href="//www.choiz.fr/tag/301.html">301</a>,      <a href="//www.choiz.fr/tag/302.html">302</a>,      <a href="//www.choiz.fr/tag/404.html">404</a>,      <a href="//www.choiz.fr/tag/200.html">200</a>    </p>
   </header>
   <div>
-      <p>Pour connaitre le code réponse HTTP il suffit de faire : :</p>
+      <p>Pour connaitre le code réponse HTTP il suffit de faire :</p>
 <div class="highlight"><pre>curl -IL url
 </pre></div>
 
 
-<p>Voici l'exemble avec tumblr.com : :</p>
+<p>Voici l'exemble avec tumblr.com :</p>
 <div class="highlight"><pre><span class="nt">curl</span> <span class="nt">-IL</span> <span class="nt">http</span><span class="o">://</span><span class="nt">tumblr</span><span class="nc">.com</span>
 
 <span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="nc">.1</span> <span class="nt">301</span> <span class="nt">Moved</span> <span class="nt">Permanently</span>
@@ -190,7 +219,7 @@ Tags :
       <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec
 svn. Il est temps de faire la migration de svn à git !</p>
 <p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
-voulais voici donc ma procédure : :</p>
+voulais voici donc ma procédure :</p>
 <div class="highlight"><pre>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2013-07-16-passer-de-svn-à-git.html#2013-07-16-passer-de-svn-à-git">Lire la suite</a>
   </div>
@@ -205,17 +234,17 @@ Tags :
       <a href="//www.choiz.fr/tag/postgresql.html">postgreSQL</a>,      <a href="//www.choiz.fr/tag/pg_dump.html">pg\_dump</a>,      <a href="//www.choiz.fr/tag/psql.html">psql</a>,      <a href="//www.choiz.fr/tag/import.html">import</a>,      <a href="//www.choiz.fr/tag/export.html">export</a>,      <a href="//www.choiz.fr/tag/dump.html">dump</a>,      <a href="//www.choiz.fr/tag/sql.html">sql</a>    </p>
   </header>
   <div>
-      <p>Pour exporter une table spécifique d'une base : :</p>
+      <p>Pour exporter une table spécifique d'une base :</p>
 <div class="highlight"><pre>pg_dump *mabase* --table=*matable* &gt; *dump_base_table*.sql
 </pre></div>
 
 
-<p>Pour exporter une base : :</p>
+<p>Pour exporter une base :</p>
 <div class="highlight"><pre>pg_dump *mabase* &gt; *dump_base*.sql
 </pre></div>
 
 
-<p>Pour importer un dump dans une base : :</p>
+<p>Pour importer un dump dans une base :</p>
 <div class="highlight"><pre>psql *base* &lt; *dump_base_table*.sql
 psql *base* &lt; *dump_base*.sql
 </pre></div>
@@ -238,25 +267,6 @@ modifications, cette fois j'avais créé cette branche <em>debug_redirect</em>
 mais je n'étais pas dessus…</p>
 <p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master ...</em></p>
       <a class="btn" href="//www.choiz.fr/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html#2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html#2013-06-21-installation-disque-dur-seagate-4to-debian">Installation disque dur Seagate 4To Debian</a></h2>
-    <p>
-      Posté le ven. 21 juin 2013 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/debian.html">debian</a>,      <a href="//www.choiz.fr/tag/disque-dur.html">disque dur</a>,      <a href="//www.choiz.fr/tag/4to.html">4To</a>,      <a href="//www.choiz.fr/tag/partition.html">partition</a>,      <a href="//www.choiz.fr/tag/fs.html">fs</a>,      <a href="//www.choiz.fr/tag/config_efi_partition.html">config\_efi\_partition</a>,      <a href="//www.choiz.fr/tag/fdisk.html">fdisk</a>,      <a href="//www.choiz.fr/tag/parted.html">parted</a>,      <a href="//www.choiz.fr/tag/gpt.html">gpt</a>,      <a href="//www.choiz.fr/tag/mkfs.html">mkfs</a>    </p>
-  </header>
-  <div>
-      <p>J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
-(Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec «
-Fdisk » et j'ai eu le message suivant : :</p>
-<div class="highlight"><pre><span class="n">Warning</span><span class="o">:</span> <span class="n">invalid</span> <span class="n">flag</span> <span class="mh">0x0000</span> <span class="n">of</span> <span class="n">partition</span> <span class="n">table</span> <span class="mi">4</span> <span class="n">will</span> <span class="n">be</span> <span class="n">corrected</span> <span class="n">by</span> <span class="n">w</span><span class="o">(</span><span class="n">rite</span><span class="o">)</span>
-
-<span class="n">WARNING</span><span class="o">:</span> <span class="n">The</span> <span class="n">size</span> <span class="n">of ...</span></pre></div>
-      <a class="btn" href="//www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html#2013-06-21-installation-disque-dur-seagate-4to-debian">Lire la suite</a>
   </div>
 </article>
 

@@ -238,7 +238,7 @@ Tags :
       <p>Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
 correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
 "rename".</p>
-<p>Exemple je veux supprimer tous les espaces d'un fichier : :</p>
+<p>Exemple je veux supprimer tous les espaces d'un fichier :</p>
 <div class="highlight"><pre>rename &quot;s/ *//g&quot; *.*
 </pre></div>
 
@@ -383,12 +383,12 @@ pouvez spécifier un autre chemin ainsi qu'un autre fichier. :</p>
 
 <p>Ici on tape un mot de passe si on en veut un lors de la connexion aux
 différents hosts. En général j'en défini un.</p>
-<p>Pour finir on copie la clé sur le serveur soit via scp : :</p>
+<p>Pour finir on copie la clé sur le serveur soit via scp :</p>
 <div class="highlight"><pre>scp ~/.ssh/id\_rsa.pub user@ip:~/.ssh/authorized\_keys/
 </pre></div>
 
 
-<p>ou via ssh-copy-id : :</p>
+<p>ou via ssh-copy-id :</p>
 <div class="highlight"><pre>ssh-copy-id -i ~/.ssh/id\_rsa.pub user@ip
 </pre></div>
   </div>
@@ -405,14 +405,14 @@ Tags :
   <div>
       <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
 en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext
-sur votre site en php il faut télécharger le package php-gettext : :</p>
+sur votre site en php il faut télécharger le package php-gettext :</p>
 <div class="highlight"><pre>apt-get install php-gettext
 </pre></div>
 
 
 <p>Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
 commentaires devant les langues qui vont sont à traduire par exemple :
-Allemand, Anglais, Espagnol, Français &amp; Suédois : :</p>
+Allemand, Anglais, Espagnol, Français &amp; Suédois :</p>
 <div class="highlight"><pre>de_DE.UTF-8 UTF-8
 en_GB.UTF-8 UTF-8
 es_ES.UTF-8 UTF-8
@@ -421,18 +421,17 @@ sv_SE.UTF-8 UTF-8
 </pre></div>
 
 
-<p>Puis regénérer les locales : :</p>
+<p>Puis regénérer les locales :</p>
 <div class="highlight"><pre>locale-gen
 </pre></div>
 
 
-<p>Ensuite il faut définir votre chemin pour les traductions par exemple :
-:</p>
+<p>Ensuite il faut définir votre chemin pour les traductions par exemple :</p>
 <div class="highlight"><pre>lang/fr_FR/LC_MESSAGES/domaine.mo
 </pre></div>
 
 
-<p>Puis dans votre fichier php de configuration : :</p>
+<p>Puis dans votre fichier php de configuration :</p>
 <div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="c1">// configuration de la langue</span>
 <span class="nv">$lang</span> <span class="o">=</span> <span class="s1">&#39;fr_FR&#39;</span><span class="p">;</span> <span class="c1">// Langue a afficher</span>
@@ -463,7 +462,7 @@ sv_SE.UTF-8 UTF-8
 </pre></div>
 
 
-<p>Pour générer un fichier .mo a partir d'un fichier .po : :</p>
+<p>Pour générer un fichier .mo a partir d'un fichier .po :</p>
 <div class="highlight"><pre>msgfmt domaine.po -o domaine.mo
 </pre></div>
 
@@ -471,23 +470,21 @@ sv_SE.UTF-8 UTF-8
 <p>Pour générer un fichier .po a partir de fichier php avec du gettext,
 faire un fichier texte avec tous vos fichiers php ou on doit récupérer
 le gettext.</p>
-<p>Exemple listing_gettext.txt tel que : :</p>
+<p>Exemple listing_gettext.txt tel que :</p>
 <div class="highlight"><pre>index.php
 contact.php
 etc…
 </pre></div>
 
 
-<dl>
-<dt>Ensuite il faut faire la commande suivante pour générer le fichier</dt>
-<dt>domaine.po dans le dossier lang/ depuis notre fichier texte avec les php</dt>
-<dd>
-<p>:</p>
-<p>find . -iname "*.php" | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/</p>
-</dd>
-</dl>
+<p>Ensuite il faut faire la commande suivante pour générer le fichier
+domaine.po dans le dossier lang/ depuis notre fichier texte avec les php :</p>
+<div class="highlight"><pre>find . -iname &quot;*.php&quot; | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
+</pre></div>
+
+
 <p>Pour finir voilà le path des fichiers .po et .mo dans mon application
-web : :</p>
+web :</p>
 <div class="highlight"><pre>lang/fr_FR/LC_MESSAGES/domaine.po
 lang/fr_FR/LC_MESSAGES/domaine.mo
 lang/en_GB/LC_MESSAGES/domaine.po

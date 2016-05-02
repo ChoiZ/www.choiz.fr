@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Dans certains projets j’utilise git avec plusieurs remote, par exemple : un remote “origin” se trouve sur un serveur perso. un remote “github” qui lui est sur github.com. Quand je vais sur le master il m’arrive d’avoir ce message : : "your branch is up-to-date with “github/master”." Je ..." />
+<meta name="description" content="Dans certains projets j’utilise git avec plusieurs remote, par exemple : un remote “origin” se trouve sur un serveur perso. un remote “github” qui lui est sur github.com. Quand je vais sur le master il m’arrive d’avoir ce message : "your branch is up-to-date with “github/master”." Je ..." />
 <meta name="keywords" content="git, origin, remote, master, branch, checkout, track">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Récupérer le master depuis le remote origin avec git"/>
-<meta property="og:description" content="Dans certains projets j’utilise git avec plusieurs remote, par exemple : un remote “origin” se trouve sur un serveur perso. un remote “github” qui lui est sur github.com. Quand je vais sur le master il m’arrive d’avoir ce message : : "your branch is up-to-date with “github/master”." Je ..."/>
+<meta property="og:description" content="Dans certains projets j’utilise git avec plusieurs remote, par exemple : un remote “origin” se trouve sur un serveur perso. un remote “github” qui lui est sur github.com. Quand je vais sur le master il m’arrive d’avoir ce message : "your branch is up-to-date with “github/master”." Je ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html"/>
 <meta property="og:type" content="article"/>
@@ -74,7 +74,7 @@
 <li>un remote “origin” se trouve sur un serveur perso.</li>
 <li>un remote “github” qui lui est sur github.com.</li>
 </ul>
-<p>Quand je vais sur le master il m’arrive d’avoir ce message : :</p>
+<p>Quand je vais sur le master il m’arrive d’avoir ce message :</p>
 <div class="highlight"><pre>&quot;your branch is up-to-date with “github/master”.&quot;
 </pre></div>
 
@@ -84,14 +84,14 @@ github/master.</p>
 <p>La solution que j’ai trouvé est la suivante :</p>
 <ol>
 <li>
-<p>supprimer ma branche master locale : :</p>
+<p>supprimer ma branche master locale :</p>
 <div class="highlight"><pre>git branch -d master
 </pre></div>
 
 
 </li>
 <li>
-<p>récupèrer mon master depuis le remote origin : :</p>
+<p>récupèrer mon master depuis le remote origin :</p>
 <div class="highlight"><pre>git checkout -t -b master origin/master
 </pre></div>
 
@@ -135,7 +135,7 @@ github/master.</p>
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html",
-  "description": "Dans certains projets j’utilise git avec plusieurs remote, par exemple : un remote “origin” se trouve sur un serveur perso. un remote “github” qui lui est sur github.com. Quand je vais sur le master il m’arrive d’avoir ce message : : "your branch is up-to-date with “github/master”." Je ..."
+  "description": "Dans certains projets j’utilise git avec plusieurs remote, par exemple : un remote “origin” se trouve sur un serveur perso. un remote “github” qui lui est sur github.com. Quand je vais sur le master il m’arrive d’avoir ce message : "your branch is up-to-date with “github/master”." Je ..."
 }
 </script></body>
 </html>

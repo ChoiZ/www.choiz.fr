@@ -109,12 +109,12 @@ Tags :
   <div>
       <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
 suivre pour le mettre à jour vers la version : 4.3.0.</p>
-<p>Je liste les différents noyaux gentoo disponibles : :</p>
+<p>Je liste les différents noyaux gentoo disponibles :</p>
 <div class="highlight"><pre>eix sys-kernel/gentoo-sources
 </pre></div>
 
 
-<p>Je télécharge le noyau 4.3.0 : :</p>
+<p>Je télécharge le noyau 4.3.0 :</p>
 <div class="highlight"><pre>emerge -a =sys-kernel/gentoo-sources-4.3.0
 </pre></div>
 
@@ -122,7 +122,7 @@ suivre pour le mettre à jour vers la version : 4.3.0.</p>
 <p>Une fois téléchargé, il faut modifier le lien symbolique /usr/src/linux
 grâce à eselect.</p>
 <p>J'affiche la liste des noyaux (celui actuellement selectionné est suivi
-d'une étoile) : :</p>
+d'une étoile) :</p>
 <div class="highlight"><pre>eselect kernel list
 
 [1]     linux-4.2.0-gentoo *
@@ -130,7 +130,7 @@ d'une étoile) : :</p>
 </pre></div>
 
 
-<p>Pour selectionner notre noyau 4.3.0 il faut utiliser : :</p>
+<p>Pour selectionner notre noyau 4.3.0 il faut utiliser :</p>
 <div class="highlight"><pre>eselect kernel set 2
 </pre></div>
 
@@ -156,8 +156,7 @@ Tags :
       <a href="//www.choiz.fr/tag/mail.html">mail</a>,      <a href="//www.choiz.fr/tag/postfix.html">postfix</a>,      <a href="//www.choiz.fr/tag/dovecot.html">dovecot</a>,      <a href="//www.choiz.fr/tag/dns.html">dns</a>,      <a href="//www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="//www.choiz.fr/tag/rainloop.html">rainloop</a>,      <a href="//www.choiz.fr/tag/webmail.html">webmail</a>    </p>
   </header>
   <div>
-      <p>Installation d'un serveur mail complet et à jour sous debian jessie
-(8.2).</p>
+      <p>Installation d'un serveur mail complet et à jour sous debian jessie (8.2).</p>
 <h2>Configuration des DNS</h2>
 <p>Pour commencer nous allons créer des entrées DNS.</p>
 <p>Nous créons un MX pour les mails avec une priorité de 1, un sous domaine
@@ -637,18 +636,18 @@ Tags :
 pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
 est préférable d'utiliser un navigateur tel que Firefox.</p>
 <p>Voici la commande pour voir le navigateur par défaut pour les url
-utilisants le protocole "http" : :</p>
+utilisants le protocole "http" :</p>
 <div class="highlight"><pre>xdg-mime query default x-scheme-handler/http
 </pre></div>
 
 
-<p>Et voici la commande pour le "https" : :</p>
+<p>Et voici la commande pour le "https" :</p>
 <div class="highlight"><pre>xdg-mime query default x-scheme-handler/https
 </pre></div>
 
 
 <p>Pour changer le navigateur par défaut par Firefox il suffit d'executer
-ses deux commandes : :</p>
+ses deux commandes :</p>
 <div class="highlight"><pre>xdg-mime default firefox.desktop x-scheme-handler/http
 xdg-mime default firefox.desktop x-scheme-handler/https
 </pre></div>
@@ -668,12 +667,12 @@ Tags :
 backoffice et une avec une API.</p>
 <p>J'ai donc du faire un réseau privé dans vagrant pour que le BO
 communique avec l'API.</p>
-<p>Il suffit de modifier la configuration de la vm #1 et d'ajouter : :</p>
+<p>Il suffit de modifier la configuration de la vm #1 et d'ajouter :</p>
 <div class="highlight"><pre>config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.1&quot;
 </pre></div>
 
 
-<p>Et dans la configuration de la vm #2 d'ajouter : :</p>
+<p>Et dans la configuration de la vm #2 d'ajouter :</p>
 <div class="highlight"><pre>config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.2&quot;
 </pre></div>
 
@@ -694,7 +693,7 @@ Tags :
   <div>
       <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester
 qu'une fonctionnalité de code.</p>
-<p>Par exemple pour tester une api : :</p>
+<p>Par exemple pour tester une api :</p>
 <div class="highlight"><pre><span class="x">// Obtenir le livre </span><span class="err">#</span><span class="x">1</span>
 <span class="x">api_get(&#39;books/1&#39;);</span>
 
@@ -704,25 +703,25 @@ qu'une fonctionnalité de code.</p>
 
 
 <p>Je test généralement chaque élément séparement.</p>
-<p>Pour tester la première portion de mon code : :</p>
+<p>Pour tester la première portion de mon code :</p>
 <div class="highlight"><pre><span class="x">//* Obtenir le livre </span><span class="err">#</span><span class="x">1</span>
 <span class="x">api_get(&#39;books/1&#39;);</span>
-<span class="x">//\*/</span>
+<span class="x">//*/</span>
 
 <span class="x">/* Ajouter un livre</span>
 <span class="x">api_add(&#39;books&#39;, </span><span class="p">$</span><span class="nv">datas</span><span class="x">);</span>
-<span class="x">//\*/</span>
+<span class="x">//*/</span>
 </pre></div>
 
 
-<p>Pour tester la seconde portion de mon code : :</p>
+<p>Pour tester la seconde portion de mon code :</p>
 <div class="highlight"><pre><span class="cm">/* Obtenir le livre #1</span>
 <span class="cm">api_get(&#39;books/1&#39;);</span>
-<span class="cm">//\*/</span><span class="w"></span>
+<span class="cm">//*/</span><span class="w"></span>
 
 <span class="o">//*</span><span class="w"> </span>Ajouter<span class="w"> </span>un<span class="w"> </span>livre<span class="w"></span>
 api_add<span class="o">(</span><span class="s">&#39;books&#39;</span><span class="o">,</span><span class="w"> </span><span class="err">$</span>datas<span class="o">)</span><span class="err">;</span><span class="w"></span>
-<span class="o">//\*/</span><span class="w"></span>
+<span class="o">//*/</span><span class="w"></span>
 </pre></div>
 
 
@@ -743,12 +742,12 @@ Tags :
   </header>
   <div>
       <p>Pour mettre à jour Gentoo j'utilise différentes commandes.</p>
-<p>Dans un premier temps je fais la mise à jour d'eix : :</p>
+<p>Dans un premier temps je fais la mise à jour d'eix :</p>
 <div class="highlight"><pre>eix-sync
 </pre></div>
 
 
-<p>Ensuite : :</p>
+<p>Ensuite :</p>
 <div class="highlight"><pre>emerge -pvuDN world
 </pre></div>
 
@@ -761,7 +760,7 @@ updating (to another version) etc…) -v ou --verbose, mode verbeux. -u ou
 -N ou --newuse, met à jour les programmes dont le "USE" a été modifié
 depuis son installation.</p>
 <p>Une fois la liste des programmes et ses modifications vérifiée nous
-pouvons lancer la mise à jour : :</p>
+pouvons lancer la mise à jour :</p>
 <div class="highlight"><pre>emerge -vuDN world
 </pre></div>
   </div>
@@ -776,7 +775,7 @@ Tags :
       <a href="//www.choiz.fr/tag/compilation.html">compilation</a>,      <a href="//www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>    </p>
   </header>
   <div>
-      <p>Pour compiler le kernel sous gentoo : :</p>
+      <p>Pour compiler le kernel sous gentoo :</p>
 <div class="highlight"><pre>cd /usr/src/linux
 
 make menuconfig
@@ -795,7 +794,7 @@ make install
 
 <p>Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi
 que le nombre de compilation.</p>
-<p>Il faut maintenant redémarrer la machine : :</p>
+<p>Il faut maintenant redémarrer la machine :</p>
 <div class="highlight"><pre>reboot
 </pre></div>
 
@@ -819,12 +818,12 @@ syntaxe…</p>
 <h2>tar.gz</h2>
 <p>Pour les fichiers <strong>tar.gz</strong> j'arrive parfaitement à compresser ou
 décompresser ce format exemple :</p>
-<p>On compresse avec : :</p>
+<p>On compresse avec :</p>
 <div class="highlight"><pre>tar -cvzf archive.tar.gz dossier_a_compresser/
 </pre></div>
 
 
-<p>On décompresse avec : :</p>
+<p>On décompresse avec :</p>
 <div class="highlight"><pre>tar -xvzf archive.tar.gz
 </pre></div>
 
@@ -836,22 +835,22 @@ verbeux. -z pour le "gzip" d'ou le ".gz". -f pour spécifier le fichier.</p>
 <p>Pour les <strong>tar.bz2</strong> je ne sais JAMAIS qu'il faut remplacer "z" de gizip
 par "j" de Bzip… (la lettre "b" étant sans doute utilisé avant que le
 bzip n'apparaisse). L'alternative est d'utiliser "--bzip"</p>
-<p>On compresse avec : :</p>
+<p>On compresse avec :</p>
 <div class="highlight"><pre>tar -cvjf archive.tar.bz2 dossier_a_compresser/
 </pre></div>
 
 
-<p>Ou : :</p>
+<p>Ou :</p>
 <div class="highlight"><pre>tar --bzip2 -cvf archive.tar.bz2 dossier_a_compresser/
 </pre></div>
 
 
-<p>On décompresse avec : :</p>
+<p>On décompresse avec :</p>
 <div class="highlight"><pre>tar -xvjf archive.tar.bz2
 </pre></div>
 
 
-<p>Ou : :</p>
+<p>Ou :</p>
 <div class="highlight"><pre>tar --bzip2 -xvf archive.tar.bz2
 </pre></div>
 
@@ -859,22 +858,22 @@ bzip n'apparaisse). L'alternative est d'utiliser "--bzip"</p>
 <h2>tar.xz</h2>
 <p>Pour ce qui est de Lzma ou le <strong>tar.xz</strong> c'est un "J" majuscule cette
 fois ou d'utiliser "--xz".</p>
-<p>On compresse avec : :</p>
+<p>On compresse avec :</p>
 <div class="highlight"><pre>tar -cvJf archive.tar.xz dossier_a_compresser/
 </pre></div>
 
 
-<p>Ou : :</p>
+<p>Ou :</p>
 <div class="highlight"><pre>tar --xz -cvf archive.tar.xz dossier_a_compresser/
 </pre></div>
 
 
-<p>On décompresse avec : :</p>
+<p>On décompresse avec :</p>
 <div class="highlight"><pre>tar -xvJf archive.tar.xz
 </pre></div>
 
 
-<p>Ou : :</p>
+<p>Ou :</p>
 <div class="highlight"><pre>tar --xz -xvf archive.tar.xz
 </pre></div>
   </div>

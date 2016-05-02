@@ -54,6 +54,25 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html#2013-06-21-installation-disque-dur-seagate-4to-debian">Installation disque dur Seagate 4To Debian</a></h2>
+    <p>
+      Posté le ven. 21 juin 2013 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/debian.html">debian</a>,      <a href="//www.choiz.fr/tag/disque-dur.html">disque dur</a>,      <a href="//www.choiz.fr/tag/4to.html">4To</a>,      <a href="//www.choiz.fr/tag/partition.html">partition</a>,      <a href="//www.choiz.fr/tag/fs.html">fs</a>,      <a href="//www.choiz.fr/tag/config_efi_partition.html">config\_efi\_partition</a>,      <a href="//www.choiz.fr/tag/fdisk.html">fdisk</a>,      <a href="//www.choiz.fr/tag/parted.html">parted</a>,      <a href="//www.choiz.fr/tag/gpt.html">gpt</a>,      <a href="//www.choiz.fr/tag/mkfs.html">mkfs</a>    </p>
+  </header>
+  <div>
+      <p>J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
+(Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec «
+Fdisk » et j'ai eu le message suivant :</p>
+<div class="highlight"><pre><span class="n">Warning</span><span class="o">:</span> <span class="n">invalid</span> <span class="n">flag</span> <span class="mh">0x0000</span> <span class="n">of</span> <span class="n">partition</span> <span class="n">table</span> <span class="mi">4</span> <span class="n">will</span> <span class="n">be</span> <span class="n">corrected</span> <span class="n">by</span> <span class="n">w</span><span class="o">(</span><span class="n">rite</span><span class="o">)</span>
+
+<span class="n">WARNING</span><span class="o">:</span> <span class="n">The</span> <span class="n">size</span> <span class="n">of ...</span></pre></div>
+      <a class="btn" href="//www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html#2013-06-21-installation-disque-dur-seagate-4to-debian">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html#2013-06-10-toujours-afficher-le-protocole-dans-firefox">Toujours afficher le protocole dans Firefox</a></h2>
     <p>
       Posté le lun. 10 juin 2013 &#8226;
@@ -65,12 +84,12 @@ Tags :
 or lors de la copie celui-ci est copié… Je me retrouve donc avec deux
 fois <a href="http://">http://</a>…</p>
 <p>Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :</p>
-<p>Ecrire dans la barre d'adresse : :</p>
+<p>Ecrire dans la barre d'adresse :</p>
 <div class="highlight"><pre><span class="n">about</span><span class="o">:</span><span class="n">config</span>
 </pre></div>
 
 
-<p>Rechercher : :</p>
+<p>Rechercher :</p>
 <div class="highlight"><pre>browser.urlbar ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html#2013-06-10-toujours-afficher-le-protocole-dans-firefox">Lire la suite</a>
   </div>
@@ -87,7 +106,7 @@ Tags :
   <div>
       <p>Voilà une solution simple pour convertir une base de donnée en Latin1
 vers de l'UTF-8.</p>
-<p>Utiliser mysqldump avec les options suivantes : :</p>
+<p>Utiliser mysqldump avec les options suivantes :</p>
 <div class="highlight"><pre>--default-character-set=utf8
 </pre></div>
 
@@ -97,7 +116,7 @@ vers de l'UTF-8.</p>
 </pre></div>
 
 
-<p>Voilà la commande complète : :</p>
+<p>Voilà la commande complète :</p>
 <div class="highlight"><pre>mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
 </pre></div>
 
@@ -234,7 +253,7 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/stash.html">stash</a>,      <a href="//www.choiz.fr/tag/content.html">content</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/file-content.html">file content</a>,      <a href="//www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="//www.choiz.fr/tag/show.html">show</a>    </p>
   </header>
   <div>
-      <p>Pour lister les stash : :</p>
+      <p>Pour lister les stash :</p>
 <div class="highlight"><pre>git stash list
 
 stash@{0}: WIP on BranchName: 5d8a556 Edit file.js
@@ -244,31 +263,11 @@ stash@{5}: WIP on BranchName: 3bb67ff Add file.css file.js
 </pre></div>
 
 
-<p>Pour voir le contenu d'un stash : :</p>
+<p>Pour voir le contenu d'un stash :</p>
 <div class="highlight"><pre>git stash show
 
 stash@{0} chemin/vers ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis.html#2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html#2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight">Ajout dans mon .vimrc de matchadd() & highlight</a></h2>
-    <p>
-      Posté le ven. 27 avril 2012 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/vimrc.html">vimrc</a>,      <a href="//www.choiz.fr/tag/vim.html">vim</a>,      <a href="//www.choiz.fr/tag/config-file.html">config file</a>,      <a href="//www.choiz.fr/tag/vimrc.html">.vimrc</a>,      <a href="//www.choiz.fr/tag/todo.html">todo</a>,      <a href="//www.choiz.fr/tag/notice.html">notice</a>,      <a href="//www.choiz.fr/tag/fixme.html">fixme</a>,      <a href="//www.choiz.fr/tag/highlight.html">highlight</a>,      <a href="//www.choiz.fr/tag/matchadd.html">matchadd</a>    </p>
-  </header>
-  <div>
-      <p>Petit ajout dans mon fichier .vimrc :</p>
-<div class="highlight"><pre>&quot; Highlight To do list with green background
-highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
-highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
-highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
-&quot; Match todolist, notice, fixme
-:call matchadd(&#39;Todo ...</pre></div>
-      <a class="btn" href="//www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html#2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight">Lire la suite</a>
   </div>
 </article>
 

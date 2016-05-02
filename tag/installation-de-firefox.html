@@ -20,7 +20,7 @@
 <meta property="og:locale" content="fr_FR"/>
 <meta property="og:url" content="//www.choiz.fr"/>
 <meta property="og:image" content="avatar.png">
-  <title>ChoiZ &ndash; Tag : import</title>
+  <title>ChoiZ &ndash; Tag : Installation de Firefox</title>
 </head>
 <body>
   <aside>
@@ -54,49 +54,24 @@
 
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2013-06-22-export-import-avec-postgresql.html#2013-06-22-export-import-avec-postgresql">Export / Import avec PostgreSQL</a></h2>
+    <h2><a href="//www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html#2014-03-21-installation-de-firefox-sur-debian">Installation de Firefox sur Debian</a></h2>
     <p>
-      Posté le sam. 22 juin 2013 &#8226;
+      Posté le ven. 21 mars 2014 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/postgresql.html">postgreSQL</a>,      <a href="//www.choiz.fr/tag/pg_dump.html">pg\_dump</a>,      <a href="//www.choiz.fr/tag/psql.html">psql</a>,      <a href="//www.choiz.fr/tag/import.html">import</a>,      <a href="//www.choiz.fr/tag/export.html">export</a>,      <a href="//www.choiz.fr/tag/dump.html">dump</a>,      <a href="//www.choiz.fr/tag/sql.html">sql</a>    </p>
+      <a href="//www.choiz.fr/tag/firefox.html">Firefox</a>,      <a href="//www.choiz.fr/tag/mozilla.html">Mozilla</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/installation-de-firefox.html">Installation de Firefox</a>,      <a href="//www.choiz.fr/tag/firefox-sur-debian.html">Firefox sur Debian</a>    </p>
   </header>
   <div>
-      <p>Pour exporter une table spécifique d'une base :</p>
-<div class="highlight"><pre>pg_dump *mabase* --table=*matable* &gt; *dump_base_table*.sql
+      <p>Télécharger la dernière version de Firefox sur <a href="http://www.mozilla.org/">le site de
+mozilla</a>.</p>
+<p>Décompresser l'archive dans :</p>
+<div class="highlight"><pre>/opt/firefox/
 </pre></div>
 
 
-<p>Pour exporter une base :</p>
-<div class="highlight"><pre>pg_dump *mabase* &gt; *dump_base*.sql
+<p>Créer un lien symbolique avec :</p>
+<div class="highlight"><pre>ls -sf /opt/firefox/firefox /usr/bin/firefox
 </pre></div>
-
-
-<p>Pour importer un dump dans une base :</p>
-<div class="highlight"><pre>psql *base* &lt; *dump_base_table*.sql
-psql *base* &lt; *dump_base*.sql
-</pre></div>
-      <a class="btn" href="//www.choiz.fr/2013-06-22-export-import-avec-postgresql.html#2013-06-22-export-import-avec-postgresql">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-09-02-import-vm-avec-virtualbox.html#2011-09-02-import-vm-avec-virtualbox">Import VM avec Virtualbox</a></h2>
-    <p>
-      Posté le ven. 02 septembre 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/virtualbox.html">VirtualBox</a>,      <a href="//www.choiz.fr/tag/import.html">Import</a>,      <a href="//www.choiz.fr/tag/virtualmachine.html">VirtualMachine</a>,      <a href="//www.choiz.fr/tag/virtual.html">Virtual</a>,      <a href="//www.choiz.fr/tag/machine.html">Machine</a>,      <a href="//www.choiz.fr/tag/ova.html">Ova</a>,      <a href="//www.choiz.fr/tag/vboxmanage.html">VBoxManage</a>    </p>
-  </header>
-  <div>
-      <p>J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
-donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?</p>
-<p>Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper :</p>
-<div class="highlight"><pre><span class="n">VBoxManage</span> <span class="kn">import</span> <span class="nn">votrefichier.ova</span>
-</pre></div>
-
-
-<p>Maintenant lors du prochain démarrage de votre ...</p>
-      <a class="btn" href="//www.choiz.fr/2011-09-02-import-vm-avec-virtualbox.html#2011-09-02-import-vm-avec-virtualbox">Lire la suite</a>
+      <a class="btn" href="//www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html#2014-03-21-installation-de-firefox-sur-debian">Lire la suite</a>
   </div>
 </article>
 

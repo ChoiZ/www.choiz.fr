@@ -61,7 +61,7 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/patch.html">patch</a>,      <a href="//www.choiz.fr/tag/commit.html">commit</a>    </p>
   </header>
   <div>
-      <p>Voici mon historique des commits : :</p>
+      <p>Voici mon historique des commits :</p>
 <div class="highlight"><pre>c0004 -- dernier commit
 c0003 -- avant dernier commit
 c0002 -- second commit
@@ -69,7 +69,7 @@ c0001 -- premier commit
 </pre></div>
 
 
-<p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire : :</p>
+<p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire :</p>
 <div class="highlight"><pre>git format-patch -2 c0002 --stdout &gt; mon.patch
 </pre></div>
 
@@ -94,51 +94,36 @@ Tags :
 </pre></div>
 
 
-<p>Puis mettre à jour les paquets : :</p>
+<p>Puis mettre à jour les paquets :</p>
 <div class="highlight"><pre>apt-get update
 apt-get upgrade
 apt-get install -f
 </pre></div>
 
 
-<dl>
-<dt>Installer Skype en n'oubliant pas de remplacer "x" par la bonne version</dt>
-<dd>
-<p>:</p>
-<p>dpkg -i skype-debian_x_i386.deb</p>
-</dd>
-</dl>
+<p>Installer Skype en n'oubliant pas de remplacer "x" par la bonne version :</p>
+<div class="highlight"><pre>dpkg -i skype-debian_x_i386.deb
+</pre></div>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/installation-de-firefox-sur-debian.html#installation-de-firefox-sur-debian">Installation de Firefox sur Debian</a></h2>
+    <h2><a href="//www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html#2014-03-21-installation-de-firefox-sur-debian">Installation de Firefox sur Debian</a></h2>
     <p>
       Posté le ven. 21 mars 2014 &#8226;
-    </p>
+Tags :
+      <a href="//www.choiz.fr/tag/firefox.html">Firefox</a>,      <a href="//www.choiz.fr/tag/mozilla.html">Mozilla</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/installation-de-firefox.html">Installation de Firefox</a>,      <a href="//www.choiz.fr/tag/firefox-sur-debian.html">Firefox sur Debian</a>    </p>
   </header>
   <div>
-      <p>date<br />
-2014-03-21 01:14:41
-author<br />
-choiz
-category<br />
-text
-tags<br />
-Firefox, Mozilla, Debian, Installation de Firefox, Firefox sur Debian
-slug<br />
-2014-03-21-installation-de-firefox-sur-debian
-status<br />
-published</p>
-<p>Télécharger la dernière version de Firefox sur <a href="http://www.mozilla.org/">le site de
+      <p>Télécharger la dernière version de Firefox sur <a href="http://www.mozilla.org/">le site de
 mozilla</a>.</p>
-<p>Décompresser l'archive dans : :</p>
+<p>Décompresser l'archive dans :</p>
 <div class="highlight"><pre>/opt/firefox/
 </pre></div>
 
 
-<p>Créer un lien symbolique avec : :</p>
+<p>Créer un lien symbolique avec :</p>
 <div class="highlight"><pre>ls -sf /opt/firefox/firefox /usr/bin/firefox
 </pre></div>
   </div>
@@ -153,14 +138,14 @@ Tags :
       <a href="//www.choiz.fr/tag/firebug.html">firebug</a>,      <a href="//www.choiz.fr/tag/http.html">http</a>,      <a href="//www.choiz.fr/tag/https.html">https</a>,      <a href="//www.choiz.fr/tag/formulaire.html">formulaire</a>,      <a href="//www.choiz.fr/tag/warning.html">warning</a>,      <a href="//www.choiz.fr/tag/mot-de-passe.html">mot de passe</a>,      <a href="//www.choiz.fr/tag/password.html">password</a>,      <a href="//www.choiz.fr/tag/action.html">action</a>,      <a href="//www.choiz.fr/tag/form.html">form</a>    </p>
   </header>
   <div>
-      <p>Dans mon firebug des "warnings" s'affichent : :</p>
+      <p>Dans mon firebug des "warnings" s'affichent :</p>
 <div class="highlight"><pre>Champs mot de passe présents sur une page non sécurisée (http://). Cela
 représente un risque de sécurité permettant le vol d&#39;identifiants de
 connexion.
 </pre></div>
 
 
-<p>Ainsi que : :</p>
+<p>Ainsi que :</p>
 <div class="highlight"><pre>Champs mot de passe présents dans un formulaire possédant une action de
 formulaire non sécurisée (http://). Cela représente un risque de sécurité
 permettant le vol d&#39;identifiants de connexion.
@@ -189,12 +174,12 @@ Tags :
       <a href="//www.choiz.fr/tag/imapfilter.html">imapfilter</a>,      <a href="//www.choiz.fr/tag/mail.html">mail</a>,      <a href="//www.choiz.fr/tag/filter.html">filter</a>,      <a href="//www.choiz.fr/tag/imap.html">imap</a>    </p>
   </header>
   <div>
-      <p>Installer imapfilter via apt par exemple : :</p>
+      <p>Installer imapfilter via apt par exemple :</p>
 <div class="highlight"><pre>apt-get install imapfilter
 </pre></div>
 
 
-<p>Se rendre dans le dossier de configuration : :</p>
+<p>Se rendre dans le dossier de configuration :</p>
 <div class="highlight"><pre>cd ~/.imapfilter
 </pre></div>
 
@@ -206,7 +191,7 @@ Tags :
 
 <p>Maintenant je décide de faire un fichier de configuration par boite
 email.</p>
-<p>Ici gmail : :</p>
+<p>Ici gmail :</p>
 <div class="highlight"><pre>cat &gt; gmail.lua &lt;&lt;EOF
 gmail = IMAP {
     server = &#39;imap.gmail.com&#39;,
@@ -218,7 +203,7 @@ EOF
 </pre></div>
 
 
-<p>Et un pour Yahoo : :</p>
+<p>Et un pour Yahoo :</p>
 <div class="highlight"><pre>cat &gt; yahoo.lua &lt;&lt;EOF
 yahoo = IMAP {
     server = &#39;imap.yahoo.com&#39;,
@@ -230,7 +215,7 @@ EOF
 </pre></div>
 
 
-<p>Ajouter nos boites dans le fichier de config avec des filtres : :</p>
+<p>Ajouter nos boites dans le fichier de config avec des filtres :</p>
 <div class="highlight"><pre>if_dir = os.getenv(&#39;HOME&#39;) .. &#39;/.imapfilter/&#39;
 -- on inclus nos comptes imap…
 dofile(if_dir .. &quot;gmail.lua&quot;)
@@ -247,7 +232,7 @@ del_read_yahoo:delete_messages()
 
 
 <p>Maintenant c'est à vous de faire vos propres filtres. Une fois
-configuré, lancer imapfilter simplement depuis le terminal : :</p>
+configuré, lancer imapfilter simplement depuis le terminal :</p>
 <div class="highlight"><pre>imapfilter
 </pre></div>
   </div>
@@ -268,7 +253,7 @@ non utilisés (jeux etc…).</p>
 (xfdesktop4 et xfce4-panel). Au démarrage de x, une fois identifié, un
 écran gris s'affiche et rien d'autre. Heureusement grâce à mon access
 SSH je peux me connecter à la machine à distance.</p>
-<p>Pour voir la liste des paquets déinstallés j'ai donc fait : :</p>
+<p>Pour voir la liste des paquets déinstallés j'ai donc fait :</p>
 <div class="highlight"><pre>dpkg --get-selections &gt; liste-des-paquets
 </pre></div>
 
@@ -294,7 +279,7 @@ ligne…</p>
 pas entièrement…).</p>
 <p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu
 que ma ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
-<p>Mon fichier texte ressemble à ceci : :</p>
+<p>Mon fichier texte ressemble à ceci :</p>
 <div class="highlight"><pre>ligne avec un peu de texte ici nous avons 66 caractères affichés.
 </pre></div>
 
@@ -313,7 +298,7 @@ No newline at end of file
 
 
 <p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=""</em> avant la
-commande <em>git diff</em> soit ajouter dans son fichier de config git : :</p>
+commande <em>git diff</em> soit ajouter dans son fichier de config git :</p>
 <div class="highlight"><pre>git config --global core.pager &quot;less -r&quot;
 </pre></div>
 
@@ -341,7 +326,7 @@ Tags :
       <a href="//www.choiz.fr/tag/cle-usb.html">clé usb</a>,      <a href="//www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="//www.choiz.fr/tag/mac.html">mac</a>,      <a href="//www.choiz.fr/tag/terminal.html">terminal</a>,      <a href="//www.choiz.fr/tag/ubuntu.html">ubuntu</a>    </p>
   </header>
   <div>
-      <p>Dans le terminal sur votre mac : :</p>
+      <p>Dans le terminal sur votre mac :</p>
 <div class="highlight"><pre>diskutil list
 </pre></div>
 
@@ -364,7 +349,7 @@ Unmount of all volumes on disk2 was successful
 
 
 <p>Maintenant on copie xubuntu depuis notre dossier téléchargements vers
-cette clé usb : :</p>
+cette clé usb :</p>
 <div class="highlight"><pre>sudo dd if=~/Downloads/xubuntu-13.10-desktop-i386.iso of=/dev/rdisk2 bs=1m
 
 Password:
@@ -394,7 +379,7 @@ Tags :
       <p>J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
 messages sur cherry-pick sans savoir ce que c'était.</p>
 <p>git cherry-pick permet d'appliquer un commit sur la branche sur la
-branche actuelle. :</p>
+branche actuelle.</p>
 <div class="highlight"><pre>git cherry-pick c4a99776
 </pre></div>
   </div>

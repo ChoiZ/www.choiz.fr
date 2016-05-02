@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Il existe plusieurs solutions pour ignorer des fichiers sur un svn : : svn propset svn:ignore Ou dans la configuration du svn dans ~/.subversion/config le global-ignores Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou l'on se trouve actuellement il suffit d'executer la commande ..." />
+<meta name="description" content="Il existe plusieurs solutions pour ignorer des fichiers sur un svn : svn propset svn:ignore Ou dans la configuration du svn dans ~/.subversion/config le global-ignores Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou l'on se trouve actuellement il suffit d'executer la commande ..." />
 <meta name="keywords" content="svn, ignore, fichier, file, folder, dossier, .DS\_Store, .\_\*, .\_, .swp, Vim, Mac Os">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Ignorer grâce au SVN"/>
-<meta property="og:description" content="Il existe plusieurs solutions pour ignorer des fichiers sur un svn : : svn propset svn:ignore Ou dans la configuration du svn dans ~/.subversion/config le global-ignores Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou l'on se trouve actuellement il suffit d'executer la commande ..."/>
+<meta property="og:description" content="Il existe plusieurs solutions pour ignorer des fichiers sur un svn : svn propset svn:ignore Ou dans la configuration du svn dans ~/.subversion/config le global-ignores Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou l'on se trouve actuellement il suffit d'executer la commande ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html"/>
 <meta property="og:type" content="article"/>
@@ -74,7 +74,7 @@
     <p>Posté le mar. 26 juillet 2011</p>
   </header>
   <div>
-    <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn : :</p>
+    <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
 <div class="highlight"><pre>svn propset svn:ignore
 </pre></div>
 
@@ -83,20 +83,20 @@
 global-ignores</p>
 <p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
 l'on se trouve actuellement il suffit d'executer la commande svn
-suivante : :</p>
+suivante :</p>
 <div class="highlight"><pre>svn propset svn:ignore &quot;._*&quot; .
 </pre></div>
 
 
 <p>Par contre si on veut ignorer tous les fichiers qui commencent par ._
 dans tous les dossiers (et sous dossiers) du svn il faut éditer le
-fichier ~/.subversion/config et d'éditer la ligne suivante : :</p>
+fichier ~/.subversion/config et d'éditer la ligne suivante :</p>
 <div class="highlight"><pre>global-ignores = ._*
 </pre></div>
 
 
 <p>On peut également ajouter d'autres fichiers a ignorer tel que les .swp
-de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci : :</p>
+de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci :</p>
 <div class="highlight"><pre>global-ignores = ._* .DS_STORE *.swp
 </pre></div>
   </div>
@@ -137,7 +137,7 @@ de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci : :</p>
   },
   "image": "avatar.png",
   "url": "//www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html",
-  "description": "Il existe plusieurs solutions pour ignorer des fichiers sur un svn : : svn propset svn:ignore Ou dans la configuration du svn dans ~/.subversion/config le global-ignores Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou l'on se trouve actuellement il suffit d'executer la commande ..."
+  "description": "Il existe plusieurs solutions pour ignorer des fichiers sur un svn : svn propset svn:ignore Ou dans la configuration du svn dans ~/.subversion/config le global-ignores Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou l'on se trouve actuellement il suffit d'executer la commande ..."
 }
 </script></body>
 </html>

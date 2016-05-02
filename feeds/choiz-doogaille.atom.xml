@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/choiz-doogaille.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2015-11-30T21:18:07+01:00</updated><entry><title>PHP + Gettext + Debian</title><link href="//www.choiz.fr/2011-12-04-php-gettext-debian.html" rel="alternate"></link><updated>2015-11-30T21:18:07+01:00</updated><author><name>choiz, doogaille</name></author><id>tag:www.choiz.fr,2011-12-04:2011-12-04-php-gettext-debian.html</id><summary type="html">&lt;p&gt;J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
 en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext
-sur votre site en php il faut télécharger le package php-gettext : :&lt;/p&gt;
+sur votre site en php il faut télécharger le package php-gettext :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;apt-get install php-gettext
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
 commentaires devant les langues qui vont sont à traduire par exemple :
-Allemand, Anglais, Espagnol, Français &amp;amp; Suédois : :&lt;/p&gt;
+Allemand, Anglais, Espagnol, Français &amp;amp; Suédois :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;de_DE.UTF-8 UTF-8
 en_GB.UTF-8 UTF-8
 es_ES.UTF-8 UTF-8
@@ -17,18 +17,17 @@ sv_SE.UTF-8 UTF-8
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Puis regénérer les locales : :&lt;/p&gt;
+&lt;p&gt;Puis regénérer les locales :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;locale-gen
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ensuite il faut définir votre chemin pour les traductions par exemple :
-:&lt;/p&gt;
+&lt;p&gt;Ensuite il faut définir votre chemin pour les traductions par exemple :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;lang/fr_FR/LC_MESSAGES/domaine.mo
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Puis dans votre fichier php de configuration : :&lt;/p&gt;
+&lt;p&gt;Puis dans votre fichier php de configuration :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt;
 &lt;span class="c1"&gt;// configuration de la langue&lt;/span&gt;
 &lt;span class="nv"&gt;$lang&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;fr_FR&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// Langue a afficher&lt;/span&gt;
@@ -59,7 +58,7 @@ sv_SE.UTF-8 UTF-8
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Pour générer un fichier .mo a partir d'un fichier .po : :&lt;/p&gt;
+&lt;p&gt;Pour générer un fichier .mo a partir d'un fichier .po :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;msgfmt domaine.po -o domaine.mo
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -67,23 +66,21 @@ sv_SE.UTF-8 UTF-8
 &lt;p&gt;Pour générer un fichier .po a partir de fichier php avec du gettext,
 faire un fichier texte avec tous vos fichiers php ou on doit récupérer
 le gettext.&lt;/p&gt;
-&lt;p&gt;Exemple listing_gettext.txt tel que : :&lt;/p&gt;
+&lt;p&gt;Exemple listing_gettext.txt tel que :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;index.php
 contact.php
 etc…
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;dl&gt;
-&lt;dt&gt;Ensuite il faut faire la commande suivante pour générer le fichier&lt;/dt&gt;
-&lt;dt&gt;domaine.po dans le dossier lang/ depuis notre fichier texte avec les php&lt;/dt&gt;
-&lt;dd&gt;
-&lt;p&gt;:&lt;/p&gt;
-&lt;p&gt;find . -iname "*.php" | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
+&lt;p&gt;Ensuite il faut faire la commande suivante pour générer le fichier
+domaine.po dans le dossier lang/ depuis notre fichier texte avec les php :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;find . -iname &amp;quot;*.php&amp;quot; | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Pour finir voilà le path des fichiers .po et .mo dans mon application
-web : :&lt;/p&gt;
+web :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;lang/fr_FR/LC_MESSAGES/domaine.po
 lang/fr_FR/LC_MESSAGES/domaine.mo
 lang/en_GB/LC_MESSAGES/domaine.po

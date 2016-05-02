@@ -74,7 +74,7 @@ modifications, cette fois j'avais créé cette branche <em>debug_redirect</em>
 mais je n'étais pas dessus…</p>
 <p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master</em>. Or le seul
 qui devait être dessus devait être A et je devais avoir B-C dans ma
-branche <em>debug_redirect</em>. Voici un schéma de la situation : :</p>
+branche <em>debug_redirect</em>. Voici un schéma de la situation :</p>
 <div class="highlight"><pre>debug_redirect
           ↓
           A-B-C
@@ -90,7 +90,7 @@ git merge master
 </pre></div>
 
 
-<p>Ce qui donne : :</p>
+<p>Ce qui donne :</p>
 <div class="highlight"><pre>debug_redirect
         ↓
     A-B-C
@@ -106,7 +106,7 @@ git reset --hard HEAD~2
 </pre></div>
 
 
-<p>Ce qui donne : :</p>
+<p>Ce qui donne :</p>
 <div class="highlight"><pre>  debug_redirect
       ↓
   A-B-C
@@ -121,7 +121,7 @@ peux le merger avec le <em>master</em>. :</p>
 </pre></div>
 
 
-<p>Résultat : :</p>
+<p>Résultat :</p>
 <div class="highlight"><pre>         B-C      debug_redirect
        /     \
      A - - - - D   master
@@ -129,7 +129,7 @@ peux le merger avec le <em>master</em>. :</p>
 
 
 <p>Pour voir vos commits par branche vous pouvez aussi utiliser la commande
-git log : :</p>
+git log :</p>
 <div class="highlight"><pre>git log --graph --oneline --decorate
 *   4c677ac (HEAD, master) Merge branch &#39;debug_redirect&#39;
 |\ 

@@ -84,7 +84,7 @@ Tags :
 <li>un remote “origin” se trouve sur un serveur perso.</li>
 <li>un remote “github” qui lui est sur github.com.</li>
 </ul>
-<p>Quand je vais sur le master il m’arrive d’avoir ce message : :</p>
+<p>Quand je vais sur le master il m’arrive d’avoir ce message :</p>
 <div class="highlight"><pre>&quot;your branch is up-to-date with “github/master”.&quot;
 </pre></div>
 
@@ -104,19 +104,17 @@ Tags :
   </header>
   <div>
       <p>Pour initialiser les sous-modules dans git j'utilise la commande
-suivante : :</p>
+suivante :</p>
 <div class="highlight"><pre>git submodule init
 </pre></div>
 
 
-<dl>
-<dt>Ensuite je dois faire un update des sous-modules pour charger le contenu</dt>
-<dd>
-<p>:</p>
-<p>git submodule update</p>
-</dd>
-</dl>
-<p>Pour faire les deux en même temps (init + update) vous pouvez faire : :</p>
+<p>Ensuite je dois faire un update des sous-modules pour charger le contenu :</p>
+<div class="highlight"><pre>git submodule update
+</pre></div>
+
+
+<p>Pour faire les deux en même temps (init + update) vous pouvez faire :</p>
 <div class="highlight"><pre>git submodule update --init
 </pre></div>
 
@@ -136,7 +134,7 @@ Tags :
   </header>
   <div>
       <p>Pour rechercher directement dans le code source une modification
-précise, j'utilise la commande suivante : :</p>
+précise, j'utilise la commande suivante :</p>
 <div class="highlight"><pre>git log -p -S &#39;display&#39;
 </pre></div>
       <a class="btn" href="//www.choiz.fr/2014-12-08-recherche-dans-le-code-source-avec-git.html#2014-12-08-recherche-dans-le-code-source-avec-git">Lire la suite</a>
@@ -152,7 +150,7 @@ Tags :
       <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/patch.html">patch</a>,      <a href="//www.choiz.fr/tag/commit.html">commit</a>    </p>
   </header>
   <div>
-      <p>Voici mon historique des commits : :</p>
+      <p>Voici mon historique des commits :</p>
 <div class="highlight"><pre>c0004 -- dernier commit
 c0003 -- avant dernier commit
 c0002 -- second commit
@@ -160,7 +158,7 @@ c0001 -- premier commit
 </pre></div>
 
 
-<p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire : :</p>
+<p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire :</p>
 <div class="highlight"><pre>git format-patch -2 c0002 --stdout &gt; mon.patch
 </pre></div>
 
@@ -201,7 +199,7 @@ Tags :
       <p>J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
 messages sur cherry-pick sans savoir ce que c'était.</p>
 <p>git cherry-pick permet d'appliquer un commit sur la branche sur la
-branche actuelle. :</p>
+branche actuelle.</p>
 <div class="highlight"><pre>git cherry-pick c4a99776
 </pre></div>
       <a class="btn" href="//www.choiz.fr/2014-02-06-git-cherry-pick.html#2014-02-06-git-cherry-pick">Lire la suite</a>
@@ -218,12 +216,12 @@ Tags :
   </header>
   <div>
       <p>J'utilise des branches tel que prod, preprod pour mes projets et en
-local il m'arrive de vouloir aller sur ses branches. :</p>
+local il m'arrive de vouloir aller sur ses branches :</p>
 <div class="highlight"><pre>git checkout preprod
 </pre></div>
 
 
-<p>Et j'ai l'erreur suivante : :</p>
+<p>Et j'ai l'erreur suivante :</p>
 <div class="highlight"><pre><span class="n">error</span><span class="o">:</span> <span class="n">pathspec</span> <span class="s1">&#39;preprod&#39;</span> <span class="n">did</span> <span class="n">not</span> <span class="n">match</span> <span class="n">any</span> <span class="n">file</span><span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="n">known</span> <span class="n">to</span> <span class="n">git</span><span class="o">.</span>
 </pre></div>
 
@@ -245,7 +243,7 @@ Tags :
       <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec
 svn. Il est temps de faire la migration de svn à git !</p>
 <p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
-voulais voici donc ma procédure : :</p>
+voulais voici donc ma procédure :</p>
 <div class="highlight"><pre>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2013-07-16-passer-de-svn-à-git.html#2013-07-16-passer-de-svn-à-git">Lire la suite</a>
   </div>

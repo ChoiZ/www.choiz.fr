@@ -65,13 +65,12 @@ Tags :
 surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
 chez Deezer c'est un peu problèmatique.</p>
 <p>J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
-ceci : :</p>
+ceci :</p>
 <div class="highlight"><pre>vi /etc/apt/source.list
 </pre></div>
 
 
-<p>Ajouter contrib non-free aux différentes sources (sauf security) puis :
-:</p>
+<p>Ajouter contrib non-free aux différentes sources (sauf security) puis :</p>
 <div class="highlight"><pre>apt-get update
 
 apt-get install flashplugin-nonfree
@@ -93,7 +92,7 @@ Tags :
       <a href="//www.choiz.fr/tag/fichiers.html">fichiers</a>,      <a href="//www.choiz.fr/tag/caches.html">cachés</a>,      <a href="//www.choiz.fr/tag/hidden.html">hidden</a>,      <a href="//www.choiz.fr/tag/files.html">files</a>,      <a href="//www.choiz.fr/tag/lion.html">lion</a>,      <a href="//www.choiz.fr/tag/defaults.html">defaults</a>,      <a href="//www.choiz.fr/tag/appleshowallfiles.html">AppleShowAllFiles</a>,      <a href="//www.choiz.fr/tag/finder.html">Finder</a>    </p>
   </header>
   <div>
-      <p>Dans un terminal : :</p>
+      <p>Dans un terminal :</p>
 <div class="highlight"><pre>defaults write com.apple.Finder AppleShowAllFiles TRUE
 
 killall Finder
@@ -114,7 +113,7 @@ Tags :
   </header>
   <div>
       <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un
-fichier avec vim : :</p>
+fichier avec vim :</p>
 <div class="highlight"><pre><span class="x">:1,</span><span class="p">$</span><span class="nv">s</span><span class="x">/^/</span><span class="err">#</span><span class="x">/</span>
 </pre></div>
 
@@ -140,7 +139,7 @@ Tags :
 <p>Créer un compte utilisateur dans les préférences systèmes &gt;
 utilisateurs. Par exemple l'utilisateur : "skype" avec comme mot de
 passe "password". Ensuite ouvrir un terminal (dans spotlight tapez
-terminal). Puis : :</p>
+terminal). Puis :</p>
 <div class="highlight"><pre>su skype (ou &quot;su nomdutilisateur&quot; en fonction de l&#39;utilisateur créé).
 
 Password:
@@ -149,7 +148,7 @@ password (ou autre suivant le mot de passe de l&#39;utilisateur).
 </pre></div>
 
 
-<p>Puis : :</p>
+<p>Puis :</p>
 <div class="highlight"><pre>/Applications/Skype.app/Contents/MacOS/Skype
 </pre></div>
 
@@ -175,7 +174,7 @@ empécher d'avoir la page de login il faut modifier une fonction
 Javascript. Avec un outil tel que <a href="http://www.getfirebug.com">Firebug</a>
 vous pouvez modifier le code Javascript du site (localement). Ouvrir
 firebug en mode console et modifier la fonction createJoin() ! Dans la
-console a coté de "&gt;&gt;&gt;" il suffit de taper : :</p>
+console a coté de "&gt;&gt;&gt;" il suffit de taper :</p>
 <div class="highlight"><pre><span class="kd">function</span> <span class="nx">createJoin</span><span class="p">()</span> <span class="p">{</span> <span class="kc">false</span><span class="p">;</span> <span class="p">}</span>
 </pre></div>
 
@@ -194,7 +193,7 @@ Tags :
       <a href="//www.choiz.fr/tag/safari.html">Safari</a>,      <a href="//www.choiz.fr/tag/dev.html">Dev</a>,      <a href="//www.choiz.fr/tag/web.html">Web</a>,      <a href="//www.choiz.fr/tag/webdev.html">WebDev</a>,      <a href="//www.choiz.fr/tag/developpement.html">Développement</a>    </p>
   </header>
   <div>
-      <p>Pour activer l'inspecteur web tapez dans le terminal : :</p>
+      <p>Pour activer l'inspecteur web tapez dans le terminal :</p>
 <div class="highlight"><pre>defaults write com.apple.Safari WebKitDeveloperExtras -bool true
 </pre></div>
 
@@ -215,7 +214,7 @@ Tags :
   <div>
       <p>J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
 donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?</p>
-<p>Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper : :</p>
+<p>Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper :</p>
 <div class="highlight"><pre><span class="n">VBoxManage</span> <span class="kn">import</span> <span class="nn">votrefichier.ova</span>
 </pre></div>
 
@@ -235,7 +234,7 @@ Tags :
   </header>
   <div>
       <p>Configuration d'un serveur samba. Editer le fichier de configuration
-/etc/samba/smb.conf Voici le contenu de mon fichier de configuration : :</p>
+/etc/samba/smb.conf Voici le contenu de mon fichier de configuration :</p>
 <div class="highlight"><pre>| ### Global ###
 | [global]
 | ## Identification ##
@@ -266,7 +265,7 @@ Tags :
 </pre></div>
 
 
-<p>Maintenant il faut créer notre utilisateur "choiz" grâce à : :</p>
+<p>Maintenant il faut créer notre utilisateur "choiz" grâce à :</p>
 <div class="highlight"><pre>smbpasswd -a choiz
 </pre></div>
 
@@ -305,7 +304,7 @@ Tags :
       <a href="//www.choiz.fr/tag/svn.html">svn</a>,      <a href="//www.choiz.fr/tag/ignore.html">ignore</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/folder.html">folder</a>,      <a href="//www.choiz.fr/tag/dossier.html">dossier</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS\_Store</a>,      <a href="//www.choiz.fr/tag/_.html">.\_\*</a>,      <a href="//www.choiz.fr/tag/_.html">.\_</a>,      <a href="//www.choiz.fr/tag/swp.html">.swp</a>,      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/mac-os.html">Mac Os</a>    </p>
   </header>
   <div>
-      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn : :</p>
+      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
 <div class="highlight"><pre>svn propset svn:ignore
 </pre></div>
 
@@ -314,20 +313,20 @@ Tags :
 global-ignores</p>
 <p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
 l'on se trouve actuellement il suffit d'executer la commande svn
-suivante : :</p>
+suivante :</p>
 <div class="highlight"><pre>svn propset svn:ignore &quot;._*&quot; .
 </pre></div>
 
 
 <p>Par contre si on veut ignorer tous les fichiers qui commencent par ._
 dans tous les dossiers (et sous dossiers) du svn il faut éditer le
-fichier ~/.subversion/config et d'éditer la ligne suivante : :</p>
+fichier ~/.subversion/config et d'éditer la ligne suivante :</p>
 <div class="highlight"><pre>global-ignores = ._*
 </pre></div>
 
 
 <p>On peut également ajouter d'autres fichiers a ignorer tel que les .swp
-de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci : :</p>
+de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci :</p>
 <div class="highlight"><pre>global-ignores = ._* .DS_STORE *.swp
 </pre></div>
   </div>

@@ -80,12 +80,12 @@ Tags :
   <div>
       <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
 suivre pour le mettre à jour vers la version : 4.3.0.</p>
-<p>Je liste les différents noyaux gentoo disponibles : :</p>
+<p>Je liste les différents noyaux gentoo disponibles :</p>
 <div class="highlight"><pre>eix sys-kernel/gentoo-sources
 </pre></div>
 
 
-<p>Je télécharge le noyau 4.3.0 : :</p>
+<p>Je télécharge le noyau 4.3.0 :</p>
 <div class="highlight"><pre>emerge -a =sys-kernel/gentoo-sources-4.3.0
 </pre></div>
 
@@ -104,8 +104,7 @@ Tags :
       <a href="//www.choiz.fr/tag/mail.html">mail</a>,      <a href="//www.choiz.fr/tag/postfix.html">postfix</a>,      <a href="//www.choiz.fr/tag/dovecot.html">dovecot</a>,      <a href="//www.choiz.fr/tag/dns.html">dns</a>,      <a href="//www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="//www.choiz.fr/tag/rainloop.html">rainloop</a>,      <a href="//www.choiz.fr/tag/webmail.html">webmail</a>    </p>
   </header>
   <div>
-      <p>Installation d'un serveur mail complet et à jour sous debian jessie
-(8.2).</p>
+      <p>Installation d'un serveur mail complet et à jour sous debian jessie (8.2).</p>
 <h2>Configuration des DNS</h2>
 <p>Pour commencer nous allons créer des entrées DNS.</p>
 <p>Nous créons un MX pour les mails avec une priorité de 1, un sous domaine
@@ -145,7 +144,7 @@ Tags :
 backoffice et une avec une API.</p>
 <p>J'ai donc du faire un réseau privé dans vagrant pour que le BO
 communique avec l'API.</p>
-<p>Il suffit de modifier la configuration de la vm #1 et d'ajouter : :</p>
+<p>Il suffit de modifier la configuration de la vm #1 et d'ajouter :</p>
 <div class="highlight"><pre>config.vm.network ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html#2015-10-13-vagrant-faire-un-reseau-prive">Lire la suite</a>
   </div>
@@ -162,7 +161,7 @@ Tags :
   <div>
       <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester
 qu'une fonctionnalité de code.</p>
-<p>Par exemple pour tester une api : :</p>
+<p>Par exemple pour tester une api :</p>
 <div class="highlight"><pre><span class="x">// Obtenir le livre </span><span class="err">#</span><span class="x">1</span>
 <span class="x">api_get(&#39;books/1&#39;);</span>
 
@@ -187,12 +186,12 @@ Tags :
   </header>
   <div>
       <p>Pour mettre à jour Gentoo j'utilise différentes commandes.</p>
-<p>Dans un premier temps je fais la mise à jour d'eix : :</p>
+<p>Dans un premier temps je fais la mise à jour d'eix :</p>
 <div class="highlight"><pre>eix-sync
 </pre></div>
 
 
-<p>Ensuite : :</p>
+<p>Ensuite :</p>
 <div class="highlight"><pre>emerge -pvuDN world
 </pre></div>
 
@@ -213,7 +212,7 @@ Tags :
       <a href="//www.choiz.fr/tag/compilation.html">compilation</a>,      <a href="//www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>    </p>
   </header>
   <div>
-      <p>Pour compiler le kernel sous gentoo : :</p>
+      <p>Pour compiler le kernel sous gentoo :</p>
 <div class="highlight"><pre>cd /usr/src/linux
 
 make menuconfig

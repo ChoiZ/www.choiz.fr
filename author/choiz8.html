@@ -54,6 +54,30 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2011-06-30-elément-cliqué-en-js.html#2011-06-30-elément-cliqué-en-js">Elément cliqué en js</a></h2>
+    <p>
+      Posté le jeu. 30 juin 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/js.html">js</a>,      <a href="//www.choiz.fr/tag/element.html">element</a>,      <a href="//www.choiz.fr/tag/click.html">click</a>,      <a href="//www.choiz.fr/tag/javascript.html">javascript</a>,      <a href="//www.choiz.fr/tag/html.html">html</a>    </p>
+  </header>
+  <div>
+      <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :</p>
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">checkclick</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">e</span> <span class="o">=</span> <span class="nx">e</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">event</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span> <span class="o">||</span> <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">o</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">onclick</span><span class="o">=</span><span class="nx">checkclick</span><span class="p">;</span>
+</pre></div>
+
+
+<p>Pratique pour faire du débug.</p>
+      <a class="btn" href="//www.choiz.fr/2011-06-30-elément-cliqué-en-js.html#2011-06-30-elément-cliqué-en-js">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2011-05-30-patch-diff.html#2011-05-30-patch-diff">Patch & diff</a></h2>
     <p>
       Posté le lun. 30 mai 2011 &#8226;
@@ -118,7 +142,7 @@ Tags :
       <p>J'ai souvent besoin de voir les différences entre plusieurs fichiers...
 J'utilise souvent la commande diff dans un terminal, mais mon éditeur
 texte favoris "Vim" sait aussi trés bien faire un différentiel.
-Utilisation avec le terminal : :</p>
+Utilisation avec le terminal :</p>
 <div class="highlight"><pre><span class="gh">diff fichier1 fichier2</span>
 </pre></div>
 
@@ -157,7 +181,7 @@ Tags :
   </header>
   <div>
       <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
-dans la console je tape la commande : :</p>
+dans la console je tape la commande :</p>
 <div class="highlight"><pre>php -l fichier_a_tester.php
 </pre></div>
 
@@ -249,31 +273,10 @@ Tags :
 fonctionne pas avec l'attribut "onclick"…</p>
 <p>Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.</p>
-<p>Remplacer donc : :</p>
+<p>Remplacer donc :</p>
 <div class="highlight"><pre>var mavar = &#39;fonctionAffichage();&#39;;
 $(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html#2011-01-07-jquery-attr-avec-onclick-par-click">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html#2010-10-25-commande-svn-pour-ajouter-des-keywords">Commande SVN pour ajouter des keywords</a></h2>
-    <p>
-      Posté le lun. 25 octobre 2010 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/svn.html">SVN</a>,      <a href="//www.choiz.fr/tag/subversion.html">Subversion</a>,      <a href="//www.choiz.fr/tag/keyword.html">Keyword</a>,      <a href="//www.choiz.fr/tag/id.html">Id</a>,      <a href="//www.choiz.fr/tag/revision.html">Revision</a>,      <a href="//www.choiz.fr/tag/date.html">Date</a>,      <a href="//www.choiz.fr/tag/author.html">Author</a>,      <a href="//www.choiz.fr/tag/url.html">URL</a>,      <a href="//www.choiz.fr/tag/php.html">PHP</a>,      <a href="//www.choiz.fr/tag/code.html">Code</a>,      <a href="//www.choiz.fr/tag/subversion.html">Subversion</a>    </p>
-  </header>
-  <div>
-      <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
-informations dans vos projets il suffit de taper cette commande : :</p>
-<div class="highlight"><pre>svn propset svn:keywords &quot;Id&quot; index.php
-</pre></div>
-
-
-<p>Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php</p>
-<p>Pour afficher l'Id dans votre fichier index ...</p>
-      <a class="btn" href="//www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html#2010-10-25-commande-svn-pour-ajouter-des-keywords">Lire la suite</a>
   </div>
 </article>
 
