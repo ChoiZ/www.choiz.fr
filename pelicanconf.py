@@ -52,13 +52,13 @@ DEFAULT_PAGINATION = 10
 STATIC_PATHS = [
     'extra/CNAME',
     'extra/avatar.png',
-    'extra/README.md',
+    'extra/README',
     ]
 
 EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
     'extra/avatar.png': {'path': 'avatar.png'},
-    'extra/README.md': {'path': 'README.md'},
+    'extra/README': {'path': 'README.md'},
     }
 
 # Uncomment following line if you want document-relative URLs when developing
