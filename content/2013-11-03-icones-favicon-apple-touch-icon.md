@@ -32,7 +32,6 @@ Apple etc… :
     convert icon512.png -resize x152 touch-icon-ipad-retina.png
 
 Maintenant il faut ajouter dans notre page html entre les balises head :
-:
 
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="touch-icon-iphone.png">

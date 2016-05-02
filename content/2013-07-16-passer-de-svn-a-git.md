@@ -10,7 +10,7 @@ Sur le projet Addictradio nous utilisons encore un de nos dépot avec
 svn. Il est temps de faire la migration de svn à git !
 
 J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
-voulais voici donc ma procédure : :
+voulais voici donc ma procédure :
 
     svn log --quiet 'svn://svn.mondomaine/monprojet' | grep "^r" | awk
     '{print $3}' | sort | uniq | awk '{ print $1" = "$1"
@@ -25,13 +25,13 @@ Puis j'ai utilisé git svn clone :
     --authors-file=authors.txt --tags=tags --branches=branches
     --trunk=trunk monprojet
 
-Si vous avez des tags dans svn, vous pouvez les mettre dans git : :
+Si vous avez des tags dans svn, vous pouvez les mettre dans git :
 
     git branch -r | sed -rne 's, \*tags/([^@]+)$,\\1,p' | while read
     tag; do echo "git tag $tag 'tags/${tag}^'; git branch -r -d
     tags/$tag"; done | sh
 
-Pour finir ajoutez votre dépot distant : :
+Pour finir ajoutez votre dépot distant :
 
     git remote add origin git@git.mondomaine:/monprojet.git
     git push -u origin --tags

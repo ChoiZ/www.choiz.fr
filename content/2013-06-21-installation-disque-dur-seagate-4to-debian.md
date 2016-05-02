@@ -8,7 +8,7 @@ Status: published
 
 J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
 (Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec «
-Fdisk » et j'ai eu le message suivant : :
+Fdisk » et j'ai eu le message suivant :
 
     Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
 
@@ -18,7 +18,7 @@ Fdisk » et j'ai eu le message suivant : :
     partition table format (GPT).
 
 J'ai donc vérifié si j'avais dans le noyau l'option
-CONFIG\_EFI\_PARTITION active : :
+CONFIG\_EFI\_PARTITION active :
 
     cat "/boot/config-`uname -r`" | grep CONFIG_EFI_PARTITION
 
@@ -71,7 +71,7 @@ Quitter « parted » :
 
     Information: You may need to update /etc/fstab.
 
-Formater la partition avec un système de fichiers donné : :
+Formater la partition avec un système de fichiers donné :
 
     mkfs.ext4 /dev/sdd1
 

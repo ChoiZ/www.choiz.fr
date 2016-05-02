@@ -13,7 +13,7 @@ mais je n'étais pas dessus…
 
 Je me suis retrouvé avec les commits A-B-C sur mon *master*. Or le seul
 qui devait être dessus devait être A et je devais avoir B-C dans ma
-branche *debug\_redirect*. Voici un schéma de la situation : :
+branche *debug\_redirect*. Voici un schéma de la situation :
 
     debug_redirect
               ↓
@@ -27,7 +27,7 @@ Je dois donc soit mettre a jour ma branche *debug\_redirect*. :
 
     git merge master
 
-Ce qui donne : :
+Ce qui donne :
 
     debug_redirect
             ↓
@@ -41,7 +41,7 @@ Il me reste qu'a retourner sur le *master* et revenir à la version A. :
 
     git reset --hard HEAD~2
 
-Ce qui donne : :
+Ce qui donne :
 
       debug_redirect
           ↓
@@ -54,14 +54,14 @@ peux le merger avec le *master*. :
 
     git merge debug_redirect --no-ff
 
-Résultat : :
+Résultat :
 
              B-C      debug_redirect
            /     \
          A - - - - D   master
 
 Pour voir vos commits par branche vous pouvez aussi utiliser la commande
-git log : :
+git log :
 
     git log --graph --oneline --decorate
     *   4c677ac (HEAD, master) Merge branch 'debug_redirect'

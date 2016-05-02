@@ -6,11 +6,11 @@ Tags: curl, http, response, code, 301, 302, 404, 200
 Slug: 2013-09-29-connaitre-le-code-réponse-http-avec-curl
 Status: published
 
-Pour connaitre le code réponse HTTP il suffit de faire : :
+Pour connaitre le code réponse HTTP il suffit de faire :
 
     curl -IL url
 
-Voici l'exemble avec tumblr.com : :
+Voici l'exemble avec tumblr.com :
 
     curl -IL http://tumblr.com
 

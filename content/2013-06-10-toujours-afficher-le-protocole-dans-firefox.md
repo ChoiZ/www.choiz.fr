@@ -12,14 +12,14 @@ fois <http://>…
 
 Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :
 
-Ecrire dans la barre d'adresse : :
+Ecrire dans la barre d'adresse :
 
     about:config
 
-Rechercher : :
+Rechercher :
 
     browser.urlbar.trimURLs
 
-Modifier la valeur par : :
+Modifier la valeur par :
 
     false
