@@ -14,7 +14,7 @@ J'ai malheureusement supprimé un peu (trop) de paquets tel que
 écran gris s'affiche et rien d'autre. Heureusement grâce à mon access
 SSH je peux me connecter à la machine à distance.
 
-Pour voir la liste des paquets déinstallés j'ai donc fait : :
+Pour voir la liste des paquets déinstallés j'ai donc fait :
 
     dpkg --get-selections > liste-des-paquets
 

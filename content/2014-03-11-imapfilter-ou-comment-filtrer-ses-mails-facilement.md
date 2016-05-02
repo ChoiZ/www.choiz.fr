@@ -6,11 +6,11 @@ Tags: imapfilter, mail, filter, imap
 Slug: 2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement
 Status: published
 
-Installer imapfilter via apt par exemple : :
+Installer imapfilter via apt par exemple :
 
     apt-get install imapfilter
 
-Se rendre dans le dossier de configuration : :
+Se rendre dans le dossier de configuration :
 
     cd ~/.imapfilter
 
@@ -21,7 +21,7 @@ Créer un fichier config.lua :
 Maintenant je décide de faire un fichier de configuration par boite
 email.
 
-Ici gmail : :
+Ici gmail :
 
     cat > gmail.lua <<EOF
     gmail = IMAP {
@@ -32,7 +32,7 @@ Ici gmail : :
     }
     EOF
 
-Et un pour Yahoo : :
+Et un pour Yahoo :
 
     cat > yahoo.lua <<EOF
     yahoo = IMAP {
@@ -43,7 +43,7 @@ Et un pour Yahoo : :
     }
     EOF
 
-Ajouter nos boites dans le fichier de config avec des filtres : :
+Ajouter nos boites dans le fichier de config avec des filtres :
 
     if_dir = os.getenv('HOME') .. '/.imapfilter/'
     -- on inclus nos comptes imap…
@@ -59,6 +59,6 @@ Ajouter nos boites dans le fichier de config avec des filtres : :
     del_read_yahoo:delete_messages()
 
 Maintenant c'est à vous de faire vos propres filtres. Une fois
-configuré, lancer imapfilter simplement depuis le terminal : :
+configuré, lancer imapfilter simplement depuis le terminal :
 
     imapfilter

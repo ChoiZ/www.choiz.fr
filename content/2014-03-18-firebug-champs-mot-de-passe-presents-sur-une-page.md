@@ -6,13 +6,13 @@ Tags: firebug, http, https, formulaire, warning, mot de passe, password, action,
 Slug: 2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page
 Status: published
 
-Dans mon firebug des "warnings" s'affichent : :
+Dans mon firebug des "warnings" s'affichent :
 
     Champs mot de passe présents sur une page non sécurisée (http://). Cela
     représente un risque de sécurité permettant le vol d'identifiants de
     connexion.
 
-Ainsi que : :
+Ainsi que :
 
     Champs mot de passe présents dans un formulaire possédant une action de
     formulaire non sécurisée (http://). Cela représente un risque de sécurité

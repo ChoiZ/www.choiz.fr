@@ -6,7 +6,7 @@ Tags: clé usb, xubuntu, mac, terminal, ubuntu
 Slug: 2014-03-04-création-dune-clé-usb-xubuntu-sur-mac
 Status: published
 
-Dans le terminal sur votre mac : :
+Dans le terminal sur votre mac :
 
     diskutil list
 
@@ -27,7 +27,7 @@ Démontez la clé. :
     Unmount of all volumes on disk2 was successful
 
 Maintenant on copie xubuntu depuis notre dossier téléchargements vers
-cette clé usb : :
+cette clé usb :
 
     sudo dd if=~/Downloads/xubuntu-13.10-desktop-i386.iso of=/dev/rdisk2 bs=1m
 

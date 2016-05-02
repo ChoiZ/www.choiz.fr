@@ -6,15 +6,15 @@ Tags: vim, unicode, char, suppression, caractère
 Slug: 2014-01-19-suppression-dun-caractère-unicode-dans-vim
 Status: published
 
-J'étais à la recherche de se caractère unicode dans vim : :
+J'étais à la recherche de se caractère unicode dans vim :
 
     <U+2028>
 
-Pour pouvoir le supprimer j'ai utilisé la commande suivante : :
+Pour pouvoir le supprimer j'ai utilisé la commande suivante :
 
     :%s/\%U2028//g
 
-Décortiquons la commande : :
+Décortiquons la commande :
 
     `:%s/` Recherche et remplace dans tout le fichier
 

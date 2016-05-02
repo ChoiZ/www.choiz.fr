@@ -15,7 +15,7 @@ pas entièrement…).
 J'ai donc refais un *git diff* dans mon terminal et je me suis aperçu
 que ma ligne qui devait être sur plusieurs lignes ne l'était pas…
 
-Mon fichier texte ressemble à ceci : :
+Mon fichier texte ressemble à ceci :
 
     ligne avec un peu de texte ici nous avons 66 caractères affichés.
 
@@ -32,7 +32,7 @@ Or, quand je fais un diff on ne voit pas tous les caractères :
     No newline at end of file
 
 Pour résoudre ce problème il faut soit ajouter *GIT\_PAGER=""* avant la
-commande *git diff* soit ajouter dans son fichier de config git : :
+commande *git diff* soit ajouter dans son fichier de config git :
 
     git config --global core.pager "less -r"
 

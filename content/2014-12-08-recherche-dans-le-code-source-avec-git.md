@@ -7,6 +7,6 @@ Slug: 2014-12-08-recherche-dans-le-code-source-avec-git
 Status: published
 
 Pour rechercher directement dans le code source une modification
-précise, j'utilise la commande suivante : :
+précise, j'utilise la commande suivante :
 
     git log -p -S 'display'
