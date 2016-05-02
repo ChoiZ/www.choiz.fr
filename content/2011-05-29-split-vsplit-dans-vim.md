@@ -39,7 +39,7 @@ Pour agrandir ou réduire la fenêtre courante utiliser CTRL + W (puis
 &gt; si vous êtes sur votre fenêtre de droite pour ajouter une colonne,
 si vous êtes sur la fenêtre de gauche ceci supprimera une colonne et vis
 versa avec &lt;) vous pouvez également ajouter / supprimer 5 ou 10
-colonnes avec : :
+colonnes avec :
 
     5>
 

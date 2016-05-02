@@ -6,7 +6,7 @@ Tags: fichiers, cachés, hidden, files, lion, defaults, AppleShowAllFiles, Finde
 Slug: 2011-11-02-voir-les-fichiers-cachés-sur-lion
 Status: published
 
-Dans un terminal : :
+Dans un terminal :
 
     defaults write com.apple.Finder AppleShowAllFiles TRUE
 

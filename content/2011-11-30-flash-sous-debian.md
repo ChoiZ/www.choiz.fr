@@ -11,12 +11,11 @@ surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
 chez Deezer c'est un peu problèmatique.
 
 J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
-ceci : :
+ceci :
 
     vi /etc/apt/source.list
 
 Ajouter contrib non-free aux différentes sources (sauf security) puis :
-:
 
     apt-get update
 

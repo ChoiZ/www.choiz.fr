@@ -13,7 +13,7 @@ Comment lancer plusieurs comptes Skype avec le même Mac ?
 Créer un compte utilisateur dans les préférences systèmes &gt;
 utilisateurs. Par exemple l'utilisateur : "skype" avec comme mot de
 passe "password". Ensuite ouvrir un terminal (dans spotlight tapez
-terminal). Puis : :
+terminal). Puis :
 
     su skype (ou "su nomdutilisateur" en fonction de l'utilisateur créé).
 
@@ -21,7 +21,7 @@ terminal). Puis : :
 
     password (ou autre suivant le mot de passe de l'utilisateur).
 
-Puis : :
+Puis :
 
     /Applications/Skype.app/Contents/MacOS/Skype
 

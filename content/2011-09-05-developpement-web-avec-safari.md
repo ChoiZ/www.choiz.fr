@@ -6,7 +6,7 @@ Tags: Safari, Dev, Web, WebDev, Développement
 Slug: 2011-09-05-développement-web-avec-safari
 Status: published
 
-Pour activer l'inspecteur web tapez dans le terminal : :
+Pour activer l'inspecteur web tapez dans le terminal :
 
     defaults write com.apple.Safari WebKitDeveloperExtras -bool true
 

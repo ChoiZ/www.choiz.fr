@@ -7,13 +7,13 @@ Slug: 2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php
 Status: published
 
 Lorsque je code en PHP, pour tester si il y a des erreurs généralement
-dans la console je tape la commande : :
+dans la console je tape la commande :
 
     php -l fichier_a_tester.php
 
 Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
 Pour la faire il suffit de faire "ESC" pour passer en mode commande de
-VIM puis : :
+VIM puis :
 
     :!php -l %
 

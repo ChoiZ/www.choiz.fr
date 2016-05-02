@@ -19,6 +19,6 @@ aurez le différentiel entre les deux fichier. Comment le lire ? Les
 lignes avec des + devant sont les nouvelles lignes celles avec des -
 sont celles a supprimer. Ce n'est pas plus difficile que ça ! Maintenant
 j'applique mon patch sur mon fichier version1.php grâce à la commande
-suivante : :
+suivante :
 
     patch -p0 < mon_patch

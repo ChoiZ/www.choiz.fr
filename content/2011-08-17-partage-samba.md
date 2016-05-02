@@ -7,7 +7,7 @@ Slug: 2011-08-17-partage-samba
 Status: published
 
 Configuration d'un serveur samba. Editer le fichier de configuration
-/etc/samba/smb.conf Voici le contenu de mon fichier de configuration : :
+/etc/samba/smb.conf Voici le contenu de mon fichier de configuration :
 
     | ### Global ###
     | [global]
@@ -37,7 +37,7 @@ Configuration d'un serveur samba. Editer le fichier de configuration
     | valid users = choiz, @group
     | comment = partage en lecture pour choiz et le groupe "group"
 
-Maintenant il faut créer notre utilisateur "choiz" grâce à : :
+Maintenant il faut créer notre utilisateur "choiz" grâce à :
 
     smbpasswd -a choiz
 

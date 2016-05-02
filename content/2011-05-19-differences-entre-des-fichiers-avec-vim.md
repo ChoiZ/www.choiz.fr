@@ -9,14 +9,14 @@ Status: published
 J'ai souvent besoin de voir les différences entre plusieurs fichiers...
 J'utilise souvent la commande diff dans un terminal, mais mon éditeur
 texte favoris "Vim" sait aussi trés bien faire un différentiel.
-Utilisation avec le terminal : :
+Utilisation avec le terminal :
 
     diff fichier1 fichier2
 
 Celui-ci retournera les différences directement dans le terminal (pas
 pratique pour l'édition).
 
-Utilisation avec vim : :
+Utilisation avec vim :
 
     vim -d fichier1 fichier2
 

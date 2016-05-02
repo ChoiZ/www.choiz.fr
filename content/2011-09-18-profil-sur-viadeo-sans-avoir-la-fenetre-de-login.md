@@ -14,7 +14,7 @@ empécher d'avoir la page de login il faut modifier une fonction
 Javascript. Avec un outil tel que [Firebug](http://www.getfirebug.com)
 vous pouvez modifier le code Javascript du site (localement). Ouvrir
 firebug en mode console et modifier la fonction createJoin() ! Dans la
-console a coté de "&gt;&gt;&gt;" il suffit de taper : :
+console a coté de "&gt;&gt;&gt;" il suffit de taper :
 
     function createJoin() { false; }
 

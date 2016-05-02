@@ -7,7 +7,7 @@ Slug: 2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier
 Status: published
 
 Voilà la commande pour ajouter un \# au début de chaque ligne d'un
-fichier avec vim : :
+fichier avec vim :
 
     :1,$s/^/#/
 

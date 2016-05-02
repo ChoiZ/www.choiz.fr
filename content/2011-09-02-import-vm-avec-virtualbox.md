@@ -9,7 +9,7 @@ Status: published
 J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
 donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?
 
-Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper : :
+Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper :
 
     VBoxManage import votrefichier.ova
 

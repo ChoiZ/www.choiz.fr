@@ -9,13 +9,13 @@ Status: published
 
 J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
 en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext
-sur votre site en php il faut télécharger le package php-gettext : :
+sur votre site en php il faut télécharger le package php-gettext :
 
     apt-get install php-gettext
 
 Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
 commentaires devant les langues qui vont sont à traduire par exemple :
-Allemand, Anglais, Espagnol, Français & Suédois : :
+Allemand, Anglais, Espagnol, Français & Suédois :
 
     de_DE.UTF-8 UTF-8
     en_GB.UTF-8 UTF-8
@@ -23,16 +23,15 @@ Allemand, Anglais, Espagnol, Français & Suédois : :
     fr_FR.UTF-8 UTF-8
     sv_SE.UTF-8 UTF-8
 
-Puis regénérer les locales : :
+Puis regénérer les locales :
 
     locale-gen
 
 Ensuite il faut définir votre chemin pour les traductions par exemple :
-:
 
     lang/fr_FR/LC_MESSAGES/domaine.mo
 
-Puis dans votre fichier php de configuration : :
+Puis dans votre fichier php de configuration :
 
     <?php
     // configuration de la langue
@@ -61,7 +60,7 @@ Puis faites le test en affichant dans un fichier php le texte "hello" :
     echo _('hello');
     ?>
 
-Pour générer un fichier .mo a partir d'un fichier .po : :
+Pour générer un fichier .mo a partir d'un fichier .po :
 
     msgfmt domaine.po -o domaine.mo
 
@@ -69,20 +68,19 @@ Pour générer un fichier .po a partir de fichier php avec du gettext,
 faire un fichier texte avec tous vos fichiers php ou on doit récupérer
 le gettext.
 
-Exemple listing\_gettext.txt tel que : :
+Exemple listing\_gettext.txt tel que :
 
     index.php
     contact.php
     etc…
 
 Ensuite il faut faire la commande suivante pour générer le fichier
-domaine.po dans le dossier lang/ depuis notre fichier texte avec les php
-: :
+domaine.po dans le dossier lang/ depuis notre fichier texte avec les php :
 
     find . -iname "*.php" | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
 
 Pour finir voilà le path des fichiers .po et .mo dans mon application
-web : :
+web :
 
     lang/fr_FR/LC_MESSAGES/domaine.po
     lang/fr_FR/LC_MESSAGES/domaine.mo
