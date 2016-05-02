@@ -50,13 +50,11 @@ SOCIAL = (
 DEFAULT_PAGINATION = 10
 
 STATIC_PATHS = [
-    'extra/CNAME',
     'extra/avatar.png',
     'extra/README',
     ]
 
 EXTRA_PATH_METADATA = {
-    'extra/CNAME': {'path': 'CNAME'},
     'extra/avatar.png': {'path': 'avatar.png'},
     'extra/README': {'path': 'README.md'},
     }
