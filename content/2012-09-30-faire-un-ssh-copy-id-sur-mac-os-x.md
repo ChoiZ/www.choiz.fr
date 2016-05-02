@@ -12,7 +12,7 @@ cette commande n’est pas disponible.
 
 Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
 peut la rendre disponible facilement en quelques étapes. Créer un
-fichier "ssh-copy-id" dans le dossier "/usr/bin/" avec ce contenu : :
+fichier "ssh-copy-id" dans le dossier "/usr/bin/" avec ce contenu :
 
     #!/bin/sh
     # Shell script to install your public key on a remote machine
@@ -64,11 +64,11 @@ fichier "ssh-copy-id" dans le dossier "/usr/bin/" avec ce contenu : :
 
     EOF
 
-Il ne reste qu'a donner les droits au fichier : :
+Il ne reste qu'a donner les droits au fichier :
 
     chmod 755 /usr/bin/ssh-copy-id
 
 Vous pouvez maintenant copier votre clé ssh sur un serveur distant en
-tapant : :
+tapant :
 
     ssh-copy-id -i id_rsa.pub user@machine.distante

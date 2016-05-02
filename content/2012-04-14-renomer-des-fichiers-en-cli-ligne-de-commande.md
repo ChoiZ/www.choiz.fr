@@ -10,7 +10,7 @@ Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
 correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
 "rename".
 
-Exemple je veux supprimer tous les espaces d'un fichier : :
+Exemple je veux supprimer tous les espaces d'un fichier :
 
     rename "s/ *//g" *.*
 

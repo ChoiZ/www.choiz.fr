@@ -6,7 +6,7 @@ Tags: git, stash, content, file, file content, git stash, show
 Slug: 2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis
 Status: published
 
-Pour lister les stash : :
+Pour lister les stash :
 
     git stash list
 
@@ -15,7 +15,7 @@ Pour lister les stash : :
     …
     stash@{5}: WIP on BranchName: 3bb67ff Add file.css file.js
 
-Pour voir le contenu d'un stash : :
+Pour voir le contenu d'un stash :
 
     git stash show
 

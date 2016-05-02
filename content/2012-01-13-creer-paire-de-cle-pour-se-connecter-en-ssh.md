@@ -20,10 +20,10 @@ pouvez spécifier un autre chemin ainsi qu'un autre fichier. :
 Ici on tape un mot de passe si on en veut un lors de la connexion aux
 différents hosts. En général j'en défini un.
 
-Pour finir on copie la clé sur le serveur soit via scp : :
+Pour finir on copie la clé sur le serveur soit via scp :
 
     scp ~/.ssh/id\_rsa.pub user@ip:~/.ssh/authorized\_keys/
 
-ou via ssh-copy-id : :
+ou via ssh-copy-id :
 
     ssh-copy-id -i ~/.ssh/id\_rsa.pub user@ip
