@@ -32,7 +32,7 @@ github que je tape directement l'url "http://choiz.github.io".&lt;/li&gt;
     SSLCertificateKeyFile …
 &lt;span class="nt"&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/span&gt;
 &lt;span class="nt"&gt;&amp;lt;/IfModule&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="blog ssl https github page"></category></entry><entry><title>Mise à jour d'un kernel gentoo</title><link href="//www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html" rel="alternate"></link><updated>2015-11-21T13:50:44+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-11-21:2015-11-21-mise-a-jour-d-un-kernel-gentoo.html</id><summary type="html">&lt;p&gt;Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="blog"></category><category term="ssl"></category><category term="https"></category><category term="github"></category><category term="page"></category></entry><entry><title>Mise à jour d'un kernel gentoo</title><link href="//www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html" rel="alternate"></link><updated>2015-11-21T13:50:44+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-11-21:2015-11-21-mise-a-jour-d-un-kernel-gentoo.html</id><summary type="html">&lt;p&gt;Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
 suivre pour le mettre à jour vers la version : 4.3.0.&lt;/p&gt;
 &lt;p&gt;Je liste les différents noyaux gentoo disponibles :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;eix sys-kernel/gentoo-sources
