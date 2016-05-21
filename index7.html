@@ -54,6 +54,26 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2011-12-01-dual-screen-sur-xfce.html">Dual screen sur xfce</a></h2>
+    <p>
+      Posté le jeu. 01 décembre 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/xfce.html">xfce</a>,      <a href="//www.choiz.fr/tag/dualscreen.html">dualscreen</a>,      <a href="//www.choiz.fr/tag/dual.html">dual</a>,      <a href="//www.choiz.fr/tag/screen.html">screen</a>,      <a href="//www.choiz.fr/tag/xfce.html">xfce</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>    </p>
+  </header>
+  <div>
+      <p>Un petit package bien pratique pour configurer le dual screen sur xfce
+se nomme : arandr :</p>
+<div class="highlight"><pre>apt-get install arandr
+</pre></div>
+
+
+<p>Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez
+le ARandR pour configurer les deux écrans.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2011-11-30-flash-sous-debian.html">Flash sous Debian</a></h2>
     <p>
       Posté le mer. 30 novembre 2011 &#8226;
@@ -292,43 +312,6 @@ Tags :
       <p><a href="http://www.jsfiddle.net/">http://www.jsfiddle.net/</a> Pratique pour tester un code html / css / js</p>
 <p><a href="http://www.jsperf.com/">http://www.jsperf.com/</a> Pour faire des performances de code js</p>
 <p><a href="http://www.pastebin.com/">http://www.pastebin.com/</a> Pour copier coller du code facilement</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html">Ignorer grâce au SVN</a></h2>
-    <p>
-      Posté le mar. 26 juillet 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/svn.html">svn</a>,      <a href="//www.choiz.fr/tag/ignore.html">ignore</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/folder.html">folder</a>,      <a href="//www.choiz.fr/tag/dossier.html">dossier</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS\_Store</a>,      <a href="//www.choiz.fr/tag/_.html">.\_\*</a>,      <a href="//www.choiz.fr/tag/_.html">.\_</a>,      <a href="//www.choiz.fr/tag/swp.html">.swp</a>,      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/mac-os.html">Mac Os</a>    </p>
-  </header>
-  <div>
-      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<div class="highlight"><pre>svn propset svn:ignore
-</pre></div>
-
-
-<p>Ou dans la configuration du svn dans ~/.subversion/config le
-global-ignores</p>
-<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
-l'on se trouve actuellement il suffit d'executer la commande svn
-suivante :</p>
-<div class="highlight"><pre>svn propset svn:ignore &quot;._*&quot; .
-</pre></div>
-
-
-<p>Par contre si on veut ignorer tous les fichiers qui commencent par ._
-dans tous les dossiers (et sous dossiers) du svn il faut éditer le
-fichier ~/.subversion/config et d'éditer la ligne suivante :</p>
-<div class="highlight"><pre>global-ignores = ._*
-</pre></div>
-
-
-<p>On peut également ajouter d'autres fichiers a ignorer tel que les .swp
-de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci :</p>
-<div class="highlight"><pre>global-ignores = ._* .DS_STORE *.swp
-</pre></div>
   </div>
 </article>
 

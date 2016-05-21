@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2016-04-28T22:17:11+02:00</updated><entry><title>Passage en SSL du blog</title><link href="//www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html" rel="alternate"></link><updated>2016-04-28T22:17:11+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2016-04-28:2016-04-28-passage-en-ssl-du-blog.html</id><summary type="html">&lt;p&gt;J'utilise pelican sur github pour écrire mon blog depuis quelques temps, voir les
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2016-05-21T16:34:57+02:00</updated><entry><title>Installation de xubuntu 16.04 sur ASUS X205TA</title><link href="//www.choiz.fr/2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA.html" rel="alternate"></link><updated>2016-05-21T16:34:57+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2016-05-21:2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA.html</id><summary type="html">&lt;p&gt;J'ai récement acheté un ASUS X205TA, livré avec Windows
+10 (32 bits), un disque SSD de 32Go et 2Go de ram et pour un prix de 210€.&lt;/p&gt;
+&lt;p&gt;J'ai installé xubuntu 16.04 (64 bits) sur une partition séparée pour garder Windows 10.&lt;/p&gt;
+&lt;p&gt;L'installation est plutôt complexe car le "bootloader" est en 32bits (je pense
+d'ailleurs que c'est pour ça qu'il est livré avec un windows 32bits et non
+64bits).&lt;/p&gt;
+&lt;p&gt;Voici &lt;a href="http://ubuntuforums.org/showthread.php?t=2254322&amp;amp;page=92&amp;amp;p=13474817#post13474817"&gt;un message&lt;/a&gt; qui explique l'installation simple d'ubuntu (remplacer l'iso
+par xubuntu ou autre).&lt;/p&gt;
+&lt;p&gt;Pour l'instant : la carte son n'est pas reconnue et le pointeur de la souris
+disparait suite a la mise en veille… Mis a part ça la machine fonctionne très
+bien pour mon utilisation (des petits développements pendant mes trajets maison &amp;lt;-&amp;gt; travail).&lt;/p&gt;</summary><category term="xubuntu"></category><category term="linux"></category><category term="Asus X205TA"></category><category term="64bits"></category><category term="ubuntu"></category></entry><entry><title>Passage en SSL du blog</title><link href="//www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html" rel="alternate"></link><updated>2016-04-28T22:17:11+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2016-04-28:2016-04-28-passage-en-ssl-du-blog.html</id><summary type="html">&lt;p&gt;J'utilise pelican sur github pour écrire mon blog depuis quelques temps, voir les
 articles précédents sur le sujet.&lt;/p&gt;
 &lt;p&gt;J'ai décidé de passer le blog en https, avec un certificat gratuit let's encrypt.&lt;/p&gt;
 &lt;p&gt;Pour mettre en place un certificat SSL sur "github page" il faut avoir un serveur web qui

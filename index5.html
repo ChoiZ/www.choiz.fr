@@ -54,6 +54,88 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html">Git déplacer mon dernier commit sur une autre branche</a></h2>
+    <p>
+      Posté le sam. 22 juin 2013 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/reset.html">reset</a>,      <a href="//www.choiz.fr/tag/checkout.html">checkout</a>,      <a href="//www.choiz.fr/tag/merge.html">merge</a>,      <a href="//www.choiz.fr/tag/branch.html">branch</a>,      <a href="//www.choiz.fr/tag/commit.html">commit</a>    </p>
+  </header>
+  <div>
+      <p>J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
+<em>master</em>… Généralement je fais toujours une branche pour les
+modifications, cette fois j'avais créé cette branche <em>debug_redirect</em>
+mais je n'étais pas dessus…</p>
+<p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master</em>. Or le seul
+qui devait être dessus devait être A et je devais avoir B-C dans ma
+branche <em>debug_redirect</em>. Voici un schéma de la situation :</p>
+<div class="highlight"><pre>debug_redirect
+          ↓
+          A-B-C
+              ↑
+             master
+</pre></div>
+
+
+<p>Je dois donc soit mettre a jour ma branche <em>debug_redirect</em>. :</p>
+<div class="highlight"><pre>git checkout debug_redirect
+
+git merge master
+</pre></div>
+
+
+<p>Ce qui donne :</p>
+<div class="highlight"><pre>debug_redirect
+        ↓
+    A-B-C
+        ↑
+      master
+</pre></div>
+
+
+<p>Il me reste qu'a retourner sur le <em>master</em> et revenir à la version A. :</p>
+<div class="highlight"><pre>git checkout master
+
+git reset --hard HEAD~2
+</pre></div>
+
+
+<p>Ce qui donne :</p>
+<div class="highlight"><pre>  debug_redirect
+      ↓
+  A-B-C
+  ↑
+master
+</pre></div>
+
+
+<p>Maintenant que j'ai fixé mon bug sur ma branche  <em>debug_redirect</em> je
+peux le merger avec le <em>master</em>. :</p>
+<div class="highlight"><pre>git merge debug_redirect --no-ff
+</pre></div>
+
+
+<p>Résultat :</p>
+<div class="highlight"><pre>         B-C      debug_redirect
+       /     \
+     A - - - - D   master
+</pre></div>
+
+
+<p>Pour voir vos commits par branche vous pouvez aussi utiliser la commande
+git log :</p>
+<div class="highlight"><pre>git log --graph --oneline --decorate
+*   4c677ac (HEAD, master) Merge branch &#39;debug_redirect&#39;
+|\ 
+| * 90e7a7a (debug_redirect) Fix another bug on redirect
+| * 40ae981 Fix the redirect bug
+|/ 
+* 4e06ff4 initial commit
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html">Installation disque dur Seagate 4To Debian</a></h2>
     <p>
       Posté le ven. 21 juin 2013 &#8226;
@@ -508,40 +590,6 @@ Tags :
 
 # .swp (Vim)
 *.swp
-</pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis.html">Voir le contenu d'un fichier dans un stash précis (git)</a></h2>
-    <p>
-      Posté le ven. 06 juillet 2012 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/stash.html">stash</a>,      <a href="//www.choiz.fr/tag/content.html">content</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/file-content.html">file content</a>,      <a href="//www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="//www.choiz.fr/tag/show.html">show</a>    </p>
-  </header>
-  <div>
-      <p>Pour lister les stash :</p>
-<div class="highlight"><pre>git stash list
-
-stash@{0}: WIP on BranchName: 5d8a556 Edit file.js
-stash@{1}: WIP on BranchName: 66dfe78 Edit file.css
-…
-stash@{5}: WIP on BranchName: 3bb67ff Add file.css file.js
-</pre></div>
-
-
-<p>Pour voir le contenu d'un stash :</p>
-<div class="highlight"><pre>git stash show
-
-stash@{0} chemin/vers/mon/fichier.js | 199 ++++++++++++++++++++++++++--------
-chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------
-</pre></div>
-
-
-<p>Pour voir le contenu de "chemin/vers/mon/fichier.js" qui est dans le
-stash{0} :</p>
-<div class="highlight"><pre>git show stash@{0}:chemin/vers/mon/fichier.js
 </pre></div>
   </div>
 </article>

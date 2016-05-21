@@ -54,6 +54,31 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Protection de fichier tel qu'un htaccess en PHP</a></h2>
+    <p>
+      Posté le ven. 11 février 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/php.html">php</a>,      <a href="//www.choiz.fr/tag/htaccess.html">htaccess</a>,      <a href="//www.choiz.fr/tag/htpasswd.html">htpasswd</a>,      <a href="//www.choiz.fr/tag/protection.html">protection</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/authenticate.html">authenticate</a>,      <a href="//www.choiz.fr/tag/auth.html">auth</a>    </p>
+  </header>
+  <div>
+      <p>Faire un système de protection (tel que htaccess) direct dans un fichier PHP :</p>
+<div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_USER&quot;</span><span class="p">])</span> <span class="o">&amp;&amp;</span>
+<span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_USER&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;login&quot;</span> <span class="o">&amp;&amp;</span>
+<span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_PW&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// code protégé ici</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;WWW-Authenticate: Basic realm=&quot;Restricted area&quot;&#39;</span><span class="p">);</span>
+    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;HTTP/1.0 401 Unauthorized&#39;</span><span class="p">);</span>
+    <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;Access Denied&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html">jQuery attr() avec onclick par click()</a></h2>
     <p>
       Posté le ven. 07 janvier 2011 &#8226;
