@@ -14,4 +14,4 @@ en 32 bits, 64 bits et fedora en 64 bits.
 
 deb2targz permet de convertir un fichier ".deb" en archive ".tar.gz".
 
-Si vous êtes sur gentoo installez le via emerge avec `emerge -a app-arch/deb2targz`.
+Si vous êtes sur gentoo installez le via : `emerge -a app-arch/deb2targz`
