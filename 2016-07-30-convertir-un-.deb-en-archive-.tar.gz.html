@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
+  <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+<meta name="author" content="choiz" />
+<meta name="description" content="En voulant installer le logiciel "slack" sur ma machine gentoo au travail j'ai trouvé un logiciel plutôt intéressant nommé "deb2targz". En effet slack ne dispose que des archives ubuntu en 32 bits, 64 bits et fedora en 64 bits. deb2targz permet de convertir un fichier ".deb" en archive ".tar ..." />
+<meta name="keywords" content="deb, tar.gz, debian, ubuntu, archive, gentoo, linux">
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:title" content="Convertir un .deb en archive .tar.gz"/>
+<meta property="og:description" content="En voulant installer le logiciel "slack" sur ma machine gentoo au travail j'ai trouvé un logiciel plutôt intéressant nommé "deb2targz". En effet slack ne dispose que des archives ubuntu en 32 bits, 64 bits et fedora en 64 bits. deb2targz permet de convertir un fichier ".deb" en archive ".tar ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="//www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-07-30 10:28:18+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="//www.choiz.fr/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="deb"/>
+<meta property="article:tag" content="tar.gz"/>
+<meta property="article:tag" content="debian"/>
+<meta property="article:tag" content="ubuntu"/>
+<meta property="article:tag" content="archive"/>
+<meta property="article:tag" content="gentoo"/>
+<meta property="article:tag" content="linux"/>
+<meta property="og:image" content="/avatar.png">  <title>ChoiZ &ndash; Convertir un .deb en archive .tar.gz</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="//www.choiz.fr">
+        <img src="/avatar.png" alt="Blog de François LASSERRE" title="Blog de François LASSERRE">
+      </a>
+      <div>
+          <a href="//www.choiz.fr">Blog de François LASSERRE</a>
+      </div>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis ingénieur informaticien, j'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios (Radio-Psylone, Live9 ou encore AddictRadio).<br>Je fais parti de l'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="2016-07-30-convertir-un-.deb-en-archive-.tar.gz">Convertir un .deb en archive .tar.gz</h1>
+    <p>Posté le sam. 30 juillet 2016</p>
+  </header>
+  <div>
+    <p>En voulant installer le logiciel "slack" sur ma machine gentoo au travail j'ai
+trouvé un logiciel plutôt intéressant nommé "deb2targz".</p>
+<p>En effet <a href="https://slack.com/downloads">slack</a> ne dispose que des archives ubuntu
+en 32 bits, 64 bits et fedora en 64 bits.</p>
+<p>deb2targz permet de convertir un fichier ".deb" en archive ".tar.gz".</p>
+<p>Si vous êtes sur gentoo installez le via emerge avec <code>emerge -a app-arch/deb2targz</code>.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="//www.choiz.fr/tag/deb.html">deb</a>
+      <a href="//www.choiz.fr/tag/targz.html">tar.gz</a>
+      <a href="//www.choiz.fr/tag/debian.html">debian</a>
+      <a href="//www.choiz.fr/tag/ubuntu.html">ubuntu</a>
+      <a href="//www.choiz.fr/tag/archive.html">archive</a>
+      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>
+      <a href="//www.choiz.fr/tag/linux.html">linux</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Convertir un .deb en archive .tar.gz",
+  "headline": "Convertir un .deb en archive .tar.gz",
+  "datePublished": "2016-07-30 10:28:18+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "//www.choiz.fr/author/choiz.html"
+  },
+  "image": "/avatar.png",
+  "url": "//www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html",
+  "description": "En voulant installer le logiciel "slack" sur ma machine gentoo au travail j'ai trouvé un logiciel plutôt intéressant nommé "deb2targz". En effet slack ne dispose que des archives ubuntu en 32 bits, 64 bits et fedora en 64 bits. deb2targz permet de convertir un fichier ".deb" en archive ".tar ..."
+}
+</script></body>
+</html>

@@ -54,6 +54,33 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2013-06-22-export-import-avec-postgresql.html">Export / Import avec PostgreSQL</a></h2>
+    <p>
+      Posté le sam. 22 juin 2013 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/postgresql.html">postgreSQL</a>,      <a href="//www.choiz.fr/tag/pg_dump.html">pg\_dump</a>,      <a href="//www.choiz.fr/tag/psql.html">psql</a>,      <a href="//www.choiz.fr/tag/import.html">import</a>,      <a href="//www.choiz.fr/tag/export.html">export</a>,      <a href="//www.choiz.fr/tag/dump.html">dump</a>,      <a href="//www.choiz.fr/tag/sql.html">sql</a>    </p>
+  </header>
+  <div>
+      <p>Pour exporter une table spécifique d'une base :</p>
+<div class="highlight"><pre>pg_dump *mabase* --table=*matable* &gt; *dump_base_table*.sql
+</pre></div>
+
+
+<p>Pour exporter une base :</p>
+<div class="highlight"><pre>pg_dump *mabase* &gt; *dump_base*.sql
+</pre></div>
+
+
+<p>Pour importer un dump dans une base :</p>
+<div class="highlight"><pre>psql *base* &lt; *dump_base_table*.sql
+psql *base* &lt; *dump_base*.sql
+</pre></div>
+      <a class="btn" href="//www.choiz.fr/2013-06-22-export-import-avec-postgresql.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html">Git déplacer mon dernier commit sur une autre branche</a></h2>
     <p>
       Posté le sam. 22 juin 2013 &#8226;
@@ -234,31 +261,6 @@ les préférences d'iTerm2.</p>
 <p>iTerm &gt; Préférences (ou ⌘ ,) puis dans Profiles &gt; Keys et en bas
 "Load Preset..." et choisir ...</p>
       <a class="btn" href="//www.choiz.fr/2012-09-29-ma-configuration-iterm2.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2012-08-13-mon-fichier-gitignore.html">Mon fichier .gitignore</a></h2>
-    <p>
-      Posté le lun. 13 août 2012 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/gitignore.html">gitignore</a>,      <a href="//www.choiz.fr/tag/gitignore.html">.gitignore</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>    </p>
-  </header>
-  <div>
-      <p>Voilà mon petit fichier .gitignore :</p>
-<div class="highlight"><pre># Ignore files from git
-
-# ._ files (Mac Os X)
-._*
-
-# .DS_STORE (Mac Os X)
-.DS_STORE
-
-# .swp (Vim)
-*.swp
-</pre></div>
-      <a class="btn" href="//www.choiz.fr/2012-08-13-mon-fichier-gitignore.html">Lire la suite</a>
   </div>
 </article>
 
