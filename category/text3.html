@@ -63,7 +63,7 @@ Tags :
   <div>
       <p>Pour rechercher directement dans le code source une modification
 précise, j'utilise la commande suivante :</p>
-<div class="highlight"><pre>git log -p -S &#39;display&#39;
+<div class="highlight"><pre><span></span>git log -p -S &#39;display&#39;
 </pre></div>
       <a class="btn" href="//www.choiz.fr/2014-12-08-recherche-dans-le-code-source-avec-git.html">Lire la suite</a>
   </div>
@@ -98,7 +98,7 @@ Tags :
   </header>
   <div>
       <p>Voici mon historique des commits :</p>
-<div class="highlight"><pre>c0004 -- dernier commit
+<div class="highlight"><pre><span></span>c0004 -- dernier commit
 c0003 -- avant dernier commit
 c0002 -- second commit
 c0001 -- premier commit
@@ -106,7 +106,7 @@ c0001 -- premier commit
 
 
 <p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire :</p>
-<div class="highlight"><pre>git format-patch -2 c0002 --stdout &gt; mon.patch
+<div class="highlight"><pre><span></span>git format-patch -2 c0002 --stdout &gt; mon.patch
 </pre></div>
 
 
@@ -127,12 +127,12 @@ Tags :
       <p>Télécharger la dernière version de <a href="http://www.skype.com">Skype</a> (Debian
 7.0 [multiarch]).</p>
 <p>Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. :</p>
-<div class="highlight"><pre>dpkg --add-architecture i386
+<div class="highlight"><pre><span></span>dpkg --add-architecture i386
 </pre></div>
 
 
 <p>Puis mettre à jour les paquets :</p>
-<div class="highlight"><pre>apt-get update
+<div class="highlight"><pre><span></span>apt-get update
 apt-get upgrade
 apt-get install -f
 </pre></div>
@@ -155,12 +155,12 @@ Tags :
       <p>Télécharger la dernière version de Firefox sur <a href="http://www.mozilla.org/">le site de
 mozilla</a>.</p>
 <p>Décompresser l'archive dans :</p>
-<div class="highlight"><pre>/opt/firefox/
+<div class="highlight"><pre><span></span>/opt/firefox/
 </pre></div>
 
 
 <p>Créer un lien symbolique avec :</p>
-<div class="highlight"><pre>ls -sf /opt/firefox/firefox /usr/bin/firefox
+<div class="highlight"><pre><span></span>ls -sf /opt/firefox/firefox /usr/bin/firefox
 </pre></div>
       <a class="btn" href="//www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html">Lire la suite</a>
   </div>
@@ -176,14 +176,14 @@ Tags :
   </header>
   <div>
       <p>Dans mon firebug des "warnings" s'affichent :</p>
-<div class="highlight"><pre>Champs mot de passe présents sur une page non sécurisée (http://). Cela
+<div class="highlight"><pre><span></span>Champs mot de passe présents sur une page non sécurisée (http://). Cela
 représente un risque de sécurité permettant le vol d&#39;identifiants de
 connexion.
 </pre></div>
 
 
 <p>Ainsi que :</p>
-<div class="highlight"><pre>Champs mot de passe présents dans un formulaire possédant une action de
+<div class="highlight"><pre><span></span>Champs mot de passe présents dans un formulaire possédant une action de
 formulaire non sécurisée (http://). Cela ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html">Lire la suite</a>
   </div>
@@ -199,24 +199,24 @@ Tags :
   </header>
   <div>
       <p>Installer imapfilter via apt par exemple :</p>
-<div class="highlight"><pre>apt-get install imapfilter
+<div class="highlight"><pre><span></span>apt-get install imapfilter
 </pre></div>
 
 
 <p>Se rendre dans le dossier de configuration :</p>
-<div class="highlight"><pre>cd ~/.imapfilter
+<div class="highlight"><pre><span></span>cd ~/.imapfilter
 </pre></div>
 
 
 <p>Créer un fichier config.lua :</p>
-<div class="highlight"><pre>touch config.lua
+<div class="highlight"><pre><span></span>touch config.lua
 </pre></div>
 
 
 <p>Maintenant je décide de faire un fichier de configuration par boite
 email.</p>
 <p>Ici gmail :</p>
-<div class="highlight"><pre>cat &gt; gmail.lua &lt;&lt;EOF
+<div class="highlight"><pre><span></span>cat &gt; gmail.lua &lt;&lt;EOF
 gmail = IMAP {
     server = &#39;imap.gmail.com ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html">Lire la suite</a>
@@ -270,13 +270,13 @@ Tags :
   </header>
   <div>
       <p>Dans le terminal sur votre mac :</p>
-<div class="highlight"><pre>diskutil list
+<div class="highlight"><pre><span></span>diskutil list
 </pre></div>
 
 
 <p>Qui permet de lister vos disque dur / clés usb etc…</p>
 <p>ici ma clé usb est disk2. :</p>
-<div class="highlight"><pre>/dev/disk2
+<div class="highlight"><pre><span></span>/dev/disk2
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:     FDisk_partition_scheme                        *8.1 GB     disk2
    1:                      Linux                         4.0 GB     disk2s1
@@ -302,7 +302,22 @@ Tags :
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

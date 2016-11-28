@@ -72,51 +72,51 @@
     <p>Voilà une solution simple pour convertir une base de donnée en Latin1
 vers de l'UTF-8.</p>
 <p>Utiliser mysqldump avec les options suivantes :</p>
-<div class="highlight"><pre>--default-character-set=utf8
+<div class="highlight"><pre><span></span>--default-character-set=utf8
 </pre></div>
 
 
 <p>et :</p>
-<div class="highlight"><pre>--skip-set-charset
+<div class="highlight"><pre><span></span>--skip-set-charset
 </pre></div>
 
 
 <p>Voilà la commande complète :</p>
-<div class="highlight"><pre>mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
+<div class="highlight"><pre><span></span>mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
 </pre></div>
 
 
 <p>Ensuite en utilisant vim je fais un rechercher / remplacer des
 différents latin1 en utf-8. :</p>
-<div class="highlight"><pre>vim dump_base_table.sql
+<div class="highlight"><pre><span></span>vim dump_base_table.sql
 </pre></div>
 
 
 <p>Et en mode commande :</p>
-<div class="highlight"><pre>:%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/
+<div class="highlight"><pre><span></span>:%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/
 </pre></div>
 
 
 <p>et :</p>
-<div class="highlight"><pre>:%s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/
+<div class="highlight"><pre><span></span>:%s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/
 </pre></div>
 
 
 <p>on enregistre et quitte le fichier avec :wq (ou sinon avec ZZ).</p>
 <p>Maintenant on réimporte la table grâce à mysql :</p>
-<div class="highlight"><pre>mysql -u user -p base &lt; dump_base_table.sql
+<div class="highlight"><pre><span></span>mysql -u user -p base &lt; dump_base_table.sql
 </pre></div>
 
 
 <p>il reste a vérifier si les champs sont bien en UTF-8.</p>
 <p>Ici une table « table » avec une colonne « col » on ajoute un caractère
 accentué. :</p>
-<div class="highlight"><pre>INSERT INTO table VALUES(&quot;é&quot;);
+<div class="highlight"><pre><span></span>INSERT INTO table VALUES(&quot;é&quot;);
 </pre></div>
 
 
 <p>Maintenant on regarde la taille de la colonne :</p>
-<div class="highlight"><pre>SELECT `col`, length(`col`) FROM `table`;
+<div class="highlight"><pre><span></span>SELECT `col`, length(`col`) FROM `table`;
 </pre></div>
 
 
@@ -143,7 +143,22 @@ pour le dernier tips.</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

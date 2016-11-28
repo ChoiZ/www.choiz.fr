@@ -62,17 +62,17 @@ Tags :
   </header>
   <div>
       <p>Pour exporter une table spécifique d'une base :</p>
-<div class="highlight"><pre>pg_dump *mabase* --table=*matable* &gt; *dump_base_table*.sql
+<div class="highlight"><pre><span></span>pg_dump *mabase* --table=*matable* &gt; *dump_base_table*.sql
 </pre></div>
 
 
 <p>Pour exporter une base :</p>
-<div class="highlight"><pre>pg_dump *mabase* &gt; *dump_base*.sql
+<div class="highlight"><pre><span></span>pg_dump *mabase* &gt; *dump_base*.sql
 </pre></div>
 
 
 <p>Pour importer un dump dans une base :</p>
-<div class="highlight"><pre>psql *base* &lt; *dump_base_table*.sql
+<div class="highlight"><pre><span></span>psql *base* &lt; *dump_base_table*.sql
 psql *base* &lt; *dump_base*.sql
 </pre></div>
       <a class="btn" href="//www.choiz.fr/2013-06-22-export-import-avec-postgresql.html">Lire la suite</a>
@@ -109,7 +109,7 @@ Tags :
       <p>J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
 (Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec «
 Fdisk » et j'ai eu le message suivant :</p>
-<div class="highlight"><pre><span class="n">Warning</span><span class="o">:</span> <span class="n">invalid</span> <span class="n">flag</span> <span class="mh">0x0000</span> <span class="n">of</span> <span class="n">partition</span> <span class="n">table</span> <span class="mi">4</span> <span class="n">will</span> <span class="n">be</span> <span class="n">corrected</span> <span class="n">by</span> <span class="n">w</span><span class="o">(</span><span class="n">rite</span><span class="o">)</span>
+<div class="highlight"><pre><span></span><span class="n">Warning</span><span class="o">:</span> <span class="n">invalid</span> <span class="n">flag</span> <span class="mh">0x0000</span> <span class="n">of</span> <span class="n">partition</span> <span class="n">table</span> <span class="mi">4</span> <span class="n">will</span> <span class="n">be</span> <span class="n">corrected</span> <span class="n">by</span> <span class="n">w</span><span class="o">(</span><span class="n">rite</span><span class="o">)</span>
 
 <span class="n">WARNING</span><span class="o">:</span> <span class="n">The</span> <span class="n">size</span> <span class="n">of ...</span></pre></div>
       <a class="btn" href="//www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html">Lire la suite</a>
@@ -130,12 +130,12 @@ or lors de la copie celui-ci est copié… Je me retrouve donc avec deux
 fois <a href="http://">http://</a>…</p>
 <p>Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :</p>
 <p>Ecrire dans la barre d'adresse :</p>
-<div class="highlight"><pre><span class="n">about</span><span class="o">:</span><span class="n">config</span>
+<div class="highlight"><pre><span></span><span class="n">about</span><span class="o">:</span><span class="n">config</span>
 </pre></div>
 
 
 <p>Rechercher :</p>
-<div class="highlight"><pre>browser.urlbar ...</pre></div>
+<div class="highlight"><pre><span></span>browser.urlbar ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html">Lire la suite</a>
   </div>
   <hr />
@@ -152,17 +152,17 @@ Tags :
       <p>Voilà une solution simple pour convertir une base de donnée en Latin1
 vers de l'UTF-8.</p>
 <p>Utiliser mysqldump avec les options suivantes :</p>
-<div class="highlight"><pre>--default-character-set=utf8
+<div class="highlight"><pre><span></span>--default-character-set=utf8
 </pre></div>
 
 
 <p>et :</p>
-<div class="highlight"><pre>--skip-set-charset
+<div class="highlight"><pre><span></span>--skip-set-charset
 </pre></div>
 
 
 <p>Voilà la commande complète :</p>
-<div class="highlight"><pre>mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
+<div class="highlight"><pre><span></span>mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
 </pre></div>
 
 
@@ -277,7 +277,22 @@ les préférences d'iTerm2.</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

@@ -75,23 +75,23 @@
   <div>
     <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
 informations dans vos projets il suffit de taper cette commande :</p>
-<div class="highlight"><pre>svn propset svn:keywords &quot;Id&quot; index.php
+<div class="highlight"><pre><span></span>svn propset svn:keywords &quot;Id&quot; index.php
 </pre></div>
 
 
 <p>Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php</p>
 <p>Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">Id</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
+<div class="highlight"><pre><span></span><span class="p">$</span><span class="nv">Id</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
 </pre></div>
 
 
 <p>Une fois le fichier versionné vous obtiendrez :</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">Id</span><span class="x">: ajax\_modif.php 481 2010-10-25 12:02:50Z choiz </span><span class="p">$</span><span class="x"></span>
+<div class="highlight"><pre><span></span><span class="p">$</span><span class="nv">Id</span><span class="x">: ajax\_modif.php 481 2010-10-25 12:02:50Z choiz </span><span class="p">$</span><span class="x"></span>
 </pre></div>
 
 
 <p>D'autres keywords sont disponible tel que :</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">Revision</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
+<div class="highlight"><pre><span></span><span class="p">$</span><span class="nv">Revision</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
 <span class="p">$</span><span class="nv">Date</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
 <span class="p">$</span><span class="nv">Author</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
 <span class="p">$</span><span class="nv">URL</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
@@ -101,12 +101,12 @@ informations dans vos projets il suffit de taper cette commande :</p>
 <p>Vous pouvez les ajouter les uns à la suite des autres par exemple pour
 notre fichier index.php je veux ajouter les 4 keywords précédents grâce
 à la commande :</p>
-<div class="highlight"><pre>svn propset svn:keywords &quot;Revision Date Author URL&quot; index.php
+<div class="highlight"><pre><span></span>svn propset svn:keywords &quot;Revision Date Author URL&quot; index.php
 </pre></div>
 
 
 <p>Ce qui affichera :</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">Revision</span><span class="x">: 481 </span><span class="p">$</span><span class="x"></span>
+<div class="highlight"><pre><span></span><span class="p">$</span><span class="nv">Revision</span><span class="x">: 481 </span><span class="p">$</span><span class="x"></span>
 <span class="p">$</span><span class="nv">Date</span><span class="x">: 2010-10-25 14:02:50 +0200 (lun., 25 oct. 2010) </span><span class="p">$</span><span class="x"></span>
 <span class="p">$</span><span class="nv">Author</span><span class="x">: choiz </span><span class="p">$</span><span class="x"></span>
 <span class="p">$</span><span class="nv">URL</span><span class="x">: svn://svn.choiz.fr/projet/branches/prod/index.php </span><span class="p">$</span><span class="x"></span>
@@ -133,7 +133,22 @@ notre fichier index.php je veux ajouter les 4 keywords précédents grâce
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

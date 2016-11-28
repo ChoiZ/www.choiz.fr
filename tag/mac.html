@@ -62,13 +62,13 @@ Tags :
   </header>
   <div>
       <p>Dans le terminal sur votre mac :</p>
-<div class="highlight"><pre>diskutil list
+<div class="highlight"><pre><span></span>diskutil list
 </pre></div>
 
 
 <p>Qui permet de lister vos disque dur / clés usb etc…</p>
 <p>ici ma clé usb est disk2. :</p>
-<div class="highlight"><pre>/dev/disk2
+<div class="highlight"><pre><span></span>/dev/disk2
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:     FDisk_partition_scheme                        *8.1 GB     disk2
    1:                      Linux                         4.0 GB     disk2s1
@@ -94,7 +94,7 @@ Tags :
     sudo npm install -g jshint</p>
 <p>Faire un lien symbolique pour pouvoir utiliser directement jshint sans
 préciser tout le chemin a chaque fois :</p>
-<div class="highlight"><pre>ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
+<div class="highlight"><pre><span></span>ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
 </pre></div>
       <a class="btn" href="//www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html">Lire la suite</a>
   </div>
@@ -154,7 +154,7 @@ Tags :
 utilisateurs. Par exemple l'utilisateur : "skype" avec comme mot de
 passe "password". Ensuite ouvrir un terminal (dans spotlight tapez
 terminal). Puis :</p>
-<div class="highlight"><pre>su skype (ou &quot;su nomdutilisateur&quot; en fonction de l&#39;utilisateur créé).
+<div class="highlight"><pre><span></span>su skype (ou &quot;su nomdutilisateur&quot; en fonction de l&#39;utilisateur créé).
 
 Password ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html">Lire la suite</a>
@@ -171,7 +171,7 @@ Tags :
   </header>
   <div>
       <p>Dans une console sur votre Mac :</p>
-<div class="highlight"><pre>defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+<div class="highlight"><pre><span></span>defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 </pre></div>
 
 
@@ -191,7 +191,7 @@ Tags :
   <div>
       <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
 dans la console je tape la commande :</p>
-<div class="highlight"><pre>php -l fichier_a_tester.php
+<div class="highlight"><pre><span></span>php -l fichier_a_tester.php
 </pre></div>
 
 
@@ -208,7 +208,22 @@ Pour la faire il suffit de faire "ESC" pour passer en mode ...</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

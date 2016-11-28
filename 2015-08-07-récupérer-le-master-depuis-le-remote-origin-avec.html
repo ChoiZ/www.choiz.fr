@@ -75,7 +75,7 @@
 <li>un remote “github” qui lui est sur github.com.</li>
 </ul>
 <p>Quand je vais sur le master il m’arrive d’avoir ce message :</p>
-<div class="highlight"><pre>&quot;your branch is up-to-date with “github/master”.&quot;
+<div class="highlight"><pre><span></span>&quot;your branch is up-to-date with “github/master”.&quot;
 </pre></div>
 
 
@@ -85,14 +85,14 @@ github/master.</p>
 <ol>
 <li>
 <p>supprimer ma branche master locale :</p>
-<div class="highlight"><pre>git branch -d master
+<div class="highlight"><pre><span></span>git branch -d master
 </pre></div>
 
 
 </li>
 <li>
 <p>récupèrer mon master depuis le remote origin :</p>
-<div class="highlight"><pre>git checkout -t -b master origin/master
+<div class="highlight"><pre><span></span>git checkout -t -b master origin/master
 </pre></div>
 
 
@@ -120,7 +120,22 @@ github/master.</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

@@ -82,7 +82,7 @@ Tags :
   <div>
       <p>Un petit package bien pratique pour configurer le dual screen sur xfce
 se nomme : arandr :</p>
-<div class="highlight"><pre>apt-get install arandr
+<div class="highlight"><pre><span></span>apt-get install arandr
 </pre></div>
 
 
@@ -106,7 +106,7 @@ surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
 chez Deezer c'est un peu problèmatique.</p>
 <p>J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
 ceci :</p>
-<div class="highlight"><pre>vi /etc/apt/source.list
+<div class="highlight"><pre><span></span>vi /etc/apt/source.list
 </pre></div>
 
 
@@ -125,7 +125,7 @@ Tags :
   </header>
   <div>
       <p>Dans un terminal :</p>
-<div class="highlight"><pre>defaults write com.apple.Finder AppleShowAllFiles TRUE
+<div class="highlight"><pre><span></span>defaults write com.apple.Finder AppleShowAllFiles TRUE
 
 killall Finder
 </pre></div>
@@ -147,7 +147,7 @@ Tags :
   <div>
       <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un
 fichier avec vim :</p>
-<div class="highlight"><pre><span class="x">:1,</span><span class="p">$</span><span class="nv">s</span><span class="x">/^/</span><span class="err">#</span><span class="x">/</span>
+<div class="highlight"><pre><span></span><span class="x">:1,</span><span class="p">$</span><span class="nv">s</span><span class="x">/^/</span><span class="err">#</span><span class="x">/</span>
 </pre></div>
 
 
@@ -174,7 +174,7 @@ Tags :
 utilisateurs. Par exemple l'utilisateur : "skype" avec comme mot de
 passe "password". Ensuite ouvrir un terminal (dans spotlight tapez
 terminal). Puis :</p>
-<div class="highlight"><pre>su skype (ou &quot;su nomdutilisateur&quot; en fonction de l&#39;utilisateur créé).
+<div class="highlight"><pre><span></span>su skype (ou &quot;su nomdutilisateur&quot; en fonction de l&#39;utilisateur créé).
 
 Password ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html">Lire la suite</a>
@@ -210,7 +210,7 @@ Tags :
   </header>
   <div>
       <p>Pour activer l'inspecteur web tapez dans le terminal :</p>
-<div class="highlight"><pre>defaults write com.apple.Safari WebKitDeveloperExtras -bool true
+<div class="highlight"><pre><span></span>defaults write com.apple.Safari WebKitDeveloperExtras -bool true
 </pre></div>
 
 
@@ -232,7 +232,7 @@ Tags :
       <p>J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
 donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?</p>
 <p>Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper :</p>
-<div class="highlight"><pre><span class="n">VBoxManage</span> <span class="kn">import</span> <span class="nn">votrefichier.ova</span>
+<div class="highlight"><pre><span></span><span class="n">VBoxManage</span> <span class="kn">import</span> <span class="nn">votrefichier.ova</span>
 </pre></div>
 
 
@@ -252,7 +252,7 @@ Tags :
   <div>
       <p>Configuration d'un serveur samba. Editer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :</p>
-<div class="highlight"><pre>| ### Global ###
+<div class="highlight"><pre><span></span>| ### Global ###
 | [global]
 | ## Identification ##
 | workgroup = WORKGROUP
@@ -280,7 +280,22 @@ Tags :
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

@@ -62,7 +62,7 @@ Tags :
   </header>
   <div>
       <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<div class="highlight"><pre>svn propset svn:ignore
+<div class="highlight"><pre><span></span>svn propset svn:ignore
 </pre></div>
 
 
@@ -84,7 +84,7 @@ Tags :
   </header>
   <div>
       <p>Dans une console sur votre Mac :</p>
-<div class="highlight"><pre>defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+<div class="highlight"><pre><span></span>defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 </pre></div>
 
 
@@ -103,12 +103,12 @@ Tags :
   </header>
   <div>
       <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :</p>
-<div class="highlight"><pre><span class="kd">function</span> <span class="nx">checkclick</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">e</span> <span class="o">=</span> <span class="nx">e</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">event</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span> <span class="o">||</span> <span class="nx">e</span><span class="p">.</span><span class="nx">srcElement</span><span class="p">;</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">o</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">onclick</span><span class="o">=</span><span class="nx">checkclick</span><span class="p">;</span>
+<div class="highlight"><pre><span></span>function checkclick(e) {
+    e = e || window.event;
+    var o = e.target || e.srcElement;
+    console.log(o);
+}
+document.onclick=checkclick;
 </pre></div>
 
 
@@ -131,7 +131,7 @@ vous distribuez du code et que vous voulez le mettre à jour. Comment
 l'utiliser ? Dans un premier temps nous allons faire un différentiel de
 notre version actuelle du projet et de la nouvelle version (celle
 patchée). :</p>
-<div class="highlight"><pre><span class="gh">diff -u version1 ...</span></pre></div>
+<div class="highlight"><pre><span></span><span class="gh">diff -u version1 ...</span></pre></div>
       <a class="btn" href="//www.choiz.fr/2011-05-30-patch-diff.html">Lire la suite</a>
   </div>
   <hr />
@@ -149,19 +149,19 @@ Tags :
 pouvoir ouvrir plusieurs fichiers en même temps.</p>
 <p>Pour celà il utilises 2 méthodes soit :</p>
 <ol>
-<li>la division de la fenêtre horizontal en utilisant :<div class="highlight"><pre>:split
+<li>la division de la fenêtre horizontal en utilisant :<div class="highlight"><pre><span></span>:split
 </pre></div>
 
 
 </li>
 </ol>
 <p>ou :</p>
-<div class="highlight"><pre>:new
+<div class="highlight"><pre><span></span>:new
 </pre></div>
 
 
 <p>et ensuite :</p>
-<div class="highlight"><pre>:e le_fichier_a_ouvrir
+<div class="highlight"><pre><span></span>:e le_fichier_a_ouvrir
 </pre></div>
 
 
@@ -184,7 +184,7 @@ Tags :
 J'utilise souvent la commande diff dans un terminal, mais mon éditeur
 texte favoris "Vim" sait aussi trés bien faire un différentiel.
 Utilisation avec le terminal :</p>
-<div class="highlight"><pre><span class="gh">diff fichier1 fichier2</span>
+<div class="highlight"><pre><span></span><span class="gh">diff fichier1 fichier2</span>
 </pre></div>
 
 
@@ -207,7 +207,7 @@ Tags :
 commande mysqldump et mysql.</p>
 <p>Dans un premier temps je sauve ma base database dans le fichier dump.sql
 J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss :</p>
-<div class="highlight"><pre>mysqldump -u utilisateur -p p4ss database &gt; dump ...</pre></div>
+<div class="highlight"><pre><span></span>mysqldump -u utilisateur -p p4ss database &gt; dump ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2011-05-14-migration-dune-base-de-donnée-mysql.html">Lire la suite</a>
   </div>
   <hr />
@@ -223,7 +223,7 @@ Tags :
   <div>
       <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
 dans la console je tape la commande :</p>
-<div class="highlight"><pre>php -l fichier_a_tester.php
+<div class="highlight"><pre><span></span>php -l fichier_a_tester.php
 </pre></div>
 
 
@@ -263,7 +263,7 @@ Tags :
   </header>
   <div>
       <p>Voilà à quoi correspond cette erreur pour ceux qui demandent :</p>
-<div class="highlight"><pre>Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695
+<div class="highlight"><pre><span></span>Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695
 </pre></div>
 
 
@@ -288,7 +288,22 @@ ou, en termes ...</em></p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

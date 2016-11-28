@@ -63,7 +63,7 @@ Tags :
   <div>
       <p>Pour rechercher directement dans le code source une modification
 précise, j'utilise la commande suivante :</p>
-<div class="highlight"><pre>git log -p -S &#39;display&#39;
+<div class="highlight"><pre><span></span>git log -p -S &#39;display&#39;
 </pre></div>
   </div>
   <hr />
@@ -111,7 +111,7 @@ Tags :
   </header>
   <div>
       <p>Voici mon historique des commits :</p>
-<div class="highlight"><pre>c0004 -- dernier commit
+<div class="highlight"><pre><span></span>c0004 -- dernier commit
 c0003 -- avant dernier commit
 c0002 -- second commit
 c0001 -- premier commit
@@ -119,7 +119,7 @@ c0001 -- premier commit
 
 
 <p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire :</p>
-<div class="highlight"><pre>git format-patch -2 c0002 --stdout &gt; mon.patch
+<div class="highlight"><pre><span></span>git format-patch -2 c0002 --stdout &gt; mon.patch
 </pre></div>
 
 
@@ -139,19 +139,19 @@ Tags :
       <p>Télécharger la dernière version de <a href="http://www.skype.com">Skype</a> (Debian
 7.0 [multiarch]).</p>
 <p>Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. :</p>
-<div class="highlight"><pre>dpkg --add-architecture i386
+<div class="highlight"><pre><span></span>dpkg --add-architecture i386
 </pre></div>
 
 
 <p>Puis mettre à jour les paquets :</p>
-<div class="highlight"><pre>apt-get update
+<div class="highlight"><pre><span></span>apt-get update
 apt-get upgrade
 apt-get install -f
 </pre></div>
 
 
 <p>Installer Skype en n'oubliant pas de remplacer "x" par la bonne version :</p>
-<div class="highlight"><pre>dpkg -i skype-debian_x_i386.deb
+<div class="highlight"><pre><span></span>dpkg -i skype-debian_x_i386.deb
 </pre></div>
   </div>
   <hr />
@@ -168,12 +168,12 @@ Tags :
       <p>Télécharger la dernière version de Firefox sur <a href="http://www.mozilla.org/">le site de
 mozilla</a>.</p>
 <p>Décompresser l'archive dans :</p>
-<div class="highlight"><pre>/opt/firefox/
+<div class="highlight"><pre><span></span>/opt/firefox/
 </pre></div>
 
 
 <p>Créer un lien symbolique avec :</p>
-<div class="highlight"><pre>ls -sf /opt/firefox/firefox /usr/bin/firefox
+<div class="highlight"><pre><span></span>ls -sf /opt/firefox/firefox /usr/bin/firefox
 </pre></div>
   </div>
   <hr />
@@ -188,14 +188,14 @@ Tags :
   </header>
   <div>
       <p>Dans mon firebug des "warnings" s'affichent :</p>
-<div class="highlight"><pre>Champs mot de passe présents sur une page non sécurisée (http://). Cela
+<div class="highlight"><pre><span></span>Champs mot de passe présents sur une page non sécurisée (http://). Cela
 représente un risque de sécurité permettant le vol d&#39;identifiants de
 connexion.
 </pre></div>
 
 
 <p>Ainsi que :</p>
-<div class="highlight"><pre>Champs mot de passe présents dans un formulaire possédant une action de
+<div class="highlight"><pre><span></span>Champs mot de passe présents dans un formulaire possédant une action de
 formulaire non sécurisée (http://). Cela représente un risque de sécurité
 permettant le vol d&#39;identifiants de connexion.
 </pre></div>
@@ -224,24 +224,24 @@ Tags :
   </header>
   <div>
       <p>Installer imapfilter via apt par exemple :</p>
-<div class="highlight"><pre>apt-get install imapfilter
+<div class="highlight"><pre><span></span>apt-get install imapfilter
 </pre></div>
 
 
 <p>Se rendre dans le dossier de configuration :</p>
-<div class="highlight"><pre>cd ~/.imapfilter
+<div class="highlight"><pre><span></span>cd ~/.imapfilter
 </pre></div>
 
 
 <p>Créer un fichier config.lua :</p>
-<div class="highlight"><pre>touch config.lua
+<div class="highlight"><pre><span></span>touch config.lua
 </pre></div>
 
 
 <p>Maintenant je décide de faire un fichier de configuration par boite
 email.</p>
 <p>Ici gmail :</p>
-<div class="highlight"><pre>cat &gt; gmail.lua &lt;&lt;EOF
+<div class="highlight"><pre><span></span>cat &gt; gmail.lua &lt;&lt;EOF
 gmail = IMAP {
     server = &#39;imap.gmail.com&#39;,
     username = &#39;mail@gmail.com&#39;,
@@ -253,7 +253,7 @@ EOF
 
 
 <p>Et un pour Yahoo :</p>
-<div class="highlight"><pre>cat &gt; yahoo.lua &lt;&lt;EOF
+<div class="highlight"><pre><span></span>cat &gt; yahoo.lua &lt;&lt;EOF
 yahoo = IMAP {
     server = &#39;imap.yahoo.com&#39;,
     username = &#39;mail@yahoo.com&#39;,
@@ -265,7 +265,7 @@ EOF
 
 
 <p>Ajouter nos boites dans le fichier de config avec des filtres :</p>
-<div class="highlight"><pre>if_dir = os.getenv(&#39;HOME&#39;) .. &#39;/.imapfilter/&#39;
+<div class="highlight"><pre><span></span>if_dir = os.getenv(&#39;HOME&#39;) .. &#39;/.imapfilter/&#39;
 -- on inclus nos comptes imap…
 dofile(if_dir .. &quot;gmail.lua&quot;)
 dofile(if_dir .. &quot;yahoo.lua&quot;)
@@ -282,7 +282,7 @@ del_read_yahoo:delete_messages()
 
 <p>Maintenant c'est à vous de faire vos propres filtres. Une fois
 configuré, lancer imapfilter simplement depuis le terminal :</p>
-<div class="highlight"><pre>imapfilter
+<div class="highlight"><pre><span></span>imapfilter
 </pre></div>
   </div>
   <hr />
@@ -303,7 +303,7 @@ non utilisés (jeux etc…).</p>
 écran gris s'affiche et rien d'autre. Heureusement grâce à mon access
 SSH je peux me connecter à la machine à distance.</p>
 <p>Pour voir la liste des paquets déinstallés j'ai donc fait :</p>
-<div class="highlight"><pre>dpkg --get-selections &gt; liste-des-paquets
+<div class="highlight"><pre><span></span>dpkg --get-selections &gt; liste-des-paquets
 </pre></div>
 
 
@@ -329,12 +329,12 @@ pas entièrement…).</p>
 <p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu
 que ma ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
 <p>Mon fichier texte ressemble à ceci :</p>
-<div class="highlight"><pre>ligne avec un peu de texte ici nous avons 66 caractères affichés.
+<div class="highlight"><pre><span></span>ligne avec un peu de texte ici nous avons 66 caractères affichés.
 </pre></div>
 
 
 <p>Or, quand je fais un diff on ne voit pas tous les caractères :</p>
-<div class="highlight"><pre>git diff HEAD~1 HEAD
+<div class="highlight"><pre><span></span>git diff HEAD~1 HEAD
 diff --git a/test.txt b/test.txt
 new file mode 100644
 index 0000000..235a891
@@ -348,12 +348,12 @@ No newline at end of file
 
 <p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=""</em> avant la
 commande <em>git diff</em> soit ajouter dans son fichier de config git :</p>
-<div class="highlight"><pre>git config --global core.pager &quot;less -r&quot;
+<div class="highlight"><pre><span></span>git config --global core.pager &quot;less -r&quot;
 </pre></div>
 
 
 <p>Voilà ce que ça donne avec GIT_PAGER :</p>
-<div class="highlight"><pre>GIT_PAGER=&quot;&quot; git diff HEAD~1 HEAD
+<div class="highlight"><pre><span></span>GIT_PAGER=&quot;&quot; git diff HEAD~1 HEAD
 diff --git a/test.txt b/test.txt
 new file mode 100644
 index 0000000..235a891
@@ -376,13 +376,13 @@ Tags :
   </header>
   <div>
       <p>Dans le terminal sur votre mac :</p>
-<div class="highlight"><pre>diskutil list
+<div class="highlight"><pre><span></span>diskutil list
 </pre></div>
 
 
 <p>Qui permet de lister vos disque dur / clés usb etc…</p>
 <p>ici ma clé usb est disk2. :</p>
-<div class="highlight"><pre>/dev/disk2
+<div class="highlight"><pre><span></span>/dev/disk2
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:     FDisk_partition_scheme                        *8.1 GB     disk2
    1:                      Linux                         4.0 GB     disk2s1
@@ -391,7 +391,7 @@ Tags :
 
 
 <p>Démontez la clé. :</p>
-<div class="highlight"><pre>diskutil unmountDisk /dev/disk2
+<div class="highlight"><pre><span></span>diskutil unmountDisk /dev/disk2
 
 Unmount of all volumes on disk2 was successful
 </pre></div>
@@ -399,7 +399,7 @@ Unmount of all volumes on disk2 was successful
 
 <p>Maintenant on copie xubuntu depuis notre dossier téléchargements vers
 cette clé usb :</p>
-<div class="highlight"><pre>sudo dd if=~/Downloads/xubuntu-13.10-desktop-i386.iso of=/dev/rdisk2 bs=1m
+<div class="highlight"><pre><span></span>sudo dd if=~/Downloads/xubuntu-13.10-desktop-i386.iso of=/dev/rdisk2 bs=1m
 
 Password:
 834+0 records in
@@ -409,7 +409,7 @@ Password:
 
 
 <p>Puis on éjecte proprement la clé usb :</p>
-<div class="highlight"><pre>diskutil eject /dev/disk2
+<div class="highlight"><pre><span></span>diskutil eject /dev/disk2
 
 Disk /dev/disk2 ejected
 </pre></div>
@@ -429,7 +429,22 @@ Disk /dev/disk2 ejected
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

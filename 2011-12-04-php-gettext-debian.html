@@ -74,14 +74,14 @@
     <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
 en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext
 sur votre site en php il faut télécharger le package php-gettext :</p>
-<div class="highlight"><pre>apt-get install php-gettext
+<div class="highlight"><pre><span></span>apt-get install php-gettext
 </pre></div>
 
 
 <p>Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
 commentaires devant les langues qui vont sont à traduire par exemple :
 Allemand, Anglais, Espagnol, Français &amp; Suédois :</p>
-<div class="highlight"><pre>de_DE.UTF-8 UTF-8
+<div class="highlight"><pre><span></span>de_DE.UTF-8 UTF-8
 en_GB.UTF-8 UTF-8
 es_ES.UTF-8 UTF-8
 fr_FR.UTF-8 UTF-8
@@ -90,17 +90,17 @@ sv_SE.UTF-8 UTF-8
 
 
 <p>Puis regénérer les locales :</p>
-<div class="highlight"><pre>locale-gen
+<div class="highlight"><pre><span></span>locale-gen
 </pre></div>
 
 
 <p>Ensuite il faut définir votre chemin pour les traductions par exemple :</p>
-<div class="highlight"><pre>lang/fr_FR/LC_MESSAGES/domaine.mo
+<div class="highlight"><pre><span></span>lang/fr_FR/LC_MESSAGES/domaine.mo
 </pre></div>
 
 
 <p>Puis dans votre fichier php de configuration :</p>
-<div class="highlight"><pre><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="c1">// configuration de la langue</span>
 <span class="nv">$lang</span> <span class="o">=</span> <span class="s1">&#39;fr_FR&#39;</span><span class="p">;</span> <span class="c1">// Langue a afficher</span>
 <span class="nv">$lang_encode</span> <span class="o">=</span> <span class="s1">&#39;utf8&#39;</span><span class="p">;</span> <span class="c1">// Encodage du fichier</span>
@@ -122,7 +122,7 @@ sv_SE.UTF-8 UTF-8
 
 
 <p>Puis faites le test en affichant dans un fichier php le texte "hello" :</p>
-<div class="highlight"><pre><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="c1">// on inclus la config…</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">&#39;config.php&#39;</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nx">_</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>
@@ -131,7 +131,7 @@ sv_SE.UTF-8 UTF-8
 
 
 <p>Pour générer un fichier .mo a partir d'un fichier .po :</p>
-<div class="highlight"><pre>msgfmt domaine.po -o domaine.mo
+<div class="highlight"><pre><span></span>msgfmt domaine.po -o domaine.mo
 </pre></div>
 
 
@@ -139,7 +139,7 @@ sv_SE.UTF-8 UTF-8
 faire un fichier texte avec tous vos fichiers php ou on doit récupérer
 le gettext.</p>
 <p>Exemple listing_gettext.txt tel que :</p>
-<div class="highlight"><pre>index.php
+<div class="highlight"><pre><span></span>index.php
 contact.php
 etc…
 </pre></div>
@@ -147,13 +147,13 @@ etc…
 
 <p>Ensuite il faut faire la commande suivante pour générer le fichier
 domaine.po dans le dossier lang/ depuis notre fichier texte avec les php :</p>
-<div class="highlight"><pre>find . -iname &quot;*.php&quot; | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
+<div class="highlight"><pre><span></span>find . -iname &quot;*.php&quot; | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
 </pre></div>
 
 
 <p>Pour finir voilà le path des fichiers .po et .mo dans mon application
 web :</p>
-<div class="highlight"><pre>lang/fr_FR/LC_MESSAGES/domaine.po
+<div class="highlight"><pre><span></span>lang/fr_FR/LC_MESSAGES/domaine.po
 lang/fr_FR/LC_MESSAGES/domaine.mo
 lang/en_GB/LC_MESSAGES/domaine.po
 lang/en_GB/LC_MESSAGES/domaine.mo
@@ -184,7 +184,22 @@ soient pris en compte.</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

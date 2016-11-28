@@ -99,12 +99,12 @@ Tags :
       <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
 suivre pour le mettre à jour vers la version : 4.3.0.</p>
 <p>Je liste les différents noyaux gentoo disponibles :</p>
-<div class="highlight"><pre>eix sys-kernel/gentoo-sources
+<div class="highlight"><pre><span></span>eix sys-kernel/gentoo-sources
 </pre></div>
 
 
 <p>Je télécharge le noyau 4.3.0 :</p>
-<div class="highlight"><pre>emerge -a =sys-kernel/gentoo-sources-4.3.0
+<div class="highlight"><pre><span></span>emerge -a =sys-kernel/gentoo-sources-4.3.0
 </pre></div>
 
 
@@ -123,7 +123,7 @@ Tags :
   </header>
   <div>
       <p>Lorsque j'ai voulu "réattacher" mon "Screen" j'ai eu le message suivant :</p>
-<div class="highlight"><pre>There is a screen on:
+<div class="highlight"><pre><span></span>There is a screen on:
 1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)
 </pre></div>
 
@@ -164,7 +164,7 @@ Tags :
   <div>
       <p>Un petit package bien pratique pour configurer le dual screen sur xfce
 se nomme : arandr :</p>
-<div class="highlight"><pre>apt-get install arandr
+<div class="highlight"><pre><span></span>apt-get install arandr
 </pre></div>
 
 
@@ -185,7 +185,7 @@ Tags :
   <div>
       <p>Configuration d'un serveur samba. Editer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :</p>
-<div class="highlight"><pre>| ### Global ###
+<div class="highlight"><pre><span></span>| ### Global ###
 | [global]
 | ## Identification ##
 | workgroup = WORKGROUP
@@ -211,7 +211,7 @@ Tags :
   <div>
       <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
 dans la console je tape la commande :</p>
-<div class="highlight"><pre>php -l fichier_a_tester.php
+<div class="highlight"><pre><span></span>php -l fichier_a_tester.php
 </pre></div>
 
 
@@ -228,7 +228,22 @@ Pour la faire il suffit de faire "ESC" pour passer en mode ...</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

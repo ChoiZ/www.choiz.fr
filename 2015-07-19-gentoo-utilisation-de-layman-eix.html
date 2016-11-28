@@ -79,26 +79,26 @@ vagrant je me rend compte que nous sommes à la version 1.7.3.</p>
 <a href="http://gpo.zugaina.org/app-emulation/vagrant-bin">http://gpo.zugaina.org/app-emulation/vagrant-bin</a></p>
 <p>Pour utiliser cette overlay nous avons besoin de layman.</p>
 <p>Installation :</p>
-<div class="highlight"><pre>emerge -a layman
+<div class="highlight"><pre><span></span>emerge -a layman
 
 echo &quot;source /usr/portage/local/layman/make.conf&quot; &gt;&gt; /etc/make.conf
 </pre></div>
 
 
 <p>Pour afficher tous les overlays disponible :</p>
-<div class="highlight"><pre>layman -L
+<div class="highlight"><pre><span></span>layman -L
 </pre></div>
 
 
 <p>Ajouter l’overlay stefantalpalaru (dans lequel nous avons
 vagrant-bin-1.7.3) :</p>
-<div class="highlight"><pre>layman -f -a stefantalpalaru
+<div class="highlight"><pre><span></span>layman -f -a stefantalpalaru
 </pre></div>
 
 
 <p>Maintenant si on recherche dans eix “vagrant” rien n’a changé.</p>
 <p>Il faut mettre à jour eix :</p>
-<div class="highlight"><pre>eix-update
+<div class="highlight"><pre><span></span>eix-update
 </pre></div>
 
 
@@ -123,7 +123,22 @@ pouvons installer vagrant-1.7.3 via emerge.</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

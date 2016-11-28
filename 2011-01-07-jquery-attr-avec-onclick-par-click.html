@@ -73,14 +73,14 @@ fonctionne pas avec l'attribut "onclick"…</p>
 <p>Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.</p>
 <p>Remplacer donc :</p>
-<div class="highlight"><pre>var mavar = &#39;fonctionAffichage();&#39;;
+<div class="highlight"><pre><span></span>var mavar = &#39;fonctionAffichage();&#39;;
 $(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
 </pre></div>
 
 
 <p>Par :</p>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">mavar</span> <span class="o">=</span> <span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">&#39;onclick&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nb">eval</span><span class="p">(</span><span class="nx">mavar</span><span class="p">);</span> <span class="p">});</span>
+<div class="highlight"><pre><span></span>var mavar = &#39;fonctionAffichage();&#39;;
+$(&quot;#code&quot;).removeAttr(&#39;onclick&#39;).click(function() { eval(mavar); });
 </pre></div>
   </div>
   <div class="tag-cloud">
@@ -99,7 +99,22 @@ $(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

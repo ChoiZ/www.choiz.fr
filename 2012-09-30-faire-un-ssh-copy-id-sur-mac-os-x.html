@@ -122,66 +122,66 @@ fichier "ssh-copy-id" dans le dossier "/usr/bin/" avec ce contenu :</p>
 46
 47
 48
-49</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/bin/sh</span>
-<span class="c"># Shell script to install your public key on a remote machine</span>
-<span class="c"># Takes the remote machine name as an argument.</span>
-<span class="c"># Obviously, the remote machine must accept password authentication,</span>
-<span class="c"># or one of the other keys in your ssh-agent, for this to work.</span>
+49</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="c1"># Shell script to install your public key on a remote machine</span>
+<span class="c1"># Takes the remote machine name as an argument.</span>
+<span class="c1"># Obviously, the remote machine must accept password authentication,</span>
+<span class="c1"># or one of the other keys in your ssh-agent, for this to work.</span>
 
 <span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.ssh/id_rsa.pub&quot;</span>
 
 <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;-i&quot;</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
   <span class="nb">shift</span>
-  <span class="c"># check if we have 2 parameters left, if so the first is the new ID file</span>
+  <span class="c1"># check if we have 2 parameters left, if so the first is the new ID file</span>
   <span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     <span class="k">if</span> expr <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> : <span class="s2">&quot;.*\.pub&quot;</span> &gt; /dev/null <span class="p">;</span> <span class="k">then</span>
       <span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
     <span class="k">else</span>
       <span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">.pub&quot;</span>
     <span class="k">fi</span>
-    <span class="nb">shift</span>         <span class="c"># and this should leave $1 as the target name</span>
+    <span class="nb">shift</span>         <span class="c1"># and this should leave $1 as the target name</span>
   <span class="k">fi</span>
 <span class="k">else</span>
-  <span class="k">if</span> <span class="o">[</span> x<span class="nv">$SSH_AUTH_SOCK</span> !<span class="o">=</span> x <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
-    <span class="nv">GET_ID</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$GET_ID</span><span class="s2"> ssh-add -L&quot;</span>
+  <span class="k">if</span> <span class="o">[</span> x$SSH_AUTH_SOCK !<span class="o">=</span> x <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+    <span class="nv">GET_ID</span><span class="o">=</span><span class="s2">&quot;</span>$<span class="s2">GET_ID ssh-add -L&quot;</span>
   <span class="k">fi</span>
 <span class="k">fi</span>
 
-<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;`eval </span><span class="nv">$GET_ID</span><span class="s2">`&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> -r <span class="s2">&quot;</span><span class="si">${</span><span class="nv">ID_FILE</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;`eval </span>$<span class="s2">GET_ID`&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> -r <span class="s2">&quot;</span><span class="si">${</span><span class="nv">ID_FILE</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
   <span class="nv">GET_ID</span><span class="o">=</span><span class="s2">&quot;cat </span><span class="si">${</span><span class="nv">ID_FILE</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="k">fi</span>
 
-<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;`eval </span><span class="nv">$GET_ID</span><span class="s2">`&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;`eval </span>$<span class="s2">GET_ID`&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
   <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">: ERROR: No identities found&quot;</span> &gt;<span class="p">&amp;</span>2
-  <span class="nb">exit </span>1
+  <span class="nb">exit</span> 1
 <span class="k">fi</span>
 
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$#&quot;</span><span class="s2"> -lt 1 ] || [ &quot;</span><span class="nv">$1</span><span class="s2">&quot; = &quot;</span>-h<span class="s2">&quot; ] || [ &quot;</span><span class="nv">$1</span><span class="s2">&quot; = &quot;</span>--help<span class="s2">&quot; ]; then</span>
-<span class="s2">  echo &quot;</span>Usage: <span class="nv">$0</span> <span class="o">[</span>-i <span class="o">[</span>identity_file<span class="o">]]</span> <span class="o">[</span>user@<span class="o">]</span>machine<span class="s2">&quot; &gt;&amp;2</span>
-<span class="s2">  exit 1</span>
-<span class="s2">fi</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$#</span><span class="s2">&quot;</span> -lt <span class="m">1</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;-h&quot;</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;--help&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Usage: </span><span class="nv">$0</span><span class="s2"> [-i [identity_file]] [user@]machine&quot;</span> &gt;<span class="p">&amp;</span>2
+  <span class="nb">exit</span> 1
+<span class="k">fi</span>
 
-<span class="s2">{ eval &quot;</span><span class="nv">$GET_ID</span><span class="s2">&quot; ; } | ssh </span><span class="nv">$1</span><span class="s2"> &quot;</span><span class="nb">umask </span>077<span class="p">;</span> <span class="nb">test</span> -d .ssh <span class="o">||</span> mkdir .ssh <span class="p">;</span> cat &gt;&gt; .ssh/authorized_keys<span class="s2">&quot; || exit 1</span>
+<span class="o">{</span> <span class="nb">eval</span> <span class="s2">&quot;</span>$<span class="s2">GET_ID&quot;</span> <span class="p">;</span> <span class="o">}</span> <span class="p">|</span> ssh <span class="nv">$1</span> <span class="s2">&quot;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys&quot;</span> <span class="o">||</span> <span class="nb">exit</span> 1
 
-<span class="s2">cat &lt;&lt;EOF</span>
-<span class="s2">Now try logging into the machine, with &quot;</span>ssh <span class="s1">&#39;$1&#39;</span><span class="s2">&quot;, and check in:</span>
+cat <span class="s">&lt;&lt;EOF</span>
+<span class="s">Now try logging into the machine, with &quot;ssh &#39;$1&#39;&quot;, and check in:</span>
 
-<span class="s2">  .ssh/authorized_keys</span>
+<span class="s">  .ssh/authorized_keys</span>
 
-<span class="s2">to make sure we haven&#39;t added extra keys that you weren&#39;t expecting.</span>
+<span class="s">to make sure we haven&#39;t added extra keys that you weren&#39;t expecting.</span>
 
-<span class="s2">EOF</span>
+<span class="s">EOF</span>
 </pre></div>
 </td></tr></table>
 
 <p>Il ne reste qu'a donner les droits au fichier :</p>
-<div class="highlight"><pre>chmod 755 /usr/bin/ssh-copy-id
+<div class="highlight"><pre><span></span>chmod 755 /usr/bin/ssh-copy-id
 </pre></div>
 
 
 <p>Vous pouvez maintenant copier votre clé ssh sur un serveur distant en
 tapant :</p>
-<div class="highlight"><pre>ssh-copy-id -i id_rsa.pub user@machine.distante
+<div class="highlight"><pre><span></span>ssh-copy-id -i id_rsa.pub user@machine.distante
 </pre></div>
   </div>
   <div class="tag-cloud">
@@ -200,7 +200,22 @@ tapant :</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

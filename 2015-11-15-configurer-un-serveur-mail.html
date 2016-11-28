@@ -76,7 +76,7 @@
 "mail" qui pointe vers l'adresse ipv4 de votre serveur, d'un sous
 domaine webmail qui pointe sur le sous domaine mail et d'un
 enregistrement SPF :</p>
-<div class="highlight"><pre>votredomaine.com.           MX      1   mail.votredomaine.com.
+<div class="highlight"><pre><span></span>votredomaine.com.           MX      1   mail.votredomaine.com.
 mail.votredomaine.com.      A           ip.v4.du.serveur
 webmail.votredomaine.com.   CNAME       mail.votredomaine.com.
 votredomain.com.            SPF         &quot;v=spf1 ip4:ip.v4.du.server ~all&quot;
@@ -85,7 +85,7 @@ votredomain.com.            SPF         &quot;v=spf1 ip4:ip.v4.du.server ~all&qu
 
 <h2>Installation des paquets</h2>
 <p>Maintenant installons postfix dovecot-imapd et sasl2-bin :</p>
-<div class="highlight"><pre>apt-get install postfix dovecot-imapd sasl2-bin php5-curl
+<div class="highlight"><pre><span></span>apt-get install postfix dovecot-imapd sasl2-bin php5-curl
 </pre></div>
 
 
@@ -93,17 +93,17 @@ votredomain.com.            SPF         &quot;v=spf1 ip4:ip.v4.du.server ~all&qu
 de courrier indiquer "mail.votredomaine.com".</p>
 <h2>Configuration de dovecot</h2>
 <p>Créer un dossier ssl dans dovecot :</p>
-<div class="highlight"><pre>mkdir /etc/dovecot/ssl &amp;&amp; cd /etc/dovecot/ssl
+<div class="highlight"><pre><span></span>mkdir /etc/dovecot/ssl &amp;&amp; cd /etc/dovecot/ssl
 </pre></div>
 
 
 <p>Créer un certificat ssl :</p>
-<div class="highlight"><pre>openssl req -new -newkey rsa:2048 -nodes -keyout certificat.key -out certificat.csr
+<div class="highlight"><pre><span></span>openssl req -new -newkey rsa:2048 -nodes -keyout certificat.key -out certificat.csr
 </pre></div>
 
 
 <p>Puis répondre aux différentes questions pour ma part j'ai répondu :</p>
-<div class="highlight"><pre>FR
+<div class="highlight"><pre><span></span>FR
 (vide)
 Paris
 votredomaine
@@ -116,28 +116,28 @@ contact@votredomaine.com
 
 
 <p>Ensuite :</p>
-<div class="highlight"><pre>openssl x509 -req -days 365 -in certificat.csr -signkey certificat.key -out certificat.crt
+<div class="highlight"><pre><span></span>openssl x509 -req -days 365 -in certificat.csr -signkey certificat.key -out certificat.crt
 </pre></div>
 
 
 <p>Puis :</p>
-<div class="highlight"><pre>cat certificat.key certificat.crt &gt; certificat.pem
+<div class="highlight"><pre><span></span>cat certificat.key certificat.crt &gt; certificat.pem
 </pre></div>
 
 
 <p>Créer le groupe et l'utilisateur vmail :</p>
-<div class="highlight"><pre>groupadd -g 5000 vmail
+<div class="highlight"><pre><span></span>groupadd -g 5000 vmail
 useradd -m -d /var/vmail -s /bin/false -u 5000 -g vmail vmail
 </pre></div>
 
 
 <p>Ajouter dans /etc/dovecot/dovecot.conf :</p>
-<div class="highlight"><pre>listen = ip.v4.du.server
+<div class="highlight"><pre><span></span>listen = ip.v4.du.server
 </pre></div>
 
 
 <p>Editer /etc/dovecot/conf.d/10-auth.conf :</p>
-<div class="highlight"><pre>disable_plaintext_auth = yes
+<div class="highlight"><pre><span></span>disable_plaintext_auth = yes
 auth_username_format = %Lu
 #!include auth-system.conf.ext
 !include auth-passwdfile.conf.ext
@@ -145,13 +145,13 @@ auth_username_format = %Lu
 
 
 <p>Editer /etc/dovecot/conf.d/10-logging.conf :</p>
-<div class="highlight"><pre>auth_verbose = yes
+<div class="highlight"><pre><span></span>auth_verbose = yes
 mail_debug = yes
 </pre></div>
 
 
 <p>Editer /etc/dovecot/conf.d/10-master.conf :</p>
-<div class="highlight"><pre>unix_listener /var/spool/postfix/private/auth {
+<div class="highlight"><pre><span></span>unix_listener /var/spool/postfix/private/auth {
   mode = 0666
   user = postfix
   group = postfix
@@ -160,14 +160,14 @@ mail_debug = yes
 
 
 <p>Editer /etc/dovecot/conf.d/10-ssl.conf :</p>
-<div class="highlight"><pre>ssl = required
+<div class="highlight"><pre><span></span>ssl = required
 ssl_cert = &lt;/etc/dovecot/ssl/certificat.pem
 ssl_key = &lt;/etc/dovecot/ssl/certificat.key
 </pre></div>
 
 
 <p>Editer /etc/dovecot/conf.d/15-mailboxes.conf :</p>
-<div class="highlight"><pre>mailbox Drafts {
+<div class="highlight"><pre><span></span>mailbox Drafts {
     auto = subscribe
     special_use = \Drafts
 }
@@ -194,7 +194,7 @@ mailbox Sent {
 
 
 <p>Editer /etc/dovecot/conf.d/auth-passwdfile.conf.ext :</p>
-<div class="highlight"><pre>passdb {
+<div class="highlight"><pre><span></span>passdb {
     driver = passwd-file
     args = scheme=MD5 username_format=%u /etc/dovecot/users
 }
@@ -208,12 +208,12 @@ userdb {
 
 
 <p>Créer le fichier /etc/dovecot/users :</p>
-<div class="highlight"><pre>touch /etc/dovecot/users
+<div class="highlight"><pre><span></span>touch /etc/dovecot/users
 </pre></div>
 
 
 <p>Puis pour chaque mail créer un enregistrement :</p>
-<div class="highlight"><pre>adresse@votredomaine.com:motdepassemd5:::::::
+<div class="highlight"><pre><span></span>adresse@votredomaine.com:motdepassemd5:::::::
 </pre></div>
 
 
@@ -259,12 +259,12 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 </table>
 
 <p>Tester votre utilisateur grâce à la commande :</p>
-<div class="highlight"><pre>doveadm user adresse@votredomaine.com
+<div class="highlight"><pre><span></span>doveadm user adresse@votredomaine.com
 </pre></div>
 
 
 <p>Ce qui devrait afficher :</p>
-<div class="highlight"><pre>field   value
+<div class="highlight"><pre><span></span>field   value
 uid     5000
 gid     5000
 home    /var/vmail/votredomaine.com
@@ -273,38 +273,38 @@ mail    maildir:~/adresse@votredomaine.com
 
 
 <p>Démarrer dovecot :</p>
-<div class="highlight"><pre>/etc/init.d/dovecot start
+<div class="highlight"><pre><span></span>/etc/init.d/dovecot start
 </pre></div>
 
 
 <p>Tester la connexion :</p>
-<div class="highlight"><pre>openssl s_client -connect ip.v4.du.server:993
+<div class="highlight"><pre><span></span>openssl s_client -connect ip.v4.du.server:993
 </pre></div>
 
 
 <p>Si vous avez "* OK [CAPABILITY …] Dovecot ready. Vous pouvez vous
 authentifier :</p>
-<div class="highlight"><pre>. LOGIN adresse@votredomaine.com motdepasseenclair
+<div class="highlight"><pre><span></span>. LOGIN adresse@votredomaine.com motdepasseenclair
 </pre></div>
 
 
 <p>C'est fini pour dovecot.</p>
 <h2>Configuration de sasl</h2>
 <p>Editer /etc/default/saslauthd :</p>
-<div class="highlight"><pre>START=yes
+<div class="highlight"><pre><span></span>START=yes
 OPTIONS=&quot;-m /var/spool/postfix/var/run/saslauthd&quot;
 </pre></div>
 
 
 <p>Puis lancer :</p>
-<div class="highlight"><pre>/etc/init.d/saslauthd start
+<div class="highlight"><pre><span></span>/etc/init.d/saslauthd start
 </pre></div>
 
 
 <p>C'est fini pour sasl</p>
 <h2>Configuration de postfix</h2>
 <p>Editer /etc/postfix/main.cf ::</p>
-<div class="highlight"><pre><span class="x">smtpd_banner = </span><span class="p">$</span><span class="nv">myhostname</span><span class="x"> ESMTP </span><span class="p">$</span><span class="nv">mail_name</span><span class="x"></span>
+<div class="highlight"><pre><span></span><span class="x">smtpd_banner = </span><span class="p">$</span><span class="nv">myhostname</span><span class="x"> ESMTP </span><span class="p">$</span><span class="nv">mail_name</span><span class="x"></span>
 <span class="x">smtpd_tls_cert_file=/etc/dovecot/ssl/certificat.pem</span>
 <span class="x">smtpd_tls_key_file=/etc/dovecot/ssl/certificat.key</span>
 <span class="x">mynetworks = 127.0.0.0/8 ip.v4.du.server</span>
@@ -339,33 +339,33 @@ OPTIONS=&quot;-m /var/spool/postfix/var/run/saslauthd&quot;
 
 
 <p>Créer /etc/postfix/virtual_alias :</p>
-<div class="highlight"><pre>touch /etc/postfix/virtual_alias
+<div class="highlight"><pre><span></span>touch /etc/postfix/virtual_alias
 </pre></div>
 
 
 <p>Pour créer un alias, éditer /etc/postfix/virtual_alias :</p>
-<div class="highlight"><pre>alias@votredomaine.com          destination@votredomaine.com
+<div class="highlight"><pre><span></span>alias@votredomaine.com          destination@votredomaine.com
 </pre></div>
 
 
 <p>Créer /etc/postfix/virtual_domains :</p>
-<div class="highlight"><pre>touch /etc/postfix/virtual_domains
+<div class="highlight"><pre><span></span>touch /etc/postfix/virtual_domains
 </pre></div>
 
 
 <p>Pour gérer vos domaines, éditer /etc/postfix/virtual_domains :</p>
-<div class="highlight"><pre>votredomaine.com                OK
+<div class="highlight"><pre><span></span>votredomaine.com                OK
 votredeuxiemedomaine.com        OK
 </pre></div>
 
 
 <p>Créer /etc/postfix/virtual_mailbox :</p>
-<div class="highlight"><pre>touch /etc/postfix/virtual_mailbox
+<div class="highlight"><pre><span></span>touch /etc/postfix/virtual_mailbox
 </pre></div>
 
 
 <p>Pour créer un comte mail, éditer /etc/postfix/virtual_mailbox :</p>
-<div class="highlight"><pre>email@votredomaine.com          votredomaine.com/email@votredomaine.com/
+<div class="highlight"><pre><span></span>email@votredomaine.com          votredomaine.com/email@votredomaine.com/
 linus@torvald.com               torvald.com/linus@torvald.com/
 </pre></div>
 
@@ -374,14 +374,14 @@ linus@torvald.com               torvald.com/linus@torvald.com/
 /etc/dovecot/users ;-)</p>
 <p>Maintenant il faut dire a postfix que nous avons modifier nos fichiers
 virtuels :</p>
-<div class="highlight"><pre>postmap /etc/postfix/virtual_alias
+<div class="highlight"><pre><span></span>postmap /etc/postfix/virtual_alias
 postmap /etc/postfix/virtual_domains
 postmap /etc/postfix/virtual_mailbox
 </pre></div>
 
 
 <p>Editer /etc/postfix/master.cf :</p>
-<div class="highlight"><pre>smtp    inet    n   -   -   -   -   smtpd   -v
+<div class="highlight"><pre><span></span>smtp    inet    n   -   -   -   -   smtpd   -v
  -o smtpd_tls_cert_file=/etc/dovecot/ssl/certificat.pem
  -o smtpd_tls_key_file=/etc/dovecot/ssl/certificat.key
 submission inet n - n - - smtpd
@@ -398,7 +398,7 @@ smtps   inet    n   -   -   -   -   smtpd   -v
 
 
 <p>Puis redemarrer postfix :</p>
-<div class="highlight"><pre>/etc/init.d/postfix restart
+<div class="highlight"><pre><span></span>/etc/init.d/postfix restart
 </pre></div>
 
 
@@ -407,22 +407,22 @@ smtps   inet    n   -   -   -   -   smtpd   -v
 votre serveur sur le site <a href="http://www.mail-tester.com">http://www.mail-tester.com</a></p>
 <h2>Installation d'un webmail rainloop</h2>
 <p>Créer un dossier pour votre webmail :</p>
-<div class="highlight"><pre>mkdir -p /var/www/webmail/public &amp;&amp; cd /var/www/webmail/public
+<div class="highlight"><pre><span></span>mkdir -p /var/www/webmail/public &amp;&amp; cd /var/www/webmail/public
 </pre></div>
 
 
 <p>Télécharger rainloop :</p>
-<div class="highlight"><pre>wget http://repository.rainloop.net/v2/webmail/rainloop-community-latest.zip
+<div class="highlight"><pre><span></span>wget http://repository.rainloop.net/v2/webmail/rainloop-community-latest.zip
 </pre></div>
 
 
 <p>Décompresser rainloop :</p>
-<div class="highlight"><pre>unzip rainloop*.zip &amp;&amp; rm -rf rainloop*.zip
+<div class="highlight"><pre><span></span>unzip rainloop*.zip &amp;&amp; rm -rf rainloop*.zip
 </pre></div>
 
 
 <p>Modifier les droits :</p>
-<div class="highlight"><pre>chown -R www-data:www-data /var/www/webmail
+<div class="highlight"><pre><span></span>chown -R www-data:www-data /var/www/webmail
 find . -type f -exec chmod 644 {} \;
 find . -type d -exec chmod 755 {} \;
 </pre></div>
@@ -430,7 +430,7 @@ find . -type d -exec chmod 755 {} \;
 
 <p>Créer un vhost pour apache dans
 /etc/apache2/site-enabled/001-webmail.domain.com.conf :</p>
-<div class="highlight"><pre><span class="nt">&lt;VirtualHost</span> <span class="err">*:80</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><span class="nt">&lt;VirtualHost</span> <span class="err">*:80</span><span class="nt">&gt;</span>
     ServerAdmin contact@domain.com
     ServerName mail.domain.com
 
@@ -462,7 +462,7 @@ find . -type d -exec chmod 755 {} \;
 
 
 <p>N'oubliez pas de redémarrer apache :</p>
-<div class="highlight"><pre>/etc/init.d/apache2 restart
+<div class="highlight"><pre><span></span>/etc/init.d/apache2 restart
 </pre></div>
 
 
@@ -551,7 +551,22 @@ avec votre login et mot de passe.</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

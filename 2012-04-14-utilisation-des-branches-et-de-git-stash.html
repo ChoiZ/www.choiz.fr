@@ -72,7 +72,7 @@
 sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc
 git stash, voyons voir comment l'utiliser simplement.</p>
 <p>On regarde l'état du status et des branches :</p>
-<div class="highlight"><pre>git status
+<div class="highlight"><pre><span></span>git status
 # On branch master
 nothing to commit (working directory clean)
 
@@ -83,7 +83,7 @@ $ git branch
 
 <p>Je travail sur la branche master et je n'ai pas d'autre branche. Je vais
 donc faire une branche API pour mon projet. :</p>
-<div class="highlight"><pre>git branch API
+<div class="highlight"><pre><span></span>git branch API
 
 git branch
   API
@@ -93,7 +93,7 @@ git branch
 
 <p>Maintenant je vais changer de branche git checkout pour être sur ma
 branche API et modifier les fichiers sur cette branche. :</p>
-<div class="highlight"><pre>git checkout API
+<div class="highlight"><pre><span></span>git checkout API
 Switched to branch &#39;API&#39;
 
 git branch
@@ -104,7 +104,7 @@ git branch
 
 <p>Maintenant je vais modifier un mon fichier manage.py sur ma branche API.
 :</p>
-<div class="highlight"><pre>git status
+<div class="highlight"><pre><span></span>git status
 # On branch API
 # Changes not staged for commit:
 #   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
@@ -119,7 +119,7 @@ no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&q
 <p>Si je veux revenir sur mon master, sans avoir la modification du
 manage.py je vais devoir utiliser git stash (qui sauvegardera mes
 modifications du manage.py) :</p>
-<div class="highlight"><pre>git stash
+<div class="highlight"><pre><span></span>git stash
 Saved working directory and index state WIP on API: 8b6342d Fix register.py
 HEAD is now at 8b6342d Fix register.py
 
@@ -131,11 +131,11 @@ nothing to commit (working directory clean)
 
 <p>Maintenant que notre branche est propre on peut changer de branche
 revenir sur le master par exemple. :</p>
-<div class="highlight"><pre><span class="nv">$ </span>git checkout master
+<div class="highlight"><pre><span></span>$ git checkout master
 Switched to branch <span class="s1">&#39;master&#39;</span>
 
-<span class="nv">$ </span>git status
-<span class="c"># On branch master</span>
+$ git status
+<span class="c1"># On branch master</span>
 nothing to commit <span class="o">(</span>working directory clean<span class="o">)</span>
 </pre></div>
 
@@ -143,7 +143,7 @@ nothing to commit <span class="o">(</span>working directory clean<span class="o"
 <p>On peut donc travailler tranquillement sur la branche master. Puis
 revenir sur notre branche API, lister les stash git stash list récupérer
 les modifications précédentes git stash pop. :</p>
-<div class="highlight"><pre>git checkout API
+<div class="highlight"><pre><span></span>git checkout API
 Switched to branch &#39;API&#39;
 
 git stash list
@@ -197,7 +197,22 @@ mon alias = git stapp</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

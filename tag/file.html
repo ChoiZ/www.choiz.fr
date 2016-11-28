@@ -96,7 +96,7 @@ Tags :
   </header>
   <div>
       <p>Voilà mon petit fichier .gitignore :</p>
-<div class="highlight"><pre># Ignore files from git
+<div class="highlight"><pre><span></span># Ignore files from git
 
 # ._ files (Mac Os X)
 ._*
@@ -121,7 +121,7 @@ Tags :
   </header>
   <div>
       <p>Pour lister les stash :</p>
-<div class="highlight"><pre>git stash list
+<div class="highlight"><pre><span></span>git stash list
 
 stash@{0}: WIP on BranchName: 5d8a556 Edit file.js
 stash@{1}: WIP on BranchName: 66dfe78 Edit file.css
@@ -131,7 +131,7 @@ stash@{5}: WIP on BranchName: 3bb67ff Add file.css file.js
 
 
 <p>Pour voir le contenu d'un stash :</p>
-<div class="highlight"><pre>git stash show
+<div class="highlight"><pre><span></span>git stash show
 
 stash@{0} chemin/vers ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis.html">Lire la suite</a>
@@ -149,7 +149,7 @@ Tags :
   <div>
       <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un
 fichier avec vim :</p>
-<div class="highlight"><pre><span class="x">:1,</span><span class="p">$</span><span class="nv">s</span><span class="x">/^/</span><span class="err">#</span><span class="x">/</span>
+<div class="highlight"><pre><span></span><span class="x">:1,</span><span class="p">$</span><span class="nv">s</span><span class="x">/^/</span><span class="err">#</span><span class="x">/</span>
 </pre></div>
 
 
@@ -171,7 +171,7 @@ Tags :
   </header>
   <div>
       <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<div class="highlight"><pre>svn propset svn:ignore
+<div class="highlight"><pre><span></span>svn propset svn:ignore
 </pre></div>
 
 
@@ -190,7 +190,22 @@ l'on se trouve actuellement il suffit d'executer la commande ...</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

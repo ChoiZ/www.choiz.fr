@@ -77,12 +77,12 @@ pas entièrement…).</p>
 <p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu
 que ma ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
 <p>Mon fichier texte ressemble à ceci :</p>
-<div class="highlight"><pre>ligne avec un peu de texte ici nous avons 66 caractères affichés.
+<div class="highlight"><pre><span></span>ligne avec un peu de texte ici nous avons 66 caractères affichés.
 </pre></div>
 
 
 <p>Or, quand je fais un diff on ne voit pas tous les caractères :</p>
-<div class="highlight"><pre>git diff HEAD~1 HEAD
+<div class="highlight"><pre><span></span>git diff HEAD~1 HEAD
 diff --git a/test.txt b/test.txt
 new file mode 100644
 index 0000000..235a891
@@ -96,12 +96,12 @@ No newline at end of file
 
 <p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=""</em> avant la
 commande <em>git diff</em> soit ajouter dans son fichier de config git :</p>
-<div class="highlight"><pre>git config --global core.pager &quot;less -r&quot;
+<div class="highlight"><pre><span></span>git config --global core.pager &quot;less -r&quot;
 </pre></div>
 
 
 <p>Voilà ce que ça donne avec GIT_PAGER :</p>
-<div class="highlight"><pre>GIT_PAGER=&quot;&quot; git diff HEAD~1 HEAD
+<div class="highlight"><pre><span></span>GIT_PAGER=&quot;&quot; git diff HEAD~1 HEAD
 diff --git a/test.txt b/test.txt
 new file mode 100644
 index 0000000..235a891
@@ -130,7 +130,22 @@ No newline at end of file
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

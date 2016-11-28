@@ -73,7 +73,7 @@
 svn. Il est temps de faire la migration de svn à git !</p>
 <p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
 voulais voici donc ma procédure :</p>
-<div class="highlight"><pre>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep &quot;^r&quot; | awk
+<div class="highlight"><pre><span></span>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep &quot;^r&quot; | awk
 &#39;{print $3}&#39; | sort | uniq | awk &#39;{ print $1&quot; = &quot;$1&quot;
 &lt;&quot;$1&quot;@mondomaine&gt;&quot; }&#39; &gt; authors.txt
 </pre></div>
@@ -82,21 +82,21 @@ voulais voici donc ma procédure :</p>
 <p>J'ai ensuite édité authors.txt pour remplacer nos différents pseudos par
 nos prénoms et noms puis j'ai vérifié les adresses e-mails.</p>
 <p>Puis j'ai utilisé git svn clone :</p>
-<div class="highlight"><pre>git svn clone &#39;svn://svn.mondomaine/monprojet&#39; --no-metadata
+<div class="highlight"><pre><span></span>git svn clone &#39;svn://svn.mondomaine/monprojet&#39; --no-metadata
 --authors-file=authors.txt --tags=tags --branches=branches
 --trunk=trunk monprojet
 </pre></div>
 
 
 <p>Si vous avez des tags dans svn, vous pouvez les mettre dans git :</p>
-<div class="highlight"><pre>git branch -r | sed -rne &#39;s, \*tags/([^@]+)$,\\1,p&#39; | while read
+<div class="highlight"><pre><span></span>git branch -r | sed -rne &#39;s, \*tags/([^@]+)$,\\1,p&#39; | while read
 tag; do echo &quot;git tag <span class="nv">$tag</span> &#39;tags/<span class="cp">${</span><span class="n">tag</span><span class="cp">}</span>^&#39;; git branch -r -d
 tags/<span class="nv">$tag</span>&quot;; done | sh
 </pre></div>
 
 
 <p>Pour finir ajoutez votre dépot distant :</p>
-<div class="highlight"><pre>git remote add origin git@git.mondomaine:/monprojet.git
+<div class="highlight"><pre><span></span>git remote add origin git@git.mondomaine:/monprojet.git
 git push -u origin --tags
 </pre></div>
 
@@ -122,7 +122,22 @@ pour différentes commandes ;)</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

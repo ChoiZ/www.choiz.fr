@@ -62,7 +62,7 @@ Tags :
   </header>
   <div>
       <p>Voilà mon petit fichier .gitignore :</p>
-<div class="highlight"><pre># Ignore files from git
+<div class="highlight"><pre><span></span># Ignore files from git
 
 # ._ files (Mac Os X)
 ._*
@@ -86,7 +86,7 @@ Tags :
   </header>
   <div>
       <p>Pour lister les stash :</p>
-<div class="highlight"><pre>git stash list
+<div class="highlight"><pre><span></span>git stash list
 
 stash@{0}: WIP on BranchName: 5d8a556 Edit file.js
 stash@{1}: WIP on BranchName: 66dfe78 Edit file.css
@@ -96,7 +96,7 @@ stash@{5}: WIP on BranchName: 3bb67ff Add file.css file.js
 
 
 <p>Pour voir le contenu d'un stash :</p>
-<div class="highlight"><pre>git stash show
+<div class="highlight"><pre><span></span>git stash show
 
 stash@{0} chemin/vers/mon/fichier.js | 199 ++++++++++++++++++++++++++--------
 chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------
@@ -105,7 +105,7 @@ chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------
 
 <p>Pour voir le contenu de "chemin/vers/mon/fichier.js" qui est dans le
 stash{0} :</p>
-<div class="highlight"><pre>git show stash@{0}:chemin/vers/mon/fichier.js
+<div class="highlight"><pre><span></span>git show stash@{0}:chemin/vers/mon/fichier.js
 </pre></div>
   </div>
   <hr />
@@ -120,7 +120,7 @@ Tags :
   </header>
   <div>
       <p>Petit ajout dans mon fichier .vimrc :</p>
-<div class="highlight"><pre>&quot; Highlight To do list with green background
+<div class="highlight"><pre><span></span>&quot; Highlight To do list with green background
 highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
 highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
 highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
@@ -145,14 +145,14 @@ Tags :
   </header>
   <div>
       <p>Lorsque j'ai voulu "réattacher" mon "Screen" j'ai eu le message suivant :</p>
-<div class="highlight"><pre>There is a screen on:
+<div class="highlight"><pre><span></span>There is a screen on:
 1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)
 </pre></div>
 
 
 <p>Habituellement je détache mon "Screen" mais cette fois j'ai oublié.</p>
 <p>Pour "détacher" / "réattacher" mon "Screen" j'ai du faire la commande suivante :</p>
-<div class="highlight"><pre>screen -dRR
+<div class="highlight"><pre><span></span>screen -dRR
 </pre></div>
 
 
@@ -173,7 +173,7 @@ Tags :
 sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc
 git stash, voyons voir comment l'utiliser simplement.</p>
 <p>On regarde l'état du status et des branches :</p>
-<div class="highlight"><pre>git status
+<div class="highlight"><pre><span></span>git status
 # On branch master
 nothing to commit (working directory clean)
 
@@ -184,7 +184,7 @@ $ git branch
 
 <p>Je travail sur la branche master et je n'ai pas d'autre branche. Je vais
 donc faire une branche API pour mon projet. :</p>
-<div class="highlight"><pre>git branch API
+<div class="highlight"><pre><span></span>git branch API
 
 git branch
   API
@@ -194,7 +194,7 @@ git branch
 
 <p>Maintenant je vais changer de branche git checkout pour être sur ma
 branche API et modifier les fichiers sur cette branche. :</p>
-<div class="highlight"><pre>git checkout API
+<div class="highlight"><pre><span></span>git checkout API
 Switched to branch &#39;API&#39;
 
 git branch
@@ -205,7 +205,7 @@ git branch
 
 <p>Maintenant je vais modifier un mon fichier manage.py sur ma branche API.
 :</p>
-<div class="highlight"><pre>git status
+<div class="highlight"><pre><span></span>git status
 # On branch API
 # Changes not staged for commit:
 #   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
@@ -220,7 +220,7 @@ no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&q
 <p>Si je veux revenir sur mon master, sans avoir la modification du
 manage.py je vais devoir utiliser git stash (qui sauvegardera mes
 modifications du manage.py) :</p>
-<div class="highlight"><pre>git stash
+<div class="highlight"><pre><span></span>git stash
 Saved working directory and index state WIP on API: 8b6342d Fix register.py
 HEAD is now at 8b6342d Fix register.py
 
@@ -232,11 +232,11 @@ nothing to commit (working directory clean)
 
 <p>Maintenant que notre branche est propre on peut changer de branche
 revenir sur le master par exemple. :</p>
-<div class="highlight"><pre><span class="nv">$ </span>git checkout master
+<div class="highlight"><pre><span></span>$ git checkout master
 Switched to branch <span class="s1">&#39;master&#39;</span>
 
-<span class="nv">$ </span>git status
-<span class="c"># On branch master</span>
+$ git status
+<span class="c1"># On branch master</span>
 nothing to commit <span class="o">(</span>working directory clean<span class="o">)</span>
 </pre></div>
 
@@ -244,7 +244,7 @@ nothing to commit <span class="o">(</span>working directory clean<span class="o"
 <p>On peut donc travailler tranquillement sur la branche master. Puis
 revenir sur notre branche API, lister les stash git stash list récupérer
 les modifications précédentes git stash pop. :</p>
-<div class="highlight"><pre>git checkout API
+<div class="highlight"><pre><span></span>git checkout API
 Switched to branch &#39;API&#39;
 
 git stash list
@@ -297,12 +297,12 @@ Tags :
 correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
 "rename".</p>
 <p>Exemple je veux supprimer tous les espaces d'un fichier :</p>
-<div class="highlight"><pre>rename &quot;s/ *//g&quot; *.*
+<div class="highlight"><pre><span></span>rename &quot;s/ *//g&quot; *.*
 </pre></div>
 
 
 <p>Ou renomer tous mes fichiers .WAV en .wav etc… :</p>
-<div class="highlight"><pre>rename &quot;s/\.WAV/\.wav/g&quot; *.WAV
+<div class="highlight"><pre><span></span>rename &quot;s/\.WAV/\.wav/g&quot; *.WAV
 </pre></div>
 
 
@@ -320,7 +320,7 @@ Tags :
   </header>
   <div>
       <p>Ajout du pull, push, diff et surtout stash :</p>
-<div class="highlight"><pre><span class="k">[user]</span>
+<div class="highlight"><pre><span></span><span class="k">[user]</span>
   <span class="na">name</span> <span class="o">=</span> <span class="s">François LASSERRE</span>
 <span class="s">  email = mon@email.fr</span>
 <span class="k">[diff]</span>
@@ -373,7 +373,7 @@ Tags :
   </header>
   <div>
       <p>Fichier .gitconfig :</p>
-<div class="highlight"><pre><span class="k">[user]</span>
+<div class="highlight"><pre><span></span><span class="k">[user]</span>
     <span class="na">name</span> <span class="o">=</span> <span class="s">François LASSERRE</span>
 <span class="s">    email = mon@email.fr</span>
 <span class="k">[diff]</span>
@@ -403,7 +403,7 @@ Tags :
 
 
 <p>Fichier .gitignore :</p>
-<div class="highlight"><pre># Ignore files from git
+<div class="highlight"><pre><span></span># Ignore files from git
 
 # ._ files (Mac Os X)
 ._*
@@ -427,7 +427,7 @@ Tags :
   </header>
   <div>
       <p>On commence par ouvrir un terminal puis on tape :</p>
-<div class="highlight"><pre>ssh-keygen -t rsa -b 1024
+<div class="highlight"><pre><span></span>ssh-keygen -t rsa -b 1024
 
 Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
 </pre></div>
@@ -435,19 +435,19 @@ Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
 
 <p>En général je garde le fichier id_rsa donc je tape "enter" sinon vous
 pouvez spécifier un autre chemin ainsi qu'un autre fichier. :</p>
-<div class="highlight"><pre>Enter passphrase (empty for no passphrase):
+<div class="highlight"><pre><span></span>Enter passphrase (empty for no passphrase):
 </pre></div>
 
 
 <p>Ici on tape un mot de passe si on en veut un lors de la connexion aux
 différents hosts. En général j'en défini un.</p>
 <p>Pour finir on copie la clé sur le serveur soit via scp :</p>
-<div class="highlight"><pre>scp ~/.ssh/id\_rsa.pub user@ip:~/.ssh/authorized\_keys/
+<div class="highlight"><pre><span></span>scp ~/.ssh/id\_rsa.pub user@ip:~/.ssh/authorized\_keys/
 </pre></div>
 
 
 <p>ou via ssh-copy-id :</p>
-<div class="highlight"><pre>ssh-copy-id -i ~/.ssh/id\_rsa.pub user@ip
+<div class="highlight"><pre><span></span>ssh-copy-id -i ~/.ssh/id\_rsa.pub user@ip
 </pre></div>
   </div>
   <hr />
@@ -464,14 +464,14 @@ Tags :
       <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
 en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext
 sur votre site en php il faut télécharger le package php-gettext :</p>
-<div class="highlight"><pre>apt-get install php-gettext
+<div class="highlight"><pre><span></span>apt-get install php-gettext
 </pre></div>
 
 
 <p>Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
 commentaires devant les langues qui vont sont à traduire par exemple :
 Allemand, Anglais, Espagnol, Français &amp; Suédois :</p>
-<div class="highlight"><pre>de_DE.UTF-8 UTF-8
+<div class="highlight"><pre><span></span>de_DE.UTF-8 UTF-8
 en_GB.UTF-8 UTF-8
 es_ES.UTF-8 UTF-8
 fr_FR.UTF-8 UTF-8
@@ -480,17 +480,17 @@ sv_SE.UTF-8 UTF-8
 
 
 <p>Puis regénérer les locales :</p>
-<div class="highlight"><pre>locale-gen
+<div class="highlight"><pre><span></span>locale-gen
 </pre></div>
 
 
 <p>Ensuite il faut définir votre chemin pour les traductions par exemple :</p>
-<div class="highlight"><pre>lang/fr_FR/LC_MESSAGES/domaine.mo
+<div class="highlight"><pre><span></span>lang/fr_FR/LC_MESSAGES/domaine.mo
 </pre></div>
 
 
 <p>Puis dans votre fichier php de configuration :</p>
-<div class="highlight"><pre><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="c1">// configuration de la langue</span>
 <span class="nv">$lang</span> <span class="o">=</span> <span class="s1">&#39;fr_FR&#39;</span><span class="p">;</span> <span class="c1">// Langue a afficher</span>
 <span class="nv">$lang_encode</span> <span class="o">=</span> <span class="s1">&#39;utf8&#39;</span><span class="p">;</span> <span class="c1">// Encodage du fichier</span>
@@ -512,7 +512,7 @@ sv_SE.UTF-8 UTF-8
 
 
 <p>Puis faites le test en affichant dans un fichier php le texte "hello" :</p>
-<div class="highlight"><pre><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="c1">// on inclus la config…</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">&#39;config.php&#39;</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nx">_</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>
@@ -521,7 +521,7 @@ sv_SE.UTF-8 UTF-8
 
 
 <p>Pour générer un fichier .mo a partir d'un fichier .po :</p>
-<div class="highlight"><pre>msgfmt domaine.po -o domaine.mo
+<div class="highlight"><pre><span></span>msgfmt domaine.po -o domaine.mo
 </pre></div>
 
 
@@ -529,7 +529,7 @@ sv_SE.UTF-8 UTF-8
 faire un fichier texte avec tous vos fichiers php ou on doit récupérer
 le gettext.</p>
 <p>Exemple listing_gettext.txt tel que :</p>
-<div class="highlight"><pre>index.php
+<div class="highlight"><pre><span></span>index.php
 contact.php
 etc…
 </pre></div>
@@ -537,13 +537,13 @@ etc…
 
 <p>Ensuite il faut faire la commande suivante pour générer le fichier
 domaine.po dans le dossier lang/ depuis notre fichier texte avec les php :</p>
-<div class="highlight"><pre>find . -iname &quot;*.php&quot; | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
+<div class="highlight"><pre><span></span>find . -iname &quot;*.php&quot; | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
 </pre></div>
 
 
 <p>Pour finir voilà le path des fichiers .po et .mo dans mon application
 web :</p>
-<div class="highlight"><pre>lang/fr_FR/LC_MESSAGES/domaine.po
+<div class="highlight"><pre><span></span>lang/fr_FR/LC_MESSAGES/domaine.po
 lang/fr_FR/LC_MESSAGES/domaine.mo
 lang/en_GB/LC_MESSAGES/domaine.po
 lang/en_GB/LC_MESSAGES/domaine.mo
@@ -570,7 +570,22 @@ soient pris en compte.</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

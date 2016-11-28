@@ -70,12 +70,12 @@
     <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
 suivre pour le mettre à jour vers la version : 4.3.0.</p>
 <p>Je liste les différents noyaux gentoo disponibles :</p>
-<div class="highlight"><pre>eix sys-kernel/gentoo-sources
+<div class="highlight"><pre><span></span>eix sys-kernel/gentoo-sources
 </pre></div>
 
 
 <p>Je télécharge le noyau 4.3.0 :</p>
-<div class="highlight"><pre>emerge -a =sys-kernel/gentoo-sources-4.3.0
+<div class="highlight"><pre><span></span>emerge -a =sys-kernel/gentoo-sources-4.3.0
 </pre></div>
 
 
@@ -83,7 +83,7 @@ suivre pour le mettre à jour vers la version : 4.3.0.</p>
 grâce à eselect.</p>
 <p>J'affiche la liste des noyaux (celui actuellement selectionné est suivi
 d'une étoile) :</p>
-<div class="highlight"><pre>eselect kernel list
+<div class="highlight"><pre><span></span>eselect kernel list
 
 [1]     linux-4.2.0-gentoo *
 [2]     linux-4.3.0-gentoo
@@ -91,14 +91,14 @@ d'une étoile) :</p>
 
 
 <p>Pour selectionner notre noyau 4.3.0 il faut utiliser :</p>
-<div class="highlight"><pre>eselect kernel set 2
+<div class="highlight"><pre><span></span>eselect kernel set 2
 </pre></div>
 
 
 <p>Maintenant que vous avez selectionné votre noyau, copier le fichier
 ".config" de votre noyau précédent (pour conserver vos réglages de
 compilation) :</p>
-<div class="highlight"><pre>cp /usr/src/linux-4.2.0-gentoo/.config /usr/src/linux
+<div class="highlight"><pre><span></span>cp /usr/src/linux-4.2.0-gentoo/.config /usr/src/linux
 </pre></div>
 
 
@@ -120,7 +120,22 @@ kernel</a>.</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

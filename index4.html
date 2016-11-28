@@ -65,7 +65,7 @@ Tags :
 messages sur cherry-pick sans savoir ce que c'était.</p>
 <p>git cherry-pick permet d'appliquer un commit sur la branche sur la
 branche actuelle.</p>
-<div class="highlight"><pre>git cherry-pick c4a99776
+<div class="highlight"><pre><span></span>git cherry-pick c4a99776
 </pre></div>
   </div>
   <hr />
@@ -99,17 +99,17 @@ Tags :
   </header>
   <div>
       <p>J'étais à la recherche de se caractère unicode dans vim :</p>
-<div class="highlight"><pre>&lt;U+2028&gt;
+<div class="highlight"><pre><span></span>&lt;U+2028&gt;
 </pre></div>
 
 
 <p>Pour pouvoir le supprimer j'ai utilisé la commande suivante :</p>
-<div class="highlight"><pre>:%s/\%U2028//g
+<div class="highlight"><pre><span></span>:%s/\%U2028//g
 </pre></div>
 
 
 <p>Décortiquons la commande :</p>
-<div class="highlight"><pre>`:%s/` Recherche et remplace dans tout le fichier
+<div class="highlight"><pre><span></span>`:%s/` Recherche et remplace dans tout le fichier
 
 `\%U2028` Le caractère que l&#39;on recherche unicode &quot;2028&quot;
 
@@ -151,19 +151,19 @@ niveau des permissions des dossiers / fichiers.</p>
 on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
 dossiers ça va mais quand on en a 40… on utilise une autre technique !</p>
 <p>J'utilise pour les dossiers :</p>
-<div class="highlight"><pre><span class="nv">$ </span>find <span class="se">\`</span><span class="nb">pwd</span><span class="se">\`</span> -type d -exec chmod <span class="m">755</span> <span class="o">{}</span> <span class="se">\\</span><span class="p">;</span>
+<div class="highlight"><pre><span></span>$ find <span class="se">\`</span>pwd<span class="se">\`</span> -type d -exec chmod <span class="m">755</span> <span class="o">{}</span> <span class="se">\\</span><span class="p">;</span>
 </pre></div>
 
 
 <p>et pour les fichiers :</p>
-<div class="highlight"><pre><span class="nv">$ </span>find <span class="se">\`</span><span class="nb">pwd</span><span class="se">\`</span> -type f -exec chmod <span class="m">644</span> <span class="o">{}</span> <span class="se">\\</span><span class="p">;</span>
+<div class="highlight"><pre><span></span>$ find <span class="se">\`</span>pwd<span class="se">\`</span> -type f -exec chmod <span class="m">644</span> <span class="o">{}</span> <span class="se">\\</span><span class="p">;</span>
 </pre></div>
 
 
 <p>Avec `pwd` je vais partir du dossier actuel et remplacer tous les
 droits des fichiers et dossiers enfants. Vous pouvez remplacer par un
 autre chemin par exemple :</p>
-<div class="highlight"><pre>find /home/choiz/ -type d -exec chmod 755 {} \\;
+<div class="highlight"><pre><span></span>find /home/choiz/ -type d -exec chmod 755 {} \\;
 
 find /home/choiz/ -type f -exec chmod 644 {} \\;
 </pre></div>
@@ -185,7 +185,7 @@ appareils mobiles avec image magick.</p>
 la transparence "icon512.png".</p>
 <p>Je veux faire une favicon en 16x16px, 32x32px 48x48px et 64x64px le tout
 dans un seul fichier favicon.ico. :</p>
-<div class="highlight"><pre>convert icon512.png \
+<div class="highlight"><pre><span></span>convert icon512.png \
     -bordercolor white -border 0 \
     \( -clone 0 -resize 16x16 \) \
     \( -clone 0 -resize 32x32 \) \
@@ -197,7 +197,7 @@ dans un seul fichier favicon.ico. :</p>
 
 <p>Ensuite je veux faire mes icônes pour les appareils mobiles : Android,
 Apple etc… :</p>
-<div class="highlight"><pre>convert icon512.png -resize x60 touch-icon-iphone.png
+<div class="highlight"><pre><span></span>convert icon512.png -resize x60 touch-icon-iphone.png
 convert icon512.png -resize x76 touch-icon-ipad.png
 convert icon512.png -resize x120 touch-icon-iphone-retina.png
 convert icon512.png -resize x152 touch-icon-ipad-retina.png
@@ -205,7 +205,7 @@ convert icon512.png -resize x152 touch-icon-ipad-retina.png
 
 
 <p>Maintenant il faut ajouter dans notre page html entre les balises head :</p>
-<div class="highlight"><pre>&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;
+<div class="highlight"><pre><span></span>&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;touch-icon-iphone.png&quot;&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;76x76&quot; href=&quot;touch-icon-ipad.png&quot;&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;120x120&quot; href=&quot;touch-icon-iphone-retina.png&quot;&gt;
@@ -231,7 +231,7 @@ Tags :
     sudo npm install -g jshint</p>
 <p>Faire un lien symbolique pour pouvoir utiliser directement jshint sans
 préciser tout le chemin a chaque fois :</p>
-<div class="highlight"><pre>ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
+<div class="highlight"><pre><span></span>ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
 </pre></div>
   </div>
   <hr />
@@ -247,27 +247,27 @@ Tags :
   <div>
       <p>J'utilise des branches tel que prod, preprod pour mes projets et en
 local il m'arrive de vouloir aller sur ses branches :</p>
-<div class="highlight"><pre>git checkout preprod
+<div class="highlight"><pre><span></span>git checkout preprod
 </pre></div>
 
 
 <p>Et j'ai l'erreur suivante :</p>
-<div class="highlight"><pre><span class="n">error</span><span class="o">:</span> <span class="n">pathspec</span> <span class="s1">&#39;preprod&#39;</span> <span class="n">did</span> <span class="n">not</span> <span class="n">match</span> <span class="n">any</span> <span class="n">file</span><span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="n">known</span> <span class="n">to</span> <span class="n">git</span><span class="o">.</span>
+<div class="highlight"><pre><span></span><span class="n">error</span><span class="o">:</span> <span class="n">pathspec</span> <span class="s1">&#39;preprod&#39;</span> <span class="n">did</span> <span class="n">not</span> <span class="n">match</span> <span class="n">any</span> <span class="n">file</span><span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="n">known</span> <span class="n">to</span> <span class="n">git</span><span class="o">.</span>
 </pre></div>
 
 
 <p>Je vais mettre a jour mon origin :</p>
-<div class="highlight"><pre>git fetch origin
+<div class="highlight"><pre><span></span>git fetch origin
 </pre></div>
 
 
 <p>Maintenant je veux ma branche distante en lui précisant l'origin :</p>
-<div class="highlight"><pre>git checkout -b preprod origin/preprod
+<div class="highlight"><pre><span></span>git checkout -b preprod origin/preprod
 </pre></div>
 
 
 <p>Et j'ai bien ma branche en local comme git me l'indique :</p>
-<div class="highlight"><pre>Branch preprod set up to track remote branch preprod from origin.
+<div class="highlight"><pre><span></span>Branch preprod set up to track remote branch preprod from origin.
 Switched to a new branch &#39;preprod&#39;
 </pre></div>
   </div>
@@ -283,12 +283,12 @@ Tags :
   </header>
   <div>
       <p>Pour connaitre le code réponse HTTP il suffit de faire :</p>
-<div class="highlight"><pre>curl -IL url
+<div class="highlight"><pre><span></span>curl -IL url
 </pre></div>
 
 
 <p>Voici l'exemble avec tumblr.com :</p>
-<div class="highlight"><pre><span class="nt">curl</span> <span class="nt">-IL</span> <span class="nt">http</span><span class="o">://</span><span class="nt">tumblr</span><span class="nc">.com</span>
+<div class="highlight"><pre><span></span><span class="nt">curl</span> <span class="nt">-IL</span> <span class="nt">http</span><span class="o">://</span><span class="nt">tumblr</span><span class="nc">.com</span>
 
 <span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="nc">.1</span> <span class="nt">301</span> <span class="nt">Moved</span> <span class="nt">Permanently</span>
 <span class="nt">Content-length</span><span class="o">:</span> <span class="nt">0</span>
@@ -328,7 +328,7 @@ Tags :
 svn. Il est temps de faire la migration de svn à git !</p>
 <p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
 voulais voici donc ma procédure :</p>
-<div class="highlight"><pre>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep &quot;^r&quot; | awk
+<div class="highlight"><pre><span></span>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep &quot;^r&quot; | awk
 &#39;{print $3}&#39; | sort | uniq | awk &#39;{ print $1&quot; = &quot;$1&quot;
 &lt;&quot;$1&quot;@mondomaine&gt;&quot; }&#39; &gt; authors.txt
 </pre></div>
@@ -337,21 +337,21 @@ voulais voici donc ma procédure :</p>
 <p>J'ai ensuite édité authors.txt pour remplacer nos différents pseudos par
 nos prénoms et noms puis j'ai vérifié les adresses e-mails.</p>
 <p>Puis j'ai utilisé git svn clone :</p>
-<div class="highlight"><pre>git svn clone &#39;svn://svn.mondomaine/monprojet&#39; --no-metadata
+<div class="highlight"><pre><span></span>git svn clone &#39;svn://svn.mondomaine/monprojet&#39; --no-metadata
 --authors-file=authors.txt --tags=tags --branches=branches
 --trunk=trunk monprojet
 </pre></div>
 
 
 <p>Si vous avez des tags dans svn, vous pouvez les mettre dans git :</p>
-<div class="highlight"><pre>git branch -r | sed -rne &#39;s, \*tags/([^@]+)$,\\1,p&#39; | while read
+<div class="highlight"><pre><span></span>git branch -r | sed -rne &#39;s, \*tags/([^@]+)$,\\1,p&#39; | while read
 tag; do echo &quot;git tag <span class="nv">$tag</span> &#39;tags/<span class="cp">${</span><span class="n">tag</span><span class="cp">}</span>^&#39;; git branch -r -d
 tags/<span class="nv">$tag</span>&quot;; done | sh
 </pre></div>
 
 
 <p>Pour finir ajoutez votre dépot distant :</p>
-<div class="highlight"><pre>git remote add origin git@git.mondomaine:/monprojet.git
+<div class="highlight"><pre><span></span>git remote add origin git@git.mondomaine:/monprojet.git
 git push -u origin --tags
 </pre></div>
 
@@ -375,7 +375,22 @@ pour différentes commandes ;)</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

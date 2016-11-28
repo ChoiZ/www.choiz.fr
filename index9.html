@@ -62,7 +62,7 @@ Tags :
   </header>
   <div>
       <p>Voilà à quoi correspond cette erreur pour ceux qui demandent :</p>
-<div class="highlight"><pre>Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695
+<div class="highlight"><pre><span></span>Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695
 </pre></div>
 
 
@@ -86,7 +86,7 @@ Tags :
   </header>
   <div>
       <p>Faire un système de protection (tel que htaccess) direct dans un fichier PHP :</p>
-<div class="highlight"><pre><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_USER&quot;</span><span class="p">])</span> <span class="o">&amp;&amp;</span>
 <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_USER&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;login&quot;</span> <span class="o">&amp;&amp;</span>
 <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_PW&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span> <span class="p">{</span>
@@ -115,14 +115,14 @@ fonctionne pas avec l'attribut "onclick"…</p>
 <p>Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.</p>
 <p>Remplacer donc :</p>
-<div class="highlight"><pre>var mavar = &#39;fonctionAffichage();&#39;;
+<div class="highlight"><pre><span></span>var mavar = &#39;fonctionAffichage();&#39;;
 $(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
 </pre></div>
 
 
 <p>Par :</p>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">mavar</span> <span class="o">=</span> <span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">&#39;onclick&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nb">eval</span><span class="p">(</span><span class="nx">mavar</span><span class="p">);</span> <span class="p">});</span>
+<div class="highlight"><pre><span></span>var mavar = &#39;fonctionAffichage();&#39;;
+$(&quot;#code&quot;).removeAttr(&#39;onclick&#39;).click(function() { eval(mavar); });
 </pre></div>
   </div>
   <hr />
@@ -138,23 +138,23 @@ Tags :
   <div>
       <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
 informations dans vos projets il suffit de taper cette commande :</p>
-<div class="highlight"><pre>svn propset svn:keywords &quot;Id&quot; index.php
+<div class="highlight"><pre><span></span>svn propset svn:keywords &quot;Id&quot; index.php
 </pre></div>
 
 
 <p>Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php</p>
 <p>Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">Id</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
+<div class="highlight"><pre><span></span><span class="p">$</span><span class="nv">Id</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
 </pre></div>
 
 
 <p>Une fois le fichier versionné vous obtiendrez :</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">Id</span><span class="x">: ajax\_modif.php 481 2010-10-25 12:02:50Z choiz </span><span class="p">$</span><span class="x"></span>
+<div class="highlight"><pre><span></span><span class="p">$</span><span class="nv">Id</span><span class="x">: ajax\_modif.php 481 2010-10-25 12:02:50Z choiz </span><span class="p">$</span><span class="x"></span>
 </pre></div>
 
 
 <p>D'autres keywords sont disponible tel que :</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">Revision</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
+<div class="highlight"><pre><span></span><span class="p">$</span><span class="nv">Revision</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
 <span class="p">$</span><span class="nv">Date</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
 <span class="p">$</span><span class="nv">Author</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
 <span class="p">$</span><span class="nv">URL</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
@@ -164,12 +164,12 @@ informations dans vos projets il suffit de taper cette commande :</p>
 <p>Vous pouvez les ajouter les uns à la suite des autres par exemple pour
 notre fichier index.php je veux ajouter les 4 keywords précédents grâce
 à la commande :</p>
-<div class="highlight"><pre>svn propset svn:keywords &quot;Revision Date Author URL&quot; index.php
+<div class="highlight"><pre><span></span>svn propset svn:keywords &quot;Revision Date Author URL&quot; index.php
 </pre></div>
 
 
 <p>Ce qui affichera :</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">Revision</span><span class="x">: 481 </span><span class="p">$</span><span class="x"></span>
+<div class="highlight"><pre><span></span><span class="p">$</span><span class="nv">Revision</span><span class="x">: 481 </span><span class="p">$</span><span class="x"></span>
 <span class="p">$</span><span class="nv">Date</span><span class="x">: 2010-10-25 14:02:50 +0200 (lun., 25 oct. 2010) </span><span class="p">$</span><span class="x"></span>
 <span class="p">$</span><span class="nv">Author</span><span class="x">: choiz </span><span class="p">$</span><span class="x"></span>
 <span class="p">$</span><span class="nv">URL</span><span class="x">: svn://svn.choiz.fr/projet/branches/prod/index.php </span><span class="p">$</span><span class="x"></span>
@@ -192,8 +192,8 @@ documentations…</p>
 il n'y a pas de retour à la ligne fait automatiquement pour cela un
 petit css permet de faire les retours à la ligne lorsque la page est
 trop grande. :</p>
-<div class="highlight"><pre><span class="nt">pre</span> <span class="p">{</span>
-    <span class="k">white-space</span><span class="o">:</span> <span class="n">pre</span><span class="o">-</span><span class="n">wrap</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><span class="nt">pre</span> <span class="p">{</span>
+    <span class="nb">white-space</span><span class="o">:</span> <span class="n">pre</span><span class="o">-</span><span class="n">wrap</span><span class="p">;</span>
     <span class="n">word</span><span class="o">-</span><span class="n">wrap</span><span class="o">:</span> <span class="n">break</span><span class="o">-</span><span class="n">word</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -235,7 +235,22 @@ un navigateur par exemple).</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

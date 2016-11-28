@@ -68,12 +68,12 @@ syntaxe…</p>
 <p>Pour les fichiers <strong>tar.gz</strong> j'arrive parfaitement à compresser ou
 décompresser ce format exemple :</p>
 <p>On compresse avec :</p>
-<div class="highlight"><pre>tar -cvzf archive.tar.gz dossier_a_compresser/
+<div class="highlight"><pre><span></span>tar -cvzf archive.tar.gz dossier_a_compresser/
 </pre></div>
 
 
 <p>On décompresse avec :</p>
-<div class="highlight"><pre>tar -xvzf archive.tar.gz
+<div class="highlight"><pre><span></span>tar -xvzf archive.tar.gz
 </pre></div>
 
 
@@ -85,22 +85,22 @@ verbeux. -z pour le "gzip" d'ou le ".gz". -f pour spécifier le fichier.</p>
 par "j" de Bzip… (la lettre "b" étant sans doute utilisé avant que le
 bzip n'apparaisse). L'alternative est d'utiliser "--bzip"</p>
 <p>On compresse avec :</p>
-<div class="highlight"><pre>tar -cvjf archive.tar.bz2 dossier_a_compresser/
+<div class="highlight"><pre><span></span>tar -cvjf archive.tar.bz2 dossier_a_compresser/
 </pre></div>
 
 
 <p>Ou :</p>
-<div class="highlight"><pre>tar --bzip2 -cvf archive.tar.bz2 dossier_a_compresser/
+<div class="highlight"><pre><span></span>tar --bzip2 -cvf archive.tar.bz2 dossier_a_compresser/
 </pre></div>
 
 
 <p>On décompresse avec :</p>
-<div class="highlight"><pre>tar -xvjf archive.tar.bz2
+<div class="highlight"><pre><span></span>tar -xvjf archive.tar.bz2
 </pre></div>
 
 
 <p>Ou :</p>
-<div class="highlight"><pre>tar --bzip2 -xvf archive.tar.bz2
+<div class="highlight"><pre><span></span>tar --bzip2 -xvf archive.tar.bz2
 </pre></div>
 
 
@@ -108,22 +108,22 @@ bzip n'apparaisse). L'alternative est d'utiliser "--bzip"</p>
 <p>Pour ce qui est de Lzma ou le <strong>tar.xz</strong> c'est un "J" majuscule cette
 fois ou d'utiliser "--xz".</p>
 <p>On compresse avec :</p>
-<div class="highlight"><pre>tar -cvJf archive.tar.xz dossier_a_compresser/
+<div class="highlight"><pre><span></span>tar -cvJf archive.tar.xz dossier_a_compresser/
 </pre></div>
 
 
 <p>Ou :</p>
-<div class="highlight"><pre>tar --xz -cvf archive.tar.xz dossier_a_compresser/
+<div class="highlight"><pre><span></span>tar --xz -cvf archive.tar.xz dossier_a_compresser/
 </pre></div>
 
 
 <p>On décompresse avec :</p>
-<div class="highlight"><pre>tar -xvJf archive.tar.xz
+<div class="highlight"><pre><span></span>tar -xvJf archive.tar.xz
 </pre></div>
 
 
 <p>Ou :</p>
-<div class="highlight"><pre>tar --xz -xvf archive.tar.xz
+<div class="highlight"><pre><span></span>tar --xz -xvf archive.tar.xz
 </pre></div>
   </div>
   <hr />
@@ -229,7 +229,7 @@ Tags :
 <li>un remote “github” qui lui est sur github.com.</li>
 </ul>
 <p>Quand je vais sur le master il m’arrive d’avoir ce message :</p>
-<div class="highlight"><pre>&quot;your branch is up-to-date with “github/master”.&quot;
+<div class="highlight"><pre><span></span>&quot;your branch is up-to-date with “github/master”.&quot;
 </pre></div>
 
 
@@ -239,14 +239,14 @@ github/master.</p>
 <ol>
 <li>
 <p>supprimer ma branche master locale :</p>
-<div class="highlight"><pre>git branch -d master
+<div class="highlight"><pre><span></span>git branch -d master
 </pre></div>
 
 
 </li>
 <li>
 <p>récupèrer mon master depuis le remote origin :</p>
-<div class="highlight"><pre>git checkout -t -b master origin/master
+<div class="highlight"><pre><span></span>git checkout -t -b master origin/master
 </pre></div>
 
 
@@ -277,26 +277,26 @@ vagrant je me rend compte que nous sommes à la version 1.7.3.</p>
 <a href="http://gpo.zugaina.org/app-emulation/vagrant-bin">http://gpo.zugaina.org/app-emulation/vagrant-bin</a></p>
 <p>Pour utiliser cette overlay nous avons besoin de layman.</p>
 <p>Installation :</p>
-<div class="highlight"><pre>emerge -a layman
+<div class="highlight"><pre><span></span>emerge -a layman
 
 echo &quot;source /usr/portage/local/layman/make.conf&quot; &gt;&gt; /etc/make.conf
 </pre></div>
 
 
 <p>Pour afficher tous les overlays disponible :</p>
-<div class="highlight"><pre>layman -L
+<div class="highlight"><pre><span></span>layman -L
 </pre></div>
 
 
 <p>Ajouter l’overlay stefantalpalaru (dans lequel nous avons
 vagrant-bin-1.7.3) :</p>
-<div class="highlight"><pre>layman -f -a stefantalpalaru
+<div class="highlight"><pre><span></span>layman -f -a stefantalpalaru
 </pre></div>
 
 
 <p>Maintenant si on recherche dans eix “vagrant” rien n’a changé.</p>
 <p>Il faut mettre à jour eix :</p>
-<div class="highlight"><pre>eix-update
+<div class="highlight"><pre><span></span>eix-update
 </pre></div>
 
 
@@ -341,7 +341,7 @@ ancien laptop, en 45mn c'était fait avec d'autres grosses applications
 tel que gimp ou darktable…</p>
 <p>Pour l'instant rien a redire sur cette machine.</p>
 <p>Voici les modules a activer dans le noyau pour le réseau et le son :</p>
-<div class="highlight"><pre>Realtek 8169 gigabit ethernet support
+<div class="highlight"><pre><span></span>Realtek 8169 gigabit ethernet support
 Build Analog Device HD-audio codec support
 </pre></div>
   </div>
@@ -357,12 +357,12 @@ Build Analog Device HD-audio codec support
   <div>
       <p>Il suffit d’utiliser git show.</p>
 <p>La commande :</p>
-<div class="highlight"><pre>git show branch_name:filename
+<div class="highlight"><pre><span></span>git show branch_name:filename
 </pre></div>
 
 
 <p>Exemple :</p>
-<div class="highlight"><pre>git show reset_password:/templates/reset_password.tmpl
+<div class="highlight"><pre><span></span>git show reset_password:/templates/reset_password.tmpl
 </pre></div>
   </div>
   <hr />
@@ -378,17 +378,17 @@ Tags :
   <div>
       <p>Pour initialiser les sous-modules dans git j'utilise la commande
 suivante :</p>
-<div class="highlight"><pre>git submodule init
+<div class="highlight"><pre><span></span>git submodule init
 </pre></div>
 
 
 <p>Ensuite je dois faire un update des sous-modules pour charger le contenu :</p>
-<div class="highlight"><pre>git submodule update
+<div class="highlight"><pre><span></span>git submodule update
 </pre></div>
 
 
 <p>Pour faire les deux en même temps (init + update) vous pouvez faire :</p>
-<div class="highlight"><pre>git submodule update --init
+<div class="highlight"><pre><span></span>git submodule update --init
 </pre></div>
 
 
@@ -399,7 +399,7 @@ sous-modules. Exemple dans mon dépot
 sous-modules avec les plugins de vim. Pour initialiser, mettre à jour et
 le tout en cascade (dans tous les dossiers et sous-dossiers) il faut
 faire :</p>
-<div class="highlight"><pre>git submodule update --init --recursive
+<div class="highlight"><pre><span></span>git submodule update --init --recursive
 </pre></div>
   </div>
   <hr />
@@ -437,7 +437,22 @@ serveurs sont à l'heure.</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

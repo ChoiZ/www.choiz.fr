@@ -75,7 +75,7 @@ mais je n'étais pas dessus…</p>
 <p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master</em>. Or le seul
 qui devait être dessus devait être A et je devais avoir B-C dans ma
 branche <em>debug_redirect</em>. Voici un schéma de la situation :</p>
-<div class="highlight"><pre>debug_redirect
+<div class="highlight"><pre><span></span>debug_redirect
           ↓
           A-B-C
               ↑
@@ -84,14 +84,14 @@ branche <em>debug_redirect</em>. Voici un schéma de la situation :</p>
 
 
 <p>Je dois donc soit mettre a jour ma branche <em>debug_redirect</em>. :</p>
-<div class="highlight"><pre>git checkout debug_redirect
+<div class="highlight"><pre><span></span>git checkout debug_redirect
 
 git merge master
 </pre></div>
 
 
 <p>Ce qui donne :</p>
-<div class="highlight"><pre>debug_redirect
+<div class="highlight"><pre><span></span>debug_redirect
         ↓
     A-B-C
         ↑
@@ -100,14 +100,14 @@ git merge master
 
 
 <p>Il me reste qu'a retourner sur le <em>master</em> et revenir à la version A. :</p>
-<div class="highlight"><pre>git checkout master
+<div class="highlight"><pre><span></span>git checkout master
 
 git reset --hard HEAD~2
 </pre></div>
 
 
 <p>Ce qui donne :</p>
-<div class="highlight"><pre>  debug_redirect
+<div class="highlight"><pre><span></span>  debug_redirect
       ↓
   A-B-C
   ↑
@@ -117,12 +117,12 @@ master
 
 <p>Maintenant que j'ai fixé mon bug sur ma branche  <em>debug_redirect</em> je
 peux le merger avec le <em>master</em>. :</p>
-<div class="highlight"><pre>git merge debug_redirect --no-ff
+<div class="highlight"><pre><span></span>git merge debug_redirect --no-ff
 </pre></div>
 
 
 <p>Résultat :</p>
-<div class="highlight"><pre>         B-C      debug_redirect
+<div class="highlight"><pre><span></span>         B-C      debug_redirect
        /     \
      A - - - - D   master
 </pre></div>
@@ -130,7 +130,7 @@ peux le merger avec le <em>master</em>. :</p>
 
 <p>Pour voir vos commits par branche vous pouvez aussi utiliser la commande
 git log :</p>
-<div class="highlight"><pre>git log --graph --oneline --decorate
+<div class="highlight"><pre><span></span>git log --graph --oneline --decorate
 *   4c677ac (HEAD, master) Merge branch &#39;debug_redirect&#39;
 |\ 
 | * 90e7a7a (debug_redirect) Fix another bug on redirect
@@ -155,7 +155,22 @@ git log :</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

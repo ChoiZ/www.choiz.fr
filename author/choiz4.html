@@ -65,7 +65,7 @@ Tags :
 messages sur cherry-pick sans savoir ce que c'était.</p>
 <p>git cherry-pick permet d'appliquer un commit sur la branche sur la
 branche actuelle.</p>
-<div class="highlight"><pre>git cherry-pick c4a99776
+<div class="highlight"><pre><span></span>git cherry-pick c4a99776
 </pre></div>
       <a class="btn" href="//www.choiz.fr/2014-02-06-git-cherry-pick.html">Lire la suite</a>
   </div>
@@ -101,17 +101,17 @@ Tags :
   </header>
   <div>
       <p>J'étais à la recherche de se caractère unicode dans vim :</p>
-<div class="highlight"><pre>&lt;U+2028&gt;
+<div class="highlight"><pre><span></span>&lt;U+2028&gt;
 </pre></div>
 
 
 <p>Pour pouvoir le supprimer j'ai utilisé la commande suivante :</p>
-<div class="highlight"><pre>:%s/\%U2028//g
+<div class="highlight"><pre><span></span>:%s/\%U2028//g
 </pre></div>
 
 
 <p>Décortiquons la commande :</p>
-<div class="highlight"><pre>`:%s/` Recherche et remplace dans tout le fichier
+<div class="highlight"><pre><span></span>`:%s/` Recherche et remplace dans tout le fichier
 
 `\%U2028` Le caractère que l&#39;on recherche unicode &quot;2028&quot;
 
@@ -186,7 +186,7 @@ Tags :
     sudo npm install -g jshint</p>
 <p>Faire un lien symbolique pour pouvoir utiliser directement jshint sans
 préciser tout le chemin a chaque fois :</p>
-<div class="highlight"><pre>ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
+<div class="highlight"><pre><span></span>ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
 </pre></div>
       <a class="btn" href="//www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html">Lire la suite</a>
   </div>
@@ -203,12 +203,12 @@ Tags :
   <div>
       <p>J'utilise des branches tel que prod, preprod pour mes projets et en
 local il m'arrive de vouloir aller sur ses branches :</p>
-<div class="highlight"><pre>git checkout preprod
+<div class="highlight"><pre><span></span>git checkout preprod
 </pre></div>
 
 
 <p>Et j'ai l'erreur suivante :</p>
-<div class="highlight"><pre><span class="n">error</span><span class="o">:</span> <span class="n">pathspec</span> <span class="s1">&#39;preprod&#39;</span> <span class="n">did</span> <span class="n">not</span> <span class="n">match</span> <span class="n">any</span> <span class="n">file</span><span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="n">known</span> <span class="n">to</span> <span class="n">git</span><span class="o">.</span>
+<div class="highlight"><pre><span></span><span class="n">error</span><span class="o">:</span> <span class="n">pathspec</span> <span class="s1">&#39;preprod&#39;</span> <span class="n">did</span> <span class="n">not</span> <span class="n">match</span> <span class="n">any</span> <span class="n">file</span><span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="n">known</span> <span class="n">to</span> <span class="n">git</span><span class="o">.</span>
 </pre></div>
 
 
@@ -227,12 +227,12 @@ Tags :
   </header>
   <div>
       <p>Pour connaitre le code réponse HTTP il suffit de faire :</p>
-<div class="highlight"><pre>curl -IL url
+<div class="highlight"><pre><span></span>curl -IL url
 </pre></div>
 
 
 <p>Voici l'exemble avec tumblr.com :</p>
-<div class="highlight"><pre><span class="nt">curl</span> <span class="nt">-IL</span> <span class="nt">http</span><span class="o">://</span><span class="nt">tumblr</span><span class="nc">.com</span>
+<div class="highlight"><pre><span></span><span class="nt">curl</span> <span class="nt">-IL</span> <span class="nt">http</span><span class="o">://</span><span class="nt">tumblr</span><span class="nc">.com</span>
 
 <span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="nc">.1</span> <span class="nt">301</span> <span class="nt">Moved</span> <span class="nt">Permanently</span>
 <span class="nt">Content-length</span><span class="o">:</span> <span class="nt">0</span>
@@ -259,7 +259,7 @@ Tags :
 svn. Il est temps de faire la migration de svn à git !</p>
 <p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
 voulais voici donc ma procédure :</p>
-<div class="highlight"><pre>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep ...</pre></div>
+<div class="highlight"><pre><span></span>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2013-07-16-passer-de-svn-à-git.html">Lire la suite</a>
   </div>
 </article>
@@ -277,7 +277,22 @@ voulais voici donc ma procédure :</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

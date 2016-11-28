@@ -70,7 +70,7 @@
   <div>
     <p>Configuration d'un serveur samba. Editer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :</p>
-<div class="highlight"><pre>| ### Global ###
+<div class="highlight"><pre><span></span>| ### Global ###
 | [global]
 | ## Identification ##
 | workgroup = WORKGROUP
@@ -101,7 +101,7 @@
 
 
 <p>Maintenant il faut créer notre utilisateur "choiz" grâce à :</p>
-<div class="highlight"><pre>smbpasswd -a choiz
+<div class="highlight"><pre><span></span>smbpasswd -a choiz
 </pre></div>
 
 
@@ -110,7 +110,7 @@ voulez gérer votre partage samba utilisateur par utilisateur ou
 directement avec des groupes.</p>
 <p>N'oubliez pas de redémarrer le service Samba avant de tester depuis
 votre client le partage de fichiers ! :</p>
-<div class="highlight"><pre>/etc/init.d/samba restart
+<div class="highlight"><pre><span></span>/etc/init.d/samba restart
 </pre></div>
   </div>
   <div class="tag-cloud">
@@ -129,7 +129,22 @@ votre client le partage de fichiers ! :</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

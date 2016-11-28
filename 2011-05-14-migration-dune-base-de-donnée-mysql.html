@@ -72,13 +72,13 @@
 commande mysqldump et mysql.</p>
 <p>Dans un premier temps je sauve ma base database dans le fichier dump.sql
 J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss :</p>
-<div class="highlight"><pre>mysqldump -u utilisateur -p p4ss database &gt; dump.sql
+<div class="highlight"><pre><span></span>mysqldump -u utilisateur -p p4ss database &gt; dump.sql
 </pre></div>
 
 
 <p>Une fois que j'ai mon fichier dump.sql je le met sur la nouvelle
 machine, puis j'execute la commande suivante :</p>
-<div class="highlight"><pre>mysql -u utilisateur -pp4ss database &lt; fichierdump.sql
+<div class="highlight"><pre><span></span>mysql -u utilisateur -pp4ss database &lt; fichierdump.sql
 </pre></div>
   </div>
   <div class="tag-cloud">
@@ -97,7 +97,22 @@ machine, puis j'execute la commande suivante :</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

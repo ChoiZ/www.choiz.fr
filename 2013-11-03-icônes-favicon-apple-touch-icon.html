@@ -79,7 +79,7 @@ appareils mobiles avec image magick.</p>
 la transparence "icon512.png".</p>
 <p>Je veux faire une favicon en 16x16px, 32x32px 48x48px et 64x64px le tout
 dans un seul fichier favicon.ico. :</p>
-<div class="highlight"><pre>convert icon512.png \
+<div class="highlight"><pre><span></span>convert icon512.png \
     -bordercolor white -border 0 \
     \( -clone 0 -resize 16x16 \) \
     \( -clone 0 -resize 32x32 \) \
@@ -91,7 +91,7 @@ dans un seul fichier favicon.ico. :</p>
 
 <p>Ensuite je veux faire mes icônes pour les appareils mobiles : Android,
 Apple etc… :</p>
-<div class="highlight"><pre>convert icon512.png -resize x60 touch-icon-iphone.png
+<div class="highlight"><pre><span></span>convert icon512.png -resize x60 touch-icon-iphone.png
 convert icon512.png -resize x76 touch-icon-ipad.png
 convert icon512.png -resize x120 touch-icon-iphone-retina.png
 convert icon512.png -resize x152 touch-icon-ipad-retina.png
@@ -99,7 +99,7 @@ convert icon512.png -resize x152 touch-icon-ipad-retina.png
 
 
 <p>Maintenant il faut ajouter dans notre page html entre les balises head :</p>
-<div class="highlight"><pre>&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;
+<div class="highlight"><pre><span></span>&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;touch-icon-iphone.png&quot;&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;76x76&quot; href=&quot;touch-icon-ipad.png&quot;&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;120x120&quot; href=&quot;touch-icon-iphone-retina.png&quot;&gt;
@@ -131,7 +131,22 @@ convert icon512.png -resize x152 touch-icon-ipad-retina.png
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

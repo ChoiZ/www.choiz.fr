@@ -62,14 +62,14 @@ Tags :
   </header>
   <div>
       <p>Dans mon firebug des "warnings" s'affichent :</p>
-<div class="highlight"><pre>Champs mot de passe présents sur une page non sécurisée (http://). Cela
+<div class="highlight"><pre><span></span>Champs mot de passe présents sur une page non sécurisée (http://). Cela
 représente un risque de sécurité permettant le vol d&#39;identifiants de
 connexion.
 </pre></div>
 
 
 <p>Ainsi que :</p>
-<div class="highlight"><pre>Champs mot de passe présents dans un formulaire possédant une action de
+<div class="highlight"><pre><span></span>Champs mot de passe présents dans un formulaire possédant une action de
 formulaire non sécurisée (http://). Cela ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html">Lire la suite</a>
   </div>
@@ -85,12 +85,12 @@ Tags :
   </header>
   <div>
       <p>Pour connaitre le code réponse HTTP il suffit de faire :</p>
-<div class="highlight"><pre>curl -IL url
+<div class="highlight"><pre><span></span>curl -IL url
 </pre></div>
 
 
 <p>Voici l'exemble avec tumblr.com :</p>
-<div class="highlight"><pre><span class="nt">curl</span> <span class="nt">-IL</span> <span class="nt">http</span><span class="o">://</span><span class="nt">tumblr</span><span class="nc">.com</span>
+<div class="highlight"><pre><span></span><span class="nt">curl</span> <span class="nt">-IL</span> <span class="nt">http</span><span class="o">://</span><span class="nt">tumblr</span><span class="nc">.com</span>
 
 <span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="nc">.1</span> <span class="nt">301</span> <span class="nt">Moved</span> <span class="nt">Permanently</span>
 <span class="nt">Content-length</span><span class="o">:</span> <span class="nt">0</span>
@@ -118,12 +118,12 @@ or lors de la copie celui-ci est copié… Je me retrouve donc avec deux
 fois <a href="http://">http://</a>…</p>
 <p>Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :</p>
 <p>Ecrire dans la barre d'adresse :</p>
-<div class="highlight"><pre><span class="n">about</span><span class="o">:</span><span class="n">config</span>
+<div class="highlight"><pre><span></span><span class="n">about</span><span class="o">:</span><span class="n">config</span>
 </pre></div>
 
 
 <p>Rechercher :</p>
-<div class="highlight"><pre>browser.urlbar ...</pre></div>
+<div class="highlight"><pre><span></span>browser.urlbar ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html">Lire la suite</a>
   </div>
 </article>
@@ -135,7 +135,22 @@ fois <a href="http://">http://</a>…</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

@@ -62,17 +62,17 @@ Tags :
   </header>
   <div>
       <p>J'étais à la recherche de se caractère unicode dans vim :</p>
-<div class="highlight"><pre>&lt;U+2028&gt;
+<div class="highlight"><pre><span></span>&lt;U+2028&gt;
 </pre></div>
 
 
 <p>Pour pouvoir le supprimer j'ai utilisé la commande suivante :</p>
-<div class="highlight"><pre>:%s/\%U2028//g
+<div class="highlight"><pre><span></span>:%s/\%U2028//g
 </pre></div>
 
 
 <p>Décortiquons la commande :</p>
-<div class="highlight"><pre>`:%s/` Recherche et remplace dans tout le fichier
+<div class="highlight"><pre><span></span>`:%s/` Recherche et remplace dans tout le fichier
 
 `\%U2028` Le caractère que l&#39;on recherche unicode &quot;2028&quot;
 
@@ -91,7 +91,7 @@ Tags :
   </header>
   <div>
       <p>Petit ajout dans mon fichier .vimrc :</p>
-<div class="highlight"><pre>&quot; Highlight To do list with green background
+<div class="highlight"><pre><span></span>&quot; Highlight To do list with green background
 highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
 highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
 highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
@@ -112,7 +112,7 @@ Tags :
   <div>
       <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un
 fichier avec vim :</p>
-<div class="highlight"><pre><span class="x">:1,</span><span class="p">$</span><span class="nv">s</span><span class="x">/^/</span><span class="err">#</span><span class="x">/</span>
+<div class="highlight"><pre><span></span><span class="x">:1,</span><span class="p">$</span><span class="nv">s</span><span class="x">/^/</span><span class="err">#</span><span class="x">/</span>
 </pre></div>
 
 
@@ -134,7 +134,7 @@ Tags :
   </header>
   <div>
       <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<div class="highlight"><pre>svn propset svn:ignore
+<div class="highlight"><pre><span></span>svn propset svn:ignore
 </pre></div>
 
 
@@ -159,19 +159,19 @@ Tags :
 pouvoir ouvrir plusieurs fichiers en même temps.</p>
 <p>Pour celà il utilises 2 méthodes soit :</p>
 <ol>
-<li>la division de la fenêtre horizontal en utilisant :<div class="highlight"><pre>:split
+<li>la division de la fenêtre horizontal en utilisant :<div class="highlight"><pre><span></span>:split
 </pre></div>
 
 
 </li>
 </ol>
 <p>ou :</p>
-<div class="highlight"><pre>:new
+<div class="highlight"><pre><span></span>:new
 </pre></div>
 
 
 <p>et ensuite :</p>
-<div class="highlight"><pre>:e le_fichier_a_ouvrir
+<div class="highlight"><pre><span></span>:e le_fichier_a_ouvrir
 </pre></div>
 
 
@@ -194,7 +194,7 @@ Tags :
 J'utilise souvent la commande diff dans un terminal, mais mon éditeur
 texte favoris "Vim" sait aussi trés bien faire un différentiel.
 Utilisation avec le terminal :</p>
-<div class="highlight"><pre><span class="gh">diff fichier1 fichier2</span>
+<div class="highlight"><pre><span></span><span class="gh">diff fichier1 fichier2</span>
 </pre></div>
 
 
@@ -215,7 +215,7 @@ Tags :
   <div>
       <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
 dans la console je tape la commande :</p>
-<div class="highlight"><pre>php -l fichier_a_tester.php
+<div class="highlight"><pre><span></span>php -l fichier_a_tester.php
 </pre></div>
 
 
@@ -252,7 +252,22 @@ apres la ligne courante et d'indenter ...</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

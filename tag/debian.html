@@ -100,12 +100,12 @@ Tags :
       <p>Télécharger la dernière version de <a href="http://www.skype.com">Skype</a> (Debian
 7.0 [multiarch]).</p>
 <p>Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. :</p>
-<div class="highlight"><pre>dpkg --add-architecture i386
+<div class="highlight"><pre><span></span>dpkg --add-architecture i386
 </pre></div>
 
 
 <p>Puis mettre à jour les paquets :</p>
-<div class="highlight"><pre>apt-get update
+<div class="highlight"><pre><span></span>apt-get update
 apt-get upgrade
 apt-get install -f
 </pre></div>
@@ -128,12 +128,12 @@ Tags :
       <p>Télécharger la dernière version de Firefox sur <a href="http://www.mozilla.org/">le site de
 mozilla</a>.</p>
 <p>Décompresser l'archive dans :</p>
-<div class="highlight"><pre>/opt/firefox/
+<div class="highlight"><pre><span></span>/opt/firefox/
 </pre></div>
 
 
 <p>Créer un lien symbolique avec :</p>
-<div class="highlight"><pre>ls -sf /opt/firefox/firefox /usr/bin/firefox
+<div class="highlight"><pre><span></span>ls -sf /opt/firefox/firefox /usr/bin/firefox
 </pre></div>
       <a class="btn" href="//www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html">Lire la suite</a>
   </div>
@@ -151,7 +151,7 @@ Tags :
       <p>J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
 (Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec «
 Fdisk » et j'ai eu le message suivant :</p>
-<div class="highlight"><pre><span class="n">Warning</span><span class="o">:</span> <span class="n">invalid</span> <span class="n">flag</span> <span class="mh">0x0000</span> <span class="n">of</span> <span class="n">partition</span> <span class="n">table</span> <span class="mi">4</span> <span class="n">will</span> <span class="n">be</span> <span class="n">corrected</span> <span class="n">by</span> <span class="n">w</span><span class="o">(</span><span class="n">rite</span><span class="o">)</span>
+<div class="highlight"><pre><span></span><span class="n">Warning</span><span class="o">:</span> <span class="n">invalid</span> <span class="n">flag</span> <span class="mh">0x0000</span> <span class="n">of</span> <span class="n">partition</span> <span class="n">table</span> <span class="mi">4</span> <span class="n">will</span> <span class="n">be</span> <span class="n">corrected</span> <span class="n">by</span> <span class="n">w</span><span class="o">(</span><span class="n">rite</span><span class="o">)</span>
 
 <span class="n">WARNING</span><span class="o">:</span> <span class="n">The</span> <span class="n">size</span> <span class="n">of ...</span></pre></div>
       <a class="btn" href="//www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html">Lire la suite</a>
@@ -191,7 +191,7 @@ surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
 chez Deezer c'est un peu problèmatique.</p>
 <p>J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
 ceci :</p>
-<div class="highlight"><pre>vi /etc/apt/source.list
+<div class="highlight"><pre><span></span>vi /etc/apt/source.list
 </pre></div>
 
 
@@ -207,7 +207,22 @@ ceci :</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

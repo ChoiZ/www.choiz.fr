@@ -70,7 +70,7 @@
   </header>
   <div>
     <p>Pour lister les stash :</p>
-<div class="highlight"><pre>git stash list
+<div class="highlight"><pre><span></span>git stash list
 
 stash@{0}: WIP on BranchName: 5d8a556 Edit file.js
 stash@{1}: WIP on BranchName: 66dfe78 Edit file.css
@@ -80,7 +80,7 @@ stash@{5}: WIP on BranchName: 3bb67ff Add file.css file.js
 
 
 <p>Pour voir le contenu d'un stash :</p>
-<div class="highlight"><pre>git stash show
+<div class="highlight"><pre><span></span>git stash show
 
 stash@{0} chemin/vers/mon/fichier.js | 199 ++++++++++++++++++++++++++--------
 chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------
@@ -89,7 +89,7 @@ chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------
 
 <p>Pour voir le contenu de "chemin/vers/mon/fichier.js" qui est dans le
 stash{0} :</p>
-<div class="highlight"><pre>git show stash@{0}:chemin/vers/mon/fichier.js
+<div class="highlight"><pre><span></span>git show stash@{0}:chemin/vers/mon/fichier.js
 </pre></div>
   </div>
   <div class="tag-cloud">
@@ -109,7 +109,22 @@ stash{0} :</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

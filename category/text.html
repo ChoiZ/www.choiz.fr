@@ -116,12 +116,12 @@ Tags :
       <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
 suivre pour le mettre à jour vers la version : 4.3.0.</p>
 <p>Je liste les différents noyaux gentoo disponibles :</p>
-<div class="highlight"><pre>eix sys-kernel/gentoo-sources
+<div class="highlight"><pre><span></span>eix sys-kernel/gentoo-sources
 </pre></div>
 
 
 <p>Je télécharge le noyau 4.3.0 :</p>
-<div class="highlight"><pre>emerge -a =sys-kernel/gentoo-sources-4.3.0
+<div class="highlight"><pre><span></span>emerge -a =sys-kernel/gentoo-sources-4.3.0
 </pre></div>
 
 
@@ -180,7 +180,7 @@ backoffice et une avec une API.</p>
 <p>J'ai donc du faire un réseau privé dans vagrant pour que le BO
 communique avec l'API.</p>
 <p>Il suffit de modifier la configuration de la vm #1 et d'ajouter :</p>
-<div class="highlight"><pre>config.vm.network ...</pre></div>
+<div class="highlight"><pre><span></span>config.vm.network ...</pre></div>
       <a class="btn" href="//www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html">Lire la suite</a>
   </div>
   <hr />
@@ -197,7 +197,7 @@ Tags :
       <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester
 qu'une fonctionnalité de code.</p>
 <p>Par exemple pour tester une api :</p>
-<div class="highlight"><pre><span class="x">// Obtenir le livre </span><span class="err">#</span><span class="x">1</span>
+<div class="highlight"><pre><span></span><span class="x">// Obtenir le livre </span><span class="err">#</span><span class="x">1</span>
 <span class="x">api_get(&#39;books/1&#39;);</span>
 
 <span class="x">// Ajouter un livre</span>
@@ -222,12 +222,12 @@ Tags :
   <div>
       <p>Pour mettre à jour Gentoo j'utilise différentes commandes.</p>
 <p>Dans un premier temps je fais la mise à jour d'eix :</p>
-<div class="highlight"><pre>eix-sync
+<div class="highlight"><pre><span></span>eix-sync
 </pre></div>
 
 
 <p>Ensuite :</p>
-<div class="highlight"><pre>emerge -pvuDN world
+<div class="highlight"><pre><span></span>emerge -pvuDN world
 </pre></div>
 
 
@@ -248,7 +248,7 @@ Tags :
   </header>
   <div>
       <p>Pour compiler le kernel sous gentoo :</p>
-<div class="highlight"><pre>cd /usr/src/linux
+<div class="highlight"><pre><span></span>cd /usr/src/linux
 
 make menuconfig
 
@@ -260,7 +260,7 @@ make install
 
 <p>Le kernel est maintenant compilé.</p>
 <p>Maintenant il faut mettre à jour grub. :</p>
-<div class="highlight"><pre>grub2-mkconfig -o /boot/grub/grub.cfg
+<div class="highlight"><pre><span></span>grub2-mkconfig -o /boot/grub/grub.cfg
 </pre></div>
 
 
@@ -280,7 +280,22 @@ que le nombre de ...</p>
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

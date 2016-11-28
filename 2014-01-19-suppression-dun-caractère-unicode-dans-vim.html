@@ -68,17 +68,17 @@
   </header>
   <div>
     <p>J'étais à la recherche de se caractère unicode dans vim :</p>
-<div class="highlight"><pre>&lt;U+2028&gt;
+<div class="highlight"><pre><span></span>&lt;U+2028&gt;
 </pre></div>
 
 
 <p>Pour pouvoir le supprimer j'ai utilisé la commande suivante :</p>
-<div class="highlight"><pre>:%s/\%U2028//g
+<div class="highlight"><pre><span></span>:%s/\%U2028//g
 </pre></div>
 
 
 <p>Décortiquons la commande :</p>
-<div class="highlight"><pre>`:%s/` Recherche et remplace dans tout le fichier
+<div class="highlight"><pre><span></span>`:%s/` Recherche et remplace dans tout le fichier
 
 `\%U2028` Le caractère que l&#39;on recherche unicode &quot;2028&quot;
 
@@ -102,7 +102,22 @@
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

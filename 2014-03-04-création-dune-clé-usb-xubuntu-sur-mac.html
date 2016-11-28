@@ -68,13 +68,13 @@
   </header>
   <div>
     <p>Dans le terminal sur votre mac :</p>
-<div class="highlight"><pre>diskutil list
+<div class="highlight"><pre><span></span>diskutil list
 </pre></div>
 
 
 <p>Qui permet de lister vos disque dur / clés usb etc…</p>
 <p>ici ma clé usb est disk2. :</p>
-<div class="highlight"><pre>/dev/disk2
+<div class="highlight"><pre><span></span>/dev/disk2
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:     FDisk_partition_scheme                        *8.1 GB     disk2
    1:                      Linux                         4.0 GB     disk2s1
@@ -83,7 +83,7 @@
 
 
 <p>Démontez la clé. :</p>
-<div class="highlight"><pre>diskutil unmountDisk /dev/disk2
+<div class="highlight"><pre><span></span>diskutil unmountDisk /dev/disk2
 
 Unmount of all volumes on disk2 was successful
 </pre></div>
@@ -91,7 +91,7 @@ Unmount of all volumes on disk2 was successful
 
 <p>Maintenant on copie xubuntu depuis notre dossier téléchargements vers
 cette clé usb :</p>
-<div class="highlight"><pre>sudo dd if=~/Downloads/xubuntu-13.10-desktop-i386.iso of=/dev/rdisk2 bs=1m
+<div class="highlight"><pre><span></span>sudo dd if=~/Downloads/xubuntu-13.10-desktop-i386.iso of=/dev/rdisk2 bs=1m
 
 Password:
 834+0 records in
@@ -101,7 +101,7 @@ Password:
 
 
 <p>Puis on éjecte proprement la clé usb :</p>
-<div class="highlight"><pre>diskutil eject /dev/disk2
+<div class="highlight"><pre><span></span>diskutil eject /dev/disk2
 
 Disk /dev/disk2 ejected
 </pre></div>
@@ -121,7 +121,22 @@ Disk /dev/disk2 ejected
       <p>&copy; François LASSERRE </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
