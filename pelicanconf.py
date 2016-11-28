@@ -22,6 +22,9 @@ THEME = 'Flexfork'
 
 DEFAULT_LANG = u'fr'
 
+PIWIK_URL = 'stats.rocketip.net'
+PIWIK_SITE_ID = '7042kjNK6PYV9LoGM5np'
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
