@@ -6,7 +6,7 @@ AUTHOR = u'Fran\xe7ois LASSERRE'
 SITENAME = u'ChoiZ'
 SITEURL = u'//choiz.fr'
 SITETITLE = u'Blog de François LASSERRE'
-SITESUBTITLE = 'Je suis ingénieur informaticien, j\'aime le développement, le streaming, l\'Internet…<br><br>Depuis l\'an 2000, j\'ai fondé plusieurs webradios (Radio-Psylone, Live9 ou encore AddictRadio).<br>Je fais parti de l\'équipe de <a href="http://www.lagrosseradio.com">La Grosse Radio</a>.'
+SITESUBTITLE = 'Je suis ingénieur informaticien, j\'aime le développement, le streaming, l\'Internet…<br><br>Depuis l\'an 2000, j\'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.'
 SITELOGO = u'/avatar.png'
 
 FAVICON = SITEURL + '/favicon.ico'
@@ -37,7 +37,6 @@ LINKS = (
          ('Tags', '/tags'),
         )
          #('Pelican', 'http://getpelican.com/'),
-         #('La Grosse Radio', 'http://www.lagrosseradio.com/'),
 
 # Social widget
 SOCIAL = (
