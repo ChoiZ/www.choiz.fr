@@ -54,6 +54,36 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2012-09-29-ma-configuration-iterm2.html">Ma configuration iTerm2</a></h2>
+    <p>
+      Posté le sam. 29 septembre 2012 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/iterm2.html">iTerm2</a>,      <a href="//www.choiz.fr/tag/config.html">config</a>,      <a href="//www.choiz.fr/tag/keypad.html">keypad</a>,      <a href="//www.choiz.fr/tag/numeric.html">numeric</a>,      <a href="//www.choiz.fr/tag/enter.html">enter</a>,      <a href="//www.choiz.fr/tag/-.html">⌥→</a>,      <a href="//www.choiz.fr/tag/-.html">⌥←</a>,      <a href="//www.choiz.fr/tag/-.html">↩</a>,      <a href="//www.choiz.fr/tag/shortcut.html">shortcut</a>,      <a href="//www.choiz.fr/tag/clavier.html">clavier</a>,      <a href="//www.choiz.fr/tag/pave-numerique.html">pavé numérique</a>,      <a href="//www.choiz.fr/tag/configuration-iterm2.html">configuration iTerm2</a>    </p>
+  </header>
+  <div>
+      <p>Depuis quelques jours j'utilise iTerm2 et je trouve ce terminal sous Mac
+Os X vraiment au top !</p>
+<p>J'ai un clavier Apple Usb avec le pavé numérique il faut donc modifier
+les préférences d'iTerm2.</p>
+<p>iTerm &gt; Préférences (ou ⌘ ,) puis dans Profiles &gt; Keys et en bas
+"Load Preset..." et choisir "xterm with Numeric Keypad". Ce n'est pas
+tout malheureusement.</p>
+<p>La touche "enter" du pavé numérique ne fonctionne pas il faut donc
+cliquer sur "+" et dans Keyboard Shortcut: appuyer sur la touche et "↩"
+doit apparaitre. Dans Action: choisir "Send Hex Code" et taper "0xd".</p>
+<p>J'ai également ajouter 2 raccourcis bien pratiques :</p>
+<ul>
+<li>"alt et fleche de gauche" soit "⌥←" avec le code "[H" permet de
+    revenir au debut de la ligne de commande que l'on tape (pratique si
+    on oublie un argument).</li>
+<li>"alt et fleche de droite" soit "⌥→" avec le code "[F" pour aller à
+    la fin de la ligne.</li>
+</ul>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2012-08-13-mon-fichier-gitignore.html">Mon fichier .gitignore</a></h2>
     <p>
       Posté le lun. 13 août 2012 &#8226;
@@ -449,111 +479,6 @@ différents hosts. En général j'en défini un.</p>
 <p>ou via ssh-copy-id :</p>
 <div class="highlight"><pre><span></span>ssh-copy-id -i ~/.ssh/id\_rsa.pub user@ip
 </pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-12-04-php-gettext-debian.html">PHP + Gettext + Debian</a></h2>
-    <p>
-      Posté le dim. 04 décembre 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/mo.html">.mo</a>,      <a href="//www.choiz.fr/tag/po.html">.po</a>,      <a href="//www.choiz.fr/tag/etclocale.html">/etc/locale</a>,      <a href="//www.choiz.fr/tag/lc_all.html">LC\_ALL</a>,      <a href="//www.choiz.fr/tag/gettext.html">gettext</a>,      <a href="//www.choiz.fr/tag/php.html">php</a>,      <a href="//www.choiz.fr/tag/php-gettext.html">php-gettext</a>,      <a href="//www.choiz.fr/tag/setlocale.html">setlocale</a>,      <a href="//www.choiz.fr/tag/xgettext.html">xgettext</a>    </p>
-  </header>
-  <div>
-      <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
-en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext
-sur votre site en php il faut télécharger le package php-gettext :</p>
-<div class="highlight"><pre><span></span>apt-get install php-gettext
-</pre></div>
-
-
-<p>Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
-commentaires devant les langues qui vont sont à traduire par exemple :
-Allemand, Anglais, Espagnol, Français &amp; Suédois :</p>
-<div class="highlight"><pre><span></span>de_DE.UTF-8 UTF-8
-en_GB.UTF-8 UTF-8
-es_ES.UTF-8 UTF-8
-fr_FR.UTF-8 UTF-8
-sv_SE.UTF-8 UTF-8
-</pre></div>
-
-
-<p>Puis regénérer les locales :</p>
-<div class="highlight"><pre><span></span>locale-gen
-</pre></div>
-
-
-<p>Ensuite il faut définir votre chemin pour les traductions par exemple :</p>
-<div class="highlight"><pre><span></span>lang/fr_FR/LC_MESSAGES/domaine.mo
-</pre></div>
-
-
-<p>Puis dans votre fichier php de configuration :</p>
-<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="c1">// configuration de la langue</span>
-<span class="nv">$lang</span> <span class="o">=</span> <span class="s1">&#39;fr_FR&#39;</span><span class="p">;</span> <span class="c1">// Langue a afficher</span>
-<span class="nv">$lang_encode</span> <span class="o">=</span> <span class="s1">&#39;utf8&#39;</span><span class="p">;</span> <span class="c1">// Encodage du fichier</span>
-<span class="nv">$lang_path</span> <span class="o">=</span> <span class="s1">&#39;./lang&#39;</span><span class="p">;</span> <span class="c1">// Chemin des fichiers de langue</span>
-<span class="nv">$lang_file</span> <span class="o">=</span> <span class="s1">&#39;domaine&#39;</span><span class="p">;</span> <span class="c1">// Nom du fichier de langue</span>
-
-<span class="nb">putenv</span><span class="p">(</span><span class="s1">&#39;LANG=&#39;</span><span class="o">.</span><span class="nv">$lang</span><span class="o">.</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="nv">$lang_encode</span><span class="p">);</span>
-<span class="nb">putenv</span><span class="p">(</span><span class="s1">&#39;LANGUAGE=&#39;</span><span class="o">.</span><span class="nv">$lang</span><span class="o">.</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="nv">$lang_encode</span><span class="p">);</span>
-<span class="nb">setlocale</span><span class="p">(</span><span class="nx">LC_MESSAGES</span><span class="p">,</span> <span class="nv">$lang</span><span class="o">.</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="nv">$lang_encode</span><span class="p">);</span>
-<span class="nb">bindtextdomain</span><span class="p">(</span><span class="nv">$lang_file</span><span class="p">,</span> <span class="nv">$lang_path</span><span class="p">);</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="nb">function_exists</span><span class="p">(</span><span class="s1">&#39;bind_textdomain_codeset&#39;</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nb">bind_textdomain_codeset</span><span class="p">(</span><span class="nv">$lang_file</span><span class="p">,</span> <span class="nv">$lang_encode</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nb">textdomain</span><span class="p">(</span><span class="nv">$lang_file</span><span class="p">);</span>
-<span class="cp">?&gt;</span>
-</pre></div>
-
-
-<p>Puis faites le test en affichant dans un fichier php le texte "hello" :</p>
-<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="c1">// on inclus la config…</span>
-<span class="k">include_once</span><span class="p">(</span><span class="s1">&#39;config.php&#39;</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nx">_</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>
-<span class="cp">?&gt;</span>
-</pre></div>
-
-
-<p>Pour générer un fichier .mo a partir d'un fichier .po :</p>
-<div class="highlight"><pre><span></span>msgfmt domaine.po -o domaine.mo
-</pre></div>
-
-
-<p>Pour générer un fichier .po a partir de fichier php avec du gettext,
-faire un fichier texte avec tous vos fichiers php ou on doit récupérer
-le gettext.</p>
-<p>Exemple listing_gettext.txt tel que :</p>
-<div class="highlight"><pre><span></span>index.php
-contact.php
-etc…
-</pre></div>
-
-
-<p>Ensuite il faut faire la commande suivante pour générer le fichier
-domaine.po dans le dossier lang/ depuis notre fichier texte avec les php :</p>
-<div class="highlight"><pre><span></span>find . -iname &quot;*.php&quot; | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
-</pre></div>
-
-
-<p>Pour finir voilà le path des fichiers .po et .mo dans mon application
-web :</p>
-<div class="highlight"><pre><span></span>lang/fr_FR/LC_MESSAGES/domaine.po
-lang/fr_FR/LC_MESSAGES/domaine.mo
-lang/en_GB/LC_MESSAGES/domaine.po
-lang/en_GB/LC_MESSAGES/domaine.mo
-</pre></div>
-
-
-<p>N'oubliez pas de redémarrer votre serveur web pour que les changements
-soient pris en compte.</p>
-<p>Mise à jour le 30 Novembre 2015 par
-<a href="http://www.github.com/doogaille">doogaille</a>.</p>
   </div>
 </article>
 

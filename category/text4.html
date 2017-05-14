@@ -54,6 +54,35 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html">Création d'une clé usb xubuntu sur mac</a></h2>
+    <p>
+      Posté le mar. 04 mars 2014 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/cle-usb.html">clé usb</a>,      <a href="//www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="//www.choiz.fr/tag/mac.html">mac</a>,      <a href="//www.choiz.fr/tag/terminal.html">terminal</a>,      <a href="//www.choiz.fr/tag/ubuntu.html">ubuntu</a>    </p>
+  </header>
+  <div>
+      <p>Dans le terminal sur votre mac :</p>
+<div class="highlight"><pre><span></span>diskutil list
+</pre></div>
+
+
+<p>Qui permet de lister vos disque dur / clés usb etc…</p>
+<p>ici ma clé usb est disk2. :</p>
+<div class="highlight"><pre><span></span>/dev/disk2
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *8.1 GB     disk2
+   1:                      Linux                         4.0 GB     disk2s1
+   2:                 Linux_Swap                         4.1 GB     disk2s5
+</pre></div>
+
+
+<p>Démontez la …</p>
+      <a class="btn" href="//www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2014-02-06-git-cherry-pick.html">git cherry-pick</a></h2>
     <p>
       Posté le jeu. 06 février 2014 &#8226;
@@ -245,24 +274,6 @@ Tags :
 <span class="nt">Server</span><span class="o">:</span> <span class="nt">nginx</span>
 <span class="nt">Date</span><span class="o">:</span> <span class="nt">Sun</span><span class="o">,</span> <span class="nt">29</span> <span class="nt">Sep …</span></pre></div>
       <a class="btn" href="//www.choiz.fr/2013-09-29-connaitre-le-code-réponse-http-avec-curl.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2013-07-16-passer-de-svn-à-git.html">Passer de svn à git</a></h2>
-    <p>
-      Posté le mar. 16 juillet 2013 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/svn-to-git.html">svn to git</a>,      <a href="//www.choiz.fr/tag/svn.html">svn</a>,      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/migate.html">migate</a>,      <a href="//www.choiz.fr/tag/git-svn-clone.html">git svn clone</a>,      <a href="//www.choiz.fr/tag/authors.html">authors</a>,      <a href="//www.choiz.fr/tag/tags.html">tags</a>    </p>
-  </header>
-  <div>
-      <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec
-svn. Il est temps de faire la migration de svn à git !</p>
-<p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
-voulais voici donc ma procédure :</p>
-<div class="highlight"><pre><span></span>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep &quot;^r …</pre></div>
-      <a class="btn" href="//www.choiz.fr/2013-07-16-passer-de-svn-à-git.html">Lire la suite</a>
   </div>
 </article>
 

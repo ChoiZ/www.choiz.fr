@@ -54,6 +54,28 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2011-12-04-php-gettext-debian.html">PHP + Gettext + Debian</a></h2>
+    <p>
+      Posté le dim. 04 décembre 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/mo.html">.mo</a>,      <a href="//www.choiz.fr/tag/po.html">.po</a>,      <a href="//www.choiz.fr/tag/etclocale.html">/etc/locale</a>,      <a href="//www.choiz.fr/tag/lc_all.html">LC\_ALL</a>,      <a href="//www.choiz.fr/tag/gettext.html">gettext</a>,      <a href="//www.choiz.fr/tag/php.html">php</a>,      <a href="//www.choiz.fr/tag/php-gettext.html">php-gettext</a>,      <a href="//www.choiz.fr/tag/setlocale.html">setlocale</a>,      <a href="//www.choiz.fr/tag/xgettext.html">xgettext</a>    </p>
+  </header>
+  <div>
+      <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
+en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext
+sur votre site en php il faut télécharger le package php-gettext :</p>
+<div class="highlight"><pre><span></span>apt-get install php-gettext
+</pre></div>
+
+
+<p>Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
+commentaires devant les …</p>
+      <a class="btn" href="//www.choiz.fr/2011-12-04-php-gettext-debian.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html">Clavier Apple sur debian</a></h2>
     <p>
       Posté le ven. 02 décembre 2011 &#8226;
@@ -241,32 +263,6 @@ donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?</p>
 <p>Maintenant lors du prochain démarrage de votre VirtualBox vous devez
 avoir la …</p>
       <a class="btn" href="//www.choiz.fr/2011-09-02-import-vm-avec-virtualbox.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-08-17-partage-samba.html">Partage Samba !</a></h2>
-    <p>
-      Posté le mer. 17 août 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/linux.html">Linux</a>,      <a href="//www.choiz.fr/tag/samba.html">Samba</a>,      <a href="//www.choiz.fr/tag/config.html">config</a>,      <a href="//www.choiz.fr/tag/configuration.html">configuration</a>,      <a href="//www.choiz.fr/tag/partage.html">Partage</a>,      <a href="//www.choiz.fr/tag/sharing.html">Sharing</a>    </p>
-  </header>
-  <div>
-      <p>Configuration d'un serveur samba. Editer le fichier de configuration
-/etc/samba/smb.conf Voici le contenu de mon fichier de configuration :</p>
-<div class="highlight"><pre><span></span>| ### Global ###
-| [global]
-| ## Identification ##
-| workgroup = WORKGROUP
-| netbios name = %h
-| server string = Serveur samba %h
-| security = user
-| public = yes
-| ## Log ##
-| log file = /var/log/samba/log.%m
-| max log size = 1000 …</pre></div>
-      <a class="btn" href="//www.choiz.fr/2011-08-17-partage-samba.html">Lire la suite</a>
   </div>
 </article>
 

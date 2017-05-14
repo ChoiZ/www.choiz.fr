@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ - choiz</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/choiz.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2016-07-30T10:28:18+02:00</updated><entry><title>Convertir un .deb en archive .tar.gz</title><link href="//www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html" rel="alternate"></link><published>2016-07-30T10:28:18+02:00</published><updated>2016-07-30T10:28:18+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2016-07-30:/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html</id><summary type="html">&lt;p&gt;En voulant installer le logiciel "slack" sur ma machine gentoo au travail j'ai
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ - choiz</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/choiz.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-05-14T21:47:35+02:00</updated><entry><title>Docker commandes utiles</title><link href="//www.choiz.fr/2017-05-14-docker-commandes-utiles.html" rel="alternate"></link><published>2017-05-14T21:47:35+02:00</published><updated>2017-05-14T21:47:35+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-05-14:/2017-05-14-docker-commandes-utiles.html</id><summary type="html">&lt;p&gt;Voici quelques commandes très utiles si vous utilisez docker.&lt;/p&gt;
+&lt;p&gt;Supprimer tous les containers qui sont arétés :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker ps -q | xargs docker rm
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Supprimer toutes les images non utilisées :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker images -q | xargs docker rmi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Se connecter a un conteneur docker lancé par son id :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker exec -it id_de_votre_container /bin/bash …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Voici quelques commandes très utiles si vous utilisez docker.&lt;/p&gt;
+&lt;p&gt;Supprimer tous les containers qui sont arétés :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker ps -q | xargs docker rm
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Supprimer toutes les images non utilisées :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker images -q | xargs docker rmi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Se connecter a un conteneur docker lancé par son id :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker exec -it id_de_votre_container /bin/bash
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Se connecter a un conteneur docker lancé par son nom :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker exec -it nom_de_votre_container /bin/bash
+&lt;/pre&gt;&lt;/div&gt;</content><category term="docker"></category><category term="linux"></category><category term="container"></category></entry><entry><title>Convertir un .deb en archive .tar.gz</title><link href="//www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html" rel="alternate"></link><published>2016-07-30T10:28:18+02:00</published><updated>2016-07-30T10:28:18+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2016-07-30:/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html</id><summary type="html">&lt;p&gt;En voulant installer le logiciel "slack" sur ma machine gentoo au travail j'ai
 trouvé un logiciel plutôt intéressant nommé "deb2targz".&lt;/p&gt;
 &lt;p&gt;En effet &lt;a href="https://slack.com/downloads"&gt;slack&lt;/a&gt; ne dispose que des archives ubuntu
 en 32 bits, 64 bits et fedora en 64 bits.&lt;/p&gt;

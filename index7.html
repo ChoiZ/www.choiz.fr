@@ -54,6 +54,111 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2011-12-04-php-gettext-debian.html">PHP + Gettext + Debian</a></h2>
+    <p>
+      Posté le dim. 04 décembre 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/mo.html">.mo</a>,      <a href="//www.choiz.fr/tag/po.html">.po</a>,      <a href="//www.choiz.fr/tag/etclocale.html">/etc/locale</a>,      <a href="//www.choiz.fr/tag/lc_all.html">LC\_ALL</a>,      <a href="//www.choiz.fr/tag/gettext.html">gettext</a>,      <a href="//www.choiz.fr/tag/php.html">php</a>,      <a href="//www.choiz.fr/tag/php-gettext.html">php-gettext</a>,      <a href="//www.choiz.fr/tag/setlocale.html">setlocale</a>,      <a href="//www.choiz.fr/tag/xgettext.html">xgettext</a>    </p>
+  </header>
+  <div>
+      <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
+en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext
+sur votre site en php il faut télécharger le package php-gettext :</p>
+<div class="highlight"><pre><span></span>apt-get install php-gettext
+</pre></div>
+
+
+<p>Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
+commentaires devant les langues qui vont sont à traduire par exemple :
+Allemand, Anglais, Espagnol, Français &amp; Suédois :</p>
+<div class="highlight"><pre><span></span>de_DE.UTF-8 UTF-8
+en_GB.UTF-8 UTF-8
+es_ES.UTF-8 UTF-8
+fr_FR.UTF-8 UTF-8
+sv_SE.UTF-8 UTF-8
+</pre></div>
+
+
+<p>Puis regénérer les locales :</p>
+<div class="highlight"><pre><span></span>locale-gen
+</pre></div>
+
+
+<p>Ensuite il faut définir votre chemin pour les traductions par exemple :</p>
+<div class="highlight"><pre><span></span>lang/fr_FR/LC_MESSAGES/domaine.mo
+</pre></div>
+
+
+<p>Puis dans votre fichier php de configuration :</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="c1">// configuration de la langue</span>
+<span class="nv">$lang</span> <span class="o">=</span> <span class="s1">&#39;fr_FR&#39;</span><span class="p">;</span> <span class="c1">// Langue a afficher</span>
+<span class="nv">$lang_encode</span> <span class="o">=</span> <span class="s1">&#39;utf8&#39;</span><span class="p">;</span> <span class="c1">// Encodage du fichier</span>
+<span class="nv">$lang_path</span> <span class="o">=</span> <span class="s1">&#39;./lang&#39;</span><span class="p">;</span> <span class="c1">// Chemin des fichiers de langue</span>
+<span class="nv">$lang_file</span> <span class="o">=</span> <span class="s1">&#39;domaine&#39;</span><span class="p">;</span> <span class="c1">// Nom du fichier de langue</span>
+
+<span class="nb">putenv</span><span class="p">(</span><span class="s1">&#39;LANG=&#39;</span><span class="o">.</span><span class="nv">$lang</span><span class="o">.</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="nv">$lang_encode</span><span class="p">);</span>
+<span class="nb">putenv</span><span class="p">(</span><span class="s1">&#39;LANGUAGE=&#39;</span><span class="o">.</span><span class="nv">$lang</span><span class="o">.</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="nv">$lang_encode</span><span class="p">);</span>
+<span class="nb">setlocale</span><span class="p">(</span><span class="nx">LC_MESSAGES</span><span class="p">,</span> <span class="nv">$lang</span><span class="o">.</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="nv">$lang_encode</span><span class="p">);</span>
+<span class="nb">bindtextdomain</span><span class="p">(</span><span class="nv">$lang_file</span><span class="p">,</span> <span class="nv">$lang_path</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">function_exists</span><span class="p">(</span><span class="s1">&#39;bind_textdomain_codeset&#39;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nb">bind_textdomain_codeset</span><span class="p">(</span><span class="nv">$lang_file</span><span class="p">,</span> <span class="nv">$lang_encode</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nb">textdomain</span><span class="p">(</span><span class="nv">$lang_file</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+
+
+<p>Puis faites le test en affichant dans un fichier php le texte "hello" :</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="c1">// on inclus la config…</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">&#39;config.php&#39;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nx">_</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</pre></div>
+
+
+<p>Pour générer un fichier .mo a partir d'un fichier .po :</p>
+<div class="highlight"><pre><span></span>msgfmt domaine.po -o domaine.mo
+</pre></div>
+
+
+<p>Pour générer un fichier .po a partir de fichier php avec du gettext,
+faire un fichier texte avec tous vos fichiers php ou on doit récupérer
+le gettext.</p>
+<p>Exemple listing_gettext.txt tel que :</p>
+<div class="highlight"><pre><span></span>index.php
+contact.php
+etc…
+</pre></div>
+
+
+<p>Ensuite il faut faire la commande suivante pour générer le fichier
+domaine.po dans le dossier lang/ depuis notre fichier texte avec les php :</p>
+<div class="highlight"><pre><span></span>find . -iname &quot;*.php&quot; | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
+</pre></div>
+
+
+<p>Pour finir voilà le path des fichiers .po et .mo dans mon application
+web :</p>
+<div class="highlight"><pre><span></span>lang/fr_FR/LC_MESSAGES/domaine.po
+lang/fr_FR/LC_MESSAGES/domaine.mo
+lang/en_GB/LC_MESSAGES/domaine.po
+lang/en_GB/LC_MESSAGES/domaine.mo
+</pre></div>
+
+
+<p>N'oubliez pas de redémarrer votre serveur web pour que les changements
+soient pris en compte.</p>
+<p>Mise à jour le 30 Novembre 2015 par
+<a href="http://www.github.com/doogaille">doogaille</a>.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html">Clavier Apple sur debian</a></h2>
     <p>
       Posté le ven. 02 décembre 2011 &#8226;
@@ -294,62 +399,6 @@ donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?</p>
 
 <p>Maintenant lors du prochain démarrage de votre VirtualBox vous devez
 avoir la machine virtuelle importée !</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-08-17-partage-samba.html">Partage Samba !</a></h2>
-    <p>
-      Posté le mer. 17 août 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/linux.html">Linux</a>,      <a href="//www.choiz.fr/tag/samba.html">Samba</a>,      <a href="//www.choiz.fr/tag/config.html">config</a>,      <a href="//www.choiz.fr/tag/configuration.html">configuration</a>,      <a href="//www.choiz.fr/tag/partage.html">Partage</a>,      <a href="//www.choiz.fr/tag/sharing.html">Sharing</a>    </p>
-  </header>
-  <div>
-      <p>Configuration d'un serveur samba. Editer le fichier de configuration
-/etc/samba/smb.conf Voici le contenu de mon fichier de configuration :</p>
-<div class="highlight"><pre><span></span>| ### Global ###
-| [global]
-| ## Identification ##
-| workgroup = WORKGROUP
-| netbios name = %h
-| server string = Serveur samba %h
-| security = user
-| public = yes
-| ## Log ##
-| log file = /var/log/samba/log.%m
-| max log size = 1000
-| ## Auth ##
-| encrypt passwords = true
-| smb passwd file = /etc/samba/smbpasswd
-| ### Share ###
-| [choiz]
-| path = /home/choiz/samba
-| read only = no
-| writeable = yes
-| valid users = choiz
-| comment = partage de choiz
-| [partagereadonly]
-| path = /home/partageread
-| read only = yes
-| writeable = no
-| valid users = choiz, @group
-| comment = partage en lecture pour choiz et le groupe &quot;group&quot;
-</pre></div>
-
-
-<p>Maintenant il faut créer notre utilisateur "choiz" grâce à :</p>
-<div class="highlight"><pre><span></span>smbpasswd -a choiz
-</pre></div>
-
-
-<p>Pour les groupes samba utilise les groupes unix. A vous de voir si vous
-voulez gérer votre partage samba utilisateur par utilisateur ou
-directement avec des groupes.</p>
-<p>N'oubliez pas de redémarrer le service Samba avant de tester depuis
-votre client le partage de fichiers ! :</p>
-<div class="highlight"><pre><span></span>/etc/init.d/samba restart
-</pre></div>
   </div>
 </article>
 

@@ -54,6 +54,32 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2017-05-14-docker-commandes-utiles.html">Docker commandes utiles</a></h2>
+    <p>
+      Posté le dim. 14 mai 2017 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/docker.html">docker</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>,      <a href="//www.choiz.fr/tag/container.html">container</a>    </p>
+  </header>
+  <div>
+      <p>Voici quelques commandes très utiles si vous utilisez docker.</p>
+<p>Supprimer tous les containers qui sont arétés :</p>
+<div class="highlight"><pre><span></span>docker ps -q | xargs docker rm
+</pre></div>
+
+
+<p>Supprimer toutes les images non utilisées :</p>
+<div class="highlight"><pre><span></span>docker images -q | xargs docker rmi
+</pre></div>
+
+
+<p>Se connecter a un conteneur docker lancé par son id :</p>
+<div class="highlight"><pre><span></span>docker exec -it id_de_votre_container /bin/bash …</pre></div>
+      <a class="btn" href="//www.choiz.fr/2017-05-14-docker-commandes-utiles.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html">Convertir un .deb en archive .tar.gz</a></h2>
     <p>
       Posté le sam. 30 juillet 2016 &#8226;
@@ -237,38 +263,6 @@ Tags :
 également les différents flags (N = new (not yet installed), U =
 updating (to another version …</p>
       <a class="btn" href="//www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">Compilation Kernel Gentoo</a></h2>
-    <p>
-      Posté le dim. 06 septembre 2015 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/compilation.html">compilation</a>,      <a href="//www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>    </p>
-  </header>
-  <div>
-      <p>Pour compiler le kernel sous gentoo :</p>
-<div class="highlight"><pre><span></span>cd /usr/src/linux
-
-make menuconfig
-
-make &amp;&amp; make modules_install
-
-make install
-</pre></div>
-
-
-<p>Le kernel est maintenant compilé.</p>
-<p>Maintenant il faut mettre à jour grub. :</p>
-<div class="highlight"><pre><span></span>grub2-mkconfig -o /boot/grub/grub.cfg
-</pre></div>
-
-
-<p>Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi
-que le nombre de …</p>
-      <a class="btn" href="//www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">Lire la suite</a>
   </div>
 </article>
 

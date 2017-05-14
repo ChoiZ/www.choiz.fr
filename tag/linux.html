@@ -54,6 +54,32 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2017-05-14-docker-commandes-utiles.html">Docker commandes utiles</a></h2>
+    <p>
+      Posté le dim. 14 mai 2017 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/docker.html">docker</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>,      <a href="//www.choiz.fr/tag/container.html">container</a>    </p>
+  </header>
+  <div>
+      <p>Voici quelques commandes très utiles si vous utilisez docker.</p>
+<p>Supprimer tous les containers qui sont arétés :</p>
+<div class="highlight"><pre><span></span>docker ps -q | xargs docker rm
+</pre></div>
+
+
+<p>Supprimer toutes les images non utilisées :</p>
+<div class="highlight"><pre><span></span>docker images -q | xargs docker rmi
+</pre></div>
+
+
+<p>Se connecter a un conteneur docker lancé par son id :</p>
+<div class="highlight"><pre><span></span>docker exec -it id_de_votre_container /bin/bash …</pre></div>
+      <a class="btn" href="//www.choiz.fr/2017-05-14-docker-commandes-utiles.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html">Convertir un .deb en archive .tar.gz</a></h2>
     <p>
       Posté le sam. 30 juillet 2016 &#8226;

@@ -20,7 +20,7 @@
 <meta property="og:locale" content="fr_FR"/>
 <meta property="og:url" content="//www.choiz.fr"/>
 <meta property="og:image" content="/avatar.png">
-  <title>ChoiZ &ndash; Categories</title>
+  <title>ChoiZ &ndash; Tag : docker</title>
 </head>
 <body>
   <aside>
@@ -54,14 +54,32 @@
 
 <article>
   <header>
-    <h1>Categories</h1>
+    <h2><a href="//www.choiz.fr/2017-05-14-docker-commandes-utiles.html">Docker commandes utiles</a></h2>
+    <p>
+      Posté le dim. 14 mai 2017 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/docker.html">docker</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>,      <a href="//www.choiz.fr/tag/container.html">container</a>    </p>
   </header>
   <div>
-    <ul class="list">
-      <li><a href="//www.choiz.fr/category/text.html">text</a> (87)</li>
-    </ul>
+      <p>Voici quelques commandes très utiles si vous utilisez docker.</p>
+<p>Supprimer tous les containers qui sont arétés :</p>
+<div class="highlight"><pre><span></span>docker ps -q | xargs docker rm
+</pre></div>
+
+
+<p>Supprimer toutes les images non utilisées :</p>
+<div class="highlight"><pre><span></span>docker images -q | xargs docker rmi
+</pre></div>
+
+
+<p>Se connecter a un conteneur docker lancé par son id :</p>
+<div class="highlight"><pre><span></span>docker exec -it id_de_votre_container /bin/bash …</pre></div>
+      <a class="btn" href="//www.choiz.fr/2017-05-14-docker-commandes-utiles.html">Lire la suite</a>
   </div>
 </article>
+
+  <div class="pagination">
+  </div>
 
     <footer>
       <p>&copy; François LASSERRE </p>
@@ -82,5 +100,14 @@
   })();
 </script>
 <noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code --></body>
+<!-- End Piwik Code --><script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " ChoiZ ",
+  "url" : "//www.choiz.fr",
+  "image": "/avatar.png",
+  "description": ""
+}
+</script></body>
 </html>
