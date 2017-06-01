@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="//www.choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="//www.choiz.fr/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -52,6 +52,40 @@
   </aside>
   <main>
 
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html">Mettre à jour Gentoo</a></h2>
+    <p>
+      Posté le dim. 27 septembre 2015 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/update.html">update</a>,      <a href="//www.choiz.fr/tag/mise-a-jour.html">mise à jour</a>,      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="//www.choiz.fr/tag/eix.html">eix</a>,      <a href="//www.choiz.fr/tag/emerge.html">emerge</a>    </p>
+  </header>
+  <div>
+      <p>Pour mettre à jour Gentoo j'utilise différentes commandes.</p>
+<p>Dans un premier temps je fais la mise à jour d'eix :</p>
+<div class="highlight"><pre><span></span>eix-sync
+</pre></div>
+
+
+<p>Ensuite :</p>
+<div class="highlight"><pre><span></span>emerge -pvuDN world
+</pre></div>
+
+
+<p>-p ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche
+également les différents flags (N = new (not yet installed), U =
+updating (to another version) etc…) -v ou --verbose, mode verbeux. -u ou
+--update, met à jour les programmes dans la meilleur version disponible.
+-D ou --deep, met à jour les dépendances des programmes si nécessaire.
+-N ou --newuse, met à jour les programmes dont le "USE" a été modifié
+depuis son installation.</p>
+<p>Une fois la liste des programmes et ses modifications vérifiée nous
+pouvons lancer la mise à jour :</p>
+<div class="highlight"><pre><span></span>emerge -vuDN world
+</pre></div>
+  </div>
+  <hr />
+</article>
 <article>
   <header>
     <h2><a href="//www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">Compilation Kernel Gentoo</a></h2>
@@ -400,43 +434,6 @@ Build Analog Device HD-audio codec support
 
 <p>Exemple :</p>
 <div class="highlight"><pre><span></span>git show reset_password:/templates/reset_password.tmpl
-</pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html">Initialiser des sous-modules en cascade dans git</a></h2>
-    <p>
-      Posté le dim. 25 janvier 2015 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/submodule.html">submodule</a>,      <a href="//www.choiz.fr/tag/update.html">update</a>,      <a href="//www.choiz.fr/tag/init.html">init</a>,      <a href="//www.choiz.fr/tag/recursive.html">recursive</a>    </p>
-  </header>
-  <div>
-      <p>Pour initialiser les sous-modules dans git j'utilise la commande
-suivante :</p>
-<div class="highlight"><pre><span></span>git submodule init
-</pre></div>
-
-
-<p>Ensuite je dois faire un update des sous-modules pour charger le contenu :</p>
-<div class="highlight"><pre><span></span>git submodule update
-</pre></div>
-
-
-<p>Pour faire les deux en même temps (init + update) vous pouvez faire :</p>
-<div class="highlight"><pre><span></span>git submodule update --init
-</pre></div>
-
-
-<p>Imaginons maintenant que vous avez des sous-modules dans d'autres
-sous-modules. Exemple dans mon dépot
-<a href="https://www.github.com/ChoiZ/dotfiles.git">dotfiles</a> j'ai mon dépot
-<a href="https://www.github.com/ChoiZ/vim-config.git">vim</a> et dedans des
-sous-modules avec les plugins de vim. Pour initialiser, mettre à jour et
-le tout en cascade (dans tous les dossiers et sous-dossiers) il faut
-faire :</p>
-<div class="highlight"><pre><span></span>git submodule update --init --recursive
 </pre></div>
   </div>
 </article>

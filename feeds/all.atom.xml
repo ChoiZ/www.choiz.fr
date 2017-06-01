@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-05-14T21:47:35+02:00</updated><entry><title>Docker commandes utiles</title><link href="//www.choiz.fr/2017-05-14-docker-commandes-utiles.html" rel="alternate"></link><published>2017-05-14T21:47:35+02:00</published><updated>2017-05-14T21:47:35+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-05-14:/2017-05-14-docker-commandes-utiles.html</id><summary type="html">&lt;p&gt;Voici quelques commandes très utiles si vous utilisez docker.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-06-01T21:29:24+02:00</updated><entry><title>Utiliser un Bastion SSH</title><link href="//www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html" rel="alternate"></link><published>2017-06-01T21:29:24+02:00</published><updated>2017-06-01T21:29:24+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-06-01:/2017-06-01-utiliser-un-bastion-ssh.html</id><summary type="html">&lt;p&gt;Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
+trouve dans &lt;em&gt;~/.ssh/config&lt;/em&gt; et d'ajouter les deux lignes suivantes :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Host destination.local
+    ProxyCommand ssh user@bastion.fr -W %h:%p
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;C'est tout.&lt;/p&gt;
+&lt;p&gt;Explications : on utilise l'host &lt;em&gt;bastion.fr&lt;/em&gt; pour se connecter à
+&lt;em&gt;destination.local&lt;/em&gt;. Quand …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
+trouve dans &lt;em&gt;~/.ssh/config&lt;/em&gt; et d'ajouter les deux lignes suivantes :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Host destination.local
+    ProxyCommand ssh user@bastion.fr -W %h:%p
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;C'est tout.&lt;/p&gt;
+&lt;p&gt;Explications : on utilise l'host &lt;em&gt;bastion.fr&lt;/em&gt; pour se connecter à
+&lt;em&gt;destination.local&lt;/em&gt;. Quand je tape sur ma machine local &lt;em&gt;ssh
+choiz@destination.local&lt;/em&gt; mon client SSH lit le fichier de configuration, se
+connecte à l'host &lt;em&gt;bastion.fr&lt;/em&gt; avec l'utilisateur &lt;em&gt;user&lt;/em&gt; puis fait une nouvelle
+connexion vers ma destination.&lt;/p&gt;
+&lt;p&gt;Vous pouvez modifier votre configuration ssh pour se connecter à votre bastion
+avec une clé spécifique puis a votre destination avec une autre clé par exemple
+ou avec des utilisateurs différents…&lt;/p&gt;
+&lt;p&gt;Exemple :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Host bastion.fr
+    User toto
+    IdentifyFile ~/.ssh/bastion
+
+Host destination.local
+    User tata
+    IdentifyFile ~/.ssh/destination
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Enjoy vincent.m ;-)&lt;/p&gt;</content><category term="SSH"></category><category term="Bastion"></category><category term="linux"></category><category term="unix"></category><category term="tunnel"></category></entry><entry><title>Docker commandes utiles</title><link href="//www.choiz.fr/2017-05-14-docker-commandes-utiles.html" rel="alternate"></link><published>2017-05-14T21:47:35+02:00</published><updated>2017-05-14T21:47:35+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-05-14:/2017-05-14-docker-commandes-utiles.html</id><summary type="html">&lt;p&gt;Voici quelques commandes très utiles si vous utilisez docker.&lt;/p&gt;
 &lt;p&gt;Supprimer tous les containers qui sont arétés :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker ps -q | xargs docker rm
 &lt;/pre&gt;&lt;/div&gt;

@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="//www.choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="//www.choiz.fr/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -52,6 +52,29 @@
   </aside>
   <main>
 
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html">Utiliser un Bastion SSH</a></h2>
+    <p>
+      Posté le jeu. 01 juin 2017 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/ssh.html">SSH</a>,      <a href="//www.choiz.fr/tag/bastion.html">Bastion</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>,      <a href="//www.choiz.fr/tag/unix.html">unix</a>,      <a href="//www.choiz.fr/tag/tunnel.html">tunnel</a>    </p>
+  </header>
+  <div>
+      <p>Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
+trouve dans <em>~/.ssh/config</em> et d'ajouter les deux lignes suivantes :</p>
+<div class="highlight"><pre><span></span>Host destination.local
+    ProxyCommand ssh user@bastion.fr -W %h:%p
+</pre></div>
+
+
+<p>C'est tout.</p>
+<p>Explications : on utilise l'host <em>bastion.fr</em> pour se connecter à
+<em>destination.local</em>. Quand …</p>
+      <a class="btn" href="//www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
 <article>
   <header>
     <h2><a href="//www.choiz.fr/2017-05-14-docker-commandes-utiles.html">Docker commandes utiles</a></h2>

@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="//www.choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="//www.choiz.fr/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -52,6 +52,29 @@
   </aside>
   <main>
 
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html">Créer paire de clé pour se connecter en SSH</a></h2>
+    <p>
+      Posté le ven. 13 janvier 2012 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/cle-publique.html">clé publique</a>,      <a href="//www.choiz.fr/tag/cle-privee.html">clé privée</a>,      <a href="//www.choiz.fr/tag/connexion-ssh.html">connexion ssh</a>,      <a href="//www.choiz.fr/tag/authorized_keys.html">authorized\_keys</a>,      <a href="//www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="//www.choiz.fr/tag/ssh.html">.ssh</a>    </p>
+  </header>
+  <div>
+      <p>On commence par ouvrir un terminal puis on tape :</p>
+<div class="highlight"><pre><span></span>ssh-keygen -t rsa -b 1024
+
+Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
+</pre></div>
+
+
+<p>En général je garde le fichier id_rsa donc je tape "enter" sinon vous
+pouvez spécifier un autre chemin ainsi qu'un autre fichier. :</p>
+<div class="highlight"><pre><span></span>Enter passphrase …</pre></div>
+      <a class="btn" href="//www.choiz.fr/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
 <article>
   <header>
     <h2><a href="//www.choiz.fr/2011-12-04-php-gettext-debian.html">PHP + Gettext + Debian</a></h2>
@@ -241,28 +264,6 @@ Tags :
 <p>Redémarrez Safari et maintenant vous pouvez inspecter les éléments de
 vos pages web.</p>
       <a class="btn" href="//www.choiz.fr/2011-09-05-développement-web-avec-safari.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-09-02-import-vm-avec-virtualbox.html">Import VM avec Virtualbox</a></h2>
-    <p>
-      Posté le ven. 02 septembre 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/virtualbox.html">VirtualBox</a>,      <a href="//www.choiz.fr/tag/import.html">Import</a>,      <a href="//www.choiz.fr/tag/virtualmachine.html">VirtualMachine</a>,      <a href="//www.choiz.fr/tag/virtual.html">Virtual</a>,      <a href="//www.choiz.fr/tag/machine.html">Machine</a>,      <a href="//www.choiz.fr/tag/ova.html">Ova</a>,      <a href="//www.choiz.fr/tag/vboxmanage.html">VBoxManage</a>    </p>
-  </header>
-  <div>
-      <p>J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
-donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?</p>
-<p>Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper :</p>
-<div class="highlight"><pre><span></span><span class="n">VBoxManage</span> <span class="kn">import</span> <span class="nn">votrefichier.ova</span>
-</pre></div>
-
-
-<p>Maintenant lors du prochain démarrage de votre VirtualBox vous devez
-avoir la …</p>
-      <a class="btn" href="//www.choiz.fr/2011-09-02-import-vm-avec-virtualbox.html">Lire la suite</a>
   </div>
 </article>
 

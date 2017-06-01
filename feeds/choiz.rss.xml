@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>ChoiZ - choiz</title><link>//www.choiz.fr/</link><description>Je suis ingénieur informatique, je travail en tant que Dev Ops chez &lt;a href="//www.manomano.fr"&gt;ManoMano&lt;/a&gt;. J'aime le développement, le streaming, l'Internet…&lt;br&gt;&lt;br&gt;Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.</description><lastBuildDate>Sun, 14 May 2017 21:47:35 +0200</lastBuildDate><item><title>Docker commandes utiles</title><link>//www.choiz.fr/2017-05-14-docker-commandes-utiles.html</link><description>&lt;p&gt;Voici quelques commandes très utiles si vous utilisez docker.&lt;/p&gt;
+<rss version="2.0"><channel><title>ChoiZ - choiz</title><link>//www.choiz.fr/</link><description>Je suis ingénieur informatique, je travail en tant que Dev Ops chez &lt;a href="//www.manomano.fr"&gt;ManoMano&lt;/a&gt;. J'aime le développement, le streaming, l'Internet…&lt;br&gt;&lt;br&gt;Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.</description><lastBuildDate>Thu, 01 Jun 2017 21:29:24 +0200</lastBuildDate><item><title>Utiliser un Bastion SSH</title><link>//www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html</link><description>&lt;p&gt;Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
+trouve dans &lt;em&gt;~/.ssh/config&lt;/em&gt; et d'ajouter les deux lignes suivantes :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Host destination.local
+    ProxyCommand ssh user@bastion.fr -W %h:%p
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;C'est tout.&lt;/p&gt;
+&lt;p&gt;Explications : on utilise l'host &lt;em&gt;bastion.fr&lt;/em&gt; pour se connecter à
+&lt;em&gt;destination.local&lt;/em&gt;. Quand …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 01 Jun 2017 21:29:24 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-06-01:/2017-06-01-utiliser-un-bastion-ssh.html</guid><category>SSH</category><category>Bastion</category><category>linux</category><category>unix</category><category>tunnel</category></item><item><title>Docker commandes utiles</title><link>//www.choiz.fr/2017-05-14-docker-commandes-utiles.html</link><description>&lt;p&gt;Voici quelques commandes très utiles si vous utilisez docker.&lt;/p&gt;
 &lt;p&gt;Supprimer tous les containers qui sont arétés :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker ps -q | xargs docker rm
 &lt;/pre&gt;&lt;/div&gt;
