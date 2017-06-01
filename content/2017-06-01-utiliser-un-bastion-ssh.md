@@ -7,7 +7,7 @@ Slug: 2017-06-01-utiliser-un-bastion-ssh
 Status: published
 
 Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
-trouve dans `~/.ssh/config` et d'ajouter les deux lignes suivantes :
+trouve dans *~/.ssh/config* et d'ajouter les deux lignes suivantes :
 
 ```
 Host destination.local
@@ -16,10 +16,10 @@ Host destination.local
 
 C'est tout.
 
-Explications : on utilise l'host `bastion.fr` pour se connecter à
-`destination.local`. Quand je tape sur ma machine local `ssh
-choiz@destination.local` mon client SSH lit le fichier de configuration, se
-connecte à l'host `bastion.fr` avec l'utilisateur `user` puis fait une nouvelle
+Explications : on utilise l'host *bastion.fr* pour se connecter à
+*destination.local*. Quand je tape sur ma machine local *ssh
+choiz@destination.local* mon client SSH lit le fichier de configuration, se
+connecte à l'host *bastion.fr* avec l'utilisateur *user* puis fait une nouvelle
 connexion vers ma destination.
 
 Vous pouvez modifier votre configuration ssh pour se connecter à votre bastion
