@@ -11,16 +11,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
-  <meta name="author" content="François LASSERRE" />
-  <meta name="description" content="" />
+<meta name="author" content="choiz" />
+<meta name="description" content="Si vous n'avez plus de clé publique, mais que vous avez toujours votre clé privée vous pouvez regénérer votre clé publique. Pour se faire il faut utiliser la commande ssh-keygen avec l'option -y et -f pour désigner la clé privé. ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub On utilise …" />
+<meta name="keywords" content="id_rsa, rsa, pub, key, ssh">
 <meta property="og:site_name" content="ChoiZ"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="ChoiZ"/>
-<meta property="og:description" content=""/>
-<meta property="og:locale" content="fr_FR"/>
-<meta property="og:url" content="//www.choiz.fr"/>
-<meta property="og:image" content="/avatar.png">
-  <title>ChoiZ &ndash; Categories</title>
+<meta property="og:title" content="Re-générer une clé rsa publique"/>
+<meta property="og:description" content="Si vous n'avez plus de clé publique, mais que vous avez toujours votre clé privée vous pouvez regénérer votre clé publique. Pour se faire il faut utiliser la commande ssh-keygen avec l'option -y et -f pour désigner la clé privé. ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub On utilise …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="//www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-06-05 15:03:08+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="//www.choiz.fr/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="id_rsa"/>
+<meta property="article:tag" content="rsa"/>
+<meta property="article:tag" content="pub"/>
+<meta property="article:tag" content="key"/>
+<meta property="article:tag" content="ssh"/>
+<meta property="og:image" content="/avatar.png">  <title>ChoiZ &ndash; Re-générer une clé rsa publique</title>
 </head>
 <body>
   <aside>
@@ -54,12 +63,24 @@
 
 <article>
   <header>
-    <h1>Categories</h1>
+    <h1 id="2017-06-05-re-generer-une-cle-rsa-publique">Re-générer une clé rsa publique</h1>
+    <p>Posté le lun. 05 juin 2017</p>
   </header>
   <div>
-    <ul class="list">
-      <li><a href="//www.choiz.fr/category/text.html">text</a> (89)</li>
-    </ul>
+    <p>Si vous n'avez plus de clé publique, mais que vous avez toujours votre clé privée vous pouvez regénérer votre clé
+publique.</p>
+<p>Pour se faire il faut utiliser la commande <em>ssh-keygen</em> avec l'option <em>-y</em> et <em>-f</em> pour désigner la clé privé.</p>
+<p><code>ssh-keygen -y -f ~/.ssh/id_rsa &gt; ~/.ssh/id_rsa.pub</code></p>
+<p>On utilise ci-dessus l'id_rsa (privée) pour générer l'id_rsa.pub.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="//www.choiz.fr/tag/id_rsa.html">id_rsa</a>
+      <a href="//www.choiz.fr/tag/rsa.html">rsa</a>
+      <a href="//www.choiz.fr/tag/pub.html">pub</a>
+      <a href="//www.choiz.fr/tag/key.html">key</a>
+      <a href="//www.choiz.fr/tag/ssh.html">ssh</a>
+    </p>
   </div>
 </article>
 
@@ -82,5 +103,22 @@
   })();
 </script>
 <noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code --></body>
+<!-- End Piwik Code --><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Re-générer une clé rsa publique",
+  "headline": "Re-générer une clé rsa publique",
+  "datePublished": "2017-06-05 15:03:08+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "//www.choiz.fr/author/choiz.html"
+  },
+  "image": "/avatar.png",
+  "url": "//www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html",
+  "description": "Si vous n'avez plus de clé publique, mais que vous avez toujours votre clé privée vous pouvez regénérer votre clé publique. Pour se faire il faut utiliser la commande ssh-keygen avec l'option -y et -f pour désigner la clé privé. ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub On utilise …"
+}
+</script></body>
 </html>
