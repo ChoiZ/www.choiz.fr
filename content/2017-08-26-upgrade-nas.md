@@ -25,11 +25,11 @@ Et j'avais ce qu'il fallait pour le SATA et l'alimentation.
 Ce qui m'a permis de mettre un disque 2"½ au niveau de l'emplacement CDROM du HP
 Microserver.
 
-J'ai du tué mon uptime d'un an (depuis mon dernier déménagemet) :
+J'ai du tué mon uptime d'un an (depuis mon dernier déménagement) :
 
 ```
-    12:31:37 choiz@wayland ~  #❯❯❯ uptime
-    12:31:37 up 366 days,  1:08,  1 user,  load average: 0,16, 0,22, 0,24
+12:31:37 choiz@wayland ~  #❯❯❯ uptime
+12:31:37 up 366 days,  1:08,  1 user,  load average: 0,16, 0,22, 0,24
 ```
 
 Pour la réinstallation j'ai monté un [serveur PXE sur
