@@ -29,13 +29,13 @@
 <meta property="article:tag" content="click"/>
 <meta property="article:tag" content="javascript"/>
 <meta property="article:tag" content="html"/>
-<meta property="og:image" content="/avatar.png">  <title>ChoiZ &ndash; Elément cliqué en js</title>
+<meta property="og:image" content="">  <title>ChoiZ &ndash; Elément cliqué en js</title>
 </head>
 <body>
   <aside>
     <div>
       <a href="//www.choiz.fr">
-        <img src="/avatar.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
+        <img src="//www.choiz.fr/theme/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
       </a>
       <div>
           <a href="//www.choiz.fr">Blog technique de François LASSERRE</a>
@@ -122,7 +122,7 @@ document.onclick=checkclick;
     "name": "choiz",
     "url": "//www.choiz.fr/author/choiz.html"
   },
-  "image": "/avatar.png",
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "//www.choiz.fr/2011-06-30-elément-cliqué-en-js.html",
   "description": "Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript : function checkclick(e) { e = e || window.event; var o = e.target || e.srcElement; console.log(o); } document.onclick=checkclick; Pratique pour faire du débug."
 }

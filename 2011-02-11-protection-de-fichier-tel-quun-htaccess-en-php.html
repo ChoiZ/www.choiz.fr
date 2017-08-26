@@ -31,13 +31,13 @@
 <meta property="article:tag" content="fichier"/>
 <meta property="article:tag" content="authenticate"/>
 <meta property="article:tag" content="auth"/>
-<meta property="og:image" content="/avatar.png">  <title>ChoiZ &ndash; Protection de fichier tel qu'un htaccess en PHP</title>
+<meta property="og:image" content="">  <title>ChoiZ &ndash; Protection de fichier tel qu'un htaccess en PHP</title>
 </head>
 <body>
   <aside>
     <div>
       <a href="//www.choiz.fr">
-        <img src="/avatar.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
+        <img src="//www.choiz.fr/theme/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
       </a>
       <div>
           <a href="//www.choiz.fr">Blog technique de François LASSERRE</a>
@@ -128,7 +128,7 @@
     "name": "choiz",
     "url": "//www.choiz.fr/author/choiz.html"
   },
-  "image": "/avatar.png",
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "//www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html",
   "description": "Faire un système de protection (tel que htaccess) direct dans un fichier PHP : <?php if (!empty($_SERVER["PHP_AUTH_USER"]) && $_SERVER["PHP_AUTH_USER"] == "login" && $_SERVER["PHP_AUTH_PW"] == "password") { // code protégé ici } else { header('WWW-Authenticate: Basic realm="Restricted area"'); header('HTTP/1.0 401 Unauthorized'); exit('Access Denied'); } ?>"
 }

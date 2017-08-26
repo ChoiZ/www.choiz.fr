@@ -31,13 +31,13 @@
 <meta property="article:tag" content="ENCODING"/>
 <meta property="article:tag" content="CHARSET"/>
 <meta property="article:tag" content="mysqldump"/>
-<meta property="og:image" content="/avatar.png">  <title>ChoiZ &ndash; Latin1 &lt;-&gt; UTF-8</title>
+<meta property="og:image" content="">  <title>ChoiZ &ndash; Latin1 &lt;-&gt; UTF-8</title>
 </head>
 <body>
   <aside>
     <div>
       <a href="//www.choiz.fr">
-        <img src="/avatar.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
+        <img src="//www.choiz.fr/theme/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
       </a>
       <div>
           <a href="//www.choiz.fr">Blog technique de François LASSERRE</a>
@@ -171,7 +171,7 @@ pour le dernier tips.</p>
     "name": "choiz",
     "url": "//www.choiz.fr/author/choiz.html"
   },
-  "image": "/avatar.png",
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "//www.choiz.fr/2013-05-29-latin1-utf-8.html",
   "description": "Voilà une solution simple pour convertir une base de donnée en Latin1 vers de l'UTF-8. Utiliser mysqldump avec les options suivantes : --default-character-set=utf8 et : --skip-set-charset Voilà la commande complète : mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset > base_table.sql Ensuite en utilisant vim je fais un rechercher / remplacer des …"
 }

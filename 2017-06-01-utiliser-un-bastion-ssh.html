@@ -29,13 +29,13 @@
 <meta property="article:tag" content="linux"/>
 <meta property="article:tag" content="unix"/>
 <meta property="article:tag" content="tunnel"/>
-<meta property="og:image" content="/avatar.png">  <title>ChoiZ &ndash; Utiliser un Bastion SSH</title>
+<meta property="og:image" content="">  <title>ChoiZ &ndash; Utiliser un Bastion SSH</title>
 </head>
 <body>
   <aside>
     <div>
       <a href="//www.choiz.fr">
-        <img src="/avatar.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
+        <img src="//www.choiz.fr/theme/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
       </a>
       <div>
           <a href="//www.choiz.fr">Blog technique de François LASSERRE</a>
@@ -139,7 +139,7 @@ Host destination.local
     "name": "choiz",
     "url": "//www.choiz.fr/author/choiz.html"
   },
-  "image": "/avatar.png",
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "//www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html",
   "description": "Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se trouve dans ~/.ssh/config et d'ajouter les deux lignes suivantes : Host destination.local ProxyCommand ssh user@bastion.fr -W %h:%p C'est tout. Explications : on utilise l'host bastion.fr pour se connecter à destination.local. Quand …"
 }
