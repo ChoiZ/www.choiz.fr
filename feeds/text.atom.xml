@@ -49,7 +49,7 @@ rechercher la ligne avec :&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;if (data.status !== 'Active') {&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;remplacer par :&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;if (false /*data.status !== 'Active'*/) {&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Puis relancer pveproxy avec la commande &lt;code&gt;pveproxy restart&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Puis relancer pveproxy avec la commande &lt;code&gt;pveproxy restart&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Se déconnecter de l'interface proxmox, à la reconnection vous n'aurez plus le
 message de souscription.&lt;/p&gt;</content><category term="Proxmox"></category><category term="Debian"></category><category term="Stretch"></category></entry><entry><title>Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</title><link href="//www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html" rel="alternate"></link><published>2017-08-26T17:00:56+02:00</published><updated>2017-08-26T17:00:56+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</id><summary type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
 &lt;p&gt;En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
