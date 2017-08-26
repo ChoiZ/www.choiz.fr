@@ -9,7 +9,7 @@ SITETITLE = u'Blog technique de François LASSERRE'
 SITESUBTITLE = 'Je suis ingénieur informatique, je travail en tant que Dev Ops chez <a href="//www.manomano.fr">ManoMano</a>. J\'aime le développement, le streaming, l\'Internet…<br><br>Depuis l\'an 2000, j\'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.'
 SITELOGO = u'/avatar.png'
 
-FAVICON = SITEURL + '/favicon.ico'
+FAVICON = 'favicon.ico'
 ROBOTS = 'index, follow'
 
 # top menu
@@ -53,11 +53,15 @@ DEFAULT_PAGINATION = 10
 
 STATIC_PATHS = [
     'extra/avatar.png',
-    'extra/README',
+    'extra/robots.txt',
+    'extra/favicon.ico',
+    'extra/README'
     ]
 
 EXTRA_PATH_METADATA = {
     'extra/avatar.png': {'path': 'avatar.png'},
+    'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/favicon.ico': {'path': 'favicon.ico'},
     'extra/README': {'path': 'README.md'},
     }
 
