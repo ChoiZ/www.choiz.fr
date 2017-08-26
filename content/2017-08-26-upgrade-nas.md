@@ -83,7 +83,7 @@ Redémarrer le DHCP pour que la config soit prise en compte.
 # systemctl restart isc-dhcp-server
 ```
 
-Maintenant nous téléchargeons la derniere version de debian pour la mettre sur
+Maintenant nous téléchargeons la dernière version de debian pour la mettre sur
 notre TFTP :
 
 ```
