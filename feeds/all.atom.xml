@@ -15,9 +15,9 @@ un disque Seagate ST500LM030 en 2"½ de 500Go.&lt;/p&gt;
 &lt;p&gt;Et j'avais ce qu'il fallait pour le SATA et l'alimentation.&lt;/p&gt;
 &lt;p&gt;Ce qui m'a permis de mettre un disque 2"½ au niveau de l'emplacement CDROM du HP
 Microserver.&lt;/p&gt;
-&lt;p&gt;J'ai du tué mon uptime d'un an (depuis mon dernier déménagemet) :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    12:31:37 choiz@wayland ~  #❯❯❯ uptime
-    12:31:37 up 366 days,  1:08,  1 user,  load average: 0,16, 0,22, 0,24
+&lt;p&gt;J'ai du tué mon uptime d'un an (depuis mon dernier déménagement) :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;37&lt;/span&gt; &lt;span class="n"&gt;choiz&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;wayland&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt;  &lt;span class="err"&gt;#❯❯❯&lt;/span&gt; &lt;span class="n"&gt;uptime&lt;/span&gt;
+&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;37&lt;/span&gt; &lt;span class="n"&gt;up&lt;/span&gt; &lt;span class="mi"&gt;366&lt;/span&gt; &lt;span class="n"&gt;days&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;  &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;08&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;  &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;  &lt;span class="n"&gt;load&lt;/span&gt; &lt;span class="n"&gt;average&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
