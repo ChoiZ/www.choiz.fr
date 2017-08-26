@@ -13,7 +13,7 @@ Mon objectif est l'ajout d'un disque car j'ai 4 emplacements pour le stockage et
 je n'utilisais que 3 de ses 4 emplacements.
 
 Pour commencer il me fallait un rack 5"¼ permettant de mettre un disque 3"½ ou
-2"½, je l'ai trouvé sur [http://www.ldlc.com/fiche/PB00157318.html](LCLC) c'est
+2"½, je l'ai trouvé sur [LDLC](http://www.ldlc.com/fiche/PB00157318.html) c'est
 un "ICY BOX IB-129SSK-B".
 
 Ensuite j'ai pris sur
