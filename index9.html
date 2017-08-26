@@ -53,6 +53,91 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2011-05-30-patch-diff.html">Patch & diff</a></h2>
+    <p>
+      Posté le lun. 30 mai 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/patch.html">Patch</a>,      <a href="//www.choiz.fr/tag/commande.html">Commande</a>,      <a href="//www.choiz.fr/tag/terminal.html">Terminal</a>,      <a href="//www.choiz.fr/tag/diff.html">Diff</a>,      <a href="//www.choiz.fr/tag/version.html">Version</a>    </p>
+  </header>
+  <div>
+      <p>Patch permet de "patcher" un fichier, dossier, projet ! Pratique lorsque
+vous distribuez du code et que vous voulez le mettre à jour. Comment
+l'utiliser ? Dans un premier temps nous allons faire un différentiel de
+notre version actuelle du projet et de la nouvelle version (celle
+patchée). :</p>
+<div class="highlight"><pre><span></span><span class="gh">diff -u version1.php version2.php &gt; mon_patch</span>
+</pre></div>
+
+
+<p>Notre fichier de patch est "mon_patch" si vous ouvrez celui-ci vous
+aurez le différentiel entre les deux fichier. Comment le lire ? Les
+lignes avec des + devant sont les nouvelles lignes celles avec des -
+sont celles a supprimer. Ce n'est pas plus difficile que ça ! Maintenant
+j'applique mon patch sur mon fichier version1.php grâce à la commande
+suivante :</p>
+<div class="highlight"><pre><span></span>patch -p0 &lt; mon_patch
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html">Split & Vsplit dans vim</a></h2>
+    <p>
+      Posté le dim. 29 mai 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/vim.html">vim</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/editeur.html">editeur</a>,      <a href="//www.choiz.fr/tag/texte.html">texte</a>,      <a href="//www.choiz.fr/tag/terminal.html">terminal</a>,      <a href="//www.choiz.fr/tag/commande.html">commande</a>,      <a href="//www.choiz.fr/tag/split.html">split</a>,      <a href="//www.choiz.fr/tag/vsplit.html">vsplit</a>,      <a href="//www.choiz.fr/tag/window.html">window</a>,      <a href="//www.choiz.fr/tag/colonnes.html">colonnes</a>,      <a href="//www.choiz.fr/tag/cols.html">cols</a>,      <a href="//www.choiz.fr/tag/columns.html">columns</a>    </p>
+  </header>
+  <div>
+      <p>Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
+pouvoir ouvrir plusieurs fichiers en même temps.</p>
+<p>Pour celà il utilises 2 méthodes soit :</p>
+<ol>
+<li>la division de la fenêtre horizontal en utilisant :<div class="highlight"><pre><span></span>:split
+</pre></div>
+
+
+</li>
+</ol>
+<p>ou :</p>
+<div class="highlight"><pre><span></span>:new
+</pre></div>
+
+
+<p>et ensuite :</p>
+<div class="highlight"><pre><span></span>:e le_fichier_a_ouvrir
+</pre></div>
+
+
+<ol>
+<li>la division de la fenêtre verticalement en utilisant :<div class="highlight"><pre><span></span>:vsplit
+</pre></div>
+
+
+</li>
+</ol>
+<p>puis :</p>
+<div class="highlight"><pre><span></span>:e le_fichier_a_ouvrir
+</pre></div>
+
+
+<p>Et comme lors de l'utilisation du diff (CTRL + W puis W) pour changer de
+fenêtre (gauche à droite ou droite à gauche ou haut en bas ou bas en
+haut) ou bien en utilisant (CTRL + W puis une fléche directionnelle).</p>
+<p>Pour agrandir ou réduire la fenêtre courante utiliser CTRL + W (puis
+&gt; si vous êtes sur votre fenêtre de droite pour ajouter une colonne,
+si vous êtes sur la fenêtre de gauche ceci supprimera une colonne et vis
+versa avec &lt;) vous pouvez également ajouter / supprimer 5 ou 10
+colonnes avec :</p>
+<div class="highlight"><pre><span></span>5&gt;
+
+10&gt;
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2011-05-19-différences-entre-des-fichiers-avec-vim.html">Différences entre des fichiers avec Vim</a></h2>
     <p>
       Posté le jeu. 19 mai 2011 &#8226;
@@ -284,57 +369,12 @@ notre fichier index.php je veux ajouter les 4 keywords précédents grâce
 <span class="p">$</span><span class="nv">URL</span><span class="x">: svn://svn.choiz.fr/projet/branches/prod/index.php </span><span class="p">$</span><span class="x"></span>
 </pre></div>
   </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2010-09-15-impression-de-commandes-entre-balise-pre.html">Impression de commandes entre balise &lt;pre&gt;</a></h2>
-    <p>
-      Posté le mer. 15 septembre 2010 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/balise.html">Balise</a>,      <a href="//www.choiz.fr/tag/hml.html">hml</a>,      <a href="//www.choiz.fr/tag/balise-pre.html">Balise Pre</a>,      <a href="//www.choiz.fr/tag/pre.html">Pre</a>,      <a href="//www.choiz.fr/tag/print.html">Print</a>,      <a href="//www.choiz.fr/tag/impression.html">Impression</a>,      <a href="//www.choiz.fr/tag/css.html">CSS</a>    </p>
-  </header>
-  <div>
-      <p>J'ai toujours eu pas mal de soucis lors d'impression de différentes
-documentations…</p>
-<p>J'utilise souvent la balise &lt;pre&gt; pour les lignes de commandes et
-il n'y a pas de retour à la ligne fait automatiquement pour cela un
-petit css permet de faire les retours à la ligne lorsque la page est
-trop grande. :</p>
-<div class="highlight"><pre><span></span><span class="nt">pre</span> <span class="p">{</span>
-    <span class="nb">white-space</span><span class="o">:</span> <span class="n">pre</span><span class="o">-</span><span class="n">wrap</span><span class="p">;</span>
-    <span class="n">word</span><span class="o">-</span><span class="n">wrap</span><span class="o">:</span> <span class="n">break</span><span class="o">-</span><span class="n">word</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html">Limiter la bande passante sous Mac Os X</a></h2>
-    <p>
-      Posté le lun. 12 juillet 2010 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/limit-brandwith.html">Limit Brandwith</a>,      <a href="//www.choiz.fr/tag/limitation-bande-passante.html">Limitation Bande Passante</a>,      <a href="//www.choiz.fr/tag/mac-os.html">Mac Os</a>,      <a href="//www.choiz.fr/tag/mac-os-x.html">Mac Os X</a>,      <a href="//www.choiz.fr/tag/tuyau.html">Tuyau</a>,      <a href="//www.choiz.fr/tag/tuyau-virtuel.html">Tuyau Virtuel</a>,      <a href="//www.choiz.fr/tag/limit-brandwidth.html">Limit Brandwidth</a>    </p>
-  </header>
-  <div>
-      <p>Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
-virtuel en console.</p>
-<p>Ici on créer un tuyau virtuel de 1Mbit/s.</p>
-<p><code>sudo ipfw pipe 1 config bw 1Mbit/s</code></p>
-<p>On applique ce tuyau au port 80 (pour le téléchargement de fichier via
-un navigateur par exemple).</p>
-<p><code>sudo ipfw add 1 pipe 1 proto tcp src-port 80</code></p>
-<p>Pour voir le tuyau :</p>
-<p><code>sudo ipfw pipe show</code></p>
-<p>Pour supprimer la règle du port 80 :</p>
-<p><code>sudo ipfw del 1</code></p>
-<p>Pour supprimer le tuyau :</p>
-<p><code>sudo ipfw pipe 1 delete</code></p>
-  </div>
 </article>
 
   <div class="pagination">
+    <a class="btn" href="//www.choiz.fr/index10.html">
+      <i class="fa fa-angle-left"></i> Anciens articles
+    </a>
       <a class="btn float-right" href="//www.choiz.fr/index8.html">
         Nouveaux articles <i class="fa fa-angle-right"></i>
       </a>

@@ -53,6 +53,88 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html">Chmod 755 sur les dossiers et 644 sur les fichiers</a></h2>
+    <p>
+      Posté le mar. 12 novembre 2013 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/chmod.html">chmod</a>,      <a href="//www.choiz.fr/tag/755.html">755</a>,      <a href="//www.choiz.fr/tag/644.html">644</a>,      <a href="//www.choiz.fr/tag/folder.html">folder</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/folders.html">folders</a>,      <a href="//www.choiz.fr/tag/files.html">files</a>,      <a href="//www.choiz.fr/tag/pwd.html">pwd</a>,      <a href="//www.choiz.fr/tag/find.html">find</a>    </p>
+  </header>
+  <div>
+      <p>C'est toujours la galère lorsque l'on veut que tout soit propre au
+niveau des permissions des dossiers / fichiers.</p>
+<p>Souvent la première chose que l'on fait : on va dans chaque dossier et
+on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
+dossiers ça va mais quand on en a 40… on utilise une autre technique !</p>
+<p>J'utilise pour les dossiers :</p>
+<div class="highlight"><pre><span></span>$ find <span class="se">\`</span>pwd<span class="se">\`</span> -type d -exec chmod <span class="m">755</span> <span class="o">{}</span> <span class="se">\\</span><span class="p">;</span>
+</pre></div>
+
+
+<p>et pour les fichiers :</p>
+<div class="highlight"><pre><span></span>$ find <span class="se">\`</span>pwd<span class="se">\`</span> -type f -exec chmod <span class="m">644</span> <span class="o">{}</span> <span class="se">\\</span><span class="p">;</span>
+</pre></div>
+
+
+<p>Avec `pwd` je vais partir du dossier actuel et remplacer tous les
+droits des fichiers et dossiers enfants. Vous pouvez remplacer par un
+autre chemin par exemple :</p>
+<div class="highlight"><pre><span></span>find /home/choiz/ -type d -exec chmod 755 {} \\;
+
+find /home/choiz/ -type f -exec chmod 644 {} \\;
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2013-11-03-icônes-favicon-apple-touch-icon.html">Icônes / Favicon / Apple-touch-icon</a></h2>
+    <p>
+      Posté le dim. 03 novembre 2013 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/cli.html">cli</a>,      <a href="//www.choiz.fr/tag/imagemagick.html">imagemagick</a>,      <a href="//www.choiz.fr/tag/android.html">android</a>,      <a href="//www.choiz.fr/tag/ios.html">ios</a>,      <a href="//www.choiz.fr/tag/apple.html">apple</a>,      <a href="//www.choiz.fr/tag/icons.html">icons</a>,      <a href="//www.choiz.fr/tag/icon.html">icon</a>,      <a href="//www.choiz.fr/tag/favicon.html">favicon</a>,      <a href="//www.choiz.fr/tag/apple-touch-icon.html">apple-touch-icon</a>,      <a href="//www.choiz.fr/tag/precomposed.html">precomposed</a>,      <a href="//www.choiz.fr/tag/html.html">html</a>    </p>
+  </header>
+  <div>
+      <p>Voici comment faire facilement sa favicon et ses icônes pour les
+appareils mobiles avec image magick.</p>
+<p>Mon icône de base est en 512x512px au format png avec prise en charge de
+la transparence "icon512.png".</p>
+<p>Je veux faire une favicon en 16x16px, 32x32px 48x48px et 64x64px le tout
+dans un seul fichier favicon.ico. :</p>
+<div class="highlight"><pre><span></span>convert icon512.png \
+    -bordercolor white -border 0 \
+    \( -clone 0 -resize 16x16 \) \
+    \( -clone 0 -resize 32x32 \) \
+    \( -clone 0 -resize 48x48 \) \
+    \( -clone 0 -resize 64x64 \) \
+    -delete 0 -alpha off favicon.ico
+</pre></div>
+
+
+<p>Ensuite je veux faire mes icônes pour les appareils mobiles : Android,
+Apple etc… :</p>
+<div class="highlight"><pre><span></span>convert icon512.png -resize x60 touch-icon-iphone.png
+convert icon512.png -resize x76 touch-icon-ipad.png
+convert icon512.png -resize x120 touch-icon-iphone-retina.png
+convert icon512.png -resize x152 touch-icon-ipad-retina.png
+</pre></div>
+
+
+<p>Maintenant il faut ajouter dans notre page html entre les balises head :</p>
+<div class="highlight"><pre><span></span>&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;touch-icon-iphone.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;76x76&quot; href=&quot;touch-icon-ipad.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;120x120&quot; href=&quot;touch-icon-iphone-retina.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;152x152&quot; href=&quot;touch-icon-ipad-retina.png&quot;&gt;
+</pre></div>
+
+
+<p>A noter les appareils Android utilisent aussi les images
+"apple-touch-icon".</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html">Installer jshint sur mac</a></h2>
     <p>
       Posté le lun. 14 octobre 2013 &#8226;
@@ -441,101 +523,6 @@ fois <a href="http://">http://</a>…</p>
 <p>Modifier la valeur par :</p>
 <div class="highlight"><pre><span></span>false
 </pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2013-05-29-latin1-utf-8.html">Latin1 &lt;-&gt; UTF-8</a></h2>
-    <p>
-      Posté le mer. 29 mai 2013 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/php.html">PHP</a>,      <a href="//www.choiz.fr/tag/latin1.html">LATIN1</a>,      <a href="//www.choiz.fr/tag/utf-8.html">UTF-8</a>,      <a href="//www.choiz.fr/tag/mysql.html">MYSQL</a>,      <a href="//www.choiz.fr/tag/encoding.html">ENCODING</a>,      <a href="//www.choiz.fr/tag/charset.html">CHARSET</a>,      <a href="//www.choiz.fr/tag/mysqldump.html">mysqldump</a>    </p>
-  </header>
-  <div>
-      <p>Voilà une solution simple pour convertir une base de donnée en Latin1
-vers de l'UTF-8.</p>
-<p>Utiliser mysqldump avec les options suivantes :</p>
-<div class="highlight"><pre><span></span>--default-character-set=utf8
-</pre></div>
-
-
-<p>et :</p>
-<div class="highlight"><pre><span></span>--skip-set-charset
-</pre></div>
-
-
-<p>Voilà la commande complète :</p>
-<div class="highlight"><pre><span></span>mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
-</pre></div>
-
-
-<p>Ensuite en utilisant vim je fais un rechercher / remplacer des
-différents latin1 en utf-8. :</p>
-<div class="highlight"><pre><span></span>vim dump_base_table.sql
-</pre></div>
-
-
-<p>Et en mode commande :</p>
-<div class="highlight"><pre><span></span>:%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/
-</pre></div>
-
-
-<p>et :</p>
-<div class="highlight"><pre><span></span>:%s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/
-</pre></div>
-
-
-<p>on enregistre et quitte le fichier avec :wq (ou sinon avec ZZ).</p>
-<p>Maintenant on réimporte la table grâce à mysql :</p>
-<div class="highlight"><pre><span></span>mysql -u user -p base &lt; dump_base_table.sql
-</pre></div>
-
-
-<p>il reste a vérifier si les champs sont bien en UTF-8.</p>
-<p>Ici une table « table » avec une colonne « col » on ajoute un caractère
-accentué. :</p>
-<div class="highlight"><pre><span></span>INSERT INTO table VALUES(&quot;é&quot;);
-</pre></div>
-
-
-<p>Maintenant on regarde la taille de la colonne :</p>
-<div class="highlight"><pre><span></span>SELECT `col`, length(`col`) FROM `table`;
-</pre></div>
-
-
-<p>Si la taille = 1 le caractère est enregistré en latin1… si c'est 2 c'est
-bien de l'UTF-8 car sauvé sur 2 octets.</p>
-<p>Merci à <a href="http://agopian.info/blog/mysql-mysqldump-et-php-convertir-de-latin1-vers-utf8.html">Mathieu
-Agopian</a>
-pour le dernier tips.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html">TypeMatrix sous Mac Os X</a></h2>
-    <p>
-      Posté le lun. 04 mars 2013 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/typematrix.html">TypeMatrix</a>,      <a href="//www.choiz.fr/tag/2030.html">2030</a>,      <a href="//www.choiz.fr/tag/usb.html">USB</a>,      <a href="//www.choiz.fr/tag/mac.html">mac</a>,      <a href="//www.choiz.fr/tag/cut.html">cut</a>,      <a href="//www.choiz.fr/tag/copy.html">copy</a>,      <a href="//www.choiz.fr/tag/paste.html">paste</a>,      <a href="//www.choiz.fr/tag/couper.html">couper</a>,      <a href="//www.choiz.fr/tag/copier.html">copier</a>,      <a href="//www.choiz.fr/tag/coller.html">coller</a>    </p>
-  </header>
-  <div>
-      <p>J'ai chez moi comme au travail un clavier TypeMatrix 2030 USB.</p>
-<p>Sur mac il faut <a href="http://download.tuxfamily.org/dvorak/macosx/fr-dvorak-bepo-macosx-1.0rc2.dmg">télécharger le
-pilote</a>,
-puis copier le fichier fr-dvorak-bepo.bundle dans le dossier
-/Bibliothèque/Keyboard Layouts/</p>
-<p>Note : si vous installez le pilote dans le dossier de votre utilisateur
-(~/Bibliothèque/Keyboard Layouts/) vous ne pourrez pas utiliser le
-mappage à l'ouverture de session…</p>
-<p>Pour utiliser les touches couper, copier,coller, j'utilise
-<a href="http://pqrs.org/macosx/keyremap4macbook/">keyremap4macbook</a> (qui
-fonctionne aussi sur iMac etc…). L'installer puis redémarrer. Dans les
-préférences dans l'onglet "change key" recherchez "Use PC Style
-Copy/Paste #3bis" et sélectionnez l'option proposée.</p>
-<p>Vous pouvez maintenant utiliser votre TypeMatrix en Bépo sur Mac Os X
-avec la prise en charge des touches couper, copier et coller.</p>
   </div>
 </article>
 

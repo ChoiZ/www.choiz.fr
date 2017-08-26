@@ -53,6 +53,101 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2013-05-29-latin1-utf-8.html">Latin1 &lt;-&gt; UTF-8</a></h2>
+    <p>
+      Posté le mer. 29 mai 2013 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/php.html">PHP</a>,      <a href="//www.choiz.fr/tag/latin1.html">LATIN1</a>,      <a href="//www.choiz.fr/tag/utf-8.html">UTF-8</a>,      <a href="//www.choiz.fr/tag/mysql.html">MYSQL</a>,      <a href="//www.choiz.fr/tag/encoding.html">ENCODING</a>,      <a href="//www.choiz.fr/tag/charset.html">CHARSET</a>,      <a href="//www.choiz.fr/tag/mysqldump.html">mysqldump</a>    </p>
+  </header>
+  <div>
+      <p>Voilà une solution simple pour convertir une base de donnée en Latin1
+vers de l'UTF-8.</p>
+<p>Utiliser mysqldump avec les options suivantes :</p>
+<div class="highlight"><pre><span></span>--default-character-set=utf8
+</pre></div>
+
+
+<p>et :</p>
+<div class="highlight"><pre><span></span>--skip-set-charset
+</pre></div>
+
+
+<p>Voilà la commande complète :</p>
+<div class="highlight"><pre><span></span>mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
+</pre></div>
+
+
+<p>Ensuite en utilisant vim je fais un rechercher / remplacer des
+différents latin1 en utf-8. :</p>
+<div class="highlight"><pre><span></span>vim dump_base_table.sql
+</pre></div>
+
+
+<p>Et en mode commande :</p>
+<div class="highlight"><pre><span></span>:%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/
+</pre></div>
+
+
+<p>et :</p>
+<div class="highlight"><pre><span></span>:%s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/
+</pre></div>
+
+
+<p>on enregistre et quitte le fichier avec :wq (ou sinon avec ZZ).</p>
+<p>Maintenant on réimporte la table grâce à mysql :</p>
+<div class="highlight"><pre><span></span>mysql -u user -p base &lt; dump_base_table.sql
+</pre></div>
+
+
+<p>il reste a vérifier si les champs sont bien en UTF-8.</p>
+<p>Ici une table « table » avec une colonne « col » on ajoute un caractère
+accentué. :</p>
+<div class="highlight"><pre><span></span>INSERT INTO table VALUES(&quot;é&quot;);
+</pre></div>
+
+
+<p>Maintenant on regarde la taille de la colonne :</p>
+<div class="highlight"><pre><span></span>SELECT `col`, length(`col`) FROM `table`;
+</pre></div>
+
+
+<p>Si la taille = 1 le caractère est enregistré en latin1… si c'est 2 c'est
+bien de l'UTF-8 car sauvé sur 2 octets.</p>
+<p>Merci à <a href="http://agopian.info/blog/mysql-mysqldump-et-php-convertir-de-latin1-vers-utf8.html">Mathieu
+Agopian</a>
+pour le dernier tips.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html">TypeMatrix sous Mac Os X</a></h2>
+    <p>
+      Posté le lun. 04 mars 2013 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/typematrix.html">TypeMatrix</a>,      <a href="//www.choiz.fr/tag/2030.html">2030</a>,      <a href="//www.choiz.fr/tag/usb.html">USB</a>,      <a href="//www.choiz.fr/tag/mac.html">mac</a>,      <a href="//www.choiz.fr/tag/cut.html">cut</a>,      <a href="//www.choiz.fr/tag/copy.html">copy</a>,      <a href="//www.choiz.fr/tag/paste.html">paste</a>,      <a href="//www.choiz.fr/tag/couper.html">couper</a>,      <a href="//www.choiz.fr/tag/copier.html">copier</a>,      <a href="//www.choiz.fr/tag/coller.html">coller</a>    </p>
+  </header>
+  <div>
+      <p>J'ai chez moi comme au travail un clavier TypeMatrix 2030 USB.</p>
+<p>Sur mac il faut <a href="http://download.tuxfamily.org/dvorak/macosx/fr-dvorak-bepo-macosx-1.0rc2.dmg">télécharger le
+pilote</a>,
+puis copier le fichier fr-dvorak-bepo.bundle dans le dossier
+/Bibliothèque/Keyboard Layouts/</p>
+<p>Note : si vous installez le pilote dans le dossier de votre utilisateur
+(~/Bibliothèque/Keyboard Layouts/) vous ne pourrez pas utiliser le
+mappage à l'ouverture de session…</p>
+<p>Pour utiliser les touches couper, copier,coller, j'utilise
+<a href="http://pqrs.org/macosx/keyremap4macbook/">keyremap4macbook</a> (qui
+fonctionne aussi sur iMac etc…). L'installer puis redémarrer. Dans les
+préférences dans l'onglet "change key" recherchez "Use PC Style
+Copy/Paste #3bis" et sélectionnez l'option proposée.</p>
+<p>Vous pouvez maintenant utiliser votre TypeMatrix en Bépo sur Mac Os X
+avec la prise en charge des touches couper, copier et coller.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html">Logiciels de gestion de versions (Svn, Git, Mercurial)</a></h2>
     <p>
       Posté le mar. 12 février 2013 &#8226;
@@ -356,156 +451,6 @@ Tags :
 
 
 <p>Je note car c'est toujours bon à savoir :)</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html">Utilisation des branches et de git stash</a></h2>
-    <p>
-      Posté le sam. 14 avril 2012 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="//www.choiz.fr/tag/git-stash-pop.html">git stash pop</a>,      <a href="//www.choiz.fr/tag/git-stash-list.html">git stash list</a>,      <a href="//www.choiz.fr/tag/git-branch.html">git branch</a>,      <a href="//www.choiz.fr/tag/git-checkout.html">git checkout</a>    </p>
-  </header>
-  <div>
-      <p>Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
-sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc
-git stash, voyons voir comment l'utiliser simplement.</p>
-<p>On regarde l'état du status et des branches :</p>
-<div class="highlight"><pre><span></span>git status
-# On branch master
-nothing to commit (working directory clean)
-
-$ git branch
-* master
-</pre></div>
-
-
-<p>Je travail sur la branche master et je n'ai pas d'autre branche. Je vais
-donc faire une branche API pour mon projet. :</p>
-<div class="highlight"><pre><span></span>git branch API
-
-git branch
-  API
-  * master
-</pre></div>
-
-
-<p>Maintenant je vais changer de branche git checkout pour être sur ma
-branche API et modifier les fichiers sur cette branche. :</p>
-<div class="highlight"><pre><span></span>git checkout API
-Switched to branch &#39;API&#39;
-
-git branch
-* API
-  master
-</pre></div>
-
-
-<p>Maintenant je vais modifier un mon fichier manage.py sur ma branche API.
-:</p>
-<div class="highlight"><pre><span></span>git status
-# On branch API
-# Changes not staged for commit:
-#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-#
-#    modified:   manage.py
-#
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</pre></div>
-
-
-<p>Si je veux revenir sur mon master, sans avoir la modification du
-manage.py je vais devoir utiliser git stash (qui sauvegardera mes
-modifications du manage.py) :</p>
-<div class="highlight"><pre><span></span>git stash
-Saved working directory and index state WIP on API: 8b6342d Fix register.py
-HEAD is now at 8b6342d Fix register.py
-
-$ git status
-# On branch API
-nothing to commit (working directory clean)
-</pre></div>
-
-
-<p>Maintenant que notre branche est propre on peut changer de branche
-revenir sur le master par exemple. :</p>
-<div class="highlight"><pre><span></span>$ git checkout master
-Switched to branch <span class="s1">&#39;master&#39;</span>
-
-$ git status
-<span class="c1"># On branch master</span>
-nothing to commit <span class="o">(</span>working directory clean<span class="o">)</span>
-</pre></div>
-
-
-<p>On peut donc travailler tranquillement sur la branche master. Puis
-revenir sur notre branche API, lister les stash git stash list récupérer
-les modifications précédentes git stash pop. :</p>
-<div class="highlight"><pre><span></span>git checkout API
-Switched to branch &#39;API&#39;
-
-git stash list
-stash@{0}: WIP on API: 8b6342d Fix register.py
-
-git stash pop
-# On branch API
-# Changes not staged for commit:
-#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-#
-#    modified:   manage.py
-#
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-Dropped refs/stash@{0} (533906a52b923a8960fa0f6fdf17a288c94f233a)
-
-$ git status
-# On branch API
-# Changes not staged for commit:
-#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-#
-#    modified:   manage.py
-#
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</pre></div>
-
-
-<p>Maintenant je peux continuer les modifications sur ma branche API
-réutilise git stash si besoin ou les commiter, merger ma branche…</p>
-<p>git stash pop (récupére le dernier stash enregistré
-<a href="mailto:stash@{0}">stash@{0}</a>, l'applique et le supprime de la liste)
-mon alias = git stapp</p>
-<p>git stash apply (récupére le dernier stash enregistré
-<a href="mailto:stash@{0">stash@{0</a>} et l'applique)</p>
-<p>Et pour rien n'oublier (RTFM) : man git stash</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html">Renomer des fichiers en CLI (ligne de commande)</a></h2>
-    <p>
-      Posté le sam. 14 avril 2012 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/cli.html">CLI</a>,      <a href="//www.choiz.fr/tag/rename.html">rename</a>,      <a href="//www.choiz.fr/tag/renommer.html">renommer</a>,      <a href="//www.choiz.fr/tag/fichiers.html">fichiers</a>,      <a href="//www.choiz.fr/tag/wav.html">wav</a>,      <a href="//www.choiz.fr/tag/wav.html">WAV</a>    </p>
-  </header>
-  <div>
-      <p>Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
-correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
-"rename".</p>
-<p>Exemple je veux supprimer tous les espaces d'un fichier :</p>
-<div class="highlight"><pre><span></span>rename &quot;s/ *//g&quot; *.*
-</pre></div>
-
-
-<p>Ou renomer tous mes fichiers .WAV en .wav etc… :</p>
-<div class="highlight"><pre><span></span>rename &quot;s/\.WAV/\.wav/g&quot; *.WAV
-</pre></div>
-
-
-<p>A vous de modifier l'expression régulière !</p>
   </div>
 </article>
 

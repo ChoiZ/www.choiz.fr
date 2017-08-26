@@ -1,5 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ - choiz</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/choiz.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-08-26T11:04:27+02:00</updated><entry><title>Upgrade NAS</title><link href="//www.choiz.fr/2017-08-26-upgrade-nas.html" rel="alternate"></link><published>2017-08-26T11:04:27+02:00</published><updated>2017-08-26T11:04:27+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-upgrade-nas.html</id><summary type="html">&lt;p&gt;J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ - choiz</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/choiz.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-08-26T17:36:19+02:00</updated><entry><title>Installation de Proxmox-VE 5 sur Debian Stretch</title><link href="//www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html" rel="alternate"></link><published>2017-08-26T17:36:19+02:00</published><updated>2017-08-26T17:36:19+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html</id><summary type="html">&lt;p&gt;Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
+Par contre il ne faut pas modifier le sources.list ni installer
+firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
+tout).&lt;/p&gt;
+&lt;p&gt;Sur debian éditer le fichier /etc/hosts comme ceci :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;127.0.0.1       localhost.localdomain localhost
+192 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
+Par contre il ne faut pas modifier le sources.list ni installer
+firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
+tout).&lt;/p&gt;
+&lt;p&gt;Sur debian éditer le fichier /etc/hosts comme ceci :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;127.0.0.1       localhost.localdomain localhost
+192.168.15.77   prox4m1.proxmox.com prox4m1 pvelocalhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Puis tester la configuration :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;hostname --ip-address
+192.168.15.77 # should return here your IP adress
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Puis on ajoute au sources.list le dépot de proxmox, on récupere la clé et on
+update :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;echo &amp;quot;deb http://download.proxmox.com/debian/pve stretch pve-no-subscription&amp;quot; &amp;gt; /etc/apt/sources.list.d/pve-install-repo.list
+wget http://download.proxmox.com/debian/proxmox-ve-release-5.x.gpg -O /etc/apt/trusted.gpg.d/proxmox-ve-release-5.x.gpg
+apt update &amp;amp;&amp;amp; apt dist-upgrade
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Puis on install les packages Proxmox VE :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt install proxmox-ve postfix open-iscsi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;On configure postfix en distribution locale uniquement et à la fin de
+l'installation on reboot.&lt;/p&gt;
+&lt;p&gt;Au reboot vous devriez avoir la main en https sur https://ip_proxmox:8006&lt;/p&gt;
+&lt;p&gt;S'identifier avec vos login / pass debian.&lt;/p&gt;
+&lt;p&gt;Pour ne pas avoir la popup qui indique que vous n'avez pas de souscription il
+faut modifier le fichier /usr/share/pve-manager/js/pvemanagerlib.js et
+rechercher la ligne avec :&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;if (data.status !== 'Active') {&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;remplacer par :&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;if (false /*data.status !== 'Active'*/) {&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Puis relancer pveproxy avec la commande &lt;code&gt;pveproxy restart&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Se déconnecter de l'interface proxmox, à la reconnection vous n'aurez plus le
+message de souscription.&lt;/p&gt;</content><category term="Proxmox"></category><category term="Debian"></category><category term="Stretch"></category></entry><entry><title>Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</title><link href="//www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html" rel="alternate"></link><published>2017-08-26T17:00:56+02:00</published><updated>2017-08-26T17:00:56+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</id><summary type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
+&lt;p&gt;En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
+livebox par l'USG tout en concervant la télévision etc… grâce a des VLANs.&lt;/p&gt;
+&lt;p&gt;Il y a pas mal de manipulations …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
+&lt;p&gt;En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
+livebox par l'USG tout en concervant la télévision etc… grâce a des VLANs.&lt;/p&gt;
+&lt;p&gt;Il y a pas mal de manipulations a faire avant de pouvoir remplacer totalement sa
+livebox par l'USG.&lt;/p&gt;
+&lt;p&gt;J'ai utilisé un raspberry pi qui me permet d'installer un controlleur UniFi qui
+permet de gerer son matériel de la marque.&lt;/p&gt;
+&lt;p&gt;En branchant l'USG au secteur il prend l'adresse IP 192.168.1.1 (la même que la
+livebox dans un premier temps ça aide pas…). Je branche donc l'USG en direct sur
+mon poste et je me connect en ssh dessus avec les login / pass : "ubnt / ubnt".&lt;/p&gt;
+&lt;p&gt;Une fois connecté en ssh il faut reconfigurer l'interface eth1 avec l'adresse IP
+de votre choix :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# configure
+$ set interfaces ethernet eth0 address 192.168.1.10/24
+$ delete interfaces ethernet eth0 address 192.168.1.1/24
+$ commit
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;On commence par dire qu'on assigne sur eth0 l'IP 192.168.1.10 avec un masque
+255.255.255.0 et ensuite on supprime l'IP 192.168.1.1 puis on commit. A ce
+moment on se fait déconnecté du SSH vu que l'IP à changée.&lt;/p&gt;
+&lt;p&gt;Si besoin vous pouvez vous reconnecter avec 192.168.1.10.&lt;/p&gt;
+&lt;p&gt;L'autre méthode pour changer d'IP est de configurer dans le controlleur UniFi
+l'IP de votre réseau en 192.168.1.10/24 ensuite il va reprovisionner l'USG avec
+cette IP.&lt;/p&gt;</content><category term="UniFi"></category><category term="Gateway"></category><category term="Livebox"></category><category term="USG"></category><category term="Network"></category></entry><entry><title>Upgrade NAS</title><link href="//www.choiz.fr/2017-08-26-upgrade-nas.html" rel="alternate"></link><published>2017-08-26T11:04:27+02:00</published><updated>2017-08-26T11:04:27+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-upgrade-nas.html</id><summary type="html">&lt;p&gt;J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
 dessus j'avais installé Debian 6 à l'époque puis j'ai mis à jour jusqu'à la version 9.&lt;/p&gt;
 &lt;p&gt;Mon objectif est l'ajout d'un disque car j'ai 4 emplacements pour le stockage et
 je n'utilisais que 3 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,

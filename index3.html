@@ -53,6 +53,97 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html">Récupérer le master depuis le remote origin avec git</a></h2>
+    <p>
+      Posté le ven. 07 août 2015 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/origin.html">origin</a>,      <a href="//www.choiz.fr/tag/remote.html">remote</a>,      <a href="//www.choiz.fr/tag/master.html">master</a>,      <a href="//www.choiz.fr/tag/branch.html">branch</a>,      <a href="//www.choiz.fr/tag/checkout.html">checkout</a>,      <a href="//www.choiz.fr/tag/track.html">track</a>    </p>
+  </header>
+  <div>
+      <p>Dans certains projets j’utilise git avec plusieurs remote, par exemple :</p>
+<ul>
+<li>un remote “origin” se trouve sur un serveur perso.</li>
+<li>un remote “github” qui lui est sur github.com.</li>
+</ul>
+<p>Quand je vais sur le master il m’arrive d’avoir ce message :</p>
+<div class="highlight"><pre><span></span>&quot;your branch is up-to-date with “github/master”.&quot;
+</pre></div>
+
+
+<p>Je préfèrerai que ma branche soit à jour avec mon origin/master et non
+github/master.</p>
+<p>La solution que j’ai trouvé est la suivante :</p>
+<ol>
+<li>
+<p>supprimer ma branche master locale :</p>
+<div class="highlight"><pre><span></span>git branch -d master
+</pre></div>
+
+
+</li>
+<li>
+<p>récupèrer mon master depuis le remote origin :</p>
+<div class="highlight"><pre><span></span>git checkout -t -b master origin/master
+</pre></div>
+
+
+</li>
+</ol>
+<p>Pour info :</p>
+<p>-t ou --track pour rattacher à l’origin/master</p>
+<p>-b pour créer ma nouvelle branche “master”</p>
+<p>Plus d’info avec man git-checkout ;-)</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2015-07-19-gentoo-utilisation-de-layman-eix.html">Gentoo utilisation de layman & eix</a></h2>
+    <p>
+      Posté le dim. 19 juillet 2015 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/depot.html">dépôt</a>,      <a href="//www.choiz.fr/tag/repos.html">repos</a>,      <a href="//www.choiz.fr/tag/layman.html">layman</a>,      <a href="//www.choiz.fr/tag/eix.html">eix</a>,      <a href="//www.choiz.fr/tag/emerge.html">emerge</a>,      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="//www.choiz.fr/tag/vagrant-bin.html">vagrant-bin</a>,      <a href="//www.choiz.fr/tag/overlay.html">overlay</a>    </p>
+  </header>
+  <div>
+      <p>Certains programmes n’étant pas en dernière version dans les dépôts
+gentoo l’utilisation de layman peut faciliter la vie.</p>
+<p>Étant à la recherche de vagrant, la seule version disponible à ce jour
+sur gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de
+vagrant je me rend compte que nous sommes à la version 1.7.3.</p>
+<p>J’ai donc trouvé un overlay avec vagrant-bin version 1.7.3 :
+<a href="http://gpo.zugaina.org/app-emulation/vagrant-bin">http://gpo.zugaina.org/app-emulation/vagrant-bin</a></p>
+<p>Pour utiliser cette overlay nous avons besoin de layman.</p>
+<p>Installation :</p>
+<div class="highlight"><pre><span></span>emerge -a layman
+
+echo &quot;source /usr/portage/local/layman/make.conf&quot; &gt;&gt; /etc/make.conf
+</pre></div>
+
+
+<p>Pour afficher tous les overlays disponible :</p>
+<div class="highlight"><pre><span></span>layman -L
+</pre></div>
+
+
+<p>Ajouter l’overlay stefantalpalaru (dans lequel nous avons
+vagrant-bin-1.7.3) :</p>
+<div class="highlight"><pre><span></span>layman -f -a stefantalpalaru
+</pre></div>
+
+
+<p>Maintenant si on recherche dans eix “vagrant” rien n’a changé.</p>
+<p>Il faut mettre à jour eix :</p>
+<div class="highlight"><pre><span></span>eix-update
+</pre></div>
+
+
+<p>Maintenant avec eix vagrant nous avons la ligne vagrant-bin et donc nous
+pouvons installer vagrant-1.7.3 via emerge.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html">Ma config : Clevo w650sz i7 4910MQ</a></h2>
     <p>
       Posté le sam. 18 juillet 2015 &#8226;
@@ -271,64 +362,6 @@ apt-get install -f
 <p>Installer Skype en n'oubliant pas de remplacer "x" par la bonne version :</p>
 <div class="highlight"><pre><span></span>dpkg -i skype-debian_x_i386.deb
 </pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html">Installation de Firefox sur Debian</a></h2>
-    <p>
-      Posté le ven. 21 mars 2014 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/firefox.html">Firefox</a>,      <a href="//www.choiz.fr/tag/mozilla.html">Mozilla</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/installation-de-firefox.html">Installation de Firefox</a>,      <a href="//www.choiz.fr/tag/firefox-sur-debian.html">Firefox sur Debian</a>    </p>
-  </header>
-  <div>
-      <p>Télécharger la dernière version de Firefox sur <a href="http://www.mozilla.org/">le site de
-mozilla</a>.</p>
-<p>Décompresser l'archive dans :</p>
-<div class="highlight"><pre><span></span>/opt/firefox/
-</pre></div>
-
-
-<p>Créer un lien symbolique avec :</p>
-<div class="highlight"><pre><span></span>ls -sf /opt/firefox/firefox /usr/bin/firefox
-</pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html">Firebug champs mot de passe présents sur une page non sécurisée</a></h2>
-    <p>
-      Posté le mar. 18 mars 2014 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/firebug.html">firebug</a>,      <a href="//www.choiz.fr/tag/http.html">http</a>,      <a href="//www.choiz.fr/tag/https.html">https</a>,      <a href="//www.choiz.fr/tag/formulaire.html">formulaire</a>,      <a href="//www.choiz.fr/tag/warning.html">warning</a>,      <a href="//www.choiz.fr/tag/mot-de-passe.html">mot de passe</a>,      <a href="//www.choiz.fr/tag/password.html">password</a>,      <a href="//www.choiz.fr/tag/action.html">action</a>,      <a href="//www.choiz.fr/tag/form.html">form</a>    </p>
-  </header>
-  <div>
-      <p>Dans mon firebug des "warnings" s'affichent :</p>
-<div class="highlight"><pre><span></span>Champs mot de passe présents sur une page non sécurisée (http://). Cela
-représente un risque de sécurité permettant le vol d&#39;identifiants de
-connexion.
-</pre></div>
-
-
-<p>Ainsi que :</p>
-<div class="highlight"><pre><span></span>Champs mot de passe présents dans un formulaire possédant une action de
-formulaire non sécurisée (http://). Cela représente un risque de sécurité
-permettant le vol d&#39;identifiants de connexion.
-</pre></div>
-
-
-<p>La première indications informe que vous n'êtes pas sur un site
-utilisant le HTTPS. Lorsque vous allez remplir le champs "password"
-celui-ci sera envoyé en clair sur le réseau.</p>
-<p>La seconde indication informe que l'action du formulaire envoi sur une
-page qui n'est pas en HTTPS.</p>
-<p>Vous pouvez avoir votre formulaire sur l'url :
-<a href="https://www.mon-formulaire.fr">https://www.mon-formulaire.fr</a> et dans l'action de votre formulaire
-avoir : <a href="http://www.mon-formulaire.fr">http://www.mon-formulaire.fr</a></p>
-<p>Dans ce cas l'affichage du formulaire est sécurisé, mais l'envoi des
-données ne l'est pas vu que l'action est en http.</p>
   </div>
 </article>
 
