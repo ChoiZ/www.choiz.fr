@@ -14,13 +14,10 @@ je n'utilisais que 3 de ses 4 emplacements.
 
 Pour commencer il me fallait un rack 5"¼ permettant de mettre un disque 3"½ ou
 2"½, je l'ai trouvé sur [LDLC](http://www.ldlc.com/fiche/PB00157318.html) c'est
-un "ICY BOX IB-129SSK-B".
-
-Ensuite j'ai pris sur
+un "ICY BOX IB-129SSK-B", ensuite j'ai pris sur
 [Amazon](https://www.amazon.fr/gp/product/B01LZY5T8Y/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1)
-un disque Seagate ST500LM030 en 2"½ de 500Go.
-
-Et j'avais ce qu'il fallait pour le SATA et l'alimentation.
+un disque Seagate ST500LM030 en 2"½ de 500Go et j'avais ce qu'il fallait pour le
+SATA et l'alimentation.
 
 Ce qui m'a permis de mettre un disque 2"½ au niveau de l'emplacement CDROM du HP
 Microserver.
@@ -28,8 +25,8 @@ Microserver.
 J'ai du tué mon uptime d'un an (depuis mon dernier déménagement) :
 
 ```
-12:31:37 choiz@wayland ~  #❯❯❯ uptime
-12:31:37 up 366 days,  1:08,  1 user,  load average: 0,16, 0,22, 0,24
+ 12:31:37 choiz@wayland ~  #❯❯❯ uptime
+ 12:31:37 up 366 days,  1:08,  1 user,  load average: 0,16, 0,22, 0,24
 ```
 
 Pour la réinstallation j'ai monté un [serveur PXE sur
