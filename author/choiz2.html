@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//www.choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//www.choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -52,6 +52,25 @@
   </aside>
   <main>
 
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html">Vagrant faire un réseau privé</a></h2>
+    <p>
+      Posté le mar. 13 octobre 2015 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/vagrant.html">vagrant</a>,      <a href="//www.choiz.fr/tag/reseau.html">réseau</a>,      <a href="//www.choiz.fr/tag/prive.html">privé</a>,      <a href="//www.choiz.fr/tag/private.html">private</a>,      <a href="//www.choiz.fr/tag/network.html">network</a>    </p>
+  </header>
+  <div>
+      <p>J'utilise plusieurs machines virtuelles avec vagrant, une avec un
+backoffice et une avec une API.</p>
+<p>J'ai donc du faire un réseau privé dans vagrant pour que le BO
+communique avec l'API.</p>
+<p>Il suffit de modifier la configuration de la vm #1 et d'ajouter :</p>
+<div class="highlight"><pre><span></span>config.vm.network &quot;private_network&quot;, ip: &quot;192.168 …</pre></div>
+      <a class="btn" href="//www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
 <article>
   <header>
     <h2><a href="//www.choiz.fr/2015-10-12-des-commentaires-efficaces.html">Des commentaires efficaces</a></h2>
@@ -253,25 +272,6 @@ gentoo l’utilisation de layman peut faciliter la vie.</p>
 sur gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de
 vagrant je me rend …</p>
       <a class="btn" href="//www.choiz.fr/2015-07-19-gentoo-utilisation-de-layman-eix.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html">Ma config : Clevo w650sz i7 4910MQ</a></h2>
-    <p>
-      Posté le sam. 18 juillet 2015 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/clevo.html">clevo</a>,      <a href="//www.choiz.fr/tag/clevo-w650.html">clevo w650</a>,      <a href="//www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="//www.choiz.fr/tag/ethernet.html">ethernet</a>,      <a href="//www.choiz.fr/tag/realtek.html">realtek</a>,      <a href="//www.choiz.fr/tag/audio.html">audio</a>,      <a href="//www.choiz.fr/tag/hdaudio.html">hdaudio</a>,      <a href="//www.choiz.fr/tag/achat.html">achat</a>,      <a href="//www.choiz.fr/tag/i7-4910mq.html">i7 4910MQ</a>,      <a href="//www.choiz.fr/tag/msata.html">mSata</a>    </p>
-  </header>
-  <div>
-      <p>Ayant vendu mon Macbook Air 13" il y a quelques mois, j'ai pris le temps
-de comparer les différents portables. La marque Taïwanaise "clevo"
-propose des machines avec ou sans OS (gain d'une centaine d'euros pour
-Windows).</p>
-<p>J'ai donc commandé chez <a href="http://www.clevo.fr">Anyware</a> un w650sz avec un
-i7 4910MQ (qui a …</p>
-      <a class="btn" href="//www.choiz.fr/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html">Lire la suite</a>
   </div>
 </article>
 

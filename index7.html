@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//www.choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//www.choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -52,6 +52,59 @@
   </aside>
   <main>
 
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2012-04-13-update-gitconfig.html">Update .gitconfig</a></h2>
+    <p>
+      Posté le ven. 13 avril 2012 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/gitconfig.html">gitconfig</a>,      <a href="//www.choiz.fr/tag/git-pull.html">git pull</a>,      <a href="//www.choiz.fr/tag/git-push.html">git push</a>,      <a href="//www.choiz.fr/tag/git-diff.html">git diff</a>,      <a href="//www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="//www.choiz.fr/tag/stash.html">stash</a>    </p>
+  </header>
+  <div>
+      <p>Ajout du pull, push, diff et surtout stash :</p>
+<div class="highlight"><pre><span></span><span class="k">[user]</span>
+  <span class="na">name</span> <span class="o">=</span> <span class="s">François LASSERRE</span>
+<span class="s">  email = mon@email.fr</span>
+<span class="k">[diff]</span>
+  <span class="na">tool</span> <span class="o">=</span> <span class="s">vimdiff</span>
+<span class="k">[color]</span>
+  <span class="na">branch</span> <span class="o">=</span> <span class="s">auto</span>
+<span class="s">  diff = auto</span>
+<span class="s">  status = auto</span>
+<span class="s">  interactive = auto</span>
+<span class="s">  ui = true</span>
+<span class="k">[alias]</span>
+  <span class="na">br</span> <span class="o">=</span> <span class="s">branch</span>
+<span class="s">  ci = commit -a</span>
+<span class="s">  co = checkout</span>
+<span class="s">  sh = show --color-words</span>
+<span class="s">  st = status</span>
+<span class="s">  di = diff</span>
+<span class="s">  ph = push</span>
+<span class="s">  pl = pull</span>
+<span class="s">  sta = stash</span>
+<span class="s">  stalist = stash list</span>
+<span class="s">  stast = stash list</span>
+<span class="s">  stapp = stash pop</span>
+<span class="s">  starm = stash drop</span>
+<span class="s">  last = cat-file commit HEAD</span>
+<span class="s">  graph = log --graph --decorate</span>
+<span class="s">  tree = log --graph --oneline --decorate</span>
+<span class="s">  pom = push origin master</span>
+<span class="s">  logs = log --stat</span>
+<span class="s">  currentbranch = &quot;!git branch | grep ^* | cut -d \&quot; \&quot; -f 2&quot;</span>
+<span class="k">[core]</span>
+  <span class="na">excludesfile</span> <span class="o">=</span> <span class="s">~/.gitignore</span>
+<span class="na">editor</span> <span class="o">=</span> <span class="s">vim</span>
+<span class="s">  filemode = false</span>
+<span class="k">[merge]</span>
+  <span class="na">tool</span> <span class="o">=</span> <span class="s">vimdiff</span>
+<span class="k">[http]</span>
+  <span class="c1">#sslverify = false|</span>
+</pre></div>
+  </div>
+  <hr />
+</article>
 <article>
   <header>
     <h2><a href="//www.choiz.fr/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html">Git mes fichiers de config gitconfig / gitignore</a></h2>
@@ -421,33 +474,6 @@ password (ou autre suivant le mot de passe de l&#39;utilisateur).
 
 
 <p>Ce qui devrait lancer une seconde instance de Skype.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login.html">Profil sur viadeo sans avoir la fenêtre de login</a></h2>
-    <p>
-      Posté le dim. 18 septembre 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/viadeo.html">viadeo</a>,      <a href="//www.choiz.fr/tag/javascript.html">javascript</a>,      <a href="//www.choiz.fr/tag/js.html">js</a>,      <a href="//www.choiz.fr/tag/code.html">code</a>,      <a href="//www.choiz.fr/tag/login.html">login</a>,      <a href="//www.choiz.fr/tag/profil.html">profil</a>,      <a href="//www.choiz.fr/tag/identifie.html">identifié</a>,      <a href="//www.choiz.fr/tag/firebug.html">firebug</a>    </p>
-  </header>
-  <div>
-      <p>J'ai voulu plusieurs fois voir un profil sur Viadeo sans forcement être
-identifié. Lorsque l'on déplace la souris ou que l'on scroll une autre
-page s'affiche. Exemple sur <a href="http://www.viadeo.com/fr/profile/francois.lasserre1">ma page
-viadeo</a>. Pour
-empécher d'avoir la page de login il faut modifier une fonction
-Javascript. Avec un outil tel que <a href="http://www.getfirebug.com">Firebug</a>
-vous pouvez modifier le code Javascript du site (localement). Ouvrir
-firebug en mode console et modifier la fonction createJoin() ! Dans la
-console a coté de "&gt;&gt;&gt;" il suffit de taper :</p>
-<div class="highlight"><pre><span></span>function createJoin() { false; }
-</pre></div>
-
-
-<p>Avec ce code on modifie le contenu de la fonction createJoin() par false
-(plutôt que le code par defaut qui ouvre la fenêtre d'identification).</p>
   </div>
 </article>
 

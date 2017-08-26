@@ -1,5 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ - choiz</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/choiz.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-06-05T15:03:08+02:00</updated><entry><title>Re-générer une clé rsa publique</title><link href="//www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html" rel="alternate"></link><published>2017-06-05T15:03:08+02:00</published><updated>2017-06-05T15:03:08+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-06-05:/2017-06-05-re-generer-une-cle-rsa-publique.html</id><summary type="html">&lt;p&gt;Si vous n'avez plus de clé publique, mais que vous avez toujours votre clé privée vous pouvez regénérer votre clé
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ - choiz</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/choiz.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-08-26T11:04:27+02:00</updated><entry><title>Upgrade NAS</title><link href="//www.choiz.fr/2017-08-26-upgrade-nas.html" rel="alternate"></link><published>2017-08-26T11:04:27+02:00</published><updated>2017-08-26T11:04:27+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-upgrade-nas.html</id><summary type="html">&lt;p&gt;J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
+dessus j'avais installé Debian 6 à l'époque puis j'ai mis à jour jusqu'à la version 9.&lt;/p&gt;
+&lt;p&gt;Mon objectif est l'ajout d'un disque car j'ai 4 emplacements pour le stockage et
+je n'utilisais que 3 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
+dessus j'avais installé Debian 6 à l'époque puis j'ai mis à jour jusqu'à la version 9.&lt;/p&gt;
+&lt;p&gt;Mon objectif est l'ajout d'un disque car j'ai 4 emplacements pour le stockage et
+je n'utilisais que 3 de ses 4 emplacements.&lt;/p&gt;
+&lt;p&gt;Pour commencer il me fallait un rack 5"¼ permettant de mettre un disque 3"½ ou
+2"½, je l'ai trouvé sur &lt;a href="LCLC"&gt;http://www.ldlc.com/fiche/PB00157318.html&lt;/a&gt; c'est
+un "ICY BOX IB-129SSK-B".&lt;/p&gt;
+&lt;p&gt;Ensuite j'ai pris sur
+&lt;a href="https://www.amazon.fr/gp/product/B01LZY5T8Y/ref=oh_aui_detailpage_o02_s00?ie=UTF8&amp;amp;psc=1"&gt;Amazon&lt;/a&gt;
+un disque Seagate ST500LM030 en 2"½ de 500Go.&lt;/p&gt;
+&lt;p&gt;Et j'avais ce qu'il fallait pour le SATA et l'alimentation.&lt;/p&gt;
+&lt;p&gt;Ce qui m'a permis de mettre un disque 2"½ au niveau de l'emplacement CDROM du HP
+Microserver.&lt;/p&gt;
+&lt;p&gt;J'ai du tué mon uptime d'un an (depuis mon dernier déménagemet) :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    12:31:37 choiz@wayland ~  #❯❯❯ uptime
+    12:31:37 up 366 days,  1:08,  1 user,  load average: 0,16, 0,22, 0,24
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pour la réinstallation j'ai monté un &lt;a href="https://wiki.debian-fr.xyz/PXE_avec_support_EFI"&gt;serveur PXE sur
+debian&lt;/a&gt; merci Benjamin pour le
+lien et les conseils.&lt;/p&gt;
+&lt;p&gt;Installationn du TFTP :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# apt-install -y tftpd-hpa
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Si vous avez un pare-feu n'oubliez pas d'ouvrir le port 69 :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# iptables -A INPUT -p udp -m udp --dport 69 -j ACCEPT
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Installer le serveur DHCP :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# apt install isc-dhcp-server
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Mes IP sont dans le réseau 192.168.1.0/24, mon router en 192.168.1.1, je met un
+range entre 192.168.1.100 et 192.168.1.150 mon serveur TFTP est en 192.168.1.2.&lt;/p&gt;
+&lt;p&gt;Voici la conf d'isc-dhcp-server :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;default-lease-time 600;
+max-lease-time 7200;
+
+allow booting;
+
+# in this example, we serve DHCP requests from 192.168.1.(3 to 253)
+# and we have a router at 192.168.1.1
+subnet 192.168.1.0 netmask 255.255.255.0 {
+  range 192.168.1.100 192.168.1.150;
+  option broadcast-address 192.168.1.255;
+  option routers 192.168.1.1;
+  option domain-name-servers 192.168.1.1;
+  filename &amp;quot;pxelinux.0&amp;quot;;
+}
+
+group {
+  next-server 192.168.1.2;
+  host tftpclient {
+    filename &amp;quot;pxelinux.0&amp;quot;;
+  }
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Redémarrer le DHCP pour que la config soit prise en compte.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# systemctl restart isc-dhcp-server
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Maintenant nous téléchargeons la derniere version de debian pour la mettre sur
+notre TFTP :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# cd /srv/tftp/
+# wget -c http://ftp.fr.debian.org/debian/dists/stretch/main/installer-amd64/current/images/netboot/netboot.tar.gz
+# tar -zxf netboot.tar.gz
+# rm netboot.tar.gz
+# systemctl restart tftpd-hpa
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Le PXE est maintenant fonctionnel avec l'installation de debian.&lt;/p&gt;
+&lt;p&gt;Je réinstall donc debian 9.1 proprement.&lt;/p&gt;
+&lt;p&gt;Pour éviter d'avoir ses messages d'erreurs :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;W&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Possible&lt;/span&gt; &lt;span class="n"&gt;missing&lt;/span&gt; &lt;span class="n"&gt;firmware&lt;/span&gt; &lt;span class="sr"&gt;/lib/firmware/tigon/&lt;/span&gt;&lt;span class="n"&gt;tg3_tso5&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bin&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="n"&gt;tg3&lt;/span&gt;
+&lt;span class="n"&gt;W&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Possible&lt;/span&gt; &lt;span class="n"&gt;missing&lt;/span&gt; &lt;span class="n"&gt;firmware&lt;/span&gt; &lt;span class="sr"&gt;/lib/firmware/tigon/&lt;/span&gt;&lt;span class="n"&gt;tg3_tso&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bin&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="n"&gt;tg3&lt;/span&gt;
+&lt;span class="n"&gt;W&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Possible&lt;/span&gt; &lt;span class="n"&gt;missing&lt;/span&gt; &lt;span class="n"&gt;firmware&lt;/span&gt; &lt;span class="sr"&gt;/lib/firmware/tigon/&lt;/span&gt;&lt;span class="n"&gt;tg3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bin&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="n"&gt;tg3&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;J'édit mon fichier /etc/apt/sources.list et j'ajoute les "non-free".&lt;/p&gt;
+&lt;p&gt;Puis j'install le firmware-linux-nonfree :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt update
+apt install firmware-linux-nonfree
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Il me reste plus qu'a remonter mes disques de backup et de refaire mes partages.&lt;/p&gt;</content><category term="NAS"></category><category term="HP"></category><category term="Microserver"></category><category term="Debian"></category><category term="Proxmox"></category><category term="Stockage"></category><category term="Data"></category></entry><entry><title>Re-générer une clé rsa publique</title><link href="//www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html" rel="alternate"></link><published>2017-06-05T15:03:08+02:00</published><updated>2017-06-05T15:03:08+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-06-05:/2017-06-05-re-generer-une-cle-rsa-publique.html</id><summary type="html">&lt;p&gt;Si vous n'avez plus de clé publique, mais que vous avez toujours votre clé privée vous pouvez regénérer votre clé
 publique.&lt;/p&gt;
 &lt;p&gt;Pour se faire il faut utiliser la commande &lt;em&gt;ssh-keygen&lt;/em&gt; avec l'option &lt;em&gt;-y&lt;/em&gt; et &lt;em&gt;-f&lt;/em&gt; pour désigner la clé privé.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ssh-keygen -y -f ~/.ssh/id_rsa &amp;gt; ~/.ssh/id_rsa.pub&lt;/code&gt;&lt;/p&gt;

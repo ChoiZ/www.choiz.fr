@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//www.choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//www.choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -52,6 +52,39 @@
   </aside>
   <main>
 
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2011-05-19-différences-entre-des-fichiers-avec-vim.html">Différences entre des fichiers avec Vim</a></h2>
+    <p>
+      Posté le jeu. 19 mai 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/diff.html">Diff</a>,      <a href="//www.choiz.fr/tag/difference.html">Différence</a>,      <a href="//www.choiz.fr/tag/fichiers.html">Fichiers</a>,      <a href="//www.choiz.fr/tag/editeur.html">Editeur</a>,      <a href="//www.choiz.fr/tag/texte.html">Texte</a>,      <a href="//www.choiz.fr/tag/terminal.html">Terminal</a>,      <a href="//www.choiz.fr/tag/console.html">Console</a>,      <a href="//www.choiz.fr/tag/commande.html">Commande</a>    </p>
+  </header>
+  <div>
+      <p>J'ai souvent besoin de voir les différences entre plusieurs fichiers...
+J'utilise souvent la commande diff dans un terminal, mais mon éditeur
+texte favoris "Vim" sait aussi trés bien faire un différentiel.
+Utilisation avec le terminal :</p>
+<div class="highlight"><pre><span></span><span class="gh">diff fichier1 fichier2</span>
+</pre></div>
+
+
+<p>Celui-ci retournera les différences directement dans le terminal (pas
+pratique pour l'édition).</p>
+<p>Utilisation avec vim :</p>
+<div class="highlight"><pre><span></span>vim -d fichier1 fichier2
+</pre></div>
+
+
+<p>Ensuite il suffit d'utiliser (CTRL + W puis W) pour changer de fenêtre
+(gauche à droite ou droite à gauche) ou bien en utilisant (CTRL + W puis
+fléche de droite ou gauche) suivant la direction ou on veut aller.</p>
+<p>Pour le reste des commandes reportez-vous au <a href="http://matrix.samizdat.net/pratique/documentation/guide-survie-VI.html">guide de survie de
+vi</a>
+!</p>
+  </div>
+  <hr />
+</article>
 <article>
   <header>
     <h2><a href="//www.choiz.fr/2011-05-14-migration-dune-base-de-donnée-mysql.html">Migration d'une base de donnée Mysql</a></h2>

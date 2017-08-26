@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//www.choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//www.choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -52,6 +52,41 @@
   </aside>
   <main>
 
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2012-04-13-update-gitconfig.html">Update .gitconfig</a></h2>
+    <p>
+      Posté le ven. 13 avril 2012 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/gitconfig.html">gitconfig</a>,      <a href="//www.choiz.fr/tag/git-pull.html">git pull</a>,      <a href="//www.choiz.fr/tag/git-push.html">git push</a>,      <a href="//www.choiz.fr/tag/git-diff.html">git diff</a>,      <a href="//www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="//www.choiz.fr/tag/stash.html">stash</a>    </p>
+  </header>
+  <div>
+      <p>Ajout du pull, push, diff et surtout stash :</p>
+<div class="highlight"><pre><span></span><span class="k">[user]</span>
+  <span class="na">name</span> <span class="o">=</span> <span class="s">François LASSERRE</span>
+<span class="s">  email = mon@email.fr</span>
+<span class="k">[diff]</span>
+  <span class="na">tool</span> <span class="o">=</span> <span class="s">vimdiff</span>
+<span class="k">[color]</span>
+  <span class="na">branch</span> <span class="o">=</span> <span class="s">auto</span>
+<span class="s">  diff = auto</span>
+<span class="s">  status = auto</span>
+<span class="s">  interactive = auto</span>
+<span class="s">  ui = true</span>
+<span class="k">[alias]</span>
+  <span class="na">br</span> <span class="o">=</span> <span class="s">branch</span>
+<span class="s">  ci = commit -a</span>
+<span class="s">  co = checkout</span>
+<span class="s">  sh = show --color-words</span>
+<span class="s">  st = status</span>
+<span class="s">  di = diff</span>
+<span class="s">  ph = push</span>
+<span class="s">  pl = pull</span>
+<span class="s">  sta …</span></pre></div>
+      <a class="btn" href="//www.choiz.fr/2012-04-13-update-gitconfig.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
 <article>
   <header>
     <h2><a href="//www.choiz.fr/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html">Git mes fichiers de config gitconfig / gitignore</a></h2>
@@ -256,26 +291,6 @@ viadeo</a>. Pour
 empécher d'avoir la page de login il faut modifier une fonction
 Javascript. Avec un outil tel que <a href="http://www.getfirebug.com">Firebug …</a></p>
       <a class="btn" href="//www.choiz.fr/2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-09-05-développement-web-avec-safari.html">Développement web avec Safari</a></h2>
-    <p>
-      Posté le lun. 05 septembre 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/safari.html">Safari</a>,      <a href="//www.choiz.fr/tag/dev.html">Dev</a>,      <a href="//www.choiz.fr/tag/web.html">Web</a>,      <a href="//www.choiz.fr/tag/webdev.html">WebDev</a>,      <a href="//www.choiz.fr/tag/developpement.html">Développement</a>    </p>
-  </header>
-  <div>
-      <p>Pour activer l'inspecteur web tapez dans le terminal :</p>
-<div class="highlight"><pre><span></span>defaults write com.apple.Safari WebKitDeveloperExtras -bool true
-</pre></div>
-
-
-<p>Redémarrez Safari et maintenant vous pouvez inspecter les éléments de
-vos pages web.</p>
-      <a class="btn" href="//www.choiz.fr/2011-09-05-développement-web-avec-safari.html">Lire la suite</a>
   </div>
 </article>
 

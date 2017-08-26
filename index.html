@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
   <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
   <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="//www.choiz.fr/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="//www.choiz.fr/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
@@ -52,6 +52,114 @@
   </aside>
   <main>
 
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2017-08-26-upgrade-nas.html">Upgrade NAS</a></h2>
+    <p>
+      Posté le sam. 26 août 2017 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/nas.html">NAS</a>,      <a href="//www.choiz.fr/tag/hp.html">HP</a>,      <a href="//www.choiz.fr/tag/microserver.html">Microserver</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/proxmox.html">Proxmox</a>,      <a href="//www.choiz.fr/tag/stockage.html">Stockage</a>,      <a href="//www.choiz.fr/tag/data.html">Data</a>    </p>
+  </header>
+  <div>
+      <p>J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
+dessus j'avais installé Debian 6 à l'époque puis j'ai mis à jour jusqu'à la version 9.</p>
+<p>Mon objectif est l'ajout d'un disque car j'ai 4 emplacements pour le stockage et
+je n'utilisais que 3 de ses 4 emplacements.</p>
+<p>Pour commencer il me fallait un rack 5"¼ permettant de mettre un disque 3"½ ou
+2"½, je l'ai trouvé sur <a href="LCLC">http://www.ldlc.com/fiche/PB00157318.html</a> c'est
+un "ICY BOX IB-129SSK-B".</p>
+<p>Ensuite j'ai pris sur
+<a href="https://www.amazon.fr/gp/product/B01LZY5T8Y/ref=oh_aui_detailpage_o02_s00?ie=UTF8&amp;psc=1">Amazon</a>
+un disque Seagate ST500LM030 en 2"½ de 500Go.</p>
+<p>Et j'avais ce qu'il fallait pour le SATA et l'alimentation.</p>
+<p>Ce qui m'a permis de mettre un disque 2"½ au niveau de l'emplacement CDROM du HP
+Microserver.</p>
+<p>J'ai du tué mon uptime d'un an (depuis mon dernier déménagemet) :</p>
+<div class="highlight"><pre><span></span>    12:31:37 choiz@wayland ~  #❯❯❯ uptime
+    12:31:37 up 366 days,  1:08,  1 user,  load average: 0,16, 0,22, 0,24
+</pre></div>
+
+
+<p>Pour la réinstallation j'ai monté un <a href="https://wiki.debian-fr.xyz/PXE_avec_support_EFI">serveur PXE sur
+debian</a> merci Benjamin pour le
+lien et les conseils.</p>
+<p>Installationn du TFTP :</p>
+<div class="highlight"><pre><span></span># apt-install -y tftpd-hpa
+</pre></div>
+
+
+<p>Si vous avez un pare-feu n'oubliez pas d'ouvrir le port 69 :</p>
+<div class="highlight"><pre><span></span># iptables -A INPUT -p udp -m udp --dport 69 -j ACCEPT
+</pre></div>
+
+
+<p>Installer le serveur DHCP :</p>
+<div class="highlight"><pre><span></span># apt install isc-dhcp-server
+</pre></div>
+
+
+<p>Mes IP sont dans le réseau 192.168.1.0/24, mon router en 192.168.1.1, je met un
+range entre 192.168.1.100 et 192.168.1.150 mon serveur TFTP est en 192.168.1.2.</p>
+<p>Voici la conf d'isc-dhcp-server :</p>
+<div class="highlight"><pre><span></span>default-lease-time 600;
+max-lease-time 7200;
+
+allow booting;
+
+# in this example, we serve DHCP requests from 192.168.1.(3 to 253)
+# and we have a router at 192.168.1.1
+subnet 192.168.1.0 netmask 255.255.255.0 {
+  range 192.168.1.100 192.168.1.150;
+  option broadcast-address 192.168.1.255;
+  option routers 192.168.1.1;
+  option domain-name-servers 192.168.1.1;
+  filename &quot;pxelinux.0&quot;;
+}
+
+group {
+  next-server 192.168.1.2;
+  host tftpclient {
+    filename &quot;pxelinux.0&quot;;
+  }
+}
+</pre></div>
+
+
+<p>Redémarrer le DHCP pour que la config soit prise en compte.</p>
+<div class="highlight"><pre><span></span># systemctl restart isc-dhcp-server
+</pre></div>
+
+
+<p>Maintenant nous téléchargeons la derniere version de debian pour la mettre sur
+notre TFTP :</p>
+<div class="highlight"><pre><span></span># cd /srv/tftp/
+# wget -c http://ftp.fr.debian.org/debian/dists/stretch/main/installer-amd64/current/images/netboot/netboot.tar.gz
+# tar -zxf netboot.tar.gz
+# rm netboot.tar.gz
+# systemctl restart tftpd-hpa
+</pre></div>
+
+
+<p>Le PXE est maintenant fonctionnel avec l'installation de debian.</p>
+<p>Je réinstall donc debian 9.1 proprement.</p>
+<p>Pour éviter d'avoir ses messages d'erreurs :</p>
+<div class="highlight"><pre><span></span><span class="n">W</span><span class="o">:</span> <span class="n">Possible</span> <span class="n">missing</span> <span class="n">firmware</span> <span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso5</span><span class="o">.</span><span class="na">bin</span> <span class="k">for</span> <span class="n">module</span> <span class="n">tg3</span>
+<span class="n">W</span><span class="o">:</span> <span class="n">Possible</span> <span class="n">missing</span> <span class="n">firmware</span> <span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso</span><span class="o">.</span><span class="na">bin</span> <span class="k">for</span> <span class="n">module</span> <span class="n">tg3</span>
+<span class="n">W</span><span class="o">:</span> <span class="n">Possible</span> <span class="n">missing</span> <span class="n">firmware</span> <span class="sr">/lib/firmware/tigon/</span><span class="n">tg3</span><span class="o">.</span><span class="na">bin</span> <span class="k">for</span> <span class="n">module</span> <span class="n">tg3</span>
+</pre></div>
+
+
+<p>J'édit mon fichier /etc/apt/sources.list et j'ajoute les "non-free".</p>
+<p>Puis j'install le firmware-linux-nonfree :</p>
+<div class="highlight"><pre><span></span>apt update
+apt install firmware-linux-nonfree
+</pre></div>
+
+
+<p>Il me reste plus qu'a remonter mes disques de backup et de refaire mes partages.</p>
+  </div>
+  <hr />
+</article>
 <article>
   <header>
     <h2><a href="//www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html">Re-générer une clé rsa publique</a></h2>
@@ -780,34 +888,6 @@ ses deux commandes :</p>
 <div class="highlight"><pre><span></span>xdg-mime default firefox.desktop x-scheme-handler/http
 xdg-mime default firefox.desktop x-scheme-handler/https
 </pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html">Vagrant faire un réseau privé</a></h2>
-    <p>
-      Posté le mar. 13 octobre 2015 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/vagrant.html">vagrant</a>,      <a href="//www.choiz.fr/tag/reseau.html">réseau</a>,      <a href="//www.choiz.fr/tag/prive.html">privé</a>,      <a href="//www.choiz.fr/tag/private.html">private</a>,      <a href="//www.choiz.fr/tag/network.html">network</a>    </p>
-  </header>
-  <div>
-      <p>J'utilise plusieurs machines virtuelles avec vagrant, une avec un
-backoffice et une avec une API.</p>
-<p>J'ai donc du faire un réseau privé dans vagrant pour que le BO
-communique avec l'API.</p>
-<p>Il suffit de modifier la configuration de la vm #1 et d'ajouter :</p>
-<div class="highlight"><pre><span></span>config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.1&quot;
-</pre></div>
-
-
-<p>Et dans la configuration de la vm #2 d'ajouter :</p>
-<div class="highlight"><pre><span></span>config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.2&quot;
-</pre></div>
-
-
-<p>Votre vm #1 peut (suite au redémarrage des deux vm vagrant) communiquer
-avec votre vm #2 directement avec l'ip 192.168.10.2.</p>
   </div>
 </article>
 
