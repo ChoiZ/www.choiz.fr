@@ -70,7 +70,7 @@ group {
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Maintenant nous téléchargeons la derniere version de debian pour la mettre sur
+&lt;p&gt;Maintenant nous téléchargeons la dernière version de debian pour la mettre sur
 notre TFTP :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# cd /srv/tftp/
 # wget -c http://ftp.fr.debian.org/debian/dists/stretch/main/installer-amd64/current/images/netboot/netboot.tar.gz
