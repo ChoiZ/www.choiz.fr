@@ -58,7 +58,7 @@ remplacer par :
 
   ```if (false /*data.status !== 'Active'*/) {```
 
-Puis relancer pveproxy avec la commande `pveproxy restart`.
+Puis relancer pveproxy avec la commande `pveproxy restart`
 
 Se déconnecter de l'interface proxmox, à la reconnection vous n'aurez plus le
 message de souscription.
