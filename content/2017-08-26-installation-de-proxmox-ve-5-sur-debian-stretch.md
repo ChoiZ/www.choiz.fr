@@ -62,3 +62,10 @@ Puis relancer pveproxy avec la commande `pveproxy restart`
 
 Se déconnecter de l'interface proxmox, à la reconnection vous n'aurez plus le
 message de souscription.
+
+Puis faire les commandes optionnelles :
+```
+apt remove os-prober
+apt remove linux-image-amd64 linux-image-4.9.0-3-amd64
+update-grub
+```
