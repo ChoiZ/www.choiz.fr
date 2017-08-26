@@ -108,7 +108,7 @@ W: Possible missing firmware /lib/firmware/tigon/tg3_tso.bin for module tg3
 W: Possible missing firmware /lib/firmware/tigon/tg3.bin for module tg3
 ```
 
-J'édit mon fichier /etc/apt/sources.list et j'ajoute les "non-free".
+Je modifie mon fichier /etc/apt/sources.list et j'ajoute les "non-free".
 
 Puis j'install le firmware-linux-nonfree :
 ```
