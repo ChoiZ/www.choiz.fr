@@ -7,7 +7,7 @@ SITENAME = u'ChoiZ'
 SITEURL = u'//www.choiz.fr'
 SITETITLE = u'Blog technique de François LASSERRE'
 SITESUBTITLE = 'Je suis ingénieur informatique, je travail en tant que Dev Ops chez <a href="//www.manomano.fr">ManoMano</a>. J\'aime le développement, le streaming, l\'Internet…<br><br>Depuis l\'an 2000, j\'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.'
-SITELOGO = u'/avatar.png'
+#SITELOGO = u'avatar.png'
 
 FAVICON = 'favicon.ico'
 ROBOTS = 'index, follow'
