@@ -51,7 +51,12 @@ rechercher la ligne avec :&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;if (false /*data.status !== 'Active'*/) {&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Puis relancer pveproxy avec la commande &lt;code&gt;pveproxy restart&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Se déconnecter de l'interface proxmox, à la reconnection vous n'aurez plus le
-message de souscription.&lt;/p&gt;</content><category term="Proxmox"></category><category term="Debian"></category><category term="Stretch"></category></entry><entry><title>Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</title><link href="//www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html" rel="alternate"></link><published>2017-08-26T17:00:56+02:00</published><updated>2017-08-26T17:00:56+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</id><summary type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
+message de souscription.&lt;/p&gt;
+&lt;p&gt;Puis faire les commandes optionnelles :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt remove os-prober
+apt remove linux-image-amd64 linux-image-4.9.0-3-amd64
+update-grub
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Proxmox"></category><category term="Debian"></category><category term="Stretch"></category></entry><entry><title>Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</title><link href="//www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html" rel="alternate"></link><published>2017-08-26T17:00:56+02:00</published><updated>2017-08-26T17:00:56+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</id><summary type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
 &lt;p&gt;En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
 livebox par l'USG tout en concervant la télévision etc… grâce a des VLANs.&lt;/p&gt;
 &lt;p&gt;Il y a pas mal de manipulations …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
