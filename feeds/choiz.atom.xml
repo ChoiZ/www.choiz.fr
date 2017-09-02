@@ -12,25 +12,15 @@ permet de gerer son matériel de la marque.&lt;/p&gt;
 &lt;p&gt;En branchant l'USG au secteur il prend l'adresse IP 192.168.1.1 (la même que la
 livebox dans un premier temps ça aide pas…). Je branche donc l'USG en direct sur
 mon poste et je me connect en ssh dessus avec les login / pass : "ubnt / ubnt".&lt;/p&gt;
-&lt;p&gt;Se rendre sur &lt;a href="https://jsfiddle.net/kgersen/45zudr15/embedded/result/"&gt;le générateur d'option 90 DHCP&lt;/a&gt;
-Ajouter votre identifiant fti qui permet de se connecter au réseau orange.&lt;/p&gt;
-&lt;p&gt;Une chaine va être généré par exemple :
-&lt;code&gt;fti/abc1d2e&lt;/code&gt;
-génére la chaine :
-&lt;code&gt;00:00:00:00:00:00:00:00:00:00:00:66:74:69:2f:61:62:63:31:64:32:65&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Récupérez l'adresse mac de votre livebox (le modem) elle doit être sous la forme :
-&lt;code&gt;AA:BB:CC:DD:EE:FF&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Télécharger les différents fichiers :&lt;/p&gt;
+&lt;p&gt;Se rendre sur &lt;a href="https://www.l9.fr/usg-config-generator.php"&gt;mon générateur de configuration&lt;/a&gt; pour générer un fichier config_usg.sh&lt;/p&gt;
+&lt;p&gt;Puis télécharger les fichiers :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://lafibre.info/remplacer-livebox/en-cours-remplacer-sa-livebox-par-un-routeur-ubiquiti-edgemax/?action=dlattach;attach=34373"&gt;dhclient3&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://gist.githubusercontent.com/ChoiZ/32add22a2addcb00c1b07c8a453a5902/raw/c4f3d9426de070121fb70caa9664efbe76c8b2e3/rfc3442-classless-routes"&gt;rfc3442-classless-routes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://gist.githubusercontent.com/ChoiZ/32add22a2addcb00c1b07c8a453a5902/raw/c4f3d9426de070121fb70caa9664efbe76c8b2e3/script.orange.sh"&gt;script_choiz.sh&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Modifier dans script_choiz.sh l'adresse mac + la chaine fti.
-Recherchez les chaînes que j'ai cité plus haut en exemple.&lt;/p&gt;
-&lt;p&gt;Faire un scp de dhclient3 rfc3442-classless-route script_choiz.sh sur votre USG
+&lt;p&gt;Faire un scp de dhclient3 rfc3442-classless-route config_usg.sh sur votre USG
 avec l'utilisateur "ubnt" et le mot de passe "ubnt"&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;scp&lt;/span&gt; &lt;span class="n"&gt;dhclient3&lt;/span&gt; &lt;span class="n"&gt;rfc3442&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;classless&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;routes&lt;/span&gt; &lt;span class="n"&gt;script_choiz&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="n"&gt;ubnt&lt;/span&gt;&lt;span class="mf"&gt;@192.168.1.1&lt;/span&gt;&lt;span class="o"&gt;:/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ubnt&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;scp&lt;/span&gt; &lt;span class="n"&gt;dhclient3&lt;/span&gt; &lt;span class="n"&gt;rfc3442&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;classless&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;routes&lt;/span&gt; &lt;span class="n"&gt;config_usg&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="n"&gt;ubnt&lt;/span&gt;&lt;span class="mf"&gt;@192.168.1.1&lt;/span&gt;&lt;span class="o"&gt;:/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ubnt&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -47,7 +37,7 @@ chmod 775 /sbin/dhclient3
 chown root:root /sbin/dhclient3
 mv rfc3442-classless-routes /etc/dhcp3/dhclient-exit-hooks.d/
 chown root:root /etc/dhcp3/dhclient-exit-hooks.d/rfc3442-classless-routes
-chmod a+x script_choiz.sh
+chmod a+x config_usg.sh
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -77,7 +67,7 @@ vielle configuration).&lt;/p&gt;
 
 &lt;p&gt;Se connecter en tant que root pour executer le script&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo bash
-./script_choiz.sh
+./config_usg.sh
 &lt;/pre&gt;&lt;/div&gt;
 
 

@@ -70,25 +70,15 @@ permet de gerer son matériel de la marque.</p>
 <p>En branchant l'USG au secteur il prend l'adresse IP 192.168.1.1 (la même que la
 livebox dans un premier temps ça aide pas…). Je branche donc l'USG en direct sur
 mon poste et je me connect en ssh dessus avec les login / pass : "ubnt / ubnt".</p>
-<p>Se rendre sur <a href="https://jsfiddle.net/kgersen/45zudr15/embedded/result/">le générateur d'option 90 DHCP</a>
-Ajouter votre identifiant fti qui permet de se connecter au réseau orange.</p>
-<p>Une chaine va être généré par exemple :
-<code>fti/abc1d2e</code>
-génére la chaine :
-<code>00:00:00:00:00:00:00:00:00:00:00:66:74:69:2f:61:62:63:31:64:32:65</code></p>
-<p>Récupérez l'adresse mac de votre livebox (le modem) elle doit être sous la forme :
-<code>AA:BB:CC:DD:EE:FF</code></p>
-<p>Télécharger les différents fichiers :</p>
+<p>Se rendre sur <a href="https://www.l9.fr/usg-config-generator.php">mon générateur de configuration</a> pour générer un fichier config_usg.sh</p>
+<p>Puis télécharger les fichiers :</p>
 <ul>
 <li><a href="https://lafibre.info/remplacer-livebox/en-cours-remplacer-sa-livebox-par-un-routeur-ubiquiti-edgemax/?action=dlattach;attach=34373">dhclient3</a></li>
 <li><a href="https://gist.githubusercontent.com/ChoiZ/32add22a2addcb00c1b07c8a453a5902/raw/c4f3d9426de070121fb70caa9664efbe76c8b2e3/rfc3442-classless-routes">rfc3442-classless-routes</a></li>
-<li><a href="https://gist.githubusercontent.com/ChoiZ/32add22a2addcb00c1b07c8a453a5902/raw/c4f3d9426de070121fb70caa9664efbe76c8b2e3/script.orange.sh">script_choiz.sh</a></li>
 </ul>
-<p>Modifier dans script_choiz.sh l'adresse mac + la chaine fti.
-Recherchez les chaînes que j'ai cité plus haut en exemple.</p>
-<p>Faire un scp de dhclient3 rfc3442-classless-route script_choiz.sh sur votre USG
+<p>Faire un scp de dhclient3 rfc3442-classless-route config_usg.sh sur votre USG
 avec l'utilisateur "ubnt" et le mot de passe "ubnt"</p>
-<div class="highlight"><pre><span></span><span class="n">scp</span> <span class="n">dhclient3</span> <span class="n">rfc3442</span><span class="o">-</span><span class="n">classless</span><span class="o">-</span><span class="n">routes</span> <span class="n">script_choiz</span><span class="p">.</span><span class="n">sh</span> <span class="n">ubnt</span><span class="mf">@192.168.1.1</span><span class="o">:/</span><span class="n">home</span><span class="o">/</span><span class="n">ubnt</span>
+<div class="highlight"><pre><span></span><span class="n">scp</span> <span class="n">dhclient3</span> <span class="n">rfc3442</span><span class="o">-</span><span class="n">classless</span><span class="o">-</span><span class="n">routes</span> <span class="n">config_usg</span><span class="p">.</span><span class="n">sh</span> <span class="n">ubnt</span><span class="mf">@192.168.1.1</span><span class="o">:/</span><span class="n">home</span><span class="o">/</span><span class="n">ubnt</span>
 </pre></div>
 
 
@@ -105,7 +95,7 @@ chmod 775 /sbin/dhclient3
 chown root:root /sbin/dhclient3
 mv rfc3442-classless-routes /etc/dhcp3/dhclient-exit-hooks.d/
 chown root:root /etc/dhcp3/dhclient-exit-hooks.d/rfc3442-classless-routes
-chmod a+x script_choiz.sh
+chmod a+x config_usg.sh
 </pre></div>
 
 
@@ -135,7 +125,7 @@ vielle configuration).</p>
 
 <p>Se connecter en tant que root pour executer le script</p>
 <div class="highlight"><pre><span></span>sudo bash
-./script_choiz.sh
+./config_usg.sh
 </pre></div>
 
 
