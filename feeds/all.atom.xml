@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-08-26T19:00:56+02:00</updated><entry><title>Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</title><link href="//www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html" rel="alternate"></link><published>2017-08-26T19:00:56+02:00</published><updated>2017-08-26T19:00:56+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</id><summary type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-09-02T18:25:10+02:00</updated><entry><title>Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</title><link href="//www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html" rel="alternate"></link><published>2017-08-26T19:00:56+02:00</published><updated>2017-09-02T18:25:10+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</id><summary type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
 &lt;p&gt;En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
-livebox par l'USG tout en concervant la télévision etc… grâce a des VLANs.&lt;/p&gt;
-&lt;p&gt;Il y a pas mal de manipulations …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
+livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs.&lt;/p&gt;
+&lt;p&gt;Il y a pas mal de manipulations a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
 &lt;p&gt;En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
-livebox par l'USG tout en concervant la télévision etc… grâce a des VLANs.&lt;/p&gt;
+livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs.&lt;/p&gt;
 &lt;p&gt;Il y a pas mal de manipulations a faire avant de pouvoir remplacer totalement sa
 livebox par l'USG.&lt;/p&gt;
 &lt;p&gt;J'ai utilisé un raspberry pi qui me permet d'installer un controlleur UniFi qui
@@ -12,22 +12,6 @@ permet de gerer son matériel de la marque.&lt;/p&gt;
 &lt;p&gt;En branchant l'USG au secteur il prend l'adresse IP 192.168.1.1 (la même que la
 livebox dans un premier temps ça aide pas…). Je branche donc l'USG en direct sur
 mon poste et je me connect en ssh dessus avec les login / pass : "ubnt / ubnt".&lt;/p&gt;
-&lt;p&gt;Une fois connecté en ssh il faut reconfigurer l'interface eth1 avec l'adresse IP
-de votre choix :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# configure
-$ set interfaces ethernet eth0 address 192.168.1.10/24
-$ delete interfaces ethernet eth0 address 192.168.1.1/24
-$ commit
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;On commence par dire qu'on assigne sur eth0 l'IP 192.168.1.10 avec un masque
-255.255.255.0 et ensuite on supprime l'IP 192.168.1.1 puis on commit. A ce
-moment on se fait déconnecté du SSH vu que l'IP à changée.&lt;/p&gt;
-&lt;p&gt;Si besoin vous pouvez vous reconnecter avec 192.168.1.10.&lt;/p&gt;
-&lt;p&gt;L'autre méthode pour changer d'IP est de configurer dans le controlleur UniFi
-l'IP de votre réseau en 192.168.1.10/24 ensuite il va reprovisionner l'USG avec
-cette IP.&lt;/p&gt;
 &lt;p&gt;Se rendre sur &lt;a href="https://jsfiddle.net/kgersen/45zudr15/embedded/result/"&gt;le générateur d'option 90 DHCP&lt;/a&gt;
 Ajouter votre identifiant fti qui permet de se connecter au réseau orange.&lt;/p&gt;
 &lt;p&gt;Une chaine va être généré par exemple :
@@ -40,45 +24,30 @@ génére la chaine :
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://lafibre.info/remplacer-livebox/en-cours-remplacer-sa-livebox-par-un-routeur-ubiquiti-edgemax/?action=dlattach;attach=34373"&gt;dhclient3&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://gist.githubusercontent.com/ChoiZ/32add22a2addcb00c1b07c8a453a5902/raw/c4f3d9426de070121fb70caa9664efbe76c8b2e3/rfc3442-classless-routes"&gt;rfc3442-classless-routes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://gist.githubusercontent.com/ChoiZ/32add22a2addcb00c1b07c8a453a5902/raw/c4f3d9426de070121fb70caa9664efbe76c8b2e3/script.orange.sh"&gt;script_orange.sh&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://gist.githubusercontent.com/ChoiZ/32add22a2addcb00c1b07c8a453a5902/raw/c4f3d9426de070121fb70caa9664efbe76c8b2e3/config.orange.txt"&gt;config.orange.txt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gist.githubusercontent.com/ChoiZ/32add22a2addcb00c1b07c8a453a5902/raw/c4f3d9426de070121fb70caa9664efbe76c8b2e3/script.orange.sh"&gt;script_choiz.sh&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Modifier dans script_orange.sh et dans config.orange.txt l'adresse mac + la
-chaine fti. Recherchez les chaînes que j'ai cité plus haut en exemple.&lt;/p&gt;
-&lt;p&gt;Faire un scp de dhclient3 rfc3442-classless-route script_orange.sh et
-config.orange.txt sur votre USG avec l'utilisateur qui est indiqué dans votre
-controlleur dans settings &amp;gt; site &amp;gt; Device Authentication, cliquez sur
-le mot de passe pour le faire apparaitre.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;scp&lt;/span&gt; &lt;span class="n"&gt;dhclient3&lt;/span&gt; &lt;span class="n"&gt;rfc3442&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;classless&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;routes&lt;/span&gt; &lt;span class="n"&gt;script_orange&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;orange&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="mf"&gt;@192.168.1.20&lt;/span&gt;&lt;span class="o"&gt;:/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;
+&lt;p&gt;Modifier dans script_choiz.sh l'adresse mac + la chaine fti.
+Recherchez les chaînes que j'ai cité plus haut en exemple.&lt;/p&gt;
+&lt;p&gt;Faire un scp de dhclient3 rfc3442-classless-route script_choiz.sh sur votre USG
+avec l'utilisateur "ubnt" et le mot de passe "ubnt"&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;scp&lt;/span&gt; &lt;span class="n"&gt;dhclient3&lt;/span&gt; &lt;span class="n"&gt;rfc3442&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;classless&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;routes&lt;/span&gt; &lt;span class="n"&gt;script_choiz&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="n"&gt;ubnt&lt;/span&gt;&lt;span class="mf"&gt;@192.168.1.1&lt;/span&gt;&lt;span class="o"&gt;:/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ubnt&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Se connecter en ssh sur votre usg :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="mf"&gt;@192.168.1.20&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt; &lt;span class="n"&gt;ubnt&lt;/span&gt;&lt;span class="mf"&gt;@192.168.1.1&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Remplacer le dhclient3 :&lt;/p&gt;
+&lt;p&gt;Remplacer le dhclient3, copier la rfc au bon endroit et rendre executable mon
+script :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo bash
 mv dhclient3 /sbin/dhclient3
 chmod 775 /sbin/dhclient3
 chown root:root /sbin/dhclient3
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Copier la rfc :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mv rfc3442-classless-routes /etc/dhcp3/dhclient-exit-hooks.d/
+mv rfc3442-classless-routes /etc/dhcp3/dhclient-exit-hooks.d/
 chown root:root /etc/dhcp3/dhclient-exit-hooks.d/rfc3442-classless-routes
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Rendre executable le script :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chmod a+x script_orange.sh
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Copier la config dans /config/&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mv config.orange.txt /config/
+chmod a+x script_choiz.sh
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -94,119 +63,51 @@ du dhcp. Il faut aller a la ligne 194 :&lt;/p&gt;
 
 
 &lt;p&gt;Maintenant redémarrer l'USG.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@ubnt:/home/user# reboot
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@ubnt:/home/ubnt# reboot
 Proceed with reboot? [confirm]y
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Une fois l'usg de nouveau opérationnel, débrancher votre controlleur du réseau
-puis se connecter de nouveau en ssh sur l'usg :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="mf"&gt;@192.168.1.20&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Reconfigurer l'ip en 192.168.1.1/24 (Débrancher votre livebox du réseau pour pas
-avoir de conflit d'ip).&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;configure
-set interfaces ethernet eth1 address 192.168.1.1/24
-delete interfaces ethernet eth1 address 192.168.1.20/24
-commit
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Maintenant vous êtes déconnecté du ssh vu que votre USG a changé d'ip.&lt;/p&gt;
-&lt;p&gt;Se reconnecter en ssh sur la nouvelle ip :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="mf"&gt;@192.168.1.1&lt;/span&gt;
+&lt;p&gt;Débrancher votre controlleur du réseau (pour ne pas que l'USG reprovisionne une 
+vielle configuration).&lt;/p&gt;
+&lt;p&gt;Se connecter de nouveau en ssh sur l'usg :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt; &lt;span class="n"&gt;ubnt&lt;/span&gt;&lt;span class="mf"&gt;@192.168.1.1&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Se connecter en tant que root pour executer le script&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo bash
-./script_orange.sh
-exit
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Puis lancer un configure et charger la conf :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;configure
-load config.orange.txt
+./script_choiz.sh
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Vous devriez avoir :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Loading configuration from &amp;#39;/config/config.orange.eth0.txt&amp;#39;...
-The specified configuration node is not valid
-Set [&amp;#39;service&amp;#39; &amp;#39;gui&amp;#39; &amp;#39;http-port&amp;#39; &amp;#39;80&amp;#39;] failed
-The specified configuration node is not valid
-Set [&amp;#39;service&amp;#39; &amp;#39;gui&amp;#39; &amp;#39;older-ciphers&amp;#39; &amp;#39;disable&amp;#39;] failed
-The specified configuration node is not valid
-Set [&amp;#39;system&amp;#39; &amp;#39;offload&amp;#39; &amp;#39;hwnat&amp;#39; &amp;#39;disable&amp;#39;] failed
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;specified&lt;/span&gt; &lt;span class="n"&gt;configuration&lt;/span&gt; &lt;span class="n"&gt;node&lt;/span&gt; &lt;span class="n"&gt;already&lt;/span&gt; &lt;span class="n"&gt;exists&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;service&lt;/span&gt; &lt;span class="n"&gt;nat&lt;/span&gt; &lt;span class="n"&gt;rule&lt;/span&gt; &lt;span class="mi"&gt;6010&lt;/span&gt; &lt;span class="n"&gt;outbound&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;interface&lt;/span&gt; &lt;span class="n"&gt;eth0&lt;/span&gt;&lt;span class="mf"&gt;.832&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;NAT&lt;/span&gt; &lt;span class="n"&gt;configuration&lt;/span&gt; &lt;span class="nl"&gt;warning&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;interface&lt;/span&gt; &lt;span class="n"&gt;eth0&lt;/span&gt;&lt;span class="mf"&gt;.832&lt;/span&gt; &lt;span class="n"&gt;does&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;exist&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;system&lt;/span&gt;
 
-Load complete.  Use &amp;#39;commit&amp;#39; to make changes active.
-[edit]
-&lt;/pre&gt;&lt;/div&gt;
+&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;service&lt;/span&gt; &lt;span class="n"&gt;nat&lt;/span&gt; &lt;span class="n"&gt;rule&lt;/span&gt; &lt;span class="mi"&gt;6011&lt;/span&gt; &lt;span class="n"&gt;outbound&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;interface&lt;/span&gt; &lt;span class="n"&gt;eth0&lt;/span&gt;&lt;span class="mf"&gt;.838&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;NAT&lt;/span&gt; &lt;span class="n"&gt;configuration&lt;/span&gt; &lt;span class="nl"&gt;warning&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;interface&lt;/span&gt; &lt;span class="n"&gt;eth0&lt;/span&gt;&lt;span class="mf"&gt;.838&lt;/span&gt; &lt;span class="n"&gt;does&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;exist&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;system&lt;/span&gt;
 
+&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;interfaces&lt;/span&gt; &lt;span class="n"&gt;ethernet&lt;/span&gt; &lt;span class="n"&gt;eth0&lt;/span&gt; &lt;span class="n"&gt;vif&lt;/span&gt; &lt;span class="mi"&gt;838&lt;/span&gt; &lt;span class="n"&gt;address&lt;/span&gt; &lt;span class="n"&gt;dhcp&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;Starting&lt;/span&gt; &lt;span class="n"&gt;DHCP&lt;/span&gt; &lt;span class="n"&gt;client&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;eth0&lt;/span&gt;&lt;span class="mf"&gt;.838&lt;/span&gt; &lt;span class="p"&gt;...&lt;/span&gt;
 
-&lt;p&gt;Ici je lance un commit pour appliquer la config :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;commit
-&lt;/pre&gt;&lt;/div&gt;
+&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;interfaces&lt;/span&gt; &lt;span class="n"&gt;ethernet&lt;/span&gt; &lt;span class="n"&gt;eth0&lt;/span&gt; &lt;span class="n"&gt;vif&lt;/span&gt; &lt;span class="mi"&gt;832&lt;/span&gt; &lt;span class="n"&gt;address&lt;/span&gt; &lt;span class="n"&gt;dhcp&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;Starting&lt;/span&gt; &lt;span class="n"&gt;DHCP&lt;/span&gt; &lt;span class="n"&gt;client&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;eth0&lt;/span&gt;&lt;span class="mf"&gt;.832&lt;/span&gt; &lt;span class="p"&gt;...&lt;/span&gt;
 
+&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;service&lt;/span&gt; &lt;span class="n"&gt;ssh&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;Restarting&lt;/span&gt; &lt;span class="n"&gt;OpenBSD&lt;/span&gt; &lt;span class="n"&gt;Secure&lt;/span&gt; &lt;span class="n"&gt;Shell&lt;/span&gt; &lt;span class="nl"&gt;server&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;sshd&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
 
-&lt;p&gt;Et ça m'affiche :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[ firewall name LAN_IN ]&lt;/span&gt;
-&lt;span class="err"&gt;Firewall&lt;/span&gt; &lt;span class="err"&gt;config&lt;/span&gt; &lt;span class="err"&gt;error:&lt;/span&gt; &lt;span class="err"&gt;Cannot&lt;/span&gt; &lt;span class="err"&gt;delete&lt;/span&gt; &lt;span class="err"&gt;rule&lt;/span&gt; &lt;span class="err"&gt;set&lt;/span&gt; &lt;span class="err"&gt;&amp;quot;LAN_IN&amp;quot;&lt;/span&gt; &lt;span class="err"&gt;(still&lt;/span&gt; &lt;span class="err"&gt;in&lt;/span&gt; &lt;span class="err"&gt;use)&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;protocols&lt;/span&gt; &lt;span class="n"&gt;igmp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;proxy&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;Starting&lt;/span&gt; &lt;span class="n"&gt;IGMP&lt;/span&gt; &lt;span class="n"&gt;proxy&lt;/span&gt;
 
-&lt;span class="k"&gt;[ firewall name LAN_LOCAL ]&lt;/span&gt;
-&lt;span class="err"&gt;Firewall&lt;/span&gt; &lt;span class="err"&gt;config&lt;/span&gt; &lt;span class="err"&gt;error:&lt;/span&gt; &lt;span class="err"&gt;Cannot&lt;/span&gt; &lt;span class="err"&gt;delete&lt;/span&gt; &lt;span class="err"&gt;rule&lt;/span&gt; &lt;span class="err"&gt;set&lt;/span&gt; &lt;span class="err"&gt;&amp;quot;LAN_LOCAL&amp;quot;&lt;/span&gt; &lt;span class="err"&gt;(still&lt;/span&gt; &lt;span class="err"&gt;in&lt;/span&gt; &lt;span class="err"&gt;use)&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="n"&gt;service&lt;/span&gt; &lt;span class="n"&gt;dhcp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;Stopping&lt;/span&gt; &lt;span class="n"&gt;DHCP&lt;/span&gt; &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="n"&gt;daemon&lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="n"&gt;Starting&lt;/span&gt; &lt;span class="n"&gt;DHCP&lt;/span&gt; &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="n"&gt;daemon&lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;
 
-&lt;span class="k"&gt;[ firewall name LAN_OUT ]&lt;/span&gt;
-&lt;span class="err"&gt;Firewall&lt;/span&gt; &lt;span class="err"&gt;config&lt;/span&gt; &lt;span class="err"&gt;error:&lt;/span&gt; &lt;span class="err"&gt;Cannot&lt;/span&gt; &lt;span class="err"&gt;delete&lt;/span&gt; &lt;span class="err"&gt;rule&lt;/span&gt; &lt;span class="err"&gt;set&lt;/span&gt; &lt;span class="err"&gt;&amp;quot;LAN_OUT&amp;quot;&lt;/span&gt; &lt;span class="err"&gt;(still&lt;/span&gt; &lt;span class="err"&gt;in&lt;/span&gt; &lt;span class="err"&gt;use)&lt;/span&gt;
-
-&lt;span class="k"&gt;[ firewall name WAN_IN ]&lt;/span&gt;
-&lt;span class="err"&gt;Error:&lt;/span&gt; &lt;span class="err"&gt;group&lt;/span&gt; &lt;span class="err"&gt;[guest_restricted_subnets]&lt;/span&gt; &lt;span class="err"&gt;doesn&amp;#39;t&lt;/span&gt; &lt;span class="err"&gt;exist&lt;/span&gt;
-
-&lt;span class="k"&gt;[ firewall name WAN_LOCAL ]&lt;/span&gt;
-&lt;span class="err"&gt;Error:&lt;/span&gt; &lt;span class="err"&gt;group&lt;/span&gt; &lt;span class="err"&gt;[guest_restricted_subnets]&lt;/span&gt; &lt;span class="err"&gt;doesn&amp;#39;t&lt;/span&gt; &lt;span class="err"&gt;exist&lt;/span&gt;
-
-&lt;span class="k"&gt;[ system conntrack hash-size 4096 ]&lt;/span&gt;
-&lt;span class="err"&gt;Updated&lt;/span&gt; &lt;span class="err"&gt;conntrack&lt;/span&gt; &lt;span class="err"&gt;hash&lt;/span&gt; &lt;span class="err"&gt;size.&lt;/span&gt; &lt;span class="err"&gt;This&lt;/span&gt; &lt;span class="err"&gt;change&lt;/span&gt; &lt;span class="err"&gt;will&lt;/span&gt; &lt;span class="err"&gt;take&lt;/span&gt; &lt;span class="err"&gt;affect&lt;/span&gt; &lt;span class="err"&gt;when&lt;/span&gt; &lt;span class="err"&gt;the&lt;/span&gt; &lt;span class="err"&gt;system&lt;/span&gt; &lt;span class="err"&gt;is&lt;/span&gt; &lt;span class="err"&gt;rebooted.&lt;/span&gt;
-
-&lt;span class="k"&gt;[ interfaces ethernet eth0 address dhcp ]&lt;/span&gt;
-&lt;span class="err"&gt;Stopping&lt;/span&gt; &lt;span class="err"&gt;DHCP&lt;/span&gt; &lt;span class="err"&gt;client&lt;/span&gt; &lt;span class="err"&gt;on&lt;/span&gt; &lt;span class="err"&gt;eth0&lt;/span&gt; &lt;span class="err"&gt;...&lt;/span&gt;
-
-&lt;span class="k"&gt;[ interfaces ethernet eth0 vif 832 address dhcp ]&lt;/span&gt;
-&lt;span class="err"&gt;Starting&lt;/span&gt; &lt;span class="err"&gt;DHCP&lt;/span&gt; &lt;span class="err"&gt;client&lt;/span&gt; &lt;span class="err"&gt;on&lt;/span&gt; &lt;span class="err"&gt;eth0.832&lt;/span&gt; &lt;span class="err"&gt;...&lt;/span&gt;
-
-&lt;span class="k"&gt;[ system syslog ]&lt;/span&gt;
-&lt;span class="err"&gt;Stopping&lt;/span&gt; &lt;span class="err"&gt;enhanced&lt;/span&gt; &lt;span class="err"&gt;syslogd:&lt;/span&gt; &lt;span class="err"&gt;rsyslogd.&lt;/span&gt;
-&lt;span class="err"&gt;Starting&lt;/span&gt; &lt;span class="err"&gt;enhanced&lt;/span&gt; &lt;span class="err"&gt;syslogd:&lt;/span&gt; &lt;span class="err"&gt;rsyslogd.&lt;/span&gt;
-
-&lt;span class="k"&gt;[ system ntp ]&lt;/span&gt;
-&lt;span class="err"&gt;Stopping&lt;/span&gt; &lt;span class="err"&gt;NTP&lt;/span&gt; &lt;span class="err"&gt;server:&lt;/span&gt; &lt;span class="err"&gt;ntpd.&lt;/span&gt;
-&lt;span class="err"&gt;Starting&lt;/span&gt; &lt;span class="err"&gt;NTP&lt;/span&gt; &lt;span class="err"&gt;server:&lt;/span&gt; &lt;span class="err"&gt;ntpd.&lt;/span&gt;
-
-&lt;span class="k"&gt;[ service ssh ]&lt;/span&gt;
-&lt;span class="err"&gt;Restarting&lt;/span&gt; &lt;span class="err"&gt;OpenBSD&lt;/span&gt; &lt;span class="err"&gt;Secure&lt;/span&gt; &lt;span class="err"&gt;Shell&lt;/span&gt; &lt;span class="err"&gt;server:&lt;/span&gt; &lt;span class="err"&gt;sshd.&lt;/span&gt;
-
-&lt;span class="k"&gt;[ protocols igmp-proxy ]&lt;/span&gt;
-&lt;span class="err"&gt;Starting&lt;/span&gt; &lt;span class="err"&gt;IGMP&lt;/span&gt; &lt;span class="err"&gt;proxy&lt;/span&gt;
-
-&lt;span class="k"&gt;[ service dhcp-server ]&lt;/span&gt;
-&lt;span class="err"&gt;Stopping&lt;/span&gt; &lt;span class="err"&gt;DHCP&lt;/span&gt; &lt;span class="err"&gt;server&lt;/span&gt; &lt;span class="err"&gt;daemon...&lt;/span&gt;
-&lt;span class="err"&gt;Starting&lt;/span&gt; &lt;span class="err"&gt;DHCP&lt;/span&gt; &lt;span class="err"&gt;server&lt;/span&gt; &lt;span class="err"&gt;daemon...&lt;/span&gt;
-
-&lt;span class="err"&gt;Commit&lt;/span&gt; &lt;span class="err"&gt;failed&lt;/span&gt;
-&lt;span class="k"&gt;[edit]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Malgrès le fail, je fais un save :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@ubnt# save
-Warning: you have uncommitted changes that will not be saved.
-
-Saving configuration to &amp;#39;/config/config.boot&amp;#39;...
-Done
-[edit]
+&lt;span class="n"&gt;Saving&lt;/span&gt; &lt;span class="n"&gt;configuration&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;boot&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="n"&gt;Done&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;edit&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -241,8 +142,6 @@ erreurs lors de ce provisionning elles seront affichées dans "alerts" sur votre
 controlleur. Dans ce cas il y a un truc qui cloche entre votre config et celle
 du controlleur revoir les différentes étapes.&lt;/p&gt;
 &lt;p&gt;Si le provisionning est ok l'USG redémarre et la config est enfin fini ! ;-)&lt;/p&gt;
-&lt;p&gt;Le tout doit être faisable qu'avec un fichier plutôt que d'utiliser
-script_orange.sh + config.orange.txt&lt;/p&gt;
 &lt;p&gt;Grand merci au forum lafibre.info et particulièrement ce &lt;a href="https://lafibre.info/remplacer-livebox/unifi-security-gateway-en-remplacement-de-la-livebox/"&gt;sujet&lt;/a&gt;.&lt;/p&gt;</content><category term="UniFi"></category><category term="Gateway"></category><category term="Livebox"></category><category term="USG"></category><category term="Network"></category></entry><entry><title>Installation de Proxmox-VE 5 sur Debian Stretch</title><link href="//www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html" rel="alternate"></link><published>2017-08-26T17:36:19+02:00</published><updated>2017-08-26T17:36:19+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html</id><summary type="html">&lt;p&gt;Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
 Par contre il ne faut pas modifier le sources.list ni installer
 firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
