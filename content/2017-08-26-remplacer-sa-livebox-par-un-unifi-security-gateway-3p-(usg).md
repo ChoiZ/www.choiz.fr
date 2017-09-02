@@ -22,30 +22,17 @@ En branchant l'USG au secteur il prend l'adresse IP 192.168.1.1 (la même que la
 livebox dans un premier temps ça aide pas…). Je branche donc l'USG en direct sur
 mon poste et je me connect en ssh dessus avec les login / pass : "ubnt / ubnt".
 
-Se rendre sur [le générateur d'option 90 DHCP](https://jsfiddle.net/kgersen/45zudr15/embedded/result/)
-Ajouter votre identifiant fti qui permet de se connecter au réseau orange.
+Se rendre sur [mon générateur de configuration](https://www.l9.fr/usg-config-generator.php) pour générer un fichier config_usg.sh
 
-Une chaine va être généré par exemple :
-```fti/abc1d2e```
-génére la chaine :
-```00:00:00:00:00:00:00:00:00:00:00:66:74:69:2f:61:62:63:31:64:32:65```
-
-Récupérez l'adresse mac de votre livebox (le modem) elle doit être sous la forme :
-```AA:BB:CC:DD:EE:FF```
-
-Télécharger les différents fichiers :
+Puis télécharger les fichiers :
 
 * [dhclient3](https://lafibre.info/remplacer-livebox/en-cours-remplacer-sa-livebox-par-un-routeur-ubiquiti-edgemax/?action=dlattach;attach=34373)
 * [rfc3442-classless-routes](https://gist.githubusercontent.com/ChoiZ/32add22a2addcb00c1b07c8a453a5902/raw/c4f3d9426de070121fb70caa9664efbe76c8b2e3/rfc3442-classless-routes)
-* [script_choiz.sh](https://gist.githubusercontent.com/ChoiZ/32add22a2addcb00c1b07c8a453a5902/raw/c4f3d9426de070121fb70caa9664efbe76c8b2e3/script.orange.sh)
 
-Modifier dans script_choiz.sh l'adresse mac + la chaine fti.
-Recherchez les chaînes que j'ai cité plus haut en exemple.
-
-Faire un scp de dhclient3 rfc3442-classless-route script_choiz.sh sur votre USG
+Faire un scp de dhclient3 rfc3442-classless-route config_usg.sh sur votre USG
 avec l'utilisateur "ubnt" et le mot de passe "ubnt"
 ```
-scp dhclient3 rfc3442-classless-routes script_choiz.sh ubnt@192.168.1.1:/home/ubnt
+scp dhclient3 rfc3442-classless-routes config_usg.sh ubnt@192.168.1.1:/home/ubnt
 ```
 
 Se connecter en ssh sur votre usg :
@@ -62,7 +49,7 @@ chmod 775 /sbin/dhclient3
 chown root:root /sbin/dhclient3
 mv rfc3442-classless-routes /etc/dhcp3/dhclient-exit-hooks.d/
 chown root:root /etc/dhcp3/dhclient-exit-hooks.d/rfc3442-classless-routes
-chmod a+x script_choiz.sh
+chmod a+x config_usg.sh
 ```
 
 Editer le fichier /opt/vyatta/sbin/vyatta-interfaces.pl et ajouter l'option 90
@@ -92,7 +79,7 @@ ssh ubnt@192.168.1.1
 Se connecter en tant que root pour executer le script
 ```
 sudo bash
-./script_choiz.sh
+./config_usg.sh
 ```
 
 Vous devriez avoir :
