@@ -560,7 +560,7 @@ correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
 &lt;span class="s"&gt;    last = cat-file commit HEAD&lt;/span&gt;
 &lt;span class="s"&gt;    tree = log --graph --oneline --decorate&lt;/span&gt;
 &lt;span class="s"&gt;    graph = log --graph --decorate …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 31 Jan 2012 10:34:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2012-01-31:/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html</guid><category>git</category><category>gitconfig</category><category>gitignore</category><category>git color</category><category>git tools</category><category>git alias</category><category>git merge</category><category>git diff</category><category>git editor</category><category>git excludesfile</category></item><item><title>Créer paire de clé pour se connecter en SSH</title><link>//www.choiz.fr/2012-01-13-cr%C3%A9er-paire-de-cl%C3%A9-pour-se-connecter-en-ssh.html</link><description>&lt;p&gt;On commence par ouvrir un terminal puis on tape :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -t rsa -b 1024
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -t rsa -b 4096
 
 Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
 &lt;/pre&gt;&lt;/div&gt;
@@ -568,7 +568,7 @@ Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
 
 &lt;p&gt;En général je garde le fichier id_rsa donc je tape "enter" sinon vous
 pouvez spécifier un autre chemin ainsi qu'un autre fichier. :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Enter passphrase …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 13 Jan 2012 10:05:18 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2012-01-13:/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html</guid><category>clé publique</category><category>clé privée</category><category>connexion ssh</category><category>authorized\_keys</category><category>ssh</category><category>.ssh</category></item><item><title>Clavier Apple sur debian</title><link>//www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html</link><description>&lt;p&gt;Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Enter passphrase …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 13 Jan 2012 10:05:18 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2012-01-13:/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html</guid><category>clé publique</category><category>clé privée</category><category>ssh</category><category>rsa</category></item><item><title>Clavier Apple sur debian</title><link>//www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html</link><description>&lt;p&gt;Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
 mapage clavier Mac. Il y a beaucoup de différences entre un clavier
 AZERTY de PC et un clavier AZERTY de Mac.&lt;/p&gt;
 &lt;p&gt;Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à

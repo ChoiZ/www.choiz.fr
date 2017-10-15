@@ -2973,7 +2973,7 @@ correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
 # .swp (Vim)
 *.swp
 &lt;/pre&gt;&lt;/div&gt;</content><category term="git"></category><category term="gitconfig"></category><category term="gitignore"></category><category term="git color"></category><category term="git tools"></category><category term="git alias"></category><category term="git merge"></category><category term="git diff"></category><category term="git editor"></category><category term="git excludesfile"></category></entry><entry><title>Créer paire de clé pour se connecter en SSH</title><link href="//www.choiz.fr/2012-01-13-cr%C3%A9er-paire-de-cl%C3%A9-pour-se-connecter-en-ssh.html" rel="alternate"></link><published>2012-01-13T10:05:18+01:00</published><updated>2012-01-13T10:05:18+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-01-13:/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html</id><summary type="html">&lt;p&gt;On commence par ouvrir un terminal puis on tape :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -t rsa -b 1024
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -t rsa -b 4096
 
 Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
 &lt;/pre&gt;&lt;/div&gt;
@@ -2982,7 +2982,7 @@ Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
 &lt;p&gt;En général je garde le fichier id_rsa donc je tape "enter" sinon vous
 pouvez spécifier un autre chemin ainsi qu'un autre fichier. :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Enter passphrase …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;On commence par ouvrir un terminal puis on tape :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -t rsa -b 1024
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -t rsa -b 4096
 
 Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
 &lt;/pre&gt;&lt;/div&gt;
@@ -3003,7 +3003,7 @@ différents hosts. En général j'en défini un.&lt;/p&gt;
 
 &lt;p&gt;ou via ssh-copy-id :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-copy-id -i ~/.ssh/id\_rsa.pub user@ip
-&lt;/pre&gt;&lt;/div&gt;</content><category term="clé publique"></category><category term="clé privée"></category><category term="connexion ssh"></category><category term="authorized\_keys"></category><category term="ssh"></category><category term=".ssh"></category></entry><entry><title>Clavier Apple sur debian</title><link href="//www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html" rel="alternate"></link><published>2011-12-02T00:14:00+01:00</published><updated>2011-12-02T00:14:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-12-02:/2011-12-02-clavier-apple-sur-debian.html</id><summary type="html">&lt;p&gt;Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
+&lt;/pre&gt;&lt;/div&gt;</content><category term="clé publique"></category><category term="clé privée"></category><category term="ssh"></category><category term="rsa"></category></entry><entry><title>Clavier Apple sur debian</title><link href="//www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html" rel="alternate"></link><published>2011-12-02T00:14:00+01:00</published><updated>2011-12-02T00:14:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-12-02:/2011-12-02-clavier-apple-sur-debian.html</id><summary type="html">&lt;p&gt;Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
 mapage clavier Mac. Il y a beaucoup de différences entre un clavier
 AZERTY de PC et un clavier AZERTY de Mac.&lt;/p&gt;
 &lt;p&gt;Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
