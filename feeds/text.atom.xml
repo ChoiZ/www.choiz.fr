@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ - text</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/text.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-10-15T19:52:13+02:00</updated><entry><title>Créer un partage NFS</title><link href="//www.choiz.fr/2017-10-15-creer-un-partage-nfs.html" rel="alternate"></link><published>2017-10-15T19:52:13+02:00</published><updated>2017-10-15T19:52:13+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-15:/2017-10-15-creer-un-partage-nfs.html</id><summary type="html">&lt;p&gt;Pour installer un serveur NFS sur Debian voici la marche à suivre :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install nfs-kernel-server
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt install nfs-kernel-server
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -12,7 +12,7 @@ votre partage.&lt;/p&gt;
 
 
 &lt;p&gt;J'ajoute dans le fichier le dossier à partager &lt;strong&gt;/home/user/share&lt;/strong&gt; et l'adresse …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pour installer un serveur NFS sur Debian voici la marche à suivre :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install nfs-kernel-server
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt install nfs-kernel-server
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -47,7 +47,7 @@ qui donne :&lt;/p&gt;
 
 
 &lt;p&gt;Sur Debian installer le paquet : &lt;strong&gt;nfs-common&lt;/strong&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install nfs-common
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt install nfs-common
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -286,8 +286,8 @@ Microserver.&lt;/p&gt;
 &lt;p&gt;Pour la réinstallation j'ai monté un &lt;a href="https://wiki.debian-fr.xyz/PXE_avec_support_EFI"&gt;serveur PXE sur
 debian&lt;/a&gt; merci Benjamin pour le
 lien et les conseils.&lt;/p&gt;
-&lt;p&gt;Installationn du TFTP :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# apt-install -y tftpd-hpa
+&lt;p&gt;Installation du TFTP :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# apt install -y tftpd-hpa
 &lt;/pre&gt;&lt;/div&gt;
 
 
