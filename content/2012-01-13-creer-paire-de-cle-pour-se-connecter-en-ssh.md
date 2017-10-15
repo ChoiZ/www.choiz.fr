@@ -2,13 +2,13 @@ Title: Créer paire de clé pour se connecter en SSH
 Date: 2012-01-13 10:05:18
 Author: choiz
 Category: text
-Tags: clé publique, clé privée, connexion ssh, authorized\_keys, ssh, .ssh
+Tags: clé publique, clé privée, ssh, rsa
 Slug: 2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh
 Status: published
 
 On commence par ouvrir un terminal puis on tape :
 
-    ssh-keygen -t rsa -b 1024
+    ssh-keygen -t rsa -b 4096
 
     Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
 
