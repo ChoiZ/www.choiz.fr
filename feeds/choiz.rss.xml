@@ -327,11 +327,9 @@ thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr
 
 
 &lt;p&gt;Décortiquons la commande :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;`:%s/` Recherche et remplace dans tout le fichier
-
-`\%U2028` Le caractère que l&amp;#39;on recherche unicode &amp;quot;2028&amp;quot;
-
-`//` par rien (1er slash sépare la …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 19 Jan 2014 17:06:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2014-01-19:/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html</guid><category>vim</category><category>unicode</category><category>char</category><category>suppression</category><category>caractère</category></item><item><title>crontab -e file(s)</title><link>//www.choiz.fr/2013-11-13-crontab-e-files.html</link><description>&lt;p&gt;Ou se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;:%s/&lt;/code&gt; Recherche et remplace dans tout le fichier&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;\%U2028&lt;/code&gt; Le caractère que l'on recherche unicode "2028"&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;//&lt;/code&gt; par rien (1er slash sépare la recherche …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 19 Jan 2014 17:06:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2014-01-19:/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html</guid><category>vim</category><category>unicode</category><category>char</category><category>suppression</category><category>caractère</category></item><item><title>crontab -e file(s)</title><link>//www.choiz.fr/2013-11-13-crontab-e-files.html</link><description>&lt;p&gt;Ou se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?&lt;/p&gt;
 &lt;p&gt;C'est une bonne question n'est-ce pas ?&lt;/p&gt;
 &lt;p&gt;La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
 debian, a voir sur d'autres distribs)&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 13 Nov 2013 21:13:34 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2013-11-13:/2013-11-13-crontab-e-files.html</guid><category>crontab -e</category><category>crontab</category><category>files</category><category>file</category><category>/var/spool/cron/crontabs</category><category>/var/spool/cron</category><category>user</category></item><item><title>Chmod 755 sur les dossiers et 644 sur les fichiers</title><link>//www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html</link><description>&lt;p&gt;C'est toujours la galère lorsque l'on veut que tout soit propre au

@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="J'étais à la recherche de se caractère unicode dans vim : <U+2028> Pour pouvoir le supprimer j'ai utilisé la commande suivante : :%s/\%U2028//g Décortiquons la commande : `:%s/` Recherche et remplace dans tout le fichier `\%U2028` Le caractère que l'on recherche unicode "2028" `//` par rien (1er slash sépare la …" />
+<meta name="description" content="J'étais à la recherche de se caractère unicode dans vim : <U+2028> Pour pouvoir le supprimer j'ai utilisé la commande suivante : :%s/\%U2028//g Décortiquons la commande : :%s/ Recherche et remplace dans tout le fichier \%U2028 Le caractère que l'on recherche unicode "2028" // par rien (1er slash sépare la recherche …" />
 <meta name="keywords" content="vim, unicode, char, suppression, caractère">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Suppression d'un caractère unicode dans Vim"/>
-<meta property="og:description" content="J'étais à la recherche de se caractère unicode dans vim : <U+2028> Pour pouvoir le supprimer j'ai utilisé la commande suivante : :%s/\%U2028//g Décortiquons la commande : `:%s/` Recherche et remplace dans tout le fichier `\%U2028` Le caractère que l'on recherche unicode "2028" `//` par rien (1er slash sépare la …"/>
+<meta property="og:description" content="J'étais à la recherche de se caractère unicode dans vim : <U+2028> Pour pouvoir le supprimer j'ai utilisé la commande suivante : :%s/\%U2028//g Décortiquons la commande : :%s/ Recherche et remplace dans tout le fichier \%U2028 Le caractère que l'on recherche unicode "2028" // par rien (1er slash sépare la recherche …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html"/>
 <meta property="og:type" content="article"/>
@@ -78,14 +78,10 @@
 
 
 <p>Décortiquons la commande :</p>
-<div class="highlight"><pre><span></span>`:%s/` Recherche et remplace dans tout le fichier
-
-`\%U2028` Le caractère que l&#39;on recherche unicode &quot;2028&quot;
-
-`//` par rien (1er slash sépare la recherche par ce qu&#39;on remplace, le second pour dire la fin de ce qu&#39;on remplace).
-
-`g` dans tout le fichier (global).
-</pre></div>
+<p><code>:%s/</code> Recherche et remplace dans tout le fichier</p>
+<p><code>\%U2028</code> Le caractère que l'on recherche unicode "2028"</p>
+<p><code>//</code> par rien (1er slash sépare la recherche par ce qu'on remplace, le second pour dire la fin de ce qu'on remplace).</p>
+<p><code>g</code> dans tout le fichier (global).</p>
   </div>
   <div class="tag-cloud">
     <p>
@@ -132,7 +128,7 @@
   },
   "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "//www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html",
-  "description": "J'étais à la recherche de se caractère unicode dans vim : <U+2028> Pour pouvoir le supprimer j'ai utilisé la commande suivante : :%s/\%U2028//g Décortiquons la commande : `:%s/` Recherche et remplace dans tout le fichier `\%U2028` Le caractère que l'on recherche unicode "2028" `//` par rien (1er slash sépare la …"
+  "description": "J'étais à la recherche de se caractère unicode dans vim : <U+2028> Pour pouvoir le supprimer j'ai utilisé la commande suivante : :%s/\%U2028//g Décortiquons la commande : :%s/ Recherche et remplace dans tout le fichier \%U2028 Le caractère que l'on recherche unicode "2028" // par rien (1er slash sépare la recherche …"
 }
 </script></body>
 </html>
