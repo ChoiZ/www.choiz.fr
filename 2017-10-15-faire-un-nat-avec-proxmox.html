@@ -11,15 +11,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
-  <meta name="author" content="François LASSERRE" />
-  <meta name="description" content="" />
+<meta name="author" content="choiz" />
+<meta name="description" content="L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut faire la même chose. Ip Public de proxmox : 11.22.33.44 Ip Privé de proxmox : 10.0.0.254 Je …" />
+<meta name="keywords" content="NAT, Proxmox, IPV4">
 <meta property="og:site_name" content="ChoiZ"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="ChoiZ"/>
-<meta property="og:description" content=""/>
-<meta property="og:locale" content="fr_FR"/>
-<meta property="og:url" content="//www.choiz.fr"/>
-  <title>ChoiZ &ndash; Tag : Proxmox</title>
+<meta property="og:title" content="Faire du NAT avec Proxmox"/>
+<meta property="og:description" content="L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut faire la même chose. Ip Public de proxmox : 11.22.33.44 Ip Privé de proxmox : 10.0.0.254 Je …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="//www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-10-15 22:08:23+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="//www.choiz.fr/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="NAT"/>
+<meta property="article:tag" content="Proxmox"/>
+<meta property="article:tag" content="IPV4"/>
+<meta property="og:image" content="">  <title>ChoiZ &ndash; Faire du NAT avec Proxmox</title>
 </head>
 <body>
   <aside>
@@ -53,62 +61,52 @@
 
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html">Faire du NAT avec Proxmox</a></h2>
-    <p>
-      Posté le dim. 15 octobre 2017 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/nat.html">NAT</a>,      <a href="//www.choiz.fr/tag/proxmox.html">Proxmox</a>,      <a href="//www.choiz.fr/tag/ipv4.html">IPV4</a>    </p>
+    <h1 id="2017-10-15-faire-un-nat-avec-proxmox">Faire du NAT avec Proxmox</h1>
+    <p>Posté le dim. 15 octobre 2017</p>
   </header>
   <div>
-      <p>L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
+    <p>L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
 la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut
 faire la même chose.</p>
 <p>Ip Public de proxmox : 11.22.33.44
 Ip Privé de proxmox : 10.0.0.254</p>
-<p>Je …</p>
-      <a class="btn" href="//www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html">Installation de Proxmox-VE 5 sur Debian Stretch</a></h2>
-    <p>
-      Posté le sam. 26 août 2017 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/proxmox.html">Proxmox</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/stretch.html">Stretch</a>    </p>
-  </header>
-  <div>
-      <p>Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
-Par contre il ne faut pas modifier le sources.list ni installer
-firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
-tout).</p>
-<p>Sur debian éditer le fichier /etc/hosts comme ceci :</p>
-<div class="highlight"><pre><span></span>127.0.0.1       localhost.localdomain localhost
-192 …</pre></div>
-      <a class="btn" href="//www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2017-08-26-upgrade-nas.html">Upgrade NAS</a></h2>
-    <p>
-      Posté le sam. 26 août 2017 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/nas.html">NAS</a>,      <a href="//www.choiz.fr/tag/hp.html">HP</a>,      <a href="//www.choiz.fr/tag/microserver.html">Microserver</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/proxmox.html">Proxmox</a>,      <a href="//www.choiz.fr/tag/stockage.html">Stockage</a>,      <a href="//www.choiz.fr/tag/data.html">Data</a>    </p>
-  </header>
-  <div>
-      <p>J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
-dessus j'avais installé Debian 6 à l'époque puis j'ai mis à jour jusqu'à la version 9.</p>
-<p>Mon objectif est l'ajout d'un disque car j'ai 4 emplacements pour le stockage et
-je n'utilisais que 3 …</p>
-      <a class="btn" href="//www.choiz.fr/2017-08-26-upgrade-nas.html">Lire la suite</a>
-  </div>
-</article>
+<p>Je me connect en ssh à Proxmox et je modifie le fichier <code>/etc/network/interfaces</code>
+j'ajoute à la fin du fichier :</p>
+<div class="highlight"><pre><span></span>auto vmbr2
+iface vmbr2 inet static
+    address 10.0.0.254
+    netmask 255.255.255.0
+    bridge_ports none
+    bridge_stp off
+    bridge_fd 0
+    post-up echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+    post-up iptables -t nat -A POSTROUTING -s &#39;10.0.0.0/24&#39; -o vmbr0 -j MASQUERADE
+    post-down iptables -t nat -D POSTROUTING -s &#39;10.0.0.0/24&#39; -o vmbr0 -j MASQUERADE
+</pre></div>
 
-  <div class="pagination">
+
+<p>On peut également ajouter si on veut différents ports qu'on ouvre vers
+l'exterieur vers tel ou tel VM ou Conteneur.
+Par exemple j'ouvre le port 22 de mon Conteneur avec l'ip 10.0.0.1 sur le port
+8022 de mon ip public :</p>
+<div class="highlight"><pre><span></span>    post-up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
+    post-down iptables -t nat -D PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
+</pre></div>
+
+
+<p>Ensuite enregistrer le fichier <code>/etc/network/interfaces</code> puis relancer les
+interfaces réseaux</p>
+<div class="highlight"><pre><span></span>service networking restart
+</pre></div>
   </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="//www.choiz.fr/tag/nat.html">NAT</a>
+      <a href="//www.choiz.fr/tag/proxmox.html">Proxmox</a>
+      <a href="//www.choiz.fr/tag/ipv4.html">IPV4</a>
+    </p>
+  </div>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
@@ -131,12 +129,20 @@ je n'utilisais que 3 …</p>
 <noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " ChoiZ ",
-  "url" : "//www.choiz.fr",
-  "image": "",
-  "description": ""
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Faire du NAT avec Proxmox",
+  "headline": "Faire du NAT avec Proxmox",
+  "datePublished": "2017-10-15 22:08:23+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "//www.choiz.fr/author/choiz.html"
+  },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
+  "url": "//www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html",
+  "description": "L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut faire la même chose. Ip Public de proxmox : 11.22.33.44 Ip Privé de proxmox : 10.0.0.254 Je …"
 }
 </script></body>
 </html>

@@ -53,6 +53,47 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html">Suppression des branches distantes inexistantes</a></h2>
+    <p>
+      Posté le mar. 25 août 2015 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/branch.html">branch</a>,      <a href="//www.choiz.fr/tag/remote.html">remote</a>,      <a href="//www.choiz.fr/tag/prune.html">prune</a>,      <a href="//www.choiz.fr/tag/origin.html">origin</a>    </p>
+  </header>
+  <div>
+      <p>Lors d'un developpement j'ai créé une branche "add_namespace" qui m'a
+permis d'ajouté des namespaces a différents fichiers PHP.</p>
+<p>Une fois la modification faite j'ai envoyé ma branche sur l'origin, en
+faisant un "pull request" (github) ou "merge request" (gitlab).</p>
+<p>Un autre développeur a accepté mon pull request (il a donc mergé la
+branche) et a supprimé ma branche de l'origine.</p>
+<p>Sur mon environnement je vois toujours cette branche.</p>
+<blockquote>
+<p>git branch -a</p>
+<p>* master</p>
+<p>remote/origin/HEAD -&gt; origin/master</p>
+<p>remote/origin/add_namespace</p>
+<p>remote/origin/master</p>
+</blockquote>
+<p>Pour pouvoir effacer cette branche dans le remote, il suffit de tapper
+la commande :</p>
+<blockquote>
+<p>git remote prune origin</p>
+<p>Élimination de origin</p>
+<p>URL : <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#46;&#109;&#111;&#110;&#100;&#111;&#109;&#97;&#105;&#110;&#46;&#99;&#111;&#109;">&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#46;&#109;&#111;&#110;&#100;&#111;&#109;&#97;&#105;&#110;&#46;&#99;&#111;&#109;</a>:mondepot.git</p>
+<p>* [éliminé] origin/add_namespace</p>
+</blockquote>
+<p>Maintenant, vérifions que tout est propre :</p>
+<blockquote>
+<p>git branch -a</p>
+<p>* master</p>
+<p>remote/origin/HEAD -&gt; origin/master</p>
+<p>remote/origin/master</p>
+</blockquote>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html">Migration de Tumblr à Pelican</a></h2>
     <p>
       Posté le jeu. 20 août 2015 &#8226;
@@ -319,39 +360,6 @@ Tags :
 précise, j'utilise la commande suivante :</p>
 <div class="highlight"><pre><span></span>git log -p -S &#39;display&#39;
 </pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2014-11-08-écriture-dun-rapport-de-bug.html">Écriture d'un rapport de bug</a></h2>
-    <p>
-      Posté le sam. 08 novembre 2014 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/ecriture-rapport-de-bug.html">Écriture rapport de bug</a>,      <a href="//www.choiz.fr/tag/rapport-de-bug.html">Rapport de bug</a>,      <a href="//www.choiz.fr/tag/bug-report.html">bug report</a>,      <a href="//www.choiz.fr/tag/bug.html">bug</a>    </p>
-  </header>
-  <div>
-      <p>Étant développeur, j'ai très souvent des rapports de bug, qui peuvent
-être précis, ou moins suivant la personne.</p>
-<p>L'écriture d'un rapport de bug peut demander du temps, si on veut faire
-les choses correctement.</p>
-<p>Le rapport de bug doit être écrit <strong>clairement</strong> et <strong>précisément</strong> pour
-que les développeurs sachent comment reproduire le bug.</p>
-<p>Pensez à <strong>joindre un maximum d'informations</strong> : le message d'erreur, le
-numéro d'erreur, une copie d'écran quand c'est possible.</p>
-<p>Ajoutez également des <strong>informations sur votre environnement de
-travail</strong> (version du système d'exploitation, nom et version du
-navigateur…).</p>
-<p>Une fois que vous avez écrit votre rapport, <strong>relisez-le</strong> pour <strong>être
-sûr de vous faire comprendre</strong> et <strong>vérifiez</strong> que quelque chose ne soit
-pas mal interprété.</p>
-<p>Si le rapport est bien fait le développeur ne doit pas venir vers vous
-avec des questions ou explications supplémentaires. Le développeur gagne
-donc du temps et il ne vous perturbe pas dans votre travail (donc vous
-en gagnez aussi).</p>
-<p>Je vous invite également à lire <a href="http://www.chiark.greenend.org.uk/~sgtatham/bugs-fr.html">cet
-article</a> pour
-écrire un bon rapport de bug.</p>
   </div>
 </article>
 

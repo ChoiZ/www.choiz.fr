@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>ChoiZ - choiz</title><link>//www.choiz.fr/</link><description>Je suis ingénieur informatique, je travail en tant que DevOps chez &lt;a href="//www.manomano.fr"&gt;ManoMano&lt;/a&gt;. J'aime le développement, le streaming, l'Internet…&lt;br&gt;&lt;br&gt;Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.</description><lastBuildDate>Sun, 15 Oct 2017 19:52:13 +0200</lastBuildDate><item><title>Créer un partage NFS</title><link>//www.choiz.fr/2017-10-15-creer-un-partage-nfs.html</link><description>&lt;p&gt;Pour installer un serveur NFS sur Debian voici la marche à suivre :&lt;/p&gt;
+<rss version="2.0"><channel><title>ChoiZ - choiz</title><link>//www.choiz.fr/</link><description>Je suis ingénieur informatique, je travail en tant que DevOps chez &lt;a href="//www.manomano.fr"&gt;ManoMano&lt;/a&gt;. J'aime le développement, le streaming, l'Internet…&lt;br&gt;&lt;br&gt;Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.</description><lastBuildDate>Sun, 15 Oct 2017 22:08:23 +0200</lastBuildDate><item><title>Faire du NAT avec Proxmox</title><link>//www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html</link><description>&lt;p&gt;L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
+la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut
+faire la même chose.&lt;/p&gt;
+&lt;p&gt;Ip Public de proxmox : 11.22.33.44
+Ip Privé de proxmox : 10.0.0.254&lt;/p&gt;
+&lt;p&gt;Je …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 15 Oct 2017 22:08:23 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-10-15:/2017-10-15-faire-un-nat-avec-proxmox.html</guid><category>NAT</category><category>Proxmox</category><category>IPV4</category></item><item><title>Créer un partage NFS</title><link>//www.choiz.fr/2017-10-15-creer-un-partage-nfs.html</link><description>&lt;p&gt;Pour installer un serveur NFS sur Debian voici la marche à suivre :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt install nfs-kernel-server
 &lt;/pre&gt;&lt;/div&gt;
 

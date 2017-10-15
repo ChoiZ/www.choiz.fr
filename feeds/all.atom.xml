@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-10-15T19:52:13+02:00</updated><entry><title>Créer un partage NFS</title><link href="//www.choiz.fr/2017-10-15-creer-un-partage-nfs.html" rel="alternate"></link><published>2017-10-15T19:52:13+02:00</published><updated>2017-10-15T19:52:13+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-15:/2017-10-15-creer-un-partage-nfs.html</id><summary type="html">&lt;p&gt;Pour installer un serveur NFS sur Debian voici la marche à suivre :&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-10-15T22:08:23+02:00</updated><entry><title>Faire du NAT avec Proxmox</title><link href="//www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html" rel="alternate"></link><published>2017-10-15T22:08:23+02:00</published><updated>2017-10-15T22:08:23+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-15:/2017-10-15-faire-un-nat-avec-proxmox.html</id><summary type="html">&lt;p&gt;L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
+la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut
+faire la même chose.&lt;/p&gt;
+&lt;p&gt;Ip Public de proxmox : 11.22.33.44
+Ip Privé de proxmox : 10.0.0.254&lt;/p&gt;
+&lt;p&gt;Je …&lt;/p&gt;</summary><content type="html">&lt;p&gt;L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
+la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut
+faire la même chose.&lt;/p&gt;
+&lt;p&gt;Ip Public de proxmox : 11.22.33.44
+Ip Privé de proxmox : 10.0.0.254&lt;/p&gt;
+&lt;p&gt;Je me connect en ssh à Proxmox et je modifie le fichier &lt;code&gt;/etc/network/interfaces&lt;/code&gt;
+j'ajoute à la fin du fichier :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;auto vmbr2
+iface vmbr2 inet static
+    address 10.0.0.254
+    netmask 255.255.255.0
+    bridge_ports none
+    bridge_stp off
+    bridge_fd 0
+    post-up echo 1 &amp;gt; /proc/sys/net/ipv4/ip_forward
+    post-up iptables -t nat -A POSTROUTING -s &amp;#39;10.0.0.0/24&amp;#39; -o vmbr0 -j MASQUERADE
+    post-down iptables -t nat -D POSTROUTING -s &amp;#39;10.0.0.0/24&amp;#39; -o vmbr0 -j MASQUERADE
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;On peut également ajouter si on veut différents ports qu'on ouvre vers
+l'exterieur vers tel ou tel VM ou Conteneur.
+Par exemple j'ouvre le port 22 de mon Conteneur avec l'ip 10.0.0.1 sur le port
+8022 de mon ip public :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    post-up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
+    post-down iptables -t nat -D PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ensuite enregistrer le fichier &lt;code&gt;/etc/network/interfaces&lt;/code&gt; puis relancer les
+interfaces réseaux&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;service networking restart
+&lt;/pre&gt;&lt;/div&gt;</content><category term="NAT"></category><category term="Proxmox"></category><category term="IPV4"></category></entry><entry><title>Créer un partage NFS</title><link href="//www.choiz.fr/2017-10-15-creer-un-partage-nfs.html" rel="alternate"></link><published>2017-10-15T19:52:13+02:00</published><updated>2017-10-15T19:52:13+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-15:/2017-10-15-creer-un-partage-nfs.html</id><summary type="html">&lt;p&gt;Pour installer un serveur NFS sur Debian voici la marche à suivre :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt install nfs-kernel-server
 &lt;/pre&gt;&lt;/div&gt;
 

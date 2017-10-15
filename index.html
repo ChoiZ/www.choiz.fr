@@ -53,6 +53,51 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html">Faire du NAT avec Proxmox</a></h2>
+    <p>
+      Posté le dim. 15 octobre 2017 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/nat.html">NAT</a>,      <a href="//www.choiz.fr/tag/proxmox.html">Proxmox</a>,      <a href="//www.choiz.fr/tag/ipv4.html">IPV4</a>    </p>
+  </header>
+  <div>
+      <p>L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
+la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut
+faire la même chose.</p>
+<p>Ip Public de proxmox : 11.22.33.44
+Ip Privé de proxmox : 10.0.0.254</p>
+<p>Je me connect en ssh à Proxmox et je modifie le fichier <code>/etc/network/interfaces</code>
+j'ajoute à la fin du fichier :</p>
+<div class="highlight"><pre><span></span>auto vmbr2
+iface vmbr2 inet static
+    address 10.0.0.254
+    netmask 255.255.255.0
+    bridge_ports none
+    bridge_stp off
+    bridge_fd 0
+    post-up echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+    post-up iptables -t nat -A POSTROUTING -s &#39;10.0.0.0/24&#39; -o vmbr0 -j MASQUERADE
+    post-down iptables -t nat -D POSTROUTING -s &#39;10.0.0.0/24&#39; -o vmbr0 -j MASQUERADE
+</pre></div>
+
+
+<p>On peut également ajouter si on veut différents ports qu'on ouvre vers
+l'exterieur vers tel ou tel VM ou Conteneur.
+Par exemple j'ouvre le port 22 de mon Conteneur avec l'ip 10.0.0.1 sur le port
+8022 de mon ip public :</p>
+<div class="highlight"><pre><span></span>    post-up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
+    post-down iptables -t nat -D PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
+</pre></div>
+
+
+<p>Ensuite enregistrer le fichier <code>/etc/network/interfaces</code> puis relancer les
+interfaces réseaux</p>
+<div class="highlight"><pre><span></span>service networking restart
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2017-10-15-creer-un-partage-nfs.html">Créer un partage NFS</a></h2>
     <p>
       Posté le dim. 15 octobre 2017 &#8226;
@@ -551,29 +596,6 @@ trouvé un logiciel plutôt intéressant nommé "deb2targz".</p>
 en 32 bits, 64 bits et fedora en 64 bits.</p>
 <p>deb2targz permet de convertir un fichier ".deb" en archive ".tar.gz".</p>
 <p>Si vous êtes sur gentoo installez le via : <code>emerge -a app-arch/deb2targz</code></p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA.html">Installation de xubuntu 16.04 sur ASUS X205TA</a></h2>
-    <p>
-      Posté le sam. 21 mai 2016 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>,      <a href="//www.choiz.fr/tag/asus-x205ta.html">Asus X205TA</a>,      <a href="//www.choiz.fr/tag/64bits.html">64bits</a>,      <a href="//www.choiz.fr/tag/ubuntu.html">ubuntu</a>    </p>
-  </header>
-  <div>
-      <p>J'ai récement acheté un ASUS X205TA, livré avec Windows
-10 (32 bits), un disque SSD de 32Go et 2Go de ram et pour un prix de 210€.</p>
-<p>J'ai installé xubuntu 16.04 (64 bits) sur une partition séparée pour garder Windows 10.</p>
-<p>L'installation est plutôt complexe car le "bootloader" est en 32bits (je pense
-d'ailleurs que c'est pour ça qu'il est livré avec un windows 32bits et non
-64bits).</p>
-<p>Voici <a href="http://ubuntuforums.org/showthread.php?t=2254322&amp;page=92&amp;p=13474817#post13474817">un message</a> qui explique l'installation simple d'ubuntu (remplacer l'iso
-par xubuntu ou autre).</p>
-<p>Pour l'instant : la carte son n'est pas reconnue et le pointeur de la souris
-disparait suite a la mise en veille… Mis a part ça la machine fonctionne très
-bien pour mon utilisation (des petits développements pendant mes trajets maison &lt;-&gt; travail).</p>
   </div>
 </article>
 
