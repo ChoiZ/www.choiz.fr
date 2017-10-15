@@ -2,7 +2,7 @@ Title: Suppression des .DS\_Store
 Date: 2011-07-05 18:01:40
 Author: choiz
 Category: text
-Tags: Mac .DsStore, Mac, .DS\_Store
+Tags: MacOs, .DS_Store
 Slug: 2011-07-05-suppression-des-dsstore
 Status: published
 
