@@ -2,7 +2,7 @@ Title: Ignorer grâce au SVN
 Date: 2011-07-26 18:53:21
 Author: choiz
 Category: text
-Tags: svn, ignore, fichier, file, folder, dossier, .DS\_Store, .\_\*, .\_, .swp, Vim, Mac Os
+Tags: svn, ignore, file, Vim, MacOs
 Slug: 2011-07-26-ignorer-grâce-au-svn
 Status: published
 
