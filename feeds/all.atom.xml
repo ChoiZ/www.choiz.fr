@@ -1992,7 +1992,7 @@ convert icon512.png -resize x152 touch-icon-ipad-retina.png
 
 
 &lt;p&gt;A noter les appareils Android utilisent aussi les images
-"apple-touch-icon".&lt;/p&gt;</content><category term="cli"></category><category term="imagemagick"></category><category term="android"></category><category term="ios"></category><category term="apple"></category><category term="icons"></category><category term="icon"></category><category term="favicon"></category><category term="apple-touch-icon"></category><category term="precomposed"></category><category term="html"></category></entry><entry><title>Installer jshint sur mac</title><link href="//www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html" rel="alternate"></link><published>2013-10-14T12:41:08+02:00</published><updated>2013-10-14T12:41:08+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-10-14:/2013-10-14-installer-jshint-sur-mac.html</id><summary type="html">&lt;p&gt;Installation via npm de jshint (-g pour installer pour tous les utilisateurs) :
+"apple-touch-icon".&lt;/p&gt;</content><category term="cli"></category><category term="imagemagick"></category><category term="android"></category><category term="ios"></category><category term="favicon"></category><category term="precomposed"></category></entry><entry><title>Installer jshint sur mac</title><link href="//www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html" rel="alternate"></link><published>2013-10-14T12:41:08+02:00</published><updated>2013-10-14T12:41:08+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-10-14:/2013-10-14-installer-jshint-sur-mac.html</id><summary type="html">&lt;p&gt;Installation via npm de jshint (-g pour installer pour tous les utilisateurs) :
     sudo npm install -g jshint&lt;/p&gt;
 &lt;p&gt;Faire un lien symbolique pour pouvoir utiliser directement jshint sans
 préciser tout le chemin a chaque fois :&lt;/p&gt;
@@ -2115,12 +2115,7 @@ tags/&lt;span class="nv"&gt;$tag&lt;/span&gt;&amp;quot;; done | sh
 &lt;p&gt;Pour finir ajoutez votre dépot distant :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git remote add origin git@git.mondomaine:/monprojet.git
 git push -u origin --tags
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Merci à
-&lt;a href="http://bazoud.com/articles/2010-12-11-migration-de-svn-vers-git-en-4-etapes/index.html"&gt;Bazoud&lt;/a&gt;
-pour différentes commandes ;)&lt;/p&gt;</content><category term="svn to git"></category><category term="svn"></category><category term="git"></category><category term="migate"></category><category term="git svn clone"></category><category term="authors"></category><category term="tags"></category></entry><entry><title>Export / Import avec PostgreSQL</title><link href="//www.choiz.fr/2013-06-22-export-import-avec-postgresql.html" rel="alternate"></link><published>2013-06-22T19:57:41+02:00</published><updated>2013-06-22T19:57:41+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-06-22:/2013-06-22-export-import-avec-postgresql.html</id><summary type="html">&lt;p&gt;Pour exporter une table spécifique d'une base :&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="svn to git"></category><category term="svn"></category><category term="git"></category><category term="migate"></category><category term="git svn clone"></category><category term="authors"></category><category term="tags"></category></entry><entry><title>Export / Import avec PostgreSQL</title><link href="//www.choiz.fr/2013-06-22-export-import-avec-postgresql.html" rel="alternate"></link><published>2013-06-22T19:57:41+02:00</published><updated>2013-06-22T19:57:41+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-06-22:/2013-06-22-export-import-avec-postgresql.html</id><summary type="html">&lt;p&gt;Pour exporter une table spécifique d'une base :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pg_dump *mabase* --table=*matable* &amp;gt; *dump_base_table*.sql
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -2354,7 +2349,7 @@ fois &lt;a href="http://"&gt;http://&lt;/a&gt;…&lt;/p&gt;
 
 &lt;p&gt;Modifier la valeur par :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;false
-&lt;/pre&gt;&lt;/div&gt;</content><category term="firefox"></category><category term="config"></category><category term="http"></category><category term="urlbar"></category><category term="browser"></category></entry><entry><title>Latin1 &lt;-&gt; UTF-8</title><link href="//www.choiz.fr/2013-05-29-latin1-utf-8.html" rel="alternate"></link><published>2013-05-29T16:32:00+02:00</published><updated>2013-05-29T16:32:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-05-29:/2013-05-29-latin1-utf-8.html</id><summary type="html">&lt;p&gt;Voilà une solution simple pour convertir une base de donnée en Latin1
+&lt;/pre&gt;&lt;/div&gt;</content><category term="firefox"></category><category term="config"></category><category term="http"></category><category term="urlbar"></category><category term="browser"></category></entry><entry><title>Latin1 vers UTF-8</title><link href="//www.choiz.fr/2013-05-29-latin1-utf-8.html" rel="alternate"></link><published>2013-05-29T16:32:00+02:00</published><updated>2013-05-29T16:32:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-05-29:/2013-05-29-latin1-utf-8.html</id><summary type="html">&lt;p&gt;Voilà une solution simple pour convertir une base de donnée en Latin1
 vers de l'UTF-8.&lt;/p&gt;
 &lt;p&gt;Utiliser mysqldump avec les options suivantes :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;--default-character-set=utf8
@@ -2426,7 +2421,7 @@ accentué. :&lt;/p&gt;
 bien de l'UTF-8 car sauvé sur 2 octets.&lt;/p&gt;
 &lt;p&gt;Merci à &lt;a href="http://agopian.info/blog/mysql-mysqldump-et-php-convertir-de-latin1-vers-utf8.html"&gt;Mathieu
 Agopian&lt;/a&gt;
-pour le dernier tips.&lt;/p&gt;</content><category term="PHP"></category><category term="LATIN1"></category><category term="UTF-8"></category><category term="MYSQL"></category><category term="ENCODING"></category><category term="CHARSET"></category><category term="mysqldump"></category></entry><entry><title>TypeMatrix sous Mac Os X</title><link href="//www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html" rel="alternate"></link><published>2013-03-04T13:08:09+01:00</published><updated>2013-03-04T13:08:09+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-03-04:/2013-03-04-typematrix-sous-mac-os-x.html</id><summary type="html">&lt;p&gt;J'ai chez moi comme au travail un clavier TypeMatrix 2030 USB.&lt;/p&gt;
+pour le dernier tips.&lt;/p&gt;</content><category term="latin1"></category><category term="utf8"></category><category term="encoding"></category><category term="mysql"></category><category term="mysqldump"></category><category term="Vim"></category></entry><entry><title>TypeMatrix sous Mac Os X</title><link href="//www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html" rel="alternate"></link><published>2013-03-04T13:08:09+01:00</published><updated>2013-03-04T13:08:09+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-03-04:/2013-03-04-typematrix-sous-mac-os-x.html</id><summary type="html">&lt;p&gt;J'ai chez moi comme au travail un clavier TypeMatrix 2030 USB.&lt;/p&gt;
 &lt;p&gt;Sur mac il faut &lt;a href="http://download.tuxfamily.org/dvorak/macosx/fr-dvorak-bepo-macosx-1.0rc2.dmg"&gt;télécharger le
 pilote&lt;/a&gt;,
 puis copier le fichier fr-dvorak-bepo.bundle dans le dossier
@@ -2472,7 +2467,7 @@ et un en &lt;a href="http://bepo.fr"&gt;bépo&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Pour info je m'entraine généralement 2 fois par jour quand j'ai le temps
 environ 1/2 heure. Je m'intéresse pas mal au sujet et je vous recommande
 de lire le &lt;a href="http://bepo.fr/wiki/DVZine"&gt;dvzine en Français&lt;/a&gt; qui est
-fascinant.&lt;/p&gt;</content><category term="bépo"></category><category term="dvorak fr"></category><category term="dvorak"></category><category term="clavier"></category><category term="ergonomique"></category><category term="typematrix"></category><category term="azerty"></category><category term="disposition"></category><category term="libre"></category></entry><entry><title>Faire un ssh-copy-id sur Mac OS X</title><link href="//www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html" rel="alternate"></link><published>2012-09-30T11:50:54+02:00</published><updated>2012-09-30T11:50:54+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-09-30:/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html</id><summary type="html">&lt;p&gt;Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
+fascinant.&lt;/p&gt;</content><category term="bépo"></category><category term="TypeMatrix"></category><category term="ergonomie"></category><category term="keyboard"></category></entry><entry><title>Faire un ssh-copy-id sur Mac OS X</title><link href="//www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html" rel="alternate"></link><published>2012-09-30T11:50:54+02:00</published><updated>2012-09-30T11:50:54+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-09-30:/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html</id><summary type="html">&lt;p&gt;Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
 avez dû vous rendre compte que, même si openssh est installé nativement,
 cette commande n’est pas disponible.&lt;/p&gt;
 &lt;p&gt;Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on

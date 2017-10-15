@@ -341,7 +341,7 @@ appareils mobiles avec image magick.&lt;/p&gt;
 &lt;p&gt;Mon icône de base est en 512x512px au format png avec prise en charge de
 la transparence "icon512.png".&lt;/p&gt;
 &lt;p&gt;Je veux faire une favicon en 16x16px, 32x32px 48x48px et 64x64px le tout
-dans un …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 03 Nov 2013 14:11:02 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2013-11-03:/2013-11-03-icônes-favicon-apple-touch-icon.html</guid><category>cli</category><category>imagemagick</category><category>android</category><category>ios</category><category>apple</category><category>icons</category><category>icon</category><category>favicon</category><category>apple-touch-icon</category><category>precomposed</category><category>html</category></item><item><title>Installer jshint sur mac</title><link>//www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html</link><description>&lt;p&gt;Installation via npm de jshint (-g pour installer pour tous les utilisateurs) :
+dans un …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 03 Nov 2013 14:11:02 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2013-11-03:/2013-11-03-icônes-favicon-apple-touch-icon.html</guid><category>cli</category><category>imagemagick</category><category>android</category><category>ios</category><category>favicon</category><category>precomposed</category></item><item><title>Installer jshint sur mac</title><link>//www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html</link><description>&lt;p&gt;Installation via npm de jshint (-g pour installer pour tous les utilisateurs) :
     sudo npm install -g jshint&lt;/p&gt;
 &lt;p&gt;Faire un lien symbolique pour pouvoir utiliser directement jshint sans
 préciser tout le chemin a chaque fois :&lt;/p&gt;
@@ -414,7 +414,7 @@ fois &lt;a href="http://"&gt;http://&lt;/a&gt;…&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Modifier la …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 10 Jun 2013 14:22:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2013-06-10:/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html</guid><category>firefox</category><category>config</category><category>http</category><category>urlbar</category><category>browser</category></item><item><title>Latin1 &lt;-&gt; UTF-8</title><link>//www.choiz.fr/2013-05-29-latin1-utf-8.html</link><description>&lt;p&gt;Voilà une solution simple pour convertir une base de donnée en Latin1
+&lt;p&gt;Modifier la …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 10 Jun 2013 14:22:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2013-06-10:/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html</guid><category>firefox</category><category>config</category><category>http</category><category>urlbar</category><category>browser</category></item><item><title>Latin1 vers UTF-8</title><link>//www.choiz.fr/2013-05-29-latin1-utf-8.html</link><description>&lt;p&gt;Voilà une solution simple pour convertir une base de donnée en Latin1
 vers de l'UTF-8.&lt;/p&gt;
 &lt;p&gt;Utiliser mysqldump avec les options suivantes :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;--default-character-set=utf8
@@ -431,7 +431,7 @@ vers de l'UTF-8.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ensuite en utilisant vim je fais un rechercher / remplacer des …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 29 May 2013 16:32:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2013-05-29:/2013-05-29-latin1-utf-8.html</guid><category>PHP</category><category>LATIN1</category><category>UTF-8</category><category>MYSQL</category><category>ENCODING</category><category>CHARSET</category><category>mysqldump</category></item><item><title>TypeMatrix sous Mac Os X</title><link>//www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html</link><description>&lt;p&gt;J'ai chez moi comme au travail un clavier TypeMatrix 2030 USB.&lt;/p&gt;
+&lt;p&gt;Ensuite en utilisant vim je fais un rechercher / remplacer des …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 29 May 2013 16:32:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2013-05-29:/2013-05-29-latin1-utf-8.html</guid><category>latin1</category><category>utf8</category><category>encoding</category><category>mysql</category><category>mysqldump</category><category>Vim</category></item><item><title>TypeMatrix sous Mac Os X</title><link>//www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html</link><description>&lt;p&gt;J'ai chez moi comme au travail un clavier TypeMatrix 2030 USB.&lt;/p&gt;
 &lt;p&gt;Sur mac il faut &lt;a href="http://download.tuxfamily.org/dvorak/macosx/fr-dvorak-bepo-macosx-1.0rc2.dmg"&gt;télécharger le
 pilote&lt;/a&gt;,
 puis copier le fichier fr-dvorak-bepo.bundle dans le dossier
@@ -446,7 +446,7 @@ git&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/e
 J'ai gardé mes différents résultats, ce qui vas me permettre de faire
 une courbe de progression de mon apprentissage.&lt;/p&gt;
 &lt;p&gt;Sachant qu'au second jour j'arrivais à taper environ 10,2 mots par
-minute, aujourd'hui je suis à 24,4 mots par …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 27 Dec 2012 21:26:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2012-12-27:/2012-12-27-bépo-11ème-jour.html</guid><category>bépo</category><category>dvorak fr</category><category>dvorak</category><category>clavier</category><category>ergonomique</category><category>typematrix</category><category>azerty</category><category>disposition</category><category>libre</category></item><item><title>Faire un ssh-copy-id sur Mac OS X</title><link>//www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html</link><description>&lt;p&gt;Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
+minute, aujourd'hui je suis à 24,4 mots par …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 27 Dec 2012 21:26:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2012-12-27:/2012-12-27-bépo-11ème-jour.html</guid><category>bépo</category><category>TypeMatrix</category><category>ergonomie</category><category>keyboard</category></item><item><title>Faire un ssh-copy-id sur Mac OS X</title><link>//www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html</link><description>&lt;p&gt;Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
 avez dû vous rendre compte que, même si openssh est installé nativement,
 cette commande n’est pas disponible.&lt;/p&gt;
 &lt;p&gt;Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
