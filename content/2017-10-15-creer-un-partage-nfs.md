@@ -8,7 +8,7 @@ Status: published
 
 Pour installer un serveur NFS sur Debian voici la marche à suivre :
 ```
-apt-get install nfs-kernel-server
+apt install nfs-kernel-server
 ```
 
 Une fois le paquet installé, il faut modifier la configuration pour ajouter
@@ -44,7 +44,7 @@ emerge -a net-fs/nfs-utils
 
 Sur Debian installer le paquet : **nfs-common**
 ```
-apt-get install nfs-common
+apt install nfs-common
 ```
 
 Ensuite configurer votre fichier **/etc/fstab**

@@ -33,10 +33,10 @@ Pour la réinstallation j'ai monté un [serveur PXE sur
 debian](https://wiki.debian-fr.xyz/PXE_avec_support_EFI) merci Benjamin pour le
 lien et les conseils.
 
-Installationn du TFTP :
+Installation du TFTP :
 
 ```
-# apt-install -y tftpd-hpa
+# apt install -y tftpd-hpa
 ```
 
 Si vous avez un pare-feu n'oubliez pas d'ouvrir le port 69 :
