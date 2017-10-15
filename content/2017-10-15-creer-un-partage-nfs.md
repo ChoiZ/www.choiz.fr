@@ -19,8 +19,9 @@ Editier le fichier **/etc/exports**
 vim /etc/exports
 ```
 
-J'insert dans le fichier le dossier à partager **/home/user/share** et la ou les
-clients qui peuvent accèder a ce partage **10.0.0.1(rw,sync,no_subtree_check)** ce
+J'ajoute dans le fichier le dossier à partager **/home/user/share** et l'adresse 
+du ou des clients qui peuvent accèder a ce partage
+**10.0.0.1(rw,sync,no_subtree_check)** ici mon client a l'adresse ip 10.0.0.1 ce
 qui donne :
 ```
 /home/user/share 10.0.0.1(rw,sync,no_subtree_check)
@@ -59,5 +60,5 @@ point de montage sur votre client.
 
 Puis monter le nouveau partage avec la commande **mount -a**
 
-Si vous faites un **ls /home/user/nfs-nas** vous devriez voir les fichiers qui se
-trouvent sur votre server.
+Si vous faites la commande **ls /home/user/nfs-nas** vous devriez voir les
+fichiers qui se trouvent sur votre serveur.
