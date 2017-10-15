@@ -127,14 +127,14 @@ Tags :
 
 <p>Une fois le paquet installé, il faut modifier la configuration pour ajouter
 votre partage.</p>
-<p>Editer le fichier <strong>/etc/exports</strong></p>
+<p>Editer le fichier <code>/etc/exports</code></p>
 <div class="highlight"><pre><span></span>vim /etc/exports
 </pre></div>
 
 
-<p>J'ajoute dans le fichier le dossier à partager <strong>/home/user/share</strong> et l'adresse 
+<p>J'ajoute dans le fichier le dossier à partager <code>/home/user/share</code> et l'adresse
 du ou des clients qui peuvent accèder a ce partage
-<strong>10.0.0.1(rw,sync,no_subtree_check)</strong> ici mon client a l'adresse ip 10.0.0.1 ce
+<code>10.0.0.1(rw,sync,no_subtree_check)</code> ici mon client a l'adresse ip 10.0.0.1 ce
 qui donne :</p>
 <div class="highlight"><pre><span></span>/home/user/share 10.0.0.1(rw,sync,no_subtree_check)
 </pre></div>
@@ -150,17 +150,17 @@ qui donne :</p>
 </pre></div>
 
 
-<p>Côté client, j'ai installé sur Gentoo : <strong>net-fs/nfs-utils</strong></p>
+<p>Côté client, j'ai installé sur Gentoo : <code>net-fs/nfs-utils</code></p>
 <div class="highlight"><pre><span></span>emerge -a net-fs/nfs-utils
 </pre></div>
 
 
-<p>Sur Debian installer le paquet : <strong>nfs-common</strong></p>
+<p>Sur Debian installer le paquet : <code>nfs-common</code></p>
 <div class="highlight"><pre><span></span>apt install nfs-common
 </pre></div>
 
 
-<p>Ensuite configurer votre fichier <strong>/etc/fstab</strong></p>
+<p>Ensuite configurer votre fichier <code>/etc/fstab</code></p>
 <div class="highlight"><pre><span></span>vim /etc/fstab
 </pre></div>
 
@@ -171,8 +171,8 @@ point de montage sur votre client.</p>
 </pre></div>
 
 
-<p>Puis monter le nouveau partage avec la commande <strong>mount -a</strong></p>
-<p>Si vous faites la commande <strong>ls /home/user/nfs-nas</strong> vous devriez voir les
+<p>Puis monter le nouveau partage avec la commande <code>mount -a</code></p>
+<p>Si vous faites la commande <code>ls /home/user/nfs-nas</code> vous devriez voir les
 fichiers qui se trouvent sur votre serveur.</p>
   </div>
   <hr />
@@ -326,7 +326,7 @@ je viens de sauver.</p>
 
 <p>Puis je me connecte a mon controlleur en ssh pour déposer dans le bon dossier ce
 fichier.</p>
-<p>Le dossier doit être <strong>/data/sites/default</strong> si vous utilisez le site par defaut.</p>
+<p>Le dossier doit être <code>/data/sites/default</code> si vous utilisez le site par defaut.</p>
 <p>Reconnecter l'USG a votre réseau.</p>
 <p>Il va être de nouveau provisionné par votre controlleur, si vous avez des
 erreurs lors de ce provisionning elles seront affichées dans "alerts" sur votre

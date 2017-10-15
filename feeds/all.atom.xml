@@ -58,26 +58,26 @@ site internet duckduckgo.com par exemple.&lt;/p&gt;</content><category term="NAT
 
 &lt;p&gt;Une fois le paquet installé, il faut modifier la configuration pour ajouter
 votre partage.&lt;/p&gt;
-&lt;p&gt;Editer le fichier &lt;strong&gt;/etc/exports&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Editer le fichier &lt;code&gt;/etc/exports&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vim /etc/exports
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;J'ajoute dans le fichier le dossier à partager &lt;strong&gt;/home/user/share&lt;/strong&gt; et l'adresse …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pour installer un serveur NFS sur Debian voici la marche à suivre :&lt;/p&gt;
+&lt;p&gt;J'ajoute dans le fichier le dossier à partager &lt;code&gt;/home/user/share&lt;/code&gt; et l'adresse …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pour installer un serveur NFS sur Debian voici la marche à suivre :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt install nfs-kernel-server
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Une fois le paquet installé, il faut modifier la configuration pour ajouter
 votre partage.&lt;/p&gt;
-&lt;p&gt;Editer le fichier &lt;strong&gt;/etc/exports&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Editer le fichier &lt;code&gt;/etc/exports&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vim /etc/exports
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;J'ajoute dans le fichier le dossier à partager &lt;strong&gt;/home/user/share&lt;/strong&gt; et l'adresse 
+&lt;p&gt;J'ajoute dans le fichier le dossier à partager &lt;code&gt;/home/user/share&lt;/code&gt; et l'adresse
 du ou des clients qui peuvent accèder a ce partage
-&lt;strong&gt;10.0.0.1(rw,sync,no_subtree_check)&lt;/strong&gt; ici mon client a l'adresse ip 10.0.0.1 ce
+&lt;code&gt;10.0.0.1(rw,sync,no_subtree_check)&lt;/code&gt; ici mon client a l'adresse ip 10.0.0.1 ce
 qui donne :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/home/user/share 10.0.0.1(rw,sync,no_subtree_check)
 &lt;/pre&gt;&lt;/div&gt;
@@ -93,17 +93,17 @@ qui donne :&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Côté client, j'ai installé sur Gentoo : &lt;strong&gt;net-fs/nfs-utils&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Côté client, j'ai installé sur Gentoo : &lt;code&gt;net-fs/nfs-utils&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emerge -a net-fs/nfs-utils
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Sur Debian installer le paquet : &lt;strong&gt;nfs-common&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Sur Debian installer le paquet : &lt;code&gt;nfs-common&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt install nfs-common
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ensuite configurer votre fichier &lt;strong&gt;/etc/fstab&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ensuite configurer votre fichier &lt;code&gt;/etc/fstab&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vim /etc/fstab
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -114,8 +114,8 @@ point de montage sur votre client.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Puis monter le nouveau partage avec la commande &lt;strong&gt;mount -a&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Si vous faites la commande &lt;strong&gt;ls /home/user/nfs-nas&lt;/strong&gt; vous devriez voir les
+&lt;p&gt;Puis monter le nouveau partage avec la commande &lt;code&gt;mount -a&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Si vous faites la commande &lt;code&gt;ls /home/user/nfs-nas&lt;/code&gt; vous devriez voir les
 fichiers qui se trouvent sur votre serveur.&lt;/p&gt;</content><category term="partage"></category><category term="NFS"></category><category term="linux"></category><category term="debian"></category><category term="gentoo"></category></entry><entry><title>Mise à jour de UniFi Security Gateway 3P (USG)</title><link href="//www.choiz.fr/2017-09-03-mise-a-jour-de-unifi-security-gateway-3p-(usg).html" rel="alternate"></link><published>2017-09-03T10:33:24+02:00</published><updated>2017-09-03T10:33:24+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-09-03:/2017-09-03-mise-a-jour-de-unifi-security-gateway-3p-(usg).html</id><summary type="html">&lt;p&gt;J'ai mis à jour mon USG en version 4.3.49.5001150 aujourd'hui.&lt;/p&gt;
 &lt;p&gt;Pour qu'il soit toujours fonctionnel derrière une livebox j'ai du refaire les
 différentes étapes d'installation de mon article &lt;a href="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html"&gt;Remplacer sa livebox par un
@@ -250,7 +250,7 @@ je viens de sauver.&lt;/p&gt;
 
 &lt;p&gt;Puis je me connecte a mon controlleur en ssh pour déposer dans le bon dossier ce
 fichier.&lt;/p&gt;
-&lt;p&gt;Le dossier doit être &lt;strong&gt;/data/sites/default&lt;/strong&gt; si vous utilisez le site par defaut.&lt;/p&gt;
+&lt;p&gt;Le dossier doit être &lt;code&gt;/data/sites/default&lt;/code&gt; si vous utilisez le site par defaut.&lt;/p&gt;
 &lt;p&gt;Reconnecter l'USG a votre réseau.&lt;/p&gt;
 &lt;p&gt;Il va être de nouveau provisionné par votre controlleur, si vous avez des
 erreurs lors de ce provisionning elles seront affichées dans "alerts" sur votre
@@ -1231,14 +1231,14 @@ que le nombre de compilation.&lt;/p&gt;
 "tar.xz". Je n'ai pas encore trouvé le moyen de me souvenir de la
 syntaxe…&lt;/p&gt;
 &lt;h2&gt;tar.gz&lt;/h2&gt;
-&lt;p&gt;Pour les fichiers &lt;strong&gt;tar.gz&lt;/strong&gt; j'arrive parfaitement à compresser ou
+&lt;p&gt;Pour les fichiers &lt;code&gt;tar.gz&lt;/code&gt; j'arrive parfaitement à compresser ou
 décompresser ce format exemple :&lt;/p&gt;
 &lt;p&gt;On compresse avec :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tar -cvzf archive …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;J'ai toujours du mal pour décompresser un fichier de type "tar.bz2" ou
 "tar.xz". Je n'ai pas encore trouvé le moyen de me souvenir de la
 syntaxe…&lt;/p&gt;
 &lt;h2&gt;tar.gz&lt;/h2&gt;
-&lt;p&gt;Pour les fichiers &lt;strong&gt;tar.gz&lt;/strong&gt; j'arrive parfaitement à compresser ou
+&lt;p&gt;Pour les fichiers &lt;code&gt;tar.gz&lt;/code&gt; j'arrive parfaitement à compresser ou
 décompresser ce format exemple :&lt;/p&gt;
 &lt;p&gt;On compresse avec :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tar -cvzf archive.tar.gz dossier_a_compresser/
@@ -1254,7 +1254,7 @@ décompresser ce format exemple :&lt;/p&gt;
 &lt;p&gt;-c comme compression / "x" comme eXtract ou eXtraction. -v pour le mode
 verbeux. -z pour le "gzip" d'ou le ".gz". -f pour spécifier le fichier.&lt;/p&gt;
 &lt;h2&gt;tar.bz2&lt;/h2&gt;
-&lt;p&gt;Pour les &lt;strong&gt;tar.bz2&lt;/strong&gt; je ne sais JAMAIS qu'il faut remplacer "z" de gizip
+&lt;p&gt;Pour les &lt;code&gt;tar.bz2&lt;/code&gt; je ne sais JAMAIS qu'il faut remplacer "z" de gizip
 par "j" de Bzip… (la lettre "b" étant sans doute utilisé avant que le
 bzip n'apparaisse). L'alternative est d'utiliser "--bzip"&lt;/p&gt;
 &lt;p&gt;On compresse avec :&lt;/p&gt;
@@ -1278,7 +1278,7 @@ bzip n'apparaisse). L'alternative est d'utiliser "--bzip"&lt;/p&gt;
 
 
 &lt;h2&gt;tar.xz&lt;/h2&gt;
-&lt;p&gt;Pour ce qui est de Lzma ou le &lt;strong&gt;tar.xz&lt;/strong&gt; c'est un "J" majuscule cette
+&lt;p&gt;Pour ce qui est de Lzma ou le &lt;code&gt;tar.xz&lt;/code&gt; c'est un "J" majuscule cette
 fois ou d'utiliser "--xz".&lt;/p&gt;
 &lt;p&gt;On compresse avec :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tar -cvJf archive.tar.xz dossier_a_compresser/
@@ -1549,20 +1549,20 @@ précise, j'utilise la commande suivante :&lt;/p&gt;
 être précis, ou moins suivant la personne.&lt;/p&gt;
 &lt;p&gt;L'écriture d'un rapport de bug peut demander du temps, si on veut faire
 les choses correctement.&lt;/p&gt;
-&lt;p&gt;Le rapport de bug doit être écrit &lt;strong&gt;clairement&lt;/strong&gt; et &lt;strong&gt;précisément&lt;/strong&gt; pour
+&lt;p&gt;Le rapport de bug doit être écrit &lt;code&gt;clairement&lt;/code&gt; et &lt;code&gt;précisément&lt;/code&gt; pour
 que les développeurs sachent comment …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Étant développeur, j'ai très souvent des rapports de bug, qui peuvent
 être précis, ou moins suivant la personne.&lt;/p&gt;
 &lt;p&gt;L'écriture d'un rapport de bug peut demander du temps, si on veut faire
 les choses correctement.&lt;/p&gt;
-&lt;p&gt;Le rapport de bug doit être écrit &lt;strong&gt;clairement&lt;/strong&gt; et &lt;strong&gt;précisément&lt;/strong&gt; pour
+&lt;p&gt;Le rapport de bug doit être écrit &lt;code&gt;clairement&lt;/code&gt; et &lt;code&gt;précisément&lt;/code&gt; pour
 que les développeurs sachent comment reproduire le bug.&lt;/p&gt;
-&lt;p&gt;Pensez à &lt;strong&gt;joindre un maximum d'informations&lt;/strong&gt; : le message d'erreur, le
+&lt;p&gt;Pensez à &lt;code&gt;joindre un maximum d'informations&lt;/code&gt; : le message d'erreur, le
 numéro d'erreur, une copie d'écran quand c'est possible.&lt;/p&gt;
-&lt;p&gt;Ajoutez également des &lt;strong&gt;informations sur votre environnement de
-travail&lt;/strong&gt; (version du système d'exploitation, nom et version du
+&lt;p&gt;Ajoutez également des &lt;code&gt;informations sur votre environnement de
+travail&lt;/code&gt; (version du système d'exploitation, nom et version du
 navigateur…).&lt;/p&gt;
-&lt;p&gt;Une fois que vous avez écrit votre rapport, &lt;strong&gt;relisez-le&lt;/strong&gt; pour &lt;strong&gt;être
-sûr de vous faire comprendre&lt;/strong&gt; et &lt;strong&gt;vérifiez&lt;/strong&gt; que quelque chose ne soit
+&lt;p&gt;Une fois que vous avez écrit votre rapport, &lt;code&gt;relisez-le&lt;/code&gt; pour &lt;code&gt;être
+sûr de vous faire comprendre&lt;/code&gt; et &lt;code&gt;vérifiez&lt;/code&gt; que quelque chose ne soit
 pas mal interprété.&lt;/p&gt;
 &lt;p&gt;Si le rapport est bien fait le développeur ne doit pas venir vers vous
 avec des questions ou explications supplémentaires. Le développeur gagne
@@ -3221,8 +3221,8 @@ fichier avec vim :&lt;/p&gt;
 
 
 &lt;p&gt;Explications :&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;:1,$&lt;/strong&gt; : Sélection des ligne 1 à $ ($ étant la dernière).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;s/^/#/&lt;/strong&gt; : &lt;strong&gt;s&lt;/strong&gt; pour search, &lt;strong&gt;^&lt;/strong&gt; indique le début de ligne, &lt;strong&gt;/&lt;/strong&gt; est un
+&lt;p&gt;&lt;code&gt;:1,$&lt;/code&gt; : Sélection des ligne 1 à $ ($ étant la dernière).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;s/^/\#/&lt;/code&gt; : &lt;code&gt;s&lt;/code&gt; pour search, &lt;code&gt;^&lt;/code&gt; indique le début de ligne, &lt;code&gt;/&lt;/code&gt; est un
 séparateur pour la recherche et pour ce que l'on souhaite remplacer et …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Voilà la commande pour ajouter un # au début de chaque ligne d'un
 fichier avec vim :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;:1,&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;s&lt;/span&gt;&lt;span class="x"&gt;/^/&lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="x"&gt;/&lt;/span&gt;
@@ -3230,9 +3230,9 @@ fichier avec vim :&lt;/p&gt;
 
 
 &lt;p&gt;Explications :&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;:1,$&lt;/strong&gt; : Sélection des ligne 1 à $ ($ étant la dernière).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;s/^/#/&lt;/strong&gt; : &lt;strong&gt;s&lt;/strong&gt; pour search, &lt;strong&gt;^&lt;/strong&gt; indique le début de ligne, &lt;strong&gt;/&lt;/strong&gt; est un
-séparateur pour la recherche et pour ce que l'on souhaite remplacer et &lt;strong&gt;#&lt;/strong&gt;
+&lt;p&gt;&lt;code&gt;:1,$&lt;/code&gt; : Sélection des ligne 1 à $ ($ étant la dernière).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;s/^/\#/&lt;/code&gt; : &lt;code&gt;s&lt;/code&gt; pour search, &lt;code&gt;^&lt;/code&gt; indique le début de ligne, &lt;code&gt;/&lt;/code&gt; est un
+séparateur pour la recherche et pour ce que l'on souhaite remplacer et &lt;code&gt;\#&lt;/code&gt;
 est le caractère de remplacement.&lt;/p&gt;
 &lt;p&gt;Je remplace donc le début de ligne par un #.&lt;/p&gt;</content><category term="Vim"></category><category term="search"></category><category term="replace"></category><category term="comment"></category></entry><entry><title>Plusieurs comptes Skype sur le même Mac !</title><link href="//www.choiz.fr/2011-09-18-plusieurs-comptes-skype-sur-le-m%C3%AAme-mac.html" rel="alternate"></link><published>2011-09-18T23:47:53+02:00</published><updated>2011-09-18T23:47:53+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-09-18:/2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html</id><summary type="html">&lt;p&gt;Comment lancer plusieurs comptes Skype avec le même Mac ?&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image0" src="http://media.tumblr.com/tumblr_lrqn73WCUg1qzr4hx.png"&gt;&lt;/p&gt;

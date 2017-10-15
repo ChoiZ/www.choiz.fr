@@ -11,12 +11,12 @@ Ip Privé de proxmox : 10.0.0.254&lt;/p&gt;
 
 &lt;p&gt;Une fois le paquet installé, il faut modifier la configuration pour ajouter
 votre partage.&lt;/p&gt;
-&lt;p&gt;Editer le fichier &lt;strong&gt;/etc/exports&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Editer le fichier &lt;code&gt;/etc/exports&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vim /etc/exports
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;J'ajoute dans le fichier le dossier à partager &lt;strong&gt;/home/user/share&lt;/strong&gt; et l'adresse …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 15 Oct 2017 19:52:13 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-10-15:/2017-10-15-creer-un-partage-nfs.html</guid><category>partage</category><category>NFS</category><category>linux</category><category>debian</category><category>gentoo</category></item><item><title>Mise à jour de UniFi Security Gateway 3P (USG)</title><link>//www.choiz.fr/2017-09-03-mise-a-jour-de-unifi-security-gateway-3p-(usg).html</link><description>&lt;p&gt;J'ai mis à jour mon USG en version 4.3.49.5001150 aujourd'hui.&lt;/p&gt;
+&lt;p&gt;J'ajoute dans le fichier le dossier à partager &lt;code&gt;/home/user/share&lt;/code&gt; et l'adresse …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 15 Oct 2017 19:52:13 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-10-15:/2017-10-15-creer-un-partage-nfs.html</guid><category>partage</category><category>NFS</category><category>linux</category><category>debian</category><category>gentoo</category></item><item><title>Mise à jour de UniFi Security Gateway 3P (USG)</title><link>//www.choiz.fr/2017-09-03-mise-a-jour-de-unifi-security-gateway-3p-(usg).html</link><description>&lt;p&gt;J'ai mis à jour mon USG en version 4.3.49.5001150 aujourd'hui.&lt;/p&gt;
 &lt;p&gt;Pour qu'il soit toujours fonctionnel derrière une livebox j'ai du refaire les
 différentes étapes d'installation de mon article &lt;a href="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html"&gt;Remplacer sa livebox par un
 UniFi Security Gateway 3P
@@ -141,7 +141,7 @@ que le nombre de …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.or
 "tar.xz". Je n'ai pas encore trouvé le moyen de me souvenir de la
 syntaxe…&lt;/p&gt;
 &lt;h2&gt;tar.gz&lt;/h2&gt;
-&lt;p&gt;Pour les fichiers &lt;strong&gt;tar.gz&lt;/strong&gt; j'arrive parfaitement à compresser ou
+&lt;p&gt;Pour les fichiers &lt;code&gt;tar.gz&lt;/code&gt; j'arrive parfaitement à compresser ou
 décompresser ce format exemple :&lt;/p&gt;
 &lt;p&gt;On compresse avec :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tar -cvzf archive …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 30 Aug 2015 11:47:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2015-08-30:/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html</guid><category>tar.gz</category><category>tar.bz2</category><category>tar.xz</category><category>tar</category><category>gz</category><category>gzip</category><category>bz2</category><category>xz</category><category>lzma</category></item><item><title>Suppression des branches distantes inexistantes</title><link>//www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html</link><description>&lt;p&gt;Lors d'un developpement j'ai créé une branche "add_namespace" qui m'a
@@ -213,7 +213,7 @@ précise, j'utilise la commande suivante :&lt;/p&gt;
 être précis, ou moins suivant la personne.&lt;/p&gt;
 &lt;p&gt;L'écriture d'un rapport de bug peut demander du temps, si on veut faire
 les choses correctement.&lt;/p&gt;
-&lt;p&gt;Le rapport de bug doit être écrit &lt;strong&gt;clairement&lt;/strong&gt; et &lt;strong&gt;précisément&lt;/strong&gt; pour
+&lt;p&gt;Le rapport de bug doit être écrit &lt;code&gt;clairement&lt;/code&gt; et &lt;code&gt;précisément&lt;/code&gt; pour
 que les développeurs sachent comment …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 08 Nov 2014 16:55:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2014-11-08:/2014-11-08-écriture-dun-rapport-de-bug.html</guid><category>Écriture rapport de bug</category><category>Rapport de bug</category><category>bug report</category><category>bug</category></item><item><title>Faire un patch de "x" commit(s) avec git</title><link>//www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html</link><description>&lt;p&gt;Voici mon historique des commits :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;c0004 -- dernier commit
 c0003 -- avant dernier commit
@@ -605,8 +605,8 @@ fichier avec vim :&lt;/p&gt;
 
 
 &lt;p&gt;Explications :&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;:1,$&lt;/strong&gt; : Sélection des ligne 1 à $ ($ étant la dernière).&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;s/^/#/&lt;/strong&gt; : &lt;strong&gt;s&lt;/strong&gt; pour search, &lt;strong&gt;^&lt;/strong&gt; indique le début de ligne, &lt;strong&gt;/&lt;/strong&gt; est un
+&lt;p&gt;&lt;code&gt;:1,$&lt;/code&gt; : Sélection des ligne 1 à $ ($ étant la dernière).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;s/^/\#/&lt;/code&gt; : &lt;code&gt;s&lt;/code&gt; pour search, &lt;code&gt;^&lt;/code&gt; indique le début de ligne, &lt;code&gt;/&lt;/code&gt; est un
 séparateur pour la recherche et pour ce que l'on souhaite remplacer et …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 05 Oct 2011 00:42:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-10-05:/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html</guid><category>Vim</category><category>search</category><category>replace</category><category>comment</category></item><item><title>Plusieurs comptes Skype sur le même Mac !</title><link>//www.choiz.fr/2011-09-18-plusieurs-comptes-skype-sur-le-m%C3%AAme-mac.html</link><description>&lt;p&gt;Comment lancer plusieurs comptes Skype avec le même Mac ?&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image0" src="http://media.tumblr.com/tumblr_lrqn73WCUg1qzr4hx.png"&gt;&lt;/p&gt;
 &lt;p&gt;Créer un compte utilisateur dans les préférences systèmes &amp;gt;
