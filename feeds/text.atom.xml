@@ -11,7 +11,7 @@ votre partage.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;J'insert dans le fichier le dossier à partager &lt;strong&gt;/home/user/share&lt;/strong&gt; et la …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pour installer un serveur NFS sur Debian voici la marche à suivre :&lt;/p&gt;
+&lt;p&gt;J'ajoute dans le fichier le dossier à partager &lt;strong&gt;/home/user/share&lt;/strong&gt; et l'adresse …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pour installer un serveur NFS sur Debian voici la marche à suivre :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install nfs-kernel-server
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -23,8 +23,9 @@ votre partage.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;J'insert dans le fichier le dossier à partager &lt;strong&gt;/home/user/share&lt;/strong&gt; et la ou les
-clients qui peuvent accèder a ce partage &lt;strong&gt;10.0.0.1(rw,sync,no_subtree_check)&lt;/strong&gt; ce
+&lt;p&gt;J'ajoute dans le fichier le dossier à partager &lt;strong&gt;/home/user/share&lt;/strong&gt; et l'adresse 
+du ou des clients qui peuvent accèder a ce partage
+&lt;strong&gt;10.0.0.1(rw,sync,no_subtree_check)&lt;/strong&gt; ici mon client a l'adresse ip 10.0.0.1 ce
 qui donne :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/home/user/share 10.0.0.1(rw,sync,no_subtree_check)
 &lt;/pre&gt;&lt;/div&gt;
@@ -62,8 +63,8 @@ point de montage sur votre client.&lt;/p&gt;
 
 
 &lt;p&gt;Puis monter le nouveau partage avec la commande &lt;strong&gt;mount -a&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Si vous faites un &lt;strong&gt;ls /home/user/nfs-nas&lt;/strong&gt; vous devriez voir les fichiers qui se
-trouvent sur votre server.&lt;/p&gt;</content><category term="partage"></category><category term="NFS"></category><category term="linux"></category><category term="debian"></category><category term="gentoo"></category></entry><entry><title>Mise à jour de UniFi Security Gateway 3P (USG)</title><link href="//www.choiz.fr/2017-09-03-mise-a-jour-de-unifi-security-gateway-3p-(usg).html" rel="alternate"></link><published>2017-09-03T10:33:24+02:00</published><updated>2017-09-03T10:33:24+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-09-03:/2017-09-03-mise-a-jour-de-unifi-security-gateway-3p-(usg).html</id><summary type="html">&lt;p&gt;J'ai mis à jour mon USG en version 4.3.49.5001150 aujourd'hui.&lt;/p&gt;
+&lt;p&gt;Si vous faites la commande &lt;strong&gt;ls /home/user/nfs-nas&lt;/strong&gt; vous devriez voir les
+fichiers qui se trouvent sur votre serveur.&lt;/p&gt;</content><category term="partage"></category><category term="NFS"></category><category term="linux"></category><category term="debian"></category><category term="gentoo"></category></entry><entry><title>Mise à jour de UniFi Security Gateway 3P (USG)</title><link href="//www.choiz.fr/2017-09-03-mise-a-jour-de-unifi-security-gateway-3p-(usg).html" rel="alternate"></link><published>2017-09-03T10:33:24+02:00</published><updated>2017-09-03T10:33:24+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-09-03:/2017-09-03-mise-a-jour-de-unifi-security-gateway-3p-(usg).html</id><summary type="html">&lt;p&gt;J'ai mis à jour mon USG en version 4.3.49.5001150 aujourd'hui.&lt;/p&gt;
 &lt;p&gt;Pour qu'il soit toujours fonctionnel derrière une livebox j'ai du refaire les
 différentes étapes d'installation de mon article &lt;a href="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html"&gt;Remplacer sa livebox par un
 UniFi Security Gateway 3P
