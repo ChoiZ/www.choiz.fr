@@ -176,7 +176,7 @@ de comparer les différents portables. La marque Taïwanaise "clevo"
 propose des machines avec ou sans OS (gain d'une centaine d'euros pour
 Windows).&lt;/p&gt;
 &lt;p&gt;J'ai donc commandé chez &lt;a href="http://www.clevo.fr"&gt;Anyware&lt;/a&gt; un w650sz avec un
-i7 4910MQ (qui a …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 18 Jul 2015 12:21:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2015-07-18:/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html</guid><category>clevo</category><category>clevo w650</category><category>kernel</category><category>ethernet</category><category>realtek</category><category>audio</category><category>hdaudio</category><category>achat</category><category>i7 4910MQ</category><category>mSata</category></item><item><title>Comment récupérer le contenu d’un fichier d’une autre branche avec GIT ?</title><link>//www.choiz.fr/2015-03-20-comment-r%C3%A9cup%C3%A9rer-le-contenu-dun-fichier-dune-autre-branche.html</link><description>&lt;p&gt;Il suffit d’utiliser git show.&lt;/p&gt;
+i7 4910MQ (qui a …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 18 Jul 2015 12:21:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2015-07-18:/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html</guid><category>clevo w650</category><category>kernel</category><category>ethernet</category><category>realtek</category><category>hdaudio</category><category>i7 4910MQ</category><category>mSata</category></item><item><title>Comment récupérer le contenu d’un fichier d’une autre branche avec GIT ?</title><link>//www.choiz.fr/2015-03-20-comment-r%C3%A9cup%C3%A9rer-le-contenu-dun-fichier-dune-autre-branche.html</link><description>&lt;p&gt;Il suffit d’utiliser git show.&lt;/p&gt;
 &lt;p&gt;La commande :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git show branch_name:filename
 &lt;/pre&gt;&lt;/div&gt;
@@ -184,7 +184,7 @@ i7 4910MQ (qui a …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.or
 
 &lt;p&gt;Exemple :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git show reset_password:/templates/reset_password.tmpl
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 20 Mar 2015 15:27:23 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2015-03-20:/2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune-autre-branche.html</guid></item><item><title>Initialiser des sous-modules en cascade dans git</title><link>//www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html</link><description>&lt;p&gt;Pour initialiser les sous-modules dans git j'utilise la commande
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 20 Mar 2015 15:27:23 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2015-03-20:/2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune-autre-branche.html</guid><category>git</category><category>show</category><category>branch</category></item><item><title>Initialiser des sous-modules en cascade dans git</title><link>//www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html</link><description>&lt;p&gt;Pour initialiser les sous-modules dans git j'utilise la commande
 suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git submodule init
 &lt;/pre&gt;&lt;/div&gt;
@@ -251,7 +251,7 @@ mozilla&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Créer un lien symbolique avec :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ls -sf /opt/firefox/firefox /usr/bin/firefox
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 21 Mar 2014 01:14:41 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2014-03-21:/2014-03-21-installation-de-firefox-sur-debian.html</guid><category>Firefox</category><category>Mozilla</category><category>Debian</category><category>Installation de Firefox</category><category>Firefox sur Debian</category></item><item><title>Firebug champs mot de passe présents sur une page non sécurisée</title><link>//www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-pr%C3%A9sents-sur-une-page.html</link><description>&lt;p&gt;Dans mon firebug des "warnings" s'affichent :&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 21 Mar 2014 01:14:41 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2014-03-21:/2014-03-21-installation-de-firefox-sur-debian.html</guid><category>Firefox</category><category>Debian</category></item><item><title>Firebug champs mot de passe présents sur une page non sécurisée</title><link>//www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-pr%C3%A9sents-sur-une-page.html</link><description>&lt;p&gt;Dans mon firebug des "warnings" s'affichent :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Champs mot de passe présents sur une page non sécurisée (http://). Cela
 représente un risque de sécurité permettant le vol d&amp;#39;identifiants de
 connexion.
@@ -290,7 +290,7 @@ ligne…&lt;/p&gt;
 &lt;p&gt;J'ai du faire un &lt;em&gt;git diff&lt;/em&gt; dans mon terminal et copié la ligne (mais
 pas entièrement…).&lt;/p&gt;
 &lt;p&gt;J'ai donc refais un &lt;em&gt;git diff&lt;/em&gt; dans mon terminal et je me suis aperçu
-que ma ligne qui devait être sur …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 05 Mar 2014 12:56:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2014-03-05:/2014-03-05-git-diff-multiligne.html</guid><category>git</category><category>diff</category><category>wrap</category><category>multiline</category><category>multiligne</category><category>less</category><category>config</category><category>gitconfig</category></item><item><title>Création d'une clé usb xubuntu sur mac</title><link>//www.choiz.fr/2014-03-04-cr%C3%A9ation-dune-cl%C3%A9-usb-xubuntu-sur-mac.html</link><description>&lt;p&gt;Dans le terminal sur votre mac :&lt;/p&gt;
+que ma ligne qui devait être sur …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 05 Mar 2014 12:56:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2014-03-05:/2014-03-05-git-diff-multiligne.html</guid><category>git</category><category>diff</category><category>wrap</category><category>less</category><category>gitconfig</category></item><item><title>Création d'une clé usb xubuntu sur mac</title><link>//www.choiz.fr/2014-03-04-cr%C3%A9ation-dune-cl%C3%A9-usb-xubuntu-sur-mac.html</link><description>&lt;p&gt;Dans le terminal sur votre mac :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;diskutil list
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -311,12 +311,12 @@ messages sur cherry-pick sans savoir ce que c'était.&lt;/p&gt;
 branche actuelle.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git cherry-pick c4a99776
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 06 Feb 2014 23:11:30 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2014-02-06:/2014-02-06-git-cherry-pick.html</guid><category>git</category><category>cherry-pick</category><category>commit</category><category>branch</category></item><item><title>Nouveau thème</title><link>//www.choiz.fr/2014-02-06-nouveau-th%C3%A8me.html</link><description>&lt;p&gt;Je n'avais pas mis à jour mon thème depuis bien longtemps.&lt;/p&gt;
-&lt;p&gt;C'est maintenant chose faite avec ce nouveau thème !
-&lt;img alt="nouveau
+&lt;p&gt;C'est maintenant chose faite avec ce nouveau thème !&lt;/p&gt;
+&lt;p&gt;&lt;img alt="nouveau
 thème" src="https://31.media.tumblr.com/d0896de0a038122cee44adbfaeb7e90c/tumblr_inline_n0lh2qig1i1qzr4hx.png"&gt;&lt;/p&gt;
-&lt;p&gt;Voici l'ancien thème en souvenir.
-&lt;img alt="ancien
-thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr_inline_n0lh2l5LOi1qzr4hx.png"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 06 Feb 2014 23:03:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2014-02-06:/2014-02-06-nouveau-thème.html</guid><category>thème</category><category>tumblr</category></item><item><title>Suppression d'un caractère unicode dans Vim</title><link>//www.choiz.fr/2014-01-19-suppression-dun-caract%C3%A8re-unicode-dans-vim.html</link><description>&lt;p&gt;J'étais à la recherche de se caractère unicode dans vim :&lt;/p&gt;
+&lt;p&gt;Voici l'ancien thème en souvenir.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="ancien
+thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr_inline_n0lh2l5LOi1qzr4hx.png"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 06 Feb 2014 23:03:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2014-02-06:/2014-02-06-nouveau-thème.html</guid><category>thème</category><category>blog</category></item><item><title>Suppression d'un caractère unicode dans Vim</title><link>//www.choiz.fr/2014-01-19-suppression-dun-caract%C3%A8re-unicode-dans-vim.html</link><description>&lt;p&gt;J'étais à la recherche de se caractère unicode dans vim :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;U+2028&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 

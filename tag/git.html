@@ -95,6 +95,28 @@ Tags :
 </article>
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune-autre-branche.html">Comment récupérer le contenu d’un fichier d’une autre branche avec GIT ?</a></h2>
+    <p>
+      Posté le ven. 20 mars 2015 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/show.html">show</a>,      <a href="//www.choiz.fr/tag/branch.html">branch</a>    </p>
+  </header>
+  <div>
+      <p>Il suffit d’utiliser git show.</p>
+<p>La commande :</p>
+<div class="highlight"><pre><span></span>git show branch_name:filename
+</pre></div>
+
+
+<p>Exemple :</p>
+<div class="highlight"><pre><span></span>git show reset_password:/templates/reset_password.tmpl
+</pre></div>
+      <a class="btn" href="//www.choiz.fr/2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune-autre-branche.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html">Initialiser des sous-modules en cascade dans git</a></h2>
     <p>
       Posté le dim. 25 janvier 2015 &#8226;
@@ -173,7 +195,7 @@ c0001 -- premier commit
     <p>
       Posté le mer. 05 mars 2014 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/diff.html">diff</a>,      <a href="//www.choiz.fr/tag/wrap.html">wrap</a>,      <a href="//www.choiz.fr/tag/multiline.html">multiline</a>,      <a href="//www.choiz.fr/tag/multiligne.html">multiligne</a>,      <a href="//www.choiz.fr/tag/less.html">less</a>,      <a href="//www.choiz.fr/tag/config.html">config</a>,      <a href="//www.choiz.fr/tag/gitconfig.html">gitconfig</a>    </p>
+      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/diff.html">diff</a>,      <a href="//www.choiz.fr/tag/wrap.html">wrap</a>,      <a href="//www.choiz.fr/tag/less.html">less</a>,      <a href="//www.choiz.fr/tag/gitconfig.html">gitconfig</a>    </p>
   </header>
   <div>
       <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
@@ -246,25 +268,6 @@ svn. Il est temps de faire la migration de svn à git !</p>
 voulais voici donc ma procédure :</p>
 <div class="highlight"><pre><span></span>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep &quot;^r …</pre></div>
       <a class="btn" href="//www.choiz.fr/2013-07-16-passer-de-svn-à-git.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html">Git déplacer mon dernier commit sur une autre branche</a></h2>
-    <p>
-      Posté le sam. 22 juin 2013 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/reset.html">reset</a>,      <a href="//www.choiz.fr/tag/checkout.html">checkout</a>,      <a href="//www.choiz.fr/tag/merge.html">merge</a>,      <a href="//www.choiz.fr/tag/branch.html">branch</a>,      <a href="//www.choiz.fr/tag/commit.html">commit</a>    </p>
-  </header>
-  <div>
-      <p>J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
-<em>master</em>… Généralement je fais toujours une branche pour les
-modifications, cette fois j'avais créé cette branche <em>debug_redirect</em>
-mais je n'étais pas dessus…</p>
-<p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master</em>. Or le seul
-qui …</p>
-      <a class="btn" href="//www.choiz.fr/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html">Lire la suite</a>
   </div>
 </article>
 
