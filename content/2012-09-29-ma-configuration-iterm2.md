@@ -2,7 +2,7 @@ Title: Ma configuration iTerm2
 Date: 2012-09-29 16:27:52
 Author: choiz
 Category: text
-Tags: iTerm2, config, keypad, numeric, enter, ⌥→, ⌥←, ↩, shortcut, clavier, pavé numérique, configuration iTerm2
+Tags: iTerm2, Keypad, MacOs
 Slug: 2012-09-29-ma-configuration-iterm2
 Status: published
 

@@ -2,7 +2,7 @@ Title: Installation de Skype 64 sur Debian
 Date: 2014-03-21 01:32:18
 Author: choiz
 Category: text
-Tags: Skype, Debian, Installation de Skype, Skype Debian 64, Debian 64
+Tags: Skype, Debian, Installation de Skype, Skype, Debian, 64bits
 Slug: 2014-03-21-installation-de-skype-64-sur-debian
 Status: published
 

@@ -2,7 +2,7 @@ Title: Insérer un \# au début de chaque ligne d'un fichier avec vim
 Date: 2011-10-05 00:42:00
 Author: choiz
 Category: text
-Tags: Vim, search, replace, line, add, ligne, fichier, file, remplace, ajout
+Tags: Vim, search, replace, comment
 Slug: 2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier
 Status: published
 
@@ -13,7 +13,10 @@ fichier avec vim :
 
 Explications :
 
-:1,$ Sélection des ligne 1 à $ ($ étant la dernière).
+**:1,$** : Sélection des ligne 1 à $ ($ étant la dernière).
 
-s/^/\#/ s pour search ^ indique le début de ligne / sépare ma recherche
-par ce que l'on remplace \# est le caractère que je veux remplacer
+**s/^/\#/** : **s** pour search, **^** indique le début de ligne, **/** est un
+séparateur pour la recherche et pour ce que l'on souhaite remplacer et **\#**
+est le caractère de remplacement.
+
+Je remplace donc le début de ligne par un \#.
