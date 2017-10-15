@@ -6,7 +6,7 @@
 
 &lt;p&gt;Une fois le paquet installé, il faut modifier la configuration pour ajouter
 votre partage.&lt;/p&gt;
-&lt;p&gt;Editier le fichier &lt;strong&gt;/etc/exports&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Editer le fichier &lt;strong&gt;/etc/exports&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vim /etc/exports
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -18,7 +18,7 @@ votre partage.&lt;/p&gt;
 
 &lt;p&gt;Une fois le paquet installé, il faut modifier la configuration pour ajouter
 votre partage.&lt;/p&gt;
-&lt;p&gt;Editier le fichier &lt;strong&gt;/etc/exports&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Editer le fichier &lt;strong&gt;/etc/exports&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vim /etc/exports
 &lt;/pre&gt;&lt;/div&gt;
 
