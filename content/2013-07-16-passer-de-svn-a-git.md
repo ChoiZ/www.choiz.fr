@@ -35,7 +35,3 @@ Pour finir ajoutez votre dépot distant :
 
     git remote add origin git@git.mondomaine:/monprojet.git
     git push -u origin --tags
-
-Merci à
-[Bazoud](http://bazoud.com/articles/2010-12-11-migration-de-svn-vers-git-en-4-etapes/index.html)
-pour différentes commandes ;)
