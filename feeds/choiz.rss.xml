@@ -237,7 +237,7 @@ apt-get install -f
 
 
 &lt;p&gt;Installer Skype en n'oubliant pas de remplacer "x" par la bonne version :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dpkg -i …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 21 Mar 2014 01:32:18 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2014-03-21:/2014-03-21-installation-de-skype-64-sur-debian.html</guid><category>Skype</category><category>Debian</category><category>Installation de Skype</category><category>Skype Debian 64</category><category>Debian 64</category></item><item><title>Installation de Firefox sur Debian</title><link>//www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html</link><description>&lt;p&gt;Télécharger la dernière version de Firefox sur &lt;a href="http://www.mozilla.org/"&gt;le site de
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dpkg -i …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 21 Mar 2014 01:32:18 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2014-03-21:/2014-03-21-installation-de-skype-64-sur-debian.html</guid><category>Skype</category><category>Debian</category><category>Installation de Skype</category><category>64bits</category></item><item><title>Installation de Firefox sur Debian</title><link>//www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html</link><description>&lt;p&gt;Télécharger la dernière version de Firefox sur &lt;a href="http://www.mozilla.org/"&gt;le site de
 mozilla&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Décompresser l'archive dans :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/opt/firefox/
@@ -434,7 +434,7 @@ pilote&lt;/a&gt;,
 puis copier le fichier fr-dvorak-bepo.bundle dans le dossier
 /Bibliothèque/Keyboard Layouts/&lt;/p&gt;
 &lt;p&gt;Note : si vous installez le pilote dans le dossier de votre utilisateur
-(~/Bibliothèque/Keyboard Layouts/) vous ne pourrez pas utiliser …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 04 Mar 2013 13:08:09 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2013-03-04:/2013-03-04-typematrix-sous-mac-os-x.html</guid><category>TypeMatrix</category><category>2030</category><category>USB</category><category>mac</category><category>cut</category><category>copy</category><category>paste</category><category>couper</category><category>copier</category><category>coller</category></item><item><title>Logiciels de gestion de versions (Svn, Git, Mercurial)</title><link>//www.choiz.fr/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html</link><description>&lt;p&gt;J'ai différents projet sous svn, git et mercurial. J'ai pour but de tout
+(~/Bibliothèque/Keyboard Layouts/) vous ne pourrez pas utiliser …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 04 Mar 2013 13:08:09 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2013-03-04:/2013-03-04-typematrix-sous-mac-os-x.html</guid><category>TypeMatrix</category><category>Keyboard</category><category>MacOs</category></item><item><title>Logiciels de gestion de versions (Svn, Git, Mercurial)</title><link>//www.choiz.fr/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html</link><description>&lt;p&gt;J'ai différents projet sous svn, git et mercurial. J'ai pour but de tout
 migrer sur git car disponible sur github ainsi que sur bitbucket.&lt;/p&gt;
 &lt;p&gt;J'ai trouvé un &lt;a href="http://www.yterium.net/Migrer-un-projet-SVN-vers-GIT"&gt;trés bon tutoriel pour migrer un projet svn à
 git&lt;/a&gt;.&lt;/p&gt;
@@ -452,7 +452,7 @@ Os X vraiment au top !&lt;/p&gt;
 &lt;p&gt;J'ai un clavier Apple Usb avec le pavé numérique il faut donc modifier
 les préférences d'iTerm2.&lt;/p&gt;
 &lt;p&gt;iTerm &amp;gt; Préférences (ou ⌘ ,) puis dans Profiles &amp;gt; Keys et en bas
-"Load Preset..." et choisir "xterm with Numeric …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 29 Sep 2012 16:27:52 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2012-09-29:/2012-09-29-ma-configuration-iterm2.html</guid><category>iTerm2</category><category>config</category><category>keypad</category><category>numeric</category><category>enter</category><category>⌥→</category><category>⌥←</category><category>↩</category><category>shortcut</category><category>clavier</category><category>pavé numérique</category><category>configuration iTerm2</category></item><item><title>Mon fichier .gitignore</title><link>//www.choiz.fr/2012-08-13-mon-fichier-gitignore.html</link><description>&lt;p&gt;Voilà mon petit fichier .gitignore :&lt;/p&gt;
+"Load Preset..." et choisir "xterm with Numeric …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 29 Sep 2012 16:27:52 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2012-09-29:/2012-09-29-ma-configuration-iterm2.html</guid><category>iTerm2</category><category>Keypad</category><category>MacOs</category></item><item><title>Mon fichier .gitignore</title><link>//www.choiz.fr/2012-08-13-mon-fichier-gitignore.html</link><description>&lt;p&gt;Voilà mon petit fichier .gitignore :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Ignore files from git
 
 # ._ files (Mac Os X)
@@ -600,9 +600,9 @@ fichier avec vim :&lt;/p&gt;
 
 
 &lt;p&gt;Explications :&lt;/p&gt;
-&lt;p&gt;:1,$ Sélection des ligne 1 à $ ($ étant la dernière).&lt;/p&gt;
-&lt;p&gt;s/^/#/ s pour search ^ indique le début de ligne / sépare ma recherche
-par ce que l'on remplace # est le caractère que je veux …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 05 Oct 2011 00:42:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-10-05:/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html</guid><category>Vim</category><category>search</category><category>replace</category><category>line</category><category>add</category><category>ligne</category><category>fichier</category><category>file</category><category>remplace</category><category>ajout</category></item><item><title>Plusieurs comptes Skype sur le même Mac !</title><link>//www.choiz.fr/2011-09-18-plusieurs-comptes-skype-sur-le-m%C3%AAme-mac.html</link><description>&lt;p&gt;Comment lancer plusieurs comptes Skype avec le même Mac ?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;:1,$&lt;/strong&gt; : Sélection des ligne 1 à $ ($ étant la dernière).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;s/^/#/&lt;/strong&gt; : &lt;strong&gt;s&lt;/strong&gt; pour search, &lt;strong&gt;^&lt;/strong&gt; indique le début de ligne, &lt;strong&gt;/&lt;/strong&gt; est un
+séparateur pour la recherche et pour ce que l'on souhaite remplacer et …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 05 Oct 2011 00:42:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-10-05:/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html</guid><category>Vim</category><category>search</category><category>replace</category><category>comment</category></item><item><title>Plusieurs comptes Skype sur le même Mac !</title><link>//www.choiz.fr/2011-09-18-plusieurs-comptes-skype-sur-le-m%C3%AAme-mac.html</link><description>&lt;p&gt;Comment lancer plusieurs comptes Skype avec le même Mac ?&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image0" src="http://media.tumblr.com/tumblr_lrqn73WCUg1qzr4hx.png"&gt;&lt;/p&gt;
 &lt;p&gt;Créer un compte utilisateur dans les préférences systèmes &amp;gt;
 utilisateurs. Par exemple l'utilisateur : "skype" avec comme mot de
@@ -612,7 +612,7 @@ terminal). Puis :&lt;/p&gt;
 
 Password:
 
-password …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 18 Sep 2011 23:47:53 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-09-18:/2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html</guid><category>Skype</category><category>Multiutilisateur</category><category>Mac</category><category>MacOs</category><category>Mac os x</category><category>OsX</category><category>Skype Mac</category><category>Multi</category><category>Compte</category><category>Another copy</category><category>Another copy of Skype</category></item><item><title>Profil sur viadeo sans avoir la fenêtre de login</title><link>//www.choiz.fr/2011-09-18-profil-sur-viadeo-sans-avoir-la-fen%C3%AAtre-de-login.html</link><description>&lt;p&gt;J'ai voulu plusieurs fois voir un profil sur Viadeo sans forcement être
+password …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 18 Sep 2011 23:47:53 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-09-18:/2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html</guid><category>Skype</category><category>MacOs</category></item><item><title>Profil sur viadeo sans avoir la fenêtre de login</title><link>//www.choiz.fr/2011-09-18-profil-sur-viadeo-sans-avoir-la-fen%C3%AAtre-de-login.html</link><description>&lt;p&gt;J'ai voulu plusieurs fois voir un profil sur Viadeo sans forcement être
 identifié. Lorsque l'on déplace la souris ou que l'on scroll une autre
 page s'affiche. Exemple sur &lt;a href="http://www.viadeo.com/fr/profile/francois.lasserre1"&gt;ma page
 viadeo&lt;/a&gt;. Pour
