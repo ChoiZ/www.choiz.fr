@@ -2,7 +2,7 @@ Title: Bépo 11ème jour !
 Date: 2012-12-27 21:26:00
 Author: choiz
 Category: text
-Tags: bépo, dvorak fr, dvorak, clavier, ergonomique, typematrix, azerty, disposition, libre
+Tags: bépo, TypeMatrix, ergonomie, keyboard
 Slug: 2012-12-27-bépo-11ème-jour
 Status: published
 
