@@ -2,7 +2,7 @@ Title: Ma config : Clevo w650sz i7 4910MQ
 Date: 2015-07-18 12:21:00
 Author: choiz
 Category: text
-Tags: clevo, clevo w650, kernel, ethernet, realtek, audio, hdaudio, achat, i7 4910MQ, mSata
+Tags: clevo w650, kernel, ethernet, realtek, hdaudio, i7 4910MQ, mSata
 Slug: 2015-07-18-ma-config-clevo-w650sz-i7-4910mq
 Status: published
 
