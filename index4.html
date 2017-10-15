@@ -53,6 +53,61 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html">Faire un patch de "x" commit(s) avec git</a></h2>
+    <p>
+      Posté le mar. 06 mai 2014 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/patch.html">patch</a>,      <a href="//www.choiz.fr/tag/commit.html">commit</a>    </p>
+  </header>
+  <div>
+      <p>Voici mon historique des commits :</p>
+<div class="highlight"><pre><span></span>c0004 -- dernier commit
+c0003 -- avant dernier commit
+c0002 -- second commit
+c0001 -- premier commit
+</pre></div>
+
+
+<p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire :</p>
+<div class="highlight"><pre><span></span>git format-patch -2 c0002 --stdout &gt; mon.patch
+</pre></div>
+
+
+<p>le "-2" sert à récupérer 2 commits à partir du commit c0002.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2014-03-21-installation-de-skype-64-sur-debian.html">Installation de Skype 64 sur Debian</a></h2>
+    <p>
+      Posté le ven. 21 mars 2014 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/skype.html">Skype</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/installation-de-skype.html">Installation de Skype</a>,      <a href="//www.choiz.fr/tag/skype-debian-64.html">Skype Debian 64</a>,      <a href="//www.choiz.fr/tag/debian-64.html">Debian 64</a>    </p>
+  </header>
+  <div>
+      <p>Télécharger la dernière version de <a href="http://www.skype.com">Skype</a> (Debian
+7.0 [multiarch]).</p>
+<p>Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. :</p>
+<div class="highlight"><pre><span></span>dpkg --add-architecture i386
+</pre></div>
+
+
+<p>Puis mettre à jour les paquets :</p>
+<div class="highlight"><pre><span></span>apt-get update
+apt-get upgrade
+apt-get install -f
+</pre></div>
+
+
+<p>Installer Skype en n'oubliant pas de remplacer "x" par la bonne version :</p>
+<div class="highlight"><pre><span></span>dpkg -i skype-debian_x_i386.deb
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html">Installation de Firefox sur Debian</a></h2>
     <p>
       Posté le ven. 21 mars 2014 &#8226;
@@ -345,53 +400,6 @@ thème" src="https://31.media.tumblr.com/d0896de0a038122cee44adbfaeb7e90c/tumblr
 <p>Voici l'ancien thème en souvenir.
 <img alt="ancien
 thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr_inline_n0lh2l5LOi1qzr4hx.png"></p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html">Suppression d'un caractère unicode dans Vim</a></h2>
-    <p>
-      Posté le dim. 19 janvier 2014 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/vim.html">vim</a>,      <a href="//www.choiz.fr/tag/unicode.html">unicode</a>,      <a href="//www.choiz.fr/tag/char.html">char</a>,      <a href="//www.choiz.fr/tag/suppression.html">suppression</a>,      <a href="//www.choiz.fr/tag/caractere.html">caractère</a>    </p>
-  </header>
-  <div>
-      <p>J'étais à la recherche de se caractère unicode dans vim :</p>
-<div class="highlight"><pre><span></span>&lt;U+2028&gt;
-</pre></div>
-
-
-<p>Pour pouvoir le supprimer j'ai utilisé la commande suivante :</p>
-<div class="highlight"><pre><span></span>:%s/\%U2028//g
-</pre></div>
-
-
-<p>Décortiquons la commande :</p>
-<div class="highlight"><pre><span></span>`:%s/` Recherche et remplace dans tout le fichier
-
-`\%U2028` Le caractère que l&#39;on recherche unicode &quot;2028&quot;
-
-`//` par rien (1er slash sépare la recherche par ce qu&#39;on remplace, le second pour dire la fin de ce qu&#39;on remplace).
-
-`g` dans tout le fichier (global).
-</pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2013-11-13-crontab-e-files.html">crontab -e file(s)</a></h2>
-    <p>
-      Posté le mer. 13 novembre 2013 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/crontab-e.html">crontab -e</a>,      <a href="//www.choiz.fr/tag/crontab.html">crontab</a>,      <a href="//www.choiz.fr/tag/files.html">files</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/varspoolcroncrontabs.html">/var/spool/cron/crontabs</a>,      <a href="//www.choiz.fr/tag/varspoolcron.html">/var/spool/cron</a>,      <a href="//www.choiz.fr/tag/user.html">user</a>    </p>
-  </header>
-  <div>
-      <p>Ou se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?</p>
-<p>C'est une bonne question n'est-ce pas ?</p>
-<p>La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
-debian, a voir sur d'autres distribs)</p>
   </div>
 </article>
 

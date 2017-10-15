@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>ChoiZ - choiz</title><link>//www.choiz.fr/</link><description>Je suis ingénieur informatique, je travail en tant que DevOps chez &lt;a href="//www.manomano.fr"&gt;ManoMano&lt;/a&gt;. J'aime le développement, le streaming, l'Internet…&lt;br&gt;&lt;br&gt;Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.</description><lastBuildDate>Sat, 02 Sep 2017 18:25:10 +0200</lastBuildDate><item><title>Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</title><link>//www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</link><description>&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
+<rss version="2.0"><channel><title>ChoiZ - choiz</title><link>//www.choiz.fr/</link><description>Je suis ingénieur informatique, je travail en tant que DevOps chez &lt;a href="//www.manomano.fr"&gt;ManoMano&lt;/a&gt;. J'aime le développement, le streaming, l'Internet…&lt;br&gt;&lt;br&gt;Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.</description><lastBuildDate>Sun, 15 Oct 2017 19:52:13 +0200</lastBuildDate><item><title>Créer un partage NFS</title><link>//www.choiz.fr/2017-10-15-creer-un-partage-nfs.html</link><description>&lt;p&gt;Pour installer un serveur NFS sur Debian voici la marche à suivre :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install nfs-kernel-server
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Une fois le paquet installé, il faut modifier la configuration pour ajouter
+votre partage.&lt;/p&gt;
+&lt;p&gt;Editier le fichier &lt;strong&gt;/etc/exports&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vim /etc/exports
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;J'insert dans le fichier le dossier à partager &lt;strong&gt;/home/user/share&lt;/strong&gt; et la …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 15 Oct 2017 19:52:13 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-10-15:/2017-10-15-creer-un-partage-nfs.html</guid><category>partage</category><category>NFS</category><category>linux</category><category>debian</category><category>gentoo</category></item><item><title>Mise à jour de UniFi Security Gateway 3P (USG)</title><link>//www.choiz.fr/2017-09-03-mise-a-jour-de-unifi-security-gateway-3p-(usg).html</link><description>&lt;p&gt;J'ai mis à jour mon USG en version 4.3.49.5001150 aujourd'hui.&lt;/p&gt;
+&lt;p&gt;Pour qu'il soit toujours fonctionnel derrière une livebox j'ai du refaire les
+différentes étapes d'installation de mon article &lt;a href="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html"&gt;Remplacer sa livebox par un
+UniFi Security Gateway 3P
+(USG)&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 03 Sep 2017 10:33:24 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-09-03:/2017-09-03-mise-a-jour-de-unifi-security-gateway-3p-(usg).html</guid><category>UniFi</category><category>Gateway</category><category>USG</category><category>Network</category><category>Update</category></item><item><title>Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</title><link>//www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</link><description>&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
 &lt;p&gt;En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
 livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs.&lt;/p&gt;
 &lt;p&gt;Il y a pas mal de manipulations a …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 26 Aug 2017 19:00:56 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-08-26:/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</guid><category>UniFi</category><category>Gateway</category><category>Livebox</category><category>USG</category><category>Network</category></item><item><title>Installation de Proxmox-VE 5 sur Debian Stretch</title><link>//www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html</link><description>&lt;p&gt;Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.

@@ -53,6 +53,101 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html">Passage en SSL du blog</a></h2>
+    <p>
+      Posté le jeu. 28 avril 2016 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/blog.html">blog</a>,      <a href="//www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="//www.choiz.fr/tag/https.html">https</a>,      <a href="//www.choiz.fr/tag/github.html">github</a>,      <a href="//www.choiz.fr/tag/page.html">page</a>    </p>
+  </header>
+  <div>
+      <p>J'utilise pelican sur github pour écrire mon blog depuis quelques temps, voir les
+articles précédents sur le sujet.</p>
+<p>J'ai décidé de passer le blog en https, avec un certificat gratuit let's encrypt.</p>
+<p>Pour mettre en place un certificat SSL sur "github page" il faut avoir un serveur web qui
+fait reverse proxy. J'utilise donc apache avec la configuration suivante :</p>
+<ul>
+<li>Un vhost pour "choiz.fr" qui redirige le port 80 de "choiz.fr" vers le 443 de "www.choiz.fr".</li>
+<li>Un vhost pour "choiz.fr" qui redirige le port 443 (avec un certificat ssl
+valide) de "choiz.fr" vers le 443 de
+"www.choiz.fr".</li>
+<li>Un vhost pour "www.choiz.fr" qui redirige le port 80 de "www.choiz.fr" vers
+le 443 de "www.choiz.fr".</li>
+<li>Et un vhost avec le certificat SSL ainsi que le reverse proxy qui fait croire a
+github que je tape directement l'url "http://choiz.github.io".</li>
+</ul>
+<p>Ici la configuration du dernier vhost :</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;IfModule</span> <span class="err">mod_ssl.c</span><span class="nt">&gt;</span>
+<span class="nt">&lt;VirtualHost</span> <span class="err">*:443</span><span class="nt">&gt;</span>
+    ServerName www.choiz.fr
+
+    SSLProxyEngine On
+    ProxyRequests Off
+    ProxyPreserveHost Off
+    ProxyPass / https://choiz.github.io/
+    ProxyPassReverse / https://choiz.github.io/
+    ProxyPassReverse / http://choiz.github.io/
+
+    # puis la config du SSL
+    SSLEngine On
+    SSLCertificateFile …
+    SSLCertificateKeyFile …
+<span class="nt">&lt;/VirtualHost&gt;</span>
+<span class="nt">&lt;/IfModule&gt;</span>
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Mise à jour d'un kernel gentoo</a></h2>
+    <p>
+      Posté le sam. 21 novembre 2015 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="//www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="//www.choiz.fr/tag/upgrade.html">upgrade</a>,      <a href="//www.choiz.fr/tag/noyaux.html">noyaux</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>    </p>
+  </header>
+  <div>
+      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
+suivre pour le mettre à jour vers la version : 4.3.0.</p>
+<p>Je liste les différents noyaux gentoo disponibles :</p>
+<div class="highlight"><pre><span></span>eix sys-kernel/gentoo-sources
+</pre></div>
+
+
+<p>Je télécharge le noyau 4.3.0 :</p>
+<div class="highlight"><pre><span></span>emerge -a =sys-kernel/gentoo-sources-4.3.0
+</pre></div>
+
+
+<p>Une fois téléchargé, il faut modifier le lien symbolique /usr/src/linux
+grâce à eselect.</p>
+<p>J'affiche la liste des noyaux (celui actuellement selectionné est suivi
+d'une étoile) :</p>
+<div class="highlight"><pre><span></span>eselect kernel list
+
+[1]     linux-4.2.0-gentoo *
+[2]     linux-4.3.0-gentoo
+</pre></div>
+
+
+<p>Pour selectionner notre noyau 4.3.0 il faut utiliser :</p>
+<div class="highlight"><pre><span></span>eselect kernel set 2
+</pre></div>
+
+
+<p>Maintenant que vous avez selectionné votre noyau, copier le fichier
+".config" de votre noyau précédent (pour conserver vos réglages de
+compilation) :</p>
+<div class="highlight"><pre><span></span>cp /usr/src/linux-4.2.0-gentoo/.config /usr/src/linux
+</pre></div>
+
+
+<p>Puis <a href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">compiler votre
+kernel</a>.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html">Configurer un serveur mail</a></h2>
     <p>
       Posté le dim. 15 novembre 2015 &#8226;
@@ -821,51 +916,6 @@ la commande :</p>
 <p>remote/origin/HEAD -&gt; origin/master</p>
 <p>remote/origin/master</p>
 </blockquote>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html">Migration de Tumblr à Pelican</a></h2>
-    <p>
-      Posté le jeu. 20 août 2015 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/tumblr.html">tumblr</a>,      <a href="//www.choiz.fr/tag/migration.html">migration</a>,      <a href="//www.choiz.fr/tag/pelican.html">pelican</a>,      <a href="//www.choiz.fr/tag/site.html">site</a>,      <a href="//www.choiz.fr/tag/static.html">static</a>,      <a href="//www.choiz.fr/tag/python.html">python</a>    </p>
-  </header>
-  <div>
-      <p>J'ai testé pelican, lors de mon voyage à Bruxelles en Thalys le 15 Août
-2014. Depuis cette date je n'avais pas pris le temps de m'occuper de la
-migration de mon blog de tumblr vers pelican.</p>
-<p><a href="http://blog.getpelican.com/">Pelican</a> est un générateur de site
-statique, il est pratique pour la gestion des articles tel que mon blog.</p>
-<p>Il suffit de créer un fichier texte avec le contenu de l'article et
-l'envoyer sur github pour que celui-ci soit publié.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2015-08-08-touche-pour-sortir-sa-machine-de-veille.html">Touche pour sortir sa machine de veille</a></h2>
-    <p>
-      Posté le sam. 08 août 2015 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/touche.html">touche</a>,      <a href="//www.choiz.fr/tag/sortie.html">sortie</a>,      <a href="//www.choiz.fr/tag/veille.html">veille</a>,      <a href="//www.choiz.fr/tag/ordinateur.html">ordinateur</a>,      <a href="//www.choiz.fr/tag/shift.html">shift</a>,      <a href="//www.choiz.fr/tag/clavier.html">clavier</a>    </p>
-  </header>
-  <div>
-      <p>Il y a quelques années, pour sortir ma machine de veille j'utilisais la
-touche "enter" ou "escape".</p>
-<p>Ce qui fonctionne mais, si vous êtes dans un programme d'installation
-qui demande une confirmation (formater tout le disque par exemple), en
-appuyant sur "enter" vous allez confirmer le formatage…</p>
-<p>Avec la touche escape vous allez généralement annuler l'action que l'on
-vous propose.</p>
-<p>Même problème avec toutes les autres touches : "espace" qui confirme
-généralement, "o" pour "oui", "y" pour "yes", "n" pour "no" ou "non", ou
-une quantité "1", "2", ou toute autre lettre défini tel que "a" pour
-"annuler", "c" pour "cancel"…</p>
-<p>Bref la seule touche que j'utilise pour sortir mon ordinateur de veille
-est "shift". Que ça soit le "shift" droit ou gauche il ne fais jamais
-d'action spécifique à ma connaissance ;-)</p>
   </div>
 </article>
 

@@ -53,6 +53,51 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html">Migration de Tumblr à Pelican</a></h2>
+    <p>
+      Posté le jeu. 20 août 2015 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/tumblr.html">tumblr</a>,      <a href="//www.choiz.fr/tag/migration.html">migration</a>,      <a href="//www.choiz.fr/tag/pelican.html">pelican</a>,      <a href="//www.choiz.fr/tag/site.html">site</a>,      <a href="//www.choiz.fr/tag/static.html">static</a>,      <a href="//www.choiz.fr/tag/python.html">python</a>    </p>
+  </header>
+  <div>
+      <p>J'ai testé pelican, lors de mon voyage à Bruxelles en Thalys le 15 Août
+2014. Depuis cette date je n'avais pas pris le temps de m'occuper de la
+migration de mon blog de tumblr vers pelican.</p>
+<p><a href="http://blog.getpelican.com/">Pelican</a> est un générateur de site
+statique, il est pratique pour la gestion des articles tel que mon blog.</p>
+<p>Il suffit de créer un fichier texte avec le contenu de l'article et
+l'envoyer sur github pour que celui-ci soit publié.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2015-08-08-touche-pour-sortir-sa-machine-de-veille.html">Touche pour sortir sa machine de veille</a></h2>
+    <p>
+      Posté le sam. 08 août 2015 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/touche.html">touche</a>,      <a href="//www.choiz.fr/tag/sortie.html">sortie</a>,      <a href="//www.choiz.fr/tag/veille.html">veille</a>,      <a href="//www.choiz.fr/tag/ordinateur.html">ordinateur</a>,      <a href="//www.choiz.fr/tag/shift.html">shift</a>,      <a href="//www.choiz.fr/tag/clavier.html">clavier</a>    </p>
+  </header>
+  <div>
+      <p>Il y a quelques années, pour sortir ma machine de veille j'utilisais la
+touche "enter" ou "escape".</p>
+<p>Ce qui fonctionne mais, si vous êtes dans un programme d'installation
+qui demande une confirmation (formater tout le disque par exemple), en
+appuyant sur "enter" vous allez confirmer le formatage…</p>
+<p>Avec la touche escape vous allez généralement annuler l'action que l'on
+vous propose.</p>
+<p>Même problème avec toutes les autres touches : "espace" qui confirme
+généralement, "o" pour "oui", "y" pour "yes", "n" pour "no" ou "non", ou
+une quantité "1", "2", ou toute autre lettre défini tel que "a" pour
+"annuler", "c" pour "cancel"…</p>
+<p>Bref la seule touche que j'utilise pour sortir mon ordinateur de veille
+est "shift". Que ça soit le "shift" droit ou gauche il ne fais jamais
+d'action spécifique à ma connaissance ;-)</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html">Récupérer le master depuis le remote origin avec git</a></h2>
     <p>
       Posté le ven. 07 août 2015 &#8226;
@@ -307,61 +352,6 @@ en gagnez aussi).</p>
 <p>Je vous invite également à lire <a href="http://www.chiark.greenend.org.uk/~sgtatham/bugs-fr.html">cet
 article</a> pour
 écrire un bon rapport de bug.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html">Faire un patch de "x" commit(s) avec git</a></h2>
-    <p>
-      Posté le mar. 06 mai 2014 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/patch.html">patch</a>,      <a href="//www.choiz.fr/tag/commit.html">commit</a>    </p>
-  </header>
-  <div>
-      <p>Voici mon historique des commits :</p>
-<div class="highlight"><pre><span></span>c0004 -- dernier commit
-c0003 -- avant dernier commit
-c0002 -- second commit
-c0001 -- premier commit
-</pre></div>
-
-
-<p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire :</p>
-<div class="highlight"><pre><span></span>git format-patch -2 c0002 --stdout &gt; mon.patch
-</pre></div>
-
-
-<p>le "-2" sert à récupérer 2 commits à partir du commit c0002.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2014-03-21-installation-de-skype-64-sur-debian.html">Installation de Skype 64 sur Debian</a></h2>
-    <p>
-      Posté le ven. 21 mars 2014 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/skype.html">Skype</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/installation-de-skype.html">Installation de Skype</a>,      <a href="//www.choiz.fr/tag/skype-debian-64.html">Skype Debian 64</a>,      <a href="//www.choiz.fr/tag/debian-64.html">Debian 64</a>    </p>
-  </header>
-  <div>
-      <p>Télécharger la dernière version de <a href="http://www.skype.com">Skype</a> (Debian
-7.0 [multiarch]).</p>
-<p>Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. :</p>
-<div class="highlight"><pre><span></span>dpkg --add-architecture i386
-</pre></div>
-
-
-<p>Puis mettre à jour les paquets :</p>
-<div class="highlight"><pre><span></span>apt-get update
-apt-get upgrade
-apt-get install -f
-</pre></div>
-
-
-<p>Installer Skype en n'oubliant pas de remplacer "x" par la bonne version :</p>
-<div class="highlight"><pre><span></span>dpkg -i skype-debian_x_i386.deb
-</pre></div>
   </div>
 </article>
 

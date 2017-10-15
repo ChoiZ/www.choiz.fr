@@ -53,6 +53,53 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html">Installation disque dur Seagate 4To Debian</a></h2>
+    <p>
+      Posté le ven. 21 juin 2013 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/debian.html">debian</a>,      <a href="//www.choiz.fr/tag/disque-dur.html">disque dur</a>,      <a href="//www.choiz.fr/tag/4to.html">4To</a>,      <a href="//www.choiz.fr/tag/partition.html">partition</a>,      <a href="//www.choiz.fr/tag/fs.html">fs</a>,      <a href="//www.choiz.fr/tag/config_efi_partition.html">config\_efi\_partition</a>,      <a href="//www.choiz.fr/tag/fdisk.html">fdisk</a>,      <a href="//www.choiz.fr/tag/parted.html">parted</a>,      <a href="//www.choiz.fr/tag/gpt.html">gpt</a>,      <a href="//www.choiz.fr/tag/mkfs.html">mkfs</a>    </p>
+  </header>
+  <div>
+      <p>J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
+(Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec «
+Fdisk » et j'ai eu le message suivant :</p>
+<div class="highlight"><pre><span></span><span class="n">Warning</span><span class="o">:</span> <span class="n">invalid</span> <span class="n">flag</span> <span class="mh">0x0000</span> <span class="n">of</span> <span class="n">partition</span> <span class="n">table</span> <span class="mi">4</span> <span class="n">will</span> <span class="n">be</span> <span class="n">corrected</span> <span class="n">by</span> <span class="n">w</span><span class="o">(</span><span class="n">rite</span><span class="o">)</span>
+
+<span class="n">WARNING</span><span class="o">:</span> <span class="n">The</span> <span class="n">size</span> <span class="n">of</span> <span class="k">this</span> <span class="n">disk</span> <span class="k">is …</span></pre></div>
+      <a class="btn" href="//www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html">Toujours afficher le protocole dans Firefox</a></h2>
+    <p>
+      Posté le lun. 10 juin 2013 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/firefox.html">firefox</a>,      <a href="//www.choiz.fr/tag/config.html">config</a>,      <a href="//www.choiz.fr/tag/http.html">http</a>,      <a href="//www.choiz.fr/tag/urlbar.html">urlbar</a>,      <a href="//www.choiz.fr/tag/browser.html">browser</a>    </p>
+  </header>
+  <div>
+      <p>Souvent lorsque je copie/colle une url depuis firefox j'ajoute <a href="http://">http://</a>
+or lors de la copie celui-ci est copié… Je me retrouve donc avec deux
+fois <a href="http://">http://</a>…</p>
+<p>Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :</p>
+<p>Ecrire dans la barre d'adresse :</p>
+<div class="highlight"><pre><span></span><span class="n">about</span><span class="o">:</span><span class="n">config</span>
+</pre></div>
+
+
+<p>Rechercher :</p>
+<div class="highlight"><pre><span></span>browser.urlbar.trimURLs
+</pre></div>
+
+
+<p>Modifier la …</p>
+      <a class="btn" href="//www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2013-05-29-latin1-utf-8.html">Latin1 &lt;-&gt; UTF-8</a></h2>
     <p>
       Posté le mer. 29 mai 2013 &#8226;
@@ -225,52 +272,6 @@ stash@{5}: WIP on BranchName: 3bb67ff Add file.css file.js
 
 stash@{0} chemin/vers/mon …</pre></div>
       <a class="btn" href="//www.choiz.fr/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Ajout dans mon .vimrc de matchadd() & highlight</a></h2>
-    <p>
-      Posté le ven. 27 avril 2012 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/vimrc.html">vimrc</a>,      <a href="//www.choiz.fr/tag/vim.html">vim</a>,      <a href="//www.choiz.fr/tag/config-file.html">config file</a>,      <a href="//www.choiz.fr/tag/vimrc.html">.vimrc</a>,      <a href="//www.choiz.fr/tag/todo.html">todo</a>,      <a href="//www.choiz.fr/tag/notice.html">notice</a>,      <a href="//www.choiz.fr/tag/fixme.html">fixme</a>,      <a href="//www.choiz.fr/tag/highlight.html">highlight</a>,      <a href="//www.choiz.fr/tag/matchadd.html">matchadd</a>    </p>
-  </header>
-  <div>
-      <p>Petit ajout dans mon fichier .vimrc :</p>
-<div class="highlight"><pre><span></span>&quot; Highlight To do list with green background
-highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
-highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
-highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
-&quot; Match todolist, notice, fixme
-:call matchadd(&#39;Todo …</pre></div>
-      <a class="btn" href="//www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html">Reprendre la main sur un Screen pas "detached"</a></h2>
-    <p>
-      Posté le mer. 18 avril 2012 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/attached.html">attached</a>,      <a href="//www.choiz.fr/tag/detached.html">detached</a>,      <a href="//www.choiz.fr/tag/detacher.html">détacher</a>,      <a href="//www.choiz.fr/tag/screen.html">screen</a>,      <a href="//www.choiz.fr/tag/reattacher.html">réattacher</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>,      <a href="//www.choiz.fr/tag/cli.html">cli</a>    </p>
-  </header>
-  <div>
-      <p>Lorsque j'ai voulu "réattacher" mon "Screen" j'ai eu le message suivant :</p>
-<div class="highlight"><pre><span></span>There is a screen on:
-1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)
-</pre></div>
-
-
-<p>Habituellement je détache mon "Screen" mais cette fois j'ai oublié.</p>
-<p>Pour "détacher" / "réattacher" mon "Screen" j'ai du faire la commande suivante :</p>
-<div class="highlight"><pre><span></span>screen -dRR
-</pre></div>
-
-
-<p>Je …</p>
-      <a class="btn" href="//www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html">Lire la suite</a>
   </div>
 </article>
 

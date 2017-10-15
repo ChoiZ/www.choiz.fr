@@ -53,6 +53,32 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2017-10-15-creer-un-partage-nfs.html">Créer un partage NFS</a></h2>
+    <p>
+      Posté le dim. 15 octobre 2017 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/partage.html">partage</a>,      <a href="//www.choiz.fr/tag/nfs.html">NFS</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>,      <a href="//www.choiz.fr/tag/debian.html">debian</a>,      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>    </p>
+  </header>
+  <div>
+      <p>Pour installer un serveur NFS sur Debian voici la marche à suivre :</p>
+<div class="highlight"><pre><span></span>apt-get install nfs-kernel-server
+</pre></div>
+
+
+<p>Une fois le paquet installé, il faut modifier la configuration pour ajouter
+votre partage.</p>
+<p>Editier le fichier <strong>/etc/exports</strong></p>
+<div class="highlight"><pre><span></span>vim /etc/exports
+</pre></div>
+
+
+<p>J'insert dans le fichier le dossier à partager <strong>/home/user/share</strong> et la …</p>
+      <a class="btn" href="//www.choiz.fr/2017-10-15-creer-un-partage-nfs.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html">Convertir un .deb en archive .tar.gz</a></h2>
     <p>
       Posté le sam. 30 juillet 2016 &#8226;

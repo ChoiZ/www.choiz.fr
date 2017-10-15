@@ -53,6 +53,49 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2011-06-30-elément-cliqué-en-js.html">Elément cliqué en js</a></h2>
+    <p>
+      Posté le jeu. 30 juin 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/js.html">js</a>,      <a href="//www.choiz.fr/tag/element.html">element</a>,      <a href="//www.choiz.fr/tag/click.html">click</a>,      <a href="//www.choiz.fr/tag/javascript.html">javascript</a>,      <a href="//www.choiz.fr/tag/html.html">html</a>    </p>
+  </header>
+  <div>
+      <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :</p>
+<div class="highlight"><pre><span></span>function checkclick(e) {
+    e = e || window.event;
+    var o = e.target || e.srcElement;
+    console.log(o);
+}
+document.onclick=checkclick;
+</pre></div>
+
+
+<p>Pratique pour faire du débug.</p>
+      <a class="btn" href="//www.choiz.fr/2011-06-30-elément-cliqué-en-js.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2011-05-30-patch-diff.html">Patch & diff</a></h2>
+    <p>
+      Posté le lun. 30 mai 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/patch.html">Patch</a>,      <a href="//www.choiz.fr/tag/commande.html">Commande</a>,      <a href="//www.choiz.fr/tag/terminal.html">Terminal</a>,      <a href="//www.choiz.fr/tag/diff.html">Diff</a>,      <a href="//www.choiz.fr/tag/version.html">Version</a>    </p>
+  </header>
+  <div>
+      <p>Patch permet de "patcher" un fichier, dossier, projet ! Pratique lorsque
+vous distribuez du code et que vous voulez le mettre à jour. Comment
+l'utiliser ? Dans un premier temps nous allons faire un différentiel de
+notre version actuelle du projet et de la nouvelle version (celle
+patchée). :</p>
+<div class="highlight"><pre><span></span><span class="gh">diff -u version1.php …</span></pre></div>
+      <a class="btn" href="//www.choiz.fr/2011-05-30-patch-diff.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html">Split & Vsplit dans vim</a></h2>
     <p>
       Posté le dim. 29 mai 2011 &#8226;
@@ -243,45 +286,6 @@ $(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
 <p>Par :</p>
 <div class="highlight"><pre><span></span>var mavar …</pre></div>
       <a class="btn" href="//www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Commande SVN pour ajouter des keywords</a></h2>
-    <p>
-      Posté le lun. 25 octobre 2010 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/svn.html">SVN</a>,      <a href="//www.choiz.fr/tag/subversion.html">Subversion</a>,      <a href="//www.choiz.fr/tag/keyword.html">Keyword</a>,      <a href="//www.choiz.fr/tag/id.html">Id</a>,      <a href="//www.choiz.fr/tag/revision.html">Revision</a>,      <a href="//www.choiz.fr/tag/date.html">Date</a>,      <a href="//www.choiz.fr/tag/author.html">Author</a>,      <a href="//www.choiz.fr/tag/url.html">URL</a>,      <a href="//www.choiz.fr/tag/php.html">PHP</a>,      <a href="//www.choiz.fr/tag/code.html">Code</a>    </p>
-  </header>
-  <div>
-      <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
-informations dans vos projets il suffit de taper cette commande :</p>
-<div class="highlight"><pre><span></span>svn propset svn:keywords &quot;Id&quot; index.php
-</pre></div>
-
-
-<p>Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php</p>
-<p>Pour afficher l'Id dans votre fichier index.php ajouter dans …</p>
-      <a class="btn" href="//www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2010-09-15-impression-de-commandes-entre-balise-pre.html">Impression de commandes entre balise &lt;pre&gt;</a></h2>
-    <p>
-      Posté le mer. 15 septembre 2010 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/balise.html">Balise</a>,      <a href="//www.choiz.fr/tag/hml.html">hml</a>,      <a href="//www.choiz.fr/tag/balise-pre.html">Balise Pre</a>,      <a href="//www.choiz.fr/tag/pre.html">Pre</a>,      <a href="//www.choiz.fr/tag/print.html">Print</a>,      <a href="//www.choiz.fr/tag/impression.html">Impression</a>,      <a href="//www.choiz.fr/tag/css.html">CSS</a>    </p>
-  </header>
-  <div>
-      <p>J'ai toujours eu pas mal de soucis lors d'impression de différentes
-documentations…</p>
-<p>J'utilise souvent la balise &lt;pre&gt; pour les lignes de commandes et
-il n'y a pas de retour à la ligne fait automatiquement pour cela un
-petit css permet de faire les retours à la ligne lorsque la page …</p>
-      <a class="btn" href="//www.choiz.fr/2010-09-15-impression-de-commandes-entre-balise-pre.html">Lire la suite</a>
   </div>
 </article>
 

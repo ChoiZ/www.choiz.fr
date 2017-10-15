@@ -53,6 +53,52 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Ajout dans mon .vimrc de matchadd() & highlight</a></h2>
+    <p>
+      Posté le ven. 27 avril 2012 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/vimrc.html">vimrc</a>,      <a href="//www.choiz.fr/tag/vim.html">vim</a>,      <a href="//www.choiz.fr/tag/config-file.html">config file</a>,      <a href="//www.choiz.fr/tag/vimrc.html">.vimrc</a>,      <a href="//www.choiz.fr/tag/todo.html">todo</a>,      <a href="//www.choiz.fr/tag/notice.html">notice</a>,      <a href="//www.choiz.fr/tag/fixme.html">fixme</a>,      <a href="//www.choiz.fr/tag/highlight.html">highlight</a>,      <a href="//www.choiz.fr/tag/matchadd.html">matchadd</a>    </p>
+  </header>
+  <div>
+      <p>Petit ajout dans mon fichier .vimrc :</p>
+<div class="highlight"><pre><span></span>&quot; Highlight To do list with green background
+highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
+highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
+highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
+&quot; Match todolist, notice, fixme
+:call matchadd(&#39;Todo …</pre></div>
+      <a class="btn" href="//www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html">Reprendre la main sur un Screen pas "detached"</a></h2>
+    <p>
+      Posté le mer. 18 avril 2012 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/attached.html">attached</a>,      <a href="//www.choiz.fr/tag/detached.html">detached</a>,      <a href="//www.choiz.fr/tag/detacher.html">détacher</a>,      <a href="//www.choiz.fr/tag/screen.html">screen</a>,      <a href="//www.choiz.fr/tag/reattacher.html">réattacher</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>,      <a href="//www.choiz.fr/tag/cli.html">cli</a>    </p>
+  </header>
+  <div>
+      <p>Lorsque j'ai voulu "réattacher" mon "Screen" j'ai eu le message suivant :</p>
+<div class="highlight"><pre><span></span>There is a screen on:
+1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)
+</pre></div>
+
+
+<p>Habituellement je détache mon "Screen" mais cette fois j'ai oublié.</p>
+<p>Pour "détacher" / "réattacher" mon "Screen" j'ai du faire la commande suivante :</p>
+<div class="highlight"><pre><span></span>screen -dRR
+</pre></div>
+
+
+<p>Je …</p>
+      <a class="btn" href="//www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html">Utilisation des branches et de git stash</a></h2>
     <p>
       Posté le sam. 14 avril 2012 &#8226;
@@ -252,50 +298,6 @@ ceci :</p>
 
 <p>Ajouter contrib non-free aux différentes sources …</p>
       <a class="btn" href="//www.choiz.fr/2011-11-30-flash-sous-debian.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html">Voir les fichiers cachés sur Lion</a></h2>
-    <p>
-      Posté le mer. 02 novembre 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/fichiers.html">fichiers</a>,      <a href="//www.choiz.fr/tag/caches.html">cachés</a>,      <a href="//www.choiz.fr/tag/hidden.html">hidden</a>,      <a href="//www.choiz.fr/tag/files.html">files</a>,      <a href="//www.choiz.fr/tag/lion.html">lion</a>,      <a href="//www.choiz.fr/tag/defaults.html">defaults</a>,      <a href="//www.choiz.fr/tag/appleshowallfiles.html">AppleShowAllFiles</a>,      <a href="//www.choiz.fr/tag/finder.html">Finder</a>    </p>
-  </header>
-  <div>
-      <p>Dans un terminal :</p>
-<div class="highlight"><pre><span></span>defaults write com.apple.Finder AppleShowAllFiles TRUE
-
-killall Finder
-</pre></div>
-
-
-<p>Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés.</p>
-      <a class="btn" href="//www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html">Insérer un \# au début de chaque ligne d'un fichier avec vim</a></h2>
-    <p>
-      Posté le mer. 05 octobre 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/search.html">search</a>,      <a href="//www.choiz.fr/tag/replace.html">replace</a>,      <a href="//www.choiz.fr/tag/line.html">line</a>,      <a href="//www.choiz.fr/tag/add.html">add</a>,      <a href="//www.choiz.fr/tag/ligne.html">ligne</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/remplace.html">remplace</a>,      <a href="//www.choiz.fr/tag/ajout.html">ajout</a>    </p>
-  </header>
-  <div>
-      <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un
-fichier avec vim :</p>
-<div class="highlight"><pre><span></span><span class="x">:1,</span><span class="p">$</span><span class="nv">s</span><span class="x">/^/</span><span class="err">#</span><span class="x">/</span>
-</pre></div>
-
-
-<p>Explications :</p>
-<p>:1,$ Sélection des ligne 1 à $ ($ étant la dernière).</p>
-<p>s/^/#/ s pour search ^ indique le début de ligne / sépare ma recherche
-par ce que l'on remplace # est le caractère que je veux …</p>
-      <a class="btn" href="//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html">Lire la suite</a>
   </div>
 </article>
 

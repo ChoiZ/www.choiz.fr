@@ -53,6 +53,50 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2017-10-15-creer-un-partage-nfs.html">Créer un partage NFS</a></h2>
+    <p>
+      Posté le dim. 15 octobre 2017 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/partage.html">partage</a>,      <a href="//www.choiz.fr/tag/nfs.html">NFS</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>,      <a href="//www.choiz.fr/tag/debian.html">debian</a>,      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>    </p>
+  </header>
+  <div>
+      <p>Pour installer un serveur NFS sur Debian voici la marche à suivre :</p>
+<div class="highlight"><pre><span></span>apt-get install nfs-kernel-server
+</pre></div>
+
+
+<p>Une fois le paquet installé, il faut modifier la configuration pour ajouter
+votre partage.</p>
+<p>Editier le fichier <strong>/etc/exports</strong></p>
+<div class="highlight"><pre><span></span>vim /etc/exports
+</pre></div>
+
+
+<p>J'insert dans le fichier le dossier à partager <strong>/home/user/share</strong> et la …</p>
+      <a class="btn" href="//www.choiz.fr/2017-10-15-creer-un-partage-nfs.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2017-09-03-mise-a-jour-de-unifi-security-gateway-3p-(usg).html">Mise à jour de UniFi Security Gateway 3P (USG)</a></h2>
+    <p>
+      Posté le dim. 03 septembre 2017 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/unifi.html">UniFi</a>,      <a href="//www.choiz.fr/tag/gateway.html">Gateway</a>,      <a href="//www.choiz.fr/tag/usg.html">USG</a>,      <a href="//www.choiz.fr/tag/network.html">Network</a>,      <a href="//www.choiz.fr/tag/update.html">Update</a>    </p>
+  </header>
+  <div>
+      <p>J'ai mis à jour mon USG en version 4.3.49.5001150 aujourd'hui.</p>
+<p>Pour qu'il soit toujours fonctionnel derrière une livebox j'ai du refaire les
+différentes étapes d'installation de mon article <a href="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html">Remplacer sa livebox par un
+UniFi Security Gateway 3P
+(USG)</a>.</p>
+      <a class="btn" href="//www.choiz.fr/2017-09-03-mise-a-jour-de-unifi-security-gateway-3p-(usg).html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html">Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</a></h2>
     <p>
       Posté le sam. 26 août 2017 &#8226;
@@ -204,50 +248,6 @@ Tags :
 <p>J'ai installé xubuntu 16.04 (64 bits) sur une partition séparée pour garder Windows 10.</p>
 <p>L'installation est plutôt complexe car le "bootloader" est …</p>
       <a class="btn" href="//www.choiz.fr/2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html">Passage en SSL du blog</a></h2>
-    <p>
-      Posté le jeu. 28 avril 2016 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/blog.html">blog</a>,      <a href="//www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="//www.choiz.fr/tag/https.html">https</a>,      <a href="//www.choiz.fr/tag/github.html">github</a>,      <a href="//www.choiz.fr/tag/page.html">page</a>    </p>
-  </header>
-  <div>
-      <p>J'utilise pelican sur github pour écrire mon blog depuis quelques temps, voir les
-articles précédents sur le sujet.</p>
-<p>J'ai décidé de passer le blog en https, avec un certificat gratuit let's encrypt.</p>
-<p>Pour mettre en place un certificat SSL sur "github page" il faut avoir un serveur web qui
-fait …</p>
-      <a class="btn" href="//www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Mise à jour d'un kernel gentoo</a></h2>
-    <p>
-      Posté le sam. 21 novembre 2015 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="//www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="//www.choiz.fr/tag/upgrade.html">upgrade</a>,      <a href="//www.choiz.fr/tag/noyaux.html">noyaux</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>    </p>
-  </header>
-  <div>
-      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
-suivre pour le mettre à jour vers la version : 4.3.0.</p>
-<p>Je liste les différents noyaux gentoo disponibles :</p>
-<div class="highlight"><pre><span></span>eix sys-kernel/gentoo-sources
-</pre></div>
-
-
-<p>Je télécharge le noyau 4.3.0 :</p>
-<div class="highlight"><pre><span></span>emerge -a =sys-kernel/gentoo-sources-4.3.0
-</pre></div>
-
-
-<p>Une …</p>
-      <a class="btn" href="//www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Lire la suite</a>
   </div>
 </article>
 

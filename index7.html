@@ -53,6 +53,56 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Ajout dans mon .vimrc de matchadd() & highlight</a></h2>
+    <p>
+      Posté le ven. 27 avril 2012 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/vimrc.html">vimrc</a>,      <a href="//www.choiz.fr/tag/vim.html">vim</a>,      <a href="//www.choiz.fr/tag/config-file.html">config file</a>,      <a href="//www.choiz.fr/tag/vimrc.html">.vimrc</a>,      <a href="//www.choiz.fr/tag/todo.html">todo</a>,      <a href="//www.choiz.fr/tag/notice.html">notice</a>,      <a href="//www.choiz.fr/tag/fixme.html">fixme</a>,      <a href="//www.choiz.fr/tag/highlight.html">highlight</a>,      <a href="//www.choiz.fr/tag/matchadd.html">matchadd</a>    </p>
+  </header>
+  <div>
+      <p>Petit ajout dans mon fichier .vimrc :</p>
+<div class="highlight"><pre><span></span>&quot; Highlight To do list with green background
+highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
+highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
+highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
+&quot; Match todolist, notice, fixme
+:call matchadd(&#39;Todo&#39;,&#39;[T|t][O|o][D|d][O|o]&#39;)
+:call matchadd(&#39;Todo&#39;,&#39;[T|t][O|o] [D|d][O|o]&#39;)
+:call matchadd(&#39;Notice&#39;,&#39;[N|n][O|o][T|t][I|i][C|c][E|e]&#39;)
+:call matchadd(&#39;Notice&#39;,&#39;[N|n][O|o][T|t][E|e]&#39;)
+:call matchadd(&#39;Fixme&#39;,&#39;[F|f][I|i][X|x][M|m][E|e]&#39;)
+:call matchadd(&#39;Fixme&#39;,&#39;[F|f][I|i][X|x] [M|m][E|e]&#39;)
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html">Reprendre la main sur un Screen pas "detached"</a></h2>
+    <p>
+      Posté le mer. 18 avril 2012 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/attached.html">attached</a>,      <a href="//www.choiz.fr/tag/detached.html">detached</a>,      <a href="//www.choiz.fr/tag/detacher.html">détacher</a>,      <a href="//www.choiz.fr/tag/screen.html">screen</a>,      <a href="//www.choiz.fr/tag/reattacher.html">réattacher</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>,      <a href="//www.choiz.fr/tag/cli.html">cli</a>    </p>
+  </header>
+  <div>
+      <p>Lorsque j'ai voulu "réattacher" mon "Screen" j'ai eu le message suivant :</p>
+<div class="highlight"><pre><span></span>There is a screen on:
+1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)
+</pre></div>
+
+
+<p>Habituellement je détache mon "Screen" mais cette fois j'ai oublié.</p>
+<p>Pour "détacher" / "réattacher" mon "Screen" j'ai du faire la commande suivante :</p>
+<div class="highlight"><pre><span></span>screen -dRR
+</pre></div>
+
+
+<p>Je note car c'est toujours bon à savoir :)</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html">Utilisation des branches et de git stash</a></h2>
     <p>
       Posté le sam. 14 avril 2012 &#8226;
@@ -518,57 +568,6 @@ se nomme : arandr :</p>
 
 <p>Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez
 le ARandR pour configurer les deux écrans.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-11-30-flash-sous-debian.html">Flash sous Debian</a></h2>
-    <p>
-      Posté le mer. 30 novembre 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/flash.html">Flash</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/deezer.html">Deezer</a>,      <a href="//www.choiz.fr/tag/firefox.html">Firefox</a>,      <a href="//www.choiz.fr/tag/flashplugin.html">flashplugin</a>,      <a href="//www.choiz.fr/tag/source.html">source</a>,      <a href="//www.choiz.fr/tag/apt.html">apt</a>,      <a href="//www.choiz.fr/tag/soucelist.html">souce.list</a>,      <a href="//www.choiz.fr/tag/non-free.html">non-free</a>,      <a href="//www.choiz.fr/tag/contrib.html">contrib</a>    </p>
-  </header>
-  <div>
-      <p>Lors de l'installation de Debian sur mon poste au travail j'ai eu la
-surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
-chez Deezer c'est un peu problèmatique.</p>
-<p>J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
-ceci :</p>
-<div class="highlight"><pre><span></span>vi /etc/apt/source.list
-</pre></div>
-
-
-<p>Ajouter contrib non-free aux différentes sources (sauf security) puis :</p>
-<div class="highlight"><pre><span></span>apt-get update
-
-apt-get install flashplugin-nonfree
-</pre></div>
-
-
-<p>En relançant Firefox j'ai bien flash player fonctionnel sur Deezer.</p>
-<p>Le package flashplugin étant nonfree Debian ne l'inclus pas directement
-lors de l'installation.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html">Voir les fichiers cachés sur Lion</a></h2>
-    <p>
-      Posté le mer. 02 novembre 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/fichiers.html">fichiers</a>,      <a href="//www.choiz.fr/tag/caches.html">cachés</a>,      <a href="//www.choiz.fr/tag/hidden.html">hidden</a>,      <a href="//www.choiz.fr/tag/files.html">files</a>,      <a href="//www.choiz.fr/tag/lion.html">lion</a>,      <a href="//www.choiz.fr/tag/defaults.html">defaults</a>,      <a href="//www.choiz.fr/tag/appleshowallfiles.html">AppleShowAllFiles</a>,      <a href="//www.choiz.fr/tag/finder.html">Finder</a>    </p>
-  </header>
-  <div>
-      <p>Dans un terminal :</p>
-<div class="highlight"><pre><span></span>defaults write com.apple.Finder AppleShowAllFiles TRUE
-
-killall Finder
-</pre></div>
-
-
-<p>Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés.</p>
   </div>
 </article>
 

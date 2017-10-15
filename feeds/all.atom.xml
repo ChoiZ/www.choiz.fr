@@ -1,5 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-09-02T18:25:10+02:00</updated><entry><title>Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</title><link href="//www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html" rel="alternate"></link><published>2017-08-26T19:00:56+02:00</published><updated>2017-09-02T18:25:10+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</id><summary type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-10-15T19:52:13+02:00</updated><entry><title>Créer un partage NFS</title><link href="//www.choiz.fr/2017-10-15-creer-un-partage-nfs.html" rel="alternate"></link><published>2017-10-15T19:52:13+02:00</published><updated>2017-10-15T19:52:13+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-15:/2017-10-15-creer-un-partage-nfs.html</id><summary type="html">&lt;p&gt;Pour installer un serveur NFS sur Debian voici la marche à suivre :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install nfs-kernel-server
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Une fois le paquet installé, il faut modifier la configuration pour ajouter
+votre partage.&lt;/p&gt;
+&lt;p&gt;Editier le fichier &lt;strong&gt;/etc/exports&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vim /etc/exports
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;J'insert dans le fichier le dossier à partager &lt;strong&gt;/home/user/share&lt;/strong&gt; et la …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pour installer un serveur NFS sur Debian voici la marche à suivre :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install nfs-kernel-server
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Une fois le paquet installé, il faut modifier la configuration pour ajouter
+votre partage.&lt;/p&gt;
+&lt;p&gt;Editier le fichier &lt;strong&gt;/etc/exports&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vim /etc/exports
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;J'insert dans le fichier le dossier à partager &lt;strong&gt;/home/user/share&lt;/strong&gt; et la ou les
+clients qui peuvent accèder a ce partage &lt;strong&gt;10.0.0.1(rw,sync,no_subtree_check)&lt;/strong&gt; ce
+qui donne :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/home/user/share 10.0.0.1(rw,sync,no_subtree_check)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Recharger le service :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;service nfs-kernel-server reload
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Vérifier que votre partage est bien actif :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;showmount -e
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Côté client, j'ai installé sur Gentoo : &lt;strong&gt;net-fs/nfs-utils&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;emerge -a net-fs/nfs-utils
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Sur Debian installer le paquet : &lt;strong&gt;nfs-common&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install nfs-common
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ensuite configurer votre fichier &lt;strong&gt;/etc/fstab&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vim /etc/fstab
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ajouter à la fin du fichier l'ip de votre partage avec le nom local puis le
+point de montage sur votre client.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;10.0.0.100:/home/user/share /home/user/nfs-nas nfs defaults,user,auto,noatime,intr 0 0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Puis monter le nouveau partage avec la commande &lt;strong&gt;mount -a&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Si vous faites un &lt;strong&gt;ls /home/user/nfs-nas&lt;/strong&gt; vous devriez voir les fichiers qui se
+trouvent sur votre server.&lt;/p&gt;</content><category term="partage"></category><category term="NFS"></category><category term="linux"></category><category term="debian"></category><category term="gentoo"></category></entry><entry><title>Mise à jour de UniFi Security Gateway 3P (USG)</title><link href="//www.choiz.fr/2017-09-03-mise-a-jour-de-unifi-security-gateway-3p-(usg).html" rel="alternate"></link><published>2017-09-03T10:33:24+02:00</published><updated>2017-09-03T10:33:24+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-09-03:/2017-09-03-mise-a-jour-de-unifi-security-gateway-3p-(usg).html</id><summary type="html">&lt;p&gt;J'ai mis à jour mon USG en version 4.3.49.5001150 aujourd'hui.&lt;/p&gt;
+&lt;p&gt;Pour qu'il soit toujours fonctionnel derrière une livebox j'ai du refaire les
+différentes étapes d'installation de mon article &lt;a href="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html"&gt;Remplacer sa livebox par un
+UniFi Security Gateway 3P
+(USG)&lt;/a&gt;.&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'ai mis à jour mon USG en version 4.3.49.5001150 aujourd'hui.&lt;/p&gt;
+&lt;p&gt;Pour qu'il soit toujours fonctionnel derrière une livebox j'ai du refaire les
+différentes étapes d'installation de mon article &lt;a href="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html"&gt;Remplacer sa livebox par un
+UniFi Security Gateway 3P
+(USG)&lt;/a&gt;.&lt;/p&gt;</content><category term="UniFi"></category><category term="Gateway"></category><category term="USG"></category><category term="Network"></category><category term="Update"></category></entry><entry><title>Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</title><link href="//www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html" rel="alternate"></link><published>2017-08-26T19:00:56+02:00</published><updated>2017-09-02T18:25:10+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</id><summary type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
 &lt;p&gt;En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
 livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs.&lt;/p&gt;
 &lt;p&gt;Il y a pas mal de manipulations a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;

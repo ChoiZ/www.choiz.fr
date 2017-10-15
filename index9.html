@@ -53,6 +53,47 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2011-07-05-suppression-des-dsstore.html">Suppression des .DS\_Store</a></h2>
+    <p>
+      Posté le mar. 05 juillet 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/mac-dsstore.html">Mac .DsStore</a>,      <a href="//www.choiz.fr/tag/mac.html">Mac</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS\_Store</a>    </p>
+  </header>
+  <div>
+      <p>Dans une console sur votre Mac :</p>
+<div class="highlight"><pre><span></span>defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+</pre></div>
+
+
+<p>Puis redémarrez le mac.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2011-06-30-elément-cliqué-en-js.html">Elément cliqué en js</a></h2>
+    <p>
+      Posté le jeu. 30 juin 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/js.html">js</a>,      <a href="//www.choiz.fr/tag/element.html">element</a>,      <a href="//www.choiz.fr/tag/click.html">click</a>,      <a href="//www.choiz.fr/tag/javascript.html">javascript</a>,      <a href="//www.choiz.fr/tag/html.html">html</a>    </p>
+  </header>
+  <div>
+      <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :</p>
+<div class="highlight"><pre><span></span>function checkclick(e) {
+    e = e || window.event;
+    var o = e.target || e.srcElement;
+    console.log(o);
+}
+document.onclick=checkclick;
+</pre></div>
+
+
+<p>Pratique pour faire du débug.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2011-05-30-patch-diff.html">Patch & diff</a></h2>
     <p>
       Posté le lun. 30 mai 2011 &#8226;
@@ -291,82 +332,6 @@ Tags :
     <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;Access Denied&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
-</pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html">jQuery attr() avec onclick par click()</a></h2>
-    <p>
-      Posté le ven. 07 janvier 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/code.html">code</a>,      <a href="//www.choiz.fr/tag/js.html">js</a>,      <a href="//www.choiz.fr/tag/jquery.html">jquery</a>,      <a href="//www.choiz.fr/tag/attr.html">attr()</a>,      <a href="//www.choiz.fr/tag/click.html">click()</a>,      <a href="//www.choiz.fr/tag/removeattr.html">removeAttr()</a>    </p>
-  </header>
-  <div>
-      <p>Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery
-fonctionne pas avec l'attribut "onclick"…</p>
-<p>Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
-.attr('onClick','valeur') ou faire de la façon suivante.</p>
-<p>Remplacer donc :</p>
-<div class="highlight"><pre><span></span>var mavar = &#39;fonctionAffichage();&#39;;
-$(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
-</pre></div>
-
-
-<p>Par :</p>
-<div class="highlight"><pre><span></span>var mavar = &#39;fonctionAffichage();&#39;;
-$(&quot;#code&quot;).removeAttr(&#39;onclick&#39;).click(function() { eval(mavar); });
-</pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Commande SVN pour ajouter des keywords</a></h2>
-    <p>
-      Posté le lun. 25 octobre 2010 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/svn.html">SVN</a>,      <a href="//www.choiz.fr/tag/subversion.html">Subversion</a>,      <a href="//www.choiz.fr/tag/keyword.html">Keyword</a>,      <a href="//www.choiz.fr/tag/id.html">Id</a>,      <a href="//www.choiz.fr/tag/revision.html">Revision</a>,      <a href="//www.choiz.fr/tag/date.html">Date</a>,      <a href="//www.choiz.fr/tag/author.html">Author</a>,      <a href="//www.choiz.fr/tag/url.html">URL</a>,      <a href="//www.choiz.fr/tag/php.html">PHP</a>,      <a href="//www.choiz.fr/tag/code.html">Code</a>    </p>
-  </header>
-  <div>
-      <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
-informations dans vos projets il suffit de taper cette commande :</p>
-<div class="highlight"><pre><span></span>svn propset svn:keywords &quot;Id&quot; index.php
-</pre></div>
-
-
-<p>Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php</p>
-<p>Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :</p>
-<div class="highlight"><pre><span></span><span class="p">$</span><span class="nv">Id</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
-</pre></div>
-
-
-<p>Une fois le fichier versionné vous obtiendrez :</p>
-<div class="highlight"><pre><span></span><span class="p">$</span><span class="nv">Id</span><span class="x">: ajax\_modif.php 481 2010-10-25 12:02:50Z choiz </span><span class="p">$</span><span class="x"></span>
-</pre></div>
-
-
-<p>D'autres keywords sont disponible tel que :</p>
-<div class="highlight"><pre><span></span><span class="p">$</span><span class="nv">Revision</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
-<span class="p">$</span><span class="nv">Date</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
-<span class="p">$</span><span class="nv">Author</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
-<span class="p">$</span><span class="nv">URL</span><span class="x">:</span><span class="p">$</span><span class="x"></span>
-</pre></div>
-
-
-<p>Vous pouvez les ajouter les uns à la suite des autres par exemple pour
-notre fichier index.php je veux ajouter les 4 keywords précédents grâce
-à la commande :</p>
-<div class="highlight"><pre><span></span>svn propset svn:keywords &quot;Revision Date Author URL&quot; index.php
-</pre></div>
-
-
-<p>Ce qui affichera :</p>
-<div class="highlight"><pre><span></span><span class="p">$</span><span class="nv">Revision</span><span class="x">: 481 </span><span class="p">$</span><span class="x"></span>
-<span class="p">$</span><span class="nv">Date</span><span class="x">: 2010-10-25 14:02:50 +0200 (lun., 25 oct. 2010) </span><span class="p">$</span><span class="x"></span>
-<span class="p">$</span><span class="nv">Author</span><span class="x">: choiz </span><span class="p">$</span><span class="x"></span>
-<span class="p">$</span><span class="nv">URL</span><span class="x">: svn://svn.choiz.fr/projet/branches/prod/index.php </span><span class="p">$</span><span class="x"></span>
 </pre></div>
   </div>
 </article>

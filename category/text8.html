@@ -53,6 +53,50 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2011-11-30-flash-sous-debian.html">Flash sous Debian</a></h2>
+    <p>
+      Posté le mer. 30 novembre 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/flash.html">Flash</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/deezer.html">Deezer</a>,      <a href="//www.choiz.fr/tag/firefox.html">Firefox</a>,      <a href="//www.choiz.fr/tag/flashplugin.html">flashplugin</a>,      <a href="//www.choiz.fr/tag/source.html">source</a>,      <a href="//www.choiz.fr/tag/apt.html">apt</a>,      <a href="//www.choiz.fr/tag/soucelist.html">souce.list</a>,      <a href="//www.choiz.fr/tag/non-free.html">non-free</a>,      <a href="//www.choiz.fr/tag/contrib.html">contrib</a>    </p>
+  </header>
+  <div>
+      <p>Lors de l'installation de Debian sur mon poste au travail j'ai eu la
+surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
+chez Deezer c'est un peu problèmatique.</p>
+<p>J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
+ceci :</p>
+<div class="highlight"><pre><span></span>vi /etc/apt/source.list
+</pre></div>
+
+
+<p>Ajouter contrib non-free aux différentes sources …</p>
+      <a class="btn" href="//www.choiz.fr/2011-11-30-flash-sous-debian.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html">Voir les fichiers cachés sur Lion</a></h2>
+    <p>
+      Posté le mer. 02 novembre 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/fichiers.html">fichiers</a>,      <a href="//www.choiz.fr/tag/caches.html">cachés</a>,      <a href="//www.choiz.fr/tag/hidden.html">hidden</a>,      <a href="//www.choiz.fr/tag/files.html">files</a>,      <a href="//www.choiz.fr/tag/lion.html">lion</a>,      <a href="//www.choiz.fr/tag/defaults.html">defaults</a>,      <a href="//www.choiz.fr/tag/appleshowallfiles.html">AppleShowAllFiles</a>,      <a href="//www.choiz.fr/tag/finder.html">Finder</a>    </p>
+  </header>
+  <div>
+      <p>Dans un terminal :</p>
+<div class="highlight"><pre><span></span>defaults write com.apple.Finder AppleShowAllFiles TRUE
+
+killall Finder
+</pre></div>
+
+
+<p>Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés.</p>
+      <a class="btn" href="//www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html">Insérer un \# au début de chaque ligne d'un fichier avec vim</a></h2>
     <p>
       Posté le mer. 05 octobre 2011 &#8226;
@@ -221,49 +265,6 @@ global-ignores</p>
 l'on se trouve actuellement il suffit d'executer la commande svn
 suivante …</p>
       <a class="btn" href="//www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-07-05-suppression-des-dsstore.html">Suppression des .DS\_Store</a></h2>
-    <p>
-      Posté le mar. 05 juillet 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/mac-dsstore.html">Mac .DsStore</a>,      <a href="//www.choiz.fr/tag/mac.html">Mac</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS\_Store</a>    </p>
-  </header>
-  <div>
-      <p>Dans une console sur votre Mac :</p>
-<div class="highlight"><pre><span></span>defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-</pre></div>
-
-
-<p>Puis redémarrez le mac.</p>
-      <a class="btn" href="//www.choiz.fr/2011-07-05-suppression-des-dsstore.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-06-30-elément-cliqué-en-js.html">Elément cliqué en js</a></h2>
-    <p>
-      Posté le jeu. 30 juin 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/js.html">js</a>,      <a href="//www.choiz.fr/tag/element.html">element</a>,      <a href="//www.choiz.fr/tag/click.html">click</a>,      <a href="//www.choiz.fr/tag/javascript.html">javascript</a>,      <a href="//www.choiz.fr/tag/html.html">html</a>    </p>
-  </header>
-  <div>
-      <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :</p>
-<div class="highlight"><pre><span></span>function checkclick(e) {
-    e = e || window.event;
-    var o = e.target || e.srcElement;
-    console.log(o);
-}
-document.onclick=checkclick;
-</pre></div>
-
-
-<p>Pratique pour faire du débug.</p>
-      <a class="btn" href="//www.choiz.fr/2011-06-30-elément-cliqué-en-js.html">Lire la suite</a>
   </div>
 </article>
 
