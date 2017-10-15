@@ -573,7 +573,7 @@ mapage clavier Mac. Il y a beaucoup de différences entre un clavier
 AZERTY de PC et un clavier AZERTY de Mac.&lt;/p&gt;
 &lt;p&gt;Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
 des endroits complétement différents.&lt;/p&gt;
-&lt;p&gt;J'ai donc décidé …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 02 Dec 2011 00:14:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-12-02:/2011-12-02-clavier-apple-sur-debian.html</guid><category>Clavier</category><category>Apple</category><category>Mapage</category><category>Debian</category><category>Linux</category><category>Keyboard</category><category>Mac</category><category>Mac Keyboard</category></item><item><title>Dual screen sur xfce</title><link>//www.choiz.fr/2011-12-01-dual-screen-sur-xfce.html</link><description>&lt;p&gt;Un petit package bien pratique pour configurer le dual screen sur xfce
+&lt;p&gt;J'ai donc décidé …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 02 Dec 2011 00:14:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-12-02:/2011-12-02-clavier-apple-sur-debian.html</guid><category>Debian</category><category>Keyboard</category><category>MacOs</category></item><item><title>Dual screen sur xfce</title><link>//www.choiz.fr/2011-12-01-dual-screen-sur-xfce.html</link><description>&lt;p&gt;Un petit package bien pratique pour configurer le dual screen sur xfce
 se nomme : arandr :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install arandr
 &lt;/pre&gt;&lt;/div&gt;
@@ -657,12 +657,12 @@ avoir la …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/ele
 global-ignores&lt;/p&gt;
 &lt;p&gt;Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
 l'on se trouve actuellement il suffit d'executer la commande svn
-suivante …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 26 Jul 2011 18:53:21 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-07-26:/2011-07-26-ignorer-grâce-au-svn.html</guid><category>svn</category><category>ignore</category><category>fichier</category><category>file</category><category>folder</category><category>dossier</category><category>.DS\_Store</category><category>.\_\*</category><category>.\_</category><category>.swp</category><category>Vim</category><category>Mac Os</category></item><item><title>Suppression des .DS\_Store</title><link>//www.choiz.fr/2011-07-05-suppression-des-dsstore.html</link><description>&lt;p&gt;Dans une console sur votre Mac :&lt;/p&gt;
+suivante …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 26 Jul 2011 18:53:21 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-07-26:/2011-07-26-ignorer-grâce-au-svn.html</guid><category>svn</category><category>ignore</category><category>file</category><category>Vim</category><category>MacOs</category></item><item><title>Suppression des .DS\_Store</title><link>//www.choiz.fr/2011-07-05-suppression-des-dsstore.html</link><description>&lt;p&gt;Dans une console sur votre Mac :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Puis redémarrez le mac.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 05 Jul 2011 18:01:40 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-07-05:/2011-07-05-suppression-des-dsstore.html</guid><category>Mac .DsStore</category><category>Mac</category><category>.DS\_Store</category></item><item><title>Elément cliqué en js</title><link>//www.choiz.fr/2011-06-30-el%C3%A9ment-cliqu%C3%A9-en-js.html</link><description>&lt;p&gt;Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :&lt;/p&gt;
+&lt;p&gt;Puis redémarrez le mac.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 05 Jul 2011 18:01:40 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-07-05:/2011-07-05-suppression-des-dsstore.html</guid><category>MacOs</category><category>.DS_Store</category></item><item><title>Elément cliqué en js</title><link>//www.choiz.fr/2011-06-30-el%C3%A9ment-cliqu%C3%A9-en-js.html</link><description>&lt;p&gt;Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;function checkclick(e) {
     e = e || window.event;
     var o = e.target || e.srcElement;
