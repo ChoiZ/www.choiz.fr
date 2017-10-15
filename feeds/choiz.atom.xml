@@ -25,8 +25,8 @@ iface vmbr2 inet static
 
 
 &lt;p&gt;On peut également ajouter si on veut différents ports qu'on ouvre vers
-l'exterieur vers tel ou tel VM ou Conteneur.
-Par exemple j'ouvre le port 22 de mon Conteneur avec l'ip 10.0.0.1 sur le port
+l'exterieur vers tel ou tel VM ou conteneur.
+Par exemple j'ouvre le port 22 de mon conteneur avec l'ip 10.0.0.1 sur le port
 8022 de mon ip public :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    post-up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
     post-down iptables -t nat -D PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
@@ -36,7 +36,22 @@ Par exemple j'ouvre le port 22 de mon Conteneur avec l'ip 10.0.0.1 sur le port
 &lt;p&gt;Ensuite enregistrer le fichier &lt;code&gt;/etc/network/interfaces&lt;/code&gt; puis relancer les
 interfaces réseaux&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;service networking restart
-&lt;/pre&gt;&lt;/div&gt;</content><category term="NAT"></category><category term="Proxmox"></category><category term="IPV4"></category></entry><entry><title>Créer un partage NFS</title><link href="//www.choiz.fr/2017-10-15-creer-un-partage-nfs.html" rel="alternate"></link><published>2017-10-15T19:52:13+02:00</published><updated>2017-10-15T19:52:13+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-15:/2017-10-15-creer-un-partage-nfs.html</id><summary type="html">&lt;p&gt;Pour installer un serveur NFS sur Debian voici la marche à suivre :&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Lorsque vous allez faire la configuration réseau d'une VM ou d'un conteneur, il
+suffit de renseigner une adresse ip de la plage 10.0.0.0/24&lt;/p&gt;
+&lt;p&gt;Exemple :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;auto eth0
+iface eth0 inet static
+    address 10.0.0.1
+    netmask 255.255.255.0
+    gateway 10.0.0.254
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Puis faites un ping depuis votre conteneur vers l'ip 10.0.0.254, puis vers un
+site internet duckduckgo.com par exemple.&lt;/p&gt;</content><category term="NAT"></category><category term="Proxmox"></category><category term="IPV4"></category></entry><entry><title>Créer un partage NFS</title><link href="//www.choiz.fr/2017-10-15-creer-un-partage-nfs.html" rel="alternate"></link><published>2017-10-15T19:52:13+02:00</published><updated>2017-10-15T19:52:13+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-15:/2017-10-15-creer-un-partage-nfs.html</id><summary type="html">&lt;p&gt;Pour installer un serveur NFS sur Debian voici la marche à suivre :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt install nfs-kernel-server
 &lt;/pre&gt;&lt;/div&gt;
 

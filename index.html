@@ -81,8 +81,8 @@ iface vmbr2 inet static
 
 
 <p>On peut également ajouter si on veut différents ports qu'on ouvre vers
-l'exterieur vers tel ou tel VM ou Conteneur.
-Par exemple j'ouvre le port 22 de mon Conteneur avec l'ip 10.0.0.1 sur le port
+l'exterieur vers tel ou tel VM ou conteneur.
+Par exemple j'ouvre le port 22 de mon conteneur avec l'ip 10.0.0.1 sur le port
 8022 de mon ip public :</p>
 <div class="highlight"><pre><span></span>    post-up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
     post-down iptables -t nat -D PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
@@ -93,6 +93,21 @@ Par exemple j'ouvre le port 22 de mon Conteneur avec l'ip 10.0.0.1 sur le port
 interfaces réseaux</p>
 <div class="highlight"><pre><span></span>service networking restart
 </pre></div>
+
+
+<p>Lorsque vous allez faire la configuration réseau d'une VM ou d'un conteneur, il
+suffit de renseigner une adresse ip de la plage 10.0.0.0/24</p>
+<p>Exemple :</p>
+<div class="highlight"><pre><span></span>auto eth0
+iface eth0 inet static
+    address 10.0.0.1
+    netmask 255.255.255.0
+    gateway 10.0.0.254
+</pre></div>
+
+
+<p>Puis faites un ping depuis votre conteneur vers l'ip 10.0.0.254, puis vers un
+site internet duckduckgo.com par exemple.</p>
   </div>
   <hr />
 </article>
