@@ -14,14 +14,14 @@ apt install nfs-kernel-server
 Une fois le paquet installé, il faut modifier la configuration pour ajouter
 votre partage.
 
-Editer le fichier **/etc/exports**
+Editer le fichier `/etc/exports`
 ```
 vim /etc/exports
 ```
 
-J'ajoute dans le fichier le dossier à partager **/home/user/share** et l'adresse 
+J'ajoute dans le fichier le dossier à partager `/home/user/share` et l'adresse
 du ou des clients qui peuvent accèder a ce partage
-**10.0.0.1(rw,sync,no_subtree_check)** ici mon client a l'adresse ip 10.0.0.1 ce
+`10.0.0.1(rw,sync,no_subtree_check)` ici mon client a l'adresse ip 10.0.0.1 ce
 qui donne :
 ```
 /home/user/share 10.0.0.1(rw,sync,no_subtree_check)
@@ -37,17 +37,17 @@ Vérifier que votre partage est bien actif :
 showmount -e
 ```
 
-Côté client, j'ai installé sur Gentoo : **net-fs/nfs-utils**
+Côté client, j'ai installé sur Gentoo : `net-fs/nfs-utils`
 ```
 emerge -a net-fs/nfs-utils
 ```
 
-Sur Debian installer le paquet : **nfs-common**
+Sur Debian installer le paquet : `nfs-common`
 ```
 apt install nfs-common
 ```
 
-Ensuite configurer votre fichier **/etc/fstab**
+Ensuite configurer votre fichier `/etc/fstab`
 ```
 vim /etc/fstab
 ```
@@ -58,7 +58,7 @@ point de montage sur votre client.
 10.0.0.100:/home/user/share /home/user/nfs-nas nfs defaults,user,auto,noatime,intr 0 0
 ```
 
-Puis monter le nouveau partage avec la commande **mount -a**
+Puis monter le nouveau partage avec la commande `mount -a`
 
-Si vous faites la commande **ls /home/user/nfs-nas** vous devriez voir les
+Si vous faites la commande `ls /home/user/nfs-nas` vous devriez voir les
 fichiers qui se trouvent sur votre serveur.

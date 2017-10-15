@@ -142,7 +142,7 @@ scp config.gateway.json user@mon_controlleur:/home/user
 Puis je me connecte a mon controlleur en ssh pour déposer dans le bon dossier ce
 fichier.
 
-Le dossier doit être **/data/sites/default** si vous utilisez le site par defaut.
+Le dossier doit être `/data/sites/default` si vous utilisez le site par defaut.
 
 Reconnecter l'USG a votre réseau.
 

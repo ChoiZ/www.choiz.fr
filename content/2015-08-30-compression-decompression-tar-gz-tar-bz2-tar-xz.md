@@ -13,7 +13,7 @@ syntaxe…
 tar.gz
 ------
 
-Pour les fichiers **tar.gz** j'arrive parfaitement à compresser ou
+Pour les fichiers `tar.gz` j'arrive parfaitement à compresser ou
 décompresser ce format exemple :
 
 On compresse avec :
@@ -32,7 +32,7 @@ verbeux. -z pour le "gzip" d'ou le ".gz". -f pour spécifier le fichier.
 tar.bz2
 -------
 
-Pour les **tar.bz2** je ne sais JAMAIS qu'il faut remplacer "z" de gizip
+Pour les `tar.bz2` je ne sais JAMAIS qu'il faut remplacer "z" de gizip
 par "j" de Bzip… (la lettre "b" étant sans doute utilisé avant que le
 bzip n'apparaisse). L'alternative est d'utiliser "--bzip"
 
@@ -55,7 +55,7 @@ Ou :
 tar.xz
 ------
 
-Pour ce qui est de Lzma ou le **tar.xz** c'est un "J" majuscule cette
+Pour ce qui est de Lzma ou le `tar.xz` c'est un "J" majuscule cette
 fois ou d'utiliser "--xz".
 
 On compresse avec :
