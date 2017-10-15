@@ -14,7 +14,7 @@ apt-get install nfs-kernel-server
 Une fois le paquet installé, il faut modifier la configuration pour ajouter
 votre partage.
 
-Editier le fichier **/etc/exports**
+Editer le fichier **/etc/exports**
 ```
 vim /etc/exports
 ```
