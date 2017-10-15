@@ -2,7 +2,7 @@ Title: Installation de Firefox sur Debian
 Date: 2014-03-21 01:14:41
 Author: choiz
 Category: text
-Tags: Firefox, Mozilla, Debian, Installation de Firefox, Firefox sur Debian
+Tags: Firefox, Debian
 Slug: 2014-03-21-installation-de-firefox-sur-debian
 Status: published
 
