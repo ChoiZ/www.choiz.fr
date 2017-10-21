@@ -53,6 +53,31 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html">jQuery attr() avec onclick par click()</a></h2>
+    <p>
+      Posté le ven. 07 janvier 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/code.html">Code</a>,      <a href="//www.choiz.fr/tag/jquery.html">jQuery</a>,      <a href="//www.choiz.fr/tag/javascript.html">JavaScript</a>    </p>
+  </header>
+  <div>
+      <p>Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery
+fonctionne pas avec l'attribut "onclick"…</p>
+<p>Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
+.attr('onClick','valeur') ou faire de la façon suivante.</p>
+<p>Remplacer donc :</p>
+<div class="highlight"><pre><span></span>var mavar = &#39;fonctionAffichage();&#39;;
+$(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
+</pre></div>
+
+
+<p>Par :</p>
+<div class="highlight"><pre><span></span>var mavar …</pre></div>
+      <a class="btn" href="//www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Commande SVN pour ajouter des keywords</a></h2>
     <p>
       Posté le lun. 25 octobre 2010 &#8226;
@@ -101,8 +126,7 @@ Tags :
   <div>
       <p>Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
 virtuel en console.</p>
-<p>Ici on créer un tuyau virtuel de 1Mbit/s.</p>
-<p><code>sudo ipfw pipe 1 config bw 1Mbit/s</code></p>
+<p>Ici on créer un tuyau virtuel de 1Mbit/s : <code>sudo ipfw pipe 1 config bw 1Mbit/s</code></p>
 <p>On applique ce tuyau au port 80 (pour le téléchargement de fichier via
 un navigateur …</p>
       <a class="btn" href="//www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html">Lire la suite</a>

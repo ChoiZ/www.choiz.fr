@@ -11,22 +11,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
-<meta name="author" content="choiz" />
-<meta name="description" content="Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau virtuel en console. Ici on créer un tuyau virtuel de 1Mbit/s : sudo ipfw pipe 1 config bw 1Mbit/s On applique ce tuyau au port 80 (pour le téléchargement de fichier via un navigateur …" />
-<meta name="keywords" content="QoS, MacOs">
+  <meta name="author" content="François LASSERRE" />
+  <meta name="description" content="" />
 <meta property="og:site_name" content="ChoiZ"/>
-<meta property="og:title" content="Limiter la bande passante sous Mac Os X"/>
-<meta property="og:description" content="Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau virtuel en console. Ici on créer un tuyau virtuel de 1Mbit/s : sudo ipfw pipe 1 config bw 1Mbit/s On applique ce tuyau au port 80 (pour le téléchargement de fichier via un navigateur …"/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="//www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html"/>
-<meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2010-07-12 11:59:00+02:00"/>
-<meta property="article:modified_time" content=""/>
-<meta property="article:author" content="//www.choiz.fr/author/choiz.html">
-<meta property="article:section" content="text"/>
-<meta property="article:tag" content="QoS"/>
-<meta property="article:tag" content="MacOs"/>
-<meta property="og:image" content="">  <title>ChoiZ &ndash; Limiter la bande passante sous Mac Os X</title>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="ChoiZ"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:url" content="//www.choiz.fr"/>
+  <title>ChoiZ &ndash; Tag : Debian</title>
 </head>
 <body>
   <aside>
@@ -60,26 +53,32 @@
 
 <article>
   <header>
-    <h1 id="2010-07-12-limiter-la-bande-passante-sous-mac-os-x">Limiter la bande passante sous Mac Os X</h1>
-    <p>Posté le lun. 12 juillet 2010</p>
+    <h2><a href="//www.choiz.fr/2011-11-30-flash-sous-debian.html">Flash sous Debian</a></h2>
+    <p>
+      Posté le mer. 30 novembre 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/flash.html">Flash</a>,      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/deezer.html">Deezer</a>,      <a href="//www.choiz.fr/tag/firefox.html">Firefox</a>,      <a href="//www.choiz.fr/tag/flashplugin.html">flashplugin</a>,      <a href="//www.choiz.fr/tag/source.html">source</a>,      <a href="//www.choiz.fr/tag/apt.html">apt</a>,      <a href="//www.choiz.fr/tag/soucelist.html">souce.list</a>,      <a href="//www.choiz.fr/tag/non-free.html">non-free</a>,      <a href="//www.choiz.fr/tag/contrib.html">contrib</a>    </p>
   </header>
   <div>
-    <p>Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
-virtuel en console.</p>
-<p>Ici on créer un tuyau virtuel de 1Mbit/s : <code>sudo ipfw pipe 1 config bw 1Mbit/s</code></p>
-<p>On applique ce tuyau au port 80 (pour le téléchargement de fichier via
-un navigateur par exemple) <code>sudo ipfw add 1 pipe 1 proto tcp src-port 80</code></p>
-<p>Pour voir le tuyau : <code>sudo ipfw pipe show</code></p>
-<p>Pour supprimer la règle du port 80 : <code>sudo ipfw del 1</code></p>
-<p>Pour supprimer le tuyau : <code>sudo ipfw pipe 1 delete</code></p>
-  </div>
-  <div class="tag-cloud">
-    <p>
-      <a href="//www.choiz.fr/tag/qos.html">QoS</a>
-      <a href="//www.choiz.fr/tag/macos.html">MacOs</a>
-    </p>
+      <p>Lors de l'installation de Debian sur mon poste au travail j'ai eu la
+surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
+chez Deezer c'est un peu problèmatique.</p>
+<p>J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
+ceci :</p>
+<div class="highlight"><pre><span></span>vi /etc/apt/source.list
+</pre></div>
+
+
+<p>Ajouter contrib non-free aux différentes sources …</p>
+      <a class="btn" href="//www.choiz.fr/2011-11-30-flash-sous-debian.html">Lire la suite</a>
   </div>
 </article>
+
+  <div class="pagination">
+      <a class="btn float-right" href="//www.choiz.fr/tag/debian.html">
+        Nouveaux articles <i class="fa fa-angle-right"></i>
+      </a>
+  </div>
 
     <footer>
       <p>&copy; François LASSERRE </p>
@@ -102,20 +101,12 @@ un navigateur par exemple) <code>sudo ipfw add 1 pipe 1 proto tcp src-port 80</c
 <noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "http://schema.org",
-  "@type": "BlogPosting",
-  "name": "Limiter la bande passante sous Mac Os X",
-  "headline": "Limiter la bande passante sous Mac Os X",
-  "datePublished": "2010-07-12 11:59:00+02:00",
-  "dateModified": "",
-  "author": {
-    "@type": "Person",
-    "name": "choiz",
-    "url": "//www.choiz.fr/author/choiz.html"
-  },
-  "image": "{{ SITEURL }}/theme/img/profile.png",
-  "url": "//www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html",
-  "description": "Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau virtuel en console. Ici on créer un tuyau virtuel de 1Mbit/s : sudo ipfw pipe 1 config bw 1Mbit/s On applique ce tuyau au port 80 (pour le téléchargement de fichier via un navigateur …"
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " ChoiZ ",
+  "url" : "//www.choiz.fr",
+  "image": "",
+  "description": ""
 }
 </script></body>
 </html>

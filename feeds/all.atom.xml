@@ -1,5 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-10-15T22:08:23+02:00</updated><entry><title>Faire du NAT avec Proxmox</title><link href="//www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html" rel="alternate"></link><published>2017-10-15T22:08:23+02:00</published><updated>2017-10-15T22:08:23+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-15:/2017-10-15-faire-un-nat-avec-proxmox.html</id><summary type="html">&lt;p&gt;L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/all.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-10-21T21:57:19+02:00</updated><entry><title>Installation d'un controlleur Unifi sur Raspberry Pi 3</title><link href="//www.choiz.fr/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html" rel="alternate"></link><published>2017-10-21T21:57:19+02:00</published><updated>2017-10-21T21:57:19+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-21:/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html</id><summary type="html">&lt;p&gt;Pour commencer il faut télécharger la dernière version de raspbian sur le site
+officiel raspberrypi.org. Actuellement c'est 2017-09-07-raspbian-stretch-lite.zip.&lt;/p&gt;
+&lt;p&gt;Il faut ensuite extraire l'image de l'archive :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;unzip 2017-09-07-raspbian-stretch-lite.zip
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Puis mettre l'image sur une carte micro sd, j'utilise la commande &lt;code&gt;dmesg&lt;/code&gt; pour
+voir le nom du périphérique USB sur …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pour commencer il faut télécharger la dernière version de raspbian sur le site
+officiel raspberrypi.org. Actuellement c'est 2017-09-07-raspbian-stretch-lite.zip.&lt;/p&gt;
+&lt;p&gt;Il faut ensuite extraire l'image de l'archive :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;unzip 2017-09-07-raspbian-stretch-lite.zip
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Puis mettre l'image sur une carte micro sd, j'utilise la commande &lt;code&gt;dmesg&lt;/code&gt; pour
+voir le nom du périphérique USB sur ma machine :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[5371729.056039] usb-storage 2-1.3:1.0: USB Mass Storage device detected
+[5371729.056115] scsi host5: usb-storage 2-1.3:1.0
+[5371730.058300] scsi 5:0:0:0: Direct-Access     Single   Flash Reader     1.00 PQ: 0 ANSI: 0
+[5371730.058447] sd 5:0:0:0: Attached scsi generic sg1 type 0
+[5371730.509370] sd 5:0:0:0: [sdb] 15759360 512-byte logical blocks: (8.07 GB/7.51 GiB)
+[5371730.510383] sd 5:0:0:0: [sdb] Write Protect is off
+[5371730.510386] sd 5:0:0:0: [sdb] Mode Sense: 03 00 00 00
+[5371730.511384] sd 5:0:0:0: [sdb] No Caching mode page found
+[5371730.511386] sd 5:0:0:0: [sdb] Assuming drive cache: write through
+[5371730.516135]  sdb: sdb1
+[5371730.519381] sd 5:0:0:0: [sdb] Attached SCSI removable disk
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Je copie donc l'image sur /dev/sdb « ma microsd d'après dmesg.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dd bs=4M if=/home/choiz/2017-09-07-raspbian-stretch-lite.img of=/dev/sdb conv=fsync
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Une fois la copie terminée, je déconnecte la micro sd et je démarre le Raspberry Pi.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dd bs=4M if=2017-09-07-raspbian-stretch-lite.img of=/dev/sdb conv=fsync
+442+1 enregistrements lus
+442+1 enregistrements écrits
+1854590976 bytes (1,9 GB, 1,7 GiB) copied, 288,12 s, 6,4 MB/s
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Une fois le Raspberry Pi démarrer s'identifier avec : pi / raspberry (attention
+le clavier est en qwerty pour l'instant donc tapper rqspberry en mot de passe ;-)&lt;/p&gt;
+&lt;p&gt;Puis tappez la commande &lt;code&gt;sudo bash&lt;/code&gt; pour passer en root puis &lt;code&gt;raspi-config&lt;/code&gt; pour
+configurer votre Raspberry Pi.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Changer les locales (4 Localisation Option, puis I1 Change Locale),
+    décocher en_GB.UTF-8 UTF-8 et cocher fr_FR.UTF-8 UTF-8.
+    "Default local for the system environment:" choisir fr_FR.UTF-8&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Changer le timezone (4 Localisation Option, puis I2 Change Timezone),
+    choisir Europe, puis Paris.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Changer le layout du clavier (4 Localisation Option, puis I3 Change Keyboard 
+    Layout), choisir Generic 105-key (Intl) PC, Other, French,
+    French - French (Azerty), The Default for keybord layout, et pour finir : No compose key.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Changer le pays pour le wifi (4 Localisation Option, puis I4 Change Wi-fi
+        Country), choisir FR France.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ajouter le SSH (5 Interfacing Options, P2 SSH) Puis répondre "yes" pour
+   activer le serveur SSH.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Choisir 7 Advanced Options, A1 Expand Filesystem.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Choisir 8 Update pour mettre à jour raspbian.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2 Hostname si vous voulez changer le nom de votre raspberry par exemple
+"raspberrypi3".&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;9: Finish, et redémarrer.&lt;/p&gt;
+&lt;p&gt;Récuperer l'adresse ip du raspberry pi pour se connecter dessus via SSH.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh pi@adresseip
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;pi@raspberry3:~ $ &lt;code&gt;sudo bash&lt;/code&gt;
+root@raspberrypi3:/home/pi# &lt;code&gt;apt install dirmngr -y&lt;/code&gt;
+root@raspberrypi3:/home/pi# &lt;code&gt;echo 'deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | tee -a /etc/apt/sources.list.d/ubnt.list &amp;gt; /dev/null&lt;/code&gt;
+root@raspberrypi3:/home/pi# &lt;code&gt;apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50&lt;/code&gt;
+root@raspberrypi3:/home/pi# &lt;code&gt;apt update -y&lt;/code&gt;
+root@raspberrypi3:/home/pi# &lt;code&gt;apt install unifi -y&lt;/code&gt;
+root@raspberrypi3:/home/pi# &lt;code&gt;echo 'ENABLE_MONGODB=no' | tee -a /etc/mongodb.conf &amp;gt; /dev/null&lt;/code&gt;
+root@raspberrypi3:/home/pi# &lt;code&gt;apt install oracle-java8-jdk -y&lt;/code&gt;
+root@raspberrypi3:/home/pi# &lt;code&gt;echo 'JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt' | tee /etc/default/unifi &amp;gt; /dev/null&lt;/code&gt;
+root@raspberrypi3:/home/pi# &lt;code&gt;reboot&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Une fois le raspberry pi démarrer se rendre sur https://ip_raspberry:8443 vous
+devriez avoir votre interface Unifi disponible.&lt;/p&gt;</content><category term="RaspberryPi"></category><category term="Unifi"></category><category term="Debian"></category></entry><entry><title>Faire du NAT avec Proxmox</title><link href="//www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html" rel="alternate"></link><published>2017-10-15T22:08:23+02:00</published><updated>2017-10-15T22:08:23+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-15:/2017-10-15-faire-un-nat-avec-proxmox.html</id><summary type="html">&lt;p&gt;L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
 la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut
 faire la même chose.&lt;/p&gt;
 &lt;p&gt;Ip Public de proxmox : 11.22.33.44
@@ -3282,60 +3381,54 @@ donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?&lt;/p&gt;
 &lt;p&gt;Maintenant lors du prochain démarrage de votre VirtualBox vous devez
 avoir la machine virtuelle importée !&lt;/p&gt;</content><category term="VirtualBox"></category><category term="Import"></category></entry><entry><title>Partage Samba !</title><link href="//www.choiz.fr/2011-08-17-partage-samba.html" rel="alternate"></link><published>2011-08-17T20:41:00+02:00</published><updated>2011-08-17T20:41:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-17:/2011-08-17-partage-samba.html</id><summary type="html">&lt;p&gt;Configuration d'un serveur samba. Editer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;| ### Global ###
-| [global]
-| ## Identification ##
-| workgroup = WORKGROUP
-| netbios name = %h
-| server string = Serveur samba %h
-| security = user
-| public = yes
-| ## Log ##
-| log file = /var/log/samba/log.%m
-| max log size = 1000 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Configuration d'un serveur samba. Editer le fichier de configuration
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;### Global ###
+[global]
+## Identification ##
+workgroup = WORKGROUP
+netbios name = %h
+server string = Serveur samba %h
+security = user
+public = yes
+## Log ##
+log file = /var/log/samba/log.%m
+max log size = 1000 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Configuration d'un serveur samba. Editer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;| ### Global ###
-| [global]
-| ## Identification ##
-| workgroup = WORKGROUP
-| netbios name = %h
-| server string = Serveur samba %h
-| security = user
-| public = yes
-| ## Log ##
-| log file = /var/log/samba/log.%m
-| max log size = 1000
-| ## Auth ##
-| encrypt passwords = true
-| smb passwd file = /etc/samba/smbpasswd
-| ### Share ###
-| [choiz]
-| path = /home/choiz/samba
-| read only = no
-| writeable = yes
-| valid users = choiz
-| comment = partage de choiz
-| [partagereadonly]
-| path = /home/partageread
-| read only = yes
-| writeable = no
-| valid users = choiz, @group
-| comment = partage en lecture pour choiz et le groupe &amp;quot;group&amp;quot;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;### Global ###
+[global]
+## Identification ##
+workgroup = WORKGROUP
+netbios name = %h
+server string = Serveur samba %h
+security = user
+public = yes
+## Log ##
+log file = /var/log/samba/log.%m
+max log size = 1000
+## Auth ##
+encrypt passwords = true
+smb passwd file = /etc/samba/smbpasswd
+### Share ###
+[choiz]
+path = /home/choiz/samba
+read only = no
+writeable = yes
+valid users = choiz
+comment = partage de choiz
+[partagereadonly]
+path = /home/partageread
+read only = yes
+writeable = no
+valid users = choiz, @group
+comment = partage en lecture pour choiz et le groupe &amp;quot;group&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Maintenant il faut créer notre utilisateur "choiz" grâce à :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;smbpasswd -a choiz
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;Maintenant il faut créer notre utilisateur "choiz" grâce à : &lt;code&gt;smbpasswd -a choiz&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Pour les groupes samba utilise les groupes unix. A vous de voir si vous
 voulez gérer votre partage samba utilisateur par utilisateur ou
 directement avec des groupes.&lt;/p&gt;
 &lt;p&gt;N'oubliez pas de redémarrer le service Samba avant de tester depuis
-votre client le partage de fichiers ! :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/etc/init.d/samba restart
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Samba"></category><category term="Share"></category><category term="Linux"></category></entry><entry><title>Liens utiles</title><link href="//www.choiz.fr/2011-08-09-liens-utiles.html" rel="alternate"></link><published>2011-08-09T21:03:05+02:00</published><updated>2011-08-09T21:03:05+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-09:/2011-08-09-liens-utiles.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/p&gt;
+votre client le partage de fichiers : &lt;code&gt;/etc/init.d/samba restart&lt;/code&gt;&lt;/p&gt;</content><category term="Samba"></category><category term="Share"></category><category term="Linux"></category></entry><entry><title>Liens utiles</title><link href="//www.choiz.fr/2011-08-09-liens-utiles.html" rel="alternate"></link><published>2011-08-09T21:03:05+02:00</published><updated>2011-08-09T21:03:05+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-09:/2011-08-09-liens-utiles.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.jsperf.com/"&gt;http://www.jsperf.com/&lt;/a&gt; Pour faire des performances de code js&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.pastebin.com/"&gt;http://www.pastebin.com/&lt;/a&gt; Pour copier coller du code facilement&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.jsperf.com/"&gt;http://www.jsperf.com/&lt;/a&gt; Pour faire des performances de code js&lt;/p&gt;
@@ -3633,7 +3726,7 @@ informations dans vos projets il suffit de taper cette commande :&lt;/p&gt;
 
 
 &lt;p&gt;Une fois le fichier versionné vous obtiendrez :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;Id&lt;/span&gt;&lt;span class="x"&gt;: ajax\_modif.php 481 2010-10-25 12:02:50Z choiz &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;Id&lt;/span&gt;&lt;span class="x"&gt;: ajax_modif.php 481 2010-10-25 12:02:50Z choiz &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3673,19 +3766,13 @@ trop grande. :&lt;/p&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</content><category term="CSS"></category><category term="HTML"></category><category term="Print"></category><category term="Code"></category></entry><entry><title>Limiter la bande passante sous Mac Os X</title><link href="//www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html" rel="alternate"></link><published>2010-07-12T11:59:00+02:00</published><updated>2010-07-12T11:59:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2010-07-12:/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html</id><summary type="html">&lt;p&gt;Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
 virtuel en console.&lt;/p&gt;
-&lt;p&gt;Ici on créer un tuyau virtuel de 1Mbit/s.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo ipfw pipe 1 config bw 1Mbit/s&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Ici on créer un tuyau virtuel de 1Mbit/s : &lt;code&gt;sudo ipfw pipe 1 config bw 1Mbit/s&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;On applique ce tuyau au port 80 (pour le téléchargement de fichier via
 un navigateur …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
 virtuel en console.&lt;/p&gt;
-&lt;p&gt;Ici on créer un tuyau virtuel de 1Mbit/s.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo ipfw pipe 1 config bw 1Mbit/s&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Ici on créer un tuyau virtuel de 1Mbit/s : &lt;code&gt;sudo ipfw pipe 1 config bw 1Mbit/s&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;On applique ce tuyau au port 80 (pour le téléchargement de fichier via
-un navigateur par exemple).&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo ipfw add 1 pipe 1 proto tcp src-port 80&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Pour voir le tuyau :&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo ipfw pipe show&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Pour supprimer la règle du port 80 :&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo ipfw del 1&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Pour supprimer le tuyau :&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo ipfw pipe 1 delete&lt;/code&gt;&lt;/p&gt;</content><category term="QoS"></category><category term="MacOs"></category></entry></feed>
+un navigateur par exemple) &lt;code&gt;sudo ipfw add 1 pipe 1 proto tcp src-port 80&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Pour voir le tuyau : &lt;code&gt;sudo ipfw pipe show&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Pour supprimer la règle du port 80 : &lt;code&gt;sudo ipfw del 1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Pour supprimer le tuyau : &lt;code&gt;sudo ipfw pipe 1 delete&lt;/code&gt;&lt;/p&gt;</content><category term="QoS"></category><category term="MacOs"></category></entry></feed>

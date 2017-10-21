@@ -53,6 +53,27 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2011-12-01-dual-screen-sur-xfce.html">Dual screen sur xfce</a></h2>
+    <p>
+      Posté le jeu. 01 décembre 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/xfce.html">xfce</a>,      <a href="//www.choiz.fr/tag/dualscreen.html">dualscreen</a>,      <a href="//www.choiz.fr/tag/dual.html">dual</a>,      <a href="//www.choiz.fr/tag/screen.html">screen</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>    </p>
+  </header>
+  <div>
+      <p>Un petit package bien pratique pour configurer le dual screen sur xfce
+se nomme : arandr :</p>
+<div class="highlight"><pre><span></span>apt-get install arandr
+</pre></div>
+
+
+<p>Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez
+le ARandR pour configurer les deux écrans.</p>
+      <a class="btn" href="//www.choiz.fr/2011-12-01-dual-screen-sur-xfce.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2011-11-30-flash-sous-debian.html">Flash sous Debian</a></h2>
     <p>
       Posté le mer. 30 novembre 2011 &#8226;
@@ -195,17 +216,17 @@ Tags :
   <div>
       <p>Configuration d'un serveur samba. Editer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :</p>
-<div class="highlight"><pre><span></span>| ### Global ###
-| [global]
-| ## Identification ##
-| workgroup = WORKGROUP
-| netbios name = %h
-| server string = Serveur samba %h
-| security = user
-| public = yes
-| ## Log ##
-| log file = /var/log/samba/log.%m
-| max log size = 1000 …</pre></div>
+<div class="highlight"><pre><span></span>### Global ###
+[global]
+## Identification ##
+workgroup = WORKGROUP
+netbios name = %h
+server string = Serveur samba %h
+security = user
+public = yes
+## Log ##
+log file = /var/log/samba/log.%m
+max log size = 1000 …</pre></div>
       <a class="btn" href="//www.choiz.fr/2011-08-17-partage-samba.html">Lire la suite</a>
   </div>
   <hr />
@@ -246,25 +267,6 @@ global-ignores</p>
 l'on se trouve actuellement il suffit d'executer la commande svn
 suivante …</p>
       <a class="btn" href="//www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-07-05-suppression-des-dsstore.html">Suppression des .DS_Store</a></h2>
-    <p>
-      Posté le mar. 05 juillet 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/macos.html">MacOs</a>,      <a href="//www.choiz.fr/tag/ds_store.html">.DS_Store</a>    </p>
-  </header>
-  <div>
-      <p>Dans une console sur votre Mac :</p>
-<div class="highlight"><pre><span></span>defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-</pre></div>
-
-
-<p>Puis redémarrez le mac.</p>
-      <a class="btn" href="//www.choiz.fr/2011-07-05-suppression-des-dsstore.html">Lire la suite</a>
   </div>
 </article>
 

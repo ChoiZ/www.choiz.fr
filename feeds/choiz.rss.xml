@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>ChoiZ - choiz</title><link>//www.choiz.fr/</link><description>Je suis ingénieur informatique, je travail en tant que DevOps chez &lt;a href="//www.manomano.fr"&gt;ManoMano&lt;/a&gt;. J'aime le développement, le streaming, l'Internet…&lt;br&gt;&lt;br&gt;Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.</description><lastBuildDate>Sun, 15 Oct 2017 22:08:23 +0200</lastBuildDate><item><title>Faire du NAT avec Proxmox</title><link>//www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html</link><description>&lt;p&gt;L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
+<rss version="2.0"><channel><title>ChoiZ - choiz</title><link>//www.choiz.fr/</link><description>Je suis ingénieur informatique, je travail en tant que DevOps chez &lt;a href="//www.manomano.fr"&gt;ManoMano&lt;/a&gt;. J'aime le développement, le streaming, l'Internet…&lt;br&gt;&lt;br&gt;Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.</description><lastBuildDate>Sat, 21 Oct 2017 21:57:19 +0200</lastBuildDate><item><title>Installation d'un controlleur Unifi sur Raspberry Pi 3</title><link>//www.choiz.fr/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html</link><description>&lt;p&gt;Pour commencer il faut télécharger la dernière version de raspbian sur le site
+officiel raspberrypi.org. Actuellement c'est 2017-09-07-raspbian-stretch-lite.zip.&lt;/p&gt;
+&lt;p&gt;Il faut ensuite extraire l'image de l'archive :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;unzip 2017-09-07-raspbian-stretch-lite.zip
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Puis mettre l'image sur une carte micro sd, j'utilise la commande &lt;code&gt;dmesg&lt;/code&gt; pour
+voir le nom du périphérique USB sur …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 21 Oct 2017 21:57:19 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-10-21:/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html</guid><category>RaspberryPi</category><category>Unifi</category><category>Debian</category></item><item><title>Faire du NAT avec Proxmox</title><link>//www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html</link><description>&lt;p&gt;L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
 la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut
 faire la même chose.&lt;/p&gt;
 &lt;p&gt;Ip Public de proxmox : 11.22.33.44
@@ -631,17 +639,17 @@ donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?&lt;/p&gt;
 &lt;p&gt;Maintenant lors du prochain démarrage de votre VirtualBox vous devez
 avoir la …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 02 Sep 2011 19:28:28 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-09-02:/2011-09-02-import-vm-avec-virtualbox.html</guid><category>VirtualBox</category><category>Import</category></item><item><title>Partage Samba !</title><link>//www.choiz.fr/2011-08-17-partage-samba.html</link><description>&lt;p&gt;Configuration d'un serveur samba. Editer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;| ### Global ###
-| [global]
-| ## Identification ##
-| workgroup = WORKGROUP
-| netbios name = %h
-| server string = Serveur samba %h
-| security = user
-| public = yes
-| ## Log ##
-| log file = /var/log/samba/log.%m
-| max log size = 1000 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 17 Aug 2011 20:41:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-08-17:/2011-08-17-partage-samba.html</guid><category>Samba</category><category>Share</category><category>Linux</category></item><item><title>Liens utiles</title><link>//www.choiz.fr/2011-08-09-liens-utiles.html</link><description>&lt;p&gt;&lt;a href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;### Global ###
+[global]
+## Identification ##
+workgroup = WORKGROUP
+netbios name = %h
+server string = Serveur samba %h
+security = user
+public = yes
+## Log ##
+log file = /var/log/samba/log.%m
+max log size = 1000 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 17 Aug 2011 20:41:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-08-17:/2011-08-17-partage-samba.html</guid><category>Samba</category><category>Share</category><category>Linux</category></item><item><title>Liens utiles</title><link>//www.choiz.fr/2011-08-09-liens-utiles.html</link><description>&lt;p&gt;&lt;a href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.jsperf.com/"&gt;http://www.jsperf.com/&lt;/a&gt; Pour faire des performances de code js&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.pastebin.com/"&gt;http://www.pastebin.com/&lt;/a&gt; Pour copier coller du code facilement&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 09 Aug 2011 21:03:05 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-08-09:/2011-08-09-liens-utiles.html</guid><category>Code</category><category>JavaScript</category><category>CSS</category></item><item><title>Ignorer grâce au SVN</title><link>//www.choiz.fr/2011-07-26-ignorer-gr%C3%A2ce-au-svn.html</link><description>&lt;p&gt;Il existe plusieurs solutions pour ignorer des fichiers sur un svn :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;svn propset svn:ignore
@@ -759,7 +767,6 @@ documentations…&lt;/p&gt;
 il n'y a pas de retour à la ligne fait automatiquement pour cela un
 petit css permet de faire les retours à la ligne lorsque la page …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 15 Sep 2010 15:43:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2010-09-15:/2010-09-15-impression-de-commandes-entre-balise-pre.html</guid><category>CSS</category><category>HTML</category><category>Print</category><category>Code</category></item><item><title>Limiter la bande passante sous Mac Os X</title><link>//www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html</link><description>&lt;p&gt;Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
 virtuel en console.&lt;/p&gt;
-&lt;p&gt;Ici on créer un tuyau virtuel de 1Mbit/s.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo ipfw pipe 1 config bw 1Mbit/s&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Ici on créer un tuyau virtuel de 1Mbit/s : &lt;code&gt;sudo ipfw pipe 1 config bw 1Mbit/s&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;On applique ce tuyau au port 80 (pour le téléchargement de fichier via
 un navigateur …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 12 Jul 2010 11:59:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2010-07-12:/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html</guid><category>QoS</category><category>MacOs</category></item></channel></rss>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
+  <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+<meta name="author" content="choiz" />
+<meta name="description" content="Pour commencer il faut télécharger la dernière version de raspbian sur le site officiel raspberrypi.org. Actuellement c'est 2017-09-07-raspbian-stretch-lite.zip. Il faut ensuite extraire l'image de l'archive : unzip 2017-09-07-raspbian-stretch-lite.zip Puis mettre l'image sur une carte micro sd, j'utilise la commande dmesg pour voir le nom du périphérique USB sur …" />
+<meta name="keywords" content="RaspberryPi, Unifi, Debian">
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:title" content="Installation d'un controlleur Unifi sur Raspberry Pi 3"/>
+<meta property="og:description" content="Pour commencer il faut télécharger la dernière version de raspbian sur le site officiel raspberrypi.org. Actuellement c'est 2017-09-07-raspbian-stretch-lite.zip. Il faut ensuite extraire l'image de l'archive : unzip 2017-09-07-raspbian-stretch-lite.zip Puis mettre l'image sur une carte micro sd, j'utilise la commande dmesg pour voir le nom du périphérique USB sur …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="//www.choiz.fr/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-10-21 21:57:19+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="//www.choiz.fr/author/choiz.html">
+<meta property="article:section" content="text"/>
+<meta property="article:tag" content="RaspberryPi"/>
+<meta property="article:tag" content="Unifi"/>
+<meta property="article:tag" content="Debian"/>
+<meta property="og:image" content="">  <title>ChoiZ &ndash; Installation d'un controlleur Unifi sur Raspberry Pi 3</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="//www.choiz.fr">
+        <img src="//www.choiz.fr/theme/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
+      </a>
+      <div>
+          <a href="//www.choiz.fr">Blog technique de François LASSERRE</a>
+      </div>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis ingénieur informatique, je travail en tant que DevOps chez <a href="//www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
+        <li><a class="sc-lastfm" href="//www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="//www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-facebook" href="//www.facebook.com/ChoiZ"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-foursquare" href="//www.foursquare.com/ChoiZ"><i class="fa fa-foursquare"></i></a></li>
+        <li><a class="sc-linkedin" href="//www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3">Installation d'un controlleur Unifi sur Raspberry Pi 3</h1>
+    <p>Posté le sam. 21 octobre 2017</p>
+  </header>
+  <div>
+    <p>Pour commencer il faut télécharger la dernière version de raspbian sur le site
+officiel raspberrypi.org. Actuellement c'est 2017-09-07-raspbian-stretch-lite.zip.</p>
+<p>Il faut ensuite extraire l'image de l'archive :</p>
+<div class="highlight"><pre><span></span>unzip 2017-09-07-raspbian-stretch-lite.zip
+</pre></div>
+
+
+<p>Puis mettre l'image sur une carte micro sd, j'utilise la commande <code>dmesg</code> pour
+voir le nom du périphérique USB sur ma machine :</p>
+<div class="highlight"><pre><span></span>[5371729.056039] usb-storage 2-1.3:1.0: USB Mass Storage device detected
+[5371729.056115] scsi host5: usb-storage 2-1.3:1.0
+[5371730.058300] scsi 5:0:0:0: Direct-Access     Single   Flash Reader     1.00 PQ: 0 ANSI: 0
+[5371730.058447] sd 5:0:0:0: Attached scsi generic sg1 type 0
+[5371730.509370] sd 5:0:0:0: [sdb] 15759360 512-byte logical blocks: (8.07 GB/7.51 GiB)
+[5371730.510383] sd 5:0:0:0: [sdb] Write Protect is off
+[5371730.510386] sd 5:0:0:0: [sdb] Mode Sense: 03 00 00 00
+[5371730.511384] sd 5:0:0:0: [sdb] No Caching mode page found
+[5371730.511386] sd 5:0:0:0: [sdb] Assuming drive cache: write through
+[5371730.516135]  sdb: sdb1
+[5371730.519381] sd 5:0:0:0: [sdb] Attached SCSI removable disk
+</pre></div>
+
+
+<p>Je copie donc l'image sur /dev/sdb « ma microsd d'après dmesg.</p>
+<div class="highlight"><pre><span></span>dd bs=4M if=/home/choiz/2017-09-07-raspbian-stretch-lite.img of=/dev/sdb conv=fsync
+</pre></div>
+
+
+<p>Une fois la copie terminée, je déconnecte la micro sd et je démarre le Raspberry Pi.</p>
+<div class="highlight"><pre><span></span>dd bs=4M if=2017-09-07-raspbian-stretch-lite.img of=/dev/sdb conv=fsync
+442+1 enregistrements lus
+442+1 enregistrements écrits
+1854590976 bytes (1,9 GB, 1,7 GiB) copied, 288,12 s, 6,4 MB/s
+</pre></div>
+
+
+<p>Une fois le Raspberry Pi démarrer s'identifier avec : pi / raspberry (attention
+le clavier est en qwerty pour l'instant donc tapper rqspberry en mot de passe ;-)</p>
+<p>Puis tappez la commande <code>sudo bash</code> pour passer en root puis <code>raspi-config</code> pour
+configurer votre Raspberry Pi.</p>
+<ol>
+<li>
+<p>Changer les locales (4 Localisation Option, puis I1 Change Locale),
+    décocher en_GB.UTF-8 UTF-8 et cocher fr_FR.UTF-8 UTF-8.
+    "Default local for the system environment:" choisir fr_FR.UTF-8</p>
+</li>
+<li>
+<p>Changer le timezone (4 Localisation Option, puis I2 Change Timezone),
+    choisir Europe, puis Paris.</p>
+</li>
+<li>
+<p>Changer le layout du clavier (4 Localisation Option, puis I3 Change Keyboard 
+    Layout), choisir Generic 105-key (Intl) PC, Other, French,
+    French - French (Azerty), The Default for keybord layout, et pour finir : No compose key.</p>
+</li>
+<li>
+<p>Changer le pays pour le wifi (4 Localisation Option, puis I4 Change Wi-fi
+        Country), choisir FR France.</p>
+</li>
+<li>
+<p>Ajouter le SSH (5 Interfacing Options, P2 SSH) Puis répondre "yes" pour
+   activer le serveur SSH.</p>
+</li>
+<li>
+<p>Choisir 7 Advanced Options, A1 Expand Filesystem.</p>
+</li>
+<li>
+<p>Choisir 8 Update pour mettre à jour raspbian.</p>
+</li>
+<li>
+<p>2 Hostname si vous voulez changer le nom de votre raspberry par exemple
+"raspberrypi3".</p>
+</li>
+</ol>
+<p>9: Finish, et redémarrer.</p>
+<p>Récuperer l'adresse ip du raspberry pi pour se connecter dessus via SSH.</p>
+<div class="highlight"><pre><span></span>ssh pi@adresseip
+</pre></div>
+
+
+<p>pi@raspberry3:~ $ <code>sudo bash</code>
+root@raspberrypi3:/home/pi# <code>apt install dirmngr -y</code>
+root@raspberrypi3:/home/pi# <code>echo 'deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | tee -a /etc/apt/sources.list.d/ubnt.list &gt; /dev/null</code>
+root@raspberrypi3:/home/pi# <code>apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50</code>
+root@raspberrypi3:/home/pi# <code>apt update -y</code>
+root@raspberrypi3:/home/pi# <code>apt install unifi -y</code>
+root@raspberrypi3:/home/pi# <code>echo 'ENABLE_MONGODB=no' | tee -a /etc/mongodb.conf &gt; /dev/null</code>
+root@raspberrypi3:/home/pi# <code>apt install oracle-java8-jdk -y</code>
+root@raspberrypi3:/home/pi# <code>echo 'JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt' | tee /etc/default/unifi &gt; /dev/null</code>
+root@raspberrypi3:/home/pi# <code>reboot</code></p>
+<p>Une fois le raspberry pi démarrer se rendre sur https://ip_raspberry:8443 vous
+devriez avoir votre interface Unifi disponible.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="//www.choiz.fr/tag/raspberrypi.html">RaspberryPi</a>
+      <a href="//www.choiz.fr/tag/unifi.html">Unifi</a>
+      <a href="//www.choiz.fr/tag/debian.html">Debian</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Installation d'un controlleur Unifi sur Raspberry Pi 3",
+  "headline": "Installation d'un controlleur Unifi sur Raspberry Pi 3",
+  "datePublished": "2017-10-21 21:57:19+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "choiz",
+    "url": "//www.choiz.fr/author/choiz.html"
+  },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
+  "url": "//www.choiz.fr/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html",
+  "description": "Pour commencer il faut télécharger la dernière version de raspbian sur le site officiel raspberrypi.org. Actuellement c'est 2017-09-07-raspbian-stretch-lite.zip. Il faut ensuite extraire l'image de l'archive : unzip 2017-09-07-raspbian-stretch-lite.zip Puis mettre l'image sur une carte micro sd, j'utilise la commande dmesg pour voir le nom du périphérique USB sur …"
+}
+</script></body>
+</html>

@@ -53,6 +53,59 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html">Clavier Apple sur debian</a></h2>
+    <p>
+      Posté le ven. 02 décembre 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/keyboard.html">Keyboard</a>,      <a href="//www.choiz.fr/tag/macos.html">MacOs</a>    </p>
+  </header>
+  <div>
+      <p>Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
+mapage clavier Mac. Il y a beaucoup de différences entre un clavier
+AZERTY de PC et un clavier AZERTY de Mac.</p>
+<p>Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
+des endroits complétement différents.</p>
+<p>J'ai donc décidé de modifier la configuration de debian pour prendre en
+compte un clavier mac. :</p>
+<div class="highlight"><pre><span></span>dpkg-reconfigure keyboard-console
+
+Select keymap from arch list
+
+azerty
+
+French
+
+Apple USB
+
+dpkg-reconfigure keyboard-configuration
+
+model: Apple
+
+layout: France - Macintosh
+
+Key for AltGr: No AltGr Key
+
+Compose key: Right Alt (AltGr)
+
+Use Control+Alt+Backspace to terminate the X server? no
+</pre></div>
+
+
+<p>J'ai choisi un clavier Apple, Français Mac, sans touche AltGr, avec
+comme touche de fonctionnalité secondaire "Alt droit". Malheureusement
+je n'ai pas réussi a mapper l'Alt de gauche pour avoir la même fonction
+qu'à droite…</p>
+<p>Et ensuite j'ai indiqué que je ne voulais pas pouvoir quitter le server
+X avec la combinaison de touche Control+Alt+Backspace.</p>
+<p>Si ceci ne fonctionne pas il faut se rendre dans la configuration du
+clavier de votre gestionnaire de fenêtre (xfce: dans mon cas). Puis
+désactiver le layout par defaut du système.</p>
+<p><img alt="image0" src="http://media.tumblr.com/tumblr_lvjsbrOL8E1qzr4hx.png"></p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2011-12-01-dual-screen-sur-xfce.html">Dual screen sur xfce</a></h2>
     <p>
       Posté le jeu. 01 décembre 2011 &#8226;
@@ -229,48 +282,42 @@ Tags :
   <div>
       <p>Configuration d'un serveur samba. Editer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :</p>
-<div class="highlight"><pre><span></span>| ### Global ###
-| [global]
-| ## Identification ##
-| workgroup = WORKGROUP
-| netbios name = %h
-| server string = Serveur samba %h
-| security = user
-| public = yes
-| ## Log ##
-| log file = /var/log/samba/log.%m
-| max log size = 1000
-| ## Auth ##
-| encrypt passwords = true
-| smb passwd file = /etc/samba/smbpasswd
-| ### Share ###
-| [choiz]
-| path = /home/choiz/samba
-| read only = no
-| writeable = yes
-| valid users = choiz
-| comment = partage de choiz
-| [partagereadonly]
-| path = /home/partageread
-| read only = yes
-| writeable = no
-| valid users = choiz, @group
-| comment = partage en lecture pour choiz et le groupe &quot;group&quot;
+<div class="highlight"><pre><span></span>### Global ###
+[global]
+## Identification ##
+workgroup = WORKGROUP
+netbios name = %h
+server string = Serveur samba %h
+security = user
+public = yes
+## Log ##
+log file = /var/log/samba/log.%m
+max log size = 1000
+## Auth ##
+encrypt passwords = true
+smb passwd file = /etc/samba/smbpasswd
+### Share ###
+[choiz]
+path = /home/choiz/samba
+read only = no
+writeable = yes
+valid users = choiz
+comment = partage de choiz
+[partagereadonly]
+path = /home/partageread
+read only = yes
+writeable = no
+valid users = choiz, @group
+comment = partage en lecture pour choiz et le groupe &quot;group&quot;
 </pre></div>
 
 
-<p>Maintenant il faut créer notre utilisateur "choiz" grâce à :</p>
-<div class="highlight"><pre><span></span>smbpasswd -a choiz
-</pre></div>
-
-
+<p>Maintenant il faut créer notre utilisateur "choiz" grâce à : <code>smbpasswd -a choiz</code></p>
 <p>Pour les groupes samba utilise les groupes unix. A vous de voir si vous
 voulez gérer votre partage samba utilisateur par utilisateur ou
 directement avec des groupes.</p>
 <p>N'oubliez pas de redémarrer le service Samba avant de tester depuis
-votre client le partage de fichiers ! :</p>
-<div class="highlight"><pre><span></span>/etc/init.d/samba restart
-</pre></div>
+votre client le partage de fichiers : <code>/etc/init.d/samba restart</code></p>
   </div>
   <hr />
 </article>
@@ -286,43 +333,6 @@ Tags :
       <p><a href="http://www.jsfiddle.net/">http://www.jsfiddle.net/</a> Pratique pour tester un code html / css / js</p>
 <p><a href="http://www.jsperf.com/">http://www.jsperf.com/</a> Pour faire des performances de code js</p>
 <p><a href="http://www.pastebin.com/">http://www.pastebin.com/</a> Pour copier coller du code facilement</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html">Ignorer grâce au SVN</a></h2>
-    <p>
-      Posté le mar. 26 juillet 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/svn.html">SVN</a>,      <a href="//www.choiz.fr/tag/subversion.html">Subversion</a>,      <a href="//www.choiz.fr/tag/ignore.html">Ignore</a>    </p>
-  </header>
-  <div>
-      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<div class="highlight"><pre><span></span>svn propset svn:ignore
-</pre></div>
-
-
-<p>Ou dans la configuration du svn dans ~/.subversion/config le
-global-ignores</p>
-<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
-l'on se trouve actuellement il suffit d'executer la commande svn
-suivante :</p>
-<div class="highlight"><pre><span></span>svn propset svn:ignore &quot;._*&quot; .
-</pre></div>
-
-
-<p>Par contre si on veut ignorer tous les fichiers qui commencent par ._
-dans tous les dossiers (et sous dossiers) du svn il faut éditer le
-fichier ~/.subversion/config et d'éditer la ligne suivante :</p>
-<div class="highlight"><pre><span></span>global-ignores = ._*
-</pre></div>
-
-
-<p>On peut également ajouter d'autres fichiers a ignorer tel que les .swp
-de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci :</p>
-<div class="highlight"><pre><span></span>global-ignores = ._* .DS_STORE *.swp
-</pre></div>
   </div>
 </article>
 

@@ -53,6 +53,24 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2014-02-06-git-cherry-pick.html">git cherry-pick</a></h2>
+    <p>
+      Posté le jeu. 06 février 2014 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/cherry-pick.html">cherry-pick</a>,      <a href="//www.choiz.fr/tag/commit.html">commit</a>,      <a href="//www.choiz.fr/tag/branch.html">branch</a>    </p>
+  </header>
+  <div>
+      <p>J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
+messages sur cherry-pick sans savoir ce que c'était.</p>
+<p>git cherry-pick permet d'appliquer un commit sur la branche sur la
+branche actuelle.</p>
+<div class="highlight"><pre><span></span>git cherry-pick c4a99776
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2014-02-06-nouveau-thème.html">Nouveau thème</a></h2>
     <p>
       Posté le jeu. 06 février 2014 &#8226;
@@ -330,32 +348,6 @@ tags/<span class="nv">$tag</span>&quot;; done | sh
 <p>Pour finir ajoutez votre dépot distant :</p>
 <div class="highlight"><pre><span></span>git remote add origin git@git.mondomaine:/monprojet.git
 git push -u origin --tags
-</pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2013-06-22-export-import-avec-postgresql.html">Export / Import avec PostgreSQL</a></h2>
-    <p>
-      Posté le sam. 22 juin 2013 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/postgresql.html">postgreSQL</a>,      <a href="//www.choiz.fr/tag/pg_dump.html">pg\_dump</a>,      <a href="//www.choiz.fr/tag/psql.html">psql</a>,      <a href="//www.choiz.fr/tag/import.html">import</a>,      <a href="//www.choiz.fr/tag/export.html">export</a>,      <a href="//www.choiz.fr/tag/dump.html">dump</a>,      <a href="//www.choiz.fr/tag/sql.html">sql</a>    </p>
-  </header>
-  <div>
-      <p>Pour exporter une table spécifique d'une base :</p>
-<div class="highlight"><pre><span></span>pg_dump *mabase* --table=*matable* &gt; *dump_base_table*.sql
-</pre></div>
-
-
-<p>Pour exporter une base :</p>
-<div class="highlight"><pre><span></span>pg_dump *mabase* &gt; *dump_base*.sql
-</pre></div>
-
-
-<p>Pour importer un dump dans une base :</p>
-<div class="highlight"><pre><span></span>psql *base* &lt; *dump_base_table*.sql
-psql *base* &lt; *dump_base*.sql
 </pre></div>
   </div>
 </article>

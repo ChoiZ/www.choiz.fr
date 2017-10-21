@@ -245,17 +245,17 @@ Tags :
   <div>
       <p>Configuration d'un serveur samba. Editer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :</p>
-<div class="highlight"><pre><span></span>| ### Global ###
-| [global]
-| ## Identification ##
-| workgroup = WORKGROUP
-| netbios name = %h
-| server string = Serveur samba %h
-| security = user
-| public = yes
-| ## Log ##
-| log file = /var/log/samba/log.%m
-| max log size = 1000 …</pre></div>
+<div class="highlight"><pre><span></span>### Global ###
+[global]
+## Identification ##
+workgroup = WORKGROUP
+netbios name = %h
+server string = Serveur samba %h
+security = user
+public = yes
+## Log ##
+log file = /var/log/samba/log.%m
+max log size = 1000 …</pre></div>
       <a class="btn" href="//www.choiz.fr/2011-08-17-partage-samba.html">Lire la suite</a>
   </div>
 </article>

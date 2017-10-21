@@ -53,6 +53,43 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html">Ignorer grâce au SVN</a></h2>
+    <p>
+      Posté le mar. 26 juillet 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/svn.html">SVN</a>,      <a href="//www.choiz.fr/tag/subversion.html">Subversion</a>,      <a href="//www.choiz.fr/tag/ignore.html">Ignore</a>    </p>
+  </header>
+  <div>
+      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
+<div class="highlight"><pre><span></span>svn propset svn:ignore
+</pre></div>
+
+
+<p>Ou dans la configuration du svn dans ~/.subversion/config le
+global-ignores</p>
+<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
+l'on se trouve actuellement il suffit d'executer la commande svn
+suivante :</p>
+<div class="highlight"><pre><span></span>svn propset svn:ignore &quot;._*&quot; .
+</pre></div>
+
+
+<p>Par contre si on veut ignorer tous les fichiers qui commencent par ._
+dans tous les dossiers (et sous dossiers) du svn il faut éditer le
+fichier ~/.subversion/config et d'éditer la ligne suivante :</p>
+<div class="highlight"><pre><span></span>global-ignores = ._*
+</pre></div>
+
+
+<p>On peut également ajouter d'autres fichiers a ignorer tel que les .swp
+de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci :</p>
+<div class="highlight"><pre><span></span>global-ignores = ._* .DS_STORE *.swp
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2011-07-05-suppression-des-dsstore.html">Suppression des .DS_Store</a></h2>
     <p>
       Posté le mar. 05 juillet 2011 &#8226;
@@ -283,35 +320,6 @@ ou, en termes plus simples, le symbole "double deux-points" (::),
 fournit un moyen d'accéder aux membres
 <a href="http://fr.php.net/manual/fr/language.oop5.static.php">statics</a> ou
 <a href="http://fr.php.net/manual/fr/language.oop5.constants.php">constants</a>.</em></p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Protection de fichier tel qu'un htaccess en PHP</a></h2>
-    <p>
-      Posté le ven. 11 février 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/php.html">PHP</a>,      <a href="//www.choiz.fr/tag/htaccess.html">htaccess</a>,      <a href="//www.choiz.fr/tag/basic-auth.html">Basic auth</a>,      <a href="//www.choiz.fr/tag/code.html">Code</a>    </p>
-  </header>
-  <div>
-      <p>Faire un système de protection (tel que htaccess) direct dans un fichier PHP :</p>
-<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_USER&quot;</span><span class="p">])</span> <span class="o">&amp;&amp;</span>
-<span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_USER&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;login&quot;</span> <span class="o">&amp;&amp;</span>
-<span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_PW&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// code protégé ici</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;WWW-Authenticate: Basic realm=&quot;Restricted area&quot;&#39;</span><span class="p">);</span>
-    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;HTTP/1.0 401 Unauthorized&#39;</span><span class="p">);</span>
-    <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;Access Denied&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p>Attention l'utilisation du htaccess n'est pas recommandée sur une connexion non
-chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffré
-(HTTPS).</p>
   </div>
 </article>
 

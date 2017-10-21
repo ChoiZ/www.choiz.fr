@@ -53,6 +53,25 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html">Clavier Apple sur debian</a></h2>
+    <p>
+      Posté le ven. 02 décembre 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/debian.html">Debian</a>,      <a href="//www.choiz.fr/tag/keyboard.html">Keyboard</a>,      <a href="//www.choiz.fr/tag/macos.html">MacOs</a>    </p>
+  </header>
+  <div>
+      <p>Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
+mapage clavier Mac. Il y a beaucoup de différences entre un clavier
+AZERTY de PC et un clavier AZERTY de Mac.</p>
+<p>Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
+des endroits complétement différents.</p>
+<p>J'ai donc décidé …</p>
+      <a class="btn" href="//www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2011-12-01-dual-screen-sur-xfce.html">Dual screen sur xfce</a></h2>
     <p>
       Posté le jeu. 01 décembre 2011 &#8226;
@@ -216,17 +235,17 @@ Tags :
   <div>
       <p>Configuration d'un serveur samba. Editer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :</p>
-<div class="highlight"><pre><span></span>| ### Global ###
-| [global]
-| ## Identification ##
-| workgroup = WORKGROUP
-| netbios name = %h
-| server string = Serveur samba %h
-| security = user
-| public = yes
-| ## Log ##
-| log file = /var/log/samba/log.%m
-| max log size = 1000 …</pre></div>
+<div class="highlight"><pre><span></span>### Global ###
+[global]
+## Identification ##
+workgroup = WORKGROUP
+netbios name = %h
+server string = Serveur samba %h
+security = user
+public = yes
+## Log ##
+log file = /var/log/samba/log.%m
+max log size = 1000 …</pre></div>
       <a class="btn" href="//www.choiz.fr/2011-08-17-partage-samba.html">Lire la suite</a>
   </div>
   <hr />
@@ -244,29 +263,6 @@ Tags :
 <p><a href="http://www.jsperf.com/">http://www.jsperf.com/</a> Pour faire des performances de code js</p>
 <p><a href="http://www.pastebin.com/">http://www.pastebin.com/</a> Pour copier coller du code facilement</p>
       <a class="btn" href="//www.choiz.fr/2011-08-09-liens-utiles.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html">Ignorer grâce au SVN</a></h2>
-    <p>
-      Posté le mar. 26 juillet 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/svn.html">SVN</a>,      <a href="//www.choiz.fr/tag/subversion.html">Subversion</a>,      <a href="//www.choiz.fr/tag/ignore.html">Ignore</a>    </p>
-  </header>
-  <div>
-      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<div class="highlight"><pre><span></span>svn propset svn:ignore
-</pre></div>
-
-
-<p>Ou dans la configuration du svn dans ~/.subversion/config le
-global-ignores</p>
-<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
-l'on se trouve actuellement il suffit d'executer la commande svn
-suivante …</p>
-      <a class="btn" href="//www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html">Lire la suite</a>
   </div>
 </article>
 
