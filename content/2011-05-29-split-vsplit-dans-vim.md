@@ -9,7 +9,7 @@ Status: published
 Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
 pouvoir ouvrir plusieurs fichiers en même temps.
 
-Pour celà il utilises 2 méthodes soit :
+Il y a 2 méthodes :
 
 - la division de la fenêtre horizontal en utilisant :
 
