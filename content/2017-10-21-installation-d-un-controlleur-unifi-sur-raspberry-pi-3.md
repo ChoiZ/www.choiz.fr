@@ -84,14 +84,23 @@ ssh pi@adresseip
 ```
 
 pi@raspberry3:~ $ `sudo bash`
+
 root@raspberrypi3:/home/pi# `apt install dirmngr -y`
+
 root@raspberrypi3:/home/pi# `echo 'deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | tee -a /etc/apt/sources.list.d/ubnt.list > /dev/null`
+
 root@raspberrypi3:/home/pi# `apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50`
+
 root@raspberrypi3:/home/pi# `apt update -y`
+
 root@raspberrypi3:/home/pi# `apt install unifi -y`
+
 root@raspberrypi3:/home/pi# `echo 'ENABLE_MONGODB=no' | tee -a /etc/mongodb.conf > /dev/null`
+
 root@raspberrypi3:/home/pi# `apt install oracle-java8-jdk -y`
+
 root@raspberrypi3:/home/pi# `echo 'JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt' | tee /etc/default/unifi > /dev/null`
+
 root@raspberrypi3:/home/pi# `reboot`
 
 Une fois le raspberry pi démarrer se rendre sur https://ip_raspberry:8443 vous
