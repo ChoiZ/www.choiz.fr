@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Faire un système de protection (tel que htaccess) direct dans un fichier PHP : <?php if (!empty($_SERVER["PHP_AUTH_USER"]) && $_SERVER["PHP_AUTH_USER"] == "login" && $_SERVER["PHP_AUTH_PW"] == "password") { // code protégé ici } else { header('WWW-Authenticate: Basic realm="Restricted area"'); header('HTTP/1.0 401 Unauthorized'); exit('Access Denied'); } ?> Attention l'utilisation du htaccess n'est pas recommandée …" />
+<meta name="description" content="Faire un système de protection (tel que htaccess) direct dans un fichier PHP : <?php if (!empty($_SERVER["PHP_AUTH_USER"]) && $_SERVER["PHP_AUTH_USER"] == "login" && $_SERVER["PHP_AUTH_PW"] == "password") { // code protégé ici } else { header('WWW-Authenticate: Basic realm="Restricted area"'); header('HTTP/1.0 401 Unauthorized'); exit('Access Denied'); } Attention l'utilisation du htaccess n'est pas recommandée …" />
 <meta name="keywords" content="PHP, htaccess, Basic auth, Code">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Protection de fichier tel qu'un htaccess en PHP"/>
-<meta property="og:description" content="Faire un système de protection (tel que htaccess) direct dans un fichier PHP : <?php if (!empty($_SERVER["PHP_AUTH_USER"]) && $_SERVER["PHP_AUTH_USER"] == "login" && $_SERVER["PHP_AUTH_PW"] == "password") { // code protégé ici } else { header('WWW-Authenticate: Basic realm="Restricted area"'); header('HTTP/1.0 401 Unauthorized'); exit('Access Denied'); } ?> Attention l'utilisation du htaccess n'est pas recommandée …"/>
+<meta property="og:description" content="Faire un système de protection (tel que htaccess) direct dans un fichier PHP : <?php if (!empty($_SERVER["PHP_AUTH_USER"]) && $_SERVER["PHP_AUTH_USER"] == "login" && $_SERVER["PHP_AUTH_PW"] == "password") { // code protégé ici } else { header('WWW-Authenticate: Basic realm="Restricted area"'); header('HTTP/1.0 401 Unauthorized'); exit('Access Denied'); } Attention l'utilisation du htaccess n'est pas recommandée …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html"/>
 <meta property="og:type" content="article"/>
@@ -77,7 +77,6 @@
     <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;HTTP/1.0 401 Unauthorized&#39;</span><span class="p">);</span>
     <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;Access Denied&#39;</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span>
 </pre></div>
 
 
@@ -129,7 +128,7 @@ chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffré
   },
   "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "//www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html",
-  "description": "Faire un système de protection (tel que htaccess) direct dans un fichier PHP : <?php if (!empty($_SERVER["PHP_AUTH_USER"]) && $_SERVER["PHP_AUTH_USER"] == "login" && $_SERVER["PHP_AUTH_PW"] == "password") { // code protégé ici } else { header('WWW-Authenticate: Basic realm="Restricted area"'); header('HTTP/1.0 401 Unauthorized'); exit('Access Denied'); } ?> Attention l'utilisation du htaccess n'est pas recommandée …"
+  "description": "Faire un système de protection (tel que htaccess) direct dans un fichier PHP : <?php if (!empty($_SERVER["PHP_AUTH_USER"]) && $_SERVER["PHP_AUTH_USER"] == "login" && $_SERVER["PHP_AUTH_PW"] == "password") { // code protégé ici } else { header('WWW-Authenticate: Basic realm="Restricted area"'); header('HTTP/1.0 401 Unauthorized'); exit('Access Denied'); } Attention l'utilisation du htaccess n'est pas recommandée …"
 }
 </script></body>
 </html>
