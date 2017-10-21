@@ -13,23 +13,11 @@ Pour celà il utilises 2 méthodes soit :
 
 - la division de la fenêtre horizontal en utilisant :
 
-`:split`
-
-ou :
-
-`:new`
-
-et ensuite :
-
-`:e le_fichier_a_ouvrir`
+`:split` (ou `:new`) puis : `:e le_fichier_a_ouvrir`
 
 - la division de la fenêtre verticalement en utilisant :
 
-`:vsplit`
-
-puis :
-
-`:e le_fichier_a_ouvrir`
+`:vsplit` puis : `:e le_fichier_a_ouvrir`
 
 Et comme lors de l'utilisation du diff (CTRL + W puis W) pour changer de
 fenêtre (gauche à droite ou droite à gauche ou haut en bas ou bas en
