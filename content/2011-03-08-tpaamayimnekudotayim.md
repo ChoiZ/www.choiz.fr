@@ -1,4 +1,4 @@
-Title: T\_PAAMAYIM\_NEKUDOTAYIM
+Title: T_PAAMAYIM_NEKUDOTAYIM
 Date: 2011-03-08 16:17:00
 Author: choiz
 Category: text
