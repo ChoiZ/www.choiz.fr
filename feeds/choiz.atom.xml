@@ -3474,7 +3474,7 @@ apres la ligne courante et d'indenter celle-ci.&lt;/p&gt;
 lequel vous vous trouvez.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;cst&amp;lt;b&amp;gt;&lt;/code&gt; permet de changer le tag &amp;lt;a&amp;gt; (change surround tag) par
 &amp;lt;b&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;dst&lt;/code&gt; permet de supprimer le tag&lt;/p&gt;</content><category term="Vim"></category><category term="Plugin"></category><category term="HTML"></category></entry><entry><title>T\_PAAMAYIM\_NEKUDOTAYIM</title><link href="//www.choiz.fr/2011-03-08-tpaamayimnekudotayim.html" rel="alternate"></link><published>2011-03-08T16:17:00+01:00</published><updated>2011-03-08T16:17:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-03-08:/2011-03-08-tpaamayimnekudotayim.html</id><summary type="html">&lt;p&gt;Voilà à quoi correspond cette erreur pour ceux qui demandent :&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dst&lt;/code&gt; permet de supprimer le tag&lt;/p&gt;</content><category term="Vim"></category><category term="Plugin"></category><category term="HTML"></category></entry><entry><title>T_PAAMAYIM_NEKUDOTAYIM</title><link href="//www.choiz.fr/2011-03-08-tpaamayimnekudotayim.html" rel="alternate"></link><published>2011-03-08T16:17:00+01:00</published><updated>2011-03-08T16:17:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-03-08:/2011-03-08-tpaamayimnekudotayim.html</id><summary type="html">&lt;p&gt;Voilà à quoi correspond cette erreur pour ceux qui demandent :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695
 &lt;/pre&gt;&lt;/div&gt;
 

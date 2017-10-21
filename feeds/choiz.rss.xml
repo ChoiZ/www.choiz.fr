@@ -724,7 +724,7 @@ texte.&lt;/p&gt;
 &lt;p&gt;Comment l'utiliser ?&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;VS&amp;lt;b&amp;gt;&lt;/code&gt; permet d'ajouter les balises &amp;lt;b&amp;gt; et &amp;lt;/b&amp;gt; avant et
 apres la ligne courante et d'indenter celle-ci.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;vims&amp;lt;a&amp;gt;&lt;/code&gt; permet d'ajouter le …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 09 Apr 2011 19:37:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-04-09:/2011-04-09-surround-avec-vim.html</guid><category>Vim</category><category>Plugin</category><category>HTML</category></item><item><title>T\_PAAMAYIM\_NEKUDOTAYIM</title><link>//www.choiz.fr/2011-03-08-tpaamayimnekudotayim.html</link><description>&lt;p&gt;Voilà à quoi correspond cette erreur pour ceux qui demandent :&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;vims&amp;lt;a&amp;gt;&lt;/code&gt; permet d'ajouter le …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 09 Apr 2011 19:37:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-04-09:/2011-04-09-surround-avec-vim.html</guid><category>Vim</category><category>Plugin</category><category>HTML</category></item><item><title>T_PAAMAYIM_NEKUDOTAYIM</title><link>//www.choiz.fr/2011-03-08-tpaamayimnekudotayim.html</link><description>&lt;p&gt;Voilà à quoi correspond cette erreur pour ceux qui demandent :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695
 &lt;/pre&gt;&lt;/div&gt;
 
