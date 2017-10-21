@@ -3326,54 +3326,32 @@ suivante :&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;</content><category term="Diff"></category><category term="Patch"></category><category term="cli"></category></entry><entry><title>Split &amp; Vsplit dans vim</title><link href="//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html" rel="alternate"></link><published>2011-05-29T17:16:00+02:00</published><updated>2011-05-29T17:16:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-29:/2011-05-29-split-vsplit-dans-vim.html</id><summary type="html">&lt;p&gt;Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
 pouvoir ouvrir plusieurs fichiers en même temps.&lt;/p&gt;
 &lt;p&gt;Pour celà il utilises 2 méthodes soit :&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;la division de la fenêtre horizontal en utilisant :&lt;/p&gt;
-&lt;p&gt;:split&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;la division de la fenêtre horizontal en utilisant :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;:split&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;ou :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:new
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;&lt;code&gt;:new&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;et ensuite :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:e le_fichier_a_ouvrir
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;la division de la fenêtre verticalement en …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
+&lt;p&gt;&lt;code&gt;:e le_fichier_a_ouvrir&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;la division de la fenêtre verticalement en …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
 pouvoir ouvrir plusieurs fichiers en même temps.&lt;/p&gt;
 &lt;p&gt;Pour celà il utilises 2 méthodes soit :&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;la division de la fenêtre horizontal en utilisant :&lt;/p&gt;
-&lt;p&gt;:split&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;la division de la fenêtre horizontal en utilisant :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;:split&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;ou :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:new
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;&lt;code&gt;:new&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;et ensuite :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:e le_fichier_a_ouvrir
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;la division de la fenêtre verticalement en utilisant :&lt;/p&gt;
-&lt;p&gt;:vsplit&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;:e le_fichier_a_ouvrir&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;la division de la fenêtre verticalement en utilisant :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;:vsplit&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;puis :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:e le_fichier_a_ouvrir
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;&lt;code&gt;:e le_fichier_a_ouvrir&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Et comme lors de l'utilisation du diff (CTRL + W puis W) pour changer de
 fenêtre (gauche à droite ou droite à gauche ou haut en bas ou bas en
 haut) ou bien en utilisant (CTRL + W puis une fléche directionnelle).&lt;/p&gt;
@@ -3381,11 +3359,7 @@ haut) ou bien en utilisant (CTRL + W puis une fléche directionnelle).&lt;/p&gt;
 &amp;gt; si vous êtes sur votre fenêtre de droite pour ajouter une colonne,
 si vous êtes sur la fenêtre de gauche ceci supprimera une colonne et vis
 versa avec &amp;lt;) vous pouvez également ajouter / supprimer 5 ou 10
-colonnes avec :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;5&amp;gt;
-
-10&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Vim"></category><category term="Split"></category><category term="File"></category></entry><entry><title>Différences entre des fichiers avec Vim</title><link href="//www.choiz.fr/2011-05-19-diff%C3%A9rences-entre-des-fichiers-avec-vim.html" rel="alternate"></link><published>2011-05-19T23:32:00+02:00</published><updated>2011-05-19T23:32:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-19:/2011-05-19-différences-entre-des-fichiers-avec-vim.html</id><summary type="html">&lt;p&gt;J'ai souvent besoin de voir les différences entre plusieurs fichiers...
+colonnes avec : &lt;code&gt;5&amp;gt;&lt;/code&gt; et &lt;code&gt;10&amp;gt;&lt;/code&gt;&lt;/p&gt;</content><category term="Vim"></category><category term="Split"></category><category term="File"></category></entry><entry><title>Différences entre des fichiers avec Vim</title><link href="//www.choiz.fr/2011-05-19-diff%C3%A9rences-entre-des-fichiers-avec-vim.html" rel="alternate"></link><published>2011-05-19T23:32:00+02:00</published><updated>2011-05-19T23:32:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-19:/2011-05-19-différences-entre-des-fichiers-avec-vim.html</id><summary type="html">&lt;p&gt;J'ai souvent besoin de voir les différences entre plusieurs fichiers...
 J'utilise souvent la commande diff dans un terminal, mais mon éditeur
 texte favoris "Vim" sait aussi trés bien faire un différentiel.
 Utilisation avec le terminal :&lt;/p&gt;
