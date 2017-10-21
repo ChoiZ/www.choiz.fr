@@ -74,67 +74,6 @@ Tags :
 </pre></div>
       <a class="btn" href="//www.choiz.fr/2012-08-13-mon-fichier-gitignore.html">Lire la suite</a>
   </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html">Split & Vsplit dans vim</a></h2>
-    <p>
-      Posté le dim. 29 mai 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/vim.html">vim</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/editeur.html">editeur</a>,      <a href="//www.choiz.fr/tag/texte.html">texte</a>,      <a href="//www.choiz.fr/tag/terminal.html">terminal</a>,      <a href="//www.choiz.fr/tag/commande.html">commande</a>,      <a href="//www.choiz.fr/tag/split.html">split</a>,      <a href="//www.choiz.fr/tag/vsplit.html">vsplit</a>,      <a href="//www.choiz.fr/tag/window.html">window</a>,      <a href="//www.choiz.fr/tag/colonnes.html">colonnes</a>,      <a href="//www.choiz.fr/tag/cols.html">cols</a>,      <a href="//www.choiz.fr/tag/columns.html">columns</a>    </p>
-  </header>
-  <div>
-      <p>Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
-pouvoir ouvrir plusieurs fichiers en même temps.</p>
-<p>Pour celà il utilises 2 méthodes soit :</p>
-<ol>
-<li>la division de la fenêtre horizontal en utilisant :<div class="highlight"><pre><span></span>:split
-</pre></div>
-
-
-</li>
-</ol>
-<p>ou :</p>
-<div class="highlight"><pre><span></span>:new
-</pre></div>
-
-
-<p>et ensuite :</p>
-<div class="highlight"><pre><span></span>:e le_fichier_a_ouvrir
-</pre></div>
-
-
-<ol>
-<li>la division de la fenêtre verticalement en …</li></ol>
-      <a class="btn" href="//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Protection de fichier tel qu'un htaccess en PHP</a></h2>
-    <p>
-      Posté le ven. 11 février 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/php.html">php</a>,      <a href="//www.choiz.fr/tag/htaccess.html">htaccess</a>,      <a href="//www.choiz.fr/tag/htpasswd.html">htpasswd</a>,      <a href="//www.choiz.fr/tag/protection.html">protection</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/authenticate.html">authenticate</a>,      <a href="//www.choiz.fr/tag/auth.html">auth</a>    </p>
-  </header>
-  <div>
-      <p>Faire un système de protection (tel que htaccess) direct dans un fichier PHP :</p>
-<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_USER&quot;</span><span class="p">])</span> <span class="o">&amp;&amp;</span>
-<span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_USER&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;login&quot;</span> <span class="o">&amp;&amp;</span>
-<span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_PW&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// code protégé ici</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;WWW-Authenticate: Basic realm=&quot;Restricted area&quot;&#39;</span><span class="p">);</span>
-    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;HTTP/1.0 401 Unauthorized&#39;</span><span class="p">);</span>
-    <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;Access Denied&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span>
-</pre></div>
-      <a class="btn" href="//www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Lire la suite</a>
-  </div>
 </article>
 
   <div class="pagination">

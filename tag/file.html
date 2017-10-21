@@ -140,24 +140,36 @@ stash@{0} chemin/vers/mon …</pre></div>
 </article>
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html">Ignorer grâce au SVN</a></h2>
+    <h2><a href="//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html">Split & Vsplit dans vim</a></h2>
     <p>
-      Posté le mar. 26 juillet 2011 &#8226;
+      Posté le dim. 29 mai 2011 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/svn.html">svn</a>,      <a href="//www.choiz.fr/tag/ignore.html">ignore</a>,      <a href="//www.choiz.fr/tag/file.html">file</a>,      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/macos.html">MacOs</a>    </p>
+      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/split.html">Split</a>,      <a href="//www.choiz.fr/tag/file.html">File</a>    </p>
   </header>
   <div>
-      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<div class="highlight"><pre><span></span>svn propset svn:ignore
+      <p>Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
+pouvoir ouvrir plusieurs fichiers en même temps.</p>
+<p>Pour celà il utilises 2 méthodes soit :</p>
+<ol>
+<li>
+<p>la division de la fenêtre horizontal en utilisant :</p>
+<p>:split</p>
+</li>
+</ol>
+<p>ou :</p>
+<div class="highlight"><pre><span></span>:new
 </pre></div>
 
 
-<p>Ou dans la configuration du svn dans ~/.subversion/config le
-global-ignores</p>
-<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
-l'on se trouve actuellement il suffit d'executer la commande svn
-suivante …</p>
-      <a class="btn" href="//www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html">Lire la suite</a>
+<p>et ensuite :</p>
+<div class="highlight"><pre><span></span>:e le_fichier_a_ouvrir
+</pre></div>
+
+
+<ol>
+<li>
+<p>la division de la fenêtre verticalement en …</p></li></ol>
+      <a class="btn" href="//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html">Lire la suite</a>
   </div>
 </article>
 

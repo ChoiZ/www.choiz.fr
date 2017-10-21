@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Faire un système de protection (tel que htaccess) direct dans un fichier PHP : <?php if (!empty($_SERVER["PHP_AUTH_USER"]) && $_SERVER["PHP_AUTH_USER"] == "login" && $_SERVER["PHP_AUTH_PW"] == "password") { // code protégé ici } else { header('WWW-Authenticate: Basic realm="Restricted area"'); header('HTTP/1.0 401 Unauthorized'); exit('Access Denied'); } ?>" />
-<meta name="keywords" content="php, htaccess, htpasswd, protection, fichier, authenticate, auth">
+<meta name="description" content="Faire un système de protection (tel que htaccess) direct dans un fichier PHP : <?php if (!empty($_SERVER["PHP_AUTH_USER"]) && $_SERVER["PHP_AUTH_USER"] == "login" && $_SERVER["PHP_AUTH_PW"] == "password") { // code protégé ici } else { header('WWW-Authenticate: Basic realm="Restricted area"'); header('HTTP/1.0 401 Unauthorized'); exit('Access Denied'); } ?> Attention l'utilisation du htaccess n'est pas recommandée …" />
+<meta name="keywords" content="PHP, htaccess, Basic auth, Code">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Protection de fichier tel qu'un htaccess en PHP"/>
-<meta property="og:description" content="Faire un système de protection (tel que htaccess) direct dans un fichier PHP : <?php if (!empty($_SERVER["PHP_AUTH_USER"]) && $_SERVER["PHP_AUTH_USER"] == "login" && $_SERVER["PHP_AUTH_PW"] == "password") { // code protégé ici } else { header('WWW-Authenticate: Basic realm="Restricted area"'); header('HTTP/1.0 401 Unauthorized'); exit('Access Denied'); } ?>"/>
+<meta property="og:description" content="Faire un système de protection (tel que htaccess) direct dans un fichier PHP : <?php if (!empty($_SERVER["PHP_AUTH_USER"]) && $_SERVER["PHP_AUTH_USER"] == "login" && $_SERVER["PHP_AUTH_PW"] == "password") { // code protégé ici } else { header('WWW-Authenticate: Basic realm="Restricted area"'); header('HTTP/1.0 401 Unauthorized'); exit('Access Denied'); } ?> Attention l'utilisation du htaccess n'est pas recommandée …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html"/>
 <meta property="og:type" content="article"/>
@@ -24,13 +24,10 @@
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="//www.choiz.fr/author/choiz.html">
 <meta property="article:section" content="text"/>
-<meta property="article:tag" content="php"/>
+<meta property="article:tag" content="PHP"/>
 <meta property="article:tag" content="htaccess"/>
-<meta property="article:tag" content="htpasswd"/>
-<meta property="article:tag" content="protection"/>
-<meta property="article:tag" content="fichier"/>
-<meta property="article:tag" content="authenticate"/>
-<meta property="article:tag" content="auth"/>
+<meta property="article:tag" content="Basic auth"/>
+<meta property="article:tag" content="Code"/>
 <meta property="og:image" content="">  <title>ChoiZ &ndash; Protection de fichier tel qu'un htaccess en PHP</title>
 </head>
 <body>
@@ -82,16 +79,18 @@
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
 </pre></div>
+
+
+<p>Attention l'utilisation du htaccess n'est pas recommandée sur une connexion non
+chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffré
+(HTTPS).</p>
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="//www.choiz.fr/tag/php.html">php</a>
+      <a href="//www.choiz.fr/tag/php.html">PHP</a>
       <a href="//www.choiz.fr/tag/htaccess.html">htaccess</a>
-      <a href="//www.choiz.fr/tag/htpasswd.html">htpasswd</a>
-      <a href="//www.choiz.fr/tag/protection.html">protection</a>
-      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>
-      <a href="//www.choiz.fr/tag/authenticate.html">authenticate</a>
-      <a href="//www.choiz.fr/tag/auth.html">auth</a>
+      <a href="//www.choiz.fr/tag/basic-auth.html">Basic auth</a>
+      <a href="//www.choiz.fr/tag/code.html">Code</a>
     </p>
   </div>
 </article>
@@ -130,7 +129,7 @@
   },
   "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "//www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html",
-  "description": "Faire un système de protection (tel que htaccess) direct dans un fichier PHP : <?php if (!empty($_SERVER["PHP_AUTH_USER"]) && $_SERVER["PHP_AUTH_USER"] == "login" && $_SERVER["PHP_AUTH_PW"] == "password") { // code protégé ici } else { header('WWW-Authenticate: Basic realm="Restricted area"'); header('HTTP/1.0 401 Unauthorized'); exit('Access Denied'); } ?>"
+  "description": "Faire un système de protection (tel que htaccess) direct dans un fichier PHP : <?php if (!empty($_SERVER["PHP_AUTH_USER"]) && $_SERVER["PHP_AUTH_USER"] == "login" && $_SERVER["PHP_AUTH_PW"] == "password") { // code protégé ici } else { header('WWW-Authenticate: Basic realm="Restricted area"'); header('HTTP/1.0 401 Unauthorized'); exit('Access Denied'); } ?> Attention l'utilisation du htaccess n'est pas recommandée …"
 }
 </script></body>
 </html>

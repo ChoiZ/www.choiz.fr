@@ -3152,26 +3152,7 @@ password (ou autre suivant le mot de passe de l&amp;#39;utilisateur).
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ce qui devrait lancer une seconde instance de Skype.&lt;/p&gt;</content><category term="Skype"></category><category term="MacOs"></category></entry><entry><title>Profil sur viadeo sans avoir la fenêtre de login</title><link href="//www.choiz.fr/2011-09-18-profil-sur-viadeo-sans-avoir-la-fen%C3%AAtre-de-login.html" rel="alternate"></link><published>2011-09-18T22:54:00+02:00</published><updated>2011-09-18T22:54:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-09-18:/2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login.html</id><summary type="html">&lt;p&gt;J'ai voulu plusieurs fois voir un profil sur Viadeo sans forcement être
-identifié. Lorsque l'on déplace la souris ou que l'on scroll une autre
-page s'affiche. Exemple sur &lt;a href="http://www.viadeo.com/fr/profile/francois.lasserre1"&gt;ma page
-viadeo&lt;/a&gt;. Pour
-empécher d'avoir la page de login il faut modifier une fonction
-Javascript. Avec un outil tel que &lt;a href="http://www.getfirebug.com"&gt;Firebug …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'ai voulu plusieurs fois voir un profil sur Viadeo sans forcement être
-identifié. Lorsque l'on déplace la souris ou que l'on scroll une autre
-page s'affiche. Exemple sur &lt;a href="http://www.viadeo.com/fr/profile/francois.lasserre1"&gt;ma page
-viadeo&lt;/a&gt;. Pour
-empécher d'avoir la page de login il faut modifier une fonction
-Javascript. Avec un outil tel que &lt;a href="http://www.getfirebug.com"&gt;Firebug&lt;/a&gt;
-vous pouvez modifier le code Javascript du site (localement). Ouvrir
-firebug en mode console et modifier la fonction createJoin() ! Dans la
-console a coté de "&amp;gt;&amp;gt;&amp;gt;" il suffit de taper :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;function createJoin() { false; }
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Avec ce code on modifie le contenu de la fonction createJoin() par false
-(plutôt que le code par defaut qui ouvre la fenêtre d'identification).&lt;/p&gt;</content><category term="viadeo"></category><category term="javascript"></category><category term="js"></category><category term="code"></category><category term="login"></category><category term="profil"></category><category term="identifié"></category><category term="firebug"></category></entry><entry><title>Développement web avec Safari</title><link href="//www.choiz.fr/2011-09-05-d%C3%A9veloppement-web-avec-safari.html" rel="alternate"></link><published>2011-09-05T09:53:22+02:00</published><updated>2011-09-05T09:53:22+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-09-05:/2011-09-05-développement-web-avec-safari.html</id><summary type="html">&lt;p&gt;Pour activer l'inspecteur web tapez dans le terminal :&lt;/p&gt;
+&lt;p&gt;Ce qui devrait lancer une seconde instance de Skype.&lt;/p&gt;</content><category term="Skype"></category><category term="MacOs"></category></entry><entry><title>Développement web avec Safari</title><link href="//www.choiz.fr/2011-09-05-d%C3%A9veloppement-web-avec-safari.html" rel="alternate"></link><published>2011-09-05T09:53:22+02:00</published><updated>2011-09-05T09:53:22+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-09-05:/2011-09-05-développement-web-avec-safari.html</id><summary type="html">&lt;p&gt;Pour activer l'inspecteur web tapez dans le terminal :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;defaults write com.apple.Safari WebKitDeveloperExtras -bool true
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -3183,7 +3164,7 @@ vos pages web.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pour activer l'i
 
 
 &lt;p&gt;Redémarrez Safari et maintenant vous pouvez inspecter les éléments de
-vos pages web.&lt;/p&gt;</content><category term="Safari"></category><category term="Dev"></category><category term="Web"></category><category term="WebDev"></category><category term="Développement"></category></entry><entry><title>Import VM avec Virtualbox</title><link href="//www.choiz.fr/2011-09-02-import-vm-avec-virtualbox.html" rel="alternate"></link><published>2011-09-02T19:28:28+02:00</published><updated>2011-09-02T19:28:28+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-09-02:/2011-09-02-import-vm-avec-virtualbox.html</id><summary type="html">&lt;p&gt;J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
+vos pages web.&lt;/p&gt;</content><category term="Safari"></category><category term="Dev"></category></entry><entry><title>Import VM avec Virtualbox</title><link href="//www.choiz.fr/2011-09-02-import-vm-avec-virtualbox.html" rel="alternate"></link><published>2011-09-02T19:28:28+02:00</published><updated>2011-09-02T19:28:28+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-09-02:/2011-09-02-import-vm-avec-virtualbox.html</id><summary type="html">&lt;p&gt;J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
 donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?&lt;/p&gt;
 &lt;p&gt;Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;VBoxManage&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;votrefichier.ova&lt;/span&gt;
@@ -3199,7 +3180,7 @@ donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?&lt;/p&gt;
 
 
 &lt;p&gt;Maintenant lors du prochain démarrage de votre VirtualBox vous devez
-avoir la machine virtuelle importée !&lt;/p&gt;</content><category term="VirtualBox"></category><category term="Import"></category><category term="VirtualMachine"></category><category term="Virtual"></category><category term="Machine"></category><category term="Ova"></category><category term="VBoxManage"></category></entry><entry><title>Partage Samba !</title><link href="//www.choiz.fr/2011-08-17-partage-samba.html" rel="alternate"></link><published>2011-08-17T20:41:00+02:00</published><updated>2011-08-17T20:41:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-17:/2011-08-17-partage-samba.html</id><summary type="html">&lt;p&gt;Configuration d'un serveur samba. Editer le fichier de configuration
+avoir la machine virtuelle importée !&lt;/p&gt;</content><category term="VirtualBox"></category><category term="Import"></category></entry><entry><title>Partage Samba !</title><link href="//www.choiz.fr/2011-08-17-partage-samba.html" rel="alternate"></link><published>2011-08-17T20:41:00+02:00</published><updated>2011-08-17T20:41:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-17:/2011-08-17-partage-samba.html</id><summary type="html">&lt;p&gt;Configuration d'un serveur samba. Editer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;| ### Global ###
 | [global]
@@ -3254,11 +3235,11 @@ directement avec des groupes.&lt;/p&gt;
 &lt;p&gt;N'oubliez pas de redémarrer le service Samba avant de tester depuis
 votre client le partage de fichiers ! :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/etc/init.d/samba restart
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Linux"></category><category term="Samba"></category><category term="config"></category><category term="configuration"></category><category term="Partage"></category><category term="Sharing"></category></entry><entry><title>Liens utiles</title><link href="//www.choiz.fr/2011-08-09-liens-utiles.html" rel="alternate"></link><published>2011-08-09T21:03:05+02:00</published><updated>2011-08-09T21:03:05+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-09:/2011-08-09-liens-utiles.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Samba"></category><category term="Share"></category><category term="Linux"></category></entry><entry><title>Liens utiles</title><link href="//www.choiz.fr/2011-08-09-liens-utiles.html" rel="alternate"></link><published>2011-08-09T21:03:05+02:00</published><updated>2011-08-09T21:03:05+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-09:/2011-08-09-liens-utiles.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.jsperf.com/"&gt;http://www.jsperf.com/&lt;/a&gt; Pour faire des performances de code js&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.pastebin.com/"&gt;http://www.pastebin.com/&lt;/a&gt; Pour copier coller du code facilement&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.jsperf.com/"&gt;http://www.jsperf.com/&lt;/a&gt; Pour faire des performances de code js&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.pastebin.com/"&gt;http://www.pastebin.com/&lt;/a&gt; Pour copier coller du code facilement&lt;/p&gt;</content><category term="Code"></category><category term="js"></category><category term="html"></category><category term="css"></category><category term="xhtml"></category><category term="javascript"></category><category term="sites"></category></entry><entry><title>Ignorer grâce au SVN</title><link href="//www.choiz.fr/2011-07-26-ignorer-gr%C3%A2ce-au-svn.html" rel="alternate"></link><published>2011-07-26T18:53:21+02:00</published><updated>2011-07-26T18:53:21+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-07-26:/2011-07-26-ignorer-grâce-au-svn.html</id><summary type="html">&lt;p&gt;Il existe plusieurs solutions pour ignorer des fichiers sur un svn :&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.pastebin.com/"&gt;http://www.pastebin.com/&lt;/a&gt; Pour copier coller du code facilement&lt;/p&gt;</content><category term="Code"></category><category term="JavaScript"></category><category term="CSS"></category></entry><entry><title>Ignorer grâce au SVN</title><link href="//www.choiz.fr/2011-07-26-ignorer-gr%C3%A2ce-au-svn.html" rel="alternate"></link><published>2011-07-26T18:53:21+02:00</published><updated>2011-07-26T18:53:21+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-07-26:/2011-07-26-ignorer-grâce-au-svn.html</id><summary type="html">&lt;p&gt;Il existe plusieurs solutions pour ignorer des fichiers sur un svn :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;svn propset svn:ignore
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -3291,7 +3272,7 @@ fichier ~/.subversion/config et d'éditer la ligne suivante :&lt;/p&gt;
 &lt;p&gt;On peut également ajouter d'autres fichiers a ignorer tel que les .swp
 de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;global-ignores = ._* .DS_STORE *.swp
-&lt;/pre&gt;&lt;/div&gt;</content><category term="svn"></category><category term="ignore"></category><category term="file"></category><category term="Vim"></category><category term="MacOs"></category></entry><entry><title>Suppression des .DS\_Store</title><link href="//www.choiz.fr/2011-07-05-suppression-des-dsstore.html" rel="alternate"></link><published>2011-07-05T18:01:40+02:00</published><updated>2011-07-05T18:01:40+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-07-05:/2011-07-05-suppression-des-dsstore.html</id><summary type="html">&lt;p&gt;Dans une console sur votre Mac :&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="SVN"></category><category term="Subversion"></category><category term="Ignore"></category></entry><entry><title>Suppression des .DS_Store</title><link href="//www.choiz.fr/2011-07-05-suppression-des-dsstore.html" rel="alternate"></link><published>2011-07-05T18:01:40+02:00</published><updated>2011-07-05T18:01:40+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-07-05:/2011-07-05-suppression-des-dsstore.html</id><summary type="html">&lt;p&gt;Dans une console sur votre Mac :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -3321,7 +3302,7 @@ document.onclick=checkclick;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Pratique pour faire du débug.&lt;/p&gt;</content><category term="js"></category><category term="element"></category><category term="click"></category><category term="javascript"></category><category term="html"></category></entry><entry><title>Patch &amp; diff</title><link href="//www.choiz.fr/2011-05-30-patch-diff.html" rel="alternate"></link><published>2011-05-30T06:00:06+02:00</published><updated>2011-05-30T06:00:06+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-30:/2011-05-30-patch-diff.html</id><summary type="html">&lt;p&gt;Patch permet de "patcher" un fichier, dossier, projet ! Pratique lorsque
+&lt;p&gt;Pratique pour faire du débug.&lt;/p&gt;</content><category term="JavaScript"></category><category term="Code"></category></entry><entry><title>Patch &amp; diff</title><link href="//www.choiz.fr/2011-05-30-patch-diff.html" rel="alternate"></link><published>2011-05-30T06:00:06+02:00</published><updated>2011-05-30T06:00:06+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-30:/2011-05-30-patch-diff.html</id><summary type="html">&lt;p&gt;Patch permet de "patcher" un fichier, dossier, projet ! Pratique lorsque
 vous distribuez du code et que vous voulez le mettre à jour. Comment
 l'utiliser ? Dans un premier temps nous allons faire un différentiel de
 notre version actuelle du projet et de la nouvelle version (celle
@@ -3342,14 +3323,13 @@ sont celles a supprimer. Ce n'est pas plus difficile que ça ! Maintenant
 j'applique mon patch sur mon fichier version1.php grâce à la commande
 suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;patch -p0 &amp;lt; mon_patch
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Patch"></category><category term="Commande"></category><category term="Terminal"></category><category term="Diff"></category><category term="Version"></category></entry><entry><title>Split &amp; Vsplit dans vim</title><link href="//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html" rel="alternate"></link><published>2011-05-29T17:16:00+02:00</published><updated>2011-05-29T17:16:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-29:/2011-05-29-split-vsplit-dans-vim.html</id><summary type="html">&lt;p&gt;Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Diff"></category><category term="Patch"></category><category term="cli"></category></entry><entry><title>Split &amp; Vsplit dans vim</title><link href="//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html" rel="alternate"></link><published>2011-05-29T17:16:00+02:00</published><updated>2011-05-29T17:16:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-29:/2011-05-29-split-vsplit-dans-vim.html</id><summary type="html">&lt;p&gt;Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
 pouvoir ouvrir plusieurs fichiers en même temps.&lt;/p&gt;
 &lt;p&gt;Pour celà il utilises 2 méthodes soit :&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;la division de la fenêtre horizontal en utilisant :&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:split
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;li&gt;
+&lt;p&gt;la division de la fenêtre horizontal en utilisant :&lt;/p&gt;
+&lt;p&gt;:split&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;ou :&lt;/p&gt;
@@ -3363,14 +3343,14 @@ pouvoir ouvrir plusieurs fichiers en même temps.&lt;/p&gt;
 
 
 &lt;ol&gt;
-&lt;li&gt;la division de la fenêtre verticalement en …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
+&lt;li&gt;
+&lt;p&gt;la division de la fenêtre verticalement en …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
 pouvoir ouvrir plusieurs fichiers en même temps.&lt;/p&gt;
 &lt;p&gt;Pour celà il utilises 2 méthodes soit :&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;la division de la fenêtre horizontal en utilisant :&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:split
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;li&gt;
+&lt;p&gt;la division de la fenêtre horizontal en utilisant :&lt;/p&gt;
+&lt;p&gt;:split&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;ou :&lt;/p&gt;
@@ -3384,10 +3364,9 @@ pouvoir ouvrir plusieurs fichiers en même temps.&lt;/p&gt;
 
 
 &lt;ol&gt;
-&lt;li&gt;la division de la fenêtre verticalement en utilisant :&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:vsplit
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;li&gt;
+&lt;p&gt;la division de la fenêtre verticalement en utilisant :&lt;/p&gt;
+&lt;p&gt;:vsplit&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;puis :&lt;/p&gt;
@@ -3406,7 +3385,7 @@ colonnes avec :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;5&amp;gt;
 
 10&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="vim"></category><category term="fichier"></category><category term="editeur"></category><category term="texte"></category><category term="terminal"></category><category term="commande"></category><category term="split"></category><category term="vsplit"></category><category term="window"></category><category term="colonnes"></category><category term="cols"></category><category term="columns"></category></entry><entry><title>Différences entre des fichiers avec Vim</title><link href="//www.choiz.fr/2011-05-19-diff%C3%A9rences-entre-des-fichiers-avec-vim.html" rel="alternate"></link><published>2011-05-19T23:32:00+02:00</published><updated>2011-05-19T23:32:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-19:/2011-05-19-différences-entre-des-fichiers-avec-vim.html</id><summary type="html">&lt;p&gt;J'ai souvent besoin de voir les différences entre plusieurs fichiers...
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Vim"></category><category term="Split"></category><category term="File"></category></entry><entry><title>Différences entre des fichiers avec Vim</title><link href="//www.choiz.fr/2011-05-19-diff%C3%A9rences-entre-des-fichiers-avec-vim.html" rel="alternate"></link><published>2011-05-19T23:32:00+02:00</published><updated>2011-05-19T23:32:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-19:/2011-05-19-différences-entre-des-fichiers-avec-vim.html</id><summary type="html">&lt;p&gt;J'ai souvent besoin de voir les différences entre plusieurs fichiers...
 J'utilise souvent la commande diff dans un terminal, mais mon éditeur
 texte favoris "Vim" sait aussi trés bien faire un différentiel.
 Utilisation avec le terminal :&lt;/p&gt;
@@ -3435,7 +3414,7 @@ pratique pour l'édition).&lt;/p&gt;
 fléche de droite ou gauche) suivant la direction ou on veut aller.&lt;/p&gt;
 &lt;p&gt;Pour le reste des commandes reportez-vous au &lt;a href="http://matrix.samizdat.net/pratique/documentation/guide-survie-VI.html"&gt;guide de survie de
 vi&lt;/a&gt;
-!&lt;/p&gt;</content><category term="Vim"></category><category term="Diff"></category><category term="Différence"></category><category term="Fichiers"></category><category term="Editeur"></category><category term="Texte"></category><category term="Terminal"></category><category term="Console"></category><category term="Commande"></category></entry><entry><title>Migration d'une base de donnée Mysql</title><link href="//www.choiz.fr/2011-05-14-migration-dune-base-de-donn%C3%A9e-mysql.html" rel="alternate"></link><published>2011-05-14T13:21:17+02:00</published><updated>2011-05-14T13:21:17+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-14:/2011-05-14-migration-dune-base-de-donnée-mysql.html</id><summary type="html">&lt;p&gt;Pour faire mes migrations de base de donnée j'utilise en ligne de
+!&lt;/p&gt;</content><category term="Vim"></category><category term="Diff"></category><category term="cli"></category></entry><entry><title>Migration d'une base de donnée Mysql</title><link href="//www.choiz.fr/2011-05-14-migration-dune-base-de-donn%C3%A9e-mysql.html" rel="alternate"></link><published>2011-05-14T13:21:17+02:00</published><updated>2011-05-14T13:21:17+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-14:/2011-05-14-migration-dune-base-de-donnée-mysql.html</id><summary type="html">&lt;p&gt;Pour faire mes migrations de base de donnée j'utilise en ligne de
 commande mysqldump et mysql.&lt;/p&gt;
 &lt;p&gt;Dans un premier temps je sauve ma base database dans le fichier dump.sql
 J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss :&lt;/p&gt;
@@ -3454,7 +3433,7 @@ J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss :&lt;/p&g
 &lt;p&gt;Une fois que j'ai mon fichier dump.sql je le met sur la nouvelle
 machine, puis j'execute la commande suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mysql -u utilisateur -pp4ss database &amp;lt; fichierdump.sql
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Mysql"></category><category term="Mysqldump"></category><category term="Database"></category><category term="Migration"></category><category term="Dump Sql"></category><category term="Sql"></category></entry><entry><title>Petit tips pour les utilisateurs de VIM et PHP</title><link href="//www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html" rel="alternate"></link><published>2011-04-13T13:59:00+02:00</published><updated>2011-04-13T13:59:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-04-13:/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html</id><summary type="html">&lt;p&gt;Lorsque je code en PHP, pour tester si il y a des erreurs généralement
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Mysql"></category><category term="MysqlDump"></category><category term="Dump"></category></entry><entry><title>Petit tips pour les utilisateurs de VIM et PHP</title><link href="//www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html" rel="alternate"></link><published>2011-04-13T13:59:00+02:00</published><updated>2011-04-13T13:59:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-04-13:/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html</id><summary type="html">&lt;p&gt;Lorsque je code en PHP, pour tester si il y a des erreurs généralement
 dans la console je tape la commande :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;php -l fichier_a_tester.php
 &lt;/pre&gt;&lt;/div&gt;
@@ -3477,7 +3456,7 @@ VIM puis :&lt;/p&gt;
 &lt;p&gt;Ce qui produira exactement le même résultat qu'en console.&lt;/p&gt;
 &lt;p&gt;:! (permet l'execution d'une commande système dans vim)&lt;/p&gt;
 &lt;p&gt;Ensuite php -l pour PHP lint&lt;/p&gt;
-&lt;p&gt;% (récupère le nom du fichier courant avec le path complet)&lt;/p&gt;</content><category term="PHP"></category><category term="Vim"></category><category term="Vi"></category><category term="Console"></category><category term="Mac"></category><category term="Linux"></category></entry><entry><title>Surround avec Vim</title><link href="//www.choiz.fr/2011-04-09-surround-avec-vim.html" rel="alternate"></link><published>2011-04-09T19:37:00+02:00</published><updated>2011-04-09T19:37:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-04-09:/2011-04-09-surround-avec-vim.html</id><summary type="html">&lt;p&gt;J'ai ajouté quelques plugins dans ma configuration de Vim dont :
+&lt;p&gt;% (récupère le nom du fichier courant avec le path complet)&lt;/p&gt;</content><category term="PHP"></category><category term="Vim"></category><category term="cli"></category></entry><entry><title>Surround avec Vim</title><link href="//www.choiz.fr/2011-04-09-surround-avec-vim.html" rel="alternate"></link><published>2011-04-09T19:37:00+02:00</published><updated>2011-04-09T19:37:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-04-09:/2011-04-09-surround-avec-vim.html</id><summary type="html">&lt;p&gt;J'ai ajouté quelques plugins dans ma configuration de Vim dont :
 surround.vim.&lt;/p&gt;
 &lt;p&gt;Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un
 texte.&lt;/p&gt;
@@ -3495,7 +3474,7 @@ apres la ligne courante et d'indenter celle-ci.&lt;/p&gt;
 lequel vous vous trouvez.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;cst&amp;lt;b&amp;gt;&lt;/code&gt; permet de changer le tag &amp;lt;a&amp;gt; (change surround tag) par
 &amp;lt;b&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;dst&lt;/code&gt; permet de supprimer le tag&lt;/p&gt;</content><category term="vim"></category><category term="config"></category><category term=".vimrc"></category><category term="plugin"></category><category term="vim plugin"></category><category term="surround"></category><category term="surround.vim"></category><category term="tags"></category><category term="html"></category></entry><entry><title>T\_PAAMAYIM\_NEKUDOTAYIM</title><link href="//www.choiz.fr/2011-03-08-tpaamayimnekudotayim.html" rel="alternate"></link><published>2011-03-08T16:17:00+01:00</published><updated>2011-03-08T16:17:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-03-08:/2011-03-08-tpaamayimnekudotayim.html</id><summary type="html">&lt;p&gt;Voilà à quoi correspond cette erreur pour ceux qui demandent :&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dst&lt;/code&gt; permet de supprimer le tag&lt;/p&gt;</content><category term="Vim"></category><category term="Plugin"></category><category term="HTML"></category></entry><entry><title>T\_PAAMAYIM\_NEKUDOTAYIM</title><link href="//www.choiz.fr/2011-03-08-tpaamayimnekudotayim.html" rel="alternate"></link><published>2011-03-08T16:17:00+01:00</published><updated>2011-03-08T16:17:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-03-08:/2011-03-08-tpaamayimnekudotayim.html</id><summary type="html">&lt;p&gt;Voilà à quoi correspond cette erreur pour ceux qui demandent :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -3514,7 +3493,7 @@ ou, en termes plus simples …&lt;/em&gt;&lt;/p&gt;</summary><content type="html
 ou, en termes plus simples, le symbole "double deux-points" (::),
 fournit un moyen d'accéder aux membres
 &lt;a href="http://fr.php.net/manual/fr/language.oop5.static.php"&gt;statics&lt;/a&gt; ou
-&lt;a href="http://fr.php.net/manual/fr/language.oop5.constants.php"&gt;constants&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</content><category term="Paamayim Nekudotayim"></category><category term="opérateur de résolution de portée"></category><category term="::"></category><category term="PHP"></category><category term="Error"></category><category term="Erreur"></category></entry><entry><title>Protection de fichier tel qu'un htaccess en PHP</title><link href="//www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html" rel="alternate"></link><published>2011-02-11T15:40:00+01:00</published><updated>2011-02-11T15:40:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-02-11:/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html</id><summary type="html">&lt;p&gt;Faire un système de protection (tel que htaccess) direct dans un fichier PHP :&lt;/p&gt;
+&lt;a href="http://fr.php.net/manual/fr/language.oop5.constants.php"&gt;constants&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</content><category term="Paamayim Nekudotayim"></category><category term="PHP"></category><category term="Error"></category></entry><entry><title>Protection de fichier tel qu'un htaccess en PHP</title><link href="//www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html" rel="alternate"></link><published>2011-02-11T15:40:00+01:00</published><updated>2011-02-11T15:40:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-02-11:/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html</id><summary type="html">&lt;p&gt;Faire un système de protection (tel que htaccess) direct dans un fichier PHP :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="k"&gt;empty&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$_SERVER&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;PHP_AUTH_USER&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;
 &lt;span class="nv"&gt;$_SERVER&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;PHP_AUTH_USER&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;login&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;
@@ -3526,7 +3505,10 @@ fournit un moyen d'accéder aux membres
     &lt;span class="k"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Access Denied&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Faire un système de protection (tel que htaccess) direct dans un fichier PHP :&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Attention l'utilisation du htaccess n'est pas recommandée …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Faire un système de protection (tel que htaccess) direct dans un fichier PHP :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="k"&gt;empty&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$_SERVER&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;PHP_AUTH_USER&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;
 &lt;span class="nv"&gt;$_SERVER&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;PHP_AUTH_USER&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;login&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;
@@ -3538,7 +3520,12 @@ fournit un moyen d'accéder aux membres
     &lt;span class="k"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Access Denied&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="php"></category><category term="htaccess"></category><category term="htpasswd"></category><category term="protection"></category><category term="fichier"></category><category term="authenticate"></category><category term="auth"></category></entry><entry><title>jQuery attr() avec onclick par click()</title><link href="//www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html" rel="alternate"></link><published>2011-01-07T16:43:00+01:00</published><updated>2011-01-07T16:43:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-01-07:/2011-01-07-jquery-attr-avec-onclick-par-click.html</id><summary type="html">&lt;p&gt;Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Attention l'utilisation du htaccess n'est pas recommandée sur une connexion non
+chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffré
+(HTTPS).&lt;/p&gt;</content><category term="PHP"></category><category term="htaccess"></category><category term="Basic auth"></category><category term="Code"></category></entry><entry><title>jQuery attr() avec onclick par click()</title><link href="//www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html" rel="alternate"></link><published>2011-01-07T16:43:00+01:00</published><updated>2011-01-07T16:43:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-01-07:/2011-01-07-jquery-attr-avec-onclick-par-click.html</id><summary type="html">&lt;p&gt;Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery
 fonctionne pas avec l'attribut "onclick"…&lt;/p&gt;
 &lt;p&gt;Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.&lt;/p&gt;
@@ -3562,7 +3549,7 @@ $(&amp;quot;#code&amp;quot;).attr(&amp;quot;onclick&amp;quot;,&amp;quot;mavar&am
 &lt;p&gt;Par :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;var mavar = &amp;#39;fonctionAffichage();&amp;#39;;
 $(&amp;quot;#code&amp;quot;).removeAttr(&amp;#39;onclick&amp;#39;).click(function() { eval(mavar); });
-&lt;/pre&gt;&lt;/div&gt;</content><category term="code"></category><category term="js"></category><category term="jquery"></category><category term="attr()"></category><category term="click()"></category><category term="removeAttr()"></category></entry><entry><title>Commande SVN pour ajouter des keywords</title><link href="//www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html" rel="alternate"></link><published>2010-10-25T14:27:33+02:00</published><updated>2010-10-25T14:27:33+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2010-10-25:/2010-10-25-commande-svn-pour-ajouter-des-keywords.html</id><summary type="html">&lt;p&gt;Pour ajouter le numéro de révision ainsi que pas mal d'autres
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Code"></category><category term="jQuery"></category><category term="JavaScript"></category></entry><entry><title>Commande SVN pour ajouter des keywords</title><link href="//www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html" rel="alternate"></link><published>2010-10-25T14:27:33+02:00</published><updated>2010-10-25T14:27:33+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2010-10-25:/2010-10-25-commande-svn-pour-ajouter-des-keywords.html</id><summary type="html">&lt;p&gt;Pour ajouter le numéro de révision ainsi que pas mal d'autres
 informations dans vos projets il suffit de taper cette commande :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;svn propset svn:keywords &amp;quot;Id&amp;quot; index.php
 &lt;/pre&gt;&lt;/div&gt;
@@ -3606,7 +3593,7 @@ notre fichier index.php je veux ajouter les 4 keywords précédents grâce
 &lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;Date&lt;/span&gt;&lt;span class="x"&gt;: 2010-10-25 14:02:50 +0200 (lun., 25 oct. 2010) &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;Author&lt;/span&gt;&lt;span class="x"&gt;: choiz &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;URL&lt;/span&gt;&lt;span class="x"&gt;: svn://svn.choiz.fr/projet/branches/prod/index.php &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="SVN"></category><category term="Subversion"></category><category term="Keyword"></category><category term="Id"></category><category term="Revision"></category><category term="Date"></category><category term="Author"></category><category term="URL"></category><category term="PHP"></category><category term="Code"></category></entry><entry><title>Impression de commandes entre balise &lt;pre&gt;</title><link href="//www.choiz.fr/2010-09-15-impression-de-commandes-entre-balise-pre.html" rel="alternate"></link><published>2010-09-15T15:43:00+02:00</published><updated>2010-09-15T15:43:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2010-09-15:/2010-09-15-impression-de-commandes-entre-balise-pre.html</id><summary type="html">&lt;p&gt;J'ai toujours eu pas mal de soucis lors d'impression de différentes
+&lt;/pre&gt;&lt;/div&gt;</content><category term="SVN"></category><category term="Subversion"></category><category term="Keyword"></category></entry><entry><title>Impression de commandes entre balise &lt;pre&gt;</title><link href="//www.choiz.fr/2010-09-15-impression-de-commandes-entre-balise-pre.html" rel="alternate"></link><published>2010-09-15T15:43:00+02:00</published><updated>2010-09-15T15:43:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2010-09-15:/2010-09-15-impression-de-commandes-entre-balise-pre.html</id><summary type="html">&lt;p&gt;J'ai toujours eu pas mal de soucis lors d'impression de différentes
 documentations…&lt;/p&gt;
 &lt;p&gt;J'utilise souvent la balise &amp;lt;pre&amp;gt; pour les lignes de commandes et
 il n'y a pas de retour à la ligne fait automatiquement pour cela un
@@ -3620,7 +3607,7 @@ trop grande. :&lt;/p&gt;
     &lt;span class="nb"&gt;white-space&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pre&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;wrap&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;wrap&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;break&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Balise"></category><category term="hml"></category><category term="Balise Pre"></category><category term="Pre"></category><category term="Print"></category><category term="Impression"></category><category term="CSS"></category></entry><entry><title>Limiter la bande passante sous Mac Os X</title><link href="//www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html" rel="alternate"></link><published>2010-07-12T11:59:00+02:00</published><updated>2010-07-12T11:59:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2010-07-12:/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html</id><summary type="html">&lt;p&gt;Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
+&lt;/pre&gt;&lt;/div&gt;</content><category term="CSS"></category><category term="HTML"></category><category term="Print"></category><category term="Code"></category></entry><entry><title>Limiter la bande passante sous Mac Os X</title><link href="//www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html" rel="alternate"></link><published>2010-07-12T11:59:00+02:00</published><updated>2010-07-12T11:59:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2010-07-12:/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html</id><summary type="html">&lt;p&gt;Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
 virtuel en console.&lt;/p&gt;
 &lt;p&gt;Ici on créer un tuyau virtuel de 1Mbit/s.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;sudo ipfw pipe 1 config bw 1Mbit/s&lt;/code&gt;&lt;/p&gt;
@@ -3637,4 +3624,4 @@ un navigateur par exemple).&lt;/p&gt;
 &lt;p&gt;Pour supprimer la règle du port 80 :&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;sudo ipfw del 1&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Pour supprimer le tuyau :&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo ipfw pipe 1 delete&lt;/code&gt;&lt;/p&gt;</content><category term="Limit Brandwith"></category><category term="Limitation Bande Passante"></category><category term="Mac Os"></category><category term="Mac Os X"></category><category term="Tuyau"></category><category term="Tuyau Virtuel"></category><category term="Limit Brandwidth"></category></entry></feed>
+&lt;p&gt;&lt;code&gt;sudo ipfw pipe 1 delete&lt;/code&gt;&lt;/p&gt;</content><category term="QoS"></category><category term="MacOs"></category></entry></feed>

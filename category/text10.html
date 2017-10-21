@@ -53,37 +53,11 @@
 
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Protection de fichier tel qu'un htaccess en PHP</a></h2>
-    <p>
-      Posté le ven. 11 février 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/php.html">php</a>,      <a href="//www.choiz.fr/tag/htaccess.html">htaccess</a>,      <a href="//www.choiz.fr/tag/htpasswd.html">htpasswd</a>,      <a href="//www.choiz.fr/tag/protection.html">protection</a>,      <a href="//www.choiz.fr/tag/fichier.html">fichier</a>,      <a href="//www.choiz.fr/tag/authenticate.html">authenticate</a>,      <a href="//www.choiz.fr/tag/auth.html">auth</a>    </p>
-  </header>
-  <div>
-      <p>Faire un système de protection (tel que htaccess) direct dans un fichier PHP :</p>
-<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_USER&quot;</span><span class="p">])</span> <span class="o">&amp;&amp;</span>
-<span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_USER&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;login&quot;</span> <span class="o">&amp;&amp;</span>
-<span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_PW&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// code protégé ici</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;WWW-Authenticate: Basic realm=&quot;Restricted area&quot;&#39;</span><span class="p">);</span>
-    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;HTTP/1.0 401 Unauthorized&#39;</span><span class="p">);</span>
-    <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;Access Denied&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span>
-</pre></div>
-      <a class="btn" href="//www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
     <h2><a href="//www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html">jQuery attr() avec onclick par click()</a></h2>
     <p>
       Posté le ven. 07 janvier 2011 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/code.html">code</a>,      <a href="//www.choiz.fr/tag/js.html">js</a>,      <a href="//www.choiz.fr/tag/jquery.html">jquery</a>,      <a href="//www.choiz.fr/tag/attr.html">attr()</a>,      <a href="//www.choiz.fr/tag/click.html">click()</a>,      <a href="//www.choiz.fr/tag/removeattr.html">removeAttr()</a>    </p>
+      <a href="//www.choiz.fr/tag/code.html">Code</a>,      <a href="//www.choiz.fr/tag/jquery.html">jQuery</a>,      <a href="//www.choiz.fr/tag/javascript.html">JavaScript</a>    </p>
   </header>
   <div>
       <p>Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery
@@ -108,7 +82,7 @@ $(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
     <p>
       Posté le lun. 25 octobre 2010 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/svn.html">SVN</a>,      <a href="//www.choiz.fr/tag/subversion.html">Subversion</a>,      <a href="//www.choiz.fr/tag/keyword.html">Keyword</a>,      <a href="//www.choiz.fr/tag/id.html">Id</a>,      <a href="//www.choiz.fr/tag/revision.html">Revision</a>,      <a href="//www.choiz.fr/tag/date.html">Date</a>,      <a href="//www.choiz.fr/tag/author.html">Author</a>,      <a href="//www.choiz.fr/tag/url.html">URL</a>,      <a href="//www.choiz.fr/tag/php.html">PHP</a>,      <a href="//www.choiz.fr/tag/code.html">Code</a>    </p>
+      <a href="//www.choiz.fr/tag/svn.html">SVN</a>,      <a href="//www.choiz.fr/tag/subversion.html">Subversion</a>,      <a href="//www.choiz.fr/tag/keyword.html">Keyword</a>    </p>
   </header>
   <div>
       <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
@@ -129,7 +103,7 @@ informations dans vos projets il suffit de taper cette commande :</p>
     <p>
       Posté le mer. 15 septembre 2010 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/balise.html">Balise</a>,      <a href="//www.choiz.fr/tag/hml.html">hml</a>,      <a href="//www.choiz.fr/tag/balise-pre.html">Balise Pre</a>,      <a href="//www.choiz.fr/tag/pre.html">Pre</a>,      <a href="//www.choiz.fr/tag/print.html">Print</a>,      <a href="//www.choiz.fr/tag/impression.html">Impression</a>,      <a href="//www.choiz.fr/tag/css.html">CSS</a>    </p>
+      <a href="//www.choiz.fr/tag/css.html">CSS</a>,      <a href="//www.choiz.fr/tag/html.html">HTML</a>,      <a href="//www.choiz.fr/tag/print.html">Print</a>,      <a href="//www.choiz.fr/tag/code.html">Code</a>    </p>
   </header>
   <div>
       <p>J'ai toujours eu pas mal de soucis lors d'impression de différentes
@@ -147,7 +121,7 @@ petit css permet de faire les retours à la ligne lorsque la page …</p>
     <p>
       Posté le lun. 12 juillet 2010 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/limit-brandwith.html">Limit Brandwith</a>,      <a href="//www.choiz.fr/tag/limitation-bande-passante.html">Limitation Bande Passante</a>,      <a href="//www.choiz.fr/tag/mac-os.html">Mac Os</a>,      <a href="//www.choiz.fr/tag/mac-os-x.html">Mac Os X</a>,      <a href="//www.choiz.fr/tag/tuyau.html">Tuyau</a>,      <a href="//www.choiz.fr/tag/tuyau-virtuel.html">Tuyau Virtuel</a>,      <a href="//www.choiz.fr/tag/limit-brandwidth.html">Limit Brandwidth</a>    </p>
+      <a href="//www.choiz.fr/tag/qos.html">QoS</a>,      <a href="//www.choiz.fr/tag/macos.html">MacOs</a>    </p>
   </header>
   <div>
       <p>Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
