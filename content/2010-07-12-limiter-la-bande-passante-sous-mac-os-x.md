@@ -2,7 +2,7 @@ Title: Limiter la bande passante sous Mac Os X
 Date: 2010-07-12 11:59:00
 Author: choiz
 Category: text
-Tags: Limit Brandwith, Limitation Bande Passante, Mac Os, Mac Os X, Tuyau, Tuyau Virtuel, Limit Brandwidth
+Tags: QoS, MacOs
 Slug: 2010-07-12-limiter-la-bande-passante-sous-mac-os-x
 Status: published
 

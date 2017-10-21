@@ -2,7 +2,7 @@ Title: Différences entre des fichiers avec Vim
 Date: 2011-05-19 23:32:00
 Author: choiz
 Category: text
-Tags: Vim, Diff, Différence, Fichiers, Editeur, Texte, Terminal, Console, Commande
+Tags: Vim, Diff, cli
 Slug: 2011-05-19-différences-entre-des-fichiers-avec-vim
 Status: published
 

@@ -2,7 +2,7 @@ Title: Split & Vsplit dans vim
 Date: 2011-05-29 17:16:00
 Author: choiz
 Category: text
-Tags: vim, fichier, editeur, texte, terminal, commande, split, vsplit, window, colonnes, cols, columns
+Tags: Vim, Split, File
 Slug: 2011-05-29-split-vsplit-dans-vim
 Status: published
 
@@ -13,7 +13,7 @@ Pour celà il utilises 2 méthodes soit :
 
 1.  la division de la fenêtre horizontal en utilisant :
 
-        :split
+    :split
 
 ou :
 
@@ -25,7 +25,7 @@ et ensuite :
 
 1.  la division de la fenêtre verticalement en utilisant :
 
-        :vsplit
+    :vsplit
 
 puis :
 

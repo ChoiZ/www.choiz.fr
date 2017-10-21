@@ -2,7 +2,7 @@ Title: Import VM avec Virtualbox
 Date: 2011-09-02 19:28:28
 Author: choiz
 Category: text
-Tags: VirtualBox, Import, VirtualMachine, Virtual, Machine, Ova, VBoxManage
+Tags: VirtualBox, Import
 Slug: 2011-09-02-import-vm-avec-virtualbox
 Status: published
 

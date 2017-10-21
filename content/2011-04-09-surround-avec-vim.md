@@ -2,7 +2,7 @@ Title: Surround avec Vim
 Date: 2011-04-09 19:37:00
 Author: choiz
 Category: text
-Tags: vim, config, .vimrc, plugin, vim plugin, surround, surround.vim, tags, html
+Tags: Vim, Plugin, HTML
 Slug: 2011-04-09-surround-avec-vim
 Status: published
 

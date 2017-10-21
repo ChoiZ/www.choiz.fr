@@ -2,7 +2,7 @@ Title: Profil sur viadeo sans avoir la fenêtre de login
 Date: 2011-09-18 22:54:00
 Author: choiz
 Category: text
-Tags: viadeo, javascript, js, code, login, profil, identifié, firebug
+Tags: JavaScript, Code
 Slug: 2011-09-18-profil-sur-viadeo-sans-avoir-la-fenêtre-de-login
 Status: published
 

@@ -2,7 +2,7 @@ Title: Commande SVN pour ajouter des keywords
 Date: 2010-10-25 14:27:33
 Author: choiz
 Category: text
-Tags: SVN, Subversion, Keyword, Id, Revision, Date, Author, URL, PHP, Code, Subversion
+Tags: SVN, Subversion, Keyword
 Slug: 2010-10-25-commande-svn-pour-ajouter-des-keywords
 Status: published
 

@@ -2,7 +2,7 @@ Title: T\_PAAMAYIM\_NEKUDOTAYIM
 Date: 2011-03-08 16:17:00
 Author: choiz
 Category: text
-Tags: Paamayim Nekudotayim, opérateur de résolution de portée, ::, PHP, Error, Erreur
+Tags: Paamayim Nekudotayim, PHP, Error
 Slug: 2011-03-08-tpaamayimnekudotayim
 Status: published
 

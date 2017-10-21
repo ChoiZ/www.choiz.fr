@@ -1,4 +1,4 @@
-Title: Suppression des .DS\_Store
+Title: Suppression des .DS_Store
 Date: 2011-07-05 18:01:40
 Author: choiz
 Category: text

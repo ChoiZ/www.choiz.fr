@@ -2,7 +2,7 @@ Title: Elément cliqué en js
 Date: 2011-06-30 16:55:59
 Author: choiz
 Category: text
-Tags: js, element, click, javascript, html
+Tags: JavaScript, Code
 Slug: 2011-06-30-elément-cliqué-en-js
 Status: published
 
