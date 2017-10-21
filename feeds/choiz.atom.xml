@@ -3325,15 +3325,17 @@ suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;patch -p0 &amp;lt; mon_patch
 &lt;/pre&gt;&lt;/div&gt;</content><category term="Diff"></category><category term="Patch"></category><category term="cli"></category></entry><entry><title>Split &amp; Vsplit dans vim</title><link href="//www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html" rel="alternate"></link><published>2011-05-29T17:16:00+02:00</published><updated>2011-05-29T17:16:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-29:/2011-05-29-split-vsplit-dans-vim.html</id><summary type="html">&lt;p&gt;Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
 pouvoir ouvrir plusieurs fichiers en même temps.&lt;/p&gt;
-&lt;p&gt;Pour celà il utilises 2 méthodes soit :&lt;/p&gt;
+&lt;p&gt;Il y a 2 méthodes :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;la division de la fenêtre horizontal en utilisant :&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;code&gt;:split&lt;/code&gt; (ou &lt;code&gt;:new&lt;/code&gt;) puis : &lt;code&gt;:e le_fichier_a_ouvrir&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;la division de la fenêtre verticalement en utilisant …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
+&lt;li&gt;la division de la fenêtre verticalement en utilisant :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;:vsplit&lt;/code&gt; puis …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
 pouvoir ouvrir plusieurs fichiers en même temps.&lt;/p&gt;
-&lt;p&gt;Pour celà il utilises 2 méthodes soit :&lt;/p&gt;
+&lt;p&gt;Il y a 2 méthodes :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;la division de la fenêtre horizontal en utilisant :&lt;/li&gt;
 &lt;/ul&gt;
