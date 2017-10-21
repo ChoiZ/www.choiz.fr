@@ -87,16 +87,16 @@ configurer votre Raspberry Pi.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;pi@raspberry3:~ $ &lt;code&gt;sudo bash&lt;/code&gt;
-root@raspberrypi3:/home/pi# &lt;code&gt;apt install dirmngr -y&lt;/code&gt;
-root@raspberrypi3:/home/pi# &lt;code&gt;echo 'deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | tee -a /etc/apt/sources.list.d/ubnt.list &amp;gt; /dev/null&lt;/code&gt;
-root@raspberrypi3:/home/pi# &lt;code&gt;apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50&lt;/code&gt;
-root@raspberrypi3:/home/pi# &lt;code&gt;apt update -y&lt;/code&gt;
-root@raspberrypi3:/home/pi# &lt;code&gt;apt install unifi -y&lt;/code&gt;
-root@raspberrypi3:/home/pi# &lt;code&gt;echo 'ENABLE_MONGODB=no' | tee -a /etc/mongodb.conf &amp;gt; /dev/null&lt;/code&gt;
-root@raspberrypi3:/home/pi# &lt;code&gt;apt install oracle-java8-jdk -y&lt;/code&gt;
-root@raspberrypi3:/home/pi# &lt;code&gt;echo 'JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt' | tee /etc/default/unifi &amp;gt; /dev/null&lt;/code&gt;
-root@raspberrypi3:/home/pi# &lt;code&gt;reboot&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;pi@raspberry3:~ $ &lt;code&gt;sudo bash&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;apt install dirmngr -y&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;echo 'deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | tee -a /etc/apt/sources.list.d/ubnt.list &amp;gt; /dev/null&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;apt update -y&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;apt install unifi -y&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;echo 'ENABLE_MONGODB=no' | tee -a /etc/mongodb.conf &amp;gt; /dev/null&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;apt install oracle-java8-jdk -y&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;echo 'JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt' | tee /etc/default/unifi &amp;gt; /dev/null&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;reboot&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Une fois le raspberry pi démarrer se rendre sur https://ip_raspberry:8443 vous
 devriez avoir votre interface Unifi disponible.&lt;/p&gt;</content><category term="RaspberryPi"></category><category term="Unifi"></category><category term="Debian"></category></entry><entry><title>Faire du NAT avec Proxmox</title><link href="//www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html" rel="alternate"></link><published>2017-10-15T22:08:23+02:00</published><updated>2017-10-15T22:08:23+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-15:/2017-10-15-faire-un-nat-avec-proxmox.html</id><summary type="html">&lt;p&gt;L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
 la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut

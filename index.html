@@ -140,16 +140,16 @@ configurer votre Raspberry Pi.</p>
 </pre></div>
 
 
-<p>pi@raspberry3:~ $ <code>sudo bash</code>
-root@raspberrypi3:/home/pi# <code>apt install dirmngr -y</code>
-root@raspberrypi3:/home/pi# <code>echo 'deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | tee -a /etc/apt/sources.list.d/ubnt.list &gt; /dev/null</code>
-root@raspberrypi3:/home/pi# <code>apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50</code>
-root@raspberrypi3:/home/pi# <code>apt update -y</code>
-root@raspberrypi3:/home/pi# <code>apt install unifi -y</code>
-root@raspberrypi3:/home/pi# <code>echo 'ENABLE_MONGODB=no' | tee -a /etc/mongodb.conf &gt; /dev/null</code>
-root@raspberrypi3:/home/pi# <code>apt install oracle-java8-jdk -y</code>
-root@raspberrypi3:/home/pi# <code>echo 'JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt' | tee /etc/default/unifi &gt; /dev/null</code>
-root@raspberrypi3:/home/pi# <code>reboot</code></p>
+<p>pi@raspberry3:~ $ <code>sudo bash</code></p>
+<p>root@raspberrypi3:/home/pi# <code>apt install dirmngr -y</code></p>
+<p>root@raspberrypi3:/home/pi# <code>echo 'deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | tee -a /etc/apt/sources.list.d/ubnt.list &gt; /dev/null</code></p>
+<p>root@raspberrypi3:/home/pi# <code>apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50</code></p>
+<p>root@raspberrypi3:/home/pi# <code>apt update -y</code></p>
+<p>root@raspberrypi3:/home/pi# <code>apt install unifi -y</code></p>
+<p>root@raspberrypi3:/home/pi# <code>echo 'ENABLE_MONGODB=no' | tee -a /etc/mongodb.conf &gt; /dev/null</code></p>
+<p>root@raspberrypi3:/home/pi# <code>apt install oracle-java8-jdk -y</code></p>
+<p>root@raspberrypi3:/home/pi# <code>echo 'JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt' | tee /etc/default/unifi &gt; /dev/null</code></p>
+<p>root@raspberrypi3:/home/pi# <code>reboot</code></p>
 <p>Une fois le raspberry pi démarrer se rendre sur https://ip_raspberry:8443 vous
 devriez avoir votre interface Unifi disponible.</p>
   </div>
