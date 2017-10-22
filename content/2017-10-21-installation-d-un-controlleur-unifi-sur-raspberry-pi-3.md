@@ -83,6 +83,10 @@ Récuperer l'adresse ip du raspberry pi pour se connecter dessus via SSH.
 ssh pi@adresseip
 ```
 
+Nous changeons le mot de passe de l'utilisateur 'pi'
+
+pi@raspberry3:~ $ `passwd`
+
 pi@raspberry3:~ $ `sudo bash`
 
 root@raspberrypi3:/home/pi# `apt install dirmngr -y`
@@ -103,5 +107,35 @@ root@raspberrypi3:/home/pi# `echo 'JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp
 
 root@raspberrypi3:/home/pi# `reboot`
 
-Une fois le raspberry pi démarrer se rendre sur https://ip_raspberry:8443 vous
+Une fois le raspberry pi démarrer se rendre sur `https://ip_raspberry:8443` vous
 devriez avoir votre interface Unifi disponible.
+
+Mettre à jour votre materiel unifi depuis le controlleur. Puis sur le raspberry
+pi nous allons changer d'adresse ip pour avoir un réseau séparé.
+
+```
+ssh pi@adresseip
+```
+
+pi@raspberry3:~ $ `sudo vi /etc/network/interfaces`
+
+Ajouter à la fin du fichier :
+
+```
+auto eth0
+iface eth0 inet static
+    address 10.0.0.10
+    network 255.255.255.0
+    gateway 10.0.0.1
+```
+
+Enregistrer le fichier et quitter (ne pas rédémarrer le pi pour l'instant).
+
+Retourner sur l'interface d'unifi et modifier l'adresse ip de votre réseau LAN.
+
+Gateway/Subnet 10.0.0.1/24
+
+Cliquer sur "UPDATE DHCP RANGE" puis enregistrer vos modifications dans l'onglet
+Devices votre USG devrait être en "provisionning".
+Redémarrez le Raspberry Pi avec `sudo reboot` puis vous reconnecter au
+controlleur avec la nouvelle adresse ip : `https://10.0.0.10:8443`.
