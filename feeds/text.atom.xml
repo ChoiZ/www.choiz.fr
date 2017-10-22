@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ - text</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/text.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-10-21T21:57:19+02:00</updated><entry><title>Installation d'un controlleur Unifi sur Raspberry Pi 3</title><link href="//www.choiz.fr/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html" rel="alternate"></link><published>2017-10-21T21:57:19+02:00</published><updated>2017-10-21T21:57:19+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-21:/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html</id><summary type="html">&lt;p&gt;Pour commencer il faut télécharger la dernière version de raspbian sur le site
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ - text</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/text.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2017-10-21T21:57:19+02:00</updated><entry><title>Installation d'un controlleur Unifi sur Raspberry Pi 3</title><link href="//www.choiz.fr/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html" rel="alternate"></link><published>2017-10-21T21:57:19+02:00</published><updated>2017-10-21T21:57:19+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-21:/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html</id><summary type="html">&lt;p&gt;&lt;a href="http://amzn.to/2gEgWOV"&gt;Rapsberry Pi 3&lt;/a&gt; sur Amazon.&lt;/p&gt;
+&lt;p&gt;Pour commencer il faut télécharger la dernière version de raspbian sur le site
 officiel raspberrypi.org. Actuellement c'est 2017-09-07-raspbian-stretch-lite.zip.&lt;/p&gt;
 &lt;p&gt;Il faut ensuite extraire l'image de l'archive :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;unzip 2017-09-07-raspbian-stretch-lite.zip
@@ -7,7 +8,8 @@ officiel raspberrypi.org. Actuellement c'est 2017-09-07-raspbian-stretch-lite.zi
 
 
 &lt;p&gt;Puis mettre l'image sur une carte micro sd, j'utilise la commande &lt;code&gt;dmesg&lt;/code&gt; pour
-voir le nom du périphérique USB sur …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pour commencer il faut télécharger la dernière version de raspbian sur le site
+voir le …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://amzn.to/2gEgWOV"&gt;Rapsberry Pi 3&lt;/a&gt; sur Amazon.&lt;/p&gt;
+&lt;p&gt;Pour commencer il faut télécharger la dernière version de raspbian sur le site
 officiel raspberrypi.org. Actuellement c'est 2017-09-07-raspbian-stretch-lite.zip.&lt;/p&gt;
 &lt;p&gt;Il faut ensuite extraire l'image de l'archive :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;unzip 2017-09-07-raspbian-stretch-lite.zip
@@ -248,10 +250,12 @@ UniFi Security Gateway 3P
 &lt;p&gt;Pour qu'il soit toujours fonctionnel derrière une livebox j'ai du refaire les
 différentes étapes d'installation de mon article &lt;a href="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html"&gt;Remplacer sa livebox par un
 UniFi Security Gateway 3P
-(USG)&lt;/a&gt;.&lt;/p&gt;</content><category term="UniFi"></category><category term="Gateway"></category><category term="USG"></category><category term="Network"></category><category term="Update"></category></entry><entry><title>Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</title><link href="//www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html" rel="alternate"></link><published>2017-08-26T19:00:56+02:00</published><updated>2017-09-02T18:25:10+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</id><summary type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
+(USG)&lt;/a&gt;.&lt;/p&gt;</content><category term="UniFi"></category><category term="Gateway"></category><category term="USG"></category><category term="Network"></category><category term="Update"></category></entry><entry><title>Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</title><link href="//www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html" rel="alternate"></link><published>2017-08-26T19:00:56+02:00</published><updated>2017-09-02T18:25:10+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</id><summary type="html">&lt;p&gt;&lt;a href="http://amzn.to/2xXmsDO"&gt;Ubiquiti Networks USG&lt;/a&gt; sur Amazon.&lt;/p&gt;
+&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
 &lt;p&gt;En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
 livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs.&lt;/p&gt;
-&lt;p&gt;Il y a pas mal de manipulations a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
+&lt;p&gt;Il y a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://amzn.to/2xXmsDO"&gt;Ubiquiti Networks USG&lt;/a&gt; sur Amazon.&lt;/p&gt;
+&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
 &lt;p&gt;En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
 livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs.&lt;/p&gt;
 &lt;p&gt;Il y a pas mal de manipulations a faire avant de pouvoir remplacer totalement sa
@@ -381,8 +385,7 @@ erreurs lors de ce provisionning elles seront affichées dans "alerts" sur votre
 controlleur. Dans ce cas il y a un truc qui cloche entre votre config et celle
 du controlleur revoir les différentes étapes.&lt;/p&gt;
 &lt;p&gt;Si le provisionning est ok l'USG redémarre et la config est enfin fini ! ;-)&lt;/p&gt;
-&lt;p&gt;Grand merci au forum lafibre.info et particulièrement ce &lt;a href="https://lafibre.info/remplacer-livebox/unifi-security-gateway-en-remplacement-de-la-livebox/"&gt;sujet&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://amzn.to/2xXmsDO"&gt;Ubiquiti Networks USG&lt;/a&gt; sur Amazon.&lt;/p&gt;</content><category term="UniFi"></category><category term="Gateway"></category><category term="Livebox"></category><category term="USG"></category><category term="Network"></category></entry><entry><title>Installation de Proxmox-VE 5 sur Debian Stretch</title><link href="//www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html" rel="alternate"></link><published>2017-08-26T17:36:19+02:00</published><updated>2017-08-26T17:36:19+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html</id><summary type="html">&lt;p&gt;Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
+&lt;p&gt;Grand merci au forum lafibre.info et particulièrement ce &lt;a href="https://lafibre.info/remplacer-livebox/unifi-security-gateway-en-remplacement-de-la-livebox/"&gt;sujet&lt;/a&gt;.&lt;/p&gt;</content><category term="UniFi"></category><category term="Gateway"></category><category term="Livebox"></category><category term="USG"></category><category term="Network"></category></entry><entry><title>Installation de Proxmox-VE 5 sur Debian Stretch</title><link href="//www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html" rel="alternate"></link><published>2017-08-26T17:36:19+02:00</published><updated>2017-08-26T17:36:19+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html</id><summary type="html">&lt;p&gt;Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
 Par contre il ne faut pas modifier le sources.list ni installer
 firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
 tout).&lt;/p&gt;
