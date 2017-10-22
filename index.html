@@ -140,6 +140,8 @@ configurer votre Raspberry Pi.</p>
 </pre></div>
 
 
+<p>Nous changeons le mot de passe de l'utilisateur 'pi'</p>
+<p>pi@raspberry3:~ $ <code>passwd</code></p>
 <p>pi@raspberry3:~ $ <code>sudo bash</code></p>
 <p>root@raspberrypi3:/home/pi# <code>apt install dirmngr -y</code></p>
 <p>root@raspberrypi3:/home/pi# <code>echo 'deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | tee -a /etc/apt/sources.list.d/ubnt.list &gt; /dev/null</code></p>
@@ -150,8 +152,31 @@ configurer votre Raspberry Pi.</p>
 <p>root@raspberrypi3:/home/pi# <code>apt install oracle-java8-jdk -y</code></p>
 <p>root@raspberrypi3:/home/pi# <code>echo 'JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt' | tee /etc/default/unifi &gt; /dev/null</code></p>
 <p>root@raspberrypi3:/home/pi# <code>reboot</code></p>
-<p>Une fois le raspberry pi démarrer se rendre sur https://ip_raspberry:8443 vous
+<p>Une fois le raspberry pi démarrer se rendre sur <code>https://ip_raspberry:8443</code> vous
 devriez avoir votre interface Unifi disponible.</p>
+<p>Mettre à jour votre materiel unifi depuis le controlleur. Puis sur le raspberry
+pi nous allons changer d'adresse ip pour avoir un réseau séparé.</p>
+<div class="highlight"><pre><span></span>ssh pi@adresseip
+</pre></div>
+
+
+<p>pi@raspberry3:~ $ <code>sudo vi /etc/network/interfaces</code></p>
+<p>Ajouter à la fin du fichier :</p>
+<div class="highlight"><pre><span></span>auto eth0
+iface eth0 inet static
+    address 10.0.0.10
+    network 255.255.255.0
+    gateway 10.0.0.1
+</pre></div>
+
+
+<p>Enregistrer le fichier et quitter (ne pas rédémarrer le pi pour l'instant).</p>
+<p>Retourner sur l'interface d'unifi et modifier l'adresse ip de votre réseau LAN.</p>
+<p>Gateway/Subnet 10.0.0.1/24</p>
+<p>Cliquer sur "UPDATE DHCP RANGE" puis enregistrer vos modifications dans l'onglet
+Devices votre USG devrait être en "provisionning".
+Redémarrez le Raspberry Pi avec <code>sudo reboot</code> puis vous reconnecter au
+controlleur avec la nouvelle adresse ip : <code>https://10.0.0.10:8443</code>.</p>
   </div>
   <hr />
 </article>

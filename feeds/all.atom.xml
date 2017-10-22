@@ -87,6 +87,8 @@ configurer votre Raspberry Pi.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;Nous changeons le mot de passe de l'utilisateur 'pi'&lt;/p&gt;
+&lt;p&gt;pi@raspberry3:~ $ &lt;code&gt;passwd&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;pi@raspberry3:~ $ &lt;code&gt;sudo bash&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;apt install dirmngr -y&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;echo 'deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | tee -a /etc/apt/sources.list.d/ubnt.list &amp;gt; /dev/null&lt;/code&gt;&lt;/p&gt;
@@ -97,8 +99,31 @@ configurer votre Raspberry Pi.&lt;/p&gt;
 &lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;apt install oracle-java8-jdk -y&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;echo 'JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt' | tee /etc/default/unifi &amp;gt; /dev/null&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;reboot&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Une fois le raspberry pi démarrer se rendre sur https://ip_raspberry:8443 vous
-devriez avoir votre interface Unifi disponible.&lt;/p&gt;</content><category term="RaspberryPi"></category><category term="Unifi"></category><category term="Debian"></category></entry><entry><title>Faire du NAT avec Proxmox</title><link href="//www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html" rel="alternate"></link><published>2017-10-15T22:08:23+02:00</published><updated>2017-10-15T22:08:23+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-15:/2017-10-15-faire-un-nat-avec-proxmox.html</id><summary type="html">&lt;p&gt;L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
+&lt;p&gt;Une fois le raspberry pi démarrer se rendre sur &lt;code&gt;https://ip_raspberry:8443&lt;/code&gt; vous
+devriez avoir votre interface Unifi disponible.&lt;/p&gt;
+&lt;p&gt;Mettre à jour votre materiel unifi depuis le controlleur. Puis sur le raspberry
+pi nous allons changer d'adresse ip pour avoir un réseau séparé.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh pi@adresseip
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;pi@raspberry3:~ $ &lt;code&gt;sudo vi /etc/network/interfaces&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Ajouter à la fin du fichier :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;auto eth0
+iface eth0 inet static
+    address 10.0.0.10
+    network 255.255.255.0
+    gateway 10.0.0.1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Enregistrer le fichier et quitter (ne pas rédémarrer le pi pour l'instant).&lt;/p&gt;
+&lt;p&gt;Retourner sur l'interface d'unifi et modifier l'adresse ip de votre réseau LAN.&lt;/p&gt;
+&lt;p&gt;Gateway/Subnet 10.0.0.1/24&lt;/p&gt;
+&lt;p&gt;Cliquer sur "UPDATE DHCP RANGE" puis enregistrer vos modifications dans l'onglet
+Devices votre USG devrait être en "provisionning".
+Redémarrez le Raspberry Pi avec &lt;code&gt;sudo reboot&lt;/code&gt; puis vous reconnecter au
+controlleur avec la nouvelle adresse ip : &lt;code&gt;https://10.0.0.10:8443&lt;/code&gt;.&lt;/p&gt;</content><category term="RaspberryPi"></category><category term="Unifi"></category><category term="Debian"></category></entry><entry><title>Faire du NAT avec Proxmox</title><link href="//www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html" rel="alternate"></link><published>2017-10-15T22:08:23+02:00</published><updated>2017-10-15T22:08:23+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-15:/2017-10-15-faire-un-nat-avec-proxmox.html</id><summary type="html">&lt;p&gt;L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
 la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut
 faire la même chose.&lt;/p&gt;
 &lt;p&gt;Ip Public de proxmox : 11.22.33.44
