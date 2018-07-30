@@ -12,21 +12,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Dans une console sur votre Mac : defaults write com.apple.desktopservices DSDontWriteNetworkStores true Puis redémarrez le mac." />
-<meta name="keywords" content="MacOs, .DS_Store">
+<meta name="description" content="Installation de lxc sur debian : apt-get install lxc Création d'un conteneur lxc sous debian : lxc-create -n debian9 -t download Sélectionner : distribution: debian Release: strech Architecture: amd64 Lister les conteneurs : lxc-ls -f NAME STATE AUTOSTART GROUPS IPV4 IPV6 debian9 STOPPED 0 - - - Copier debian9 en conteneur debian pour l'utiliser pour un wiki …" />
+<meta name="keywords" content="linux, container, lxc">
 <meta property="og:site_name" content="ChoiZ"/>
-<meta property="og:title" content="Suppression des .DS_Store"/>
-<meta property="og:description" content="Dans une console sur votre Mac : defaults write com.apple.desktopservices DSDontWriteNetworkStores true Puis redémarrez le mac."/>
+<meta property="og:title" content="Installer et utiliser lxc"/>
+<meta property="og:description" content="Installation de lxc sur debian : apt-get install lxc Création d'un conteneur lxc sous debian : lxc-create -n debian9 -t download Sélectionner : distribution: debian Release: strech Architecture: amd64 Lister les conteneurs : lxc-ls -f NAME STATE AUTOSTART GROUPS IPV4 IPV6 debian9 STOPPED 0 - - - Copier debian9 en conteneur debian pour l'utiliser pour un wiki …"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://www.choiz.fr/2011-07-05-suppression-des-dsstore.html"/>
+<meta property="og:url" content="https://www.choiz.fr/2018-07-30-installer-et-utiliser-lxc.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2011-07-05 18:01:40+02:00"/>
+<meta property="article:published_time" content="2018-07-30 10:48:04+02:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="https://www.choiz.fr/author/choiz.html">
 <meta property="article:section" content="text"/>
-<meta property="article:tag" content="MacOs"/>
-<meta property="article:tag" content=".DS_Store"/>
-<meta property="og:image" content="">  <title>ChoiZ &ndash; Suppression des .DS_Store</title>
+<meta property="article:tag" content="linux"/>
+<meta property="article:tag" content="container"/>
+<meta property="article:tag" content="lxc"/>
+<meta property="og:image" content="">  <title>ChoiZ &ndash; Installer et utiliser lxc</title>
 </head>
 <body>
   <aside>
@@ -60,21 +61,76 @@
 
 <article>
   <header>
-    <h1 id="2011-07-05-suppression-des-dsstore">Suppression des .DS_Store</h1>
-    <p>Posté le mar. 05 juillet 2011</p>
+    <h1 id="2018-07-30-installer-et-utiliser-lxc">Installer et utiliser lxc</h1>
+    <p>Posté le lun. 30 juillet 2018</p>
   </header>
   <div>
-    <p>Dans une console sur votre Mac :</p>
-<div class="highlight"><pre><span></span>defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+    <p>Installation de lxc sur debian :</p>
+<p><code>apt-get install lxc</code></p>
+<p>Création d'un conteneur lxc sous debian :</p>
+<p><code>lxc-create -n debian9 -t download</code></p>
+<p>Sélectionner :</p>
+<div class="highlight"><pre><span></span><span class="n">distribution</span><span class="o">:</span> <span class="n">debian</span>
+<span class="n">Release</span><span class="o">:</span> <span class="n">strech</span>
+<span class="n">Architecture</span><span class="o">:</span> <span class="n">amd64</span>
 </pre></div>
 
 
-<p>Puis redémarrez le mac.</p>
+<p>Lister les conteneurs :</p>
+<div class="highlight"><pre><span></span>lxc-ls -f
+NAME        STATE   AUTOSTART GROUPS IPV4 IPV6 
+debian9     STOPPED 0         -      -    -
+</pre></div>
+
+
+<p>Copier debian9 en conteneur debian pour l'utiliser pour un wiki par exemple :</p>
+<div class="highlight"><pre><span></span>lxc-copy -n debian9 -N debian9wiki -B overlay -s
+</pre></div>
+
+
+<p>Vérifions :</p>
+<div class="highlight"><pre><span></span>lxc-ls -f
+NAME        STATE   AUTOSTART GROUPS IPV4 IPV6 
+debian9     STOPPED 0         -      -    -    
+debian9wiki STOPPED 0         -      -    -
+</pre></div>
+
+
+<p>Lancer debian9wiki :</p>
+<div class="highlight"><pre><span></span>lxc-start -n debian9wiki
+</pre></div>
+
+
+<p>Vérifions :</p>
+<div class="highlight"><pre><span></span>lxc-ls -f
+NAME        STATE   AUTOSTART GROUPS IPV4           IPV6 
+debian9     STOPPED 0         -      -              -    
+debian9wiki RUNNING 0         -      192.168.60.140 -    
+</pre></div>
+
+
+<p>Se connecter a l'aide de lxc-attach :</p>
+<div class="highlight"><pre><span></span>lxc-attach -n debian9wiki
+</pre></div>
+
+
+<p>Installer openssh-server</p>
+<div class="highlight"><pre><span></span>apt-get install openssh-server
+</pre></div>
+
+
+<p>Ajouter votre utilisateur user :</p>
+<div class="highlight"><pre><span></span>useradd user
+</pre></div>
+
+
+<p>Se déconnecter du conteneur et se connecter via ssh avec votre utilisateur user.</p>
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://www.choiz.fr/tag/macos.html">MacOs</a>
-      <a href="https://www.choiz.fr/tag/ds_store.html">.DS_Store</a>
+      <a href="https://www.choiz.fr/tag/linux.html">linux</a>
+      <a href="https://www.choiz.fr/tag/container.html">container</a>
+      <a href="https://www.choiz.fr/tag/lxc.html">lxc</a>
     </p>
   </div>
 </article>
@@ -102,9 +158,9 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "name": "Suppression des .DS_Store",
-  "headline": "Suppression des .DS_Store",
-  "datePublished": "2011-07-05 18:01:40+02:00",
+  "name": "Installer et utiliser lxc",
+  "headline": "Installer et utiliser lxc",
+  "datePublished": "2018-07-30 10:48:04+02:00",
   "dateModified": "",
   "author": {
     "@type": "Person",
@@ -112,8 +168,8 @@
     "url": "https://www.choiz.fr/author/choiz.html"
   },
   "image": "{{ SITEURL }}/theme/img/profile.png",
-  "url": "https://www.choiz.fr/2011-07-05-suppression-des-dsstore.html",
-  "description": "Dans une console sur votre Mac : defaults write com.apple.desktopservices DSDontWriteNetworkStores true Puis redémarrez le mac."
+  "url": "https://www.choiz.fr/2018-07-30-installer-et-utiliser-lxc.html",
+  "description": "Installation de lxc sur debian : apt-get install lxc Création d'un conteneur lxc sous debian : lxc-create -n debian9 -t download Sélectionner : distribution: debian Release: strech Architecture: amd64 Lister les conteneurs : lxc-ls -f NAME STATE AUTOSTART GROUPS IPV4 IPV6 debian9 STOPPED 0 - - - Copier debian9 en conteneur debian pour l'utiliser pour un wiki …"
 }
 </script></body>
 </html>

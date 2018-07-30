@@ -2,27 +2,27 @@
 <html lang="fr">
 <head>
   <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/style.min.css">
-  <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
-  <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/font-awesome.min.css">
+  <link href="https://www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Ubiquiti Networks USG sur Amazon. Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison. En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs. Il y a …" />
+<meta name="description" content="Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison. En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs. Il y a pas mal de manipulations a …" />
 <meta name="keywords" content="UniFi, Gateway, Livebox, USG, Network">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Remplacer sa livebox par un UniFi Security Gateway 3P (USG)"/>
-<meta property="og:description" content="Ubiquiti Networks USG sur Amazon. Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison. En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs. Il y a …"/>
+<meta property="og:description" content="Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison. En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs. Il y a pas mal de manipulations a …"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="//www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html"/>
+<meta property="og:url" content="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2017-08-26 19:00:56+02:00"/>
 <meta property="article:modified_time" content="2017-09-02 18:25:10+02:00"/>
-<meta property="article:author" content="//www.choiz.fr/author/choiz.html">
+<meta property="article:author" content="https://www.choiz.fr/author/choiz.html">
 <meta property="article:section" content="text"/>
 <meta property="article:tag" content="UniFi"/>
 <meta property="article:tag" content="Gateway"/>
@@ -34,11 +34,11 @@
 <body>
   <aside>
     <div>
-      <a href="//www.choiz.fr">
-        <img src="//www.choiz.fr/theme/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
+      <a href="https://www.choiz.fr">
+        <img src="https://www.choiz.fr/theme/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
       </a>
       <div>
-          <a href="//www.choiz.fr">Blog technique de François LASSERRE</a>
+          <a href="https://www.choiz.fr">Blog technique de François LASSERRE</a>
       </div>
       <nav>
         <ul class="list">
@@ -67,8 +67,7 @@
     <p>Posté le sam. 26 août 2017</p>
   </header>
   <div>
-    <p><a href="http://amzn.to/2xXmsDO">Ubiquiti Networks USG</a> sur Amazon.</p>
-<p>Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.</p>
+    <p>Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.</p>
 <p>En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
 livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs.</p>
 <p>Il y a pas mal de manipulations a faire avant de pouvoir remplacer totalement sa
@@ -109,12 +108,12 @@ chmod a+x config_usg.sh
 
 <p>Editer le fichier /opt/vyatta/sbin/vyatta-interfaces.pl et ajouter l'option 90
 du dhcp. Il faut aller a la ligne 194 :</p>
-<div class="highlight"><pre><span></span><span class="x">    </span><span class="p">$</span><span class="nv">output</span><span class="x"> .= &quot;option rfc3442-classless-static-routes code 121 = array of unsigned integer 8;\n\n&quot;;</span>
+<div class="highlight"><pre><span></span>    $output .= &quot;option rfc3442-classless-static-routes code 121 = array of unsigned integer 8;\n\n&quot;;
 </pre></div>
 
 
 <p>Et ajouter dessous :</p>
-<div class="highlight"><pre><span></span><span class="x">    </span><span class="p">$</span><span class="nv">output</span><span class="x"> .= &quot;option rfc3118-auth code 90 = string;\n\n&quot;;</span>
+<div class="highlight"><pre><span></span>    $output .= &quot;option rfc3118-auth code 90 = string;\n\n&quot;;
 </pre></div>
 
 
@@ -199,14 +198,15 @@ controlleur. Dans ce cas il y a un truc qui cloche entre votre config et celle
 du controlleur revoir les différentes étapes.</p>
 <p>Si le provisionning est ok l'USG redémarre et la config est enfin fini ! ;-)</p>
 <p>Grand merci au forum lafibre.info et particulièrement ce <a href="https://lafibre.info/remplacer-livebox/unifi-security-gateway-en-remplacement-de-la-livebox/">sujet</a>.</p>
+<p><a href="http://amzn.to/2xXmsDO">Ubiquiti Networks USG</a> sur Amazon.</p>
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="//www.choiz.fr/tag/unifi.html">UniFi</a>
-      <a href="//www.choiz.fr/tag/gateway.html">Gateway</a>
-      <a href="//www.choiz.fr/tag/livebox.html">Livebox</a>
-      <a href="//www.choiz.fr/tag/usg.html">USG</a>
-      <a href="//www.choiz.fr/tag/network.html">Network</a>
+      <a href="https://www.choiz.fr/tag/unifi.html">UniFi</a>
+      <a href="https://www.choiz.fr/tag/gateway.html">Gateway</a>
+      <a href="https://www.choiz.fr/tag/livebox.html">Livebox</a>
+      <a href="https://www.choiz.fr/tag/usg.html">USG</a>
+      <a href="https://www.choiz.fr/tag/network.html">Network</a>
     </p>
   </div>
 </article>
@@ -241,11 +241,11 @@ du controlleur revoir les différentes étapes.</p>
   "author": {
     "@type": "Person",
     "name": "choiz",
-    "url": "//www.choiz.fr/author/choiz.html"
+    "url": "https://www.choiz.fr/author/choiz.html"
   },
   "image": "{{ SITEURL }}/theme/img/profile.png",
-  "url": "//www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html",
-  "description": "Ubiquiti Networks USG sur Amazon. Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison. En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs. Il y a …"
+  "url": "https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html",
+  "description": "Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison. En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs. Il y a pas mal de manipulations a …"
 }
 </script></body>
 </html>
