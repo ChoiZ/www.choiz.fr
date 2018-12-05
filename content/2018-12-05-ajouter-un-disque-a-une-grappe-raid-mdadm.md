@@ -6,17 +6,21 @@ Tags: RAID, MDADM
 Slug: 2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm
 Status: published
 
-Ayant enfin fini la migration de mon NAS vers mon nouveau NAS, j'ai récupéré mon 3eme disque de 10To pour l'ajouter à ma grappe RAID1 qui contient déjà 2 disques de 10To.
+Ayant enfin fini la migration de mon NAS vers mon nouveau NAS, j'ai récupéré mon troisième disque de 10To pour l'ajouter à ma grappe RAID1 qui contient déjà 2 disques de 10To.
 
-Pour ajouter le disque /dev/sdd dans ma grappe /dev/md0 il faut tapper la commande suivante :
+Pour ajouter le disque /dev/sdd dans la grappe /dev/md0 il faut tapper la commande suivante :
 
-```mdadm --manage /dev/md0 --add /dev/sdd```
+```
+mdadm --manage /dev/md0 --add /dev/sdd
+```
 
-Si vous n'avez pas de bol comme moi vous aurez le message d'erreur suivant :
+Si vous n'avez pas de chance comme moi, vous aurez le message d'erreur suivant :
 
-```mdadm: Cannot open /dev/sdd: Device or resource busy```
+```
+mdadm: Cannot open /dev/sdd: Device or resource busy
+```
 
-Il faut donc redémarrer la machine et éditer le grub à la main… pour ma part j'ai juste ajouté dans la ligne avec le kernel `nodmraid` puis j'ai booté.
+Il faut donc redémarrer la machine et éditer le grub à la main… (avec la touche e), puis ajouter dans la ligne avec le kernel `nodmraid` puis appuyer sur f10 ou b pour booter.
 
 Une fois la machine prête j'ai pu lancer ma commande cette fois-ci avec succès :
 
@@ -25,13 +29,15 @@ mdadm --manage /dev/md0 --add /dev/sdd
 mdadm: added /dev/sdd
 ```
 
-Il faut maintenant dire à MDADM qu'on a un raid1 sur 3 disques avec :
+Il faut maintenant dire à MDADM qu'on a un raid1 sur 3 disques avec la commande suivante :
 
 ```
 mdadm --grow /dev/md0 --raid-device=3
 raid_disks for /dev/md0 set to 3
 ```
 
-Vous pouvez maintenant faire un watch pour voir l'avancement de la copie sur le 3ème disque :
+Vous pouvez maintenant faire un watch pour voir l'avancement de la copie sur le troisième disque :
 
-```watch cat /proc/mdstat```
+```
+watch cat /proc/mdstat
+```
