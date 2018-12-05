@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ - text</title><link href="//www.choiz.fr/" rel="alternate"></link><link href="//www.choiz.fr/feeds/text.atom.xml" rel="self"></link><id>//www.choiz.fr/</id><updated>2018-12-05T23:22:42+01:00</updated><entry><title>Ajouter un disque a une grappe RAID MDADM</title><link href="//www.choiz.fr/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html" rel="alternate"></link><published>2018-12-05T23:22:42+01:00</published><updated>2018-12-05T23:22:42+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2018-12-05:/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html</id><summary type="html">&lt;p&gt;Ayant enfin fini la migration de mon NAS vers mon nouveau NAS, j'ai récupéré mon troisième disque de 10To pour l'ajouter à ma grappe RAID1 qui contient déjà 2 disques de 10To.&lt;/p&gt;
-&lt;p&gt;Pour ajouter le disque /dev/sdd dans ma grappe /dev/md0 il faut tapper la commande suivante :&lt;/p&gt;
+&lt;p&gt;Pour ajouter le disque /dev/sdd dans la grappe /dev/md0 il faut tapper la commande suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mdadm …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Ayant enfin fini la migration de mon NAS vers mon nouveau NAS, j'ai récupéré mon troisième disque de 10To pour l'ajouter à ma grappe RAID1 qui contient déjà 2 disques de 10To.&lt;/p&gt;
-&lt;p&gt;Pour ajouter le disque /dev/sdd dans ma grappe /dev/md0 il faut tapper la commande suivante :&lt;/p&gt;
+&lt;p&gt;Pour ajouter le disque /dev/sdd dans la grappe /dev/md0 il faut tapper la commande suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mdadm --manage /dev/md0 --add /dev/sdd
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -12,7 +12,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Il faut donc redémarrer la machine et éditer le grub à la main… (avec la touche e), pus ajouter dans la ligne avec le kernel &lt;code&gt;nodmraid&lt;/code&gt; puis appuyer sur f10 ou b pour booter.&lt;/p&gt;
+&lt;p&gt;Il faut donc redémarrer la machine et éditer le grub à la main… (avec la touche e), puis ajouter dans la ligne avec le kernel &lt;code&gt;nodmraid&lt;/code&gt; puis appuyer sur f10 ou b pour booter.&lt;/p&gt;
 &lt;p&gt;Une fois la machine prête j'ai pu lancer ma commande cette fois-ci avec succès :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mdadm --manage /dev/md0 --add /dev/sdd
 mdadm: added /dev/sdd
