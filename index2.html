@@ -2,10 +2,10 @@
 <html lang="fr">
 <head>
   <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/style.min.css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/font-awesome.min.css">
-  <link href="https://www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="//www.choiz.fr/theme/css/font-awesome.min.css">
+  <link href="//www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
@@ -18,17 +18,17 @@
 <meta property="og:title" content="ChoiZ"/>
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="fr_FR"/>
-<meta property="og:url" content="https://www.choiz.fr"/>
+<meta property="og:url" content="//www.choiz.fr"/>
   <title>ChoiZ</title>
 </head>
 <body>
   <aside>
     <div>
-      <a href="https://www.choiz.fr">
-        <img src="https://www.choiz.fr/theme/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
+      <a href="//www.choiz.fr">
+        <img src="//www.choiz.fr/theme/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
       </a>
       <div>
-          <a href="https://www.choiz.fr">Blog technique de François LASSERRE</a>
+          <a href="//www.choiz.fr">Blog technique de François LASSERRE</a>
       </div>
       <nav>
         <ul class="list">
@@ -53,11 +53,42 @@
 
 <article>
   <header>
-    <h2><a href="https://www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html">Convertir un .deb en archive .tar.gz</a></h2>
+    <h2><a href="//www.choiz.fr/2017-05-14-docker-commandes-utiles.html">Docker commandes utiles</a></h2>
+    <p>
+      Posté le dim. 14 mai 2017 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/docker.html">docker</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>,      <a href="//www.choiz.fr/tag/container.html">container</a>    </p>
+  </header>
+  <div>
+      <p>Voici quelques commandes très utiles si vous utilisez docker.</p>
+<p>Supprimer tous les containers qui sont arétés :</p>
+<div class="highlight"><pre><span></span>docker ps -q | xargs docker rm
+</pre></div>
+
+
+<p>Supprimer toutes les images non utilisées :</p>
+<div class="highlight"><pre><span></span>docker images -q | xargs docker rmi
+</pre></div>
+
+
+<p>Se connecter a un conteneur docker lancé par son id :</p>
+<div class="highlight"><pre><span></span>docker exec -it id_de_votre_container /bin/bash
+</pre></div>
+
+
+<p>Se connecter a un conteneur docker lancé par son nom :</p>
+<div class="highlight"><pre><span></span>docker exec -it nom_de_votre_container /bin/bash
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html">Convertir un .deb en archive .tar.gz</a></h2>
     <p>
       Posté le sam. 30 juillet 2016 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/deb.html">deb</a>,      <a href="https://www.choiz.fr/tag/targz.html">tar.gz</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/ubuntu.html">ubuntu</a>,      <a href="https://www.choiz.fr/tag/archive.html">archive</a>,      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
+      <a href="//www.choiz.fr/tag/deb.html">deb</a>,      <a href="//www.choiz.fr/tag/targz.html">tar.gz</a>,      <a href="//www.choiz.fr/tag/debian.html">debian</a>,      <a href="//www.choiz.fr/tag/ubuntu.html">ubuntu</a>,      <a href="//www.choiz.fr/tag/archive.html">archive</a>,      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>En voulant installer le logiciel "slack" sur ma machine gentoo au travail j'ai
@@ -71,11 +102,11 @@ en 32 bits, 64 bits et fedora en 64 bits.</p>
 </article>
 <article>
   <header>
-    <h2><a href="https://www.choiz.fr/2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA.html">Installation de xubuntu 16.04 sur ASUS X205TA</a></h2>
+    <h2><a href="//www.choiz.fr/2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA.html">Installation de xubuntu 16.04 sur ASUS X205TA</a></h2>
     <p>
       Posté le sam. 21 mai 2016 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/asus-x205ta.html">Asus X205TA</a>,      <a href="https://www.choiz.fr/tag/64bits.html">64bits</a>,      <a href="https://www.choiz.fr/tag/ubuntu.html">ubuntu</a>    </p>
+      <a href="//www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>,      <a href="//www.choiz.fr/tag/asus-x205ta.html">Asus X205TA</a>,      <a href="//www.choiz.fr/tag/64bits.html">64bits</a>,      <a href="//www.choiz.fr/tag/ubuntu.html">ubuntu</a>    </p>
   </header>
   <div>
       <p>J'ai récement acheté un ASUS X205TA, livré avec Windows
@@ -94,11 +125,11 @@ bien pour mon utilisation (des petits développements pendant mes trajets maison
 </article>
 <article>
   <header>
-    <h2><a href="https://www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html">Passage en SSL du blog</a></h2>
+    <h2><a href="//www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html">Passage en SSL du blog</a></h2>
     <p>
       Posté le jeu. 28 avril 2016 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/blog.html">blog</a>,      <a href="https://www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="https://www.choiz.fr/tag/https.html">https</a>,      <a href="https://www.choiz.fr/tag/github.html">github</a>,      <a href="https://www.choiz.fr/tag/page.html">page</a>    </p>
+      <a href="//www.choiz.fr/tag/blog.html">blog</a>,      <a href="//www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="//www.choiz.fr/tag/https.html">https</a>,      <a href="//www.choiz.fr/tag/github.html">github</a>,      <a href="//www.choiz.fr/tag/page.html">page</a>    </p>
   </header>
   <div>
       <p>J'utilise pelican sur github pour écrire mon blog depuis quelques temps, voir les
@@ -140,11 +171,11 @@ github que je tape directement l'url "http://choiz.github.io".</li>
 </article>
 <article>
   <header>
-    <h2><a href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Mise à jour d'un kernel gentoo</a></h2>
+    <h2><a href="//www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Mise à jour d'un kernel gentoo</a></h2>
     <p>
       Posté le sam. 21 novembre 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="https://www.choiz.fr/tag/upgrade.html">upgrade</a>,      <a href="https://www.choiz.fr/tag/noyaux.html">noyaux</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
+      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="//www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="//www.choiz.fr/tag/upgrade.html">upgrade</a>,      <a href="//www.choiz.fr/tag/noyaux.html">noyaux</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
@@ -189,11 +220,11 @@ kernel</a>.</p>
 </article>
 <article>
   <header>
-    <h2><a href="https://www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html">Configurer un serveur mail</a></h2>
+    <h2><a href="//www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html">Configurer un serveur mail</a></h2>
     <p>
       Posté le dim. 15 novembre 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/mail.html">mail</a>,      <a href="https://www.choiz.fr/tag/postfix.html">postfix</a>,      <a href="https://www.choiz.fr/tag/dovecot.html">dovecot</a>,      <a href="https://www.choiz.fr/tag/dns.html">dns</a>,      <a href="https://www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="https://www.choiz.fr/tag/rainloop.html">rainloop</a>,      <a href="https://www.choiz.fr/tag/webmail.html">webmail</a>    </p>
+      <a href="//www.choiz.fr/tag/mail.html">mail</a>,      <a href="//www.choiz.fr/tag/postfix.html">postfix</a>,      <a href="//www.choiz.fr/tag/dovecot.html">dovecot</a>,      <a href="//www.choiz.fr/tag/dns.html">dns</a>,      <a href="//www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="//www.choiz.fr/tag/rainloop.html">rainloop</a>,      <a href="//www.choiz.fr/tag/webmail.html">webmail</a>    </p>
   </header>
   <div>
       <p>Installation d'un serveur mail complet et à jour sous debian jessie (8.2).</p>
@@ -665,11 +696,11 @@ avec votre login et mot de passe.</p>
 </article>
 <article>
   <header>
-    <h2><a href="https://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html">Gentoo Navigateur Web par Défaut</a></h2>
+    <h2><a href="//www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html">Gentoo Navigateur Web par Défaut</a></h2>
     <p>
       Posté le dim. 25 octobre 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/web.html">web</a>,      <a href="https://www.choiz.fr/tag/browser.html">browser</a>,      <a href="https://www.choiz.fr/tag/default.html">default</a>,      <a href="https://www.choiz.fr/tag/navigateur.html">navigateur</a>    </p>
+      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="//www.choiz.fr/tag/web.html">web</a>,      <a href="//www.choiz.fr/tag/browser.html">browser</a>,      <a href="//www.choiz.fr/tag/default.html">default</a>,      <a href="//www.choiz.fr/tag/navigateur.html">navigateur</a>    </p>
   </header>
   <div>
       <p>Sur ma machine "links" était le navigateur web par défaut. Il est
@@ -696,11 +727,11 @@ xdg-mime default firefox.desktop x-scheme-handler/https
 </article>
 <article>
   <header>
-    <h2><a href="https://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html">Vagrant faire un réseau privé</a></h2>
+    <h2><a href="//www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html">Vagrant faire un réseau privé</a></h2>
     <p>
       Posté le mar. 13 octobre 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/vagrant.html">vagrant</a>,      <a href="https://www.choiz.fr/tag/reseau.html">réseau</a>,      <a href="https://www.choiz.fr/tag/prive.html">privé</a>,      <a href="https://www.choiz.fr/tag/private.html">private</a>,      <a href="https://www.choiz.fr/tag/network.html">network</a>    </p>
+      <a href="//www.choiz.fr/tag/vagrant.html">vagrant</a>,      <a href="//www.choiz.fr/tag/reseau.html">réseau</a>,      <a href="//www.choiz.fr/tag/prive.html">privé</a>,      <a href="//www.choiz.fr/tag/private.html">private</a>,      <a href="//www.choiz.fr/tag/network.html">network</a>    </p>
   </header>
   <div>
       <p>J'utilise plusieurs machines virtuelles avec vagrant, une avec un
@@ -724,11 +755,11 @@ avec votre vm #2 directement avec l'ip 192.168.10.2.</p>
 </article>
 <article>
   <header>
-    <h2><a href="https://www.choiz.fr/2015-10-12-des-commentaires-efficaces.html">Des commentaires efficaces</a></h2>
+    <h2><a href="//www.choiz.fr/2015-10-12-des-commentaires-efficaces.html">Des commentaires efficaces</a></h2>
     <p>
       Posté le lun. 12 octobre 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/commentaire.html">commentaire</a>,      <a href="https://www.choiz.fr/tag/code.html">code</a>,      <a href="https://www.choiz.fr/tag/efficace.html">efficace</a>    </p>
+      <a href="//www.choiz.fr/tag/commentaire.html">commentaire</a>,      <a href="//www.choiz.fr/tag/code.html">code</a>,      <a href="//www.choiz.fr/tag/efficace.html">efficace</a>    </p>
   </header>
   <div>
       <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester
@@ -774,11 +805,11 @@ tests.</p>
 </article>
 <article>
   <header>
-    <h2><a href="https://www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html">Mettre à jour Gentoo</a></h2>
+    <h2><a href="//www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html">Mettre à jour Gentoo</a></h2>
     <p>
       Posté le dim. 27 septembre 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/update.html">update</a>,      <a href="https://www.choiz.fr/tag/mise-a-jour.html">mise à jour</a>,      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/eix.html">eix</a>,      <a href="https://www.choiz.fr/tag/emerge.html">emerge</a>    </p>
+      <a href="//www.choiz.fr/tag/update.html">update</a>,      <a href="//www.choiz.fr/tag/mise-a-jour.html">mise à jour</a>,      <a href="//www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="//www.choiz.fr/tag/eix.html">eix</a>,      <a href="//www.choiz.fr/tag/emerge.html">emerge</a>    </p>
   </header>
   <div>
       <p>Pour mettre à jour Gentoo j'utilise différentes commandes.</p>
@@ -804,50 +835,13 @@ pouvons lancer la mise à jour :</p>
 <div class="highlight"><pre><span></span>emerge -vuDN world
 </pre></div>
   </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">Compilation Kernel Gentoo</a></h2>
-    <p>
-      Posté le dim. 06 septembre 2015 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/compilation.html">compilation</a>,      <a href="https://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>    </p>
-  </header>
-  <div>
-      <p>Pour compiler le kernel sous gentoo :</p>
-<div class="highlight"><pre><span></span>cd /usr/src/linux
-
-make menuconfig
-
-make &amp;&amp; make modules_install
-
-make install
-</pre></div>
-
-
-<p>Le kernel est maintenant compilé.</p>
-<p>Maintenant il faut mettre à jour grub. :</p>
-<div class="highlight"><pre><span></span>grub2-mkconfig -o /boot/grub/grub.cfg
-</pre></div>
-
-
-<p>Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi
-que le nombre de compilation.</p>
-<p>Il faut maintenant redémarrer la machine :</p>
-<div class="highlight"><pre><span></span>reboot
-</pre></div>
-
-
-<p>Au final vérifier avec uname -a si le bon kernel est chargé.</p>
-  </div>
 </article>
 
   <div class="pagination">
-    <a class="btn" href="https://www.choiz.fr/index3.html">
+    <a class="btn" href="//www.choiz.fr/index3.html">
       <i class="fa fa-angle-left"></i> Anciens articles
     </a>
-      <a class="btn float-right" href="https://www.choiz.fr/index.html">
+      <a class="btn float-right" href="//www.choiz.fr/index.html">
         Nouveaux articles <i class="fa fa-angle-right"></i>
       </a>
   </div>
@@ -876,7 +870,7 @@ que le nombre de compilation.</p>
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " ChoiZ ",
-  "url" : "https://www.choiz.fr",
+  "url" : "//www.choiz.fr",
   "image": "",
   "description": ""
 }
