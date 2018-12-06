@@ -37,7 +37,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que DevOps chez <a href="//www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.</p>
+      <p>Je suis ingénieur informatique, je travail en tant que DevOps chez <a href="//www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio. J'aide actuellement l'association <a href="https://www.frequence3.fr">Fréquence 3</a></p>
       <ul class="social">
         <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
@@ -62,19 +62,19 @@ Tags :
   <div>
       <p>Ayant enfin fini la migration de mon NAS vers mon nouveau NAS, j'ai récupéré mon troisième disque de 10To pour l'ajouter à ma grappe RAID1 qui contient déjà 2 disques de 10To.</p>
 <p>Pour ajouter le disque /dev/sdd dans la grappe /dev/md0 il faut tapper la commande suivante :</p>
-<div class="highlight"><pre><span></span>mdadm --manage /dev/md0 --add /dev/sdd
+<div class="highlight"><pre><span></span>mdadm --manage /dev/md0 --add /dev/sdd1
 </pre></div>
 
 
 <p>Si vous n'avez pas de chance comme moi, vous aurez le message d'erreur suivant :</p>
-<div class="highlight"><pre><span></span><span class="n">mdadm</span><span class="o">:</span> <span class="n">Cannot</span> <span class="n">open</span> <span class="sr">/dev/s</span><span class="n">dd</span><span class="o">:</span> <span class="n">Device</span> <span class="n">or</span> <span class="n">resource</span> <span class="n">busy</span>
+<div class="highlight"><pre><span></span><span class="n">mdadm</span><span class="o">:</span> <span class="n">Cannot</span> <span class="n">open</span> <span class="sr">/dev/s</span><span class="n">dd1</span><span class="o">:</span> <span class="n">Device</span> <span class="n">or</span> <span class="n">resource</span> <span class="n">busy</span>
 </pre></div>
 
 
 <p>Il faut donc redémarrer la machine et éditer le grub à la main… (avec la touche e), puis ajouter dans la ligne avec le kernel <code>nodmraid</code> puis appuyer sur f10 ou b pour booter.</p>
 <p>Une fois la machine prête j'ai pu lancer ma commande cette fois-ci avec succès :</p>
-<div class="highlight"><pre><span></span>mdadm --manage /dev/md0 --add /dev/sdd
-mdadm: added /dev/sdd
+<div class="highlight"><pre><span></span>mdadm --manage /dev/md0 --add /dev/sdd1
+mdadm: added /dev/sdd1
 </pre></div>
 
 
