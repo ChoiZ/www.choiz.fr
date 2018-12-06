@@ -11,13 +11,13 @@ Ayant enfin fini la migration de mon NAS vers mon nouveau NAS, j'ai récupéré 
 Pour ajouter le disque /dev/sdd dans la grappe /dev/md0 il faut tapper la commande suivante :
 
 ```
-mdadm --manage /dev/md0 --add /dev/sdd
+mdadm --manage /dev/md0 --add /dev/sdd1
 ```
 
 Si vous n'avez pas de chance comme moi, vous aurez le message d'erreur suivant :
 
 ```
-mdadm: Cannot open /dev/sdd: Device or resource busy
+mdadm: Cannot open /dev/sdd1: Device or resource busy
 ```
 
 Il faut donc redémarrer la machine et éditer le grub à la main… (avec la touche e), puis ajouter dans la ligne avec le kernel `nodmraid` puis appuyer sur f10 ou b pour booter.
@@ -25,8 +25,8 @@ Il faut donc redémarrer la machine et éditer le grub à la main… (avec la to
 Une fois la machine prête j'ai pu lancer ma commande cette fois-ci avec succès :
 
 ```
-mdadm --manage /dev/md0 --add /dev/sdd
-mdadm: added /dev/sdd
+mdadm --manage /dev/md0 --add /dev/sdd1
+mdadm: added /dev/sdd1
 ```
 
 Il faut maintenant dire à MDADM qu'on a un raid1 sur 3 disques avec la commande suivante :
