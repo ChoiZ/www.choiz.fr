@@ -50,13 +50,17 @@ Avec le dernier exemple :
 C'est bien par ordre chronologique, l'année puis le mois, puis le jour, c'est donc comme ça que nous devons écrire nos fichiers avec une date.
 
 Si vous faites une photo de vous chaque année en septembre vous aurez donc photo.jpg qui sera nommer comme suit :
+```
 2016-09-photo.jpg
 2017-09-photo.jpg
 2018-09-photo.jpg
+```
 
 On a pas besoin de préciser le jour dans le cas précédent car on a qu'une photo par an en septembre d'ailleurs on pourrait même simplifier en :
+```
 2016-photo.jpg
 2017-photo.jpg
 2018-photo.jpg
+```
 
 Personnellement je préfère toujours mettre mes fichiers sous la forme 2018-09-01-nom-de-fichier.ext ce qui permet d'avoir toujours la date du jour.
