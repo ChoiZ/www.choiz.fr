@@ -53,6 +53,41 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html">Créer paire de clé pour se connecter en SSH</a></h2>
+    <p>
+      Posté le ven. 13 janvier 2012 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/cle-publique.html">clé publique</a>,      <a href="//www.choiz.fr/tag/cle-privee.html">clé privée</a>,      <a href="//www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="//www.choiz.fr/tag/rsa.html">rsa</a>    </p>
+  </header>
+  <div>
+      <p>On commence par ouvrir un terminal puis on tape :</p>
+<div class="highlight"><pre><span></span>ssh-keygen -t rsa -b 4096
+
+Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
+</pre></div>
+
+
+<p>En général je garde le fichier id_rsa donc je tape "enter" sinon vous
+pouvez spécifier un autre chemin ainsi qu'un autre fichier. :</p>
+<div class="highlight"><pre><span></span>Enter passphrase (empty for no passphrase):
+</pre></div>
+
+
+<p>Ici on tape un mot de passe si on en veut un lors de la connexion aux
+différents hosts. En général j'en défini un.</p>
+<p>Pour finir on copie la clé sur le serveur soit via scp :</p>
+<div class="highlight"><pre><span></span>scp ~/.ssh/id\_rsa.pub user@ip:~/.ssh/authorized\_keys/
+</pre></div>
+
+
+<p>ou via ssh-copy-id :</p>
+<div class="highlight"><pre><span></span>ssh-copy-id -i ~/.ssh/id\_rsa.pub user@ip
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2011-12-04-php-gettext-debian.html">PHP + Gettext + Debian</a></h2>
     <p>
       Posté le dim. 04 décembre 2011 &#8226;
@@ -373,62 +408,6 @@ donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?</p>
 
 <p>Maintenant lors du prochain démarrage de votre VirtualBox vous devez
 avoir la machine virtuelle importée !</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-08-17-partage-samba.html">Partage Samba !</a></h2>
-    <p>
-      Posté le mer. 17 août 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/samba.html">Samba</a>,      <a href="//www.choiz.fr/tag/share.html">Share</a>,      <a href="//www.choiz.fr/tag/linux.html">Linux</a>    </p>
-  </header>
-  <div>
-      <p>Configuration d'un serveur samba. Editer le fichier de configuration
-/etc/samba/smb.conf Voici le contenu de mon fichier de configuration :</p>
-<div class="highlight"><pre><span></span>| ### Global ###
-| [global]
-| ## Identification ##
-| workgroup = WORKGROUP
-| netbios name = %h
-| server string = Serveur samba %h
-| security = user
-| public = yes
-| ## Log ##
-| log file = /var/log/samba/log.%m
-| max log size = 1000
-| ## Auth ##
-| encrypt passwords = true
-| smb passwd file = /etc/samba/smbpasswd
-| ### Share ###
-| [choiz]
-| path = /home/choiz/samba
-| read only = no
-| writeable = yes
-| valid users = choiz
-| comment = partage de choiz
-| [partagereadonly]
-| path = /home/partageread
-| read only = yes
-| writeable = no
-| valid users = choiz, @group
-| comment = partage en lecture pour choiz et le groupe &quot;group&quot;
-</pre></div>
-
-
-<p>Maintenant il faut créer notre utilisateur "choiz" grâce à :</p>
-<div class="highlight"><pre><span></span>smbpasswd -a choiz
-</pre></div>
-
-
-<p>Pour les groupes samba utilise les groupes unix. A vous de voir si vous
-voulez gérer votre partage samba utilisateur par utilisateur ou
-directement avec des groupes.</p>
-<p>N'oubliez pas de redémarrer le service Samba avant de tester depuis
-votre client le partage de fichiers ! :</p>
-<div class="highlight"><pre><span></span>/etc/init.d/samba restart
-</pre></div>
   </div>
 </article>
 

@@ -53,6 +53,65 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html">Bien nommer ses fichiers</a></h2>
+    <p>
+      Posté le jeu. 13 décembre 2018 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/filename.html">filename</a>,      <a href="//www.choiz.fr/tag/date.html">date</a>    </p>
+  </header>
+  <div>
+      <p>Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ?</p>
+<p>Il faut mettre Lundi-10-Décembre-2018 dans le nom du fichier ?
+Non.</p>
+<p>Il faut donc mettre 10-12-2018 dans le nom du fichier ?
+Toujours pas.</p>
+<p>Ok donc comment faire ?
+Pour moi la méthode la plus simple pour bien trier vos fichiers par ordre chronologique, est de commencer par l'année puis le mois puis le jour etc… On précise de plus en plus.
+Donc pour le Lundi 10 Décembre 2018 je vais écrire 20181210 ou 2018-12-10.</p>
+<p>Pourquoi ?</p>
+<p>Lorsque l'on va trier nos fichiers avec le premier cas nous aurons :</p>
+<div class="highlight"><pre><span></span>Lundi-10-Décembre-2018
+Lundi-11-Décembre-2017
+Mardi-11-Décembre-2018
+Mardi-12-Décembre-2017
+</pre></div>
+
+
+<p>Le trie se fait jour par jour donc pas du tout par ordre chronologique.
+Nous ne retenons pas cette solution.</p>
+<p>Avec le second exemple :</p>
+<div class="highlight"><pre><span></span>10-12-2018 (Lundi 10 décembre 2018)
+11-12-2018 (Mardi 11 décembre 2018)
+11-12-2017 (Lundi 11 décembre 2017)
+12-12-2017 (Mardi 12 décembre 2017)
+</pre></div>
+
+
+<p>Le trie se fait par jour, puis par mois, puis par année, donc nous avons tous les 10 décembre puis les 11 décembre etc… ce n'est toujours pas par ordre chronologique.
+Nous ne retenons pas cette solution.</p>
+<p>Avec le dernier exemple :</p>
+<div class="highlight"><pre><span></span>2017-12-10 (Lundi 10 décembre 2017)
+2017-12-11 (Mardi 11 décembre 2017)
+2018-12-11 (Lundi 11 décembre 2018)
+2018-12-12 (Mardi 12 décembre 2018)
+</pre></div>
+
+
+<p>C'est bien par ordre chronologique, l'année puis le mois, puis le jour, c'est donc comme ça que nous devons écrire nos fichiers avec une date.</p>
+<p>Si vous faites une photo de vous chaque année en septembre vous aurez donc photo.jpg qui sera nommer comme suit :
+2016-09-photo.jpg
+2017-09-photo.jpg
+2018-09-photo.jpg</p>
+<p>On a pas besoin de préciser le jour dans le cas précédent car on a qu'une photo par an en septembre d'ailleurs on pourrait même simplifier en :
+2016-photo.jpg
+2017-photo.jpg
+2018-photo.jpg</p>
+<p>Personnellement je préfère toujours mettre mes fichiers sous la forme 2018-09-01-nom-de-fichier.ext ce qui permet d'avoir toujours la date du jour.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html">Ajouter un disque a une grappe RAID MDADM</a></h2>
     <p>
       Posté le mer. 05 décembre 2018 &#8226;
@@ -746,46 +805,6 @@ publique.</p>
 <p>Pour se faire il faut utiliser la commande <em>ssh-keygen</em> avec l'option <em>-y</em> et <em>-f</em> pour désigner la clé privé.</p>
 <p><code>ssh-keygen -y -f ~/.ssh/id_rsa &gt; ~/.ssh/id_rsa.pub</code></p>
 <p>On utilise ci-dessus l'id_rsa (privée) pour générer l'id_rsa.pub.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html">Utiliser un Bastion SSH</a></h2>
-    <p>
-      Posté le jeu. 01 juin 2017 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/ssh.html">SSH</a>,      <a href="//www.choiz.fr/tag/bastion.html">Bastion</a>,      <a href="//www.choiz.fr/tag/linux.html">linux</a>,      <a href="//www.choiz.fr/tag/unix.html">unix</a>,      <a href="//www.choiz.fr/tag/tunnel.html">tunnel</a>    </p>
-  </header>
-  <div>
-      <p>Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
-trouve dans <em>~/.ssh/config</em> et d'ajouter les deux lignes suivantes :</p>
-<div class="highlight"><pre><span></span>Host destination.local
-    ProxyCommand ssh user@bastion.fr -W %h:%p
-</pre></div>
-
-
-<p>C'est tout.</p>
-<p>Explications : on utilise l'host <em>bastion.fr</em> pour se connecter à
-<em>destination.local</em>. Quand je tape sur ma machine local <em>ssh
-choiz@destination.local</em> mon client SSH lit le fichier de configuration, se
-connecte à l'host <em>bastion.fr</em> avec l'utilisateur <em>user</em> puis fait une nouvelle
-connexion vers ma destination.</p>
-<p>Vous pouvez modifier votre configuration ssh pour se connecter à votre bastion
-avec une clé spécifique puis a votre destination avec une autre clé par exemple
-ou avec des utilisateurs différents…</p>
-<p>Exemple :</p>
-<div class="highlight"><pre><span></span>Host bastion.fr
-    User toto
-    IdentifyFile ~/.ssh/bastion
-
-Host destination.local
-    User tata
-    IdentifyFile ~/.ssh/destination
-</pre></div>
-
-
-<p>Enjoy vincent.m ;-)</p>
   </div>
 </article>
 

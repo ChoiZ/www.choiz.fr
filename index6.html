@@ -53,6 +53,48 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2013-09-29-connaitre-le-code-réponse-http-avec-curl.html">Connaitre le code réponse HTTP avec curl</a></h2>
+    <p>
+      Posté le dim. 29 septembre 2013 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/curl.html">curl</a>,      <a href="//www.choiz.fr/tag/http.html">http</a>,      <a href="//www.choiz.fr/tag/response.html">response</a>,      <a href="//www.choiz.fr/tag/code.html">code</a>,      <a href="//www.choiz.fr/tag/301.html">301</a>,      <a href="//www.choiz.fr/tag/302.html">302</a>,      <a href="//www.choiz.fr/tag/404.html">404</a>,      <a href="//www.choiz.fr/tag/200.html">200</a>    </p>
+  </header>
+  <div>
+      <p>Pour connaitre le code réponse HTTP il suffit de faire :</p>
+<div class="highlight"><pre><span></span>curl -IL url
+</pre></div>
+
+
+<p>Voici l'exemble avec tumblr.com :</p>
+<div class="highlight"><pre><span></span><span class="nt">curl</span> <span class="nt">-IL</span> <span class="nt">http</span><span class="o">://</span><span class="nt">tumblr</span><span class="p">.</span><span class="nc">com</span>
+
+<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span> <span class="nt">301</span> <span class="nt">Moved</span> <span class="nt">Permanently</span>
+<span class="nt">Content-length</span><span class="o">:</span> <span class="nt">0</span>
+<span class="nt">Location</span><span class="o">:</span> <span class="nt">http</span><span class="o">://</span><span class="nt">www</span><span class="p">.</span><span class="nc">tumblr</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span>
+<span class="nt">Connection</span><span class="o">:</span> <span class="nt">close</span>
+
+<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span> <span class="nt">302</span> <span class="nt">Moved</span> <span class="nt">Temporarily</span>
+<span class="nt">Server</span><span class="o">:</span> <span class="nt">nginx</span>
+<span class="nt">Date</span><span class="o">:</span> <span class="nt">Sun</span><span class="o">,</span> <span class="nt">29</span> <span class="nt">Sep</span> <span class="nt">2013</span> <span class="nt">17</span><span class="p">:</span><span class="nd">06</span><span class="p">:</span><span class="nd">40</span> <span class="nt">GMT</span>
+<span class="nt">Content-Type</span><span class="o">:</span> <span class="nt">text</span><span class="o">/</span><span class="nt">html</span>
+<span class="nt">Connection</span><span class="o">:</span> <span class="nt">close</span>
+<span class="nt">P3P</span><span class="o">:</span> <span class="nt">CP</span><span class="o">=</span><span class="s2">&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;</span>
+<span class="nt">Location</span><span class="o">:</span> <span class="nt">https</span><span class="o">://</span><span class="nt">www</span><span class="p">.</span><span class="nc">tumblr</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span>
+
+<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span> <span class="nt">200</span> <span class="nt">OK</span>
+<span class="nt">Server</span><span class="o">:</span> <span class="nt">nginx</span>
+<span class="nt">Date</span><span class="o">:</span> <span class="nt">Sun</span><span class="o">,</span> <span class="nt">29</span> <span class="nt">Sep</span> <span class="nt">2013</span> <span class="nt">17</span><span class="p">:</span><span class="nd">06</span><span class="p">:</span><span class="nd">42</span> <span class="nt">GMT</span>
+<span class="nt">Content-Type</span><span class="o">:</span> <span class="nt">text</span><span class="o">/</span><span class="nt">html</span><span class="o">;</span> <span class="nt">charset</span><span class="o">=</span><span class="nt">utf-8</span>
+<span class="nt">Connection</span><span class="o">:</span> <span class="nt">keep-alive</span>
+<span class="nt">Vary</span><span class="o">:</span> <span class="nt">Accept-Encoding</span>
+<span class="nt">P3P</span><span class="o">:</span> <span class="nt">CP</span><span class="o">=</span><span class="s2">&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;</span>
+<span class="nt">Set-Cookie</span><span class="o">:</span> <span class="nt">tmgioct</span><span class="o">=</span><span class="nt">52485e21d628b00096885790</span><span class="o">;</span> <span class="nt">expires</span><span class="o">=</span><span class="nt">Wed</span><span class="o">,</span> <span class="nt">27-Sep-2023</span> <span class="nt">17</span><span class="p">:</span><span class="nd">06</span><span class="p">:</span><span class="nd">41</span> <span class="nt">GMT</span><span class="o">;</span> <span class="nt">path</span><span class="o">=/;</span> <span class="nt">httponly</span>
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2013-07-16-passer-de-svn-à-git.html">Passer de svn à git</a></h2>
     <p>
       Posté le mar. 16 juillet 2013 &#8226;
@@ -477,133 +519,6 @@ et un en <a href="http://bepo.fr">bépo</a>.</p>
 environ 1/2 heure. Je m'intéresse pas mal au sujet et je vous recommande
 de lire le <a href="http://bepo.fr/wiki/DVZine">dvzine en Français</a> qui est
 fascinant.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html">Faire un ssh-copy-id sur Mac OS X</a></h2>
-    <p>
-      Posté le dim. 30 septembre 2012 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/ssh-copy-id.html">ssh-copy-id</a>,      <a href="//www.choiz.fr/tag/mac-os-x.html">mac os x</a>,      <a href="//www.choiz.fr/tag/copy-ssh-key.html">copy ssh key</a>,      <a href="//www.choiz.fr/tag/copier-cle-ssh.html">copier clé ssh</a>,      <a href="//www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="//www.choiz.fr/tag/copy-id.html">copy-id</a>    </p>
-  </header>
-  <div>
-      <p>Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
-avez dû vous rendre compte que, même si openssh est installé nativement,
-cette commande n’est pas disponible.</p>
-<p>Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
-peut la rendre disponible facilement en quelques étapes. Créer un
-fichier "ssh-copy-id" dans le dossier "/usr/bin/" avec ce contenu :</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
-<span class="c1"># Shell script to install your public key on a remote machine</span>
-<span class="c1"># Takes the remote machine name as an argument.</span>
-<span class="c1"># Obviously, the remote machine must accept password authentication,</span>
-<span class="c1"># or one of the other keys in your ssh-agent, for this to work.</span>
-
-<span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.ssh/id_rsa.pub&quot;</span>
-
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;-i&quot;</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nb">shift</span>
-  <span class="c1"># check if we have 2 parameters left, if so the first is the new ID file</span>
-  <span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="k">if</span> expr <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> : <span class="s2">&quot;.*\.pub&quot;</span> &gt; /dev/null <span class="p">;</span> <span class="k">then</span>
-      <span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-    <span class="k">else</span>
-      <span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">.pub&quot;</span>
-    <span class="k">fi</span>
-    <span class="nb">shift</span>         <span class="c1"># and this should leave $1 as the target name</span>
-  <span class="k">fi</span>
-<span class="k">else</span>
-  <span class="k">if</span> <span class="o">[</span> x<span class="nv">$SSH_AUTH_SOCK</span> !<span class="o">=</span> x <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
-    <span class="nv">GET_ID</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$GET_ID</span><span class="s2"> ssh-add -L&quot;</span>
-  <span class="k">fi</span>
-<span class="k">fi</span>
-
-<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;`eval </span><span class="nv">$GET_ID</span><span class="s2">`&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> -r <span class="s2">&quot;</span><span class="si">${</span><span class="nv">ID_FILE</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
-  <span class="nv">GET_ID</span><span class="o">=</span><span class="s2">&quot;cat </span><span class="si">${</span><span class="nv">ID_FILE</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="k">fi</span>
-
-<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;`eval </span><span class="nv">$GET_ID</span><span class="s2">`&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">: ERROR: No identities found&quot;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
-  <span class="nb">exit</span> <span class="m">1</span>
-<span class="k">fi</span>
-
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$#</span><span class="s2">&quot;</span> -lt <span class="m">1</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;-h&quot;</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;--help&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nb">echo</span> <span class="s2">&quot;Usage: </span><span class="nv">$0</span><span class="s2"> [-i [identity_file]] [user@]machine&quot;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
-  <span class="nb">exit</span> <span class="m">1</span>
-<span class="k">fi</span>
-
-<span class="o">{</span> <span class="nb">eval</span> <span class="s2">&quot;</span><span class="nv">$GET_ID</span><span class="s2">&quot;</span> <span class="p">;</span> <span class="o">}</span> <span class="p">|</span> ssh <span class="nv">$1</span> <span class="s2">&quot;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys&quot;</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span>
-
-cat <span class="s">&lt;&lt;EOF</span>
-<span class="s">Now try logging into the machine, with &quot;ssh &#39;$1&#39;&quot;, and check in:</span>
-
-<span class="s">  .ssh/authorized_keys</span>
-
-<span class="s">to make sure we haven&#39;t added extra keys that you weren&#39;t expecting.</span>
-
-<span class="s">EOF</span>
-</pre></div>
-</td></tr></table>
-
-<p>Il ne reste qu'a donner les droits au fichier :</p>
-<div class="highlight"><pre><span></span>chmod 755 /usr/bin/ssh-copy-id
-</pre></div>
-
-
-<p>Vous pouvez maintenant copier votre clé ssh sur un serveur distant en
-tapant :</p>
-<div class="highlight"><pre><span></span>ssh-copy-id -i id_rsa.pub user@machine.distante
-</pre></div>
   </div>
 </article>
 

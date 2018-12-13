@@ -53,6 +53,59 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2014-03-05-git-diff-multiligne.html">Git diff multiligne</a></h2>
+    <p>
+      Posté le mer. 05 mars 2014 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/diff.html">diff</a>,      <a href="//www.choiz.fr/tag/wrap.html">wrap</a>,      <a href="//www.choiz.fr/tag/less.html">less</a>,      <a href="//www.choiz.fr/tag/gitconfig.html">gitconfig</a>    </p>
+  </header>
+  <div>
+      <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
+ligne…</p>
+<p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais
+pas entièrement…).</p>
+<p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu
+que ma ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
+<p>Mon fichier texte ressemble à ceci :</p>
+<div class="highlight"><pre><span></span>ligne avec un peu de texte ici nous avons 66 caractères affichés.
+</pre></div>
+
+
+<p>Or, quand je fais un diff on ne voit pas tous les caractères :</p>
+<div class="highlight"><pre><span></span>git diff HEAD~1 HEAD
+diff --git a/test.txt b/test.txt
+new file mode 100644
+index 0000000..235a891
+--- /dev/null
++++ b/test.txt
+@@ -0,0 +1 @@
++ligne avec un peu de texte ici nous avons 66 caractè\
+No newline at end of file
+</pre></div>
+
+
+<p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=""</em> avant la
+commande <em>git diff</em> soit ajouter dans son fichier de config git :</p>
+<div class="highlight"><pre><span></span>git config --global core.pager &quot;less -r&quot;
+</pre></div>
+
+
+<p>Voilà ce que ça donne avec GIT_PAGER :</p>
+<div class="highlight"><pre><span></span>GIT_PAGER=&quot;&quot; git diff HEAD~1 HEAD
+diff --git a/test.txt b/test.txt
+new file mode 100644
+index 0000000..235a891
+--- /dev/null
++++ b/test.txt
+@@ -0,0 +1 @@
++ligne avec un peu de texte ici nous avons 66 caractères affichés.\
+No newline at end of file
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html">Création d'une clé usb xubuntu sur mac</a></h2>
     <p>
       Posté le mar. 04 mars 2014 &#8226;
@@ -314,48 +367,6 @@ local il m'arrive de vouloir aller sur ses branches :</p>
 <p>Et j'ai bien ma branche en local comme git me l'indique :</p>
 <div class="highlight"><pre><span></span>Branch preprod set up to track remote branch preprod from origin.
 Switched to a new branch &#39;preprod&#39;
-</pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2013-09-29-connaitre-le-code-réponse-http-avec-curl.html">Connaitre le code réponse HTTP avec curl</a></h2>
-    <p>
-      Posté le dim. 29 septembre 2013 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/curl.html">curl</a>,      <a href="//www.choiz.fr/tag/http.html">http</a>,      <a href="//www.choiz.fr/tag/response.html">response</a>,      <a href="//www.choiz.fr/tag/code.html">code</a>,      <a href="//www.choiz.fr/tag/301.html">301</a>,      <a href="//www.choiz.fr/tag/302.html">302</a>,      <a href="//www.choiz.fr/tag/404.html">404</a>,      <a href="//www.choiz.fr/tag/200.html">200</a>    </p>
-  </header>
-  <div>
-      <p>Pour connaitre le code réponse HTTP il suffit de faire :</p>
-<div class="highlight"><pre><span></span>curl -IL url
-</pre></div>
-
-
-<p>Voici l'exemble avec tumblr.com :</p>
-<div class="highlight"><pre><span></span><span class="nt">curl</span> <span class="nt">-IL</span> <span class="nt">http</span><span class="o">://</span><span class="nt">tumblr</span><span class="p">.</span><span class="nc">com</span>
-
-<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span> <span class="nt">301</span> <span class="nt">Moved</span> <span class="nt">Permanently</span>
-<span class="nt">Content-length</span><span class="o">:</span> <span class="nt">0</span>
-<span class="nt">Location</span><span class="o">:</span> <span class="nt">http</span><span class="o">://</span><span class="nt">www</span><span class="p">.</span><span class="nc">tumblr</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span>
-<span class="nt">Connection</span><span class="o">:</span> <span class="nt">close</span>
-
-<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span> <span class="nt">302</span> <span class="nt">Moved</span> <span class="nt">Temporarily</span>
-<span class="nt">Server</span><span class="o">:</span> <span class="nt">nginx</span>
-<span class="nt">Date</span><span class="o">:</span> <span class="nt">Sun</span><span class="o">,</span> <span class="nt">29</span> <span class="nt">Sep</span> <span class="nt">2013</span> <span class="nt">17</span><span class="p">:</span><span class="nd">06</span><span class="p">:</span><span class="nd">40</span> <span class="nt">GMT</span>
-<span class="nt">Content-Type</span><span class="o">:</span> <span class="nt">text</span><span class="o">/</span><span class="nt">html</span>
-<span class="nt">Connection</span><span class="o">:</span> <span class="nt">close</span>
-<span class="nt">P3P</span><span class="o">:</span> <span class="nt">CP</span><span class="o">=</span><span class="s2">&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;</span>
-<span class="nt">Location</span><span class="o">:</span> <span class="nt">https</span><span class="o">://</span><span class="nt">www</span><span class="p">.</span><span class="nc">tumblr</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span>
-
-<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span> <span class="nt">200</span> <span class="nt">OK</span>
-<span class="nt">Server</span><span class="o">:</span> <span class="nt">nginx</span>
-<span class="nt">Date</span><span class="o">:</span> <span class="nt">Sun</span><span class="o">,</span> <span class="nt">29</span> <span class="nt">Sep</span> <span class="nt">2013</span> <span class="nt">17</span><span class="p">:</span><span class="nd">06</span><span class="p">:</span><span class="nd">42</span> <span class="nt">GMT</span>
-<span class="nt">Content-Type</span><span class="o">:</span> <span class="nt">text</span><span class="o">/</span><span class="nt">html</span><span class="o">;</span> <span class="nt">charset</span><span class="o">=</span><span class="nt">utf-8</span>
-<span class="nt">Connection</span><span class="o">:</span> <span class="nt">keep-alive</span>
-<span class="nt">Vary</span><span class="o">:</span> <span class="nt">Accept-Encoding</span>
-<span class="nt">P3P</span><span class="o">:</span> <span class="nt">CP</span><span class="o">=</span><span class="s2">&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;</span>
-<span class="nt">Set-Cookie</span><span class="o">:</span> <span class="nt">tmgioct</span><span class="o">=</span><span class="nt">52485e21d628b00096885790</span><span class="o">;</span> <span class="nt">expires</span><span class="o">=</span><span class="nt">Wed</span><span class="o">,</span> <span class="nt">27-Sep-2023</span> <span class="nt">17</span><span class="p">:</span><span class="nd">06</span><span class="p">:</span><span class="nd">41</span> <span class="nt">GMT</span><span class="o">;</span> <span class="nt">path</span><span class="o">=/;</span> <span class="nt">httponly</span>
 </pre></div>
   </div>
 </article>

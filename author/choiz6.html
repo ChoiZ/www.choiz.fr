@@ -53,6 +53,35 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2013-09-29-connaitre-le-code-réponse-http-avec-curl.html">Connaitre le code réponse HTTP avec curl</a></h2>
+    <p>
+      Posté le dim. 29 septembre 2013 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/curl.html">curl</a>,      <a href="//www.choiz.fr/tag/http.html">http</a>,      <a href="//www.choiz.fr/tag/response.html">response</a>,      <a href="//www.choiz.fr/tag/code.html">code</a>,      <a href="//www.choiz.fr/tag/301.html">301</a>,      <a href="//www.choiz.fr/tag/302.html">302</a>,      <a href="//www.choiz.fr/tag/404.html">404</a>,      <a href="//www.choiz.fr/tag/200.html">200</a>    </p>
+  </header>
+  <div>
+      <p>Pour connaitre le code réponse HTTP il suffit de faire :</p>
+<div class="highlight"><pre><span></span>curl -IL url
+</pre></div>
+
+
+<p>Voici l'exemble avec tumblr.com :</p>
+<div class="highlight"><pre><span></span><span class="nt">curl</span> <span class="nt">-IL</span> <span class="nt">http</span><span class="o">://</span><span class="nt">tumblr</span><span class="p">.</span><span class="nc">com</span>
+
+<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span> <span class="nt">301</span> <span class="nt">Moved</span> <span class="nt">Permanently</span>
+<span class="nt">Content-length</span><span class="o">:</span> <span class="nt">0</span>
+<span class="nt">Location</span><span class="o">:</span> <span class="nt">http</span><span class="o">://</span><span class="nt">www</span><span class="p">.</span><span class="nc">tumblr</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span>
+<span class="nt">Connection</span><span class="o">:</span> <span class="nt">close</span>
+
+<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span> <span class="nt">302</span> <span class="nt">Moved</span> <span class="nt">Temporarily</span>
+<span class="nt">Server</span><span class="o">:</span> <span class="nt">nginx</span>
+<span class="nt">Date</span><span class="o">:</span> <span class="nt">Sun</span><span class="o">,</span> <span class="nt">29</span> <span class="nt">Sep …</span></pre></div>
+      <a class="btn" href="//www.choiz.fr/2013-09-29-connaitre-le-code-réponse-http-avec-curl.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2013-07-16-passer-de-svn-à-git.html">Passer de svn à git</a></h2>
     <p>
       Posté le mar. 16 juillet 2013 &#8226;
@@ -247,24 +276,6 @@ une courbe de progression de mon apprentissage.</p>
 <p>Sachant qu'au second jour j'arrivais à taper environ 10,2 mots par
 minute, aujourd'hui je suis à 24,4 mots par …</p>
       <a class="btn" href="//www.choiz.fr/2012-12-27-bépo-11ème-jour.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html">Faire un ssh-copy-id sur Mac OS X</a></h2>
-    <p>
-      Posté le dim. 30 septembre 2012 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/ssh-copy-id.html">ssh-copy-id</a>,      <a href="//www.choiz.fr/tag/mac-os-x.html">mac os x</a>,      <a href="//www.choiz.fr/tag/copy-ssh-key.html">copy ssh key</a>,      <a href="//www.choiz.fr/tag/copier-cle-ssh.html">copier clé ssh</a>,      <a href="//www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="//www.choiz.fr/tag/copy-id.html">copy-id</a>    </p>
-  </header>
-  <div>
-      <p>Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
-avez dû vous rendre compte que, même si openssh est installé nativement,
-cette commande n’est pas disponible.</p>
-<p>Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
-peut la rendre disponible facilement …</p>
-      <a class="btn" href="//www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html">Lire la suite</a>
   </div>
 </article>
 
