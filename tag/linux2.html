@@ -19,7 +19,7 @@
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="fr_FR"/>
 <meta property="og:url" content="//www.choiz.fr"/>
-  <title>ChoiZ &ndash; Tag : date</title>
+  <title>ChoiZ &ndash; Tag : linux</title>
 </head>
 <body>
   <aside>
@@ -53,25 +53,34 @@
 
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html">Bien nommer ses fichiers</a></h2>
+    <h2><a href="//www.choiz.fr/2011-08-17-partage-samba.html">Partage Samba !</a></h2>
     <p>
-      Posté le jeu. 13 décembre 2018 &#8226;
+      Posté le mer. 17 août 2011 &#8226;
 Tags :
-      <a href="//www.choiz.fr/tag/filename.html">filename</a>,      <a href="//www.choiz.fr/tag/date.html">date</a>    </p>
+      <a href="//www.choiz.fr/tag/samba.html">Samba</a>,      <a href="//www.choiz.fr/tag/share.html">Share</a>,      <a href="//www.choiz.fr/tag/linux.html">Linux</a>    </p>
   </header>
   <div>
-      <p>Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ?</p>
-<p>Il faut mettre Lundi-10-Décembre-2018 dans le nom du fichier ?
-Non.</p>
-<p>Il faut donc mettre 10-12-2018 dans le nom du fichier ?
-Toujours pas.</p>
-<p>Ok donc comment faire ?
-Pour moi la …</p>
-      <a class="btn" href="//www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html">Lire la suite</a>
+      <p>Configuration d'un serveur samba. Editer le fichier de configuration
+/etc/samba/smb.conf Voici le contenu de mon fichier de configuration :</p>
+<div class="highlight"><pre><span></span>| ### Global ###
+| [global]
+| ## Identification ##
+| workgroup = WORKGROUP
+| netbios name = %h
+| server string = Serveur samba %h
+| security = user
+| public = yes
+| ## Log ##
+| log file = /var/log/samba/log.%m
+| max log size = 1000 …</pre></div>
+      <a class="btn" href="//www.choiz.fr/2011-08-17-partage-samba.html">Lire la suite</a>
   </div>
 </article>
 
   <div class="pagination">
+      <a class="btn float-right" href="//www.choiz.fr/tag/linux.html">
+        Nouveaux articles <i class="fa fa-angle-right"></i>
+      </a>
   </div>
 
     <footer>

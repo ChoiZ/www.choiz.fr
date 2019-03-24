@@ -53,6 +53,27 @@
 
 <article>
   <header>
+    <h2><a href="//www.choiz.fr/2011-09-02-import-vm-avec-virtualbox.html">Import VM avec Virtualbox</a></h2>
+    <p>
+      Posté le ven. 02 septembre 2011 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/virtualbox.html">VirtualBox</a>,      <a href="//www.choiz.fr/tag/import.html">Import</a>    </p>
+  </header>
+  <div>
+      <p>J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
+donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?</p>
+<p>Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper :</p>
+<div class="highlight"><pre><span></span><span class="n">VBoxManage</span> <span class="kn">import</span> <span class="nn">votrefichier.ova</span>
+</pre></div>
+
+
+<p>Maintenant lors du prochain démarrage de votre VirtualBox vous devez
+avoir la machine virtuelle importée !</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="//www.choiz.fr/2011-08-17-partage-samba.html">Partage Samba !</a></h2>
     <p>
       Posté le mer. 17 août 2011 &#8226;
@@ -314,35 +335,6 @@ J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss :</p>
 machine, puis j'execute la commande suivante :</p>
 <div class="highlight"><pre><span></span>mysql -u utilisateur -pp4ss database &lt; fichierdump.sql
 </pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html">Petit tips pour les utilisateurs de VIM et PHP</a></h2>
-    <p>
-      Posté le mer. 13 avril 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/php.html">PHP</a>,      <a href="//www.choiz.fr/tag/vim.html">Vim</a>,      <a href="//www.choiz.fr/tag/cli.html">cli</a>    </p>
-  </header>
-  <div>
-      <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
-dans la console je tape la commande :</p>
-<div class="highlight"><pre><span></span>php -l fichier_a_tester.php
-</pre></div>
-
-
-<p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
-Pour la faire il suffit de faire "ESC" pour passer en mode commande de
-VIM puis :</p>
-<div class="highlight"><pre><span></span>:!php -l %
-</pre></div>
-
-
-<p>Ce qui produira exactement le même résultat qu'en console.</p>
-<p>:! (permet l'execution d'une commande système dans vim)</p>
-<p>Ensuite php -l pour PHP lint</p>
-<p>% (récupère le nom du fichier courant avec le path complet)</p>
   </div>
 </article>
 

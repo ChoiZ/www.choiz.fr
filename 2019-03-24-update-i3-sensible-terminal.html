@@ -12,21 +12,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ? Il faut mettre Lundi-10-Décembre-2018 dans le nom du fichier ? Non. Il faut donc mettre 10-12-2018 dans le nom du fichier ? Toujours pas. Ok donc comment faire ? Pour moi la …" />
-<meta name="keywords" content="filename, date">
+<meta name="description" content="En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne : bindsym $mod+Return exec i3-sensible-terminal par la ligne suivante : bindsym $mod+Return exec urxvt Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par …" />
+<meta name="keywords" content="i3wm, terminal, linux">
 <meta property="og:site_name" content="ChoiZ"/>
-<meta property="og:title" content="Bien nommer ses fichiers"/>
-<meta property="og:description" content="Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ? Il faut mettre Lundi-10-Décembre-2018 dans le nom du fichier ? Non. Il faut donc mettre 10-12-2018 dans le nom du fichier ? Toujours pas. Ok donc comment faire ? Pour moi la …"/>
+<meta property="og:title" content="Update i3-sensible-terminal"/>
+<meta property="og:description" content="En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne : bindsym $mod+Return exec i3-sensible-terminal par la ligne suivante : bindsym $mod+Return exec urxvt Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par …"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="//www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html"/>
+<meta property="og:url" content="//www.choiz.fr/2019-03-24-update-i3-sensible-terminal.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2018-12-13 12:52:55+01:00"/>
+<meta property="article:published_time" content="2019-03-24 16:26:25+01:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="//www.choiz.fr/author/choiz.html">
 <meta property="article:section" content="text"/>
-<meta property="article:tag" content="filename"/>
-<meta property="article:tag" content="date"/>
-<meta property="og:image" content="">  <title>ChoiZ &ndash; Bien nommer ses fichiers</title>
+<meta property="article:tag" content="i3wm"/>
+<meta property="article:tag" content="terminal"/>
+<meta property="article:tag" content="linux"/>
+<meta property="og:image" content="">  <title>ChoiZ &ndash; Update i3-sensible-terminal</title>
 </head>
 <body>
   <aside>
@@ -60,68 +61,30 @@
 
 <article>
   <header>
-    <h1 id="2018-12-13-bien-nommer-ses-fichiers">Bien nommer ses fichiers</h1>
-    <p>Posté le jeu. 13 décembre 2018</p>
+    <h1 id="2019-03-24-update-i3-sensible-terminal">Update i3-sensible-terminal</h1>
+    <p>Posté le dim. 24 mars 2019</p>
   </header>
   <div>
-    <p>Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ?</p>
-<p>Il faut mettre Lundi-10-Décembre-2018 dans le nom du fichier ?
-Non.</p>
-<p>Il faut donc mettre 10-12-2018 dans le nom du fichier ?
-Toujours pas.</p>
-<p>Ok donc comment faire ?
-Pour moi la méthode la plus simple pour bien trier vos fichiers par ordre chronologique, est de commencer par l'année puis le mois puis le jour etc… On précise de plus en plus.
-Donc pour le Lundi 10 Décembre 2018 je vais écrire 20181210 ou 2018-12-10.</p>
-<p>Pourquoi ?</p>
-<p>Lorsque l'on va trier nos fichiers avec le premier cas nous aurons :</p>
-<div class="highlight"><pre><span></span>Lundi-10-Décembre-2018
-Lundi-11-Décembre-2017
-Mardi-11-Décembre-2018
-Mardi-12-Décembre-2017
+    <p>En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne :</p>
+<div class="highlight"><pre><span></span>bindsym $mod+Return exec i3-sensible-terminal
 </pre></div>
 
 
-<p>Le trie se fait jour par jour donc pas du tout par ordre chronologique.
-Nous ne retenons pas cette solution.</p>
-<p>Avec le second exemple :</p>
-<div class="highlight"><pre><span></span>10-12-2018 (Lundi 10 décembre 2018)
-11-12-2018 (Mardi 11 décembre 2018)
-11-12-2017 (Lundi 11 décembre 2017)
-12-12-2017 (Mardi 12 décembre 2017)
+<p>par la ligne suivante :</p>
+<div class="highlight"><pre><span></span>bindsym $mod+Return exec urxvt
 </pre></div>
 
 
-<p>Le trie se fait par jour, puis par mois, puis par année, donc nous avons tous les 10 décembre puis les 11 décembre etc… ce n'est toujours pas par ordre chronologique.
-Nous ne retenons pas cette solution.</p>
-<p>Avec le dernier exemple :</p>
-<div class="highlight"><pre><span></span>2017-12-10 (Lundi 10 décembre 2017)
-2017-12-11 (Mardi 11 décembre 2017)
-2018-12-11 (Lundi 11 décembre 2018)
-2018-12-12 (Mardi 12 décembre 2018)
+<p>Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par défaut <code>i3-sensible-terminal</code>.</p>
+<p>Pour modifier le terminal executé par la commande <code>i3-sensible-terminal</code> il suffit donc de lancer la commande suivante puis de choisir dans mon cas urxvt :</p>
+<div class="highlight"><pre><span></span>update-alternatives --config x-terminal-emulator
 </pre></div>
-
-
-<p>C'est bien par ordre chronologique, l'année puis le mois, puis le jour, c'est donc comme ça que nous devons écrire nos fichiers avec une date.</p>
-<p>Si vous faites une photo de vous chaque année en septembre vous aurez donc photo.jpg qui sera nommer comme suit :</p>
-<div class="highlight"><pre><span></span>2016-09-photo.jpg
-2017-09-photo.jpg
-2018-09-photo.jpg
-</pre></div>
-
-
-<p>On a pas besoin de préciser le jour dans le cas précédent car on a qu'une photo par an en septembre d'ailleurs on pourrait même simplifier en :</p>
-<div class="highlight"><pre><span></span>2016-photo.jpg
-2017-photo.jpg
-2018-photo.jpg
-</pre></div>
-
-
-<p>Personnellement je préfère toujours mettre mes fichiers sous la forme 2018-09-01-nom-de-fichier.ext ce qui permet d'avoir toujours la date du jour.</p>
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="//www.choiz.fr/tag/filename.html">filename</a>
-      <a href="//www.choiz.fr/tag/date.html">date</a>
+      <a href="//www.choiz.fr/tag/i3wm.html">i3wm</a>
+      <a href="//www.choiz.fr/tag/terminal.html">terminal</a>
+      <a href="//www.choiz.fr/tag/linux.html">linux</a>
     </p>
   </div>
 </article>
@@ -149,9 +112,9 @@ Nous ne retenons pas cette solution.</p>
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "name": "Bien nommer ses fichiers",
-  "headline": "Bien nommer ses fichiers",
-  "datePublished": "2018-12-13 12:52:55+01:00",
+  "name": "Update i3-sensible-terminal",
+  "headline": "Update i3-sensible-terminal",
+  "datePublished": "2019-03-24 16:26:25+01:00",
   "dateModified": "",
   "author": {
     "@type": "Person",
@@ -159,8 +122,8 @@ Nous ne retenons pas cette solution.</p>
     "url": "//www.choiz.fr/author/choiz.html"
   },
   "image": "{{ SITEURL }}/theme/img/profile.png",
-  "url": "//www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html",
-  "description": "Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ? Il faut mettre Lundi-10-Décembre-2018 dans le nom du fichier ? Non. Il faut donc mettre 10-12-2018 dans le nom du fichier ? Toujours pas. Ok donc comment faire ? Pour moi la …"
+  "url": "//www.choiz.fr/2019-03-24-update-i3-sensible-terminal.html",
+  "description": "En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne : bindsym $mod+Return exec i3-sensible-terminal par la ligne suivante : bindsym $mod+Return exec urxvt Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par …"
 }
 </script></body>
 </html>
