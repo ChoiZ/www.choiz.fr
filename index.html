@@ -79,85 +79,6 @@ Tags :
 </article>
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2018-12-06-configurer-un-serveur-mail-en-2019.html">Configurer un serveur mail en 2019</a></h2>
-    <p>
-      Posté le jeu. 06 décembre 2018 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/mail.html">mail</a>,      <a href="//www.choiz.fr/tag/postfix.html">postfix</a>,      <a href="//www.choiz.fr/tag/dovecot.html">dovecot</a>,      <a href="//www.choiz.fr/tag/sasl.html">sasl</a>    </p>
-  </header>
-  <div>
-      <p>Comment installer un serveur mail en 2019 ? Mon article précédent datait de Novembre 2015 avec debian 8.2 il était temps de le mettre à jour.</p>
-<p>Création des enregistrements dns :</p>
-<p>^        ^
-/!\ TODO /!\
----      ---</p>
-<p>useradd choiz</p>
-<p>Ajout des backports :
-mkdir -p /etc/apt/sources.list.d
-echo "deb http://ftp.debian.org/debian stretch-backports main" &gt; /etc/apt/sources.list.d/backport.list</p>
-<p>apt-get install postfix postfix-mysql postfix-pcre libsasl2-modules libsasl2-modules-sql dovecot-imapd dovecot-mysql dovecot-lmtpd python-pip python-urllib3 git vim curl mariadb-server
-apt-get -t stretch-backports install nginx</p>
-<p>Créer le groupe et l'utilisateur vmail :
-groupadd -g 5000 vmail
-useradd -m -d /var/vmail -s /bin/false -u 5000 -g vmail vmail</p>
-<p>Installation de dehydrated pour les certificats ssl letsencrypt</p>
-<p>mkdir -p /etc/dehydrated &amp;&amp; cd /etc/dehydrated
-git clone https://github.com/lukas2511/dehydrated.git .
-mkdir accounts certs hooks private records_backup
-cd hooks
-git clone https://github.com/kappataumu/letsencrypt-cloudflare-hook cloudflare
-pip install -r cloudflare/requirements.txt
-cd ..
-export CF_EMAIL="votre-compte-mail@cloudflare"
-export CF_KEY="votre-api-key-cloudflare"
-J'utilise les dns de cloudflare (1.1.1.1, 1.0.0.1) et de quad9.net (9.9.9.9) plutôt que google (8.8.8.8, 8.8.4.4).
-export CF_DNS_SERVER="1.1.1.1,9.9.9.9,1.0.0.1"</p>
-<p>Création du fichier domains.txt avec les sous domaines a créer pour letsencrypt
-echo "mail.mondomain.com &gt; mail_mondomain_com" &gt; domains.txt</p>
-<p>On s'enregistre auprès de letsencrypt avec dehydrated :
-./dehydrated --register --accept-terms</p>
-<p>Puis on lance dehydrated avec l'option -c (cron) qui permet de signer / renouveller les certificats :
-./dehydrated -c</p>
-<p>Clone de postfixadmin :
-cd /srv/
-git clone https://github.com/postfixadmin/postfixadmin.git
-cd postfixadmin
-git checkout postfixadmin-3.2</p>
-<p>Création du dossier web pour postfixadmin puis création du symlink :
-mkdir -p /var/www/postfixadmin
-ln -s /srv/postfixadmin/public /var/www/postfixadmin/</p>
-<p>Création de la base sql pour postfixadmin</p>
-<div class="highlight"><pre><span></span>mysql -u root -e &quot;CREATE DATABASE postfixadmin;&quot;
-mysql -u root -e &quot;CREATE USER &#39;postfixadmin&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;votre_mot_de_pass&#39;;&quot;
-mysql -u root -e &quot;GRANT ALL PRIVILEGES ON postfixadmin.* TO &#39;postfixadmin&#39;@&#39;localhost&#39;;&quot;
-</pre></div>
-
-
-<p>apt install apt-transport-https ca-certificates
-curl -fsSL https://packages.sury.org/php/apt.gpg | apt-key add -
-echo "deb https://packages.sury.org/php/ $(lsb_release -cs) main" &gt; /etc/apt/sources.list.d/sury.list
-apt-get update
-apt-get install php7.3-common php7.3-cli php7.3-curl php7.3-fpm php7.3-mysql php7.3-mbstring php7.3-imap</p>
-<p>Configure nginx vhost for your domain with the dehydrated certificate</p>
-<p>Reload nginx</p>
-<p>Se rendre sur la page setup de votre postfixadmin : https://mail.votredomaine.com/setup.php</p>
-<p>Copier la variable généré $CONF['setup_password'] dans votre config.local.php</p>
-<p>adduser postfix sasl</p>
-<p>Edition de la configuration postfix
-/etc/postfix/main.cf
-Ajout du fichier header_checks dans /etc/postfix/header_checks
-Génération d'une clé de 2048 pour le Diffie-Hellman 
-openssl dhparam -out /etc/postfix/dh2048.pem 2048</p>
-<p>mkdir -p /etc/postfix/mysql
-Copie des fichiers 
-mysql-virtual-alias-maps.cf  mysql-virtual-mailbox-domains.cf  mysql-virtual-mailbox-maps.cf
-dans ce dossier.</p>
-<p>Activation du port submission (587) dans le fichier /etc/postfix/master.cf, le port smtps (465) n'est volontairement pas activé</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
     <h2><a href="//www.choiz.fr/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html">Ajouter un disque a une grappe RAID MDADM</a></h2>
     <p>
       Posté le mer. 05 décembre 2018 &#8226;
@@ -834,6 +755,23 @@ apt install firmware-linux-nonfree
 
 
 <p>Il me reste plus qu'a remonter mes disques de backup et de refaire mes partages.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html">Re-générer une clé rsa publique</a></h2>
+    <p>
+      Posté le lun. 05 juin 2017 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/id_rsa.html">id_rsa</a>,      <a href="//www.choiz.fr/tag/rsa.html">rsa</a>,      <a href="//www.choiz.fr/tag/pub.html">pub</a>,      <a href="//www.choiz.fr/tag/key.html">key</a>,      <a href="//www.choiz.fr/tag/ssh.html">ssh</a>    </p>
+  </header>
+  <div>
+      <p>Si vous n'avez plus de clé publique, mais que vous avez toujours votre clé privée vous pouvez regénérer votre clé
+publique.</p>
+<p>Pour se faire il faut utiliser la commande <em>ssh-keygen</em> avec l'option <em>-y</em> et <em>-f</em> pour désigner la clé privé.</p>
+<p><code>ssh-keygen -y -f ~/.ssh/id_rsa &gt; ~/.ssh/id_rsa.pub</code></p>
+<p>On utilise ci-dessus l'id_rsa (privée) pour générer l'id_rsa.pub.</p>
   </div>
 </article>
 

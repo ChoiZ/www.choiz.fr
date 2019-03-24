@@ -53,25 +53,6 @@
 
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2014-03-08-réparer-ubuntu-après-un-apt-get-remove-de-trop.html">Réparer ubuntu après un apt-get remove… de trop</a></h2>
-    <p>
-      Posté le sam. 08 mars 2014 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="//www.choiz.fr/tag/ubuntu.html">ubuntu</a>,      <a href="//www.choiz.fr/tag/xfce.html">xfce</a>,      <a href="//www.choiz.fr/tag/ecran-gris.html">écran gris</a>,      <a href="//www.choiz.fr/tag/apt-get-remove.html">apt-get remove</a>,      <a href="//www.choiz.fr/tag/reparation.html">réparation</a>    </p>
-  </header>
-  <div>
-      <p>En voulant modifier xscreensaver par i3lock j'ai supprimé des paquets
-non utilisés (jeux etc…).</p>
-<p>J'ai malheureusement supprimé un peu (trop) de paquets tel que
-(xfdesktop4 et xfce4-panel). Au démarrage de x, une fois identifié, un
-écran gris s'affiche et rien d'autre. Heureusement grâce à mon access
-SSH je peux me …</p>
-      <a class="btn" href="//www.choiz.fr/2014-03-08-réparer-ubuntu-après-un-apt-get-remove-de-trop.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
     <h2><a href="//www.choiz.fr/2014-03-05-git-diff-multiligne.html">Git diff multiligne</a></h2>
     <p>
       Posté le mer. 05 mars 2014 &#8226;
@@ -254,6 +235,32 @@ préciser tout le chemin a chaque fois :</p>
 <div class="highlight"><pre><span></span>ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
 </pre></div>
       <a class="btn" href="//www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2013-10-01-git-se-déplacer-dans-une-branche-distante.html">Git se déplacer dans une branche distante</a></h2>
+    <p>
+      Posté le mar. 01 octobre 2013 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/checkout.html">checkout</a>,      <a href="//www.choiz.fr/tag/fetch.html">fetch</a>,      <a href="//www.choiz.fr/tag/origin.html">origin</a>,      <a href="//www.choiz.fr/tag/checkout-b.html">checkout -b</a>,      <a href="//www.choiz.fr/tag/branch.html">branch</a>,      <a href="//www.choiz.fr/tag/remote.html">remote</a>    </p>
+  </header>
+  <div>
+      <p>J'utilise des branches tel que prod, preprod pour mes projets et en
+local il m'arrive de vouloir aller sur ses branches :</p>
+<div class="highlight"><pre><span></span>git checkout preprod
+</pre></div>
+
+
+<p>Et j'ai l'erreur suivante :</p>
+<div class="highlight"><pre><span></span><span class="n">error</span><span class="o">:</span> <span class="n">pathspec</span> <span class="s1">&#39;preprod&#39;</span> <span class="n">did</span> <span class="n">not</span> <span class="n">match</span> <span class="n">any</span> <span class="n">file</span><span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="n">known</span> <span class="n">to</span> <span class="n">git</span><span class="o">.</span>
+</pre></div>
+
+
+<p>Je vais mettre a jour mon origin :</p>
+<div class="highlight"><pre><span></span>git fetch origin …</pre></div>
+      <a class="btn" href="//www.choiz.fr/2013-10-01-git-se-déplacer-dans-une-branche-distante.html">Lire la suite</a>
   </div>
 </article>
 

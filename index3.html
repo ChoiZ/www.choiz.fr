@@ -53,56 +53,6 @@
 
 <article>
   <header>
-    <h2><a href="//www.choiz.fr/2015-10-12-des-commentaires-efficaces.html">Des commentaires efficaces</a></h2>
-    <p>
-      Posté le lun. 12 octobre 2015 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/commentaire.html">commentaire</a>,      <a href="//www.choiz.fr/tag/code.html">code</a>,      <a href="//www.choiz.fr/tag/efficace.html">efficace</a>    </p>
-  </header>
-  <div>
-      <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester
-qu'une fonctionnalité de code.</p>
-<p>Par exemple pour tester une api :</p>
-<div class="highlight"><pre><span></span>// Obtenir le livre #1
-api_get(&#39;books/1&#39;);
-
-// Ajouter un livre
-api_add(&#39;books&#39;, $datas);
-</pre></div>
-
-
-<p>Je test généralement chaque élément séparement.</p>
-<p>Pour tester la première portion de mon code :</p>
-<div class="highlight"><pre><span></span>//* Obtenir le livre #1
-api_get(&#39;books/1&#39;);
-//*/
-
-/* Ajouter un livre
-api_add(&#39;books&#39;, $datas);
-//*/
-</pre></div>
-
-
-<p>Pour tester la seconde portion de mon code :</p>
-<div class="highlight"><pre><span></span><span class="cm">/* Obtenir le livre #1</span>
-<span class="cm">api_get(&#39;books/1&#39;);</span>
-<span class="cm">//*/</span><span class="w"></span>
-
-<span class="o">//*</span><span class="w"> </span>Ajouter<span class="w"> </span>un<span class="w"> </span>livre<span class="w"></span>
-api_add<span class="o">(</span><span class="s">&#39;books&#39;</span><span class="o">,</span><span class="w"> </span><span class="err">$</span>datas<span class="o">)</span><span class="err">;</span><span class="w"></span>
-<span class="o">//*/</span><span class="w"></span>
-</pre></div>
-
-
-<p>Il me suffit d'ajouter ou d'enlever un slash sur le premier commentaire
-pour commenter ou non tout le bloc.</p>
-<p>Ce n'est pas forcément très lisible donc je fais ça uniquement pour mes
-tests.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
     <h2><a href="//www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html">Mettre à jour Gentoo</a></h2>
     <p>
       Posté le dim. 27 septembre 2015 &#8226;
@@ -463,6 +413,27 @@ tel que gimp ou darktable…</p>
 <p>Voici les modules a activer dans le noyau pour le réseau et le son :</p>
 <div class="highlight"><pre><span></span>Realtek 8169 gigabit ethernet support
 Build Analog Device HD-audio codec support
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune-autre-branche.html">Comment récupérer le contenu d’un fichier d’une autre branche avec GIT ?</a></h2>
+    <p>
+      Posté le ven. 20 mars 2015 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/show.html">show</a>,      <a href="//www.choiz.fr/tag/branch.html">branch</a>    </p>
+  </header>
+  <div>
+      <p>Il suffit d’utiliser git show.</p>
+<p>La commande :</p>
+<div class="highlight"><pre><span></span>git show branch_name:filename
+</pre></div>
+
+
+<p>Exemple :</p>
+<div class="highlight"><pre><span></span>git show reset_password:/templates/reset_password.tmpl
 </pre></div>
   </div>
 </article>
