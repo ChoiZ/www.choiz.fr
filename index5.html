@@ -37,7 +37,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que DevOps chez <a href="//www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio. J'aide actuellement l'association <a href="https://www.frequence3.fr">Fréquence 3</a></p>
+      <p>Je suis ingénieur informatique, je travail en tant que DevOps chez <a href="//www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio. Je suis vice-président de l'association <a href="https://www.frequence3.fr">Fréquence 3</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
@@ -51,6 +51,79 @@
   </aside>
   <main>
 
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html">imapfilter ou comment filtrer ses mails facilement</a></h2>
+    <p>
+      Posté le mar. 11 mars 2014 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/imapfilter.html">imapfilter</a>,      <a href="//www.choiz.fr/tag/mail.html">mail</a>,      <a href="//www.choiz.fr/tag/filter.html">filter</a>,      <a href="//www.choiz.fr/tag/imap.html">imap</a>    </p>
+  </header>
+  <div>
+      <p>Installer imapfilter via apt par exemple :</p>
+<div class="highlight"><pre><span></span>apt-get install imapfilter
+</pre></div>
+
+
+<p>Se rendre dans le dossier de configuration :</p>
+<div class="highlight"><pre><span></span>cd ~/.imapfilter
+</pre></div>
+
+
+<p>Créer un fichier config.lua :</p>
+<div class="highlight"><pre><span></span>touch config.lua
+</pre></div>
+
+
+<p>Maintenant je décide de faire un fichier de configuration par boite
+email.</p>
+<p>Ici gmail :</p>
+<div class="highlight"><pre><span></span>cat &gt; gmail.lua &lt;&lt;EOF
+gmail = IMAP {
+    server = &#39;imap.gmail.com&#39;,
+    username = &#39;mail@gmail.com&#39;,
+    password = &#39;mon_mot_de_passe&#39;,
+    ssl = &#39;ssl3&#39;,
+}
+EOF
+</pre></div>
+
+
+<p>Et un pour Yahoo :</p>
+<div class="highlight"><pre><span></span>cat &gt; yahoo.lua &lt;&lt;EOF
+yahoo = IMAP {
+    server = &#39;imap.yahoo.com&#39;,
+    username = &#39;mail@yahoo.com&#39;,
+    password = &#39;mon_mot_de_passe&#39;,
+    ssl = &#39;ssl3&#39;,
+}
+EOF
+</pre></div>
+
+
+<p>Ajouter nos boites dans le fichier de config avec des filtres :</p>
+<div class="highlight"><pre><span></span>if_dir = os.getenv(&#39;HOME&#39;) .. &#39;/.imapfilter/&#39;
+-- on inclus nos comptes imap…
+dofile(if_dir .. &quot;gmail.lua&quot;)
+dofile(if_dir .. &quot;yahoo.lua&quot;)
+-- nos options
+options.timeout = 120
+-- filtres pour le compte gmail (on copie les messages non lus dans la boite &quot;nouveaux&quot;)
+nonlugmail=gmail.INBOX:is_unseen()
+nonlugmail:copy_message(gmail[&#39;nouveaux&#39;])
+-- filtres pour le compte yahoo (on supprime tous les messages lus)
+del_read_yahoo=yahoo.INBOX:is_seen()
+del_read_yahoo:delete_messages()
+</pre></div>
+
+
+<p>Maintenant c'est à vous de faire vos propres filtres. Une fois
+configuré, lancer imapfilter simplement depuis le terminal :</p>
+<div class="highlight"><pre><span></span>imapfilter
+</pre></div>
+  </div>
+  <hr />
+</article>
 <article>
   <header>
     <h2><a href="//www.choiz.fr/2014-03-08-réparer-ubuntu-après-un-apt-get-remove-de-trop.html">Réparer ubuntu après un apt-get remove… de trop</a></h2>
@@ -339,24 +412,6 @@ convert icon512.png -resize x152 touch-icon-ipad-retina.png
 
 <p>A noter les appareils Android utilisent aussi les images
 "apple-touch-icon".</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html">Installer jshint sur mac</a></h2>
-    <p>
-      Posté le lun. 14 octobre 2013 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/jshint.html">jshint</a>,      <a href="//www.choiz.fr/tag/mac.html">mac</a>,      <a href="//www.choiz.fr/tag/setup.html">setup</a>,      <a href="//www.choiz.fr/tag/npm.html">npm</a>,      <a href="//www.choiz.fr/tag/nodejs.html">nodejs</a>    </p>
-  </header>
-  <div>
-      <p>Installation via npm de jshint (-g pour installer pour tous les utilisateurs) :
-    sudo npm install -g jshint</p>
-<p>Faire un lien symbolique pour pouvoir utiliser directement jshint sans
-préciser tout le chemin a chaque fois :</p>
-<div class="highlight"><pre><span></span>ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
-</pre></div>
   </div>
 </article>
 

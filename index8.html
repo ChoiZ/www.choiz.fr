@@ -37,7 +37,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que DevOps chez <a href="//www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio. J'aide actuellement l'association <a href="https://www.frequence3.fr">Fréquence 3</a></p>
+      <p>Je suis ingénieur informatique, je travail en tant que DevOps chez <a href="//www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio. Je suis vice-président de l'association <a href="https://www.frequence3.fr">Fréquence 3</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="//www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-flickr" href="//www.flickr.com/ChoiZ"><i class="fa fa-flickr"></i></a></li>
@@ -51,6 +51,59 @@
   </aside>
   <main>
 
+<article>
+  <header>
+    <h2><a href="//www.choiz.fr/2012-04-13-update-gitconfig.html">Update .gitconfig</a></h2>
+    <p>
+      Posté le ven. 13 avril 2012 &#8226;
+Tags :
+      <a href="//www.choiz.fr/tag/git.html">git</a>,      <a href="//www.choiz.fr/tag/gitconfig.html">gitconfig</a>,      <a href="//www.choiz.fr/tag/git-pull.html">git pull</a>,      <a href="//www.choiz.fr/tag/git-push.html">git push</a>,      <a href="//www.choiz.fr/tag/git-diff.html">git diff</a>,      <a href="//www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="//www.choiz.fr/tag/stash.html">stash</a>    </p>
+  </header>
+  <div>
+      <p>Ajout du pull, push, diff et surtout stash :</p>
+<div class="highlight"><pre><span></span><span class="k">[user]</span>
+  <span class="na">name</span> <span class="o">=</span> <span class="s">François LASSERRE</span>
+<span class="s">  email = mon@email.fr</span>
+<span class="k">[diff]</span>
+  <span class="na">tool</span> <span class="o">=</span> <span class="s">vimdiff</span>
+<span class="k">[color]</span>
+  <span class="na">branch</span> <span class="o">=</span> <span class="s">auto</span>
+<span class="s">  diff = auto</span>
+<span class="s">  status = auto</span>
+<span class="s">  interactive = auto</span>
+<span class="s">  ui = true</span>
+<span class="k">[alias]</span>
+  <span class="na">br</span> <span class="o">=</span> <span class="s">branch</span>
+<span class="s">  ci = commit -a</span>
+<span class="s">  co = checkout</span>
+<span class="s">  sh = show --color-words</span>
+<span class="s">  st = status</span>
+<span class="s">  di = diff</span>
+<span class="s">  ph = push</span>
+<span class="s">  pl = pull</span>
+<span class="s">  sta = stash</span>
+<span class="s">  stalist = stash list</span>
+<span class="s">  stast = stash list</span>
+<span class="s">  stapp = stash pop</span>
+<span class="s">  starm = stash drop</span>
+<span class="s">  last = cat-file commit HEAD</span>
+<span class="s">  graph = log --graph --decorate</span>
+<span class="s">  tree = log --graph --oneline --decorate</span>
+<span class="s">  pom = push origin master</span>
+<span class="s">  logs = log --stat</span>
+<span class="s">  currentbranch = &quot;!git branch | grep ^* | cut -d \&quot; \&quot; -f 2&quot;</span>
+<span class="k">[core]</span>
+  <span class="na">excludesfile</span> <span class="o">=</span> <span class="s">~/.gitignore</span>
+<span class="na">editor</span> <span class="o">=</span> <span class="s">vim</span>
+<span class="s">  filemode = false</span>
+<span class="k">[merge]</span>
+  <span class="na">tool</span> <span class="o">=</span> <span class="s">vimdiff</span>
+<span class="k">[http]</span>
+  <span class="c1">#sslverify = false|</span>
+</pre></div>
+  </div>
+  <hr />
+</article>
 <article>
   <header>
     <h2><a href="//www.choiz.fr/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html">Git mes fichiers de config gitconfig / gitignore</a></h2>
@@ -422,25 +475,6 @@ password (ou autre suivant le mot de passe de l&#39;utilisateur).
 
 
 <p>Ce qui devrait lancer une seconde instance de Skype.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="//www.choiz.fr/2011-09-05-développement-web-avec-safari.html">Développement web avec Safari</a></h2>
-    <p>
-      Posté le lun. 05 septembre 2011 &#8226;
-Tags :
-      <a href="//www.choiz.fr/tag/safari.html">Safari</a>,      <a href="//www.choiz.fr/tag/dev.html">Dev</a>    </p>
-  </header>
-  <div>
-      <p>Pour activer l'inspecteur web tapez dans le terminal :</p>
-<div class="highlight"><pre><span></span>defaults write com.apple.Safari WebKitDeveloperExtras -bool true
-</pre></div>
-
-
-<p>Redémarrez Safari et maintenant vous pouvez inspecter les éléments de
-vos pages web.</p>
   </div>
 </article>
 

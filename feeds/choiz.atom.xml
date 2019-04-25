@@ -28,7 +28,65 @@
 &lt;p&gt;Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par défaut &lt;code&gt;i3-sensible-terminal&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Pour modifier le terminal executé par la commande &lt;code&gt;i3-sensible-terminal&lt;/code&gt; il suffit donc de lancer la commande suivante puis de choisir dans mon cas urxvt :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;update-alternatives --config x-terminal-emulator
-&lt;/pre&gt;&lt;/div&gt;</content><category term="i3wm"></category><category term="terminal"></category><category term="linux"></category></entry><entry><title>Ajouter un disque a une grappe RAID MDADM</title><link href="//www.choiz.fr/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html" rel="alternate"></link><published>2018-12-05T23:22:42+01:00</published><updated>2018-12-05T23:22:42+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2018-12-05:/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html</id><summary type="html">&lt;p&gt;Ayant enfin fini la migration de mon NAS vers mon nouveau NAS, j'ai récupéré mon troisième disque de 10To pour l'ajouter à ma grappe RAID1 qui contient déjà 2 disques de 10To.&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="i3wm"></category><category term="terminal"></category><category term="linux"></category></entry><entry><title>Bien nommer ses fichiers</title><link href="//www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html" rel="alternate"></link><published>2018-12-13T12:52:55+01:00</published><updated>2018-12-13T12:52:55+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2018-12-13:/2018-12-13-bien-nommer-ses-fichiers.html</id><summary type="html">&lt;p&gt;Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ?&lt;/p&gt;
+&lt;p&gt;Il faut mettre Lundi-10-Décembre-2018 dans le nom du fichier ?
+Non.&lt;/p&gt;
+&lt;p&gt;Il faut donc mettre 10-12-2018 dans le nom du fichier ?
+Toujours pas.&lt;/p&gt;
+&lt;p&gt;Ok donc comment faire ?
+Pour moi la …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ?&lt;/p&gt;
+&lt;p&gt;Il faut mettre Lundi-10-Décembre-2018 dans le nom du fichier ?
+Non.&lt;/p&gt;
+&lt;p&gt;Il faut donc mettre 10-12-2018 dans le nom du fichier ?
+Toujours pas.&lt;/p&gt;
+&lt;p&gt;Ok donc comment faire ?
+Pour moi la méthode la plus simple pour bien trier vos fichiers par ordre chronologique, est de commencer par l'année puis le mois puis le jour etc… On précise de plus en plus.
+Donc pour le Lundi 10 Décembre 2018 je vais écrire 20181210 ou 2018-12-10.&lt;/p&gt;
+&lt;p&gt;Pourquoi ?&lt;/p&gt;
+&lt;p&gt;Lorsque l'on va trier nos fichiers avec le premier cas nous aurons :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Lundi-10-Décembre-2018
+Lundi-11-Décembre-2017
+Mardi-11-Décembre-2018
+Mardi-12-Décembre-2017
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Le trie se fait jour par jour donc pas du tout par ordre chronologique.
+Nous ne retenons pas cette solution.&lt;/p&gt;
+&lt;p&gt;Avec le second exemple :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;10-12-2018 (Lundi 10 décembre 2018)
+11-12-2018 (Mardi 11 décembre 2018)
+11-12-2017 (Lundi 11 décembre 2017)
+12-12-2017 (Mardi 12 décembre 2017)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Le trie se fait par jour, puis par mois, puis par année, donc nous avons tous les 10 décembre puis les 11 décembre etc… ce n'est toujours pas par ordre chronologique.
+Nous ne retenons pas cette solution.&lt;/p&gt;
+&lt;p&gt;Avec le dernier exemple :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;2017-12-10 (Lundi 10 décembre 2017)
+2017-12-11 (Mardi 11 décembre 2017)
+2018-12-11 (Lundi 11 décembre 2018)
+2018-12-12 (Mardi 12 décembre 2018)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;C'est bien par ordre chronologique, l'année puis le mois, puis le jour, c'est donc comme ça que nous devons écrire nos fichiers avec une date.&lt;/p&gt;
+&lt;p&gt;Si vous faites une photo de vous chaque année en septembre vous aurez donc photo.jpg qui sera nommer comme suit :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;2016-09-photo.jpg
+2017-09-photo.jpg
+2018-09-photo.jpg
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;On a pas besoin de préciser le jour dans le cas précédent car on a qu'une photo par an en septembre d'ailleurs on pourrait même simplifier en :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;2016-photo.jpg
+2017-photo.jpg
+2018-photo.jpg
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Personnellement je préfère toujours mettre mes fichiers sous la forme 2018-09-01-nom-de-fichier.ext ce qui permet d'avoir toujours la date du jour.&lt;/p&gt;</content><category term="filename"></category><category term="date"></category></entry><entry><title>Ajouter un disque a une grappe RAID MDADM</title><link href="//www.choiz.fr/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html" rel="alternate"></link><published>2018-12-05T23:22:42+01:00</published><updated>2018-12-05T23:22:42+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2018-12-05:/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html</id><summary type="html">&lt;p&gt;Ayant enfin fini la migration de mon NAS vers mon nouveau NAS, j'ai récupéré mon troisième disque de 10To pour l'ajouter à ma grappe RAID1 qui contient déjà 2 disques de 10To.&lt;/p&gt;
 &lt;p&gt;Pour ajouter le disque /dev/sdd dans la grappe /dev/md0 il faut tapper la commande suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mdadm …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Ayant enfin fini la migration de mon NAS vers mon nouveau NAS, j'ai récupéré mon troisième disque de 10To pour l'ajouter à ma grappe RAID1 qui contient déjà 2 disques de 10To.&lt;/p&gt;
 &lt;p&gt;Pour ajouter le disque /dev/sdd dans la grappe /dev/md0 il faut tapper la commande suivante :&lt;/p&gt;
