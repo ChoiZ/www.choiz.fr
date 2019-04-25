@@ -60,6 +60,7 @@ STATIC_PATHS = [
     'extra/avatar.png',
     'extra/robots.txt',
     'extra/favicon.ico',
+    'extra/CNAME',
     'extra/README'
     ]
 
