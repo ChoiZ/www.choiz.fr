@@ -68,6 +68,7 @@ EXTRA_PATH_METADATA = {
     'extra/avatar.png': {'path': 'avatar.png'},
     'extra/robots.txt': {'path': 'robots.txt'},
     'extra/favicon.ico': {'path': 'favicon.ico'},
+    'extra/CNAME': {'path': 'CNAME'},
     'extra/README': {'path': 'README.md'},
     }
 
