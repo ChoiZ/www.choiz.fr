@@ -5,12 +5,12 @@ import os
 
 AUTHOR = u'Fran\xe7ois LASSERRE'
 SITENAME = u'ChoiZ'
-SITEURL = u'//www.choiz.fr'
+SITEURL = u'https://www.choiz.fr'
 SITETITLE = u'Blog technique de François LASSERRE'
-SITESUBTITLE = 'Je suis ingénieur informatique, je travail en tant que DevOps chez <a href="//www.manomano.fr">ManoMano</a>. J\'aime le développement, le streaming, l\'Internet…<br><br>Depuis l\'an 2000, j\'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio. Je suis vice-président de l\'association <a href="https://www.frequence3.fr">Fréquence 3</a>.'
+SITESUBTITLE = 'Je suis ingénieur informatique, je travail en tant que DevOps chez <a href="https://www.manomano.fr">ManoMano</a>. J\'aime le développement, le streaming, l\'Internet…<br><br>Depuis l\'an 2000, j\'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio. Je suis vice-président de l\'association <a href="https://www.frequence3.fr">Fréquence 3</a>.'
 #SITELOGO = u'avatar.png'
 
-GITHUB_URL = 'https://github.com/choiz/choiz.github.io/tree/pelican'
+GITHUB_URL = 'https://github.com/choiz/www.choiz.fr/tree/pelican'
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 FAVICON = 'favicon.ico'
@@ -45,13 +45,13 @@ LINKS = (
 
 # Social widget
 SOCIAL = (
-          ('github', '//www.github.com/ChoiZ'),
-          ('flickr', '//www.flickr.com/ChoiZ'),
-          ('lastfm', '//www.last.fm/user/ChoiZ'),
-          ('twitter', '//www.twitter.com/ChoiZ'),
-          ('facebook', '//www.facebook.com/ChoiZ'),
-          ('foursquare', '//www.foursquare.com/ChoiZ'),
-          ('linkedin', '//www.linkedin.com/in/ChoiZ'),
+          ('github', 'https://www.github.com/ChoiZ'),
+          ('flickr', 'https://www.flickr.com/ChoiZ'),
+          ('lastfm', 'https://www.last.fm/user/ChoiZ'),
+          ('twitter', 'https://www.twitter.com/ChoiZ'),
+          ('facebook', 'https://www.facebook.com/ChoiZ'),
+          ('foursquare', 'https://www.foursquare.com/ChoiZ'),
+          ('linkedin', 'https://www.linkedin.com/in/ChoiZ'),
          )
 
 DEFAULT_PAGINATION = 10
