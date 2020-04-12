@@ -61,7 +61,7 @@ function shut_down(){
 
 function start_up(){
   local port=$1
-  echo "Starting up Pelican and HTTP server"
+  echo "Starting up Pelican and HTTP server $port"
   shift
   $PELICAN --debug --autoreload -r $INPUTDIR -o $OUTPUTDIR -s $CONFFILE $PELICANOPTS &
   pelican_pid=$!
@@ -76,7 +76,7 @@ function start_up(){
     echo "Pelican didn't start. Is the Pelican package installed?"
     return 1
   elif ! alive $srv_pid ; then
-    echo "The HTTP server didn't start. Is there another service using port 8000?"
+    echo "The HTTP server didn't start. Is there another service using port $port?"
     return 1
   fi
   echo 'Pelican and HTTP server processes now running in background.'
