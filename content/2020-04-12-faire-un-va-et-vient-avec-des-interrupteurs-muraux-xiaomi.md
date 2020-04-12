@@ -8,6 +8,8 @@ Status: published
 
 J'ai recherché longtemps comment faire un va et vient avec des interrupteurs muraux Xiaomi.
 
+![Xiaomi switch wall]({static}/images/xiaomi-switch-wall.png)
+
 La seule solution proposée était de mettre :
 
 - un interrupteur filaire.
