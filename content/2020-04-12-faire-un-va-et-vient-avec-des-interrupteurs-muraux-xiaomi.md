@@ -16,7 +16,9 @@ La seule solution proposée était de mettre :
 
 Cette solution ne me convient pas car j'ai des interrupteurs encastrés, je n'ai pas envie d'avoir un interrupteur sans fil collé, alors que j'ai potentiellement de l'electricité a cet endroit et je ne veux pas changer les piles…
 
-J'ai donc pas mal cherché fait des tests etc… pour au final trouver comment faire un va et vient "classique" comme on fait avec des interrupteurs standards.
+J'ai donc pas mal fait de recherches, tests etc… pour au final trouver comment faire un va et vient "classique" comme on le fait avec des interrupteurs standards.
+
+![Schéma va et vient]({static}/images/schema-va-et-vient-classic.png)
 
 Pour que le va et vient fonctionne avec deux boutons xiaomi filaire il vous faut :
 
