@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="J'ai recherché longtemps comment faire un va et vient avec des interrupteurs muraux Xiaomi. La seule solution proposée était de mettre : - un interrupteur filaire. - un interrupteur sans fil. Cette solution ne me convient pas car j'ai des interrupteurs encastrés, je n'ai pas envie d'avoir un interrupteur sans fil collé, alors …" />
+<meta name="description" content="J'ai recherché longtemps comment faire un va et vient avec des interrupteurs muraux Xiaomi. La seule solution proposée était de mettre : un interrupteur filaire. un interrupteur sans fil. Cette solution ne me convient pas car j'ai des interrupteurs encastrés, je n'ai pas envie d'avoir un interrupteur sans fil collé, alors …" />
 <meta name="keywords" content="Domotique, Electricité, Xiaomi">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Faire un va et vient avec des interrupteurs muraux Xiaomi"/>
-<meta property="og:description" content="J'ai recherché longtemps comment faire un va et vient avec des interrupteurs muraux Xiaomi. La seule solution proposée était de mettre : - un interrupteur filaire. - un interrupteur sans fil. Cette solution ne me convient pas car j'ai des interrupteurs encastrés, je n'ai pas envie d'avoir un interrupteur sans fil collé, alors …"/>
+<meta property="og:description" content="J'ai recherché longtemps comment faire un va et vient avec des interrupteurs muraux Xiaomi. La seule solution proposée était de mettre : un interrupteur filaire. un interrupteur sans fil. Cette solution ne me convient pas car j'ai des interrupteurs encastrés, je n'ai pas envie d'avoir un interrupteur sans fil collé, alors …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://www.choiz.fr/2020-04-12-faire-un-va-et-vient-avec-des-interrupteurs-muraux-xiaomi.html"/>
 <meta property="og:type" content="article"/>
@@ -63,43 +63,101 @@
   </header>
   <div>
     <p>J'ai recherché longtemps comment faire un va et vient avec des interrupteurs muraux Xiaomi.</p>
-<p>La seule solution proposée était de mettre :
-- un interrupteur filaire.
-- un interrupteur sans fil.</p>
+<p>La seule solution proposée était de mettre :</p>
+<ul>
+<li>
+<p>un interrupteur filaire.</p>
+</li>
+<li>
+<p>un interrupteur sans fil.</p>
+</li>
+</ul>
 <p>Cette solution ne me convient pas car j'ai des interrupteurs encastrés, je n'ai pas envie d'avoir un interrupteur sans fil collé, alors que j'ai potentiellement de l'electricité a cet endroit et je ne veux pas changer les piles…</p>
 <p>J'ai donc pas mal cherché fait des tests etc… pour au final trouver comment faire un va et vient "classique" comme on fait avec des interrupteurs standards.</p>
-<p>Pour que le va et vient fonctionne avec 2 boutons xiaomi filaire il vous faut :
-- un va et vient electrique type lumière d'escalier
-- un circuit classique type lumière d'une entrée (avec un seul interrupteur) qui soit a coté d'un des deux interrupteurs va et vient
-- un interrupteur 2 boutons Xiaomi (un bouton sera alimenté par le 2eme circuit electrique, l'autre n'aura pas besoin d'alimentation car il fonctionnera en sans fil sans pile ;-))
-- un interrupteur 1 bouton (ou 2 boutons) pour le 2eme bouton du va et vient (master)
-- un wago (2 ou 3 bornes en fonction des fils présents)
-- un cache (obturateur) si on remplace 2 interrupteurs 1 bouton par un interrupteur 2 boutons.</p>
-<p>Je prend l'exemple d'un va et vient dans un escalier (RDC - 1er étage), avec 2 interrupteurs en bas :
-- un qui alimente l'ampoule de l'entrée
-- un qui alimente l'ampoule de l'escalier (va et vient)</p>
+<p>Pour que le va et vient fonctionne avec 2 boutons xiaomi filaire il vous faut :</p>
+<ul>
+<li>
+<p>un va et vient electrique type lumière d'escalier</p>
+</li>
+<li>
+<p>un circuit classique type lumière d'une entrée (avec un seul interrupteur) qui soit a coté d'un des deux interrupteurs va et vient</p>
+</li>
+<li>
+<p>un interrupteur 2 boutons Xiaomi (un bouton sera alimenté par le 2eme circuit electrique, l'autre n'aura pas besoin d'alimentation car il fonctionnera en sans fil sans pile ;-))</p>
+</li>
+<li>
+<p>un interrupteur 1 bouton (ou 2 boutons) pour le 2eme bouton du va et vient (master)</p>
+</li>
+<li>
+<p>un wago (2 ou 3 bornes en fonction des fils présents)</p>
+</li>
+<li>
+<p>un cache (obturateur) si on remplace 2 interrupteurs 1 bouton par un interrupteur 2 boutons.</p>
+</li>
+</ul>
+<p>Je prend l'exemple d'un va et vient dans un escalier (RDC - 1er étage), avec 2 interrupteurs en bas :</p>
+<ul>
+<li>
+<p>un qui alimente l'ampoule de l'entrée</p>
+</li>
+<li>
+<p>un qui alimente l'ampoule de l'escalier (va et vient)</p>
+</li>
+</ul>
 <p><strong>ATTENTION :</strong></p>
 <p><strong>Avant toute intervention sur votre installation électrique, couper le disjoncteur général. Je ne pourrais en aucun cas être tenu pour responsable de vos agissements. Ce document est uniquement a titre d'information. Je ne pourrait être tenu pour responsable de tout dommages ou incidents.</strong></p>
 <p>Je démonte au RDC, mon interrupteur de l'entrée, et mon ancien interrupteur avec va et vient classique, je me retrouve donc avec :
-sur l'interrupteur de l'entrée :
-- la phase pour la lumière de l'entrée
-- le câble allant vers la lumière de l'entrée
-sur l'interrupteur va et vient (bas) :
-- la phase
-- deux navettes</p>
-<p>Je remplace mon interrupteur de l'entrée par l'interrupteur xiaomi :
-- la phase sur le "L"
-- le câble allant vers la lumière de l'entrée sur le "L1"</p>
-<p>Je prend mon wago ou équivalent, je branche :
-- la phase de l'interrupteur va et vient (bas)
-- une navette (pour alimenter mon second interrupteur du 1er étage)
-- je referme avec un "obturateur" pour avoir une finition propre</p>
+sur l'interrupteur de l'entrée :</p>
+<ul>
+<li>
+<p>la phase pour la lumière de l'entrée</p>
+</li>
+<li>
+<p>le câble allant vers la lumière de l'entrée</p>
+</li>
+</ul>
+<p>sur l'interrupteur va et vient (bas) :</p>
+<ul>
+<li>
+<p>la phase</p>
+</li>
+<li>
+<p>deux navettes</p>
+</li>
+</ul>
+<p>Je remplace mon interrupteur de l'entrée par l'interrupteur xiaomi :</p>
+<ul>
+<li>
+<p>la phase sur le "L"</p>
+</li>
+<li>
+<p>le câble allant vers la lumière de l'entrée sur le "L1"</p>
+</li>
+</ul>
+<p>Je prend mon wago ou équivalent, je branche :</p>
+<ul>
+<li>
+<p>la phase de l'interrupteur va et vient (bas)</p>
+</li>
+<li>
+<p>une navette (pour alimenter mon second interrupteur du 1er étage)</p>
+</li>
+<li>
+<p>je referme avec un "obturateur" pour avoir une finition propre</p>
+</li>
+</ul>
 <p>Au premier étage j'ai toujours mon interrupteur classique fonctionnel je le laisse connecté pour savoir laquelle des deux navettes est sur notre wago 221 (avec la phase). L'autre navette n'est pas connectée pour l'instant.</p>
 <p>N'oubliez pas de re-couper le disjoncteur !</p>
 <p>Démonter l'interrupteur du haut. Marquer d'un morceau de scotch electrique rouge de préférence la navette avec la phase.</p>
-<p>Connecter votre interrupteur Xiaomi du haut 1 bouton (ou 2 boutons) en plaçant :
-- la phase obtenu par le Wago et par la navette avec le scotch rouge sur la borne "L" de votre interrupteur
-- le fil précédent allant sur votre ampoule sur la borne "L1" de votre interrupteur.</p>
+<p>Connecter votre interrupteur Xiaomi du haut 1 bouton (ou 2 boutons) en plaçant :</p>
+<ul>
+<li>
+<p>la phase obtenu par le Wago et par la navette avec le scotch rouge sur la borne "L" de votre interrupteur</p>
+</li>
+<li>
+<p>le fil précédent allant sur votre ampoule sur la borne "L1" de votre interrupteur.</p>
+</li>
+</ul>
 <p>Refixer l'interrupteur et tester le fonctionnement de celui-ci.</p>
 <p>Pour que le va et vient soit fonctionnel, il ne vous reste plus qu'a activer le mode sans fil sur le 2eme bouton de votre interrupteur de l'entrée. Celui-ci doit déclencher sans fil l'interrupteur de l'escalier qui se trouve en haut.</p>
 <p>J'ai personnellement 3 va et vient qui fonctionne ainsi grâce a plusieurs boutons situés a proximité les uns des autres.</p>
@@ -147,7 +205,7 @@ sur l'interrupteur va et vient (bas) :
   },
   "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2020-04-12-faire-un-va-et-vient-avec-des-interrupteurs-muraux-xiaomi.html",
-  "description": "J'ai recherché longtemps comment faire un va et vient avec des interrupteurs muraux Xiaomi. La seule solution proposée était de mettre : - un interrupteur filaire. - un interrupteur sans fil. Cette solution ne me convient pas car j'ai des interrupteurs encastrés, je n'ai pas envie d'avoir un interrupteur sans fil collé, alors …"
+  "description": "J'ai recherché longtemps comment faire un va et vient avec des interrupteurs muraux Xiaomi. La seule solution proposée était de mettre : un interrupteur filaire. un interrupteur sans fil. Cette solution ne me convient pas car j'ai des interrupteurs encastrés, je n'ai pas envie d'avoir un interrupteur sans fil collé, alors …"
 }
 </script></body>
 </html>

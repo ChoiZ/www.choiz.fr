@@ -1,46 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ - choiz</title><link href="https://www.choiz.fr/" rel="alternate"></link><link href="https://www.choiz.fr/feeds/choiz.atom.xml" rel="self"></link><id>https://www.choiz.fr/</id><updated>2020-04-12T17:37:45+02:00</updated><subtitle>Je suis ingénieur informatique, je travail en tant que Lead SRE chez &lt;a href="https://www.manomano.fr"&gt;ManoMano&lt;/a&gt;. J'aime le développement, le streaming, l'Internet…&lt;br&gt;&lt;br&gt;Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.</subtitle><entry><title>Faire un va et vient avec des interrupteurs muraux Xiaomi</title><link href="https://www.choiz.fr/2020-04-12-faire-un-va-et-vient-avec-des-interrupteurs-muraux-xiaomi.html" rel="alternate"></link><published>2020-04-12T17:37:45+02:00</published><updated>2020-04-12T17:37:45+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2020-04-12:/2020-04-12-faire-un-va-et-vient-avec-des-interrupteurs-muraux-xiaomi.html</id><summary type="html">&lt;p&gt;J'ai recherché longtemps comment faire un va et vient avec des interrupteurs muraux Xiaomi.&lt;/p&gt;
-&lt;p&gt;La seule solution proposée était de mettre :
-- un interrupteur filaire.
-- un interrupteur sans fil.&lt;/p&gt;
+&lt;p&gt;La seule solution proposée était de mettre :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;un interrupteur filaire.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;un interrupteur sans fil.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Cette solution ne me convient pas car j'ai des interrupteurs encastrés, je n'ai pas envie d'avoir un interrupteur sans fil collé, alors …&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'ai recherché longtemps comment faire un va et vient avec des interrupteurs muraux Xiaomi.&lt;/p&gt;
-&lt;p&gt;La seule solution proposée était de mettre :
-- un interrupteur filaire.
-- un interrupteur sans fil.&lt;/p&gt;
+&lt;p&gt;La seule solution proposée était de mettre :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;un interrupteur filaire.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;un interrupteur sans fil.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Cette solution ne me convient pas car j'ai des interrupteurs encastrés, je n'ai pas envie d'avoir un interrupteur sans fil collé, alors que j'ai potentiellement de l'electricité a cet endroit et je ne veux pas changer les piles…&lt;/p&gt;
 &lt;p&gt;J'ai donc pas mal cherché fait des tests etc… pour au final trouver comment faire un va et vient "classique" comme on fait avec des interrupteurs standards.&lt;/p&gt;
-&lt;p&gt;Pour que le va et vient fonctionne avec 2 boutons xiaomi filaire il vous faut :
-- un va et vient electrique type lumière d'escalier
-- un circuit classique type lumière d'une entrée (avec un seul interrupteur) qui soit a coté d'un des deux interrupteurs va et vient
-- un interrupteur 2 boutons Xiaomi (un bouton sera alimenté par le 2eme circuit electrique, l'autre n'aura pas besoin d'alimentation car il fonctionnera en sans fil sans pile ;-))
-- un interrupteur 1 bouton (ou 2 boutons) pour le 2eme bouton du va et vient (master)
-- un wago (2 ou 3 bornes en fonction des fils présents)
-- un cache (obturateur) si on remplace 2 interrupteurs 1 bouton par un interrupteur 2 boutons.&lt;/p&gt;
-&lt;p&gt;Je prend l'exemple d'un va et vient dans un escalier (RDC - 1er étage), avec 2 interrupteurs en bas :
-- un qui alimente l'ampoule de l'entrée
-- un qui alimente l'ampoule de l'escalier (va et vient)&lt;/p&gt;
+&lt;p&gt;Pour que le va et vient fonctionne avec 2 boutons xiaomi filaire il vous faut :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;un va et vient electrique type lumière d'escalier&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;un circuit classique type lumière d'une entrée (avec un seul interrupteur) qui soit a coté d'un des deux interrupteurs va et vient&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;un interrupteur 2 boutons Xiaomi (un bouton sera alimenté par le 2eme circuit electrique, l'autre n'aura pas besoin d'alimentation car il fonctionnera en sans fil sans pile ;-))&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;un interrupteur 1 bouton (ou 2 boutons) pour le 2eme bouton du va et vient (master)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;un wago (2 ou 3 bornes en fonction des fils présents)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;un cache (obturateur) si on remplace 2 interrupteurs 1 bouton par un interrupteur 2 boutons.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Je prend l'exemple d'un va et vient dans un escalier (RDC - 1er étage), avec 2 interrupteurs en bas :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;un qui alimente l'ampoule de l'entrée&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;un qui alimente l'ampoule de l'escalier (va et vient)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;ATTENTION :&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Avant toute intervention sur votre installation électrique, couper le disjoncteur général. Je ne pourrais en aucun cas être tenu pour responsable de vos agissements. Ce document est uniquement a titre d'information. Je ne pourrait être tenu pour responsable de tout dommages ou incidents.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Je démonte au RDC, mon interrupteur de l'entrée, et mon ancien interrupteur avec va et vient classique, je me retrouve donc avec :
-sur l'interrupteur de l'entrée :
-- la phase pour la lumière de l'entrée
-- le câble allant vers la lumière de l'entrée
-sur l'interrupteur va et vient (bas) :
-- la phase
-- deux navettes&lt;/p&gt;
-&lt;p&gt;Je remplace mon interrupteur de l'entrée par l'interrupteur xiaomi :
-- la phase sur le "L"
-- le câble allant vers la lumière de l'entrée sur le "L1"&lt;/p&gt;
-&lt;p&gt;Je prend mon wago ou équivalent, je branche :
-- la phase de l'interrupteur va et vient (bas)
-- une navette (pour alimenter mon second interrupteur du 1er étage)
-- je referme avec un "obturateur" pour avoir une finition propre&lt;/p&gt;
+sur l'interrupteur de l'entrée :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;la phase pour la lumière de l'entrée&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;le câble allant vers la lumière de l'entrée&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;sur l'interrupteur va et vient (bas) :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;la phase&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;deux navettes&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Je remplace mon interrupteur de l'entrée par l'interrupteur xiaomi :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;la phase sur le "L"&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;le câble allant vers la lumière de l'entrée sur le "L1"&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Je prend mon wago ou équivalent, je branche :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;la phase de l'interrupteur va et vient (bas)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;une navette (pour alimenter mon second interrupteur du 1er étage)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;je referme avec un "obturateur" pour avoir une finition propre&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Au premier étage j'ai toujours mon interrupteur classique fonctionnel je le laisse connecté pour savoir laquelle des deux navettes est sur notre wago 221 (avec la phase). L'autre navette n'est pas connectée pour l'instant.&lt;/p&gt;
 &lt;p&gt;N'oubliez pas de re-couper le disjoncteur !&lt;/p&gt;
 &lt;p&gt;Démonter l'interrupteur du haut. Marquer d'un morceau de scotch electrique rouge de préférence la navette avec la phase.&lt;/p&gt;
-&lt;p&gt;Connecter votre interrupteur Xiaomi du haut 1 bouton (ou 2 boutons) en plaçant :
-- la phase obtenu par le Wago et par la navette avec le scotch rouge sur la borne "L" de votre interrupteur
-- le fil précédent allant sur votre ampoule sur la borne "L1" de votre interrupteur.&lt;/p&gt;
+&lt;p&gt;Connecter votre interrupteur Xiaomi du haut 1 bouton (ou 2 boutons) en plaçant :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;la phase obtenu par le Wago et par la navette avec le scotch rouge sur la borne "L" de votre interrupteur&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;le fil précédent allant sur votre ampoule sur la borne "L1" de votre interrupteur.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Refixer l'interrupteur et tester le fonctionnement de celui-ci.&lt;/p&gt;
 &lt;p&gt;Pour que le va et vient soit fonctionnel, il ne vous reste plus qu'a activer le mode sans fil sur le 2eme bouton de votre interrupteur de l'entrée. Celui-ci doit déclencher sans fil l'interrupteur de l'escalier qui se trouve en haut.&lt;/p&gt;
 &lt;p&gt;J'ai personnellement 3 va et vient qui fonctionne ainsi grâce a plusieurs boutons situés a proximité les uns des autres.&lt;/p&gt;</content><category term="Domotique"></category><category term="Electricité"></category><category term="Xiaomi"></category></entry><entry><title>Optimisation de pdf grâce à ImageMagick</title><link href="https://www.choiz.fr/2019-04-23-optimisation-de-pdf-grace-a-imagemagick.html" rel="alternate"></link><published>2019-04-23T00:32:20+02:00</published><updated>2019-04-23T00:32:20+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2019-04-23:/2019-04-23-optimisation-de-pdf-grace-a-imagemagick.html</id><summary type="html">&lt;p&gt;Ayant de gros pdf de 3Mo je cherchais une solution pour les optimiser en ligne de commande.&lt;/p&gt;
