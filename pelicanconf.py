@@ -7,7 +7,7 @@ AUTHOR = u'Fran\xe7ois LASSERRE'
 SITENAME = u'ChoiZ'
 SITEURL = u'https://www.choiz.fr'
 SITETITLE = u'Blog technique de François LASSERRE'
-SITESUBTITLE = 'Je suis ingénieur informatique, je travail en tant que DevOps chez <a href="https://www.manomano.fr">ManoMano</a>. J\'aime le développement, le streaming, l\'Internet…<br><br>Depuis l\'an 2000, j\'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio. Je suis vice-président de l\'association <a href="https://www.frequence3.fr">Fréquence 3</a>.'
+SITESUBTITLE = 'Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J\'aime le développement, le streaming, l\'Internet…<br><br>Depuis l\'an 2000, j\'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2007 et j\'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.'
 #SITELOGO = u'avatar.png'
 
 GITHUB_URL = 'https://github.com/choiz/www.choiz.fr/tree/pelican'
@@ -46,11 +46,8 @@ LINKS = (
 # Social widget
 SOCIAL = (
           ('github', 'https://www.github.com/ChoiZ'),
-          ('flickr', 'https://www.flickr.com/ChoiZ'),
           ('lastfm', 'https://www.last.fm/user/ChoiZ'),
           ('twitter', 'https://www.twitter.com/ChoiZ'),
-          ('facebook', 'https://www.facebook.com/ChoiZ'),
-          ('foursquare', 'https://www.foursquare.com/ChoiZ'),
           ('linkedin', 'https://www.linkedin.com/in/ChoiZ'),
          )
 
