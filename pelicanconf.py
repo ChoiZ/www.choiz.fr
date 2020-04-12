@@ -58,7 +58,8 @@ STATIC_PATHS = [
     'extra/robots.txt',
     'extra/favicon.ico',
     'extra/CNAME',
-    'extra/README'
+    'extra/README',
+    'images',
     ]
 
 EXTRA_PATH_METADATA = {
