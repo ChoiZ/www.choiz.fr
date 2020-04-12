@@ -50,6 +50,37 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html">Gentoo Navigateur Web par Défaut</a></h2>
+    <p>
+      Posté le dim. 25 octobre 2015 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/web.html">web</a>,      <a href="https://www.choiz.fr/tag/browser.html">browser</a>,      <a href="https://www.choiz.fr/tag/default.html">default</a>,      <a href="https://www.choiz.fr/tag/navigateur.html">navigateur</a>    </p>
+  </header>
+  <div>
+      <p>Sur ma machine "links" était le navigateur web par défaut. Il est
+pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
+est préférable d'utiliser un navigateur tel que Firefox.</p>
+<p>Voici la commande pour voir le navigateur par défaut pour les url
+utilisants le protocole "http" :</p>
+<div class="highlight"><pre><span></span>xdg-mime query default x-scheme-handler/http
+</pre></div>
+
+
+<p>Et voici la commande pour le "https" :</p>
+<div class="highlight"><pre><span></span>xdg-mime query default x-scheme-handler/https
+</pre></div>
+
+
+<p>Pour changer le navigateur par défaut par Firefox il suffit d'executer
+ses deux commandes :</p>
+<div class="highlight"><pre><span></span>xdg-mime default firefox.desktop x-scheme-handler/http
+xdg-mime default firefox.desktop x-scheme-handler/https
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html">Vagrant faire un réseau privé</a></h2>
     <p>
       Posté le mar. 13 octobre 2015 &#8226;
@@ -401,52 +432,6 @@ github/master.</p>
 <p>-t ou --track pour rattacher à l’origin/master</p>
 <p>-b pour créer ma nouvelle branche “master”</p>
 <p>Plus d’info avec man git-checkout ;-)</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2015-07-19-gentoo-utilisation-de-layman-eix.html">Gentoo utilisation de layman & eix</a></h2>
-    <p>
-      Posté le dim. 19 juillet 2015 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/depot.html">dépôt</a>,      <a href="https://www.choiz.fr/tag/repos.html">repos</a>,      <a href="https://www.choiz.fr/tag/layman.html">layman</a>,      <a href="https://www.choiz.fr/tag/eix.html">eix</a>,      <a href="https://www.choiz.fr/tag/emerge.html">emerge</a>,      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/vagrant-bin.html">vagrant-bin</a>,      <a href="https://www.choiz.fr/tag/overlay.html">overlay</a>    </p>
-  </header>
-  <div>
-      <p>Certains programmes n’étant pas en dernière version dans les dépôts
-gentoo l’utilisation de layman peut faciliter la vie.</p>
-<p>Étant à la recherche de vagrant, la seule version disponible à ce jour
-sur gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de
-vagrant je me rend compte que nous sommes à la version 1.7.3.</p>
-<p>J’ai donc trouvé un overlay avec vagrant-bin version 1.7.3 :
-<a href="http://gpo.zugaina.org/app-emulation/vagrant-bin">http://gpo.zugaina.org/app-emulation/vagrant-bin</a></p>
-<p>Pour utiliser cette overlay nous avons besoin de layman.</p>
-<p>Installation :</p>
-<div class="highlight"><pre><span></span>emerge -a layman
-
-echo &quot;source /usr/portage/local/layman/make.conf&quot; &gt;&gt; /etc/make.conf
-</pre></div>
-
-
-<p>Pour afficher tous les overlays disponible :</p>
-<div class="highlight"><pre><span></span>layman -L
-</pre></div>
-
-
-<p>Ajouter l’overlay stefantalpalaru (dans lequel nous avons
-vagrant-bin-1.7.3) :</p>
-<div class="highlight"><pre><span></span>layman -f -a stefantalpalaru
-</pre></div>
-
-
-<p>Maintenant si on recherche dans eix “vagrant” rien n’a changé.</p>
-<p>Il faut mettre à jour eix :</p>
-<div class="highlight"><pre><span></span>eix-update
-</pre></div>
-
-
-<p>Maintenant avec eix vagrant nous avons la ligne vagrant-bin et donc nous
-pouvons installer vagrant-1.7.3 via emerge.</p>
   </div>
 </article>
 

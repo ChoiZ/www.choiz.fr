@@ -50,6 +50,59 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2020-04-12-faire-un-va-et-vient-avec-des-interrupteurs-muraux-xiaomi.html">Faire un va et vient avec des interrupteurs muraux Xiaomi</a></h2>
+    <p>
+      Posté le dim. 12 avril 2020 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/domotique.html">Domotique</a>,      <a href="https://www.choiz.fr/tag/electricite.html">Electricité</a>,      <a href="https://www.choiz.fr/tag/xiaomi.html">Xiaomi</a>    </p>
+  </header>
+  <div>
+      <p>J'ai recherché longtemps comment faire un va et vient avec des interrupteurs muraux Xiaomi.</p>
+<p>La seule solution proposée était de mettre :
+- un interrupteur filaire.
+- un interrupteur sans fil.</p>
+<p>Cette solution ne me convient pas car j'ai des interrupteurs encastrés, je n'ai pas envie d'avoir un interrupteur sans fil collé, alors que j'ai potentiellement de l'electricité a cet endroit et je ne veux pas changer les piles…</p>
+<p>J'ai donc pas mal cherché fait des tests etc… pour au final trouver comment faire un va et vient "classique" comme on fait avec des interrupteurs standards.</p>
+<p>Pour que le va et vient fonctionne avec 2 boutons xiaomi filaire il vous faut :
+- un va et vient electrique type lumière d'escalier
+- un circuit classique type lumière d'une entrée (avec un seul interrupteur) qui soit a coté d'un des deux interrupteurs va et vient
+- un interrupteur 2 boutons Xiaomi (un bouton sera alimenté par le 2eme circuit electrique, l'autre n'aura pas besoin d'alimentation car il fonctionnera en sans fil sans pile ;-))
+- un interrupteur 1 bouton (ou 2 boutons) pour le 2eme bouton du va et vient (master)
+- un wago (2 ou 3 bornes en fonction des fils présents)
+- un cache (obturateur) si on remplace 2 interrupteurs 1 bouton par un interrupteur 2 boutons.</p>
+<p>Je prend l'exemple d'un va et vient dans un escalier (RDC - 1er étage), avec 2 interrupteurs en bas :
+- un qui alimente l'ampoule de l'entrée
+- un qui alimente l'ampoule de l'escalier (va et vient)</p>
+<p><strong>ATTENTION :</strong></p>
+<p><strong>Avant toute intervention sur votre installation électrique, couper le disjoncteur général. Je ne pourrais en aucun cas être tenu pour responsable de vos agissements. Ce document est uniquement a titre d'information. Je ne pourrait être tenu pour responsable de tout dommages ou incidents.</strong></p>
+<p>Je démonte au RDC, mon interrupteur de l'entrée, et mon ancien interrupteur avec va et vient classique, je me retrouve donc avec :
+sur l'interrupteur de l'entrée :
+- la phase pour la lumière de l'entrée
+- le câble allant vers la lumière de l'entrée
+sur l'interrupteur va et vient (bas) :
+- la phase
+- deux navettes</p>
+<p>Je remplace mon interrupteur de l'entrée par l'interrupteur xiaomi :
+- la phase sur le "L"
+- le câble allant vers la lumière de l'entrée sur le "L1"</p>
+<p>Je prend mon wago ou équivalent, je branche :
+- la phase de l'interrupteur va et vient (bas)
+- une navette (pour alimenter mon second interrupteur du 1er étage)
+- je referme avec un "obturateur" pour avoir une finition propre</p>
+<p>Au premier étage j'ai toujours mon interrupteur classique fonctionnel je le laisse connecté pour savoir laquelle des deux navettes est sur notre wago 221 (avec la phase). L'autre navette n'est pas connectée pour l'instant.</p>
+<p>N'oubliez pas de re-couper le disjoncteur !</p>
+<p>Démonter l'interrupteur du haut. Marquer d'un morceau de scotch electrique rouge de préférence la navette avec la phase.</p>
+<p>Connecter votre interrupteur Xiaomi du haut 1 bouton (ou 2 boutons) en plaçant :
+- la phase obtenu par le Wago et par la navette avec le scotch rouge sur la borne "L" de votre interrupteur
+- le fil précédent allant sur votre ampoule sur la borne "L1" de votre interrupteur.</p>
+<p>Refixer l'interrupteur et tester le fonctionnement de celui-ci.</p>
+<p>Pour que le va et vient soit fonctionnel, il ne vous reste plus qu'a activer le mode sans fil sur le 2eme bouton de votre interrupteur de l'entrée. Celui-ci doit déclencher sans fil l'interrupteur de l'escalier qui se trouve en haut.</p>
+<p>J'ai personnellement 3 va et vient qui fonctionne ainsi grâce a plusieurs boutons situés a proximité les uns des autres.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2019-04-23-optimisation-de-pdf-grace-a-imagemagick.html">Optimisation de pdf grâce à ImageMagick</a></h2>
     <p>
       Posté le mar. 23 avril 2019 &#8226;
@@ -663,70 +716,6 @@ du controlleur revoir les différentes étapes.</p>
 <p>Si le provisionning est ok l'USG redémarre et la config est enfin fini ! ;-)</p>
 <p>Grand merci au forum lafibre.info et particulièrement ce <a href="https://lafibre.info/remplacer-livebox/unifi-security-gateway-en-remplacement-de-la-livebox/">sujet</a>.</p>
 <p><a href="http://amzn.to/2xXmsDO">Ubiquiti Networks USG</a> sur Amazon.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html">Installation de Proxmox-VE 5 sur Debian Stretch</a></h2>
-    <p>
-      Posté le sam. 26 août 2017 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/proxmox.html">Proxmox</a>,      <a href="https://www.choiz.fr/tag/debian.html">Debian</a>,      <a href="https://www.choiz.fr/tag/stretch.html">Stretch</a>    </p>
-  </header>
-  <div>
-      <p>Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
-Par contre il ne faut pas modifier le sources.list ni installer
-firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
-tout).</p>
-<p>Sur debian éditer le fichier /etc/hosts comme ceci :</p>
-<div class="highlight"><pre><span></span>127.0.0.1       localhost.localdomain localhost
-192.168.15.77   prox4m1.proxmox.com prox4m1 pvelocalhost
-
-# The following lines are desirable for IPv6 capable hosts
-::1     localhost ip6-localhost ip6-loopback
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters
-</pre></div>
-
-
-<p>Puis tester la configuration :</p>
-<div class="highlight"><pre><span></span>hostname --ip-address
-192.168.15.77 # should return here your IP adress
-</pre></div>
-
-
-<p>Puis on ajoute au sources.list le dépot de proxmox, on récupere la clé et on
-update :</p>
-<div class="highlight"><pre><span></span>echo &quot;deb http://download.proxmox.com/debian/pve stretch pve-no-subscription&quot; &gt; /etc/apt/sources.list.d/pve-install-repo.list
-wget http://download.proxmox.com/debian/proxmox-ve-release-5.x.gpg -O /etc/apt/trusted.gpg.d/proxmox-ve-release-5.x.gpg
-apt update &amp;&amp; apt dist-upgrade
-</pre></div>
-
-
-<p>Puis on install les packages Proxmox VE :</p>
-<div class="highlight"><pre><span></span>apt install proxmox-ve postfix open-iscsi
-</pre></div>
-
-
-<p>On configure postfix en distribution locale uniquement et à la fin de
-l'installation on reboot.</p>
-<p>Au reboot vous devriez avoir la main en https sur https://ip_proxmox:8006</p>
-<p>S'identifier avec vos login / pass debian.</p>
-<p>Pour ne pas avoir la popup qui indique que vous n'avez pas de souscription il
-faut modifier le fichier /usr/share/pve-manager/js/pvemanagerlib.js et
-rechercher la ligne avec :</p>
-<p><code>if (data.status !== 'Active') {</code></p>
-<p>remplacer par :</p>
-<p><code>if (false /*data.status !== 'Active'*/) {</code></p>
-<p>Puis relancer pveproxy avec la commande <code>pveproxy restart</code></p>
-<p>Se déconnecter de l'interface proxmox, à la reconnection vous n'aurez plus le
-message de souscription.</p>
-<p>Puis faire les commandes optionnelles :</p>
-<div class="highlight"><pre><span></span>apt remove os-prober
-apt remove linux-image-amd64 linux-image-4.9.0-3-amd64
-update-grub
-</pre></div>
   </div>
 </article>
 

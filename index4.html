@@ -50,6 +50,52 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2015-07-19-gentoo-utilisation-de-layman-eix.html">Gentoo utilisation de layman & eix</a></h2>
+    <p>
+      Posté le dim. 19 juillet 2015 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/depot.html">dépôt</a>,      <a href="https://www.choiz.fr/tag/repos.html">repos</a>,      <a href="https://www.choiz.fr/tag/layman.html">layman</a>,      <a href="https://www.choiz.fr/tag/eix.html">eix</a>,      <a href="https://www.choiz.fr/tag/emerge.html">emerge</a>,      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/vagrant-bin.html">vagrant-bin</a>,      <a href="https://www.choiz.fr/tag/overlay.html">overlay</a>    </p>
+  </header>
+  <div>
+      <p>Certains programmes n’étant pas en dernière version dans les dépôts
+gentoo l’utilisation de layman peut faciliter la vie.</p>
+<p>Étant à la recherche de vagrant, la seule version disponible à ce jour
+sur gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de
+vagrant je me rend compte que nous sommes à la version 1.7.3.</p>
+<p>J’ai donc trouvé un overlay avec vagrant-bin version 1.7.3 :
+<a href="http://gpo.zugaina.org/app-emulation/vagrant-bin">http://gpo.zugaina.org/app-emulation/vagrant-bin</a></p>
+<p>Pour utiliser cette overlay nous avons besoin de layman.</p>
+<p>Installation :</p>
+<div class="highlight"><pre><span></span>emerge -a layman
+
+echo &quot;source /usr/portage/local/layman/make.conf&quot; &gt;&gt; /etc/make.conf
+</pre></div>
+
+
+<p>Pour afficher tous les overlays disponible :</p>
+<div class="highlight"><pre><span></span>layman -L
+</pre></div>
+
+
+<p>Ajouter l’overlay stefantalpalaru (dans lequel nous avons
+vagrant-bin-1.7.3) :</p>
+<div class="highlight"><pre><span></span>layman -f -a stefantalpalaru
+</pre></div>
+
+
+<p>Maintenant si on recherche dans eix “vagrant” rien n’a changé.</p>
+<p>Il faut mettre à jour eix :</p>
+<div class="highlight"><pre><span></span>eix-update
+</pre></div>
+
+
+<p>Maintenant avec eix vagrant nous avons la ligne vagrant-bin et donc nous
+pouvons installer vagrant-1.7.3 via emerge.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html">Ma config : Clevo w650sz i7 4910MQ</a></h2>
     <p>
       Posté le sam. 18 juillet 2015 &#8226;
@@ -291,42 +337,6 @@ mozilla</a>.</p>
 <p>Créer un lien symbolique avec :</p>
 <div class="highlight"><pre><span></span>ls -sf /opt/firefox/firefox /usr/bin/firefox
 </pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html">Firebug champs mot de passe présents sur une page non sécurisée</a></h2>
-    <p>
-      Posté le mar. 18 mars 2014 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/firebug.html">firebug</a>,      <a href="https://www.choiz.fr/tag/http.html">http</a>,      <a href="https://www.choiz.fr/tag/https.html">https</a>,      <a href="https://www.choiz.fr/tag/formulaire.html">formulaire</a>,      <a href="https://www.choiz.fr/tag/warning.html">warning</a>,      <a href="https://www.choiz.fr/tag/password.html">password</a>    </p>
-  </header>
-  <div>
-      <p>Dans mon firebug des "warnings" s'affichent :</p>
-<div class="highlight"><pre><span></span>Champs mot de passe présents sur une page non sécurisée (http://). Cela
-représente un risque de sécurité permettant le vol d&#39;identifiants de
-connexion.
-</pre></div>
-
-
-<p>Ainsi que :</p>
-<div class="highlight"><pre><span></span>Champs mot de passe présents dans un formulaire possédant une action de
-formulaire non sécurisée (http://). Cela représente un risque de sécurité
-permettant le vol d&#39;identifiants de connexion.
-</pre></div>
-
-
-<p>La première indications informe que vous n'êtes pas sur un site
-utilisant le HTTPS. Lorsque vous allez remplir le champs "password"
-celui-ci sera envoyé en clair sur le réseau.</p>
-<p>La seconde indication informe que l'action du formulaire envoi sur une
-page qui n'est pas en HTTPS.</p>
-<p>Vous pouvez avoir votre formulaire sur l'url :
-<a href="https://www.mon-formulaire.fr">https://www.mon-formulaire.fr</a> et dans l'action de votre formulaire
-avoir : <a href="http://www.mon-formulaire.fr">http://www.mon-formulaire.fr</a></p>
-<p>Dans ce cas l'affichage du formulaire est sécurisé, mais l'envoi des
-données ne l'est pas vu que l'action est en http.</p>
   </div>
 </article>
 

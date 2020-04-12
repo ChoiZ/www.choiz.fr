@@ -50,6 +50,32 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html">Renomer des fichiers en CLI (ligne de commande)</a></h2>
+    <p>
+      Posté le sam. 14 avril 2012 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/cli.html">CLI</a>,      <a href="https://www.choiz.fr/tag/rename.html">rename</a>,      <a href="https://www.choiz.fr/tag/renommer.html">renommer</a>,      <a href="https://www.choiz.fr/tag/fichiers.html">fichiers</a>,      <a href="https://www.choiz.fr/tag/wav.html">wav</a>,      <a href="https://www.choiz.fr/tag/wav.html">WAV</a>    </p>
+  </header>
+  <div>
+      <p>Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
+correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
+"rename".</p>
+<p>Exemple je veux supprimer tous les espaces d'un fichier :</p>
+<div class="highlight"><pre><span></span>rename &quot;s/ *//g&quot; *.*
+</pre></div>
+
+
+<p>Ou renomer tous mes fichiers .WAV en .wav etc… :</p>
+<div class="highlight"><pre><span></span>rename &quot;s/\.WAV/\.wav/g&quot; *.WAV
+</pre></div>
+
+
+<p>A vous de modifier l'expression régulière !</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2012-04-13-update-gitconfig.html">Update .gitconfig</a></h2>
     <p>
       Posté le ven. 13 avril 2012 &#8226;
@@ -440,38 +466,6 @@ fichier avec vim :</p>
 séparateur pour la recherche et pour ce que l'on souhaite remplacer et <code>\#</code>
 est le caractère de remplacement.</p>
 <p>Je remplace donc le début de ligne par un #.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html">Plusieurs comptes Skype sur le même Mac !</a></h2>
-    <p>
-      Posté le dim. 18 septembre 2011 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/skype.html">Skype</a>,      <a href="https://www.choiz.fr/tag/macos.html">MacOs</a>    </p>
-  </header>
-  <div>
-      <p>Comment lancer plusieurs comptes Skype avec le même Mac ?</p>
-<p><img alt="image0" src="http://media.tumblr.com/tumblr_lrqn73WCUg1qzr4hx.png"></p>
-<p>Créer un compte utilisateur dans les préférences systèmes &gt;
-utilisateurs. Par exemple l'utilisateur : "skype" avec comme mot de
-passe "password". Ensuite ouvrir un terminal (dans spotlight tapez
-terminal). Puis :</p>
-<div class="highlight"><pre><span></span>su skype (ou &quot;su nomdutilisateur&quot; en fonction de l&#39;utilisateur créé).
-
-Password:
-
-password (ou autre suivant le mot de passe de l&#39;utilisateur).
-</pre></div>
-
-
-<p>Puis :</p>
-<div class="highlight"><pre><span></span>/Applications/Skype.app/Contents/MacOS/Skype
-</pre></div>
-
-
-<p>Ce qui devrait lancer une seconde instance de Skype.</p>
   </div>
 </article>
 

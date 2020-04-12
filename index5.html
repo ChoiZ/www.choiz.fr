@@ -50,6 +50,42 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html">Firebug champs mot de passe présents sur une page non sécurisée</a></h2>
+    <p>
+      Posté le mar. 18 mars 2014 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/firebug.html">firebug</a>,      <a href="https://www.choiz.fr/tag/http.html">http</a>,      <a href="https://www.choiz.fr/tag/https.html">https</a>,      <a href="https://www.choiz.fr/tag/formulaire.html">formulaire</a>,      <a href="https://www.choiz.fr/tag/warning.html">warning</a>,      <a href="https://www.choiz.fr/tag/password.html">password</a>    </p>
+  </header>
+  <div>
+      <p>Dans mon firebug des "warnings" s'affichent :</p>
+<div class="highlight"><pre><span></span>Champs mot de passe présents sur une page non sécurisée (http://). Cela
+représente un risque de sécurité permettant le vol d&#39;identifiants de
+connexion.
+</pre></div>
+
+
+<p>Ainsi que :</p>
+<div class="highlight"><pre><span></span>Champs mot de passe présents dans un formulaire possédant une action de
+formulaire non sécurisée (http://). Cela représente un risque de sécurité
+permettant le vol d&#39;identifiants de connexion.
+</pre></div>
+
+
+<p>La première indications informe que vous n'êtes pas sur un site
+utilisant le HTTPS. Lorsque vous allez remplir le champs "password"
+celui-ci sera envoyé en clair sur le réseau.</p>
+<p>La seconde indication informe que l'action du formulaire envoi sur une
+page qui n'est pas en HTTPS.</p>
+<p>Vous pouvez avoir votre formulaire sur l'url :
+<a href="https://www.mon-formulaire.fr">https://www.mon-formulaire.fr</a> et dans l'action de votre formulaire
+avoir : <a href="http://www.mon-formulaire.fr">http://www.mon-formulaire.fr</a></p>
+<p>Dans ce cas l'affichage du formulaire est sécurisé, mais l'envoi des
+données ne l'est pas vu que l'action est en http.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html">imapfilter ou comment filtrer ses mails facilement</a></h2>
     <p>
       Posté le mar. 11 mars 2014 &#8226;
@@ -361,54 +397,6 @@ autre chemin par exemple :</p>
 
 find /home/choiz/ -type f -exec chmod 644 {} \\;
 </pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2013-11-03-icônes-favicon-apple-touch-icon.html">Icônes / Favicon / Apple-touch-icon</a></h2>
-    <p>
-      Posté le dim. 03 novembre 2013 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/cli.html">cli</a>,      <a href="https://www.choiz.fr/tag/imagemagick.html">imagemagick</a>,      <a href="https://www.choiz.fr/tag/android.html">android</a>,      <a href="https://www.choiz.fr/tag/ios.html">ios</a>,      <a href="https://www.choiz.fr/tag/favicon.html">favicon</a>,      <a href="https://www.choiz.fr/tag/precomposed.html">precomposed</a>    </p>
-  </header>
-  <div>
-      <p>Voici comment faire facilement sa favicon et ses icônes pour les
-appareils mobiles avec image magick.</p>
-<p>Mon icône de base est en 512x512px au format png avec prise en charge de
-la transparence "icon512.png".</p>
-<p>Je veux faire une favicon en 16x16px, 32x32px 48x48px et 64x64px le tout
-dans un seul fichier favicon.ico. :</p>
-<div class="highlight"><pre><span></span>convert icon512.png \
-    -bordercolor white -border 0 \
-    \( -clone 0 -resize 16x16 \) \
-    \( -clone 0 -resize 32x32 \) \
-    \( -clone 0 -resize 48x48 \) \
-    \( -clone 0 -resize 64x64 \) \
-    -delete 0 -alpha off favicon.ico
-</pre></div>
-
-
-<p>Ensuite je veux faire mes icônes pour les appareils mobiles : Android,
-Apple etc… :</p>
-<div class="highlight"><pre><span></span>convert icon512.png -resize x60 touch-icon-iphone.png
-convert icon512.png -resize x76 touch-icon-ipad.png
-convert icon512.png -resize x120 touch-icon-iphone-retina.png
-convert icon512.png -resize x152 touch-icon-ipad-retina.png
-</pre></div>
-
-
-<p>Maintenant il faut ajouter dans notre page html entre les balises head :</p>
-<div class="highlight"><pre><span></span>&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;
-&lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;touch-icon-iphone.png&quot;&gt;
-&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;76x76&quot; href=&quot;touch-icon-ipad.png&quot;&gt;
-&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;120x120&quot; href=&quot;touch-icon-iphone-retina.png&quot;&gt;
-&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;152x152&quot; href=&quot;touch-icon-ipad-retina.png&quot;&gt;
-</pre></div>
-
-
-<p>A noter les appareils Android utilisent aussi les images
-"apple-touch-icon".</p>
   </div>
 </article>
 

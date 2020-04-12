@@ -50,6 +50,33 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html">TypeMatrix sous Mac Os X</a></h2>
+    <p>
+      Posté le lun. 04 mars 2013 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/typematrix.html">TypeMatrix</a>,      <a href="https://www.choiz.fr/tag/keyboard.html">Keyboard</a>,      <a href="https://www.choiz.fr/tag/macos.html">MacOs</a>    </p>
+  </header>
+  <div>
+      <p>J'ai chez moi comme au travail un clavier TypeMatrix 2030 USB.</p>
+<p>Sur mac il faut <a href="http://download.tuxfamily.org/dvorak/macosx/fr-dvorak-bepo-macosx-1.0rc2.dmg">télécharger le
+pilote</a>,
+puis copier le fichier fr-dvorak-bepo.bundle dans le dossier
+/Bibliothèque/Keyboard Layouts/</p>
+<p>Note : si vous installez le pilote dans le dossier de votre utilisateur
+(~/Bibliothèque/Keyboard Layouts/) vous ne pourrez pas utiliser le
+mappage à l'ouverture de session…</p>
+<p>Pour utiliser les touches couper, copier,coller, j'utilise
+<a href="http://pqrs.org/macosx/keyremap4macbook/">keyremap4macbook</a> (qui
+fonctionne aussi sur iMac etc…). L'installer puis redémarrer. Dans les
+préférences dans l'onglet "change key" recherchez "Use PC Style
+Copy/Paste #3bis" et sélectionnez l'option proposée.</p>
+<p>Vous pouvez maintenant utiliser votre TypeMatrix en Bépo sur Mac Os X
+avec la prise en charge des touches couper, copier et coller.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html">Logiciels de gestion de versions (Svn, Git, Mercurial)</a></h2>
     <p>
       Posté le mar. 12 février 2013 &#8226;
@@ -477,32 +504,6 @@ mon alias = git stapp</p>
 <p>git stash apply (récupére le dernier stash enregistré
 <a href="mailto:stash@{0">stash@{0</a>} et l'applique)</p>
 <p>Et pour rien n'oublier (RTFM) : man git stash</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html">Renomer des fichiers en CLI (ligne de commande)</a></h2>
-    <p>
-      Posté le sam. 14 avril 2012 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/cli.html">CLI</a>,      <a href="https://www.choiz.fr/tag/rename.html">rename</a>,      <a href="https://www.choiz.fr/tag/renommer.html">renommer</a>,      <a href="https://www.choiz.fr/tag/fichiers.html">fichiers</a>,      <a href="https://www.choiz.fr/tag/wav.html">wav</a>,      <a href="https://www.choiz.fr/tag/wav.html">WAV</a>    </p>
-  </header>
-  <div>
-      <p>Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
-correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
-"rename".</p>
-<p>Exemple je veux supprimer tous les espaces d'un fichier :</p>
-<div class="highlight"><pre><span></span>rename &quot;s/ *//g&quot; *.*
-</pre></div>
-
-
-<p>Ou renomer tous mes fichiers .WAV en .wav etc… :</p>
-<div class="highlight"><pre><span></span>rename &quot;s/\.WAV/\.wav/g&quot; *.WAV
-</pre></div>
-
-
-<p>A vous de modifier l'expression régulière !</p>
   </div>
 </article>
 
