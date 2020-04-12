@@ -47,6 +47,7 @@ Je prend l'exemple d'un va et vient dans un escalier (RDC - premier étage), ave
 
 **Avant toute intervention sur votre installation électrique, couper le disjoncteur général. Je ne pourrais en aucun cas être tenu pour responsable de vos agissements. Ce document est uniquement a titre d'information. Je ne pourrait être tenu pour responsable de tout dommages ou incidents.**
 
+![Schéma va et vient xiaomi]({static}/images/schema-va-et-vient-xiaomi.png)
 
 Je démonte au RDC, mon interrupteur de l'entrée, et mon ancien interrupteur avec va et vient classique, je me retrouve donc avec sur l'interrupteur de l'entrée :
 
