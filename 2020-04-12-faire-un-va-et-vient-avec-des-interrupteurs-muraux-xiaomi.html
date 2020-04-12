@@ -74,7 +74,7 @@
 </ul>
 <p>Cette solution ne me convient pas car j'ai des interrupteurs encastrés, je n'ai pas envie d'avoir un interrupteur sans fil collé, alors que j'ai potentiellement de l'electricité a cet endroit et je ne veux pas changer les piles…</p>
 <p>J'ai donc pas mal cherché fait des tests etc… pour au final trouver comment faire un va et vient "classique" comme on fait avec des interrupteurs standards.</p>
-<p>Pour que le va et vient fonctionne avec 2 boutons xiaomi filaire il vous faut :</p>
+<p>Pour que le va et vient fonctionne avec deux boutons xiaomi filaire il vous faut :</p>
 <ul>
 <li>
 <p>un va et vient electrique type lumière d'escalier</p>
@@ -83,19 +83,22 @@
 <p>un circuit classique type lumière d'une entrée (avec un seul interrupteur) qui soit a coté d'un des deux interrupteurs va et vient</p>
 </li>
 <li>
-<p>un interrupteur 2 boutons Xiaomi (un bouton sera alimenté par le 2eme circuit electrique, l'autre n'aura pas besoin d'alimentation car il fonctionnera en sans fil sans pile ;-))</p>
+<p>un interrupteur deux boutons Xiaomi (un bouton sera alimenté par le deuxième circuit electrique, l'autre bouton sera pour le va et vient (slave) et n'aura pas besoin d'alimentation car il fonctionnera en sans fil et sans pile, il enverra l'ordre au master d'allumer ou éteindre)</p>
 </li>
 <li>
-<p>un interrupteur 1 bouton (ou 2 boutons) pour le 2eme bouton du va et vient (master)</p>
+<p>un interrupteur un bouton (ou deux boutons) pour le deuxième bouton du va et vient (master).</p>
 </li>
 <li>
-<p>un wago (2 ou 3 bornes en fonction des fils présents)</p>
+<p>un wago 2 bornes</p>
 </li>
 <li>
-<p>un cache (obturateur) si on remplace 2 interrupteurs 1 bouton par un interrupteur 2 boutons.</p>
+<p>2 wago une borne (pour la deuxième navette inutile)</p>
+</li>
+<li>
+<p>un cache (obturateur) si on remplace 2 interrupteurs un bouton par un interrupteur deux boutons.</p>
 </li>
 </ul>
-<p>Je prend l'exemple d'un va et vient dans un escalier (RDC - 1er étage), avec 2 interrupteurs en bas :</p>
+<p>Je prend l'exemple d'un va et vient dans un escalier (RDC - premier étage), avec 2 interrupteurs en bas :</p>
 <ul>
 <li>
 <p>un qui alimente l'ampoule de l'entrée</p>
@@ -106,8 +109,7 @@
 </ul>
 <p><strong>ATTENTION :</strong></p>
 <p><strong>Avant toute intervention sur votre installation électrique, couper le disjoncteur général. Je ne pourrais en aucun cas être tenu pour responsable de vos agissements. Ce document est uniquement a titre d'information. Je ne pourrait être tenu pour responsable de tout dommages ou incidents.</strong></p>
-<p>Je démonte au RDC, mon interrupteur de l'entrée, et mon ancien interrupteur avec va et vient classique, je me retrouve donc avec :
-sur l'interrupteur de l'entrée :</p>
+<p>Je démonte au RDC, mon interrupteur de l'entrée, et mon ancien interrupteur avec va et vient classique, je me retrouve donc avec sur l'interrupteur de l'entrée :</p>
 <ul>
 <li>
 <p>la phase pour la lumière de l'entrée</p>
@@ -131,7 +133,7 @@ sur l'interrupteur de l'entrée :</p>
 <p>la phase sur le "L"</p>
 </li>
 <li>
-<p>le câble allant vers la lumière de l'entrée sur le "L1"</p>
+<p>le câble allant vers la lumière de l'entrée sur le "L1" ou "L2" a voir quel bouton vous souhaitez utiliser pour l'entrée et votre va et vient</p>
 </li>
 </ul>
 <p>Je prend mon wago ou équivalent, je branche :</p>
@@ -140,16 +142,20 @@ sur l'interrupteur de l'entrée :</p>
 <p>la phase de l'interrupteur va et vient (bas)</p>
 </li>
 <li>
-<p>une navette (pour alimenter mon second interrupteur du 1er étage)</p>
+<p>une navette (pour alimenter mon second interrupteur du premier étage)</p>
+</li>
+<li>
+<p>le wago une borne sur la navette restante</p>
 </li>
 <li>
 <p>je referme avec un "obturateur" pour avoir une finition propre</p>
 </li>
 </ul>
-<p>Au premier étage j'ai toujours mon interrupteur classique fonctionnel je le laisse connecté pour savoir laquelle des deux navettes est sur notre wago 221 (avec la phase). L'autre navette n'est pas connectée pour l'instant.</p>
+<p>Au premier étage j'ai toujours mon interrupteur classique fonctionnel je le laisse connecté pour savoir laquelle des deux navettes est sur notre wago (avec la phase). L'autre navette n'est pas connectée pour l'instant.</p>
 <p>N'oubliez pas de re-couper le disjoncteur !</p>
 <p>Démonter l'interrupteur du haut. Marquer d'un morceau de scotch electrique rouge de préférence la navette avec la phase.</p>
-<p>Connecter votre interrupteur Xiaomi du haut 1 bouton (ou 2 boutons) en plaçant :</p>
+<p>Sur l'autre navette mettre le deuxième wago une borne.</p>
+<p>Connecter votre interrupteur Xiaomi du haut un bouton (ou deux boutons) en plaçant :</p>
 <ul>
 <li>
 <p>la phase obtenu par le Wago et par la navette avec le scotch rouge sur la borne "L" de votre interrupteur</p>
@@ -159,8 +165,9 @@ sur l'interrupteur de l'entrée :</p>
 </li>
 </ul>
 <p>Refixer l'interrupteur et tester le fonctionnement de celui-ci.</p>
-<p>Pour que le va et vient soit fonctionnel, il ne vous reste plus qu'a activer le mode sans fil sur le 2eme bouton de votre interrupteur de l'entrée. Celui-ci doit déclencher sans fil l'interrupteur de l'escalier qui se trouve en haut.</p>
-<p>J'ai personnellement 3 va et vient qui fonctionne ainsi grâce a plusieurs boutons situés a proximité les uns des autres.</p>
+<p>Si vous avez un interrupteur deux boutons en haut le deuxieme bouton peut également être utilisé en mode sans fil pour un autre appareil ou êteindre votre entrée d'en haut par exemple (a voir si c'est utile).</p>
+<p>Pour que le va et vient soit fonctionnel, il ne vous reste plus qu'a activer le mode sans fil sur le deuxième bouton de votre interrupteur de l'entrée. Celui-ci doit déclencher sans fil l'interrupteur de l'escalier qui se trouve en haut.</p>
+<p>J'ai personnellement trois va et vient qui fonctionnent ainsi grâce à plusieurs boutons situés a proximité les uns des autres.</p>
   </div>
   <div class="tag-cloud">
     <p>
