@@ -1991,7 +1991,7 @@ précise, j'utilise la commande suivante :&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Pour rechercher directement dans le code source une modification
 précise, j'utilise la commande suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git log -p -S &amp;#39;display&amp;#39;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="git"></category><category term="search"></category><category term="source"></category><category term="code"></category><category term="log"></category></entry><entry><title>Écriture d'un rapport de bug</title><link href="https://www.choiz.fr/2014-11-08-%C3%A9criture-dun-rapport-de-bug.html" rel="alternate"></link><published>2014-11-08T16:55:00+01:00</published><updated>2014-11-08T16:55:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-11-08:/2014-11-08-écriture-dun-rapport-de-bug.html</id><summary type="html">&lt;p&gt;Étant développeur, j'ai très souvent des rapports de bug, qui peuvent
+&lt;/pre&gt;&lt;/div&gt;</content><category term="git"></category><category term="code"></category></entry><entry><title>Écriture d'un rapport de bug</title><link href="https://www.choiz.fr/2014-11-08-%C3%A9criture-dun-rapport-de-bug.html" rel="alternate"></link><published>2014-11-08T16:55:00+01:00</published><updated>2014-11-08T16:55:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-11-08:/2014-11-08-écriture-dun-rapport-de-bug.html</id><summary type="html">&lt;p&gt;Étant développeur, j'ai très souvent des rapports de bug, qui peuvent
 être précis, ou moins suivant la personne.&lt;/p&gt;
 &lt;p&gt;L'écriture d'un rapport de bug peut demander du temps, si on veut faire
 les choses correctement.&lt;/p&gt;
@@ -2016,7 +2016,7 @@ donc du temps et il ne vous perturbe pas dans votre travail (donc vous
 en gagnez aussi).&lt;/p&gt;
 &lt;p&gt;Je vous invite également à lire &lt;a href="http://www.chiark.greenend.org.uk/~sgtatham/bugs-fr.html"&gt;cet
 article&lt;/a&gt; pour
-écrire un bon rapport de bug.&lt;/p&gt;</content><category term="Écriture rapport de bug"></category><category term="Rapport de bug"></category><category term="bug report"></category><category term="bug"></category></entry><entry><title>Faire un patch de "x" commit(s) avec git</title><link href="https://www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html" rel="alternate"></link><published>2014-05-06T11:21:00+02:00</published><updated>2014-05-06T11:21:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-05-06:/2014-05-06-faire-un-patch-de-x-commits-avec-git.html</id><summary type="html">&lt;p&gt;Voici mon historique des commits :&lt;/p&gt;
+écrire un bon rapport de bug.&lt;/p&gt;</content><category term="bug"></category><category term="report"></category></entry><entry><title>Faire un patch de "x" commit(s) avec git</title><link href="https://www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html" rel="alternate"></link><published>2014-05-06T11:21:00+02:00</published><updated>2014-05-06T11:21:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-05-06:/2014-05-06-faire-un-patch-de-x-commits-avec-git.html</id><summary type="html">&lt;p&gt;Voici mon historique des commits :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;c0004 -- dernier commit
 c0003 -- avant dernier commit
 c0002 -- second commit
@@ -2042,7 +2042,7 @@ c0001 -- premier commit
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;le "-2" sert à récupérer 2 commits à partir du commit c0002.&lt;/p&gt;</content><category term="git"></category><category term="patch"></category><category term="commit"></category></entry><entry><title>Installation de Skype 64 sur Debian</title><link href="https://www.choiz.fr/2014-03-21-installation-de-skype-64-sur-debian.html" rel="alternate"></link><published>2014-03-21T01:32:18+01:00</published><updated>2014-03-21T01:32:18+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-03-21:/2014-03-21-installation-de-skype-64-sur-debian.html</id><summary type="html">&lt;p&gt;Télécharger la dernière version de &lt;a href="http://www.skype.com"&gt;Skype&lt;/a&gt; (Debian
+&lt;p&gt;le "-2" sert à récupérer 2 commits à partir du commit c0002.&lt;/p&gt;</content><category term="git"></category><category term="patch"></category></entry><entry><title>Installation de Skype 64 sur Debian</title><link href="https://www.choiz.fr/2014-03-21-installation-de-skype-64-sur-debian.html" rel="alternate"></link><published>2014-03-21T01:32:18+01:00</published><updated>2014-03-21T01:32:18+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-03-21:/2014-03-21-installation-de-skype-64-sur-debian.html</id><summary type="html">&lt;p&gt;Télécharger la dernière version de &lt;a href="http://www.skype.com"&gt;Skype&lt;/a&gt; (Debian
 7.0 [multiarch]).&lt;/p&gt;
 &lt;p&gt;Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dpkg --add-architecture i386
@@ -2073,7 +2073,7 @@ apt-get install -f
 
 &lt;p&gt;Installer Skype en n'oubliant pas de remplacer "x" par la bonne version :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dpkg -i skype-debian_x_i386.deb
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Skype"></category><category term="Debian"></category><category term="Installation de Skype"></category><category term="64bits"></category></entry><entry><title>Installation de Firefox sur Debian</title><link href="https://www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html" rel="alternate"></link><published>2014-03-21T01:14:41+01:00</published><updated>2014-03-21T01:14:41+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-03-21:/2014-03-21-installation-de-firefox-sur-debian.html</id><summary type="html">&lt;p&gt;Télécharger la dernière version de Firefox sur &lt;a href="http://www.mozilla.org/"&gt;le site de
+&lt;/pre&gt;&lt;/div&gt;</content><category term="skype"></category><category term="debian"></category></entry><entry><title>Installation de Firefox sur Debian</title><link href="https://www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html" rel="alternate"></link><published>2014-03-21T01:14:41+01:00</published><updated>2014-03-21T01:14:41+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-03-21:/2014-03-21-installation-de-firefox-sur-debian.html</id><summary type="html">&lt;p&gt;Télécharger la dernière version de Firefox sur &lt;a href="http://www.mozilla.org/"&gt;le site de
 mozilla&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Décompresser l'archive dans :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/opt/firefox/
@@ -2091,7 +2091,7 @@ mozilla&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Créer un lien symbolique avec :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ls -sf /opt/firefox/firefox /usr/bin/firefox
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Firefox"></category><category term="Debian"></category></entry><entry><title>Firebug champs mot de passe présents sur une page non sécurisée</title><link href="https://www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-pr%C3%A9sents-sur-une-page.html" rel="alternate"></link><published>2014-03-18T10:11:00+01:00</published><updated>2014-03-18T10:11:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-03-18:/2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html</id><summary type="html">&lt;p&gt;Dans mon firebug des "warnings" s'affichent :&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="firefox"></category><category term="debian"></category></entry><entry><title>Firebug champs mot de passe présents sur une page non sécurisée</title><link href="https://www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-pr%C3%A9sents-sur-une-page.html" rel="alternate"></link><published>2014-03-18T10:11:00+01:00</published><updated>2014-03-18T10:11:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-03-18:/2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html</id><summary type="html">&lt;p&gt;Dans mon firebug des "warnings" s'affichent :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Champs mot de passe présents sur une page non sécurisée (http://). Cela
 représente un risque de sécurité permettant le vol d&amp;#39;identifiants de
 connexion.
@@ -2123,7 +2123,7 @@ page qui n'est pas en HTTPS.&lt;/p&gt;
 &lt;a href="https://www.mon-formulaire.fr"&gt;https://www.mon-formulaire.fr&lt;/a&gt; et dans l'action de votre formulaire
 avoir : &lt;a href="http://www.mon-formulaire.fr"&gt;http://www.mon-formulaire.fr&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Dans ce cas l'affichage du formulaire est sécurisé, mais l'envoi des
-données ne l'est pas vu que l'action est en http.&lt;/p&gt;</content><category term="firebug"></category><category term="http"></category><category term="https"></category><category term="formulaire"></category><category term="warning"></category><category term="password"></category></entry><entry><title>imapfilter ou comment filtrer ses mails facilement</title><link href="https://www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html" rel="alternate"></link><published>2014-03-11T13:54:00+01:00</published><updated>2014-03-11T13:54:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-03-11:/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html</id><summary type="html">&lt;p&gt;Installer imapfilter via apt par exemple :&lt;/p&gt;
+données ne l'est pas vu que l'action est en http.&lt;/p&gt;</content><category term="http"></category><category term="ssl"></category><category term="firefox"></category></entry><entry><title>imapfilter ou comment filtrer ses mails facilement</title><link href="https://www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html" rel="alternate"></link><published>2014-03-11T13:54:00+01:00</published><updated>2014-03-11T13:54:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-03-11:/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html</id><summary type="html">&lt;p&gt;Installer imapfilter via apt par exemple :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install imapfilter
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -2203,7 +2203,7 @@ del_read_yahoo:delete_messages()
 &lt;p&gt;Maintenant c'est à vous de faire vos propres filtres. Une fois
 configuré, lancer imapfilter simplement depuis le terminal :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;imapfilter
-&lt;/pre&gt;&lt;/div&gt;</content><category term="imapfilter"></category><category term="mail"></category><category term="filter"></category><category term="imap"></category></entry><entry><title>Réparer ubuntu après un apt-get remove… de trop</title><link href="https://www.choiz.fr/2014-03-08-r%C3%A9parer-ubuntu-apr%C3%A8s-un-apt-get-remove-de-trop.html" rel="alternate"></link><published>2014-03-08T13:34:00+01:00</published><updated>2014-03-08T13:34:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-03-08:/2014-03-08-réparer-ubuntu-après-un-apt-get-remove-de-trop.html</id><summary type="html">&lt;p&gt;En voulant modifier xscreensaver par i3lock j'ai supprimé des paquets
+&lt;/pre&gt;&lt;/div&gt;</content><category term="mail"></category><category term="filter"></category><category term="imap"></category></entry><entry><title>Réparer ubuntu après un apt-get remove… de trop</title><link href="https://www.choiz.fr/2014-03-08-r%C3%A9parer-ubuntu-apr%C3%A8s-un-apt-get-remove-de-trop.html" rel="alternate"></link><published>2014-03-08T13:34:00+01:00</published><updated>2014-03-08T13:34:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-03-08:/2014-03-08-réparer-ubuntu-après-un-apt-get-remove-de-trop.html</id><summary type="html">&lt;p&gt;En voulant modifier xscreensaver par i3lock j'ai supprimé des paquets
 non utilisés (jeux etc…).&lt;/p&gt;
 &lt;p&gt;J'ai malheureusement supprimé un peu (trop) de paquets tel que
 (xfdesktop4 et xfce4-panel). Au démarrage de x, une fois identifié, un
@@ -2221,7 +2221,7 @@ SSH je peux me connecter à la machine à distance.&lt;/p&gt;
 
 &lt;p&gt;Il suffit ensuite d'ouvrir dans un éditeur texte (type vi) le fichier
 pour voir les paquets installés / déinstallés. Et réinstaller avec sudo
-apt-get install le ou les paquets manquants.&lt;/p&gt;</content><category term="xubuntu"></category><category term="ubuntu"></category><category term="xfce"></category><category term="écran gris"></category><category term="apt-get remove"></category><category term="réparation"></category></entry><entry><title>Git diff multiligne</title><link href="https://www.choiz.fr/2014-03-05-git-diff-multiligne.html" rel="alternate"></link><published>2014-03-05T12:56:00+01:00</published><updated>2014-03-05T12:56:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-03-05:/2014-03-05-git-diff-multiligne.html</id><summary type="html">&lt;p&gt;Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
+apt-get install le ou les paquets manquants.&lt;/p&gt;</content><category term="xubuntu"></category><category term="apt"></category><category term="linux"></category></entry><entry><title>Git diff multiligne</title><link href="https://www.choiz.fr/2014-03-05-git-diff-multiligne.html" rel="alternate"></link><published>2014-03-05T12:56:00+01:00</published><updated>2014-03-05T12:56:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-03-05:/2014-03-05-git-diff-multiligne.html</id><summary type="html">&lt;p&gt;Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
 ligne…&lt;/p&gt;
 &lt;p&gt;J'ai du faire un &lt;em&gt;git diff&lt;/em&gt; dans mon terminal et copié la ligne (mais
 pas entièrement…).&lt;/p&gt;
@@ -2266,7 +2266,7 @@ index 0000000..235a891
 @@ -0,0 +1 @@
 +ligne avec un peu de texte ici nous avons 66 caractères affichés.\
 No newline at end of file
-&lt;/pre&gt;&lt;/div&gt;</content><category term="git"></category><category term="diff"></category><category term="wrap"></category><category term="less"></category><category term="gitconfig"></category></entry><entry><title>Création d'une clé usb xubuntu sur mac</title><link href="https://www.choiz.fr/2014-03-04-cr%C3%A9ation-dune-cl%C3%A9-usb-xubuntu-sur-mac.html" rel="alternate"></link><published>2014-03-04T14:10:00+01:00</published><updated>2014-03-04T14:10:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-03-04:/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html</id><summary type="html">&lt;p&gt;Dans le terminal sur votre mac :&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="git"></category><category term="diff"></category><category term="config"></category></entry><entry><title>Création d'une clé usb xubuntu sur mac</title><link href="https://www.choiz.fr/2014-03-04-cr%C3%A9ation-dune-cl%C3%A9-usb-xubuntu-sur-mac.html" rel="alternate"></link><published>2014-03-04T14:10:00+01:00</published><updated>2014-03-04T14:10:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-03-04:/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html</id><summary type="html">&lt;p&gt;Dans le terminal sur votre mac :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;diskutil list
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -2318,7 +2318,7 @@ Password:
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;diskutil eject /dev/disk2
 
 Disk /dev/disk2 ejected
-&lt;/pre&gt;&lt;/div&gt;</content><category term="clé usb"></category><category term="xubuntu"></category><category term="mac"></category><category term="terminal"></category><category term="ubuntu"></category></entry><entry><title>git cherry-pick</title><link href="https://www.choiz.fr/2014-02-06-git-cherry-pick.html" rel="alternate"></link><published>2014-02-06T23:11:30+01:00</published><updated>2014-02-06T23:11:30+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-02-06:/2014-02-06-git-cherry-pick.html</id><summary type="html">&lt;p&gt;J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
+&lt;/pre&gt;&lt;/div&gt;</content><category term="usb"></category><category term="xubuntu"></category><category term="osx"></category><category term="linux"></category></entry><entry><title>git cherry-pick</title><link href="https://www.choiz.fr/2014-02-06-git-cherry-pick.html" rel="alternate"></link><published>2014-02-06T23:11:30+01:00</published><updated>2014-02-06T23:11:30+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-02-06:/2014-02-06-git-cherry-pick.html</id><summary type="html">&lt;p&gt;J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
 messages sur cherry-pick sans savoir ce que c'était.&lt;/p&gt;
 &lt;p&gt;git cherry-pick permet d'appliquer un commit sur la branche sur la
 branche actuelle.&lt;/p&gt;
@@ -2328,7 +2328,7 @@ messages sur cherry-pick sans savoir ce que c'était.&lt;/p&gt;
 &lt;p&gt;git cherry-pick permet d'appliquer un commit sur la branche sur la
 branche actuelle.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git cherry-pick c4a99776
-&lt;/pre&gt;&lt;/div&gt;</content><category term="git"></category><category term="cherry-pick"></category><category term="commit"></category><category term="branch"></category></entry><entry><title>Nouveau thème</title><link href="https://www.choiz.fr/2014-02-06-nouveau-th%C3%A8me.html" rel="alternate"></link><published>2014-02-06T23:03:00+01:00</published><updated>2014-02-06T23:03:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-02-06:/2014-02-06-nouveau-thème.html</id><summary type="html">&lt;p&gt;Je n'avais pas mis à jour mon thème depuis bien longtemps.&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="git"></category><category term="branch"></category></entry><entry><title>Nouveau thème</title><link href="https://www.choiz.fr/2014-02-06-nouveau-th%C3%A8me.html" rel="alternate"></link><published>2014-02-06T23:03:00+01:00</published><updated>2014-02-06T23:03:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-02-06:/2014-02-06-nouveau-thème.html</id><summary type="html">&lt;p&gt;Je n'avais pas mis à jour mon thème depuis bien longtemps.&lt;/p&gt;
 &lt;p&gt;C'est maintenant chose faite avec ce nouveau thème !&lt;/p&gt;
 &lt;p&gt;&lt;img alt="nouveau
 thème" src="https://31.media.tumblr.com/d0896de0a038122cee44adbfaeb7e90c/tumblr_inline_n0lh2qig1i1qzr4hx.png"&gt;&lt;/p&gt;
@@ -2340,7 +2340,7 @@ thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr
 thème" src="https://31.media.tumblr.com/d0896de0a038122cee44adbfaeb7e90c/tumblr_inline_n0lh2qig1i1qzr4hx.png"&gt;&lt;/p&gt;
 &lt;p&gt;Voici l'ancien thème en souvenir.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="ancien
-thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr_inline_n0lh2l5LOi1qzr4hx.png"&gt;&lt;/p&gt;</content><category term="thème"></category><category term="blog"></category></entry><entry><title>Suppression d'un caractère unicode dans Vim</title><link href="https://www.choiz.fr/2014-01-19-suppression-dun-caract%C3%A8re-unicode-dans-vim.html" rel="alternate"></link><published>2014-01-19T17:06:00+01:00</published><updated>2014-01-19T17:06:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-01-19:/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html</id><summary type="html">&lt;p&gt;J'étais à la recherche de se caractère unicode dans vim :&lt;/p&gt;
+thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr_inline_n0lh2l5LOi1qzr4hx.png"&gt;&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>Suppression d'un caractère unicode dans Vim</title><link href="https://www.choiz.fr/2014-01-19-suppression-dun-caract%C3%A8re-unicode-dans-vim.html" rel="alternate"></link><published>2014-01-19T17:06:00+01:00</published><updated>2014-01-19T17:06:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-01-19:/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html</id><summary type="html">&lt;p&gt;J'étais à la recherche de se caractère unicode dans vim :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;U+2028&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -2367,7 +2367,7 @@ thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr
 &lt;p&gt;&lt;code&gt;:%s/&lt;/code&gt; Recherche et remplace dans tout le fichier&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;\%U2028&lt;/code&gt; Le caractère que l'on recherche unicode "2028"&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;//&lt;/code&gt; par rien (1er slash sépare la recherche par ce qu'on remplace, le second pour dire la fin de ce qu'on remplace).&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;g&lt;/code&gt; dans tout le fichier (global).&lt;/p&gt;</content><category term="vim"></category><category term="unicode"></category><category term="char"></category><category term="suppression"></category><category term="caractère"></category></entry><entry><title>crontab -e file(s)</title><link href="https://www.choiz.fr/2013-11-13-crontab-e-files.html" rel="alternate"></link><published>2013-11-13T21:13:34+01:00</published><updated>2013-11-13T21:13:34+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-11-13:/2013-11-13-crontab-e-files.html</id><summary type="html">&lt;p&gt;Ou se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;g&lt;/code&gt; dans tout le fichier (global).&lt;/p&gt;</content><category term="vim"></category><category term="encoding"></category></entry><entry><title>crontab -e file(s)</title><link href="https://www.choiz.fr/2013-11-13-crontab-e-files.html" rel="alternate"></link><published>2013-11-13T21:13:34+01:00</published><updated>2013-11-13T21:13:34+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-11-13:/2013-11-13-crontab-e-files.html</id><summary type="html">&lt;p&gt;Ou se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?&lt;/p&gt;
 &lt;p&gt;C'est une bonne question n'est-ce pas ?&lt;/p&gt;
 &lt;p&gt;La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
 debian, a voir sur d'autres distribs)&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ou se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?&lt;/p&gt;

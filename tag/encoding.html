@@ -50,6 +50,34 @@
 
 <article>
   <header>
+    <h1><a href="https://www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html">Suppression d'un caractère unicode dans Vim</a></h1>
+    <p>
+      Posté le dim. 19 janvier 2014 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/encoding.html">encoding</a>      &#8226; <a href="https://www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>J'étais à la recherche de se caractère unicode dans vim :</p>
+<div class="highlight"><pre><span></span>&lt;U+2028&gt;
+</pre></div>
+
+
+<p>Pour pouvoir le supprimer j'ai utilisé la commande suivante :</p>
+<div class="highlight"><pre><span></span>:%s/\%U2028//g
+</pre></div>
+
+
+<p>Décortiquons la commande :</p>
+<p><code>:%s/</code> Recherche et remplace dans tout le fichier</p>
+<p><code>\%U2028</code> Le caractère que l'on recherche unicode "2028"</p>
+<p><code>//</code> par rien (1er slash sépare la recherche …</p>
+      <a class="btn" href="https://www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h1><a href="https://www.choiz.fr/2013-05-29-latin1-utf-8.html">Latin1 vers UTF-8</a></h1>
     <p>
       Posté le mer. 29 mai 2013 &#8226;
