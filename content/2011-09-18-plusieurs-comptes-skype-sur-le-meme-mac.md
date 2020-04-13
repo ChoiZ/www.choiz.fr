@@ -2,7 +2,7 @@ Title: Plusieurs comptes Skype sur le même Mac !
 Date: 2011-09-18 23:47:53
 Author: choiz
 Category: text
-Tags: Skype, MacOs
+Tags: skype, osx
 Slug: 2011-09-18-plusieurs-comptes-skype-sur-le-même-mac
 Status: published
 

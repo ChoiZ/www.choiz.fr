@@ -2,7 +2,7 @@ Title: Partage Samba !
 Date: 2011-08-17 20:41:00
 Author: choiz
 Category: text
-Tags: Samba, Share, Linux
+Tags: samba, linux
 Slug: 2011-08-17-partage-samba
 Status: published
 

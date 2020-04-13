@@ -2,7 +2,7 @@ Title: Passage en SSL du blog
 Date: 2016-04-28 22:17:11
 Author: choiz
 Category: text
-Tags: blog, ssl, https, github, page
+Tags: blog, ssl, github
 Slug: 2016-04-28-passage-en-ssl-du-blog
 Status: published
 

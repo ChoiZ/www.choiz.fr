@@ -2,7 +2,7 @@ Title: Créer un partage NFS
 Date: 2017-10-15 19:52:13
 Author: choiz
 Category: text
-Tags: partage, NFS, linux, debian, gentoo
+Tags: nfs, linux, debian, gentoo
 Slug: 2017-10-15-creer-un-partage-nfs
 Status: published
 

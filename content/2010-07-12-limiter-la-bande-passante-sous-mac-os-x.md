@@ -2,7 +2,7 @@ Title: Limiter la bande passante sous Mac Os X
 Date: 2010-07-12 11:59:00
 Author: choiz
 Category: text
-Tags: QoS, MacOs
+Tags: qos, osx
 Slug: 2010-07-12-limiter-la-bande-passante-sous-mac-os-x
 Status: published
 

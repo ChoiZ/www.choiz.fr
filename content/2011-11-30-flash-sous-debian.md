@@ -2,7 +2,7 @@ Title: Flash sous Debian
 Date: 2011-11-30 22:52:56
 Author: choiz
 Category: text
-Tags: Flash, Debian, Deezer, Firefox, flashplugin, source, apt, souce.list, non-free, contrib
+Tags: flash, debian, linux
 Slug: 2011-11-30-flash-sous-debian
 Status: published
 

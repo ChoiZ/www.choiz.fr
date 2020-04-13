@@ -2,7 +2,7 @@ Title: Installer et utiliser lxc
 Date: 2018-07-30 10:48:04
 Author: choiz
 Category: text
-Tags: linux, container, lxc
+Tags: linux, lxc, debian
 Slug: 2018-07-30-installer-et-utiliser-lxc
 Status: published
 
@@ -26,7 +26,7 @@ Lister les conteneurs :
 
 ```
 lxc-ls -f
-NAME        STATE   AUTOSTART GROUPS IPV4 IPV6 
+NAME        STATE   AUTOSTART GROUPS IPV4 IPV6
 debian9     STOPPED 0         -      -    -
 ```
 
@@ -40,8 +40,8 @@ Vérifions :
 
 ```
 lxc-ls -f
-NAME        STATE   AUTOSTART GROUPS IPV4 IPV6 
-debian9     STOPPED 0         -      -    -    
+NAME        STATE   AUTOSTART GROUPS IPV4 IPV6
+debian9     STOPPED 0         -      -    -
 debian9wiki STOPPED 0         -      -    -
 ```
 
@@ -55,9 +55,9 @@ Vérifions :
 
 ```
 lxc-ls -f
-NAME        STATE   AUTOSTART GROUPS IPV4           IPV6 
-debian9     STOPPED 0         -      -              -    
-debian9wiki RUNNING 0         -      192.168.60.140 -    
+NAME        STATE   AUTOSTART GROUPS IPV4           IPV6
+debian9     STOPPED 0         -      -              -
+debian9wiki RUNNING 0         -      192.168.60.140 -
 ```
 
 Se connecter a l'aide de lxc-attach :

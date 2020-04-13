@@ -2,7 +2,7 @@ Title: Mise à jour d'un kernel gentoo
 Date: 2015-11-21 13:50:44
 Author: choiz
 Category: text
-Tags: gentoo, kernel, upgrade, noyaux, linux
+Tags: gentoo, kernel, linux
 Slug: 2015-11-21-mise-a-jour-d-un-kernel-gentoo
 Status: published
 

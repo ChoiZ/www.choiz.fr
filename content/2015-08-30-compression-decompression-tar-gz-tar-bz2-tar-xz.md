@@ -2,7 +2,7 @@ Title: Compression Décompression tar.gz tar.bz2 tar.xz
 Date: 2015-08-30 11:47:00
 Author: choiz
 Category: text
-Tags: tar.gz, tar.bz2, tar.xz, tar, gz, gzip, bz2, xz, lzma
+Tags: archive, gzip
 Slug: 2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz
 Status: published
 

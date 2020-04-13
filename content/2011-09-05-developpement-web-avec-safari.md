@@ -2,7 +2,7 @@ Title: Développement web avec Safari
 Date: 2011-09-05 09:53:22
 Author: choiz
 Category: text
-Tags: Safari, Dev
+Tags: dev, code, osx
 Slug: 2011-09-05-développement-web-avec-safari
 Status: published
 

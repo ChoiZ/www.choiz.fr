@@ -2,7 +2,7 @@ Title: Convertir un .deb en archive .tar.gz
 Date: 2016-07-30 10:28:18
 Author: choiz
 Category: text
-Tags: deb, tar.gz, debian, ubuntu, archive, gentoo, linux
+Tags: archive, debian, gentoo, gzip, linux
 Slug: 2016-07-30-convertir-un-.deb-en-archive-.tar.gz
 Status: published
 

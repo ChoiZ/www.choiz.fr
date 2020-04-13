@@ -3,7 +3,7 @@ Date: 2017-08-26 19:00:56
 Modified: 2017-09-02 18:25:10
 Author: choiz
 Category: text
-Tags: UniFi, Gateway, Livebox, USG, Network
+Tags: unifi, gateway, livebox, usg, network
 Slug: 2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg)
 Status: published
 
@@ -68,7 +68,7 @@ root@ubnt:/home/ubnt# reboot
 Proceed with reboot? [confirm]y
 ```
 
-Débrancher votre controlleur du réseau (pour ne pas que l'USG reprovisionne une 
+Débrancher votre controlleur du réseau (pour ne pas que l'USG reprovisionne une
 vielle configuration).
 
 Se connecter de nouveau en ssh sur l'usg :

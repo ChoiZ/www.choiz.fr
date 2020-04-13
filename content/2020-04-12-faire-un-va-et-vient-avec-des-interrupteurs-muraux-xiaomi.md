@@ -2,7 +2,7 @@ Title: Faire un va et vient avec des interrupteurs muraux Xiaomi
 Date: 2020-04-12 17:37:45
 Author: choiz
 Category: text
-Tags: Domotique, Electricité, Xiaomi
+Tags: électricité, domotique, xiaomi
 Slug: 2020-04-12-faire-un-va-et-vient-avec-des-interrupteurs-muraux-xiaomi
 Status: published
 

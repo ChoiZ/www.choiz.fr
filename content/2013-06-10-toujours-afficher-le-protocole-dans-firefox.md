@@ -2,7 +2,7 @@ Title: Toujours afficher le protocole dans Firefox
 Date: 2013-06-10 14:22:00
 Author: choiz
 Category: text
-Tags: firefox, config, http, urlbar, browser
+Tags: web, config
 Slug: 2013-06-10-toujours-afficher-le-protocole-dans-firefox
 Status: published
 

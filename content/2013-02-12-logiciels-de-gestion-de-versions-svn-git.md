@@ -2,7 +2,7 @@ Title: Logiciels de gestion de versions (Svn, Git, Mercurial)
 Date: 2013-02-12 13:26:00
 Author: choiz
 Category: text
-Tags: git, mercurial, svn, migration, svn to git, mercurial to git, hg to git, hg
+Tags: git, svn
 Slug: 2013-02-12-logiciels-de-gestion-de-versions-svn-git
 Status: published
 

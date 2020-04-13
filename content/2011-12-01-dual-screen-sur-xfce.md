@@ -2,7 +2,7 @@ Title: Dual screen sur xfce
 Date: 2011-12-01 12:14:16
 Author: choiz
 Category: text
-Tags: xfce, dualscreen, dual, screen, xfce, linux
+Tags: arandr, linux
 Slug: 2011-12-01-dual-screen-sur-xfce
 Status: published
 

@@ -2,7 +2,7 @@ Title: Clavier Apple sur debian
 Date: 2011-12-02 00:14:00
 Author: choiz
 Category: text
-Tags: Debian, Keyboard, MacOs
+Tags: debian, keyboard, osx
 Slug: 2011-12-02-clavier-apple-sur-debian
 Status: published
 

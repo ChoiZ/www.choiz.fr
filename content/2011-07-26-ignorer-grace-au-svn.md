@@ -2,7 +2,7 @@ Title: Ignorer grâce au SVN
 Date: 2011-07-26 18:53:21
 Author: choiz
 Category: text
-Tags: SVN, Subversion, Ignore
+Tags: svn
 Slug: 2011-07-26-ignorer-grâce-au-svn
 Status: published
 

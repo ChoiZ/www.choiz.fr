@@ -2,7 +2,7 @@ Title: Git mes fichiers de config gitconfig / gitignore
 Date: 2012-01-31 10:34:00
 Author: choiz
 Category: text
-Tags: git, gitconfig, gitignore, git color, git tools, git alias, git merge, git diff, git editor, git excludesfile
+Tags: git, config
 Slug: 2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore
 Status: published
 

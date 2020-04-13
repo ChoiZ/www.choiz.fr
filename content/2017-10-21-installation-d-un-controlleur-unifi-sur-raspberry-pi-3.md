@@ -2,7 +2,7 @@ Title: Installation d'un controlleur Unifi sur Raspberry Pi 3
 Date: 2017-10-21 21:57:19
 Author: choiz
 Category: text
-Tags: RaspberryPi, Unifi, Debian
+Tags: raspberry, unifi, debian, linux
 Slug: 2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3
 Status: published
 
@@ -58,7 +58,7 @@ configurer votre Raspberry Pi.
 2. Changer le timezone (4 Localisation Option, puis I2 Change Timezone),
     choisir Europe, puis Paris.
 
-3. Changer le layout du clavier (4 Localisation Option, puis I3 Change Keyboard 
+3. Changer le layout du clavier (4 Localisation Option, puis I3 Change Keyboard
     Layout), choisir Generic 105-key (Intl) PC, Other, French,
     French - French (Azerty), The Default for keybord layout, et pour finir : No compose key.
 

@@ -2,7 +2,7 @@ Title: Vagrant faire un réseau privé
 Date: 2015-10-13 18:21:02
 Author: choiz
 Category: text
-Tags: vagrant, réseau, privé, private, network
+Tags: vagrant, network
 Slug: 2015-10-13-vagrant-faire-un-reseau-prive
 Status: published
 

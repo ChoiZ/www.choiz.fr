@@ -2,7 +2,7 @@ Title: Récupérer le master depuis le remote origin avec git
 Date: 2015-08-07 17:33:07
 Author: choiz
 Category: text
-Tags: git, origin, remote, master, branch, checkout, track
+Tags: git, branch, origin
 Slug: 2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec
 Status: published
 

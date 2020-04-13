@@ -2,7 +2,7 @@ Title: jQuery attr() avec onclick par click()
 Date: 2011-01-07 16:43:00
 Author: choiz
 Category: text
-Tags: Code, jQuery, JavaScript
+Tags: code, jquery, javascript
 Slug: 2011-01-07-jquery-attr-avec-onclick-par-click
 Status: published
 

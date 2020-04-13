@@ -2,7 +2,7 @@ Title: Liens utiles
 Date: 2011-08-09 21:03:05
 Author: choiz
 Category: text
-Tags: Code, JavaScript, CSS
+Tags: code, javascript, css
 Slug: 2011-08-09-liens-utiles
 Status: published
 

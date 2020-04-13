@@ -2,7 +2,7 @@ Title: Renomer des fichiers en CLI (ligne de commande)
 Date: 2012-04-14 16:02:00
 Author: choiz
 Category: text
-Tags: CLI, rename, renommer, fichiers, wav, WAV
+Tags: cli, file, linux
 Slug: 2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande
 Status: published
 

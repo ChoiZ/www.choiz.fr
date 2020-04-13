@@ -2,7 +2,7 @@ Title: Des commentaires efficaces
 Date: 2015-10-12 13:44:15
 Author: choiz
 Category: text
-Tags: commentaire, code, efficace
+Tags: commentaire, code
 Slug: 2015-10-12-des-commentaires-efficaces
 Status: published
 

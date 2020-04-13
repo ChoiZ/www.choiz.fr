@@ -2,7 +2,7 @@ Title: Touche pour sortir sa machine de veille
 Date: 2015-08-08 09:17:25
 Author: choiz
 Category: text
-Tags: touche, sortie, veille, ordinateur, shift, clavier
+Tags: key, computer
 Slug: 2015-08-08-touche-pour-sortir-sa-machine-de-veille
 Status: published
 

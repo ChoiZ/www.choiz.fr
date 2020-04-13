@@ -2,7 +2,7 @@ Title: Gentoo utilisation de layman & eix
 Date: 2015-07-19 10:54:55
 Author: choiz
 Category: text
-Tags: dépôt, repos, layman, eix, emerge, gentoo, vagrant-bin, overlay
+Tags: emerge, gentoo
 Slug: 2015-07-19-gentoo-utilisation-de-layman-eix
 Status: published
 

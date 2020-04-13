@@ -2,7 +2,7 @@ Title: Initialiser des sous-modules en cascade dans git
 Date: 2015-01-25 11:17:00
 Author: choiz
 Category: text
-Tags: git, submodule, update, init, recursive
+Tags: git, submodule
 Slug: 2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git
 Status: published
 

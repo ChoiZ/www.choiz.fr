@@ -2,7 +2,7 @@ Title: Petit tips pour les utilisateurs de VIM et PHP
 Date: 2011-04-13 13:59:00
 Author: choiz
 Category: text
-Tags: PHP, Vim, cli
+Tags: php, vim, cli
 Slug: 2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php
 Status: published
 

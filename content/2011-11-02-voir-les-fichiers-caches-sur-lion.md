@@ -2,7 +2,7 @@ Title: Voir les fichiers cachés sur Lion
 Date: 2011-11-02 11:17:12
 Author: choiz
 Category: text
-Tags: fichiers, cachés, hidden, files, MacOs
+Tags: file, osx
 Slug: 2011-11-02-voir-les-fichiers-cachés-sur-lion
 Status: published
 

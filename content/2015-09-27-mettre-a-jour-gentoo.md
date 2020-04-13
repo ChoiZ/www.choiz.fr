@@ -2,7 +2,7 @@ Title: Mettre à jour Gentoo
 Date: 2015-09-27 14:04:13
 Author: choiz
 Category: text
-Tags: update, mise à jour, gentoo, eix, emerge
+Tags: gentoo, emerge, linux
 Slug: 2015-09-27-mettre-a-jour-gentoo
 Status: published
 

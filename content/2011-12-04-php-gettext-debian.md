@@ -3,7 +3,7 @@ Date: 2011-12-04 19:10:00
 Modified: 2015-11-30 21:18:07
 Author: choiz, doogaille
 Category: text
-Tags: .mo, .po, /etc/locale, LC\_ALL, gettext, php, php-gettext, setlocale, xgettext
+Tags: php, gettext
 Slug: 2011-12-04-php-gettext-debian
 Status: published
 

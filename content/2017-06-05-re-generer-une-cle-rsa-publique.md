@@ -2,7 +2,7 @@ Title: Re-générer une clé rsa publique
 Date: 2017-06-05 15:03:08
 Author: choiz
 Category: text
-Tags: id_rsa, rsa, pub, key, ssh
+Tags: ssh, key, rsa, pub
 Slug: 2017-06-05-re-generer-une-cle-rsa-publique
 Status: published
 

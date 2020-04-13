@@ -2,7 +2,7 @@ Title: Utiliser les Github Issues pour avoir des commentaires sur le blog
 Date: 2020-04-13 14:13:51
 Author: choiz
 Category: text
-Tags: Blog, Github, Comments
+Tags: blog, github, commentaire
 Slug: 2020-04-13-utiliser-les-github-issues-pour-avoir-des-commentaires-sur-le-blog
 Status: published
 

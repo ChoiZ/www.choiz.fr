@@ -2,7 +2,7 @@ Title: TypeMatrix sous Mac Os X
 Date: 2013-03-04 13:08:09
 Author: choiz
 Category: text
-Tags: TypeMatrix, Keyboard, MacOs
+Tags: keyboard, macos
 Slug: 2013-03-04-typematrix-sous-mac-os-x
 Status: published
 

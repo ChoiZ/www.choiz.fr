@@ -2,7 +2,7 @@ Title: Faire du NAT avec Proxmox
 Date: 2017-10-15 22:08:23
 Author: choiz
 Category: text
-Tags: NAT, Proxmox, IPV4
+Tags: network, proxmox
 Slug: 2017-10-15-faire-un-nat-avec-proxmox
 Status: published
 

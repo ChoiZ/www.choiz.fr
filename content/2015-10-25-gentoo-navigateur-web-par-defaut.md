@@ -2,7 +2,7 @@ Title: Gentoo Navigateur Web par Défaut
 Date: 2015-10-25 14:02:17
 Author: choiz
 Category: text
-Tags: gentoo, web, browser, default, navigateur
+Tags: gentoo, web, linux
 Slug: 2015-10-25-gentoo-navigateur-web-par-defaut
 Status: published
 

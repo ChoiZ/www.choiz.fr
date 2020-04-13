@@ -2,7 +2,7 @@ Title: Patch & diff
 Date: 2011-05-30 06:00:06
 Author: choiz
 Category: text
-Tags: Diff, Patch, cli
+Tags: diff, patch, cli, linux
 Slug: 2011-05-30-patch-diff
 Status: published
 

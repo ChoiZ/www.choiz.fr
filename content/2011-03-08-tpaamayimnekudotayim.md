@@ -2,7 +2,7 @@ Title: T_PAAMAYIM_NEKUDOTAYIM
 Date: 2011-03-08 16:17:00
 Author: choiz
 Category: text
-Tags: Paamayim Nekudotayim, PHP, Error
+Tags: php, error
 Slug: 2011-03-08-tpaamayimnekudotayim
 Status: published
 

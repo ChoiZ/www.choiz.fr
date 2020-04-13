@@ -2,7 +2,7 @@ Title: Mise à jour profile gentoo
 Date: 2017-12-19 10:39:19
 Author: choiz
 Category: text
-Tags: Gentoo, Linux
+Tags: gentoo, linux
 Slug: 2017-12-19-Mise-a-jour-profile-gentoo
 Status: published
 
@@ -22,7 +22,7 @@ Pour passer à la version 6.4.0 il faut faire un `gcc-config 2` puis verifier av
     . /etc/profile
 * Re-emerge libtool
     emerge -1 sys-devel/libtool
-Then, 
+Then,
 * Select the new profile with eselect
 * Re-emerge, in this sequence, gcc, binutils, and glibc
     emerge -1 sys-devel/gcc:6.4.0

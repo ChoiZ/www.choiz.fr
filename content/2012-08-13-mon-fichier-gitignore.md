@@ -2,7 +2,7 @@ Title: Mon fichier .gitignore
 Date: 2012-08-13 11:06:31
 Author: choiz
 Category: text
-Tags: git, gitignore, .gitignore, file, fichier
+Tags: git, config, file
 Slug: 2012-08-13-mon-fichier-gitignore
 Status: published
 

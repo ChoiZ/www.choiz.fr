@@ -2,7 +2,7 @@ Title: Docker commandes utiles
 Date: 2017-05-14 21:47:35
 Author: choiz
 Category: text
-Tags: docker, linux, container
+Tags: docker, linux
 Slug: 2017-05-14-docker-commandes-utiles
 Status: published
 

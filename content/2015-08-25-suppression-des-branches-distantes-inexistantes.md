@@ -2,7 +2,7 @@ Title: Suppression des branches distantes inexistantes
 Date: 2015-08-25 13:43:05
 Author: choiz
 Category: text
-Tags: git, branch, remote, prune, origin
+Tags: git, branch, origin
 Slug: 2015-08-25-suppression-des-branches-distantes-inexistantes
 Status: published
 

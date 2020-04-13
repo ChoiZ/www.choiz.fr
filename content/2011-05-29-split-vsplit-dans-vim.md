@@ -2,7 +2,7 @@ Title: Split & Vsplit dans vim
 Date: 2011-05-29 17:16:00
 Author: choiz
 Category: text
-Tags: Vim, Split, File
+Tags: vim, file
 Slug: 2011-05-29-split-vsplit-dans-vim
 Status: published
 

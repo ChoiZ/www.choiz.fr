@@ -2,7 +2,7 @@ Title: Upgrade NAS
 Date: 2017-08-26 11:04:27
 Author: choiz
 Category: text
-Tags: NAS, HP, Microserver, Debian, Proxmox, Stockage, Data
+Tags: nas, debian, stockage, linux
 Slug: 2017-08-26-upgrade-nas
 Status: published
 

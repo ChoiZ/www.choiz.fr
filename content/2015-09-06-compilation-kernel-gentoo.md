@@ -2,7 +2,7 @@ Title: Compilation Kernel Gentoo
 Date: 2015-09-06 11:48:24
 Author: choiz
 Category: text
-Tags: compilation, kernel, gentoo
+Tags: kernel, gentoo, linux
 Slug: 2015-09-06-compilation-kernel-gentoo
 Status: published
 

@@ -2,7 +2,7 @@ Title: Installation de Proxmox-VE 5 sur Debian Stretch
 Date: 2017-08-26 17:36:19
 Author: choiz
 Category: text
-Tags: Proxmox, Debian, Stretch
+Tags: proxmox, debian, stretch
 Slug: 2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch
 Status: published
 

@@ -2,7 +2,7 @@ Title: Update .gitconfig
 Date: 2012-04-13 12:00:00
 Author: choiz
 Category: text
-Tags: git, gitconfig, git pull, git push, git diff, git stash, stash
+Tags: git, config
 Slug: 2012-04-13-update-gitconfig
 Status: published
 

@@ -2,7 +2,7 @@ Title: Ajouter un disque a une grappe RAID MDADM
 Date: 2018-12-05 23:22:42
 Author: choiz
 Category: text
-Tags: RAID, MDADM
+Tags: raid, mdadm
 Slug: 2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm
 Status: published
 
