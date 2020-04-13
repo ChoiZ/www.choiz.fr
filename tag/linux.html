@@ -54,7 +54,7 @@
     <p>
       Posté le dim. 24 mars 2019 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/i3wm.html">i3wm</a>,      <a href="https://www.choiz.fr/tag/terminal.html">terminal</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2019-03-24-update-i3-sensible-terminal.html#comments">Laissez un commentaire</a>
+      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2019-03-24-update-i3-sensible-terminal.html#comments">Laissez un commentaire</a>
     </p>
   </header>
   <div>
@@ -153,6 +153,27 @@ votre partage.</p>
 
 <p>J'ajoute dans le fichier le dossier à partager <code>/home/user/share</code> et l'adresse …</p>
       <a class="btn" href="https://www.choiz.fr/2017-10-15-creer-un-partage-nfs.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h1><a href="https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html">Installation de Proxmox-VE 5 sur Debian Stretch</a></h1>
+    <p>
+      Posté le sam. 26 août 2017 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/proxmox.html">proxmox</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
+Par contre il ne faut pas modifier le sources.list ni installer
+firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
+tout).</p>
+<p>Sur debian éditer le fichier /etc/hosts comme ceci :</p>
+<div class="highlight"><pre><span></span>127.0.0.1       localhost.localdomain localhost
+192 …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -259,33 +280,6 @@ Tags :
 <p>J'ai installé xubuntu 16.04 (64 bits) sur une partition séparée pour garder Windows 10.</p>
 <p>L'installation est plutôt complexe car le "bootloader" est …</p>
       <a class="btn" href="https://www.choiz.fr/2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h1><a href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Mise à jour d'un kernel gentoo</a></h1>
-    <p>
-      Posté le sam. 21 novembre 2015 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html#comments">Laissez un commentaire</a>
-    </p>
-  </header>
-  <div>
-      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
-suivre pour le mettre à jour vers la version : 4.3.0.</p>
-<p>Je liste les différents noyaux gentoo disponibles :</p>
-<div class="highlight"><pre><span></span>eix sys-kernel/gentoo-sources
-</pre></div>
-
-
-<p>Je télécharge le noyau 4.3.0 :</p>
-<div class="highlight"><pre><span></span>emerge -a =sys-kernel/gentoo-sources-4.3.0
-</pre></div>
-
-
-<p>Une …</p>
-      <a class="btn" href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Lire la suite</a>
   </div>
 </article>
 

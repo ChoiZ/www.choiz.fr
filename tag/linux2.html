@@ -50,6 +50,33 @@
 
 <article>
   <header>
+    <h1><a href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Mise à jour d'un kernel gentoo</a></h1>
+    <p>
+      Posté le sam. 21 novembre 2015 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
+suivre pour le mettre à jour vers la version : 4.3.0.</p>
+<p>Je liste les différents noyaux gentoo disponibles :</p>
+<div class="highlight"><pre><span></span>eix sys-kernel/gentoo-sources
+</pre></div>
+
+
+<p>Je télécharge le noyau 4.3.0 :</p>
+<div class="highlight"><pre><span></span>emerge -a =sys-kernel/gentoo-sources-4.3.0
+</pre></div>
+
+
+<p>Une …</p>
+      <a class="btn" href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h1><a href="https://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html">Gentoo Navigateur Web par Défaut</a></h1>
     <p>
       Posté le dim. 25 octobre 2015 &#8226;
@@ -64,6 +91,26 @@ est préférable d'utiliser un navigateur tel que Firefox.</p>
 <p>Voici la commande pour voir le navigateur par défaut pour les url
 utilisants le protocole …</p>
       <a class="btn" href="https://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h1><a href="https://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html">Vagrant faire un réseau privé</a></h1>
+    <p>
+      Posté le mar. 13 octobre 2015 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/network.html">network</a>      &#8226; <a href="https://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>J'utilise plusieurs machines virtuelles avec vagrant, une avec un
+backoffice et une avec une API.</p>
+<p>J'ai donc du faire un réseau privé dans vagrant pour que le BO
+communique avec l'API.</p>
+<p>Il suffit de modifier la configuration de la vm #1 et d'ajouter :</p>
+<div class="highlight"><pre><span></span>config.vm.network &quot;private_network&quot;, ip: &quot;192.168 …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -195,7 +242,7 @@ SSH je peux me …</p>
     <p>
       Posté le mar. 04 mars 2014 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/usb.html">usb</a>,      <a href="https://www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="https://www.choiz.fr/tag/osx.html">osx</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html#comments">Laissez un commentaire</a>
+      <a href="https://www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="https://www.choiz.fr/tag/osx.html">osx</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html#comments">Laissez un commentaire</a>
     </p>
   </header>
   <div>
@@ -234,45 +281,6 @@ Tags :
 <p>La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
 debian, a voir sur d'autres distribs)</p>
       <a class="btn" href="https://www.choiz.fr/2013-11-13-crontab-e-files.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h1><a href="https://www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html">Chmod 755 sur les dossiers et 644 sur les fichiers</a></h1>
-    <p>
-      Posté le mar. 12 novembre 2013 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/chmod.html">chmod</a>,      <a href="https://www.choiz.fr/tag/folder.html">folder</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html#comments">Laissez un commentaire</a>
-    </p>
-  </header>
-  <div>
-      <p>C'est toujours la galère lorsque l'on veut que tout soit propre au
-niveau des permissions des dossiers / fichiers.</p>
-<p>Souvent la première chose que l'on fait : on va dans chaque dossier et
-on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
-dossiers ça va …</p>
-      <a class="btn" href="https://www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h1><a href="https://www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html">Installation disque dur Seagate 4To Debian</a></h1>
-    <p>
-      Posté le ven. 21 juin 2013 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/stockage.html">stockage</a>      &#8226; <a href="https://www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html#comments">Laissez un commentaire</a>
-    </p>
-  </header>
-  <div>
-      <p>J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
-(Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec «
-Fdisk » et j'ai eu le message suivant :</p>
-<div class="highlight"><pre><span></span><span class="n">Warning</span><span class="o">:</span> <span class="n">invalid</span> <span class="n">flag</span> <span class="mh">0x0000</span> <span class="n">of</span> <span class="n">partition</span> <span class="n">table</span> <span class="mi">4</span> <span class="n">will</span> <span class="n">be</span> <span class="n">corrected</span> <span class="n">by</span> <span class="n">w</span><span class="o">(</span><span class="n">rite</span><span class="o">)</span>
-
-<span class="n">WARNING</span><span class="o">:</span> <span class="n">The</span> <span class="n">size</span> <span class="n">of</span> <span class="k">this</span> <span class="n">disk</span> <span class="k">is …</span></pre></div>
-      <a class="btn" href="https://www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html">Lire la suite</a>
   </div>
 </article>
 

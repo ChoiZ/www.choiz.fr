@@ -165,7 +165,7 @@
 &lt;p&gt;Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par défaut &lt;code&gt;i3-sensible-terminal&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Pour modifier le terminal executé par la commande &lt;code&gt;i3-sensible-terminal&lt;/code&gt; il suffit donc de lancer la commande suivante puis de choisir dans mon cas urxvt :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;update-alternatives --config x-terminal-emulator
-&lt;/pre&gt;&lt;/div&gt;</content><category term="i3wm"></category><category term="terminal"></category><category term="linux"></category></entry><entry><title>Bien nommer ses fichiers</title><link href="https://www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html" rel="alternate"></link><published>2018-12-13T12:52:55+01:00</published><updated>2018-12-13T12:52:55+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2018-12-13:/2018-12-13-bien-nommer-ses-fichiers.html</id><summary type="html">&lt;p&gt;Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ?&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category></entry><entry><title>Bien nommer ses fichiers</title><link href="https://www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html" rel="alternate"></link><published>2018-12-13T12:52:55+01:00</published><updated>2018-12-13T12:52:55+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2018-12-13:/2018-12-13-bien-nommer-ses-fichiers.html</id><summary type="html">&lt;p&gt;Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ?&lt;/p&gt;
 &lt;p&gt;Il faut mettre Lundi-10-Décembre-2018 dans le nom du fichier ?
 Non.&lt;/p&gt;
 &lt;p&gt;Il faut donc mettre 10-12-2018 dans le nom du fichier ?
@@ -703,7 +703,7 @@ controlleur. Dans ce cas il y a un truc qui cloche entre votre config et celle
 du controlleur revoir les différentes étapes.&lt;/p&gt;
 &lt;p&gt;Si le provisionning est ok l'USG redémarre et la config est enfin fini ! ;-)&lt;/p&gt;
 &lt;p&gt;Grand merci au forum lafibre.info et particulièrement ce &lt;a href="https://lafibre.info/remplacer-livebox/unifi-security-gateway-en-remplacement-de-la-livebox/"&gt;sujet&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://amzn.to/2xXmsDO"&gt;Ubiquiti Networks USG&lt;/a&gt; sur Amazon.&lt;/p&gt;</content><category term="unifi"></category><category term="gateway"></category><category term="livebox"></category><category term="usg"></category><category term="network"></category></entry><entry><title>Installation de Proxmox-VE 5 sur Debian Stretch</title><link href="https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html" rel="alternate"></link><published>2017-08-26T17:36:19+02:00</published><updated>2017-08-26T17:36:19+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html</id><summary type="html">&lt;p&gt;Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
+&lt;p&gt;&lt;a href="http://amzn.to/2xXmsDO"&gt;Ubiquiti Networks USG&lt;/a&gt; sur Amazon.&lt;/p&gt;</content><category term="unifi"></category><category term="network"></category></entry><entry><title>Installation de Proxmox-VE 5 sur Debian Stretch</title><link href="https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html" rel="alternate"></link><published>2017-08-26T17:36:19+02:00</published><updated>2017-08-26T17:36:19+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html</id><summary type="html">&lt;p&gt;Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
 Par contre il ne faut pas modifier le sources.list ni installer
 firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
 tout).&lt;/p&gt;
@@ -760,7 +760,7 @@ message de souscription.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt remove os-prober
 apt remove linux-image-amd64 linux-image-4.9.0-3-amd64
 update-grub
-&lt;/pre&gt;&lt;/div&gt;</content><category term="proxmox"></category><category term="debian"></category><category term="stretch"></category></entry><entry><title>Upgrade NAS</title><link href="https://www.choiz.fr/2017-08-26-upgrade-nas.html" rel="alternate"></link><published>2017-08-26T11:04:27+02:00</published><updated>2017-08-26T11:04:27+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-upgrade-nas.html</id><summary type="html">&lt;p&gt;J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
+&lt;/pre&gt;&lt;/div&gt;</content><category term="proxmox"></category><category term="debian"></category><category term="linux"></category></entry><entry><title>Upgrade NAS</title><link href="https://www.choiz.fr/2017-08-26-upgrade-nas.html" rel="alternate"></link><published>2017-08-26T11:04:27+02:00</published><updated>2017-08-26T11:04:27+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-upgrade-nas.html</id><summary type="html">&lt;p&gt;J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
 dessus j'avais installé Debian 6 à l'époque puis j'ai mis à jour jusqu'à la version 9.&lt;/p&gt;
 &lt;p&gt;Mon objectif est l'ajout d'un disque car j'ai 4 emplacements pour le stockage et
 je n'utilisais que 3 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
@@ -865,7 +865,7 @@ publique.&lt;/p&gt;
 publique.&lt;/p&gt;
 &lt;p&gt;Pour se faire il faut utiliser la commande &lt;em&gt;ssh-keygen&lt;/em&gt; avec l'option &lt;em&gt;-y&lt;/em&gt; et &lt;em&gt;-f&lt;/em&gt; pour désigner la clé privé.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ssh-keygen -y -f ~/.ssh/id_rsa &amp;gt; ~/.ssh/id_rsa.pub&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;On utilise ci-dessus l'id_rsa (privée) pour générer l'id_rsa.pub.&lt;/p&gt;</content><category term="ssh"></category><category term="key"></category><category term="rsa"></category><category term="pub"></category></entry><entry><title>Utiliser un Bastion SSH</title><link href="https://www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html" rel="alternate"></link><published>2017-06-01T21:29:24+02:00</published><updated>2017-06-01T21:29:24+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-06-01:/2017-06-01-utiliser-un-bastion-ssh.html</id><summary type="html">&lt;p&gt;Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
+&lt;p&gt;On utilise ci-dessus l'id_rsa (privée) pour générer l'id_rsa.pub.&lt;/p&gt;</content><category term="ssh"></category><category term="key"></category></entry><entry><title>Utiliser un Bastion SSH</title><link href="https://www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html" rel="alternate"></link><published>2017-06-01T21:29:24+02:00</published><updated>2017-06-01T21:29:24+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-06-01:/2017-06-01-utiliser-un-bastion-ssh.html</id><summary type="html">&lt;p&gt;Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
 trouve dans &lt;em&gt;~/.ssh/config&lt;/em&gt; et d'ajouter les deux lignes suivantes :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Host destination.local
     ProxyCommand ssh user@bastion.fr -W %h:%p
@@ -1547,7 +1547,7 @@ communique avec l'API.&lt;/p&gt;
 
 
 &lt;p&gt;Votre vm #1 peut (suite au redémarrage des deux vm vagrant) communiquer
-avec votre vm #2 directement avec l'ip 192.168.10.2.&lt;/p&gt;</content><category term="vagrant"></category><category term="network"></category></entry><entry><title>Des commentaires efficaces</title><link href="https://www.choiz.fr/2015-10-12-des-commentaires-efficaces.html" rel="alternate"></link><published>2015-10-12T13:44:15+02:00</published><updated>2015-10-12T13:44:15+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-10-12:/2015-10-12-des-commentaires-efficaces.html</id><summary type="html">&lt;p&gt;Dans mes fichiers de test j'utilise souvent des commentaires pour tester
+avec votre vm #2 directement avec l'ip 192.168.10.2.&lt;/p&gt;</content><category term="linux"></category><category term="network"></category></entry><entry><title>Des commentaires efficaces</title><link href="https://www.choiz.fr/2015-10-12-des-commentaires-efficaces.html" rel="alternate"></link><published>2015-10-12T13:44:15+02:00</published><updated>2015-10-12T13:44:15+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-10-12:/2015-10-12-des-commentaires-efficaces.html</id><summary type="html">&lt;p&gt;Dans mes fichiers de test j'utilise souvent des commentaires pour tester
 qu'une fonctionnalité de code.&lt;/p&gt;
 &lt;p&gt;Par exemple pour tester une api :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;// Obtenir le livre #1
@@ -1972,7 +1972,7 @@ sous-modules avec les plugins de vim. Pour initialiser, mettre à jour et
 le tout en cascade (dans tous les dossiers et sous-dossiers) il faut
 faire :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git submodule update --init --recursive
-&lt;/pre&gt;&lt;/div&gt;</content><category term="git"></category><category term="submodule"></category></entry><entry><title>Êtes-vous à l'heure ? (Et votre serveur ?)</title><link href="https://www.choiz.fr/2015-01-24-%C3%AAtes-vous-%C3%A0-lheure-et-votre-serveur.html" rel="alternate"></link><published>2015-01-24T16:54:00+01:00</published><updated>2015-01-24T16:54:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-01-24:/2015-01-24-êtes-vous-à-lheure-et-votre-serveur.html</id><summary type="html">&lt;p&gt;Je suis à l'heure, et mes serveurs le sont également (normalement).&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="git"></category></entry><entry><title>Êtes-vous à l'heure ? (Et votre serveur ?)</title><link href="https://www.choiz.fr/2015-01-24-%C3%AAtes-vous-%C3%A0-lheure-et-votre-serveur.html" rel="alternate"></link><published>2015-01-24T16:54:00+01:00</published><updated>2015-01-24T16:54:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-01-24:/2015-01-24-êtes-vous-à-lheure-et-votre-serveur.html</id><summary type="html">&lt;p&gt;Je suis à l'heure, et mes serveurs le sont également (normalement).&lt;/p&gt;
 &lt;p&gt;Normalement oui, mais le serveur NTP que j'utilisais ne répond plus… Mes
 serveurs ont donc 1mn30 de retard pour l'un, et 40mn de retard pour
 l'autre !&lt;/p&gt;
@@ -2016,7 +2016,7 @@ donc du temps et il ne vous perturbe pas dans votre travail (donc vous
 en gagnez aussi).&lt;/p&gt;
 &lt;p&gt;Je vous invite également à lire &lt;a href="http://www.chiark.greenend.org.uk/~sgtatham/bugs-fr.html"&gt;cet
 article&lt;/a&gt; pour
-écrire un bon rapport de bug.&lt;/p&gt;</content><category term="bug"></category><category term="report"></category></entry><entry><title>Faire un patch de "x" commit(s) avec git</title><link href="https://www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html" rel="alternate"></link><published>2014-05-06T11:21:00+02:00</published><updated>2014-05-06T11:21:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-05-06:/2014-05-06-faire-un-patch-de-x-commits-avec-git.html</id><summary type="html">&lt;p&gt;Voici mon historique des commits :&lt;/p&gt;
+écrire un bon rapport de bug.&lt;/p&gt;</content><category term="bug"></category><category term="doc"></category></entry><entry><title>Faire un patch de "x" commit(s) avec git</title><link href="https://www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html" rel="alternate"></link><published>2014-05-06T11:21:00+02:00</published><updated>2014-05-06T11:21:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-05-06:/2014-05-06-faire-un-patch-de-x-commits-avec-git.html</id><summary type="html">&lt;p&gt;Voici mon historique des commits :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;c0004 -- dernier commit
 c0003 -- avant dernier commit
 c0002 -- second commit
@@ -2318,7 +2318,7 @@ Password:
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;diskutil eject /dev/disk2
 
 Disk /dev/disk2 ejected
-&lt;/pre&gt;&lt;/div&gt;</content><category term="usb"></category><category term="xubuntu"></category><category term="osx"></category><category term="linux"></category></entry><entry><title>git cherry-pick</title><link href="https://www.choiz.fr/2014-02-06-git-cherry-pick.html" rel="alternate"></link><published>2014-02-06T23:11:30+01:00</published><updated>2014-02-06T23:11:30+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-02-06:/2014-02-06-git-cherry-pick.html</id><summary type="html">&lt;p&gt;J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
+&lt;/pre&gt;&lt;/div&gt;</content><category term="xubuntu"></category><category term="osx"></category><category term="linux"></category></entry><entry><title>git cherry-pick</title><link href="https://www.choiz.fr/2014-02-06-git-cherry-pick.html" rel="alternate"></link><published>2014-02-06T23:11:30+01:00</published><updated>2014-02-06T23:11:30+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-02-06:/2014-02-06-git-cherry-pick.html</id><summary type="html">&lt;p&gt;J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
 messages sur cherry-pick sans savoir ce que c'était.&lt;/p&gt;
 &lt;p&gt;git cherry-pick permet d'appliquer un commit sur la branche sur la
 branche actuelle.&lt;/p&gt;
@@ -2867,7 +2867,7 @@ accentué. :&lt;/p&gt;
 bien de l'UTF-8 car sauvé sur 2 octets.&lt;/p&gt;
 &lt;p&gt;Merci à &lt;a href="http://agopian.info/blog/mysql-mysqldump-et-php-convertir-de-latin1-vers-utf8.html"&gt;Mathieu
 Agopian&lt;/a&gt;
-pour le dernier tips.&lt;/p&gt;</content><category term="encoding"></category><category term="mysql"></category><category term="mysqldump"></category><category term="vim"></category></entry><entry><title>TypeMatrix sous Mac Os X</title><link href="https://www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html" rel="alternate"></link><published>2013-03-04T13:08:09+01:00</published><updated>2013-03-04T13:08:09+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-03-04:/2013-03-04-typematrix-sous-mac-os-x.html</id><summary type="html">&lt;p&gt;J'ai chez moi comme au travail un clavier TypeMatrix 2030 USB.&lt;/p&gt;
+pour le dernier tips.&lt;/p&gt;</content><category term="encoding"></category><category term="mysql"></category><category term="mysqldump"></category><category term="vim"></category><category term="sql"></category></entry><entry><title>TypeMatrix sous Mac Os X</title><link href="https://www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html" rel="alternate"></link><published>2013-03-04T13:08:09+01:00</published><updated>2013-03-04T13:08:09+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-03-04:/2013-03-04-typematrix-sous-mac-os-x.html</id><summary type="html">&lt;p&gt;J'ai chez moi comme au travail un clavier TypeMatrix 2030 USB.&lt;/p&gt;
 &lt;p&gt;Sur mac il faut &lt;a href="http://download.tuxfamily.org/dvorak/macosx/fr-dvorak-bepo-macosx-1.0rc2.dmg"&gt;télécharger le
 pilote&lt;/a&gt;,
 puis copier le fichier fr-dvorak-bepo.bundle dans le dossier
@@ -3151,7 +3151,7 @@ highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Je note car c'est toujours bon à savoir :)&lt;/p&gt;</content><category term="screen"></category><category term="linux"></category></entry><entry><title>Utilisation des branches et de git stash</title><link href="https://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html" rel="alternate"></link><published>2012-04-14T16:32:42+02:00</published><updated>2012-04-14T16:32:42+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-04-14:/2012-04-14-utilisation-des-branches-et-de-git-stash.html</id><summary type="html">&lt;p&gt;Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
+&lt;p&gt;Je note car c'est toujours bon à savoir :)&lt;/p&gt;</content><category term="linux"></category></entry><entry><title>Utilisation des branches et de git stash</title><link href="https://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html" rel="alternate"></link><published>2012-04-14T16:32:42+02:00</published><updated>2012-04-14T16:32:42+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-04-14:/2012-04-14-utilisation-des-branches-et-de-git-stash.html</id><summary type="html">&lt;p&gt;Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
 sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc
 git stash, voyons voir comment l'utiliser simplement.&lt;/p&gt;
 &lt;p&gt;On regarde l'état du status et des branches :&lt;/p&gt;
@@ -3449,7 +3449,7 @@ différents hosts. En général j'en défini un.&lt;/p&gt;
 
 &lt;p&gt;ou via ssh-copy-id :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-copy-id -i ~/.ssh/id\_rsa.pub user@ip
-&lt;/pre&gt;&lt;/div&gt;</content><category term="ssh"></category><category term="key"></category><category term="rsa"></category></entry><entry><title>PHP + Gettext + Debian</title><link href="https://www.choiz.fr/2011-12-04-php-gettext-debian.html" rel="alternate"></link><published>2011-12-04T19:10:00+01:00</published><updated>2015-11-30T21:18:07+01:00</updated><author><name>choiz, doogaille</name></author><id>tag:www.choiz.fr,2011-12-04:/2011-12-04-php-gettext-debian.html</id><summary type="html">&lt;p&gt;J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
+&lt;/pre&gt;&lt;/div&gt;</content><category term="ssh"></category><category term="key"></category></entry><entry><title>PHP + Gettext + Debian</title><link href="https://www.choiz.fr/2011-12-04-php-gettext-debian.html" rel="alternate"></link><published>2011-12-04T19:10:00+01:00</published><updated>2015-11-30T21:18:07+01:00</updated><author><name>choiz, doogaille</name></author><id>tag:www.choiz.fr,2011-12-04:/2011-12-04-php-gettext-debian.html</id><summary type="html">&lt;p&gt;J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
 en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext
 sur votre site en php il faut télécharger le package php-gettext :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install php-gettext
@@ -3726,7 +3726,7 @@ donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?&lt;/p&gt;
 
 
 &lt;p&gt;Maintenant lors du prochain démarrage de votre VirtualBox vous devez
-avoir la machine virtuelle importée !&lt;/p&gt;</content><category term="virtualbox"></category><category term="linux"></category></entry><entry><title>Partage Samba !</title><link href="https://www.choiz.fr/2011-08-17-partage-samba.html" rel="alternate"></link><published>2011-08-17T20:41:00+02:00</published><updated>2011-08-17T20:41:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-17:/2011-08-17-partage-samba.html</id><summary type="html">&lt;p&gt;Configuration d'un serveur samba. Editer le fichier de configuration
+avoir la machine virtuelle importée !&lt;/p&gt;</content><category term="linux"></category></entry><entry><title>Partage Samba !</title><link href="https://www.choiz.fr/2011-08-17-partage-samba.html" rel="alternate"></link><published>2011-08-17T20:41:00+02:00</published><updated>2011-08-17T20:41:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-17:/2011-08-17-partage-samba.html</id><summary type="html">&lt;p&gt;Configuration d'un serveur samba. Editer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;| ### Global ###
 | [global]
@@ -3781,7 +3781,7 @@ directement avec des groupes.&lt;/p&gt;
 &lt;p&gt;N'oubliez pas de redémarrer le service Samba avant de tester depuis
 votre client le partage de fichiers ! :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/etc/init.d/samba restart
-&lt;/pre&gt;&lt;/div&gt;</content><category term="samba"></category><category term="linux"></category></entry><entry><title>Liens utiles</title><link href="https://www.choiz.fr/2011-08-09-liens-utiles.html" rel="alternate"></link><published>2011-08-09T21:03:05+02:00</published><updated>2011-08-09T21:03:05+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-09:/2011-08-09-liens-utiles.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category></entry><entry><title>Liens utiles</title><link href="https://www.choiz.fr/2011-08-09-liens-utiles.html" rel="alternate"></link><published>2011-08-09T21:03:05+02:00</published><updated>2011-08-09T21:03:05+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-09:/2011-08-09-liens-utiles.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.jsperf.com/"&gt;http://www.jsperf.com/&lt;/a&gt; Pour faire des performances de code js&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.pastebin.com/"&gt;http://www.pastebin.com/&lt;/a&gt; Pour copier coller du code facilement&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.jsperf.com/"&gt;http://www.jsperf.com/&lt;/a&gt; Pour faire des performances de code js&lt;/p&gt;
@@ -3945,7 +3945,7 @@ J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss :&lt;/p&g
 &lt;p&gt;Une fois que j'ai mon fichier dump.sql je le met sur la nouvelle
 machine, puis j'execute la commande suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mysql -u utilisateur -pp4ss database &amp;lt; fichierdump.sql
-&lt;/pre&gt;&lt;/div&gt;</content><category term="mysql"></category><category term="mysqldump"></category><category term="linux"></category><category term="cli"></category></entry><entry><title>Petit tips pour les utilisateurs de VIM et PHP</title><link href="https://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html" rel="alternate"></link><published>2011-04-13T13:59:00+02:00</published><updated>2011-04-13T13:59:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-04-13:/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html</id><summary type="html">&lt;p&gt;Lorsque je code en PHP, pour tester si il y a des erreurs généralement
+&lt;/pre&gt;&lt;/div&gt;</content><category term="mysql"></category><category term="mysqldump"></category><category term="linux"></category><category term="sql"></category></entry><entry><title>Petit tips pour les utilisateurs de VIM et PHP</title><link href="https://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html" rel="alternate"></link><published>2011-04-13T13:59:00+02:00</published><updated>2011-04-13T13:59:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-04-13:/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html</id><summary type="html">&lt;p&gt;Lorsque je code en PHP, pour tester si il y a des erreurs généralement
 dans la console je tape la commande :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;php -l fichier_a_tester.php
 &lt;/pre&gt;&lt;/div&gt;

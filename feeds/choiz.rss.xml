@@ -24,7 +24,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 24 Mar 2019 16:26:25 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2019-03-24:/2019-03-24-update-i3-sensible-terminal.html</guid><category>i3wm</category><category>terminal</category><category>linux</category></item><item><title>Bien nommer ses fichiers</title><link>https://www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html</link><description>&lt;p&gt;Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ?&lt;/p&gt;
+&lt;p&gt;Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 24 Mar 2019 16:26:25 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2019-03-24:/2019-03-24-update-i3-sensible-terminal.html</guid><category>linux</category></item><item><title>Bien nommer ses fichiers</title><link>https://www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html</link><description>&lt;p&gt;Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ?&lt;/p&gt;
 &lt;p&gt;Il faut mettre Lundi-10-Décembre-2018 dans le nom du fichier ?
 Non.&lt;/p&gt;
 &lt;p&gt;Il faut donc mettre 10-12-2018 dans le nom du fichier ?
@@ -78,20 +78,20 @@ votre partage.&lt;/p&gt;
 &lt;p&gt;J'ajoute dans le fichier le dossier à partager &lt;code&gt;/home/user/share&lt;/code&gt; et l'adresse …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 15 Oct 2017 19:52:13 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-10-15:/2017-10-15-creer-un-partage-nfs.html</guid><category>nfs</category><category>linux</category><category>debian</category><category>gentoo</category></item><item><title>Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</title><link>https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</link><description>&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
 &lt;p&gt;En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
 livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs.&lt;/p&gt;
-&lt;p&gt;Il y a pas mal de manipulations a …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 26 Aug 2017 19:00:56 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-08-26:/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</guid><category>unifi</category><category>gateway</category><category>livebox</category><category>usg</category><category>network</category></item><item><title>Installation de Proxmox-VE 5 sur Debian Stretch</title><link>https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html</link><description>&lt;p&gt;Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
+&lt;p&gt;Il y a pas mal de manipulations a …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 26 Aug 2017 19:00:56 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-08-26:/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</guid><category>unifi</category><category>network</category></item><item><title>Installation de Proxmox-VE 5 sur Debian Stretch</title><link>https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html</link><description>&lt;p&gt;Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
 Par contre il ne faut pas modifier le sources.list ni installer
 firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
 tout).&lt;/p&gt;
 &lt;p&gt;Sur debian éditer le fichier /etc/hosts comme ceci :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;127.0.0.1       localhost.localdomain localhost
-192 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 26 Aug 2017 17:36:19 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-08-26:/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html</guid><category>proxmox</category><category>debian</category><category>stretch</category></item><item><title>Upgrade NAS</title><link>https://www.choiz.fr/2017-08-26-upgrade-nas.html</link><description>&lt;p&gt;J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
+192 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 26 Aug 2017 17:36:19 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-08-26:/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html</guid><category>proxmox</category><category>debian</category><category>linux</category></item><item><title>Upgrade NAS</title><link>https://www.choiz.fr/2017-08-26-upgrade-nas.html</link><description>&lt;p&gt;J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
 dessus j'avais installé Debian 6 à l'époque puis j'ai mis à jour jusqu'à la version 9.&lt;/p&gt;
 &lt;p&gt;Mon objectif est l'ajout d'un disque car j'ai 4 emplacements pour le stockage et
 je n'utilisais que 3 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 26 Aug 2017 11:04:27 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-08-26:/2017-08-26-upgrade-nas.html</guid><category>nas</category><category>debian</category><category>stockage</category><category>linux</category></item><item><title>Re-générer une clé rsa publique</title><link>https://www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html</link><description>&lt;p&gt;Si vous n'avez plus de clé publique, mais que vous avez toujours votre clé privée vous pouvez regénérer votre clé
 publique.&lt;/p&gt;
 &lt;p&gt;Pour se faire il faut utiliser la commande &lt;em&gt;ssh-keygen&lt;/em&gt; avec l'option &lt;em&gt;-y&lt;/em&gt; et &lt;em&gt;-f&lt;/em&gt; pour désigner la clé privé.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ssh-keygen -y -f ~/.ssh/id_rsa &amp;gt; ~/.ssh/id_rsa.pub&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;On utilise …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 05 Jun 2017 15:03:08 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-06-05:/2017-06-05-re-generer-une-cle-rsa-publique.html</guid><category>ssh</category><category>key</category><category>rsa</category><category>pub</category></item><item><title>Utiliser un Bastion SSH</title><link>https://www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html</link><description>&lt;p&gt;Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
+&lt;p&gt;On utilise …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 05 Jun 2017 15:03:08 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-06-05:/2017-06-05-re-generer-une-cle-rsa-publique.html</guid><category>ssh</category><category>key</category></item><item><title>Utiliser un Bastion SSH</title><link>https://www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html</link><description>&lt;p&gt;Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
 trouve dans &lt;em&gt;~/.ssh/config&lt;/em&gt; et d'ajouter les deux lignes suivantes :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Host destination.local
     ProxyCommand ssh user@bastion.fr -W %h:%p
@@ -148,7 +148,7 @@ backoffice et une avec une API.&lt;/p&gt;
 &lt;p&gt;J'ai donc du faire un réseau privé dans vagrant pour que le BO
 communique avec l'API.&lt;/p&gt;
 &lt;p&gt;Il suffit de modifier la configuration de la vm #1 et d'ajouter :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;config.vm.network &amp;quot;private_network&amp;quot;, ip: &amp;quot;192.168 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 13 Oct 2015 18:21:02 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2015-10-13:/2015-10-13-vagrant-faire-un-reseau-prive.html</guid><category>vagrant</category><category>network</category></item><item><title>Des commentaires efficaces</title><link>https://www.choiz.fr/2015-10-12-des-commentaires-efficaces.html</link><description>&lt;p&gt;Dans mes fichiers de test j'utilise souvent des commentaires pour tester
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;config.vm.network &amp;quot;private_network&amp;quot;, ip: &amp;quot;192.168 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 13 Oct 2015 18:21:02 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2015-10-13:/2015-10-13-vagrant-faire-un-reseau-prive.html</guid><category>linux</category><category>network</category></item><item><title>Des commentaires efficaces</title><link>https://www.choiz.fr/2015-10-12-des-commentaires-efficaces.html</link><description>&lt;p&gt;Dans mes fichiers de test j'utilise souvent des commentaires pour tester
 qu'une fonctionnalité de code.&lt;/p&gt;
 &lt;p&gt;Par exemple pour tester une api :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;// Obtenir le livre #1
@@ -255,7 +255,7 @@ suivante :&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Imaginons maintenant que vous avez des …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 25 Jan 2015 11:17:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2015-01-25:/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html</guid><category>git</category><category>submodule</category></item><item><title>Êtes-vous à l'heure ? (Et votre serveur ?)</title><link>https://www.choiz.fr/2015-01-24-%C3%AAtes-vous-%C3%A0-lheure-et-votre-serveur.html</link><description>&lt;p&gt;Je suis à l'heure, et mes serveurs le sont également (normalement).&lt;/p&gt;
+&lt;p&gt;Imaginons maintenant que vous avez des …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 25 Jan 2015 11:17:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2015-01-25:/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html</guid><category>git</category></item><item><title>Êtes-vous à l'heure ? (Et votre serveur ?)</title><link>https://www.choiz.fr/2015-01-24-%C3%AAtes-vous-%C3%A0-lheure-et-votre-serveur.html</link><description>&lt;p&gt;Je suis à l'heure, et mes serveurs le sont également (normalement).&lt;/p&gt;
 &lt;p&gt;Normalement oui, mais le serveur NTP que j'utilisais ne répond plus… Mes
 serveurs ont donc 1mn30 de retard pour l'un, et 40mn de retard pour
 l'autre !&lt;/p&gt;
@@ -269,7 +269,7 @@ précise, j'utilise la commande suivante :&lt;/p&gt;
 &lt;p&gt;L'écriture d'un rapport de bug peut demander du temps, si on veut faire
 les choses correctement.&lt;/p&gt;
 &lt;p&gt;Le rapport de bug doit être écrit &lt;code&gt;clairement&lt;/code&gt; et &lt;code&gt;précisément&lt;/code&gt; pour
-que les développeurs sachent comment …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 08 Nov 2014 16:55:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2014-11-08:/2014-11-08-écriture-dun-rapport-de-bug.html</guid><category>bug</category><category>report</category></item><item><title>Faire un patch de "x" commit(s) avec git</title><link>https://www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html</link><description>&lt;p&gt;Voici mon historique des commits :&lt;/p&gt;
+que les développeurs sachent comment …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 08 Nov 2014 16:55:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2014-11-08:/2014-11-08-écriture-dun-rapport-de-bug.html</guid><category>bug</category><category>doc</category></item><item><title>Faire un patch de "x" commit(s) avec git</title><link>https://www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html</link><description>&lt;p&gt;Voici mon historique des commits :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;c0004 -- dernier commit
 c0003 -- avant dernier commit
 c0002 -- second commit
@@ -360,7 +360,7 @@ que ma ligne qui devait être sur …&lt;/p&gt;</description><dc:creator xmlns:d
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Démontez la …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 04 Mar 2014 14:10:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2014-03-04:/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html</guid><category>usb</category><category>xubuntu</category><category>osx</category><category>linux</category></item><item><title>git cherry-pick</title><link>https://www.choiz.fr/2014-02-06-git-cherry-pick.html</link><description>&lt;p&gt;J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
+&lt;p&gt;Démontez la …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 04 Mar 2014 14:10:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2014-03-04:/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html</guid><category>xubuntu</category><category>osx</category><category>linux</category></item><item><title>git cherry-pick</title><link>https://www.choiz.fr/2014-02-06-git-cherry-pick.html</link><description>&lt;p&gt;J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
 messages sur cherry-pick sans savoir ce que c'était.&lt;/p&gt;
 &lt;p&gt;git cherry-pick permet d'appliquer un commit sur la branche sur la
 branche actuelle.&lt;/p&gt;
@@ -486,7 +486,7 @@ vers de l'UTF-8.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ensuite en utilisant vim je fais un rechercher / remplacer des …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 29 May 2013 16:32:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2013-05-29:/2013-05-29-latin1-utf-8.html</guid><category>encoding</category><category>mysql</category><category>mysqldump</category><category>vim</category></item><item><title>TypeMatrix sous Mac Os X</title><link>https://www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html</link><description>&lt;p&gt;J'ai chez moi comme au travail un clavier TypeMatrix 2030 USB.&lt;/p&gt;
+&lt;p&gt;Ensuite en utilisant vim je fais un rechercher / remplacer des …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 29 May 2013 16:32:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2013-05-29:/2013-05-29-latin1-utf-8.html</guid><category>encoding</category><category>mysql</category><category>mysqldump</category><category>vim</category><category>sql</category></item><item><title>TypeMatrix sous Mac Os X</title><link>https://www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html</link><description>&lt;p&gt;J'ai chez moi comme au travail un clavier TypeMatrix 2030 USB.&lt;/p&gt;
 &lt;p&gt;Sur mac il faut &lt;a href="http://download.tuxfamily.org/dvorak/macosx/fr-dvorak-bepo-macosx-1.0rc2.dmg"&gt;télécharger le
 pilote&lt;/a&gt;,
 puis copier le fichier fr-dvorak-bepo.bundle dans le dossier
@@ -552,7 +552,7 @@ highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Je …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 18 Apr 2012 01:39:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2012-04-18:/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html</guid><category>screen</category><category>linux</category></item><item><title>Utilisation des branches et de git stash</title><link>https://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html</link><description>&lt;p&gt;Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
+&lt;p&gt;Je …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 18 Apr 2012 01:39:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2012-04-18:/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html</guid><category>linux</category></item><item><title>Utilisation des branches et de git stash</title><link>https://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html</link><description>&lt;p&gt;Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
 sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc
 git stash, voyons voir comment l'utiliser simplement.&lt;/p&gt;
 &lt;p&gt;On regarde l'état du status et des branches :&lt;/p&gt;
@@ -623,7 +623,7 @@ Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
 
 &lt;p&gt;En général je garde le fichier id_rsa donc je tape "enter" sinon vous
 pouvez spécifier un autre chemin ainsi qu'un autre fichier. :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Enter passphrase …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 13 Jan 2012 10:05:18 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2012-01-13:/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html</guid><category>ssh</category><category>key</category><category>rsa</category></item><item><title>Clavier Apple sur debian</title><link>https://www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html</link><description>&lt;p&gt;Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Enter passphrase …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 13 Jan 2012 10:05:18 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2012-01-13:/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html</guid><category>ssh</category><category>key</category></item><item><title>Clavier Apple sur debian</title><link>https://www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html</link><description>&lt;p&gt;Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
 mapage clavier Mac. Il y a beaucoup de différences entre un clavier
 AZERTY de PC et un clavier AZERTY de Mac.&lt;/p&gt;
 &lt;p&gt;Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
@@ -684,7 +684,7 @@ donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?&lt;/p&gt;
 
 
 &lt;p&gt;Maintenant lors du prochain démarrage de votre VirtualBox vous devez
-avoir la …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 02 Sep 2011 19:28:28 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-09-02:/2011-09-02-import-vm-avec-virtualbox.html</guid><category>virtualbox</category><category>linux</category></item><item><title>Partage Samba !</title><link>https://www.choiz.fr/2011-08-17-partage-samba.html</link><description>&lt;p&gt;Configuration d'un serveur samba. Editer le fichier de configuration
+avoir la …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 02 Sep 2011 19:28:28 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-09-02:/2011-09-02-import-vm-avec-virtualbox.html</guid><category>linux</category></item><item><title>Partage Samba !</title><link>https://www.choiz.fr/2011-08-17-partage-samba.html</link><description>&lt;p&gt;Configuration d'un serveur samba. Editer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;| ### Global ###
 | [global]
@@ -696,7 +696,7 @@ avoir la …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/ele
 | public = yes
 | ## Log ##
 | log file = /var/log/samba/log.%m
-| max log size = 1000 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 17 Aug 2011 20:41:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-08-17:/2011-08-17-partage-samba.html</guid><category>samba</category><category>linux</category></item><item><title>Liens utiles</title><link>https://www.choiz.fr/2011-08-09-liens-utiles.html</link><description>&lt;p&gt;&lt;a href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/p&gt;
+| max log size = 1000 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 17 Aug 2011 20:41:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-08-17:/2011-08-17-partage-samba.html</guid><category>linux</category></item><item><title>Liens utiles</title><link>https://www.choiz.fr/2011-08-09-liens-utiles.html</link><description>&lt;p&gt;&lt;a href="http://www.jsfiddle.net/"&gt;http://www.jsfiddle.net/&lt;/a&gt; Pratique pour tester un code html / css / js&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.jsperf.com/"&gt;http://www.jsperf.com/&lt;/a&gt; Pour faire des performances de code js&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.pastebin.com/"&gt;http://www.pastebin.com/&lt;/a&gt; Pour copier coller du code facilement&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 09 Aug 2011 21:03:05 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-08-09:/2011-08-09-liens-utiles.html</guid><category>code</category><category>javascript</category><category>css</category></item><item><title>Ignorer grâce au SVN</title><link>https://www.choiz.fr/2011-07-26-ignorer-gr%C3%A2ce-au-svn.html</link><description>&lt;p&gt;Il existe plusieurs solutions pour ignorer des fichiers sur un svn :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;svn propset svn:ignore
@@ -754,7 +754,7 @@ J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss :&lt;/p&g
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Une fois …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 14 May 2011 13:21:17 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-05-14:/2011-05-14-migration-dune-base-de-donnée-mysql.html</guid><category>mysql</category><category>mysqldump</category><category>linux</category><category>cli</category></item><item><title>Petit tips pour les utilisateurs de VIM et PHP</title><link>https://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html</link><description>&lt;p&gt;Lorsque je code en PHP, pour tester si il y a des erreurs généralement
+&lt;p&gt;Une fois …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 14 May 2011 13:21:17 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-05-14:/2011-05-14-migration-dune-base-de-donnée-mysql.html</guid><category>mysql</category><category>mysqldump</category><category>linux</category><category>sql</category></item><item><title>Petit tips pour les utilisateurs de VIM et PHP</title><link>https://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html</link><description>&lt;p&gt;Lorsque je code en PHP, pour tester si il y a des erreurs généralement
 dans la console je tape la commande :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;php -l fichier_a_tester.php
 &lt;/pre&gt;&lt;/div&gt;
