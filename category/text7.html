@@ -50,6 +50,38 @@
 
 <article>
   <header>
+    <h1><a href="https://www.choiz.fr/2013-05-29-latin1-utf-8.html">Latin1 vers UTF-8</a></h1>
+    <p>
+      Posté le mer. 29 mai 2013 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/latin1.html">latin1</a>,      <a href="https://www.choiz.fr/tag/utf8.html">utf8</a>,      <a href="https://www.choiz.fr/tag/encoding.html">encoding</a>,      <a href="https://www.choiz.fr/tag/mysql.html">mysql</a>,      <a href="https://www.choiz.fr/tag/mysqldump.html">mysqldump</a>,      <a href="https://www.choiz.fr/tag/vim.html">Vim</a>      &#8226; <a href="https://www.choiz.fr/2013-05-29-latin1-utf-8.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Voilà une solution simple pour convertir une base de donnée en Latin1
+vers de l'UTF-8.</p>
+<p>Utiliser mysqldump avec les options suivantes :</p>
+<div class="highlight"><pre><span></span>--default-character-set=utf8
+</pre></div>
+
+
+<p>et :</p>
+<div class="highlight"><pre><span></span>--skip-set-charset
+</pre></div>
+
+
+<p>Voilà la commande complète :</p>
+<div class="highlight"><pre><span></span>mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
+</pre></div>
+
+
+<p>Ensuite en utilisant vim je fais un rechercher / remplacer des …</p>
+      <a class="btn" href="https://www.choiz.fr/2013-05-29-latin1-utf-8.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h1><a href="https://www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html">TypeMatrix sous Mac Os X</a></h1>
     <p>
       Posté le lun. 04 mars 2013 &#8226;
@@ -246,29 +278,6 @@ Tags :
 
 <p>Je …</p>
       <a class="btn" href="https://www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h1><a href="https://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html">Utilisation des branches et de git stash</a></h1>
-    <p>
-      Posté le sam. 14 avril 2012 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="https://www.choiz.fr/tag/git-stash-pop.html">git stash pop</a>,      <a href="https://www.choiz.fr/tag/git-stash-list.html">git stash list</a>,      <a href="https://www.choiz.fr/tag/git-branch.html">git branch</a>,      <a href="https://www.choiz.fr/tag/git-checkout.html">git checkout</a>      &#8226; <a href="https://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html#comments">Laissez un commentaire</a>
-    </p>
-  </header>
-  <div>
-      <p>Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
-sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc
-git stash, voyons voir comment l'utiliser simplement.</p>
-<p>On regarde l'état du status et des branches :</p>
-<div class="highlight"><pre><span></span>git status
-# On branch master
-nothing to commit (working directory clean)
-
-$ git …</pre></div>
-      <a class="btn" href="https://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html">Lire la suite</a>
   </div>
 </article>
 

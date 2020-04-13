@@ -50,6 +50,29 @@
 
 <article>
   <header>
+    <h1><a href="https://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html">Utilisation des branches et de git stash</a></h1>
+    <p>
+      Posté le sam. 14 avril 2012 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="https://www.choiz.fr/tag/git-stash-pop.html">git stash pop</a>,      <a href="https://www.choiz.fr/tag/git-stash-list.html">git stash list</a>,      <a href="https://www.choiz.fr/tag/git-branch.html">git branch</a>,      <a href="https://www.choiz.fr/tag/git-checkout.html">git checkout</a>      &#8226; <a href="https://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
+sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc
+git stash, voyons voir comment l'utiliser simplement.</p>
+<p>On regarde l'état du status et des branches :</p>
+<div class="highlight"><pre><span></span>git status
+# On branch master
+nothing to commit (working directory clean)
+
+$ git …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h1><a href="https://www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html">Renomer des fichiers en CLI (ligne de commande)</a></h1>
     <p>
       Posté le sam. 14 avril 2012 &#8226;
@@ -279,30 +302,6 @@ killall Finder
 
 <p>Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés.</p>
       <a class="btn" href="https://www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h1><a href="https://www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html">Insérer un \# au début de chaque ligne d'un fichier avec vim</a></h1>
-    <p>
-      Posté le mer. 05 octobre 2011 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/vim.html">Vim</a>,      <a href="https://www.choiz.fr/tag/search.html">search</a>,      <a href="https://www.choiz.fr/tag/replace.html">replace</a>,      <a href="https://www.choiz.fr/tag/comment.html">comment</a>      &#8226; <a href="https://www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#comments">Laissez un commentaire</a>
-    </p>
-  </header>
-  <div>
-      <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un
-fichier avec vim :</p>
-<div class="highlight"><pre><span></span>:1,$s/^/#/
-</pre></div>
-
-
-<p>Explications :</p>
-<p><code>:1,$</code> : Sélection des ligne 1 à $ ($ étant la dernière).</p>
-<p><code>s/^/\#/</code> : <code>s</code> pour search, <code>^</code> indique le début de ligne, <code>/</code> est un
-séparateur pour la recherche et pour ce que l'on souhaite remplacer et …</p>
-      <a class="btn" href="https://www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html">Lire la suite</a>
   </div>
 </article>
 
