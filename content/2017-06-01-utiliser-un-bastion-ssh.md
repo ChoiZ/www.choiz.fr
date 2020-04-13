@@ -2,7 +2,7 @@ Title: Utiliser un Bastion SSH
 Date: 2017-06-01 21:29:24
 Author: choiz
 Category: text
-Tags: ssh, bastion, linux
+Tags: ssh, linux
 Slug: 2017-06-01-utiliser-un-bastion-ssh
 Status: published
 
