@@ -20,6 +20,6 @@ Ma recheche est donc la suivante :
 
 - qui fonctionne avec un site statique
 
-J'ai trouvé "[utterances](https://utteranc.es/) qui est léger, open source, n'as pas de système de tracking, n'utilise pas de gros framework JavaScript, et se base les issues github pour stocker les commentaires.
+J'ai trouvé [utterances](https://utteranc.es/) qui est léger, open source, n'as pas de système de tracking, n'utilise pas de gros framework JavaScript, et se base les issues github pour stocker les commentaires.
 
 Il faut donc que vous ayez un compte [github](https://github.com) pour laisser un commentaire sur un article du blog.
