@@ -2,7 +2,7 @@ Title: Icônes / Favicon / Apple-touch-icon
 Date: 2013-11-03 14:11:02
 Author: choiz
 Category: text
-Tags: cli, imagemagick, android, ios, favicon, precomposed
+Tags: cli, imagemagick, favicon
 Slug: 2013-11-03-icônes-favicon-apple-touch-icon
 Status: published
 

@@ -2,7 +2,7 @@ Title: Passer de svn à git
 Date: 2013-07-16 22:37:00
 Author: choiz
 Category: text
-Tags: svn to git, svn, git, migate, git svn clone, authors, tags
+Tags: svn, git
 Slug: 2013-07-16-passer-de-svn-à-git
 Status: published
 

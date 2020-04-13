@@ -2,7 +2,7 @@ Title: Export / Import avec PostgreSQL
 Date: 2013-06-22 19:57:41
 Author: choiz
 Category: text
-Tags: postgreSQL, pg\_dump, psql, import, export, dump, sql
+Tags: postgresql, psql, dump
 Slug: 2013-06-22-export-import-avec-postgresql
 Status: published
 

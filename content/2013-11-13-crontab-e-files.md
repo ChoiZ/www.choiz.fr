@@ -2,7 +2,7 @@ Title: crontab -e file(s)
 Date: 2013-11-13 21:13:34
 Author: choiz
 Category: text
-Tags: crontab -e, crontab, files, file, /var/spool/cron/crontabs, /var/spool/cron, user
+Tags: crontab, file, linux
 Slug: 2013-11-13-crontab-e-files
 Status: published
 

@@ -2,7 +2,7 @@ Title: Git se déplacer dans une branche distante
 Date: 2013-10-01 13:51:00
 Author: choiz
 Category: text
-Tags: git, checkout, fetch, origin, checkout -b, branch, remote
+Tags: git, origin, branch
 Slug: 2013-10-01-git-se-déplacer-dans-une-branche-distante
 Status: published
 

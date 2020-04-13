@@ -2,7 +2,7 @@ Title: Installation disque dur Seagate 4To Debian
 Date: 2013-06-21 00:30:00
 Author: choiz
 Category: text
-Tags: debian, linux, storage
+Tags: debian, linux, stockage
 Slug: 2013-06-21-installation-disque-dur-seagate-4to-debian
 Status: published
 

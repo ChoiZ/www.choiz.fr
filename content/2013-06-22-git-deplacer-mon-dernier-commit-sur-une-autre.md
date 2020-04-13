@@ -2,7 +2,7 @@ Title: Git déplacer mon dernier commit sur une autre branche
 Date: 2013-06-22 13:07:00
 Author: choiz
 Category: text
-Tags: git, reset, checkout, merge, branch, commit
+Tags: git, branch
 Slug: 2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre
 Status: published
 

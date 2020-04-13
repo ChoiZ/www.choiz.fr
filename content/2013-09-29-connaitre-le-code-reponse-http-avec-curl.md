@@ -2,7 +2,7 @@ Title: Connaitre le code réponse HTTP avec curl
 Date: 2013-09-29 19:10:00
 Author: choiz
 Category: text
-Tags: curl, http, response, code, 301, 302, 404, 200
+Tags: curl, http
 Slug: 2013-09-29-connaitre-le-code-réponse-http-avec-curl
 Status: published
 
