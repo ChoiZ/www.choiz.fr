@@ -901,7 +901,7 @@ Host destination.local
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Enjoy vincent.m ;-)&lt;/p&gt;</content><category term="ssh"></category><category term="bastion"></category><category term="linux"></category></entry><entry><title>Docker commandes utiles</title><link href="https://www.choiz.fr/2017-05-14-docker-commandes-utiles.html" rel="alternate"></link><published>2017-05-14T21:47:35+02:00</published><updated>2017-05-14T21:47:35+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-05-14:/2017-05-14-docker-commandes-utiles.html</id><summary type="html">&lt;p&gt;Voici quelques commandes très utiles si vous utilisez docker.&lt;/p&gt;
+&lt;p&gt;Enjoy vincent.m ;-)&lt;/p&gt;</content><category term="ssh"></category><category term="linux"></category></entry><entry><title>Docker commandes utiles</title><link href="https://www.choiz.fr/2017-05-14-docker-commandes-utiles.html" rel="alternate"></link><published>2017-05-14T21:47:35+02:00</published><updated>2017-05-14T21:47:35+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-05-14:/2017-05-14-docker-commandes-utiles.html</id><summary type="html">&lt;p&gt;Voici quelques commandes très utiles si vous utilisez docker.&lt;/p&gt;
 &lt;p&gt;Supprimer tous les containers qui sont arétés :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker ps -q | xargs docker rm
 &lt;/pre&gt;&lt;/div&gt;

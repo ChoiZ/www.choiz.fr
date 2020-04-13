@@ -100,7 +100,7 @@ trouve dans &lt;em&gt;~/.ssh/config&lt;/em&gt; et d'ajouter les deux lignes suiv
 
 &lt;p&gt;C'est tout.&lt;/p&gt;
 &lt;p&gt;Explications : on utilise l'host &lt;em&gt;bastion.fr&lt;/em&gt; pour se connecter à
-&lt;em&gt;destination.local&lt;/em&gt;. Quand …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 01 Jun 2017 21:29:24 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-06-01:/2017-06-01-utiliser-un-bastion-ssh.html</guid><category>ssh</category><category>bastion</category><category>linux</category></item><item><title>Docker commandes utiles</title><link>https://www.choiz.fr/2017-05-14-docker-commandes-utiles.html</link><description>&lt;p&gt;Voici quelques commandes très utiles si vous utilisez docker.&lt;/p&gt;
+&lt;em&gt;destination.local&lt;/em&gt;. Quand …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 01 Jun 2017 21:29:24 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2017-06-01:/2017-06-01-utiliser-un-bastion-ssh.html</guid><category>ssh</category><category>linux</category></item><item><title>Docker commandes utiles</title><link>https://www.choiz.fr/2017-05-14-docker-commandes-utiles.html</link><description>&lt;p&gt;Voici quelques commandes très utiles si vous utilisez docker.&lt;/p&gt;
 &lt;p&gt;Supprimer tous les containers qui sont arétés :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker ps -q | xargs docker rm
 &lt;/pre&gt;&lt;/div&gt;
