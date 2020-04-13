@@ -2,7 +2,7 @@ Title: Configurer un serveur mail
 Date: 2015-11-15 17:11:23
 Author: choiz
 Category: text
-Tags: mail, postfix, dovecot, dns, ssl, rainloop, webmail
+Tags: mail, postfix, dovecot, ssl, imap
 Slug: 2015-11-15-configurer-un-serveur-mail
 Status: published
 

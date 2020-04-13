@@ -2,7 +2,7 @@ Title: Impression de commandes entre balise &lt;pre&gt;
 Date: 2010-09-15 15:43:00
 Author: choiz
 Category: text
-Tags: css, html, print, code
+Tags: css, html, code
 Slug: 2010-09-15-impression-de-commandes-entre-balise-pre
 Status: published
 

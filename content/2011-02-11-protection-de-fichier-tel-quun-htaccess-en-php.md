@@ -2,7 +2,7 @@ Title: Protection de fichier tel qu'un htaccess en PHP
 Date: 2011-02-11 15:40:00
 Author: choiz
 Category: text
-Tags: php, auth basic, code
+Tags: php, code
 Slug: 2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php
 Status: published
 

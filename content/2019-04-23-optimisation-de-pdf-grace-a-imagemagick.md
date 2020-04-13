@@ -2,7 +2,7 @@ Title: Optimisation de pdf grâce à ImageMagick
 Date: 2019-04-23 00:32:20
 Author: choiz
 Category: text
-Tags: imagemagick, pdf, optimisation
+Tags: imagemagick, pdf
 Slug: 2019-04-23-optimisation-de-pdf-grace-a-imagemagick
 Status: published
 
