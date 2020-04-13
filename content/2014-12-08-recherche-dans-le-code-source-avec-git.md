@@ -2,7 +2,7 @@ Title: Recherche dans le code source avec git
 Date: 2014-12-08 18:22:11
 Author: choiz
 Category: text
-Tags: git, search, source, code, log
+Tags: git, code
 Slug: 2014-12-08-recherche-dans-le-code-source-avec-git
 Status: published
 

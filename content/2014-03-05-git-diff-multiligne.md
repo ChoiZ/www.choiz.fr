@@ -2,7 +2,7 @@ Title: Git diff multiligne
 Date: 2014-03-05 12:56:00
 Author: choiz
 Category: text
-Tags: git, diff, wrap, less, gitconfig
+Tags: git, diff, config
 Slug: 2014-03-05-git-diff-multiligne
 Status: published
 

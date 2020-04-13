@@ -2,7 +2,7 @@ Title: Firebug champs mot de passe présents sur une page non sécurisée
 Date: 2014-03-18 10:11:00
 Author: choiz
 Category: text
-Tags: firebug, http, https, formulaire, warning, password
+Tags: http, ssl, firefox
 Slug: 2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page
 Status: published
 

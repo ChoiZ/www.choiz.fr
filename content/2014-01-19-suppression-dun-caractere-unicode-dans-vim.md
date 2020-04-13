@@ -2,7 +2,7 @@ Title: Suppression d'un caractère unicode dans Vim
 Date: 2014-01-19 17:06:00
 Author: choiz
 Category: text
-Tags: vim, unicode, char, suppression, caractère
+Tags: vim, encoding
 Slug: 2014-01-19-suppression-dun-caractère-unicode-dans-vim
 Status: published
 

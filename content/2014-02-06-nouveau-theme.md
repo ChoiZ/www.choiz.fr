@@ -2,7 +2,7 @@ Title: Nouveau thème
 Date: 2014-02-06 23:03:00
 Author: choiz
 Category: text
-Tags: thème, blog
+Tags: blog
 Slug: 2014-02-06-nouveau-thème
 Status: published
 

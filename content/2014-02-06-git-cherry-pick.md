@@ -2,7 +2,7 @@ Title: git cherry-pick
 Date: 2014-02-06 23:11:30
 Author: choiz
 Category: text
-Tags: git, cherry-pick, commit, branch
+Tags: git, branch
 Slug: 2014-02-06-git-cherry-pick
 Status: published
 

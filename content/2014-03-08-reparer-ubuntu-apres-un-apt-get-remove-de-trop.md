@@ -2,7 +2,7 @@ Title: Réparer ubuntu après un apt-get remove… de trop
 Date: 2014-03-08 13:34:00
 Author: choiz
 Category: text
-Tags: xubuntu, ubuntu, xfce, écran gris, apt-get remove, réparation
+Tags: xubuntu, apt, linux
 Slug: 2014-03-08-réparer-ubuntu-après-un-apt-get-remove-de-trop
 Status: published
 

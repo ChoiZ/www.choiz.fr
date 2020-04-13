@@ -2,7 +2,7 @@ Title: Faire un patch de "x" commit(s) avec git
 Date: 2014-05-06 11:21:00
 Author: choiz
 Category: text
-Tags: git, patch, commit
+Tags: git, patch
 Slug: 2014-05-06-faire-un-patch-de-x-commits-avec-git
 Status: published
 
