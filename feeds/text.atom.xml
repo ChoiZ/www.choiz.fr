@@ -142,7 +142,7 @@
 &lt;p&gt;ImageMagick est doté de l'outil convert qui permet de convertir des images.&lt;/p&gt;
 &lt;p&gt;Avec la commande suivante j'ai pu convertir un PDF de 3,5Mo en un PDF de 1,5Mo en compressant les pages au format JPG 90%.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;convert -density 300x300 -quality 9 -compress jpeg input.pdf output.pdf
-&lt;/pre&gt;&lt;/div&gt;</content><category term="imagemagick"></category><category term="pdf"></category><category term="optimisation"></category></entry><entry><title>Update i3-sensible-terminal</title><link href="https://www.choiz.fr/2019-03-24-update-i3-sensible-terminal.html" rel="alternate"></link><published>2019-03-24T16:26:25+01:00</published><updated>2019-03-24T16:26:25+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2019-03-24:/2019-03-24-update-i3-sensible-terminal.html</id><summary type="html">&lt;p&gt;En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne :&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="imagemagick"></category><category term="pdf"></category></entry><entry><title>Update i3-sensible-terminal</title><link href="https://www.choiz.fr/2019-03-24-update-i3-sensible-terminal.html" rel="alternate"></link><published>2019-03-24T16:26:25+01:00</published><updated>2019-03-24T16:26:25+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2019-03-24:/2019-03-24-update-i3-sensible-terminal.html</id><summary type="html">&lt;p&gt;En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bindsym $mod+Return exec i3-sensible-terminal
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1505,7 +1505,7 @@ domain&lt;/p&gt;
 &lt;p&gt;Ensuite j'active les plugins, et les packages : X-Originating-IP, Black
 list et White list.&lt;/p&gt;
 &lt;p&gt;Maintenant rendez-vous sur : &lt;a href="http://mail.domain.com"&gt;http://mail.domain.com&lt;/a&gt; et identifiez-vous
-avec votre login et mot de passe.&lt;/p&gt;</content><category term="mail"></category><category term="postfix"></category><category term="dovecot"></category><category term="dns"></category><category term="ssl"></category><category term="rainloop"></category><category term="webmail"></category></entry><entry><title>Gentoo Navigateur Web par Défaut</title><link href="https://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html" rel="alternate"></link><published>2015-10-25T14:02:17+01:00</published><updated>2015-10-25T14:02:17+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-10-25:/2015-10-25-gentoo-navigateur-web-par-defaut.html</id><summary type="html">&lt;p&gt;Sur ma machine "links" était le navigateur web par défaut. Il est
+avec votre login et mot de passe.&lt;/p&gt;</content><category term="mail"></category><category term="postfix"></category><category term="dovecot"></category><category term="ssl"></category><category term="imap"></category></entry><entry><title>Gentoo Navigateur Web par Défaut</title><link href="https://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html" rel="alternate"></link><published>2015-10-25T14:02:17+01:00</published><updated>2015-10-25T14:02:17+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-10-25:/2015-10-25-gentoo-navigateur-web-par-defaut.html</id><summary type="html">&lt;p&gt;Sur ma machine "links" était le navigateur web par défaut. Il est
 pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
 est préférable d'utiliser un navigateur tel que Firefox.&lt;/p&gt;
 &lt;p&gt;Voici la commande pour voir le navigateur par défaut pour les url
@@ -2587,7 +2587,7 @@ psql *base* &amp;lt; *dump_base*.sql
 &lt;p&gt;Pour importer un dump dans une base :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;psql *base* &amp;lt; *dump_base_table*.sql
 psql *base* &amp;lt; *dump_base*.sql
-&lt;/pre&gt;&lt;/div&gt;</content><category term="postgresql"></category><category term="sql"></category></entry><entry><title>Git déplacer mon dernier commit sur une autre branche</title><link href="https://www.choiz.fr/2013-06-22-git-d%C3%A9placer-mon-dernier-commit-sur-une-autre.html" rel="alternate"></link><published>2013-06-22T13:07:00+02:00</published><updated>2013-06-22T13:07:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-06-22:/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html</id><summary type="html">&lt;p&gt;J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
+&lt;/pre&gt;&lt;/div&gt;</content><category term="sql"></category></entry><entry><title>Git déplacer mon dernier commit sur une autre branche</title><link href="https://www.choiz.fr/2013-06-22-git-d%C3%A9placer-mon-dernier-commit-sur-une-autre.html" rel="alternate"></link><published>2013-06-22T13:07:00+02:00</published><updated>2013-06-22T13:07:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-06-22:/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html</id><summary type="html">&lt;p&gt;J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
 &lt;em&gt;master&lt;/em&gt;… Généralement je fais toujours une branche pour les
 modifications, cette fois j'avais créé cette branche &lt;em&gt;debug_redirect&lt;/em&gt;
 mais je n'étais pas dessus…&lt;/p&gt;
@@ -3608,7 +3608,7 @@ se nomme : arandr :&lt;/p&gt;
 
 
 &lt;p&gt;Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez
-le ARandR pour configurer les deux écrans.&lt;/p&gt;</content><category term="arandr"></category><category term="linux"></category></entry><entry><title>Flash sous Debian</title><link href="https://www.choiz.fr/2011-11-30-flash-sous-debian.html" rel="alternate"></link><published>2011-11-30T22:52:56+01:00</published><updated>2011-11-30T22:52:56+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-11-30:/2011-11-30-flash-sous-debian.html</id><summary type="html">&lt;p&gt;Lors de l'installation de Debian sur mon poste au travail j'ai eu la
+le ARandR pour configurer les deux écrans.&lt;/p&gt;</content><category term="linux"></category></entry><entry><title>Flash sous Debian</title><link href="https://www.choiz.fr/2011-11-30-flash-sous-debian.html" rel="alternate"></link><published>2011-11-30T22:52:56+01:00</published><updated>2011-11-30T22:52:56+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-11-30:/2011-11-30-flash-sous-debian.html</id><summary type="html">&lt;p&gt;Lors de l'installation de Debian sur mon poste au travail j'ai eu la
 surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
 chez Deezer c'est un peu problèmatique.&lt;/p&gt;
 &lt;p&gt;J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
@@ -3635,7 +3635,7 @@ apt-get install flashplugin-nonfree
 
 &lt;p&gt;En relançant Firefox j'ai bien flash player fonctionnel sur Deezer.&lt;/p&gt;
 &lt;p&gt;Le package flashplugin étant nonfree Debian ne l'inclus pas directement
-lors de l'installation.&lt;/p&gt;</content><category term="flash"></category><category term="debian"></category><category term="linux"></category></entry><entry><title>Voir les fichiers cachés sur Lion</title><link href="https://www.choiz.fr/2011-11-02-voir-les-fichiers-cach%C3%A9s-sur-lion.html" rel="alternate"></link><published>2011-11-02T11:17:12+01:00</published><updated>2011-11-02T11:17:12+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-11-02:/2011-11-02-voir-les-fichiers-cachés-sur-lion.html</id><summary type="html">&lt;p&gt;Dans un terminal :&lt;/p&gt;
+lors de l'installation.&lt;/p&gt;</content><category term="debian"></category><category term="linux"></category></entry><entry><title>Voir les fichiers cachés sur Lion</title><link href="https://www.choiz.fr/2011-11-02-voir-les-fichiers-cach%C3%A9s-sur-lion.html" rel="alternate"></link><published>2011-11-02T11:17:12+01:00</published><updated>2011-11-02T11:17:12+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-11-02:/2011-11-02-voir-les-fichiers-cachés-sur-lion.html</id><summary type="html">&lt;p&gt;Dans un terminal :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;defaults write com.apple.Finder AppleShowAllFiles TRUE
 
 killall Finder
@@ -4035,7 +4035,7 @@ fournit un moyen d'accéder aux membres
 
 &lt;p&gt;Attention l'utilisation du htaccess n'est pas recommandée sur une connexion non
 chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffré
-(HTTPS).&lt;/p&gt;</content><category term="php"></category><category term="auth basic"></category><category term="code"></category></entry><entry><title>jQuery attr() avec onclick par click()</title><link href="https://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html" rel="alternate"></link><published>2011-01-07T16:43:00+01:00</published><updated>2011-01-07T16:43:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-01-07:/2011-01-07-jquery-attr-avec-onclick-par-click.html</id><summary type="html">&lt;p&gt;Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery
+(HTTPS).&lt;/p&gt;</content><category term="php"></category><category term="code"></category></entry><entry><title>jQuery attr() avec onclick par click()</title><link href="https://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html" rel="alternate"></link><published>2011-01-07T16:43:00+01:00</published><updated>2011-01-07T16:43:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-01-07:/2011-01-07-jquery-attr-avec-onclick-par-click.html</id><summary type="html">&lt;p&gt;Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery
 fonctionne pas avec l'attribut "onclick"…&lt;/p&gt;
 &lt;p&gt;Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.&lt;/p&gt;
@@ -4117,7 +4117,7 @@ trop grande. :&lt;/p&gt;
     &lt;span class="k"&gt;white-space&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;pre-wrap&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="k"&gt;word-wrap&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;break-word&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="css"></category><category term="html"></category><category term="print"></category><category term="code"></category></entry><entry><title>Limiter la bande passante sous Mac Os X</title><link href="https://www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html" rel="alternate"></link><published>2010-07-12T11:59:00+02:00</published><updated>2010-07-12T11:59:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2010-07-12:/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html</id><summary type="html">&lt;p&gt;Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
+&lt;/pre&gt;&lt;/div&gt;</content><category term="css"></category><category term="html"></category><category term="code"></category></entry><entry><title>Limiter la bande passante sous Mac Os X</title><link href="https://www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html" rel="alternate"></link><published>2010-07-12T11:59:00+02:00</published><updated>2010-07-12T11:59:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2010-07-12:/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html</id><summary type="html">&lt;p&gt;Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
 virtuel en console.&lt;/p&gt;
 &lt;p&gt;Ici on créer un tuyau virtuel de 1Mbit/s.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;sudo ipfw pipe 1 config bw 1Mbit/s&lt;/code&gt;&lt;/p&gt;
@@ -4134,4 +4134,4 @@ un navigateur par exemple).&lt;/p&gt;
 &lt;p&gt;Pour supprimer la règle du port 80 :&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;sudo ipfw del 1&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Pour supprimer le tuyau :&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo ipfw pipe 1 delete&lt;/code&gt;&lt;/p&gt;</content><category term="qos"></category><category term="osx"></category></entry></feed>
+&lt;p&gt;&lt;code&gt;sudo ipfw pipe 1 delete&lt;/code&gt;&lt;/p&gt;</content><category term="osx"></category></entry></feed>

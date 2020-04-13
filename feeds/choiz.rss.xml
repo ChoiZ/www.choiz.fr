@@ -14,7 +14,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Cette solution ne me convient pas car j'ai des interrupteurs encastrés, je n'ai pas envie d'avoir un interrupteur sans fil collé, alors …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 12 Apr 2020 17:37:45 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2020-04-12:/2020-04-12-faire-un-va-et-vient-avec-des-interrupteurs-muraux-xiaomi.html</guid><category>électricité</category><category>domotique</category><category>xiaomi</category></item><item><title>Optimisation de pdf grâce à ImageMagick</title><link>https://www.choiz.fr/2019-04-23-optimisation-de-pdf-grace-a-imagemagick.html</link><description>&lt;p&gt;Ayant de gros pdf de 3Mo je cherchais une solution pour les optimiser en ligne de commande.&lt;/p&gt;
 &lt;p&gt;ImageMagick est doté de l'outil convert qui permet de convertir des images.&lt;/p&gt;
-&lt;p&gt;Avec la commande suivante j'ai pu convertir un PDF de 3,5Mo en un PDF de 1,5Mo en compressant les …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 23 Apr 2019 00:32:20 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2019-04-23:/2019-04-23-optimisation-de-pdf-grace-a-imagemagick.html</guid><category>imagemagick</category><category>pdf</category><category>optimisation</category></item><item><title>Update i3-sensible-terminal</title><link>https://www.choiz.fr/2019-03-24-update-i3-sensible-terminal.html</link><description>&lt;p&gt;En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne :&lt;/p&gt;
+&lt;p&gt;Avec la commande suivante j'ai pu convertir un PDF de 3,5Mo en un PDF de 1,5Mo en compressant les …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Tue, 23 Apr 2019 00:32:20 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2019-04-23:/2019-04-23-optimisation-de-pdf-grace-a-imagemagick.html</guid><category>imagemagick</category><category>pdf</category></item><item><title>Update i3-sensible-terminal</title><link>https://www.choiz.fr/2019-03-24-update-i3-sensible-terminal.html</link><description>&lt;p&gt;En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bindsym $mod+Return exec i3-sensible-terminal
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -139,7 +139,7 @@ suivre pour le mettre à jour vers la version : 4.3.0.&lt;/p&gt;
 &lt;h2&gt;Configuration des DNS&lt;/h2&gt;
 &lt;p&gt;Pour commencer nous allons créer des entrées DNS.&lt;/p&gt;
 &lt;p&gt;Nous créons un MX pour les mails avec une priorité de 1, un sous domaine
-"mail" qui pointe vers l'adresse ipv4 de votre serveur, d'un sous …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 15 Nov 2015 17:11:23 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2015-11-15:/2015-11-15-configurer-un-serveur-mail.html</guid><category>mail</category><category>postfix</category><category>dovecot</category><category>dns</category><category>ssl</category><category>rainloop</category><category>webmail</category></item><item><title>Gentoo Navigateur Web par Défaut</title><link>https://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html</link><description>&lt;p&gt;Sur ma machine "links" était le navigateur web par défaut. Il est
+"mail" qui pointe vers l'adresse ipv4 de votre serveur, d'un sous …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sun, 15 Nov 2015 17:11:23 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2015-11-15:/2015-11-15-configurer-un-serveur-mail.html</guid><category>mail</category><category>postfix</category><category>dovecot</category><category>ssl</category><category>imap</category></item><item><title>Gentoo Navigateur Web par Défaut</title><link>https://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html</link><description>&lt;p&gt;Sur ma machine "links" était le navigateur web par défaut. Il est
 pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
 est préférable d'utiliser un navigateur tel que Firefox.&lt;/p&gt;
 &lt;p&gt;Voici la commande pour voir le navigateur par défaut pour les url
@@ -445,7 +445,7 @@ voulais voici donc ma procédure :&lt;/p&gt;
 &lt;p&gt;Pour importer un dump dans une base :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;psql *base* &amp;lt; *dump_base_table*.sql
 psql *base* &amp;lt; *dump_base*.sql
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 22 Jun 2013 19:57:41 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2013-06-22:/2013-06-22-export-import-avec-postgresql.html</guid><category>postgresql</category><category>sql</category></item><item><title>Git déplacer mon dernier commit sur une autre branche</title><link>https://www.choiz.fr/2013-06-22-git-d%C3%A9placer-mon-dernier-commit-sur-une-autre.html</link><description>&lt;p&gt;J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Sat, 22 Jun 2013 19:57:41 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2013-06-22:/2013-06-22-export-import-avec-postgresql.html</guid><category>sql</category></item><item><title>Git déplacer mon dernier commit sur une autre branche</title><link>https://www.choiz.fr/2013-06-22-git-d%C3%A9placer-mon-dernier-commit-sur-une-autre.html</link><description>&lt;p&gt;J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
 &lt;em&gt;master&lt;/em&gt;… Généralement je fais toujours une branche pour les
 modifications, cette fois j'avais créé cette branche &lt;em&gt;debug_redirect&lt;/em&gt;
 mais je n'étais pas dessus…&lt;/p&gt;
@@ -635,7 +635,7 @@ se nomme : arandr :&lt;/p&gt;
 
 
 &lt;p&gt;Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez
-le ARandR pour configurer les deux écrans.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 01 Dec 2011 12:14:16 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-12-01:/2011-12-01-dual-screen-sur-xfce.html</guid><category>arandr</category><category>linux</category></item><item><title>Flash sous Debian</title><link>https://www.choiz.fr/2011-11-30-flash-sous-debian.html</link><description>&lt;p&gt;Lors de l'installation de Debian sur mon poste au travail j'ai eu la
+le ARandR pour configurer les deux écrans.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Thu, 01 Dec 2011 12:14:16 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-12-01:/2011-12-01-dual-screen-sur-xfce.html</guid><category>linux</category></item><item><title>Flash sous Debian</title><link>https://www.choiz.fr/2011-11-30-flash-sous-debian.html</link><description>&lt;p&gt;Lors de l'installation de Debian sur mon poste au travail j'ai eu la
 surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
 chez Deezer c'est un peu problèmatique.&lt;/p&gt;
 &lt;p&gt;J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
@@ -644,7 +644,7 @@ ceci :&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ajouter contrib non-free aux différentes sources …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 30 Nov 2011 22:52:56 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-11-30:/2011-11-30-flash-sous-debian.html</guid><category>flash</category><category>debian</category><category>linux</category></item><item><title>Voir les fichiers cachés sur Lion</title><link>https://www.choiz.fr/2011-11-02-voir-les-fichiers-cach%C3%A9s-sur-lion.html</link><description>&lt;p&gt;Dans un terminal :&lt;/p&gt;
+&lt;p&gt;Ajouter contrib non-free aux différentes sources …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 30 Nov 2011 22:52:56 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-11-30:/2011-11-30-flash-sous-debian.html</guid><category>debian</category><category>linux</category></item><item><title>Voir les fichiers cachés sur Lion</title><link>https://www.choiz.fr/2011-11-02-voir-les-fichiers-cach%C3%A9s-sur-lion.html</link><description>&lt;p&gt;Dans un terminal :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;defaults write com.apple.Finder AppleShowAllFiles TRUE
 
 killall Finder
@@ -790,7 +790,7 @@ ou, en termes plus simples …&lt;/em&gt;&lt;/p&gt;</description><dc:creator xml
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Attention l'utilisation du htaccess n'est pas recommandée …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 11 Feb 2011 15:40:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-02-11:/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html</guid><category>php</category><category>auth basic</category><category>code</category></item><item><title>jQuery attr() avec onclick par click()</title><link>https://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html</link><description>&lt;p&gt;Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery
+&lt;p&gt;Attention l'utilisation du htaccess n'est pas recommandée …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Fri, 11 Feb 2011 15:40:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-02-11:/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html</guid><category>php</category><category>code</category></item><item><title>jQuery attr() avec onclick par click()</title><link>https://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html</link><description>&lt;p&gt;Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery
 fonctionne pas avec l'attribut "onclick"…&lt;/p&gt;
 &lt;p&gt;Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.&lt;/p&gt;
@@ -812,9 +812,9 @@ informations dans vos projets il suffit de taper cette commande :&lt;/p&gt;
 documentations…&lt;/p&gt;
 &lt;p&gt;J'utilise souvent la balise &amp;lt;pre&amp;gt; pour les lignes de commandes et
 il n'y a pas de retour à la ligne fait automatiquement pour cela un
-petit css permet de faire les retours à la ligne lorsque la page …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 15 Sep 2010 15:43:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2010-09-15:/2010-09-15-impression-de-commandes-entre-balise-pre.html</guid><category>css</category><category>html</category><category>print</category><category>code</category></item><item><title>Limiter la bande passante sous Mac Os X</title><link>https://www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html</link><description>&lt;p&gt;Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
+petit css permet de faire les retours à la ligne lorsque la page …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Wed, 15 Sep 2010 15:43:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2010-09-15:/2010-09-15-impression-de-commandes-entre-balise-pre.html</guid><category>css</category><category>html</category><category>code</category></item><item><title>Limiter la bande passante sous Mac Os X</title><link>https://www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html</link><description>&lt;p&gt;Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
 virtuel en console.&lt;/p&gt;
 &lt;p&gt;Ici on créer un tuyau virtuel de 1Mbit/s.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;sudo ipfw pipe 1 config bw 1Mbit/s&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;On applique ce tuyau au port 80 (pour le téléchargement de fichier via
-un navigateur …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 12 Jul 2010 11:59:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2010-07-12:/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html</guid><category>qos</category><category>osx</category></item></channel></rss>
+un navigateur …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz</dc:creator><pubDate>Mon, 12 Jul 2010 11:59:00 +0200</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2010-07-12:/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html</guid><category>osx</category></item></channel></rss>
