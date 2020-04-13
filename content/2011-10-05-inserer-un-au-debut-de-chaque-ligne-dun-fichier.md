@@ -2,7 +2,7 @@ Title: Insérer un \# au début de chaque ligne d'un fichier avec vim
 Date: 2011-10-05 00:42:00
 Author: choiz
 Category: text
-Tags: vim, search, replace, comment
+Tags: vim, commentaire
 Slug: 2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier
 Status: published
 
