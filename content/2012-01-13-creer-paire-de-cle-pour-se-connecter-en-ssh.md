@@ -2,7 +2,7 @@ Title: Créer paire de clé pour se connecter en SSH
 Date: 2012-01-13 10:05:18
 Author: choiz
 Category: text
-Tags: ssh, key, rsa
+Tags: ssh, key
 Slug: 2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh
 Status: published
 

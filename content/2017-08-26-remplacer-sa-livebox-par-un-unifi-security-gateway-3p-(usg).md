@@ -3,7 +3,7 @@ Date: 2017-08-26 19:00:56
 Modified: 2017-09-02 18:25:10
 Author: choiz
 Category: text
-Tags: unifi, gateway, livebox, usg, network
+Tags: unifi, network
 Slug: 2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg)
 Status: published
 

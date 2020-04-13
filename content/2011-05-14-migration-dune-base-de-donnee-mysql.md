@@ -2,7 +2,7 @@ Title: Migration d'une base de donnée Mysql
 Date: 2011-05-14 13:21:17
 Author: choiz
 Category: text
-Tags: mysql, mysqldump, linux, cli
+Tags: mysql, mysqldump, linux, sql
 Slug: 2011-05-14-migration-dune-base-de-donnée-mysql
 Status: published
 

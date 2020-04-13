@@ -2,7 +2,7 @@ Title: Création d'une clé usb xubuntu sur mac
 Date: 2014-03-04 14:10:00
 Author: choiz
 Category: text
-Tags: usb, xubuntu, osx, linux
+Tags: xubuntu, osx, linux
 Slug: 2014-03-04-création-dune-clé-usb-xubuntu-sur-mac
 Status: published
 

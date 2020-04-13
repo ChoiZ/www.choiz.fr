@@ -2,7 +2,7 @@ Title: Update i3-sensible-terminal
 Date: 2019-03-24 16:26:25
 Author: choiz
 Category: text
-Tags: i3wm, terminal, linux
+Tags: linux
 Slug: 2019-03-24-update-i3-sensible-terminal
 Status: published
 

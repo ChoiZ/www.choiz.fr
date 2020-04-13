@@ -2,7 +2,7 @@ Title: Écriture d'un rapport de bug
 Date: 2014-11-08 16:55:00
 Author: choiz
 Category: text
-Tags: bug, report
+Tags: bug, doc
 Slug: 2014-11-08-écriture-dun-rapport-de-bug
 Status: published
 

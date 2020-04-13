@@ -2,7 +2,7 @@ Title: Import VM avec Virtualbox
 Date: 2011-09-02 19:28:28
 Author: choiz
 Category: text
-Tags: virtualbox, linux
+Tags: linux
 Slug: 2011-09-02-import-vm-avec-virtualbox
 Status: published
 

@@ -2,7 +2,7 @@ Title: Reprendre la main sur un Screen pas "detached"
 Date: 2012-04-18 01:39:00
 Author: choiz
 Category: text
-Tags: screen, linux
+Tags: linux
 Slug: 2012-04-18-reprendre-la-main-sur-un-screen-pas-detached
 Status: published
 
