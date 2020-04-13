@@ -2,7 +2,7 @@ Title: Bien nommer ses fichiers
 Date: 2018-12-13 12:52:55
 Author: choiz
 Category: text
-Tags: filename, date
+Tags: file, date
 Slug: 2018-12-13-bien-nommer-ses-fichiers
 Status: published
 

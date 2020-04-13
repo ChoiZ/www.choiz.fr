@@ -2,7 +2,7 @@ Title: Êtes-vous à l'heure ? (Et votre serveur ?)
 Date: 2015-01-24 16:54:00
 Author: choiz
 Category: text
-Tags: debian, ntp, time, linux
+Tags: debian, ntp, date, linux
 Slug: 2015-01-24-êtes-vous-à-lheure-et-votre-serveur
 Status: published
 

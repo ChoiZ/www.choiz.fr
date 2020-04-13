@@ -1,9 +1,9 @@
-Title: Réparer ubuntu après un apt-get remove… de trop
+Title: Réparer xubuntu après un apt-get remove… de trop
 Date: 2014-03-08 13:34:00
 Author: choiz
 Category: text
-Tags: xubuntu, apt, linux
-Slug: 2014-03-08-réparer-ubuntu-après-un-apt-get-remove-de-trop
+Tags: dpkg, debian, xubuntu, linux
+Slug: 2014-03-08-réparer-xubuntu-après-un-apt-get-remove-de-trop
 Status: published
 
 En voulant modifier xscreensaver par i3lock j'ai supprimé des paquets

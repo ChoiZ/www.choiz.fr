@@ -2,7 +2,7 @@ Title: imapfilter ou comment filtrer ses mails facilement
 Date: 2014-03-11 13:54:00
 Author: choiz
 Category: text
-Tags: mail, filter, imap
+Tags: mail, imap
 Slug: 2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement
 Status: published
 

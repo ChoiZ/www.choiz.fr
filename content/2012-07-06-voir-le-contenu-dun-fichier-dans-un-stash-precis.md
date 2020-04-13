@@ -2,7 +2,7 @@ Title: Voir le contenu d'un fichier dans un stash précis (git)
 Date: 2012-07-06 17:56:00
 Author: choiz
 Category: text
-Tags: git, file, stash
+Tags: git
 Slug: 2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis
 Status: published
 

@@ -2,7 +2,7 @@ Title: Migration de Tumblr à Pelican
 Date: 2015-08-20 22:03:40
 Author: choiz
 Category: text
-Tags: static, site, blog, migration
+Tags: blog
 Slug: 2015-08-20-migration-de-tumblr-a-pelican
 Status: published
 

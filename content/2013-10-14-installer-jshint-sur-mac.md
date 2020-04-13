@@ -2,7 +2,7 @@ Title: Installer jshint sur mac
 Date: 2013-10-14 12:41:08
 Author: choiz
 Category: text
-Tags: jshint, npm, nodejs
+Tags: npm
 Slug: 2013-10-14-installer-jshint-sur-mac
 Status: published
 

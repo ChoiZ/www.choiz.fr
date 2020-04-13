@@ -2,7 +2,7 @@ Title: Utilisation des branches et de git stash
 Date: 2012-04-14 16:32:42
 Author: choiz
 Category: text
-Tags: git, branch
+Tags: git
 Slug: 2012-04-14-utilisation-des-branches-et-de-git-stash
 Status: published
 
