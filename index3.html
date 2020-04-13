@@ -62,21 +62,8 @@ Tags :
 pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
 est préférable d'utiliser un navigateur tel que Firefox.</p>
 <p>Voici la commande pour voir le navigateur par défaut pour les url
-utilisants le protocole "http" :</p>
-<div class="highlight"><pre><span></span>xdg-mime query default x-scheme-handler/http
-</pre></div>
-
-
-<p>Et voici la commande pour le "https" :</p>
-<div class="highlight"><pre><span></span>xdg-mime query default x-scheme-handler/https
-</pre></div>
-
-
-<p>Pour changer le navigateur par défaut par Firefox il suffit d'executer
-ses deux commandes :</p>
-<div class="highlight"><pre><span></span>xdg-mime default firefox.desktop x-scheme-handler/http
-xdg-mime default firefox.desktop x-scheme-handler/https
-</pre></div>
+utilisants le protocole …</p>
+      <a class="btn" href="https://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -95,17 +82,8 @@ backoffice et une avec une API.</p>
 <p>J'ai donc du faire un réseau privé dans vagrant pour que le BO
 communique avec l'API.</p>
 <p>Il suffit de modifier la configuration de la vm #1 et d'ajouter :</p>
-<div class="highlight"><pre><span></span>config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.1&quot;
-</pre></div>
-
-
-<p>Et dans la configuration de la vm #2 d'ajouter :</p>
-<div class="highlight"><pre><span></span>config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.2&quot;
-</pre></div>
-
-
-<p>Votre vm #1 peut (suite au redémarrage des deux vm vagrant) communiquer
-avec votre vm #2 directement avec l'ip 192.168.10.2.</p>
+<div class="highlight"><pre><span></span>config.vm.network &quot;private_network&quot;, ip: &quot;192.168 …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -132,31 +110,8 @@ api_add(&#39;books&#39;, $datas);
 
 <p>Je test généralement chaque élément séparement.</p>
 <p>Pour tester la première portion de mon code :</p>
-<div class="highlight"><pre><span></span>//* Obtenir le livre #1
-api_get(&#39;books/1&#39;);
-//*/
-
-/* Ajouter un livre
-api_add(&#39;books&#39;, $datas);
-//*/
-</pre></div>
-
-
-<p>Pour tester la seconde portion de mon code :</p>
-<div class="highlight"><pre><span></span><span class="cm">/* Obtenir le livre #1</span>
-<span class="cm">api_get(&#39;books/1&#39;);</span>
-<span class="cm">//*/</span><span class="w"></span>
-
-<span class="o">//*</span><span class="w"> </span>Ajouter<span class="w"> </span>un<span class="w"> </span>livre<span class="w"></span>
-api_add<span class="o">(</span><span class="s">&#39;books&#39;</span><span class="o">,</span><span class="w"> </span><span class="err">$</span>datas<span class="o">)</span><span class="err">;</span><span class="w"></span>
-<span class="o">//*/</span><span class="w"></span>
-</pre></div>
-
-
-<p>Il me suffit d'ajouter ou d'enlever un slash sur le premier commentaire
-pour commenter ou non tout le bloc.</p>
-<p>Ce n'est pas forcément très lisible donc je fais ça uniquement pour mes
-tests.</p>
+<div class="highlight"><pre><span></span>//* Obtenir le …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2015-10-12-des-commentaires-efficaces.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -183,15 +138,8 @@ Tags :
 
 <p>-p ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche
 également les différents flags (N = new (not yet installed), U =
-updating (to another version) etc…) -v ou --verbose, mode verbeux. -u ou
---update, met à jour les programmes dans la meilleur version disponible.
--D ou --deep, met à jour les dépendances des programmes si nécessaire.
--N ou --newuse, met à jour les programmes dont le "USE" a été modifié
-depuis son installation.</p>
-<p>Une fois la liste des programmes et ses modifications vérifiée nous
-pouvons lancer la mise à jour :</p>
-<div class="highlight"><pre><span></span>emerge -vuDN world
-</pre></div>
+updating (to another version …</p>
+      <a class="btn" href="https://www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -223,13 +171,8 @@ make install
 
 
 <p>Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi
-que le nombre de compilation.</p>
-<p>Il faut maintenant redémarrer la machine :</p>
-<div class="highlight"><pre><span></span>reboot
-</pre></div>
-
-
-<p>Au final vérifier avec uname -a si le bon kernel est chargé.</p>
+que le nombre de …</p>
+      <a class="btn" href="https://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -250,63 +193,8 @@ syntaxe…</p>
 <p>Pour les fichiers <code>tar.gz</code> j'arrive parfaitement à compresser ou
 décompresser ce format exemple :</p>
 <p>On compresse avec :</p>
-<div class="highlight"><pre><span></span>tar -cvzf archive.tar.gz dossier_a_compresser/
-</pre></div>
-
-
-<p>On décompresse avec :</p>
-<div class="highlight"><pre><span></span>tar -xvzf archive.tar.gz
-</pre></div>
-
-
-<p>Il suffit de retenir :</p>
-<p>-c comme compression / "x" comme eXtract ou eXtraction. -v pour le mode
-verbeux. -z pour le "gzip" d'ou le ".gz". -f pour spécifier le fichier.</p>
-<h2>tar.bz2</h2>
-<p>Pour les <code>tar.bz2</code> je ne sais JAMAIS qu'il faut remplacer "z" de gizip
-par "j" de Bzip… (la lettre "b" étant sans doute utilisé avant que le
-bzip n'apparaisse). L'alternative est d'utiliser "--bzip"</p>
-<p>On compresse avec :</p>
-<div class="highlight"><pre><span></span>tar -cvjf archive.tar.bz2 dossier_a_compresser/
-</pre></div>
-
-
-<p>Ou :</p>
-<div class="highlight"><pre><span></span>tar --bzip2 -cvf archive.tar.bz2 dossier_a_compresser/
-</pre></div>
-
-
-<p>On décompresse avec :</p>
-<div class="highlight"><pre><span></span>tar -xvjf archive.tar.bz2
-</pre></div>
-
-
-<p>Ou :</p>
-<div class="highlight"><pre><span></span>tar --bzip2 -xvf archive.tar.bz2
-</pre></div>
-
-
-<h2>tar.xz</h2>
-<p>Pour ce qui est de Lzma ou le <code>tar.xz</code> c'est un "J" majuscule cette
-fois ou d'utiliser "--xz".</p>
-<p>On compresse avec :</p>
-<div class="highlight"><pre><span></span>tar -cvJf archive.tar.xz dossier_a_compresser/
-</pre></div>
-
-
-<p>Ou :</p>
-<div class="highlight"><pre><span></span>tar --xz -cvf archive.tar.xz dossier_a_compresser/
-</pre></div>
-
-
-<p>On décompresse avec :</p>
-<div class="highlight"><pre><span></span>tar -xvJf archive.tar.xz
-</pre></div>
-
-
-<p>Ou :</p>
-<div class="highlight"><pre><span></span>tar --xz -xvf archive.tar.xz
-</pre></div>
+<div class="highlight"><pre><span></span>tar -cvzf archive …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -324,31 +212,8 @@ Tags :
 permis d'ajouté des namespaces a différents fichiers PHP.</p>
 <p>Une fois la modification faite j'ai envoyé ma branche sur l'origin, en
 faisant un "pull request" (github) ou "merge request" (gitlab).</p>
-<p>Un autre développeur a accepté mon pull request (il a donc mergé la
-branche) et a supprimé ma branche de l'origine.</p>
-<p>Sur mon environnement je vois toujours cette branche.</p>
-<blockquote>
-<p>git branch -a</p>
-<p>* master</p>
-<p>remote/origin/HEAD -&gt; origin/master</p>
-<p>remote/origin/add_namespace</p>
-<p>remote/origin/master</p>
-</blockquote>
-<p>Pour pouvoir effacer cette branche dans le remote, il suffit de tapper
-la commande :</p>
-<blockquote>
-<p>git remote prune origin</p>
-<p>Élimination de origin</p>
-<p>URL : <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#46;&#109;&#111;&#110;&#100;&#111;&#109;&#97;&#105;&#110;&#46;&#99;&#111;&#109;">&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#46;&#109;&#111;&#110;&#100;&#111;&#109;&#97;&#105;&#110;&#46;&#99;&#111;&#109;</a>:mondepot.git</p>
-<p>* [éliminé] origin/add_namespace</p>
-</blockquote>
-<p>Maintenant, vérifions que tout est propre :</p>
-<blockquote>
-<p>git branch -a</p>
-<p>* master</p>
-<p>remote/origin/HEAD -&gt; origin/master</p>
-<p>remote/origin/master</p>
-</blockquote>
+<p>Un autre développeur a accepté mon pull request (il a donc …</p>
+      <a class="btn" href="https://www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -366,9 +231,8 @@ Tags :
 2014. Depuis cette date je n'avais pas pris le temps de m'occuper de la
 migration de mon blog de tumblr vers pelican.</p>
 <p><a href="http://blog.getpelican.com/">Pelican</a> est un générateur de site
-statique, il est pratique pour la gestion des articles tel que mon blog.</p>
-<p>Il suffit de créer un fichier texte avec le contenu de l'article et
-l'envoyer sur github pour que celui-ci soit publié.</p>
+statique, il est pratique pour la gestion des …</p>
+      <a class="btn" href="https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -387,15 +251,8 @@ touche "enter" ou "escape".</p>
 <p>Ce qui fonctionne mais, si vous êtes dans un programme d'installation
 qui demande une confirmation (formater tout le disque par exemple), en
 appuyant sur "enter" vous allez confirmer le formatage…</p>
-<p>Avec la touche escape vous allez généralement annuler l'action que l'on
-vous propose.</p>
-<p>Même problème avec toutes les autres touches : "espace" qui confirme
-généralement, "o" pour "oui", "y" pour "yes", "n" pour "no" ou "non", ou
-une quantité "1", "2", ou toute autre lettre défini tel que "a" pour
-"annuler", "c" pour "cancel"…</p>
-<p>Bref la seule touche que j'utilise pour sortir mon ordinateur de veille
-est "shift". Que ça soit le "shift" droit ou gauche il ne fais jamais
-d'action spécifique à ma connaissance ;-)</p>
+<p>Avec la touche …</p>
+      <a class="btn" href="https://www.choiz.fr/2015-08-08-touche-pour-sortir-sa-machine-de-veille.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -419,29 +276,8 @@ Tags :
 </pre></div>
 
 
-<p>Je préfèrerai que ma branche soit à jour avec mon origin/master et non
-github/master.</p>
-<p>La solution que j’ai trouvé est la suivante :</p>
-<ol>
-<li>
-<p>supprimer ma branche master locale :</p>
-<div class="highlight"><pre><span></span>git branch -d master
-</pre></div>
-
-
-</li>
-<li>
-<p>récupèrer mon master depuis le remote origin :</p>
-<div class="highlight"><pre><span></span>git checkout -t -b master origin/master
-</pre></div>
-
-
-</li>
-</ol>
-<p>Pour info :</p>
-<p>-t ou --track pour rattacher à l’origin/master</p>
-<p>-b pour créer ma nouvelle branche “master”</p>
-<p>Plus d’info avec man git-checkout ;-)</p>
+<p>Je …</p>
+      <a class="btn" href="https://www.choiz.fr/2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html">Lire la suite</a>
   </div>
 </article>
 

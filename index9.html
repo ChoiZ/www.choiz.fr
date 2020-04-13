@@ -68,16 +68,8 @@ terminal). Puis :</p>
 
 Password:
 
-password (ou autre suivant le mot de passe de l&#39;utilisateur).
-</pre></div>
-
-
-<p>Puis :</p>
-<div class="highlight"><pre><span></span>/Applications/Skype.app/Contents/MacOS/Skype
-</pre></div>
-
-
-<p>Ce qui devrait lancer une seconde instance de Skype.</p>
+password …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -98,6 +90,7 @@ Tags :
 
 <p>Redémarrez Safari et maintenant vous pouvez inspecter les éléments de
 vos pages web.</p>
+      <a class="btn" href="https://www.choiz.fr/2011-09-05-développement-web-avec-safari.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -119,7 +112,8 @@ donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?</p>
 
 
 <p>Maintenant lors du prochain démarrage de votre VirtualBox vous devez
-avoir la machine virtuelle importée !</p>
+avoir la …</p>
+      <a class="btn" href="https://www.choiz.fr/2011-09-02-import-vm-avec-virtualbox.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -145,38 +139,8 @@ Tags :
 | public = yes
 | ## Log ##
 | log file = /var/log/samba/log.%m
-| max log size = 1000
-| ## Auth ##
-| encrypt passwords = true
-| smb passwd file = /etc/samba/smbpasswd
-| ### Share ###
-| [choiz]
-| path = /home/choiz/samba
-| read only = no
-| writeable = yes
-| valid users = choiz
-| comment = partage de choiz
-| [partagereadonly]
-| path = /home/partageread
-| read only = yes
-| writeable = no
-| valid users = choiz, @group
-| comment = partage en lecture pour choiz et le groupe &quot;group&quot;
-</pre></div>
-
-
-<p>Maintenant il faut créer notre utilisateur "choiz" grâce à :</p>
-<div class="highlight"><pre><span></span>smbpasswd -a choiz
-</pre></div>
-
-
-<p>Pour les groupes samba utilise les groupes unix. A vous de voir si vous
-voulez gérer votre partage samba utilisateur par utilisateur ou
-directement avec des groupes.</p>
-<p>N'oubliez pas de redémarrer le service Samba avant de tester depuis
-votre client le partage de fichiers ! :</p>
-<div class="highlight"><pre><span></span>/etc/init.d/samba restart
-</pre></div>
+| max log size = 1000 …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2011-08-17-partage-samba.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -193,6 +157,7 @@ Tags :
       <p><a href="http://www.jsfiddle.net/">http://www.jsfiddle.net/</a> Pratique pour tester un code html / css / js</p>
 <p><a href="http://www.jsperf.com/">http://www.jsperf.com/</a> Pour faire des performances de code js</p>
 <p><a href="http://www.pastebin.com/">http://www.pastebin.com/</a> Pour copier coller du code facilement</p>
+      <a class="btn" href="https://www.choiz.fr/2011-08-09-liens-utiles.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -215,22 +180,8 @@ Tags :
 global-ignores</p>
 <p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
 l'on se trouve actuellement il suffit d'executer la commande svn
-suivante :</p>
-<div class="highlight"><pre><span></span>svn propset svn:ignore &quot;._*&quot; .
-</pre></div>
-
-
-<p>Par contre si on veut ignorer tous les fichiers qui commencent par ._
-dans tous les dossiers (et sous dossiers) du svn il faut éditer le
-fichier ~/.subversion/config et d'éditer la ligne suivante :</p>
-<div class="highlight"><pre><span></span>global-ignores = ._*
-</pre></div>
-
-
-<p>On peut également ajouter d'autres fichiers a ignorer tel que les .swp
-de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci :</p>
-<div class="highlight"><pre><span></span>global-ignores = ._* .DS_STORE *.swp
-</pre></div>
+suivante …</p>
+      <a class="btn" href="https://www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -250,6 +201,7 @@ Tags :
 
 
 <p>Puis redémarrez le mac.</p>
+      <a class="btn" href="https://www.choiz.fr/2011-07-05-suppression-des-dsstore.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -274,6 +226,7 @@ Tags :
 
 
 <p>Pratique pour faire du débug.</p>
+      <a class="btn" href="https://www.choiz.fr/2011-06-30-elément-cliqué-en-js.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -292,18 +245,8 @@ vous distribuez du code et que vous voulez le mettre à jour. Comment
 l'utiliser ? Dans un premier temps nous allons faire un différentiel de
 notre version actuelle du projet et de la nouvelle version (celle
 patchée). :</p>
-<div class="highlight"><pre><span></span><span class="gh">diff -u version1.php version2.php &gt; mon_patch</span>
-</pre></div>
-
-
-<p>Notre fichier de patch est "mon_patch" si vous ouvrez celui-ci vous
-aurez le différentiel entre les deux fichier. Comment le lire ? Les
-lignes avec des + devant sont les nouvelles lignes celles avec des -
-sont celles a supprimer. Ce n'est pas plus difficile que ça ! Maintenant
-j'applique mon patch sur mon fichier version1.php grâce à la commande
-suivante :</p>
-<div class="highlight"><pre><span></span>patch -p0 &lt; mon_patch
-</pre></div>
+<div class="highlight"><pre><span></span><span class="gh">diff -u version1.php …</span></pre></div>
+      <a class="btn" href="https://www.choiz.fr/2011-05-30-patch-diff.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -327,15 +270,8 @@ pouvoir ouvrir plusieurs fichiers en même temps.</p>
 <ul>
 <li>la division de la fenêtre verticalement en utilisant :</li>
 </ul>
-<p><code>:vsplit</code> puis : <code>:e le_fichier_a_ouvrir</code></p>
-<p>Et comme lors de l'utilisation du diff (CTRL + W puis W) pour changer de
-fenêtre (gauche à droite ou droite à gauche ou haut en bas ou bas en
-haut) ou bien en utilisant (CTRL + W puis une fléche directionnelle).</p>
-<p>Pour agrandir ou réduire la fenêtre courante utiliser CTRL + W (puis
-&gt; si vous êtes sur votre fenêtre de droite pour ajouter une colonne,
-si vous êtes sur la fenêtre de gauche ceci supprimera une colonne et vis
-versa avec &lt;) vous pouvez également ajouter / supprimer 5 ou 10
-colonnes avec : <code>5&gt;</code> et <code>10&gt;</code></p>
+<p><code>:vsplit</code> puis …</p>
+      <a class="btn" href="https://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html">Lire la suite</a>
   </div>
 </article>
 

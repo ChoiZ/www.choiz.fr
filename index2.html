@@ -64,52 +64,8 @@ firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
 tout).</p>
 <p>Sur debian éditer le fichier /etc/hosts comme ceci :</p>
 <div class="highlight"><pre><span></span>127.0.0.1       localhost.localdomain localhost
-192.168.15.77   prox4m1.proxmox.com prox4m1 pvelocalhost
-
-# The following lines are desirable for IPv6 capable hosts
-::1     localhost ip6-localhost ip6-loopback
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters
-</pre></div>
-
-
-<p>Puis tester la configuration :</p>
-<div class="highlight"><pre><span></span>hostname --ip-address
-192.168.15.77 # should return here your IP adress
-</pre></div>
-
-
-<p>Puis on ajoute au sources.list le dépot de proxmox, on récupere la clé et on
-update :</p>
-<div class="highlight"><pre><span></span>echo &quot;deb http://download.proxmox.com/debian/pve stretch pve-no-subscription&quot; &gt; /etc/apt/sources.list.d/pve-install-repo.list
-wget http://download.proxmox.com/debian/proxmox-ve-release-5.x.gpg -O /etc/apt/trusted.gpg.d/proxmox-ve-release-5.x.gpg
-apt update &amp;&amp; apt dist-upgrade
-</pre></div>
-
-
-<p>Puis on install les packages Proxmox VE :</p>
-<div class="highlight"><pre><span></span>apt install proxmox-ve postfix open-iscsi
-</pre></div>
-
-
-<p>On configure postfix en distribution locale uniquement et à la fin de
-l'installation on reboot.</p>
-<p>Au reboot vous devriez avoir la main en https sur https://ip_proxmox:8006</p>
-<p>S'identifier avec vos login / pass debian.</p>
-<p>Pour ne pas avoir la popup qui indique que vous n'avez pas de souscription il
-faut modifier le fichier /usr/share/pve-manager/js/pvemanagerlib.js et
-rechercher la ligne avec :</p>
-<p><code>if (data.status !== 'Active') {</code></p>
-<p>remplacer par :</p>
-<p><code>if (false /*data.status !== 'Active'*/) {</code></p>
-<p>Puis relancer pveproxy avec la commande <code>pveproxy restart</code></p>
-<p>Se déconnecter de l'interface proxmox, à la reconnection vous n'aurez plus le
-message de souscription.</p>
-<p>Puis faire les commandes optionnelles :</p>
-<div class="highlight"><pre><span></span>apt remove os-prober
-apt remove linux-image-amd64 linux-image-4.9.0-3-amd64
-update-grub
-</pre></div>
+192 …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -126,98 +82,8 @@ Tags :
       <p>J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
 dessus j'avais installé Debian 6 à l'époque puis j'ai mis à jour jusqu'à la version 9.</p>
 <p>Mon objectif est l'ajout d'un disque car j'ai 4 emplacements pour le stockage et
-je n'utilisais que 3 de ses 4 emplacements.</p>
-<p>Pour commencer il me fallait un rack 5"¼ permettant de mettre un disque 3"½ ou
-2"½, je l'ai trouvé sur <a href="http://www.ldlc.com/fiche/PB00157318.html">LDLC</a> c'est
-un "ICY BOX IB-129SSK-B", ensuite j'ai pris sur
-<a href="https://www.amazon.fr/gp/product/B01LZY5T8Y/ref=oh_aui_detailpage_o02_s00?ie=UTF8&amp;psc=1">Amazon</a>
-un disque Seagate ST500LM030 en 2"½ de 500Go et j'avais ce qu'il fallait pour le
-SATA et l'alimentation.</p>
-<p>Ce qui m'a permis de mettre un disque 2"½ au niveau de l'emplacement CDROM du HP
-Microserver.</p>
-<p>J'ai du tué mon uptime d'un an (depuis mon dernier déménagement) :</p>
-<div class="highlight"><pre><span></span> 12:31:37 choiz@wayland ~  #❯❯❯ uptime
- 12:31:37 up 366 days,  1:08,  1 user,  load average: 0,16, 0,22, 0,24
-</pre></div>
-
-
-<p>Pour la réinstallation j'ai monté un <a href="https://wiki.debian-fr.xyz/PXE_avec_support_EFI">serveur PXE sur
-debian</a> merci Benjamin pour le
-lien et les conseils.</p>
-<p>Installation du TFTP :</p>
-<div class="highlight"><pre><span></span># apt install -y tftpd-hpa
-</pre></div>
-
-
-<p>Si vous avez un pare-feu n'oubliez pas d'ouvrir le port 69 :</p>
-<div class="highlight"><pre><span></span># iptables -A INPUT -p udp -m udp --dport 69 -j ACCEPT
-</pre></div>
-
-
-<p>Installer le serveur DHCP :</p>
-<div class="highlight"><pre><span></span># apt install isc-dhcp-server
-</pre></div>
-
-
-<p>Mes IP sont dans le réseau 192.168.1.0/24, mon router en 192.168.1.1, je met un
-range entre 192.168.1.100 et 192.168.1.150 mon serveur TFTP est en 192.168.1.2.</p>
-<p>Voici la conf d'isc-dhcp-server :</p>
-<div class="highlight"><pre><span></span>default-lease-time 600;
-max-lease-time 7200;
-
-allow booting;
-
-# in this example, we serve DHCP requests from 192.168.1.(3 to 253)
-# and we have a router at 192.168.1.1
-subnet 192.168.1.0 netmask 255.255.255.0 {
-  range 192.168.1.100 192.168.1.150;
-  option broadcast-address 192.168.1.255;
-  option routers 192.168.1.1;
-  option domain-name-servers 192.168.1.1;
-  filename &quot;pxelinux.0&quot;;
-}
-
-group {
-  next-server 192.168.1.2;
-  host tftpclient {
-    filename &quot;pxelinux.0&quot;;
-  }
-}
-</pre></div>
-
-
-<p>Redémarrer le DHCP pour que la config soit prise en compte.</p>
-<div class="highlight"><pre><span></span># systemctl restart isc-dhcp-server
-</pre></div>
-
-
-<p>Maintenant nous téléchargeons la dernière version de debian pour la mettre sur
-notre TFTP :</p>
-<div class="highlight"><pre><span></span># cd /srv/tftp/
-# wget -c http://ftp.fr.debian.org/debian/dists/stretch/main/installer-amd64/current/images/netboot/netboot.tar.gz
-# tar -zxf netboot.tar.gz
-# rm netboot.tar.gz
-# systemctl restart tftpd-hpa
-</pre></div>
-
-
-<p>Le PXE est maintenant fonctionnel avec l'installation de debian.</p>
-<p>Je réinstall donc debian 9.1 proprement.</p>
-<p>Pour éviter d'avoir ses messages d'erreurs :</p>
-<div class="highlight"><pre><span></span><span class="n">W</span><span class="o">:</span> <span class="n">Possible</span> <span class="n">missing</span> <span class="n">firmware</span> <span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso5</span><span class="o">.</span><span class="na">bin</span> <span class="k">for</span> <span class="n">module</span> <span class="n">tg3</span>
-<span class="n">W</span><span class="o">:</span> <span class="n">Possible</span> <span class="n">missing</span> <span class="n">firmware</span> <span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso</span><span class="o">.</span><span class="na">bin</span> <span class="k">for</span> <span class="n">module</span> <span class="n">tg3</span>
-<span class="n">W</span><span class="o">:</span> <span class="n">Possible</span> <span class="n">missing</span> <span class="n">firmware</span> <span class="sr">/lib/firmware/tigon/</span><span class="n">tg3</span><span class="o">.</span><span class="na">bin</span> <span class="k">for</span> <span class="n">module</span> <span class="n">tg3</span>
-</pre></div>
-
-
-<p>Je modifie mon fichier /etc/apt/sources.list et j'ajoute les "non-free".</p>
-<p>Puis j'install le firmware-linux-nonfree :</p>
-<div class="highlight"><pre><span></span>apt update
-apt install firmware-linux-nonfree
-</pre></div>
-
-
-<p>Il me reste plus qu'a remonter mes disques de backup et de refaire mes partages.</p>
+je n'utilisais que 3 …</p>
+      <a class="btn" href="https://www.choiz.fr/2017-08-26-upgrade-nas.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -235,7 +101,8 @@ Tags :
 publique.</p>
 <p>Pour se faire il faut utiliser la commande <em>ssh-keygen</em> avec l'option <em>-y</em> et <em>-f</em> pour désigner la clé privé.</p>
 <p><code>ssh-keygen -y -f ~/.ssh/id_rsa &gt; ~/.ssh/id_rsa.pub</code></p>
-<p>On utilise ci-dessus l'id_rsa (privée) pour générer l'id_rsa.pub.</p>
+<p>On utilise …</p>
+      <a class="btn" href="https://www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -258,25 +125,8 @@ trouve dans <em>~/.ssh/config</em> et d'ajouter les deux lignes suivantes :</p>
 
 <p>C'est tout.</p>
 <p>Explications : on utilise l'host <em>bastion.fr</em> pour se connecter à
-<em>destination.local</em>. Quand je tape sur ma machine local <em>ssh
-choiz@destination.local</em> mon client SSH lit le fichier de configuration, se
-connecte à l'host <em>bastion.fr</em> avec l'utilisateur <em>user</em> puis fait une nouvelle
-connexion vers ma destination.</p>
-<p>Vous pouvez modifier votre configuration ssh pour se connecter à votre bastion
-avec une clé spécifique puis a votre destination avec une autre clé par exemple
-ou avec des utilisateurs différents…</p>
-<p>Exemple :</p>
-<div class="highlight"><pre><span></span>Host bastion.fr
-    User toto
-    IdentifyFile ~/.ssh/bastion
-
-Host destination.local
-    User tata
-    IdentifyFile ~/.ssh/destination
-</pre></div>
-
-
-<p>Enjoy vincent.m ;-)</p>
+<em>destination.local</em>. Quand …</p>
+      <a class="btn" href="https://www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -302,13 +152,8 @@ Tags :
 
 
 <p>Se connecter a un conteneur docker lancé par son id :</p>
-<div class="highlight"><pre><span></span>docker exec -it id_de_votre_container /bin/bash
-</pre></div>
-
-
-<p>Se connecter a un conteneur docker lancé par son nom :</p>
-<div class="highlight"><pre><span></span>docker exec -it nom_de_votre_container /bin/bash
-</pre></div>
+<div class="highlight"><pre><span></span>docker exec -it id_de_votre_container /bin/bash …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2017-05-14-docker-commandes-utiles.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -326,8 +171,8 @@ Tags :
 trouvé un logiciel plutôt intéressant nommé "deb2targz".</p>
 <p>En effet <a href="https://slack.com/downloads">slack</a> ne dispose que des archives ubuntu
 en 32 bits, 64 bits et fedora en 64 bits.</p>
-<p>deb2targz permet de convertir un fichier ".deb" en archive ".tar.gz".</p>
-<p>Si vous êtes sur gentoo installez le via : <code>emerge -a app-arch/deb2targz</code></p>
+<p>deb2targz permet de convertir un fichier ".deb" en archive ".tar.gz …</p>
+      <a class="btn" href="https://www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -344,14 +189,8 @@ Tags :
       <p>J'ai récement acheté un ASUS X205TA, livré avec Windows
 10 (32 bits), un disque SSD de 32Go et 2Go de ram et pour un prix de 210€.</p>
 <p>J'ai installé xubuntu 16.04 (64 bits) sur une partition séparée pour garder Windows 10.</p>
-<p>L'installation est plutôt complexe car le "bootloader" est en 32bits (je pense
-d'ailleurs que c'est pour ça qu'il est livré avec un windows 32bits et non
-64bits).</p>
-<p>Voici <a href="http://ubuntuforums.org/showthread.php?t=2254322&amp;page=92&amp;p=13474817#post13474817">un message</a> qui explique l'installation simple d'ubuntu (remplacer l'iso
-par xubuntu ou autre).</p>
-<p>Pour l'instant : la carte son n'est pas reconnue et le pointeur de la souris
-disparait suite a la mise en veille… Mis a part ça la machine fonctionne très
-bien pour mon utilisation (des petits développements pendant mes trajets maison &lt;-&gt; travail).</p>
+<p>L'installation est plutôt complexe car le "bootloader" est …</p>
+      <a class="btn" href="https://www.choiz.fr/2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -369,36 +208,8 @@ Tags :
 articles précédents sur le sujet.</p>
 <p>J'ai décidé de passer le blog en https, avec un certificat gratuit let's encrypt.</p>
 <p>Pour mettre en place un certificat SSL sur "github page" il faut avoir un serveur web qui
-fait reverse proxy. J'utilise donc apache avec la configuration suivante :</p>
-<ul>
-<li>Un vhost pour "choiz.fr" qui redirige le port 80 de "choiz.fr" vers le 443 de "www.choiz.fr".</li>
-<li>Un vhost pour "choiz.fr" qui redirige le port 443 (avec un certificat ssl
-valide) de "choiz.fr" vers le 443 de
-"www.choiz.fr".</li>
-<li>Un vhost pour "www.choiz.fr" qui redirige le port 80 de "www.choiz.fr" vers
-le 443 de "www.choiz.fr".</li>
-<li>Et un vhost avec le certificat SSL ainsi que le reverse proxy qui fait croire a
-github que je tape directement l'url "http://choiz.github.io".</li>
-</ul>
-<p>Ici la configuration du dernier vhost :</p>
-<div class="highlight"><pre><span></span><span class="nt">&lt;IfModule</span> <span class="err">mod_ssl.c</span><span class="nt">&gt;</span>
-<span class="nt">&lt;VirtualHost</span> <span class="err">*:443</span><span class="nt">&gt;</span>
-    ServerName www.choiz.fr
-
-    SSLProxyEngine On
-    ProxyRequests Off
-    ProxyPreserveHost Off
-    ProxyPass / https://choiz.github.io/
-    ProxyPassReverse / https://choiz.github.io/
-    ProxyPassReverse / http://choiz.github.io/
-
-    # puis la config du SSL
-    SSLEngine On
-    SSLCertificateFile …
-    SSLCertificateKeyFile …
-<span class="nt">&lt;/VirtualHost&gt;</span>
-<span class="nt">&lt;/IfModule&gt;</span>
-</pre></div>
+fait …</p>
+      <a class="btn" href="https://www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -424,31 +235,8 @@ suivre pour le mettre à jour vers la version : 4.3.0.</p>
 </pre></div>
 
 
-<p>Une fois téléchargé, il faut modifier le lien symbolique /usr/src/linux
-grâce à eselect.</p>
-<p>J'affiche la liste des noyaux (celui actuellement selectionné est suivi
-d'une étoile) :</p>
-<div class="highlight"><pre><span></span>eselect kernel list
-
-[1]     linux-4.2.0-gentoo *
-[2]     linux-4.3.0-gentoo
-</pre></div>
-
-
-<p>Pour selectionner notre noyau 4.3.0 il faut utiliser :</p>
-<div class="highlight"><pre><span></span>eselect kernel set 2
-</pre></div>
-
-
-<p>Maintenant que vous avez selectionné votre noyau, copier le fichier
-".config" de votre noyau précédent (pour conserver vos réglages de
-compilation) :</p>
-<div class="highlight"><pre><span></span>cp /usr/src/linux-4.2.0-gentoo/.config /usr/src/linux
-</pre></div>
-
-
-<p>Puis <a href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">compiler votre
-kernel</a>.</p>
+<p>Une …</p>
+      <a class="btn" href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -466,466 +254,8 @@ Tags :
 <h2>Configuration des DNS</h2>
 <p>Pour commencer nous allons créer des entrées DNS.</p>
 <p>Nous créons un MX pour les mails avec une priorité de 1, un sous domaine
-"mail" qui pointe vers l'adresse ipv4 de votre serveur, d'un sous
-domaine webmail qui pointe sur le sous domaine mail et d'un
-enregistrement SPF :</p>
-<div class="highlight"><pre><span></span>votredomaine.com.           MX      1   mail.votredomaine.com.
-mail.votredomaine.com.      A           ip.v4.du.serveur
-webmail.votredomaine.com.   CNAME       mail.votredomaine.com.
-votredomain.com.            SPF         &quot;v=spf1 ip4:ip.v4.du.server ~all&quot;
-</pre></div>
-
-
-<h2>Installation des paquets</h2>
-<p>Maintenant installons postfix dovecot-imapd et sasl2-bin :</p>
-<div class="highlight"><pre><span></span>apt-get install postfix dovecot-imapd sasl2-bin php5-curl
-</pre></div>
-
-
-<p>Configurer le serveur de messagerie comme "Site Internet", puis en nom
-de courrier indiquer "mail.votredomaine.com".</p>
-<h2>Configuration de dovecot</h2>
-<p>Créer un dossier ssl dans dovecot :</p>
-<div class="highlight"><pre><span></span>mkdir /etc/dovecot/ssl &amp;&amp; cd /etc/dovecot/ssl
-</pre></div>
-
-
-<p>Créer un certificat ssl :</p>
-<div class="highlight"><pre><span></span>openssl req -new -newkey rsa:2048 -nodes -keyout certificat.key -out certificat.csr
-</pre></div>
-
-
-<p>Puis répondre aux différentes questions pour ma part j'ai répondu :</p>
-<div class="highlight"><pre><span></span>FR
-(vide)
-Paris
-votredomaine
-IT
-mail.votredomaine.com
-contact@votredomaine.com
-(vide)
-(vide)
-</pre></div>
-
-
-<p>Ensuite :</p>
-<div class="highlight"><pre><span></span>openssl x509 -req -days 365 -in certificat.csr -signkey certificat.key -out certificat.crt
-</pre></div>
-
-
-<p>Puis :</p>
-<div class="highlight"><pre><span></span>cat certificat.key certificat.crt &gt; certificat.pem
-</pre></div>
-
-
-<p>Créer le groupe et l'utilisateur vmail :</p>
-<div class="highlight"><pre><span></span>groupadd -g 5000 vmail
-useradd -m -d /var/vmail -s /bin/false -u 5000 -g vmail vmail
-</pre></div>
-
-
-<p>Ajouter dans /etc/dovecot/dovecot.conf :</p>
-<div class="highlight"><pre><span></span>listen = ip.v4.du.server
-</pre></div>
-
-
-<p>Editer /etc/dovecot/conf.d/10-auth.conf :</p>
-<div class="highlight"><pre><span></span>disable_plaintext_auth = yes
-auth_username_format = %Lu
-#!include auth-system.conf.ext
-!include auth-passwdfile.conf.ext
-</pre></div>
-
-
-<p>Editer /etc/dovecot/conf.d/10-logging.conf :</p>
-<div class="highlight"><pre><span></span>auth_verbose = yes
-mail_debug = yes
-</pre></div>
-
-
-<p>Editer /etc/dovecot/conf.d/10-master.conf :</p>
-<div class="highlight"><pre><span></span>unix_listener /var/spool/postfix/private/auth {
-  mode = 0666
-  user = postfix
-  group = postfix
-}
-</pre></div>
-
-
-<p>Editer /etc/dovecot/conf.d/10-ssl.conf :</p>
-<div class="highlight"><pre><span></span>ssl = required
-ssl_cert = &lt;/etc/dovecot/ssl/certificat.pem
-ssl_key = &lt;/etc/dovecot/ssl/certificat.key
-</pre></div>
-
-
-<p>Editer /etc/dovecot/conf.d/15-mailboxes.conf :</p>
-<div class="highlight"><pre><span></span>mailbox Drafts {
-    auto = subscribe
-    special_use = \Drafts
-}
-
-mailbox Junk {
-    auto = subscribe
-    special_use = \Junk
-}
-
-mailbox Trash {
-    auto = subscribe
-    special_use = \Trash
-}
-
-mailbox Sent {
-    auto = subscribe
-    special_use = \Sent
-}
-
-#mailbox &quot;Sent Messages&quot; {
-#    special_use = \Sent
-#}
-</pre></div>
-
-
-<p>Editer /etc/dovecot/conf.d/auth-passwdfile.conf.ext :</p>
-<div class="highlight"><pre><span></span>passdb {
-    driver = passwd-file
-    args = scheme=MD5 username_format=%u /etc/dovecot/users
-}
-
-userdb {
-    driver = passwd-file
-    args = username_format=%u /etc/dovecot/users
-    default_fields = uid=5000 gid=5000 home=/var/vmail/%d mail=maildir:~/%u
-}
-</pre></div>
-
-
-<p>Créer le fichier /etc/dovecot/users :</p>
-<div class="highlight"><pre><span></span>touch /etc/dovecot/users
-</pre></div>
-
-
-<p>Puis pour chaque mail créer un enregistrement :</p>
-<div class="highlight"><pre><span></span>adresse@votredomaine.com:motdepassemd5:::::::
-</pre></div>
-
-
-<p>Le format est le suivant :</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Champ</th>
-<th align="left">Valeur</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Adresse email</td>
-<td align="left"><script type="text/javascript">
-<!--
-h='&#118;&#x6f;&#116;&#114;&#x65;&#100;&#x6f;&#x6d;&#x61;&#x69;&#110;&#x65;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x61;&#100;&#114;&#x65;&#x73;&#x73;&#x65;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#x61;&#100;&#114;&#x65;&#x73;&#x73;&#x65;&#32;&#x61;&#116;&#32;&#118;&#x6f;&#116;&#114;&#x65;&#100;&#x6f;&#x6d;&#x61;&#x69;&#110;&#x65;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;</noscript></td>
-</tr>
-<tr class="odd">
-<td align="left">Mot de passe (MD5)</td>
-<td align="left">motdepassemd5</td>
-</tr>
-<tr class="odd">
-<td align="left">uid</td>
-<td align="left">déjà défini dans auth-passwdfile</td>
-</tr>
-<tr class="odd">
-<td align="left">gid</td>
-<td align="left">déjà défini dans auth-passwdfile</td>
-</tr>
-<tr class="odd">
-<td align="left">home directory</td>
-<td align="left">déjà défini dans auth-passwdfile</td>
-</tr>
-<tr class="odd">
-<td align="left">mail directory</td>
-<td align="left">déjà défini dans auth-passwdfile</td>
-</tr>
-</tbody>
-</table>
-
-<p>Tester votre utilisateur grâce à la commande :</p>
-<div class="highlight"><pre><span></span>doveadm user adresse@votredomaine.com
-</pre></div>
-
-
-<p>Ce qui devrait afficher :</p>
-<div class="highlight"><pre><span></span>field   value
-uid     5000
-gid     5000
-home    /var/vmail/votredomaine.com
-mail    maildir:~/adresse@votredomaine.com
-</pre></div>
-
-
-<p>Démarrer dovecot :</p>
-<div class="highlight"><pre><span></span>/etc/init.d/dovecot start
-</pre></div>
-
-
-<p>Tester la connexion :</p>
-<div class="highlight"><pre><span></span>openssl s_client -connect ip.v4.du.server:993
-</pre></div>
-
-
-<p>Si vous avez "* OK [CAPABILITY …] Dovecot ready. Vous pouvez vous
-authentifier :</p>
-<div class="highlight"><pre><span></span>. LOGIN adresse@votredomaine.com motdepasseenclair
-</pre></div>
-
-
-<p>C'est fini pour dovecot.</p>
-<h2>Configuration de sasl</h2>
-<p>Editer /etc/default/saslauthd :</p>
-<div class="highlight"><pre><span></span>START=yes
-OPTIONS=&quot;-m /var/spool/postfix/var/run/saslauthd&quot;
-</pre></div>
-
-
-<p>Puis lancer :</p>
-<div class="highlight"><pre><span></span>/etc/init.d/saslauthd start
-</pre></div>
-
-
-<p>C'est fini pour sasl</p>
-<h2>Configuration de postfix</h2>
-<p>Editer /etc/postfix/main.cf ::</p>
-<div class="highlight"><pre><span></span>smtpd_banner = $myhostname ESMTP $mail_name
-smtpd_tls_cert_file=/etc/dovecot/ssl/certificat.pem
-smtpd_tls_key_file=/etc/dovecot/ssl/certificat.key
-mynetworks = 127.0.0.0/8 ip.v4.du.server
-
-virtual_mailbox_domains = votredomaine.com, autredomaine.com
-virtual_mailbox_base = /var/vmail
-virtual_mailbox_maps = hash:/etc/postfix/virtual_mailbox
-virtual_minimum_uid = 100
-virtual_uid_maps = static:5000
-virtual_gid_maps = static:5000
-virtual_alias_maps = hash:/etc/postfix/virtual_alias
-
-smtpd_sasl_auth_enable = yes
-smtpd_sasl_type = dovecot
-smtpd_sasl_path = private/auth
-smtpd_sasl_security_options = noanonymous
-smtpd_sasl_tls_security_options = noanonymous
-smtpd_sasl_local_domain = $myhostname
-
-broken_sasl_auth_clients = yes
-
-smtpd_helo_restrictions = reject_unknown_helo_hostname
-smtpd_sender_restrictions = permit_sasl_authenticated reject_unknown_sender_domain
-smtpd_recipient_restrictions = permit_sasl_authenticated permit_mynetworks reject_unauth_destination
-
-smtpd_enforce_tls = no
-smtpd_tls_auth_only = no
-smtpd_tls_ask_ccert = no
-smtpd_tls_received_header = yes
-tls_random_source = dev:/dev/urandom
-</pre></div>
-
-
-<p>Créer /etc/postfix/virtual_alias :</p>
-<div class="highlight"><pre><span></span>touch /etc/postfix/virtual_alias
-</pre></div>
-
-
-<p>Pour créer un alias, éditer /etc/postfix/virtual_alias :</p>
-<div class="highlight"><pre><span></span>alias@votredomaine.com          destination@votredomaine.com
-</pre></div>
-
-
-<p>Créer /etc/postfix/virtual_domains :</p>
-<div class="highlight"><pre><span></span>touch /etc/postfix/virtual_domains
-</pre></div>
-
-
-<p>Pour gérer vos domaines, éditer /etc/postfix/virtual_domains :</p>
-<div class="highlight"><pre><span></span>votredomaine.com                OK
-votredeuxiemedomaine.com        OK
-</pre></div>
-
-
-<p>Créer /etc/postfix/virtual_mailbox :</p>
-<div class="highlight"><pre><span></span>touch /etc/postfix/virtual_mailbox
-</pre></div>
-
-
-<p>Pour créer un comte mail, éditer /etc/postfix/virtual_mailbox :</p>
-<div class="highlight"><pre><span></span>email@votredomaine.com          votredomaine.com/email@votredomaine.com/
-linus@torvald.com               torvald.com/linus@torvald.com/
-</pre></div>
-
-
-<p>N'oubliez pas lors de la création de nouveau comptes mail d'éditer
-/etc/dovecot/users ;-)</p>
-<p>Maintenant il faut dire a postfix que nous avons modifier nos fichiers
-virtuels :</p>
-<div class="highlight"><pre><span></span>postmap /etc/postfix/virtual_alias
-postmap /etc/postfix/virtual_domains
-postmap /etc/postfix/virtual_mailbox
-</pre></div>
-
-
-<p>Editer /etc/postfix/master.cf :</p>
-<div class="highlight"><pre><span></span>smtp    inet    n   -   -   -   -   smtpd   -v
- -o smtpd_tls_cert_file=/etc/dovecot/ssl/certificat.pem
- -o smtpd_tls_key_file=/etc/dovecot/ssl/certificat.key
-submission inet n - n - - smtpd
- -o smtpd_tls_security_level=encrypt
- -o smtpd_sasl_auth_enable=yes
-urd inet n - n - - smtpd
- -o smtpd_tls_wrappermode=yes
- -o smtpd_sasl_auth_enable=yes
-smtps   inet    n   -   -   -   -   smtpd   -v
- -o smtpd_tls_wrappermode=yes
- -o smtpd_tls_cert_file=/etc/dovecot/ssl/certificat.pem
- -o smtpd_tls_key_file=/etc/dovecot/ssl/certificat.key
-</pre></div>
-
-
-<p>Puis redemarrer postfix :</p>
-<div class="highlight"><pre><span></span>/etc/init.d/postfix restart
-</pre></div>
-
-
-<p>Fin de la configuration de postfix.</p>
-<p>Vous pouvez maintenant tester votre serveur mail ainsi que la qualité de
-votre serveur sur le site <a href="http://www.mail-tester.com">http://www.mail-tester.com</a></p>
-<h2>Installation d'un webmail rainloop</h2>
-<p>Créer un dossier pour votre webmail :</p>
-<div class="highlight"><pre><span></span>mkdir -p /var/www/webmail/public &amp;&amp; cd /var/www/webmail/public
-</pre></div>
-
-
-<p>Télécharger rainloop :</p>
-<div class="highlight"><pre><span></span>wget http://repository.rainloop.net/v2/webmail/rainloop-community-latest.zip
-</pre></div>
-
-
-<p>Décompresser rainloop :</p>
-<div class="highlight"><pre><span></span>unzip rainloop*.zip &amp;&amp; rm -rf rainloop*.zip
-</pre></div>
-
-
-<p>Modifier les droits :</p>
-<div class="highlight"><pre><span></span>chown -R www-data:www-data /var/www/webmail
-find . -type f -exec chmod 644 {} \;
-find . -type d -exec chmod 755 {} \;
-</pre></div>
-
-
-<p>Créer un vhost pour apache dans
-/etc/apache2/site-enabled/001-webmail.domain.com.conf :</p>
-<div class="highlight"><pre><span></span><span class="nt">&lt;VirtualHost</span> <span class="err">*:80</span><span class="nt">&gt;</span>
-    ServerAdmin contact@domain.com
-    ServerName mail.domain.com
-
-    DocumentRoot /var/www/webmail/public
-    <span class="nt">&lt;Directory</span> <span class="err">/var/www/webmail/public</span><span class="nt">&gt;</span>
-        Options FollowSymLinks
-        #Options Indexes FollowSymLinks MultiViews
-        AllowOverride All
-        Order allow,deny
-        allow from all
-    <span class="nt">&lt;/Directory&gt;</span>
-
-    <span class="nt">&lt;Directory</span> <span class="err">/var/www/webmail/public/data</span><span class="nt">&gt;</span>
-        Options -FollowSymLinks
-        AllowOverride None
-        Order allow,deny
-        Deny from all
-    <span class="nt">&lt;/Directory&gt;</span>
-
-    ErrorLog <span class="cp">${</span><span class="n">APACHE_LOG_DIR</span><span class="cp">}</span>/webmail_error.log
-
-    # Possible values include: debug, info, notice, warn, error, crit,
-    # alert, emerg.
-    LogLevel warn
-
-    CustomLog <span class="cp">${</span><span class="n">APACHE_LOG_DIR</span><span class="cp">}</span>/webmail_access.log combined
-<span class="nt">&lt;/VirtualHost&gt;</span>
-</pre></div>
-
-
-<p>N'oubliez pas de redémarrer apache :</p>
-<div class="highlight"><pre><span></span>/etc/init.d/apache2 restart
-</pre></div>
-
-
-<p>Pour configurer rainloop se rendre sur : <a href="http://mail.domain.com/?admin">http://mail.domain.com/?admin</a></p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Login</th>
-<th align="left">admin</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Password</td>
-<td align="left">12345</td>
-</tr>
-</tbody>
-</table>
-
-<p>Changer la langue et votre mot de passe (dans security).</p>
-<p>Puis dans domains configurez votre nom de domaine en cliquant sur + Add
-domain</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Name</th>
-<th align="left">domaine.com</th>
-</tr>
-</thead>
-<tbody>
-<tr class="even">
-<td align="left">IMAP</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">Server</td>
-<td align="left">mail.domain.com</td>
-</tr>
-<tr class="even">
-<td align="left">Secure</td>
-<td align="left">SSL/TLS</td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<thead>
-<tr class="header">
-<th align="left">SMTP</th>
-<th align="left"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Server</td>
-<td align="left">mail.domain.com</td>
-</tr>
-<tr class="odd">
-<td align="left">Secure</td>
-<td align="left">SSL/TLS</td>
-</tr>
-</tbody>
-</table>
-
-<p>Puis + Add</p>
-<p>Je supprime tous les autres domaines (gmail etc…)</p>
-<p>Ensuite j'active les plugins, et les packages : X-Originating-IP, Black
-list et White list.</p>
-<p>Maintenant rendez-vous sur : <a href="http://mail.domain.com">http://mail.domain.com</a> et identifiez-vous
-avec votre login et mot de passe.</p>
+"mail" qui pointe vers l'adresse ipv4 de votre serveur, d'un sous …</p>
+      <a class="btn" href="https://www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html">Lire la suite</a>
   </div>
 </article>
 

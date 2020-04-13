@@ -63,37 +63,8 @@ appareils mobiles avec image magick.</p>
 <p>Mon icône de base est en 512x512px au format png avec prise en charge de
 la transparence "icon512.png".</p>
 <p>Je veux faire une favicon en 16x16px, 32x32px 48x48px et 64x64px le tout
-dans un seul fichier favicon.ico. :</p>
-<div class="highlight"><pre><span></span>convert icon512.png \
-    -bordercolor white -border 0 \
-    \( -clone 0 -resize 16x16 \) \
-    \( -clone 0 -resize 32x32 \) \
-    \( -clone 0 -resize 48x48 \) \
-    \( -clone 0 -resize 64x64 \) \
-    -delete 0 -alpha off favicon.ico
-</pre></div>
-
-
-<p>Ensuite je veux faire mes icônes pour les appareils mobiles : Android,
-Apple etc… :</p>
-<div class="highlight"><pre><span></span>convert icon512.png -resize x60 touch-icon-iphone.png
-convert icon512.png -resize x76 touch-icon-ipad.png
-convert icon512.png -resize x120 touch-icon-iphone-retina.png
-convert icon512.png -resize x152 touch-icon-ipad-retina.png
-</pre></div>
-
-
-<p>Maintenant il faut ajouter dans notre page html entre les balises head :</p>
-<div class="highlight"><pre><span></span>&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;
-&lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;touch-icon-iphone.png&quot;&gt;
-&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;76x76&quot; href=&quot;touch-icon-ipad.png&quot;&gt;
-&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;120x120&quot; href=&quot;touch-icon-iphone-retina.png&quot;&gt;
-&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;152x152&quot; href=&quot;touch-icon-ipad-retina.png&quot;&gt;
-</pre></div>
-
-
-<p>A noter les appareils Android utilisent aussi les images
-"apple-touch-icon".</p>
+dans un …</p>
+      <a class="btn" href="https://www.choiz.fr/2013-11-03-icônes-favicon-apple-touch-icon.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -113,6 +84,7 @@ Tags :
 préciser tout le chemin a chaque fois :</p>
 <div class="highlight"><pre><span></span>ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
 </pre></div>
+      <a class="btn" href="https://www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -138,19 +110,8 @@ local il m'arrive de vouloir aller sur ses branches :</p>
 
 
 <p>Je vais mettre a jour mon origin :</p>
-<div class="highlight"><pre><span></span>git fetch origin
-</pre></div>
-
-
-<p>Maintenant je veux ma branche distante en lui précisant l'origin :</p>
-<div class="highlight"><pre><span></span>git checkout -b preprod origin/preprod
-</pre></div>
-
-
-<p>Et j'ai bien ma branche en local comme git me l'indique :</p>
-<div class="highlight"><pre><span></span>Branch preprod set up to track remote branch preprod from origin.
-Switched to a new branch &#39;preprod&#39;
-</pre></div>
+<div class="highlight"><pre><span></span>git fetch origin …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2013-10-01-git-se-déplacer-dans-une-branche-distante.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -179,21 +140,8 @@ Tags :
 
 <span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span> <span class="nt">302</span> <span class="nt">Moved</span> <span class="nt">Temporarily</span>
 <span class="nt">Server</span><span class="o">:</span> <span class="nt">nginx</span>
-<span class="nt">Date</span><span class="o">:</span> <span class="nt">Sun</span><span class="o">,</span> <span class="nt">29</span> <span class="nt">Sep</span> <span class="nt">2013</span> <span class="nt">17</span><span class="p">:</span><span class="nd">06</span><span class="p">:</span><span class="nd">40</span> <span class="nt">GMT</span>
-<span class="nt">Content-Type</span><span class="o">:</span> <span class="nt">text</span><span class="o">/</span><span class="nt">html</span>
-<span class="nt">Connection</span><span class="o">:</span> <span class="nt">close</span>
-<span class="nt">P3P</span><span class="o">:</span> <span class="nt">CP</span><span class="o">=</span><span class="s2">&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;</span>
-<span class="nt">Location</span><span class="o">:</span> <span class="nt">https</span><span class="o">://</span><span class="nt">www</span><span class="p">.</span><span class="nc">tumblr</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span>
-
-<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span> <span class="nt">200</span> <span class="nt">OK</span>
-<span class="nt">Server</span><span class="o">:</span> <span class="nt">nginx</span>
-<span class="nt">Date</span><span class="o">:</span> <span class="nt">Sun</span><span class="o">,</span> <span class="nt">29</span> <span class="nt">Sep</span> <span class="nt">2013</span> <span class="nt">17</span><span class="p">:</span><span class="nd">06</span><span class="p">:</span><span class="nd">42</span> <span class="nt">GMT</span>
-<span class="nt">Content-Type</span><span class="o">:</span> <span class="nt">text</span><span class="o">/</span><span class="nt">html</span><span class="o">;</span> <span class="nt">charset</span><span class="o">=</span><span class="nt">utf-8</span>
-<span class="nt">Connection</span><span class="o">:</span> <span class="nt">keep-alive</span>
-<span class="nt">Vary</span><span class="o">:</span> <span class="nt">Accept-Encoding</span>
-<span class="nt">P3P</span><span class="o">:</span> <span class="nt">CP</span><span class="o">=</span><span class="s2">&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;</span>
-<span class="nt">Set-Cookie</span><span class="o">:</span> <span class="nt">tmgioct</span><span class="o">=</span><span class="nt">52485e21d628b00096885790</span><span class="o">;</span> <span class="nt">expires</span><span class="o">=</span><span class="nt">Wed</span><span class="o">,</span> <span class="nt">27-Sep-2023</span> <span class="nt">17</span><span class="p">:</span><span class="nd">06</span><span class="p">:</span><span class="nd">41</span> <span class="nt">GMT</span><span class="o">;</span> <span class="nt">path</span><span class="o">=/;</span> <span class="nt">httponly</span>
-</pre></div>
+<span class="nt">Date</span><span class="o">:</span> <span class="nt">Sun</span><span class="o">,</span> <span class="nt">29</span> <span class="nt">Sep …</span></pre></div>
+      <a class="btn" href="https://www.choiz.fr/2013-09-29-connaitre-le-code-réponse-http-avec-curl.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -211,32 +159,8 @@ Tags :
 svn. Il est temps de faire la migration de svn à git !</p>
 <p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
 voulais voici donc ma procédure :</p>
-<div class="highlight"><pre><span></span>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep &quot;^r&quot; | awk
-&#39;{print $3}&#39; | sort | uniq | awk &#39;{ print $1&quot; = &quot;$1&quot;
-&lt;&quot;$1&quot;@mondomaine&gt;&quot; }&#39; &gt; authors.txt
-</pre></div>
-
-
-<p>J'ai ensuite édité authors.txt pour remplacer nos différents pseudos par
-nos prénoms et noms puis j'ai vérifié les adresses e-mails.</p>
-<p>Puis j'ai utilisé git svn clone :</p>
-<div class="highlight"><pre><span></span>git svn clone &#39;svn://svn.mondomaine/monprojet&#39; --no-metadata
---authors-file=authors.txt --tags=tags --branches=branches
---trunk=trunk monprojet
-</pre></div>
-
-
-<p>Si vous avez des tags dans svn, vous pouvez les mettre dans git :</p>
-<div class="highlight"><pre><span></span>git branch -r | sed -rne &#39;s, \*tags/([^@]+)$,\\1,p&#39; | while read
-tag; do echo &quot;git tag <span class="nv">$tag</span> &#39;tags/<span class="cp">${</span><span class="n">tag</span><span class="cp">}</span>^&#39;; git branch -r -d
-tags/<span class="nv">$tag</span>&quot;; done | sh
-</pre></div>
-
-
-<p>Pour finir ajoutez votre dépot distant :</p>
-<div class="highlight"><pre><span></span>git remote add origin git@git.mondomaine:/monprojet.git
-git push -u origin --tags
-</pre></div>
+<div class="highlight"><pre><span></span>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep &quot;^r …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -264,6 +188,7 @@ Tags :
 <div class="highlight"><pre><span></span>psql *base* &lt; *dump_base_table*.sql
 psql *base* &lt; *dump_base*.sql
 </pre></div>
+      <a class="btn" href="https://www.choiz.fr/2013-06-22-export-import-avec-postgresql.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -282,71 +207,8 @@ Tags :
 modifications, cette fois j'avais créé cette branche <em>debug_redirect</em>
 mais je n'étais pas dessus…</p>
 <p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master</em>. Or le seul
-qui devait être dessus devait être A et je devais avoir B-C dans ma
-branche <em>debug_redirect</em>. Voici un schéma de la situation :</p>
-<div class="highlight"><pre><span></span>debug_redirect
-          ↓
-          A-B-C
-              ↑
-             master
-</pre></div>
-
-
-<p>Je dois donc soit mettre a jour ma branche <em>debug_redirect</em>. :</p>
-<div class="highlight"><pre><span></span>git checkout debug_redirect
-
-git merge master
-</pre></div>
-
-
-<p>Ce qui donne :</p>
-<div class="highlight"><pre><span></span>debug_redirect
-        ↓
-    A-B-C
-        ↑
-      master
-</pre></div>
-
-
-<p>Il me reste qu'a retourner sur le <em>master</em> et revenir à la version A. :</p>
-<div class="highlight"><pre><span></span>git checkout master
-
-git reset --hard HEAD~2
-</pre></div>
-
-
-<p>Ce qui donne :</p>
-<div class="highlight"><pre><span></span>  debug_redirect
-      ↓
-  A-B-C
-  ↑
-master
-</pre></div>
-
-
-<p>Maintenant que j'ai fixé mon bug sur ma branche  <em>debug_redirect</em> je
-peux le merger avec le <em>master</em>. :</p>
-<div class="highlight"><pre><span></span>git merge debug_redirect --no-ff
-</pre></div>
-
-
-<p>Résultat :</p>
-<div class="highlight"><pre><span></span>         B-C      debug_redirect
-       /     \
-     A - - - - D   master
-</pre></div>
-
-
-<p>Pour voir vos commits par branche vous pouvez aussi utiliser la commande
-git log :</p>
-<div class="highlight"><pre><span></span>git log --graph --oneline --decorate
-*   4c677ac (HEAD, master) Merge branch &#39;debug_redirect&#39;
-|\ 
-| * 90e7a7a (debug_redirect) Fix another bug on redirect
-| * 40ae981 Fix the redirect bug
-|/ 
-* 4e06ff4 initial commit
-</pre></div>
+qui …</p>
+      <a class="btn" href="https://www.choiz.fr/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -365,101 +227,8 @@ Tags :
 Fdisk » et j'ai eu le message suivant :</p>
 <div class="highlight"><pre><span></span><span class="n">Warning</span><span class="o">:</span> <span class="n">invalid</span> <span class="n">flag</span> <span class="mh">0x0000</span> <span class="n">of</span> <span class="n">partition</span> <span class="n">table</span> <span class="mi">4</span> <span class="n">will</span> <span class="n">be</span> <span class="n">corrected</span> <span class="n">by</span> <span class="n">w</span><span class="o">(</span><span class="n">rite</span><span class="o">)</span>
 
-<span class="n">WARNING</span><span class="o">:</span> <span class="n">The</span> <span class="n">size</span> <span class="n">of</span> <span class="k">this</span> <span class="n">disk</span> <span class="k">is</span> <span class="mf">4.0</span> <span class="n">TB</span> <span class="o">(</span><span class="mi">4000787030016</span> <span class="n">bytes</span><span class="o">).</span>
-<span class="n">DOS</span> <span class="n">partition</span> <span class="n">table</span> <span class="n">format</span> <span class="n">can</span> <span class="n">not</span> <span class="n">be</span> <span class="n">used</span> <span class="n">on</span> <span class="n">drives</span> <span class="k">for</span> <span class="n">volumes</span>
-<span class="n">larger</span> <span class="n">than</span> <span class="o">(</span><span class="mi">2199023255040</span> <span class="n">bytes</span><span class="o">)</span> <span class="k">for</span> <span class="mi">512</span><span class="o">-</span><span class="n">byte</span> <span class="n">sectors</span><span class="o">.</span> <span class="n">Use</span> <span class="n">parted</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="n">and</span> <span class="n">GUID</span>
-<span class="n">partition</span> <span class="n">table</span> <span class="n">format</span> <span class="o">(</span><span class="n">GPT</span><span class="o">).</span>
-</pre></div>
-
-
-<p>J'ai donc vérifié si j'avais dans le noyau l'option
-CONFIG_EFI_PARTITION active :</p>
-<div class="highlight"><pre><span></span>cat &quot;/boot/config-`uname -r`&quot; | grep CONFIG_EFI_PARTITION
-
-CONFIG_EFI_PARTITION=y
-</pre></div>
-
-
-<p>C'était le cas, donc j'ai un autre problème… C'est « Fdisk » qui pose
-problème. Avec ma version (2.20.1) on peut faire une partition maximum
-de 2To.</p>
-<p>Donc je me relance dans le partitionnement avec « parted ».</p>
-<p>Note : mon disque est en /dev/sdd n'oubliez pas de modifier les
-commandes en fonction de votre configuration. :</p>
-<div class="highlight"><pre><span></span>parted /dev/sdd
-
-GNU Parted 2.3
-Using /dev/sdd
-Welcome to GNU Parted! Type &#39;help&#39; to view a list of commands.
-</pre></div>
-
-
-<p>Définir le label GPT qui permet de faire des partition &gt; 2To. :</p>
-<div class="highlight"><pre><span></span>mklabel gpt
-
-Warning: The existing disk label on /dev/sdd will be destroyed and all data on this disk will be lost. Do you want to continue?
-Yes/No?
-
-yes
-unit TB
-</pre></div>
-
-
-<p>Faire la partition de 4To :</p>
-<div class="highlight"><pre><span></span>mkpart primary 0.00TB 4.00TB
-</pre></div>
-
-
-<p>Vérifier :</p>
-<div class="highlight"><pre><span></span>print
-
-Model: ATA ST4000DM000-1F21 (scsi)
-Disk /dev/sdd: 4001GB
-Sector size (logical/physical): 512B/4096B
-Partition Table: gpt
-
-Number  Start   End     Size    File system  Name     Flags
- 1      1049kB  4001GB  4001GB               primary
-</pre></div>
-
-
-<p>Quitter « parted » :</p>
-<div class="highlight"><pre><span></span>quit
-
-Information: You may need to update /etc/fstab.
-</pre></div>
-
-
-<p>Formater la partition avec un système de fichiers donné :</p>
-<div class="highlight"><pre><span></span>mkfs.ext4 /dev/sdd1
-
-mke2fs 1.42.5 (29-Jul-2012)
-Étiquette de système de fichiers=
-Type de système d&#39;exploitation : Linux
-Taille de bloc=4096 (log=2)
-Taille de fragment=4096 (log=2)
-« Stride » = 0 blocs, « Stripe width » = 0 blocs
-244195328 i-noeuds, 976754176 blocs
-48837708 blocs (5.00%) réservés pour le super utilisateur
-Premier bloc de données=0
-Nombre maximum de blocs du système de fichiers=4294967296
-29809 groupes de blocs
-32768 blocs par groupe, 32768 fragments par groupe
-8192 i-noeuds par groupe
-Superblocs de secours stockés sur les blocs :
-    32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
-    4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
-    102400000, 214990848, 512000000, 550731776, 644972544
-
-Allocation des tables de groupe : complété
-Écriture des tables d&#39;i-noeuds : complété
-Création du journal (32768 blocs) : complété
-Écriture des superblocs et de l&#39;information de comptabilité du système de
-fichiers : complété
-</pre></div>
-
-
-<p>Il ne reste plus qu'a monter la partition et éditer le fstab ;)</p>
+<span class="n">WARNING</span><span class="o">:</span> <span class="n">The</span> <span class="n">size</span> <span class="n">of</span> <span class="k">this</span> <span class="n">disk</span> <span class="k">is …</span></pre></div>
+      <a class="btn" href="https://www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -487,9 +256,8 @@ fois <a href="http://">http://</a>…</p>
 </pre></div>
 
 
-<p>Modifier la valeur par :</p>
-<div class="highlight"><pre><span></span>false
-</pre></div>
+<p>Modifier la …</p>
+      <a class="btn" href="https://www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -520,45 +288,8 @@ vers de l'UTF-8.</p>
 </pre></div>
 
 
-<p>Ensuite en utilisant vim je fais un rechercher / remplacer des
-différents latin1 en utf-8. :</p>
-<div class="highlight"><pre><span></span>vim dump_base_table.sql
-</pre></div>
-
-
-<p>Et en mode commande :</p>
-<div class="highlight"><pre><span></span>:%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/
-</pre></div>
-
-
-<p>et :</p>
-<div class="highlight"><pre><span></span>:%s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/
-</pre></div>
-
-
-<p>on enregistre et quitte le fichier avec :wq (ou sinon avec ZZ).</p>
-<p>Maintenant on réimporte la table grâce à mysql :</p>
-<div class="highlight"><pre><span></span>mysql -u user -p base &lt; dump_base_table.sql
-</pre></div>
-
-
-<p>il reste a vérifier si les champs sont bien en UTF-8.</p>
-<p>Ici une table « table » avec une colonne « col » on ajoute un caractère
-accentué. :</p>
-<div class="highlight"><pre><span></span>INSERT INTO table VALUES(&quot;é&quot;);
-</pre></div>
-
-
-<p>Maintenant on regarde la taille de la colonne :</p>
-<div class="highlight"><pre><span></span>SELECT `col`, length(`col`) FROM `table`;
-</pre></div>
-
-
-<p>Si la taille = 1 le caractère est enregistré en latin1… si c'est 2 c'est
-bien de l'UTF-8 car sauvé sur 2 octets.</p>
-<p>Merci à <a href="http://agopian.info/blog/mysql-mysqldump-et-php-convertir-de-latin1-vers-utf8.html">Mathieu
-Agopian</a>
-pour le dernier tips.</p>
+<p>Ensuite en utilisant vim je fais un rechercher / remplacer des …</p>
+      <a class="btn" href="https://www.choiz.fr/2013-05-29-latin1-utf-8.html">Lire la suite</a>
   </div>
 </article>
 

@@ -64,15 +64,8 @@ pilote</a>,
 puis copier le fichier fr-dvorak-bepo.bundle dans le dossier
 /Bibliothèque/Keyboard Layouts/</p>
 <p>Note : si vous installez le pilote dans le dossier de votre utilisateur
-(~/Bibliothèque/Keyboard Layouts/) vous ne pourrez pas utiliser le
-mappage à l'ouverture de session…</p>
-<p>Pour utiliser les touches couper, copier,coller, j'utilise
-<a href="http://pqrs.org/macosx/keyremap4macbook/">keyremap4macbook</a> (qui
-fonctionne aussi sur iMac etc…). L'installer puis redémarrer. Dans les
-préférences dans l'onglet "change key" recherchez "Use PC Style
-Copy/Paste #3bis" et sélectionnez l'option proposée.</p>
-<p>Vous pouvez maintenant utiliser votre TypeMatrix en Bépo sur Mac Os X
-avec la prise en charge des touches couper, copier et coller.</p>
+(~/Bibliothèque/Keyboard Layouts/) vous ne pourrez pas utiliser …</p>
+      <a class="btn" href="https://www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -92,6 +85,7 @@ migrer sur git car disponible sur github ainsi que sur bitbucket.</p>
 git</a>.</p>
 <p>Egalement un autre tutoriel en anglais pour passer <a href="http://hivelogic.com/articles/converting-from-mercurial-to-git">de mercurial à
 git</a>.</p>
+      <a class="btn" href="https://www.choiz.fr/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -109,15 +103,8 @@ Tags :
 J'ai gardé mes différents résultats, ce qui vas me permettre de faire
 une courbe de progression de mon apprentissage.</p>
 <p>Sachant qu'au second jour j'arrivais à taper environ 10,2 mots par
-minute, aujourd'hui je suis à 24,4 mots par minute…</p>
-<p>J'ai commandé deux claviers ergonomiques
-<a href="http://www.typematrix.com/">typematrix</a>, sans marquage sur les touches
-ainsi que 2 skins : un en <a href="http://fr.wikipedia.org/wiki/AZERTY">azerty</a>
-et un en <a href="http://bepo.fr">bépo</a>.</p>
-<p>Pour info je m'entraine généralement 2 fois par jour quand j'ai le temps
-environ 1/2 heure. Je m'intéresse pas mal au sujet et je vous recommande
-de lire le <a href="http://bepo.fr/wiki/DVZine">dvzine en Français</a> qui est
-fascinant.</p>
+minute, aujourd'hui je suis à 24,4 mots par …</p>
+      <a class="btn" href="https://www.choiz.fr/2012-12-27-bépo-11ème-jour.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -135,117 +122,8 @@ Tags :
 avez dû vous rendre compte que, même si openssh est installé nativement,
 cette commande n’est pas disponible.</p>
 <p>Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
-peut la rendre disponible facilement en quelques étapes. Créer un
-fichier "ssh-copy-id" dans le dossier "/usr/bin/" avec ce contenu :</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
-<span class="c1"># Shell script to install your public key on a remote machine</span>
-<span class="c1"># Takes the remote machine name as an argument.</span>
-<span class="c1"># Obviously, the remote machine must accept password authentication,</span>
-<span class="c1"># or one of the other keys in your ssh-agent, for this to work.</span>
-
-<span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.ssh/id_rsa.pub&quot;</span>
-
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;-i&quot;</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nb">shift</span>
-  <span class="c1"># check if we have 2 parameters left, if so the first is the new ID file</span>
-  <span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="k">if</span> expr <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> : <span class="s2">&quot;.*\.pub&quot;</span> &gt; /dev/null <span class="p">;</span> <span class="k">then</span>
-      <span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-    <span class="k">else</span>
-      <span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">.pub&quot;</span>
-    <span class="k">fi</span>
-    <span class="nb">shift</span>         <span class="c1"># and this should leave $1 as the target name</span>
-  <span class="k">fi</span>
-<span class="k">else</span>
-  <span class="k">if</span> <span class="o">[</span> x<span class="nv">$SSH_AUTH_SOCK</span> !<span class="o">=</span> x <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
-    <span class="nv">GET_ID</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$GET_ID</span><span class="s2"> ssh-add -L&quot;</span>
-  <span class="k">fi</span>
-<span class="k">fi</span>
-
-<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;`eval </span><span class="nv">$GET_ID</span><span class="s2">`&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> -r <span class="s2">&quot;</span><span class="si">${</span><span class="nv">ID_FILE</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
-  <span class="nv">GET_ID</span><span class="o">=</span><span class="s2">&quot;cat </span><span class="si">${</span><span class="nv">ID_FILE</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="k">fi</span>
-
-<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;`eval </span><span class="nv">$GET_ID</span><span class="s2">`&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">: ERROR: No identities found&quot;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
-  <span class="nb">exit</span> <span class="m">1</span>
-<span class="k">fi</span>
-
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$#</span><span class="s2">&quot;</span> -lt <span class="m">1</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;-h&quot;</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;--help&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nb">echo</span> <span class="s2">&quot;Usage: </span><span class="nv">$0</span><span class="s2"> [-i [identity_file]] [user@]machine&quot;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
-  <span class="nb">exit</span> <span class="m">1</span>
-<span class="k">fi</span>
-
-<span class="o">{</span> <span class="nb">eval</span> <span class="s2">&quot;</span><span class="nv">$GET_ID</span><span class="s2">&quot;</span> <span class="p">;</span> <span class="o">}</span> <span class="p">|</span> ssh <span class="nv">$1</span> <span class="s2">&quot;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys&quot;</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span>
-
-cat <span class="s">&lt;&lt;EOF</span>
-<span class="s">Now try logging into the machine, with &quot;ssh &#39;$1&#39;&quot;, and check in:</span>
-
-<span class="s">  .ssh/authorized_keys</span>
-
-<span class="s">to make sure we haven&#39;t added extra keys that you weren&#39;t expecting.</span>
-
-<span class="s">EOF</span>
-</pre></div>
-</td></tr></table>
-
-<p>Il ne reste qu'a donner les droits au fichier :</p>
-<div class="highlight"><pre><span></span>chmod 755 /usr/bin/ssh-copy-id
-</pre></div>
-
-
-<p>Vous pouvez maintenant copier votre clé ssh sur un serveur distant en
-tapant :</p>
-<div class="highlight"><pre><span></span>ssh-copy-id -i id_rsa.pub user@machine.distante
-</pre></div>
+peut la rendre disponible facilement …</p>
+      <a class="btn" href="https://www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -264,19 +142,8 @@ Os X vraiment au top !</p>
 <p>J'ai un clavier Apple Usb avec le pavé numérique il faut donc modifier
 les préférences d'iTerm2.</p>
 <p>iTerm &gt; Préférences (ou ⌘ ,) puis dans Profiles &gt; Keys et en bas
-"Load Preset..." et choisir "xterm with Numeric Keypad". Ce n'est pas
-tout malheureusement.</p>
-<p>La touche "enter" du pavé numérique ne fonctionne pas il faut donc
-cliquer sur "+" et dans Keyboard Shortcut: appuyer sur la touche et "↩"
-doit apparaitre. Dans Action: choisir "Send Hex Code" et taper "0xd".</p>
-<p>J'ai également ajouter 2 raccourcis bien pratiques :</p>
-<ul>
-<li>"alt et fleche de gauche" soit "⌥←" avec le code "[H" permet de
-    revenir au debut de la ligne de commande que l'on tape (pratique si
-    on oublie un argument).</li>
-<li>"alt et fleche de droite" soit "⌥→" avec le code "[F" pour aller à
-    la fin de la ligne.</li>
-</ul>
+"Load Preset..." et choisir "xterm with Numeric …</p>
+      <a class="btn" href="https://www.choiz.fr/2012-09-29-ma-configuration-iterm2.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -302,6 +169,7 @@ Tags :
 # .swp (Vim)
 *.swp
 </pre></div>
+      <a class="btn" href="https://www.choiz.fr/2012-08-13-mon-fichier-gitignore.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -328,15 +196,8 @@ stash@{5}: WIP on BranchName: 3bb67ff Add file.css file.js
 <p>Pour voir le contenu d'un stash :</p>
 <div class="highlight"><pre><span></span>git stash show
 
-stash@{0} chemin/vers/mon/fichier.js | 199 ++++++++++++++++++++++++++--------
-chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------
-</pre></div>
-
-
-<p>Pour voir le contenu de "chemin/vers/mon/fichier.js" qui est dans le
-stash{0} :</p>
-<div class="highlight"><pre><span></span>git show stash@{0}:chemin/vers/mon/fichier.js
-</pre></div>
+stash@{0} chemin/vers/mon …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -356,13 +217,8 @@ highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
 highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
 highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
 &quot; Match todolist, notice, fixme
-:call matchadd(&#39;Todo&#39;,&#39;[T|t][O|o][D|d][O|o]&#39;)
-:call matchadd(&#39;Todo&#39;,&#39;[T|t][O|o] [D|d][O|o]&#39;)
-:call matchadd(&#39;Notice&#39;,&#39;[N|n][O|o][T|t][I|i][C|c][E|e]&#39;)
-:call matchadd(&#39;Notice&#39;,&#39;[N|n][O|o][T|t][E|e]&#39;)
-:call matchadd(&#39;Fixme&#39;,&#39;[F|f][I|i][X|x][M|m][E|e]&#39;)
-:call matchadd(&#39;Fixme&#39;,&#39;[F|f][I|i][X|x] [M|m][E|e]&#39;)
-</pre></div>
+:call matchadd(&#39;Todo …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -388,7 +244,8 @@ Tags :
 </pre></div>
 
 
-<p>Je note car c'est toujours bon à savoir :)</p>
+<p>Je …</p>
+      <a class="btn" href="https://www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -410,110 +267,8 @@ git stash, voyons voir comment l'utiliser simplement.</p>
 # On branch master
 nothing to commit (working directory clean)
 
-$ git branch
-* master
-</pre></div>
-
-
-<p>Je travail sur la branche master et je n'ai pas d'autre branche. Je vais
-donc faire une branche API pour mon projet. :</p>
-<div class="highlight"><pre><span></span>git branch API
-
-git branch
-  API
-  * master
-</pre></div>
-
-
-<p>Maintenant je vais changer de branche git checkout pour être sur ma
-branche API et modifier les fichiers sur cette branche. :</p>
-<div class="highlight"><pre><span></span>git checkout API
-Switched to branch &#39;API&#39;
-
-git branch
-* API
-  master
-</pre></div>
-
-
-<p>Maintenant je vais modifier un mon fichier manage.py sur ma branche API.
-:</p>
-<div class="highlight"><pre><span></span>git status
-# On branch API
-# Changes not staged for commit:
-#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-#
-#    modified:   manage.py
-#
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</pre></div>
-
-
-<p>Si je veux revenir sur mon master, sans avoir la modification du
-manage.py je vais devoir utiliser git stash (qui sauvegardera mes
-modifications du manage.py) :</p>
-<div class="highlight"><pre><span></span>git stash
-Saved working directory and index state WIP on API: 8b6342d Fix register.py
-HEAD is now at 8b6342d Fix register.py
-
-$ git status
-# On branch API
-nothing to commit (working directory clean)
-</pre></div>
-
-
-<p>Maintenant que notre branche est propre on peut changer de branche
-revenir sur le master par exemple. :</p>
-<div class="highlight"><pre><span></span>$ git checkout master
-Switched to branch <span class="s1">&#39;master&#39;</span>
-
-$ git status
-<span class="c1"># On branch master</span>
-nothing to commit <span class="o">(</span>working directory clean<span class="o">)</span>
-</pre></div>
-
-
-<p>On peut donc travailler tranquillement sur la branche master. Puis
-revenir sur notre branche API, lister les stash git stash list récupérer
-les modifications précédentes git stash pop. :</p>
-<div class="highlight"><pre><span></span>git checkout API
-Switched to branch &#39;API&#39;
-
-git stash list
-stash@{0}: WIP on API: 8b6342d Fix register.py
-
-git stash pop
-# On branch API
-# Changes not staged for commit:
-#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-#
-#    modified:   manage.py
-#
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-Dropped refs/stash@{0} (533906a52b923a8960fa0f6fdf17a288c94f233a)
-
-$ git status
-# On branch API
-# Changes not staged for commit:
-#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-#
-#    modified:   manage.py
-#
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</pre></div>
-
-
-<p>Maintenant je peux continuer les modifications sur ma branche API
-réutilise git stash si besoin ou les commiter, merger ma branche…</p>
-<p>git stash pop (récupére le dernier stash enregistré
-<a href="mailto:stash@{0}">stash@{0}</a>, l'applique et le supprime de la liste)
-mon alias = git stapp</p>
-<p>git stash apply (récupére le dernier stash enregistré
-<a href="mailto:stash@{0">stash@{0</a>} et l'applique)</p>
-<p>Et pour rien n'oublier (RTFM) : man git stash</p>
+$ git …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html">Lire la suite</a>
   </div>
 </article>
 

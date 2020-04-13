@@ -67,18 +67,8 @@ Utilisation avec le terminal :</p>
 
 
 <p>Celui-ci retournera les différences directement dans le terminal (pas
-pratique pour l'édition).</p>
-<p>Utilisation avec vim :</p>
-<div class="highlight"><pre><span></span>vim -d fichier1 fichier2
-</pre></div>
-
-
-<p>Ensuite il suffit d'utiliser (CTRL + W puis W) pour changer de fenêtre
-(gauche à droite ou droite à gauche) ou bien en utilisant (CTRL + W puis
-fléche de droite ou gauche) suivant la direction ou on veut aller.</p>
-<p>Pour le reste des commandes reportez-vous au <a href="http://matrix.samizdat.net/pratique/documentation/guide-survie-VI.html">guide de survie de
-vi</a>
-!</p>
+pratique pour l'édition …</p>
+      <a class="btn" href="https://www.choiz.fr/2011-05-19-différences-entre-des-fichiers-avec-vim.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -100,10 +90,8 @@ J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss :</p>
 </pre></div>
 
 
-<p>Une fois que j'ai mon fichier dump.sql je le met sur la nouvelle
-machine, puis j'execute la commande suivante :</p>
-<div class="highlight"><pre><span></span>mysql -u utilisateur -pp4ss database &lt; fichierdump.sql
-</pre></div>
+<p>Une fois …</p>
+      <a class="btn" href="https://www.choiz.fr/2011-05-14-migration-dune-base-de-donnée-mysql.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -124,16 +112,8 @@ dans la console je tape la commande :</p>
 
 
 <p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
-Pour la faire il suffit de faire "ESC" pour passer en mode commande de
-VIM puis :</p>
-<div class="highlight"><pre><span></span>:!php -l %
-</pre></div>
-
-
-<p>Ce qui produira exactement le même résultat qu'en console.</p>
-<p>:! (permet l'execution d'une commande système dans vim)</p>
-<p>Ensuite php -l pour PHP lint</p>
-<p>% (récupère le nom du fichier courant avec le path complet)</p>
+Pour la faire il suffit de faire "ESC" pour passer en mode commande de …</p>
+      <a class="btn" href="https://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -154,11 +134,8 @@ texte.</p>
 <p>Comment l'utiliser ?</p>
 <p><code>VS&lt;b&gt;</code> permet d'ajouter les balises &lt;b&gt; et &lt;/b&gt; avant et
 apres la ligne courante et d'indenter celle-ci.</p>
-<p><code>vims&lt;a&gt;</code> permet d'ajouter le tag &lt;a&gt; &lt;/a&gt; autour du mot sur
-lequel vous vous trouvez.</p>
-<p><code>cst&lt;b&gt;</code> permet de changer le tag &lt;a&gt; (change surround tag) par
-&lt;b&gt;</p>
-<p><code>dst</code> permet de supprimer le tag</p>
+<p><code>vims&lt;a&gt;</code> permet d'ajouter le …</p>
+      <a class="btn" href="https://www.choiz.fr/2011-04-09-surround-avec-vim.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -180,10 +157,8 @@ Tags :
 <p>Le Paamayim Nekudotayim est l'opérateur de résolution de portée.</p>
 <p><a href="http://fr.php.net/manual/fr/language.oop5.paamayim-nekudotayim.php">Dans la doc PHP</a> :</p>
 <p><em>L'opérateur de résolution de portée (aussi appelé Paamayim Nekudotayim)
-ou, en termes plus simples, le symbole "double deux-points" (::),
-fournit un moyen d'accéder aux membres
-<a href="http://fr.php.net/manual/fr/language.oop5.static.php">statics</a> ou
-<a href="http://fr.php.net/manual/fr/language.oop5.constants.php">constants</a>.</em></p>
+ou, en termes plus simples …</em></p>
+      <a class="btn" href="https://www.choiz.fr/2011-03-08-tpaamayimnekudotayim.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -211,9 +186,8 @@ Tags :
 </pre></div>
 
 
-<p>Attention l'utilisation du htaccess n'est pas recommandée sur une connexion non
-chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffré
-(HTTPS).</p>
+<p>Attention l'utilisation du htaccess n'est pas recommandée …</p>
+      <a class="btn" href="https://www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -238,9 +212,8 @@ $(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
 
 
 <p>Par :</p>
-<div class="highlight"><pre><span></span>var mavar = &#39;fonctionAffichage();&#39;;
-$(&quot;#code&quot;).removeAttr(&#39;onclick&#39;).click(function() { eval(mavar); });
-</pre></div>
+<div class="highlight"><pre><span></span>var mavar …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -261,37 +234,8 @@ informations dans vos projets il suffit de taper cette commande :</p>
 
 
 <p>Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php</p>
-<p>Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :</p>
-<div class="highlight"><pre><span></span>$Id:$
-</pre></div>
-
-
-<p>Une fois le fichier versionné vous obtiendrez :</p>
-<div class="highlight"><pre><span></span>$Id: ajax\_modif.php 481 2010-10-25 12:02:50Z choiz $
-</pre></div>
-
-
-<p>D'autres keywords sont disponible tel que :</p>
-<div class="highlight"><pre><span></span>$Revision:$
-$Date:$
-$Author:$
-$URL:$
-</pre></div>
-
-
-<p>Vous pouvez les ajouter les uns à la suite des autres par exemple pour
-notre fichier index.php je veux ajouter les 4 keywords précédents grâce
-à la commande :</p>
-<div class="highlight"><pre><span></span>svn propset svn:keywords &quot;Revision Date Author URL&quot; index.php
-</pre></div>
-
-
-<p>Ce qui affichera :</p>
-<div class="highlight"><pre><span></span>$Revision: 481 $
-$Date: 2010-10-25 14:02:50 +0200 (lun., 25 oct. 2010) $
-$Author: choiz $
-$URL: svn://svn.choiz.fr/projet/branches/prod/index.php $
-</pre></div>
+<p>Pour afficher l'Id dans votre fichier index.php ajouter dans …</p>
+      <a class="btn" href="https://www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -309,13 +253,8 @@ Tags :
 documentations…</p>
 <p>J'utilise souvent la balise &lt;pre&gt; pour les lignes de commandes et
 il n'y a pas de retour à la ligne fait automatiquement pour cela un
-petit css permet de faire les retours à la ligne lorsque la page est
-trop grande. :</p>
-<div class="highlight"><pre><span></span><span class="nt">pre</span> <span class="p">{</span>
-    <span class="k">white-space</span><span class="p">:</span> <span class="kc">pre-wrap</span><span class="p">;</span>
-    <span class="k">word-wrap</span><span class="p">:</span> <span class="kc">break-word</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+petit css permet de faire les retours à la ligne lorsque la page …</p>
+      <a class="btn" href="https://www.choiz.fr/2010-09-15-impression-de-commandes-entre-balise-pre.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -334,14 +273,8 @@ virtuel en console.</p>
 <p>Ici on créer un tuyau virtuel de 1Mbit/s.</p>
 <p><code>sudo ipfw pipe 1 config bw 1Mbit/s</code></p>
 <p>On applique ce tuyau au port 80 (pour le téléchargement de fichier via
-un navigateur par exemple).</p>
-<p><code>sudo ipfw add 1 pipe 1 proto tcp src-port 80</code></p>
-<p>Pour voir le tuyau :</p>
-<p><code>sudo ipfw pipe show</code></p>
-<p>Pour supprimer la règle du port 80 :</p>
-<p><code>sudo ipfw del 1</code></p>
-<p>Pour supprimer le tuyau :</p>
-<p><code>sudo ipfw pipe 1 delete</code></p>
+un navigateur …</p>
+      <a class="btn" href="https://www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html">Lire la suite</a>
   </div>
 </article>
 

@@ -67,21 +67,8 @@ connexion.
 
 <p>Ainsi que :</p>
 <div class="highlight"><pre><span></span>Champs mot de passe présents dans un formulaire possédant une action de
-formulaire non sécurisée (http://). Cela représente un risque de sécurité
-permettant le vol d&#39;identifiants de connexion.
-</pre></div>
-
-
-<p>La première indications informe que vous n'êtes pas sur un site
-utilisant le HTTPS. Lorsque vous allez remplir le champs "password"
-celui-ci sera envoyé en clair sur le réseau.</p>
-<p>La seconde indication informe que l'action du formulaire envoi sur une
-page qui n'est pas en HTTPS.</p>
-<p>Vous pouvez avoir votre formulaire sur l'url :
-<a href="https://www.mon-formulaire.fr">https://www.mon-formulaire.fr</a> et dans l'action de votre formulaire
-avoir : <a href="http://www.mon-formulaire.fr">http://www.mon-formulaire.fr</a></p>
-<p>Dans ce cas l'affichage du formulaire est sécurisé, mais l'envoi des
-données ne l'est pas vu que l'action est en http.</p>
+formulaire non sécurisée (http://). Cela représente …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -115,47 +102,8 @@ email.</p>
 <p>Ici gmail :</p>
 <div class="highlight"><pre><span></span>cat &gt; gmail.lua &lt;&lt;EOF
 gmail = IMAP {
-    server = &#39;imap.gmail.com&#39;,
-    username = &#39;mail@gmail.com&#39;,
-    password = &#39;mon_mot_de_passe&#39;,
-    ssl = &#39;ssl3&#39;,
-}
-EOF
-</pre></div>
-
-
-<p>Et un pour Yahoo :</p>
-<div class="highlight"><pre><span></span>cat &gt; yahoo.lua &lt;&lt;EOF
-yahoo = IMAP {
-    server = &#39;imap.yahoo.com&#39;,
-    username = &#39;mail@yahoo.com&#39;,
-    password = &#39;mon_mot_de_passe&#39;,
-    ssl = &#39;ssl3&#39;,
-}
-EOF
-</pre></div>
-
-
-<p>Ajouter nos boites dans le fichier de config avec des filtres :</p>
-<div class="highlight"><pre><span></span>if_dir = os.getenv(&#39;HOME&#39;) .. &#39;/.imapfilter/&#39;
--- on inclus nos comptes imap…
-dofile(if_dir .. &quot;gmail.lua&quot;)
-dofile(if_dir .. &quot;yahoo.lua&quot;)
--- nos options
-options.timeout = 120
--- filtres pour le compte gmail (on copie les messages non lus dans la boite &quot;nouveaux&quot;)
-nonlugmail=gmail.INBOX:is_unseen()
-nonlugmail:copy_message(gmail[&#39;nouveaux&#39;])
--- filtres pour le compte yahoo (on supprime tous les messages lus)
-del_read_yahoo=yahoo.INBOX:is_seen()
-del_read_yahoo:delete_messages()
-</pre></div>
-
-
-<p>Maintenant c'est à vous de faire vos propres filtres. Une fois
-configuré, lancer imapfilter simplement depuis le terminal :</p>
-<div class="highlight"><pre><span></span>imapfilter
-</pre></div>
+    server = &#39;imap.gmail.com …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -174,15 +122,8 @@ non utilisés (jeux etc…).</p>
 <p>J'ai malheureusement supprimé un peu (trop) de paquets tel que
 (xfdesktop4 et xfce4-panel). Au démarrage de x, une fois identifié, un
 écran gris s'affiche et rien d'autre. Heureusement grâce à mon access
-SSH je peux me connecter à la machine à distance.</p>
-<p>Pour voir la liste des paquets déinstallés j'ai donc fait :</p>
-<div class="highlight"><pre><span></span>dpkg --get-selections &gt; liste-des-paquets
-</pre></div>
-
-
-<p>Il suffit ensuite d'ouvrir dans un éditeur texte (type vi) le fichier
-pour voir les paquets installés / déinstallés. Et réinstaller avec sudo
-apt-get install le ou les paquets manquants.</p>
+SSH je peux me …</p>
+      <a class="btn" href="https://www.choiz.fr/2014-03-08-réparer-ubuntu-après-un-apt-get-remove-de-trop.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -201,42 +142,8 @@ ligne…</p>
 <p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais
 pas entièrement…).</p>
 <p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu
-que ma ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
-<p>Mon fichier texte ressemble à ceci :</p>
-<div class="highlight"><pre><span></span>ligne avec un peu de texte ici nous avons 66 caractères affichés.
-</pre></div>
-
-
-<p>Or, quand je fais un diff on ne voit pas tous les caractères :</p>
-<div class="highlight"><pre><span></span>git diff HEAD~1 HEAD
-diff --git a/test.txt b/test.txt
-new file mode 100644
-index 0000000..235a891
---- /dev/null
-+++ b/test.txt
-@@ -0,0 +1 @@
-+ligne avec un peu de texte ici nous avons 66 caractè\
-No newline at end of file
-</pre></div>
-
-
-<p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=""</em> avant la
-commande <em>git diff</em> soit ajouter dans son fichier de config git :</p>
-<div class="highlight"><pre><span></span>git config --global core.pager &quot;less -r&quot;
-</pre></div>
-
-
-<p>Voilà ce que ça donne avec GIT_PAGER :</p>
-<div class="highlight"><pre><span></span>GIT_PAGER=&quot;&quot; git diff HEAD~1 HEAD
-diff --git a/test.txt b/test.txt
-new file mode 100644
-index 0000000..235a891
---- /dev/null
-+++ b/test.txt
-@@ -0,0 +1 @@
-+ligne avec un peu de texte ici nous avons 66 caractères affichés.\
-No newline at end of file
-</pre></div>
+que ma ligne qui devait être sur …</p>
+      <a class="btn" href="https://www.choiz.fr/2014-03-05-git-diff-multiligne.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -265,29 +172,8 @@ Tags :
 </pre></div>
 
 
-<p>Démontez la clé. :</p>
-<div class="highlight"><pre><span></span>diskutil unmountDisk /dev/disk2
-
-Unmount of all volumes on disk2 was successful
-</pre></div>
-
-
-<p>Maintenant on copie xubuntu depuis notre dossier téléchargements vers
-cette clé usb :</p>
-<div class="highlight"><pre><span></span>sudo dd if=~/Downloads/xubuntu-13.10-desktop-i386.iso of=/dev/rdisk2 bs=1m
-
-Password:
-834+0 records in
-834+0 records out
-874512384 bytes transferred in 137.915395 secs (6340934 bytes/sec)
-</pre></div>
-
-
-<p>Puis on éjecte proprement la clé usb :</p>
-<div class="highlight"><pre><span></span>diskutil eject /dev/disk2
-
-Disk /dev/disk2 ejected
-</pre></div>
+<p>Démontez la …</p>
+      <a class="btn" href="https://www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -307,6 +193,7 @@ messages sur cherry-pick sans savoir ce que c'était.</p>
 branche actuelle.</p>
 <div class="highlight"><pre><span></span>git cherry-pick c4a99776
 </pre></div>
+      <a class="btn" href="https://www.choiz.fr/2014-02-06-git-cherry-pick.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -327,6 +214,7 @@ thème" src="https://31.media.tumblr.com/d0896de0a038122cee44adbfaeb7e90c/tumblr
 <p>Voici l'ancien thème en souvenir.</p>
 <p><img alt="ancien
 thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr_inline_n0lh2l5LOi1qzr4hx.png"></p>
+      <a class="btn" href="https://www.choiz.fr/2014-02-06-nouveau-thème.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -353,8 +241,8 @@ Tags :
 <p>Décortiquons la commande :</p>
 <p><code>:%s/</code> Recherche et remplace dans tout le fichier</p>
 <p><code>\%U2028</code> Le caractère que l'on recherche unicode "2028"</p>
-<p><code>//</code> par rien (1er slash sépare la recherche par ce qu'on remplace, le second pour dire la fin de ce qu'on remplace).</p>
-<p><code>g</code> dans tout le fichier (global).</p>
+<p><code>//</code> par rien (1er slash sépare la recherche …</p>
+      <a class="btn" href="https://www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -372,6 +260,7 @@ Tags :
 <p>C'est une bonne question n'est-ce pas ?</p>
 <p>La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
 debian, a voir sur d'autres distribs)</p>
+      <a class="btn" href="https://www.choiz.fr/2013-11-13-crontab-e-files.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -389,24 +278,8 @@ Tags :
 niveau des permissions des dossiers / fichiers.</p>
 <p>Souvent la première chose que l'on fait : on va dans chaque dossier et
 on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
-dossiers ça va mais quand on en a 40… on utilise une autre technique !</p>
-<p>J'utilise pour les dossiers :</p>
-<div class="highlight"><pre><span></span>$ find <span class="se">\`</span>pwd<span class="se">\`</span> -type d -exec chmod <span class="m">755</span> <span class="o">{}</span> <span class="se">\\</span><span class="p">;</span>
-</pre></div>
-
-
-<p>et pour les fichiers :</p>
-<div class="highlight"><pre><span></span>$ find <span class="se">\`</span>pwd<span class="se">\`</span> -type f -exec chmod <span class="m">644</span> <span class="o">{}</span> <span class="se">\\</span><span class="p">;</span>
-</pre></div>
-
-
-<p>Avec `pwd` je vais partir du dossier actuel et remplacer tous les
-droits des fichiers et dossiers enfants. Vous pouvez remplacer par un
-autre chemin par exemple :</p>
-<div class="highlight"><pre><span></span>find /home/choiz/ -type d -exec chmod 755 {} \\;
-
-find /home/choiz/ -type f -exec chmod 644 {} \\;
-</pre></div>
+dossiers ça va …</p>
+      <a class="btn" href="https://www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html">Lire la suite</a>
   </div>
 </article>
 

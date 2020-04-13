@@ -62,36 +62,8 @@ Tags :
 gentoo l’utilisation de layman peut faciliter la vie.</p>
 <p>Étant à la recherche de vagrant, la seule version disponible à ce jour
 sur gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de
-vagrant je me rend compte que nous sommes à la version 1.7.3.</p>
-<p>J’ai donc trouvé un overlay avec vagrant-bin version 1.7.3 :
-<a href="http://gpo.zugaina.org/app-emulation/vagrant-bin">http://gpo.zugaina.org/app-emulation/vagrant-bin</a></p>
-<p>Pour utiliser cette overlay nous avons besoin de layman.</p>
-<p>Installation :</p>
-<div class="highlight"><pre><span></span>emerge -a layman
-
-echo &quot;source /usr/portage/local/layman/make.conf&quot; &gt;&gt; /etc/make.conf
-</pre></div>
-
-
-<p>Pour afficher tous les overlays disponible :</p>
-<div class="highlight"><pre><span></span>layman -L
-</pre></div>
-
-
-<p>Ajouter l’overlay stefantalpalaru (dans lequel nous avons
-vagrant-bin-1.7.3) :</p>
-<div class="highlight"><pre><span></span>layman -f -a stefantalpalaru
-</pre></div>
-
-
-<p>Maintenant si on recherche dans eix “vagrant” rien n’a changé.</p>
-<p>Il faut mettre à jour eix :</p>
-<div class="highlight"><pre><span></span>eix-update
-</pre></div>
-
-
-<p>Maintenant avec eix vagrant nous avons la ligne vagrant-bin et donc nous
-pouvons installer vagrant-1.7.3 via emerge.</p>
+vagrant je me rend …</p>
+      <a class="btn" href="https://www.choiz.fr/2015-07-19-gentoo-utilisation-de-layman-eix.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -110,31 +82,8 @@ de comparer les différents portables. La marque Taïwanaise "clevo"
 propose des machines avec ou sans OS (gain d'une centaine d'euros pour
 Windows).</p>
 <p>J'ai donc commandé chez <a href="http://www.clevo.fr">Anyware</a> un w650sz avec un
-i7 4910MQ (qui a un score sur
-<a href="http://www.cpubenchmark.net/cpu.php?cpu=Intel+Core+i7-4910MQ+%40+2.90GHz">cpubenchmark</a>
-plutôt remarquable).</p>
-<p>Je l'ai commandé sans ram, sans disque dur, avec un rack pour disque dur
-à la place d'un graveur dvd ou autre cd, sans extension de garanti pour
-un peu moins de 1000€ (j'ai bénéficié d'une réduction de 5% et des frais
-de port gratuit). J'ai commandé mes barrettes de ram et mon mSata
-ailleurs, car les marques en stock ne me plaisaient pas. <em>Note l'équipe
-de Anyware est bien sympa (ils ont enlevé les 2Go de ram qui m'étaient
-inutiles donc non facturé)</em> Plutôt que payer 2Go de ram et ne jamais les
-utiliser… J'ai donc ajouté 2 barrettes de 8Go ainsi qu'un mSata de 128Go
-pour un peu moins de 200€.</p>
-<p>J'ai utilisé cette machine 2 jours, pour l'instant et elle est parfaite
-pour mon utilisation. L'écran 1080p sur un 15" est appréciable, avec mon
-iiyama 27" j'ai un dualscreen en 2x1080p ce qui est mieux que ma config
-précédente avec un écran en 1080p et l'autre avec une résolution
-moindre…</p>
-<p>Pour la compilation de chrome qui prenait 2/3h à elle seule sur mon
-ancien laptop, en 45mn c'était fait avec d'autres grosses applications
-tel que gimp ou darktable…</p>
-<p>Pour l'instant rien a redire sur cette machine.</p>
-<p>Voici les modules a activer dans le noyau pour le réseau et le son :</p>
-<div class="highlight"><pre><span></span>Realtek 8169 gigabit ethernet support
-Build Analog Device HD-audio codec support
-</pre></div>
+i7 4910MQ (qui a …</p>
+      <a class="btn" href="https://www.choiz.fr/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -157,6 +106,7 @@ Tags :
 <p>Exemple :</p>
 <div class="highlight"><pre><span></span>git show reset_password:/templates/reset_password.tmpl
 </pre></div>
+      <a class="btn" href="https://www.choiz.fr/2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune-autre-branche.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -186,15 +136,8 @@ suivante :</p>
 </pre></div>
 
 
-<p>Imaginons maintenant que vous avez des sous-modules dans d'autres
-sous-modules. Exemple dans mon dépot
-<a href="https://www.github.com/ChoiZ/dotfiles.git">dotfiles</a> j'ai mon dépot
-<a href="https://www.github.com/ChoiZ/vim-config.git">vim</a> et dedans des
-sous-modules avec les plugins de vim. Pour initialiser, mettre à jour et
-le tout en cascade (dans tous les dossiers et sous-dossiers) il faut
-faire :</p>
-<div class="highlight"><pre><span></span>git submodule update --init --recursive
-</pre></div>
+<p>Imaginons maintenant que vous avez des …</p>
+      <a class="btn" href="https://www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -214,8 +157,8 @@ serveurs ont donc 1mn30 de retard pour l'un, et 40mn de retard pour
 l'autre !</p>
 <p>J'utilisais ntpdate avec le serveur de l'université de Nice
 (ntp.unice.fr).</p>
-<p>J'ai donc installé ntp grâce aux paquets debian, et maintenant mes
-serveurs sont à l'heure.</p>
+<p>J'ai …</p>
+      <a class="btn" href="https://www.choiz.fr/2015-01-24-êtes-vous-à-lheure-et-votre-serveur.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -233,6 +176,7 @@ Tags :
 précise, j'utilise la commande suivante :</p>
 <div class="highlight"><pre><span></span>git log -p -S &#39;display&#39;
 </pre></div>
+      <a class="btn" href="https://www.choiz.fr/2014-12-08-recherche-dans-le-code-source-avec-git.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -251,22 +195,8 @@ Tags :
 <p>L'écriture d'un rapport de bug peut demander du temps, si on veut faire
 les choses correctement.</p>
 <p>Le rapport de bug doit être écrit <code>clairement</code> et <code>précisément</code> pour
-que les développeurs sachent comment reproduire le bug.</p>
-<p>Pensez à <code>joindre un maximum d'informations</code> : le message d'erreur, le
-numéro d'erreur, une copie d'écran quand c'est possible.</p>
-<p>Ajoutez également des <code>informations sur votre environnement de
-travail</code> (version du système d'exploitation, nom et version du
-navigateur…).</p>
-<p>Une fois que vous avez écrit votre rapport, <code>relisez-le</code> pour <code>être
-sûr de vous faire comprendre</code> et <code>vérifiez</code> que quelque chose ne soit
-pas mal interprété.</p>
-<p>Si le rapport est bien fait le développeur ne doit pas venir vers vous
-avec des questions ou explications supplémentaires. Le développeur gagne
-donc du temps et il ne vous perturbe pas dans votre travail (donc vous
-en gagnez aussi).</p>
-<p>Je vous invite également à lire <a href="http://www.chiark.greenend.org.uk/~sgtatham/bugs-fr.html">cet
-article</a> pour
-écrire un bon rapport de bug.</p>
+que les développeurs sachent comment …</p>
+      <a class="btn" href="https://www.choiz.fr/2014-11-08-écriture-dun-rapport-de-bug.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -293,7 +223,8 @@ c0001 -- premier commit
 </pre></div>
 
 
-<p>le "-2" sert à récupérer 2 commits à partir du commit c0002.</p>
+<p>le "-2" sert à récupérer 2 commits à partir du commit …</p>
+      <a class="btn" href="https://www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -322,8 +253,8 @@ apt-get install -f
 
 
 <p>Installer Skype en n'oubliant pas de remplacer "x" par la bonne version :</p>
-<div class="highlight"><pre><span></span>dpkg -i skype-debian_x_i386.deb
-</pre></div>
+<div class="highlight"><pre><span></span>dpkg -i …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2014-03-21-installation-de-skype-64-sur-debian.html">Lire la suite</a>
   </div>
   <hr />
 </article>
@@ -347,6 +278,7 @@ mozilla</a>.</p>
 <p>Créer un lien symbolique avec :</p>
 <div class="highlight"><pre><span></span>ls -sf /opt/firefox/firefox /usr/bin/firefox
 </pre></div>
+      <a class="btn" href="https://www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html">Lire la suite</a>
   </div>
 </article>
 
