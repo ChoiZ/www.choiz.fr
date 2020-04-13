@@ -54,7 +54,7 @@
     <p>
       Posté le lun. 05 juin 2017 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/id_rsa.html">id_rsa</a>,      <a href="https://www.choiz.fr/tag/rsa.html">rsa</a>,      <a href="https://www.choiz.fr/tag/pub.html">pub</a>,      <a href="https://www.choiz.fr/tag/key.html">key</a>,      <a href="https://www.choiz.fr/tag/ssh.html">ssh</a>      &#8226; <a href="https://www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html#comments">Laissez un commentaire</a>
+      <a href="https://www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="https://www.choiz.fr/tag/key.html">key</a>,      <a href="https://www.choiz.fr/tag/rsa.html">rsa</a>,      <a href="https://www.choiz.fr/tag/pub.html">pub</a>      &#8226; <a href="https://www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html#comments">Laissez un commentaire</a>
     </p>
   </header>
   <div>
@@ -64,6 +64,69 @@ publique.</p>
 <p><code>ssh-keygen -y -f ~/.ssh/id_rsa &gt; ~/.ssh/id_rsa.pub</code></p>
 <p>On utilise …</p>
       <a class="btn" href="https://www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h1><a href="https://www.choiz.fr/2015-08-08-touche-pour-sortir-sa-machine-de-veille.html">Touche pour sortir sa machine de veille</a></h1>
+    <p>
+      Posté le sam. 08 août 2015 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/key.html">key</a>,      <a href="https://www.choiz.fr/tag/computer.html">computer</a>      &#8226; <a href="https://www.choiz.fr/2015-08-08-touche-pour-sortir-sa-machine-de-veille.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Il y a quelques années, pour sortir ma machine de veille j'utilisais la
+touche "enter" ou "escape".</p>
+<p>Ce qui fonctionne mais, si vous êtes dans un programme d'installation
+qui demande une confirmation (formater tout le disque par exemple), en
+appuyant sur "enter" vous allez confirmer le formatage…</p>
+<p>Avec la touche …</p>
+      <a class="btn" href="https://www.choiz.fr/2015-08-08-touche-pour-sortir-sa-machine-de-veille.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h1><a href="https://www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html">Faire un ssh-copy-id sur Mac OS X</a></h1>
+    <p>
+      Posté le dim. 30 septembre 2012 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="https://www.choiz.fr/tag/key.html">key</a>,      <a href="https://www.choiz.fr/tag/osx.html">osx</a>      &#8226; <a href="https://www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
+avez dû vous rendre compte que, même si openssh est installé nativement,
+cette commande n’est pas disponible.</p>
+<p>Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
+peut la rendre disponible facilement …</p>
+      <a class="btn" href="https://www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h1><a href="https://www.choiz.fr/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html">Créer paire de clé pour se connecter en SSH</a></h1>
+    <p>
+      Posté le ven. 13 janvier 2012 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="https://www.choiz.fr/tag/key.html">key</a>,      <a href="https://www.choiz.fr/tag/rsa.html">rsa</a>      &#8226; <a href="https://www.choiz.fr/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>On commence par ouvrir un terminal puis on tape :</p>
+<div class="highlight"><pre><span></span>ssh-keygen -t rsa -b 4096
+
+Enter file in which to save the key (/Users/choiz/.ssh/id_rsa):
+</pre></div>
+
+
+<p>En général je garde le fichier id_rsa donc je tape "enter" sinon vous
+pouvez spécifier un autre chemin ainsi qu'un autre fichier. :</p>
+<div class="highlight"><pre><span></span>Enter passphrase …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2012-01-13-créer-paire-de-clé-pour-se-connecter-en-ssh.html">Lire la suite</a>
   </div>
 </article>
 

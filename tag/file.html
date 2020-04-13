@@ -91,7 +91,7 @@ dossiers ça va …</p>
     <p>
       Posté le lun. 13 août 2012 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/gitignore.html">gitignore</a>,      <a href="https://www.choiz.fr/tag/gitignore.html">.gitignore</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>,      <a href="https://www.choiz.fr/tag/fichier.html">fichier</a>      &#8226; <a href="https://www.choiz.fr/2012-08-13-mon-fichier-gitignore.html#comments">Laissez un commentaire</a>
+      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>      &#8226; <a href="https://www.choiz.fr/2012-08-13-mon-fichier-gitignore.html#comments">Laissez un commentaire</a>
     </p>
   </header>
   <div>
@@ -117,7 +117,7 @@ Tags :
     <p>
       Posté le ven. 06 juillet 2012 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/stash.html">stash</a>,      <a href="https://www.choiz.fr/tag/content.html">content</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>,      <a href="https://www.choiz.fr/tag/file-content.html">file content</a>,      <a href="https://www.choiz.fr/tag/git-stash.html">git stash</a>,      <a href="https://www.choiz.fr/tag/show.html">show</a>      &#8226; <a href="https://www.choiz.fr/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis.html#comments">Laissez un commentaire</a>
+      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>,      <a href="https://www.choiz.fr/tag/stash.html">stash</a>      &#8226; <a href="https://www.choiz.fr/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis.html#comments">Laissez un commentaire</a>
     </p>
   </header>
   <div>
@@ -141,11 +141,102 @@ stash@{0} chemin/vers/mon …</pre></div>
 </article>
 <article>
   <header>
+    <h1><a href="https://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Ajout dans mon .vimrc de matchadd() & highlight</a></h1>
+    <p>
+      Posté le ven. 27 avril 2012 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>      &#8226; <a href="https://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Petit ajout dans mon fichier .vimrc :</p>
+<div class="highlight"><pre><span></span>&quot; Highlight To do list with green background
+highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
+highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
+highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
+&quot; Match todolist, notice, fixme
+:call matchadd(&#39;Todo …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h1><a href="https://www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html">Renomer des fichiers en CLI (ligne de commande)</a></h1>
+    <p>
+      Posté le sam. 14 avril 2012 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/cli.html">cli</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
+correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
+"rename".</p>
+<p>Exemple je veux supprimer tous les espaces d'un fichier :</p>
+<div class="highlight"><pre><span></span>rename &quot;s/ *//g&quot; *.*
+</pre></div>
+
+
+<p>Ou renomer tous mes fichiers .WAV en .wav etc… :</p>
+<div class="highlight"><pre><span></span>rename &quot;s/\.WAV/\.wav/g&quot; *.WAV
+</pre></div>
+
+
+<p>A …</p>
+      <a class="btn" href="https://www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h1><a href="https://www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html">Voir les fichiers cachés sur Lion</a></h1>
+    <p>
+      Posté le mer. 02 novembre 2011 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/file.html">file</a>,      <a href="https://www.choiz.fr/tag/osx.html">osx</a>      &#8226; <a href="https://www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Dans un terminal :</p>
+<div class="highlight"><pre><span></span>defaults write com.apple.Finder AppleShowAllFiles TRUE
+
+killall Finder
+</pre></div>
+
+
+<p>Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés.</p>
+      <a class="btn" href="https://www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h1><a href="https://www.choiz.fr/2011-07-05-suppression-des-dsstore.html">Suppression des .DS_Store</a></h1>
+    <p>
+      Posté le mar. 05 juillet 2011 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/osx.html">osx</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>      &#8226; <a href="https://www.choiz.fr/2011-07-05-suppression-des-dsstore.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Dans une console sur votre Mac :</p>
+<div class="highlight"><pre><span></span>defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+</pre></div>
+
+
+<p>Puis redémarrez le mac.</p>
+      <a class="btn" href="https://www.choiz.fr/2011-07-05-suppression-des-dsstore.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h1><a href="https://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html">Split & Vsplit dans vim</a></h1>
     <p>
       Posté le dim. 29 mai 2011 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/vim.html">Vim</a>,      <a href="https://www.choiz.fr/tag/split.html">Split</a>,      <a href="https://www.choiz.fr/tag/file.html">File</a>      &#8226; <a href="https://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html#comments">Laissez un commentaire</a>
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>      &#8226; <a href="https://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html#comments">Laissez un commentaire</a>
     </p>
   </header>
   <div>

@@ -13,7 +13,7 @@
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
 <meta name="description" content="Installation de lxc sur debian : apt-get install lxc Création d'un conteneur lxc sous debian : lxc-create -n debian9 -t download Sélectionner : distribution: debian Release: strech Architecture: amd64 Lister les conteneurs : lxc-ls -f NAME STATE AUTOSTART GROUPS IPV4 IPV6 debian9 STOPPED 0 - - - Copier debian9 en conteneur debian pour l'utiliser pour un wiki …" />
-<meta name="keywords" content="linux, container, lxc">
+<meta name="keywords" content="linux, lxc, debian">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Installer et utiliser lxc"/>
 <meta property="og:description" content="Installation de lxc sur debian : apt-get install lxc Création d'un conteneur lxc sous debian : lxc-create -n debian9 -t download Sélectionner : distribution: debian Release: strech Architecture: amd64 Lister les conteneurs : lxc-ls -f NAME STATE AUTOSTART GROUPS IPV4 IPV6 debian9 STOPPED 0 - - - Copier debian9 en conteneur debian pour l'utiliser pour un wiki …"/>
@@ -25,8 +25,8 @@
 <meta property="article:author" content="https://www.choiz.fr/author/choiz.html">
 <meta property="article:section" content="text"/>
 <meta property="article:tag" content="linux"/>
-<meta property="article:tag" content="container"/>
 <meta property="article:tag" content="lxc"/>
+<meta property="article:tag" content="debian"/>
 <meta property="og:image" content="">  <title>ChoiZ &ndash; Installer et utiliser lxc</title>
 </head>
 <body>
@@ -62,7 +62,7 @@
     <p>
       Posté le lun. 30 juillet 2018 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/container.html">container</a>,      <a href="https://www.choiz.fr/tag/lxc.html">lxc</a>      &#8226; <a href="https://www.choiz.fr/2018-07-30-installer-et-utiliser-lxc.html#comments">Laissez un commentaire</a>
+      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/lxc.html">lxc</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>      &#8226; <a href="https://www.choiz.fr/2018-07-30-installer-et-utiliser-lxc.html#comments">Laissez un commentaire</a>
     </p>
   </header>
   <div>
@@ -79,7 +79,7 @@ Tags :
 
 <p>Lister les conteneurs :</p>
 <div class="highlight"><pre><span></span>lxc-ls -f
-NAME        STATE   AUTOSTART GROUPS IPV4 IPV6 
+NAME        STATE   AUTOSTART GROUPS IPV4 IPV6
 debian9     STOPPED 0         -      -    -
 </pre></div>
 
@@ -91,8 +91,8 @@ debian9     STOPPED 0         -      -    -
 
 <p>Vérifions :</p>
 <div class="highlight"><pre><span></span>lxc-ls -f
-NAME        STATE   AUTOSTART GROUPS IPV4 IPV6 
-debian9     STOPPED 0         -      -    -    
+NAME        STATE   AUTOSTART GROUPS IPV4 IPV6
+debian9     STOPPED 0         -      -    -
 debian9wiki STOPPED 0         -      -    -
 </pre></div>
 
@@ -104,9 +104,9 @@ debian9wiki STOPPED 0         -      -    -
 
 <p>Vérifions :</p>
 <div class="highlight"><pre><span></span>lxc-ls -f
-NAME        STATE   AUTOSTART GROUPS IPV4           IPV6 
-debian9     STOPPED 0         -      -              -    
-debian9wiki RUNNING 0         -      192.168.60.140 -    
+NAME        STATE   AUTOSTART GROUPS IPV4           IPV6
+debian9     STOPPED 0         -      -              -
+debian9wiki RUNNING 0         -      192.168.60.140 -
 </pre></div>
 
 
@@ -130,8 +130,8 @@ debian9wiki RUNNING 0         -      192.168.60.140 -
   <div class="tag-cloud">
     <p>
       <a href="https://www.choiz.fr/tag/linux.html">linux</a>
-      <a href="https://www.choiz.fr/tag/container.html">container</a>
       <a href="https://www.choiz.fr/tag/lxc.html">lxc</a>
+      <a href="https://www.choiz.fr/tag/debian.html">debian</a>
     </p>
   </div>
 <div id="comments"><h2>Commentaires</h2></div>

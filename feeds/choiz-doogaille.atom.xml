@@ -99,4 +99,4 @@ lang/en_GB/LC_MESSAGES/domaine.mo
 &lt;p&gt;N'oubliez pas de redémarrer votre serveur web pour que les changements
 soient pris en compte.&lt;/p&gt;
 &lt;p&gt;Mise à jour le 30 Novembre 2015 par
-&lt;a href="http://www.github.com/doogaille"&gt;doogaille&lt;/a&gt;.&lt;/p&gt;</content><category term=".mo"></category><category term=".po"></category><category term="/etc/locale"></category><category term="LC\_ALL"></category><category term="gettext"></category><category term="php"></category><category term="php-gettext"></category><category term="setlocale"></category><category term="xgettext"></category></entry></feed>
+&lt;a href="http://www.github.com/doogaille"&gt;doogaille&lt;/a&gt;.&lt;/p&gt;</content><category term="php"></category><category term="gettext"></category></entry></feed>

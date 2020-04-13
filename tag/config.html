@@ -54,7 +54,7 @@
     <p>
       Posté le lun. 10 juin 2013 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/firefox.html">firefox</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>,      <a href="https://www.choiz.fr/tag/http.html">http</a>,      <a href="https://www.choiz.fr/tag/urlbar.html">urlbar</a>,      <a href="https://www.choiz.fr/tag/browser.html">browser</a>      &#8226; <a href="https://www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html#comments">Laissez un commentaire</a>
+      <a href="https://www.choiz.fr/tag/web.html">web</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>      &#8226; <a href="https://www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html#comments">Laissez un commentaire</a>
     </p>
   </header>
   <div>
@@ -74,6 +74,124 @@ fois <a href="http://">http://</a>…</p>
 
 <p>Modifier la …</p>
       <a class="btn" href="https://www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h1><a href="https://www.choiz.fr/2012-08-13-mon-fichier-gitignore.html">Mon fichier .gitignore</a></h1>
+    <p>
+      Posté le lun. 13 août 2012 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>      &#8226; <a href="https://www.choiz.fr/2012-08-13-mon-fichier-gitignore.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Voilà mon petit fichier .gitignore :</p>
+<div class="highlight"><pre><span></span># Ignore files from git
+
+# ._ files (Mac Os X)
+._*
+
+# .DS_STORE (Mac Os X)
+.DS_STORE
+
+# .swp (Vim)
+*.swp
+</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2012-08-13-mon-fichier-gitignore.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h1><a href="https://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Ajout dans mon .vimrc de matchadd() & highlight</a></h1>
+    <p>
+      Posté le ven. 27 avril 2012 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>      &#8226; <a href="https://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Petit ajout dans mon fichier .vimrc :</p>
+<div class="highlight"><pre><span></span>&quot; Highlight To do list with green background
+highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
+highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
+highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
+&quot; Match todolist, notice, fixme
+:call matchadd(&#39;Todo …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h1><a href="https://www.choiz.fr/2012-04-13-update-gitconfig.html">Update .gitconfig</a></h1>
+    <p>
+      Posté le ven. 13 avril 2012 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>      &#8226; <a href="https://www.choiz.fr/2012-04-13-update-gitconfig.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Ajout du pull, push, diff et surtout stash :</p>
+<div class="highlight"><pre><span></span><span class="k">[user]</span>
+  <span class="na">name</span> <span class="o">=</span> <span class="s">François LASSERRE</span>
+<span class="s">  email = mon@email.fr</span>
+<span class="k">[diff]</span>
+  <span class="na">tool</span> <span class="o">=</span> <span class="s">vimdiff</span>
+<span class="k">[color]</span>
+  <span class="na">branch</span> <span class="o">=</span> <span class="s">auto</span>
+<span class="s">  diff = auto</span>
+<span class="s">  status = auto</span>
+<span class="s">  interactive = auto</span>
+<span class="s">  ui = true</span>
+<span class="k">[alias]</span>
+  <span class="na">br</span> <span class="o">=</span> <span class="s">branch</span>
+<span class="s">  ci = commit -a</span>
+<span class="s">  co = checkout</span>
+<span class="s">  sh = show --color-words</span>
+<span class="s">  st = status</span>
+<span class="s">  di = diff</span>
+<span class="s">  ph = push</span>
+<span class="s">  pl = pull</span>
+<span class="s">  sta …</span></pre></div>
+      <a class="btn" href="https://www.choiz.fr/2012-04-13-update-gitconfig.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h1><a href="https://www.choiz.fr/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html">Git mes fichiers de config gitconfig / gitignore</a></h1>
+    <p>
+      Posté le mar. 31 janvier 2012 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>      &#8226; <a href="https://www.choiz.fr/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Fichier .gitconfig :</p>
+<div class="highlight"><pre><span></span><span class="k">[user]</span>
+    <span class="na">name</span> <span class="o">=</span> <span class="s">François LASSERRE</span>
+<span class="s">    email = mon@email.fr</span>
+<span class="k">[diff]</span>
+    <span class="na">tool</span> <span class="o">=</span> <span class="s">vimdiff</span>
+<span class="k">[color]</span>
+    <span class="na">branch</span> <span class="o">=</span> <span class="s">auto</span>
+<span class="s">    diff = auto</span>
+<span class="s">    status = auto</span>
+<span class="s">    interactive = auto</span>
+<span class="s">    ui = true</span>
+<span class="k">[alias]</span>
+    <span class="na">br</span> <span class="o">=</span> <span class="s">branch</span>
+<span class="s">    ci = commit -a</span>
+<span class="s">    co = checkout</span>
+<span class="s">    sh = show --color-words</span>
+<span class="s">    st = status</span>
+<span class="s">    last = cat-file commit HEAD</span>
+<span class="s">    tree = log --graph --oneline --decorate</span>
+<span class="s">    graph = log --graph --decorate …</span></pre></div>
+      <a class="btn" href="https://www.choiz.fr/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html">Lire la suite</a>
   </div>
 </article>
 

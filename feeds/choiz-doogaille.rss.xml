@@ -7,4 +7,4 @@ sur votre site en php il faut télécharger le package php-gettext :&lt;/p&gt;
 
 
 &lt;p&gt;Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
-commentaires devant les …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz, doogaille</dc:creator><pubDate>Sun, 04 Dec 2011 19:10:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-12-04:/2011-12-04-php-gettext-debian.html</guid><category>.mo</category><category>.po</category><category>/etc/locale</category><category>LC\_ALL</category><category>gettext</category><category>php</category><category>php-gettext</category><category>setlocale</category><category>xgettext</category></item></channel></rss>
+commentaires devant les …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz, doogaille</dc:creator><pubDate>Sun, 04 Dec 2011 19:10:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-12-04:/2011-12-04-php-gettext-debian.html</guid><category>php</category><category>gettext</category></item></channel></rss>

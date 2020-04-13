@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/font-awesome.min.css">
+  <link href="https://www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="François LASSERRE" />
+  <meta name="description" content="" />
+<meta property="og:site_name" content="ChoiZ"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="ChoiZ"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:url" content="https://www.choiz.fr"/>
+  <title>ChoiZ &ndash; Tag : linux</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="https://www.choiz.fr">
+        <img src="https://www.choiz.fr/theme/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
+      </a>
+      <div>
+          <a href="https://www.choiz.fr">Blog technique de François LASSERRE</a>
+      </div>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="https://www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1><a href="https://www.choiz.fr/2011-09-02-import-vm-avec-virtualbox.html">Import VM avec Virtualbox</a></h1>
+    <p>
+      Posté le ven. 02 septembre 2011 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/virtualbox.html">virtualbox</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2011-09-02-import-vm-avec-virtualbox.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
+donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?</p>
+<p>Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper :</p>
+<div class="highlight"><pre><span></span><span class="n">VBoxManage</span> <span class="kn">import</span> <span class="nn">votrefichier.ova</span>
+</pre></div>
+
+
+<p>Maintenant lors du prochain démarrage de votre VirtualBox vous devez
+avoir la …</p>
+      <a class="btn" href="https://www.choiz.fr/2011-09-02-import-vm-avec-virtualbox.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h1><a href="https://www.choiz.fr/2011-08-17-partage-samba.html">Partage Samba !</a></h1>
+    <p>
+      Posté le mer. 17 août 2011 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/samba.html">samba</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2011-08-17-partage-samba.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Configuration d'un serveur samba. Editer le fichier de configuration
+/etc/samba/smb.conf Voici le contenu de mon fichier de configuration :</p>
+<div class="highlight"><pre><span></span>| ### Global ###
+| [global]
+| ## Identification ##
+| workgroup = WORKGROUP
+| netbios name = %h
+| server string = Serveur samba %h
+| security = user
+| public = yes
+| ## Log ##
+| log file = /var/log/samba/log.%m
+| max log size = 1000 …</pre></div>
+      <a class="btn" href="https://www.choiz.fr/2011-08-17-partage-samba.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h1><a href="https://www.choiz.fr/2011-05-30-patch-diff.html">Patch & diff</a></h1>
+    <p>
+      Posté le lun. 30 mai 2011 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/diff.html">diff</a>,      <a href="https://www.choiz.fr/tag/patch.html">patch</a>,      <a href="https://www.choiz.fr/tag/cli.html">cli</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2011-05-30-patch-diff.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Patch permet de "patcher" un fichier, dossier, projet ! Pratique lorsque
+vous distribuez du code et que vous voulez le mettre à jour. Comment
+l'utiliser ? Dans un premier temps nous allons faire un différentiel de
+notre version actuelle du projet et de la nouvelle version (celle
+patchée). :</p>
+<div class="highlight"><pre><span></span><span class="gh">diff -u version1.php …</span></pre></div>
+      <a class="btn" href="https://www.choiz.fr/2011-05-30-patch-diff.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h1><a href="https://www.choiz.fr/2011-05-14-migration-dune-base-de-donnée-mysql.html">Migration d'une base de donnée Mysql</a></h1>
+    <p>
+      Posté le sam. 14 mai 2011 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/mysql.html">mysql</a>,      <a href="https://www.choiz.fr/tag/mysqldump.html">mysqldump</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/cli.html">cli</a>      &#8226; <a href="https://www.choiz.fr/2011-05-14-migration-dune-base-de-donnée-mysql.html#comments">Laissez un commentaire</a>
+    </p>
+  </header>
+  <div>
+      <p>Pour faire mes migrations de base de donnée j'utilise en ligne de
+commande mysqldump et mysql.</p>
+<p>Dans un premier temps je sauve ma base database dans le fichier dump.sql
+J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss :</p>
+<div class="highlight"><pre><span></span>mysqldump -u utilisateur -p p4ss database &gt; dump.sql
+</pre></div>
+
+
+<p>Une fois …</p>
+      <a class="btn" href="https://www.choiz.fr/2011-05-14-migration-dune-base-de-donnée-mysql.html">Lire la suite</a>
+  </div>
+</article>
+
+  <div class="pagination">
+      <a class="btn float-right" href="https://www.choiz.fr/tag/linux2.html">
+        Nouveaux articles <i class="fa fa-angle-right"></i>
+      </a>
+  </div>
+
+    <footer>
+      <p>&copy; François LASSERRE </p>
+<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " ChoiZ ",
+  "url" : "https://www.choiz.fr",
+  "image": "",
+  "description": ""
+}
+</script></body>
+</html>
