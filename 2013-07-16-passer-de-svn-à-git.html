@@ -44,7 +44,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -58,43 +58,36 @@
 <article>
   <header>
     <h1 id="2013-07-16-passer-de-svn-à-git">Passer de svn à git</h1>
-    <p>
-      Posté le mar. 16 juillet 2013 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/svn.html">svn</a>,      <a href="https://www.choiz.fr/tag/git.html">git</a>      &#8226; <a href="https://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le mar. 16 juillet 2013</p>
   </header>
   <div>
     <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec
 svn. Il est temps de faire la migration de svn à git !</p>
 <p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
 voulais voici donc ma procédure :</p>
-<div class="highlight"><pre><span></span>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep &quot;^r&quot; | awk
-&#39;{print $3}&#39; | sort | uniq | awk &#39;{ print $1&quot; = &quot;$1&quot;
-&lt;&quot;$1&quot;@mondomaine&gt;&quot; }&#39; &gt; authors.txt
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">svn</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="o">--</span><span class="n">quiet</span><span class="w"> </span><span class="s1">&#39;svn://svn.mondomaine/monprojet&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">grep</span><span class="w"> </span><span class="ss">&quot;^r&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">awk</span><span class="w"></span>
+<span class="s1">&#39;{print $3}&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">uniq</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">awk</span><span class="w"> </span><span class="s1">&#39;{ print $1&quot; = &quot;$1&quot;</span>
+<span class="s1">&lt;&quot;$1&quot;@mondomaine&gt;&quot; }&#39;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">authors</span><span class="p">.</span><span class="n">txt</span><span class="w"></span>
+</code></pre></div>
 
 <p>J'ai ensuite édité authors.txt pour remplacer nos différents pseudos par
 nos prénoms et noms puis j'ai vérifié les adresses e-mails.</p>
 <p>Puis j'ai utilisé git svn clone :</p>
-<div class="highlight"><pre><span></span>git svn clone &#39;svn://svn.mondomaine/monprojet&#39; --no-metadata
+<div class="highlight"><pre><span></span><code>git svn clone &#39;svn://svn.mondomaine/monprojet&#39; --no-metadata
 --authors-file=authors.txt --tags=tags --branches=branches
 --trunk=trunk monprojet
-</pre></div>
-
+</code></pre></div>
 
 <p>Si vous avez des tags dans svn, vous pouvez les mettre dans git :</p>
-<div class="highlight"><pre><span></span>git branch -r | sed -rne &#39;s, \*tags/([^@]+)$,\\1,p&#39; | while read
+<div class="highlight"><pre><span></span><code>git branch -r | sed -rne &#39;s, \*tags/([^@]+)$,\\1,p&#39; | while read
 tag; do echo &quot;git tag <span class="nv">$tag</span> &#39;tags/<span class="cp">${</span><span class="n">tag</span><span class="cp">}</span>^&#39;; git branch -r -d
 tags/<span class="nv">$tag</span>&quot;; done | sh
-</pre></div>
-
+</code></pre></div>
 
 <p>Pour finir ajoutez votre dépot distant :</p>
-<div class="highlight"><pre><span></span>git remote add origin git@git.mondomaine:/monprojet.git
-git push -u origin --tags
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">git</span><span class="w"> </span><span class="n">remote</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="n">git</span><span class="nv">@git</span><span class="p">.</span><span class="nl">mondomaine</span><span class="p">:</span><span class="o">/</span><span class="n">monprojet</span><span class="p">.</span><span class="n">git</span><span class="w"></span>
+<span class="n">git</span><span class="w"> </span><span class="n">push</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="c1">--tags</span>
+</code></pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -102,23 +95,30 @@ git push -u origin --tags
       <a href="https://www.choiz.fr/tag/git.html">git</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Passer de svn à git",
   "headline": "Passer de svn à git",
@@ -129,6 +129,7 @@ git push -u origin --tags
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html",
   "description": "Sur le projet Addictradio nous utilisons encore un de nos dépot avec svn. Il est temps de faire la migration de svn à git ! J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais voici donc ma procédure : svn log --quiet 'svn://svn.mondomaine/monprojet' | grep "^r …"
 }

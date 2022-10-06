@@ -44,7 +44,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -58,11 +58,7 @@
 <article>
   <header>
     <h1 id="2013-11-03-icônes-favicon-apple-touch-icon">Icônes / Favicon / Apple-touch-icon</h1>
-    <p>
-      Posté le dim. 03 novembre 2013 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/cli.html">cli</a>,      <a href="https://www.choiz.fr/tag/imagemagick.html">imagemagick</a>      &#8226; <a href="https://www.choiz.fr/2013-11-03-icônes-favicon-apple-touch-icon.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le dim. 03 novembre 2013</p>
   </header>
   <div>
     <p>Voici comment faire facilement sa favicon et ses icônes pour les
@@ -71,33 +67,30 @@ appareils mobiles avec image magick.</p>
 la transparence "icon512.png".</p>
 <p>Je veux faire une favicon en 16x16px, 32x32px 48x48px et 64x64px le tout
 dans un seul fichier favicon.ico. :</p>
-<div class="highlight"><pre><span></span>convert icon512.png \
+<div class="highlight"><pre><span></span><code>convert icon512.png \
     -bordercolor white -border 0 \
     \( -clone 0 -resize 16x16 \) \
     \( -clone 0 -resize 32x32 \) \
     \( -clone 0 -resize 48x48 \) \
     \( -clone 0 -resize 64x64 \) \
     -delete 0 -alpha off favicon.ico
-</pre></div>
-
+</code></pre></div>
 
 <p>Ensuite je veux faire mes icônes pour les appareils mobiles : Android,
 Apple etc… :</p>
-<div class="highlight"><pre><span></span>convert icon512.png -resize x60 touch-icon-iphone.png
+<div class="highlight"><pre><span></span><code>convert icon512.png -resize x60 touch-icon-iphone.png
 convert icon512.png -resize x76 touch-icon-ipad.png
 convert icon512.png -resize x120 touch-icon-iphone-retina.png
 convert icon512.png -resize x152 touch-icon-ipad-retina.png
-</pre></div>
-
+</code></pre></div>
 
 <p>Maintenant il faut ajouter dans notre page html entre les balises head :</p>
-<div class="highlight"><pre><span></span>&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;
+<div class="highlight"><pre><span></span><code>&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;touch-icon-iphone.png&quot;&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;76x76&quot; href=&quot;touch-icon-ipad.png&quot;&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;120x120&quot; href=&quot;touch-icon-iphone-retina.png&quot;&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;152x152&quot; href=&quot;touch-icon-ipad-retina.png&quot;&gt;
-</pre></div>
-
+</code></pre></div>
 
 <p>A noter les appareils Android utilisent aussi les images
 "apple-touch-icon".</p>
@@ -108,23 +101,30 @@ convert icon512.png -resize x152 touch-icon-ipad-retina.png
       <a href="https://www.choiz.fr/tag/imagemagick.html">imagemagick</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Icônes / Favicon / Apple-touch-icon",
   "headline": "Icônes / Favicon / Apple-touch-icon",
@@ -135,6 +135,7 @@ convert icon512.png -resize x152 touch-icon-ipad-retina.png
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2013-11-03-icônes-favicon-apple-touch-icon.html",
   "description": "Voici comment faire facilement sa favicon et ses icônes pour les appareils mobiles avec image magick. Mon icône de base est en 512x512px au format png avec prise en charge de la transparence "icon512.png". Je veux faire une favicon en 16x16px, 32x32px 48x48px et 64x64px le tout dans un …"
 }

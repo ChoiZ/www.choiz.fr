@@ -37,7 +37,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -50,95 +50,133 @@
 
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html">Installation de Firefox sur Debian</a></h1>
+    <h2><a href="https://www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html">Installation de Firefox sur Debian</a></h2>
     <p>
       Posté le ven. 21 mars 2014 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/firefox.html">firefox</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>      &#8226; <a href="https://www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/firefox.html">firefox</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>    </p>
   </header>
   <div>
       <p>Télécharger la dernière version de Firefox sur <a href="http://www.mozilla.org/">le site de
 mozilla</a>.</p>
 <p>Décompresser l'archive dans :</p>
-<div class="highlight"><pre><span></span>/opt/firefox/
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>/opt/firefox/
+</code></pre></div>
 
 <p>Créer un lien symbolique avec :</p>
-<div class="highlight"><pre><span></span>ls -sf /opt/firefox/firefox /usr/bin/firefox
-</pre></div>
-      <a class="btn" href="https://www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html">Lire la suite</a>
+<div class="highlight"><pre><span></span><code>ls -sf /opt/firefox/firefox /usr/bin/firefox
+</code></pre></div>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html">Firebug champs mot de passe présents sur une page non sécurisée</a></h1>
+    <h2><a href="https://www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html">Firebug champs mot de passe présents sur une page non sécurisée</a></h2>
     <p>
       Posté le mar. 18 mars 2014 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/http.html">http</a>,      <a href="https://www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="https://www.choiz.fr/tag/firefox.html">firefox</a>      &#8226; <a href="https://www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/http.html">http</a>,      <a href="https://www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="https://www.choiz.fr/tag/firefox.html">firefox</a>    </p>
   </header>
   <div>
       <p>Dans mon firebug des "warnings" s'affichent :</p>
-<div class="highlight"><pre><span></span>Champs mot de passe présents sur une page non sécurisée (http://). Cela
+<div class="highlight"><pre><span></span><code>Champs mot de passe présents sur une page non sécurisée (http://). Cela
 représente un risque de sécurité permettant le vol d&#39;identifiants de
 connexion.
-</pre></div>
-
+</code></pre></div>
 
 <p>Ainsi que :</p>
-<div class="highlight"><pre><span></span>Champs mot de passe présents dans un formulaire possédant une action de
-formulaire non sécurisée (http://). Cela représente …</pre></div>
-      <a class="btn" href="https://www.choiz.fr/2014-03-18-firebug-champs-mot-de-passe-présents-sur-une-page.html">Lire la suite</a>
+<div class="highlight"><pre><span></span><code>Champs mot de passe présents dans un formulaire possédant une action de
+formulaire non sécurisée (http://). Cela représente un risque de sécurité
+permettant le vol d&#39;identifiants de connexion.
+</code></pre></div>
+
+<p>La première indications informe que vous n'êtes pas sur un site
+utilisant le HTTPS. Lorsque vous allez remplir le champs "password"
+celui-ci sera envoyé en clair sur le réseau.</p>
+<p>La seconde indication informe que l'action du formulaire envoi sur une
+page qui n'est pas en HTTPS.</p>
+<p>Vous pouvez avoir votre formulaire sur l'url :
+<a href="https://www.mon-formulaire.fr">https://www.mon-formulaire.fr</a> et dans l'action de votre formulaire
+avoir : <a href="http://www.mon-formulaire.fr">http://www.mon-formulaire.fr</a></p>
+<p>Dans ce cas l'affichage du formulaire est sécurisé, mais l'envoi des
+données ne l'est pas vu que l'action est en http.</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html">imapfilter ou comment filtrer ses mails facilement</a></h1>
+    <h2><a href="https://www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html">imapfilter ou comment filtrer ses mails facilement</a></h2>
     <p>
       Posté le mar. 11 mars 2014 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/mail.html">mail</a>,      <a href="https://www.choiz.fr/tag/imap.html">imap</a>      &#8226; <a href="https://www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/mail.html">mail</a>,      <a href="https://www.choiz.fr/tag/imap.html">imap</a>    </p>
   </header>
   <div>
       <p>Installer imapfilter via apt par exemple :</p>
-<div class="highlight"><pre><span></span>apt-get install imapfilter
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>apt-get install imapfilter
+</code></pre></div>
 
 <p>Se rendre dans le dossier de configuration :</p>
-<div class="highlight"><pre><span></span>cd ~/.imapfilter
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>cd ~/.imapfilter
+</code></pre></div>
 
 <p>Créer un fichier config.lua :</p>
-<div class="highlight"><pre><span></span>touch config.lua
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>touch config.lua
+</code></pre></div>
 
 <p>Maintenant je décide de faire un fichier de configuration par boite
 email.</p>
 <p>Ici gmail :</p>
-<div class="highlight"><pre><span></span>cat &gt; gmail.lua &lt;&lt;EOF
-gmail = IMAP {
-    server = &#39;imap.gmail.com …</pre></div>
-      <a class="btn" href="https://www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html">Lire la suite</a>
+<div class="highlight"><pre><span></span><code><span class="n">cat</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">gmail</span><span class="p">.</span><span class="n">lua</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">EOF</span><span class="w"></span>
+<span class="n">gmail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IMAP</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;imap.gmail.com&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mail@gmail.com&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mon_mot_de_passe&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">ssl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ssl3&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+<span class="n">EOF</span><span class="w"></span>
+</code></pre></div>
+
+<p>Et un pour Yahoo :</p>
+<div class="highlight"><pre><span></span><code><span class="n">cat</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">yahoo</span><span class="p">.</span><span class="n">lua</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">EOF</span><span class="w"></span>
+<span class="n">yahoo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IMAP</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;imap.yahoo.com&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mail@yahoo.com&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mon_mot_de_passe&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">ssl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ssl3&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+<span class="n">EOF</span><span class="w"></span>
+</code></pre></div>
+
+<p>Ajouter nos boites dans le fichier de config avec des filtres :</p>
+<div class="highlight"><pre><span></span><code><span class="nv">if_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">os</span>.<span class="k">getenv</span><span class="ss">(</span><span class="s1">&#39;HOME&#39;</span><span class="ss">)</span><span class="w"> </span>..<span class="w"> </span><span class="s1">&#39;/.imapfilter/&#39;</span><span class="w"></span>
+<span class="o">--</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">inclus</span><span class="w"> </span><span class="nv">nos</span><span class="w"> </span><span class="nv">comptes</span><span class="w"> </span><span class="nv">imap</span>…<span class="w"></span>
+<span class="nv">dofile</span><span class="ss">(</span><span class="nv">if_dir</span><span class="w"> </span>..<span class="w"> </span><span class="s2">&quot;gmail.lua&quot;</span><span class="ss">)</span><span class="w"></span>
+<span class="nv">dofile</span><span class="ss">(</span><span class="nv">if_dir</span><span class="w"> </span>..<span class="w"> </span><span class="s2">&quot;yahoo.lua&quot;</span><span class="ss">)</span><span class="w"></span>
+<span class="o">--</span><span class="w"> </span><span class="nv">nos</span><span class="w"> </span><span class="nv">options</span><span class="w"></span>
+<span class="nv">options</span>.<span class="nb">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">120</span><span class="w"></span>
+<span class="o">--</span><span class="w"> </span><span class="nv">filtres</span><span class="w"> </span><span class="nv">pour</span><span class="w"> </span><span class="nv">le</span><span class="w"> </span><span class="nv">compte</span><span class="w"> </span><span class="nv">gmail</span><span class="w"> </span><span class="ss">(</span><span class="nv">on</span><span class="w"> </span><span class="nv">copie</span><span class="w"> </span><span class="nv">les</span><span class="w"> </span><span class="nv">messages</span><span class="w"> </span><span class="nv">non</span><span class="w"> </span><span class="nv">lus</span><span class="w"> </span><span class="nv">dans</span><span class="w"> </span><span class="nv">la</span><span class="w"> </span><span class="nv">boite</span><span class="w"> </span><span class="s2">&quot;nouveaux&quot;</span><span class="ss">)</span><span class="w"></span>
+<span class="nv">nonlugmail</span><span class="o">=</span><span class="nv">gmail</span>.<span class="nv">INBOX</span>:<span class="nv">is_unseen</span><span class="ss">()</span><span class="w"></span>
+<span class="nv">nonlugmail</span>:<span class="nv">copy_message</span><span class="ss">(</span><span class="nv">gmail</span>[<span class="s1">&#39;nouveaux&#39;</span>]<span class="ss">)</span><span class="w"></span>
+<span class="o">--</span><span class="w"> </span><span class="nv">filtres</span><span class="w"> </span><span class="nv">pour</span><span class="w"> </span><span class="nv">le</span><span class="w"> </span><span class="nv">compte</span><span class="w"> </span><span class="nv">yahoo</span><span class="w"> </span><span class="ss">(</span><span class="nv">on</span><span class="w"> </span><span class="nv">supprime</span><span class="w"> </span><span class="nv">tous</span><span class="w"> </span><span class="nv">les</span><span class="w"> </span><span class="nv">messages</span><span class="w"> </span><span class="nv">lus</span><span class="ss">)</span><span class="w"></span>
+<span class="nv">del_read_yahoo</span><span class="o">=</span><span class="nv">yahoo</span>.<span class="nv">INBOX</span>:<span class="nv">is_seen</span><span class="ss">()</span><span class="w"></span>
+<span class="nv">del_read_yahoo</span>:<span class="nv">delete_messages</span><span class="ss">()</span><span class="w"></span>
+</code></pre></div>
+
+<p>Maintenant c'est à vous de faire vos propres filtres. Une fois
+configuré, lancer imapfilter simplement depuis le terminal :</p>
+<div class="highlight"><pre><span></span><code>imapfilter
+</code></pre></div>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2014-03-08-réparer-xubuntu-après-un-apt-get-remove-de-trop.html">Réparer xubuntu après un apt-get remove… de trop</a></h1>
+    <h2><a href="https://www.choiz.fr/2014-03-08-réparer-xubuntu-après-un-apt-get-remove-de-trop.html">Réparer xubuntu après un apt-get remove… de trop</a></h2>
     <p>
       Posté le sam. 08 mars 2014 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/dpkg.html">dpkg</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2014-03-08-réparer-xubuntu-après-un-apt-get-remove-de-trop.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/dpkg.html">dpkg</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>En voulant modifier xscreensaver par i3lock j'ai supprimé des paquets
@@ -146,19 +184,24 @@ non utilisés (jeux etc…).</p>
 <p>J'ai malheureusement supprimé un peu (trop) de paquets tel que
 (xfdesktop4 et xfce4-panel). Au démarrage de x, une fois identifié, un
 écran gris s'affiche et rien d'autre. Heureusement grâce à mon access
-SSH je peux me …</p>
-      <a class="btn" href="https://www.choiz.fr/2014-03-08-réparer-xubuntu-après-un-apt-get-remove-de-trop.html">Lire la suite</a>
+SSH je peux me connecter à la machine à distance.</p>
+<p>Pour voir la liste des paquets déinstallés j'ai donc fait :</p>
+<div class="highlight"><pre><span></span><code>dpkg --get-selections &gt; liste-des-paquets
+</code></pre></div>
+
+<p>Il suffit ensuite d'ouvrir dans un éditeur texte (type vi) le fichier
+pour voir les paquets installés / déinstallés. Et réinstaller avec sudo
+apt-get install le ou les paquets manquants.</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2014-03-05-git-diff-multiligne.html">Git diff multiligne</a></h1>
+    <h2><a href="https://www.choiz.fr/2014-03-05-git-diff-multiligne.html">Git diff multiligne</a></h2>
     <p>
       Posté le mer. 05 mars 2014 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/diff.html">diff</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>      &#8226; <a href="https://www.choiz.fr/2014-03-05-git-diff-multiligne.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/diff.html">diff</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>    </p>
   </header>
   <div>
       <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
@@ -166,69 +209,113 @@ ligne…</p>
 <p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais
 pas entièrement…).</p>
 <p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu
-que ma ligne qui devait être sur …</p>
-      <a class="btn" href="https://www.choiz.fr/2014-03-05-git-diff-multiligne.html">Lire la suite</a>
+que ma ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
+<p>Mon fichier texte ressemble à ceci :</p>
+<div class="highlight"><pre><span></span><code>ligne avec un peu de texte ici nous avons 66 caractères affichés.
+</code></pre></div>
+
+<p>Or, quand je fais un diff on ne voit pas tous les caractères :</p>
+<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="nv">diff</span><span class="w"> </span><span class="nv">HEAD</span><span class="o">~</span><span class="mi">1</span><span class="w"> </span><span class="nv">HEAD</span><span class="w"></span>
+<span class="nv">diff</span><span class="w"> </span><span class="o">--</span><span class="nv">git</span><span class="w"> </span><span class="nv">a</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"></span>
+<span class="nv">new</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="nv">mode</span><span class="w"> </span><span class="mi">100644</span><span class="w"></span>
+<span class="nv">index</span><span class="w"> </span><span class="mi">0000000</span>..<span class="mi">235</span><span class="nv">a891</span><span class="w"></span>
+<span class="o">---</span><span class="w"> </span><span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">null</span><span class="w"></span>
+<span class="o">+++</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"></span>
+@@<span class="w"> </span><span class="o">-</span><span class="mi">0</span>,<span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="w"> </span>@@<span class="w"></span>
+<span class="o">+</span><span class="nv">ligne</span><span class="w"> </span><span class="nv">avec</span><span class="w"> </span><span class="nv">un</span><span class="w"> </span><span class="nv">peu</span><span class="w"> </span><span class="nv">de</span><span class="w"> </span><span class="nv">texte</span><span class="w"> </span><span class="nv">ici</span><span class="w"> </span><span class="nv">nous</span><span class="w"> </span><span class="nv">avons</span><span class="w"> </span><span class="mi">66</span><span class="w"> </span><span class="nv">caract</span>è\<span class="w"></span>
+<span class="nv">No</span><span class="w"> </span><span class="nv">newline</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">file</span><span class="w"></span>
+</code></pre></div>
+
+<p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=""</em> avant la
+commande <em>git diff</em> soit ajouter dans son fichier de config git :</p>
+<div class="highlight"><pre><span></span><code>git config --global core.pager &quot;less -r&quot;
+</code></pre></div>
+
+<p>Voilà ce que ça donne avec GIT_PAGER :</p>
+<div class="highlight"><pre><span></span><code><span class="nv">GIT_PAGER</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="nv">git</span><span class="w"> </span><span class="nv">diff</span><span class="w"> </span><span class="nv">HEAD</span><span class="o">~</span><span class="mi">1</span><span class="w"> </span><span class="nv">HEAD</span><span class="w"></span>
+<span class="nv">diff</span><span class="w"> </span><span class="o">--</span><span class="nv">git</span><span class="w"> </span><span class="nv">a</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"></span>
+<span class="nv">new</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="nv">mode</span><span class="w"> </span><span class="mi">100644</span><span class="w"></span>
+<span class="nv">index</span><span class="w"> </span><span class="mi">0000000</span>..<span class="mi">235</span><span class="nv">a891</span><span class="w"></span>
+<span class="o">---</span><span class="w"> </span><span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">null</span><span class="w"></span>
+<span class="o">+++</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"></span>
+@@<span class="w"> </span><span class="o">-</span><span class="mi">0</span>,<span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="w"> </span>@@<span class="w"></span>
+<span class="o">+</span><span class="nv">ligne</span><span class="w"> </span><span class="nv">avec</span><span class="w"> </span><span class="nv">un</span><span class="w"> </span><span class="nv">peu</span><span class="w"> </span><span class="nv">de</span><span class="w"> </span><span class="nv">texte</span><span class="w"> </span><span class="nv">ici</span><span class="w"> </span><span class="nv">nous</span><span class="w"> </span><span class="nv">avons</span><span class="w"> </span><span class="mi">66</span><span class="w"> </span><span class="nv">caract</span>è<span class="nv">res</span><span class="w"> </span><span class="nv">affich</span>é<span class="nv">s</span>.\<span class="w"></span>
+<span class="nv">No</span><span class="w"> </span><span class="nv">newline</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">file</span><span class="w"></span>
+</code></pre></div>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html">Création d'une clé usb xubuntu sur mac</a></h1>
+    <h2><a href="https://www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html">Création d'une clé usb xubuntu sur mac</a></h2>
     <p>
       Posté le mar. 04 mars 2014 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="https://www.choiz.fr/tag/osx.html">osx</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="https://www.choiz.fr/tag/osx.html">osx</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>Dans le terminal sur votre mac :</p>
-<div class="highlight"><pre><span></span>diskutil list
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>diskutil list
+</code></pre></div>
 
 <p>Qui permet de lister vos disque dur / clés usb etc…</p>
 <p>ici ma clé usb est disk2. :</p>
-<div class="highlight"><pre><span></span>/dev/disk2
+<div class="highlight"><pre><span></span><code>/dev/disk2
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:     FDisk_partition_scheme                        *8.1 GB     disk2
    1:                      Linux                         4.0 GB     disk2s1
    2:                 Linux_Swap                         4.1 GB     disk2s5
-</pre></div>
+</code></pre></div>
 
+<p>Démontez la clé. :</p>
+<div class="highlight"><pre><span></span><code>diskutil unmountDisk /dev/disk2
 
-<p>Démontez la …</p>
-      <a class="btn" href="https://www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html">Lire la suite</a>
+Unmount of all volumes on disk2 was successful
+</code></pre></div>
+
+<p>Maintenant on copie xubuntu depuis notre dossier téléchargements vers
+cette clé usb :</p>
+<div class="highlight"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">dd</span><span class="w"> </span><span class="k">if</span><span class="o">=~/</span><span class="n">Downloads</span><span class="o">/</span><span class="n">xubuntu</span><span class="o">-</span><span class="mf">13.10</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">i386</span><span class="o">.</span><span class="n">iso</span><span class="w"> </span><span class="n">of</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">rdisk2</span><span class="w"> </span><span class="n">bs</span><span class="o">=</span><span class="mi">1</span><span class="n">m</span><span class="w"></span>
+
+<span class="n">Password</span><span class="p">:</span><span class="w"></span>
+<span class="mi">834</span><span class="o">+</span><span class="mi">0</span><span class="w"> </span><span class="n">records</span><span class="w"> </span><span class="ow">in</span><span class="w"></span>
+<span class="mi">834</span><span class="o">+</span><span class="mi">0</span><span class="w"> </span><span class="n">records</span><span class="w"> </span><span class="n">out</span><span class="w"></span>
+<span class="mi">874512384</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="n">transferred</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="mf">137.915395</span><span class="w"> </span><span class="n">secs</span><span class="w"> </span><span class="p">(</span><span class="mi">6340934</span><span class="w"> </span><span class="n">bytes</span><span class="o">/</span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+
+<p>Puis on éjecte proprement la clé usb :</p>
+<div class="highlight"><pre><span></span><code>diskutil eject /dev/disk2
+
+Disk /dev/disk2 ejected
+</code></pre></div>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2014-02-06-git-cherry-pick.html">git cherry-pick</a></h1>
+    <h2><a href="https://www.choiz.fr/2014-02-06-git-cherry-pick.html">git cherry-pick</a></h2>
     <p>
       Posté le jeu. 06 février 2014 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>      &#8226; <a href="https://www.choiz.fr/2014-02-06-git-cherry-pick.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/git.html">git</a>    </p>
   </header>
   <div>
       <p>J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
 messages sur cherry-pick sans savoir ce que c'était.</p>
 <p>git cherry-pick permet d'appliquer un commit sur la branche sur la
 branche actuelle.</p>
-<div class="highlight"><pre><span></span>git cherry-pick c4a99776
-</pre></div>
-      <a class="btn" href="https://www.choiz.fr/2014-02-06-git-cherry-pick.html">Lire la suite</a>
+<div class="highlight"><pre><span></span><code>git cherry-pick c4a99776
+</code></pre></div>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2014-02-06-nouveau-thème.html">Nouveau thème</a></h1>
+    <h2><a href="https://www.choiz.fr/2014-02-06-nouveau-thème.html">Nouveau thème</a></h2>
     <p>
       Posté le jeu. 06 février 2014 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/blog.html">blog</a>      &#8226; <a href="https://www.choiz.fr/2014-02-06-nouveau-thème.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/blog.html">blog</a>    </p>
   </header>
   <div>
       <p>Je n'avais pas mis à jour mon thème depuis bien longtemps.</p>
@@ -238,53 +325,47 @@ thème" src="https://31.media.tumblr.com/d0896de0a038122cee44adbfaeb7e90c/tumblr
 <p>Voici l'ancien thème en souvenir.</p>
 <p><img alt="ancien
 thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr_inline_n0lh2l5LOi1qzr4hx.png"></p>
-      <a class="btn" href="https://www.choiz.fr/2014-02-06-nouveau-thème.html">Lire la suite</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html">Suppression d'un caractère unicode dans Vim</a></h1>
+    <h2><a href="https://www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html">Suppression d'un caractère unicode dans Vim</a></h2>
     <p>
       Posté le dim. 19 janvier 2014 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/encoding.html">encoding</a>      &#8226; <a href="https://www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/encoding.html">encoding</a>    </p>
   </header>
   <div>
       <p>J'étais à la recherche de se caractère unicode dans vim :</p>
-<div class="highlight"><pre><span></span>&lt;U+2028&gt;
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>&lt;U+2028&gt;
+</code></pre></div>
 
 <p>Pour pouvoir le supprimer j'ai utilisé la commande suivante :</p>
-<div class="highlight"><pre><span></span>:%s/\%U2028//g
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>:%s/\%U2028//g
+</code></pre></div>
 
 <p>Décortiquons la commande :</p>
 <p><code>:%s/</code> Recherche et remplace dans tout le fichier</p>
 <p><code>\%U2028</code> Le caractère que l'on recherche unicode "2028"</p>
-<p><code>//</code> par rien (1er slash sépare la recherche …</p>
-      <a class="btn" href="https://www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html">Lire la suite</a>
+<p><code>//</code> par rien (1er slash sépare la recherche par ce qu'on remplace, le second pour dire la fin de ce qu'on remplace).</p>
+<p><code>g</code> dans tout le fichier (global).</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2013-11-13-crontab-e-files.html">crontab -e file(s)</a></h1>
+    <h2><a href="https://www.choiz.fr/2013-11-13-crontab-e-files.html">crontab -e file(s)</a></h2>
     <p>
       Posté le mer. 13 novembre 2013 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/crontab.html">crontab</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2013-11-13-crontab-e-files.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/crontab.html">crontab</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>Ou se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?</p>
 <p>C'est une bonne question n'est-ce pas ?</p>
 <p>La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
 debian, a voir sur d'autres distribs)</p>
-      <a class="btn" href="https://www.choiz.fr/2013-11-13-crontab-e-files.html">Lire la suite</a>
   </div>
 </article>
 
@@ -299,9 +380,24 @@ debian, a voir sur d'autres distribs)</p>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

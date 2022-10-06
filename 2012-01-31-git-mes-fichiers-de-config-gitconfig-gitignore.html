@@ -44,7 +44,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -58,55 +58,50 @@
 <article>
   <header>
     <h1 id="2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore">Git mes fichiers de config gitconfig / gitignore</h1>
-    <p>
-      Posté le mar. 31 janvier 2012 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>      &#8226; <a href="https://www.choiz.fr/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le mar. 31 janvier 2012</p>
   </header>
   <div>
     <p>Fichier .gitconfig :</p>
-<div class="highlight"><pre><span></span><span class="k">[user]</span>
-    <span class="na">name</span> <span class="o">=</span> <span class="s">François LASSERRE</span>
-<span class="s">    email = mon@email.fr</span>
-<span class="k">[diff]</span>
-    <span class="na">tool</span> <span class="o">=</span> <span class="s">vimdiff</span>
-<span class="k">[color]</span>
-    <span class="na">branch</span> <span class="o">=</span> <span class="s">auto</span>
-<span class="s">    diff = auto</span>
-<span class="s">    status = auto</span>
-<span class="s">    interactive = auto</span>
-<span class="s">    ui = true</span>
-<span class="k">[alias]</span>
-    <span class="na">br</span> <span class="o">=</span> <span class="s">branch</span>
-<span class="s">    ci = commit -a</span>
-<span class="s">    co = checkout</span>
-<span class="s">    sh = show --color-words</span>
-<span class="s">    st = status</span>
-<span class="s">    last = cat-file commit HEAD</span>
-<span class="s">    tree = log --graph --oneline --decorate</span>
-<span class="s">    graph = log --graph --decorate</span>
-<span class="s">    pom = push origin master</span>
-<span class="k">[core]</span>
-    <span class="na">excludesfile</span> <span class="o">=</span> <span class="s">~/.gitignore</span>
-<span class="s">    editor = vim</span>
-<span class="k">[merge]</span>
-    <span class="na">tool</span> <span class="o">=</span> <span class="s">vimdiff</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="k">[user]</span><span class="w"></span>
+<span class="w">    </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">François LASSERRE</span><span class="w"></span>
+<span class="w">    </span><span class="na">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mon@email.fr</span><span class="w"></span>
+<span class="k">[diff]</span><span class="w"></span>
+<span class="w">    </span><span class="na">tool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">vimdiff</span><span class="w"></span>
+<span class="k">[color]</span><span class="w"></span>
+<span class="w">    </span><span class="na">branch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span><span class="w"></span>
+<span class="w">    </span><span class="na">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span><span class="w"></span>
+<span class="w">    </span><span class="na">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span><span class="w"></span>
+<span class="w">    </span><span class="na">interactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span><span class="w"></span>
+<span class="w">    </span><span class="na">ui</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span><span class="w"></span>
+<span class="k">[alias]</span><span class="w"></span>
+<span class="w">    </span><span class="na">br</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">branch</span><span class="w"></span>
+<span class="w">    </span><span class="na">ci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">commit -a</span><span class="w"></span>
+<span class="w">    </span><span class="na">co</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">checkout</span><span class="w"></span>
+<span class="w">    </span><span class="na">sh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">show --color-words</span><span class="w"></span>
+<span class="w">    </span><span class="na">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">status</span><span class="w"></span>
+<span class="w">    </span><span class="na">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">cat-file commit HEAD</span><span class="w"></span>
+<span class="w">    </span><span class="na">tree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">log --graph --oneline --decorate</span><span class="w"></span>
+<span class="w">    </span><span class="na">graph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">log --graph --decorate</span><span class="w"></span>
+<span class="w">    </span><span class="na">pom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">push origin master</span><span class="w"></span>
+<span class="k">[core]</span><span class="w"></span>
+<span class="w">    </span><span class="na">excludesfile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">~/.gitignore</span><span class="w"></span>
+<span class="w">    </span><span class="na">editor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">vim</span><span class="w"></span>
+<span class="k">[merge]</span><span class="w"></span>
+<span class="w">    </span><span class="na">tool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">vimdiff</span><span class="w"></span>
+</code></pre></div>
 
 <p>Fichier .gitignore :</p>
-<div class="highlight"><pre><span></span># Ignore files from git
+<div class="highlight"><pre><span></span><code><span class="c1"># Ignore files from git</span>
 
-# ._ files (Mac Os X)
-._*
+<span class="c1"># ._ files (Mac Os X)</span>
+<span class="na">._</span><span class="p">*</span><span class="w"></span>
 
-# .DS_STORE (Mac Os X)
-.DS_STORE
+<span class="c1"># .DS_STORE (Mac Os X)</span>
+<span class="na">.DS_STORE</span><span class="w"></span>
 
-# .swp (Vim)
-*.swp
-</pre></div>
+<span class="c1"># .swp (Vim)</span>
+<span class="err">*</span><span class="na">.swp</span><span class="w"></span>
+</code></pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -114,23 +109,30 @@ Tags :
       <a href="https://www.choiz.fr/tag/config.html">config</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Git mes fichiers de config gitconfig / gitignore",
   "headline": "Git mes fichiers de config gitconfig / gitignore",
@@ -141,6 +143,7 @@ Tags :
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html",
   "description": "Fichier .gitconfig : [user] name = François LASSERRE email = mon@email.fr [diff] tool = vimdiff [color] branch = auto diff = auto status = auto interactive = auto ui = true [alias] br = branch ci = commit -a co = checkout sh = show --color-words st = status last = cat-file commit HEAD tree = log --graph --oneline --decorate graph = log --graph --decorate …"
 }

@@ -45,7 +45,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -59,11 +59,7 @@
 <article>
   <header>
     <h1 id="2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch">Installation de Proxmox-VE 5 sur Debian Stretch</h1>
-    <p>
-      Posté le sam. 26 août 2017 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/proxmox.html">proxmox</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le sam. 26 août 2017</p>
   </header>
   <div>
     <p>Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
@@ -71,34 +67,30 @@ Par contre il ne faut pas modifier le sources.list ni installer
 firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
 tout).</p>
 <p>Sur debian éditer le fichier /etc/hosts comme ceci :</p>
-<div class="highlight"><pre><span></span>127.0.0.1       localhost.localdomain localhost
-192.168.15.77   prox4m1.proxmox.com prox4m1 pvelocalhost
+<div class="highlight"><pre><span></span><code><span class="mf">127.0.0.1</span><span class="w">       </span><span class="n">localhost</span><span class="mf">.</span><span class="n">localdomain</span><span class="w"> </span><span class="n">localhost</span><span class="w"></span>
+<span class="mf">192.168.15.77</span><span class="w">   </span><span class="n">prox4m1</span><span class="mf">.</span><span class="n">proxmox</span><span class="mf">.</span><span class="n">com</span><span class="w"> </span><span class="n">prox4m1</span><span class="w"> </span><span class="n">pvelocalhost</span><span class="w"></span>
 
-# The following lines are desirable for IPv6 capable hosts
-::1     localhost ip6-localhost ip6-loopback
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters
-</pre></div>
-
+<span class="err">#</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">lines</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">desirable</span><span class="w"> </span><span class="kr">for</span><span class="w"> </span><span class="n">IPv6</span><span class="w"> </span><span class="n">capable</span><span class="w"> </span><span class="n">hosts</span><span class="w"></span>
+<span class="p">::</span><span class="mf">1</span><span class="w">     </span><span class="n">localhost</span><span class="w"> </span><span class="n">ip6</span><span class="o">-</span><span class="n">localhost</span><span class="w"> </span><span class="n">ip6</span><span class="o">-</span><span class="n">loopback</span><span class="w"></span>
+<span class="n">ff02</span><span class="p">::</span><span class="mf">1</span><span class="w"> </span><span class="n">ip6</span><span class="o">-</span><span class="n">allnodes</span><span class="w"></span>
+<span class="n">ff02</span><span class="p">::</span><span class="mf">2</span><span class="w"> </span><span class="n">ip6</span><span class="o">-</span><span class="n">allrouters</span><span class="w"></span>
+</code></pre></div>
 
 <p>Puis tester la configuration :</p>
-<div class="highlight"><pre><span></span>hostname --ip-address
-192.168.15.77 # should return here your IP adress
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nv">hostname</span><span class="w"> </span><span class="o">--</span><span class="nv">ip</span><span class="o">-</span><span class="nv">address</span><span class="w"></span>
+<span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">15</span>.<span class="mi">77</span><span class="w"> </span>#<span class="w"> </span><span class="nv">should</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nv">here</span><span class="w"> </span><span class="nv">your</span><span class="w"> </span><span class="nv">IP</span><span class="w"> </span><span class="nv">adress</span><span class="w"></span>
+</code></pre></div>
 
 <p>Puis on ajoute au sources.list le dépot de proxmox, on récupere la clé et on
 update :</p>
-<div class="highlight"><pre><span></span>echo &quot;deb http://download.proxmox.com/debian/pve stretch pve-no-subscription&quot; &gt; /etc/apt/sources.list.d/pve-install-repo.list
-wget http://download.proxmox.com/debian/proxmox-ve-release-5.x.gpg -O /etc/apt/trusted.gpg.d/proxmox-ve-release-5.x.gpg
-apt update &amp;&amp; apt dist-upgrade
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;deb http://download.proxmox.com/debian/pve stretch pve-no-subscription&quot;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">pve</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">repo</span><span class="o">.</span><span class="n">list</span><span class="w"></span>
+<span class="n">wget</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">proxmox</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">debian</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">ve</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">5.</span><span class="n">x</span><span class="o">.</span><span class="n">gpg</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">trusted</span><span class="o">.</span><span class="n">gpg</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">ve</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">5.</span><span class="n">x</span><span class="o">.</span><span class="n">gpg</span><span class="w"></span>
+<span class="n">apt</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">apt</span><span class="w"> </span><span class="n">dist</span><span class="o">-</span><span class="n">upgrade</span><span class="w"></span>
+</code></pre></div>
 
 <p>Puis on install les packages Proxmox VE :</p>
-<div class="highlight"><pre><span></span>apt install proxmox-ve postfix open-iscsi
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>apt install proxmox-ve postfix open-iscsi
+</code></pre></div>
 
 <p>On configure postfix en distribution locale uniquement et à la fin de
 l'installation on reboot.</p>
@@ -114,10 +106,10 @@ rechercher la ligne avec :</p>
 <p>Se déconnecter de l'interface proxmox, à la reconnection vous n'aurez plus le
 message de souscription.</p>
 <p>Puis faire les commandes optionnelles :</p>
-<div class="highlight"><pre><span></span>apt remove os-prober
+<div class="highlight"><pre><span></span><code>apt remove os-prober
 apt remove linux-image-amd64 linux-image-4.9.0-3-amd64
 update-grub
-</pre></div>
+</code></pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -126,23 +118,30 @@ update-grub
       <a href="https://www.choiz.fr/tag/linux.html">linux</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Installation de Proxmox-VE 5 sur Debian Stretch",
   "headline": "Installation de Proxmox-VE 5 sur Debian Stretch",
@@ -153,6 +152,7 @@ update-grub
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html",
   "description": "Suite à l'installation de mon NAS, j'ai installer un proxmox dessus. Par contre il ne faut pas modifier le sources.list ni installer firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du tout). Sur debian éditer le fichier /etc/hosts comme ceci : 127.0.0.1 localhost.localdomain localhost 192 …"
 }

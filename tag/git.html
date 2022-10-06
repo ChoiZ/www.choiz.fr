@@ -37,7 +37,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -50,12 +50,11 @@
 
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html">Suppression des branches distantes inexistantes</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html">Suppression des branches distantes inexistantes</a></h2>
     <p>
       Posté le mar. 25 août 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>      &#8226; <a href="https://www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/git.html">git</a>    </p>
   </header>
   <div>
       <p>Lors d'un developpement j'ai créé une branche "add_namespace" qui m'a
@@ -69,12 +68,11 @@ faisant un "pull request" (github) ou "merge request" (gitlab).</p>
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html">Récupérer le master depuis le remote origin avec git</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html">Récupérer le master depuis le remote origin avec git</a></h2>
     <p>
       Posté le ven. 07 août 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>      &#8226; <a href="https://www.choiz.fr/2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/git.html">git</a>    </p>
   </header>
   <div>
       <p>Dans certains projets j’utilise git avec plusieurs remote, par exemple :</p>
@@ -83,9 +81,8 @@ Tags :
 <li>un remote “github” qui lui est sur github.com.</li>
 </ul>
 <p>Quand je vais sur le master il m’arrive d’avoir ce message :</p>
-<div class="highlight"><pre><span></span>&quot;your branch is up-to-date with “github/master”.&quot;
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>&quot;your branch is up-to-date with “github/master”.&quot;
+</code></pre></div>
 
 <p>Je …</p>
       <a class="btn" href="https://www.choiz.fr/2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html">Lire la suite</a>
@@ -94,52 +91,46 @@ Tags :
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune-autre-branche.html">Comment récupérer le contenu d’un fichier d’une autre branche avec GIT ?</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune-autre-branche.html">Comment récupérer le contenu d’un fichier d’une autre branche avec GIT ?</a></h2>
     <p>
       Posté le ven. 20 mars 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>      &#8226; <a href="https://www.choiz.fr/2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune-autre-branche.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/git.html">git</a>    </p>
   </header>
   <div>
       <p>Il suffit d’utiliser git show.</p>
 <p>La commande :</p>
-<div class="highlight"><pre><span></span>git show branch_name:filename
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="nv">branch_name</span>:<span class="nv">filename</span><span class="w"></span>
+</code></pre></div>
 
 <p>Exemple :</p>
-<div class="highlight"><pre><span></span>git show reset_password:/templates/reset_password.tmpl
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="nv">reset_password</span>:<span class="o">/</span><span class="nv">templates</span><span class="o">/</span><span class="nv">reset_password</span>.<span class="nv">tmpl</span><span class="w"></span>
+</code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune-autre-branche.html">Lire la suite</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html">Initialiser des sous-modules en cascade dans git</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html">Initialiser des sous-modules en cascade dans git</a></h2>
     <p>
       Posté le dim. 25 janvier 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>      &#8226; <a href="https://www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/git.html">git</a>    </p>
   </header>
   <div>
       <p>Pour initialiser les sous-modules dans git j'utilise la commande
 suivante :</p>
-<div class="highlight"><pre><span></span>git submodule init
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>git submodule init
+</code></pre></div>
 
 <p>Ensuite je dois faire un update des sous-modules pour charger le contenu :</p>
-<div class="highlight"><pre><span></span>git submodule update
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>git submodule update
+</code></pre></div>
 
 <p>Pour faire les deux en même temps (init + update) vous pouvez faire :</p>
-<div class="highlight"><pre><span></span>git submodule update --init
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>git submodule update --init
+</code></pre></div>
 
 <p>Imaginons maintenant que vous avez des …</p>
       <a class="btn" href="https://www.choiz.fr/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html">Lire la suite</a>
@@ -148,44 +139,40 @@ suivante :</p>
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2014-12-08-recherche-dans-le-code-source-avec-git.html">Recherche dans le code source avec git</a></h1>
+    <h2><a href="https://www.choiz.fr/2014-12-08-recherche-dans-le-code-source-avec-git.html">Recherche dans le code source avec git</a></h2>
     <p>
       Posté le lun. 08 décembre 2014 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/code.html">code</a>      &#8226; <a href="https://www.choiz.fr/2014-12-08-recherche-dans-le-code-source-avec-git.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/code.html">code</a>    </p>
   </header>
   <div>
       <p>Pour rechercher directement dans le code source une modification
 précise, j'utilise la commande suivante :</p>
-<div class="highlight"><pre><span></span>git log -p -S &#39;display&#39;
-</pre></div>
+<div class="highlight"><pre><span></span><code>git log -p -S &#39;display&#39;
+</code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2014-12-08-recherche-dans-le-code-source-avec-git.html">Lire la suite</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html">Faire un patch de "x" commit(s) avec git</a></h1>
+    <h2><a href="https://www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html">Faire un patch de "x" commit(s) avec git</a></h2>
     <p>
       Posté le mar. 06 mai 2014 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/patch.html">patch</a>      &#8226; <a href="https://www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/patch.html">patch</a>    </p>
   </header>
   <div>
       <p>Voici mon historique des commits :</p>
-<div class="highlight"><pre><span></span>c0004 -- dernier commit
+<div class="highlight"><pre><span></span><code>c0004 -- dernier commit
 c0003 -- avant dernier commit
 c0002 -- second commit
 c0001 -- premier commit
-</pre></div>
-
+</code></pre></div>
 
 <p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire :</p>
-<div class="highlight"><pre><span></span>git format-patch -2 c0002 --stdout &gt; mon.patch
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>git format-patch -2 c0002 --stdout &gt; mon.patch
+</code></pre></div>
 
 <p>le "-2" sert à récupérer 2 commits à partir du commit …</p>
       <a class="btn" href="https://www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html">Lire la suite</a>
@@ -194,12 +181,11 @@ c0001 -- premier commit
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2014-03-05-git-diff-multiligne.html">Git diff multiligne</a></h1>
+    <h2><a href="https://www.choiz.fr/2014-03-05-git-diff-multiligne.html">Git diff multiligne</a></h2>
     <p>
       Posté le mer. 05 mars 2014 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/diff.html">diff</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>      &#8226; <a href="https://www.choiz.fr/2014-03-05-git-diff-multiligne.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/diff.html">diff</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>    </p>
   </header>
   <div>
       <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
@@ -214,66 +200,61 @@ que ma ligne qui devait être sur …</p>
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2014-02-06-git-cherry-pick.html">git cherry-pick</a></h1>
+    <h2><a href="https://www.choiz.fr/2014-02-06-git-cherry-pick.html">git cherry-pick</a></h2>
     <p>
       Posté le jeu. 06 février 2014 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>      &#8226; <a href="https://www.choiz.fr/2014-02-06-git-cherry-pick.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/git.html">git</a>    </p>
   </header>
   <div>
       <p>J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
 messages sur cherry-pick sans savoir ce que c'était.</p>
 <p>git cherry-pick permet d'appliquer un commit sur la branche sur la
 branche actuelle.</p>
-<div class="highlight"><pre><span></span>git cherry-pick c4a99776
-</pre></div>
+<div class="highlight"><pre><span></span><code>git cherry-pick c4a99776
+</code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2014-02-06-git-cherry-pick.html">Lire la suite</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2013-10-01-git-se-déplacer-dans-une-branche-distante.html">Git se déplacer dans une branche distante</a></h1>
+    <h2><a href="https://www.choiz.fr/2013-10-01-git-se-déplacer-dans-une-branche-distante.html">Git se déplacer dans une branche distante</a></h2>
     <p>
       Posté le mar. 01 octobre 2013 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>      &#8226; <a href="https://www.choiz.fr/2013-10-01-git-se-déplacer-dans-une-branche-distante.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/git.html">git</a>    </p>
   </header>
   <div>
       <p>J'utilise des branches tel que prod, preprod pour mes projets et en
 local il m'arrive de vouloir aller sur ses branches :</p>
-<div class="highlight"><pre><span></span>git checkout preprod
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>git checkout preprod
+</code></pre></div>
 
 <p>Et j'ai l'erreur suivante :</p>
-<div class="highlight"><pre><span></span><span class="n">error</span><span class="o">:</span> <span class="n">pathspec</span> <span class="s1">&#39;preprod&#39;</span> <span class="n">did</span> <span class="n">not</span> <span class="n">match</span> <span class="n">any</span> <span class="n">file</span><span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="n">known</span> <span class="n">to</span> <span class="n">git</span><span class="o">.</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">error</span><span class="o">:</span><span class="w"> </span><span class="n">pathspec</span><span class="w"> </span><span class="s1">&#39;preprod&#39;</span><span class="w"> </span><span class="n">did</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">file</span><span class="o">(</span><span class="n">s</span><span class="o">)</span><span class="w"> </span><span class="n">known</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">git</span><span class="o">.</span><span class="w"></span>
+</code></pre></div>
 
 <p>Je vais mettre a jour mon origin :</p>
-<div class="highlight"><pre><span></span>git fetch origin …</pre></div>
+<div class="highlight"><pre><span></span><code>git fetch origin …</code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2013-10-01-git-se-déplacer-dans-une-branche-distante.html">Lire la suite</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html">Passer de svn à git</a></h1>
+    <h2><a href="https://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html">Passer de svn à git</a></h2>
     <p>
       Posté le mar. 16 juillet 2013 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/svn.html">svn</a>,      <a href="https://www.choiz.fr/tag/git.html">git</a>      &#8226; <a href="https://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/svn.html">svn</a>,      <a href="https://www.choiz.fr/tag/git.html">git</a>    </p>
   </header>
   <div>
       <p>Sur le projet Addictradio nous utilisons encore un de nos dépot avec
 svn. Il est temps de faire la migration de svn à git !</p>
 <p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
 voulais voici donc ma procédure :</p>
-<div class="highlight"><pre><span></span>svn log --quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep &quot;^r …</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">svn</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="o">--</span><span class="n">quiet</span><span class="w"> </span><span class="s1">&#39;svn://svn.mondomaine/monprojet&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">grep</span><span class="w"> </span><span class="ss">&quot;^r …</span></code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html">Lire la suite</a>
   </div>
 </article>
@@ -286,9 +267,24 @@ voulais voici donc ma procédure :</p>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

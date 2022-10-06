@@ -37,7 +37,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -50,25 +50,22 @@
 
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Mise à jour d'un kernel gentoo</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Mise à jour d'un kernel gentoo</a></h2>
     <p>
       Posté le sam. 21 novembre 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
 suivre pour le mettre à jour vers la version : 4.3.0.</p>
 <p>Je liste les différents noyaux gentoo disponibles :</p>
-<div class="highlight"><pre><span></span>eix sys-kernel/gentoo-sources
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>eix sys-kernel/gentoo-sources
+</code></pre></div>
 
 <p>Je télécharge le noyau 4.3.0 :</p>
-<div class="highlight"><pre><span></span>emerge -a =sys-kernel/gentoo-sources-4.3.0
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>emerge -a =sys-kernel/gentoo-sources-4.3.0
+</code></pre></div>
 
 <p>Une …</p>
       <a class="btn" href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Lire la suite</a>
@@ -77,30 +74,27 @@ suivre pour le mettre à jour vers la version : 4.3.0.</p>
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">Compilation Kernel Gentoo</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">Compilation Kernel Gentoo</a></h2>
     <p>
       Posté le dim. 06 septembre 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>Pour compiler le kernel sous gentoo :</p>
-<div class="highlight"><pre><span></span>cd /usr/src/linux
+<div class="highlight"><pre><span></span><code>cd /usr/src/linux
 
 make menuconfig
 
 make &amp;&amp; make modules_install
 
 make install
-</pre></div>
-
+</code></pre></div>
 
 <p>Le kernel est maintenant compilé.</p>
 <p>Maintenant il faut mettre à jour grub. :</p>
-<div class="highlight"><pre><span></span>grub2-mkconfig -o /boot/grub/grub.cfg
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>grub2-mkconfig -o /boot/grub/grub.cfg
+</code></pre></div>
 
 <p>Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi
 que le nombre de …</p>
@@ -110,12 +104,11 @@ que le nombre de …</p>
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html">Ma config : Clevo w650sz i7 4910MQ</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html">Ma config : Clevo w650sz i7 4910MQ</a></h2>
     <p>
       Posté le sam. 18 juillet 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/computer.html">computer</a>,      <a href="https://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2015-07-18-ma-config-clevo-w650sz-i7-4910mq.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/computer.html">computer</a>,      <a href="https://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>Ayant vendu mon Macbook Air 13" il y a quelques mois, j'ai pris le temps
@@ -133,9 +126,24 @@ i7 4910MQ (qui a …</p>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

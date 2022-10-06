@@ -44,7 +44,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -58,43 +58,35 @@
 <article>
   <header>
     <h1 id="2011-12-04-php-gettext-debian">PHP + Gettext + Debian</h1>
-    <p>
-      Posté le dim. 04 décembre 2011 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/php.html">php</a>,      <a href="https://www.choiz.fr/tag/gettext.html">gettext</a>      &#8226; <a href="https://www.choiz.fr/2011-12-04-php-gettext-debian.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le dim. 04 décembre 2011</p>
   </header>
   <div>
     <p>J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
 en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext
 sur votre site en php il faut télécharger le package php-gettext :</p>
-<div class="highlight"><pre><span></span>apt-get install php-gettext
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>apt-get install php-gettext
+</code></pre></div>
 
 <p>Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
 commentaires devant les langues qui vont sont à traduire par exemple :
 Allemand, Anglais, Espagnol, Français &amp; Suédois :</p>
-<div class="highlight"><pre><span></span>de_DE.UTF-8 UTF-8
+<div class="highlight"><pre><span></span><code>de_DE.UTF-8 UTF-8
 en_GB.UTF-8 UTF-8
 es_ES.UTF-8 UTF-8
 fr_FR.UTF-8 UTF-8
 sv_SE.UTF-8 UTF-8
-</pre></div>
-
+</code></pre></div>
 
 <p>Puis regénérer les locales :</p>
-<div class="highlight"><pre><span></span>locale-gen
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>locale-gen
+</code></pre></div>
 
 <p>Ensuite il faut définir votre chemin pour les traductions par exemple :</p>
-<div class="highlight"><pre><span></span>lang/fr_FR/LC_MESSAGES/domaine.mo
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>lang/fr_FR/LC_MESSAGES/domaine.mo
+</code></pre></div>
 
 <p>Puis dans votre fichier php de configuration :</p>
-<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// configuration de la langue</span>
 <span class="nv">$lang</span> <span class="o">=</span> <span class="s1">&#39;fr_FR&#39;</span><span class="p">;</span> <span class="c1">// Langue a afficher</span>
 <span class="nv">$lang_encode</span> <span class="o">=</span> <span class="s1">&#39;utf8&#39;</span><span class="p">;</span> <span class="c1">// Encodage du fichier</span>
@@ -111,48 +103,42 @@ sv_SE.UTF-8 UTF-8
 <span class="p">}</span>
 
 <span class="nb">textdomain</span><span class="p">(</span><span class="nv">$lang_file</span><span class="p">);</span>
-<span class="cp">?&gt;</span>
-</pre></div>
-
+<span class="cp">?&gt;</span><span class="w"></span>
+</code></pre></div>
 
 <p>Puis faites le test en affichant dans un fichier php le texte "hello" :</p>
-<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// on inclus la config…</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">&#39;config.php&#39;</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nx">_</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>
-<span class="cp">?&gt;</span>
-</pre></div>
-
+<span class="cp">?&gt;</span><span class="w"></span>
+</code></pre></div>
 
 <p>Pour générer un fichier .mo a partir d'un fichier .po :</p>
-<div class="highlight"><pre><span></span>msgfmt domaine.po -o domaine.mo
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>msgfmt domaine.po -o domaine.mo
+</code></pre></div>
 
 <p>Pour générer un fichier .po a partir de fichier php avec du gettext,
 faire un fichier texte avec tous vos fichiers php ou on doit récupérer
 le gettext.</p>
 <p>Exemple listing_gettext.txt tel que :</p>
-<div class="highlight"><pre><span></span>index.php
+<div class="highlight"><pre><span></span><code>index.php
 contact.php
 etc…
-</pre></div>
-
+</code></pre></div>
 
 <p>Ensuite il faut faire la commande suivante pour générer le fichier
 domaine.po dans le dossier lang/ depuis notre fichier texte avec les php :</p>
-<div class="highlight"><pre><span></span>find . -iname &quot;*.php&quot; | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>find . -iname &quot;*.php&quot; | xargs xgettext --from-code=UTF-8 --default-domain=domaine -p lang/
+</code></pre></div>
 
 <p>Pour finir voilà le path des fichiers .po et .mo dans mon application
 web :</p>
-<div class="highlight"><pre><span></span>lang/fr_FR/LC_MESSAGES/domaine.po
+<div class="highlight"><pre><span></span><code>lang/fr_FR/LC_MESSAGES/domaine.po
 lang/fr_FR/LC_MESSAGES/domaine.mo
 lang/en_GB/LC_MESSAGES/domaine.po
 lang/en_GB/LC_MESSAGES/domaine.mo
-</pre></div>
-
+</code></pre></div>
 
 <p>N'oubliez pas de redémarrer votre serveur web pour que les changements
 soient pris en compte.</p>
@@ -165,23 +151,30 @@ soient pris en compte.</p>
       <a href="https://www.choiz.fr/tag/gettext.html">gettext</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "PHP + Gettext + Debian",
   "headline": "PHP + Gettext + Debian",
@@ -192,6 +185,7 @@ soient pris en compte.</p>
     "name": "choiz, doogaille",
     "url": "https://www.choiz.fr/author/choiz-doogaille.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2011-12-04-php-gettext-debian.html",
   "description": "J'utilise maintenant php-gettext pour mes traductions. C'est plus facile en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext sur votre site en php il faut télécharger le package php-gettext : apt-get install php-gettext Ensuite il faut modifier le fichier /etc/locale.gen et enlever les commentaires devant les …"
 }

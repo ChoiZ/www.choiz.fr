@@ -44,7 +44,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -58,74 +58,64 @@
 <article>
   <header>
     <h1 id="2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement">imapfilter ou comment filtrer ses mails facilement</h1>
-    <p>
-      Posté le mar. 11 mars 2014 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/mail.html">mail</a>,      <a href="https://www.choiz.fr/tag/imap.html">imap</a>      &#8226; <a href="https://www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le mar. 11 mars 2014</p>
   </header>
   <div>
     <p>Installer imapfilter via apt par exemple :</p>
-<div class="highlight"><pre><span></span>apt-get install imapfilter
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>apt-get install imapfilter
+</code></pre></div>
 
 <p>Se rendre dans le dossier de configuration :</p>
-<div class="highlight"><pre><span></span>cd ~/.imapfilter
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>cd ~/.imapfilter
+</code></pre></div>
 
 <p>Créer un fichier config.lua :</p>
-<div class="highlight"><pre><span></span>touch config.lua
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>touch config.lua
+</code></pre></div>
 
 <p>Maintenant je décide de faire un fichier de configuration par boite
 email.</p>
 <p>Ici gmail :</p>
-<div class="highlight"><pre><span></span>cat &gt; gmail.lua &lt;&lt;EOF
-gmail = IMAP {
-    server = &#39;imap.gmail.com&#39;,
-    username = &#39;mail@gmail.com&#39;,
-    password = &#39;mon_mot_de_passe&#39;,
-    ssl = &#39;ssl3&#39;,
-}
-EOF
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">cat</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">gmail</span><span class="p">.</span><span class="n">lua</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">EOF</span><span class="w"></span>
+<span class="n">gmail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IMAP</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;imap.gmail.com&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mail@gmail.com&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mon_mot_de_passe&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">ssl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ssl3&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+<span class="n">EOF</span><span class="w"></span>
+</code></pre></div>
 
 <p>Et un pour Yahoo :</p>
-<div class="highlight"><pre><span></span>cat &gt; yahoo.lua &lt;&lt;EOF
-yahoo = IMAP {
-    server = &#39;imap.yahoo.com&#39;,
-    username = &#39;mail@yahoo.com&#39;,
-    password = &#39;mon_mot_de_passe&#39;,
-    ssl = &#39;ssl3&#39;,
-}
-EOF
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">cat</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">yahoo</span><span class="p">.</span><span class="n">lua</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">EOF</span><span class="w"></span>
+<span class="n">yahoo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IMAP</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;imap.yahoo.com&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mail@yahoo.com&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mon_mot_de_passe&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">ssl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ssl3&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+<span class="n">EOF</span><span class="w"></span>
+</code></pre></div>
 
 <p>Ajouter nos boites dans le fichier de config avec des filtres :</p>
-<div class="highlight"><pre><span></span>if_dir = os.getenv(&#39;HOME&#39;) .. &#39;/.imapfilter/&#39;
--- on inclus nos comptes imap…
-dofile(if_dir .. &quot;gmail.lua&quot;)
-dofile(if_dir .. &quot;yahoo.lua&quot;)
--- nos options
-options.timeout = 120
--- filtres pour le compte gmail (on copie les messages non lus dans la boite &quot;nouveaux&quot;)
-nonlugmail=gmail.INBOX:is_unseen()
-nonlugmail:copy_message(gmail[&#39;nouveaux&#39;])
--- filtres pour le compte yahoo (on supprime tous les messages lus)
-del_read_yahoo=yahoo.INBOX:is_seen()
-del_read_yahoo:delete_messages()
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nv">if_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">os</span>.<span class="k">getenv</span><span class="ss">(</span><span class="s1">&#39;HOME&#39;</span><span class="ss">)</span><span class="w"> </span>..<span class="w"> </span><span class="s1">&#39;/.imapfilter/&#39;</span><span class="w"></span>
+<span class="o">--</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">inclus</span><span class="w"> </span><span class="nv">nos</span><span class="w"> </span><span class="nv">comptes</span><span class="w"> </span><span class="nv">imap</span>…<span class="w"></span>
+<span class="nv">dofile</span><span class="ss">(</span><span class="nv">if_dir</span><span class="w"> </span>..<span class="w"> </span><span class="s2">&quot;gmail.lua&quot;</span><span class="ss">)</span><span class="w"></span>
+<span class="nv">dofile</span><span class="ss">(</span><span class="nv">if_dir</span><span class="w"> </span>..<span class="w"> </span><span class="s2">&quot;yahoo.lua&quot;</span><span class="ss">)</span><span class="w"></span>
+<span class="o">--</span><span class="w"> </span><span class="nv">nos</span><span class="w"> </span><span class="nv">options</span><span class="w"></span>
+<span class="nv">options</span>.<span class="nb">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">120</span><span class="w"></span>
+<span class="o">--</span><span class="w"> </span><span class="nv">filtres</span><span class="w"> </span><span class="nv">pour</span><span class="w"> </span><span class="nv">le</span><span class="w"> </span><span class="nv">compte</span><span class="w"> </span><span class="nv">gmail</span><span class="w"> </span><span class="ss">(</span><span class="nv">on</span><span class="w"> </span><span class="nv">copie</span><span class="w"> </span><span class="nv">les</span><span class="w"> </span><span class="nv">messages</span><span class="w"> </span><span class="nv">non</span><span class="w"> </span><span class="nv">lus</span><span class="w"> </span><span class="nv">dans</span><span class="w"> </span><span class="nv">la</span><span class="w"> </span><span class="nv">boite</span><span class="w"> </span><span class="s2">&quot;nouveaux&quot;</span><span class="ss">)</span><span class="w"></span>
+<span class="nv">nonlugmail</span><span class="o">=</span><span class="nv">gmail</span>.<span class="nv">INBOX</span>:<span class="nv">is_unseen</span><span class="ss">()</span><span class="w"></span>
+<span class="nv">nonlugmail</span>:<span class="nv">copy_message</span><span class="ss">(</span><span class="nv">gmail</span>[<span class="s1">&#39;nouveaux&#39;</span>]<span class="ss">)</span><span class="w"></span>
+<span class="o">--</span><span class="w"> </span><span class="nv">filtres</span><span class="w"> </span><span class="nv">pour</span><span class="w"> </span><span class="nv">le</span><span class="w"> </span><span class="nv">compte</span><span class="w"> </span><span class="nv">yahoo</span><span class="w"> </span><span class="ss">(</span><span class="nv">on</span><span class="w"> </span><span class="nv">supprime</span><span class="w"> </span><span class="nv">tous</span><span class="w"> </span><span class="nv">les</span><span class="w"> </span><span class="nv">messages</span><span class="w"> </span><span class="nv">lus</span><span class="ss">)</span><span class="w"></span>
+<span class="nv">del_read_yahoo</span><span class="o">=</span><span class="nv">yahoo</span>.<span class="nv">INBOX</span>:<span class="nv">is_seen</span><span class="ss">()</span><span class="w"></span>
+<span class="nv">del_read_yahoo</span>:<span class="nv">delete_messages</span><span class="ss">()</span><span class="w"></span>
+</code></pre></div>
 
 <p>Maintenant c'est à vous de faire vos propres filtres. Une fois
 configuré, lancer imapfilter simplement depuis le terminal :</p>
-<div class="highlight"><pre><span></span>imapfilter
-</pre></div>
+<div class="highlight"><pre><span></span><code>imapfilter
+</code></pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -133,23 +123,30 @@ configuré, lancer imapfilter simplement depuis le terminal :</p>
       <a href="https://www.choiz.fr/tag/imap.html">imap</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "imapfilter ou comment filtrer ses mails facilement",
   "headline": "imapfilter ou comment filtrer ses mails facilement",
@@ -160,6 +157,7 @@ configuré, lancer imapfilter simplement depuis le terminal :</p>
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html",
   "description": "Installer imapfilter via apt par exemple : apt-get install imapfilter Se rendre dans le dossier de configuration : cd ~/.imapfilter Créer un fichier config.lua : touch config.lua Maintenant je décide de faire un fichier de configuration par boite email. Ici gmail : cat > gmail.lua <<EOF gmail = IMAP { server = 'imap.gmail.com …"
 }

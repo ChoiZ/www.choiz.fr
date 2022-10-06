@@ -43,7 +43,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -57,80 +57,81 @@
 <article>
   <header>
     <h1 id="2011-08-17-partage-samba">Partage Samba !</h1>
-    <p>
-      Posté le mer. 17 août 2011 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2011-08-17-partage-samba.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le mer. 17 août 2011</p>
   </header>
   <div>
     <p>Configuration d'un serveur samba. Editer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :</p>
-<div class="highlight"><pre><span></span>| ### Global ###
-| [global]
-| ## Identification ##
-| workgroup = WORKGROUP
-| netbios name = %h
-| server string = Serveur samba %h
-| security = user
-| public = yes
-| ## Log ##
-| log file = /var/log/samba/log.%m
-| max log size = 1000
-| ## Auth ##
-| encrypt passwords = true
-| smb passwd file = /etc/samba/smbpasswd
-| ### Share ###
-| [choiz]
-| path = /home/choiz/samba
-| read only = no
-| writeable = yes
-| valid users = choiz
-| comment = partage de choiz
-| [partagereadonly]
-| path = /home/partageread
-| read only = yes
-| writeable = no
-| valid users = choiz, @group
-| comment = partage en lecture pour choiz et le groupe &quot;group&quot;
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="o">|</span><span class="w"> </span><span class="err">###</span><span class="w"> </span><span class="k">Global</span><span class="w"> </span><span class="err">###</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="o">[</span><span class="n">global</span><span class="o">]</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="err">##</span><span class="w"> </span><span class="n">Identification</span><span class="w"> </span><span class="err">##</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="n">workgroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WORKGROUP</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="n">netbios</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">%</span><span class="n">h</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Serveur</span><span class="w"> </span><span class="n">samba</span><span class="w"> </span><span class="o">%</span><span class="n">h</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="n">security</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">user</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yes</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="err">##</span><span class="w"> </span><span class="nf">Log</span><span class="w"> </span><span class="err">##</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="nf">var</span><span class="o">/</span><span class="nf">log</span><span class="o">/</span><span class="n">samba</span><span class="o">/</span><span class="nf">log</span><span class="p">.</span><span class="o">%</span><span class="n">m</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="nf">max</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="err">##</span><span class="w"> </span><span class="n">Auth</span><span class="w"> </span><span class="err">##</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="n">encrypt</span><span class="w"> </span><span class="n">passwords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="n">smb</span><span class="w"> </span><span class="n">passwd</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">samba</span><span class="o">/</span><span class="n">smbpasswd</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="err">###</span><span class="w"> </span><span class="n">Share</span><span class="w"> </span><span class="err">###</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="o">[</span><span class="n">choiz</span><span class="o">]</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="k">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">choiz</span><span class="o">/</span><span class="n">samba</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="k">read</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">no</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="n">writeable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yes</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="n">valid</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">choiz</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">partage</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">choiz</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="o">[</span><span class="n">partagereadonly</span><span class="o">]</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="k">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">partageread</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="k">read</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yes</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="n">writeable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">no</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="n">valid</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">choiz</span><span class="p">,</span><span class="w"> </span><span class="nv">@group</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">partage</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">lecture</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">choiz</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">groupe</span><span class="w"> </span><span class="ss">&quot;group&quot;</span><span class="w"></span>
+</code></pre></div>
 
 <p>Maintenant il faut créer notre utilisateur "choiz" grâce à :</p>
-<div class="highlight"><pre><span></span>smbpasswd -a choiz
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>smbpasswd -a choiz
+</code></pre></div>
 
 <p>Pour les groupes samba utilise les groupes unix. A vous de voir si vous
 voulez gérer votre partage samba utilisateur par utilisateur ou
 directement avec des groupes.</p>
 <p>N'oubliez pas de redémarrer le service Samba avant de tester depuis
 votre client le partage de fichiers ! :</p>
-<div class="highlight"><pre><span></span>/etc/init.d/samba restart
-</pre></div>
+<div class="highlight"><pre><span></span><code>/etc/init.d/samba restart
+</code></pre></div>
   </div>
   <div class="tag-cloud">
     <p>
       <a href="https://www.choiz.fr/tag/linux.html">linux</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Partage Samba !",
   "headline": "Partage Samba !",
@@ -141,6 +142,7 @@ votre client le partage de fichiers ! :</p>
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2011-08-17-partage-samba.html",
   "description": "Configuration d'un serveur samba. Editer le fichier de configuration /etc/samba/smb.conf Voici le contenu de mon fichier de configuration : | ### Global ### | [global] | ## Identification ## | workgroup = WORKGROUP | netbios name = %h | server string = Serveur samba %h | security = user | public = yes | ## Log ## | log file = /var/log/samba/log.%m | max log size = 1000 …"
 }

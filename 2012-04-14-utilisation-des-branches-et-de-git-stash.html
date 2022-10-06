@@ -43,7 +43,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -57,116 +57,105 @@
 <article>
   <header>
     <h1 id="2012-04-14-utilisation-des-branches-et-de-git-stash">Utilisation des branches et de git stash</h1>
-    <p>
-      Posté le sam. 14 avril 2012 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>      &#8226; <a href="https://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le sam. 14 avril 2012</p>
   </header>
   <div>
     <p>Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
 sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc
 git stash, voyons voir comment l'utiliser simplement.</p>
 <p>On regarde l'état du status et des branches :</p>
-<div class="highlight"><pre><span></span>git status
+<div class="highlight"><pre><span></span><code>git status
 # On branch master
 nothing to commit (working directory clean)
 
 $ git branch
 * master
-</pre></div>
-
+</code></pre></div>
 
 <p>Je travail sur la branche master et je n'ai pas d'autre branche. Je vais
 donc faire une branche API pour mon projet. :</p>
-<div class="highlight"><pre><span></span>git branch API
+<div class="highlight"><pre><span></span><code>git branch API
 
 git branch
   API
   * master
-</pre></div>
-
+</code></pre></div>
 
 <p>Maintenant je vais changer de branche git checkout pour être sur ma
 branche API et modifier les fichiers sur cette branche. :</p>
-<div class="highlight"><pre><span></span>git checkout API
+<div class="highlight"><pre><span></span><code>git checkout API
 Switched to branch &#39;API&#39;
 
 git branch
 * API
   master
-</pre></div>
-
+</code></pre></div>
 
 <p>Maintenant je vais modifier un mon fichier manage.py sur ma branche API.
 :</p>
-<div class="highlight"><pre><span></span>git status
-# On branch API
-# Changes not staged for commit:
-#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-#
-#    modified:   manage.py
-#
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="nv">status</span><span class="w"></span>
+#<span class="w"> </span><span class="nv">On</span><span class="w"> </span><span class="nv">branch</span><span class="w"> </span><span class="nv">API</span><span class="w"></span>
+#<span class="w"> </span><span class="nv">Changes</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">staged</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">commit</span>:<span class="w"></span>
+#<span class="w">   </span><span class="ss">(</span><span class="nv">use</span><span class="w"> </span><span class="s2">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">update</span><span class="w"> </span><span class="nv">what</span><span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">committed</span><span class="ss">)</span><span class="w"></span>
+#<span class="w">   </span><span class="ss">(</span><span class="nv">use</span><span class="w"> </span><span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">discard</span><span class="w"> </span><span class="nv">changes</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">working</span><span class="w"> </span><span class="nv">directory</span><span class="ss">)</span><span class="w"></span>
+#<span class="w"></span>
+#<span class="w">    </span><span class="nv">modified</span>:<span class="w">   </span><span class="nv">manage</span>.<span class="nv">py</span><span class="w"></span>
+#<span class="w"></span>
+<span class="nv">no</span><span class="w"> </span><span class="nv">changes</span><span class="w"> </span><span class="nv">added</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">commit</span><span class="w"> </span><span class="ss">(</span><span class="nv">use</span><span class="w"> </span><span class="s2">&quot;git add&quot;</span><span class="w"> </span><span class="nv">and</span><span class="o">/</span><span class="nv">or</span><span class="w"> </span><span class="s2">&quot;git commit -a&quot;</span><span class="ss">)</span><span class="w"></span>
+</code></pre></div>
 
 <p>Si je veux revenir sur mon master, sans avoir la modification du
 manage.py je vais devoir utiliser git stash (qui sauvegardera mes
 modifications du manage.py) :</p>
-<div class="highlight"><pre><span></span>git stash
-Saved working directory and index state WIP on API: 8b6342d Fix register.py
-HEAD is now at 8b6342d Fix register.py
+<div class="highlight"><pre><span></span><code><span class="n">git</span><span class="w"> </span><span class="n">stash</span><span class="w"></span>
+<span class="n">Saved</span><span class="w"> </span><span class="n">working</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="n">WIP</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="nl">API:</span><span class="w"> </span><span class="mh">8</span><span class="n">b6342d</span><span class="w"> </span><span class="n">Fix</span><span class="w"> </span><span class="n">register</span><span class="p">.</span><span class="n">py</span><span class="w"></span>
+<span class="n">HEAD</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="mh">8</span><span class="n">b6342d</span><span class="w"> </span><span class="n">Fix</span><span class="w"> </span><span class="n">register</span><span class="p">.</span><span class="n">py</span><span class="w"></span>
 
-$ git status
-# On branch API
-nothing to commit (working directory clean)
-</pre></div>
-
+<span class="err">$</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="n">status</span><span class="w"></span>
+<span class="p">#</span><span class="w"> </span><span class="n">On</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span><span class="n">API</span><span class="w"></span>
+<span class="n">nothing</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">commit</span><span class="w"> </span><span class="p">(</span><span class="n">working</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="n">clean</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
 
 <p>Maintenant que notre branche est propre on peut changer de branche
 revenir sur le master par exemple. :</p>
-<div class="highlight"><pre><span></span>$ git checkout master
+<div class="highlight"><pre><span></span><code>$ git checkout master
 Switched to branch <span class="s1">&#39;master&#39;</span>
 
 $ git status
 <span class="c1"># On branch master</span>
 nothing to commit <span class="o">(</span>working directory clean<span class="o">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>On peut donc travailler tranquillement sur la branche master. Puis
 revenir sur notre branche API, lister les stash git stash list récupérer
 les modifications précédentes git stash pop. :</p>
-<div class="highlight"><pre><span></span>git checkout API
-Switched to branch &#39;API&#39;
+<div class="highlight"><pre><span></span><code><span class="n">git</span><span class="w"> </span><span class="n">checkout</span><span class="w"> </span><span class="n">API</span><span class="w"></span>
+<span class="n">Switched</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span><span class="p">&#39;</span><span class="n">API</span><span class="p">&#39;</span><span class="w"></span>
 
-git stash list
-stash@{0}: WIP on API: 8b6342d Fix register.py
+<span class="n">git</span><span class="w"> </span><span class="n">stash</span><span class="w"> </span><span class="n">list</span><span class="w"></span>
+<span class="n">stash</span><span class="p">@{</span><span class="mh">0</span><span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="n">WIP</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="nl">API:</span><span class="w"> </span><span class="mh">8</span><span class="n">b6342d</span><span class="w"> </span><span class="n">Fix</span><span class="w"> </span><span class="n">register</span><span class="p">.</span><span class="n">py</span><span class="w"></span>
 
-git stash pop
-# On branch API
-# Changes not staged for commit:
-#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-#
-#    modified:   manage.py
-#
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-Dropped refs/stash@{0} (533906a52b923a8960fa0f6fdf17a288c94f233a)
+<span class="n">git</span><span class="w"> </span><span class="n">stash</span><span class="w"> </span><span class="n">pop</span><span class="w"></span>
+<span class="p">#</span><span class="w"> </span><span class="n">On</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span><span class="n">API</span><span class="w"></span>
+<span class="p">#</span><span class="w"> </span><span class="n">Changes</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">staged</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nl">commit:</span><span class="w"></span>
+<span class="p">#</span><span class="w">   </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">committed</span><span class="p">)</span><span class="w"></span>
+<span class="p">#</span><span class="w">   </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git checkout -- &lt;file&gt;...&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">discard</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">working</span><span class="w"> </span><span class="n">directory</span><span class="p">)</span><span class="w"></span>
+<span class="p">#</span><span class="w"></span>
+<span class="p">#</span><span class="w">    </span><span class="nl">modified:</span><span class="w">   </span><span class="n">manage</span><span class="p">.</span><span class="n">py</span><span class="w"></span>
+<span class="p">#</span><span class="w"></span>
+<span class="n">no</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="n">added</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">commit</span><span class="w"> </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git add&quot;</span><span class="w"> </span><span class="k">and</span><span class="o">/</span><span class="k">or</span><span class="w"> </span><span class="s">&quot;git commit -a&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="n">Dropped</span><span class="w"> </span><span class="n">refs</span><span class="o">/</span><span class="n">stash</span><span class="p">@{</span><span class="mh">0</span><span class="p">}</span><span class="w"> </span><span class="p">(</span><span class="mh">533906</span><span class="n">a52b923a8960fa0f6fdf17a288c94f233a</span><span class="p">)</span><span class="w"></span>
 
-$ git status
-# On branch API
-# Changes not staged for commit:
-#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-#
-#    modified:   manage.py
-#
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</pre></div>
-
+<span class="err">$</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="n">status</span><span class="w"></span>
+<span class="p">#</span><span class="w"> </span><span class="n">On</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span><span class="n">API</span><span class="w"></span>
+<span class="p">#</span><span class="w"> </span><span class="n">Changes</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">staged</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nl">commit:</span><span class="w"></span>
+<span class="p">#</span><span class="w">   </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">committed</span><span class="p">)</span><span class="w"></span>
+<span class="p">#</span><span class="w">   </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git checkout -- &lt;file&gt;...&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">discard</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">working</span><span class="w"> </span><span class="n">directory</span><span class="p">)</span><span class="w"></span>
+<span class="p">#</span><span class="w"></span>
+<span class="p">#</span><span class="w">    </span><span class="nl">modified:</span><span class="w">   </span><span class="n">manage</span><span class="p">.</span><span class="n">py</span><span class="w"></span>
+<span class="p">#</span><span class="w"></span>
+<span class="n">no</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="n">added</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">commit</span><span class="w"> </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git add&quot;</span><span class="w"> </span><span class="k">and</span><span class="o">/</span><span class="k">or</span><span class="w"> </span><span class="s">&quot;git commit -a&quot;</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
 
 <p>Maintenant je peux continuer les modifications sur ma branche API
 réutilise git stash si besoin ou les commiter, merger ma branche…</p>
@@ -182,23 +171,30 @@ mon alias = git stapp</p>
       <a href="https://www.choiz.fr/tag/git.html">git</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Utilisation des branches et de git stash",
   "headline": "Utilisation des branches et de git stash",
@@ -209,6 +205,7 @@ mon alias = git stapp</p>
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html",
   "description": "Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc git stash, voyons voir comment l'utiliser simplement. On regarde l'état du status et des branches : git status # On branch master nothing to commit (working directory clean) $ git …"
 }

@@ -45,7 +45,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -59,11 +59,7 @@
 <article>
   <header>
     <h1 id="2014-03-05-git-diff-multiligne">Git diff multiligne</h1>
-    <p>
-      Posté le mer. 05 mars 2014 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/diff.html">diff</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>      &#8226; <a href="https://www.choiz.fr/2014-03-05-git-diff-multiligne.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le mer. 05 mars 2014</p>
   </header>
   <div>
     <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
@@ -73,40 +69,37 @@ pas entièrement…).</p>
 <p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu
 que ma ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
 <p>Mon fichier texte ressemble à ceci :</p>
-<div class="highlight"><pre><span></span>ligne avec un peu de texte ici nous avons 66 caractères affichés.
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>ligne avec un peu de texte ici nous avons 66 caractères affichés.
+</code></pre></div>
 
 <p>Or, quand je fais un diff on ne voit pas tous les caractères :</p>
-<div class="highlight"><pre><span></span>git diff HEAD~1 HEAD
-diff --git a/test.txt b/test.txt
-new file mode 100644
-index 0000000..235a891
---- /dev/null
-+++ b/test.txt
-@@ -0,0 +1 @@
-+ligne avec un peu de texte ici nous avons 66 caractè\
-No newline at end of file
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="nv">diff</span><span class="w"> </span><span class="nv">HEAD</span><span class="o">~</span><span class="mi">1</span><span class="w"> </span><span class="nv">HEAD</span><span class="w"></span>
+<span class="nv">diff</span><span class="w"> </span><span class="o">--</span><span class="nv">git</span><span class="w"> </span><span class="nv">a</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"></span>
+<span class="nv">new</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="nv">mode</span><span class="w"> </span><span class="mi">100644</span><span class="w"></span>
+<span class="nv">index</span><span class="w"> </span><span class="mi">0000000</span>..<span class="mi">235</span><span class="nv">a891</span><span class="w"></span>
+<span class="o">---</span><span class="w"> </span><span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">null</span><span class="w"></span>
+<span class="o">+++</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"></span>
+@@<span class="w"> </span><span class="o">-</span><span class="mi">0</span>,<span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="w"> </span>@@<span class="w"></span>
+<span class="o">+</span><span class="nv">ligne</span><span class="w"> </span><span class="nv">avec</span><span class="w"> </span><span class="nv">un</span><span class="w"> </span><span class="nv">peu</span><span class="w"> </span><span class="nv">de</span><span class="w"> </span><span class="nv">texte</span><span class="w"> </span><span class="nv">ici</span><span class="w"> </span><span class="nv">nous</span><span class="w"> </span><span class="nv">avons</span><span class="w"> </span><span class="mi">66</span><span class="w"> </span><span class="nv">caract</span>è\<span class="w"></span>
+<span class="nv">No</span><span class="w"> </span><span class="nv">newline</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">file</span><span class="w"></span>
+</code></pre></div>
 
 <p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=""</em> avant la
 commande <em>git diff</em> soit ajouter dans son fichier de config git :</p>
-<div class="highlight"><pre><span></span>git config --global core.pager &quot;less -r&quot;
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>git config --global core.pager &quot;less -r&quot;
+</code></pre></div>
 
 <p>Voilà ce que ça donne avec GIT_PAGER :</p>
-<div class="highlight"><pre><span></span>GIT_PAGER=&quot;&quot; git diff HEAD~1 HEAD
-diff --git a/test.txt b/test.txt
-new file mode 100644
-index 0000000..235a891
---- /dev/null
-+++ b/test.txt
-@@ -0,0 +1 @@
-+ligne avec un peu de texte ici nous avons 66 caractères affichés.\
-No newline at end of file
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">GIT_PAGER</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="nv">git</span><span class="w"> </span><span class="nv">diff</span><span class="w"> </span><span class="nv">HEAD</span><span class="o">~</span><span class="mi">1</span><span class="w"> </span><span class="nv">HEAD</span><span class="w"></span>
+<span class="nv">diff</span><span class="w"> </span><span class="o">--</span><span class="nv">git</span><span class="w"> </span><span class="nv">a</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"></span>
+<span class="nv">new</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="nv">mode</span><span class="w"> </span><span class="mi">100644</span><span class="w"></span>
+<span class="nv">index</span><span class="w"> </span><span class="mi">0000000</span>..<span class="mi">235</span><span class="nv">a891</span><span class="w"></span>
+<span class="o">---</span><span class="w"> </span><span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">null</span><span class="w"></span>
+<span class="o">+++</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"></span>
+@@<span class="w"> </span><span class="o">-</span><span class="mi">0</span>,<span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="w"> </span>@@<span class="w"></span>
+<span class="o">+</span><span class="nv">ligne</span><span class="w"> </span><span class="nv">avec</span><span class="w"> </span><span class="nv">un</span><span class="w"> </span><span class="nv">peu</span><span class="w"> </span><span class="nv">de</span><span class="w"> </span><span class="nv">texte</span><span class="w"> </span><span class="nv">ici</span><span class="w"> </span><span class="nv">nous</span><span class="w"> </span><span class="nv">avons</span><span class="w"> </span><span class="mi">66</span><span class="w"> </span><span class="nv">caract</span>è<span class="nv">res</span><span class="w"> </span><span class="nv">affich</span>é<span class="nv">s</span>.\<span class="w"></span>
+<span class="nv">No</span><span class="w"> </span><span class="nv">newline</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">file</span><span class="w"></span>
+</code></pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -115,23 +108,30 @@ No newline at end of file
       <a href="https://www.choiz.fr/tag/config.html">config</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Git diff multiligne",
   "headline": "Git diff multiligne",
@@ -142,6 +142,7 @@ No newline at end of file
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2014-03-05-git-diff-multiligne.html",
   "description": "Lors d'une modification d'un bout de code, j'ai perdu la fin d'une ligne… J'ai du faire un git diff dans mon terminal et copié la ligne (mais pas entièrement…). J'ai donc refais un git diff dans mon terminal et je me suis aperçu que ma ligne qui devait être sur …"
 }

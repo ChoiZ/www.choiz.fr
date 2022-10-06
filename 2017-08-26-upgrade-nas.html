@@ -46,7 +46,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -60,11 +60,7 @@
 <article>
   <header>
     <h1 id="2017-08-26-upgrade-nas">Upgrade NAS</h1>
-    <p>
-      Posté le sam. 26 août 2017 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/nas.html">nas</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/stockage.html">stockage</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2017-08-26-upgrade-nas.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le sam. 26 août 2017</p>
   </header>
   <div>
     <p>J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
@@ -80,86 +76,77 @@ SATA et l'alimentation.</p>
 <p>Ce qui m'a permis de mettre un disque 2"½ au niveau de l'emplacement CDROM du HP
 Microserver.</p>
 <p>J'ai du tué mon uptime d'un an (depuis mon dernier déménagement) :</p>
-<div class="highlight"><pre><span></span> 12:31:37 choiz@wayland ~  #❯❯❯ uptime
- 12:31:37 up 366 days,  1:08,  1 user,  load average: 0,16, 0,22, 0,24
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="mi">12</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">37</span><span class="w"> </span><span class="n">choiz</span><span class="err">@</span><span class="n">wayland</span><span class="w"> </span><span class="o">~</span><span class="w">  </span><span class="c1">#❯❯❯ uptime</span><span class="w"></span>
+<span class="w"> </span><span class="mi">12</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">37</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="mi">366</span><span class="w"> </span><span class="n">days</span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="p">:</span><span class="mi">08</span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w">  </span><span class="nb">load</span><span class="w"> </span><span class="n">average</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="w"></span>
+</code></pre></div>
 
 <p>Pour la réinstallation j'ai monté un <a href="https://wiki.debian-fr.xyz/PXE_avec_support_EFI">serveur PXE sur
 debian</a> merci Benjamin pour le
 lien et les conseils.</p>
 <p>Installation du TFTP :</p>
-<div class="highlight"><pre><span></span># apt install -y tftpd-hpa
-</pre></div>
-
+<div class="highlight"><pre><span></span><code># apt install -y tftpd-hpa
+</code></pre></div>
 
 <p>Si vous avez un pare-feu n'oubliez pas d'ouvrir le port 69 :</p>
-<div class="highlight"><pre><span></span># iptables -A INPUT -p udp -m udp --dport 69 -j ACCEPT
-</pre></div>
-
+<div class="highlight"><pre><span></span><code># iptables -A INPUT -p udp -m udp --dport 69 -j ACCEPT
+</code></pre></div>
 
 <p>Installer le serveur DHCP :</p>
-<div class="highlight"><pre><span></span># apt install isc-dhcp-server
-</pre></div>
-
+<div class="highlight"><pre><span></span><code># apt install isc-dhcp-server
+</code></pre></div>
 
 <p>Mes IP sont dans le réseau 192.168.1.0/24, mon router en 192.168.1.1, je met un
 range entre 192.168.1.100 et 192.168.1.150 mon serveur TFTP est en 192.168.1.2.</p>
 <p>Voici la conf d'isc-dhcp-server :</p>
-<div class="highlight"><pre><span></span>default-lease-time 600;
-max-lease-time 7200;
+<div class="highlight"><pre><span></span><code><span class="nv">default</span><span class="o">-</span><span class="nv">lease</span><span class="o">-</span><span class="nv">time</span><span class="w"> </span><span class="mi">600</span><span class="c1">;</span><span class="w"></span>
+<span class="nv">max</span><span class="o">-</span><span class="nv">lease</span><span class="o">-</span><span class="nv">time</span><span class="w"> </span><span class="mi">7200</span><span class="c1">;</span><span class="w"></span>
 
-allow booting;
+<span class="nv">allow</span><span class="w"> </span><span class="nv">booting</span><span class="c1">;</span><span class="w"></span>
 
-# in this example, we serve DHCP requests from 192.168.1.(3 to 253)
-# and we have a router at 192.168.1.1
-subnet 192.168.1.0 netmask 255.255.255.0 {
-  range 192.168.1.100 192.168.1.150;
-  option broadcast-address 192.168.1.255;
-  option routers 192.168.1.1;
-  option domain-name-servers 192.168.1.1;
-  filename &quot;pxelinux.0&quot;;
-}
+#<span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">this</span><span class="w"> </span><span class="nv">example</span>,<span class="w"> </span><span class="nv">we</span><span class="w"> </span><span class="nv">serve</span><span class="w"> </span><span class="nv">DHCP</span><span class="w"> </span><span class="nv">requests</span><span class="w"> </span><span class="nv">from</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="ss">(</span><span class="mi">3</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="mi">253</span><span class="ss">)</span><span class="w"></span>
+#<span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">we</span><span class="w"> </span><span class="nv">have</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">router</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">1</span><span class="w"></span>
+<span class="nv">subnet</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">0</span><span class="w"> </span><span class="nv">netmask</span><span class="w"> </span><span class="mi">255</span>.<span class="mi">255</span>.<span class="mi">255</span>.<span class="mi">0</span><span class="w"> </span>{<span class="w"></span>
+<span class="w">  </span><span class="nv">range</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">100</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">150</span><span class="c1">;</span><span class="w"></span>
+<span class="w">  </span><span class="nv">option</span><span class="w"> </span><span class="nv">broadcast</span><span class="o">-</span><span class="nv">address</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">255</span><span class="c1">;</span><span class="w"></span>
+<span class="w">  </span><span class="nv">option</span><span class="w"> </span><span class="nv">routers</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">1</span><span class="c1">;</span><span class="w"></span>
+<span class="w">  </span><span class="nv">option</span><span class="w"> </span><span class="nv">domain</span><span class="o">-</span><span class="nv">name</span><span class="o">-</span><span class="nv">servers</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">1</span><span class="c1">;</span><span class="w"></span>
+<span class="w">  </span><span class="nv">filename</span><span class="w"> </span><span class="s2">&quot;pxelinux.0&quot;</span><span class="c1">;</span><span class="w"></span>
+}<span class="w"></span>
 
-group {
-  next-server 192.168.1.2;
-  host tftpclient {
-    filename &quot;pxelinux.0&quot;;
-  }
-}
-</pre></div>
-
+<span class="nv">group</span><span class="w"> </span>{<span class="w"></span>
+<span class="w">  </span><span class="k">next</span><span class="o">-</span><span class="nv">server</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">2</span><span class="c1">;</span><span class="w"></span>
+<span class="w">  </span><span class="nv">host</span><span class="w"> </span><span class="nv">tftpclient</span><span class="w"> </span>{<span class="w"></span>
+<span class="w">    </span><span class="nv">filename</span><span class="w"> </span><span class="s2">&quot;pxelinux.0&quot;</span><span class="c1">;</span><span class="w"></span>
+<span class="w">  </span>}<span class="w"></span>
+}<span class="w"></span>
+</code></pre></div>
 
 <p>Redémarrer le DHCP pour que la config soit prise en compte.</p>
-<div class="highlight"><pre><span></span># systemctl restart isc-dhcp-server
-</pre></div>
-
+<div class="highlight"><pre><span></span><code># systemctl restart isc-dhcp-server
+</code></pre></div>
 
 <p>Maintenant nous téléchargeons la dernière version de debian pour la mettre sur
 notre TFTP :</p>
-<div class="highlight"><pre><span></span># cd /srv/tftp/
+<div class="highlight"><pre><span></span><code># cd /srv/tftp/
 # wget -c http://ftp.fr.debian.org/debian/dists/stretch/main/installer-amd64/current/images/netboot/netboot.tar.gz
 # tar -zxf netboot.tar.gz
 # rm netboot.tar.gz
 # systemctl restart tftpd-hpa
-</pre></div>
-
+</code></pre></div>
 
 <p>Le PXE est maintenant fonctionnel avec l'installation de debian.</p>
 <p>Je réinstall donc debian 9.1 proprement.</p>
 <p>Pour éviter d'avoir ses messages d'erreurs :</p>
-<div class="highlight"><pre><span></span><span class="n">W</span><span class="o">:</span> <span class="n">Possible</span> <span class="n">missing</span> <span class="n">firmware</span> <span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso5</span><span class="o">.</span><span class="na">bin</span> <span class="k">for</span> <span class="n">module</span> <span class="n">tg3</span>
-<span class="n">W</span><span class="o">:</span> <span class="n">Possible</span> <span class="n">missing</span> <span class="n">firmware</span> <span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso</span><span class="o">.</span><span class="na">bin</span> <span class="k">for</span> <span class="n">module</span> <span class="n">tg3</span>
-<span class="n">W</span><span class="o">:</span> <span class="n">Possible</span> <span class="n">missing</span> <span class="n">firmware</span> <span class="sr">/lib/firmware/tigon/</span><span class="n">tg3</span><span class="o">.</span><span class="na">bin</span> <span class="k">for</span> <span class="n">module</span> <span class="n">tg3</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso5</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span><span class="w"></span>
+<span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span><span class="w"></span>
+<span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span><span class="w"></span>
+</code></pre></div>
 
 <p>Je modifie mon fichier /etc/apt/sources.list et j'ajoute les "non-free".</p>
 <p>Puis j'install le firmware-linux-nonfree :</p>
-<div class="highlight"><pre><span></span>apt update
+<div class="highlight"><pre><span></span><code>apt update
 apt install firmware-linux-nonfree
-</pre></div>
-
+</code></pre></div>
 
 <p>Il me reste plus qu'a remonter mes disques de backup et de refaire mes partages.</p>
   </div>
@@ -171,23 +158,30 @@ apt install firmware-linux-nonfree
       <a href="https://www.choiz.fr/tag/linux.html">linux</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Upgrade NAS",
   "headline": "Upgrade NAS",
@@ -198,6 +192,7 @@ apt install firmware-linux-nonfree
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2017-08-26-upgrade-nas.html",
   "description": "J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS, dessus j'avais installé Debian 6 à l'époque puis j'ai mis à jour jusqu'à la version 9. Mon objectif est l'ajout d'un disque car j'ai 4 emplacements pour le stockage et je n'utilisais que 3 …"
 }

@@ -47,7 +47,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -61,63 +61,50 @@
 <article>
   <header>
     <h1 id="2013-05-29-latin1-utf-8">Latin1 vers UTF-8</h1>
-    <p>
-      Posté le mer. 29 mai 2013 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/encoding.html">encoding</a>,      <a href="https://www.choiz.fr/tag/mysql.html">mysql</a>,      <a href="https://www.choiz.fr/tag/mysqldump.html">mysqldump</a>,      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/sql.html">sql</a>      &#8226; <a href="https://www.choiz.fr/2013-05-29-latin1-utf-8.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le mer. 29 mai 2013</p>
   </header>
   <div>
     <p>Voilà une solution simple pour convertir une base de donnée en Latin1
 vers de l'UTF-8.</p>
 <p>Utiliser mysqldump avec les options suivantes :</p>
-<div class="highlight"><pre><span></span>--default-character-set=utf8
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>--default-character-set=utf8
+</code></pre></div>
 
 <p>et :</p>
-<div class="highlight"><pre><span></span>--skip-set-charset
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>--skip-set-charset
+</code></pre></div>
 
 <p>Voilà la commande complète :</p>
-<div class="highlight"><pre><span></span>mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
+</code></pre></div>
 
 <p>Ensuite en utilisant vim je fais un rechercher / remplacer des
 différents latin1 en utf-8. :</p>
-<div class="highlight"><pre><span></span>vim dump_base_table.sql
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>vim dump_base_table.sql
+</code></pre></div>
 
 <p>Et en mode commande :</p>
-<div class="highlight"><pre><span></span>:%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>:%s/DEFAULT CHARACTER SET latin1/DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci/
+</code></pre></div>
 
 <p>et :</p>
-<div class="highlight"><pre><span></span>:%s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>:%s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/
+</code></pre></div>
 
 <p>on enregistre et quitte le fichier avec :wq (ou sinon avec ZZ).</p>
 <p>Maintenant on réimporte la table grâce à mysql :</p>
-<div class="highlight"><pre><span></span>mysql -u user -p base &lt; dump_base_table.sql
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>mysql -u user -p base &lt; dump_base_table.sql
+</code></pre></div>
 
 <p>il reste a vérifier si les champs sont bien en UTF-8.</p>
 <p>Ici une table « table » avec une colonne « col » on ajoute un caractère
 accentué. :</p>
-<div class="highlight"><pre><span></span>INSERT INTO table VALUES(&quot;é&quot;);
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>INSERT INTO table VALUES(&quot;é&quot;);
+</code></pre></div>
 
 <p>Maintenant on regarde la taille de la colonne :</p>
-<div class="highlight"><pre><span></span>SELECT `col`, length(`col`) FROM `table`;
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n n-Quoted">`col`</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n n-Quoted">`col`</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n n-Quoted">`table`</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
 
 <p>Si la taille = 1 le caractère est enregistré en latin1… si c'est 2 c'est
 bien de l'UTF-8 car sauvé sur 2 octets.</p>
@@ -134,23 +121,30 @@ pour le dernier tips.</p>
       <a href="https://www.choiz.fr/tag/sql.html">sql</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Latin1 vers UTF-8",
   "headline": "Latin1 vers UTF-8",
@@ -161,6 +155,7 @@ pour le dernier tips.</p>
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2013-05-29-latin1-utf-8.html",
   "description": "Voilà une solution simple pour convertir une base de donnée en Latin1 vers de l'UTF-8. Utiliser mysqldump avec les options suivantes : --default-character-set=utf8 et : --skip-set-charset Voilà la commande complète : mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset > base_table.sql Ensuite en utilisant vim je fais un rechercher / remplacer des …"
 }

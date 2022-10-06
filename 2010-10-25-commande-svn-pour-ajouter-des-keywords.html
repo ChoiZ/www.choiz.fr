@@ -43,7 +43,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -57,74 +57,72 @@
 <article>
   <header>
     <h1 id="2010-10-25-commande-svn-pour-ajouter-des-keywords">Commande SVN pour ajouter des keywords</h1>
-    <p>
-      Posté le lun. 25 octobre 2010 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/svn.html">svn</a>      &#8226; <a href="https://www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le lun. 25 octobre 2010</p>
   </header>
   <div>
     <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
 informations dans vos projets il suffit de taper cette commande :</p>
-<div class="highlight"><pre><span></span>svn propset svn:keywords &quot;Id&quot; index.php
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>svn propset svn:keywords &quot;Id&quot; index.php
+</code></pre></div>
 
 <p>Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php</p>
 <p>Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :</p>
-<div class="highlight"><pre><span></span>$Id:$
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Id</span><span class="o">:</span><span class="p">$</span><span class="w"></span>
+</code></pre></div>
 
 <p>Une fois le fichier versionné vous obtiendrez :</p>
-<div class="highlight"><pre><span></span>$Id: ajax\_modif.php 481 2010-10-25 12:02:50Z choiz $
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Id</span><span class="o">:</span><span class="w"> </span><span class="nv">ajax</span>\<span class="nv">_modif</span><span class="o">.</span><span class="nv">php</span><span class="w"> </span><span class="mi">481</span><span class="w"> </span><span class="mi">2010</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">25</span><span class="w"> </span><span class="mi">12</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mi">50</span><span class="nv">Z</span><span class="w"> </span><span class="nv">choiz</span><span class="w"> </span><span class="p">$</span><span class="w"></span>
+</code></pre></div>
 
 <p>D'autres keywords sont disponible tel que :</p>
-<div class="highlight"><pre><span></span>$Revision:$
-$Date:$
-$Author:$
-$URL:$
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Revision</span><span class="o">:</span><span class="p">$</span><span class="w"></span>
+<span class="p">$</span><span class="nv">Date</span><span class="o">:</span><span class="p">$</span><span class="w"></span>
+<span class="p">$</span><span class="nv">Author</span><span class="o">:</span><span class="p">$</span><span class="w"></span>
+<span class="p">$</span><span class="nv">URL</span><span class="o">:</span><span class="p">$</span><span class="w"></span>
+</code></pre></div>
 
 <p>Vous pouvez les ajouter les uns à la suite des autres par exemple pour
 notre fichier index.php je veux ajouter les 4 keywords précédents grâce
 à la commande :</p>
-<div class="highlight"><pre><span></span>svn propset svn:keywords &quot;Revision Date Author URL&quot; index.php
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>svn propset svn:keywords &quot;Revision Date Author URL&quot; index.php
+</code></pre></div>
 
 <p>Ce qui affichera :</p>
-<div class="highlight"><pre><span></span>$Revision: 481 $
-$Date: 2010-10-25 14:02:50 +0200 (lun., 25 oct. 2010) $
-$Author: choiz $
-$URL: svn://svn.choiz.fr/projet/branches/prod/index.php $
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Revision</span><span class="o">:</span><span class="w"> </span><span class="mi">481</span><span class="w"> </span><span class="p">$</span><span class="w"></span>
+<span class="p">$</span><span class="nv">Date</span><span class="o">:</span><span class="w"> </span><span class="mi">2010</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">25</span><span class="w"> </span><span class="mi">14</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mi">50</span><span class="w"> </span><span class="o">+</span><span class="mi">0200</span><span class="w"> </span><span class="p">(</span><span class="nv">lun</span><span class="o">.</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="nv">oct</span><span class="o">.</span><span class="w"> </span><span class="mi">2010</span><span class="p">)</span><span class="w"> </span><span class="p">$</span><span class="w"></span>
+<span class="p">$</span><span class="nv">Author</span><span class="o">:</span><span class="w"> </span><span class="nv">choiz</span><span class="w"> </span><span class="p">$</span><span class="w"></span>
+<span class="p">$</span><span class="nv">URL</span><span class="o">:</span><span class="w"> </span><span class="nv">svn</span><span class="o">://</span><span class="nv">svn</span><span class="o">.</span><span class="nv">choiz</span><span class="o">.</span><span class="nv">fr</span><span class="o">/</span><span class="nv">projet</span><span class="o">/</span><span class="nv">branches</span><span class="o">/</span><span class="nv">prod</span><span class="o">/</span><span class="no">ind</span><span class="nv">ex</span><span class="o">.</span><span class="nv">php</span><span class="w"> </span><span class="p">$</span><span class="w"></span>
+</code></pre></div>
   </div>
   <div class="tag-cloud">
     <p>
       <a href="https://www.choiz.fr/tag/svn.html">svn</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Commande SVN pour ajouter des keywords",
   "headline": "Commande SVN pour ajouter des keywords",
@@ -135,6 +133,7 @@ $URL: svn://svn.choiz.fr/projet/branches/prod/index.php $
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html",
   "description": "Pour ajouter le numéro de révision ainsi que pas mal d'autres informations dans vos projets il suffit de taper cette commande : svn propset svn:keywords "Id" index.php Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php Pour afficher l'Id dans votre fichier index.php ajouter dans …"
 }

@@ -45,7 +45,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -59,51 +59,43 @@
 <article>
   <header>
     <h1 id="2014-03-04-création-dune-clé-usb-xubuntu-sur-mac">Création d'une clé usb xubuntu sur mac</h1>
-    <p>
-      Posté le mar. 04 mars 2014 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="https://www.choiz.fr/tag/osx.html">osx</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le mar. 04 mars 2014</p>
   </header>
   <div>
     <p>Dans le terminal sur votre mac :</p>
-<div class="highlight"><pre><span></span>diskutil list
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>diskutil list
+</code></pre></div>
 
 <p>Qui permet de lister vos disque dur / clés usb etc…</p>
 <p>ici ma clé usb est disk2. :</p>
-<div class="highlight"><pre><span></span>/dev/disk2
+<div class="highlight"><pre><span></span><code>/dev/disk2
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:     FDisk_partition_scheme                        *8.1 GB     disk2
    1:                      Linux                         4.0 GB     disk2s1
    2:                 Linux_Swap                         4.1 GB     disk2s5
-</pre></div>
-
+</code></pre></div>
 
 <p>Démontez la clé. :</p>
-<div class="highlight"><pre><span></span>diskutil unmountDisk /dev/disk2
+<div class="highlight"><pre><span></span><code>diskutil unmountDisk /dev/disk2
 
 Unmount of all volumes on disk2 was successful
-</pre></div>
-
+</code></pre></div>
 
 <p>Maintenant on copie xubuntu depuis notre dossier téléchargements vers
 cette clé usb :</p>
-<div class="highlight"><pre><span></span>sudo dd if=~/Downloads/xubuntu-13.10-desktop-i386.iso of=/dev/rdisk2 bs=1m
+<div class="highlight"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">dd</span><span class="w"> </span><span class="k">if</span><span class="o">=~/</span><span class="n">Downloads</span><span class="o">/</span><span class="n">xubuntu</span><span class="o">-</span><span class="mf">13.10</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">i386</span><span class="o">.</span><span class="n">iso</span><span class="w"> </span><span class="n">of</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">rdisk2</span><span class="w"> </span><span class="n">bs</span><span class="o">=</span><span class="mi">1</span><span class="n">m</span><span class="w"></span>
 
-Password:
-834+0 records in
-834+0 records out
-874512384 bytes transferred in 137.915395 secs (6340934 bytes/sec)
-</pre></div>
-
+<span class="n">Password</span><span class="p">:</span><span class="w"></span>
+<span class="mi">834</span><span class="o">+</span><span class="mi">0</span><span class="w"> </span><span class="n">records</span><span class="w"> </span><span class="ow">in</span><span class="w"></span>
+<span class="mi">834</span><span class="o">+</span><span class="mi">0</span><span class="w"> </span><span class="n">records</span><span class="w"> </span><span class="n">out</span><span class="w"></span>
+<span class="mi">874512384</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="n">transferred</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="mf">137.915395</span><span class="w"> </span><span class="n">secs</span><span class="w"> </span><span class="p">(</span><span class="mi">6340934</span><span class="w"> </span><span class="n">bytes</span><span class="o">/</span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
 
 <p>Puis on éjecte proprement la clé usb :</p>
-<div class="highlight"><pre><span></span>diskutil eject /dev/disk2
+<div class="highlight"><pre><span></span><code>diskutil eject /dev/disk2
 
 Disk /dev/disk2 ejected
-</pre></div>
+</code></pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -112,23 +104,30 @@ Disk /dev/disk2 ejected
       <a href="https://www.choiz.fr/tag/linux.html">linux</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Création d'une clé usb xubuntu sur mac",
   "headline": "Création d'une clé usb xubuntu sur mac",
@@ -139,6 +138,7 @@ Disk /dev/disk2 ejected
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2014-03-04-création-dune-clé-usb-xubuntu-sur-mac.html",
   "description": "Dans le terminal sur votre mac : diskutil list Qui permet de lister vos disque dur / clés usb etc… ici ma clé usb est disk2. : /dev/disk2 #: TYPE NAME SIZE IDENTIFIER 0: FDisk_partition_scheme *8.1 GB disk2 1: Linux 4.0 GB disk2s1 2: Linux_Swap 4.1 GB disk2s5 Démontez la …"
 }

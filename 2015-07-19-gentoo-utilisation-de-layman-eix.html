@@ -44,7 +44,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -58,11 +58,7 @@
 <article>
   <header>
     <h1 id="2015-07-19-gentoo-utilisation-de-layman-eix">Gentoo utilisation de layman & eix</h1>
-    <p>
-      Posté le dim. 19 juillet 2015 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/emerge.html">emerge</a>,      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>      &#8226; <a href="https://www.choiz.fr/2015-07-19-gentoo-utilisation-de-layman-eix.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le dim. 19 juillet 2015</p>
   </header>
   <div>
     <p>Certains programmes n’étant pas en dernière version dans les dépôts
@@ -74,28 +70,24 @@ vagrant je me rend compte que nous sommes à la version 1.7.3.</p>
 <a href="http://gpo.zugaina.org/app-emulation/vagrant-bin">http://gpo.zugaina.org/app-emulation/vagrant-bin</a></p>
 <p>Pour utiliser cette overlay nous avons besoin de layman.</p>
 <p>Installation :</p>
-<div class="highlight"><pre><span></span>emerge -a layman
+<div class="highlight"><pre><span></span><code>emerge -a layman
 
 echo &quot;source /usr/portage/local/layman/make.conf&quot; &gt;&gt; /etc/make.conf
-</pre></div>
-
+</code></pre></div>
 
 <p>Pour afficher tous les overlays disponible :</p>
-<div class="highlight"><pre><span></span>layman -L
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>layman -L
+</code></pre></div>
 
 <p>Ajouter l’overlay stefantalpalaru (dans lequel nous avons
 vagrant-bin-1.7.3) :</p>
-<div class="highlight"><pre><span></span>layman -f -a stefantalpalaru
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>layman -f -a stefantalpalaru
+</code></pre></div>
 
 <p>Maintenant si on recherche dans eix “vagrant” rien n’a changé.</p>
 <p>Il faut mettre à jour eix :</p>
-<div class="highlight"><pre><span></span>eix-update
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>eix-update
+</code></pre></div>
 
 <p>Maintenant avec eix vagrant nous avons la ligne vagrant-bin et donc nous
 pouvons installer vagrant-1.7.3 via emerge.</p>
@@ -106,23 +98,30 @@ pouvons installer vagrant-1.7.3 via emerge.</p>
       <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Gentoo utilisation de layman & eix",
   "headline": "Gentoo utilisation de layman & eix",
@@ -133,6 +132,7 @@ pouvons installer vagrant-1.7.3 via emerge.</p>
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2015-07-19-gentoo-utilisation-de-layman-eix.html",
   "description": "Certains programmes n’étant pas en dernière version dans les dépôts gentoo l’utilisation de layman peut faciliter la vie. Étant à la recherche de vagrant, la seule version disponible à ce jour sur gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de vagrant je me rend …"
 }

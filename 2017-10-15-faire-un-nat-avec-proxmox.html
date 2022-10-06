@@ -44,7 +44,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -58,11 +58,7 @@
 <article>
   <header>
     <h1 id="2017-10-15-faire-un-nat-avec-proxmox">Faire du NAT avec Proxmox</h1>
-    <p>
-      Posté le dim. 15 octobre 2017 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/network.html">network</a>,      <a href="https://www.choiz.fr/tag/proxmox.html">proxmox</a>      &#8226; <a href="https://www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le dim. 15 octobre 2017</p>
   </header>
   <div>
     <p>L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
@@ -72,7 +68,7 @@ faire la même chose.</p>
 Ip Privé de proxmox : 10.0.0.254</p>
 <p>Je me connect en ssh à Proxmox et je modifie le fichier <code>/etc/network/interfaces</code>
 j'ajoute à la fin du fichier :</p>
-<div class="highlight"><pre><span></span>auto vmbr2
+<div class="highlight"><pre><span></span><code>auto vmbr2
 iface vmbr2 inet static
     address 10.0.0.254
     netmask 255.255.255.0
@@ -82,34 +78,30 @@ iface vmbr2 inet static
     post-up echo 1 &gt; /proc/sys/net/ipv4/ip_forward
     post-up iptables -t nat -A POSTROUTING -s &#39;10.0.0.0/24&#39; -o vmbr0 -j MASQUERADE
     post-down iptables -t nat -D POSTROUTING -s &#39;10.0.0.0/24&#39; -o vmbr0 -j MASQUERADE
-</pre></div>
-
+</code></pre></div>
 
 <p>On peut également ajouter si on veut différents ports qu'on ouvre vers
 l'exterieur vers tel ou tel VM ou conteneur.
 Par exemple j'ouvre le port 22 de mon conteneur avec l'ip 10.0.0.1 sur le port
 8022 de mon ip public :</p>
-<div class="highlight"><pre><span></span>    post-up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
+<div class="highlight"><pre><span></span><code>    post-up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
     post-down iptables -t nat -D PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
-</pre></div>
-
+</code></pre></div>
 
 <p>Ensuite enregistrer le fichier <code>/etc/network/interfaces</code> puis relancer les
 interfaces réseaux</p>
-<div class="highlight"><pre><span></span>service networking restart
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>service networking restart
+</code></pre></div>
 
 <p>Lorsque vous allez faire la configuration réseau d'une VM ou d'un conteneur, il
 suffit de renseigner une adresse ip de la plage 10.0.0.0/24</p>
 <p>Exemple :</p>
-<div class="highlight"><pre><span></span>auto eth0
+<div class="highlight"><pre><span></span><code>auto eth0
 iface eth0 inet static
     address 10.0.0.1
     netmask 255.255.255.0
     gateway 10.0.0.254
-</pre></div>
-
+</code></pre></div>
 
 <p>Puis faites un ping depuis votre conteneur vers l'ip 10.0.0.254, puis vers un
 site internet duckduckgo.com par exemple.</p>
@@ -120,23 +112,30 @@ site internet duckduckgo.com par exemple.</p>
       <a href="https://www.choiz.fr/tag/proxmox.html">proxmox</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Faire du NAT avec Proxmox",
   "headline": "Faire du NAT avec Proxmox",
@@ -147,6 +146,7 @@ site internet duckduckgo.com par exemple.</p>
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html",
   "description": "L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut faire la même chose. Ip Public de proxmox : 11.22.33.44 Ip Privé de proxmox : 10.0.0.254 Je …"
 }

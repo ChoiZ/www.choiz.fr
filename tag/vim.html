@@ -37,7 +37,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -50,23 +50,20 @@
 
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html">Suppression d'un caractère unicode dans Vim</a></h1>
+    <h2><a href="https://www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html">Suppression d'un caractère unicode dans Vim</a></h2>
     <p>
       Posté le dim. 19 janvier 2014 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/encoding.html">encoding</a>      &#8226; <a href="https://www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/encoding.html">encoding</a>    </p>
   </header>
   <div>
       <p>J'étais à la recherche de se caractère unicode dans vim :</p>
-<div class="highlight"><pre><span></span>&lt;U+2028&gt;
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>&lt;U+2028&gt;
+</code></pre></div>
 
 <p>Pour pouvoir le supprimer j'ai utilisé la commande suivante :</p>
-<div class="highlight"><pre><span></span>:%s/\%U2028//g
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>:%s/\%U2028//g
+</code></pre></div>
 
 <p>Décortiquons la commande :</p>
 <p><code>:%s/</code> Recherche et remplace dans tout le fichier</p>
@@ -78,30 +75,26 @@ Tags :
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2013-05-29-latin1-utf-8.html">Latin1 vers UTF-8</a></h1>
+    <h2><a href="https://www.choiz.fr/2013-05-29-latin1-utf-8.html">Latin1 vers UTF-8</a></h2>
     <p>
       Posté le mer. 29 mai 2013 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/encoding.html">encoding</a>,      <a href="https://www.choiz.fr/tag/mysql.html">mysql</a>,      <a href="https://www.choiz.fr/tag/mysqldump.html">mysqldump</a>,      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/sql.html">sql</a>      &#8226; <a href="https://www.choiz.fr/2013-05-29-latin1-utf-8.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/encoding.html">encoding</a>,      <a href="https://www.choiz.fr/tag/mysql.html">mysql</a>,      <a href="https://www.choiz.fr/tag/mysqldump.html">mysqldump</a>,      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/sql.html">sql</a>    </p>
   </header>
   <div>
       <p>Voilà une solution simple pour convertir une base de donnée en Latin1
 vers de l'UTF-8.</p>
 <p>Utiliser mysqldump avec les options suivantes :</p>
-<div class="highlight"><pre><span></span>--default-character-set=utf8
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>--default-character-set=utf8
+</code></pre></div>
 
 <p>et :</p>
-<div class="highlight"><pre><span></span>--skip-set-charset
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>--skip-set-charset
+</code></pre></div>
 
 <p>Voilà la commande complète :</p>
-<div class="highlight"><pre><span></span>mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &gt; base_table.sql
+</code></pre></div>
 
 <p>Ensuite en utilisant vim je fais un rechercher / remplacer des …</p>
       <a class="btn" href="https://www.choiz.fr/2013-05-29-latin1-utf-8.html">Lire la suite</a>
@@ -110,40 +103,37 @@ vers de l'UTF-8.</p>
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Ajout dans mon .vimrc de matchadd() & highlight</a></h1>
+    <h2><a href="https://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Ajout dans mon .vimrc de matchadd() & highlight</a></h2>
     <p>
       Posté le ven. 27 avril 2012 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>      &#8226; <a href="https://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>    </p>
   </header>
   <div>
       <p>Petit ajout dans mon fichier .vimrc :</p>
-<div class="highlight"><pre><span></span>&quot; Highlight To do list with green background
-highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green
-highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue
-highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red
-&quot; Match todolist, notice, fixme
-:call matchadd(&#39;Todo …</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">&quot; Highlight To do list with green background</span>
+<span class="err">highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green</span>
+<span class="err">highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue</span>
+<span class="err">highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red</span><span class="w"></span>
+<span class="err">&quot; Match todolist, notice, fixme</span>
+<span class="err">:call matchadd(&#39;Todo …</span></code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Lire la suite</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html">Insérer un \# au début de chaque ligne d'un fichier avec vim</a></h1>
+    <h2><a href="https://www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html">Insérer un \# au début de chaque ligne d'un fichier avec vim</a></h2>
     <p>
       Posté le mer. 05 octobre 2011 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/commentaire.html">commentaire</a>      &#8226; <a href="https://www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/commentaire.html">commentaire</a>    </p>
   </header>
   <div>
       <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un
 fichier avec vim :</p>
-<div class="highlight"><pre><span></span>:1,$s/^/#/
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>:1,$s/^/#/
+</code></pre></div>
 
 <p>Explications :</p>
 <p><code>:1,$</code> : Sélection des ligne 1 à $ ($ étant la dernière).</p>
@@ -155,12 +145,11 @@ séparateur pour la recherche et pour ce que l'on souhaite remplacer et …</p>
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html">Split & Vsplit dans vim</a></h1>
+    <h2><a href="https://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html">Split & Vsplit dans vim</a></h2>
     <p>
       Posté le dim. 29 mai 2011 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>      &#8226; <a href="https://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>    </p>
   </header>
   <div>
       <p>Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
@@ -180,21 +169,19 @@ pouvoir ouvrir plusieurs fichiers en même temps.</p>
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2011-05-19-différences-entre-des-fichiers-avec-vim.html">Différences entre des fichiers avec Vim</a></h1>
+    <h2><a href="https://www.choiz.fr/2011-05-19-différences-entre-des-fichiers-avec-vim.html">Différences entre des fichiers avec Vim</a></h2>
     <p>
       Posté le jeu. 19 mai 2011 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/diff.html">diff</a>,      <a href="https://www.choiz.fr/tag/cli.html">cli</a>      &#8226; <a href="https://www.choiz.fr/2011-05-19-différences-entre-des-fichiers-avec-vim.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/diff.html">diff</a>,      <a href="https://www.choiz.fr/tag/cli.html">cli</a>    </p>
   </header>
   <div>
       <p>J'ai souvent besoin de voir les différences entre plusieurs fichiers...
 J'utilise souvent la commande diff dans un terminal, mais mon éditeur
 texte favoris "Vim" sait aussi trés bien faire un différentiel.
 Utilisation avec le terminal :</p>
-<div class="highlight"><pre><span></span><span class="gh">diff fichier1 fichier2</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="gh">diff fichier1 fichier2</span><span class="w"></span>
+</code></pre></div>
 
 <p>Celui-ci retournera les différences directement dans le terminal (pas
 pratique pour l'édition …</p>
@@ -204,19 +191,17 @@ pratique pour l'édition …</p>
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html">Petit tips pour les utilisateurs de VIM et PHP</a></h1>
+    <h2><a href="https://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html">Petit tips pour les utilisateurs de VIM et PHP</a></h2>
     <p>
       Posté le mer. 13 avril 2011 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/php.html">php</a>,      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/cli.html">cli</a>      &#8226; <a href="https://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/php.html">php</a>,      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/cli.html">cli</a>    </p>
   </header>
   <div>
       <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
 dans la console je tape la commande :</p>
-<div class="highlight"><pre><span></span>php -l fichier_a_tester.php
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>php -l fichier_a_tester.php
+</code></pre></div>
 
 <p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
 Pour la faire il suffit de faire "ESC" pour passer en mode commande de …</p>
@@ -226,12 +211,11 @@ Pour la faire il suffit de faire "ESC" pour passer en mode commande de …</p>
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2011-04-09-surround-avec-vim.html">Surround avec Vim</a></h1>
+    <h2><a href="https://www.choiz.fr/2011-04-09-surround-avec-vim.html">Surround avec Vim</a></h2>
     <p>
       Posté le sam. 09 avril 2011 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/html.html">html</a>      &#8226; <a href="https://www.choiz.fr/2011-04-09-surround-avec-vim.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/html.html">html</a>    </p>
   </header>
   <div>
       <p>J'ai ajouté quelques plugins dans ma configuration de Vim dont :
@@ -251,9 +235,24 @@ apres la ligne courante et d'indenter celle-ci.</p>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

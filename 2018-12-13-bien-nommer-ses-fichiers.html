@@ -44,7 +44,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -58,11 +58,7 @@
 <article>
   <header>
     <h1 id="2018-12-13-bien-nommer-ses-fichiers">Bien nommer ses fichiers</h1>
-    <p>
-      Posté le jeu. 13 décembre 2018 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/file.html">file</a>,      <a href="https://www.choiz.fr/tag/date.html">date</a>      &#8226; <a href="https://www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le jeu. 13 décembre 2018</p>
   </header>
   <div>
     <p>Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ?</p>
@@ -75,47 +71,42 @@ Pour moi la méthode la plus simple pour bien trier vos fichiers par ordre chron
 Donc pour le Lundi 10 Décembre 2018 je vais écrire 20181210 ou 2018-12-10.</p>
 <p>Pourquoi ?</p>
 <p>Lorsque l'on va trier nos fichiers avec le premier cas nous aurons :</p>
-<div class="highlight"><pre><span></span>Lundi-10-Décembre-2018
+<div class="highlight"><pre><span></span><code>Lundi-10-Décembre-2018
 Lundi-11-Décembre-2017
 Mardi-11-Décembre-2018
 Mardi-12-Décembre-2017
-</pre></div>
-
+</code></pre></div>
 
 <p>Le trie se fait jour par jour donc pas du tout par ordre chronologique.
 Nous ne retenons pas cette solution.</p>
 <p>Avec le second exemple :</p>
-<div class="highlight"><pre><span></span>10-12-2018 (Lundi 10 décembre 2018)
-11-12-2018 (Mardi 11 décembre 2018)
-11-12-2017 (Lundi 11 décembre 2017)
-12-12-2017 (Mardi 12 décembre 2017)
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="mf">10</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">2018</span><span class="w"> </span><span class="p">(</span><span class="n">Lundi</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2018</span><span class="p">)</span><span class="w"></span>
+<span class="mf">11</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">2018</span><span class="w"> </span><span class="p">(</span><span class="n">Mardi</span><span class="w"> </span><span class="mf">11</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2018</span><span class="p">)</span><span class="w"></span>
+<span class="mf">11</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">2017</span><span class="w"> </span><span class="p">(</span><span class="n">Lundi</span><span class="w"> </span><span class="mf">11</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2017</span><span class="p">)</span><span class="w"></span>
+<span class="mf">12</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">2017</span><span class="w"> </span><span class="p">(</span><span class="n">Mardi</span><span class="w"> </span><span class="mf">12</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2017</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
 
 <p>Le trie se fait par jour, puis par mois, puis par année, donc nous avons tous les 10 décembre puis les 11 décembre etc… ce n'est toujours pas par ordre chronologique.
 Nous ne retenons pas cette solution.</p>
 <p>Avec le dernier exemple :</p>
-<div class="highlight"><pre><span></span>2017-12-10 (Lundi 10 décembre 2017)
-2017-12-11 (Mardi 11 décembre 2017)
-2018-12-11 (Lundi 11 décembre 2018)
-2018-12-12 (Mardi 12 décembre 2018)
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="mf">2017</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">10</span><span class="w"> </span><span class="p">(</span><span class="n">Lundi</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2017</span><span class="p">)</span><span class="w"></span>
+<span class="mf">2017</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">11</span><span class="w"> </span><span class="p">(</span><span class="n">Mardi</span><span class="w"> </span><span class="mf">11</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2017</span><span class="p">)</span><span class="w"></span>
+<span class="mf">2018</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">11</span><span class="w"> </span><span class="p">(</span><span class="n">Lundi</span><span class="w"> </span><span class="mf">11</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2018</span><span class="p">)</span><span class="w"></span>
+<span class="mf">2018</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">12</span><span class="w"> </span><span class="p">(</span><span class="n">Mardi</span><span class="w"> </span><span class="mf">12</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2018</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
 
 <p>C'est bien par ordre chronologique, l'année puis le mois, puis le jour, c'est donc comme ça que nous devons écrire nos fichiers avec une date.</p>
 <p>Si vous faites une photo de vous chaque année en septembre vous aurez donc photo.jpg qui sera nommer comme suit :</p>
-<div class="highlight"><pre><span></span>2016-09-photo.jpg
-2017-09-photo.jpg
-2018-09-photo.jpg
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="mf">2016</span><span class="o">-</span><span class="mf">09</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span><span class="w"></span>
+<span class="mf">2017</span><span class="o">-</span><span class="mf">09</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span><span class="w"></span>
+<span class="mf">2018</span><span class="o">-</span><span class="mf">09</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span><span class="w"></span>
+</code></pre></div>
 
 <p>On a pas besoin de préciser le jour dans le cas précédent car on a qu'une photo par an en septembre d'ailleurs on pourrait même simplifier en :</p>
-<div class="highlight"><pre><span></span>2016-photo.jpg
-2017-photo.jpg
-2018-photo.jpg
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="mf">2016</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span><span class="w"></span>
+<span class="mf">2017</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span><span class="w"></span>
+<span class="mf">2018</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span><span class="w"></span>
+</code></pre></div>
 
 <p>Personnellement je préfère toujours mettre mes fichiers sous la forme 2018-09-01-nom-de-fichier.ext ce qui permet d'avoir toujours la date du jour.</p>
   </div>
@@ -125,23 +116,30 @@ Nous ne retenons pas cette solution.</p>
       <a href="https://www.choiz.fr/tag/date.html">date</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Bien nommer ses fichiers",
   "headline": "Bien nommer ses fichiers",
@@ -152,6 +150,7 @@ Nous ne retenons pas cette solution.</p>
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html",
   "description": "Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ? Il faut mettre Lundi-10-Décembre-2018 dans le nom du fichier ? Non. Il faut donc mettre 10-12-2018 dans le nom du fichier ? Toujours pas. Ok donc comment faire ? Pour moi la …"
 }

@@ -44,7 +44,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -58,43 +58,38 @@
 <article>
   <header>
     <h1 id="2013-09-29-connaitre-le-code-réponse-http-avec-curl">Connaitre le code réponse HTTP avec curl</h1>
-    <p>
-      Posté le dim. 29 septembre 2013 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/curl.html">curl</a>,      <a href="https://www.choiz.fr/tag/http.html">http</a>      &#8226; <a href="https://www.choiz.fr/2013-09-29-connaitre-le-code-réponse-http-avec-curl.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le dim. 29 septembre 2013</p>
   </header>
   <div>
     <p>Pour connaitre le code réponse HTTP il suffit de faire :</p>
-<div class="highlight"><pre><span></span>curl -IL url
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>curl -IL url
+</code></pre></div>
 
 <p>Voici l'exemble avec tumblr.com :</p>
-<div class="highlight"><pre><span></span><span class="nt">curl</span> <span class="nt">-IL</span> <span class="nt">http</span><span class="o">://</span><span class="nt">tumblr</span><span class="p">.</span><span class="nc">com</span>
+<div class="highlight"><pre><span></span><code><span class="nt">curl</span><span class="w"> </span><span class="nt">-IL</span><span class="w"> </span><span class="nt">http</span><span class="o">://</span><span class="nt">tumblr</span><span class="p">.</span><span class="nc">com</span><span class="w"></span>
 
-<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span> <span class="nt">301</span> <span class="nt">Moved</span> <span class="nt">Permanently</span>
-<span class="nt">Content-length</span><span class="o">:</span> <span class="nt">0</span>
-<span class="nt">Location</span><span class="o">:</span> <span class="nt">http</span><span class="o">://</span><span class="nt">www</span><span class="p">.</span><span class="nc">tumblr</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span>
-<span class="nt">Connection</span><span class="o">:</span> <span class="nt">close</span>
+<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span><span class="w"> </span><span class="nt">301</span><span class="w"> </span><span class="nt">Moved</span><span class="w"> </span><span class="nt">Permanently</span><span class="w"></span>
+<span class="nt">Content-length</span><span class="o">:</span><span class="w"> </span><span class="nt">0</span><span class="w"></span>
+<span class="nt">Location</span><span class="o">:</span><span class="w"> </span><span class="nt">http</span><span class="o">://</span><span class="nt">www</span><span class="p">.</span><span class="nc">tumblr</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span><span class="w"></span>
+<span class="nt">Connection</span><span class="o">:</span><span class="w"> </span><span class="nt">close</span><span class="w"></span>
 
-<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span> <span class="nt">302</span> <span class="nt">Moved</span> <span class="nt">Temporarily</span>
-<span class="nt">Server</span><span class="o">:</span> <span class="nt">nginx</span>
-<span class="nt">Date</span><span class="o">:</span> <span class="nt">Sun</span><span class="o">,</span> <span class="nt">29</span> <span class="nt">Sep</span> <span class="nt">2013</span> <span class="nt">17</span><span class="p">:</span><span class="nd">06</span><span class="p">:</span><span class="nd">40</span> <span class="nt">GMT</span>
-<span class="nt">Content-Type</span><span class="o">:</span> <span class="nt">text</span><span class="o">/</span><span class="nt">html</span>
-<span class="nt">Connection</span><span class="o">:</span> <span class="nt">close</span>
-<span class="nt">P3P</span><span class="o">:</span> <span class="nt">CP</span><span class="o">=</span><span class="s2">&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;</span>
-<span class="nt">Location</span><span class="o">:</span> <span class="nt">https</span><span class="o">://</span><span class="nt">www</span><span class="p">.</span><span class="nc">tumblr</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span>
+<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span><span class="w"> </span><span class="nt">302</span><span class="w"> </span><span class="nt">Moved</span><span class="w"> </span><span class="nt">Temporarily</span><span class="w"></span>
+<span class="nt">Server</span><span class="o">:</span><span class="w"> </span><span class="nt">nginx</span><span class="w"></span>
+<span class="nt">Date</span><span class="o">:</span><span class="w"> </span><span class="nt">Sun</span><span class="o">,</span><span class="w"> </span><span class="nt">29</span><span class="w"> </span><span class="nt">Sep</span><span class="w"> </span><span class="nt">2013</span><span class="w"> </span><span class="nt">17</span><span class="p">:</span><span class="nd">06</span><span class="p">:</span><span class="nd">40</span><span class="w"> </span><span class="nt">GMT</span><span class="w"></span>
+<span class="nt">Content-Type</span><span class="o">:</span><span class="w"> </span><span class="nt">text</span><span class="o">/</span><span class="nt">html</span><span class="w"></span>
+<span class="nt">Connection</span><span class="o">:</span><span class="w"> </span><span class="nt">close</span><span class="w"></span>
+<span class="nt">P3P</span><span class="o">:</span><span class="w"> </span><span class="nt">CP</span><span class="o">=</span><span class="s2">&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;</span><span class="w"></span>
+<span class="nt">Location</span><span class="o">:</span><span class="w"> </span><span class="nt">https</span><span class="o">://</span><span class="nt">www</span><span class="p">.</span><span class="nc">tumblr</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span><span class="w"></span>
 
-<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span> <span class="nt">200</span> <span class="nt">OK</span>
-<span class="nt">Server</span><span class="o">:</span> <span class="nt">nginx</span>
-<span class="nt">Date</span><span class="o">:</span> <span class="nt">Sun</span><span class="o">,</span> <span class="nt">29</span> <span class="nt">Sep</span> <span class="nt">2013</span> <span class="nt">17</span><span class="p">:</span><span class="nd">06</span><span class="p">:</span><span class="nd">42</span> <span class="nt">GMT</span>
-<span class="nt">Content-Type</span><span class="o">:</span> <span class="nt">text</span><span class="o">/</span><span class="nt">html</span><span class="o">;</span> <span class="nt">charset</span><span class="o">=</span><span class="nt">utf-8</span>
-<span class="nt">Connection</span><span class="o">:</span> <span class="nt">keep-alive</span>
-<span class="nt">Vary</span><span class="o">:</span> <span class="nt">Accept-Encoding</span>
-<span class="nt">P3P</span><span class="o">:</span> <span class="nt">CP</span><span class="o">=</span><span class="s2">&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;</span>
-<span class="nt">Set-Cookie</span><span class="o">:</span> <span class="nt">tmgioct</span><span class="o">=</span><span class="nt">52485e21d628b00096885790</span><span class="o">;</span> <span class="nt">expires</span><span class="o">=</span><span class="nt">Wed</span><span class="o">,</span> <span class="nt">27-Sep-2023</span> <span class="nt">17</span><span class="p">:</span><span class="nd">06</span><span class="p">:</span><span class="nd">41</span> <span class="nt">GMT</span><span class="o">;</span> <span class="nt">path</span><span class="o">=/;</span> <span class="nt">httponly</span>
-</pre></div>
+<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span><span class="w"> </span><span class="nt">200</span><span class="w"> </span><span class="nt">OK</span><span class="w"></span>
+<span class="nt">Server</span><span class="o">:</span><span class="w"> </span><span class="nt">nginx</span><span class="w"></span>
+<span class="nt">Date</span><span class="o">:</span><span class="w"> </span><span class="nt">Sun</span><span class="o">,</span><span class="w"> </span><span class="nt">29</span><span class="w"> </span><span class="nt">Sep</span><span class="w"> </span><span class="nt">2013</span><span class="w"> </span><span class="nt">17</span><span class="p">:</span><span class="nd">06</span><span class="p">:</span><span class="nd">42</span><span class="w"> </span><span class="nt">GMT</span><span class="w"></span>
+<span class="nt">Content-Type</span><span class="o">:</span><span class="w"> </span><span class="nt">text</span><span class="o">/</span><span class="nt">html</span><span class="o">;</span><span class="w"> </span><span class="nt">charset</span><span class="o">=</span><span class="nt">utf-8</span><span class="w"></span>
+<span class="nt">Connection</span><span class="o">:</span><span class="w"> </span><span class="nt">keep-alive</span><span class="w"></span>
+<span class="nt">Vary</span><span class="o">:</span><span class="w"> </span><span class="nt">Accept-Encoding</span><span class="w"></span>
+<span class="nt">P3P</span><span class="o">:</span><span class="w"> </span><span class="nt">CP</span><span class="o">=</span><span class="s2">&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;</span><span class="w"></span>
+<span class="nt">Set-Cookie</span><span class="o">:</span><span class="w"> </span><span class="nt">tmgioct</span><span class="o">=</span><span class="nt">52485e21d628b00096885790</span><span class="o">;</span><span class="w"> </span><span class="nt">expires</span><span class="o">=</span><span class="nt">Wed</span><span class="o">,</span><span class="w"> </span><span class="nt">27-Sep-2023</span><span class="w"> </span><span class="nt">17</span><span class="p">:</span><span class="nd">06</span><span class="p">:</span><span class="nd">41</span><span class="w"> </span><span class="nt">GMT</span><span class="o">;</span><span class="w"> </span><span class="nt">path</span><span class="o">=/;</span><span class="w"> </span><span class="nt">httponly</span><span class="w"></span>
+</code></pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -102,23 +97,30 @@ Tags :
       <a href="https://www.choiz.fr/tag/http.html">http</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Connaitre le code réponse HTTP avec curl",
   "headline": "Connaitre le code réponse HTTP avec curl",
@@ -129,6 +131,7 @@ Tags :
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2013-09-29-connaitre-le-code-réponse-http-avec-curl.html",
   "description": "Pour connaitre le code réponse HTTP il suffit de faire : curl -IL url Voici l'exemble avec tumblr.com : curl -IL http://tumblr.com HTTP/1.1 301 Moved Permanently Content-length: 0 Location: http://www.tumblr.com/ Connection: close HTTP/1.1 302 Moved Temporarily Server: nginx Date: Sun, 29 Sep …"
 }

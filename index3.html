@@ -37,7 +37,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -50,50 +50,475 @@
 
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html">Configurer un serveur mail</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html">Configurer un serveur mail</a></h2>
     <p>
       Posté le dim. 15 novembre 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/mail.html">mail</a>,      <a href="https://www.choiz.fr/tag/postfix.html">postfix</a>,      <a href="https://www.choiz.fr/tag/dovecot.html">dovecot</a>,      <a href="https://www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="https://www.choiz.fr/tag/imap.html">imap</a>      &#8226; <a href="https://www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/mail.html">mail</a>,      <a href="https://www.choiz.fr/tag/postfix.html">postfix</a>,      <a href="https://www.choiz.fr/tag/dovecot.html">dovecot</a>,      <a href="https://www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="https://www.choiz.fr/tag/imap.html">imap</a>    </p>
   </header>
   <div>
       <p>Installation d'un serveur mail complet et à jour sous debian jessie (8.2).</p>
 <h2>Configuration des DNS</h2>
 <p>Pour commencer nous allons créer des entrées DNS.</p>
 <p>Nous créons un MX pour les mails avec une priorité de 1, un sous domaine
-"mail" qui pointe vers l'adresse ipv4 de votre serveur, d'un sous …</p>
-      <a class="btn" href="https://www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html">Lire la suite</a>
+"mail" qui pointe vers l'adresse ipv4 de votre serveur, d'un sous
+domaine webmail qui pointe sur le sous domaine mail et d'un
+enregistrement SPF :</p>
+<div class="highlight"><pre><span></span><code>votredomaine.com.           MX      1   mail.votredomaine.com.
+mail.votredomaine.com.      A           ip.v4.du.serveur
+webmail.votredomaine.com.   CNAME       mail.votredomaine.com.
+votredomain.com.            SPF         &quot;v=spf1 ip4:ip.v4.du.server ~all&quot;
+</code></pre></div>
+
+<h2>Installation des paquets</h2>
+<p>Maintenant installons postfix dovecot-imapd et sasl2-bin :</p>
+<div class="highlight"><pre><span></span><code>apt-get install postfix dovecot-imapd sasl2-bin php5-curl
+</code></pre></div>
+
+<p>Configurer le serveur de messagerie comme "Site Internet", puis en nom
+de courrier indiquer "mail.votredomaine.com".</p>
+<h2>Configuration de dovecot</h2>
+<p>Créer un dossier ssl dans dovecot :</p>
+<div class="highlight"><pre><span></span><code>mkdir /etc/dovecot/ssl &amp;&amp; cd /etc/dovecot/ssl
+</code></pre></div>
+
+<p>Créer un certificat ssl :</p>
+<div class="highlight"><pre><span></span><code>openssl req -new -newkey rsa:2048 -nodes -keyout certificat.key -out certificat.csr
+</code></pre></div>
+
+<p>Puis répondre aux différentes questions pour ma part j'ai répondu :</p>
+<div class="highlight"><pre><span></span><code><span class="n">FR</span><span class="w"></span>
+<span class="p">(</span><span class="n">vide</span><span class="p">)</span><span class="w"></span>
+<span class="n">Paris</span><span class="w"></span>
+<span class="n">votredomaine</span><span class="w"></span>
+<span class="n">IT</span><span class="w"></span>
+<span class="n">mail</span><span class="p">.</span><span class="n">votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
+<span class="n">contact</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
+<span class="p">(</span><span class="n">vide</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="n">vide</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+
+<p>Ensuite :</p>
+<div class="highlight"><pre><span></span><code>openssl x509 -req -days 365 -in certificat.csr -signkey certificat.key -out certificat.crt
+</code></pre></div>
+
+<p>Puis :</p>
+<div class="highlight"><pre><span></span><code>cat certificat.key certificat.crt &gt; certificat.pem
+</code></pre></div>
+
+<p>Créer le groupe et l'utilisateur vmail :</p>
+<div class="highlight"><pre><span></span><code><span class="n">groupadd</span><span class="w"> </span><span class="o">-</span><span class="n">g</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="n">vmail</span><span class="w"></span>
+<span class="n">useradd</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">vmail</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="bp">false</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="o">-</span><span class="n">g</span><span class="w"> </span><span class="n">vmail</span><span class="w"> </span><span class="n">vmail</span><span class="w"></span>
+</code></pre></div>
+
+<p>Ajouter dans /etc/dovecot/dovecot.conf :</p>
+<div class="highlight"><pre><span></span><code>listen = ip.v4.du.server
+</code></pre></div>
+
+<p>Editer /etc/dovecot/conf.d/10-auth.conf :</p>
+<div class="highlight"><pre><span></span><code><span class="n">disable_plaintext_auth</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">yes</span><span class="w"></span>
+<span class="n">auth_username_format</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="c">%Lu</span><span class="w"></span>
+#!<span class="n">include</span><span class="w"> </span><span class="n">auth</span><span class="o">-</span><span class="nb">system</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">ext</span><span class="w"></span>
+<span class="sx">!include auth-passwdfile.conf.ext</span><span class="w"></span>
+</code></pre></div>
+
+<p>Editer /etc/dovecot/conf.d/10-logging.conf :</p>
+<div class="highlight"><pre><span></span><code>auth_verbose = yes
+mail_debug = yes
+</code></pre></div>
+
+<p>Editer /etc/dovecot/conf.d/10-master.conf :</p>
+<div class="highlight"><pre><span></span><code><span class="n">unix_listener</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">postfix</span><span class="o">/</span><span class="n">private</span><span class="o">/</span><span class="n">auth</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0666</span><span class="w"></span>
+<span class="w">  </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">postfix</span><span class="w"></span>
+<span class="w">  </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">postfix</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>Editer /etc/dovecot/conf.d/10-ssl.conf :</p>
+<div class="highlight"><pre><span></span><code>ssl = required
+ssl_cert = &lt;/etc/dovecot/ssl/certificat.pem
+ssl_key = &lt;/etc/dovecot/ssl/certificat.key
+</code></pre></div>
+
+<p>Editer /etc/dovecot/conf.d/15-mailboxes.conf :</p>
+<div class="highlight"><pre><span></span><code>mailbox Drafts {
+    auto = subscribe
+    special_use = \Drafts
+}
+
+mailbox Junk {
+    auto = subscribe
+    special_use = \Junk
+}
+
+mailbox Trash {
+    auto = subscribe
+    special_use = \Trash
+}
+
+mailbox Sent {
+    auto = subscribe
+    special_use = \Sent
+}
+
+#mailbox &quot;Sent Messages&quot; {
+#    special_use = \Sent
+#}
+</code></pre></div>
+
+<p>Editer /etc/dovecot/conf.d/auth-passwdfile.conf.ext :</p>
+<div class="highlight"><pre><span></span><code><span class="n">passdb</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">passwd</span><span class="o">-</span><span class="n">file</span><span class="w"></span>
+<span class="w">    </span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scheme</span><span class="o">=</span><span class="n">MD5</span><span class="w"> </span><span class="n">username_format</span><span class="o">=%</span><span class="n">u</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">dovecot</span><span class="o">/</span><span class="n">users</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">userdb</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">passwd</span><span class="o">-</span><span class="n">file</span><span class="w"></span>
+<span class="w">    </span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">username_format</span><span class="o">=%</span><span class="n">u</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">dovecot</span><span class="o">/</span><span class="n">users</span><span class="w"></span>
+<span class="w">    </span><span class="n">default_fields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uid</span><span class="o">=</span><span class="mi">5000</span><span class="w"> </span><span class="n">gid</span><span class="o">=</span><span class="mi">5000</span><span class="w"> </span><span class="n">home</span><span class="o">=/</span><span class="k">var</span><span class="o">/</span><span class="n">vmail</span><span class="o">/%</span><span class="n">d</span><span class="w"> </span><span class="n">mail</span><span class="o">=</span><span class="n">maildir</span><span class="p">:</span><span class="o">~/%</span><span class="n">u</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>Créer le fichier /etc/dovecot/users :</p>
+<div class="highlight"><pre><span></span><code>touch /etc/dovecot/users
+</code></pre></div>
+
+<p>Puis pour chaque mail créer un enregistrement :</p>
+<div class="highlight"><pre><span></span><code><span class="n">adresse</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="nl">motdepassemd5</span><span class="p">:</span><span class="o">::::::</span><span class="w"></span>
+</code></pre></div>
+
+<p>Le format est le suivant :</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Champ</th>
+<th align="left">Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Adresse email</td>
+<td align="left"><script type="text/javascript">
+<!--
+h='&#118;&#x6f;&#116;&#114;&#x65;&#100;&#x6f;&#x6d;&#x61;&#x69;&#110;&#x65;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x61;&#100;&#114;&#x65;&#x73;&#x73;&#x65;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x61;&#100;&#114;&#x65;&#x73;&#x73;&#x65;&#32;&#x61;&#116;&#32;&#118;&#x6f;&#116;&#114;&#x65;&#100;&#x6f;&#x6d;&#x61;&#x69;&#110;&#x65;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;</noscript></td>
+</tr>
+<tr class="odd">
+<td align="left">Mot de passe (MD5)</td>
+<td align="left">motdepassemd5</td>
+</tr>
+<tr class="odd">
+<td align="left">uid</td>
+<td align="left">déjà défini dans auth-passwdfile</td>
+</tr>
+<tr class="odd">
+<td align="left">gid</td>
+<td align="left">déjà défini dans auth-passwdfile</td>
+</tr>
+<tr class="odd">
+<td align="left">home directory</td>
+<td align="left">déjà défini dans auth-passwdfile</td>
+</tr>
+<tr class="odd">
+<td align="left">mail directory</td>
+<td align="left">déjà défini dans auth-passwdfile</td>
+</tr>
+</tbody>
+</table>
+<p>Tester votre utilisateur grâce à la commande :</p>
+<div class="highlight"><pre><span></span><code><span class="n">doveadm</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">adresse</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
+</code></pre></div>
+
+<p>Ce qui devrait afficher :</p>
+<div class="highlight"><pre><span></span><code><span class="n">field</span><span class="w">   </span><span class="n">value</span><span class="w"></span>
+<span class="n">uid</span><span class="w">     </span><span class="mi">5000</span><span class="w"></span>
+<span class="n">gid</span><span class="w">     </span><span class="mi">5000</span><span class="w"></span>
+<span class="n">home</span><span class="w">    </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">vmail</span><span class="o">/</span><span class="n">votredomaine</span><span class="o">.</span><span class="n">com</span><span class="w"></span>
+<span class="n">mail</span><span class="w">    </span><span class="n">maildir</span><span class="p">:</span><span class="o">~/</span><span class="n">adresse</span><span class="err">@</span><span class="n">votredomaine</span><span class="o">.</span><span class="n">com</span><span class="w"></span>
+</code></pre></div>
+
+<p>Démarrer dovecot :</p>
+<div class="highlight"><pre><span></span><code>/etc/init.d/dovecot start
+</code></pre></div>
+
+<p>Tester la connexion :</p>
+<div class="highlight"><pre><span></span><code><span class="nv">openssl</span><span class="w"> </span><span class="nv">s_client</span><span class="w"> </span><span class="o">-</span><span class="k">connect</span><span class="w"> </span><span class="nv">ip</span>.<span class="nv">v4</span>.<span class="nv">du</span>.<span class="nv">server</span>:<span class="mi">993</span><span class="w"></span>
+</code></pre></div>
+
+<p>Si vous avez "* OK [CAPABILITY …] Dovecot ready. Vous pouvez vous
+authentifier :</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="w"> </span><span class="n">LOGIN</span><span class="w"> </span><span class="n">adresse</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w"> </span><span class="n">motdepasseenclair</span><span class="w"></span>
+</code></pre></div>
+
+<p>C'est fini pour dovecot.</p>
+<h2>Configuration de sasl</h2>
+<p>Editer /etc/default/saslauthd :</p>
+<div class="highlight"><pre><span></span><code><span class="n">START</span><span class="o">=</span><span class="n">yes</span><span class="w"></span>
+<span class="n">OPTIONS</span><span class="o">=</span><span class="s2">&quot;-m /var/spool/postfix/var/run/saslauthd&quot;</span><span class="w"></span>
+</code></pre></div>
+
+<p>Puis lancer :</p>
+<div class="highlight"><pre><span></span><code>/etc/init.d/saslauthd start
+</code></pre></div>
+
+<p>C'est fini pour sasl</p>
+<h2>Configuration de postfix</h2>
+<p>Editer /etc/postfix/main.cf ::</p>
+<div class="highlight"><pre><span></span><code><span class="n">smtpd_banner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">myhostname</span><span class="w"> </span><span class="n">ESMTP</span><span class="w"> </span><span class="o">$</span><span class="n">mail_name</span><span class="w"></span>
+<span class="n">smtpd_tls_cert_file</span><span class="o">=/</span><span class="n">etc</span><span class="o">/</span><span class="n">dovecot</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">certificat</span><span class="o">.</span><span class="n">pem</span><span class="w"></span>
+<span class="n">smtpd_tls_key_file</span><span class="o">=/</span><span class="n">etc</span><span class="o">/</span><span class="n">dovecot</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">certificat</span><span class="o">.</span><span class="n">key</span><span class="w"></span>
+<span class="n">mynetworks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">8</span><span class="w"> </span><span class="n">ip</span><span class="o">.</span><span class="n">v4</span><span class="o">.</span><span class="n">du</span><span class="o">.</span><span class="n">server</span><span class="w"></span>
+
+<span class="n">virtual_mailbox_domains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">votredomaine</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="w"> </span><span class="n">autredomaine</span><span class="o">.</span><span class="n">com</span><span class="w"></span>
+<span class="n">virtual_mailbox_base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">vmail</span><span class="w"></span>
+<span class="n">virtual_mailbox_maps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">hash</span><span class="p">:</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">postfix</span><span class="o">/</span><span class="n">virtual_mailbox</span><span class="w"></span>
+<span class="n">virtual_minimum_uid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w"></span>
+<span class="n">virtual_uid_maps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static</span><span class="p">:</span><span class="mi">5000</span><span class="w"></span>
+<span class="n">virtual_gid_maps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static</span><span class="p">:</span><span class="mi">5000</span><span class="w"></span>
+<span class="n">virtual_alias_maps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">hash</span><span class="p">:</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">postfix</span><span class="o">/</span><span class="n">virtual_alias</span><span class="w"></span>
+
+<span class="n">smtpd_sasl_auth_enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yes</span><span class="w"></span>
+<span class="n">smtpd_sasl_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dovecot</span><span class="w"></span>
+<span class="n">smtpd_sasl_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">private</span><span class="o">/</span><span class="n">auth</span><span class="w"></span>
+<span class="n">smtpd_sasl_security_options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">noanonymous</span><span class="w"></span>
+<span class="n">smtpd_sasl_tls_security_options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">noanonymous</span><span class="w"></span>
+<span class="n">smtpd_sasl_local_domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">myhostname</span><span class="w"></span>
+
+<span class="n">broken_sasl_auth_clients</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yes</span><span class="w"></span>
+
+<span class="n">smtpd_helo_restrictions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reject_unknown_helo_hostname</span><span class="w"></span>
+<span class="n">smtpd_sender_restrictions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">permit_sasl_authenticated</span><span class="w"> </span><span class="n">reject_unknown_sender_domain</span><span class="w"></span>
+<span class="n">smtpd_recipient_restrictions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">permit_sasl_authenticated</span><span class="w"> </span><span class="n">permit_mynetworks</span><span class="w"> </span><span class="n">reject_unauth_destination</span><span class="w"></span>
+
+<span class="n">smtpd_enforce_tls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no</span><span class="w"></span>
+<span class="n">smtpd_tls_auth_only</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no</span><span class="w"></span>
+<span class="n">smtpd_tls_ask_ccert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no</span><span class="w"></span>
+<span class="n">smtpd_tls_received_header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yes</span><span class="w"></span>
+<span class="n">tls_random_source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dev</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">urandom</span><span class="w"></span>
+</code></pre></div>
+
+<p>Créer /etc/postfix/virtual_alias :</p>
+<div class="highlight"><pre><span></span><code>touch /etc/postfix/virtual_alias
+</code></pre></div>
+
+<p>Pour créer un alias, éditer /etc/postfix/virtual_alias :</p>
+<div class="highlight"><pre><span></span><code><span class="k">alias</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w">          </span><span class="n">destination</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
+</code></pre></div>
+
+<p>Créer /etc/postfix/virtual_domains :</p>
+<div class="highlight"><pre><span></span><code>touch /etc/postfix/virtual_domains
+</code></pre></div>
+
+<p>Pour gérer vos domaines, éditer /etc/postfix/virtual_domains :</p>
+<div class="highlight"><pre><span></span><code>votredomaine.com                OK
+votredeuxiemedomaine.com        OK
+</code></pre></div>
+
+<p>Créer /etc/postfix/virtual_mailbox :</p>
+<div class="highlight"><pre><span></span><code>touch /etc/postfix/virtual_mailbox
+</code></pre></div>
+
+<p>Pour créer un comte mail, éditer /etc/postfix/virtual_mailbox :</p>
+<div class="highlight"><pre><span></span><code><span class="n">email</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w">          </span><span class="n">votredomaine</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">email</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="w"></span>
+<span class="n">linus</span><span class="nv">@torvald</span><span class="p">.</span><span class="n">com</span><span class="w">               </span><span class="n">torvald</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">linus</span><span class="nv">@torvald</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="w"></span>
+</code></pre></div>
+
+<p>N'oubliez pas lors de la création de nouveau comptes mail d'éditer
+/etc/dovecot/users ;-)</p>
+<p>Maintenant il faut dire a postfix que nous avons modifier nos fichiers
+virtuels :</p>
+<div class="highlight"><pre><span></span><code>postmap /etc/postfix/virtual_alias
+postmap /etc/postfix/virtual_domains
+postmap /etc/postfix/virtual_mailbox
+</code></pre></div>
+
+<p>Editer /etc/postfix/master.cf :</p>
+<div class="highlight"><pre><span></span><code>smtp    inet    n   -   -   -   -   smtpd   -v
+ -o smtpd_tls_cert_file=/etc/dovecot/ssl/certificat.pem
+ -o smtpd_tls_key_file=/etc/dovecot/ssl/certificat.key
+submission inet n - n - - smtpd
+ -o smtpd_tls_security_level=encrypt
+ -o smtpd_sasl_auth_enable=yes
+urd inet n - n - - smtpd
+ -o smtpd_tls_wrappermode=yes
+ -o smtpd_sasl_auth_enable=yes
+smtps   inet    n   -   -   -   -   smtpd   -v
+ -o smtpd_tls_wrappermode=yes
+ -o smtpd_tls_cert_file=/etc/dovecot/ssl/certificat.pem
+ -o smtpd_tls_key_file=/etc/dovecot/ssl/certificat.key
+</code></pre></div>
+
+<p>Puis redemarrer postfix :</p>
+<div class="highlight"><pre><span></span><code>/etc/init.d/postfix restart
+</code></pre></div>
+
+<p>Fin de la configuration de postfix.</p>
+<p>Vous pouvez maintenant tester votre serveur mail ainsi que la qualité de
+votre serveur sur le site <a href="http://www.mail-tester.com">http://www.mail-tester.com</a></p>
+<h2>Installation d'un webmail rainloop</h2>
+<p>Créer un dossier pour votre webmail :</p>
+<div class="highlight"><pre><span></span><code><span class="n">mkdir</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">webmail</span><span class="o">/</span><span class="n">public</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">webmail</span><span class="o">/</span><span class="n">public</span><span class="w"></span>
+</code></pre></div>
+
+<p>Télécharger rainloop :</p>
+<div class="highlight"><pre><span></span><code>wget http://repository.rainloop.net/v2/webmail/rainloop-community-latest.zip
+</code></pre></div>
+
+<p>Décompresser rainloop :</p>
+<div class="highlight"><pre><span></span><code>unzip rainloop*.zip &amp;&amp; rm -rf rainloop*.zip
+</code></pre></div>
+
+<p>Modifier les droits :</p>
+<div class="highlight"><pre><span></span><code><span class="n">chown</span><span class="w"> </span><span class="o">-</span><span class="n">R</span><span class="w"> </span><span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="p">:</span><span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">webmail</span><span class="w"></span>
+<span class="n">find</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="o">-</span><span class="n">type</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">-</span><span class="n">exec</span><span class="w"> </span><span class="n">chmod</span><span class="w"> </span><span class="mi">644</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span>\<span class="p">;</span><span class="w"></span>
+<span class="n">find</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="o">-</span><span class="n">type</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">-</span><span class="n">exec</span><span class="w"> </span><span class="n">chmod</span><span class="w"> </span><span class="mi">755</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span>\<span class="p">;</span><span class="w"></span>
+</code></pre></div>
+
+<p>Créer un vhost pour apache dans
+/etc/apache2/site-enabled/001-webmail.domain.com.conf :</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;VirtualHost</span> <span class="err">*:80</span><span class="nt">&gt;</span>
+    ServerAdmin contact@domain.com
+    ServerName mail.domain.com
+
+    DocumentRoot /var/www/webmail/public
+    <span class="nt">&lt;Directory</span> <span class="err">/var/www/webmail/public</span><span class="nt">&gt;</span>
+        Options FollowSymLinks
+        #Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    <span class="nt">&lt;/Directory&gt;</span>
+
+    <span class="nt">&lt;Directory</span> <span class="err">/var/www/webmail/public/data</span><span class="nt">&gt;</span>
+        Options -FollowSymLinks
+        AllowOverride None
+        Order allow,deny
+        Deny from all
+    <span class="nt">&lt;/Directory&gt;</span>
+
+    ErrorLog <span class="cp">${</span><span class="n">APACHE_LOG_DIR</span><span class="cp">}</span>/webmail_error.log
+
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
+
+    CustomLog <span class="cp">${</span><span class="n">APACHE_LOG_DIR</span><span class="cp">}</span>/webmail_access.log combined
+<span class="nt">&lt;/VirtualHost&gt;</span>
+</code></pre></div>
+
+<p>N'oubliez pas de redémarrer apache :</p>
+<div class="highlight"><pre><span></span><code>/etc/init.d/apache2 restart
+</code></pre></div>
+
+<p>Pour configurer rainloop se rendre sur : <a href="http://mail.domain.com/?admin">http://mail.domain.com/?admin</a></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Login</th>
+<th align="left">admin</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Password</td>
+<td align="left">12345</td>
+</tr>
+</tbody>
+</table>
+
+<p>Changer la langue et votre mot de passe (dans security).</p>
+<p>Puis dans domains configurez votre nom de domaine en cliquant sur + Add
+domain</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">domaine.com</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td align="left">IMAP</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Server</td>
+<td align="left">mail.domain.com</td>
+</tr>
+<tr class="even">
+<td align="left">Secure</td>
+<td align="left">SSL/TLS</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">SMTP</th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Server</td>
+<td align="left">mail.domain.com</td>
+</tr>
+<tr class="odd">
+<td align="left">Secure</td>
+<td align="left">SSL/TLS</td>
+</tr>
+</tbody>
+</table>
+
+<p>Puis + Add</p>
+<p>Je supprime tous les autres domaines (gmail etc…)</p>
+<p>Ensuite j'active les plugins, et les packages : X-Originating-IP, Black
+list et White list.</p>
+<p>Maintenant rendez-vous sur : <a href="http://mail.domain.com">http://mail.domain.com</a> et identifiez-vous
+avec votre login et mot de passe.</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html">Gentoo Navigateur Web par Défaut</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html">Gentoo Navigateur Web par Défaut</a></h2>
     <p>
       Posté le dim. 25 octobre 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/web.html">web</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/web.html">web</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>Sur ma machine "links" était le navigateur web par défaut. Il est
 pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
 est préférable d'utiliser un navigateur tel que Firefox.</p>
 <p>Voici la commande pour voir le navigateur par défaut pour les url
-utilisants le protocole …</p>
-      <a class="btn" href="https://www.choiz.fr/2015-10-25-gentoo-navigateur-web-par-defaut.html">Lire la suite</a>
+utilisants le protocole "http" :</p>
+<div class="highlight"><pre><span></span><code>xdg-mime query default x-scheme-handler/http
+</code></pre></div>
+
+<p>Et voici la commande pour le "https" :</p>
+<div class="highlight"><pre><span></span><code>xdg-mime query default x-scheme-handler/https
+</code></pre></div>
+
+<p>Pour changer le navigateur par défaut par Firefox il suffit d'executer
+ses deux commandes :</p>
+<div class="highlight"><pre><span></span><code>xdg-mime default firefox.desktop x-scheme-handler/http
+xdg-mime default firefox.desktop x-scheme-handler/https
+</code></pre></div>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html">Vagrant faire un réseau privé</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html">Vagrant faire un réseau privé</a></h2>
     <p>
       Posté le mar. 13 octobre 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/network.html">network</a>      &#8226; <a href="https://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/network.html">network</a>    </p>
   </header>
   <div>
       <p>J'utilise plusieurs machines virtuelles avec vagrant, une avec un
@@ -101,108 +526,138 @@ backoffice et une avec une API.</p>
 <p>J'ai donc du faire un réseau privé dans vagrant pour que le BO
 communique avec l'API.</p>
 <p>Il suffit de modifier la configuration de la vm #1 et d'ajouter :</p>
-<div class="highlight"><pre><span></span>config.vm.network &quot;private_network&quot;, ip: &quot;192.168 …</pre></div>
-      <a class="btn" href="https://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html">Lire la suite</a>
+<div class="highlight"><pre><span></span><code>config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.1&quot;
+</code></pre></div>
+
+<p>Et dans la configuration de la vm #2 d'ajouter :</p>
+<div class="highlight"><pre><span></span><code>config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.2&quot;
+</code></pre></div>
+
+<p>Votre vm #1 peut (suite au redémarrage des deux vm vagrant) communiquer
+avec votre vm #2 directement avec l'ip 192.168.10.2.</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-10-12-des-commentaires-efficaces.html">Des commentaires efficaces</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-10-12-des-commentaires-efficaces.html">Des commentaires efficaces</a></h2>
     <p>
       Posté le lun. 12 octobre 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/commentaire.html">commentaire</a>,      <a href="https://www.choiz.fr/tag/code.html">code</a>      &#8226; <a href="https://www.choiz.fr/2015-10-12-des-commentaires-efficaces.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/commentaire.html">commentaire</a>,      <a href="https://www.choiz.fr/tag/code.html">code</a>    </p>
   </header>
   <div>
       <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester
 qu'une fonctionnalité de code.</p>
 <p>Par exemple pour tester une api :</p>
-<div class="highlight"><pre><span></span>// Obtenir le livre #1
+<div class="highlight"><pre><span></span><code>// Obtenir le livre #1
 api_get(&#39;books/1&#39;);
 
 // Ajouter un livre
 api_add(&#39;books&#39;, $datas);
-</pre></div>
-
+</code></pre></div>
 
 <p>Je test généralement chaque élément séparement.</p>
 <p>Pour tester la première portion de mon code :</p>
-<div class="highlight"><pre><span></span>//* Obtenir le …</pre></div>
-      <a class="btn" href="https://www.choiz.fr/2015-10-12-des-commentaires-efficaces.html">Lire la suite</a>
+<div class="highlight"><pre><span></span><code>//* Obtenir le livre #1
+api_get(&#39;books/1&#39;);
+//*/
+
+/* Ajouter un livre
+api_add(&#39;books&#39;, $datas);
+//*/
+</code></pre></div>
+
+<p>Pour tester la seconde portion de mon code :</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/* Obtenir le livre #1</span>
+<span class="cm">api_get(&#39;books/1&#39;);</span>
+<span class="cm">//*/</span><span class="w"></span>
+
+<span class="o">//*</span><span class="w"> </span>Ajouter<span class="w"> </span>un<span class="w"> </span>livre<span class="w"></span>
+api_add<span class="o">(</span><span class="s">&#39;books&#39;</span><span class="o">,</span><span class="w"> </span><span class="err">$</span>datas<span class="o">)</span><span class="err">;</span><span class="w"></span>
+<span class="o">//*/</span><span class="w"></span>
+</code></pre></div>
+
+<p>Il me suffit d'ajouter ou d'enlever un slash sur le premier commentaire
+pour commenter ou non tout le bloc.</p>
+<p>Ce n'est pas forcément très lisible donc je fais ça uniquement pour mes
+tests.</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html">Mettre à jour Gentoo</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html">Mettre à jour Gentoo</a></h2>
     <p>
       Posté le dim. 27 septembre 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/emerge.html">emerge</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/emerge.html">emerge</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>Pour mettre à jour Gentoo j'utilise différentes commandes.</p>
 <p>Dans un premier temps je fais la mise à jour d'eix :</p>
-<div class="highlight"><pre><span></span>eix-sync
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>eix-sync
+</code></pre></div>
 
 <p>Ensuite :</p>
-<div class="highlight"><pre><span></span>emerge -pvuDN world
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>emerge -pvuDN world
+</code></pre></div>
 
 <p>-p ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche
 également les différents flags (N = new (not yet installed), U =
-updating (to another version …</p>
-      <a class="btn" href="https://www.choiz.fr/2015-09-27-mettre-a-jour-gentoo.html">Lire la suite</a>
+updating (to another version) etc…) -v ou --verbose, mode verbeux. -u ou
+--update, met à jour les programmes dans la meilleur version disponible.
+-D ou --deep, met à jour les dépendances des programmes si nécessaire.
+-N ou --newuse, met à jour les programmes dont le "USE" a été modifié
+depuis son installation.</p>
+<p>Une fois la liste des programmes et ses modifications vérifiée nous
+pouvons lancer la mise à jour :</p>
+<div class="highlight"><pre><span></span><code>emerge -vuDN world
+</code></pre></div>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">Compilation Kernel Gentoo</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">Compilation Kernel Gentoo</a></h2>
     <p>
       Posté le dim. 06 septembre 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>Pour compiler le kernel sous gentoo :</p>
-<div class="highlight"><pre><span></span>cd /usr/src/linux
+<div class="highlight"><pre><span></span><code>cd /usr/src/linux
 
 make menuconfig
 
 make &amp;&amp; make modules_install
 
 make install
-</pre></div>
-
+</code></pre></div>
 
 <p>Le kernel est maintenant compilé.</p>
 <p>Maintenant il faut mettre à jour grub. :</p>
-<div class="highlight"><pre><span></span>grub2-mkconfig -o /boot/grub/grub.cfg
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>grub2-mkconfig -o /boot/grub/grub.cfg
+</code></pre></div>
 
 <p>Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi
-que le nombre de …</p>
-      <a class="btn" href="https://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">Lire la suite</a>
+que le nombre de compilation.</p>
+<p>Il faut maintenant redémarrer la machine :</p>
+<div class="highlight"><pre><span></span><code>reboot
+</code></pre></div>
+
+<p>Au final vérifier avec uname -a si le bon kernel est chargé.</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html">Compression Décompression tar.gz tar.bz2 tar.xz</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html">Compression Décompression tar.gz tar.bz2 tar.xz</a></h2>
     <p>
       Posté le dim. 30 août 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/archive.html">archive</a>,      <a href="https://www.choiz.fr/tag/gzip.html">gzip</a>      &#8226; <a href="https://www.choiz.fr/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/archive.html">archive</a>,      <a href="https://www.choiz.fr/tag/gzip.html">gzip</a>    </p>
   </header>
   <div>
       <p>J'ai toujours du mal pour décompresser un fichier de type "tar.bz2" ou
@@ -212,57 +667,124 @@ syntaxe…</p>
 <p>Pour les fichiers <code>tar.gz</code> j'arrive parfaitement à compresser ou
 décompresser ce format exemple :</p>
 <p>On compresse avec :</p>
-<div class="highlight"><pre><span></span>tar -cvzf archive …</pre></div>
-      <a class="btn" href="https://www.choiz.fr/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html">Lire la suite</a>
+<div class="highlight"><pre><span></span><code>tar -cvzf archive.tar.gz dossier_a_compresser/
+</code></pre></div>
+
+<p>On décompresse avec :</p>
+<div class="highlight"><pre><span></span><code>tar -xvzf archive.tar.gz
+</code></pre></div>
+
+<p>Il suffit de retenir :</p>
+<p>-c comme compression / "x" comme eXtract ou eXtraction. -v pour le mode
+verbeux. -z pour le "gzip" d'ou le ".gz". -f pour spécifier le fichier.</p>
+<h2>tar.bz2</h2>
+<p>Pour les <code>tar.bz2</code> je ne sais JAMAIS qu'il faut remplacer "z" de gizip
+par "j" de Bzip… (la lettre "b" étant sans doute utilisé avant que le
+bzip n'apparaisse). L'alternative est d'utiliser "--bzip"</p>
+<p>On compresse avec :</p>
+<div class="highlight"><pre><span></span><code>tar -cvjf archive.tar.bz2 dossier_a_compresser/
+</code></pre></div>
+
+<p>Ou :</p>
+<div class="highlight"><pre><span></span><code>tar --bzip2 -cvf archive.tar.bz2 dossier_a_compresser/
+</code></pre></div>
+
+<p>On décompresse avec :</p>
+<div class="highlight"><pre><span></span><code>tar -xvjf archive.tar.bz2
+</code></pre></div>
+
+<p>Ou :</p>
+<div class="highlight"><pre><span></span><code>tar --bzip2 -xvf archive.tar.bz2
+</code></pre></div>
+
+<h2>tar.xz</h2>
+<p>Pour ce qui est de Lzma ou le <code>tar.xz</code> c'est un "J" majuscule cette
+fois ou d'utiliser "--xz".</p>
+<p>On compresse avec :</p>
+<div class="highlight"><pre><span></span><code>tar -cvJf archive.tar.xz dossier_a_compresser/
+</code></pre></div>
+
+<p>Ou :</p>
+<div class="highlight"><pre><span></span><code>tar --xz -cvf archive.tar.xz dossier_a_compresser/
+</code></pre></div>
+
+<p>On décompresse avec :</p>
+<div class="highlight"><pre><span></span><code>tar -xvJf archive.tar.xz
+</code></pre></div>
+
+<p>Ou :</p>
+<div class="highlight"><pre><span></span><code>tar --xz -xvf archive.tar.xz
+</code></pre></div>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html">Suppression des branches distantes inexistantes</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html">Suppression des branches distantes inexistantes</a></h2>
     <p>
       Posté le mar. 25 août 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>      &#8226; <a href="https://www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/git.html">git</a>    </p>
   </header>
   <div>
       <p>Lors d'un developpement j'ai créé une branche "add_namespace" qui m'a
 permis d'ajouté des namespaces a différents fichiers PHP.</p>
 <p>Une fois la modification faite j'ai envoyé ma branche sur l'origin, en
 faisant un "pull request" (github) ou "merge request" (gitlab).</p>
-<p>Un autre développeur a accepté mon pull request (il a donc …</p>
-      <a class="btn" href="https://www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html">Lire la suite</a>
+<p>Un autre développeur a accepté mon pull request (il a donc mergé la
+branche) et a supprimé ma branche de l'origine.</p>
+<p>Sur mon environnement je vois toujours cette branche.</p>
+<blockquote>
+<p>git branch -a</p>
+<p>* master</p>
+<p>remote/origin/HEAD -&gt; origin/master</p>
+<p>remote/origin/add_namespace</p>
+<p>remote/origin/master</p>
+</blockquote>
+<p>Pour pouvoir effacer cette branche dans le remote, il suffit de tapper
+la commande :</p>
+<blockquote>
+<p>git remote prune origin</p>
+<p>Élimination de origin</p>
+<p>URL : <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#46;&#109;&#111;&#110;&#100;&#111;&#109;&#97;&#105;&#110;&#46;&#99;&#111;&#109;">&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#46;&#109;&#111;&#110;&#100;&#111;&#109;&#97;&#105;&#110;&#46;&#99;&#111;&#109;</a>:mondepot.git</p>
+<p>* [éliminé] origin/add_namespace</p>
+</blockquote>
+<p>Maintenant, vérifions que tout est propre :</p>
+<blockquote>
+<p>git branch -a</p>
+<p>* master</p>
+<p>remote/origin/HEAD -&gt; origin/master</p>
+<p>remote/origin/master</p>
+</blockquote>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html">Migration de Tumblr à Pelican</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html">Migration de Tumblr à Pelican</a></h2>
     <p>
       Posté le jeu. 20 août 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/blog.html">blog</a>      &#8226; <a href="https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/blog.html">blog</a>    </p>
   </header>
   <div>
       <p>J'ai testé pelican, lors de mon voyage à Bruxelles en Thalys le 15 Août
 2014. Depuis cette date je n'avais pas pris le temps de m'occuper de la
 migration de mon blog de tumblr vers pelican.</p>
 <p><a href="http://blog.getpelican.com/">Pelican</a> est un générateur de site
-statique, il est pratique pour la gestion des …</p>
-      <a class="btn" href="https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html">Lire la suite</a>
+statique, il est pratique pour la gestion des articles tel que mon blog.</p>
+<p>Il suffit de créer un fichier texte avec le contenu de l'article et
+l'envoyer sur github pour que celui-ci soit publié.</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-08-08-touche-pour-sortir-sa-machine-de-veille.html">Touche pour sortir sa machine de veille</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-08-08-touche-pour-sortir-sa-machine-de-veille.html">Touche pour sortir sa machine de veille</a></h2>
     <p>
       Posté le sam. 08 août 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/key.html">key</a>,      <a href="https://www.choiz.fr/tag/computer.html">computer</a>      &#8226; <a href="https://www.choiz.fr/2015-08-08-touche-pour-sortir-sa-machine-de-veille.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/key.html">key</a>,      <a href="https://www.choiz.fr/tag/computer.html">computer</a>    </p>
   </header>
   <div>
       <p>Il y a quelques années, pour sortir ma machine de veille j'utilisais la
@@ -270,8 +792,15 @@ touche "enter" ou "escape".</p>
 <p>Ce qui fonctionne mais, si vous êtes dans un programme d'installation
 qui demande une confirmation (formater tout le disque par exemple), en
 appuyant sur "enter" vous allez confirmer le formatage…</p>
-<p>Avec la touche …</p>
-      <a class="btn" href="https://www.choiz.fr/2015-08-08-touche-pour-sortir-sa-machine-de-veille.html">Lire la suite</a>
+<p>Avec la touche escape vous allez généralement annuler l'action que l'on
+vous propose.</p>
+<p>Même problème avec toutes les autres touches : "espace" qui confirme
+généralement, "o" pour "oui", "y" pour "yes", "n" pour "no" ou "non", ou
+une quantité "1", "2", ou toute autre lettre défini tel que "a" pour
+"annuler", "c" pour "cancel"…</p>
+<p>Bref la seule touche que j'utilise pour sortir mon ordinateur de veille
+est "shift". Que ça soit le "shift" droit ou gauche il ne fais jamais
+d'action spécifique à ma connaissance ;-)</p>
   </div>
 </article>
 
@@ -286,9 +815,24 @@ appuyant sur "enter" vous allez confirmer le formatage…</p>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

@@ -44,7 +44,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -58,11 +58,7 @@
 <article>
   <header>
     <h1 id="2011-09-18-plusieurs-comptes-skype-sur-le-même-mac">Plusieurs comptes Skype sur le même Mac !</h1>
-    <p>
-      Posté le dim. 18 septembre 2011 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/skype.html">skype</a>,      <a href="https://www.choiz.fr/tag/osx.html">osx</a>      &#8226; <a href="https://www.choiz.fr/2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le dim. 18 septembre 2011</p>
   </header>
   <div>
     <p>Comment lancer plusieurs comptes Skype avec le même Mac ?</p>
@@ -71,18 +67,16 @@ Tags :
 utilisateurs. Par exemple l'utilisateur : "skype" avec comme mot de
 passe "password". Ensuite ouvrir un terminal (dans spotlight tapez
 terminal). Puis :</p>
-<div class="highlight"><pre><span></span>su skype (ou &quot;su nomdutilisateur&quot; en fonction de l&#39;utilisateur créé).
+<div class="highlight"><pre><span></span><code>su skype (ou &quot;su nomdutilisateur&quot; en fonction de l&#39;utilisateur créé).
 
 Password:
 
 password (ou autre suivant le mot de passe de l&#39;utilisateur).
-</pre></div>
-
+</code></pre></div>
 
 <p>Puis :</p>
-<div class="highlight"><pre><span></span>/Applications/Skype.app/Contents/MacOS/Skype
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>/Applications/Skype.app/Contents/MacOS/Skype
+</code></pre></div>
 
 <p>Ce qui devrait lancer une seconde instance de Skype.</p>
   </div>
@@ -92,23 +86,30 @@ password (ou autre suivant le mot de passe de l&#39;utilisateur).
       <a href="https://www.choiz.fr/tag/osx.html">osx</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Plusieurs comptes Skype sur le même Mac !",
   "headline": "Plusieurs comptes Skype sur le même Mac !",
@@ -119,6 +120,7 @@ password (ou autre suivant le mot de passe de l&#39;utilisateur).
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2011-09-18-plusieurs-comptes-skype-sur-le-même-mac.html",
   "description": "Comment lancer plusieurs comptes Skype avec le même Mac ? Créer un compte utilisateur dans les préférences systèmes > utilisateurs. Par exemple l'utilisateur : "skype" avec comme mot de passe "password". Ensuite ouvrir un terminal (dans spotlight tapez terminal). Puis : su skype (ou "su nomdutilisateur" en fonction de l'utilisateur créé). Password: password …"
 }

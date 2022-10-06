@@ -44,7 +44,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -58,25 +58,19 @@
 <article>
   <header>
     <h1 id="2014-05-06-faire-un-patch-de-x-commits-avec-git">Faire un patch de "x" commit(s) avec git</h1>
-    <p>
-      Posté le mar. 06 mai 2014 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/patch.html">patch</a>      &#8226; <a href="https://www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le mar. 06 mai 2014</p>
   </header>
   <div>
     <p>Voici mon historique des commits :</p>
-<div class="highlight"><pre><span></span>c0004 -- dernier commit
+<div class="highlight"><pre><span></span><code>c0004 -- dernier commit
 c0003 -- avant dernier commit
 c0002 -- second commit
 c0001 -- premier commit
-</pre></div>
-
+</code></pre></div>
 
 <p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire :</p>
-<div class="highlight"><pre><span></span>git format-patch -2 c0002 --stdout &gt; mon.patch
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>git format-patch -2 c0002 --stdout &gt; mon.patch
+</code></pre></div>
 
 <p>le "-2" sert à récupérer 2 commits à partir du commit c0002.</p>
   </div>
@@ -86,23 +80,30 @@ c0001 -- premier commit
       <a href="https://www.choiz.fr/tag/patch.html">patch</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Faire un patch de "x" commit(s) avec git",
   "headline": "Faire un patch de "x" commit(s) avec git",
@@ -113,6 +114,7 @@ c0001 -- premier commit
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2014-05-06-faire-un-patch-de-x-commits-avec-git.html",
   "description": "Voici mon historique des commits : c0004 -- dernier commit c0003 -- avant dernier commit c0002 -- second commit c0001 -- premier commit Je veux faire un patch du commit c0001 et c0002 je dois donc faire : git format-patch -2 c0002 --stdout > mon.patch le "-2" sert à récupérer 2 commits à partir du commit …"
 }

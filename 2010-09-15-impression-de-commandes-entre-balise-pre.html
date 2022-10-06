@@ -45,7 +45,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -59,11 +59,7 @@
 <article>
   <header>
     <h1 id="2010-09-15-impression-de-commandes-entre-balise-pre">Impression de commandes entre balise &lt;pre&gt;</h1>
-    <p>
-      Posté le mer. 15 septembre 2010 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/css.html">css</a>,      <a href="https://www.choiz.fr/tag/html.html">html</a>,      <a href="https://www.choiz.fr/tag/code.html">code</a>      &#8226; <a href="https://www.choiz.fr/2010-09-15-impression-de-commandes-entre-balise-pre.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le mer. 15 septembre 2010</p>
   </header>
   <div>
     <p>J'ai toujours eu pas mal de soucis lors d'impression de différentes
@@ -72,11 +68,11 @@ documentations…</p>
 il n'y a pas de retour à la ligne fait automatiquement pour cela un
 petit css permet de faire les retours à la ligne lorsque la page est
 trop grande. :</p>
-<div class="highlight"><pre><span></span><span class="nt">pre</span> <span class="p">{</span>
-    <span class="k">white-space</span><span class="p">:</span> <span class="kc">pre-wrap</span><span class="p">;</span>
-    <span class="k">word-wrap</span><span class="p">:</span> <span class="kc">break-word</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">pre</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">white-space</span><span class="p">:</span><span class="w"> </span><span class="kc">pre-wrap</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">word-wrap</span><span class="p">:</span><span class="w"> </span><span class="kc">break-word</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -85,23 +81,30 @@ trop grande. :</p>
       <a href="https://www.choiz.fr/tag/code.html">code</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Impression de commandes entre balise &lt;pre&gt;",
   "headline": "Impression de commandes entre balise &lt;pre&gt;",
@@ -112,6 +115,7 @@ trop grande. :</p>
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2010-09-15-impression-de-commandes-entre-balise-pre.html",
   "description": "J'ai toujours eu pas mal de soucis lors d'impression de différentes documentations… J'utilise souvent la balise <pre> pour les lignes de commandes et il n'y a pas de retour à la ligne fait automatiquement pour cela un petit css permet de faire les retours à la ligne lorsque la page …"
 }

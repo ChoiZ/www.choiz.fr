@@ -44,7 +44,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -58,11 +58,7 @@
 <article>
   <header>
     <h1 id="2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz">Compression Décompression tar.gz tar.bz2 tar.xz</h1>
-    <p>
-      Posté le dim. 30 août 2015 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/archive.html">archive</a>,      <a href="https://www.choiz.fr/tag/gzip.html">gzip</a>      &#8226; <a href="https://www.choiz.fr/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le dim. 30 août 2015</p>
   </header>
   <div>
     <p>J'ai toujours du mal pour décompresser un fichier de type "tar.bz2" ou
@@ -72,14 +68,12 @@ syntaxe…</p>
 <p>Pour les fichiers <code>tar.gz</code> j'arrive parfaitement à compresser ou
 décompresser ce format exemple :</p>
 <p>On compresse avec :</p>
-<div class="highlight"><pre><span></span>tar -cvzf archive.tar.gz dossier_a_compresser/
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>tar -cvzf archive.tar.gz dossier_a_compresser/
+</code></pre></div>
 
 <p>On décompresse avec :</p>
-<div class="highlight"><pre><span></span>tar -xvzf archive.tar.gz
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>tar -xvzf archive.tar.gz
+</code></pre></div>
 
 <p>Il suffit de retenir :</p>
 <p>-c comme compression / "x" comme eXtract ou eXtraction. -v pour le mode
@@ -89,46 +83,39 @@ verbeux. -z pour le "gzip" d'ou le ".gz". -f pour spécifier le fichier.</p>
 par "j" de Bzip… (la lettre "b" étant sans doute utilisé avant que le
 bzip n'apparaisse). L'alternative est d'utiliser "--bzip"</p>
 <p>On compresse avec :</p>
-<div class="highlight"><pre><span></span>tar -cvjf archive.tar.bz2 dossier_a_compresser/
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>tar -cvjf archive.tar.bz2 dossier_a_compresser/
+</code></pre></div>
 
 <p>Ou :</p>
-<div class="highlight"><pre><span></span>tar --bzip2 -cvf archive.tar.bz2 dossier_a_compresser/
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>tar --bzip2 -cvf archive.tar.bz2 dossier_a_compresser/
+</code></pre></div>
 
 <p>On décompresse avec :</p>
-<div class="highlight"><pre><span></span>tar -xvjf archive.tar.bz2
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>tar -xvjf archive.tar.bz2
+</code></pre></div>
 
 <p>Ou :</p>
-<div class="highlight"><pre><span></span>tar --bzip2 -xvf archive.tar.bz2
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>tar --bzip2 -xvf archive.tar.bz2
+</code></pre></div>
 
 <h2>tar.xz</h2>
 <p>Pour ce qui est de Lzma ou le <code>tar.xz</code> c'est un "J" majuscule cette
 fois ou d'utiliser "--xz".</p>
 <p>On compresse avec :</p>
-<div class="highlight"><pre><span></span>tar -cvJf archive.tar.xz dossier_a_compresser/
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>tar -cvJf archive.tar.xz dossier_a_compresser/
+</code></pre></div>
 
 <p>Ou :</p>
-<div class="highlight"><pre><span></span>tar --xz -cvf archive.tar.xz dossier_a_compresser/
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>tar --xz -cvf archive.tar.xz dossier_a_compresser/
+</code></pre></div>
 
 <p>On décompresse avec :</p>
-<div class="highlight"><pre><span></span>tar -xvJf archive.tar.xz
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>tar -xvJf archive.tar.xz
+</code></pre></div>
 
 <p>Ou :</p>
-<div class="highlight"><pre><span></span>tar --xz -xvf archive.tar.xz
-</pre></div>
+<div class="highlight"><pre><span></span><code>tar --xz -xvf archive.tar.xz
+</code></pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -136,23 +123,30 @@ fois ou d'utiliser "--xz".</p>
       <a href="https://www.choiz.fr/tag/gzip.html">gzip</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Compression Décompression tar.gz tar.bz2 tar.xz",
   "headline": "Compression Décompression tar.gz tar.bz2 tar.xz",
@@ -163,6 +157,7 @@ fois ou d'utiliser "--xz".</p>
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html",
   "description": "J'ai toujours du mal pour décompresser un fichier de type "tar.bz2" ou "tar.xz". Je n'ai pas encore trouvé le moyen de me souvenir de la syntaxe… tar.gz Pour les fichiers tar.gz j'arrive parfaitement à compresser ou décompresser ce format exemple : On compresse avec : tar -cvzf archive …"
 }

@@ -37,7 +37,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -50,30 +50,144 @@
 
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html">Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</a></h1>
+    <h2><a href="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html">Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</a></h2>
     <p>
       Posté le sam. 26 août 2017 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/unifi.html">unifi</a>,      <a href="https://www.choiz.fr/tag/network.html">network</a>      &#8226; <a href="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/unifi.html">unifi</a>,      <a href="https://www.choiz.fr/tag/network.html">network</a>    </p>
   </header>
   <div>
       <p>Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.</p>
 <p>En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
 livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs.</p>
-<p>Il y a pas mal de manipulations a …</p>
-      <a class="btn" href="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html">Lire la suite</a>
+<p>Il y a pas mal de manipulations a faire avant de pouvoir remplacer totalement sa
+livebox par l'USG.</p>
+<p>J'ai utilisé un raspberry pi qui me permet d'installer un controlleur UniFi qui
+permet de gerer son matériel de la marque.</p>
+<p>En branchant l'USG au secteur il prend l'adresse IP 192.168.1.1 (la même que la
+livebox dans un premier temps ça aide pas…). Je branche donc l'USG en direct sur
+mon poste et je me connect en ssh dessus avec les login / pass : "ubnt / ubnt".</p>
+<p>Se rendre sur <a href="https://www.l9.fr/usg-config-generator.php">mon générateur de configuration</a> pour générer un fichier config_usg.sh</p>
+<p>Puis télécharger les fichiers :</p>
+<ul>
+<li><a href="https://lafibre.info/remplacer-livebox/en-cours-remplacer-sa-livebox-par-un-routeur-ubiquiti-edgemax/?action=dlattach;attach=34373">dhclient3</a></li>
+<li><a href="https://gist.githubusercontent.com/ChoiZ/32add22a2addcb00c1b07c8a453a5902/raw/c4f3d9426de070121fb70caa9664efbe76c8b2e3/rfc3442-classless-routes">rfc3442-classless-routes</a></li>
+</ul>
+<p>Faire un scp de dhclient3 rfc3442-classless-route config_usg.sh sur votre USG
+avec l'utilisateur "ubnt" et le mot de passe "ubnt"</p>
+<div class="highlight"><pre><span></span><code><span class="n">scp</span><span class="w"> </span><span class="n">dhclient3</span><span class="w"> </span><span class="n">rfc3442</span><span class="o">-</span><span class="n">classless</span><span class="o">-</span><span class="n">routes</span><span class="w"> </span><span class="n">config_usg</span><span class="p">.</span><span class="n">sh</span><span class="w"> </span><span class="n">ubnt</span><span class="mf">@192.168.1.1</span><span class="o">:/</span><span class="n">home</span><span class="o">/</span><span class="n">ubnt</span><span class="w"></span>
+</code></pre></div>
+
+<p>Se connecter en ssh sur votre usg :</p>
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="n">ubnt</span><span class="mf">@192.168.1.1</span><span class="w"></span>
+</code></pre></div>
+
+<p>Remplacer le dhclient3, copier la rfc au bon endroit et rendre executable mon
+script :</p>
+<div class="highlight"><pre><span></span><code><span class="nv">sudo</span><span class="w"> </span><span class="nv">bash</span><span class="w"></span>
+<span class="nv">mv</span><span class="w"> </span><span class="nv">dhclient3</span><span class="w"> </span><span class="o">/</span><span class="nv">sbin</span><span class="o">/</span><span class="nv">dhclient3</span><span class="w"></span>
+<span class="nv">chmod</span><span class="w"> </span><span class="mi">775</span><span class="w"> </span><span class="o">/</span><span class="nv">sbin</span><span class="o">/</span><span class="nv">dhclient3</span><span class="w"></span>
+<span class="nv">chown</span><span class="w"> </span><span class="nv">root</span>:<span class="nv">root</span><span class="w"> </span><span class="o">/</span><span class="nv">sbin</span><span class="o">/</span><span class="nv">dhclient3</span><span class="w"></span>
+<span class="nv">mv</span><span class="w"> </span><span class="nv">rfc3442</span><span class="o">-</span><span class="nv">classless</span><span class="o">-</span><span class="nv">routes</span><span class="w"> </span><span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">dhcp3</span><span class="o">/</span><span class="nv">dhclient</span><span class="o">-</span><span class="k">exit</span><span class="o">-</span><span class="nv">hooks</span>.<span class="nv">d</span><span class="o">/</span><span class="w"></span>
+<span class="nv">chown</span><span class="w"> </span><span class="nv">root</span>:<span class="nv">root</span><span class="w"> </span><span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">dhcp3</span><span class="o">/</span><span class="nv">dhclient</span><span class="o">-</span><span class="k">exit</span><span class="o">-</span><span class="nv">hooks</span>.<span class="nv">d</span><span class="o">/</span><span class="nv">rfc3442</span><span class="o">-</span><span class="nv">classless</span><span class="o">-</span><span class="nv">routes</span><span class="w"></span>
+<span class="nv">chmod</span><span class="w"> </span><span class="nv">a</span><span class="o">+</span><span class="nv">x</span><span class="w"> </span><span class="nv">config_usg</span>.<span class="nv">sh</span><span class="w"></span>
+</code></pre></div>
+
+<p>Editer le fichier /opt/vyatta/sbin/vyatta-interfaces.pl et ajouter l'option 90
+du dhcp. Il faut aller a la ligne 194 :</p>
+<div class="highlight"><pre><span></span><code>    $output .= &quot;option rfc3442-classless-static-routes code 121 = array of unsigned integer 8;\n\n&quot;;
+</code></pre></div>
+
+<p>Et ajouter dessous :</p>
+<div class="highlight"><pre><span></span><code>    $output .= &quot;option rfc3118-auth code 90 = string;\n\n&quot;;
+</code></pre></div>
+
+<p>Maintenant redémarrer l'USG.</p>
+<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="nv">@ubnt</span><span class="err">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ubnt</span><span class="err">#</span><span class="w"> </span><span class="n">reboot</span><span class="w"></span>
+<span class="n">Proceed</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">reboot</span><span class="vm">?</span><span class="w"> </span><span class="o">[</span><span class="n">confirm</span><span class="o">]</span><span class="n">y</span><span class="w"></span>
+</code></pre></div>
+
+<p>Débrancher votre controlleur du réseau (pour ne pas que l'USG reprovisionne une
+vielle configuration).</p>
+<p>Se connecter de nouveau en ssh sur l'usg :</p>
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="n">ubnt</span><span class="mf">@192.168.1.1</span><span class="w"></span>
+</code></pre></div>
+
+<p>Se connecter en tant que root pour executer le script</p>
+<div class="highlight"><pre><span></span><code>sudo bash
+./config_usg.sh
+</code></pre></div>
+
+<p>Vous devriez avoir :</p>
+<div class="highlight"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n">specified</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="n">already</span><span class="w"> </span><span class="n">exists</span><span class="w"></span>
+<span class="p">[</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="n">nat</span><span class="w"> </span><span class="n">rule</span><span class="w"> </span><span class="mi">6010</span><span class="w"> </span><span class="n">outbound</span><span class="o">-</span><span class="n">interface</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.832</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="n">NAT</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">warning</span><span class="o">:</span><span class="w"> </span><span class="n">interface</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.832</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">exist</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">system</span><span class="w"></span>
+
+<span class="p">[</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="n">nat</span><span class="w"> </span><span class="n">rule</span><span class="w"> </span><span class="mi">6011</span><span class="w"> </span><span class="n">outbound</span><span class="o">-</span><span class="n">interface</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.838</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="n">NAT</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">warning</span><span class="o">:</span><span class="w"> </span><span class="n">interface</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.838</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">exist</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">system</span><span class="w"></span>
+
+<span class="p">[</span><span class="w"> </span><span class="n">interfaces</span><span class="w"> </span><span class="n">ethernet</span><span class="w"> </span><span class="n">eth0</span><span class="w"> </span><span class="n">vif</span><span class="w"> </span><span class="mi">838</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="n">dhcp</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="n">Starting</span><span class="w"> </span><span class="n">DHCP</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.838</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+
+<span class="p">[</span><span class="w"> </span><span class="n">interfaces</span><span class="w"> </span><span class="n">ethernet</span><span class="w"> </span><span class="n">eth0</span><span class="w"> </span><span class="n">vif</span><span class="w"> </span><span class="mi">832</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="n">dhcp</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="n">Starting</span><span class="w"> </span><span class="n">DHCP</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.832</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+
+<span class="p">[</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="n">ssh</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="n">Restarting</span><span class="w"> </span><span class="n">OpenBSD</span><span class="w"> </span><span class="n">Secure</span><span class="w"> </span><span class="n">Shell</span><span class="w"> </span><span class="n">server</span><span class="o">:</span><span class="w"> </span><span class="n">sshd</span><span class="p">.</span><span class="w"></span>
+
+<span class="p">[</span><span class="w"> </span><span class="n">protocols</span><span class="w"> </span><span class="n">igmp</span><span class="o">-</span><span class="n">proxy</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="n">Starting</span><span class="w"> </span><span class="n">IGMP</span><span class="w"> </span><span class="n">proxy</span><span class="w"></span>
+
+<span class="p">[</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="n">dhcp</span><span class="o">-</span><span class="n">server</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="n">Stopping</span><span class="w"> </span><span class="n">DHCP</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">daemon</span><span class="p">...</span><span class="w"></span>
+<span class="n">Starting</span><span class="w"> </span><span class="n">DHCP</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">daemon</span><span class="p">...</span><span class="w"></span>
+
+<span class="n">Saving</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="err">&#39;</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">config</span><span class="p">.</span><span class="n">boot</span><span class="err">&#39;</span><span class="p">...</span><span class="w"></span>
+<span class="n">Done</span><span class="w"></span>
+<span class="p">[</span><span class="n">edit</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Puis j'éteind l'USG pour remplacer la livebox.</p>
+<p>Le port WAN1 pour l'ONT</p>
+<p>Le port LAN1 pour votre réseau local</p>
+<p>Le port WAN2/LAN2 pour la télévision</p>
+<p>Quand j'arrive a joindre l'usg sur l'IP 192.168.1.1 je me reconnect en ssh et je
+me connect en root pour sauver la config et l'envoyer sur ma machine.</p>
+<div class="highlight"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">bash</span><span class="w"></span>
+<span class="n">mca</span><span class="o">-</span><span class="n">ctrl</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="k">dump</span><span class="o">-</span><span class="n">cfg</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">gateway</span><span class="p">.</span><span class="n">json</span><span class="w"></span>
+<span class="n">scp</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">gateway</span><span class="p">.</span><span class="n">json</span><span class="w"> </span><span class="k">user</span><span class="nv">@ma_machine</span><span class="err">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="k">user</span><span class="o">/</span><span class="w"></span>
+</code></pre></div>
+
+<p>Maintenant je me déconnecte de l'usg. Je débranche le câble réseau entre l'usg et
+mon réseau local pour pouvoir rebrancher mon controlleur. Si on débranche pas
+l'usg il va reprendre la config par defaut du controlleur et il faudra tout
+refaire (hormis les copies des fichiers dhclient3 rfc… etc…).</p>
+<p>Depuis mon poste je copie sur mon controlleur le fichier config.gateway.json que
+je viens de sauver.</p>
+<div class="highlight"><pre><span></span><code><span class="n">scp</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">gateway</span><span class="p">.</span><span class="n">json</span><span class="w"> </span><span class="k">user</span><span class="nv">@mon_controlleur</span><span class="err">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="k">user</span><span class="w"></span>
+</code></pre></div>
+
+<p>Puis je me connecte a mon controlleur en ssh pour déposer dans le bon dossier ce
+fichier.</p>
+<p>Le dossier doit être <code>/data/sites/default</code> si vous utilisez le site par defaut.</p>
+<p>Reconnecter l'USG a votre réseau.</p>
+<p>Il va être de nouveau provisionné par votre controlleur, si vous avez des
+erreurs lors de ce provisionning elles seront affichées dans "alerts" sur votre
+controlleur. Dans ce cas il y a un truc qui cloche entre votre config et celle
+du controlleur revoir les différentes étapes.</p>
+<p>Si le provisionning est ok l'USG redémarre et la config est enfin fini ! ;-)</p>
+<p>Grand merci au forum lafibre.info et particulièrement ce <a href="https://lafibre.info/remplacer-livebox/unifi-security-gateway-en-remplacement-de-la-livebox/">sujet</a>.</p>
+<p><a href="http://amzn.to/2xXmsDO">Ubiquiti Networks USG</a> sur Amazon.</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html">Installation de Proxmox-VE 5 sur Debian Stretch</a></h1>
+    <h2><a href="https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html">Installation de Proxmox-VE 5 sur Debian Stretch</a></h2>
     <p>
       Posté le sam. 26 août 2017 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/proxmox.html">proxmox</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/proxmox.html">proxmox</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
@@ -81,180 +195,361 @@ Par contre il ne faut pas modifier le sources.list ni installer
 firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
 tout).</p>
 <p>Sur debian éditer le fichier /etc/hosts comme ceci :</p>
-<div class="highlight"><pre><span></span>127.0.0.1       localhost.localdomain localhost
-192 …</pre></div>
-      <a class="btn" href="https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html">Lire la suite</a>
+<div class="highlight"><pre><span></span><code><span class="mf">127.0.0.1</span><span class="w">       </span><span class="n">localhost</span><span class="mf">.</span><span class="n">localdomain</span><span class="w"> </span><span class="n">localhost</span><span class="w"></span>
+<span class="mf">192.168.15.77</span><span class="w">   </span><span class="n">prox4m1</span><span class="mf">.</span><span class="n">proxmox</span><span class="mf">.</span><span class="n">com</span><span class="w"> </span><span class="n">prox4m1</span><span class="w"> </span><span class="n">pvelocalhost</span><span class="w"></span>
+
+<span class="err">#</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">lines</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">desirable</span><span class="w"> </span><span class="kr">for</span><span class="w"> </span><span class="n">IPv6</span><span class="w"> </span><span class="n">capable</span><span class="w"> </span><span class="n">hosts</span><span class="w"></span>
+<span class="p">::</span><span class="mf">1</span><span class="w">     </span><span class="n">localhost</span><span class="w"> </span><span class="n">ip6</span><span class="o">-</span><span class="n">localhost</span><span class="w"> </span><span class="n">ip6</span><span class="o">-</span><span class="n">loopback</span><span class="w"></span>
+<span class="n">ff02</span><span class="p">::</span><span class="mf">1</span><span class="w"> </span><span class="n">ip6</span><span class="o">-</span><span class="n">allnodes</span><span class="w"></span>
+<span class="n">ff02</span><span class="p">::</span><span class="mf">2</span><span class="w"> </span><span class="n">ip6</span><span class="o">-</span><span class="n">allrouters</span><span class="w"></span>
+</code></pre></div>
+
+<p>Puis tester la configuration :</p>
+<div class="highlight"><pre><span></span><code><span class="nv">hostname</span><span class="w"> </span><span class="o">--</span><span class="nv">ip</span><span class="o">-</span><span class="nv">address</span><span class="w"></span>
+<span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">15</span>.<span class="mi">77</span><span class="w"> </span>#<span class="w"> </span><span class="nv">should</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nv">here</span><span class="w"> </span><span class="nv">your</span><span class="w"> </span><span class="nv">IP</span><span class="w"> </span><span class="nv">adress</span><span class="w"></span>
+</code></pre></div>
+
+<p>Puis on ajoute au sources.list le dépot de proxmox, on récupere la clé et on
+update :</p>
+<div class="highlight"><pre><span></span><code><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;deb http://download.proxmox.com/debian/pve stretch pve-no-subscription&quot;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">pve</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">repo</span><span class="o">.</span><span class="n">list</span><span class="w"></span>
+<span class="n">wget</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">proxmox</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">debian</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">ve</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">5.</span><span class="n">x</span><span class="o">.</span><span class="n">gpg</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">trusted</span><span class="o">.</span><span class="n">gpg</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">ve</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">5.</span><span class="n">x</span><span class="o">.</span><span class="n">gpg</span><span class="w"></span>
+<span class="n">apt</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">apt</span><span class="w"> </span><span class="n">dist</span><span class="o">-</span><span class="n">upgrade</span><span class="w"></span>
+</code></pre></div>
+
+<p>Puis on install les packages Proxmox VE :</p>
+<div class="highlight"><pre><span></span><code>apt install proxmox-ve postfix open-iscsi
+</code></pre></div>
+
+<p>On configure postfix en distribution locale uniquement et à la fin de
+l'installation on reboot.</p>
+<p>Au reboot vous devriez avoir la main en https sur https://ip_proxmox:8006</p>
+<p>S'identifier avec vos login / pass debian.</p>
+<p>Pour ne pas avoir la popup qui indique que vous n'avez pas de souscription il
+faut modifier le fichier /usr/share/pve-manager/js/pvemanagerlib.js et
+rechercher la ligne avec :</p>
+<p><code>if (data.status !== 'Active') {</code></p>
+<p>remplacer par :</p>
+<p><code>if (false /*data.status !== 'Active'*/) {</code></p>
+<p>Puis relancer pveproxy avec la commande <code>pveproxy restart</code></p>
+<p>Se déconnecter de l'interface proxmox, à la reconnection vous n'aurez plus le
+message de souscription.</p>
+<p>Puis faire les commandes optionnelles :</p>
+<div class="highlight"><pre><span></span><code>apt remove os-prober
+apt remove linux-image-amd64 linux-image-4.9.0-3-amd64
+update-grub
+</code></pre></div>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2017-08-26-upgrade-nas.html">Upgrade NAS</a></h1>
+    <h2><a href="https://www.choiz.fr/2017-08-26-upgrade-nas.html">Upgrade NAS</a></h2>
     <p>
       Posté le sam. 26 août 2017 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/nas.html">nas</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/stockage.html">stockage</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2017-08-26-upgrade-nas.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/nas.html">nas</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/stockage.html">stockage</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
 dessus j'avais installé Debian 6 à l'époque puis j'ai mis à jour jusqu'à la version 9.</p>
 <p>Mon objectif est l'ajout d'un disque car j'ai 4 emplacements pour le stockage et
-je n'utilisais que 3 …</p>
-      <a class="btn" href="https://www.choiz.fr/2017-08-26-upgrade-nas.html">Lire la suite</a>
+je n'utilisais que 3 de ses 4 emplacements.</p>
+<p>Pour commencer il me fallait un rack 5"¼ permettant de mettre un disque 3"½ ou
+2"½, je l'ai trouvé sur <a href="http://www.ldlc.com/fiche/PB00157318.html">LDLC</a> c'est
+un "ICY BOX IB-129SSK-B", ensuite j'ai pris sur
+<a href="https://www.amazon.fr/gp/product/B01LZY5T8Y/ref=oh_aui_detailpage_o02_s00?ie=UTF8&amp;psc=1">Amazon</a>
+un disque Seagate ST500LM030 en 2"½ de 500Go et j'avais ce qu'il fallait pour le
+SATA et l'alimentation.</p>
+<p>Ce qui m'a permis de mettre un disque 2"½ au niveau de l'emplacement CDROM du HP
+Microserver.</p>
+<p>J'ai du tué mon uptime d'un an (depuis mon dernier déménagement) :</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="mi">12</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">37</span><span class="w"> </span><span class="n">choiz</span><span class="err">@</span><span class="n">wayland</span><span class="w"> </span><span class="o">~</span><span class="w">  </span><span class="c1">#❯❯❯ uptime</span><span class="w"></span>
+<span class="w"> </span><span class="mi">12</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">37</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="mi">366</span><span class="w"> </span><span class="n">days</span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="p">:</span><span class="mi">08</span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w">  </span><span class="nb">load</span><span class="w"> </span><span class="n">average</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="w"></span>
+</code></pre></div>
+
+<p>Pour la réinstallation j'ai monté un <a href="https://wiki.debian-fr.xyz/PXE_avec_support_EFI">serveur PXE sur
+debian</a> merci Benjamin pour le
+lien et les conseils.</p>
+<p>Installation du TFTP :</p>
+<div class="highlight"><pre><span></span><code># apt install -y tftpd-hpa
+</code></pre></div>
+
+<p>Si vous avez un pare-feu n'oubliez pas d'ouvrir le port 69 :</p>
+<div class="highlight"><pre><span></span><code># iptables -A INPUT -p udp -m udp --dport 69 -j ACCEPT
+</code></pre></div>
+
+<p>Installer le serveur DHCP :</p>
+<div class="highlight"><pre><span></span><code># apt install isc-dhcp-server
+</code></pre></div>
+
+<p>Mes IP sont dans le réseau 192.168.1.0/24, mon router en 192.168.1.1, je met un
+range entre 192.168.1.100 et 192.168.1.150 mon serveur TFTP est en 192.168.1.2.</p>
+<p>Voici la conf d'isc-dhcp-server :</p>
+<div class="highlight"><pre><span></span><code><span class="nv">default</span><span class="o">-</span><span class="nv">lease</span><span class="o">-</span><span class="nv">time</span><span class="w"> </span><span class="mi">600</span><span class="c1">;</span><span class="w"></span>
+<span class="nv">max</span><span class="o">-</span><span class="nv">lease</span><span class="o">-</span><span class="nv">time</span><span class="w"> </span><span class="mi">7200</span><span class="c1">;</span><span class="w"></span>
+
+<span class="nv">allow</span><span class="w"> </span><span class="nv">booting</span><span class="c1">;</span><span class="w"></span>
+
+#<span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">this</span><span class="w"> </span><span class="nv">example</span>,<span class="w"> </span><span class="nv">we</span><span class="w"> </span><span class="nv">serve</span><span class="w"> </span><span class="nv">DHCP</span><span class="w"> </span><span class="nv">requests</span><span class="w"> </span><span class="nv">from</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="ss">(</span><span class="mi">3</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="mi">253</span><span class="ss">)</span><span class="w"></span>
+#<span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">we</span><span class="w"> </span><span class="nv">have</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">router</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">1</span><span class="w"></span>
+<span class="nv">subnet</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">0</span><span class="w"> </span><span class="nv">netmask</span><span class="w"> </span><span class="mi">255</span>.<span class="mi">255</span>.<span class="mi">255</span>.<span class="mi">0</span><span class="w"> </span>{<span class="w"></span>
+<span class="w">  </span><span class="nv">range</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">100</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">150</span><span class="c1">;</span><span class="w"></span>
+<span class="w">  </span><span class="nv">option</span><span class="w"> </span><span class="nv">broadcast</span><span class="o">-</span><span class="nv">address</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">255</span><span class="c1">;</span><span class="w"></span>
+<span class="w">  </span><span class="nv">option</span><span class="w"> </span><span class="nv">routers</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">1</span><span class="c1">;</span><span class="w"></span>
+<span class="w">  </span><span class="nv">option</span><span class="w"> </span><span class="nv">domain</span><span class="o">-</span><span class="nv">name</span><span class="o">-</span><span class="nv">servers</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">1</span><span class="c1">;</span><span class="w"></span>
+<span class="w">  </span><span class="nv">filename</span><span class="w"> </span><span class="s2">&quot;pxelinux.0&quot;</span><span class="c1">;</span><span class="w"></span>
+}<span class="w"></span>
+
+<span class="nv">group</span><span class="w"> </span>{<span class="w"></span>
+<span class="w">  </span><span class="k">next</span><span class="o">-</span><span class="nv">server</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">2</span><span class="c1">;</span><span class="w"></span>
+<span class="w">  </span><span class="nv">host</span><span class="w"> </span><span class="nv">tftpclient</span><span class="w"> </span>{<span class="w"></span>
+<span class="w">    </span><span class="nv">filename</span><span class="w"> </span><span class="s2">&quot;pxelinux.0&quot;</span><span class="c1">;</span><span class="w"></span>
+<span class="w">  </span>}<span class="w"></span>
+}<span class="w"></span>
+</code></pre></div>
+
+<p>Redémarrer le DHCP pour que la config soit prise en compte.</p>
+<div class="highlight"><pre><span></span><code># systemctl restart isc-dhcp-server
+</code></pre></div>
+
+<p>Maintenant nous téléchargeons la dernière version de debian pour la mettre sur
+notre TFTP :</p>
+<div class="highlight"><pre><span></span><code># cd /srv/tftp/
+# wget -c http://ftp.fr.debian.org/debian/dists/stretch/main/installer-amd64/current/images/netboot/netboot.tar.gz
+# tar -zxf netboot.tar.gz
+# rm netboot.tar.gz
+# systemctl restart tftpd-hpa
+</code></pre></div>
+
+<p>Le PXE est maintenant fonctionnel avec l'installation de debian.</p>
+<p>Je réinstall donc debian 9.1 proprement.</p>
+<p>Pour éviter d'avoir ses messages d'erreurs :</p>
+<div class="highlight"><pre><span></span><code><span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso5</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span><span class="w"></span>
+<span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span><span class="w"></span>
+<span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span><span class="w"></span>
+</code></pre></div>
+
+<p>Je modifie mon fichier /etc/apt/sources.list et j'ajoute les "non-free".</p>
+<p>Puis j'install le firmware-linux-nonfree :</p>
+<div class="highlight"><pre><span></span><code>apt update
+apt install firmware-linux-nonfree
+</code></pre></div>
+
+<p>Il me reste plus qu'a remonter mes disques de backup et de refaire mes partages.</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html">Re-générer une clé rsa publique</a></h1>
+    <h2><a href="https://www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html">Re-générer une clé rsa publique</a></h2>
     <p>
       Posté le lun. 05 juin 2017 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="https://www.choiz.fr/tag/key.html">key</a>      &#8226; <a href="https://www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="https://www.choiz.fr/tag/key.html">key</a>    </p>
   </header>
   <div>
       <p>Si vous n'avez plus de clé publique, mais que vous avez toujours votre clé privée vous pouvez regénérer votre clé
 publique.</p>
 <p>Pour se faire il faut utiliser la commande <em>ssh-keygen</em> avec l'option <em>-y</em> et <em>-f</em> pour désigner la clé privé.</p>
 <p><code>ssh-keygen -y -f ~/.ssh/id_rsa &gt; ~/.ssh/id_rsa.pub</code></p>
-<p>On utilise …</p>
-      <a class="btn" href="https://www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html">Lire la suite</a>
+<p>On utilise ci-dessus l'id_rsa (privée) pour générer l'id_rsa.pub.</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html">Utiliser un Bastion SSH</a></h1>
+    <h2><a href="https://www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html">Utiliser un Bastion SSH</a></h2>
     <p>
       Posté le jeu. 01 juin 2017 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/ssh.html">ssh</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
 trouve dans <em>~/.ssh/config</em> et d'ajouter les deux lignes suivantes :</p>
-<div class="highlight"><pre><span></span>Host destination.local
-    ProxyCommand ssh user@bastion.fr -W %h:%p
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="k">Host</span><span class="w"> </span><span class="n">destination</span><span class="p">.</span><span class="k">local</span><span class="w"></span>
+<span class="w">    </span><span class="n">ProxyCommand</span><span class="w"> </span><span class="n">ssh</span><span class="w"> </span><span class="k">user</span><span class="nv">@bastion</span><span class="p">.</span><span class="n">fr</span><span class="w"> </span><span class="o">-</span><span class="n">W</span><span class="w"> </span><span class="o">%</span><span class="nl">h</span><span class="p">:</span><span class="o">%</span><span class="n">p</span><span class="w"></span>
+</code></pre></div>
 
 <p>C'est tout.</p>
 <p>Explications : on utilise l'host <em>bastion.fr</em> pour se connecter à
-<em>destination.local</em>. Quand …</p>
-      <a class="btn" href="https://www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html">Lire la suite</a>
+<em>destination.local</em>. Quand je tape sur ma machine local <em>ssh
+choiz@destination.local</em> mon client SSH lit le fichier de configuration, se
+connecte à l'host <em>bastion.fr</em> avec l'utilisateur <em>user</em> puis fait une nouvelle
+connexion vers ma destination.</p>
+<p>Vous pouvez modifier votre configuration ssh pour se connecter à votre bastion
+avec une clé spécifique puis a votre destination avec une autre clé par exemple
+ou avec des utilisateurs différents…</p>
+<p>Exemple :</p>
+<div class="highlight"><pre><span></span><code>Host bastion.fr
+    User toto
+    IdentifyFile ~/.ssh/bastion
+
+Host destination.local
+    User tata
+    IdentifyFile ~/.ssh/destination
+</code></pre></div>
+
+<p>Enjoy vincent.m ;-)</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2017-05-14-docker-commandes-utiles.html">Docker commandes utiles</a></h1>
+    <h2><a href="https://www.choiz.fr/2017-05-14-docker-commandes-utiles.html">Docker commandes utiles</a></h2>
     <p>
       Posté le dim. 14 mai 2017 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/docker.html">docker</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2017-05-14-docker-commandes-utiles.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/docker.html">docker</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>Voici quelques commandes très utiles si vous utilisez docker.</p>
 <p>Supprimer tous les containers qui sont arétés :</p>
-<div class="highlight"><pre><span></span>docker ps -q | xargs docker rm
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>docker ps -q | xargs docker rm
+</code></pre></div>
 
 <p>Supprimer toutes les images non utilisées :</p>
-<div class="highlight"><pre><span></span>docker images -q | xargs docker rmi
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>docker images -q | xargs docker rmi
+</code></pre></div>
 
 <p>Se connecter a un conteneur docker lancé par son id :</p>
-<div class="highlight"><pre><span></span>docker exec -it id_de_votre_container /bin/bash …</pre></div>
-      <a class="btn" href="https://www.choiz.fr/2017-05-14-docker-commandes-utiles.html">Lire la suite</a>
+<div class="highlight"><pre><span></span><code><span class="nv">docker</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="o">-</span><span class="nv">it</span><span class="w"> </span><span class="nv">id_de_votre_container</span><span class="w"> </span><span class="o">/</span><span class="nv">bin</span><span class="o">/</span><span class="nv">bash</span><span class="w"></span>
+</code></pre></div>
+
+<p>Se connecter a un conteneur docker lancé par son nom :</p>
+<div class="highlight"><pre><span></span><code><span class="nv">docker</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="o">-</span><span class="nv">it</span><span class="w"> </span><span class="nv">nom_de_votre_container</span><span class="w"> </span><span class="o">/</span><span class="nv">bin</span><span class="o">/</span><span class="nv">bash</span><span class="w"></span>
+</code></pre></div>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html">Convertir un .deb en archive .tar.gz</a></h1>
+    <h2><a href="https://www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html">Convertir un .deb en archive .tar.gz</a></h2>
     <p>
       Posté le sam. 30 juillet 2016 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/archive.html">archive</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/gzip.html">gzip</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/archive.html">archive</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/gzip.html">gzip</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>En voulant installer le logiciel "slack" sur ma machine gentoo au travail j'ai
 trouvé un logiciel plutôt intéressant nommé "deb2targz".</p>
 <p>En effet <a href="https://slack.com/downloads">slack</a> ne dispose que des archives ubuntu
 en 32 bits, 64 bits et fedora en 64 bits.</p>
-<p>deb2targz permet de convertir un fichier ".deb" en archive ".tar.gz …</p>
-      <a class="btn" href="https://www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html">Lire la suite</a>
+<p>deb2targz permet de convertir un fichier ".deb" en archive ".tar.gz".</p>
+<p>Si vous êtes sur gentoo installez le via : <code>emerge -a app-arch/deb2targz</code></p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA.html">Installation de xubuntu 16.04 sur ASUS X205TA</a></h1>
+    <h2><a href="https://www.choiz.fr/2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA.html">Installation de xubuntu 16.04 sur ASUS X205TA</a></h2>
     <p>
       Posté le sam. 21 mai 2016 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/computer.html">computer</a>      &#8226; <a href="https://www.choiz.fr/2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/computer.html">computer</a>    </p>
   </header>
   <div>
       <p>J'ai récement acheté un ASUS X205TA, livré avec Windows
 10 (32 bits), un disque SSD de 32Go et 2Go de ram et pour un prix de 210€.</p>
 <p>J'ai installé xubuntu 16.04 (64 bits) sur une partition séparée pour garder Windows 10.</p>
-<p>L'installation est plutôt complexe car le "bootloader" est …</p>
-      <a class="btn" href="https://www.choiz.fr/2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA.html">Lire la suite</a>
+<p>L'installation est plutôt complexe car le "bootloader" est en 32bits (je pense
+d'ailleurs que c'est pour ça qu'il est livré avec un windows 32bits et non
+64bits).</p>
+<p>Voici <a href="http://ubuntuforums.org/showthread.php?t=2254322&amp;page=92&amp;p=13474817#post13474817">un message</a> qui explique l'installation simple d'ubuntu (remplacer l'iso
+par xubuntu ou autre).</p>
+<p>Pour l'instant : la carte son n'est pas reconnue et le pointeur de la souris
+disparait suite a la mise en veille… Mis a part ça la machine fonctionne très
+bien pour mon utilisation (des petits développements pendant mes trajets maison &lt;-&gt; travail).</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html">Passage en SSL du blog</a></h1>
+    <h2><a href="https://www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html">Passage en SSL du blog</a></h2>
     <p>
       Posté le jeu. 28 avril 2016 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/blog.html">blog</a>,      <a href="https://www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="https://www.choiz.fr/tag/github.html">github</a>      &#8226; <a href="https://www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/blog.html">blog</a>,      <a href="https://www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="https://www.choiz.fr/tag/github.html">github</a>    </p>
   </header>
   <div>
       <p>J'utilise pelican sur github pour écrire mon blog depuis quelques temps, voir les
 articles précédents sur le sujet.</p>
 <p>J'ai décidé de passer le blog en https, avec un certificat gratuit let's encrypt.</p>
 <p>Pour mettre en place un certificat SSL sur "github page" il faut avoir un serveur web qui
-fait …</p>
-      <a class="btn" href="https://www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html">Lire la suite</a>
+fait reverse proxy. J'utilise donc apache avec la configuration suivante :</p>
+<ul>
+<li>Un vhost pour "choiz.fr" qui redirige le port 80 de "choiz.fr" vers le 443 de "www.choiz.fr".</li>
+<li>Un vhost pour "choiz.fr" qui redirige le port 443 (avec un certificat ssl
+valide) de "choiz.fr" vers le 443 de
+"www.choiz.fr".</li>
+<li>Un vhost pour "www.choiz.fr" qui redirige le port 80 de "www.choiz.fr" vers
+le 443 de "www.choiz.fr".</li>
+<li>Et un vhost avec le certificat SSL ainsi que le reverse proxy qui fait croire a
+github que je tape directement l'url "http://choiz.github.io".</li>
+</ul>
+<p>Ici la configuration du dernier vhost :</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;IfModule</span> <span class="err">mod_ssl.c</span><span class="nt">&gt;</span>
+<span class="nt">&lt;VirtualHost</span> <span class="err">*:443</span><span class="nt">&gt;</span>
+    ServerName www.choiz.fr
+
+    SSLProxyEngine On
+    ProxyRequests Off
+    ProxyPreserveHost Off
+    ProxyPass / https://choiz.github.io/
+    ProxyPassReverse / https://choiz.github.io/
+    ProxyPassReverse / http://choiz.github.io/
+
+    # puis la config du SSL
+    SSLEngine On
+    SSLCertificateFile …
+    SSLCertificateKeyFile …
+<span class="nt">&lt;/VirtualHost&gt;</span>
+<span class="nt">&lt;/IfModule&gt;</span>
+</code></pre></div>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Mise à jour d'un kernel gentoo</a></h1>
+    <h2><a href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Mise à jour d'un kernel gentoo</a></h2>
     <p>
       Posté le sam. 21 novembre 2015 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
       <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
 suivre pour le mettre à jour vers la version : 4.3.0.</p>
 <p>Je liste les différents noyaux gentoo disponibles :</p>
-<div class="highlight"><pre><span></span>eix sys-kernel/gentoo-sources
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>eix sys-kernel/gentoo-sources
+</code></pre></div>
 
 <p>Je télécharge le noyau 4.3.0 :</p>
-<div class="highlight"><pre><span></span>emerge -a =sys-kernel/gentoo-sources-4.3.0
-</pre></div>
+<div class="highlight"><pre><span></span><code>emerge -a =sys-kernel/gentoo-sources-4.3.0
+</code></pre></div>
 
+<p>Une fois téléchargé, il faut modifier le lien symbolique /usr/src/linux
+grâce à eselect.</p>
+<p>J'affiche la liste des noyaux (celui actuellement selectionné est suivi
+d'une étoile) :</p>
+<div class="highlight"><pre><span></span><code>eselect kernel list
 
-<p>Une …</p>
-      <a class="btn" href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Lire la suite</a>
+[1]     linux-4.2.0-gentoo *
+[2]     linux-4.3.0-gentoo
+</code></pre></div>
+
+<p>Pour selectionner notre noyau 4.3.0 il faut utiliser :</p>
+<div class="highlight"><pre><span></span><code>eselect kernel set 2
+</code></pre></div>
+
+<p>Maintenant que vous avez selectionné votre noyau, copier le fichier
+".config" de votre noyau précédent (pour conserver vos réglages de
+compilation) :</p>
+<div class="highlight"><pre><span></span><code>cp /usr/src/linux-4.2.0-gentoo/.config /usr/src/linux
+</code></pre></div>
+
+<p>Puis <a href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">compiler votre
+kernel</a>.</p>
   </div>
 </article>
 
@@ -269,9 +564,24 @@ suivre pour le mettre à jour vers la version : 4.3.0.</p>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

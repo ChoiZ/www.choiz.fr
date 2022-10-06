@@ -45,7 +45,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -59,25 +59,19 @@
 <article>
   <header>
     <h1 id="2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande">Renomer des fichiers en CLI (ligne de commande)</h1>
-    <p>
-      Posté le sam. 14 avril 2012 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/cli.html">cli</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le sam. 14 avril 2012</p>
   </header>
   <div>
     <p>Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
 correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
 "rename".</p>
 <p>Exemple je veux supprimer tous les espaces d'un fichier :</p>
-<div class="highlight"><pre><span></span>rename &quot;s/ *//g&quot; *.*
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>rename &quot;s/ *//g&quot; *.*
+</code></pre></div>
 
 <p>Ou renomer tous mes fichiers .WAV en .wav etc… :</p>
-<div class="highlight"><pre><span></span>rename &quot;s/\.WAV/\.wav/g&quot; *.WAV
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>rename &quot;s/\.WAV/\.wav/g&quot; *.WAV
+</code></pre></div>
 
 <p>A vous de modifier l'expression régulière !</p>
   </div>
@@ -88,23 +82,30 @@ correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
       <a href="https://www.choiz.fr/tag/linux.html">linux</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Renomer des fichiers en CLI (ligne de commande)",
   "headline": "Renomer des fichiers en CLI (ligne de commande)",
@@ -115,6 +116,7 @@ correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html",
   "description": "Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise "rename". Exemple je veux supprimer tous les espaces d'un fichier : rename "s/ *//g" *.* Ou renomer tous mes fichiers .WAV en .wav etc… : rename "s/\.WAV/\.wav/g" *.WAV A …"
 }

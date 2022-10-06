@@ -37,7 +37,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -50,12 +50,11 @@
 
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html">Split & Vsplit dans vim</a></h1>
+    <h2><a href="https://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html">Split & Vsplit dans vim</a></h2>
     <p>
       Posté le dim. 29 mai 2011 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>      &#8226; <a href="https://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>    </p>
   </header>
   <div>
       <p>Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
@@ -68,88 +67,106 @@ pouvoir ouvrir plusieurs fichiers en même temps.</p>
 <ul>
 <li>la division de la fenêtre verticalement en utilisant :</li>
 </ul>
-<p><code>:vsplit</code> puis …</p>
-      <a class="btn" href="https://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html">Lire la suite</a>
+<p><code>:vsplit</code> puis : <code>:e le_fichier_a_ouvrir</code></p>
+<p>Et comme lors de l'utilisation du diff (CTRL + W puis W) pour changer de
+fenêtre (gauche à droite ou droite à gauche ou haut en bas ou bas en
+haut) ou bien en utilisant (CTRL + W puis une fléche directionnelle).</p>
+<p>Pour agrandir ou réduire la fenêtre courante utiliser CTRL + W (puis
+&gt; si vous êtes sur votre fenêtre de droite pour ajouter une colonne,
+si vous êtes sur la fenêtre de gauche ceci supprimera une colonne et vis
+versa avec &lt;) vous pouvez également ajouter / supprimer 5 ou 10
+colonnes avec : <code>5&gt;</code> et <code>10&gt;</code></p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2011-05-19-différences-entre-des-fichiers-avec-vim.html">Différences entre des fichiers avec Vim</a></h1>
+    <h2><a href="https://www.choiz.fr/2011-05-19-différences-entre-des-fichiers-avec-vim.html">Différences entre des fichiers avec Vim</a></h2>
     <p>
       Posté le jeu. 19 mai 2011 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/diff.html">diff</a>,      <a href="https://www.choiz.fr/tag/cli.html">cli</a>      &#8226; <a href="https://www.choiz.fr/2011-05-19-différences-entre-des-fichiers-avec-vim.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/diff.html">diff</a>,      <a href="https://www.choiz.fr/tag/cli.html">cli</a>    </p>
   </header>
   <div>
       <p>J'ai souvent besoin de voir les différences entre plusieurs fichiers...
 J'utilise souvent la commande diff dans un terminal, mais mon éditeur
 texte favoris "Vim" sait aussi trés bien faire un différentiel.
 Utilisation avec le terminal :</p>
-<div class="highlight"><pre><span></span><span class="gh">diff fichier1 fichier2</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="gh">diff fichier1 fichier2</span><span class="w"></span>
+</code></pre></div>
 
 <p>Celui-ci retournera les différences directement dans le terminal (pas
-pratique pour l'édition …</p>
-      <a class="btn" href="https://www.choiz.fr/2011-05-19-différences-entre-des-fichiers-avec-vim.html">Lire la suite</a>
+pratique pour l'édition).</p>
+<p>Utilisation avec vim :</p>
+<div class="highlight"><pre><span></span><code>vim -d fichier1 fichier2
+</code></pre></div>
+
+<p>Ensuite il suffit d'utiliser (CTRL + W puis W) pour changer de fenêtre
+(gauche à droite ou droite à gauche) ou bien en utilisant (CTRL + W puis
+fléche de droite ou gauche) suivant la direction ou on veut aller.</p>
+<p>Pour le reste des commandes reportez-vous au <a href="http://matrix.samizdat.net/pratique/documentation/guide-survie-VI.html">guide de survie de
+vi</a>
+!</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2011-05-14-migration-dune-base-de-donnée-mysql.html">Migration d'une base de donnée Mysql</a></h1>
+    <h2><a href="https://www.choiz.fr/2011-05-14-migration-dune-base-de-donnée-mysql.html">Migration d'une base de donnée Mysql</a></h2>
     <p>
       Posté le sam. 14 mai 2011 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/mysql.html">mysql</a>,      <a href="https://www.choiz.fr/tag/mysqldump.html">mysqldump</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/sql.html">sql</a>      &#8226; <a href="https://www.choiz.fr/2011-05-14-migration-dune-base-de-donnée-mysql.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/mysql.html">mysql</a>,      <a href="https://www.choiz.fr/tag/mysqldump.html">mysqldump</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/sql.html">sql</a>    </p>
   </header>
   <div>
       <p>Pour faire mes migrations de base de donnée j'utilise en ligne de
 commande mysqldump et mysql.</p>
 <p>Dans un premier temps je sauve ma base database dans le fichier dump.sql
 J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss :</p>
-<div class="highlight"><pre><span></span>mysqldump -u utilisateur -p p4ss database &gt; dump.sql
-</pre></div>
+<div class="highlight"><pre><span></span><code>mysqldump -u utilisateur -p p4ss database &gt; dump.sql
+</code></pre></div>
 
-
-<p>Une fois …</p>
-      <a class="btn" href="https://www.choiz.fr/2011-05-14-migration-dune-base-de-donnée-mysql.html">Lire la suite</a>
+<p>Une fois que j'ai mon fichier dump.sql je le met sur la nouvelle
+machine, puis j'execute la commande suivante :</p>
+<div class="highlight"><pre><span></span><code>mysql -u utilisateur -pp4ss database &lt; fichierdump.sql
+</code></pre></div>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html">Petit tips pour les utilisateurs de VIM et PHP</a></h1>
+    <h2><a href="https://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html">Petit tips pour les utilisateurs de VIM et PHP</a></h2>
     <p>
       Posté le mer. 13 avril 2011 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/php.html">php</a>,      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/cli.html">cli</a>      &#8226; <a href="https://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/php.html">php</a>,      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/cli.html">cli</a>    </p>
   </header>
   <div>
       <p>Lorsque je code en PHP, pour tester si il y a des erreurs généralement
 dans la console je tape la commande :</p>
-<div class="highlight"><pre><span></span>php -l fichier_a_tester.php
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>php -l fichier_a_tester.php
+</code></pre></div>
 
 <p>Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
-Pour la faire il suffit de faire "ESC" pour passer en mode commande de …</p>
-      <a class="btn" href="https://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html">Lire la suite</a>
+Pour la faire il suffit de faire "ESC" pour passer en mode commande de
+VIM puis :</p>
+<div class="highlight"><pre><span></span><code>:!php -l %
+</code></pre></div>
+
+<p>Ce qui produira exactement le même résultat qu'en console.</p>
+<p>:! (permet l'execution d'une commande système dans vim)</p>
+<p>Ensuite php -l pour PHP lint</p>
+<p>% (récupère le nom du fichier courant avec le path complet)</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2011-04-09-surround-avec-vim.html">Surround avec Vim</a></h1>
+    <h2><a href="https://www.choiz.fr/2011-04-09-surround-avec-vim.html">Surround avec Vim</a></h2>
     <p>
       Posté le sam. 09 avril 2011 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/html.html">html</a>      &#8226; <a href="https://www.choiz.fr/2011-04-09-surround-avec-vim.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/html.html">html</a>    </p>
   </header>
   <div>
       <p>J'ai ajouté quelques plugins dans ma configuration de Vim dont :
@@ -159,46 +176,48 @@ texte.</p>
 <p>Comment l'utiliser ?</p>
 <p><code>VS&lt;b&gt;</code> permet d'ajouter les balises &lt;b&gt; et &lt;/b&gt; avant et
 apres la ligne courante et d'indenter celle-ci.</p>
-<p><code>vims&lt;a&gt;</code> permet d'ajouter le …</p>
-      <a class="btn" href="https://www.choiz.fr/2011-04-09-surround-avec-vim.html">Lire la suite</a>
+<p><code>vims&lt;a&gt;</code> permet d'ajouter le tag &lt;a&gt; &lt;/a&gt; autour du mot sur
+lequel vous vous trouvez.</p>
+<p><code>cst&lt;b&gt;</code> permet de changer le tag &lt;a&gt; (change surround tag) par
+&lt;b&gt;</p>
+<p><code>dst</code> permet de supprimer le tag</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2011-03-08-tpaamayimnekudotayim.html">T_PAAMAYIM_NEKUDOTAYIM</a></h1>
+    <h2><a href="https://www.choiz.fr/2011-03-08-tpaamayimnekudotayim.html">T_PAAMAYIM_NEKUDOTAYIM</a></h2>
     <p>
       Posté le mar. 08 mars 2011 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/php.html">php</a>      &#8226; <a href="https://www.choiz.fr/2011-03-08-tpaamayimnekudotayim.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/php.html">php</a>    </p>
   </header>
   <div>
       <p>Voilà à quoi correspond cette erreur pour ceux qui demandent :</p>
-<div class="highlight"><pre><span></span>Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695
+</code></pre></div>
 
 <p>Le Paamayim Nekudotayim est l'opérateur de résolution de portée.</p>
 <p><a href="http://fr.php.net/manual/fr/language.oop5.paamayim-nekudotayim.php">Dans la doc PHP</a> :</p>
 <p><em>L'opérateur de résolution de portée (aussi appelé Paamayim Nekudotayim)
-ou, en termes plus simples …</em></p>
-      <a class="btn" href="https://www.choiz.fr/2011-03-08-tpaamayimnekudotayim.html">Lire la suite</a>
+ou, en termes plus simples, le symbole "double deux-points" (::),
+fournit un moyen d'accéder aux membres
+<a href="http://fr.php.net/manual/fr/language.oop5.static.php">statics</a> ou
+<a href="http://fr.php.net/manual/fr/language.oop5.constants.php">constants</a>.</em></p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Protection de fichier tel qu'un htaccess en PHP</a></h1>
+    <h2><a href="https://www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Protection de fichier tel qu'un htaccess en PHP</a></h2>
     <p>
       Posté le ven. 11 février 2011 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/php.html">php</a>,      <a href="https://www.choiz.fr/tag/code.html">code</a>      &#8226; <a href="https://www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/php.html">php</a>,      <a href="https://www.choiz.fr/tag/code.html">code</a>    </p>
   </header>
   <div>
       <p>Faire un système de protection (tel que htaccess) direct dans un fichier PHP :</p>
-<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_USER&quot;</span><span class="p">])</span> <span class="o">&amp;&amp;</span>
 <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_USER&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;login&quot;</span> <span class="o">&amp;&amp;</span>
 <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;PHP_AUTH_PW&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span> <span class="p">{</span>
@@ -208,22 +227,21 @@ Tags :
     <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;HTTP/1.0 401 Unauthorized&#39;</span><span class="p">);</span>
     <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;Access Denied&#39;</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
-
-<p>Attention l'utilisation du htaccess n'est pas recommandée …</p>
-      <a class="btn" href="https://www.choiz.fr/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Lire la suite</a>
+<p>Attention l'utilisation du htaccess n'est pas recommandée sur une connexion non
+chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffré
+(HTTPS).</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html">jQuery attr() avec onclick par click()</a></h1>
+    <h2><a href="https://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html">jQuery attr() avec onclick par click()</a></h2>
     <p>
       Posté le ven. 07 janvier 2011 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/code.html">code</a>,      <a href="https://www.choiz.fr/tag/jquery.html">jquery</a>,      <a href="https://www.choiz.fr/tag/javascript.html">javascript</a>      &#8226; <a href="https://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/code.html">code</a>,      <a href="https://www.choiz.fr/tag/jquery.html">jquery</a>,      <a href="https://www.choiz.fr/tag/javascript.html">javascript</a>    </p>
   </header>
   <div>
       <p>Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery
@@ -231,55 +249,82 @@ fonctionne pas avec l'attribut "onclick"…</p>
 <p>Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.</p>
 <p>Remplacer donc :</p>
-<div class="highlight"><pre><span></span>var mavar = &#39;fonctionAffichage();&#39;;
-$(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">mavar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="o">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s2">&quot;onclick&quot;</span><span class="p">,</span><span class="s2">&quot;mavar&quot;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
 
 <p>Par :</p>
-<div class="highlight"><pre><span></span>var mavar …</pre></div>
-      <a class="btn" href="https://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html">Lire la suite</a>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">mavar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="o">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">removeAttr</span><span class="p">(</span><span class="s1">&#39;onclick&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">eval</span><span class="p">(</span><span class="n">mavar</span><span class="p">);</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+</code></pre></div>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Commande SVN pour ajouter des keywords</a></h1>
+    <h2><a href="https://www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Commande SVN pour ajouter des keywords</a></h2>
     <p>
       Posté le lun. 25 octobre 2010 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/svn.html">svn</a>      &#8226; <a href="https://www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/svn.html">svn</a>    </p>
   </header>
   <div>
       <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
 informations dans vos projets il suffit de taper cette commande :</p>
-<div class="highlight"><pre><span></span>svn propset svn:keywords &quot;Id&quot; index.php
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>svn propset svn:keywords &quot;Id&quot; index.php
+</code></pre></div>
 
 <p>Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php</p>
-<p>Pour afficher l'Id dans votre fichier index.php ajouter dans …</p>
-      <a class="btn" href="https://www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Lire la suite</a>
+<p>Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :</p>
+<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Id</span><span class="o">:</span><span class="p">$</span><span class="w"></span>
+</code></pre></div>
+
+<p>Une fois le fichier versionné vous obtiendrez :</p>
+<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Id</span><span class="o">:</span><span class="w"> </span><span class="nv">ajax</span>\<span class="nv">_modif</span><span class="o">.</span><span class="nv">php</span><span class="w"> </span><span class="mi">481</span><span class="w"> </span><span class="mi">2010</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">25</span><span class="w"> </span><span class="mi">12</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mi">50</span><span class="nv">Z</span><span class="w"> </span><span class="nv">choiz</span><span class="w"> </span><span class="p">$</span><span class="w"></span>
+</code></pre></div>
+
+<p>D'autres keywords sont disponible tel que :</p>
+<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Revision</span><span class="o">:</span><span class="p">$</span><span class="w"></span>
+<span class="p">$</span><span class="nv">Date</span><span class="o">:</span><span class="p">$</span><span class="w"></span>
+<span class="p">$</span><span class="nv">Author</span><span class="o">:</span><span class="p">$</span><span class="w"></span>
+<span class="p">$</span><span class="nv">URL</span><span class="o">:</span><span class="p">$</span><span class="w"></span>
+</code></pre></div>
+
+<p>Vous pouvez les ajouter les uns à la suite des autres par exemple pour
+notre fichier index.php je veux ajouter les 4 keywords précédents grâce
+à la commande :</p>
+<div class="highlight"><pre><span></span><code>svn propset svn:keywords &quot;Revision Date Author URL&quot; index.php
+</code></pre></div>
+
+<p>Ce qui affichera :</p>
+<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Revision</span><span class="o">:</span><span class="w"> </span><span class="mi">481</span><span class="w"> </span><span class="p">$</span><span class="w"></span>
+<span class="p">$</span><span class="nv">Date</span><span class="o">:</span><span class="w"> </span><span class="mi">2010</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">25</span><span class="w"> </span><span class="mi">14</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mi">50</span><span class="w"> </span><span class="o">+</span><span class="mi">0200</span><span class="w"> </span><span class="p">(</span><span class="nv">lun</span><span class="o">.</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="nv">oct</span><span class="o">.</span><span class="w"> </span><span class="mi">2010</span><span class="p">)</span><span class="w"> </span><span class="p">$</span><span class="w"></span>
+<span class="p">$</span><span class="nv">Author</span><span class="o">:</span><span class="w"> </span><span class="nv">choiz</span><span class="w"> </span><span class="p">$</span><span class="w"></span>
+<span class="p">$</span><span class="nv">URL</span><span class="o">:</span><span class="w"> </span><span class="nv">svn</span><span class="o">://</span><span class="nv">svn</span><span class="o">.</span><span class="nv">choiz</span><span class="o">.</span><span class="nv">fr</span><span class="o">/</span><span class="nv">projet</span><span class="o">/</span><span class="nv">branches</span><span class="o">/</span><span class="nv">prod</span><span class="o">/</span><span class="no">ind</span><span class="nv">ex</span><span class="o">.</span><span class="nv">php</span><span class="w"> </span><span class="p">$</span><span class="w"></span>
+</code></pre></div>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h1><a href="https://www.choiz.fr/2010-09-15-impression-de-commandes-entre-balise-pre.html">Impression de commandes entre balise &lt;pre&gt;</a></h1>
+    <h2><a href="https://www.choiz.fr/2010-09-15-impression-de-commandes-entre-balise-pre.html">Impression de commandes entre balise &lt;pre&gt;</a></h2>
     <p>
       Posté le mer. 15 septembre 2010 &#8226;
 Tags :
-      <a href="https://www.choiz.fr/tag/css.html">css</a>,      <a href="https://www.choiz.fr/tag/html.html">html</a>,      <a href="https://www.choiz.fr/tag/code.html">code</a>      &#8226; <a href="https://www.choiz.fr/2010-09-15-impression-de-commandes-entre-balise-pre.html#comments">Laissez un commentaire</a>
-    </p>
+      <a href="https://www.choiz.fr/tag/css.html">css</a>,      <a href="https://www.choiz.fr/tag/html.html">html</a>,      <a href="https://www.choiz.fr/tag/code.html">code</a>    </p>
   </header>
   <div>
       <p>J'ai toujours eu pas mal de soucis lors d'impression de différentes
 documentations…</p>
 <p>J'utilise souvent la balise &lt;pre&gt; pour les lignes de commandes et
 il n'y a pas de retour à la ligne fait automatiquement pour cela un
-petit css permet de faire les retours à la ligne lorsque la page …</p>
-      <a class="btn" href="https://www.choiz.fr/2010-09-15-impression-de-commandes-entre-balise-pre.html">Lire la suite</a>
+petit css permet de faire les retours à la ligne lorsque la page est
+trop grande. :</p>
+<div class="highlight"><pre><span></span><code><span class="nt">pre</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">white-space</span><span class="p">:</span><span class="w"> </span><span class="kc">pre-wrap</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">word-wrap</span><span class="p">:</span><span class="w"> </span><span class="kc">break-word</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
   </div>
 </article>
 
@@ -294,9 +339,24 @@ petit css permet de faire les retours à la ligne lorsque la page …</p>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

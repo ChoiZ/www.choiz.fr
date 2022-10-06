@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>ChoiZ - choiz, doogaille</title><link>https://www.choiz.fr/</link><description>Je suis ingénieur informatique, je travail en tant que Lead SRE chez &lt;a href="https://www.manomano.fr"&gt;ManoMano&lt;/a&gt;. J'aime le développement, le streaming, l'Internet…&lt;br&gt;&lt;br&gt;Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.&lt;br&gt;&lt;br&gt;Je fais de la domotique depuis 2017 et j'utilise principalement &lt;a href="https://github.com/ChoiZ/home-assistant#home-assistant"&gt;Home-Assistant&lt;/a&gt;.</description><lastBuildDate>Mon, 30 Nov 2015 21:18:07 +0100</lastBuildDate><item><title>PHP + Gettext + Debian</title><link>https://www.choiz.fr/2011-12-04-php-gettext-debian.html</link><description>&lt;p&gt;J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
+<rss version="2.0"><channel><title>ChoiZ - choiz, doogaille</title><link>https://www.choiz.fr/</link><description>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est &lt;a href="https://www.frequencehit.com"&gt;Fréquence Hit&lt;/a&gt; n'hésitez pas à jeter une oreille.&lt;br&gt;&lt;br&gt;Je fais de la domotique depuis 2017 et j'utilise principalement &lt;a href="https://github.com/ChoiZ/home-assistant#home-assistant"&gt;Home-Assistant&lt;/a&gt;.</description><lastBuildDate>Mon, 30 Nov 2015 21:18:07 +0100</lastBuildDate><item><title>PHP + Gettext + Debian</title><link>https://www.choiz.fr/2011-12-04-php-gettext-debian.html</link><description>&lt;p&gt;J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
 en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext
 sur votre site en php il faut télécharger le package php-gettext :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install php-gettext
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install php-gettext
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
 commentaires devant les …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">choiz, doogaille</dc:creator><pubDate>Sun, 04 Dec 2011 19:10:00 +0100</pubDate><guid isPermaLink="false">tag:www.choiz.fr,2011-12-04:/2011-12-04-php-gettext-debian.html</guid><category>php</category><category>gettext</category></item></channel></rss>

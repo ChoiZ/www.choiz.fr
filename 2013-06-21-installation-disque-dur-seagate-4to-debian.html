@@ -45,7 +45,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -59,32 +59,26 @@
 <article>
   <header>
     <h1 id="2013-06-21-installation-disque-dur-seagate-4to-debian">Installation disque dur Seagate 4To Debian</h1>
-    <p>
-      Posté le ven. 21 juin 2013 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/stockage.html">stockage</a>      &#8226; <a href="https://www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le ven. 21 juin 2013</p>
   </header>
   <div>
     <p>J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
 (Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec «
 Fdisk » et j'ai eu le message suivant :</p>
-<div class="highlight"><pre><span></span><span class="n">Warning</span><span class="o">:</span> <span class="n">invalid</span> <span class="n">flag</span> <span class="mh">0x0000</span> <span class="n">of</span> <span class="n">partition</span> <span class="n">table</span> <span class="mi">4</span> <span class="n">will</span> <span class="n">be</span> <span class="n">corrected</span> <span class="n">by</span> <span class="n">w</span><span class="o">(</span><span class="n">rite</span><span class="o">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">Warning</span><span class="o">:</span><span class="w"> </span><span class="n">invalid</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="mh">0x0000</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">partition</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">corrected</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">w</span><span class="o">(</span><span class="n">rite</span><span class="o">)</span><span class="w"></span>
 
-<span class="n">WARNING</span><span class="o">:</span> <span class="n">The</span> <span class="n">size</span> <span class="n">of</span> <span class="k">this</span> <span class="n">disk</span> <span class="k">is</span> <span class="mf">4.0</span> <span class="n">TB</span> <span class="o">(</span><span class="mi">4000787030016</span> <span class="n">bytes</span><span class="o">).</span>
-<span class="n">DOS</span> <span class="n">partition</span> <span class="n">table</span> <span class="n">format</span> <span class="n">can</span> <span class="n">not</span> <span class="n">be</span> <span class="n">used</span> <span class="n">on</span> <span class="n">drives</span> <span class="k">for</span> <span class="n">volumes</span>
-<span class="n">larger</span> <span class="n">than</span> <span class="o">(</span><span class="mi">2199023255040</span> <span class="n">bytes</span><span class="o">)</span> <span class="k">for</span> <span class="mi">512</span><span class="o">-</span><span class="n">byte</span> <span class="n">sectors</span><span class="o">.</span> <span class="n">Use</span> <span class="n">parted</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="n">and</span> <span class="n">GUID</span>
-<span class="n">partition</span> <span class="n">table</span> <span class="n">format</span> <span class="o">(</span><span class="n">GPT</span><span class="o">).</span>
-</pre></div>
-
+<span class="n">WARNING</span><span class="o">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="n">disk</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mf">4.0</span><span class="w"> </span><span class="n">TB</span><span class="w"> </span><span class="o">(</span><span class="mi">4000787030016</span><span class="w"> </span><span class="n">bytes</span><span class="o">).</span><span class="w"></span>
+<span class="n">DOS</span><span class="w"> </span><span class="n">partition</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">drives</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">volumes</span><span class="w"></span>
+<span class="n">larger</span><span class="w"> </span><span class="n">than</span><span class="w"> </span><span class="o">(</span><span class="mi">2199023255040</span><span class="w"> </span><span class="n">bytes</span><span class="o">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">512</span><span class="o">-</span><span class="n">byte</span><span class="w"> </span><span class="n">sectors</span><span class="o">.</span><span class="w"> </span><span class="n">Use</span><span class="w"> </span><span class="n">parted</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">GUID</span><span class="w"></span>
+<span class="n">partition</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="o">(</span><span class="n">GPT</span><span class="o">).</span><span class="w"></span>
+</code></pre></div>
 
 <p>J'ai donc vérifié si j'avais dans le noyau l'option
 CONFIG_EFI_PARTITION active :</p>
-<div class="highlight"><pre><span></span>cat &quot;/boot/config-`uname -r`&quot; | grep CONFIG_EFI_PARTITION
+<div class="highlight"><pre><span></span><code>cat &quot;/boot/config-`uname -r`&quot; | grep CONFIG_EFI_PARTITION
 
 CONFIG_EFI_PARTITION=y
-</pre></div>
-
+</code></pre></div>
 
 <p>C'était le cas, donc j'ai un autre problème… C'est « Fdisk » qui pose
 problème. Avec ma version (2.20.1) on peut faire une partition maximum
@@ -92,52 +86,47 @@ de 2To.</p>
 <p>Donc je me relance dans le partitionnement avec « parted ».</p>
 <p>Note : mon disque est en /dev/sdd n'oubliez pas de modifier les
 commandes en fonction de votre configuration. :</p>
-<div class="highlight"><pre><span></span>parted /dev/sdd
+<div class="highlight"><pre><span></span><code>parted /dev/sdd
 
 GNU Parted 2.3
 Using /dev/sdd
 Welcome to GNU Parted! Type &#39;help&#39; to view a list of commands.
-</pre></div>
-
+</code></pre></div>
 
 <p>Définir le label GPT qui permet de faire des partition &gt; 2To. :</p>
-<div class="highlight"><pre><span></span>mklabel gpt
+<div class="highlight"><pre><span></span><code><span class="nv">mklabel</span><span class="w"> </span><span class="nv">gpt</span><span class="w"></span>
 
-Warning: The existing disk label on /dev/sdd will be destroyed and all data on this disk will be lost. Do you want to continue?
-Yes/No?
+<span class="nv">Warning</span>:<span class="w"> </span><span class="nv">The</span><span class="w"> </span><span class="nv">existing</span><span class="w"> </span><span class="nv">disk</span><span class="w"> </span><span class="nv">label</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">sdd</span><span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">destroyed</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">all</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">this</span><span class="w"> </span><span class="nv">disk</span><span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">lost</span>.<span class="w"> </span><span class="k">Do</span><span class="w"> </span><span class="nv">you</span><span class="w"> </span><span class="nv">want</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="k">continue</span>?<span class="w"></span>
+<span class="nv">Yes</span><span class="o">/</span><span class="nv">No</span>?<span class="w"></span>
 
-yes
-unit TB
-</pre></div>
-
+<span class="nv">yes</span><span class="w"></span>
+<span class="nv">unit</span><span class="w"> </span><span class="nv">TB</span><span class="w"></span>
+</code></pre></div>
 
 <p>Faire la partition de 4To :</p>
-<div class="highlight"><pre><span></span>mkpart primary 0.00TB 4.00TB
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>mkpart primary 0.00TB 4.00TB
+</code></pre></div>
 
 <p>Vérifier :</p>
-<div class="highlight"><pre><span></span>print
+<div class="highlight"><pre><span></span><code><span class="nv">print</span><span class="w"></span>
 
-Model: ATA ST4000DM000-1F21 (scsi)
-Disk /dev/sdd: 4001GB
-Sector size (logical/physical): 512B/4096B
-Partition Table: gpt
+<span class="nv">Model</span>:<span class="w"> </span><span class="nv">ATA</span><span class="w"> </span><span class="nv">ST4000DM000</span><span class="o">-</span><span class="mi">1</span><span class="nv">F21</span><span class="w"> </span><span class="ss">(</span><span class="nv">scsi</span><span class="ss">)</span><span class="w"></span>
+<span class="nv">Disk</span><span class="w"> </span><span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">sdd</span>:<span class="w"> </span><span class="mi">4001</span><span class="nv">GB</span><span class="w"></span>
+<span class="nv">Sector</span><span class="w"> </span><span class="nv">size</span><span class="w"> </span><span class="ss">(</span><span class="nv">logical</span><span class="o">/</span><span class="nv">physical</span><span class="ss">)</span>:<span class="w"> </span><span class="mi">512</span><span class="nv">B</span><span class="o">/</span><span class="mi">4096</span><span class="nv">B</span><span class="w"></span>
+<span class="nv">Partition</span><span class="w"> </span><span class="nv">Table</span>:<span class="w"> </span><span class="nv">gpt</span><span class="w"></span>
 
-Number  Start   End     Size    File system  Name     Flags
- 1      1049kB  4001GB  4001GB               primary
-</pre></div>
-
+<span class="nv">Number</span><span class="w">  </span><span class="nv">Start</span><span class="w">   </span><span class="k">End</span><span class="w">     </span><span class="nv">Size</span><span class="w">    </span><span class="nv">File</span><span class="w"> </span><span class="nv">system</span><span class="w">  </span><span class="nv">Name</span><span class="w">     </span><span class="nv">Flags</span><span class="w"></span>
+<span class="w"> </span><span class="mi">1</span><span class="w">      </span><span class="mi">1049</span><span class="nv">kB</span><span class="w">  </span><span class="mi">4001</span><span class="nv">GB</span><span class="w">  </span><span class="mi">4001</span><span class="nv">GB</span><span class="w">               </span><span class="nv">primary</span><span class="w"></span>
+</code></pre></div>
 
 <p>Quitter « parted » :</p>
-<div class="highlight"><pre><span></span>quit
+<div class="highlight"><pre><span></span><code>quit
 
 Information: You may need to update /etc/fstab.
-</pre></div>
-
+</code></pre></div>
 
 <p>Formater la partition avec un système de fichiers donné :</p>
-<div class="highlight"><pre><span></span>mkfs.ext4 /dev/sdd1
+<div class="highlight"><pre><span></span><code>mkfs.ext4 /dev/sdd1
 
 mke2fs 1.42.5 (29-Jul-2012)
 Étiquette de système de fichiers=
@@ -162,8 +151,7 @@ Allocation des tables de groupe : complété
 Création du journal (32768 blocs) : complété
 Écriture des superblocs et de l&#39;information de comptabilité du système de
 fichiers : complété
-</pre></div>
-
+</code></pre></div>
 
 <p>Il ne reste plus qu'a monter la partition et éditer le fstab ;)</p>
   </div>
@@ -174,23 +162,30 @@ fichiers : complété
       <a href="https://www.choiz.fr/tag/stockage.html">stockage</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Installation disque dur Seagate 4To Debian",
   "headline": "Installation disque dur Seagate 4To Debian",
@@ -201,6 +196,7 @@ fichiers : complété
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html",
   "description": "J'ai investi dans un gros disque dur de 4To pour mes sauvegardes (Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec « Fdisk » et j'ai eu le message suivant : Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite) WARNING: The size of this disk is …"
 }

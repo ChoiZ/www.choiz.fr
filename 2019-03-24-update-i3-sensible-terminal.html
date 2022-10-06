@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne : bindsym $mod+Return exec i3-sensible-terminal par la ligne suivante : bindsym $mod+Return exec urxvt Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par …" />
+<meta name="description" content="En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne : bindsym $mod+Return exec i3-sensible-terminal par la ligne suivante : bindsym $mod+Return exec urxvt Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour …" />
 <meta name="keywords" content="linux">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Update i3-sensible-terminal"/>
-<meta property="og:description" content="En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne : bindsym $mod+Return exec i3-sensible-terminal par la ligne suivante : bindsym $mod+Return exec urxvt Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par …"/>
+<meta property="og:description" content="En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne : bindsym $mod+Return exec i3-sensible-terminal par la ligne suivante : bindsym $mod+Return exec urxvt Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://www.choiz.fr/2019-03-24-update-i3-sensible-terminal.html"/>
 <meta property="og:type" content="article"/>
@@ -43,7 +43,7 @@
           <li><a href="/tags">Tags</a></li>
         </ul>
       </nav>
-      <p>Je suis ingénieur informatique, je travail en tant que Lead SRE chez <a href="https://www.manomano.fr">ManoMano</a>. J'aime le développement, le streaming, l'Internet…<br><br>Depuis l'an 2000, j'ai fondé plusieurs webradios Radio-Psylone, Live9 ou encore AddictRadio.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
       <ul class="social">
         <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
@@ -57,50 +57,51 @@
 <article>
   <header>
     <h1 id="2019-03-24-update-i3-sensible-terminal">Update i3-sensible-terminal</h1>
-    <p>
-      Posté le dim. 24 mars 2019 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/linux.html">linux</a>      &#8226; <a href="https://www.choiz.fr/2019-03-24-update-i3-sensible-terminal.html#comments">Laissez un commentaire</a>
-    </p>
+    <p>Posté le dim. 24 mars 2019</p>
   </header>
   <div>
     <p>En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne :</p>
-<div class="highlight"><pre><span></span>bindsym $mod+Return exec i3-sensible-terminal
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nv">bindsym</span><span class="w"> </span>$<span class="nv">mod</span><span class="o">+</span><span class="k">Return</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="nv">i3</span><span class="o">-</span><span class="nv">sensible</span><span class="o">-</span><span class="nv">terminal</span><span class="w"></span>
+</code></pre></div>
 
 <p>par la ligne suivante :</p>
-<div class="highlight"><pre><span></span>bindsym $mod+Return exec urxvt
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nv">bindsym</span><span class="w"> </span>$<span class="nv">mod</span><span class="o">+</span><span class="k">Return</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="nv">urxvt</span><span class="w"></span>
+</code></pre></div>
 
 <p>Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par défaut <code>i3-sensible-terminal</code>.</p>
 <p>Pour modifier le terminal executé par la commande <code>i3-sensible-terminal</code> il suffit donc de lancer la commande suivante puis de choisir dans mon cas urxvt :</p>
-<div class="highlight"><pre><span></span>update-alternatives --config x-terminal-emulator
-</pre></div>
+<div class="highlight"><pre><span></span><code>update-alternatives --config x-terminal-emulator
+</code></pre></div>
   </div>
   <div class="tag-cloud">
     <p>
       <a href="https://www.choiz.fr/tag/linux.html">linux</a>
     </p>
   </div>
-<div id="comments"><h2>Commentaires</h2></div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script></article>
+</article>
 
     <footer>
       <p>&copy; François LASSERRE </p>
-<p>Built using <a href="https://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="https://www.francoislasserre.fr">François LASSERRE</a></p>    </footer>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
   </main>
-<script type="application/ld+json">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rocketip.net/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "http://schema.org",
   "@type": "BlogPosting",
   "name": "Update i3-sensible-terminal",
   "headline": "Update i3-sensible-terminal",
@@ -111,8 +112,9 @@ Tags :
     "name": "choiz",
     "url": "https://www.choiz.fr/author/choiz.html"
   },
+  "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2019-03-24-update-i3-sensible-terminal.html",
-  "description": "En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne : bindsym $mod+Return exec i3-sensible-terminal par la ligne suivante : bindsym $mod+Return exec urxvt Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par …"
+  "description": "En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne : bindsym $mod+Return exec i3-sensible-terminal par la ligne suivante : bindsym $mod+Return exec urxvt Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour …"
 }
 </script></body>
 </html>
