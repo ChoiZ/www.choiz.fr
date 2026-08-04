@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ - choiz, doogaille</title><link href="https://www.choiz.fr/" rel="alternate"></link><link href="https://www.choiz.fr/feeds/choiz-doogaille.atom.xml" rel="self"></link><id>https://www.choiz.fr/</id><updated>2015-11-30T21:18:07+01:00</updated><subtitle>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est &lt;a href="https://www.frequencehit.com"&gt;Fréquence Hit&lt;/a&gt; n'hésitez pas à jeter une oreille.&lt;br&gt;&lt;br&gt;Je fais de la domotique depuis 2017 et j'utilise principalement &lt;a href="https://github.com/ChoiZ/home-assistant#home-assistant"&gt;Home-Assistant&lt;/a&gt;.</subtitle><entry><title>PHP + Gettext + Debian</title><link href="https://www.choiz.fr/2011-12-04-php-gettext-debian.html" rel="alternate"></link><published>2011-12-04T19:10:00+01:00</published><updated>2015-11-30T21:18:07+01:00</updated><author><name>choiz, doogaille</name></author><id>tag:www.choiz.fr,2011-12-04:/2011-12-04-php-gettext-debian.html</id><summary type="html">&lt;p&gt;J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
+<feed xmlns="http://www.w3.org/2005/Atom"><title>ChoiZ - choiz, doogaille</title><link href="https://www.choiz.fr/" rel="alternate"/><link href="https://www.choiz.fr/feeds/choiz-doogaille.atom.xml" rel="self"/><id>https://www.choiz.fr/</id><updated>2015-11-30T21:18:07+01:00</updated><subtitle>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est &lt;a href="https://www.frequencehit.com"&gt;Fréquence Hit&lt;/a&gt; n'hésitez pas à jeter une oreille.&lt;br&gt;&lt;br&gt;Je fais de la domotique depuis 2017 et j'utilise principalement &lt;a href="https://github.com/ChoiZ/home-assistant#home-assistant"&gt;Home-Assistant&lt;/a&gt;.</subtitle><entry><title>PHP + Gettext + Debian</title><link href="https://www.choiz.fr/2011-12-04-php-gettext-debian.html" rel="alternate"/><published>2011-12-04T19:10:00+01:00</published><updated>2015-11-30T21:18:07+01:00</updated><author><name>choiz, doogaille</name></author><id>tag:www.choiz.fr,2011-12-04:/2011-12-04-php-gettext-debian.html</id><summary type="html">&lt;p&gt;J'utilise maintenant php-gettext pour mes traductions. C'est plus facile
 en utilisant des outils tel que pootle ou poedit. Pour utiliser gettext
 sur votre site en php il faut télécharger le package php-gettext :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install php-gettext
@@ -48,7 +48,7 @@ sv_SE.UTF-8 UTF-8
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="nb"&gt;textdomain&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$lang_file&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Puis faites le test en affichant dans un fichier php le texte "hello" :&lt;/p&gt;
@@ -56,7 +56,7 @@ sv_SE.UTF-8 UTF-8
 &lt;span class="c1"&gt;// on inclus la config…&lt;/span&gt;
 &lt;span class="k"&gt;include_once&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;config.php&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="nx"&gt;_&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Pour générer un fichier .mo a partir d'un fichier .po :&lt;/p&gt;
@@ -88,4 +88,4 @@ lang/en_GB/LC_MESSAGES/domaine.mo
 &lt;p&gt;N'oubliez pas de redémarrer votre serveur web pour que les changements
 soient pris en compte.&lt;/p&gt;
 &lt;p&gt;Mise à jour le 30 Novembre 2015 par
-&lt;a href="http://www.github.com/doogaille"&gt;doogaille&lt;/a&gt;.&lt;/p&gt;</content><category term="php"></category><category term="gettext"></category></entry></feed>
+&lt;a href="http://www.github.com/doogaille"&gt;doogaille&lt;/a&gt;.&lt;/p&gt;</content><category term="text"/><category term="php"/><category term="gettext"/></entry></feed>

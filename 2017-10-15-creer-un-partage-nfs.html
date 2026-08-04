@@ -70,7 +70,7 @@
 <p>Une fois le paquet installé, il faut modifier la configuration pour ajouter
 votre partage.</p>
 <p>Editer le fichier <code>/etc/exports</code></p>
-<div class="highlight"><pre><span></span><code><span class="n">vim</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">exports</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">vim</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">exports</span>
 </code></pre></div>
 
 <p>J'ajoute dans le fichier le dossier à partager <code>/home/user/share</code> et l'adresse
@@ -81,7 +81,7 @@ qui donne :</p>
 </code></pre></div>
 
 <p>Recharger le service :</p>
-<div class="highlight"><pre><span></span><code><span class="n">service</span><span class="w"> </span><span class="n">nfs</span><span class="o">-</span><span class="n">kernel</span><span class="o">-</span><span class="n">server</span><span class="w"> </span><span class="n">reload</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">service</span><span class="w"> </span><span class="n">nfs</span><span class="o">-</span><span class="n">kernel</span><span class="o">-</span><span class="n">server</span><span class="w"> </span><span class="n">reload</span>
 </code></pre></div>
 
 <p>Vérifier que votre partage est bien actif :</p>
@@ -102,7 +102,7 @@ qui donne :</p>
 
 <p>Ajouter à la fin du fichier l'ip de votre partage avec le nom local puis le
 point de montage sur votre client.</p>
-<div class="highlight"><pre><span></span><code><span class="mf">10.0.0.100</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">share</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nfs</span><span class="o">-</span><span class="n">nas</span><span class="w"> </span><span class="n">nfs</span><span class="w"> </span><span class="kd">def</span><span class="n">aults</span><span class="p">,</span><span class="n">user</span><span class="p">,</span><span class="n">auto</span><span class="p">,</span><span class="n">noatime</span><span class="p">,</span><span class="nb">int</span><span class="n">r</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="mf">10.0.0.100</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">share</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nfs</span><span class="o">-</span><span class="n">nas</span><span class="w"> </span><span class="n">nfs</span><span class="w"> </span><span class="kd">def</span><span class="n">aults</span><span class="p">,</span><span class="n">user</span><span class="p">,</span><span class="n">auto</span><span class="p">,</span><span class="n">noatime</span><span class="p">,</span><span class="nb">int</span><span class="n">r</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">0</span>
 </code></pre></div>
 
 <p>Puis monter le nouveau partage avec la commande <code>mount -a</code></p>

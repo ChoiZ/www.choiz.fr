@@ -70,15 +70,15 @@ stash@{5}: WIP on BranchName: 3bb67ff Add file.css file.js
 </code></pre></div>
 
 <p>Pour voir le contenu d'un stash :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="nv">stash</span><span class="w"> </span><span class="k">show</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="nv">stash</span><span class="w"> </span><span class="k">show</span>
 
-<span class="nv">stash</span>@{<span class="mi">0</span>}<span class="w"> </span><span class="nv">chemin</span><span class="o">/</span><span class="nv">vers</span><span class="o">/</span><span class="nv">mon</span><span class="o">/</span><span class="nv">fichier</span>.<span class="nv">js</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">199</span><span class="w"> </span><span class="o">++++++++++++++++++++++++++--------</span><span class="w"></span>
-<span class="nv">chemin</span><span class="o">/</span><span class="nv">vers</span><span class="o">/</span><span class="nv">mon</span><span class="o">/</span><span class="nv">autre</span><span class="o">/</span><span class="nv">fichier</span>.<span class="nv">js</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">114</span><span class="w"> </span><span class="o">++++++++++++++------</span><span class="w"></span>
+<span class="nv">stash</span>@{<span class="mi">0</span>}<span class="w"> </span><span class="nv">chemin</span><span class="o">/</span><span class="nv">vers</span><span class="o">/</span><span class="nv">mon</span><span class="o">/</span><span class="nv">fichier</span>.<span class="nv">js</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">199</span><span class="w"> </span><span class="o">++++++++++++++++++++++++++--------</span>
+<span class="nv">chemin</span><span class="o">/</span><span class="nv">vers</span><span class="o">/</span><span class="nv">mon</span><span class="o">/</span><span class="nv">autre</span><span class="o">/</span><span class="nv">fichier</span>.<span class="nv">js</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">114</span><span class="w"> </span><span class="o">++++++++++++++------</span>
 </code></pre></div>
 
 <p>Pour voir le contenu de "chemin/vers/mon/fichier.js" qui est dans le
 stash{0} :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="nv">stash</span>@{<span class="mi">0</span>}:<span class="nv">chemin</span><span class="o">/</span><span class="nv">vers</span><span class="o">/</span><span class="nv">mon</span><span class="o">/</span><span class="nv">fichier</span>.<span class="nv">js</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="nv">stash</span>@{<span class="mi">0</span>}:<span class="nv">chemin</span><span class="o">/</span><span class="nv">vers</span><span class="o">/</span><span class="nv">mon</span><span class="o">/</span><span class="nv">fichier</span>.<span class="nv">js</span>
 </code></pre></div>
   </div>
   <div class="tag-cloud">

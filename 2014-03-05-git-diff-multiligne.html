@@ -73,15 +73,15 @@ que ma ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
 </code></pre></div>
 
 <p>Or, quand je fais un diff on ne voit pas tous les caractères :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="nv">diff</span><span class="w"> </span><span class="nv">HEAD</span><span class="o">~</span><span class="mi">1</span><span class="w"> </span><span class="nv">HEAD</span><span class="w"></span>
-<span class="nv">diff</span><span class="w"> </span><span class="o">--</span><span class="nv">git</span><span class="w"> </span><span class="nv">a</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"></span>
-<span class="nv">new</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="nv">mode</span><span class="w"> </span><span class="mi">100644</span><span class="w"></span>
-<span class="nv">index</span><span class="w"> </span><span class="mi">0000000</span>..<span class="mi">235</span><span class="nv">a891</span><span class="w"></span>
-<span class="o">---</span><span class="w"> </span><span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">null</span><span class="w"></span>
-<span class="o">+++</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"></span>
-@@<span class="w"> </span><span class="o">-</span><span class="mi">0</span>,<span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="w"> </span>@@<span class="w"></span>
-<span class="o">+</span><span class="nv">ligne</span><span class="w"> </span><span class="nv">avec</span><span class="w"> </span><span class="nv">un</span><span class="w"> </span><span class="nv">peu</span><span class="w"> </span><span class="nv">de</span><span class="w"> </span><span class="nv">texte</span><span class="w"> </span><span class="nv">ici</span><span class="w"> </span><span class="nv">nous</span><span class="w"> </span><span class="nv">avons</span><span class="w"> </span><span class="mi">66</span><span class="w"> </span><span class="nv">caract</span>è\<span class="w"></span>
-<span class="nv">No</span><span class="w"> </span><span class="nv">newline</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">file</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="nv">diff</span><span class="w"> </span><span class="nv">HEAD</span><span class="o">~</span><span class="mi">1</span><span class="w"> </span><span class="nv">HEAD</span>
+<span class="nv">diff</span><span class="w"> </span><span class="o">--</span><span class="nv">git</span><span class="w"> </span><span class="nv">a</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span>
+<span class="nv">new</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="nv">mode</span><span class="w"> </span><span class="mi">100644</span>
+<span class="nv">index</span><span class="w"> </span><span class="mi">0000000</span>..<span class="mi">235</span><span class="nv">a891</span>
+<span class="o">---</span><span class="w"> </span><span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">null</span>
+<span class="o">+++</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span>
+@@<span class="w"> </span><span class="o">-</span><span class="mi">0</span>,<span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="w"> </span>@@
+<span class="o">+</span><span class="nv">ligne</span><span class="w"> </span><span class="nv">avec</span><span class="w"> </span><span class="nv">un</span><span class="w"> </span><span class="nv">peu</span><span class="w"> </span><span class="nv">de</span><span class="w"> </span><span class="nv">texte</span><span class="w"> </span><span class="nv">ici</span><span class="w"> </span><span class="nv">nous</span><span class="w"> </span><span class="nv">avons</span><span class="w"> </span><span class="mi">66</span><span class="w"> </span><span class="nv">caract</span>è\
+<span class="nv">No</span><span class="w"> </span><span class="nv">newline</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">file</span>
 </code></pre></div>
 
 <p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=""</em> avant la
@@ -90,15 +90,15 @@ commande <em>git diff</em> soit ajouter dans son fichier de config git :</p>
 </code></pre></div>
 
 <p>Voilà ce que ça donne avec GIT_PAGER :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">GIT_PAGER</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="nv">git</span><span class="w"> </span><span class="nv">diff</span><span class="w"> </span><span class="nv">HEAD</span><span class="o">~</span><span class="mi">1</span><span class="w"> </span><span class="nv">HEAD</span><span class="w"></span>
-<span class="nv">diff</span><span class="w"> </span><span class="o">--</span><span class="nv">git</span><span class="w"> </span><span class="nv">a</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"></span>
-<span class="nv">new</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="nv">mode</span><span class="w"> </span><span class="mi">100644</span><span class="w"></span>
-<span class="nv">index</span><span class="w"> </span><span class="mi">0000000</span>..<span class="mi">235</span><span class="nv">a891</span><span class="w"></span>
-<span class="o">---</span><span class="w"> </span><span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">null</span><span class="w"></span>
-<span class="o">+++</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"></span>
-@@<span class="w"> </span><span class="o">-</span><span class="mi">0</span>,<span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="w"> </span>@@<span class="w"></span>
-<span class="o">+</span><span class="nv">ligne</span><span class="w"> </span><span class="nv">avec</span><span class="w"> </span><span class="nv">un</span><span class="w"> </span><span class="nv">peu</span><span class="w"> </span><span class="nv">de</span><span class="w"> </span><span class="nv">texte</span><span class="w"> </span><span class="nv">ici</span><span class="w"> </span><span class="nv">nous</span><span class="w"> </span><span class="nv">avons</span><span class="w"> </span><span class="mi">66</span><span class="w"> </span><span class="nv">caract</span>è<span class="nv">res</span><span class="w"> </span><span class="nv">affich</span>é<span class="nv">s</span>.\<span class="w"></span>
-<span class="nv">No</span><span class="w"> </span><span class="nv">newline</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">file</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>GIT_PAGER=&quot;&quot; git diff HEAD~1 HEAD
+diff --git a/test.txt b/test.txt
+new file mode 100644
+index 0000000..235a891
+--- /dev/null
++++ b/test.txt
+@@ -0,0 +1 @@
++ligne avec un peu de texte ici nous avons 66 caractères affichés.\
+No newline at end of file
 </code></pre></div>
   </div>
   <div class="tag-cloud">

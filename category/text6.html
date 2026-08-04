@@ -50,6 +50,23 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2013-11-13-crontab-e-files.html">crontab -e file(s)</a></h2>
+    <p>
+      Posté le mer. 13 novembre 2013 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/crontab.html">crontab</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
+  </header>
+  <div>
+      <p>Ou se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?</p>
+<p>C'est une bonne question n'est-ce pas ?</p>
+<p>La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
+debian, a voir sur d'autres distribs)</p>
+      <a class="btn" href="https://www.choiz.fr/2013-11-13-crontab-e-files.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html">Chmod 755 sur les dossiers et 644 sur les fichiers</a></h2>
     <p>
       Posté le mar. 12 novembre 2013 &#8226;
@@ -119,7 +136,7 @@ local il m'arrive de vouloir aller sur ses branches :</p>
 </code></pre></div>
 
 <p>Et j'ai l'erreur suivante :</p>
-<div class="highlight"><pre><span></span><code><span class="n">error</span><span class="o">:</span><span class="w"> </span><span class="n">pathspec</span><span class="w"> </span><span class="s1">&#39;preprod&#39;</span><span class="w"> </span><span class="n">did</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">file</span><span class="o">(</span><span class="n">s</span><span class="o">)</span><span class="w"> </span><span class="n">known</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">git</span><span class="o">.</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">error</span><span class="o">:</span><span class="w"> </span><span class="n">pathspec</span><span class="w"> </span><span class="s1">&#39;preprod&#39;</span><span class="w"> </span><span class="n">did</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">file</span><span class="o">(</span><span class="n">s</span><span class="o">)</span><span class="w"> </span><span class="n">known</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">git</span><span class="o">.</span>
 </code></pre></div>
 
 <p>Je vais mettre a jour mon origin :</p>
@@ -142,15 +159,15 @@ Tags :
 </code></pre></div>
 
 <p>Voici l'exemble avec tumblr.com :</p>
-<div class="highlight"><pre><span></span><code><span class="nt">curl</span><span class="w"> </span><span class="nt">-IL</span><span class="w"> </span><span class="nt">http</span><span class="o">://</span><span class="nt">tumblr</span><span class="p">.</span><span class="nc">com</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nt">curl</span><span class="w"> </span><span class="nt">-IL</span><span class="w"> </span><span class="nt">http</span><span class="o">://</span><span class="nt">tumblr</span><span class="p">.</span><span class="nc">com</span>
 
-<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span><span class="w"> </span><span class="nt">301</span><span class="w"> </span><span class="nt">Moved</span><span class="w"> </span><span class="nt">Permanently</span><span class="w"></span>
-<span class="nt">Content-length</span><span class="o">:</span><span class="w"> </span><span class="nt">0</span><span class="w"></span>
-<span class="nt">Location</span><span class="o">:</span><span class="w"> </span><span class="nt">http</span><span class="o">://</span><span class="nt">www</span><span class="p">.</span><span class="nc">tumblr</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span><span class="w"></span>
-<span class="nt">Connection</span><span class="o">:</span><span class="w"> </span><span class="nt">close</span><span class="w"></span>
+<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span><span class="w"> </span><span class="nt">301</span><span class="w"> </span><span class="nt">Moved</span><span class="w"> </span><span class="nt">Permanently</span>
+<span class="nt">Content-length</span><span class="o">:</span><span class="w"> </span><span class="nt">0</span>
+<span class="nt">Location</span><span class="o">:</span><span class="w"> </span><span class="nt">http</span><span class="o">://</span><span class="nt">www</span><span class="p">.</span><span class="nc">tumblr</span><span class="p">.</span><span class="nc">com</span><span class="o">/</span>
+<span class="nt">Connection</span><span class="o">:</span><span class="w"> </span><span class="nt">close</span>
 
-<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span><span class="w"> </span><span class="nt">302</span><span class="w"> </span><span class="nt">Moved</span><span class="w"> </span><span class="nt">Temporarily</span><span class="w"></span>
-<span class="nt">Server</span><span class="o">:</span><span class="w"> </span><span class="nt">nginx</span><span class="w"></span>
+<span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span><span class="w"> </span><span class="nt">302</span><span class="w"> </span><span class="nt">Moved</span><span class="w"> </span><span class="nt">Temporarily</span>
+<span class="nt">Server</span><span class="o">:</span><span class="w"> </span><span class="nt">nginx</span>
 <span class="nt">Date</span><span class="o">:</span><span class="w"> </span><span class="nt">Sun</span><span class="o">,</span><span class="w"> </span><span class="nt">29</span><span class="w"> </span><span class="nt">Sep …</span></code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2013-09-29-connaitre-le-code-réponse-http-avec-curl.html">Lire la suite</a>
   </div>
@@ -169,7 +186,7 @@ Tags :
 svn. Il est temps de faire la migration de svn à git !</p>
 <p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
 voulais voici donc ma procédure :</p>
-<div class="highlight"><pre><span></span><code><span class="n">svn</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="o">--</span><span class="n">quiet</span><span class="w"> </span><span class="s1">&#39;svn://svn.mondomaine/monprojet&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">grep</span><span class="w"> </span><span class="ss">&quot;^r …</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">svn</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="c1">--quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep &quot;^r …</span></code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html">Lire la suite</a>
   </div>
   <hr />
@@ -184,16 +201,16 @@ Tags :
   </header>
   <div>
       <p>Pour exporter une table spécifique d'une base :</p>
-<div class="highlight"><pre><span></span><code>pg_dump *mabase* --table=*matable* &gt; *dump_base_table*.sql
+<div class="highlight"><pre><span></span><code>pg_dump <span class="gs">*mabase*</span> --table=*matable* &gt; <span class="gs">*dump_base_table*</span>.sql
 </code></pre></div>
 
 <p>Pour exporter une base :</p>
-<div class="highlight"><pre><span></span><code>pg_dump *mabase* &gt; *dump_base*.sql
+<div class="highlight"><pre><span></span><code>pg_dump <span class="gs">*mabase*</span> &gt; <span class="gs">*dump_base*</span>.sql
 </code></pre></div>
 
 <p>Pour importer un dump dans une base :</p>
-<div class="highlight"><pre><span></span><code>psql *base* &lt; *dump_base_table*.sql
-psql *base* &lt; *dump_base*.sql
+<div class="highlight"><pre><span></span><code>psql <span class="gs">*base*</span> &lt; <span class="gs">*dump_base_table*</span>.sql
+psql <span class="gs">*base*</span> &lt; <span class="gs">*dump_base*</span>.sql
 </code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2013-06-22-export-import-avec-postgresql.html">Lire la suite</a>
   </div>
@@ -230,36 +247,10 @@ Tags :
       <p>J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
 (Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec «
 Fdisk » et j'ai eu le message suivant :</p>
-<div class="highlight"><pre><span></span><code><span class="n">Warning</span><span class="o">:</span><span class="w"> </span><span class="n">invalid</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="mh">0x0000</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">partition</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">corrected</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">w</span><span class="o">(</span><span class="n">rite</span><span class="o">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">Warning</span><span class="o">:</span><span class="w"> </span><span class="n">invalid</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="mh">0x0000</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">partition</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">corrected</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">w</span><span class="o">(</span><span class="n">rite</span><span class="o">)</span>
 
 <span class="n">WARNING</span><span class="o">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="n">disk</span><span class="w"> </span><span class="k">is …</span></code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html">Toujours afficher le protocole dans Firefox</a></h2>
-    <p>
-      Posté le lun. 10 juin 2013 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/web.html">web</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>    </p>
-  </header>
-  <div>
-      <p>Souvent lorsque je copie/colle une url depuis firefox j'ajoute <a href="http://">http://</a>
-or lors de la copie celui-ci est copié… Je me retrouve donc avec deux
-fois <a href="http://">http://</a>…</p>
-<p>Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :</p>
-<p>Ecrire dans la barre d'adresse :</p>
-<div class="highlight"><pre><span></span><code><span class="n">about</span><span class="o">:</span><span class="n">config</span><span class="w"></span>
-</code></pre></div>
-
-<p>Rechercher :</p>
-<div class="highlight"><pre><span></span><code>browser.urlbar.trimURLs
-</code></pre></div>
-
-<p>Modifier la …</p>
-      <a class="btn" href="https://www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html">Lire la suite</a>
   </div>
 </article>
 

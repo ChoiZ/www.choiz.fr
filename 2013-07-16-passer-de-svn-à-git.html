@@ -65,9 +65,9 @@
 svn. Il est temps de faire la migration de svn à git !</p>
 <p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
 voulais voici donc ma procédure :</p>
-<div class="highlight"><pre><span></span><code><span class="n">svn</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="o">--</span><span class="n">quiet</span><span class="w"> </span><span class="s1">&#39;svn://svn.mondomaine/monprojet&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">grep</span><span class="w"> </span><span class="ss">&quot;^r&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">awk</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">svn</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="c1">--quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep &quot;^r&quot; | awk</span>
 <span class="s1">&#39;{print $3}&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">uniq</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">awk</span><span class="w"> </span><span class="s1">&#39;{ print $1&quot; = &quot;$1&quot;</span>
-<span class="s1">&lt;&quot;$1&quot;@mondomaine&gt;&quot; }&#39;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">authors</span><span class="p">.</span><span class="n">txt</span><span class="w"></span>
+<span class="s1">&lt;&quot;$1&quot;@mondomaine&gt;&quot; }&#39;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">authors</span><span class="p">.</span><span class="n">txt</span>
 </code></pre></div>
 
 <p>J'ai ensuite édité authors.txt pour remplacer nos différents pseudos par
@@ -79,13 +79,13 @@ nos prénoms et noms puis j'ai vérifié les adresses e-mails.</p>
 </code></pre></div>
 
 <p>Si vous avez des tags dans svn, vous pouvez les mettre dans git :</p>
-<div class="highlight"><pre><span></span><code>git branch -r | sed -rne &#39;s, \*tags/([^@]+)$,\\1,p&#39; | while read
-tag; do echo &quot;git tag <span class="nv">$tag</span> &#39;tags/<span class="cp">${</span><span class="n">tag</span><span class="cp">}</span>^&#39;; git branch -r -d
-tags/<span class="nv">$tag</span>&quot;; done | sh
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>-r<span class="w"> </span>|<span class="w"> </span>sed<span class="w"> </span>-rne<span class="w"> </span>&#39;s,<span class="w"> </span>\*tags/([^@]+)$,\\1,p&#39;<span class="w"> </span>|<span class="w"> </span>while<span class="w"> </span>read
+tag;<span class="w"> </span>do<span class="w"> </span>echo<span class="w"> </span>&quot;git<span class="w"> </span>tag<span class="w"> </span><span class="nv">$tag</span><span class="w"> </span>&#39;tags/<span class="cp">${</span><span class="n">tag</span><span class="cp">}</span>^&#39;;<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-r<span class="w"> </span>-d
+tags/<span class="nv">$tag</span>&quot;;<span class="w"> </span>done<span class="w"> </span>|<span class="w"> </span>sh
 </code></pre></div>
 
 <p>Pour finir ajoutez votre dépot distant :</p>
-<div class="highlight"><pre><span></span><code><span class="n">git</span><span class="w"> </span><span class="n">remote</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="n">git</span><span class="nv">@git</span><span class="p">.</span><span class="nl">mondomaine</span><span class="p">:</span><span class="o">/</span><span class="n">monprojet</span><span class="p">.</span><span class="n">git</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">git</span><span class="w"> </span><span class="n">remote</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="n">git</span><span class="nv">@git</span><span class="p">.</span><span class="nl">mondomaine</span><span class="p">:</span><span class="o">/</span><span class="n">monprojet</span><span class="p">.</span><span class="n">git</span>
 <span class="n">git</span><span class="w"> </span><span class="n">push</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="c1">--tags</span>
 </code></pre></div>
   </div>

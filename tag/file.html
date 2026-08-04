@@ -116,13 +116,13 @@ Tags :
 <div class="highlight"><pre><span></span><code><span class="c1"># Ignore files from git</span>
 
 <span class="c1"># ._ files (Mac Os X)</span>
-<span class="na">._</span><span class="p">*</span><span class="w"></span>
+<span class="na">._</span><span class="p">*</span>
 
 <span class="c1"># .DS_STORE (Mac Os X)</span>
-<span class="na">.DS_STORE</span><span class="w"></span>
+<span class="na">.DS_STORE</span>
 
 <span class="c1"># .swp (Vim)</span>
-<span class="err">*</span><span class="na">.swp</span><span class="w"></span>
+<span class="err">*</span><span class="na">.swp</span>
 </code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2012-08-13-mon-fichier-gitignore.html">Lire la suite</a>
   </div>
@@ -141,7 +141,7 @@ Tags :
 <div class="highlight"><pre><span></span><code><span class="err">&quot; Highlight To do list with green background</span>
 <span class="err">highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green</span>
 <span class="err">highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue</span>
-<span class="err">highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red</span><span class="w"></span>
+<span class="err">highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red</span>
 <span class="err">&quot; Match todolist, notice, fixme</span>
 <span class="err">:call matchadd(&#39;Todo …</span></code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Lire la suite</a>
@@ -161,7 +161,7 @@ Tags :
 correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
 "rename".</p>
 <p>Exemple je veux supprimer tous les espaces d'un fichier :</p>
-<div class="highlight"><pre><span></span><code>rename &quot;s/ *//g&quot; *.*
+<div class="highlight"><pre><span></span><code>rename &quot;s/ <span class="gs">*//g&quot; *</span>.*
 </code></pre></div>
 
 <p>Ou renomer tous mes fichiers .WAV en .wav etc… :</p>

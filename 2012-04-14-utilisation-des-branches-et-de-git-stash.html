@@ -65,11 +65,11 @@ sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc
 git stash, voyons voir comment l'utiliser simplement.</p>
 <p>On regarde l'état du status et des branches :</p>
 <div class="highlight"><pre><span></span><code>git status
-# On branch master
+<span class="gh">#</span> On branch master
 nothing to commit (working directory clean)
 
 $ git branch
-* master
+<span class="k">*</span> master
 </code></pre></div>
 
 <p>Je travail sur la branche master et je n'ai pas d'autre branche. Je vais
@@ -78,7 +78,7 @@ donc faire une branche API pour mon projet. :</p>
 
 git branch
   API
-  * master
+  <span class="k">*</span> master
 </code></pre></div>
 
 <p>Maintenant je vais changer de branche git checkout pour être sur ma
@@ -87,74 +87,74 @@ branche API et modifier les fichiers sur cette branche. :</p>
 Switched to branch &#39;API&#39;
 
 git branch
-* API
+<span class="k">*</span> API
   master
 </code></pre></div>
 
 <p>Maintenant je vais modifier un mon fichier manage.py sur ma branche API.
 :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="nv">status</span><span class="w"></span>
-#<span class="w"> </span><span class="nv">On</span><span class="w"> </span><span class="nv">branch</span><span class="w"> </span><span class="nv">API</span><span class="w"></span>
-#<span class="w"> </span><span class="nv">Changes</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">staged</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">commit</span>:<span class="w"></span>
-#<span class="w">   </span><span class="ss">(</span><span class="nv">use</span><span class="w"> </span><span class="s2">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">update</span><span class="w"> </span><span class="nv">what</span><span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">committed</span><span class="ss">)</span><span class="w"></span>
-#<span class="w">   </span><span class="ss">(</span><span class="nv">use</span><span class="w"> </span><span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">discard</span><span class="w"> </span><span class="nv">changes</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">working</span><span class="w"> </span><span class="nv">directory</span><span class="ss">)</span><span class="w"></span>
-#<span class="w"></span>
-#<span class="w">    </span><span class="nv">modified</span>:<span class="w">   </span><span class="nv">manage</span>.<span class="nv">py</span><span class="w"></span>
-#<span class="w"></span>
-<span class="nv">no</span><span class="w"> </span><span class="nv">changes</span><span class="w"> </span><span class="nv">added</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">commit</span><span class="w"> </span><span class="ss">(</span><span class="nv">use</span><span class="w"> </span><span class="s2">&quot;git add&quot;</span><span class="w"> </span><span class="nv">and</span><span class="o">/</span><span class="nv">or</span><span class="w"> </span><span class="s2">&quot;git commit -a&quot;</span><span class="ss">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="nv">status</span>
+#<span class="w"> </span><span class="nv">On</span><span class="w"> </span><span class="nv">branch</span><span class="w"> </span><span class="nv">API</span>
+#<span class="w"> </span><span class="nv">Changes</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">staged</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">commit</span>:
+#<span class="w">   </span><span class="ss">(</span><span class="nv">use</span><span class="w"> </span><span class="s2">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">update</span><span class="w"> </span><span class="nv">what</span><span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">committed</span><span class="ss">)</span>
+#<span class="w">   </span><span class="ss">(</span><span class="nv">use</span><span class="w"> </span><span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">discard</span><span class="w"> </span><span class="nv">changes</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">working</span><span class="w"> </span><span class="nv">directory</span><span class="ss">)</span>
+#
+#<span class="w">    </span><span class="nv">modified</span>:<span class="w">   </span><span class="nv">manage</span>.<span class="nv">py</span>
+#
+<span class="nv">no</span><span class="w"> </span><span class="nv">changes</span><span class="w"> </span><span class="nv">added</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">commit</span><span class="w"> </span><span class="ss">(</span><span class="nv">use</span><span class="w"> </span><span class="s2">&quot;git add&quot;</span><span class="w"> </span><span class="nv">and</span><span class="o">/</span><span class="nv">or</span><span class="w"> </span><span class="s2">&quot;git commit -a&quot;</span><span class="ss">)</span>
 </code></pre></div>
 
 <p>Si je veux revenir sur mon master, sans avoir la modification du
 manage.py je vais devoir utiliser git stash (qui sauvegardera mes
 modifications du manage.py) :</p>
-<div class="highlight"><pre><span></span><code><span class="n">git</span><span class="w"> </span><span class="n">stash</span><span class="w"></span>
-<span class="n">Saved</span><span class="w"> </span><span class="n">working</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="n">WIP</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="nl">API:</span><span class="w"> </span><span class="mh">8</span><span class="n">b6342d</span><span class="w"> </span><span class="n">Fix</span><span class="w"> </span><span class="n">register</span><span class="p">.</span><span class="n">py</span><span class="w"></span>
-<span class="n">HEAD</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="mh">8</span><span class="n">b6342d</span><span class="w"> </span><span class="n">Fix</span><span class="w"> </span><span class="n">register</span><span class="p">.</span><span class="n">py</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">git</span><span class="w"> </span><span class="n">stash</span>
+<span class="n">Saved</span><span class="w"> </span><span class="n">working</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="n">WIP</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="nl">API:</span><span class="w"> </span><span class="mh">8</span><span class="n">b6342d</span><span class="w"> </span><span class="n">Fix</span><span class="w"> </span><span class="n">register</span><span class="p">.</span><span class="n">py</span>
+<span class="n">HEAD</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="mh">8</span><span class="n">b6342d</span><span class="w"> </span><span class="n">Fix</span><span class="w"> </span><span class="n">register</span><span class="p">.</span><span class="n">py</span>
 
-<span class="err">$</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="n">status</span><span class="w"></span>
-<span class="p">#</span><span class="w"> </span><span class="n">On</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span><span class="n">API</span><span class="w"></span>
-<span class="n">nothing</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">commit</span><span class="w"> </span><span class="p">(</span><span class="n">working</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="n">clean</span><span class="p">)</span><span class="w"></span>
+<span class="err">$</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="n">status</span>
+<span class="p">#</span><span class="w"> </span><span class="n">On</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span><span class="n">API</span>
+<span class="n">nothing</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">commit</span><span class="w"> </span><span class="p">(</span><span class="n">working</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="n">clean</span><span class="p">)</span>
 </code></pre></div>
 
 <p>Maintenant que notre branche est propre on peut changer de branche
 revenir sur le master par exemple. :</p>
-<div class="highlight"><pre><span></span><code>$ git checkout master
-Switched to branch <span class="s1">&#39;master&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master
+Switched<span class="w"> </span>to<span class="w"> </span>branch<span class="w"> </span><span class="s1">&#39;master&#39;</span>
 
-$ git status
+$<span class="w"> </span>git<span class="w"> </span>status
 <span class="c1"># On branch master</span>
-nothing to commit <span class="o">(</span>working directory clean<span class="o">)</span>
+nothing<span class="w"> </span>to<span class="w"> </span>commit<span class="w"> </span><span class="o">(</span>working<span class="w"> </span>directory<span class="w"> </span>clean<span class="o">)</span>
 </code></pre></div>
 
 <p>On peut donc travailler tranquillement sur la branche master. Puis
 revenir sur notre branche API, lister les stash git stash list récupérer
 les modifications précédentes git stash pop. :</p>
-<div class="highlight"><pre><span></span><code><span class="n">git</span><span class="w"> </span><span class="n">checkout</span><span class="w"> </span><span class="n">API</span><span class="w"></span>
-<span class="n">Switched</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span><span class="p">&#39;</span><span class="n">API</span><span class="p">&#39;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">git</span><span class="w"> </span><span class="n">checkout</span><span class="w"> </span><span class="n">API</span>
+<span class="n">Switched</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span><span class="p">&#39;</span><span class="n">API</span><span class="p">&#39;</span>
 
-<span class="n">git</span><span class="w"> </span><span class="n">stash</span><span class="w"> </span><span class="n">list</span><span class="w"></span>
-<span class="n">stash</span><span class="p">@{</span><span class="mh">0</span><span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="n">WIP</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="nl">API:</span><span class="w"> </span><span class="mh">8</span><span class="n">b6342d</span><span class="w"> </span><span class="n">Fix</span><span class="w"> </span><span class="n">register</span><span class="p">.</span><span class="n">py</span><span class="w"></span>
+<span class="n">git</span><span class="w"> </span><span class="n">stash</span><span class="w"> </span><span class="n">list</span>
+<span class="n">stash</span><span class="p">@{</span><span class="mh">0</span><span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="n">WIP</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="nl">API:</span><span class="w"> </span><span class="mh">8</span><span class="n">b6342d</span><span class="w"> </span><span class="n">Fix</span><span class="w"> </span><span class="n">register</span><span class="p">.</span><span class="n">py</span>
 
-<span class="n">git</span><span class="w"> </span><span class="n">stash</span><span class="w"> </span><span class="n">pop</span><span class="w"></span>
-<span class="p">#</span><span class="w"> </span><span class="n">On</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span><span class="n">API</span><span class="w"></span>
-<span class="p">#</span><span class="w"> </span><span class="n">Changes</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">staged</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nl">commit:</span><span class="w"></span>
-<span class="p">#</span><span class="w">   </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">committed</span><span class="p">)</span><span class="w"></span>
-<span class="p">#</span><span class="w">   </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git checkout -- &lt;file&gt;...&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">discard</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">working</span><span class="w"> </span><span class="n">directory</span><span class="p">)</span><span class="w"></span>
-<span class="p">#</span><span class="w"></span>
-<span class="p">#</span><span class="w">    </span><span class="nl">modified:</span><span class="w">   </span><span class="n">manage</span><span class="p">.</span><span class="n">py</span><span class="w"></span>
-<span class="p">#</span><span class="w"></span>
-<span class="n">no</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="n">added</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">commit</span><span class="w"> </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git add&quot;</span><span class="w"> </span><span class="k">and</span><span class="o">/</span><span class="k">or</span><span class="w"> </span><span class="s">&quot;git commit -a&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="n">Dropped</span><span class="w"> </span><span class="n">refs</span><span class="o">/</span><span class="n">stash</span><span class="p">@{</span><span class="mh">0</span><span class="p">}</span><span class="w"> </span><span class="p">(</span><span class="mh">533906</span><span class="n">a52b923a8960fa0f6fdf17a288c94f233a</span><span class="p">)</span><span class="w"></span>
+<span class="n">git</span><span class="w"> </span><span class="n">stash</span><span class="w"> </span><span class="n">pop</span>
+<span class="p">#</span><span class="w"> </span><span class="n">On</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span><span class="n">API</span>
+<span class="p">#</span><span class="w"> </span><span class="n">Changes</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">staged</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nl">commit:</span>
+<span class="p">#</span><span class="w">   </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">committed</span><span class="p">)</span>
+<span class="p">#</span><span class="w">   </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git checkout -- &lt;file&gt;...&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">discard</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">working</span><span class="w"> </span><span class="n">directory</span><span class="p">)</span>
+<span class="p">#</span>
+<span class="p">#</span><span class="w">    </span><span class="nl">modified:</span><span class="w">   </span><span class="n">manage</span><span class="p">.</span><span class="n">py</span>
+<span class="p">#</span>
+<span class="n">no</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="n">added</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">commit</span><span class="w"> </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git add&quot;</span><span class="w"> </span><span class="k">and</span><span class="o">/</span><span class="k">or</span><span class="w"> </span><span class="s">&quot;git commit -a&quot;</span><span class="p">)</span>
+<span class="n">Dropped</span><span class="w"> </span><span class="n">refs</span><span class="o">/</span><span class="n">stash</span><span class="p">@{</span><span class="mh">0</span><span class="p">}</span><span class="w"> </span><span class="p">(</span><span class="mh">533906</span><span class="n">a52b923a8960fa0f6fdf17a288c94f233a</span><span class="p">)</span>
 
-<span class="err">$</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="n">status</span><span class="w"></span>
-<span class="p">#</span><span class="w"> </span><span class="n">On</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span><span class="n">API</span><span class="w"></span>
-<span class="p">#</span><span class="w"> </span><span class="n">Changes</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">staged</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nl">commit:</span><span class="w"></span>
-<span class="p">#</span><span class="w">   </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">committed</span><span class="p">)</span><span class="w"></span>
-<span class="p">#</span><span class="w">   </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git checkout -- &lt;file&gt;...&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">discard</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">working</span><span class="w"> </span><span class="n">directory</span><span class="p">)</span><span class="w"></span>
-<span class="p">#</span><span class="w"></span>
-<span class="p">#</span><span class="w">    </span><span class="nl">modified:</span><span class="w">   </span><span class="n">manage</span><span class="p">.</span><span class="n">py</span><span class="w"></span>
-<span class="p">#</span><span class="w"></span>
-<span class="n">no</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="n">added</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">commit</span><span class="w"> </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git add&quot;</span><span class="w"> </span><span class="k">and</span><span class="o">/</span><span class="k">or</span><span class="w"> </span><span class="s">&quot;git commit -a&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="err">$</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="n">status</span>
+<span class="p">#</span><span class="w"> </span><span class="n">On</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span><span class="n">API</span>
+<span class="p">#</span><span class="w"> </span><span class="n">Changes</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">staged</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nl">commit:</span>
+<span class="p">#</span><span class="w">   </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">committed</span><span class="p">)</span>
+<span class="p">#</span><span class="w">   </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git checkout -- &lt;file&gt;...&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">discard</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">working</span><span class="w"> </span><span class="n">directory</span><span class="p">)</span>
+<span class="p">#</span>
+<span class="p">#</span><span class="w">    </span><span class="nl">modified:</span><span class="w">   </span><span class="n">manage</span><span class="p">.</span><span class="n">py</span>
+<span class="p">#</span>
+<span class="n">no</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="n">added</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">commit</span><span class="w"> </span><span class="p">(</span><span class="n">use</span><span class="w"> </span><span class="s">&quot;git add&quot;</span><span class="w"> </span><span class="k">and</span><span class="o">/</span><span class="k">or</span><span class="w"> </span><span class="s">&quot;git commit -a&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 <p>Maintenant je peux continuer les modifications sur ma branche API

@@ -100,11 +100,11 @@ Tags :
   <div>
       <p>Il suffit d’utiliser git show.</p>
 <p>La commande :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="nv">branch_name</span>:<span class="nv">filename</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>git show branch_name:filename
 </code></pre></div>
 
 <p>Exemple :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="nv">reset_password</span>:<span class="o">/</span><span class="nv">templates</span><span class="o">/</span><span class="nv">reset_password</span>.<span class="nv">tmpl</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>git show reset_password:/templates/reset_password.tmpl
 </code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune-autre-branche.html">Lire la suite</a>
   </div>
@@ -232,7 +232,7 @@ local il m'arrive de vouloir aller sur ses branches :</p>
 </code></pre></div>
 
 <p>Et j'ai l'erreur suivante :</p>
-<div class="highlight"><pre><span></span><code><span class="n">error</span><span class="o">:</span><span class="w"> </span><span class="n">pathspec</span><span class="w"> </span><span class="s1">&#39;preprod&#39;</span><span class="w"> </span><span class="n">did</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">file</span><span class="o">(</span><span class="n">s</span><span class="o">)</span><span class="w"> </span><span class="n">known</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">git</span><span class="o">.</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">error</span><span class="o">:</span><span class="w"> </span><span class="n">pathspec</span><span class="w"> </span><span class="s1">&#39;preprod&#39;</span><span class="w"> </span><span class="n">did</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">file</span><span class="o">(</span><span class="n">s</span><span class="o">)</span><span class="w"> </span><span class="n">known</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">git</span><span class="o">.</span>
 </code></pre></div>
 
 <p>Je vais mettre a jour mon origin :</p>
@@ -254,7 +254,7 @@ Tags :
 svn. Il est temps de faire la migration de svn à git !</p>
 <p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
 voulais voici donc ma procédure :</p>
-<div class="highlight"><pre><span></span><code><span class="n">svn</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="o">--</span><span class="n">quiet</span><span class="w"> </span><span class="s1">&#39;svn://svn.mondomaine/monprojet&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">grep</span><span class="w"> </span><span class="ss">&quot;^r …</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">svn</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="c1">--quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep &quot;^r …</span></code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html">Lire la suite</a>
   </div>
 </article>

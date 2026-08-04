@@ -50,6 +50,33 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2014-03-21-installation-de-skype-64-sur-debian.html">Installation de Skype 64 sur Debian</a></h2>
+    <p>
+      Posté le ven. 21 mars 2014 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/skype.html">skype</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>    </p>
+  </header>
+  <div>
+      <p>Télécharger la dernière version de <a href="http://www.skype.com">Skype</a> (Debian
+7.0 [multiarch]).</p>
+<p>Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. :</p>
+<div class="highlight"><pre><span></span><code>dpkg --add-architecture i386
+</code></pre></div>
+
+<p>Puis mettre à jour les paquets :</p>
+<div class="highlight"><pre><span></span><code>apt-get update
+apt-get upgrade
+apt-get install -f
+</code></pre></div>
+
+<p>Installer Skype en n'oubliant pas de remplacer "x" par la bonne version :</p>
+<div class="highlight"><pre><span></span><code>dpkg -i …</code></pre></div>
+      <a class="btn" href="https://www.choiz.fr/2014-03-21-installation-de-skype-64-sur-debian.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html">Installation de Firefox sur Debian</a></h2>
     <p>
       Posté le ven. 21 mars 2014 &#8226;
@@ -110,14 +137,14 @@ Tags :
 </code></pre></div>
 
 <p>Créer un fichier config.lua :</p>
-<div class="highlight"><pre><span></span><code>touch config.lua
+<div class="highlight"><pre><span></span><code><span class="n">touch config.lua</span>
 </code></pre></div>
 
 <p>Maintenant je décide de faire un fichier de configuration par boite
 email.</p>
 <p>Ici gmail :</p>
-<div class="highlight"><pre><span></span><code><span class="n">cat</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">gmail</span><span class="p">.</span><span class="n">lua</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">EOF</span><span class="w"></span>
-<span class="n">gmail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IMAP</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">cat</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">gmail</span><span class="p">.</span><span class="n">lua</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">EOF</span>
+<span class="n">gmail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IMAP</span><span class="w"> </span><span class="err">{</span>
 <span class="w">    </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;imap.gmail.com …</span></code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html">Lire la suite</a>
   </div>
@@ -249,23 +276,6 @@ Tags :
 <p><code>\%U2028</code> Le caractère que l'on recherche unicode "2028"</p>
 <p><code>//</code> par rien (1er slash sépare la recherche …</p>
       <a class="btn" href="https://www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2013-11-13-crontab-e-files.html">crontab -e file(s)</a></h2>
-    <p>
-      Posté le mer. 13 novembre 2013 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/crontab.html">crontab</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
-  </header>
-  <div>
-      <p>Ou se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?</p>
-<p>C'est une bonne question n'est-ce pas ?</p>
-<p>La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
-debian, a voir sur d'autres distribs)</p>
-      <a class="btn" href="https://www.choiz.fr/2013-11-13-crontab-e-files.html">Lire la suite</a>
   </div>
 </article>
 

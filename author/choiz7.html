@@ -50,6 +50,32 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html">Toujours afficher le protocole dans Firefox</a></h2>
+    <p>
+      Posté le lun. 10 juin 2013 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/web.html">web</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>    </p>
+  </header>
+  <div>
+      <p>Souvent lorsque je copie/colle une url depuis firefox j'ajoute <a href="http://">http://</a>
+or lors de la copie celui-ci est copié… Je me retrouve donc avec deux
+fois <a href="http://">http://</a>…</p>
+<p>Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :</p>
+<p>Ecrire dans la barre d'adresse :</p>
+<div class="highlight"><pre><span></span><code><span class="n">about</span><span class="o">:</span><span class="n">config</span>
+</code></pre></div>
+
+<p>Rechercher :</p>
+<div class="highlight"><pre><span></span><code>browser.urlbar.trimURLs
+</code></pre></div>
+
+<p>Modifier la …</p>
+      <a class="btn" href="https://www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2013-05-29-latin1-utf-8.html">Latin1 vers UTF-8</a></h2>
     <p>
       Posté le mer. 29 mai 2013 &#8226;
@@ -183,13 +209,13 @@ Tags :
 <div class="highlight"><pre><span></span><code><span class="c1"># Ignore files from git</span>
 
 <span class="c1"># ._ files (Mac Os X)</span>
-<span class="na">._</span><span class="p">*</span><span class="w"></span>
+<span class="na">._</span><span class="p">*</span>
 
 <span class="c1"># .DS_STORE (Mac Os X)</span>
-<span class="na">.DS_STORE</span><span class="w"></span>
+<span class="na">.DS_STORE</span>
 
 <span class="c1"># .swp (Vim)</span>
-<span class="err">*</span><span class="na">.swp</span><span class="w"></span>
+<span class="err">*</span><span class="na">.swp</span>
 </code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2012-08-13-mon-fichier-gitignore.html">Lire la suite</a>
   </div>
@@ -214,7 +240,7 @@ stash@{5}: WIP on BranchName: 3bb67ff Add file.css file.js
 </code></pre></div>
 
 <p>Pour voir le contenu d'un stash :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="nv">stash</span><span class="w"> </span><span class="k">show</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="nv">stash</span><span class="w"> </span><span class="k">show</span>
 
 <span class="nv">stash</span>@{<span class="mi">0</span>}<span class="w"> </span><span class="nv">chemin</span><span class="o">/</span><span class="nv">vers</span><span class="o">/</span><span class="nv">mon …</span></code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-précis.html">Lire la suite</a>
@@ -234,34 +260,10 @@ Tags :
 <div class="highlight"><pre><span></span><code><span class="err">&quot; Highlight To do list with green background</span>
 <span class="err">highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green</span>
 <span class="err">highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue</span>
-<span class="err">highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red</span><span class="w"></span>
+<span class="err">highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red</span>
 <span class="err">&quot; Match todolist, notice, fixme</span>
 <span class="err">:call matchadd(&#39;Todo …</span></code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html">Reprendre la main sur un Screen pas "detached"</a></h2>
-    <p>
-      Posté le mer. 18 avril 2012 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
-  </header>
-  <div>
-      <p>Lorsque j'ai voulu "réattacher" mon "Screen" j'ai eu le message suivant :</p>
-<div class="highlight"><pre><span></span><code>There is a screen on:
-1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)
-</code></pre></div>
-
-<p>Habituellement je détache mon "Screen" mais cette fois j'ai oublié.</p>
-<p>Pour "détacher" / "réattacher" mon "Screen" j'ai du faire la commande suivante :</p>
-<div class="highlight"><pre><span></span><code>screen -dRR
-</code></pre></div>
-
-<p>Je …</p>
-      <a class="btn" href="https://www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html">Lire la suite</a>
   </div>
 </article>
 

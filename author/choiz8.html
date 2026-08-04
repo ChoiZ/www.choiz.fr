@@ -50,6 +50,30 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html">Reprendre la main sur un Screen pas "detached"</a></h2>
+    <p>
+      Posté le mer. 18 avril 2012 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
+  </header>
+  <div>
+      <p>Lorsque j'ai voulu "réattacher" mon "Screen" j'ai eu le message suivant :</p>
+<div class="highlight"><pre><span></span><code>There is a screen on:
+1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)
+</code></pre></div>
+
+<p>Habituellement je détache mon "Screen" mais cette fois j'ai oublié.</p>
+<p>Pour "détacher" / "réattacher" mon "Screen" j'ai du faire la commande suivante :</p>
+<div class="highlight"><pre><span></span><code>screen -dRR
+</code></pre></div>
+
+<p>Je …</p>
+      <a class="btn" href="https://www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html">Utilisation des branches et de git stash</a></h2>
     <p>
       Posté le sam. 14 avril 2012 &#8226;
@@ -62,7 +86,7 @@ sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc
 git stash, voyons voir comment l'utiliser simplement.</p>
 <p>On regarde l'état du status et des branches :</p>
 <div class="highlight"><pre><span></span><code>git status
-# On branch master
+<span class="gh">#</span> On branch master
 nothing to commit (working directory clean)
 
 $ git …</code></pre></div>
@@ -83,7 +107,7 @@ Tags :
 correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
 "rename".</p>
 <p>Exemple je veux supprimer tous les espaces d'un fichier :</p>
-<div class="highlight"><pre><span></span><code>rename &quot;s/ *//g&quot; *.*
+<div class="highlight"><pre><span></span><code>rename &quot;s/ <span class="gs">*//g&quot; *</span>.*
 </code></pre></div>
 
 <p>Ou renomer tous mes fichiers .WAV en .wav etc… :</p>
@@ -105,26 +129,26 @@ Tags :
   </header>
   <div>
       <p>Ajout du pull, push, diff et surtout stash :</p>
-<div class="highlight"><pre><span></span><code><span class="k">[user]</span><span class="w"></span>
-<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">François LASSERRE</span><span class="w"></span>
-<span class="w">  </span><span class="na">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mon@email.fr</span><span class="w"></span>
-<span class="k">[diff]</span><span class="w"></span>
-<span class="w">  </span><span class="na">tool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">vimdiff</span><span class="w"></span>
-<span class="k">[color]</span><span class="w"></span>
-<span class="w">  </span><span class="na">branch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span><span class="w"></span>
-<span class="w">  </span><span class="na">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span><span class="w"></span>
-<span class="w">  </span><span class="na">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span><span class="w"></span>
-<span class="w">  </span><span class="na">interactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span><span class="w"></span>
-<span class="w">  </span><span class="na">ui</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span><span class="w"></span>
-<span class="k">[alias]</span><span class="w"></span>
-<span class="w">  </span><span class="na">br</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">branch</span><span class="w"></span>
-<span class="w">  </span><span class="na">ci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">commit -a</span><span class="w"></span>
-<span class="w">  </span><span class="na">co</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">checkout</span><span class="w"></span>
-<span class="w">  </span><span class="na">sh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">show --color-words</span><span class="w"></span>
-<span class="w">  </span><span class="na">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">status</span><span class="w"></span>
-<span class="w">  </span><span class="na">di</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">diff</span><span class="w"></span>
-<span class="w">  </span><span class="na">ph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">push</span><span class="w"></span>
-<span class="w">  </span><span class="na">pl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">pull</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">[user]</span>
+<span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">François LASSERRE</span>
+<span class="w">  </span><span class="na">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mon@email.fr</span>
+<span class="k">[diff]</span>
+<span class="w">  </span><span class="na">tool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">vimdiff</span>
+<span class="k">[color]</span>
+<span class="w">  </span><span class="na">branch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span>
+<span class="w">  </span><span class="na">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span>
+<span class="w">  </span><span class="na">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span>
+<span class="w">  </span><span class="na">interactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span>
+<span class="w">  </span><span class="na">ui</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+<span class="k">[alias]</span>
+<span class="w">  </span><span class="na">br</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">branch</span>
+<span class="w">  </span><span class="na">ci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">commit -a</span>
+<span class="w">  </span><span class="na">co</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">checkout</span>
+<span class="w">  </span><span class="na">sh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">show --color-words</span>
+<span class="w">  </span><span class="na">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">status</span>
+<span class="w">  </span><span class="na">di</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">diff</span>
+<span class="w">  </span><span class="na">ph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">push</span>
+<span class="w">  </span><span class="na">pl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">pull</span>
 <span class="w">  </span><span class="na">sta …</span></code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2012-04-13-update-gitconfig.html">Lire la suite</a>
   </div>
@@ -140,25 +164,25 @@ Tags :
   </header>
   <div>
       <p>Fichier .gitconfig :</p>
-<div class="highlight"><pre><span></span><code><span class="k">[user]</span><span class="w"></span>
-<span class="w">    </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">François LASSERRE</span><span class="w"></span>
-<span class="w">    </span><span class="na">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mon@email.fr</span><span class="w"></span>
-<span class="k">[diff]</span><span class="w"></span>
-<span class="w">    </span><span class="na">tool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">vimdiff</span><span class="w"></span>
-<span class="k">[color]</span><span class="w"></span>
-<span class="w">    </span><span class="na">branch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span><span class="w"></span>
-<span class="w">    </span><span class="na">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span><span class="w"></span>
-<span class="w">    </span><span class="na">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span><span class="w"></span>
-<span class="w">    </span><span class="na">interactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span><span class="w"></span>
-<span class="w">    </span><span class="na">ui</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span><span class="w"></span>
-<span class="k">[alias]</span><span class="w"></span>
-<span class="w">    </span><span class="na">br</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">branch</span><span class="w"></span>
-<span class="w">    </span><span class="na">ci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">commit -a</span><span class="w"></span>
-<span class="w">    </span><span class="na">co</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">checkout</span><span class="w"></span>
-<span class="w">    </span><span class="na">sh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">show --color-words</span><span class="w"></span>
-<span class="w">    </span><span class="na">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">status</span><span class="w"></span>
-<span class="w">    </span><span class="na">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">cat-file commit HEAD</span><span class="w"></span>
-<span class="w">    </span><span class="na">tree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">log --graph --oneline --decorate</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">[user]</span>
+<span class="w">    </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">François LASSERRE</span>
+<span class="w">    </span><span class="na">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mon@email.fr</span>
+<span class="k">[diff]</span>
+<span class="w">    </span><span class="na">tool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">vimdiff</span>
+<span class="k">[color]</span>
+<span class="w">    </span><span class="na">branch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span>
+<span class="w">    </span><span class="na">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span>
+<span class="w">    </span><span class="na">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span>
+<span class="w">    </span><span class="na">interactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span>
+<span class="w">    </span><span class="na">ui</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+<span class="k">[alias]</span>
+<span class="w">    </span><span class="na">br</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">branch</span>
+<span class="w">    </span><span class="na">ci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">commit -a</span>
+<span class="w">    </span><span class="na">co</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">checkout</span>
+<span class="w">    </span><span class="na">sh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">show --color-words</span>
+<span class="w">    </span><span class="na">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">status</span>
+<span class="w">    </span><span class="na">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">cat-file commit HEAD</span>
+<span class="w">    </span><span class="na">tree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">log --graph --oneline --decorate</span>
 <span class="w">    </span><span class="na">graph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">log --graph --decorate …</span></code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2012-01-31-git-mes-fichiers-de-config-gitconfig-gitignore.html">Lire la suite</a>
   </div>
@@ -264,28 +288,6 @@ killall Finder
 
 <p>Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés.</p>
       <a class="btn" href="https://www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html">Insérer un \# au début de chaque ligne d'un fichier avec vim</a></h2>
-    <p>
-      Posté le mer. 05 octobre 2011 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/commentaire.html">commentaire</a>    </p>
-  </header>
-  <div>
-      <p>Voilà la commande pour ajouter un # au début de chaque ligne d'un
-fichier avec vim :</p>
-<div class="highlight"><pre><span></span><code>:1,$s/^/#/
-</code></pre></div>
-
-<p>Explications :</p>
-<p><code>:1,$</code> : Sélection des ligne 1 à $ ($ étant la dernière).</p>
-<p><code>s/^/\#/</code> : <code>s</code> pour search, <code>^</code> indique le début de ligne, <code>/</code> est un
-séparateur pour la recherche et pour ce que l'on souhaite remplacer et …</p>
-      <a class="btn" href="https://www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html">Lire la suite</a>
   </div>
 </article>
 

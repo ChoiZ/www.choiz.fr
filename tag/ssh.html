@@ -77,8 +77,8 @@ Tags :
   <div>
       <p>Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
 trouve dans <em>~/.ssh/config</em> et d'ajouter les deux lignes suivantes :</p>
-<div class="highlight"><pre><span></span><code><span class="k">Host</span><span class="w"> </span><span class="n">destination</span><span class="p">.</span><span class="k">local</span><span class="w"></span>
-<span class="w">    </span><span class="n">ProxyCommand</span><span class="w"> </span><span class="n">ssh</span><span class="w"> </span><span class="k">user</span><span class="nv">@bastion</span><span class="p">.</span><span class="n">fr</span><span class="w"> </span><span class="o">-</span><span class="n">W</span><span class="w"> </span><span class="o">%</span><span class="nl">h</span><span class="p">:</span><span class="o">%</span><span class="n">p</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">Host</span><span class="w"> </span><span class="n">destination</span><span class="p">.</span><span class="k">local</span>
+<span class="w">    </span><span class="n">ProxyCommand</span><span class="w"> </span><span class="n">ssh</span><span class="w"> </span><span class="k">user</span><span class="nv">@bastion</span><span class="p">.</span><span class="n">fr</span><span class="w"> </span><span class="o">-</span><span class="n">W</span><span class="w"> </span><span class="o">%</span><span class="nl">h</span><span class="p">:</span><span class="o">%</span><span class="n">p</span>
 </code></pre></div>
 
 <p>C'est tout.</p>

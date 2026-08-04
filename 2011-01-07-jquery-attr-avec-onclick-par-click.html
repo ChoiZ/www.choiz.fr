@@ -67,13 +67,13 @@ fonctionne pas avec l'attribut "onclick"…</p>
 <p>Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.</p>
 <p>Remplacer donc :</p>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">mavar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="o">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s2">&quot;onclick&quot;</span><span class="p">,</span><span class="s2">&quot;mavar&quot;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">mavar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span>
+<span class="o">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s2">&quot;onclick&quot;</span><span class="p">,</span><span class="s2">&quot;mavar&quot;</span><span class="p">);</span>
 </code></pre></div>
 
 <p>Par :</p>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">mavar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="o">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">removeAttr</span><span class="p">(</span><span class="s1">&#39;onclick&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">eval</span><span class="p">(</span><span class="n">mavar</span><span class="p">);</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">mavar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span>
+<span class="o">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">removeAttr</span><span class="p">(</span><span class="s1">&#39;onclick&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">eval</span><span class="p">(</span><span class="n">mavar</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
 </code></pre></div>
   </div>
   <div class="tag-cloud">

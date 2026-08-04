@@ -78,21 +78,21 @@ le 443 de "www.choiz.fr".</li>
 github que je tape directement l'url "http://choiz.github.io".</li>
 </ul>
 <p>Ici la configuration du dernier vhost :</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;IfModule</span> <span class="err">mod_ssl.c</span><span class="nt">&gt;</span>
-<span class="nt">&lt;VirtualHost</span> <span class="err">*:443</span><span class="nt">&gt;</span>
-    ServerName www.choiz.fr
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;IfModule</span><span class="w"> </span><span class="err">mod_ssl.c</span><span class="nt">&gt;</span>
+<span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="err">*:443</span><span class="nt">&gt;</span>
+<span class="w">    </span>ServerName<span class="w"> </span>www.choiz.fr
 
-    SSLProxyEngine On
-    ProxyRequests Off
-    ProxyPreserveHost Off
-    ProxyPass / https://choiz.github.io/
-    ProxyPassReverse / https://choiz.github.io/
-    ProxyPassReverse / http://choiz.github.io/
+<span class="w">    </span>SSLProxyEngine<span class="w"> </span>On
+<span class="w">    </span>ProxyRequests<span class="w"> </span>Off
+<span class="w">    </span>ProxyPreserveHost<span class="w"> </span>Off
+<span class="w">    </span>ProxyPass<span class="w"> </span>/<span class="w"> </span>https://choiz.github.io/
+<span class="w">    </span>ProxyPassReverse<span class="w"> </span>/<span class="w"> </span>https://choiz.github.io/
+<span class="w">    </span>ProxyPassReverse<span class="w"> </span>/<span class="w"> </span>http://choiz.github.io/
 
-    # puis la config du SSL
-    SSLEngine On
-    SSLCertificateFile …
-    SSLCertificateKeyFile …
+<span class="w">    </span>#<span class="w"> </span>puis<span class="w"> </span>la<span class="w"> </span>config<span class="w"> </span>du<span class="w"> </span>SSL
+<span class="w">    </span>SSLEngine<span class="w"> </span>On
+<span class="w">    </span>SSLCertificateFile<span class="w"> </span>…
+<span class="w">    </span>SSLCertificateKeyFile<span class="w"> </span>…
 <span class="nt">&lt;/VirtualHost&gt;</span>
 <span class="nt">&lt;/IfModule&gt;</span>
 </code></pre></div>

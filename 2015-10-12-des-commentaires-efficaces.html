@@ -64,32 +64,32 @@
     <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester
 qu'une fonctionnalité de code.</p>
 <p>Par exemple pour tester une api :</p>
-<div class="highlight"><pre><span></span><code>// Obtenir le livre #1
-api_get(&#39;books/1&#39;);
+<div class="highlight"><pre><span></span><code><span class="c1">// Obtenir le livre #1</span>
+<span class="n">api_get</span><span class="p">(</span><span class="s">&#39;books/1&#39;</span><span class="p">);</span>
 
-// Ajouter un livre
-api_add(&#39;books&#39;, $datas);
+<span class="c1">// Ajouter un livre</span>
+<span class="n">api_add</span><span class="p">(</span><span class="s">&#39;books&#39;</span><span class="p">,</span><span class="w"> </span><span class="no">$</span><span class="n">datas</span><span class="p">);</span>
 </code></pre></div>
 
 <p>Je test généralement chaque élément séparement.</p>
 <p>Pour tester la première portion de mon code :</p>
-<div class="highlight"><pre><span></span><code>//* Obtenir le livre #1
-api_get(&#39;books/1&#39;);
-//*/
+<div class="highlight"><pre><span></span><code><span class="c1">//* Obtenir le livre #1</span>
+<span class="n">api_get</span><span class="p">(</span><span class="s">&#39;books/1&#39;</span><span class="p">);</span>
+<span class="c1">//*/</span>
 
-/* Ajouter un livre
-api_add(&#39;books&#39;, $datas);
-//*/
+<span class="o">/*</span><span class="w"> </span><span class="n">Ajouter</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">livre</span>
+<span class="n">api_add</span><span class="p">(</span><span class="s">&#39;books&#39;</span><span class="p">,</span><span class="w"> </span><span class="no">$</span><span class="n">datas</span><span class="p">);</span>
+<span class="c1">//*/</span>
 </code></pre></div>
 
 <p>Pour tester la seconde portion de mon code :</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/* Obtenir le livre #1</span>
-<span class="cm">api_get(&#39;books/1&#39;);</span>
-<span class="cm">//*/</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="o">/*</span><span class="w"> </span><span class="n">Obtenir</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span>#<span class="mi">1</span>
+<span class="n">api_get</span><span class="p">(</span><span class="s">&#39;books/1&#39;</span><span class="p">);</span>
+<span class="c1">//*/</span>
 
-<span class="o">//*</span><span class="w"> </span>Ajouter<span class="w"> </span>un<span class="w"> </span>livre<span class="w"></span>
-api_add<span class="o">(</span><span class="s">&#39;books&#39;</span><span class="o">,</span><span class="w"> </span><span class="err">$</span>datas<span class="o">)</span><span class="err">;</span><span class="w"></span>
-<span class="o">//*/</span><span class="w"></span>
+<span class="c1">//* Ajouter un livre</span>
+<span class="n">api_add</span><span class="p">(</span><span class="s">&#39;books&#39;</span><span class="p">,</span><span class="w"> </span><span class="no">$</span><span class="n">datas</span><span class="p">);</span>
+<span class="c1">//*/</span>
 </code></pre></div>
 
 <p>Il me suffit d'ajouter ou d'enlever un slash sur le premier commentaire

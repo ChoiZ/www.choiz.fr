@@ -61,16 +61,16 @@
   </header>
   <div>
     <p>Pour exporter une table spécifique d'une base :</p>
-<div class="highlight"><pre><span></span><code>pg_dump *mabase* --table=*matable* &gt; *dump_base_table*.sql
+<div class="highlight"><pre><span></span><code>pg_dump <span class="gs">*mabase*</span> --table=*matable* &gt; <span class="gs">*dump_base_table*</span>.sql
 </code></pre></div>
 
 <p>Pour exporter une base :</p>
-<div class="highlight"><pre><span></span><code>pg_dump *mabase* &gt; *dump_base*.sql
+<div class="highlight"><pre><span></span><code>pg_dump <span class="gs">*mabase*</span> &gt; <span class="gs">*dump_base*</span>.sql
 </code></pre></div>
 
 <p>Pour importer un dump dans une base :</p>
-<div class="highlight"><pre><span></span><code>psql *base* &lt; *dump_base_table*.sql
-psql *base* &lt; *dump_base*.sql
+<div class="highlight"><pre><span></span><code>psql <span class="gs">*base*</span> &lt; <span class="gs">*dump_base_table*</span>.sql
+psql <span class="gs">*base*</span> &lt; <span class="gs">*dump_base*</span>.sql
 </code></pre></div>
   </div>
   <div class="tag-cloud">

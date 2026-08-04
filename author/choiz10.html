@@ -50,6 +50,30 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html">Split & Vsplit dans vim</a></h2>
+    <p>
+      Posté le dim. 29 mai 2011 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>    </p>
+  </header>
+  <div>
+      <p>Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
+pouvoir ouvrir plusieurs fichiers en même temps.</p>
+<p>Il y a 2 méthodes :</p>
+<ul>
+<li>la division de la fenêtre horizontal en utilisant :</li>
+</ul>
+<p><code>:split</code> (ou <code>:new</code>) puis : <code>:e le_fichier_a_ouvrir</code></p>
+<ul>
+<li>la division de la fenêtre verticalement en utilisant :</li>
+</ul>
+<p><code>:vsplit</code> puis …</p>
+      <a class="btn" href="https://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2011-05-19-différences-entre-des-fichiers-avec-vim.html">Différences entre des fichiers avec Vim</a></h2>
     <p>
       Posté le jeu. 19 mai 2011 &#8226;
@@ -61,7 +85,7 @@ Tags :
 J'utilise souvent la commande diff dans un terminal, mais mon éditeur
 texte favoris "Vim" sait aussi trés bien faire un différentiel.
 Utilisation avec le terminal :</p>
-<div class="highlight"><pre><span></span><code><span class="gh">diff fichier1 fichier2</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="gh">diff fichier1 fichier2</span>
 </code></pre></div>
 
 <p>Celui-ci retournera les différences directement dans le terminal (pas
@@ -194,8 +218,8 @@ fonctionne pas avec l'attribut "onclick"…</p>
 <p>Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.</p>
 <p>Remplacer donc :</p>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">mavar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="o">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s2">&quot;onclick&quot;</span><span class="p">,</span><span class="s2">&quot;mavar&quot;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">mavar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span>
+<span class="o">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s2">&quot;onclick&quot;</span><span class="p">,</span><span class="s2">&quot;mavar&quot;</span><span class="p">);</span>
 </code></pre></div>
 
 <p>Par :</p>
@@ -240,28 +264,12 @@ il n'y a pas de retour à la ligne fait automatiquement pour cela un
 petit css permet de faire les retours à la ligne lorsque la page …</p>
       <a class="btn" href="https://www.choiz.fr/2010-09-15-impression-de-commandes-entre-balise-pre.html">Lire la suite</a>
   </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html">Limiter la bande passante sous Mac Os X</a></h2>
-    <p>
-      Posté le lun. 12 juillet 2010 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/osx.html">osx</a>    </p>
-  </header>
-  <div>
-      <p>Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
-virtuel en console.</p>
-<p>Ici on créer un tuyau virtuel de 1Mbit/s.</p>
-<p><code>sudo ipfw pipe 1 config bw 1Mbit/s</code></p>
-<p>On applique ce tuyau au port 80 (pour le téléchargement de fichier via
-un navigateur …</p>
-      <a class="btn" href="https://www.choiz.fr/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html">Lire la suite</a>
-  </div>
 </article>
 
   <div class="pagination">
+    <a class="btn" href="https://www.choiz.fr/author/choiz11.html">
+      <i class="fa fa-angle-left"></i> Anciens articles
+    </a>
       <a class="btn float-right" href="https://www.choiz.fr/author/choiz9.html">
         Nouveaux articles <i class="fa fa-angle-right"></i>
       </a>

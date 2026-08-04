@@ -74,12 +74,12 @@ Tags :
   </header>
   <div>
       <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :</p>
-<div class="highlight"><pre><span></span><code><span class="n">function</span><span class="w"> </span><span class="n">checkclick</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">window</span><span class="o">.</span><span class="n">event</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">target</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">srcElement</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">o</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="n">document</span><span class="o">.</span><span class="n">onclick</span><span class="o">=</span><span class="n">checkclick</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">function</span><span class="w"> </span><span class="n">checkclick</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">window</span><span class="o">.</span><span class="n">event</span><span class="p">;</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">target</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">srcElement</span><span class="p">;</span>
+<span class="w">    </span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">document</span><span class="o">.</span><span class="n">onclick</span><span class="o">=</span><span class="n">checkclick</span><span class="p">;</span>
 </code></pre></div>
 
 <p>Pratique pour faire du débug.</p>
@@ -101,8 +101,8 @@ fonctionne pas avec l'attribut "onclick"…</p>
 <p>Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.</p>
 <p>Remplacer donc :</p>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">mavar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="o">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s2">&quot;onclick&quot;</span><span class="p">,</span><span class="s2">&quot;mavar&quot;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">mavar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span>
+<span class="o">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s2">&quot;onclick&quot;</span><span class="p">,</span><span class="s2">&quot;mavar&quot;</span><span class="p">);</span>
 </code></pre></div>
 
 <p>Par :</p>

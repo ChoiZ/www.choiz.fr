@@ -50,6 +50,26 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html">Voir les fichiers cachés sur Lion</a></h2>
+    <p>
+      Posté le mer. 02 novembre 2011 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/file.html">file</a>,      <a href="https://www.choiz.fr/tag/osx.html">osx</a>    </p>
+  </header>
+  <div>
+      <p>Dans un terminal :</p>
+<div class="highlight"><pre><span></span><code>defaults write com.apple.Finder AppleShowAllFiles TRUE
+
+killall Finder
+</code></pre></div>
+
+<p>Ouvrir une fenêtre du Finder et vous voyez les fichiers cachés.</p>
+      <a class="btn" href="https://www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2011-10-05-insérer-un-au-début-de-chaque-ligne-dun-fichier.html">Insérer un \# au début de chaque ligne d'un fichier avec vim</a></h2>
     <p>
       Posté le mer. 05 octobre 2011 &#8226;
@@ -125,7 +145,7 @@ Tags :
       <p>J'ai récupéré une machine virtuelle d'un ami pour gagner du temps. J'ai
 donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?</p>
 <p>Sur Mac Os X Lion il suffit d'ouvrir un terminal et de taper :</p>
-<div class="highlight"><pre><span></span><code><span class="n">VBoxManage</span> <span class="kn">import</span> <span class="nn">votrefichier.ova</span>
+<div class="highlight"><pre><span></span><code><span class="n">VBoxManage</span> <span class="kn">import</span><span class="w"> </span><span class="nn">votrefichier.ova</span>
 </code></pre></div>
 
 <p>Maintenant lors du prochain démarrage de votre VirtualBox vous devez
@@ -145,16 +165,16 @@ Tags :
   <div>
       <p>Configuration d'un serveur samba. Editer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :</p>
-<div class="highlight"><pre><span></span><code><span class="o">|</span><span class="w"> </span><span class="err">###</span><span class="w"> </span><span class="k">Global</span><span class="w"> </span><span class="err">###</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="o">[</span><span class="n">global</span><span class="o">]</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="err">##</span><span class="w"> </span><span class="n">Identification</span><span class="w"> </span><span class="err">##</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">workgroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WORKGROUP</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">netbios</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">%</span><span class="n">h</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Serveur</span><span class="w"> </span><span class="n">samba</span><span class="w"> </span><span class="o">%</span><span class="n">h</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">security</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">user</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yes</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="err">##</span><span class="w"> </span><span class="nf">Log</span><span class="w"> </span><span class="err">##</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="nf">var</span><span class="o">/</span><span class="nf">log</span><span class="o">/</span><span class="n">samba</span><span class="o">/</span><span class="nf">log</span><span class="p">.</span><span class="o">%</span><span class="n">m</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="o">|</span><span class="w"> </span><span class="err">###</span><span class="w"> </span><span class="k">Global</span><span class="w"> </span><span class="err">###</span>
+<span class="o">|</span><span class="w"> </span><span class="o">[</span><span class="n">global</span><span class="o">]</span>
+<span class="o">|</span><span class="w"> </span><span class="err">##</span><span class="w"> </span><span class="n">Identification</span><span class="w"> </span><span class="err">##</span>
+<span class="o">|</span><span class="w"> </span><span class="n">workgroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WORKGROUP</span>
+<span class="o">|</span><span class="w"> </span><span class="n">netbios</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">%</span><span class="n">h</span>
+<span class="o">|</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Serveur</span><span class="w"> </span><span class="n">samba</span><span class="w"> </span><span class="o">%</span><span class="n">h</span>
+<span class="o">|</span><span class="w"> </span><span class="n">security</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">user</span>
+<span class="o">|</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yes</span>
+<span class="o">|</span><span class="w"> </span><span class="err">##</span><span class="w"> </span><span class="nf">Log</span><span class="w"> </span><span class="err">##</span>
+<span class="o">|</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="nf">var</span><span class="o">/</span><span class="nf">log</span><span class="o">/</span><span class="n">samba</span><span class="o">/</span><span class="nf">log</span><span class="p">.</span><span class="o">%</span><span class="n">m</span>
 <span class="o">|</span><span class="w"> </span><span class="nf">max</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000 …</span></code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2011-08-17-partage-samba.html">Lire la suite</a>
   </div>
@@ -226,35 +246,16 @@ Tags :
   </header>
   <div>
       <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :</p>
-<div class="highlight"><pre><span></span><code><span class="n">function</span><span class="w"> </span><span class="n">checkclick</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">window</span><span class="o">.</span><span class="n">event</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">target</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">srcElement</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">o</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="n">document</span><span class="o">.</span><span class="n">onclick</span><span class="o">=</span><span class="n">checkclick</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">function</span><span class="w"> </span><span class="n">checkclick</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">window</span><span class="o">.</span><span class="n">event</span><span class="p">;</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">target</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">srcElement</span><span class="p">;</span>
+<span class="w">    </span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">document</span><span class="o">.</span><span class="n">onclick</span><span class="o">=</span><span class="n">checkclick</span><span class="p">;</span>
 </code></pre></div>
 
 <p>Pratique pour faire du débug.</p>
       <a class="btn" href="https://www.choiz.fr/2011-06-30-elément-cliqué-en-js.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2011-05-30-patch-diff.html">Patch & diff</a></h2>
-    <p>
-      Posté le lun. 30 mai 2011 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/diff.html">diff</a>,      <a href="https://www.choiz.fr/tag/patch.html">patch</a>,      <a href="https://www.choiz.fr/tag/cli.html">cli</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
-  </header>
-  <div>
-      <p>Patch permet de "patcher" un fichier, dossier, projet ! Pratique lorsque
-vous distribuez du code et que vous voulez le mettre à jour. Comment
-l'utiliser ? Dans un premier temps nous allons faire un différentiel de
-notre version actuelle du projet et de la nouvelle version (celle
-patchée). :</p>
-<div class="highlight"><pre><span></span><code><span class="gh">diff -u version1.php …</span></code></pre></div>
-      <a class="btn" href="https://www.choiz.fr/2011-05-30-patch-diff.html">Lire la suite</a>
   </div>
 </article>
 

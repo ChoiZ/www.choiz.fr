@@ -50,6 +50,33 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html">Toujours afficher le protocole dans Firefox</a></h2>
+    <p>
+      Posté le lun. 10 juin 2013 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/web.html">web</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>    </p>
+  </header>
+  <div>
+      <p>Souvent lorsque je copie/colle une url depuis firefox j'ajoute <a href="http://">http://</a>
+or lors de la copie celui-ci est copié… Je me retrouve donc avec deux
+fois <a href="http://">http://</a>…</p>
+<p>Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :</p>
+<p>Ecrire dans la barre d'adresse :</p>
+<div class="highlight"><pre><span></span><code><span class="n">about</span><span class="o">:</span><span class="n">config</span>
+</code></pre></div>
+
+<p>Rechercher :</p>
+<div class="highlight"><pre><span></span><code>browser.urlbar.trimURLs
+</code></pre></div>
+
+<p>Modifier la valeur par :</p>
+<div class="highlight"><pre><span></span><code>false
+</code></pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2013-05-29-latin1-utf-8.html">Latin1 vers UTF-8</a></h2>
     <p>
       Posté le mer. 29 mai 2013 &#8226;
@@ -96,7 +123,7 @@ accentué. :</p>
 </code></pre></div>
 
 <p>Maintenant on regarde la taille de la colonne :</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n n-Quoted">`col`</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n n-Quoted">`col`</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n n-Quoted">`table`</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n n-Quoted">`col`</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n n-Quoted">`col`</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n n-Quoted">`table`</span><span class="p">;</span>
 </code></pre></div>
 
 <p>Si la taille = 1 le caractère est enregistré en latin1… si c'est 2 c'est
@@ -248,40 +275,40 @@ fichier "ssh-copy-id" dans le dossier "/usr/bin/" avec ce contenu :</p>
 
 <span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.ssh/id_rsa.pub&quot;</span>
 
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;-i&quot;</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nb">shift</span>
-  <span class="c1"># check if we have 2 parameters left, if so the first is the new ID file</span>
-  <span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="k">if</span> expr <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> : <span class="s2">&quot;.*\.pub&quot;</span> &gt; /dev/null <span class="p">;</span> <span class="k">then</span>
-      <span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-    <span class="k">else</span>
-      <span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">.pub&quot;</span>
-    <span class="k">fi</span>
-    <span class="nb">shift</span>         <span class="c1"># and this should leave $1 as the target name</span>
-  <span class="k">fi</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;-i&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">shift</span>
+<span class="w">  </span><span class="c1"># check if we have 2 parameters left, if so the first is the new ID file</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span>expr<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;.*\.pub&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">      </span><span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">      </span><span class="nv">ID_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">.pub&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="w">    </span><span class="nb">shift</span><span class="w">         </span><span class="c1"># and this should leave $1 as the target name</span>
+<span class="w">  </span><span class="k">fi</span>
 <span class="k">else</span>
-  <span class="k">if</span> <span class="o">[</span> x<span class="nv">$SSH_AUTH_SOCK</span> !<span class="o">=</span> x <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
-    <span class="nv">GET_ID</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$GET_ID</span><span class="s2"> ssh-add -L&quot;</span>
-  <span class="k">fi</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>x<span class="nv">$SSH_AUTH_SOCK</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span>x<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">GET_ID</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$GET_ID</span><span class="s2"> ssh-add -L&quot;</span>
+<span class="w">  </span><span class="k">fi</span>
 <span class="k">fi</span>
 
-<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;`eval </span><span class="nv">$GET_ID</span><span class="s2">`&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> -r <span class="s2">&quot;</span><span class="si">${</span><span class="nv">ID_FILE</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
-  <span class="nv">GET_ID</span><span class="o">=</span><span class="s2">&quot;cat </span><span class="si">${</span><span class="nv">ID_FILE</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;`eval </span><span class="nv">$GET_ID</span><span class="s2">`&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ID_FILE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nv">GET_ID</span><span class="o">=</span><span class="s2">&quot;cat </span><span class="si">${</span><span class="nv">ID_FILE</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="k">fi</span>
 
-<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;`eval </span><span class="nv">$GET_ID</span><span class="s2">`&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">: ERROR: No identities found&quot;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
-  <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;`eval </span><span class="nv">$GET_ID</span><span class="s2">`&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">: ERROR: No identities found&quot;</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="k">fi</span>
 
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$#</span><span class="s2">&quot;</span> -lt <span class="m">1</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;-h&quot;</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;--help&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nb">echo</span> <span class="s2">&quot;Usage: </span><span class="nv">$0</span><span class="s2"> [-i [identity_file]] [user@]machine&quot;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
-  <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$#</span><span class="s2">&quot;</span><span class="w"> </span>-lt<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;-h&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;--help&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Usage: </span><span class="nv">$0</span><span class="s2"> [-i [identity_file]] [user@]machine&quot;</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="k">fi</span>
 
-<span class="o">{</span> <span class="nb">eval</span> <span class="s2">&quot;</span><span class="nv">$GET_ID</span><span class="s2">&quot;</span> <span class="p">;</span> <span class="o">}</span> <span class="p">|</span> ssh <span class="nv">$1</span> <span class="s2">&quot;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys&quot;</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span>
+<span class="o">{</span><span class="w"> </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$GET_ID</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>ssh<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="s2">&quot;umask 077; test -d .ssh || mkdir .ssh ; cat &gt;&gt; .ssh/authorized_keys&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 
-cat <span class="s">&lt;&lt;EOF</span>
+cat<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <span class="s">Now try logging into the machine, with &quot;ssh &#39;$1&#39;&quot;, and check in:</span>
 
 <span class="s">  .ssh/authorized_keys</span>
@@ -297,7 +324,7 @@ cat <span class="s">&lt;&lt;EOF</span>
 
 <p>Vous pouvez maintenant copier votre clé ssh sur un serveur distant en
 tapant :</p>
-<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="n">id</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">id_rsa</span><span class="p">.</span><span class="n">pub</span><span class="w"> </span><span class="k">user</span><span class="nv">@machine</span><span class="p">.</span><span class="n">distante</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="n">id</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">id_rsa</span><span class="p">.</span><span class="n">pub</span><span class="w"> </span><span class="k">user</span><span class="nv">@machine</span><span class="p">.</span><span class="n">distante</span>
 </code></pre></div>
   </div>
   <hr />
@@ -345,13 +372,13 @@ Tags :
 <div class="highlight"><pre><span></span><code><span class="c1"># Ignore files from git</span>
 
 <span class="c1"># ._ files (Mac Os X)</span>
-<span class="na">._</span><span class="p">*</span><span class="w"></span>
+<span class="na">._</span><span class="p">*</span>
 
 <span class="c1"># .DS_STORE (Mac Os X)</span>
-<span class="na">.DS_STORE</span><span class="w"></span>
+<span class="na">.DS_STORE</span>
 
 <span class="c1"># .swp (Vim)</span>
-<span class="err">*</span><span class="na">.swp</span><span class="w"></span>
+<span class="err">*</span><span class="na">.swp</span>
 </code></pre></div>
   </div>
   <hr />
@@ -375,15 +402,15 @@ stash@{5}: WIP on BranchName: 3bb67ff Add file.css file.js
 </code></pre></div>
 
 <p>Pour voir le contenu d'un stash :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="nv">stash</span><span class="w"> </span><span class="k">show</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="nv">stash</span><span class="w"> </span><span class="k">show</span>
 
-<span class="nv">stash</span>@{<span class="mi">0</span>}<span class="w"> </span><span class="nv">chemin</span><span class="o">/</span><span class="nv">vers</span><span class="o">/</span><span class="nv">mon</span><span class="o">/</span><span class="nv">fichier</span>.<span class="nv">js</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">199</span><span class="w"> </span><span class="o">++++++++++++++++++++++++++--------</span><span class="w"></span>
-<span class="nv">chemin</span><span class="o">/</span><span class="nv">vers</span><span class="o">/</span><span class="nv">mon</span><span class="o">/</span><span class="nv">autre</span><span class="o">/</span><span class="nv">fichier</span>.<span class="nv">js</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">114</span><span class="w"> </span><span class="o">++++++++++++++------</span><span class="w"></span>
+<span class="nv">stash</span>@{<span class="mi">0</span>}<span class="w"> </span><span class="nv">chemin</span><span class="o">/</span><span class="nv">vers</span><span class="o">/</span><span class="nv">mon</span><span class="o">/</span><span class="nv">fichier</span>.<span class="nv">js</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">199</span><span class="w"> </span><span class="o">++++++++++++++++++++++++++--------</span>
+<span class="nv">chemin</span><span class="o">/</span><span class="nv">vers</span><span class="o">/</span><span class="nv">mon</span><span class="o">/</span><span class="nv">autre</span><span class="o">/</span><span class="nv">fichier</span>.<span class="nv">js</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">114</span><span class="w"> </span><span class="o">++++++++++++++------</span>
 </code></pre></div>
 
 <p>Pour voir le contenu de "chemin/vers/mon/fichier.js" qui est dans le
 stash{0} :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="nv">stash</span>@{<span class="mi">0</span>}:<span class="nv">chemin</span><span class="o">/</span><span class="nv">vers</span><span class="o">/</span><span class="nv">mon</span><span class="o">/</span><span class="nv">fichier</span>.<span class="nv">js</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="nv">stash</span>@{<span class="mi">0</span>}:<span class="nv">chemin</span><span class="o">/</span><span class="nv">vers</span><span class="o">/</span><span class="nv">mon</span><span class="o">/</span><span class="nv">fichier</span>.<span class="nv">js</span>
 </code></pre></div>
   </div>
   <hr />
@@ -401,38 +428,15 @@ Tags :
 <div class="highlight"><pre><span></span><code><span class="err">&quot; Highlight To do list with green background</span>
 <span class="err">highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green</span>
 <span class="err">highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue</span>
-<span class="err">highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red</span><span class="w"></span>
+<span class="err">highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red</span>
 <span class="err">&quot; Match todolist, notice, fixme</span>
 <span class="err">:call matchadd(&#39;Todo&#39;,&#39;[T|t][O|o][D|d][O|o]&#39;)</span>
 <span class="err">:call matchadd(&#39;Todo&#39;,&#39;[T|t][O|o] [D|d][O|o]&#39;)</span>
 <span class="err">:call matchadd(&#39;Notice&#39;,&#39;[N|n][O|o][T|t][I|i][C|c][E|e]&#39;)</span>
 <span class="err">:call matchadd(&#39;Notice&#39;,&#39;[N|n][O|o][T|t][E|e]&#39;)</span>
 <span class="err">:call matchadd(&#39;Fixme&#39;,&#39;[F|f][I|i][X|x][M|m][E|e]&#39;)</span>
-<span class="err">:call matchadd(&#39;Fixme&#39;,&#39;[F|f][I|i][X|x] [M|m][E|e]&#39;)</span><span class="w"></span>
+<span class="err">:call matchadd(&#39;Fixme&#39;,&#39;[F|f][I|i][X|x] [M|m][E|e]&#39;)</span>
 </code></pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html">Reprendre la main sur un Screen pas "detached"</a></h2>
-    <p>
-      Posté le mer. 18 avril 2012 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
-  </header>
-  <div>
-      <p>Lorsque j'ai voulu "réattacher" mon "Screen" j'ai eu le message suivant :</p>
-<div class="highlight"><pre><span></span><code>There is a screen on:
-1652.pts-8.stream62(06.12.2011 02:29:16)(Attached)
-</code></pre></div>
-
-<p>Habituellement je détache mon "Screen" mais cette fois j'ai oublié.</p>
-<p>Pour "détacher" / "réattacher" mon "Screen" j'ai du faire la commande suivante :</p>
-<div class="highlight"><pre><span></span><code>screen -dRR
-</code></pre></div>
-
-<p>Je note car c'est toujours bon à savoir :)</p>
   </div>
 </article>
 

@@ -50,6 +50,23 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2026-08-04-versionner-son-css-et-son-js-en-precisant-de-plus-en-plus.html">Versionner son CSS et son JS en précisant de plus en plus</a></h2>
+    <p>
+      Posté le mar. 04 août 2026 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/css.html">css</a>,      <a href="https://www.choiz.fr/tag/js.html">js</a>,      <a href="https://www.choiz.fr/tag/deploy.html">deploy</a>,      <a href="https://www.choiz.fr/tag/cache.html">cache</a>,      <a href="https://www.choiz.fr/tag/version.html">version</a>    </p>
+  </header>
+  <div>
+      <p>Quand on met à jour le CSS ou le JS d'un site, on tombe toujours sur le même
+problème : le navigateur — ou pire, le proxy devant — garde en cache
+l'ancienne version du fichier. On déploie, on recharge la page, et rien ne
+bouge. Le fameux « vide ton cache » que l'on …</p>
+      <a class="btn" href="https://www.choiz.fr/2026-08-04-versionner-son-css-et-son-js-en-precisant-de-plus-en-plus.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2020-04-13-utiliser-les-github-issues-pour-avoir-des-commentaires-sur-le-blog.html">Utiliser les Github Issues pour avoir des commentaires sur le blog</a></h2>
     <p>
       Posté le lun. 13 avril 2020 &#8226;
@@ -115,11 +132,11 @@ Tags :
   </header>
   <div>
       <p>En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">bindsym</span><span class="w"> </span>$<span class="nv">mod</span><span class="o">+</span><span class="k">Return</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="nv">i3</span><span class="o">-</span><span class="nv">sensible</span><span class="o">-</span><span class="nv">terminal</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">bindsym</span><span class="w"> </span>$<span class="nv">mod</span><span class="o">+</span><span class="k">Return</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="nv">i3</span><span class="o">-</span><span class="nv">sensible</span><span class="o">-</span><span class="nv">terminal</span>
 </code></pre></div>
 
 <p>par la ligne suivante :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">bindsym</span><span class="w"> </span>$<span class="nv">mod</span><span class="o">+</span><span class="k">Return</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="nv">urxvt</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">bindsym</span><span class="w"> </span>$<span class="nv">mod</span><span class="o">+</span><span class="k">Return</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="nv">urxvt</span>
 </code></pre></div>
 
 <p>Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour …</p>
@@ -177,9 +194,9 @@ Tags :
 <p>Création d'un conteneur lxc sous debian :</p>
 <p><code>lxc-create -n debian9 -t download</code></p>
 <p>Sélectionner :</p>
-<div class="highlight"><pre><span></span><code><span class="n">distribution</span><span class="o">:</span><span class="w"> </span><span class="n">debian</span><span class="w"></span>
-<span class="n">Release</span><span class="o">:</span><span class="w"> </span><span class="n">strech</span><span class="w"></span>
-<span class="n">Architecture</span><span class="o">:</span><span class="w"> </span><span class="n">amd64</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">distribution</span><span class="o">:</span><span class="w"> </span><span class="n">debian</span>
+<span class="n">Release</span><span class="o">:</span><span class="w"> </span><span class="n">strech</span>
+<span class="n">Architecture</span><span class="o">:</span><span class="w"> </span><span class="n">amd64</span>
 </code></pre></div>
 
 <p>Lister les conteneurs :</p>
@@ -230,30 +247,6 @@ faire la même chose.</p>
 Ip Privé de proxmox : 10.0.0.254</p>
 <p>Je …</p>
       <a class="btn" href="https://www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2017-10-15-creer-un-partage-nfs.html">Créer un partage NFS</a></h2>
-    <p>
-      Posté le dim. 15 octobre 2017 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/nfs.html">nfs</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>    </p>
-  </header>
-  <div>
-      <p>Pour installer un serveur NFS sur Debian voici la marche à suivre :</p>
-<div class="highlight"><pre><span></span><code>apt install nfs-kernel-server
-</code></pre></div>
-
-<p>Une fois le paquet installé, il faut modifier la configuration pour ajouter
-votre partage.</p>
-<p>Editer le fichier <code>/etc/exports</code></p>
-<div class="highlight"><pre><span></span><code><span class="n">vim</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">exports</span><span class="w"></span>
-</code></pre></div>
-
-<p>J'ajoute dans le fichier le dossier à partager <code>/home/user/share</code> et l'adresse …</p>
-      <a class="btn" href="https://www.choiz.fr/2017-10-15-creer-un-partage-nfs.html">Lire la suite</a>
   </div>
 </article>
 

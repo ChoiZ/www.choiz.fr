@@ -50,6 +50,63 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2017-10-15-creer-un-partage-nfs.html">Créer un partage NFS</a></h2>
+    <p>
+      Posté le dim. 15 octobre 2017 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/nfs.html">nfs</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>    </p>
+  </header>
+  <div>
+      <p>Pour installer un serveur NFS sur Debian voici la marche à suivre :</p>
+<div class="highlight"><pre><span></span><code>apt install nfs-kernel-server
+</code></pre></div>
+
+<p>Une fois le paquet installé, il faut modifier la configuration pour ajouter
+votre partage.</p>
+<p>Editer le fichier <code>/etc/exports</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">vim</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">exports</span>
+</code></pre></div>
+
+<p>J'ajoute dans le fichier le dossier à partager <code>/home/user/share</code> et l'adresse
+du ou des clients qui peuvent accèder a ce partage
+<code>10.0.0.1(rw,sync,no_subtree_check)</code> ici mon client a l'adresse ip 10.0.0.1 ce
+qui donne :</p>
+<div class="highlight"><pre><span></span><code>/home/user/share 10.0.0.1(rw,sync,no_subtree_check)
+</code></pre></div>
+
+<p>Recharger le service :</p>
+<div class="highlight"><pre><span></span><code><span class="n">service</span><span class="w"> </span><span class="n">nfs</span><span class="o">-</span><span class="n">kernel</span><span class="o">-</span><span class="n">server</span><span class="w"> </span><span class="n">reload</span>
+</code></pre></div>
+
+<p>Vérifier que votre partage est bien actif :</p>
+<div class="highlight"><pre><span></span><code>showmount -e
+</code></pre></div>
+
+<p>Côté client, j'ai installé sur Gentoo : <code>net-fs/nfs-utils</code></p>
+<div class="highlight"><pre><span></span><code>emerge -a net-fs/nfs-utils
+</code></pre></div>
+
+<p>Sur Debian installer le paquet : <code>nfs-common</code></p>
+<div class="highlight"><pre><span></span><code>apt install nfs-common
+</code></pre></div>
+
+<p>Ensuite configurer votre fichier <code>/etc/fstab</code></p>
+<div class="highlight"><pre><span></span><code>vim /etc/fstab
+</code></pre></div>
+
+<p>Ajouter à la fin du fichier l'ip de votre partage avec le nom local puis le
+point de montage sur votre client.</p>
+<div class="highlight"><pre><span></span><code><span class="mf">10.0.0.100</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">share</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nfs</span><span class="o">-</span><span class="n">nas</span><span class="w"> </span><span class="n">nfs</span><span class="w"> </span><span class="kd">def</span><span class="n">aults</span><span class="p">,</span><span class="n">user</span><span class="p">,</span><span class="n">auto</span><span class="p">,</span><span class="n">noatime</span><span class="p">,</span><span class="nb">int</span><span class="n">r</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">0</span>
+</code></pre></div>
+
+<p>Puis monter le nouveau partage avec la commande <code>mount -a</code></p>
+<p>Si vous faites la commande <code>ls /home/user/nfs-nas</code> vous devriez voir les
+fichiers qui se trouvent sur votre serveur.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html">Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</a></h2>
     <p>
       Posté le sam. 26 août 2017 &#8226;
@@ -75,22 +132,22 @@ mon poste et je me connect en ssh dessus avec les login / pass : "ubnt / ubnt".<
 </ul>
 <p>Faire un scp de dhclient3 rfc3442-classless-route config_usg.sh sur votre USG
 avec l'utilisateur "ubnt" et le mot de passe "ubnt"</p>
-<div class="highlight"><pre><span></span><code><span class="n">scp</span><span class="w"> </span><span class="n">dhclient3</span><span class="w"> </span><span class="n">rfc3442</span><span class="o">-</span><span class="n">classless</span><span class="o">-</span><span class="n">routes</span><span class="w"> </span><span class="n">config_usg</span><span class="p">.</span><span class="n">sh</span><span class="w"> </span><span class="n">ubnt</span><span class="mf">@192.168.1.1</span><span class="o">:/</span><span class="n">home</span><span class="o">/</span><span class="n">ubnt</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">scp</span><span class="w"> </span><span class="n">dhclient3</span><span class="w"> </span><span class="n">rfc3442</span><span class="o">-</span><span class="n">classless</span><span class="o">-</span><span class="n">routes</span><span class="w"> </span><span class="n">config_usg</span><span class="p">.</span><span class="n">sh</span><span class="w"> </span><span class="n">ubnt</span><span class="mf">@192.168.1.1</span><span class="o">:/</span><span class="n">home</span><span class="o">/</span><span class="n">ubnt</span>
 </code></pre></div>
 
 <p>Se connecter en ssh sur votre usg :</p>
-<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="n">ubnt</span><span class="mf">@192.168.1.1</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="n">ubnt</span><span class="mf">@192.168.1.1</span>
 </code></pre></div>
 
 <p>Remplacer le dhclient3, copier la rfc au bon endroit et rendre executable mon
 script :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">sudo</span><span class="w"> </span><span class="nv">bash</span><span class="w"></span>
-<span class="nv">mv</span><span class="w"> </span><span class="nv">dhclient3</span><span class="w"> </span><span class="o">/</span><span class="nv">sbin</span><span class="o">/</span><span class="nv">dhclient3</span><span class="w"></span>
-<span class="nv">chmod</span><span class="w"> </span><span class="mi">775</span><span class="w"> </span><span class="o">/</span><span class="nv">sbin</span><span class="o">/</span><span class="nv">dhclient3</span><span class="w"></span>
-<span class="nv">chown</span><span class="w"> </span><span class="nv">root</span>:<span class="nv">root</span><span class="w"> </span><span class="o">/</span><span class="nv">sbin</span><span class="o">/</span><span class="nv">dhclient3</span><span class="w"></span>
-<span class="nv">mv</span><span class="w"> </span><span class="nv">rfc3442</span><span class="o">-</span><span class="nv">classless</span><span class="o">-</span><span class="nv">routes</span><span class="w"> </span><span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">dhcp3</span><span class="o">/</span><span class="nv">dhclient</span><span class="o">-</span><span class="k">exit</span><span class="o">-</span><span class="nv">hooks</span>.<span class="nv">d</span><span class="o">/</span><span class="w"></span>
-<span class="nv">chown</span><span class="w"> </span><span class="nv">root</span>:<span class="nv">root</span><span class="w"> </span><span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">dhcp3</span><span class="o">/</span><span class="nv">dhclient</span><span class="o">-</span><span class="k">exit</span><span class="o">-</span><span class="nv">hooks</span>.<span class="nv">d</span><span class="o">/</span><span class="nv">rfc3442</span><span class="o">-</span><span class="nv">classless</span><span class="o">-</span><span class="nv">routes</span><span class="w"></span>
-<span class="nv">chmod</span><span class="w"> </span><span class="nv">a</span><span class="o">+</span><span class="nv">x</span><span class="w"> </span><span class="nv">config_usg</span>.<span class="nv">sh</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>sudo bash
+mv dhclient3 /sbin/dhclient3
+chmod 775 /sbin/dhclient3
+chown root:root /sbin/dhclient3
+mv rfc3442-classless-routes /etc/dhcp3/dhclient-exit-hooks.d/
+chown root:root /etc/dhcp3/dhclient-exit-hooks.d/rfc3442-classless-routes
+chmod a+x config_usg.sh
 </code></pre></div>
 
 <p>Editer le fichier /opt/vyatta/sbin/vyatta-interfaces.pl et ajouter l'option 90
@@ -103,14 +160,14 @@ du dhcp. Il faut aller a la ligne 194 :</p>
 </code></pre></div>
 
 <p>Maintenant redémarrer l'USG.</p>
-<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="nv">@ubnt</span><span class="err">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ubnt</span><span class="err">#</span><span class="w"> </span><span class="n">reboot</span><span class="w"></span>
-<span class="n">Proceed</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">reboot</span><span class="vm">?</span><span class="w"> </span><span class="o">[</span><span class="n">confirm</span><span class="o">]</span><span class="n">y</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="nv">@ubnt</span><span class="err">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ubnt</span><span class="err">#</span><span class="w"> </span><span class="n">reboot</span>
+<span class="n">Proceed</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">reboot</span><span class="vm">?</span><span class="w"> </span><span class="o">[</span><span class="n">confirm</span><span class="o">]</span><span class="n">y</span>
 </code></pre></div>
 
 <p>Débrancher votre controlleur du réseau (pour ne pas que l'USG reprovisionne une
 vielle configuration).</p>
 <p>Se connecter de nouveau en ssh sur l'usg :</p>
-<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="n">ubnt</span><span class="mf">@192.168.1.1</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="n">ubnt</span><span class="mf">@192.168.1.1</span>
 </code></pre></div>
 
 <p>Se connecter en tant que root pour executer le script</p>
@@ -119,32 +176,32 @@ vielle configuration).</p>
 </code></pre></div>
 
 <p>Vous devriez avoir :</p>
-<div class="highlight"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n">specified</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="n">already</span><span class="w"> </span><span class="n">exists</span><span class="w"></span>
-<span class="p">[</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="n">nat</span><span class="w"> </span><span class="n">rule</span><span class="w"> </span><span class="mi">6010</span><span class="w"> </span><span class="n">outbound</span><span class="o">-</span><span class="n">interface</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.832</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="n">NAT</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">warning</span><span class="o">:</span><span class="w"> </span><span class="n">interface</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.832</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">exist</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">system</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n">specified</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="n">already</span><span class="w"> </span><span class="n">exists</span>
+<span class="p">[</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="n">nat</span><span class="w"> </span><span class="n">rule</span><span class="w"> </span><span class="mi">6010</span><span class="w"> </span><span class="n">outbound</span><span class="o">-</span><span class="n">interface</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.832</span><span class="w"> </span><span class="p">]</span>
+<span class="n">NAT</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">warning</span><span class="o">:</span><span class="w"> </span><span class="n">interface</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.832</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">exist</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">system</span>
 
-<span class="p">[</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="n">nat</span><span class="w"> </span><span class="n">rule</span><span class="w"> </span><span class="mi">6011</span><span class="w"> </span><span class="n">outbound</span><span class="o">-</span><span class="n">interface</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.838</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="n">NAT</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">warning</span><span class="o">:</span><span class="w"> </span><span class="n">interface</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.838</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">exist</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">system</span><span class="w"></span>
+<span class="p">[</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="n">nat</span><span class="w"> </span><span class="n">rule</span><span class="w"> </span><span class="mi">6011</span><span class="w"> </span><span class="n">outbound</span><span class="o">-</span><span class="n">interface</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.838</span><span class="w"> </span><span class="p">]</span>
+<span class="n">NAT</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">warning</span><span class="o">:</span><span class="w"> </span><span class="n">interface</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.838</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">exist</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">system</span>
 
-<span class="p">[</span><span class="w"> </span><span class="n">interfaces</span><span class="w"> </span><span class="n">ethernet</span><span class="w"> </span><span class="n">eth0</span><span class="w"> </span><span class="n">vif</span><span class="w"> </span><span class="mi">838</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="n">dhcp</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="n">Starting</span><span class="w"> </span><span class="n">DHCP</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.838</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="p">[</span><span class="w"> </span><span class="n">interfaces</span><span class="w"> </span><span class="n">ethernet</span><span class="w"> </span><span class="n">eth0</span><span class="w"> </span><span class="n">vif</span><span class="w"> </span><span class="mi">838</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="n">dhcp</span><span class="w"> </span><span class="p">]</span>
+<span class="n">Starting</span><span class="w"> </span><span class="n">DHCP</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.838</span><span class="w"> </span><span class="p">...</span>
 
-<span class="p">[</span><span class="w"> </span><span class="n">interfaces</span><span class="w"> </span><span class="n">ethernet</span><span class="w"> </span><span class="n">eth0</span><span class="w"> </span><span class="n">vif</span><span class="w"> </span><span class="mi">832</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="n">dhcp</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="n">Starting</span><span class="w"> </span><span class="n">DHCP</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.832</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="p">[</span><span class="w"> </span><span class="n">interfaces</span><span class="w"> </span><span class="n">ethernet</span><span class="w"> </span><span class="n">eth0</span><span class="w"> </span><span class="n">vif</span><span class="w"> </span><span class="mi">832</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="n">dhcp</span><span class="w"> </span><span class="p">]</span>
+<span class="n">Starting</span><span class="w"> </span><span class="n">DHCP</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">eth0</span><span class="mf">.832</span><span class="w"> </span><span class="p">...</span>
 
-<span class="p">[</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="n">ssh</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="n">Restarting</span><span class="w"> </span><span class="n">OpenBSD</span><span class="w"> </span><span class="n">Secure</span><span class="w"> </span><span class="n">Shell</span><span class="w"> </span><span class="n">server</span><span class="o">:</span><span class="w"> </span><span class="n">sshd</span><span class="p">.</span><span class="w"></span>
+<span class="p">[</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="n">ssh</span><span class="w"> </span><span class="p">]</span>
+<span class="n">Restarting</span><span class="w"> </span><span class="n">OpenBSD</span><span class="w"> </span><span class="n">Secure</span><span class="w"> </span><span class="n">Shell</span><span class="w"> </span><span class="n">server</span><span class="o">:</span><span class="w"> </span><span class="n">sshd</span><span class="p">.</span>
 
-<span class="p">[</span><span class="w"> </span><span class="n">protocols</span><span class="w"> </span><span class="n">igmp</span><span class="o">-</span><span class="n">proxy</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="n">Starting</span><span class="w"> </span><span class="n">IGMP</span><span class="w"> </span><span class="n">proxy</span><span class="w"></span>
+<span class="p">[</span><span class="w"> </span><span class="n">protocols</span><span class="w"> </span><span class="n">igmp</span><span class="o">-</span><span class="n">proxy</span><span class="w"> </span><span class="p">]</span>
+<span class="n">Starting</span><span class="w"> </span><span class="n">IGMP</span><span class="w"> </span><span class="n">proxy</span>
 
-<span class="p">[</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="n">dhcp</span><span class="o">-</span><span class="n">server</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="n">Stopping</span><span class="w"> </span><span class="n">DHCP</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">daemon</span><span class="p">...</span><span class="w"></span>
-<span class="n">Starting</span><span class="w"> </span><span class="n">DHCP</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">daemon</span><span class="p">...</span><span class="w"></span>
+<span class="p">[</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="n">dhcp</span><span class="o">-</span><span class="n">server</span><span class="w"> </span><span class="p">]</span>
+<span class="n">Stopping</span><span class="w"> </span><span class="n">DHCP</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">daemon</span><span class="p">...</span>
+<span class="n">Starting</span><span class="w"> </span><span class="n">DHCP</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">daemon</span><span class="p">...</span>
 
-<span class="n">Saving</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="err">&#39;</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">config</span><span class="p">.</span><span class="n">boot</span><span class="err">&#39;</span><span class="p">...</span><span class="w"></span>
-<span class="n">Done</span><span class="w"></span>
-<span class="p">[</span><span class="n">edit</span><span class="p">]</span><span class="w"></span>
+<span class="n">Saving</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="err">&#39;</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">config</span><span class="p">.</span><span class="n">boot</span><span class="err">&#39;</span><span class="p">...</span>
+<span class="n">Done</span>
+<span class="p">[</span><span class="n">edit</span><span class="p">]</span>
 </code></pre></div>
 
 <p>Puis j'éteind l'USG pour remplacer la livebox.</p>
@@ -153,9 +210,9 @@ vielle configuration).</p>
 <p>Le port WAN2/LAN2 pour la télévision</p>
 <p>Quand j'arrive a joindre l'usg sur l'IP 192.168.1.1 je me reconnect en ssh et je
 me connect en root pour sauver la config et l'envoyer sur ma machine.</p>
-<div class="highlight"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">bash</span><span class="w"></span>
-<span class="n">mca</span><span class="o">-</span><span class="n">ctrl</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="k">dump</span><span class="o">-</span><span class="n">cfg</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">gateway</span><span class="p">.</span><span class="n">json</span><span class="w"></span>
-<span class="n">scp</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">gateway</span><span class="p">.</span><span class="n">json</span><span class="w"> </span><span class="k">user</span><span class="nv">@ma_machine</span><span class="err">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="k">user</span><span class="o">/</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">bash</span>
+<span class="n">mca</span><span class="o">-</span><span class="n">ctrl</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="k">dump</span><span class="o">-</span><span class="n">cfg</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">gateway</span><span class="p">.</span><span class="n">json</span>
+<span class="n">scp</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">gateway</span><span class="p">.</span><span class="n">json</span><span class="w"> </span><span class="k">user</span><span class="nv">@ma_machine</span><span class="err">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="k">user</span><span class="o">/</span>
 </code></pre></div>
 
 <p>Maintenant je me déconnecte de l'usg. Je débranche le câble réseau entre l'usg et
@@ -164,7 +221,7 @@ l'usg il va reprendre la config par defaut du controlleur et il faudra tout
 refaire (hormis les copies des fichiers dhclient3 rfc… etc…).</p>
 <p>Depuis mon poste je copie sur mon controlleur le fichier config.gateway.json que
 je viens de sauver.</p>
-<div class="highlight"><pre><span></span><code><span class="n">scp</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">gateway</span><span class="p">.</span><span class="n">json</span><span class="w"> </span><span class="k">user</span><span class="nv">@mon_controlleur</span><span class="err">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="k">user</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">scp</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">gateway</span><span class="p">.</span><span class="n">json</span><span class="w"> </span><span class="k">user</span><span class="nv">@mon_controlleur</span><span class="err">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="k">user</span>
 </code></pre></div>
 
 <p>Puis je me connecte a mon controlleur en ssh pour déposer dans le bon dossier ce
@@ -195,25 +252,25 @@ Par contre il ne faut pas modifier le sources.list ni installer
 firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
 tout).</p>
 <p>Sur debian éditer le fichier /etc/hosts comme ceci :</p>
-<div class="highlight"><pre><span></span><code><span class="mf">127.0.0.1</span><span class="w">       </span><span class="n">localhost</span><span class="mf">.</span><span class="n">localdomain</span><span class="w"> </span><span class="n">localhost</span><span class="w"></span>
-<span class="mf">192.168.15.77</span><span class="w">   </span><span class="n">prox4m1</span><span class="mf">.</span><span class="n">proxmox</span><span class="mf">.</span><span class="n">com</span><span class="w"> </span><span class="n">prox4m1</span><span class="w"> </span><span class="n">pvelocalhost</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="mf">127.0.0.1</span><span class="w">       </span><span class="n">localhost</span><span class="mf">.</span><span class="n">localdomain</span><span class="w"> </span><span class="n">localhost</span>
+<span class="mf">192.168.15.77</span><span class="w">   </span><span class="n">prox4m1</span><span class="mf">.</span><span class="n">proxmox</span><span class="mf">.</span><span class="n">com</span><span class="w"> </span><span class="n">prox4m1</span><span class="w"> </span><span class="n">pvelocalhost</span>
 
-<span class="err">#</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">lines</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">desirable</span><span class="w"> </span><span class="kr">for</span><span class="w"> </span><span class="n">IPv6</span><span class="w"> </span><span class="n">capable</span><span class="w"> </span><span class="n">hosts</span><span class="w"></span>
-<span class="p">::</span><span class="mf">1</span><span class="w">     </span><span class="n">localhost</span><span class="w"> </span><span class="n">ip6</span><span class="o">-</span><span class="n">localhost</span><span class="w"> </span><span class="n">ip6</span><span class="o">-</span><span class="n">loopback</span><span class="w"></span>
-<span class="n">ff02</span><span class="p">::</span><span class="mf">1</span><span class="w"> </span><span class="n">ip6</span><span class="o">-</span><span class="n">allnodes</span><span class="w"></span>
-<span class="n">ff02</span><span class="p">::</span><span class="mf">2</span><span class="w"> </span><span class="n">ip6</span><span class="o">-</span><span class="n">allrouters</span><span class="w"></span>
+<span class="err">#</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">lines</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">desirable</span><span class="w"> </span><span class="kr">for</span><span class="w"> </span><span class="n">IPv6</span><span class="w"> </span><span class="n">capable</span><span class="w"> </span><span class="n">hosts</span>
+<span class="p">::</span><span class="mf">1</span><span class="w">     </span><span class="n">localhost</span><span class="w"> </span><span class="n">ip6</span><span class="o">-</span><span class="n">localhost</span><span class="w"> </span><span class="n">ip6</span><span class="o">-</span><span class="n">loopback</span>
+<span class="n">ff02</span><span class="p">::</span><span class="mf">1</span><span class="w"> </span><span class="n">ip6</span><span class="o">-</span><span class="n">allnodes</span>
+<span class="n">ff02</span><span class="p">::</span><span class="mf">2</span><span class="w"> </span><span class="n">ip6</span><span class="o">-</span><span class="n">allrouters</span>
 </code></pre></div>
 
 <p>Puis tester la configuration :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">hostname</span><span class="w"> </span><span class="o">--</span><span class="nv">ip</span><span class="o">-</span><span class="nv">address</span><span class="w"></span>
-<span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">15</span>.<span class="mi">77</span><span class="w"> </span>#<span class="w"> </span><span class="nv">should</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nv">here</span><span class="w"> </span><span class="nv">your</span><span class="w"> </span><span class="nv">IP</span><span class="w"> </span><span class="nv">adress</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">hostname</span><span class="w"> </span><span class="o">--</span><span class="nx">ip</span><span class="o">-</span><span class="nx">address</span>
+<span class="m m-Double">192.168.15.77</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="nx">should</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">here</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">IP</span><span class="w"> </span><span class="nx">adress</span>
 </code></pre></div>
 
 <p>Puis on ajoute au sources.list le dépot de proxmox, on récupere la clé et on
 update :</p>
-<div class="highlight"><pre><span></span><code><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;deb http://download.proxmox.com/debian/pve stretch pve-no-subscription&quot;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">pve</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">repo</span><span class="o">.</span><span class="n">list</span><span class="w"></span>
-<span class="n">wget</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">proxmox</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">debian</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">ve</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">5.</span><span class="n">x</span><span class="o">.</span><span class="n">gpg</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">trusted</span><span class="o">.</span><span class="n">gpg</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">ve</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">5.</span><span class="n">x</span><span class="o">.</span><span class="n">gpg</span><span class="w"></span>
-<span class="n">apt</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">apt</span><span class="w"> </span><span class="n">dist</span><span class="o">-</span><span class="n">upgrade</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;deb http://download.proxmox.com/debian/pve stretch pve-no-subscription&quot;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">pve</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">repo</span><span class="o">.</span><span class="n">list</span>
+<span class="n">wget</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">proxmox</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">debian</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">ve</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">5.</span><span class="n">x</span><span class="o">.</span><span class="n">gpg</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">trusted</span><span class="o">.</span><span class="n">gpg</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">ve</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">5.</span><span class="n">x</span><span class="o">.</span><span class="n">gpg</span>
+<span class="n">apt</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">apt</span><span class="w"> </span><span class="n">dist</span><span class="o">-</span><span class="n">upgrade</span>
 </code></pre></div>
 
 <p>Puis on install les packages Proxmox VE :</p>
@@ -263,8 +320,8 @@ SATA et l'alimentation.</p>
 <p>Ce qui m'a permis de mettre un disque 2"½ au niveau de l'emplacement CDROM du HP
 Microserver.</p>
 <p>J'ai du tué mon uptime d'un an (depuis mon dernier déménagement) :</p>
-<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="mi">12</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">37</span><span class="w"> </span><span class="n">choiz</span><span class="err">@</span><span class="n">wayland</span><span class="w"> </span><span class="o">~</span><span class="w">  </span><span class="c1">#❯❯❯ uptime</span><span class="w"></span>
-<span class="w"> </span><span class="mi">12</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">37</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="mi">366</span><span class="w"> </span><span class="n">days</span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="p">:</span><span class="mi">08</span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w">  </span><span class="nb">load</span><span class="w"> </span><span class="n">average</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="mi">12</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">37</span><span class="w"> </span><span class="n">choiz</span><span class="err">@</span><span class="n">wayland</span><span class="w"> </span><span class="o">~</span><span class="w">  </span><span class="c1">#❯❯❯ uptime</span>
+<span class="w"> </span><span class="mi">12</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">37</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="mi">366</span><span class="w"> </span><span class="n">days</span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="p">:</span><span class="mi">08</span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w">  </span><span class="nb">load</span><span class="w"> </span><span class="n">average</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span>
 </code></pre></div>
 
 <p>Pour la réinstallation j'ai monté un <a href="https://wiki.debian-fr.xyz/PXE_avec_support_EFI">serveur PXE sur
@@ -285,27 +342,27 @@ lien et les conseils.</p>
 <p>Mes IP sont dans le réseau 192.168.1.0/24, mon router en 192.168.1.1, je met un
 range entre 192.168.1.100 et 192.168.1.150 mon serveur TFTP est en 192.168.1.2.</p>
 <p>Voici la conf d'isc-dhcp-server :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">default</span><span class="o">-</span><span class="nv">lease</span><span class="o">-</span><span class="nv">time</span><span class="w"> </span><span class="mi">600</span><span class="c1">;</span><span class="w"></span>
-<span class="nv">max</span><span class="o">-</span><span class="nv">lease</span><span class="o">-</span><span class="nv">time</span><span class="w"> </span><span class="mi">7200</span><span class="c1">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">default</span><span class="o">-</span><span class="nx">lease</span><span class="o">-</span><span class="nx">time</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
+<span class="nx">max</span><span class="o">-</span><span class="nx">lease</span><span class="o">-</span><span class="nx">time</span><span class="w"> </span><span class="mi">7200</span><span class="p">;</span>
 
-<span class="nv">allow</span><span class="w"> </span><span class="nv">booting</span><span class="c1">;</span><span class="w"></span>
+<span class="nx">allow</span><span class="w"> </span><span class="nx">booting</span><span class="p">;</span>
 
-#<span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">this</span><span class="w"> </span><span class="nv">example</span>,<span class="w"> </span><span class="nv">we</span><span class="w"> </span><span class="nv">serve</span><span class="w"> </span><span class="nv">DHCP</span><span class="w"> </span><span class="nv">requests</span><span class="w"> </span><span class="nv">from</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="ss">(</span><span class="mi">3</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="mi">253</span><span class="ss">)</span><span class="w"></span>
-#<span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">we</span><span class="w"> </span><span class="nv">have</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">router</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">1</span><span class="w"></span>
-<span class="nv">subnet</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">0</span><span class="w"> </span><span class="nv">netmask</span><span class="w"> </span><span class="mi">255</span>.<span class="mi">255</span>.<span class="mi">255</span>.<span class="mi">0</span><span class="w"> </span>{<span class="w"></span>
-<span class="w">  </span><span class="nv">range</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">100</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">150</span><span class="c1">;</span><span class="w"></span>
-<span class="w">  </span><span class="nv">option</span><span class="w"> </span><span class="nv">broadcast</span><span class="o">-</span><span class="nv">address</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">255</span><span class="c1">;</span><span class="w"></span>
-<span class="w">  </span><span class="nv">option</span><span class="w"> </span><span class="nv">routers</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">1</span><span class="c1">;</span><span class="w"></span>
-<span class="w">  </span><span class="nv">option</span><span class="w"> </span><span class="nv">domain</span><span class="o">-</span><span class="nv">name</span><span class="o">-</span><span class="nv">servers</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">1</span><span class="c1">;</span><span class="w"></span>
-<span class="w">  </span><span class="nv">filename</span><span class="w"> </span><span class="s2">&quot;pxelinux.0&quot;</span><span class="c1">;</span><span class="w"></span>
-}<span class="w"></span>
+<span class="err">#</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">this</span><span class="w"> </span><span class="nx">example</span><span class="p">,</span><span class="w"> </span><span class="nx">we</span><span class="w"> </span><span class="nx">serve</span><span class="w"> </span><span class="nx">DHCP</span><span class="w"> </span><span class="nx">requests</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="m m-Double">192.168.1</span><span class="p">.(</span><span class="mi">3</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="mi">253</span><span class="p">)</span>
+<span class="err">#</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">we</span><span class="w"> </span><span class="nx">have</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">router</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="m m-Double">192.168.1.1</span>
+<span class="nx">subnet</span><span class="w"> </span><span class="m m-Double">192.168.1.0</span><span class="w"> </span><span class="nx">netmask</span><span class="w"> </span><span class="m m-Double">255.255.255.0</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">range</span><span class="w"> </span><span class="m m-Double">192.168.1.100</span><span class="w"> </span><span class="m m-Double">192.168.1.150</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">option</span><span class="w"> </span><span class="nx">broadcast</span><span class="o">-</span><span class="nx">address</span><span class="w"> </span><span class="m m-Double">192.168.1.255</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">option</span><span class="w"> </span><span class="nx">routers</span><span class="w"> </span><span class="m m-Double">192.168.1.1</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">option</span><span class="w"> </span><span class="nx">domain</span><span class="o">-</span><span class="nx">name</span><span class="o">-</span><span class="nx">servers</span><span class="w"> </span><span class="m m-Double">192.168.1.1</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">filename</span><span class="w"> </span><span class="s">&quot;pxelinux.0&quot;</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="nv">group</span><span class="w"> </span>{<span class="w"></span>
-<span class="w">  </span><span class="k">next</span><span class="o">-</span><span class="nv">server</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">2</span><span class="c1">;</span><span class="w"></span>
-<span class="w">  </span><span class="nv">host</span><span class="w"> </span><span class="nv">tftpclient</span><span class="w"> </span>{<span class="w"></span>
-<span class="w">    </span><span class="nv">filename</span><span class="w"> </span><span class="s2">&quot;pxelinux.0&quot;</span><span class="c1">;</span><span class="w"></span>
-<span class="w">  </span>}<span class="w"></span>
-}<span class="w"></span>
+<span class="nx">group</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">next</span><span class="o">-</span><span class="nx">server</span><span class="w"> </span><span class="m m-Double">192.168.1.2</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">host</span><span class="w"> </span><span class="nx">tftpclient</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">filename</span><span class="w"> </span><span class="s">&quot;pxelinux.0&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 
 <p>Redémarrer le DHCP pour que la config soit prise en compte.</p>
@@ -324,9 +381,9 @@ notre TFTP :</p>
 <p>Le PXE est maintenant fonctionnel avec l'installation de debian.</p>
 <p>Je réinstall donc debian 9.1 proprement.</p>
 <p>Pour éviter d'avoir ses messages d'erreurs :</p>
-<div class="highlight"><pre><span></span><code><span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso5</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span><span class="w"></span>
-<span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span><span class="w"></span>
-<span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso5</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span>
+<span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span>
+<span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span>
 </code></pre></div>
 
 <p>Je modifie mon fichier /etc/apt/sources.list et j'ajoute les "non-free".</p>
@@ -367,8 +424,8 @@ Tags :
   <div>
       <p>Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
 trouve dans <em>~/.ssh/config</em> et d'ajouter les deux lignes suivantes :</p>
-<div class="highlight"><pre><span></span><code><span class="k">Host</span><span class="w"> </span><span class="n">destination</span><span class="p">.</span><span class="k">local</span><span class="w"></span>
-<span class="w">    </span><span class="n">ProxyCommand</span><span class="w"> </span><span class="n">ssh</span><span class="w"> </span><span class="k">user</span><span class="nv">@bastion</span><span class="p">.</span><span class="n">fr</span><span class="w"> </span><span class="o">-</span><span class="n">W</span><span class="w"> </span><span class="o">%</span><span class="nl">h</span><span class="p">:</span><span class="o">%</span><span class="n">p</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">Host</span><span class="w"> </span><span class="n">destination</span><span class="p">.</span><span class="k">local</span>
+<span class="w">    </span><span class="n">ProxyCommand</span><span class="w"> </span><span class="n">ssh</span><span class="w"> </span><span class="k">user</span><span class="nv">@bastion</span><span class="p">.</span><span class="n">fr</span><span class="w"> </span><span class="o">-</span><span class="n">W</span><span class="w"> </span><span class="o">%</span><span class="nl">h</span><span class="p">:</span><span class="o">%</span><span class="n">p</span>
 </code></pre></div>
 
 <p>C'est tout.</p>
@@ -413,11 +470,11 @@ Tags :
 </code></pre></div>
 
 <p>Se connecter a un conteneur docker lancé par son id :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">docker</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="o">-</span><span class="nv">it</span><span class="w"> </span><span class="nv">id_de_votre_container</span><span class="w"> </span><span class="o">/</span><span class="nv">bin</span><span class="o">/</span><span class="nv">bash</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>docker exec -it id_de_votre_container /bin/bash
 </code></pre></div>
 
 <p>Se connecter a un conteneur docker lancé par son nom :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">docker</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="o">-</span><span class="nv">it</span><span class="w"> </span><span class="nv">nom_de_votre_container</span><span class="w"> </span><span class="o">/</span><span class="nv">bin</span><span class="o">/</span><span class="nv">bash</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>docker exec -it nom_de_votre_container /bin/bash
 </code></pre></div>
   </div>
   <hr />
@@ -488,68 +545,24 @@ le 443 de "www.choiz.fr".</li>
 github que je tape directement l'url "http://choiz.github.io".</li>
 </ul>
 <p>Ici la configuration du dernier vhost :</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;IfModule</span> <span class="err">mod_ssl.c</span><span class="nt">&gt;</span>
-<span class="nt">&lt;VirtualHost</span> <span class="err">*:443</span><span class="nt">&gt;</span>
-    ServerName www.choiz.fr
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;IfModule</span><span class="w"> </span><span class="err">mod_ssl.c</span><span class="nt">&gt;</span>
+<span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="err">*:443</span><span class="nt">&gt;</span>
+<span class="w">    </span>ServerName<span class="w"> </span>www.choiz.fr
 
-    SSLProxyEngine On
-    ProxyRequests Off
-    ProxyPreserveHost Off
-    ProxyPass / https://choiz.github.io/
-    ProxyPassReverse / https://choiz.github.io/
-    ProxyPassReverse / http://choiz.github.io/
+<span class="w">    </span>SSLProxyEngine<span class="w"> </span>On
+<span class="w">    </span>ProxyRequests<span class="w"> </span>Off
+<span class="w">    </span>ProxyPreserveHost<span class="w"> </span>Off
+<span class="w">    </span>ProxyPass<span class="w"> </span>/<span class="w"> </span>https://choiz.github.io/
+<span class="w">    </span>ProxyPassReverse<span class="w"> </span>/<span class="w"> </span>https://choiz.github.io/
+<span class="w">    </span>ProxyPassReverse<span class="w"> </span>/<span class="w"> </span>http://choiz.github.io/
 
-    # puis la config du SSL
-    SSLEngine On
-    SSLCertificateFile …
-    SSLCertificateKeyFile …
+<span class="w">    </span>#<span class="w"> </span>puis<span class="w"> </span>la<span class="w"> </span>config<span class="w"> </span>du<span class="w"> </span>SSL
+<span class="w">    </span>SSLEngine<span class="w"> </span>On
+<span class="w">    </span>SSLCertificateFile<span class="w"> </span>…
+<span class="w">    </span>SSLCertificateKeyFile<span class="w"> </span>…
 <span class="nt">&lt;/VirtualHost&gt;</span>
 <span class="nt">&lt;/IfModule&gt;</span>
 </code></pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Mise à jour d'un kernel gentoo</a></h2>
-    <p>
-      Posté le sam. 21 novembre 2015 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
-  </header>
-  <div>
-      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
-suivre pour le mettre à jour vers la version : 4.3.0.</p>
-<p>Je liste les différents noyaux gentoo disponibles :</p>
-<div class="highlight"><pre><span></span><code>eix sys-kernel/gentoo-sources
-</code></pre></div>
-
-<p>Je télécharge le noyau 4.3.0 :</p>
-<div class="highlight"><pre><span></span><code>emerge -a =sys-kernel/gentoo-sources-4.3.0
-</code></pre></div>
-
-<p>Une fois téléchargé, il faut modifier le lien symbolique /usr/src/linux
-grâce à eselect.</p>
-<p>J'affiche la liste des noyaux (celui actuellement selectionné est suivi
-d'une étoile) :</p>
-<div class="highlight"><pre><span></span><code>eselect kernel list
-
-[1]     linux-4.2.0-gentoo *
-[2]     linux-4.3.0-gentoo
-</code></pre></div>
-
-<p>Pour selectionner notre noyau 4.3.0 il faut utiliser :</p>
-<div class="highlight"><pre><span></span><code>eselect kernel set 2
-</code></pre></div>
-
-<p>Maintenant que vous avez selectionné votre noyau, copier le fichier
-".config" de votre noyau précédent (pour conserver vos réglages de
-compilation) :</p>
-<div class="highlight"><pre><span></span><code>cp /usr/src/linux-4.2.0-gentoo/.config /usr/src/linux
-</code></pre></div>
-
-<p>Puis <a href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">compiler votre
-kernel</a>.</p>
   </div>
 </article>
 

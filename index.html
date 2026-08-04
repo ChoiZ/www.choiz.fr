@@ -50,6 +50,154 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2026-08-04-versionner-son-css-et-son-js-en-precisant-de-plus-en-plus.html">Versionner son CSS et son JS en précisant de plus en plus</a></h2>
+    <p>
+      Posté le mar. 04 août 2026 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/css.html">css</a>,      <a href="https://www.choiz.fr/tag/js.html">js</a>,      <a href="https://www.choiz.fr/tag/deploy.html">deploy</a>,      <a href="https://www.choiz.fr/tag/cache.html">cache</a>,      <a href="https://www.choiz.fr/tag/version.html">version</a>    </p>
+  </header>
+  <div>
+      <p>Quand on met à jour le CSS ou le JS d'un site, on tombe toujours sur le même
+problème : le navigateur — ou pire, le proxy devant — garde en cache
+l'ancienne version du fichier. On déploie, on recharge la page, et rien ne
+bouge. Le fameux « vide ton cache » que l'on répète aux clients…</p>
+<p>La parade est connue : on ajoute un numéro de version à l'URL du fichier
+statique, par exemple <code>style.css?v=25</code>. Dès que la version change, l'URL
+change, et le navigateur est bien obligé d'aller rechercher le fichier.</p>
+<p>Reste une question : que mettre dans ce numéro de version ? J'ai adopté une
+règle toute simple. C'est exactement le même principe que celui dont je
+parlais dans <a href="https://www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html">Bien nommer ses fichiers</a> —
+sauf que cet article-là parlait de nommer les fichiers sur mon disque, pas de
+versionner des statiques. Le principe, lui, se transpose tel quel :
+<strong>on précise de plus en plus.</strong></p>
+<h2>Le principe</h2>
+<p>Je pars de l'année sur deux chiffres, et à chaque nouveau déploiement dans la
+même « tranche » de temps, j'ajoute juste ce qu'il faut de précision pour que
+le numéro soit différent du précédent. Pas plus.</p>
+<p>Tant que l'année suffit à distinguer deux déploiements, je m'arrête à l'année.
+Si je redéploie le même jour, je descends au mois, puis au jour, puis à
+l'heure, aux minutes, aux secondes… uniquement quand c'est nécessaire.</p>
+<p>Concrètement, voici la suite de mes déploiements sur une période donnée :</p>
+<table>
+<thead>
+<tr>
+<th>Déploiement</th>
+<th>Précision atteinte</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1er déploiement de l'année (2025)</td>
+<td>année</td>
+<td><code>25</code></td>
+</tr>
+<tr>
+<td>2 janvier 2025</td>
+<td>mois</td>
+<td><code>2501</code></td>
+</tr>
+<tr>
+<td>2 janvier 2025 à 12h40</td>
+<td>jour</td>
+<td><code>250102</code></td>
+</tr>
+<tr>
+<td>2 janvier 2025 à 12h48</td>
+<td>heure</td>
+<td><code>25010212</code></td>
+</tr>
+<tr>
+<td>2 janvier 2025 à 12h52</td>
+<td>minute</td>
+<td><code>2501021252</code></td>
+</tr>
+<tr>
+<td>2 janvier 2025 à 12h52:43</td>
+<td>seconde</td>
+<td><code>250102125243</code></td>
+</tr>
+<tr>
+<td>2 janvier 2025 à 12h53</td>
+<td>minute</td>
+<td><code>2501021253</code></td>
+</tr>
+<tr>
+<td>8 janvier 2025 à 11h28</td>
+<td>jour</td>
+<td><code>250108</code></td>
+</tr>
+<tr>
+<td>4 juin 2025 à 09h11</td>
+<td>mois</td>
+<td><code>2506</code></td>
+</tr>
+<tr>
+<td>2 janvier 2026</td>
+<td>année</td>
+<td><code>26</code></td>
+</tr>
+</tbody>
+</table>
+<p>On lit la version comme une date que l'on tronque : <code>AAMMJJHHMMSS</code>, mais
+seulement jusqu'au niveau de précision utile.</p>
+<h2>Pourquoi pas toujours la date complète ?</h2>
+<p>On pourrait se dire qu'il suffit de coller à chaque fois <code>250102125243</code> et de
+ne plus se poser de question. C'est vrai, ça marche. Mais je trouve deux
+avantages à ne préciser que le nécessaire :</p>
+<ul>
+<li>
+<p><strong>C'est plus court.</strong> Le premier déploiement de l'année, c'est <code>25</code>. Deux
+  caractères dans l'URL, c'est propre.</p>
+</li>
+<li>
+<p><strong>C'est lisible.</strong> En regardant la version d'un simple coup d'œil dans le
+  code source de la page, je sais tout de suite à quelle « échelle » remonte
+  mon dernier déploiement. <code>26</code> veut dire « je n'ai pas redéployé depuis le
+  début de l'année ». <code>2501021253</code> veut dire « ce jour-là, j'ai poussé
+  plusieurs fois à la minute près ».</p>
+</li>
+</ul>
+<h2>La règle de décision</h2>
+<p>À chaque déploiement, la question est : est-ce que ma version d'aujourd'hui
+est différente de la précédente si je m'arrête à l'année ? Au mois ? Au jour ?</p>
+<p>Je descends d'un cran de précision tant que la réponse est « non », et je
+m'arrête dès qu'elle devient « oui ».</p>
+<ul>
+<li>
+<p>On est le 8 janvier 2025, mon dernier déploiement date du 2 janvier. Le mois
+  (<code>2501</code>) ne suffit pas à nous distinguer, mais le jour oui : <code>250108</code>.</p>
+</li>
+<li>
+<p>On est le 4 juin 2025, dernier déploiement le 8 janvier. Là, le mois suffit
+  déjà : <code>2506</code>.</p>
+</li>
+<li>
+<p>On passe en 2026 : l'année suffit de nouveau à tout distinguer, je repars à
+  <code>26</code>.</p>
+</li>
+</ul>
+<h2>Petit piège à connaître</h2>
+<p>Cette astuce a une limite qu'il faut avoir en tête : comme je tronque, deux
+dates différentes peuvent en théorie produire le même numéro si je ne descends
+pas assez bas. Le <code>2506</code> du 4 juin et un éventuel <code>2506</code> d'un autre jour de
+juin auraient la même valeur si je m'arrêtais au mois pour les deux.</p>
+<p>En pratique, ça ne pose jamais de problème : la règle est justement de
+descendre d'un cran dès qu'il y a collision avec le déploiement <em>précédent</em>.
+Le numéro de version n'a pas besoin d'être unique dans l'absolu, il a juste
+besoin d'être <strong>différent de celui d'avant</strong> pour casser le cache. C'est tout
+ce qu'on lui demande.</p>
+<h2>En résumé</h2>
+<p>Une seule règle à retenir, et c'est toujours la même que pour nommer ses
+fichiers : commencer par le plus grand (l'année), et <strong>préciser de plus en
+plus</strong> uniquement quand on en a besoin. On obtient des versions courtes quand
+on déploie peu, des versions précises quand on enchaîne les mises en ligne, et
+un cache toujours à jour.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2020-04-13-utiliser-les-github-issues-pour-avoir-des-commentaires-sur-le-blog.html">Utiliser les Github Issues pour avoir des commentaires sur le blog</a></h2>
     <p>
       Posté le lun. 13 avril 2020 &#8226;
@@ -225,11 +373,11 @@ Tags :
   </header>
   <div>
       <p>En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">bindsym</span><span class="w"> </span>$<span class="nv">mod</span><span class="o">+</span><span class="k">Return</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="nv">i3</span><span class="o">-</span><span class="nv">sensible</span><span class="o">-</span><span class="nv">terminal</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">bindsym</span><span class="w"> </span>$<span class="nv">mod</span><span class="o">+</span><span class="k">Return</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="nv">i3</span><span class="o">-</span><span class="nv">sensible</span><span class="o">-</span><span class="nv">terminal</span>
 </code></pre></div>
 
 <p>par la ligne suivante :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">bindsym</span><span class="w"> </span>$<span class="nv">mod</span><span class="o">+</span><span class="k">Return</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="nv">urxvt</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">bindsym</span><span class="w"> </span>$<span class="nv">mod</span><span class="o">+</span><span class="k">Return</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="nv">urxvt</span>
 </code></pre></div>
 
 <p>Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par défaut <code>i3-sensible-terminal</code>.</p>
@@ -267,32 +415,32 @@ Mardi-12-Décembre-2017
 <p>Le trie se fait jour par jour donc pas du tout par ordre chronologique.
 Nous ne retenons pas cette solution.</p>
 <p>Avec le second exemple :</p>
-<div class="highlight"><pre><span></span><code><span class="mf">10</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">2018</span><span class="w"> </span><span class="p">(</span><span class="n">Lundi</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2018</span><span class="p">)</span><span class="w"></span>
-<span class="mf">11</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">2018</span><span class="w"> </span><span class="p">(</span><span class="n">Mardi</span><span class="w"> </span><span class="mf">11</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2018</span><span class="p">)</span><span class="w"></span>
-<span class="mf">11</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">2017</span><span class="w"> </span><span class="p">(</span><span class="n">Lundi</span><span class="w"> </span><span class="mf">11</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2017</span><span class="p">)</span><span class="w"></span>
-<span class="mf">12</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">2017</span><span class="w"> </span><span class="p">(</span><span class="n">Mardi</span><span class="w"> </span><span class="mf">12</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2017</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="mf">10</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">2018</span><span class="w"> </span><span class="p">(</span><span class="n">Lundi</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2018</span><span class="p">)</span>
+<span class="mf">11</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">2018</span><span class="w"> </span><span class="p">(</span><span class="n">Mardi</span><span class="w"> </span><span class="mf">11</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2018</span><span class="p">)</span>
+<span class="mf">11</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">2017</span><span class="w"> </span><span class="p">(</span><span class="n">Lundi</span><span class="w"> </span><span class="mf">11</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2017</span><span class="p">)</span>
+<span class="mf">12</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">2017</span><span class="w"> </span><span class="p">(</span><span class="n">Mardi</span><span class="w"> </span><span class="mf">12</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2017</span><span class="p">)</span>
 </code></pre></div>
 
 <p>Le trie se fait par jour, puis par mois, puis par année, donc nous avons tous les 10 décembre puis les 11 décembre etc… ce n'est toujours pas par ordre chronologique.
 Nous ne retenons pas cette solution.</p>
 <p>Avec le dernier exemple :</p>
-<div class="highlight"><pre><span></span><code><span class="mf">2017</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">10</span><span class="w"> </span><span class="p">(</span><span class="n">Lundi</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2017</span><span class="p">)</span><span class="w"></span>
-<span class="mf">2017</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">11</span><span class="w"> </span><span class="p">(</span><span class="n">Mardi</span><span class="w"> </span><span class="mf">11</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2017</span><span class="p">)</span><span class="w"></span>
-<span class="mf">2018</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">11</span><span class="w"> </span><span class="p">(</span><span class="n">Lundi</span><span class="w"> </span><span class="mf">11</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2018</span><span class="p">)</span><span class="w"></span>
-<span class="mf">2018</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">12</span><span class="w"> </span><span class="p">(</span><span class="n">Mardi</span><span class="w"> </span><span class="mf">12</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2018</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="mf">2017</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">10</span><span class="w"> </span><span class="p">(</span><span class="n">Lundi</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2017</span><span class="p">)</span>
+<span class="mf">2017</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">11</span><span class="w"> </span><span class="p">(</span><span class="n">Mardi</span><span class="w"> </span><span class="mf">11</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2017</span><span class="p">)</span>
+<span class="mf">2018</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">11</span><span class="w"> </span><span class="p">(</span><span class="n">Lundi</span><span class="w"> </span><span class="mf">11</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2018</span><span class="p">)</span>
+<span class="mf">2018</span><span class="o">-</span><span class="mf">12</span><span class="o">-</span><span class="mf">12</span><span class="w"> </span><span class="p">(</span><span class="n">Mardi</span><span class="w"> </span><span class="mf">12</span><span class="w"> </span><span class="n">décembre</span><span class="w"> </span><span class="mf">2018</span><span class="p">)</span>
 </code></pre></div>
 
 <p>C'est bien par ordre chronologique, l'année puis le mois, puis le jour, c'est donc comme ça que nous devons écrire nos fichiers avec une date.</p>
 <p>Si vous faites une photo de vous chaque année en septembre vous aurez donc photo.jpg qui sera nommer comme suit :</p>
-<div class="highlight"><pre><span></span><code><span class="mf">2016</span><span class="o">-</span><span class="mf">09</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span><span class="w"></span>
-<span class="mf">2017</span><span class="o">-</span><span class="mf">09</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span><span class="w"></span>
-<span class="mf">2018</span><span class="o">-</span><span class="mf">09</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="mf">2016</span><span class="o">-</span><span class="mf">09</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span>
+<span class="mf">2017</span><span class="o">-</span><span class="mf">09</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span>
+<span class="mf">2018</span><span class="o">-</span><span class="mf">09</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span>
 </code></pre></div>
 
 <p>On a pas besoin de préciser le jour dans le cas précédent car on a qu'une photo par an en septembre d'ailleurs on pourrait même simplifier en :</p>
-<div class="highlight"><pre><span></span><code><span class="mf">2016</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span><span class="w"></span>
-<span class="mf">2017</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span><span class="w"></span>
-<span class="mf">2018</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="mf">2016</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span>
+<span class="mf">2017</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span>
+<span class="mf">2018</span><span class="o">-</span><span class="n">photo</span><span class="mf">.</span><span class="n">jpg</span>
 </code></pre></div>
 
 <p>Personnellement je préfère toujours mettre mes fichiers sous la forme 2018-09-01-nom-de-fichier.ext ce qui permet d'avoir toujours la date du jour.</p>
@@ -314,7 +462,7 @@ Tags :
 </code></pre></div>
 
 <p>Si vous n'avez pas de chance comme moi, vous aurez le message d'erreur suivant :</p>
-<div class="highlight"><pre><span></span><code><span class="n">mdadm</span><span class="o">:</span><span class="w"> </span><span class="n">Cannot</span><span class="w"> </span><span class="n">open</span><span class="w"> </span><span class="sr">/dev/s</span><span class="n">dd1</span><span class="o">:</span><span class="w"> </span><span class="n">Device</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">resource</span><span class="w"> </span><span class="n">busy</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">mdadm</span><span class="o">:</span><span class="w"> </span><span class="n">Cannot</span><span class="w"> </span><span class="n">open</span><span class="w"> </span><span class="sr">/dev/s</span><span class="n">dd1</span><span class="o">:</span><span class="w"> </span><span class="n">Device</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">resource</span><span class="w"> </span><span class="n">busy</span>
 </code></pre></div>
 
 <p>Il faut donc redémarrer la machine et éditer le grub à la main… (avec la touche e), puis ajouter dans la ligne avec le kernel <code>nodmraid</code> puis appuyer sur f10 ou b pour booter.</p>
@@ -324,8 +472,8 @@ mdadm: added /dev/sdd1
 </code></pre></div>
 
 <p>Il faut maintenant dire à MDADM qu'on a un raid1 sur 3 disques avec la commande suivante :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">mdadm</span><span class="w"> </span><span class="o">--</span><span class="nv">grow</span><span class="w"> </span><span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">md0</span><span class="w"> </span><span class="o">--</span><span class="nv">raid</span><span class="o">-</span><span class="nv">device</span><span class="o">=</span><span class="mi">3</span><span class="w"></span>
-<span class="nv">raid_disks</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">md0</span><span class="w"> </span><span class="nv">set</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>mdadm --grow /dev/md0 --raid-device=3
+raid_disks for /dev/md0 set to 3
 </code></pre></div>
 
 <p>Vous pouvez maintenant faire un watch pour voir l'avancement de la copie sur le troisième disque :</p>
@@ -348,9 +496,9 @@ Tags :
 <p>Création d'un conteneur lxc sous debian :</p>
 <p><code>lxc-create -n debian9 -t download</code></p>
 <p>Sélectionner :</p>
-<div class="highlight"><pre><span></span><code><span class="n">distribution</span><span class="o">:</span><span class="w"> </span><span class="n">debian</span><span class="w"></span>
-<span class="n">Release</span><span class="o">:</span><span class="w"> </span><span class="n">strech</span><span class="w"></span>
-<span class="n">Architecture</span><span class="o">:</span><span class="w"> </span><span class="n">amd64</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">distribution</span><span class="o">:</span><span class="w"> </span><span class="n">debian</span>
+<span class="n">Release</span><span class="o">:</span><span class="w"> </span><span class="n">strech</span>
+<span class="n">Architecture</span><span class="o">:</span><span class="w"> </span><span class="n">amd64</span>
 </code></pre></div>
 
 <p>Lister les conteneurs :</p>
@@ -414,28 +562,28 @@ officiel raspberrypi.org. Actuellement c'est 2017-09-07-raspbian-stretch-lite.zi
 
 <p>Puis mettre l'image sur une carte micro sd, j'utilise la commande <code>dmesg</code> pour
 voir le nom du périphérique USB sur ma machine :</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">5371729.056039</span><span class="o">]</span><span class="w"> </span><span class="n">usb</span><span class="o">-</span><span class="n">storage</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="mf">1.3</span><span class="err">:</span><span class="mf">1.0</span><span class="err">:</span><span class="w"> </span><span class="n">USB</span><span class="w"> </span><span class="n">Mass</span><span class="w"> </span><span class="n">Storage</span><span class="w"> </span><span class="n">device</span><span class="w"> </span><span class="n">detected</span><span class="w"></span>
-<span class="o">[</span><span class="n">5371729.056115</span><span class="o">]</span><span class="w"> </span><span class="n">scsi</span><span class="w"> </span><span class="nl">host5</span><span class="p">:</span><span class="w"> </span><span class="n">usb</span><span class="o">-</span><span class="n">storage</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="mf">1.3</span><span class="err">:</span><span class="mf">1.0</span><span class="w"></span>
-<span class="o">[</span><span class="n">5371730.058300</span><span class="o">]</span><span class="w"> </span><span class="n">scsi</span><span class="w"> </span><span class="mi">5</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="w"> </span><span class="n">Direct</span><span class="o">-</span><span class="n">Access</span><span class="w">     </span><span class="n">Single</span><span class="w">   </span><span class="n">Flash</span><span class="w"> </span><span class="n">Reader</span><span class="w">     </span><span class="mf">1.00</span><span class="w"> </span><span class="nl">PQ</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nl">ANSI</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="o">[</span><span class="n">5371730.058447</span><span class="o">]</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="mi">5</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="w"> </span><span class="n">Attached</span><span class="w"> </span><span class="n">scsi</span><span class="w"> </span><span class="n">generic</span><span class="w"> </span><span class="n">sg1</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="o">[</span><span class="n">5371730.509370</span><span class="o">]</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="mi">5</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">sdb</span><span class="o">]</span><span class="w"> </span><span class="mi">15759360</span><span class="w"> </span><span class="mi">512</span><span class="o">-</span><span class="n">byte</span><span class="w"> </span><span class="n">logical</span><span class="w"> </span><span class="nl">blocks</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="mf">8.07</span><span class="w"> </span><span class="n">GB</span><span class="o">/</span><span class="mf">7.51</span><span class="w"> </span><span class="n">GiB</span><span class="p">)</span><span class="w"></span>
-<span class="o">[</span><span class="n">5371730.510383</span><span class="o">]</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="mi">5</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">sdb</span><span class="o">]</span><span class="w"> </span><span class="k">Write</span><span class="w"> </span><span class="n">Protect</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">off</span><span class="w"></span>
-<span class="o">[</span><span class="n">5371730.510386</span><span class="o">]</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="mi">5</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">sdb</span><span class="o">]</span><span class="w"> </span><span class="n">Mode</span><span class="w"> </span><span class="nl">Sense</span><span class="p">:</span><span class="w"> </span><span class="mi">03</span><span class="w"> </span><span class="mi">00</span><span class="w"> </span><span class="mi">00</span><span class="w"> </span><span class="mi">00</span><span class="w"></span>
-<span class="o">[</span><span class="n">5371730.511384</span><span class="o">]</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="mi">5</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">sdb</span><span class="o">]</span><span class="w"> </span><span class="k">No</span><span class="w"> </span><span class="n">Caching</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="k">found</span><span class="w"></span>
-<span class="o">[</span><span class="n">5371730.511386</span><span class="o">]</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="mi">5</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">sdb</span><span class="o">]</span><span class="w"> </span><span class="n">Assuming</span><span class="w"> </span><span class="n">drive</span><span class="w"> </span><span class="nl">cache</span><span class="p">:</span><span class="w"> </span><span class="k">write</span><span class="w"> </span><span class="n">through</span><span class="w"></span>
-<span class="o">[</span><span class="n">5371730.516135</span><span class="o">]</span><span class="w">  </span><span class="nl">sdb</span><span class="p">:</span><span class="w"> </span><span class="n">sdb1</span><span class="w"></span>
-<span class="o">[</span><span class="n">5371730.519381</span><span class="o">]</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="mi">5</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">sdb</span><span class="o">]</span><span class="w"> </span><span class="n">Attached</span><span class="w"> </span><span class="n">SCSI</span><span class="w"> </span><span class="n">removable</span><span class="w"> </span><span class="k">disk</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">5371729.056039</span><span class="o">]</span><span class="w"> </span><span class="n">usb</span><span class="o">-</span><span class="n">storage</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="mf">1.3</span><span class="err">:</span><span class="mf">1.0</span><span class="err">:</span><span class="w"> </span><span class="n">USB</span><span class="w"> </span><span class="n">Mass</span><span class="w"> </span><span class="n">Storage</span><span class="w"> </span><span class="n">device</span><span class="w"> </span><span class="n">detected</span>
+<span class="o">[</span><span class="n">5371729.056115</span><span class="o">]</span><span class="w"> </span><span class="n">scsi</span><span class="w"> </span><span class="nl">host5</span><span class="p">:</span><span class="w"> </span><span class="n">usb</span><span class="o">-</span><span class="n">storage</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="mf">1.3</span><span class="err">:</span><span class="mf">1.0</span>
+<span class="o">[</span><span class="n">5371730.058300</span><span class="o">]</span><span class="w"> </span><span class="n">scsi</span><span class="w"> </span><span class="mi">5</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="w"> </span><span class="n">Direct</span><span class="o">-</span><span class="n">Access</span><span class="w">     </span><span class="n">Single</span><span class="w">   </span><span class="n">Flash</span><span class="w"> </span><span class="n">Reader</span><span class="w">     </span><span class="mf">1.00</span><span class="w"> </span><span class="nl">PQ</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nl">ANSI</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="o">[</span><span class="n">5371730.058447</span><span class="o">]</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="mi">5</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="w"> </span><span class="n">Attached</span><span class="w"> </span><span class="n">scsi</span><span class="w"> </span><span class="n">generic</span><span class="w"> </span><span class="n">sg1</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="mi">0</span>
+<span class="o">[</span><span class="n">5371730.509370</span><span class="o">]</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="mi">5</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">sdb</span><span class="o">]</span><span class="w"> </span><span class="mi">15759360</span><span class="w"> </span><span class="mi">512</span><span class="o">-</span><span class="n">byte</span><span class="w"> </span><span class="n">logical</span><span class="w"> </span><span class="nl">blocks</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="mf">8.07</span><span class="w"> </span><span class="n">GB</span><span class="o">/</span><span class="mf">7.51</span><span class="w"> </span><span class="n">GiB</span><span class="p">)</span>
+<span class="o">[</span><span class="n">5371730.510383</span><span class="o">]</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="mi">5</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">sdb</span><span class="o">]</span><span class="w"> </span><span class="k">Write</span><span class="w"> </span><span class="n">Protect</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">off</span>
+<span class="o">[</span><span class="n">5371730.510386</span><span class="o">]</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="mi">5</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">sdb</span><span class="o">]</span><span class="w"> </span><span class="n">Mode</span><span class="w"> </span><span class="nl">Sense</span><span class="p">:</span><span class="w"> </span><span class="mi">03</span><span class="w"> </span><span class="mi">00</span><span class="w"> </span><span class="mi">00</span><span class="w"> </span><span class="mi">00</span>
+<span class="o">[</span><span class="n">5371730.511384</span><span class="o">]</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="mi">5</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">sdb</span><span class="o">]</span><span class="w"> </span><span class="k">No</span><span class="w"> </span><span class="n">Caching</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="k">found</span>
+<span class="o">[</span><span class="n">5371730.511386</span><span class="o">]</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="mi">5</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">sdb</span><span class="o">]</span><span class="w"> </span><span class="n">Assuming</span><span class="w"> </span><span class="n">drive</span><span class="w"> </span><span class="nl">cache</span><span class="p">:</span><span class="w"> </span><span class="k">write</span><span class="w"> </span><span class="n">through</span>
+<span class="o">[</span><span class="n">5371730.516135</span><span class="o">]</span><span class="w">  </span><span class="nl">sdb</span><span class="p">:</span><span class="w"> </span><span class="n">sdb1</span>
+<span class="o">[</span><span class="n">5371730.519381</span><span class="o">]</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="mi">5</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">sdb</span><span class="o">]</span><span class="w"> </span><span class="n">Attached</span><span class="w"> </span><span class="n">SCSI</span><span class="w"> </span><span class="n">removable</span><span class="w"> </span><span class="k">disk</span>
 </code></pre></div>
 
 <p>Je copie donc l'image sur /dev/sdb « ma microsd d'après dmesg.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">dd</span><span class="w"> </span><span class="nv">bs</span><span class="o">=</span><span class="mi">4</span><span class="nv">M</span><span class="w"> </span><span class="k">if</span><span class="o">=/</span><span class="nv">home</span><span class="o">/</span><span class="nv">choiz</span><span class="o">/</span><span class="mi">2017</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="nv">raspbian</span><span class="o">-</span><span class="nv">stretch</span><span class="o">-</span><span class="nv">lite</span>.<span class="nv">img</span><span class="w"> </span><span class="nv">of</span><span class="o">=/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">sdb</span><span class="w"> </span><span class="nv">conv</span><span class="o">=</span><span class="nv">fsync</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">dd</span><span class="w"> </span><span class="nv">bs</span><span class="o">=</span><span class="mi">4</span><span class="nv">M</span><span class="w"> </span><span class="k">if</span><span class="o">=/</span><span class="nv">home</span><span class="o">/</span><span class="nv">choiz</span><span class="o">/</span><span class="mi">2017</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="nv">raspbian</span><span class="o">-</span><span class="nv">stretch</span><span class="o">-</span><span class="nv">lite</span>.<span class="nv">img</span><span class="w"> </span><span class="nv">of</span><span class="o">=/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">sdb</span><span class="w"> </span><span class="nv">conv</span><span class="o">=</span><span class="nv">fsync</span>
 </code></pre></div>
 
 <p>Une fois la copie terminée, je déconnecte la micro sd et je démarre le Raspberry Pi.</p>
-<div class="highlight"><pre><span></span><code><span class="n">dd</span><span class="w"> </span><span class="n">bs</span><span class="o">=</span><span class="mh">4</span><span class="n">M</span><span class="w"> </span><span class="k">if</span><span class="o">=</span><span class="mh">2017</span><span class="o">-</span><span class="mh">09</span><span class="o">-</span><span class="mh">07</span><span class="o">-</span><span class="n">raspbian</span><span class="o">-</span><span class="n">stretch</span><span class="o">-</span><span class="n">lite</span><span class="p">.</span><span class="n">img</span><span class="w"> </span><span class="n">of</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb</span><span class="w"> </span><span class="n">conv</span><span class="o">=</span><span class="n">fsync</span><span class="w"></span>
-<span class="mh">442</span><span class="o">+</span><span class="mh">1</span><span class="w"> </span><span class="n">enregistrements</span><span class="w"> </span><span class="n">lus</span><span class="w"></span>
-<span class="mh">442</span><span class="o">+</span><span class="mh">1</span><span class="w"> </span><span class="n">enregistrements</span><span class="w"> </span><span class="err">é</span><span class="n">crits</span><span class="w"></span>
-<span class="mh">1854590976</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="p">(</span><span class="mh">1</span><span class="p">,</span><span class="mh">9</span><span class="w"> </span><span class="n">GB</span><span class="p">,</span><span class="w"> </span><span class="mh">1</span><span class="p">,</span><span class="mh">7</span><span class="w"> </span><span class="n">GiB</span><span class="p">)</span><span class="w"> </span><span class="n">copied</span><span class="p">,</span><span class="w"> </span><span class="mh">288</span><span class="p">,</span><span class="mh">12</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="mh">6</span><span class="p">,</span><span class="mh">4</span><span class="w"> </span><span class="n">MB</span><span class="o">/</span><span class="n">s</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">dd</span><span class="w"> </span><span class="n">bs</span><span class="o">=</span><span class="mh">4</span><span class="n">M</span><span class="w"> </span><span class="k">if</span><span class="o">=</span><span class="mh">2017</span><span class="o">-</span><span class="mh">09</span><span class="o">-</span><span class="mh">07</span><span class="o">-</span><span class="n">raspbian</span><span class="o">-</span><span class="n">stretch</span><span class="o">-</span><span class="n">lite</span><span class="p">.</span><span class="n">img</span><span class="w"> </span><span class="n">of</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb</span><span class="w"> </span><span class="n">conv</span><span class="o">=</span><span class="n">fsync</span>
+<span class="mh">442</span><span class="o">+</span><span class="mh">1</span><span class="w"> </span><span class="n">enregistrements</span><span class="w"> </span><span class="n">lus</span>
+<span class="mh">442</span><span class="o">+</span><span class="mh">1</span><span class="w"> </span><span class="n">enregistrements</span><span class="w"> </span><span class="err">é</span><span class="n">crits</span>
+<span class="mh">1854590976</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="p">(</span><span class="mh">1</span><span class="p">,</span><span class="mh">9</span><span class="w"> </span><span class="n">GB</span><span class="p">,</span><span class="w"> </span><span class="mh">1</span><span class="p">,</span><span class="mh">7</span><span class="w"> </span><span class="n">GiB</span><span class="p">)</span><span class="w"> </span><span class="n">copied</span><span class="p">,</span><span class="w"> </span><span class="mh">288</span><span class="p">,</span><span class="mh">12</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="mh">6</span><span class="p">,</span><span class="mh">4</span><span class="w"> </span><span class="n">MB</span><span class="o">/</span><span class="n">s</span>
 </code></pre></div>
 
 <p>Une fois le Raspberry Pi démarrer s'identifier avec : pi / raspberry (attention
@@ -478,7 +626,7 @@ configurer votre Raspberry Pi.</p>
 </ol>
 <p>9: Finish, et redémarrer.</p>
 <p>Récuperer l'adresse ip du raspberry pi pour se connecter dessus via SSH.</p>
-<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="nf">pi</span><span class="nv">@adresseip</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="nf">pi</span><span class="nv">@adresseip</span>
 </code></pre></div>
 
 <p>Nous changeons le mot de passe de l'utilisateur 'pi'</p>
@@ -497,16 +645,16 @@ configurer votre Raspberry Pi.</p>
 devriez avoir votre interface Unifi disponible.</p>
 <p>Mettre à jour votre materiel unifi depuis le controlleur. Puis sur le raspberry
 pi nous allons changer d'adresse ip pour avoir un réseau séparé.</p>
-<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="nf">pi</span><span class="nv">@adresseip</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="nf">pi</span><span class="nv">@adresseip</span>
 </code></pre></div>
 
 <p>pi@raspberry3:~ $ <code>sudo vi /etc/network/interfaces</code></p>
 <p>Ajouter à la fin du fichier :</p>
-<div class="highlight"><pre><span></span><code>auto eth0
-iface eth0 inet static
-    address 10.0.0.10
-    network 255.255.255.0
-    gateway 10.0.0.1
+<div class="highlight"><pre><span></span><code><span class="kt">auto</span><span class="w"> </span><span class="nx">eth0</span>
+<span class="nx">iface</span><span class="w"> </span><span class="nx">eth0</span><span class="w"> </span><span class="nx">inet</span><span class="w"> </span><span class="nx">static</span>
+<span class="w">    </span><span class="nx">address</span><span class="w"> </span><span class="m m-Double">10.0.0.10</span>
+<span class="w">    </span><span class="nx">network</span><span class="w"> </span><span class="m m-Double">255.255.255.0</span>
+<span class="w">    </span><span class="nx">gateway</span><span class="w"> </span><span class="m m-Double">10.0.0.1</span>
 </code></pre></div>
 
 <p>Enregistrer le fichier et quitter (ne pas rédémarrer le pi pour l'instant).</p>
@@ -535,16 +683,16 @@ faire la même chose.</p>
 Ip Privé de proxmox : 10.0.0.254</p>
 <p>Je me connect en ssh à Proxmox et je modifie le fichier <code>/etc/network/interfaces</code>
 j'ajoute à la fin du fichier :</p>
-<div class="highlight"><pre><span></span><code>auto vmbr2
-iface vmbr2 inet static
-    address 10.0.0.254
-    netmask 255.255.255.0
-    bridge_ports none
-    bridge_stp off
-    bridge_fd 0
-    post-up echo 1 &gt; /proc/sys/net/ipv4/ip_forward
-    post-up iptables -t nat -A POSTROUTING -s &#39;10.0.0.0/24&#39; -o vmbr0 -j MASQUERADE
-    post-down iptables -t nat -D POSTROUTING -s &#39;10.0.0.0/24&#39; -o vmbr0 -j MASQUERADE
+<div class="highlight"><pre><span></span><code><span class="kt">auto</span><span class="w"> </span><span class="nx">vmbr2</span>
+<span class="nx">iface</span><span class="w"> </span><span class="nx">vmbr2</span><span class="w"> </span><span class="nx">inet</span><span class="w"> </span><span class="nx">static</span>
+<span class="w">    </span><span class="nx">address</span><span class="w"> </span><span class="m m-Double">10.0.0.254</span>
+<span class="w">    </span><span class="nx">netmask</span><span class="w"> </span><span class="m m-Double">255.255.255.0</span>
+<span class="w">    </span><span class="nx">bridge_ports</span><span class="w"> </span><span class="nx">none</span>
+<span class="w">    </span><span class="nx">bridge_stp</span><span class="w"> </span><span class="nx">off</span>
+<span class="w">    </span><span class="nx">bridge_fd</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="nx">post</span><span class="o">-</span><span class="nx">up</span><span class="w"> </span><span class="nx">echo</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="o">/</span><span class="nx">proc</span><span class="o">/</span><span class="nx">sys</span><span class="o">/</span><span class="nx">net</span><span class="o">/</span><span class="nx">ipv4</span><span class="o">/</span><span class="nx">ip_forward</span>
+<span class="w">    </span><span class="nx">post</span><span class="o">-</span><span class="nx">up</span><span class="w"> </span><span class="nx">iptables</span><span class="w"> </span><span class="o">-</span><span class="nx">t</span><span class="w"> </span><span class="nx">nat</span><span class="w"> </span><span class="o">-</span><span class="nx">A</span><span class="w"> </span><span class="nx">POSTROUTING</span><span class="w"> </span><span class="o">-</span><span class="nx">s</span><span class="w"> </span><span class="err">&#39;</span><span class="m m-Double">10.0.0.0</span><span class="o">/</span><span class="mi">24</span><span class="err">&#39;</span><span class="w"> </span><span class="o">-</span><span class="nx">o</span><span class="w"> </span><span class="nx">vmbr0</span><span class="w"> </span><span class="o">-</span><span class="nx">j</span><span class="w"> </span><span class="nx">MASQUERADE</span>
+<span class="w">    </span><span class="nx">post</span><span class="o">-</span><span class="nx">down</span><span class="w"> </span><span class="nx">iptables</span><span class="w"> </span><span class="o">-</span><span class="nx">t</span><span class="w"> </span><span class="nx">nat</span><span class="w"> </span><span class="o">-</span><span class="nx">D</span><span class="w"> </span><span class="nx">POSTROUTING</span><span class="w"> </span><span class="o">-</span><span class="nx">s</span><span class="w"> </span><span class="err">&#39;</span><span class="m m-Double">10.0.0.0</span><span class="o">/</span><span class="mi">24</span><span class="err">&#39;</span><span class="w"> </span><span class="o">-</span><span class="nx">o</span><span class="w"> </span><span class="nx">vmbr0</span><span class="w"> </span><span class="o">-</span><span class="nx">j</span><span class="w"> </span><span class="nx">MASQUERADE</span>
 </code></pre></div>
 
 <p>On peut également ajouter si on veut différents ports qu'on ouvre vers
@@ -563,72 +711,15 @@ interfaces réseaux</p>
 <p>Lorsque vous allez faire la configuration réseau d'une VM ou d'un conteneur, il
 suffit de renseigner une adresse ip de la plage 10.0.0.0/24</p>
 <p>Exemple :</p>
-<div class="highlight"><pre><span></span><code>auto eth0
-iface eth0 inet static
-    address 10.0.0.1
-    netmask 255.255.255.0
-    gateway 10.0.0.254
+<div class="highlight"><pre><span></span><code><span class="kt">auto</span><span class="w"> </span><span class="nx">eth0</span>
+<span class="nx">iface</span><span class="w"> </span><span class="nx">eth0</span><span class="w"> </span><span class="nx">inet</span><span class="w"> </span><span class="nx">static</span>
+<span class="w">    </span><span class="nx">address</span><span class="w"> </span><span class="m m-Double">10.0.0.1</span>
+<span class="w">    </span><span class="nx">netmask</span><span class="w"> </span><span class="m m-Double">255.255.255.0</span>
+<span class="w">    </span><span class="nx">gateway</span><span class="w"> </span><span class="m m-Double">10.0.0.254</span>
 </code></pre></div>
 
 <p>Puis faites un ping depuis votre conteneur vers l'ip 10.0.0.254, puis vers un
 site internet duckduckgo.com par exemple.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2017-10-15-creer-un-partage-nfs.html">Créer un partage NFS</a></h2>
-    <p>
-      Posté le dim. 15 octobre 2017 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/nfs.html">nfs</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>    </p>
-  </header>
-  <div>
-      <p>Pour installer un serveur NFS sur Debian voici la marche à suivre :</p>
-<div class="highlight"><pre><span></span><code>apt install nfs-kernel-server
-</code></pre></div>
-
-<p>Une fois le paquet installé, il faut modifier la configuration pour ajouter
-votre partage.</p>
-<p>Editer le fichier <code>/etc/exports</code></p>
-<div class="highlight"><pre><span></span><code><span class="n">vim</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">exports</span><span class="w"></span>
-</code></pre></div>
-
-<p>J'ajoute dans le fichier le dossier à partager <code>/home/user/share</code> et l'adresse
-du ou des clients qui peuvent accèder a ce partage
-<code>10.0.0.1(rw,sync,no_subtree_check)</code> ici mon client a l'adresse ip 10.0.0.1 ce
-qui donne :</p>
-<div class="highlight"><pre><span></span><code>/home/user/share 10.0.0.1(rw,sync,no_subtree_check)
-</code></pre></div>
-
-<p>Recharger le service :</p>
-<div class="highlight"><pre><span></span><code><span class="n">service</span><span class="w"> </span><span class="n">nfs</span><span class="o">-</span><span class="n">kernel</span><span class="o">-</span><span class="n">server</span><span class="w"> </span><span class="n">reload</span><span class="w"></span>
-</code></pre></div>
-
-<p>Vérifier que votre partage est bien actif :</p>
-<div class="highlight"><pre><span></span><code>showmount -e
-</code></pre></div>
-
-<p>Côté client, j'ai installé sur Gentoo : <code>net-fs/nfs-utils</code></p>
-<div class="highlight"><pre><span></span><code>emerge -a net-fs/nfs-utils
-</code></pre></div>
-
-<p>Sur Debian installer le paquet : <code>nfs-common</code></p>
-<div class="highlight"><pre><span></span><code>apt install nfs-common
-</code></pre></div>
-
-<p>Ensuite configurer votre fichier <code>/etc/fstab</code></p>
-<div class="highlight"><pre><span></span><code>vim /etc/fstab
-</code></pre></div>
-
-<p>Ajouter à la fin du fichier l'ip de votre partage avec le nom local puis le
-point de montage sur votre client.</p>
-<div class="highlight"><pre><span></span><code><span class="mf">10.0.0.100</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">share</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nfs</span><span class="o">-</span><span class="n">nas</span><span class="w"> </span><span class="n">nfs</span><span class="w"> </span><span class="kd">def</span><span class="n">aults</span><span class="p">,</span><span class="n">user</span><span class="p">,</span><span class="n">auto</span><span class="p">,</span><span class="n">noatime</span><span class="p">,</span><span class="nb">int</span><span class="n">r</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
-</code></pre></div>
-
-<p>Puis monter le nouveau partage avec la commande <code>mount -a</code></p>
-<p>Si vous faites la commande <code>ls /home/user/nfs-nas</code> vous devriez voir les
-fichiers qui se trouvent sur votre serveur.</p>
   </div>
 </article>
 

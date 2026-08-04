@@ -50,6 +50,34 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2011-05-30-patch-diff.html">Patch & diff</a></h2>
+    <p>
+      Posté le lun. 30 mai 2011 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/diff.html">diff</a>,      <a href="https://www.choiz.fr/tag/patch.html">patch</a>,      <a href="https://www.choiz.fr/tag/cli.html">cli</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
+  </header>
+  <div>
+      <p>Patch permet de "patcher" un fichier, dossier, projet ! Pratique lorsque
+vous distribuez du code et que vous voulez le mettre à jour. Comment
+l'utiliser ? Dans un premier temps nous allons faire un différentiel de
+notre version actuelle du projet et de la nouvelle version (celle
+patchée). :</p>
+<div class="highlight"><pre><span></span><code><span class="gh">diff -u version1.php version2.php &gt; mon_patch</span>
+</code></pre></div>
+
+<p>Notre fichier de patch est "mon_patch" si vous ouvrez celui-ci vous
+aurez le différentiel entre les deux fichier. Comment le lire ? Les
+lignes avec des + devant sont les nouvelles lignes celles avec des -
+sont celles a supprimer. Ce n'est pas plus difficile que ça ! Maintenant
+j'applique mon patch sur mon fichier version1.php grâce à la commande
+suivante :</p>
+<div class="highlight"><pre><span></span><code>patch -p0 &lt; mon_patch
+</code></pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html">Split & Vsplit dans vim</a></h2>
     <p>
       Posté le dim. 29 mai 2011 &#8226;
@@ -92,7 +120,7 @@ Tags :
 J'utilise souvent la commande diff dans un terminal, mais mon éditeur
 texte favoris "Vim" sait aussi trés bien faire un différentiel.
 Utilisation avec le terminal :</p>
-<div class="highlight"><pre><span></span><code><span class="gh">diff fichier1 fichier2</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="gh">diff fichier1 fichier2</span>
 </code></pre></div>
 
 <p>Celui-ci retournera les différences directement dans le terminal (pas
@@ -249,13 +277,13 @@ fonctionne pas avec l'attribut "onclick"…</p>
 <p>Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.</p>
 <p>Remplacer donc :</p>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">mavar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="o">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s2">&quot;onclick&quot;</span><span class="p">,</span><span class="s2">&quot;mavar&quot;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">mavar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span>
+<span class="o">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s2">&quot;onclick&quot;</span><span class="p">,</span><span class="s2">&quot;mavar&quot;</span><span class="p">);</span>
 </code></pre></div>
 
 <p>Par :</p>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">mavar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="o">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">removeAttr</span><span class="p">(</span><span class="s1">&#39;onclick&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">eval</span><span class="p">(</span><span class="n">mavar</span><span class="p">);</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">mavar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span>
+<span class="o">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">removeAttr</span><span class="p">(</span><span class="s1">&#39;onclick&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">eval</span><span class="p">(</span><span class="n">mavar</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
 </code></pre></div>
   </div>
   <hr />
@@ -276,18 +304,18 @@ informations dans vos projets il suffit de taper cette commande :</p>
 
 <p>Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php</p>
 <p>Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :</p>
-<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Id</span><span class="o">:</span><span class="p">$</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Id</span><span class="o">:</span><span class="p">$</span>
 </code></pre></div>
 
 <p>Une fois le fichier versionné vous obtiendrez :</p>
-<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Id</span><span class="o">:</span><span class="w"> </span><span class="nv">ajax</span>\<span class="nv">_modif</span><span class="o">.</span><span class="nv">php</span><span class="w"> </span><span class="mi">481</span><span class="w"> </span><span class="mi">2010</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">25</span><span class="w"> </span><span class="mi">12</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mi">50</span><span class="nv">Z</span><span class="w"> </span><span class="nv">choiz</span><span class="w"> </span><span class="p">$</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Id</span><span class="o">:</span><span class="w"> </span><span class="nv">ajax</span>\<span class="nv">_modif</span><span class="o">.</span><span class="nv">php</span><span class="w"> </span><span class="mi">481</span><span class="w"> </span><span class="mi">2010</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">25</span><span class="w"> </span><span class="mi">12</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mi">50</span><span class="nv">Z</span><span class="w"> </span><span class="nv">choiz</span><span class="w"> </span><span class="p">$</span>
 </code></pre></div>
 
 <p>D'autres keywords sont disponible tel que :</p>
-<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Revision</span><span class="o">:</span><span class="p">$</span><span class="w"></span>
-<span class="p">$</span><span class="nv">Date</span><span class="o">:</span><span class="p">$</span><span class="w"></span>
-<span class="p">$</span><span class="nv">Author</span><span class="o">:</span><span class="p">$</span><span class="w"></span>
-<span class="p">$</span><span class="nv">URL</span><span class="o">:</span><span class="p">$</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Revision</span><span class="o">:</span><span class="p">$</span>
+<span class="p">$</span><span class="nv">Date</span><span class="o">:</span><span class="p">$</span>
+<span class="p">$</span><span class="nv">Author</span><span class="o">:</span><span class="p">$</span>
+<span class="p">$</span><span class="nv">URL</span><span class="o">:</span><span class="p">$</span>
 </code></pre></div>
 
 <p>Vous pouvez les ajouter les uns à la suite des autres par exemple pour
@@ -297,33 +325,10 @@ notre fichier index.php je veux ajouter les 4 keywords précédents grâce
 </code></pre></div>
 
 <p>Ce qui affichera :</p>
-<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Revision</span><span class="o">:</span><span class="w"> </span><span class="mi">481</span><span class="w"> </span><span class="p">$</span><span class="w"></span>
-<span class="p">$</span><span class="nv">Date</span><span class="o">:</span><span class="w"> </span><span class="mi">2010</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">25</span><span class="w"> </span><span class="mi">14</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mi">50</span><span class="w"> </span><span class="o">+</span><span class="mi">0200</span><span class="w"> </span><span class="p">(</span><span class="nv">lun</span><span class="o">.</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="nv">oct</span><span class="o">.</span><span class="w"> </span><span class="mi">2010</span><span class="p">)</span><span class="w"> </span><span class="p">$</span><span class="w"></span>
-<span class="p">$</span><span class="nv">Author</span><span class="o">:</span><span class="w"> </span><span class="nv">choiz</span><span class="w"> </span><span class="p">$</span><span class="w"></span>
-<span class="p">$</span><span class="nv">URL</span><span class="o">:</span><span class="w"> </span><span class="nv">svn</span><span class="o">://</span><span class="nv">svn</span><span class="o">.</span><span class="nv">choiz</span><span class="o">.</span><span class="nv">fr</span><span class="o">/</span><span class="nv">projet</span><span class="o">/</span><span class="nv">branches</span><span class="o">/</span><span class="nv">prod</span><span class="o">/</span><span class="no">ind</span><span class="nv">ex</span><span class="o">.</span><span class="nv">php</span><span class="w"> </span><span class="p">$</span><span class="w"></span>
-</code></pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2010-09-15-impression-de-commandes-entre-balise-pre.html">Impression de commandes entre balise &lt;pre&gt;</a></h2>
-    <p>
-      Posté le mer. 15 septembre 2010 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/css.html">css</a>,      <a href="https://www.choiz.fr/tag/html.html">html</a>,      <a href="https://www.choiz.fr/tag/code.html">code</a>    </p>
-  </header>
-  <div>
-      <p>J'ai toujours eu pas mal de soucis lors d'impression de différentes
-documentations…</p>
-<p>J'utilise souvent la balise &lt;pre&gt; pour les lignes de commandes et
-il n'y a pas de retour à la ligne fait automatiquement pour cela un
-petit css permet de faire les retours à la ligne lorsque la page est
-trop grande. :</p>
-<div class="highlight"><pre><span></span><code><span class="nt">pre</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">white-space</span><span class="p">:</span><span class="w"> </span><span class="kc">pre-wrap</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">word-wrap</span><span class="p">:</span><span class="w"> </span><span class="kc">break-word</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Revision</span><span class="o">:</span><span class="w"> </span><span class="mi">481</span><span class="w"> </span><span class="p">$</span>
+<span class="p">$</span><span class="nv">Date</span><span class="o">:</span><span class="w"> </span><span class="mi">2010</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">25</span><span class="w"> </span><span class="mi">14</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mi">50</span><span class="w"> </span><span class="o">+</span><span class="mi">0200</span><span class="w"> </span><span class="p">(</span><span class="nv">lun</span><span class="o">.</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="nv">oct</span><span class="o">.</span><span class="w"> </span><span class="mi">2010</span><span class="p">)</span><span class="w"> </span><span class="p">$</span>
+<span class="p">$</span><span class="nv">Author</span><span class="o">:</span><span class="w"> </span><span class="nv">choiz</span><span class="w"> </span><span class="p">$</span>
+<span class="p">$</span><span class="nv">URL</span><span class="o">:</span><span class="w"> </span><span class="nv">svn</span><span class="o">://</span><span class="nv">svn</span><span class="o">.</span><span class="nv">choiz</span><span class="o">.</span><span class="nv">fr</span><span class="o">/</span><span class="nv">projet</span><span class="o">/</span><span class="nv">branches</span><span class="o">/</span><span class="nv">prod</span><span class="o">/</span><span class="no">ind</span><span class="nv">ex</span><span class="o">.</span><span class="nv">php</span><span class="w"> </span><span class="p">$</span>
 </code></pre></div>
   </div>
 </article>

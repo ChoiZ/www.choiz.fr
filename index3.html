@@ -50,6 +50,50 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Mise à jour d'un kernel gentoo</a></h2>
+    <p>
+      Posté le sam. 21 novembre 2015 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>,      <a href="https://www.choiz.fr/tag/kernel.html">kernel</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
+  </header>
+  <div>
+      <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
+suivre pour le mettre à jour vers la version : 4.3.0.</p>
+<p>Je liste les différents noyaux gentoo disponibles :</p>
+<div class="highlight"><pre><span></span><code>eix sys-kernel/gentoo-sources
+</code></pre></div>
+
+<p>Je télécharge le noyau 4.3.0 :</p>
+<div class="highlight"><pre><span></span><code>emerge -a =sys-kernel/gentoo-sources-4.3.0
+</code></pre></div>
+
+<p>Une fois téléchargé, il faut modifier le lien symbolique /usr/src/linux
+grâce à eselect.</p>
+<p>J'affiche la liste des noyaux (celui actuellement selectionné est suivi
+d'une étoile) :</p>
+<div class="highlight"><pre><span></span><code>eselect kernel list
+
+[1]     linux-4.2.0-gentoo *
+[2]     linux-4.3.0-gentoo
+</code></pre></div>
+
+<p>Pour selectionner notre noyau 4.3.0 il faut utiliser :</p>
+<div class="highlight"><pre><span></span><code>eselect kernel set 2
+</code></pre></div>
+
+<p>Maintenant que vous avez selectionné votre noyau, copier le fichier
+".config" de votre noyau précédent (pour conserver vos réglages de
+compilation) :</p>
+<div class="highlight"><pre><span></span><code>cp /usr/src/linux-4.2.0-gentoo/.config /usr/src/linux
+</code></pre></div>
+
+<p>Puis <a href="http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html">compiler votre
+kernel</a>.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2015-11-15-configurer-un-serveur-mail.html">Configurer un serveur mail</a></h2>
     <p>
       Posté le dim. 15 novembre 2015 &#8226;
@@ -87,15 +131,15 @@ de courrier indiquer "mail.votredomaine.com".</p>
 </code></pre></div>
 
 <p>Puis répondre aux différentes questions pour ma part j'ai répondu :</p>
-<div class="highlight"><pre><span></span><code><span class="n">FR</span><span class="w"></span>
-<span class="p">(</span><span class="n">vide</span><span class="p">)</span><span class="w"></span>
-<span class="n">Paris</span><span class="w"></span>
-<span class="n">votredomaine</span><span class="w"></span>
-<span class="n">IT</span><span class="w"></span>
-<span class="n">mail</span><span class="p">.</span><span class="n">votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
-<span class="n">contact</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
-<span class="p">(</span><span class="n">vide</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="n">vide</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">FR</span>
+<span class="p">(</span><span class="n">vide</span><span class="p">)</span>
+<span class="n">Paris</span>
+<span class="n">votredomaine</span>
+<span class="n">IT</span>
+<span class="n">mail</span><span class="p">.</span><span class="n">votredomaine</span><span class="p">.</span><span class="n">com</span>
+<span class="n">contact</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span>
+<span class="p">(</span><span class="n">vide</span><span class="p">)</span>
+<span class="p">(</span><span class="n">vide</span><span class="p">)</span>
 </code></pre></div>
 
 <p>Ensuite :</p>
@@ -107,8 +151,8 @@ de courrier indiquer "mail.votredomaine.com".</p>
 </code></pre></div>
 
 <p>Créer le groupe et l'utilisateur vmail :</p>
-<div class="highlight"><pre><span></span><code><span class="n">groupadd</span><span class="w"> </span><span class="o">-</span><span class="n">g</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="n">vmail</span><span class="w"></span>
-<span class="n">useradd</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">vmail</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="bp">false</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="o">-</span><span class="n">g</span><span class="w"> </span><span class="n">vmail</span><span class="w"> </span><span class="n">vmail</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">groupadd</span><span class="w"> </span><span class="o">-</span><span class="n">g</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="n">vmail</span>
+<span class="n">useradd</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">vmail</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="bp">false</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="o">-</span><span class="n">g</span><span class="w"> </span><span class="n">vmail</span><span class="w"> </span><span class="n">vmail</span>
 </code></pre></div>
 
 <p>Ajouter dans /etc/dovecot/dovecot.conf :</p>
@@ -116,10 +160,10 @@ de courrier indiquer "mail.votredomaine.com".</p>
 </code></pre></div>
 
 <p>Editer /etc/dovecot/conf.d/10-auth.conf :</p>
-<div class="highlight"><pre><span></span><code><span class="n">disable_plaintext_auth</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">yes</span><span class="w"></span>
-<span class="n">auth_username_format</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="c">%Lu</span><span class="w"></span>
-#!<span class="n">include</span><span class="w"> </span><span class="n">auth</span><span class="o">-</span><span class="nb">system</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">ext</span><span class="w"></span>
-<span class="sx">!include auth-passwdfile.conf.ext</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">disable_plaintext_auth</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">yes</span>
+<span class="n">auth_username_format</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="c">%Lu</span>
+#!<span class="n">include</span><span class="w"> </span><span class="n">auth</span><span class="o">-</span><span class="nb">system</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">ext</span>
+<span class="sx">!include auth-passwdfile.conf.ext</span>
 </code></pre></div>
 
 <p>Editer /etc/dovecot/conf.d/10-logging.conf :</p>
@@ -128,11 +172,11 @@ mail_debug = yes
 </code></pre></div>
 
 <p>Editer /etc/dovecot/conf.d/10-master.conf :</p>
-<div class="highlight"><pre><span></span><code><span class="n">unix_listener</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">postfix</span><span class="o">/</span><span class="n">private</span><span class="o">/</span><span class="n">auth</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0666</span><span class="w"></span>
-<span class="w">  </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">postfix</span><span class="w"></span>
-<span class="w">  </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">postfix</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">unix_listener</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">postfix</span><span class="o">/</span><span class="n">private</span><span class="o">/</span><span class="n">auth</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0666</span>
+<span class="w">  </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">postfix</span>
+<span class="w">  </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">postfix</span>
+<span class="p">}</span>
 </code></pre></div>
 
 <p>Editer /etc/dovecot/conf.d/10-ssl.conf :</p>
@@ -162,22 +206,22 @@ mailbox Sent {
     special_use = \Sent
 }
 
-#mailbox &quot;Sent Messages&quot; {
-#    special_use = \Sent
+<span class="gh">#</span>mailbox &quot;Sent Messages&quot; {
+<span class="gh">#</span>    special_use = \Sent
 #}
 </code></pre></div>
 
 <p>Editer /etc/dovecot/conf.d/auth-passwdfile.conf.ext :</p>
-<div class="highlight"><pre><span></span><code><span class="n">passdb</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">passwd</span><span class="o">-</span><span class="n">file</span><span class="w"></span>
-<span class="w">    </span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scheme</span><span class="o">=</span><span class="n">MD5</span><span class="w"> </span><span class="n">username_format</span><span class="o">=%</span><span class="n">u</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">dovecot</span><span class="o">/</span><span class="n">users</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">passdb</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">passwd</span><span class="o">-</span><span class="n">file</span>
+<span class="w">    </span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scheme</span><span class="o">=</span><span class="n">MD5</span><span class="w"> </span><span class="n">username_format</span><span class="o">=%</span><span class="n">u</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">dovecot</span><span class="o">/</span><span class="n">users</span>
+<span class="p">}</span>
 
-<span class="n">userdb</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">passwd</span><span class="o">-</span><span class="n">file</span><span class="w"></span>
-<span class="w">    </span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">username_format</span><span class="o">=%</span><span class="n">u</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">dovecot</span><span class="o">/</span><span class="n">users</span><span class="w"></span>
-<span class="w">    </span><span class="n">default_fields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uid</span><span class="o">=</span><span class="mi">5000</span><span class="w"> </span><span class="n">gid</span><span class="o">=</span><span class="mi">5000</span><span class="w"> </span><span class="n">home</span><span class="o">=/</span><span class="k">var</span><span class="o">/</span><span class="n">vmail</span><span class="o">/%</span><span class="n">d</span><span class="w"> </span><span class="n">mail</span><span class="o">=</span><span class="n">maildir</span><span class="p">:</span><span class="o">~/%</span><span class="n">u</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="n">userdb</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">passwd</span><span class="o">-</span><span class="n">file</span>
+<span class="w">    </span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">username_format</span><span class="o">=%</span><span class="n">u</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">dovecot</span><span class="o">/</span><span class="n">users</span>
+<span class="w">    </span><span class="n">default_fields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uid</span><span class="o">=</span><span class="mi">5000</span><span class="w"> </span><span class="n">gid</span><span class="o">=</span><span class="mi">5000</span><span class="w"> </span><span class="n">home</span><span class="o">=/</span><span class="k">var</span><span class="o">/</span><span class="n">vmail</span><span class="o">/%</span><span class="n">d</span><span class="w"> </span><span class="n">mail</span><span class="o">=</span><span class="n">maildir</span><span class="p">:</span><span class="o">~/%</span><span class="n">u</span>
+<span class="p">}</span>
 </code></pre></div>
 
 <p>Créer le fichier /etc/dovecot/users :</p>
@@ -185,7 +229,7 @@ mailbox Sent {
 </code></pre></div>
 
 <p>Puis pour chaque mail créer un enregistrement :</p>
-<div class="highlight"><pre><span></span><code><span class="n">adresse</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="nl">motdepassemd5</span><span class="p">:</span><span class="o">::::::</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">adresse</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="nl">motdepassemd5</span><span class="p">:</span><span class="o">::::::</span>
 </code></pre></div>
 
 <p>Le format est le suivant :</p>
@@ -229,15 +273,15 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 </tbody>
 </table>
 <p>Tester votre utilisateur grâce à la commande :</p>
-<div class="highlight"><pre><span></span><code><span class="n">doveadm</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">adresse</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">doveadm</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">adresse</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span>
 </code></pre></div>
 
 <p>Ce qui devrait afficher :</p>
-<div class="highlight"><pre><span></span><code><span class="n">field</span><span class="w">   </span><span class="n">value</span><span class="w"></span>
-<span class="n">uid</span><span class="w">     </span><span class="mi">5000</span><span class="w"></span>
-<span class="n">gid</span><span class="w">     </span><span class="mi">5000</span><span class="w"></span>
-<span class="n">home</span><span class="w">    </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">vmail</span><span class="o">/</span><span class="n">votredomaine</span><span class="o">.</span><span class="n">com</span><span class="w"></span>
-<span class="n">mail</span><span class="w">    </span><span class="n">maildir</span><span class="p">:</span><span class="o">~/</span><span class="n">adresse</span><span class="err">@</span><span class="n">votredomaine</span><span class="o">.</span><span class="n">com</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">field</span><span class="w">   </span><span class="n">value</span>
+<span class="n">uid</span><span class="w">     </span><span class="mi">5000</span>
+<span class="n">gid</span><span class="w">     </span><span class="mi">5000</span>
+<span class="n">home</span><span class="w">    </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">vmail</span><span class="o">/</span><span class="n">votredomaine</span><span class="o">.</span><span class="n">com</span>
+<span class="n">mail</span><span class="w">    </span><span class="n">maildir</span><span class="p">:</span><span class="o">~/</span><span class="n">adresse</span><span class="err">@</span><span class="n">votredomaine</span><span class="o">.</span><span class="n">com</span>
 </code></pre></div>
 
 <p>Démarrer dovecot :</p>
@@ -245,19 +289,19 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 </code></pre></div>
 
 <p>Tester la connexion :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">openssl</span><span class="w"> </span><span class="nv">s_client</span><span class="w"> </span><span class="o">-</span><span class="k">connect</span><span class="w"> </span><span class="nv">ip</span>.<span class="nv">v4</span>.<span class="nv">du</span>.<span class="nv">server</span>:<span class="mi">993</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>openssl s_client -connect ip.v4.du.server:993
 </code></pre></div>
 
 <p>Si vous avez "* OK [CAPABILITY …] Dovecot ready. Vous pouvez vous
 authentifier :</p>
-<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="w"> </span><span class="n">LOGIN</span><span class="w"> </span><span class="n">adresse</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w"> </span><span class="n">motdepasseenclair</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="w"> </span><span class="n">LOGIN</span><span class="w"> </span><span class="n">adresse</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w"> </span><span class="n">motdepasseenclair</span>
 </code></pre></div>
 
 <p>C'est fini pour dovecot.</p>
 <h2>Configuration de sasl</h2>
 <p>Editer /etc/default/saslauthd :</p>
-<div class="highlight"><pre><span></span><code><span class="n">START</span><span class="o">=</span><span class="n">yes</span><span class="w"></span>
-<span class="n">OPTIONS</span><span class="o">=</span><span class="s2">&quot;-m /var/spool/postfix/var/run/saslauthd&quot;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">START</span><span class="o">=</span><span class="n">yes</span>
+<span class="n">OPTIONS</span><span class="o">=</span><span class="s2">&quot;-m /var/spool/postfix/var/run/saslauthd&quot;</span>
 </code></pre></div>
 
 <p>Puis lancer :</p>
@@ -267,37 +311,37 @@ authentifier :</p>
 <p>C'est fini pour sasl</p>
 <h2>Configuration de postfix</h2>
 <p>Editer /etc/postfix/main.cf ::</p>
-<div class="highlight"><pre><span></span><code><span class="n">smtpd_banner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">myhostname</span><span class="w"> </span><span class="n">ESMTP</span><span class="w"> </span><span class="o">$</span><span class="n">mail_name</span><span class="w"></span>
-<span class="n">smtpd_tls_cert_file</span><span class="o">=/</span><span class="n">etc</span><span class="o">/</span><span class="n">dovecot</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">certificat</span><span class="o">.</span><span class="n">pem</span><span class="w"></span>
-<span class="n">smtpd_tls_key_file</span><span class="o">=/</span><span class="n">etc</span><span class="o">/</span><span class="n">dovecot</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">certificat</span><span class="o">.</span><span class="n">key</span><span class="w"></span>
-<span class="n">mynetworks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">8</span><span class="w"> </span><span class="n">ip</span><span class="o">.</span><span class="n">v4</span><span class="o">.</span><span class="n">du</span><span class="o">.</span><span class="n">server</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">smtpd_banner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">myhostname</span><span class="w"> </span><span class="n">ESMTP</span><span class="w"> </span><span class="o">$</span><span class="n">mail_name</span>
+<span class="n">smtpd_tls_cert_file</span><span class="o">=/</span><span class="n">etc</span><span class="o">/</span><span class="n">dovecot</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">certificat</span><span class="o">.</span><span class="n">pem</span>
+<span class="n">smtpd_tls_key_file</span><span class="o">=/</span><span class="n">etc</span><span class="o">/</span><span class="n">dovecot</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">certificat</span><span class="o">.</span><span class="n">key</span>
+<span class="n">mynetworks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">8</span><span class="w"> </span><span class="n">ip</span><span class="o">.</span><span class="n">v4</span><span class="o">.</span><span class="n">du</span><span class="o">.</span><span class="n">server</span>
 
-<span class="n">virtual_mailbox_domains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">votredomaine</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="w"> </span><span class="n">autredomaine</span><span class="o">.</span><span class="n">com</span><span class="w"></span>
-<span class="n">virtual_mailbox_base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">vmail</span><span class="w"></span>
-<span class="n">virtual_mailbox_maps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">hash</span><span class="p">:</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">postfix</span><span class="o">/</span><span class="n">virtual_mailbox</span><span class="w"></span>
-<span class="n">virtual_minimum_uid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w"></span>
-<span class="n">virtual_uid_maps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static</span><span class="p">:</span><span class="mi">5000</span><span class="w"></span>
-<span class="n">virtual_gid_maps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static</span><span class="p">:</span><span class="mi">5000</span><span class="w"></span>
-<span class="n">virtual_alias_maps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">hash</span><span class="p">:</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">postfix</span><span class="o">/</span><span class="n">virtual_alias</span><span class="w"></span>
+<span class="n">virtual_mailbox_domains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">votredomaine</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="w"> </span><span class="n">autredomaine</span><span class="o">.</span><span class="n">com</span>
+<span class="n">virtual_mailbox_base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">vmail</span>
+<span class="n">virtual_mailbox_maps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">hash</span><span class="p">:</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">postfix</span><span class="o">/</span><span class="n">virtual_mailbox</span>
+<span class="n">virtual_minimum_uid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span>
+<span class="n">virtual_uid_maps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static</span><span class="p">:</span><span class="mi">5000</span>
+<span class="n">virtual_gid_maps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static</span><span class="p">:</span><span class="mi">5000</span>
+<span class="n">virtual_alias_maps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">hash</span><span class="p">:</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">postfix</span><span class="o">/</span><span class="n">virtual_alias</span>
 
-<span class="n">smtpd_sasl_auth_enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yes</span><span class="w"></span>
-<span class="n">smtpd_sasl_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dovecot</span><span class="w"></span>
-<span class="n">smtpd_sasl_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">private</span><span class="o">/</span><span class="n">auth</span><span class="w"></span>
-<span class="n">smtpd_sasl_security_options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">noanonymous</span><span class="w"></span>
-<span class="n">smtpd_sasl_tls_security_options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">noanonymous</span><span class="w"></span>
-<span class="n">smtpd_sasl_local_domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">myhostname</span><span class="w"></span>
+<span class="n">smtpd_sasl_auth_enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yes</span>
+<span class="n">smtpd_sasl_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dovecot</span>
+<span class="n">smtpd_sasl_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">private</span><span class="o">/</span><span class="n">auth</span>
+<span class="n">smtpd_sasl_security_options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">noanonymous</span>
+<span class="n">smtpd_sasl_tls_security_options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">noanonymous</span>
+<span class="n">smtpd_sasl_local_domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">myhostname</span>
 
-<span class="n">broken_sasl_auth_clients</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yes</span><span class="w"></span>
+<span class="n">broken_sasl_auth_clients</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yes</span>
 
-<span class="n">smtpd_helo_restrictions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reject_unknown_helo_hostname</span><span class="w"></span>
-<span class="n">smtpd_sender_restrictions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">permit_sasl_authenticated</span><span class="w"> </span><span class="n">reject_unknown_sender_domain</span><span class="w"></span>
-<span class="n">smtpd_recipient_restrictions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">permit_sasl_authenticated</span><span class="w"> </span><span class="n">permit_mynetworks</span><span class="w"> </span><span class="n">reject_unauth_destination</span><span class="w"></span>
+<span class="n">smtpd_helo_restrictions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reject_unknown_helo_hostname</span>
+<span class="n">smtpd_sender_restrictions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">permit_sasl_authenticated</span><span class="w"> </span><span class="n">reject_unknown_sender_domain</span>
+<span class="n">smtpd_recipient_restrictions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">permit_sasl_authenticated</span><span class="w"> </span><span class="n">permit_mynetworks</span><span class="w"> </span><span class="n">reject_unauth_destination</span>
 
-<span class="n">smtpd_enforce_tls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no</span><span class="w"></span>
-<span class="n">smtpd_tls_auth_only</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no</span><span class="w"></span>
-<span class="n">smtpd_tls_ask_ccert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no</span><span class="w"></span>
-<span class="n">smtpd_tls_received_header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yes</span><span class="w"></span>
-<span class="n">tls_random_source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dev</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">urandom</span><span class="w"></span>
+<span class="n">smtpd_enforce_tls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no</span>
+<span class="n">smtpd_tls_auth_only</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no</span>
+<span class="n">smtpd_tls_ask_ccert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no</span>
+<span class="n">smtpd_tls_received_header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yes</span>
+<span class="n">tls_random_source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dev</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">urandom</span>
 </code></pre></div>
 
 <p>Créer /etc/postfix/virtual_alias :</p>
@@ -305,7 +349,7 @@ authentifier :</p>
 </code></pre></div>
 
 <p>Pour créer un alias, éditer /etc/postfix/virtual_alias :</p>
-<div class="highlight"><pre><span></span><code><span class="k">alias</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w">          </span><span class="n">destination</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">alias</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w">          </span><span class="n">destination</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span>
 </code></pre></div>
 
 <p>Créer /etc/postfix/virtual_domains :</p>
@@ -322,8 +366,8 @@ votredeuxiemedomaine.com        OK
 </code></pre></div>
 
 <p>Pour créer un comte mail, éditer /etc/postfix/virtual_mailbox :</p>
-<div class="highlight"><pre><span></span><code><span class="n">email</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w">          </span><span class="n">votredomaine</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">email</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="w"></span>
-<span class="n">linus</span><span class="nv">@torvald</span><span class="p">.</span><span class="n">com</span><span class="w">               </span><span class="n">torvald</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">linus</span><span class="nv">@torvald</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">email</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w">          </span><span class="n">votredomaine</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">email</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="o">/</span>
+<span class="n">linus</span><span class="nv">@torvald</span><span class="p">.</span><span class="n">com</span><span class="w">               </span><span class="n">torvald</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">linus</span><span class="nv">@torvald</span><span class="p">.</span><span class="n">com</span><span class="o">/</span>
 </code></pre></div>
 
 <p>N'oubliez pas lors de la création de nouveau comptes mail d'éditer
@@ -360,7 +404,7 @@ smtps   inet    n   -   -   -   -   smtpd   -v
 votre serveur sur le site <a href="http://www.mail-tester.com">http://www.mail-tester.com</a></p>
 <h2>Installation d'un webmail rainloop</h2>
 <p>Créer un dossier pour votre webmail :</p>
-<div class="highlight"><pre><span></span><code><span class="n">mkdir</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">webmail</span><span class="o">/</span><span class="n">public</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">webmail</span><span class="o">/</span><span class="n">public</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">mkdir</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">webmail</span><span class="o">/</span><span class="n">public</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">webmail</span><span class="o">/</span><span class="n">public</span>
 </code></pre></div>
 
 <p>Télécharger rainloop :</p>
@@ -372,40 +416,40 @@ votre serveur sur le site <a href="http://www.mail-tester.com">http://www.mail-t
 </code></pre></div>
 
 <p>Modifier les droits :</p>
-<div class="highlight"><pre><span></span><code><span class="n">chown</span><span class="w"> </span><span class="o">-</span><span class="n">R</span><span class="w"> </span><span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="p">:</span><span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">webmail</span><span class="w"></span>
-<span class="n">find</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="o">-</span><span class="n">type</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">-</span><span class="n">exec</span><span class="w"> </span><span class="n">chmod</span><span class="w"> </span><span class="mi">644</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span>\<span class="p">;</span><span class="w"></span>
-<span class="n">find</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="o">-</span><span class="n">type</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">-</span><span class="n">exec</span><span class="w"> </span><span class="n">chmod</span><span class="w"> </span><span class="mi">755</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span>\<span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">chown</span><span class="w"> </span><span class="o">-</span><span class="n">R</span><span class="w"> </span><span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="p">:</span><span class="n">www</span><span class="o">-</span><span class="n">data</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">webmail</span>
+<span class="n">find</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="o">-</span><span class="n">type</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">-</span><span class="n">exec</span><span class="w"> </span><span class="n">chmod</span><span class="w"> </span><span class="mi">644</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span>\<span class="p">;</span>
+<span class="n">find</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="o">-</span><span class="n">type</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">-</span><span class="n">exec</span><span class="w"> </span><span class="n">chmod</span><span class="w"> </span><span class="mi">755</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span>\<span class="p">;</span>
 </code></pre></div>
 
 <p>Créer un vhost pour apache dans
 /etc/apache2/site-enabled/001-webmail.domain.com.conf :</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;VirtualHost</span> <span class="err">*:80</span><span class="nt">&gt;</span>
-    ServerAdmin contact@domain.com
-    ServerName mail.domain.com
+<span class="w">    </span>ServerAdmin<span class="w"> </span>contact@domain.com
+<span class="w">    </span>ServerName<span class="w"> </span>mail.domain.com
 
-    DocumentRoot /var/www/webmail/public
-    <span class="nt">&lt;Directory</span> <span class="err">/var/www/webmail/public</span><span class="nt">&gt;</span>
-        Options FollowSymLinks
-        #Options Indexes FollowSymLinks MultiViews
-        AllowOverride All
-        Order allow,deny
-        allow from all
-    <span class="nt">&lt;/Directory&gt;</span>
+<span class="w">    </span>DocumentRoot<span class="w"> </span>/var/www/webmail/public
+<span class="w">    </span><span class="nt">&lt;Directory</span> <span class="err">/var/www/webmail/public</span><span class="nt">&gt;</span>
+<span class="w">        </span>Options<span class="w"> </span>FollowSymLinks
+<span class="w">        </span>#Options<span class="w"> </span>Indexes<span class="w"> </span>FollowSymLinks<span class="w"> </span>MultiViews
+<span class="w">        </span>AllowOverride<span class="w"> </span>All
+<span class="w">        </span>Order<span class="w"> </span>allow,deny
+<span class="w">        </span>allow<span class="w"> </span>from<span class="w"> </span>all
+<span class="w">    </span><span class="nt">&lt;/Directory&gt;</span>
 
-    <span class="nt">&lt;Directory</span> <span class="err">/var/www/webmail/public/data</span><span class="nt">&gt;</span>
-        Options -FollowSymLinks
-        AllowOverride None
-        Order allow,deny
-        Deny from all
-    <span class="nt">&lt;/Directory&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Directory</span> <span class="err">/var/www/webmail/public/data</span><span class="nt">&gt;</span>
+<span class="w">        </span>Options<span class="w"> </span>-FollowSymLinks
+<span class="w">        </span>AllowOverride<span class="w"> </span>None
+<span class="w">        </span>Order<span class="w"> </span>allow,deny
+<span class="w">        </span>Deny<span class="w"> </span>from<span class="w"> </span>all
+<span class="w">    </span><span class="nt">&lt;/Directory&gt;</span>
 
-    ErrorLog <span class="cp">${</span><span class="n">APACHE_LOG_DIR</span><span class="cp">}</span>/webmail_error.log
+<span class="w">    </span>ErrorLog<span class="w"> </span><span class="cp">${</span><span class="n">APACHE_LOG_DIR</span><span class="cp">}</span>/webmail_error.log
 
-    # Possible values include: debug, info, notice, warn, error, crit,
-    # alert, emerg.
-    LogLevel warn
+<span class="w">    </span>#<span class="w"> </span>Possible<span class="w"> </span>values<span class="w"> </span>include:<span class="w"> </span>debug,<span class="w"> </span>info,<span class="w"> </span>notice,<span class="w"> </span>warn,<span class="w"> </span>error,<span class="w"> </span>crit,
+<span class="w">    </span>#<span class="w"> </span>alert,<span class="w"> </span>emerg.
+<span class="w">    </span>LogLevel<span class="w"> </span>warn
 
-    CustomLog <span class="cp">${</span><span class="n">APACHE_LOG_DIR</span><span class="cp">}</span>/webmail_access.log combined
+<span class="w">    </span>CustomLog<span class="w"> </span><span class="cp">${</span><span class="n">APACHE_LOG_DIR</span><span class="cp">}</span>/webmail_access.log<span class="w"> </span>combined
 <span class="nt">&lt;/VirtualHost&gt;</span>
 </code></pre></div>
 
@@ -550,32 +594,32 @@ Tags :
       <p>Dans mes fichiers de test j'utilise souvent des commentaires pour tester
 qu'une fonctionnalité de code.</p>
 <p>Par exemple pour tester une api :</p>
-<div class="highlight"><pre><span></span><code>// Obtenir le livre #1
-api_get(&#39;books/1&#39;);
+<div class="highlight"><pre><span></span><code><span class="c1">// Obtenir le livre #1</span>
+<span class="n">api_get</span><span class="p">(</span><span class="s">&#39;books/1&#39;</span><span class="p">);</span>
 
-// Ajouter un livre
-api_add(&#39;books&#39;, $datas);
+<span class="c1">// Ajouter un livre</span>
+<span class="n">api_add</span><span class="p">(</span><span class="s">&#39;books&#39;</span><span class="p">,</span><span class="w"> </span><span class="no">$</span><span class="n">datas</span><span class="p">);</span>
 </code></pre></div>
 
 <p>Je test généralement chaque élément séparement.</p>
 <p>Pour tester la première portion de mon code :</p>
-<div class="highlight"><pre><span></span><code>//* Obtenir le livre #1
-api_get(&#39;books/1&#39;);
-//*/
+<div class="highlight"><pre><span></span><code><span class="c1">//* Obtenir le livre #1</span>
+<span class="n">api_get</span><span class="p">(</span><span class="s">&#39;books/1&#39;</span><span class="p">);</span>
+<span class="c1">//*/</span>
 
-/* Ajouter un livre
-api_add(&#39;books&#39;, $datas);
-//*/
+<span class="o">/*</span><span class="w"> </span><span class="n">Ajouter</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">livre</span>
+<span class="n">api_add</span><span class="p">(</span><span class="s">&#39;books&#39;</span><span class="p">,</span><span class="w"> </span><span class="no">$</span><span class="n">datas</span><span class="p">);</span>
+<span class="c1">//*/</span>
 </code></pre></div>
 
 <p>Pour tester la seconde portion de mon code :</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/* Obtenir le livre #1</span>
-<span class="cm">api_get(&#39;books/1&#39;);</span>
-<span class="cm">//*/</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="o">/*</span><span class="w"> </span><span class="n">Obtenir</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">livre</span><span class="w"> </span>#<span class="mi">1</span>
+<span class="n">api_get</span><span class="p">(</span><span class="s">&#39;books/1&#39;</span><span class="p">);</span>
+<span class="c1">//*/</span>
 
-<span class="o">//*</span><span class="w"> </span>Ajouter<span class="w"> </span>un<span class="w"> </span>livre<span class="w"></span>
-api_add<span class="o">(</span><span class="s">&#39;books&#39;</span><span class="o">,</span><span class="w"> </span><span class="err">$</span>datas<span class="o">)</span><span class="err">;</span><span class="w"></span>
-<span class="o">//*/</span><span class="w"></span>
+<span class="c1">//* Ajouter un livre</span>
+<span class="n">api_add</span><span class="p">(</span><span class="s">&#39;books&#39;</span><span class="p">,</span><span class="w"> </span><span class="no">$</span><span class="n">datas</span><span class="p">);</span>
+<span class="c1">//*/</span>
 </code></pre></div>
 
 <p>Il me suffit d'ajouter ou d'enlever un slash sur le premier commentaire
@@ -775,32 +819,6 @@ migration de mon blog de tumblr vers pelican.</p>
 statique, il est pratique pour la gestion des articles tel que mon blog.</p>
 <p>Il suffit de créer un fichier texte avec le contenu de l'article et
 l'envoyer sur github pour que celui-ci soit publié.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2015-08-08-touche-pour-sortir-sa-machine-de-veille.html">Touche pour sortir sa machine de veille</a></h2>
-    <p>
-      Posté le sam. 08 août 2015 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/key.html">key</a>,      <a href="https://www.choiz.fr/tag/computer.html">computer</a>    </p>
-  </header>
-  <div>
-      <p>Il y a quelques années, pour sortir ma machine de veille j'utilisais la
-touche "enter" ou "escape".</p>
-<p>Ce qui fonctionne mais, si vous êtes dans un programme d'installation
-qui demande une confirmation (formater tout le disque par exemple), en
-appuyant sur "enter" vous allez confirmer le formatage…</p>
-<p>Avec la touche escape vous allez généralement annuler l'action que l'on
-vous propose.</p>
-<p>Même problème avec toutes les autres touches : "espace" qui confirme
-généralement, "o" pour "oui", "y" pour "yes", "n" pour "no" ou "non", ou
-une quantité "1", "2", ou toute autre lettre défini tel que "a" pour
-"annuler", "c" pour "cancel"…</p>
-<p>Bref la seule touche que j'utilise pour sortir mon ordinateur de veille
-est "shift". Que ça soit le "shift" droit ou gauche il ne fais jamais
-d'action spécifique à ma connaissance ;-)</p>
   </div>
 </article>
 

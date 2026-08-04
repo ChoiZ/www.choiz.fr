@@ -50,6 +50,33 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2014-03-21-installation-de-skype-64-sur-debian.html">Installation de Skype 64 sur Debian</a></h2>
+    <p>
+      Posté le ven. 21 mars 2014 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/skype.html">skype</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>    </p>
+  </header>
+  <div>
+      <p>Télécharger la dernière version de <a href="http://www.skype.com">Skype</a> (Debian
+7.0 [multiarch]).</p>
+<p>Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. :</p>
+<div class="highlight"><pre><span></span><code>dpkg --add-architecture i386
+</code></pre></div>
+
+<p>Puis mettre à jour les paquets :</p>
+<div class="highlight"><pre><span></span><code>apt-get update
+apt-get upgrade
+apt-get install -f
+</code></pre></div>
+
+<p>Installer Skype en n'oubliant pas de remplacer "x" par la bonne version :</p>
+<div class="highlight"><pre><span></span><code>dpkg -i skype-debian_x_i386.deb
+</code></pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2014-03-21-installation-de-firefox-sur-debian.html">Installation de Firefox sur Debian</a></h2>
     <p>
       Posté le ven. 21 mars 2014 &#8226;
@@ -121,46 +148,46 @@ Tags :
 </code></pre></div>
 
 <p>Créer un fichier config.lua :</p>
-<div class="highlight"><pre><span></span><code>touch config.lua
+<div class="highlight"><pre><span></span><code><span class="n">touch config.lua</span>
 </code></pre></div>
 
 <p>Maintenant je décide de faire un fichier de configuration par boite
 email.</p>
 <p>Ici gmail :</p>
-<div class="highlight"><pre><span></span><code><span class="n">cat</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">gmail</span><span class="p">.</span><span class="n">lua</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">EOF</span><span class="w"></span>
-<span class="n">gmail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IMAP</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;imap.gmail.com&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mail@gmail.com&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mon_mot_de_passe&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">ssl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ssl3&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="err">}</span><span class="w"></span>
-<span class="n">EOF</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">cat</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">gmail</span><span class="p">.</span><span class="n">lua</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">EOF</span>
+<span class="n">gmail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IMAP</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;imap.gmail.com&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mail@gmail.com&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mon_mot_de_passe&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ssl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ssl3&#39;</span><span class="p">,</span>
+<span class="err">}</span>
+<span class="n">EOF</span>
 </code></pre></div>
 
 <p>Et un pour Yahoo :</p>
-<div class="highlight"><pre><span></span><code><span class="n">cat</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">yahoo</span><span class="p">.</span><span class="n">lua</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">EOF</span><span class="w"></span>
-<span class="n">yahoo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IMAP</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;imap.yahoo.com&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mail@yahoo.com&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mon_mot_de_passe&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">ssl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ssl3&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="err">}</span><span class="w"></span>
-<span class="n">EOF</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">cat</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">yahoo</span><span class="p">.</span><span class="n">lua</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">EOF</span>
+<span class="n">yahoo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IMAP</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;imap.yahoo.com&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mail@yahoo.com&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mon_mot_de_passe&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ssl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ssl3&#39;</span><span class="p">,</span>
+<span class="err">}</span>
+<span class="n">EOF</span>
 </code></pre></div>
 
 <p>Ajouter nos boites dans le fichier de config avec des filtres :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">if_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">os</span>.<span class="k">getenv</span><span class="ss">(</span><span class="s1">&#39;HOME&#39;</span><span class="ss">)</span><span class="w"> </span>..<span class="w"> </span><span class="s1">&#39;/.imapfilter/&#39;</span><span class="w"></span>
-<span class="o">--</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">inclus</span><span class="w"> </span><span class="nv">nos</span><span class="w"> </span><span class="nv">comptes</span><span class="w"> </span><span class="nv">imap</span>…<span class="w"></span>
-<span class="nv">dofile</span><span class="ss">(</span><span class="nv">if_dir</span><span class="w"> </span>..<span class="w"> </span><span class="s2">&quot;gmail.lua&quot;</span><span class="ss">)</span><span class="w"></span>
-<span class="nv">dofile</span><span class="ss">(</span><span class="nv">if_dir</span><span class="w"> </span>..<span class="w"> </span><span class="s2">&quot;yahoo.lua&quot;</span><span class="ss">)</span><span class="w"></span>
-<span class="o">--</span><span class="w"> </span><span class="nv">nos</span><span class="w"> </span><span class="nv">options</span><span class="w"></span>
-<span class="nv">options</span>.<span class="nb">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">120</span><span class="w"></span>
-<span class="o">--</span><span class="w"> </span><span class="nv">filtres</span><span class="w"> </span><span class="nv">pour</span><span class="w"> </span><span class="nv">le</span><span class="w"> </span><span class="nv">compte</span><span class="w"> </span><span class="nv">gmail</span><span class="w"> </span><span class="ss">(</span><span class="nv">on</span><span class="w"> </span><span class="nv">copie</span><span class="w"> </span><span class="nv">les</span><span class="w"> </span><span class="nv">messages</span><span class="w"> </span><span class="nv">non</span><span class="w"> </span><span class="nv">lus</span><span class="w"> </span><span class="nv">dans</span><span class="w"> </span><span class="nv">la</span><span class="w"> </span><span class="nv">boite</span><span class="w"> </span><span class="s2">&quot;nouveaux&quot;</span><span class="ss">)</span><span class="w"></span>
-<span class="nv">nonlugmail</span><span class="o">=</span><span class="nv">gmail</span>.<span class="nv">INBOX</span>:<span class="nv">is_unseen</span><span class="ss">()</span><span class="w"></span>
-<span class="nv">nonlugmail</span>:<span class="nv">copy_message</span><span class="ss">(</span><span class="nv">gmail</span>[<span class="s1">&#39;nouveaux&#39;</span>]<span class="ss">)</span><span class="w"></span>
-<span class="o">--</span><span class="w"> </span><span class="nv">filtres</span><span class="w"> </span><span class="nv">pour</span><span class="w"> </span><span class="nv">le</span><span class="w"> </span><span class="nv">compte</span><span class="w"> </span><span class="nv">yahoo</span><span class="w"> </span><span class="ss">(</span><span class="nv">on</span><span class="w"> </span><span class="nv">supprime</span><span class="w"> </span><span class="nv">tous</span><span class="w"> </span><span class="nv">les</span><span class="w"> </span><span class="nv">messages</span><span class="w"> </span><span class="nv">lus</span><span class="ss">)</span><span class="w"></span>
-<span class="nv">del_read_yahoo</span><span class="o">=</span><span class="nv">yahoo</span>.<span class="nv">INBOX</span>:<span class="nv">is_seen</span><span class="ss">()</span><span class="w"></span>
-<span class="nv">del_read_yahoo</span>:<span class="nv">delete_messages</span><span class="ss">()</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">if_dir = os.getenv(&#39;HOME&#39;) .. &#39;/.imapfilter/&#39;</span>
+<span class="n">-- on inclus nos comptes imap…</span>
+<span class="n">dofile(if_dir .. &quot;gmail.lua&quot;)</span>
+<span class="n">dofile(if_dir .. &quot;yahoo.lua&quot;)</span>
+<span class="n">-- nos options</span>
+<span class="n">options.timeout = 120</span>
+<span class="n">-- filtres pour le compte gmail (on copie les messages non lus dans la boite &quot;nouveaux&quot;)</span>
+<span class="n">nonlugmail=gmail.INBOX:is_unseen()</span>
+<span class="n">nonlugmail:copy_message(gmail[&#39;nouveaux&#39;])</span>
+<span class="n">-- filtres pour le compte yahoo (on supprime tous les messages lus)</span>
+<span class="n">del_read_yahoo=yahoo.INBOX:is_seen()</span>
+<span class="n">del_read_yahoo:delete_messages()</span>
 </code></pre></div>
 
 <p>Maintenant c'est à vous de faire vos propres filtres. Une fois
@@ -215,15 +242,15 @@ que ma ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
 </code></pre></div>
 
 <p>Or, quand je fais un diff on ne voit pas tous les caractères :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="nv">diff</span><span class="w"> </span><span class="nv">HEAD</span><span class="o">~</span><span class="mi">1</span><span class="w"> </span><span class="nv">HEAD</span><span class="w"></span>
-<span class="nv">diff</span><span class="w"> </span><span class="o">--</span><span class="nv">git</span><span class="w"> </span><span class="nv">a</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"></span>
-<span class="nv">new</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="nv">mode</span><span class="w"> </span><span class="mi">100644</span><span class="w"></span>
-<span class="nv">index</span><span class="w"> </span><span class="mi">0000000</span>..<span class="mi">235</span><span class="nv">a891</span><span class="w"></span>
-<span class="o">---</span><span class="w"> </span><span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">null</span><span class="w"></span>
-<span class="o">+++</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"></span>
-@@<span class="w"> </span><span class="o">-</span><span class="mi">0</span>,<span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="w"> </span>@@<span class="w"></span>
-<span class="o">+</span><span class="nv">ligne</span><span class="w"> </span><span class="nv">avec</span><span class="w"> </span><span class="nv">un</span><span class="w"> </span><span class="nv">peu</span><span class="w"> </span><span class="nv">de</span><span class="w"> </span><span class="nv">texte</span><span class="w"> </span><span class="nv">ici</span><span class="w"> </span><span class="nv">nous</span><span class="w"> </span><span class="nv">avons</span><span class="w"> </span><span class="mi">66</span><span class="w"> </span><span class="nv">caract</span>è\<span class="w"></span>
-<span class="nv">No</span><span class="w"> </span><span class="nv">newline</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">file</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="nv">diff</span><span class="w"> </span><span class="nv">HEAD</span><span class="o">~</span><span class="mi">1</span><span class="w"> </span><span class="nv">HEAD</span>
+<span class="nv">diff</span><span class="w"> </span><span class="o">--</span><span class="nv">git</span><span class="w"> </span><span class="nv">a</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span>
+<span class="nv">new</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="nv">mode</span><span class="w"> </span><span class="mi">100644</span>
+<span class="nv">index</span><span class="w"> </span><span class="mi">0000000</span>..<span class="mi">235</span><span class="nv">a891</span>
+<span class="o">---</span><span class="w"> </span><span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">null</span>
+<span class="o">+++</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span>
+@@<span class="w"> </span><span class="o">-</span><span class="mi">0</span>,<span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="w"> </span>@@
+<span class="o">+</span><span class="nv">ligne</span><span class="w"> </span><span class="nv">avec</span><span class="w"> </span><span class="nv">un</span><span class="w"> </span><span class="nv">peu</span><span class="w"> </span><span class="nv">de</span><span class="w"> </span><span class="nv">texte</span><span class="w"> </span><span class="nv">ici</span><span class="w"> </span><span class="nv">nous</span><span class="w"> </span><span class="nv">avons</span><span class="w"> </span><span class="mi">66</span><span class="w"> </span><span class="nv">caract</span>è\
+<span class="nv">No</span><span class="w"> </span><span class="nv">newline</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">file</span>
 </code></pre></div>
 
 <p>Pour résoudre ce problème il faut soit ajouter <em>GIT_PAGER=""</em> avant la
@@ -232,15 +259,15 @@ commande <em>git diff</em> soit ajouter dans son fichier de config git :</p>
 </code></pre></div>
 
 <p>Voilà ce que ça donne avec GIT_PAGER :</p>
-<div class="highlight"><pre><span></span><code><span class="nv">GIT_PAGER</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="nv">git</span><span class="w"> </span><span class="nv">diff</span><span class="w"> </span><span class="nv">HEAD</span><span class="o">~</span><span class="mi">1</span><span class="w"> </span><span class="nv">HEAD</span><span class="w"></span>
-<span class="nv">diff</span><span class="w"> </span><span class="o">--</span><span class="nv">git</span><span class="w"> </span><span class="nv">a</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"></span>
-<span class="nv">new</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="nv">mode</span><span class="w"> </span><span class="mi">100644</span><span class="w"></span>
-<span class="nv">index</span><span class="w"> </span><span class="mi">0000000</span>..<span class="mi">235</span><span class="nv">a891</span><span class="w"></span>
-<span class="o">---</span><span class="w"> </span><span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">null</span><span class="w"></span>
-<span class="o">+++</span><span class="w"> </span><span class="nv">b</span><span class="o">/</span><span class="nv">test</span>.<span class="nv">txt</span><span class="w"></span>
-@@<span class="w"> </span><span class="o">-</span><span class="mi">0</span>,<span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="w"> </span>@@<span class="w"></span>
-<span class="o">+</span><span class="nv">ligne</span><span class="w"> </span><span class="nv">avec</span><span class="w"> </span><span class="nv">un</span><span class="w"> </span><span class="nv">peu</span><span class="w"> </span><span class="nv">de</span><span class="w"> </span><span class="nv">texte</span><span class="w"> </span><span class="nv">ici</span><span class="w"> </span><span class="nv">nous</span><span class="w"> </span><span class="nv">avons</span><span class="w"> </span><span class="mi">66</span><span class="w"> </span><span class="nv">caract</span>è<span class="nv">res</span><span class="w"> </span><span class="nv">affich</span>é<span class="nv">s</span>.\<span class="w"></span>
-<span class="nv">No</span><span class="w"> </span><span class="nv">newline</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">file</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>GIT_PAGER=&quot;&quot; git diff HEAD~1 HEAD
+diff --git a/test.txt b/test.txt
+new file mode 100644
+index 0000000..235a891
+--- /dev/null
++++ b/test.txt
+@@ -0,0 +1 @@
++ligne avec un peu de texte ici nous avons 66 caractères affichés.\
+No newline at end of file
 </code></pre></div>
   </div>
   <hr />
@@ -275,12 +302,12 @@ Unmount of all volumes on disk2 was successful
 
 <p>Maintenant on copie xubuntu depuis notre dossier téléchargements vers
 cette clé usb :</p>
-<div class="highlight"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">dd</span><span class="w"> </span><span class="k">if</span><span class="o">=~/</span><span class="n">Downloads</span><span class="o">/</span><span class="n">xubuntu</span><span class="o">-</span><span class="mf">13.10</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">i386</span><span class="o">.</span><span class="n">iso</span><span class="w"> </span><span class="n">of</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">rdisk2</span><span class="w"> </span><span class="n">bs</span><span class="o">=</span><span class="mi">1</span><span class="n">m</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">dd</span><span class="w"> </span><span class="k">if</span><span class="o">=~/</span><span class="n">Downloads</span><span class="o">/</span><span class="n">xubuntu</span><span class="o">-</span><span class="mf">13.10</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">i386</span><span class="o">.</span><span class="n">iso</span><span class="w"> </span><span class="n">of</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">rdisk2</span><span class="w"> </span><span class="n">bs</span><span class="o">=</span><span class="mi">1</span><span class="n">m</span>
 
-<span class="n">Password</span><span class="p">:</span><span class="w"></span>
-<span class="mi">834</span><span class="o">+</span><span class="mi">0</span><span class="w"> </span><span class="n">records</span><span class="w"> </span><span class="ow">in</span><span class="w"></span>
-<span class="mi">834</span><span class="o">+</span><span class="mi">0</span><span class="w"> </span><span class="n">records</span><span class="w"> </span><span class="n">out</span><span class="w"></span>
-<span class="mi">874512384</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="n">transferred</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="mf">137.915395</span><span class="w"> </span><span class="n">secs</span><span class="w"> </span><span class="p">(</span><span class="mi">6340934</span><span class="w"> </span><span class="n">bytes</span><span class="o">/</span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
+<span class="n">Password</span><span class="p">:</span>
+<span class="mi">834</span><span class="o">+</span><span class="mi">0</span><span class="w"> </span><span class="n">records</span><span class="w"> </span><span class="ow">in</span>
+<span class="mi">834</span><span class="o">+</span><span class="mi">0</span><span class="w"> </span><span class="n">records</span><span class="w"> </span><span class="n">out</span>
+<span class="mi">874512384</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="n">transferred</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="mf">137.915395</span><span class="w"> </span><span class="n">secs</span><span class="w"> </span><span class="p">(</span><span class="mi">6340934</span><span class="w"> </span><span class="n">bytes</span><span class="o">/</span><span class="n">sec</span><span class="p">)</span>
 </code></pre></div>
 
 <p>Puis on éjecte proprement la clé usb :</p>
@@ -350,22 +377,6 @@ Tags :
 <p><code>\%U2028</code> Le caractère que l'on recherche unicode "2028"</p>
 <p><code>//</code> par rien (1er slash sépare la recherche par ce qu'on remplace, le second pour dire la fin de ce qu'on remplace).</p>
 <p><code>g</code> dans tout le fichier (global).</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2013-11-13-crontab-e-files.html">crontab -e file(s)</a></h2>
-    <p>
-      Posté le mer. 13 novembre 2013 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/crontab.html">crontab</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
-  </header>
-  <div>
-      <p>Ou se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?</p>
-<p>C'est une bonne question n'est-ce pas ?</p>
-<p>La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
-debian, a voir sur d'autres distribs)</p>
   </div>
 </article>
 
