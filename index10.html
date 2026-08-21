@@ -50,6 +50,28 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2011-06-30-elément-cliqué-en-js.html">Elément cliqué en js</a></h2>
+    <p>
+      Posté le jeu. 30 juin 2011 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/javascript.html">javascript</a>,      <a href="https://www.choiz.fr/tag/code.html">code</a>    </p>
+  </header>
+  <div>
+      <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :</p>
+<div class="highlight"><pre><span></span><code><span class="n">function</span><span class="w"> </span><span class="n">checkclick</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">window</span><span class="o">.</span><span class="n">event</span><span class="p">;</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">target</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">srcElement</span><span class="p">;</span>
+<span class="w">    </span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">document</span><span class="o">.</span><span class="n">onclick</span><span class="o">=</span><span class="n">checkclick</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Pratique pour faire du débug.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2011-05-30-patch-diff.html">Patch & diff</a></h2>
     <p>
       Posté le lun. 30 mai 2011 &#8226;
@@ -284,51 +306,6 @@ fonctionne pas avec l'attribut "onclick"…</p>
 <p>Par :</p>
 <div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">mavar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fonctionAffichage();&#39;</span><span class="p">;</span>
 <span class="o">$</span><span class="p">(</span><span class="s2">&quot;#code&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">removeAttr</span><span class="p">(</span><span class="s1">&#39;onclick&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">eval</span><span class="p">(</span><span class="n">mavar</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
-</code></pre></div>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Commande SVN pour ajouter des keywords</a></h2>
-    <p>
-      Posté le lun. 25 octobre 2010 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/svn.html">svn</a>    </p>
-  </header>
-  <div>
-      <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
-informations dans vos projets il suffit de taper cette commande :</p>
-<div class="highlight"><pre><span></span><code>svn propset svn:keywords &quot;Id&quot; index.php
-</code></pre></div>
-
-<p>Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php</p>
-<p>Pour afficher l'Id dans votre fichier index.php ajouter dans celui-ci :</p>
-<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Id</span><span class="o">:</span><span class="p">$</span>
-</code></pre></div>
-
-<p>Une fois le fichier versionné vous obtiendrez :</p>
-<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Id</span><span class="o">:</span><span class="w"> </span><span class="nv">ajax</span>\<span class="nv">_modif</span><span class="o">.</span><span class="nv">php</span><span class="w"> </span><span class="mi">481</span><span class="w"> </span><span class="mi">2010</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">25</span><span class="w"> </span><span class="mi">12</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mi">50</span><span class="nv">Z</span><span class="w"> </span><span class="nv">choiz</span><span class="w"> </span><span class="p">$</span>
-</code></pre></div>
-
-<p>D'autres keywords sont disponible tel que :</p>
-<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Revision</span><span class="o">:</span><span class="p">$</span>
-<span class="p">$</span><span class="nv">Date</span><span class="o">:</span><span class="p">$</span>
-<span class="p">$</span><span class="nv">Author</span><span class="o">:</span><span class="p">$</span>
-<span class="p">$</span><span class="nv">URL</span><span class="o">:</span><span class="p">$</span>
-</code></pre></div>
-
-<p>Vous pouvez les ajouter les uns à la suite des autres par exemple pour
-notre fichier index.php je veux ajouter les 4 keywords précédents grâce
-à la commande :</p>
-<div class="highlight"><pre><span></span><code>svn propset svn:keywords &quot;Revision Date Author URL&quot; index.php
-</code></pre></div>
-
-<p>Ce qui affichera :</p>
-<div class="highlight"><pre><span></span><code><span class="p">$</span><span class="nv">Revision</span><span class="o">:</span><span class="w"> </span><span class="mi">481</span><span class="w"> </span><span class="p">$</span>
-<span class="p">$</span><span class="nv">Date</span><span class="o">:</span><span class="w"> </span><span class="mi">2010</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">25</span><span class="w"> </span><span class="mi">14</span><span class="o">:</span><span class="mi">02</span><span class="o">:</span><span class="mi">50</span><span class="w"> </span><span class="o">+</span><span class="mi">0200</span><span class="w"> </span><span class="p">(</span><span class="nv">lun</span><span class="o">.</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="nv">oct</span><span class="o">.</span><span class="w"> </span><span class="mi">2010</span><span class="p">)</span><span class="w"> </span><span class="p">$</span>
-<span class="p">$</span><span class="nv">Author</span><span class="o">:</span><span class="w"> </span><span class="nv">choiz</span><span class="w"> </span><span class="p">$</span>
-<span class="p">$</span><span class="nv">URL</span><span class="o">:</span><span class="w"> </span><span class="nv">svn</span><span class="o">://</span><span class="nv">svn</span><span class="o">.</span><span class="nv">choiz</span><span class="o">.</span><span class="nv">fr</span><span class="o">/</span><span class="nv">projet</span><span class="o">/</span><span class="nv">branches</span><span class="o">/</span><span class="nv">prod</span><span class="o">/</span><span class="no">ind</span><span class="nv">ex</span><span class="o">.</span><span class="nv">php</span><span class="w"> </span><span class="p">$</span>
 </code></pre></div>
   </div>
 </article>

@@ -50,6 +50,29 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2011-06-30-elément-cliqué-en-js.html">Elément cliqué en js</a></h2>
+    <p>
+      Posté le jeu. 30 juin 2011 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/javascript.html">javascript</a>,      <a href="https://www.choiz.fr/tag/code.html">code</a>    </p>
+  </header>
+  <div>
+      <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :</p>
+<div class="highlight"><pre><span></span><code><span class="n">function</span><span class="w"> </span><span class="n">checkclick</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">window</span><span class="o">.</span><span class="n">event</span><span class="p">;</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">target</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">srcElement</span><span class="p">;</span>
+<span class="w">    </span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">document</span><span class="o">.</span><span class="n">onclick</span><span class="o">=</span><span class="n">checkclick</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Pratique pour faire du débug.</p>
+      <a class="btn" href="https://www.choiz.fr/2011-06-30-elément-cliqué-en-js.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2011-05-30-patch-diff.html">Patch & diff</a></h2>
     <p>
       Posté le lun. 30 mai 2011 &#8226;
@@ -244,26 +267,6 @@ fonctionne pas avec l'attribut "onclick"…</p>
 <p>Par :</p>
 <div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">mavar …</span></code></pre></div>
       <a class="btn" href="https://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Commande SVN pour ajouter des keywords</a></h2>
-    <p>
-      Posté le lun. 25 octobre 2010 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/svn.html">svn</a>    </p>
-  </header>
-  <div>
-      <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
-informations dans vos projets il suffit de taper cette commande :</p>
-<div class="highlight"><pre><span></span><code>svn propset svn:keywords &quot;Id&quot; index.php
-</code></pre></div>
-
-<p>Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php</p>
-<p>Pour afficher l'Id dans votre fichier index.php ajouter dans …</p>
-      <a class="btn" href="https://www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Lire la suite</a>
   </div>
 </article>
 

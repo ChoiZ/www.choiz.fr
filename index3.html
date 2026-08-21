@@ -50,6 +50,52 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html">Passage en SSL du blog</a></h2>
+    <p>
+      Posté le jeu. 28 avril 2016 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/blog.html">blog</a>,      <a href="https://www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="https://www.choiz.fr/tag/github.html">github</a>    </p>
+  </header>
+  <div>
+      <p>J'utilise pelican sur github pour écrire mon blog depuis quelques temps, voir les
+articles précédents sur le sujet.</p>
+<p>J'ai décidé de passer le blog en https, avec un certificat gratuit let's encrypt.</p>
+<p>Pour mettre en place un certificat SSL sur "github page" il faut avoir un serveur web qui
+fait reverse proxy. J'utilise donc apache avec la configuration suivante :</p>
+<ul>
+<li>Un vhost pour "choiz.fr" qui redirige le port 80 de "choiz.fr" vers le 443 de "www.choiz.fr".</li>
+<li>Un vhost pour "choiz.fr" qui redirige le port 443 (avec un certificat ssl
+valide) de "choiz.fr" vers le 443 de
+"www.choiz.fr".</li>
+<li>Un vhost pour "www.choiz.fr" qui redirige le port 80 de "www.choiz.fr" vers
+le 443 de "www.choiz.fr".</li>
+<li>Et un vhost avec le certificat SSL ainsi que le reverse proxy qui fait croire a
+github que je tape directement l'url "http://choiz.github.io".</li>
+</ul>
+<p>Ici la configuration du dernier vhost :</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;IfModule</span><span class="w"> </span><span class="err">mod_ssl.c</span><span class="nt">&gt;</span>
+<span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="err">*:443</span><span class="nt">&gt;</span>
+<span class="w">    </span>ServerName<span class="w"> </span>www.choiz.fr
+
+<span class="w">    </span>SSLProxyEngine<span class="w"> </span>On
+<span class="w">    </span>ProxyRequests<span class="w"> </span>Off
+<span class="w">    </span>ProxyPreserveHost<span class="w"> </span>Off
+<span class="w">    </span>ProxyPass<span class="w"> </span>/<span class="w"> </span>https://choiz.github.io/
+<span class="w">    </span>ProxyPassReverse<span class="w"> </span>/<span class="w"> </span>https://choiz.github.io/
+<span class="w">    </span>ProxyPassReverse<span class="w"> </span>/<span class="w"> </span>http://choiz.github.io/
+
+<span class="w">    </span>#<span class="w"> </span>puis<span class="w"> </span>la<span class="w"> </span>config<span class="w"> </span>du<span class="w"> </span>SSL
+<span class="w">    </span>SSLEngine<span class="w"> </span>On
+<span class="w">    </span>SSLCertificateFile<span class="w"> </span>…
+<span class="w">    </span>SSLCertificateKeyFile<span class="w"> </span>…
+<span class="nt">&lt;/VirtualHost&gt;</span>
+<span class="nt">&lt;/IfModule&gt;</span>
+</code></pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Mise à jour d'un kernel gentoo</a></h2>
     <p>
       Posté le sam. 21 novembre 2015 &#8226;
@@ -800,25 +846,6 @@ la commande :</p>
 <p>remote/origin/HEAD -&gt; origin/master</p>
 <p>remote/origin/master</p>
 </blockquote>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html">Migration de Tumblr à Pelican</a></h2>
-    <p>
-      Posté le jeu. 20 août 2015 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/blog.html">blog</a>    </p>
-  </header>
-  <div>
-      <p>J'ai testé pelican, lors de mon voyage à Bruxelles en Thalys le 15 Août
-2014. Depuis cette date je n'avais pas pris le temps de m'occuper de la
-migration de mon blog de tumblr vers pelican.</p>
-<p><a href="http://blog.getpelican.com/">Pelican</a> est un générateur de site
-statique, il est pratique pour la gestion des articles tel que mon blog.</p>
-<p>Il suffit de créer un fichier texte avec le contenu de l'article et
-l'envoyer sur github pour que celui-ci soit publié.</p>
   </div>
 </article>
 

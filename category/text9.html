@@ -50,6 +50,28 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2011-11-30-flash-sous-debian.html">Flash sous Debian</a></h2>
+    <p>
+      Posté le mer. 30 novembre 2011 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
+  </header>
+  <div>
+      <p>Lors de l'installation de Debian sur mon poste au travail j'ai eu la
+surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
+chez Deezer c'est un peu problèmatique.</p>
+<p>J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
+ceci :</p>
+<div class="highlight"><pre><span></span><code>vi /etc/apt/source.list
+</code></pre></div>
+
+<p>Ajouter contrib non-free aux différentes sources …</p>
+      <a class="btn" href="https://www.choiz.fr/2011-11-30-flash-sous-debian.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2011-11-02-voir-les-fichiers-cachés-sur-lion.html">Voir les fichiers cachés sur Lion</a></h2>
     <p>
       Posté le mer. 02 novembre 2011 &#8226;
@@ -233,29 +255,6 @@ Tags :
 
 <p>Puis redémarrez le mac.</p>
       <a class="btn" href="https://www.choiz.fr/2011-07-05-suppression-des-dsstore.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2011-06-30-elément-cliqué-en-js.html">Elément cliqué en js</a></h2>
-    <p>
-      Posté le jeu. 30 juin 2011 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/javascript.html">javascript</a>,      <a href="https://www.choiz.fr/tag/code.html">code</a>    </p>
-  </header>
-  <div>
-      <p>Pour savoir quel élément est cliqué j'utilise ce petit bout de javascript :</p>
-<div class="highlight"><pre><span></span><code><span class="n">function</span><span class="w"> </span><span class="n">checkclick</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">window</span><span class="o">.</span><span class="n">event</span><span class="p">;</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">target</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">srcElement</span><span class="p">;</span>
-<span class="w">    </span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="n">document</span><span class="o">.</span><span class="n">onclick</span><span class="o">=</span><span class="n">checkclick</span><span class="p">;</span>
-</code></pre></div>
-
-<p>Pratique pour faire du débug.</p>
-      <a class="btn" href="https://www.choiz.fr/2011-06-30-elément-cliqué-en-js.html">Lire la suite</a>
   </div>
 </article>
 

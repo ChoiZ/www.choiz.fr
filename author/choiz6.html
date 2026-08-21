@@ -50,6 +50,31 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html">Suppression d'un caractère unicode dans Vim</a></h2>
+    <p>
+      Posté le dim. 19 janvier 2014 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/encoding.html">encoding</a>    </p>
+  </header>
+  <div>
+      <p>J'étais à la recherche de se caractère unicode dans vim :</p>
+<div class="highlight"><pre><span></span><code>&lt;U+2028&gt;
+</code></pre></div>
+
+<p>Pour pouvoir le supprimer j'ai utilisé la commande suivante :</p>
+<div class="highlight"><pre><span></span><code>:%s/\%U2028//g
+</code></pre></div>
+
+<p>Décortiquons la commande :</p>
+<p><code>:%s/</code> Recherche et remplace dans tout le fichier</p>
+<p><code>\%U2028</code> Le caractère que l'on recherche unicode "2028"</p>
+<p><code>//</code> par rien (1er slash sépare la recherche …</p>
+      <a class="btn" href="https://www.choiz.fr/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html">Lire la suite</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2013-11-13-crontab-e-files.html">crontab -e file(s)</a></h2>
     <p>
       Posté le mer. 13 novembre 2013 &#8226;
@@ -232,25 +257,6 @@ mais je n'étais pas dessus…</p>
 <p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master</em>. Or le seul
 qui …</p>
       <a class="btn" href="https://www.choiz.fr/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html">Installation disque dur Seagate 4To Debian</a></h2>
-    <p>
-      Posté le ven. 21 juin 2013 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/stockage.html">stockage</a>    </p>
-  </header>
-  <div>
-      <p>J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
-(Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec «
-Fdisk » et j'ai eu le message suivant :</p>
-<div class="highlight"><pre><span></span><code><span class="n">Warning</span><span class="o">:</span><span class="w"> </span><span class="n">invalid</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="mh">0x0000</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">partition</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">corrected</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">w</span><span class="o">(</span><span class="n">rite</span><span class="o">)</span>
-
-<span class="n">WARNING</span><span class="o">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="n">disk</span><span class="w"> </span><span class="k">is …</span></code></pre></div>
-      <a class="btn" href="https://www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html">Lire la suite</a>
   </div>
 </article>
 

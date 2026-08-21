@@ -50,6 +50,31 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Ajout dans mon .vimrc de matchadd() & highlight</a></h2>
+    <p>
+      Posté le ven. 27 avril 2012 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/vim.html">vim</a>,      <a href="https://www.choiz.fr/tag/config.html">config</a>,      <a href="https://www.choiz.fr/tag/file.html">file</a>    </p>
+  </header>
+  <div>
+      <p>Petit ajout dans mon fichier .vimrc :</p>
+<div class="highlight"><pre><span></span><code><span class="err">&quot; Highlight To do list with green background</span>
+<span class="err">highlight Todo ctermfg=black ctermbg=green guifg=black guibg=green</span>
+<span class="err">highlight Notice ctermfg=white ctermbg=blue guifg=white guibg=blue</span>
+<span class="err">highlight Fixme ctermfg=white ctermbg=red guifg=white guibg=red</span>
+<span class="err">&quot; Match todolist, notice, fixme</span>
+<span class="err">:call matchadd(&#39;Todo&#39;,&#39;[T|t][O|o][D|d][O|o]&#39;)</span>
+<span class="err">:call matchadd(&#39;Todo&#39;,&#39;[T|t][O|o] [D|d][O|o]&#39;)</span>
+<span class="err">:call matchadd(&#39;Notice&#39;,&#39;[N|n][O|o][T|t][I|i][C|c][E|e]&#39;)</span>
+<span class="err">:call matchadd(&#39;Notice&#39;,&#39;[N|n][O|o][T|t][E|e]&#39;)</span>
+<span class="err">:call matchadd(&#39;Fixme&#39;,&#39;[F|f][I|i][X|x][M|m][E|e]&#39;)</span>
+<span class="err">:call matchadd(&#39;Fixme&#39;,&#39;[F|f][I|i][X|x] [M|m][E|e]&#39;)</span>
+</code></pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2012-04-18-reprendre-la-main-sur-un-screen-pas-detached.html">Reprendre la main sur un Screen pas "detached"</a></h2>
     <p>
       Posté le mer. 18 avril 2012 &#8226;
@@ -513,35 +538,6 @@ se nomme : arandr :</p>
 
 <p>Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez
 le ARandR pour configurer les deux écrans.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2011-11-30-flash-sous-debian.html">Flash sous Debian</a></h2>
-    <p>
-      Posté le mer. 30 novembre 2011 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
-  </header>
-  <div>
-      <p>Lors de l'installation de Debian sur mon poste au travail j'ai eu la
-surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
-chez Deezer c'est un peu problèmatique.</p>
-<p>J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
-ceci :</p>
-<div class="highlight"><pre><span></span><code>vi /etc/apt/source.list
-</code></pre></div>
-
-<p>Ajouter contrib non-free aux différentes sources (sauf security) puis :</p>
-<div class="highlight"><pre><span></span><code>apt-get update
-
-apt-get install flashplugin-nonfree
-</code></pre></div>
-
-<p>En relançant Firefox j'ai bien flash player fonctionnel sur Deezer.</p>
-<p>Le package flashplugin étant nonfree Debian ne l'inclus pas directement
-lors de l'installation.</p>
   </div>
 </article>
 

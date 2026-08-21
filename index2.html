@@ -50,6 +50,62 @@
 
 <article>
   <header>
+    <h2><a href="https://www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html">Faire du NAT avec Proxmox</a></h2>
+    <p>
+      Posté le dim. 15 octobre 2017 &#8226;
+Tags :
+      <a href="https://www.choiz.fr/tag/network.html">network</a>,      <a href="https://www.choiz.fr/tag/proxmox.html">proxmox</a>    </p>
+  </header>
+  <div>
+      <p>L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
+la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut
+faire la même chose.</p>
+<p>Ip Public de proxmox : 11.22.33.44
+Ip Privé de proxmox : 10.0.0.254</p>
+<p>Je me connect en ssh à Proxmox et je modifie le fichier <code>/etc/network/interfaces</code>
+j'ajoute à la fin du fichier :</p>
+<div class="highlight"><pre><span></span><code><span class="kt">auto</span><span class="w"> </span><span class="nx">vmbr2</span>
+<span class="nx">iface</span><span class="w"> </span><span class="nx">vmbr2</span><span class="w"> </span><span class="nx">inet</span><span class="w"> </span><span class="nx">static</span>
+<span class="w">    </span><span class="nx">address</span><span class="w"> </span><span class="m m-Double">10.0.0.254</span>
+<span class="w">    </span><span class="nx">netmask</span><span class="w"> </span><span class="m m-Double">255.255.255.0</span>
+<span class="w">    </span><span class="nx">bridge_ports</span><span class="w"> </span><span class="nx">none</span>
+<span class="w">    </span><span class="nx">bridge_stp</span><span class="w"> </span><span class="nx">off</span>
+<span class="w">    </span><span class="nx">bridge_fd</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="nx">post</span><span class="o">-</span><span class="nx">up</span><span class="w"> </span><span class="nx">echo</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="o">/</span><span class="nx">proc</span><span class="o">/</span><span class="nx">sys</span><span class="o">/</span><span class="nx">net</span><span class="o">/</span><span class="nx">ipv4</span><span class="o">/</span><span class="nx">ip_forward</span>
+<span class="w">    </span><span class="nx">post</span><span class="o">-</span><span class="nx">up</span><span class="w"> </span><span class="nx">iptables</span><span class="w"> </span><span class="o">-</span><span class="nx">t</span><span class="w"> </span><span class="nx">nat</span><span class="w"> </span><span class="o">-</span><span class="nx">A</span><span class="w"> </span><span class="nx">POSTROUTING</span><span class="w"> </span><span class="o">-</span><span class="nx">s</span><span class="w"> </span><span class="err">&#39;</span><span class="m m-Double">10.0.0.0</span><span class="o">/</span><span class="mi">24</span><span class="err">&#39;</span><span class="w"> </span><span class="o">-</span><span class="nx">o</span><span class="w"> </span><span class="nx">vmbr0</span><span class="w"> </span><span class="o">-</span><span class="nx">j</span><span class="w"> </span><span class="nx">MASQUERADE</span>
+<span class="w">    </span><span class="nx">post</span><span class="o">-</span><span class="nx">down</span><span class="w"> </span><span class="nx">iptables</span><span class="w"> </span><span class="o">-</span><span class="nx">t</span><span class="w"> </span><span class="nx">nat</span><span class="w"> </span><span class="o">-</span><span class="nx">D</span><span class="w"> </span><span class="nx">POSTROUTING</span><span class="w"> </span><span class="o">-</span><span class="nx">s</span><span class="w"> </span><span class="err">&#39;</span><span class="m m-Double">10.0.0.0</span><span class="o">/</span><span class="mi">24</span><span class="err">&#39;</span><span class="w"> </span><span class="o">-</span><span class="nx">o</span><span class="w"> </span><span class="nx">vmbr0</span><span class="w"> </span><span class="o">-</span><span class="nx">j</span><span class="w"> </span><span class="nx">MASQUERADE</span>
+</code></pre></div>
+
+<p>On peut également ajouter si on veut différents ports qu'on ouvre vers
+l'exterieur vers tel ou tel VM ou conteneur.
+Par exemple j'ouvre le port 22 de mon conteneur avec l'ip 10.0.0.1 sur le port
+8022 de mon ip public :</p>
+<div class="highlight"><pre><span></span><code>    post-up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
+    post-down iptables -t nat -D PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
+</code></pre></div>
+
+<p>Ensuite enregistrer le fichier <code>/etc/network/interfaces</code> puis relancer les
+interfaces réseaux</p>
+<div class="highlight"><pre><span></span><code>service networking restart
+</code></pre></div>
+
+<p>Lorsque vous allez faire la configuration réseau d'une VM ou d'un conteneur, il
+suffit de renseigner une adresse ip de la plage 10.0.0.0/24</p>
+<p>Exemple :</p>
+<div class="highlight"><pre><span></span><code><span class="kt">auto</span><span class="w"> </span><span class="nx">eth0</span>
+<span class="nx">iface</span><span class="w"> </span><span class="nx">eth0</span><span class="w"> </span><span class="nx">inet</span><span class="w"> </span><span class="nx">static</span>
+<span class="w">    </span><span class="nx">address</span><span class="w"> </span><span class="m m-Double">10.0.0.1</span>
+<span class="w">    </span><span class="nx">netmask</span><span class="w"> </span><span class="m m-Double">255.255.255.0</span>
+<span class="w">    </span><span class="nx">gateway</span><span class="w"> </span><span class="m m-Double">10.0.0.254</span>
+</code></pre></div>
+
+<p>Puis faites un ping depuis votre conteneur vers l'ip 10.0.0.254, puis vers un
+site internet duckduckgo.com par exemple.</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://www.choiz.fr/2017-10-15-creer-un-partage-nfs.html">Créer un partage NFS</a></h2>
     <p>
       Posté le dim. 15 octobre 2017 &#8226;
@@ -517,52 +573,6 @@ par xubuntu ou autre).</p>
 <p>Pour l'instant : la carte son n'est pas reconnue et le pointeur de la souris
 disparait suite a la mise en veille… Mis a part ça la machine fonctionne très
 bien pour mon utilisation (des petits développements pendant mes trajets maison &lt;-&gt; travail).</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html">Passage en SSL du blog</a></h2>
-    <p>
-      Posté le jeu. 28 avril 2016 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/blog.html">blog</a>,      <a href="https://www.choiz.fr/tag/ssl.html">ssl</a>,      <a href="https://www.choiz.fr/tag/github.html">github</a>    </p>
-  </header>
-  <div>
-      <p>J'utilise pelican sur github pour écrire mon blog depuis quelques temps, voir les
-articles précédents sur le sujet.</p>
-<p>J'ai décidé de passer le blog en https, avec un certificat gratuit let's encrypt.</p>
-<p>Pour mettre en place un certificat SSL sur "github page" il faut avoir un serveur web qui
-fait reverse proxy. J'utilise donc apache avec la configuration suivante :</p>
-<ul>
-<li>Un vhost pour "choiz.fr" qui redirige le port 80 de "choiz.fr" vers le 443 de "www.choiz.fr".</li>
-<li>Un vhost pour "choiz.fr" qui redirige le port 443 (avec un certificat ssl
-valide) de "choiz.fr" vers le 443 de
-"www.choiz.fr".</li>
-<li>Un vhost pour "www.choiz.fr" qui redirige le port 80 de "www.choiz.fr" vers
-le 443 de "www.choiz.fr".</li>
-<li>Et un vhost avec le certificat SSL ainsi que le reverse proxy qui fait croire a
-github que je tape directement l'url "http://choiz.github.io".</li>
-</ul>
-<p>Ici la configuration du dernier vhost :</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;IfModule</span><span class="w"> </span><span class="err">mod_ssl.c</span><span class="nt">&gt;</span>
-<span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="err">*:443</span><span class="nt">&gt;</span>
-<span class="w">    </span>ServerName<span class="w"> </span>www.choiz.fr
-
-<span class="w">    </span>SSLProxyEngine<span class="w"> </span>On
-<span class="w">    </span>ProxyRequests<span class="w"> </span>Off
-<span class="w">    </span>ProxyPreserveHost<span class="w"> </span>Off
-<span class="w">    </span>ProxyPass<span class="w"> </span>/<span class="w"> </span>https://choiz.github.io/
-<span class="w">    </span>ProxyPassReverse<span class="w"> </span>/<span class="w"> </span>https://choiz.github.io/
-<span class="w">    </span>ProxyPassReverse<span class="w"> </span>/<span class="w"> </span>http://choiz.github.io/
-
-<span class="w">    </span>#<span class="w"> </span>puis<span class="w"> </span>la<span class="w"> </span>config<span class="w"> </span>du<span class="w"> </span>SSL
-<span class="w">    </span>SSLEngine<span class="w"> </span>On
-<span class="w">    </span>SSLCertificateFile<span class="w"> </span>…
-<span class="w">    </span>SSLCertificateKeyFile<span class="w"> </span>…
-<span class="nt">&lt;/VirtualHost&gt;</span>
-<span class="nt">&lt;/IfModule&gt;</span>
-</code></pre></div>
   </div>
 </article>
 
