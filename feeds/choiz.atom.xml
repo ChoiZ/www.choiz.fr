@@ -339,11 +339,11 @@ fichiers : commencer par le plus grand (l'année), et &lt;strong&gt;préciser de
 plus&lt;/strong&gt; uniquement quand on en a besoin. On obtient des versions courtes quand
 on déploie peu, des versions précises quand on enchaîne les mises en ligne, et
 un cache toujours à jour.&lt;/p&gt;</content><category term="text"/><category term="css"/><category term="js"/><category term="deploy"/><category term="cache"/><category term="version"/></entry><entry><title>Utiliser les Github Issues pour avoir des commentaires sur le blog</title><link href="https://www.choiz.fr/2020-04-13-utiliser-les-github-issues-pour-avoir-des-commentaires-sur-le-blog.html" rel="alternate"/><published>2020-04-13T14:13:51+02:00</published><updated>2020-04-13T14:13:51+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2020-04-13:/2020-04-13-utiliser-les-github-issues-pour-avoir-des-commentaires-sur-le-blog.html</id><summary type="html">&lt;p&gt;J'essaye depuis un certain temps de faire attention à ma vie privée sur Internet et j'évite d'être tracké.&lt;/p&gt;
-&lt;p&gt;J'essaye donc d'appliquer celà sur mon blog pour que l'affichage des pages soit plus rapide, que vous n'ayez pas 15 000 cookies etc…&lt;/p&gt;
+&lt;p&gt;J'essaye donc d'appliquer cela sur mon blog pour que l'affichage des pages soit plus rapide, que vous n'ayez pas 15 000 cookies etc…&lt;/p&gt;
 &lt;p&gt;Pour les commentaires j'utilisais disqus qui fonctionne très bien …&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'essaye depuis un certain temps de faire attention à ma vie privée sur Internet et j'évite d'être tracké.&lt;/p&gt;
-&lt;p&gt;J'essaye donc d'appliquer celà sur mon blog pour que l'affichage des pages soit plus rapide, que vous n'ayez pas 15 000 cookies etc…&lt;/p&gt;
+&lt;p&gt;J'essaye donc d'appliquer cela sur mon blog pour que l'affichage des pages soit plus rapide, que vous n'ayez pas 15 000 cookies etc…&lt;/p&gt;
 &lt;p&gt;Pour les commentaires j'utilisais disqus qui fonctionne très bien avec des sites statiques comme celui-ci qui est généré par pelican, mais il vous traque et n'est pas open source.&lt;/p&gt;
-&lt;p&gt;Ma recheche est donc la suivante :&lt;/p&gt;
+&lt;p&gt;Ma recherche est donc la suivante :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;un outil open source de gestion de commentaire&lt;/p&gt;
@@ -355,7 +355,7 @@ un cache toujours à jour.&lt;/p&gt;</content><category term="text"/><category t
 &lt;p&gt;qui fonctionne avec un site statique&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;J'ai trouvé &lt;a href="https://utteranc.es/"&gt;utterances&lt;/a&gt; qui est léger, open source, n'as pas de système de tracking, n'utilise pas de gros framework JavaScript, et se base les issues github pour stocker les commentaires.&lt;/p&gt;
+&lt;p&gt;J'ai trouvé &lt;a href="https://utteranc.es/"&gt;utterances&lt;/a&gt; qui est léger, open source, n'a pas de système de tracking, n'utilise pas de gros framework JavaScript, et se base les issues github pour stocker les commentaires.&lt;/p&gt;
 &lt;p&gt;Il faut donc que vous ayez un compte &lt;a href="https://github.com"&gt;github&lt;/a&gt; pour laisser un commentaire sur un article du blog.&lt;/p&gt;</content><category term="text"/><category term="blog"/><category term="github"/><category term="commentaire"/></entry><entry><title>Faire un va et vient avec des interrupteurs muraux Xiaomi</title><link href="https://www.choiz.fr/2020-04-12-faire-un-va-et-vient-avec-des-interrupteurs-muraux-xiaomi.html" rel="alternate"/><published>2020-04-12T17:37:45+02:00</published><updated>2020-04-12T17:37:45+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2020-04-12:/2020-04-12-faire-un-va-et-vient-avec-des-interrupteurs-muraux-xiaomi.html</id><summary type="html">&lt;p&gt;J'ai recherché longtemps comment faire un va et vient avec des interrupteurs muraux Xiaomi.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Xiaomi switch wall" src="https://www.choiz.fr/images/xiaomi-switch-wall.png"&gt;&lt;/p&gt;
 &lt;p&gt;La seule solution proposée était de mettre :&lt;/p&gt;
@@ -378,19 +378,19 @@ un cache toujours à jour.&lt;/p&gt;</content><category term="text"/><category t
 &lt;p&gt;un interrupteur sans fil.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Cette solution ne me convient pas car j'ai des interrupteurs encastrés, je n'ai pas envie d'avoir un interrupteur sans fil collé, alors que j'ai potentiellement de l'electricité a cet endroit et je ne veux pas changer les piles…&lt;/p&gt;
+&lt;p&gt;Cette solution ne me convient pas car j'ai des interrupteurs encastrés, je n'ai pas envie d'avoir un interrupteur sans fil collé, alors que j'ai potentiellement de l'électricité à cet endroit et je ne veux pas changer les piles…&lt;/p&gt;
 &lt;p&gt;J'ai donc pas mal fait de recherches, tests etc… pour au final trouver comment faire un va et vient "classique" comme on le fait avec des interrupteurs standards.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Schéma va et vient" src="https://www.choiz.fr/images/schema-va-et-vient-classic.png"&gt;&lt;/p&gt;
 &lt;p&gt;Pour que le va et vient fonctionne avec deux boutons xiaomi filaire il vous faut :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;un va et vient electrique type lumière d'escalier&lt;/p&gt;
+&lt;p&gt;un va et vient électrique type lumière d'escalier&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;un circuit classique type lumière d'une entrée (avec un seul interrupteur) qui soit a coté d'un des deux interrupteurs va et vient&lt;/p&gt;
+&lt;p&gt;un circuit classique type lumière d'une entrée (avec un seul interrupteur) qui soit à côté d'un des deux interrupteurs va et vient&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;un interrupteur deux boutons Xiaomi (un bouton sera alimenté par le deuxième circuit electrique, l'autre bouton sera pour le va et vient (slave) et n'aura pas besoin d'alimentation car il fonctionnera en sans fil et sans pile, il enverra l'ordre au master d'allumer ou éteindre)&lt;/p&gt;
+&lt;p&gt;un interrupteur deux boutons Xiaomi (un bouton sera alimenté par le deuxième circuit électrique, l'autre bouton sera pour le va et vient (slave) et n'aura pas besoin d'alimentation car il fonctionnera en sans fil et sans pile, il enverra l'ordre au master d'allumer ou éteindre)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;un interrupteur un bouton (ou deux boutons) pour le deuxième bouton du va et vient (master).&lt;/p&gt;
@@ -405,7 +405,7 @@ un cache toujours à jour.&lt;/p&gt;</content><category term="text"/><category t
 &lt;p&gt;un cache (obturateur) si on remplace 2 interrupteurs un bouton par un interrupteur deux boutons.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Je prend l'exemple d'un va et vient dans un escalier (RDC - premier étage), avec 2 interrupteurs en bas :&lt;/p&gt;
+&lt;p&gt;Je prends l'exemple d'un va et vient dans un escalier (RDC - premier étage), avec 2 interrupteurs en bas :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;un qui alimente l'ampoule de l'entrée&lt;/p&gt;
@@ -415,7 +415,7 @@ un cache toujours à jour.&lt;/p&gt;</content><category term="text"/><category t
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;ATTENTION :&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Avant toute intervention sur votre installation électrique, couper le disjoncteur général. Je ne pourrais en aucun cas être tenu pour responsable de vos agissements. Ce document est uniquement a titre d'information. Je ne pourrait être tenu pour responsable de tout dommages ou incidents.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Avant toute intervention sur votre installation électrique, couper le disjoncteur général. Je ne pourrais en aucun cas être tenu pour responsable de vos agissements. Ce document est uniquement à titre d'information. Je ne pourrais être tenu pour responsable de tous dommages ou incidents.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Schéma va et vient xiaomi" src="https://www.choiz.fr/images/schema-va-et-vient-xiaomi.png"&gt;&lt;/p&gt;
 &lt;p&gt;Je démonte au RDC, mon interrupteur de l'entrée, et mon ancien interrupteur avec va et vient classique, je me retrouve donc avec sur l'interrupteur de l'entrée :&lt;/p&gt;
 &lt;ul&gt;
@@ -441,10 +441,10 @@ un cache toujours à jour.&lt;/p&gt;</content><category term="text"/><category t
 &lt;p&gt;la phase sur le "L"&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;le câble allant vers la lumière de l'entrée sur le "L1" ou "L2" a voir quel bouton vous souhaitez utiliser pour l'entrée et votre va et vient&lt;/p&gt;
+&lt;p&gt;le câble allant vers la lumière de l'entrée sur le "L1" ou "L2" à voir quel bouton vous souhaitez utiliser pour l'entrée et votre va et vient&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Je prend mon wago ou équivalent, je branche :&lt;/p&gt;
+&lt;p&gt;Je prends mon wago ou équivalent, je branche :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;la phase de l'interrupteur va et vient (bas)&lt;/p&gt;
@@ -461,21 +461,21 @@ un cache toujours à jour.&lt;/p&gt;</content><category term="text"/><category t
 &lt;/ul&gt;
 &lt;p&gt;Au premier étage j'ai toujours mon interrupteur classique fonctionnel je le laisse connecté pour savoir laquelle des deux navettes est sur notre wago (avec la phase). L'autre navette n'est pas connectée pour l'instant.&lt;/p&gt;
 &lt;p&gt;N'oubliez pas de re-couper le disjoncteur !&lt;/p&gt;
-&lt;p&gt;Démonter l'interrupteur du haut. Marquer d'un morceau de scotch electrique rouge de préférence la navette avec la phase.&lt;/p&gt;
+&lt;p&gt;Démonter l'interrupteur du haut. Marquer d'un morceau de scotch électrique rouge de préférence la navette avec la phase.&lt;/p&gt;
 &lt;p&gt;Sur l'autre navette mettre le deuxième wago une borne.&lt;/p&gt;
 &lt;p&gt;Connecter votre interrupteur Xiaomi du haut un bouton (ou deux boutons) en plaçant :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;la phase obtenu par le Wago et par la navette avec le scotch rouge sur la borne "L" de votre interrupteur&lt;/p&gt;
+&lt;p&gt;la phase obtenue par le Wago et par la navette avec le scotch rouge sur la borne "L" de votre interrupteur&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;le fil précédent allant sur votre ampoule sur la borne "L1" de votre interrupteur.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Refixer l'interrupteur et tester le fonctionnement de celui-ci.&lt;/p&gt;
-&lt;p&gt;Si vous avez un interrupteur deux boutons en haut le deuxieme bouton peut également être utilisé en mode sans fil pour un autre appareil ou êteindre votre entrée d'en haut par exemple (a voir si c'est utile).&lt;/p&gt;
-&lt;p&gt;Pour que le va et vient soit fonctionnel, il ne vous reste plus qu'a activer le mode sans fil sur le deuxième bouton de votre interrupteur de l'entrée. Celui-ci doit déclencher sans fil l'interrupteur de l'escalier qui se trouve en haut.&lt;/p&gt;
-&lt;p&gt;J'ai personnellement trois va et vient qui fonctionnent ainsi grâce à plusieurs boutons situés a proximité les uns des autres.&lt;/p&gt;</content><category term="text"/><category term="électricité"/><category term="domotique"/><category term="xiaomi"/></entry><entry><title>Optimisation de pdf grâce à ImageMagick</title><link href="https://www.choiz.fr/2019-04-23-optimisation-de-pdf-grace-a-imagemagick.html" rel="alternate"/><published>2019-04-23T00:32:20+02:00</published><updated>2019-04-23T00:32:20+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2019-04-23:/2019-04-23-optimisation-de-pdf-grace-a-imagemagick.html</id><summary type="html">&lt;p&gt;Ayant de gros pdf de 3Mo je cherchais une solution pour les optimiser en ligne de commande.&lt;/p&gt;
+&lt;p&gt;Si vous avez un interrupteur deux boutons en haut le deuxième bouton peut également être utilisé en mode sans fil pour un autre appareil ou éteindre votre entrée d'en haut par exemple (à voir si c'est utile).&lt;/p&gt;
+&lt;p&gt;Pour que le va et vient soit fonctionnel, il ne vous reste plus qu'à activer le mode sans fil sur le deuxième bouton de votre interrupteur de l'entrée. Celui-ci doit déclencher sans fil l'interrupteur de l'escalier qui se trouve en haut.&lt;/p&gt;
+&lt;p&gt;J'ai personnellement trois va et vient qui fonctionnent ainsi grâce à plusieurs boutons situés à proximité les uns des autres.&lt;/p&gt;</content><category term="text"/><category term="électricité"/><category term="domotique"/><category term="xiaomi"/></entry><entry><title>Optimisation de pdf grâce à ImageMagick</title><link href="https://www.choiz.fr/2019-04-23-optimisation-de-pdf-grace-a-imagemagick.html" rel="alternate"/><published>2019-04-23T00:32:20+02:00</published><updated>2019-04-23T00:32:20+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2019-04-23:/2019-04-23-optimisation-de-pdf-grace-a-imagemagick.html</id><summary type="html">&lt;p&gt;Ayant de gros pdf de 3Mo je cherchais une solution pour les optimiser en ligne de commande.&lt;/p&gt;
 &lt;p&gt;ImageMagick est doté de l'outil convert qui permet de convertir des images.&lt;/p&gt;
 &lt;p&gt;Avec la commande suivante j'ai pu convertir un PDF de 3,5Mo en un PDF de 1,5Mo en compressant les …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ayant de gros pdf de 3Mo je cherchais une solution pour les optimiser en ligne de commande.&lt;/p&gt;
 &lt;p&gt;ImageMagick est doté de l'outil convert qui permet de convertir des images.&lt;/p&gt;
@@ -489,7 +489,7 @@ un cache toujours à jour.&lt;/p&gt;</content><category term="text"/><category t
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;bindsym&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;$&lt;span class="nv"&gt;mod&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="k"&gt;Return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;exec&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;urxvt&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour …&lt;/p&gt;</summary><content type="html">&lt;p&gt;En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne :&lt;/p&gt;
+&lt;p&gt;Je préfère ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour …&lt;/p&gt;</summary><content type="html">&lt;p&gt;En voulant modifier ma config de i3 je me suis aperçu que j'avais modifié la ligne :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;bindsym&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;$&lt;span class="nv"&gt;mod&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="k"&gt;Return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;exec&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;i3&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;sensible&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;terminal&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -497,7 +497,7 @@ un cache toujours à jour.&lt;/p&gt;</content><category term="text"/><category t
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;bindsym&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;$&lt;span class="nv"&gt;mod&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="k"&gt;Return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;exec&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;urxvt&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par défaut &lt;code&gt;i3-sensible-terminal&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Je préfère ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par défaut &lt;code&gt;i3-sensible-terminal&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Pour modifier le terminal executé par la commande &lt;code&gt;i3-sensible-terminal&lt;/code&gt; il suffit donc de lancer la commande suivante puis de choisir dans mon cas urxvt :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;update-alternatives --config x-terminal-emulator
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="linux"/></entry><entry><title>Bien nommer ses fichiers</title><link href="https://www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html" rel="alternate"/><published>2018-12-13T12:52:55+01:00</published><updated>2018-12-13T12:52:55+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2018-12-13:/2018-12-13-bien-nommer-ses-fichiers.html</id><summary type="html">&lt;p&gt;Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ?&lt;/p&gt;
@@ -542,7 +542,7 @@ Donc pour le Lundi 10 Décembre 2018 je vais écrire 20181210 ou 2018-12-10.&lt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Le trie se fait jour par jour donc pas du tout par ordre chronologique.
+&lt;p&gt;Le tri se fait jour par jour donc pas du tout par ordre chronologique.
 Nous ne retenons pas cette solution.&lt;/p&gt;
 &lt;p&gt;Avec le second exemple :&lt;/p&gt;
 &lt;table&gt;
@@ -571,7 +571,7 @@ Nous ne retenons pas cette solution.&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Le trie se fait par jour, puis par mois, puis par année, donc nous avons tous les 10 décembre puis les 11 décembre etc… ce n'est toujours pas par ordre chronologique.
+&lt;p&gt;Le tri se fait par jour, puis par mois, puis par année, donc nous avons tous les 10 décembre puis les 11 décembre etc… ce n'est toujours pas par ordre chronologique.
 Nous ne retenons pas cette solution.&lt;/p&gt;
 &lt;p&gt;Avec le dernier exemple :&lt;/p&gt;
 &lt;table&gt;
@@ -601,7 +601,7 @@ Nous ne retenons pas cette solution.&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;C'est bien par ordre chronologique, l'année puis le mois, puis le jour, c'est donc comme ça que nous devons écrire nos fichiers avec une date.&lt;/p&gt;
-&lt;p&gt;Si vous faites une photo de vous chaque année en septembre vous aurez donc photo.jpg qui sera nommer comme suit :&lt;/p&gt;
+&lt;p&gt;Si vous faites une photo de vous chaque année en septembre vous aurez donc photo.jpg qui sera nommée comme suit :&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -648,9 +648,9 @@ Nous ne retenons pas cette solution.&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Personnellement je préfère toujours mettre mes fichiers sous la forme 2018-09-01-nom-de-fichier.ext ce qui permet d'avoir toujours la date du jour.&lt;/p&gt;</content><category term="text"/><category term="file"/><category term="date"/></entry><entry><title>Ajouter un disque a une grappe RAID MDADM</title><link href="https://www.choiz.fr/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html" rel="alternate"/><published>2018-12-05T23:22:42+01:00</published><updated>2018-12-05T23:22:42+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2018-12-05:/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html</id><summary type="html">&lt;p&gt;Ayant enfin fini la migration de mon NAS vers mon nouveau NAS, j'ai récupéré mon troisième disque de 10To pour l'ajouter à ma grappe RAID1 qui contient déjà 2 disques de 10To.&lt;/p&gt;
-&lt;p&gt;Pour ajouter le disque /dev/sdd dans la grappe /dev/md0 il faut tapper la commande suivante :&lt;/p&gt;
+&lt;p&gt;Pour ajouter le disque /dev/sdd dans la grappe /dev/md0 il faut taper la commande suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mdadm …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Ayant enfin fini la migration de mon NAS vers mon nouveau NAS, j'ai récupéré mon troisième disque de 10To pour l'ajouter à ma grappe RAID1 qui contient déjà 2 disques de 10To.&lt;/p&gt;
-&lt;p&gt;Pour ajouter le disque /dev/sdd dans la grappe /dev/md0 il faut tapper la commande suivante :&lt;/p&gt;
+&lt;p&gt;Pour ajouter le disque /dev/sdd dans la grappe /dev/md0 il faut taper la commande suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mdadm --manage /dev/md0 --add /dev/sdd1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -725,7 +725,7 @@ debian9     STOPPED 0         -      -              -
 debian9wiki RUNNING 0         -      192.168.60.140 -
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Se connecter a l'aide de lxc-attach :&lt;/p&gt;
+&lt;p&gt;Se connecter à l'aide de lxc-attach :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;lxc-attach -n debian9wiki
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -737,7 +737,7 @@ debian9wiki RUNNING 0         -      192.168.60.140 -
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;useradd user
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Se déconnecter du conteneur et se connecter via ssh avec votre utilisateur user.&lt;/p&gt;</content><category term="text"/><category term="linux"/><category term="lxc"/><category term="debian"/></entry><entry><title>Installation d'un controlleur Unifi sur Raspberry Pi 3</title><link href="https://www.choiz.fr/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html" rel="alternate"/><published>2017-10-21T21:57:19+02:00</published><updated>2017-10-21T21:57:19+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-21:/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html</id><summary type="html">&lt;p&gt;Pour commencer il faut télécharger la dernière version de raspbian sur le site
+&lt;p&gt;Se déconnecter du conteneur et se connecter via ssh avec votre utilisateur user.&lt;/p&gt;</content><category term="text"/><category term="linux"/><category term="lxc"/><category term="debian"/></entry><entry><title>Installation d'un contrôleur Unifi sur Raspberry Pi 3</title><link href="https://www.choiz.fr/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html" rel="alternate"/><published>2017-10-21T21:57:19+02:00</published><updated>2017-10-21T21:57:19+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-21:/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html</id><summary type="html">&lt;p&gt;Pour commencer il faut télécharger la dernière version de raspbian sur le site
 officiel raspberrypi.org. Actuellement c'est 2017-09-07-raspbian-stretch-lite.zip.&lt;/p&gt;
 &lt;p&gt;Il faut ensuite extraire l'image de l'archive :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;unzip 2017-09-07-raspbian-stretch-lite.zip
@@ -776,9 +776,9 @@ voir le nom du périphérique USB sur ma machine :&lt;/p&gt;
 &lt;span class="mh"&gt;1854590976&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bytes&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mh"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mh"&gt;9&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;GB&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mh"&gt;7&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;GiB&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;copied&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;288&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mh"&gt;12&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mh"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;MB&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Une fois le Raspberry Pi démarrer s'identifier avec : pi / raspberry (attention
-le clavier est en qwerty pour l'instant donc tapper rqspberry en mot de passe ;-)&lt;/p&gt;
-&lt;p&gt;Puis tappez la commande &lt;code&gt;sudo bash&lt;/code&gt; pour passer en root puis &lt;code&gt;raspi-config&lt;/code&gt; pour
+&lt;p&gt;Une fois le Raspberry Pi démarré s'identifier avec : pi / raspberry (attention
+le clavier est en qwerty pour l'instant donc taper rqspberry en mot de passe ;-)&lt;/p&gt;
+&lt;p&gt;Puis tapez la commande &lt;code&gt;sudo bash&lt;/code&gt; pour passer en root puis &lt;code&gt;raspi-config&lt;/code&gt; pour
 configurer votre Raspberry Pi.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -813,9 +813,11 @@ configurer votre Raspberry Pi.&lt;/p&gt;
 &lt;p&gt;2 Hostname si vous voulez changer le nom de votre raspberry par exemple
 "raspberrypi3".&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Finish, et redémarrer.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;9: Finish, et redémarrer.&lt;/p&gt;
-&lt;p&gt;Récuperer l'adresse ip du raspberry pi pour se connecter dessus via SSH.&lt;/p&gt;
+&lt;p&gt;Récupérer l'adresse ip du raspberry pi pour se connecter dessus via SSH.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;pi&lt;/span&gt;&lt;span class="nv"&gt;@adresseip&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -831,9 +833,9 @@ configurer votre Raspberry Pi.&lt;/p&gt;
 &lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;apt install oracle-java8-jdk -y&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;echo 'JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt' | tee /etc/default/unifi &amp;gt; /dev/null&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;reboot&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Une fois le raspberry pi démarrer se rendre sur &lt;code&gt;https://ip_raspberry:8443&lt;/code&gt; vous
+&lt;p&gt;Une fois le raspberry pi démarré se rendre sur &lt;code&gt;https://ip_raspberry:8443&lt;/code&gt; vous
 devriez avoir votre interface Unifi disponible.&lt;/p&gt;
-&lt;p&gt;Mettre à jour votre materiel unifi depuis le controlleur. Puis sur le raspberry
+&lt;p&gt;Mettre à jour votre matériel unifi depuis le contrôleur. Puis sur le raspberry
 pi nous allons changer d'adresse ip pour avoir un réseau séparé.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;pi&lt;/span&gt;&lt;span class="nv"&gt;@adresseip&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -847,23 +849,23 @@ pi nous allons changer d'adresse ip pour avoir un réseau séparé.&lt;/p&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;gateway&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m m-Double"&gt;10.0.0.1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Enregistrer le fichier et quitter (ne pas rédémarrer le pi pour l'instant).&lt;/p&gt;
+&lt;p&gt;Enregistrer le fichier et quitter (ne pas redémarrer le pi pour l'instant).&lt;/p&gt;
 &lt;p&gt;Retourner sur l'interface d'unifi et modifier l'adresse ip de votre réseau LAN.&lt;/p&gt;
 &lt;p&gt;Gateway/Subnet 10.0.0.1/24&lt;/p&gt;
 &lt;p&gt;Cliquer sur "UPDATE DHCP RANGE" puis enregistrer vos modifications dans l'onglet
 Devices votre USG devrait être en "provisionning".
 Redémarrez le Raspberry Pi avec &lt;code&gt;sudo reboot&lt;/code&gt; puis vous reconnecter au
-controlleur avec la nouvelle adresse ip : &lt;code&gt;https://10.0.0.10:8443&lt;/code&gt;.&lt;/p&gt;</content><category term="text"/><category term="raspberry"/><category term="unifi"/><category term="debian"/><category term="linux"/></entry><entry><title>Faire du NAT avec Proxmox</title><link href="https://www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html" rel="alternate"/><published>2017-10-15T22:08:23+02:00</published><updated>2017-10-15T22:08:23+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-15:/2017-10-15-faire-un-nat-avec-proxmox.html</id><summary type="html">&lt;p&gt;L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
+contrôleur avec la nouvelle adresse ip : &lt;code&gt;https://10.0.0.10:8443&lt;/code&gt;.&lt;/p&gt;</content><category term="text"/><category term="raspberry"/><category term="unifi"/><category term="debian"/><category term="linux"/></entry><entry><title>Faire du NAT avec Proxmox</title><link href="https://www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html" rel="alternate"/><published>2017-10-15T22:08:23+02:00</published><updated>2017-10-15T22:08:23+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-10-15:/2017-10-15-faire-un-nat-avec-proxmox.html</id><summary type="html">&lt;p&gt;L'idée est d'utiliser qu'une seule adresse ip publique pour plusieurs VM. Comme à
 la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut
 faire la même chose.&lt;/p&gt;
-&lt;p&gt;Ip Public de proxmox : 11.22.33.44
-Ip Privé de proxmox : 10.0.0.254&lt;/p&gt;
-&lt;p&gt;Je …&lt;/p&gt;</summary><content type="html">&lt;p&gt;L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
+&lt;p&gt;Ip Publique de proxmox : 11.22.33.44
+Ip Privée de proxmox : 10.0.0.254&lt;/p&gt;
+&lt;p&gt;Je …&lt;/p&gt;</summary><content type="html">&lt;p&gt;L'idée est d'utiliser qu'une seule adresse ip publique pour plusieurs VM. Comme à
 la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut
 faire la même chose.&lt;/p&gt;
-&lt;p&gt;Ip Public de proxmox : 11.22.33.44
-Ip Privé de proxmox : 10.0.0.254&lt;/p&gt;
-&lt;p&gt;Je me connect en ssh à Proxmox et je modifie le fichier &lt;code&gt;/etc/network/interfaces&lt;/code&gt;
+&lt;p&gt;Ip Publique de proxmox : 11.22.33.44
+Ip Privée de proxmox : 10.0.0.254&lt;/p&gt;
+&lt;p&gt;Je me connecte en ssh à Proxmox et je modifie le fichier &lt;code&gt;/etc/network/interfaces&lt;/code&gt;
 j'ajoute à la fin du fichier :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kt"&gt;auto&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;vmbr2&lt;/span&gt;
 &lt;span class="nx"&gt;iface&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;vmbr2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;inet&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;static&lt;/span&gt;
@@ -878,7 +880,7 @@ j'ajoute à la fin du fichier :&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;On peut également ajouter si on veut différents ports qu'on ouvre vers
-l'exterieur vers tel ou tel VM ou conteneur.
+l'extérieur vers tel ou tel VM ou conteneur.
 Par exemple j'ouvre le port 22 de mon conteneur avec l'ip 10.0.0.1 sur le port
 8022 de mon ip public :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    post-up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
@@ -922,7 +924,7 @@ votre partage.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;J'ajoute dans le fichier le dossier à partager &lt;code&gt;/home/user/share&lt;/code&gt; et l'adresse
-du ou des clients qui peuvent accèder a ce partage
+du ou des clients qui peuvent accéder à ce partage
 &lt;code&gt;10.0.0.1(rw,sync,no_subtree_check)&lt;/code&gt; ici mon client a l'adresse ip 10.0.0.1 ce
 qui donne :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/home/user/share 10.0.0.1(rw,sync,no_subtree_check)
@@ -955,19 +957,19 @@ point de montage sur votre client.&lt;/p&gt;
 
 &lt;p&gt;Puis monter le nouveau partage avec la commande &lt;code&gt;mount -a&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Si vous faites la commande &lt;code&gt;ls /home/user/nfs-nas&lt;/code&gt; vous devriez voir les
-fichiers qui se trouvent sur votre serveur.&lt;/p&gt;</content><category term="text"/><category term="nfs"/><category term="linux"/><category term="debian"/><category term="gentoo"/></entry><entry><title>Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</title><link href="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html" rel="alternate"/><published>2017-08-26T19:00:56+02:00</published><updated>2017-09-02T18:25:10+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</id><summary type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
+fichiers qui se trouvent sur votre serveur.&lt;/p&gt;</content><category term="text"/><category term="nfs"/><category term="linux"/><category term="debian"/><category term="gentoo"/></entry><entry><title>Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</title><link href="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html" rel="alternate"/><published>2017-08-26T19:00:56+02:00</published><updated>2017-09-02T18:25:10+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</id><summary type="html">&lt;p&gt;Ayant pas mal utilisé le matériel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
 &lt;p&gt;En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
-livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs.&lt;/p&gt;
-&lt;p&gt;Il y a pas mal de manipulations a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
+livebox par l'USG tout en conservant la télévision etc… grâce aux VLANs.&lt;/p&gt;
+&lt;p&gt;Il y a pas mal de manipulations à …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ayant pas mal utilisé le matériel d'ubiquiti j'ai acheté un USG 3 pour la maison.&lt;/p&gt;
 &lt;p&gt;En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
-livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs.&lt;/p&gt;
-&lt;p&gt;Il y a pas mal de manipulations a faire avant de pouvoir remplacer totalement sa
+livebox par l'USG tout en conservant la télévision etc… grâce aux VLANs.&lt;/p&gt;
+&lt;p&gt;Il y a pas mal de manipulations à faire avant de pouvoir remplacer totalement sa
 livebox par l'USG.&lt;/p&gt;
-&lt;p&gt;J'ai utilisé un raspberry pi qui me permet d'installer un controlleur UniFi qui
-permet de gerer son matériel de la marque.&lt;/p&gt;
+&lt;p&gt;J'ai utilisé un raspberry pi qui me permet d'installer un contrôleur UniFi qui
+permet de gérer son matériel de la marque.&lt;/p&gt;
 &lt;p&gt;En branchant l'USG au secteur il prend l'adresse IP 192.168.1.1 (la même que la
 livebox dans un premier temps ça aide pas…). Je branche donc l'USG en direct sur
-mon poste et je me connect en ssh dessus avec les login / pass : "ubnt / ubnt".&lt;/p&gt;
+mon poste et je me connecte en ssh dessus avec les login / pass : "ubnt / ubnt".&lt;/p&gt;
 &lt;p&gt;Se rendre sur &lt;a href="https://www.l9.fr/usg-config-generator.php"&gt;mon générateur de configuration&lt;/a&gt; pour générer un fichier config_usg.sh&lt;/p&gt;
 &lt;p&gt;Puis télécharger les fichiers :&lt;/p&gt;
 &lt;ul&gt;
@@ -983,7 +985,7 @@ avec l'utilisateur "ubnt" et le mot de passe "ubnt"&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ubnt&lt;/span&gt;&lt;span class="mf"&gt;@192.168.1.1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Remplacer le dhclient3, copier la rfc au bon endroit et rendre executable mon
+&lt;p&gt;Remplacer le dhclient3, copier la rfc au bon endroit et rendre exécutable mon
 script :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo bash
 mv dhclient3 /sbin/dhclient3
@@ -995,7 +997,7 @@ chmod a+x config_usg.sh
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Editer le fichier /opt/vyatta/sbin/vyatta-interfaces.pl et ajouter l'option 90
-du dhcp. Il faut aller a la ligne 194 :&lt;/p&gt;
+du dhcp. Il faut aller à la ligne 194 :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    $output .= &amp;quot;option rfc3442-classless-static-routes code 121 = array of unsigned integer 8;\n\n&amp;quot;;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -1008,13 +1010,13 @@ du dhcp. Il faut aller a la ligne 194 :&lt;/p&gt;
 &lt;span class="n"&gt;Proceed&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;with&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;reboot&lt;/span&gt;&lt;span class="vm"&gt;?&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;confirm&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Débrancher votre controlleur du réseau (pour ne pas que l'USG reprovisionne une
-vielle configuration).&lt;/p&gt;
+&lt;p&gt;Débrancher votre contrôleur du réseau (pour ne pas que l'USG reprovisionne une
+vieille configuration).&lt;/p&gt;
 &lt;p&gt;Se connecter de nouveau en ssh sur l'usg :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ubnt&lt;/span&gt;&lt;span class="mf"&gt;@192.168.1.1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Se connecter en tant que root pour executer le script&lt;/p&gt;
+&lt;p&gt;Se connecter en tant que root pour exécuter le script&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo bash
 ./config_usg.sh
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1048,45 +1050,45 @@ vielle configuration).&lt;/p&gt;
 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;edit&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Puis j'éteind l'USG pour remplacer la livebox.&lt;/p&gt;
+&lt;p&gt;Puis j'éteins l'USG pour remplacer la livebox.&lt;/p&gt;
 &lt;p&gt;Le port WAN1 pour l'ONT&lt;/p&gt;
 &lt;p&gt;Le port LAN1 pour votre réseau local&lt;/p&gt;
 &lt;p&gt;Le port WAN2/LAN2 pour la télévision&lt;/p&gt;
-&lt;p&gt;Quand j'arrive a joindre l'usg sur l'IP 192.168.1.1 je me reconnect en ssh et je
-me connect en root pour sauver la config et l'envoyer sur ma machine.&lt;/p&gt;
+&lt;p&gt;Quand j'arrive à joindre l'usg sur l'IP 192.168.1.1 je me reconnecte en ssh et je
+me connecte en root pour sauver la config et l'envoyer sur ma machine.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;sudo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bash&lt;/span&gt;
 &lt;span class="n"&gt;mca&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ctrl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;dump&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cfg&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gateway&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;json&lt;/span&gt;
 &lt;span class="n"&gt;scp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gateway&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;user&lt;/span&gt;&lt;span class="nv"&gt;@ma_machine&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;user&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Maintenant je me déconnecte de l'usg. Je débranche le câble réseau entre l'usg et
-mon réseau local pour pouvoir rebrancher mon controlleur. Si on débranche pas
-l'usg il va reprendre la config par defaut du controlleur et il faudra tout
+mon réseau local pour pouvoir rebrancher mon contrôleur. Si on débranche pas
+l'usg il va reprendre la config par défaut du contrôleur et il faudra tout
 refaire (hormis les copies des fichiers dhclient3 rfc… etc…).&lt;/p&gt;
-&lt;p&gt;Depuis mon poste je copie sur mon controlleur le fichier config.gateway.json que
+&lt;p&gt;Depuis mon poste je copie sur mon contrôleur le fichier config.gateway.json que
 je viens de sauver.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;scp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gateway&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;user&lt;/span&gt;&lt;span class="nv"&gt;@mon_controlleur&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;user&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Puis je me connecte a mon controlleur en ssh pour déposer dans le bon dossier ce
+&lt;p&gt;Puis je me connecte à mon contrôleur en ssh pour déposer dans le bon dossier ce
 fichier.&lt;/p&gt;
-&lt;p&gt;Le dossier doit être &lt;code&gt;/data/sites/default&lt;/code&gt; si vous utilisez le site par defaut.&lt;/p&gt;
-&lt;p&gt;Reconnecter l'USG a votre réseau.&lt;/p&gt;
-&lt;p&gt;Il va être de nouveau provisionné par votre controlleur, si vous avez des
+&lt;p&gt;Le dossier doit être &lt;code&gt;/data/sites/default&lt;/code&gt; si vous utilisez le site par défaut.&lt;/p&gt;
+&lt;p&gt;Reconnecter l'USG à votre réseau.&lt;/p&gt;
+&lt;p&gt;Il va être de nouveau provisionné par votre contrôleur, si vous avez des
 erreurs lors de ce provisionning elles seront affichées dans "alerts" sur votre
-controlleur. Dans ce cas il y a un truc qui cloche entre votre config et celle
-du controlleur revoir les différentes étapes.&lt;/p&gt;
-&lt;p&gt;Si le provisionning est ok l'USG redémarre et la config est enfin fini ! ;-)&lt;/p&gt;
+contrôleur. Dans ce cas il y a un truc qui cloche entre votre config et celle
+du contrôleur revoir les différentes étapes.&lt;/p&gt;
+&lt;p&gt;Si le provisionning est ok l'USG redémarre et la config est enfin finie ! ;-)&lt;/p&gt;
 &lt;p&gt;Grand merci au forum lafibre.info et particulièrement ce &lt;a href="https://lafibre.info/remplacer-livebox/unifi-security-gateway-en-remplacement-de-la-livebox/"&gt;sujet&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://amzn.to/2xXmsDO"&gt;Ubiquiti Networks USG&lt;/a&gt; sur Amazon.&lt;/p&gt;</content><category term="text"/><category term="unifi"/><category term="network"/></entry><entry><title>Installation de Proxmox-VE 5 sur Debian Stretch</title><link href="https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html" rel="alternate"/><published>2017-08-26T17:36:19+02:00</published><updated>2017-08-26T17:36:19+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html</id><summary type="html">&lt;p&gt;Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
+&lt;p&gt;&lt;a href="http://amzn.to/2xXmsDO"&gt;Ubiquiti Networks USG&lt;/a&gt; sur Amazon.&lt;/p&gt;</content><category term="text"/><category term="unifi"/><category term="network"/></entry><entry><title>Installation de Proxmox-VE 5 sur Debian Stretch</title><link href="https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html" rel="alternate"/><published>2017-08-26T17:36:19+02:00</published><updated>2017-08-26T17:36:19+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-08-26:/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html</id><summary type="html">&lt;p&gt;Suite à l'installation de mon NAS, j'ai installé un proxmox dessus.
 Par contre il ne faut pas modifier le sources.list ni installer
-firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
+firmware-linux-nonfree avant d'installer proxmox (cela ne fonctionne pas du
 tout).&lt;/p&gt;
 &lt;p&gt;Sur debian éditer le fichier /etc/hosts comme ceci :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mf"&gt;127.0.0.1&lt;/span&gt;&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="n"&gt;localhost&lt;/span&gt;&lt;span class="mf"&gt;.&lt;/span&gt;&lt;span class="n"&gt;localdomain&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;localhost&lt;/span&gt;
-&lt;span class="mf"&gt;192 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
+&lt;span class="mf"&gt;192 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Suite à l'installation de mon NAS, j'ai installé un proxmox dessus.
 Par contre il ne faut pas modifier le sources.list ni installer
-firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
+firmware-linux-nonfree avant d'installer proxmox (cela ne fonctionne pas du
 tout).&lt;/p&gt;
 &lt;p&gt;Sur debian éditer le fichier /etc/hosts comme ceci :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mf"&gt;127.0.0.1&lt;/span&gt;&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="n"&gt;localhost&lt;/span&gt;&lt;span class="mf"&gt;.&lt;/span&gt;&lt;span class="n"&gt;localdomain&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;localhost&lt;/span&gt;
@@ -1103,14 +1105,14 @@ tout).&lt;/p&gt;
 &lt;span class="m m-Double"&gt;192.168.15.77&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;should&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;here&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;your&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;IP&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;adress&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Puis on ajoute au sources.list le dépot de proxmox, on récupere la clé et on
+&lt;p&gt;Puis on ajoute au sources.list le dépôt de proxmox, on récupère la clé et on
 update :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;deb http://download.proxmox.com/debian/pve stretch pve-no-subscription&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sources&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pve&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;install&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;
 &lt;span class="n"&gt;wget&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;download&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;proxmox&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;debian&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;proxmox&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ve&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;release&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;5.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gpg&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;O&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;trusted&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gpg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;proxmox&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ve&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;release&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;5.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gpg&lt;/span&gt;
 &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;dist&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;upgrade&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Puis on install les packages Proxmox VE :&lt;/p&gt;
+&lt;p&gt;Puis on installe les packages Proxmox VE :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt install proxmox-ve postfix open-iscsi
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -1125,7 +1127,7 @@ rechercher la ligne avec :&lt;/p&gt;
 &lt;p&gt;remplacer par :&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;if (false /*data.status !== 'Active'*/) {&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Puis relancer pveproxy avec la commande &lt;code&gt;pveproxy restart&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Se déconnecter de l'interface proxmox, à la reconnection vous n'aurez plus le
+&lt;p&gt;Se déconnecter de l'interface proxmox, à la reconnexion vous n'aurez plus le
 message de souscription.&lt;/p&gt;
 &lt;p&gt;Puis faire les commandes optionnelles :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt remove os-prober
@@ -1137,7 +1139,7 @@ dessus j'avais installé Debian 6 à l'époque puis j'ai mis à jour jusqu'à la
 je n'utilisais que 3 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
 dessus j'avais installé Debian 6 à l'époque puis j'ai mis à jour jusqu'à la version 9.&lt;/p&gt;
 &lt;p&gt;Mon objectif est l'ajout d'un disque car j'ai 4 emplacements pour le stockage et
-je n'utilisais que 3 de ses 4 emplacements.&lt;/p&gt;
+je n'utilisais que 3 de ces 4 emplacements.&lt;/p&gt;
 &lt;p&gt;Pour commencer il me fallait un rack 5"¼ permettant de mettre un disque 3"½ ou
 2"½, je l'ai trouvé sur &lt;a href="http://www.ldlc.com/fiche/PB00157318.html"&gt;LDLC&lt;/a&gt; c'est
 un "ICY BOX IB-129SSK-B", ensuite j'ai pris sur
@@ -1146,7 +1148,7 @@ un disque Seagate ST500LM030 en 2"½ de 500Go et j'avais ce qu'il fallait pour l
 SATA et l'alimentation.&lt;/p&gt;
 &lt;p&gt;Ce qui m'a permis de mettre un disque 2"½ au niveau de l'emplacement CDROM du HP
 Microserver.&lt;/p&gt;
-&lt;p&gt;J'ai du tué mon uptime d'un an (depuis mon dernier déménagement) :&lt;/p&gt;
+&lt;p&gt;J'ai dû tuer mon uptime d'un an (depuis mon dernier déménagement) :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;37&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;choiz&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;wayland&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;#❯❯❯ uptime&lt;/span&gt;
 &lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;37&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;up&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;366&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;days&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;08&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nb"&gt;load&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;average&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1166,7 +1168,7 @@ lien et les conseils.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# apt install isc-dhcp-server
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Mes IP sont dans le réseau 192.168.1.0/24, mon router en 192.168.1.1, je met un
+&lt;p&gt;Mes IP sont dans le réseau 192.168.1.0/24, mon router en 192.168.1.1, je mets un
 range entre 192.168.1.100 et 192.168.1.150 mon serveur TFTP est en 192.168.1.2.&lt;/p&gt;
 &lt;p&gt;Voici la conf d'isc-dhcp-server :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;default&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;lease&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;600&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -1206,8 +1208,8 @@ notre TFTP :&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Le PXE est maintenant fonctionnel avec l'installation de debian.&lt;/p&gt;
-&lt;p&gt;Je réinstall donc debian 9.1 proprement.&lt;/p&gt;
-&lt;p&gt;Pour éviter d'avoir ses messages d'erreurs :&lt;/p&gt;
+&lt;p&gt;Je réinstalle donc debian 9.1 proprement.&lt;/p&gt;
+&lt;p&gt;Pour éviter d'avoir ces messages d'erreurs :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;W&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Possible&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;missing&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;firmware&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sr"&gt;/lib/firmware/tigon/&lt;/span&gt;&lt;span class="n"&gt;tg3_tso5&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tg3&lt;/span&gt;
 &lt;span class="n"&gt;W&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Possible&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;missing&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;firmware&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sr"&gt;/lib/firmware/tigon/&lt;/span&gt;&lt;span class="n"&gt;tg3_tso&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tg3&lt;/span&gt;
 &lt;span class="n"&gt;W&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Possible&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;missing&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;firmware&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sr"&gt;/lib/firmware/tigon/&lt;/span&gt;&lt;span class="n"&gt;tg3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tg3&lt;/span&gt;
@@ -1219,13 +1221,13 @@ notre TFTP :&lt;/p&gt;
 apt install firmware-linux-nonfree
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Il me reste plus qu'a remonter mes disques de backup et de refaire mes partages.&lt;/p&gt;</content><category term="text"/><category term="nas"/><category term="debian"/><category term="stockage"/><category term="linux"/></entry><entry><title>Re-générer une clé rsa publique</title><link href="https://www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html" rel="alternate"/><published>2017-06-05T15:03:08+02:00</published><updated>2017-06-05T15:03:08+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-06-05:/2017-06-05-re-generer-une-cle-rsa-publique.html</id><summary type="html">&lt;p&gt;Si vous n'avez plus de clé publique, mais que vous avez toujours votre clé privée vous pouvez regénérer votre clé
+&lt;p&gt;Il me reste plus qu'à remonter mes disques de backup et de refaire mes partages.&lt;/p&gt;</content><category term="text"/><category term="nas"/><category term="debian"/><category term="stockage"/><category term="linux"/></entry><entry><title>Re-générer une clé rsa publique</title><link href="https://www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html" rel="alternate"/><published>2017-06-05T15:03:08+02:00</published><updated>2017-06-05T15:03:08+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-06-05:/2017-06-05-re-generer-une-cle-rsa-publique.html</id><summary type="html">&lt;p&gt;Si vous n'avez plus de clé publique, mais que vous avez toujours votre clé privée vous pouvez regénérer votre clé
 publique.&lt;/p&gt;
-&lt;p&gt;Pour se faire il faut utiliser la commande &lt;em&gt;ssh-keygen&lt;/em&gt; avec l'option &lt;em&gt;-y&lt;/em&gt; et &lt;em&gt;-f&lt;/em&gt; pour désigner la clé privé.&lt;/p&gt;
+&lt;p&gt;Pour ce faire il faut utiliser la commande &lt;em&gt;ssh-keygen&lt;/em&gt; avec l'option &lt;em&gt;-y&lt;/em&gt; et &lt;em&gt;-f&lt;/em&gt; pour désigner la clé privée.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ssh-keygen -y -f ~/.ssh/id_rsa &amp;gt; ~/.ssh/id_rsa.pub&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;On utilise …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Si vous n'avez plus de clé publique, mais que vous avez toujours votre clé privée vous pouvez regénérer votre clé
 publique.&lt;/p&gt;
-&lt;p&gt;Pour se faire il faut utiliser la commande &lt;em&gt;ssh-keygen&lt;/em&gt; avec l'option &lt;em&gt;-y&lt;/em&gt; et &lt;em&gt;-f&lt;/em&gt; pour désigner la clé privé.&lt;/p&gt;
+&lt;p&gt;Pour ce faire il faut utiliser la commande &lt;em&gt;ssh-keygen&lt;/em&gt; avec l'option &lt;em&gt;-y&lt;/em&gt; et &lt;em&gt;-f&lt;/em&gt; pour désigner la clé privée.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ssh-keygen -y -f ~/.ssh/id_rsa &amp;gt; ~/.ssh/id_rsa.pub&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;On utilise ci-dessus l'id_rsa (privée) pour générer l'id_rsa.pub.&lt;/p&gt;</content><category term="text"/><category term="ssh"/><category term="key"/></entry><entry><title>Utiliser un Bastion SSH</title><link href="https://www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html" rel="alternate"/><published>2017-06-01T21:29:24+02:00</published><updated>2017-06-01T21:29:24+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-06-01:/2017-06-01-utiliser-un-bastion-ssh.html</id><summary type="html">&lt;p&gt;Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
 trouve dans &lt;em&gt;~/.ssh/config&lt;/em&gt; et d'ajouter les deux lignes suivantes :&lt;/p&gt;
@@ -1243,12 +1245,12 @@ trouve dans &lt;em&gt;~/.ssh/config&lt;/em&gt; et d'ajouter les deux lignes suiv
 
 &lt;p&gt;C'est tout.&lt;/p&gt;
 &lt;p&gt;Explications : on utilise l'host &lt;em&gt;bastion.fr&lt;/em&gt; pour se connecter à
-&lt;em&gt;destination.local&lt;/em&gt;. Quand je tape sur ma machine local &lt;em&gt;ssh
+&lt;em&gt;destination.local&lt;/em&gt;. Quand je tape sur ma machine locale &lt;em&gt;ssh
 choiz@destination.local&lt;/em&gt; mon client SSH lit le fichier de configuration, se
 connecte à l'host &lt;em&gt;bastion.fr&lt;/em&gt; avec l'utilisateur &lt;em&gt;user&lt;/em&gt; puis fait une nouvelle
 connexion vers ma destination.&lt;/p&gt;
 &lt;p&gt;Vous pouvez modifier votre configuration ssh pour se connecter à votre bastion
-avec une clé spécifique puis a votre destination avec une autre clé par exemple
+avec une clé spécifique puis à votre destination avec une autre clé par exemple
 ou avec des utilisateurs différents…&lt;/p&gt;
 &lt;p&gt;Exemple :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Host bastion.fr
@@ -1261,7 +1263,7 @@ Host destination.local
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Enjoy vincent.m ;-)&lt;/p&gt;</content><category term="text"/><category term="ssh"/><category term="linux"/></entry><entry><title>Docker commandes utiles</title><link href="https://www.choiz.fr/2017-05-14-docker-commandes-utiles.html" rel="alternate"/><published>2017-05-14T21:47:35+02:00</published><updated>2017-05-14T21:47:35+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2017-05-14:/2017-05-14-docker-commandes-utiles.html</id><summary type="html">&lt;p&gt;Voici quelques commandes très utiles si vous utilisez docker.&lt;/p&gt;
-&lt;p&gt;Supprimer tous les containers qui sont arétés :&lt;/p&gt;
+&lt;p&gt;Supprimer tous les containers qui sont arrêtés :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker ps -q | xargs docker rm
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -1269,9 +1271,9 @@ Host destination.local
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker images -q | xargs docker rmi
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Se connecter a un conteneur docker lancé par son id :&lt;/p&gt;
+&lt;p&gt;Se connecter à un conteneur docker lancé par son id :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker exec -it id_de_votre_container /bin/bash …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Voici quelques commandes très utiles si vous utilisez docker.&lt;/p&gt;
-&lt;p&gt;Supprimer tous les containers qui sont arétés :&lt;/p&gt;
+&lt;p&gt;Supprimer tous les containers qui sont arrêtés :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker ps -q | xargs docker rm
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -1279,11 +1281,11 @@ Host destination.local
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker images -q | xargs docker rmi
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Se connecter a un conteneur docker lancé par son id :&lt;/p&gt;
+&lt;p&gt;Se connecter à un conteneur docker lancé par son id :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker exec -it id_de_votre_container /bin/bash
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Se connecter a un conteneur docker lancé par son nom :&lt;/p&gt;
+&lt;p&gt;Se connecter à un conteneur docker lancé par son nom :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker exec -it nom_de_votre_container /bin/bash
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="docker"/><category term="linux"/></entry><entry><title>Convertir un .deb en archive .tar.gz</title><link href="https://www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html" rel="alternate"/><published>2016-07-30T10:28:18+02:00</published><updated>2016-07-30T10:28:18+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2016-07-30:/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html</id><summary type="html">&lt;p&gt;En voulant installer le logiciel "slack" sur ma machine gentoo au travail j'ai
 trouvé un logiciel plutôt intéressant nommé "deb2targz".&lt;/p&gt;
@@ -1294,10 +1296,10 @@ trouvé un logiciel plutôt intéressant nommé "deb2targz".&lt;/p&gt;
 &lt;p&gt;En effet &lt;a href="https://slack.com/downloads"&gt;slack&lt;/a&gt; ne dispose que des archives ubuntu
 en 32 bits, 64 bits et fedora en 64 bits.&lt;/p&gt;
 &lt;p&gt;deb2targz permet de convertir un fichier ".deb" en archive ".tar.gz".&lt;/p&gt;
-&lt;p&gt;Si vous êtes sur gentoo installez le via : &lt;code&gt;emerge -a app-arch/deb2targz&lt;/code&gt;&lt;/p&gt;</content><category term="text"/><category term="archive"/><category term="debian"/><category term="gentoo"/><category term="gzip"/><category term="linux"/></entry><entry><title>Installation de xubuntu 16.04 sur ASUS X205TA</title><link href="https://www.choiz.fr/2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA.html" rel="alternate"/><published>2016-05-21T16:34:57+02:00</published><updated>2016-05-21T16:34:57+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2016-05-21:/2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA.html</id><summary type="html">&lt;p&gt;J'ai récement acheté un ASUS X205TA, livré avec Windows
+&lt;p&gt;Si vous êtes sur gentoo installez le via : &lt;code&gt;emerge -a app-arch/deb2targz&lt;/code&gt;&lt;/p&gt;</content><category term="text"/><category term="archive"/><category term="debian"/><category term="gentoo"/><category term="gzip"/><category term="linux"/></entry><entry><title>Installation de xubuntu 16.04 sur ASUS X205TA</title><link href="https://www.choiz.fr/2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA.html" rel="alternate"/><published>2016-05-21T16:34:57+02:00</published><updated>2016-05-21T16:34:57+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2016-05-21:/2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA.html</id><summary type="html">&lt;p&gt;J'ai récemment acheté un ASUS X205TA, livré avec Windows
 10 (32 bits), un disque SSD de 32Go et 2Go de ram et pour un prix de 210€.&lt;/p&gt;
 &lt;p&gt;J'ai installé xubuntu 16.04 (64 bits) sur une partition séparée pour garder Windows 10.&lt;/p&gt;
-&lt;p&gt;L'installation est plutôt complexe car le "bootloader" est …&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'ai récement acheté un ASUS X205TA, livré avec Windows
+&lt;p&gt;L'installation est plutôt complexe car le "bootloader" est …&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'ai récemment acheté un ASUS X205TA, livré avec Windows
 10 (32 bits), un disque SSD de 32Go et 2Go de ram et pour un prix de 210€.&lt;/p&gt;
 &lt;p&gt;J'ai installé xubuntu 16.04 (64 bits) sur une partition séparée pour garder Windows 10.&lt;/p&gt;
 &lt;p&gt;L'installation est plutôt complexe car le "bootloader" est en 32bits (je pense
@@ -1306,7 +1308,7 @@ d'ailleurs que c'est pour ça qu'il est livré avec un windows 32bits et non
 &lt;p&gt;Voici &lt;a href="http://ubuntuforums.org/showthread.php?t=2254322&amp;amp;page=92&amp;amp;p=13474817#post13474817"&gt;un message&lt;/a&gt; qui explique l'installation simple d'ubuntu (remplacer l'iso
 par xubuntu ou autre).&lt;/p&gt;
 &lt;p&gt;Pour l'instant : la carte son n'est pas reconnue et le pointeur de la souris
-disparait suite a la mise en veille… Mis a part ça la machine fonctionne très
+disparait suite à la mise en veille… Mis à part ça la machine fonctionne très
 bien pour mon utilisation (des petits développements pendant mes trajets maison &amp;lt;-&amp;gt; travail).&lt;/p&gt;</content><category term="text"/><category term="xubuntu"/><category term="linux"/><category term="computer"/></entry><entry><title>Passage en SSL du blog</title><link href="https://www.choiz.fr/2016-04-28-passage-en-ssl-du-blog.html" rel="alternate"/><published>2016-04-28T22:17:11+02:00</published><updated>2016-04-28T22:17:11+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2016-04-28:/2016-04-28-passage-en-ssl-du-blog.html</id><summary type="html">&lt;p&gt;J'utilise pelican sur github pour écrire mon blog depuis quelques temps, voir les
 articles précédents sur le sujet.&lt;/p&gt;
 &lt;p&gt;J'ai décidé de passer le blog en https, avec un certificat gratuit let's encrypt.&lt;/p&gt;
@@ -1323,7 +1325,7 @@ valide) de "choiz.fr" vers le 443 de
 "www.choiz.fr".&lt;/li&gt;
 &lt;li&gt;Un vhost pour "www.choiz.fr" qui redirige le port 80 de "www.choiz.fr" vers
 le 443 de "www.choiz.fr".&lt;/li&gt;
-&lt;li&gt;Et un vhost avec le certificat SSL ainsi que le reverse proxy qui fait croire a
+&lt;li&gt;Et un vhost avec le certificat SSL ainsi que le reverse proxy qui fait croire à
 github que je tape directement l'url "http://choiz.github.io".&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Ici la configuration du dernier vhost :&lt;/p&gt;
@@ -1344,7 +1346,7 @@ github que je tape directement l'url "http://choiz.github.io".&lt;/li&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;SSLCertificateKeyFile&lt;span class="w"&gt; &lt;/span&gt;…
 &lt;span class="nt"&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/span&gt;
 &lt;span class="nt"&gt;&amp;lt;/IfModule&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="blog"/><category term="ssl"/><category term="github"/></entry><entry><title>Mise à jour d'un kernel gentoo</title><link href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html" rel="alternate"/><published>2015-11-21T13:50:44+01:00</published><updated>2015-11-21T13:50:44+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-11-21:/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html</id><summary type="html">&lt;p&gt;Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="blog"/><category term="ssl"/><category term="github"/></entry><entry><title>Mise à jour d'un kernel gentoo</title><link href="https://www.choiz.fr/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html" rel="alternate"/><published>2015-11-21T13:50:44+01:00</published><updated>2015-11-21T13:50:44+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-11-21:/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html</id><summary type="html">&lt;p&gt;Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche à
 suivre pour le mettre à jour vers la version : 4.3.0.&lt;/p&gt;
 &lt;p&gt;Je liste les différents noyaux gentoo disponibles :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;eix sys-kernel/gentoo-sources
@@ -1354,7 +1356,7 @@ suivre pour le mettre à jour vers la version : 4.3.0.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;emerge -a =sys-kernel/gentoo-sources-4.3.0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Une …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche a
+&lt;p&gt;Une …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche à
 suivre pour le mettre à jour vers la version : 4.3.0.&lt;/p&gt;
 &lt;p&gt;Je liste les différents noyaux gentoo disponibles :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;eix sys-kernel/gentoo-sources
@@ -1366,7 +1368,7 @@ suivre pour le mettre à jour vers la version : 4.3.0.&lt;/p&gt;
 
 &lt;p&gt;Une fois téléchargé, il faut modifier le lien symbolique /usr/src/linux
 grâce à eselect.&lt;/p&gt;
-&lt;p&gt;J'affiche la liste des noyaux (celui actuellement selectionné est suivi
+&lt;p&gt;J'affiche la liste des noyaux (celui actuellement sélectionné est suivi
 d'une étoile) :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;eselect kernel list
 
@@ -1374,11 +1376,11 @@ d'une étoile) :&lt;/p&gt;
 [2]     linux-4.3.0-gentoo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Pour selectionner notre noyau 4.3.0 il faut utiliser :&lt;/p&gt;
+&lt;p&gt;Pour sélectionner notre noyau 4.3.0 il faut utiliser :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;eselect kernel set 2
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Maintenant que vous avez selectionné votre noyau, copier le fichier
+&lt;p&gt;Maintenant que vous avez sélectionné votre noyau, copier le fichier
 ".config" de votre noyau précédent (pour conserver vos réglages de
 compilation) :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cp /usr/src/linux-4.2.0-gentoo/.config /usr/src/linux
@@ -1653,14 +1655,14 @@ votredeuxiemedomaine.com        OK
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;touch /etc/postfix/virtual_mailbox
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Pour créer un comte mail, éditer /etc/postfix/virtual_mailbox :&lt;/p&gt;
+&lt;p&gt;Pour créer un compte mail, éditer /etc/postfix/virtual_mailbox :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;email&lt;/span&gt;&lt;span class="nv"&gt;@votredomaine&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="n"&gt;votredomaine&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;email&lt;/span&gt;&lt;span class="nv"&gt;@votredomaine&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
 &lt;span class="n"&gt;linus&lt;/span&gt;&lt;span class="nv"&gt;@torvald&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="n"&gt;torvald&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;linus&lt;/span&gt;&lt;span class="nv"&gt;@torvald&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;N'oubliez pas lors de la création de nouveau comptes mail d'éditer
+&lt;p&gt;N'oubliez pas lors de la création de nouveaux comptes mail d'éditer
 /etc/dovecot/users ;-)&lt;/p&gt;
-&lt;p&gt;Maintenant il faut dire a postfix que nous avons modifier nos fichiers
+&lt;p&gt;Maintenant il faut dire à postfix que nous avons modifié nos fichiers
 virtuels :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;postmap /etc/postfix/virtual_alias
 postmap /etc/postfix/virtual_domains
@@ -1683,7 +1685,7 @@ smtps   inet    n   -   -   -   -   smtpd   -v
  -o smtpd_tls_key_file=/etc/dovecot/ssl/certificat.key
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Puis redemarrer postfix :&lt;/p&gt;
+&lt;p&gt;Puis redémarrer postfix :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/etc/init.d/postfix restart
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -1815,11 +1817,11 @@ avec votre login et mot de passe.&lt;/p&gt;</content><category term="text"/><cat
 pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
 est préférable d'utiliser un navigateur tel que Firefox.&lt;/p&gt;
 &lt;p&gt;Voici la commande pour voir le navigateur par défaut pour les url
-utilisants le protocole …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Sur ma machine "links" était le navigateur web par défaut. Il est
+utilisant le protocole …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Sur ma machine "links" était le navigateur web par défaut. Il est
 pratique pour lire du texte, dès que l'on a du contenu audio ou vidéo il
 est préférable d'utiliser un navigateur tel que Firefox.&lt;/p&gt;
 &lt;p&gt;Voici la commande pour voir le navigateur par défaut pour les url
-utilisants le protocole "http" :&lt;/p&gt;
+utilisant le protocole "http" :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;xdg-mime query default x-scheme-handler/http
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -1827,18 +1829,18 @@ utilisants le protocole "http" :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;xdg-mime query default x-scheme-handler/https
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Pour changer le navigateur par défaut par Firefox il suffit d'executer
-ses deux commandes :&lt;/p&gt;
+&lt;p&gt;Pour changer le navigateur par défaut par Firefox il suffit d'exécuter
+ces deux commandes :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;xdg-mime default firefox.desktop x-scheme-handler/http
 xdg-mime default firefox.desktop x-scheme-handler/https
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="gentoo"/><category term="web"/><category term="linux"/></entry><entry><title>Vagrant faire un réseau privé</title><link href="https://www.choiz.fr/2015-10-13-vagrant-faire-un-reseau-prive.html" rel="alternate"/><published>2015-10-13T18:21:02+02:00</published><updated>2015-10-13T18:21:02+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-10-13:/2015-10-13-vagrant-faire-un-reseau-prive.html</id><summary type="html">&lt;p&gt;J'utilise plusieurs machines virtuelles avec vagrant, une avec un
 backoffice et une avec une API.&lt;/p&gt;
-&lt;p&gt;J'ai donc du faire un réseau privé dans vagrant pour que le BO
+&lt;p&gt;J'ai donc dû faire un réseau privé dans vagrant pour que le BO
 communique avec l'API.&lt;/p&gt;
 &lt;p&gt;Il suffit de modifier la configuration de la vm #1 et d'ajouter :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;config.vm.network &amp;quot;private_network&amp;quot;, ip: &amp;quot;192.168 …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;J'utilise plusieurs machines virtuelles avec vagrant, une avec un
 backoffice et une avec une API.&lt;/p&gt;
-&lt;p&gt;J'ai donc du faire un réseau privé dans vagrant pour que le BO
+&lt;p&gt;J'ai donc dû faire un réseau privé dans vagrant pour que le BO
 communique avec l'API.&lt;/p&gt;
 &lt;p&gt;Il suffit de modifier la configuration de la vm #1 et d'ajouter :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;config.vm.network &amp;quot;private_network&amp;quot;, ip: &amp;quot;192.168.10.1&amp;quot;
@@ -1859,7 +1861,7 @@ qu'une fonctionnalité de code.&lt;/p&gt;
 &lt;span class="n"&gt;api_add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;books&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;$&lt;/span&gt;&lt;span class="n"&gt;datas&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Je test généralement chaque élément séparement.&lt;/p&gt;
+&lt;p&gt;Je teste généralement chaque élément séparément.&lt;/p&gt;
 &lt;p&gt;Pour tester la première portion de mon code :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;//* Obtenir le …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Dans mes fichiers de test j'utilise souvent des commentaires pour tester
 qu'une fonctionnalité de code.&lt;/p&gt;
@@ -1871,7 +1873,7 @@ qu'une fonctionnalité de code.&lt;/p&gt;
 &lt;span class="n"&gt;api_add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;books&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;$&lt;/span&gt;&lt;span class="n"&gt;datas&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Je test généralement chaque élément séparement.&lt;/p&gt;
+&lt;p&gt;Je teste généralement chaque élément séparément.&lt;/p&gt;
 &lt;p&gt;Pour tester la première portion de mon code :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;//* Obtenir le livre #1&lt;/span&gt;
 &lt;span class="n"&gt;api_get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;books/1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
@@ -1918,7 +1920,7 @@ updating (to another version …&lt;/p&gt;</summary><content type="html">&lt;p&g
 &lt;p&gt;-p ou --pretend, permet d'afficher ce qui sera mis à jour. Affiche
 également les différents flags (N = new (not yet installed), U =
 updating (to another version) etc…) -v ou --verbose, mode verbeux. -u ou
---update, met à jour les programmes dans la meilleur version disponible.
+--update, met à jour les programmes dans la meilleure version disponible.
 -D ou --deep, met à jour les dépendances des programmes si nécessaire.
 -N ou --newuse, met à jour les programmes dont le "USE" a été modifié
 depuis son installation.&lt;/p&gt;
@@ -1985,10 +1987,10 @@ décompresser ce format exemple :&lt;/p&gt;
 
 &lt;p&gt;Il suffit de retenir :&lt;/p&gt;
 &lt;p&gt;-c comme compression / "x" comme eXtract ou eXtraction. -v pour le mode
-verbeux. -z pour le "gzip" d'ou le ".gz". -f pour spécifier le fichier.&lt;/p&gt;
+verbeux. -z pour le "gzip" d'où le ".gz". -f pour spécifier le fichier.&lt;/p&gt;
 &lt;h2&gt;tar.bz2&lt;/h2&gt;
-&lt;p&gt;Pour les &lt;code&gt;tar.bz2&lt;/code&gt; je ne sais JAMAIS qu'il faut remplacer "z" de gizip
-par "j" de Bzip… (la lettre "b" étant sans doute utilisé avant que le
+&lt;p&gt;Pour les &lt;code&gt;tar.bz2&lt;/code&gt; je ne sais JAMAIS qu'il faut remplacer "z" de gzip
+par "j" de Bzip… (la lettre "b" étant sans doute utilisée avant que le
 bzip n'apparaisse). L'alternative est d'utiliser "--bzip"&lt;/p&gt;
 &lt;p&gt;On compresse avec :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;tar -cvjf archive.tar.bz2 dossier_a_compresser/
@@ -2023,12 +2025,12 @@ fois ou d'utiliser "--xz".&lt;/p&gt;
 
 &lt;p&gt;Ou :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;tar --xz -xvf archive.tar.xz
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="archive"/><category term="gzip"/></entry><entry><title>Suppression des branches distantes inexistantes</title><link href="https://www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html" rel="alternate"/><published>2015-08-25T13:43:05+02:00</published><updated>2015-08-25T13:43:05+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-08-25:/2015-08-25-suppression-des-branches-distantes-inexistantes.html</id><summary type="html">&lt;p&gt;Lors d'un developpement j'ai créé une branche "add_namespace" qui m'a
-permis d'ajouté des namespaces a différents fichiers PHP.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="archive"/><category term="gzip"/></entry><entry><title>Suppression des branches distantes inexistantes</title><link href="https://www.choiz.fr/2015-08-25-suppression-des-branches-distantes-inexistantes.html" rel="alternate"/><published>2015-08-25T13:43:05+02:00</published><updated>2015-08-25T13:43:05+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-08-25:/2015-08-25-suppression-des-branches-distantes-inexistantes.html</id><summary type="html">&lt;p&gt;Lors d'un développement j'ai créé une branche "add_namespace" qui m'a
+permis d'ajouter des namespaces à différents fichiers PHP.&lt;/p&gt;
 &lt;p&gt;Une fois la modification faite j'ai envoyé ma branche sur l'origin, en
 faisant un "pull request" (github) ou "merge request" (gitlab).&lt;/p&gt;
-&lt;p&gt;Un autre développeur a accepté mon pull request (il a donc …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Lors d'un developpement j'ai créé une branche "add_namespace" qui m'a
-permis d'ajouté des namespaces a différents fichiers PHP.&lt;/p&gt;
+&lt;p&gt;Un autre développeur a accepté mon pull request (il a donc …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Lors d'un développement j'ai créé une branche "add_namespace" qui m'a
+permis d'ajouter des namespaces à différents fichiers PHP.&lt;/p&gt;
 &lt;p&gt;Une fois la modification faite j'ai envoyé ma branche sur l'origin, en
 faisant un "pull request" (github) ou "merge request" (gitlab).&lt;/p&gt;
 &lt;p&gt;Un autre développeur a accepté mon pull request (il a donc mergé la
@@ -2041,7 +2043,7 @@ branche) et a supprimé ma branche de l'origine.&lt;/p&gt;
 &lt;p&gt;remote/origin/add_namespace&lt;/p&gt;
 &lt;p&gt;remote/origin/master&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Pour pouvoir effacer cette branche dans le remote, il suffit de tapper
+&lt;p&gt;Pour pouvoir effacer cette branche dans le remote, il suffit de taper
 la commande :&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;git remote prune origin&lt;/p&gt;
@@ -2079,10 +2081,10 @@ appuyant sur "enter" vous allez confirmer le formatage…&lt;/p&gt;
 vous propose.&lt;/p&gt;
 &lt;p&gt;Même problème avec toutes les autres touches : "espace" qui confirme
 généralement, "o" pour "oui", "y" pour "yes", "n" pour "no" ou "non", ou
-une quantité "1", "2", ou toute autre lettre défini tel que "a" pour
+une quantité "1", "2", ou toute autre lettre définie telle que "a" pour
 "annuler", "c" pour "cancel"…&lt;/p&gt;
 &lt;p&gt;Bref la seule touche que j'utilise pour sortir mon ordinateur de veille
-est "shift". Que ça soit le "shift" droit ou gauche il ne fais jamais
+est "shift". Que ça soit le "shift" droit ou gauche il ne fait jamais
 d'action spécifique à ma connaissance ;-)&lt;/p&gt;</content><category term="text"/><category term="key"/><category term="computer"/></entry><entry><title>Récupérer le master depuis le remote origin avec git</title><link href="https://www.choiz.fr/2015-08-07-r%C3%A9cup%C3%A9rer-le-master-depuis-le-remote-origin-avec.html" rel="alternate"/><published>2015-08-07T17:33:07+02:00</published><updated>2015-08-07T17:33:07+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-08-07:/2015-08-07-récupérer-le-master-depuis-le-remote-origin-avec.html</id><summary type="html">&lt;p&gt;Dans certains projets j’utilise git avec plusieurs remote, par exemple :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;un remote “origin” se trouve sur un serveur perso.&lt;/li&gt;
@@ -2103,7 +2105,7 @@ d'action spécifique à ma connaissance ;-)&lt;/p&gt;</content><category term="t
 
 &lt;p&gt;Je préfèrerai que ma branche soit à jour avec mon origin/master et non
 github/master.&lt;/p&gt;
-&lt;p&gt;La solution que j’ai trouvé est la suivante :&lt;/p&gt;
+&lt;p&gt;La solution que j’ai trouvée est la suivante :&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;supprimer ma branche master locale :&lt;/p&gt;
@@ -2112,7 +2114,7 @@ github/master.&lt;/p&gt;
 
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;récupèrer mon master depuis le remote origin :&lt;/p&gt;
+&lt;p&gt;récupérer mon master depuis le remote origin :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git checkout -t -b master origin/master
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -2125,11 +2127,11 @@ github/master.&lt;/p&gt;
 gentoo l’utilisation de layman peut faciliter la vie.&lt;/p&gt;
 &lt;p&gt;Étant à la recherche de vagrant, la seule version disponible à ce jour
 sur gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de
-vagrant je me rend …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Certains programmes n’étant pas en dernière version dans les dépôts
+vagrant je me rends …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Certains programmes n’étant pas en dernière version dans les dépôts
 gentoo l’utilisation de layman peut faciliter la vie.&lt;/p&gt;
 &lt;p&gt;Étant à la recherche de vagrant, la seule version disponible à ce jour
 sur gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de
-vagrant je me rend compte que nous sommes à la version 1.7.3.&lt;/p&gt;
+vagrant je me rends compte que nous sommes à la version 1.7.3.&lt;/p&gt;
 &lt;p&gt;J’ai donc trouvé un overlay avec vagrant-bin version 1.7.3 :
 &lt;a href="http://gpo.zugaina.org/app-emulation/vagrant-bin"&gt;http://gpo.zugaina.org/app-emulation/vagrant-bin&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Pour utiliser cette overlay nous avons besoin de layman.&lt;/p&gt;
@@ -2139,7 +2141,7 @@ vagrant je me rend compte que nous sommes à la version 1.7.3.&lt;/p&gt;
 echo &amp;quot;source /usr/portage/local/layman/make.conf&amp;quot; &amp;gt;&amp;gt; /etc/make.conf
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Pour afficher tous les overlays disponible :&lt;/p&gt;
+&lt;p&gt;Pour afficher tous les overlays disponibles :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;layman -L
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -2168,9 +2170,9 @@ i7 4910MQ (qui a un score sur
 &lt;a href="http://www.cpubenchmark.net/cpu.php?cpu=Intel+Core+i7-4910MQ+%40+2.90GHz"&gt;cpubenchmark&lt;/a&gt;
 plutôt remarquable).&lt;/p&gt;
 &lt;p&gt;Je l'ai commandé sans ram, sans disque dur, avec un rack pour disque dur
-à la place d'un graveur dvd ou autre cd, sans extension de garanti pour
+à la place d'un graveur dvd ou autre cd, sans extension de garantie pour
 un peu moins de 1000€ (j'ai bénéficié d'une réduction de 5% et des frais
-de port gratuit). J'ai commandé mes barrettes de ram et mon mSata
+de port gratuits). J'ai commandé mes barrettes de ram et mon mSata
 ailleurs, car les marques en stock ne me plaisaient pas. &lt;em&gt;Note l'équipe
 de Anyware est bien sympa (ils ont enlevé les 2Go de ram qui m'étaient
 inutiles donc non facturé)&lt;/em&gt; Plutôt que payer 2Go de ram et ne jamais les
@@ -2183,9 +2185,9 @@ précédente avec un écran en 1080p et l'autre avec une résolution
 moindre…&lt;/p&gt;
 &lt;p&gt;Pour la compilation de chrome qui prenait 2/3h à elle seule sur mon
 ancien laptop, en 45mn c'était fait avec d'autres grosses applications
-tel que gimp ou darktable…&lt;/p&gt;
-&lt;p&gt;Pour l'instant rien a redire sur cette machine.&lt;/p&gt;
-&lt;p&gt;Voici les modules a activer dans le noyau pour le réseau et le son :&lt;/p&gt;
+telles que gimp ou darktable…&lt;/p&gt;
+&lt;p&gt;Pour l'instant rien à redire sur cette machine.&lt;/p&gt;
+&lt;p&gt;Voici les modules à activer dans le noyau pour le réseau et le son :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Realtek 8169 gigabit ethernet support
 Build Analog Device HD-audio codec support
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="computer"/><category term="kernel"/><category term="linux"/></entry><entry><title>Comment récupérer le contenu d’un fichier d’une autre branche avec GIT ?</title><link href="https://www.choiz.fr/2015-03-20-comment-r%C3%A9cup%C3%A9rer-le-contenu-dun-fichier-dune-autre-branche.html" rel="alternate"/><published>2015-03-20T15:27:23+01:00</published><updated>2015-03-20T15:27:23+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2015-03-20:/2015-03-20-comment-récupérer-le-contenu-dun-fichier-dune-autre-branche.html</id><content type="html">&lt;p&gt;Il suffit d’utiliser git show.&lt;/p&gt;
@@ -2222,7 +2224,7 @@ suivante :&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Imaginons maintenant que vous avez des sous-modules dans d'autres
-sous-modules. Exemple dans mon dépot
+sous-modules. Exemple dans mon dépôt
 &lt;a href="https://www.github.com/ChoiZ/dotfiles.git"&gt;dotfiles&lt;/a&gt; j'ai mon dépot
 &lt;a href="https://www.github.com/ChoiZ/vim-config.git"&gt;vim&lt;/a&gt; et dedans des
 sous-modules avec les plugins de vim. Pour initialiser, mettre à jour et
@@ -2294,7 +2296,7 @@ c0001 -- premier commit
 
 &lt;p&gt;le "-2" sert à récupérer 2 commits à partir du commit c0002.&lt;/p&gt;</content><category term="text"/><category term="git"/><category term="patch"/></entry><entry><title>Installation de Skype 64 sur Debian</title><link href="https://www.choiz.fr/2014-03-21-installation-de-skype-64-sur-debian.html" rel="alternate"/><published>2014-03-21T01:32:18+01:00</published><updated>2014-03-21T01:32:18+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-03-21:/2014-03-21-installation-de-skype-64-sur-debian.html</id><summary type="html">&lt;p&gt;Télécharger la dernière version de &lt;a href="http://www.skype.com"&gt;Skype&lt;/a&gt; (Debian
 7.0 [multiarch]).&lt;/p&gt;
-&lt;p&gt;Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. :&lt;/p&gt;
+&lt;p&gt;Ajouter l'architecture i386 si vous ne l'avez pas déjà fait. :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dpkg --add-architecture i386
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -2307,7 +2309,7 @@ apt-get install -f
 &lt;p&gt;Installer Skype en n'oubliant pas de remplacer "x" par la bonne version :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dpkg -i …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Télécharger la dernière version de &lt;a href="http://www.skype.com"&gt;Skype&lt;/a&gt; (Debian
 7.0 [multiarch]).&lt;/p&gt;
-&lt;p&gt;Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. :&lt;/p&gt;
+&lt;p&gt;Ajouter l'architecture i386 si vous ne l'avez pas déjà fait. :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dpkg --add-architecture i386
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -2347,10 +2349,10 @@ formulaire non sécurisée (http://). Cela représente un risque de sécurité
 permettant le vol d&amp;#39;identifiants de connexion.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;La première indications informe que vous n'êtes pas sur un site
-utilisant le HTTPS. Lorsque vous allez remplir le champs "password"
+&lt;p&gt;La première indication informe que vous n'êtes pas sur un site
+utilisant le HTTPS. Lorsque vous allez remplir le champ "password"
 celui-ci sera envoyé en clair sur le réseau.&lt;/p&gt;
-&lt;p&gt;La seconde indication informe que l'action du formulaire envoi sur une
+&lt;p&gt;La seconde indication informe que l'action du formulaire envoie sur une
 page qui n'est pas en HTTPS.&lt;/p&gt;
 &lt;p&gt;Vous pouvez avoir votre formulaire sur l'url :
 &lt;a href="https://www.mon-formulaire.fr"&gt;https://www.mon-formulaire.fr&lt;/a&gt; et dans l'action de votre formulaire
@@ -2431,29 +2433,29 @@ configuré, lancer imapfilter simplement depuis le terminal :&lt;/p&gt;
 non utilisés (jeux etc…).&lt;/p&gt;
 &lt;p&gt;J'ai malheureusement supprimé un peu (trop) de paquets tel que
 (xfdesktop4 et xfce4-panel). Au démarrage de x, une fois identifié, un
-écran gris s'affiche et rien d'autre. Heureusement grâce à mon access
+écran gris s'affiche et rien d'autre. Heureusement grâce à mon accès
 SSH je peux me …&lt;/p&gt;</summary><content type="html">&lt;p&gt;En voulant modifier xscreensaver par i3lock j'ai supprimé des paquets
 non utilisés (jeux etc…).&lt;/p&gt;
 &lt;p&gt;J'ai malheureusement supprimé un peu (trop) de paquets tel que
 (xfdesktop4 et xfce4-panel). Au démarrage de x, une fois identifié, un
-écran gris s'affiche et rien d'autre. Heureusement grâce à mon access
+écran gris s'affiche et rien d'autre. Heureusement grâce à mon accès
 SSH je peux me connecter à la machine à distance.&lt;/p&gt;
-&lt;p&gt;Pour voir la liste des paquets déinstallés j'ai donc fait :&lt;/p&gt;
+&lt;p&gt;Pour voir la liste des paquets désinstallés j'ai donc fait :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dpkg --get-selections &amp;gt; liste-des-paquets
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Il suffit ensuite d'ouvrir dans un éditeur texte (type vi) le fichier
-pour voir les paquets installés / déinstallés. Et réinstaller avec sudo
+pour voir les paquets installés / désinstallés. Et réinstaller avec sudo
 apt-get install le ou les paquets manquants.&lt;/p&gt;</content><category term="text"/><category term="dpkg"/><category term="debian"/><category term="xubuntu"/><category term="linux"/></entry><entry><title>Git diff multiligne</title><link href="https://www.choiz.fr/2014-03-05-git-diff-multiligne.html" rel="alternate"/><published>2014-03-05T12:56:00+01:00</published><updated>2014-03-05T12:56:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-03-05:/2014-03-05-git-diff-multiligne.html</id><summary type="html">&lt;p&gt;Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
 ligne…&lt;/p&gt;
-&lt;p&gt;J'ai du faire un &lt;em&gt;git diff&lt;/em&gt; dans mon terminal et copié la ligne (mais
+&lt;p&gt;J'ai dû faire un &lt;em&gt;git diff&lt;/em&gt; dans mon terminal et copié la ligne (mais
 pas entièrement…).&lt;/p&gt;
-&lt;p&gt;J'ai donc refais un &lt;em&gt;git diff&lt;/em&gt; dans mon terminal et je me suis aperçu
+&lt;p&gt;J'ai donc refait un &lt;em&gt;git diff&lt;/em&gt; dans mon terminal et je me suis aperçu
 que ma ligne qui devait être sur …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
 ligne…&lt;/p&gt;
-&lt;p&gt;J'ai du faire un &lt;em&gt;git diff&lt;/em&gt; dans mon terminal et copié la ligne (mais
+&lt;p&gt;J'ai dû faire un &lt;em&gt;git diff&lt;/em&gt; dans mon terminal et copié la ligne (mais
 pas entièrement…).&lt;/p&gt;
-&lt;p&gt;J'ai donc refais un &lt;em&gt;git diff&lt;/em&gt; dans mon terminal et je me suis aperçu
+&lt;p&gt;J'ai donc refait un &lt;em&gt;git diff&lt;/em&gt; dans mon terminal et je me suis aperçu
 que ma ligne qui devait être sur plusieurs lignes ne l'était pas…&lt;/p&gt;
 &lt;p&gt;Mon fichier texte ressemble à ceci :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ligne avec un peu de texte ici nous avons 66 caractères affichés.
@@ -2490,7 +2492,7 @@ No newline at end of file
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;diskutil list
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Qui permet de lister vos disque dur / clés usb etc…&lt;/p&gt;
+&lt;p&gt;Qui permet de lister vos disques durs / clés usb etc…&lt;/p&gt;
 &lt;p&gt;ici ma clé usb est disk2. :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/dev/disk2
    #:                       TYPE NAME                    SIZE       IDENTIFIER
@@ -2503,7 +2505,7 @@ No newline at end of file
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;diskutil list
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Qui permet de lister vos disque dur / clés usb etc…&lt;/p&gt;
+&lt;p&gt;Qui permet de lister vos disques durs / clés usb etc…&lt;/p&gt;
 &lt;p&gt;ici ma clé usb est disk2. :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/dev/disk2
    #:                       TYPE NAME                    SIZE       IDENTIFIER
@@ -2534,7 +2536,7 @@ cette clé usb :&lt;/p&gt;
 Disk /dev/disk2 ejected
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="xubuntu"/><category term="osx"/><category term="linux"/></entry><entry><title>git cherry-pick</title><link href="https://www.choiz.fr/2014-02-06-git-cherry-pick.html" rel="alternate"/><published>2014-02-06T23:11:30+01:00</published><updated>2014-02-06T23:11:30+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-02-06:/2014-02-06-git-cherry-pick.html</id><content type="html">&lt;p&gt;J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
 messages sur cherry-pick sans savoir ce que c'était.&lt;/p&gt;
-&lt;p&gt;git cherry-pick permet d'appliquer un commit sur la branche sur la
+&lt;p&gt;git cherry-pick permet d'appliquer un commit sur la
 branche actuelle.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git cherry-pick c4a99776
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="git"/></entry><entry><title>Nouveau thème</title><link href="https://www.choiz.fr/2014-02-06-nouveau-th%C3%A8me.html" rel="alternate"/><published>2014-02-06T23:03:00+01:00</published><updated>2014-02-06T23:03:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-02-06:/2014-02-06-nouveau-thème.html</id><content type="html">&lt;p&gt;Je n'avais pas mis à jour mon thème depuis bien longtemps.&lt;/p&gt;
@@ -2543,7 +2545,7 @@ branche actuelle.&lt;/p&gt;
 thème" src="https://31.media.tumblr.com/d0896de0a038122cee44adbfaeb7e90c/tumblr_inline_n0lh2qig1i1qzr4hx.png"&gt;&lt;/p&gt;
 &lt;p&gt;Voici l'ancien thème en souvenir.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="ancien
-thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr_inline_n0lh2l5LOi1qzr4hx.png"&gt;&lt;/p&gt;</content><category term="text"/><category term="blog"/></entry><entry><title>Suppression d'un caractère unicode dans Vim</title><link href="https://www.choiz.fr/2014-01-19-suppression-dun-caract%C3%A8re-unicode-dans-vim.html" rel="alternate"/><published>2014-01-19T17:06:00+01:00</published><updated>2014-01-19T17:06:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-01-19:/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html</id><summary type="html">&lt;p&gt;J'étais à la recherche de se caractère unicode dans vim :&lt;/p&gt;
+thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr_inline_n0lh2l5LOi1qzr4hx.png"&gt;&lt;/p&gt;</content><category term="text"/><category term="blog"/></entry><entry><title>Suppression d'un caractère unicode dans Vim</title><link href="https://www.choiz.fr/2014-01-19-suppression-dun-caract%C3%A8re-unicode-dans-vim.html" rel="alternate"/><published>2014-01-19T17:06:00+01:00</published><updated>2014-01-19T17:06:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2014-01-19:/2014-01-19-suppression-dun-caractère-unicode-dans-vim.html</id><summary type="html">&lt;p&gt;J'étais à la recherche de ce caractère unicode dans vim :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;lt;U+2028&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -2554,7 +2556,7 @@ thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr
 &lt;p&gt;Décortiquons la commande :&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;:%s/&lt;/code&gt; Recherche et remplace dans tout le fichier&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;\%U2028&lt;/code&gt; Le caractère que l'on recherche unicode "2028"&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;//&lt;/code&gt; par rien (1er slash sépare la recherche …&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'étais à la recherche de se caractère unicode dans vim :&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;//&lt;/code&gt; par rien (1er slash sépare la recherche …&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'étais à la recherche de ce caractère unicode dans vim :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;lt;U+2028&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -2566,17 +2568,17 @@ thème" src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr
 &lt;p&gt;&lt;code&gt;:%s/&lt;/code&gt; Recherche et remplace dans tout le fichier&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;\%U2028&lt;/code&gt; Le caractère que l'on recherche unicode "2028"&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;//&lt;/code&gt; par rien (1er slash sépare la recherche par ce qu'on remplace, le second pour dire la fin de ce qu'on remplace).&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;g&lt;/code&gt; dans tout le fichier (global).&lt;/p&gt;</content><category term="text"/><category term="vim"/><category term="encoding"/></entry><entry><title>crontab -e file(s)</title><link href="https://www.choiz.fr/2013-11-13-crontab-e-files.html" rel="alternate"/><published>2013-11-13T21:13:34+01:00</published><updated>2013-11-13T21:13:34+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-11-13:/2013-11-13-crontab-e-files.html</id><content type="html">&lt;p&gt;Ou se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;g&lt;/code&gt; dans tout le fichier (global).&lt;/p&gt;</content><category term="text"/><category term="vim"/><category term="encoding"/></entry><entry><title>crontab -e file(s)</title><link href="https://www.choiz.fr/2013-11-13-crontab-e-files.html" rel="alternate"/><published>2013-11-13T21:13:34+01:00</published><updated>2013-11-13T21:13:34+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-11-13:/2013-11-13-crontab-e-files.html</id><content type="html">&lt;p&gt;Où se trouve(nt) le(s) fichier(s) crontab lorsque l'on tape crontab -e ?&lt;/p&gt;
 &lt;p&gt;C'est une bonne question n'est-ce pas ?&lt;/p&gt;
 &lt;p&gt;La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
-debian, a voir sur d'autres distribs)&lt;/p&gt;</content><category term="text"/><category term="crontab"/><category term="file"/><category term="linux"/></entry><entry><title>Chmod 755 sur les dossiers et 644 sur les fichiers</title><link href="https://www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html" rel="alternate"/><published>2013-11-12T20:47:00+01:00</published><updated>2013-11-12T20:47:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-11-12:/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html</id><summary type="html">&lt;p&gt;C'est toujours la galère lorsque l'on veut que tout soit propre au
+debian, à voir sur d'autres distribs)&lt;/p&gt;</content><category term="text"/><category term="crontab"/><category term="file"/><category term="linux"/></entry><entry><title>Chmod 755 sur les dossiers et 644 sur les fichiers</title><link href="https://www.choiz.fr/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html" rel="alternate"/><published>2013-11-12T20:47:00+01:00</published><updated>2013-11-12T20:47:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-11-12:/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html</id><summary type="html">&lt;p&gt;C'est toujours la galère lorsque l'on veut que tout soit propre au
 niveau des permissions des dossiers / fichiers.&lt;/p&gt;
 &lt;p&gt;Souvent la première chose que l'on fait : on va dans chaque dossier et
-on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
+on vérifie un à un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
 dossiers ça va …&lt;/p&gt;</summary><content type="html">&lt;p&gt;C'est toujours la galère lorsque l'on veut que tout soit propre au
 niveau des permissions des dossiers / fichiers.&lt;/p&gt;
 &lt;p&gt;Souvent la première chose que l'on fait : on va dans chaque dossier et
-on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
+on vérifie un à un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
 dossiers ça va mais quand on en a 40… on utilise une autre technique !&lt;/p&gt;
 &lt;p&gt;J'utilise pour les dossiers :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;find&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\`&lt;/span&gt;pwd&lt;span class="se"&gt;\`&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-type&lt;span class="w"&gt; &lt;/span&gt;d&lt;span class="w"&gt; &lt;/span&gt;-exec&lt;span class="w"&gt; &lt;/span&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;755&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -2628,14 +2630,14 @@ convert icon512.png -resize x152 touch-icon-ipad-retina.png
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;link&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;rel&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;apple-touch-icon-precomposed&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;sizes&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;152x152&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;href&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;touch-icon-ipad-retina.png&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;A noter les appareils Android utilisent aussi les images
+&lt;p&gt;À noter les appareils Android utilisent aussi les images
 "apple-touch-icon".&lt;/p&gt;</content><category term="text"/><category term="cli"/><category term="imagemagick"/></entry><entry><title>Installer jshint sur mac</title><link href="https://www.choiz.fr/2013-10-14-installer-jshint-sur-mac.html" rel="alternate"/><published>2013-10-14T12:41:08+02:00</published><updated>2013-10-14T12:41:08+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-10-14:/2013-10-14-installer-jshint-sur-mac.html</id><content type="html">&lt;p&gt;Installation via npm de jshint (-g pour installer pour tous les utilisateurs) :
     sudo npm install -g jshint&lt;/p&gt;
 &lt;p&gt;Faire un lien symbolique pour pouvoir utiliser directement jshint sans
-préciser tout le chemin a chaque fois :&lt;/p&gt;
+préciser tout le chemin à chaque fois :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="npm"/></entry><entry><title>Git se déplacer dans une branche distante</title><link href="https://www.choiz.fr/2013-10-01-git-se-d%C3%A9placer-dans-une-branche-distante.html" rel="alternate"/><published>2013-10-01T13:51:00+02:00</published><updated>2013-10-01T13:51:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-10-01:/2013-10-01-git-se-déplacer-dans-une-branche-distante.html</id><summary type="html">&lt;p&gt;J'utilise des branches tel que prod, preprod pour mes projets et en
-local il m'arrive de vouloir aller sur ses branches :&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="npm"/></entry><entry><title>Git se déplacer dans une branche distante</title><link href="https://www.choiz.fr/2013-10-01-git-se-d%C3%A9placer-dans-une-branche-distante.html" rel="alternate"/><published>2013-10-01T13:51:00+02:00</published><updated>2013-10-01T13:51:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-10-01:/2013-10-01-git-se-déplacer-dans-une-branche-distante.html</id><summary type="html">&lt;p&gt;J'utilise des branches telles que prod, preprod pour mes projets et en
+local il m'arrive de vouloir aller sur ces branches :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git checkout preprod
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -2643,9 +2645,9 @@ local il m'arrive de vouloir aller sur ses branches :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;pathspec&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;preprod&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;did&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;match&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;any&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;known&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Je vais mettre a jour mon origin :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git fetch origin …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;J'utilise des branches tel que prod, preprod pour mes projets et en
-local il m'arrive de vouloir aller sur ses branches :&lt;/p&gt;
+&lt;p&gt;Je vais mettre à jour mon origin :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git fetch origin …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;J'utilise des branches telles que prod, preprod pour mes projets et en
+local il m'arrive de vouloir aller sur ces branches :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git checkout preprod
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -2653,7 +2655,7 @@ local il m'arrive de vouloir aller sur ses branches :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;pathspec&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;preprod&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;did&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;match&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;any&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;known&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Je vais mettre a jour mon origin :&lt;/p&gt;
+&lt;p&gt;Je vais mettre à jour mon origin :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git fetch origin
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -2668,7 +2670,7 @@ Switched to a new branch &amp;#39;preprod&amp;#39;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl -IL url
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Voici l'exemble avec tumblr.com :&lt;/p&gt;
+&lt;p&gt;Voici l'exemple avec tumblr.com :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;curl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;-IL&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;http&lt;/span&gt;&lt;span class="o"&gt;://&lt;/span&gt;&lt;span class="nt"&gt;tumblr&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;com&lt;/span&gt;
 
 &lt;span class="nt"&gt;HTTP&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;301&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;Moved&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;Permanently&lt;/span&gt;
@@ -2682,7 +2684,7 @@ Switched to a new branch &amp;#39;preprod&amp;#39;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl -IL url
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Voici l'exemble avec tumblr.com :&lt;/p&gt;
+&lt;p&gt;Voici l'exemple avec tumblr.com :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;curl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;-IL&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;http&lt;/span&gt;&lt;span class="o"&gt;://&lt;/span&gt;&lt;span class="nt"&gt;tumblr&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;com&lt;/span&gt;
 
 &lt;span class="nt"&gt;HTTP&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;301&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;Moved&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;Permanently&lt;/span&gt;
@@ -2706,11 +2708,11 @@ Switched to a new branch &amp;#39;preprod&amp;#39;
 &lt;span class="nt"&gt;Vary&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;Accept-Encoding&lt;/span&gt;
 &lt;span class="nt"&gt;P3P&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;CP&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&amp;quot;&lt;/span&gt;
 &lt;span class="nt"&gt;Set-Cookie&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;tmgioct&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nt"&gt;52485e21d628b00096885790&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;expires&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nt"&gt;Wed&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;27-Sep-2023&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;17&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;06&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;41&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;GMT&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;path&lt;/span&gt;&lt;span class="o"&gt;=/;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;httponly&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="curl"/><category term="http"/></entry><entry><title>Passer de svn à git</title><link href="https://www.choiz.fr/2013-07-16-passer-de-svn-%C3%A0-git.html" rel="alternate"/><published>2013-07-16T22:37:00+02:00</published><updated>2013-07-16T22:37:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-07-16:/2013-07-16-passer-de-svn-à-git.html</id><summary type="html">&lt;p&gt;Sur le projet Addictradio nous utilisons encore un de nos dépot avec
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="curl"/><category term="http"/></entry><entry><title>Passer de svn à git</title><link href="https://www.choiz.fr/2013-07-16-passer-de-svn-%C3%A0-git.html" rel="alternate"/><published>2013-07-16T22:37:00+02:00</published><updated>2013-07-16T22:37:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-07-16:/2013-07-16-passer-de-svn-à-git.html</id><summary type="html">&lt;p&gt;Sur le projet Addictradio nous utilisons encore un de nos dépôts avec
 svn. Il est temps de faire la migration de svn à git !&lt;/p&gt;
 &lt;p&gt;J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
 voulais voici donc ma procédure :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;svn&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;log&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;--quiet &amp;#39;svn://svn.mondomaine/monprojet&amp;#39; | grep &amp;quot;^r …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Sur le projet Addictradio nous utilisons encore un de nos dépot avec
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;svn&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;log&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;--quiet &amp;#39;svn://svn.mondomaine/monprojet&amp;#39; | grep &amp;quot;^r …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Sur le projet Addictradio nous utilisons encore un de nos dépôts avec
 svn. Il est temps de faire la migration de svn à git !&lt;/p&gt;
 &lt;p&gt;J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
 voulais voici donc ma procédure :&lt;/p&gt;
@@ -2733,7 +2735,7 @@ tag;&lt;span class="w"&gt; &lt;/span&gt;do&lt;span class="w"&gt; &lt;/span&gt;ec
 tags/&lt;span class="nv"&gt;$tag&lt;/span&gt;&amp;quot;;&lt;span class="w"&gt; &lt;/span&gt;done&lt;span class="w"&gt; &lt;/span&gt;|&lt;span class="w"&gt; &lt;/span&gt;sh
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Pour finir ajoutez votre dépot distant :&lt;/p&gt;
+&lt;p&gt;Pour finir ajoutez votre dépôt distant :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;remote&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;add&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;origin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="nv"&gt;@git&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nl"&gt;mondomaine&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;monprojet&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;
 &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;push&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;origin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;--tags&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="svn"/><category term="git"/></entry><entry><title>Export / Import avec PostgreSQL</title><link href="https://www.choiz.fr/2013-06-22-export-import-avec-postgresql.html" rel="alternate"/><published>2013-06-22T19:57:41+02:00</published><updated>2013-06-22T19:57:41+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-06-22:/2013-06-22-export-import-avec-postgresql.html</id><content type="html">&lt;p&gt;Pour exporter une table spécifique d'une base :&lt;/p&gt;
@@ -2747,72 +2749,50 @@ tags/&lt;span class="nv"&gt;$tag&lt;/span&gt;&amp;quot;;&lt;span class="w"&gt; &
 &lt;p&gt;Pour importer un dump dans une base :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;psql &lt;span class="gs"&gt;*base*&lt;/span&gt; &amp;lt; &lt;span class="gs"&gt;*dump_base_table*&lt;/span&gt;.sql
 psql &lt;span class="gs"&gt;*base*&lt;/span&gt; &amp;lt; &lt;span class="gs"&gt;*dump_base*&lt;/span&gt;.sql
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="sql"/></entry><entry><title>Git déplacer mon dernier commit sur une autre branche</title><link href="https://www.choiz.fr/2013-06-22-git-d%C3%A9placer-mon-dernier-commit-sur-une-autre.html" rel="alternate"/><published>2013-06-22T13:07:00+02:00</published><updated>2013-06-22T13:07:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-06-22:/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html</id><summary type="html">&lt;p&gt;J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="sql"/></entry><entry><title>Git déplacer mon dernier commit sur une autre branche</title><link href="https://www.choiz.fr/2013-06-22-git-d%C3%A9placer-mon-dernier-commit-sur-une-autre.html" rel="alternate"/><published>2013-06-22T13:07:00+02:00</published><updated>2013-06-22T13:07:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-06-22:/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html</id><summary type="html">&lt;p&gt;J'ai fait une boulette ! J'ai commité deux fois en étant sur la branche
 &lt;em&gt;master&lt;/em&gt;… Généralement je fais toujours une branche pour les
 modifications, cette fois j'avais créé cette branche &lt;em&gt;debug_redirect&lt;/em&gt;
 mais je n'étais pas dessus…&lt;/p&gt;
 &lt;p&gt;Je me suis retrouvé avec les commits A-B-C sur mon &lt;em&gt;master&lt;/em&gt;. Or le seul
-qui …&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
+qui …&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'ai fait une boulette ! J'ai commité deux fois en étant sur la branche
 &lt;em&gt;master&lt;/em&gt;… Généralement je fais toujours une branche pour les
 modifications, cette fois j'avais créé cette branche &lt;em&gt;debug_redirect&lt;/em&gt;
 mais je n'étais pas dessus…&lt;/p&gt;
 &lt;p&gt;Je me suis retrouvé avec les commits A-B-C sur mon &lt;em&gt;master&lt;/em&gt;. Or le seul
 qui devait être dessus devait être A et je devais avoir B-C dans ma
 branche &lt;em&gt;debug_redirect&lt;/em&gt;. Voici un schéma de la situation :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;debug_redirect
-          ↓
-          A-B-C
-              ↑
-             master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Je dois donc soit mettre a jour ma branche &lt;em&gt;debug_redirect&lt;/em&gt;. :&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Schéma : master sur C, debug_redirect sur A" src="https://www.choiz.fr/images/git-branch-1.svg"&gt;&lt;/p&gt;
+&lt;p&gt;Je dois donc soit mettre à jour ma branche &lt;em&gt;debug_redirect&lt;/em&gt;. :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git checkout debug_redirect
 
 git merge master
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Ce qui donne :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;debug_redirect
-        ↓
-    A-B-C
-        ↑
-      master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Il me reste qu'a retourner sur le &lt;em&gt;master&lt;/em&gt; et revenir à la version A. :&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Schéma : master et debug_redirect sur C" src="https://www.choiz.fr/images/git-branch-2.svg"&gt;&lt;/p&gt;
+&lt;p&gt;Il me reste qu'à retourner sur le &lt;em&gt;master&lt;/em&gt; et revenir à la version A. :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git checkout master
 
 git reset --hard HEAD~2
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Ce qui donne :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  debug_redirect
-      ↓
-  A-B-C
-  ↑
-master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Maintenant que j'ai fixé mon bug sur ma branche  &lt;em&gt;debug_redirect&lt;/em&gt; je
+&lt;p&gt;&lt;img alt="Schéma : master sur A, debug_redirect sur C" src="https://www.choiz.fr/images/git-branch-3.svg"&gt;&lt;/p&gt;
+&lt;p&gt;Maintenant que j'ai fixé mon bug sur ma branche &lt;em&gt;debug_redirect&lt;/em&gt; je
 peux le merger avec le &lt;em&gt;master&lt;/em&gt;. :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git merge debug_redirect --no-ff
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Résultat :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;         B-C      debug_redirect
-       /     \
-     A - - - - D   master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
+&lt;p&gt;&lt;img alt="Schéma : merge no-ff, D fusionne C sur master" src="https://www.choiz.fr/images/git-branch-4.svg"&gt;&lt;/p&gt;
 &lt;p&gt;Pour voir vos commits par branche vous pouvez aussi utiliser la commande
 git log :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git log --graph --oneline --decorate
-&lt;span class="gs"&gt;*   4c677ac (HEAD, master) Merge branch &amp;#39;debug_redirect&amp;#39;&lt;/span&gt;
-&lt;span class="gs"&gt;|\ &lt;/span&gt;
+&lt;span class="gs"&gt;*   4c677ac (HEAD, master) Merge branch &amp;#39;debug_redirect&amp;#39;&lt;/span&gt;
+&lt;span class="gs"&gt;|\ &lt;/span&gt;
 &lt;span class="gs"&gt;| *&lt;/span&gt; 90e7a7a (debug_redirect) Fix another bug on redirect
 | &lt;span class="gs"&gt;* 40ae981 Fix the redirect bug&lt;/span&gt;
-&lt;span class="gs"&gt;|/ &lt;/span&gt;
+&lt;span class="gs"&gt;|/ &lt;/span&gt;
 &lt;span class="gs"&gt;*&lt;/span&gt; 4e06ff4 initial commit
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="git"/></entry><entry><title>Installation disque dur Seagate 4To Debian</title><link href="https://www.choiz.fr/2013-06-21-installation-disque-dur-seagate-4to-debian.html" rel="alternate"/><published>2013-06-21T00:30:00+02:00</published><updated>2013-06-21T00:30:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-06-21:/2013-06-21-installation-disque-dur-seagate-4to-debian.html</id><summary type="html">&lt;p&gt;J'ai investi dans un gros disque dur de 4To pour mes sauvegardes
 (Fichiers persos, photos, vidéos…). J'ai donc formaté mon disque avec «
@@ -2850,7 +2830,7 @@ Using /dev/sdd
 Welcome to GNU Parted! Type &amp;#39;help&amp;#39; to view a list of commands.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Définir le label GPT qui permet de faire des partition &amp;gt; 2To. :&lt;/p&gt;
+&lt;p&gt;Définir le label GPT qui permet de faire des partitions &amp;gt; 2To. :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;mklabel&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;gpt&lt;/span&gt;
 
 &lt;span class="nv"&gt;Warning&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;The&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;existing&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;disk&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;on&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;sdd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;will&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;be&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;destroyed&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;all&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;data&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;on&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;this&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;disk&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;will&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;be&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;lost&lt;/span&gt;.&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;Do&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;you&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;want&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;continue&lt;/span&gt;?
@@ -2910,11 +2890,11 @@ Création du journal (32768 blocs) : complété
 fichiers : complété
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Il ne reste plus qu'a monter la partition et éditer le fstab ;)&lt;/p&gt;</content><category term="text"/><category term="debian"/><category term="linux"/><category term="stockage"/></entry><entry><title>Toujours afficher le protocole dans Firefox</title><link href="https://www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html" rel="alternate"/><published>2013-06-10T14:22:00+02:00</published><updated>2013-06-10T14:22:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-06-10:/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html</id><summary type="html">&lt;p&gt;Souvent lorsque je copie/colle une url depuis firefox j'ajoute &lt;a href="http://"&gt;http://&lt;/a&gt;
+&lt;p&gt;Il ne reste plus qu'à monter la partition et éditer le fstab ;)&lt;/p&gt;</content><category term="text"/><category term="debian"/><category term="linux"/><category term="stockage"/></entry><entry><title>Toujours afficher le protocole dans Firefox</title><link href="https://www.choiz.fr/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html" rel="alternate"/><published>2013-06-10T14:22:00+02:00</published><updated>2013-06-10T14:22:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-06-10:/2013-06-10-toujours-afficher-le-protocole-dans-firefox.html</id><summary type="html">&lt;p&gt;Souvent lorsque je copie/colle une url depuis firefox j'ajoute &lt;a href="http://"&gt;http://&lt;/a&gt;
 or lors de la copie celui-ci est copié… Je me retrouve donc avec deux
 fois &lt;a href="http://"&gt;http://&lt;/a&gt;…&lt;/p&gt;
 &lt;p&gt;Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :&lt;/p&gt;
-&lt;p&gt;Ecrire dans la barre d'adresse :&lt;/p&gt;
+&lt;p&gt;Écrire dans la barre d'adresse :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;about&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -2926,7 +2906,7 @@ fois &lt;a href="http://"&gt;http://&lt;/a&gt;…&lt;/p&gt;
 or lors de la copie celui-ci est copié… Je me retrouve donc avec deux
 fois &lt;a href="http://"&gt;http://&lt;/a&gt;…&lt;/p&gt;
 &lt;p&gt;Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :&lt;/p&gt;
-&lt;p&gt;Ecrire dans la barre d'adresse :&lt;/p&gt;
+&lt;p&gt;Écrire dans la barre d'adresse :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;about&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -2936,7 +2916,7 @@ fois &lt;a href="http://"&gt;http://&lt;/a&gt;…&lt;/p&gt;
 
 &lt;p&gt;Modifier la valeur par :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;false
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="web"/><category term="config"/></entry><entry><title>Latin1 vers UTF-8</title><link href="https://www.choiz.fr/2013-05-29-latin1-utf-8.html" rel="alternate"/><published>2013-05-29T16:32:00+02:00</published><updated>2013-05-29T16:32:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-05-29:/2013-05-29-latin1-utf-8.html</id><summary type="html">&lt;p&gt;Voilà une solution simple pour convertir une base de donnée en Latin1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="web"/><category term="config"/></entry><entry><title>Latin1 vers UTF-8</title><link href="https://www.choiz.fr/2013-05-29-latin1-utf-8.html" rel="alternate"/><published>2013-05-29T16:32:00+02:00</published><updated>2013-05-29T16:32:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-05-29:/2013-05-29-latin1-utf-8.html</id><summary type="html">&lt;p&gt;Voilà une solution simple pour convertir une base de données en Latin1
 vers de l'UTF-8.&lt;/p&gt;
 &lt;p&gt;Utiliser mysqldump avec les options suivantes :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;--default-character-set=utf8
@@ -2950,7 +2930,7 @@ vers de l'UTF-8.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mysqldump -u user -p base table --default-character-set=utf8 --skip-set-charset &amp;gt; base_table.sql
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Ensuite en utilisant vim je fais un rechercher / remplacer des …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Voilà une solution simple pour convertir une base de donnée en Latin1
+&lt;p&gt;Ensuite en utilisant vim je fais un rechercher / remplacer des …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Voilà une solution simple pour convertir une base de données en Latin1
 vers de l'UTF-8.&lt;/p&gt;
 &lt;p&gt;Utiliser mysqldump avec les options suivantes :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;--default-character-set=utf8
@@ -2982,7 +2962,7 @@ différents latin1 en utf-8. :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mysql -u user -p base &amp;lt; dump_base_table.sql
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;il reste a vérifier si les champs sont bien en UTF-8.&lt;/p&gt;
+&lt;p&gt;il reste à vérifier si les champs sont bien en UTF-8.&lt;/p&gt;
 &lt;p&gt;Ici une table « table » avec une colonne « col » on ajoute un caractère
 accentué. :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;INSERT INTO table VALUES(&amp;quot;é&amp;quot;);
@@ -3016,17 +2996,17 @@ fonctionne aussi sur iMac etc…). L'installer puis redémarrer. Dans les
 préférences dans l'onglet "change key" recherchez "Use PC Style
 Copy/Paste #3bis" et sélectionnez l'option proposée.&lt;/p&gt;
 &lt;p&gt;Vous pouvez maintenant utiliser votre TypeMatrix en Bépo sur Mac Os X
-avec la prise en charge des touches couper, copier et coller.&lt;/p&gt;</content><category term="text"/><category term="keyboard"/><category term="macos"/></entry><entry><title>Logiciels de gestion de versions (Svn, Git, Mercurial)</title><link href="https://www.choiz.fr/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html" rel="alternate"/><published>2013-02-12T13:26:00+01:00</published><updated>2013-02-12T13:26:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-02-12:/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html</id><content type="html">&lt;p&gt;J'ai différents projet sous svn, git et mercurial. J'ai pour but de tout
+avec la prise en charge des touches couper, copier et coller.&lt;/p&gt;</content><category term="text"/><category term="keyboard"/><category term="macos"/></entry><entry><title>Logiciels de gestion de versions (Svn, Git, Mercurial)</title><link href="https://www.choiz.fr/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html" rel="alternate"/><published>2013-02-12T13:26:00+01:00</published><updated>2013-02-12T13:26:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2013-02-12:/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html</id><content type="html">&lt;p&gt;J'ai différents projets sous svn, git et mercurial. J'ai pour but de tout
 migrer sur git car disponible sur github ainsi que sur bitbucket.&lt;/p&gt;
-&lt;p&gt;J'ai trouvé un &lt;a href="http://www.yterium.net/Migrer-un-projet-SVN-vers-GIT"&gt;trés bon tutoriel pour migrer un projet svn à
+&lt;p&gt;J'ai trouvé un &lt;a href="http://www.yterium.net/Migrer-un-projet-SVN-vers-GIT"&gt;très bon tutoriel pour migrer un projet svn à
 git&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Egalement un autre tutoriel en anglais pour passer &lt;a href="http://hivelogic.com/articles/converting-from-mercurial-to-git"&gt;de mercurial à
+&lt;p&gt;Également un autre tutoriel en anglais pour passer &lt;a href="http://hivelogic.com/articles/converting-from-mercurial-to-git"&gt;de mercurial à
 git&lt;/a&gt;.&lt;/p&gt;</content><category term="text"/><category term="git"/><category term="svn"/></entry><entry><title>Bépo 11ème jour !</title><link href="https://www.choiz.fr/2012-12-27-b%C3%A9po-11%C3%A8me-jour.html" rel="alternate"/><published>2012-12-27T21:26:00+01:00</published><updated>2012-12-27T21:26:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-12-27:/2012-12-27-bépo-11ème-jour.html</id><summary type="html">&lt;p&gt;Depuis maintenant 11 jours je me suis mis au &lt;a href="http://bepo.fr/"&gt;bépo&lt;/a&gt;.
-J'ai gardé mes différents résultats, ce qui vas me permettre de faire
+J'ai gardé mes différents résultats, ce qui va me permettre de faire
 une courbe de progression de mon apprentissage.&lt;/p&gt;
 &lt;p&gt;Sachant qu'au second jour j'arrivais à taper environ 10,2 mots par
 minute, aujourd'hui je suis à 24,4 mots par …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Depuis maintenant 11 jours je me suis mis au &lt;a href="http://bepo.fr/"&gt;bépo&lt;/a&gt;.
-J'ai gardé mes différents résultats, ce qui vas me permettre de faire
+J'ai gardé mes différents résultats, ce qui va me permettre de faire
 une courbe de progression de mon apprentissage.&lt;/p&gt;
 &lt;p&gt;Sachant qu'au second jour j'arrivais à taper environ 10,2 mots par
 minute, aujourd'hui je suis à 24,4 mots par minute…&lt;/p&gt;
@@ -3034,17 +3014,17 @@ minute, aujourd'hui je suis à 24,4 mots par minute…&lt;/p&gt;
 &lt;a href="http://www.typematrix.com/"&gt;typematrix&lt;/a&gt;, sans marquage sur les touches
 ainsi que 2 skins : un en &lt;a href="http://fr.wikipedia.org/wiki/AZERTY"&gt;azerty&lt;/a&gt;
 et un en &lt;a href="http://bepo.fr"&gt;bépo&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Pour info je m'entraine généralement 2 fois par jour quand j'ai le temps
+&lt;p&gt;Pour info je m'entraîne généralement 2 fois par jour quand j'ai le temps
 environ 1/2 heure. Je m'intéresse pas mal au sujet et je vous recommande
 de lire le &lt;a href="http://bepo.fr/wiki/DVZine"&gt;dvzine en Français&lt;/a&gt; qui est
 fascinant.&lt;/p&gt;</content><category term="text"/><category term="bépo"/><category term="keyboard"/></entry><entry><title>Faire un ssh-copy-id sur Mac OS X</title><link href="https://www.choiz.fr/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html" rel="alternate"/><published>2012-09-30T11:50:54+02:00</published><updated>2012-09-30T11:50:54+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-09-30:/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html</id><summary type="html">&lt;p&gt;Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
 avez dû vous rendre compte que, même si openssh est installé nativement,
 cette commande n’est pas disponible.&lt;/p&gt;
-&lt;p&gt;Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
+&lt;p&gt;Cette commande n'est pas disponible par défaut sur Mac OS X. Mais on
 peut la rendre disponible facilement …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
 avez dû vous rendre compte que, même si openssh est installé nativement,
 cette commande n’est pas disponible.&lt;/p&gt;
-&lt;p&gt;Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
+&lt;p&gt;Cette commande n'est pas disponible par défaut sur Mac OS X. Mais on
 peut la rendre disponible facilement en quelques étapes. Créer un
 fichier "ssh-copy-id" dans le dossier "/usr/bin/" avec ce contenu :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
@@ -3146,7 +3126,7 @@ cat&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;lt;&amp;lt;EOF
 &lt;span class="s"&gt;EOF&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
 
-&lt;p&gt;Il ne reste qu'a donner les droits au fichier :&lt;/p&gt;
+&lt;p&gt;Il ne reste qu'à donner les droits au fichier :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;chmod 755 /usr/bin/ssh-copy-id
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -3167,11 +3147,11 @@ les préférences d'iTerm2.&lt;/p&gt;
 tout malheureusement.&lt;/p&gt;
 &lt;p&gt;La touche "enter" du pavé numérique ne fonctionne pas il faut donc
 cliquer sur "+" et dans Keyboard Shortcut: appuyer sur la touche et "↩"
-doit apparaitre. Dans Action: choisir "Send Hex Code" et taper "0xd".&lt;/p&gt;
-&lt;p&gt;J'ai également ajouter 2 raccourcis bien pratiques :&lt;/p&gt;
+doit apparaître. Dans Action: choisir "Send Hex Code" et taper "0xd".&lt;/p&gt;
+&lt;p&gt;J'ai également ajouté 2 raccourcis bien pratiques :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;"alt et fleche de gauche" soit "⌥←" avec le code "[H" permet de
-    revenir au debut de la ligne de commande que l'on tape (pratique si
+    revenir au début de la ligne de commande que l'on tape (pratique si
     on oublie un argument).&lt;/li&gt;
 &lt;li&gt;"alt et fleche de droite" soit "⌥→" avec le code "[F" pour aller à
     la fin de la ligne.&lt;/li&gt;
@@ -3241,7 +3221,7 @@ stash{0} :&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Habituellement je détache mon "Screen" mais cette fois j'ai oublié.&lt;/p&gt;
-&lt;p&gt;Pour "détacher" / "réattacher" mon "Screen" j'ai du faire la commande suivante :&lt;/p&gt;
+&lt;p&gt;Pour "détacher" / "réattacher" mon "Screen" j'ai dû faire la commande suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;screen -dRR
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -3251,12 +3231,12 @@ stash{0} :&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Habituellement je détache mon "Screen" mais cette fois j'ai oublié.&lt;/p&gt;
-&lt;p&gt;Pour "détacher" / "réattacher" mon "Screen" j'ai du faire la commande suivante :&lt;/p&gt;
+&lt;p&gt;Pour "détacher" / "réattacher" mon "Screen" j'ai dû faire la commande suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;screen -dRR
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Je note car c'est toujours bon à savoir :)&lt;/p&gt;</content><category term="text"/><category term="linux"/></entry><entry><title>Utilisation des branches et de git stash</title><link href="https://www.choiz.fr/2012-04-14-utilisation-des-branches-et-de-git-stash.html" rel="alternate"/><published>2012-04-14T16:32:42+02:00</published><updated>2012-04-14T16:32:42+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-04-14:/2012-04-14-utilisation-des-branches-et-de-git-stash.html</id><summary type="html">&lt;p&gt;Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
-sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc
+sur une branche qui sont pas à commiter dans l'immédiat. J'utilise donc
 git stash, voyons voir comment l'utiliser simplement.&lt;/p&gt;
 &lt;p&gt;On regarde l'état du status et des branches :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git status
@@ -3264,7 +3244,7 @@ git stash, voyons voir comment l'utiliser simplement.&lt;/p&gt;
 nothing to commit (working directory clean)
 
 $ git …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
-sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc
+sur une branche qui sont pas à commiter dans l'immédiat. J'utilise donc
 git stash, voyons voir comment l'utiliser simplement.&lt;/p&gt;
 &lt;p&gt;On regarde l'état du status et des branches :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git status
@@ -3275,7 +3255,7 @@ $ git branch
 &lt;span class="k"&gt;*&lt;/span&gt; master
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Je travail sur la branche master et je n'ai pas d'autre branche. Je vais
+&lt;p&gt;Je travaille sur la branche master et je n'ai pas d'autre branche. Je vais
 donc faire une branche API pour mon projet. :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git branch API
 
@@ -3294,7 +3274,7 @@ git branch
   master
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Maintenant je vais modifier un mon fichier manage.py sur ma branche API.
+&lt;p&gt;Maintenant je vais modifier mon fichier manage.py sur ma branche API.
 :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;git&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;status&lt;/span&gt;
 #&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;On&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;branch&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;API&lt;/span&gt;
@@ -3362,34 +3342,34 @@ les modifications précédentes git stash pop. :&lt;/p&gt;
 
 &lt;p&gt;Maintenant je peux continuer les modifications sur ma branche API
 réutilise git stash si besoin ou les commiter, merger ma branche…&lt;/p&gt;
-&lt;p&gt;git stash pop (récupére le dernier stash enregistré
+&lt;p&gt;git stash pop (récupère le dernier stash enregistré
 &lt;a href="mailto:stash@{0}"&gt;stash@{0}&lt;/a&gt;, l'applique et le supprime de la liste)
 mon alias = git stapp&lt;/p&gt;
-&lt;p&gt;git stash apply (récupére le dernier stash enregistré
-&lt;a href="mailto:stash@{0"&gt;stash@{0&lt;/a&gt;} et l'applique)&lt;/p&gt;
-&lt;p&gt;Et pour rien n'oublier (RTFM) : man git stash&lt;/p&gt;</content><category term="text"/><category term="git"/></entry><entry><title>Renomer des fichiers en CLI (ligne de commande)</title><link href="https://www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html" rel="alternate"/><published>2012-04-14T16:02:00+02:00</published><updated>2012-04-14T16:02:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-04-14:/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html</id><summary type="html">&lt;p&gt;Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
-correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
+&lt;p&gt;git stash apply (récupère le dernier stash enregistré
+&lt;a href="mailto:stash@{0}"&gt;stash@{0}&lt;/a&gt; et l'applique)&lt;/p&gt;
+&lt;p&gt;Et pour rien n'oublier (RTFM) : man git stash&lt;/p&gt;</content><category term="text"/><category term="git"/></entry><entry><title>Renommer des fichiers en CLI (ligne de commande)</title><link href="https://www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html" rel="alternate"/><published>2012-04-14T16:02:00+02:00</published><updated>2012-04-14T16:02:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-04-14:/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html</id><summary type="html">&lt;p&gt;Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
+corrects. Sous linux pour renommer plusieurs fichiers avec bash j'utilise
 "rename".&lt;/p&gt;
 &lt;p&gt;Exemple je veux supprimer tous les espaces d'un fichier :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;rename &amp;quot;s/ &lt;span class="gs"&gt;*//g&amp;quot; *&lt;/span&gt;.*
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Ou renomer tous mes fichiers .WAV en .wav etc… :&lt;/p&gt;
+&lt;p&gt;Ou renommer tous mes fichiers .WAV en .wav etc… :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;rename &amp;quot;s/\.WAV/\.wav/g&amp;quot; *.WAV
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;A …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
-correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
+&lt;p&gt;À …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
+corrects. Sous linux pour renommer plusieurs fichiers avec bash j'utilise
 "rename".&lt;/p&gt;
 &lt;p&gt;Exemple je veux supprimer tous les espaces d'un fichier :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;rename &amp;quot;s/ &lt;span class="gs"&gt;*//g&amp;quot; *&lt;/span&gt;.*
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Ou renomer tous mes fichiers .WAV en .wav etc… :&lt;/p&gt;
+&lt;p&gt;Ou renommer tous mes fichiers .WAV en .wav etc… :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;rename &amp;quot;s/\.WAV/\.wav/g&amp;quot; *.WAV
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;A vous de modifier l'expression régulière !&lt;/p&gt;</content><category term="text"/><category term="cli"/><category term="file"/><category term="linux"/></entry><entry><title>Update .gitconfig</title><link href="https://www.choiz.fr/2012-04-13-update-gitconfig.html" rel="alternate"/><published>2012-04-13T12:00:00+02:00</published><updated>2012-04-13T12:00:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-04-13:/2012-04-13-update-gitconfig.html</id><summary type="html">&lt;p&gt;Ajout du pull, push, diff et surtout stash :&lt;/p&gt;
+&lt;p&gt;À vous de modifier l'expression régulière !&lt;/p&gt;</content><category term="text"/><category term="cli"/><category term="file"/><category term="linux"/></entry><entry><title>Update .gitconfig</title><link href="https://www.choiz.fr/2012-04-13-update-gitconfig.html" rel="alternate"/><published>2012-04-13T12:00:00+02:00</published><updated>2012-04-13T12:00:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2012-04-13:/2012-04-13-update-gitconfig.html</id><summary type="html">&lt;p&gt;Ajout du pull, push, diff et surtout stash :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[user]&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;François LASSERRE&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="na"&gt;email&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;mon@email.fr&lt;/span&gt;
@@ -3530,7 +3510,7 @@ pouvez spécifier un autre chemin ainsi qu'un autre fichier. :&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Ici on tape un mot de passe si on en veut un lors de la connexion aux
-différents hosts. En général j'en défini un.&lt;/p&gt;
+différents hosts. En général j'en définis un.&lt;/p&gt;
 &lt;p&gt;Pour finir on copie la clé sur le serveur soit via scp :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;scp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;_rsa&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pub&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;user&lt;/span&gt;&lt;span class="nv"&gt;@ip&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;authorized&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;_keys&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -3538,15 +3518,15 @@ différents hosts. En général j'en défini un.&lt;/p&gt;
 &lt;p&gt;ou via ssh-copy-id :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;copy&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;_rsa&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pub&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;user&lt;/span&gt;&lt;span class="nv"&gt;@ip&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="ssh"/><category term="key"/></entry><entry><title>Clavier Apple sur debian</title><link href="https://www.choiz.fr/2011-12-02-clavier-apple-sur-debian.html" rel="alternate"/><published>2011-12-02T00:14:00+01:00</published><updated>2011-12-02T00:14:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-12-02:/2011-12-02-clavier-apple-sur-debian.html</id><summary type="html">&lt;p&gt;Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
-mapage clavier Mac. Il y a beaucoup de différences entre un clavier
+mappage clavier Mac. Il y a beaucoup de différences entre un clavier
 AZERTY de PC et un clavier AZERTY de Mac.&lt;/p&gt;
 &lt;p&gt;Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
-des endroits complétement différents.&lt;/p&gt;
+des endroits complètement différents.&lt;/p&gt;
 &lt;p&gt;J'ai donc décidé …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
-mapage clavier Mac. Il y a beaucoup de différences entre un clavier
+mappage clavier Mac. Il y a beaucoup de différences entre un clavier
 AZERTY de PC et un clavier AZERTY de Mac.&lt;/p&gt;
 &lt;p&gt;Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
-des endroits complétement différents.&lt;/p&gt;
+des endroits complètement différents.&lt;/p&gt;
 &lt;p&gt;J'ai donc décidé de modifier la configuration de debian pour prendre en
 compte un clavier mac. :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;dpkg&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;reconfigure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;keyboard&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;console&lt;/span&gt;
@@ -3574,13 +3554,13 @@ compte un clavier mac. :&lt;/p&gt;
 
 &lt;p&gt;J'ai choisi un clavier Apple, Français Mac, sans touche AltGr, avec
 comme touche de fonctionnalité secondaire "Alt droit". Malheureusement
-je n'ai pas réussi a mapper l'Alt de gauche pour avoir la même fonction
+je n'ai pas réussi à mapper l'Alt de gauche pour avoir la même fonction
 qu'à droite…&lt;/p&gt;
-&lt;p&gt;Et ensuite j'ai indiqué que je ne voulais pas pouvoir quitter le server
-X avec la combinaison de touche Control+Alt+Backspace.&lt;/p&gt;
+&lt;p&gt;Et ensuite j'ai indiqué que je ne voulais pas pouvoir quitter le serveur
+X avec la combinaison de touches Control+Alt+Backspace.&lt;/p&gt;
 &lt;p&gt;Si ceci ne fonctionne pas il faut se rendre dans la configuration du
-clavier de votre gestionnaire de fenêtre (xfce: dans mon cas). Puis
-désactiver le layout par defaut du système.&lt;/p&gt;
+clavier de votre gestionnaire de fenêtres (xfce: dans mon cas). Puis
+désactiver le layout par défaut du système.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image0" src="http://media.tumblr.com/tumblr_lvjsbrOL8E1qzr4hx.png"&gt;&lt;/p&gt;</content><category term="text"/><category term="debian"/><category term="keyboard"/><category term="osx"/></entry><entry><title>Dual screen sur xfce</title><link href="https://www.choiz.fr/2011-12-01-dual-screen-sur-xfce.html" rel="alternate"/><published>2011-12-01T12:14:16+01:00</published><updated>2011-12-01T12:14:16+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-12-01:/2011-12-01-dual-screen-sur-xfce.html</id><content type="html">&lt;p&gt;Un petit package bien pratique pour configurer le dual screen sur xfce
 se nomme : arandr :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install arandr
@@ -3589,7 +3569,7 @@ se nomme : arandr :&lt;/p&gt;
 &lt;p&gt;Ensuite il suffit d'ouvrir le menu d'xfce puis paramètres et vous avez
 le ARandR pour configurer les deux écrans.&lt;/p&gt;</content><category term="text"/><category term="linux"/></entry><entry><title>Flash sous Debian</title><link href="https://www.choiz.fr/2011-11-30-flash-sous-debian.html" rel="alternate"/><published>2011-11-30T22:52:56+01:00</published><updated>2011-11-30T22:52:56+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-11-30:/2011-11-30-flash-sous-debian.html</id><summary type="html">&lt;p&gt;Lors de l'installation de Debian sur mon poste au travail j'ai eu la
 surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
-chez Deezer c'est un peu problèmatique.&lt;/p&gt;
+chez Deezer c'est un peu problématique.&lt;/p&gt;
 &lt;p&gt;J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
 ceci :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;vi /etc/apt/source.list
@@ -3597,7 +3577,7 @@ ceci :&lt;/p&gt;
 
 &lt;p&gt;Ajouter contrib non-free aux différentes sources …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Lors de l'installation de Debian sur mon poste au travail j'ai eu la
 surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
-chez Deezer c'est un peu problèmatique.&lt;/p&gt;
+chez Deezer c'est un peu problématique.&lt;/p&gt;
 &lt;p&gt;J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
 ceci :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;vi /etc/apt/source.list
@@ -3610,7 +3590,7 @@ apt-get install flashplugin-nonfree
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;En relançant Firefox j'ai bien flash player fonctionnel sur Deezer.&lt;/p&gt;
-&lt;p&gt;Le package flashplugin étant nonfree Debian ne l'inclus pas directement
+&lt;p&gt;Le package flashplugin étant nonfree Debian ne l'inclut pas directement
 lors de l'installation.&lt;/p&gt;</content><category term="text"/><category term="debian"/><category term="linux"/></entry><entry><title>Voir les fichiers cachés sur Lion</title><link href="https://www.choiz.fr/2011-11-02-voir-les-fichiers-cach%C3%A9s-sur-lion.html" rel="alternate"/><published>2011-11-02T11:17:12+01:00</published><updated>2011-11-02T11:17:12+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-11-02:/2011-11-02-voir-les-fichiers-cachés-sur-lion.html</id><content type="html">&lt;p&gt;Dans un terminal :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;defaults write com.apple.Finder AppleShowAllFiles TRUE
 
@@ -3623,7 +3603,7 @@ fichier avec vim :&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Explications :&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;:1,$&lt;/code&gt; : Sélection des ligne 1 à $ ($ étant la dernière).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;:1,$&lt;/code&gt; : Sélection des lignes 1 à $ ($ étant la dernière).&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;s/^/\#/&lt;/code&gt; : &lt;code&gt;s&lt;/code&gt; pour search, &lt;code&gt;^&lt;/code&gt; indique le début de ligne, &lt;code&gt;/&lt;/code&gt; est un
 séparateur pour la recherche et pour ce que l'on souhaite remplacer et …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Voilà la commande pour ajouter un # au début de chaque ligne d'un
 fichier avec vim :&lt;/p&gt;
@@ -3631,7 +3611,7 @@ fichier avec vim :&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Explications :&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;:1,$&lt;/code&gt; : Sélection des ligne 1 à $ ($ étant la dernière).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;:1,$&lt;/code&gt; : Sélection des lignes 1 à $ ($ étant la dernière).&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;s/^/\#/&lt;/code&gt; : &lt;code&gt;s&lt;/code&gt; pour search, &lt;code&gt;^&lt;/code&gt; indique le début de ligne, &lt;code&gt;/&lt;/code&gt; est un
 séparateur pour la recherche et pour ce que l'on souhaite remplacer et &lt;code&gt;\#&lt;/code&gt;
 est le caractère de remplacement.&lt;/p&gt;
@@ -3681,7 +3661,7 @@ donc un fichier ova… Maintenant comment l'importer sur VirtualBox ?&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Maintenant lors du prochain démarrage de votre VirtualBox vous devez
-avoir la machine virtuelle importée !&lt;/p&gt;</content><category term="text"/><category term="linux"/></entry><entry><title>Partage Samba !</title><link href="https://www.choiz.fr/2011-08-17-partage-samba.html" rel="alternate"/><published>2011-08-17T20:41:00+02:00</published><updated>2011-08-17T20:41:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-17:/2011-08-17-partage-samba.html</id><summary type="html">&lt;p&gt;Configuration d'un serveur samba. Editer le fichier de configuration
+avoir la machine virtuelle importée !&lt;/p&gt;</content><category term="text"/><category term="linux"/></entry><entry><title>Partage Samba !</title><link href="https://www.choiz.fr/2011-08-17-partage-samba.html" rel="alternate"/><published>2011-08-17T20:41:00+02:00</published><updated>2011-08-17T20:41:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-08-17:/2011-08-17-partage-samba.html</id><summary type="html">&lt;p&gt;Configuration d'un serveur samba. Éditer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;###&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;Global&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;###&lt;/span&gt;
 &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;global&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
@@ -3693,7 +3673,7 @@ avoir la machine virtuelle importée !&lt;/p&gt;</content><category term="text"/
 &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;yes&lt;/span&gt;
 &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;##&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;Log&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;##&lt;/span&gt;
 &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;log&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;file&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nf"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nf"&gt;log&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;samba&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nf"&gt;log&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;
-&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;max&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;log&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1000 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Configuration d'un serveur samba. Editer le fichier de configuration
+&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;max&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;log&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;size&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1000 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Configuration d'un serveur samba. Éditer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;###&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;Global&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;###&lt;/span&gt;
 &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;global&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
@@ -3728,7 +3708,7 @@ avoir la machine virtuelle importée !&lt;/p&gt;</content><category term="text"/
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;smbpasswd -a choiz
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Pour les groupes samba utilise les groupes unix. A vous de voir si vous
+&lt;p&gt;Pour les groupes samba utilise les groupes unix. À vous de voir si vous
 voulez gérer votre partage samba utilisateur par utilisateur ou
 directement avec des groupes.&lt;/p&gt;
 &lt;p&gt;N'oubliez pas de redémarrer le service Samba avant de tester depuis
@@ -3742,16 +3722,16 @@ votre client le partage de fichiers ! :&lt;/p&gt;
 
 &lt;p&gt;Ou dans la configuration du svn dans ~/.subversion/config le
 global-ignores&lt;/p&gt;
-&lt;p&gt;Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
-l'on se trouve actuellement il suffit d'executer la commande svn
+&lt;p&gt;Pour ignorer tous les fichiers qui commencent par ._ dans le dossier où
+l'on se trouve actuellement il suffit d'exécuter la commande svn
 suivante …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Il existe plusieurs solutions pour ignorer des fichiers sur un svn :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;svn propset svn:ignore
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Ou dans la configuration du svn dans ~/.subversion/config le
 global-ignores&lt;/p&gt;
-&lt;p&gt;Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
-l'on se trouve actuellement il suffit d'executer la commande svn
+&lt;p&gt;Pour ignorer tous les fichiers qui commencent par ._ dans le dossier où
+l'on se trouve actuellement il suffit d'exécuter la commande svn
 suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;svn propset svn:ignore &amp;quot;._*&amp;quot; .
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -3762,7 +3742,7 @@ fichier ~/.subversion/config et d'éditer la ligne suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;global-ignores = ._*
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;On peut également ajouter d'autres fichiers a ignorer tel que les .swp
+&lt;p&gt;On peut également ajouter d'autres fichiers à ignorer tel que les .swp
 de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;global-ignores = ._* .DS_STORE *.swp
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="svn"/></entry><entry><title>Suppression des .DS_Store</title><link href="https://www.choiz.fr/2011-07-05-suppression-des-dsstore.html" rel="alternate"/><published>2011-07-05T18:01:40+02:00</published><updated>2011-07-05T18:01:40+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-07-05:/2011-07-05-suppression-des-dsstore.html</id><content type="html">&lt;p&gt;Dans une console sur votre Mac :&lt;/p&gt;
@@ -3792,27 +3772,27 @@ patchée). :&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Notre fichier de patch est "mon_patch" si vous ouvrez celui-ci vous
-aurez le différentiel entre les deux fichier. Comment le lire ? Les
+aurez le différentiel entre les deux fichiers. Comment le lire ? Les
 lignes avec des + devant sont les nouvelles lignes celles avec des -
-sont celles a supprimer. Ce n'est pas plus difficile que ça ! Maintenant
+sont celles à supprimer. Ce n'est pas plus difficile que ça ! Maintenant
 j'applique mon patch sur mon fichier version1.php grâce à la commande
 suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;patch -p0 &amp;lt; mon_patch
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="diff"/><category term="patch"/><category term="cli"/><category term="linux"/></entry><entry><title>Split &amp; Vsplit dans vim</title><link href="https://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html" rel="alternate"/><published>2011-05-29T17:16:00+02:00</published><updated>2011-05-29T17:16:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-29:/2011-05-29-split-vsplit-dans-vim.html</id><summary type="html">&lt;p&gt;Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="diff"/><category term="patch"/><category term="cli"/><category term="linux"/></entry><entry><title>Split &amp; Vsplit dans vim</title><link href="https://www.choiz.fr/2011-05-29-split-vsplit-dans-vim.html" rel="alternate"/><published>2011-05-29T17:16:00+02:00</published><updated>2011-05-29T17:16:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-29:/2011-05-29-split-vsplit-dans-vim.html</id><summary type="html">&lt;p&gt;Très souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
 pouvoir ouvrir plusieurs fichiers en même temps.&lt;/p&gt;
 &lt;p&gt;Il y a 2 méthodes :&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;la division de la fenêtre horizontal en utilisant :&lt;/li&gt;
+&lt;li&gt;la division de la fenêtre horizontale en utilisant :&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;code&gt;:split&lt;/code&gt; (ou &lt;code&gt;:new&lt;/code&gt;) puis : &lt;code&gt;:e le_fichier_a_ouvrir&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;la division de la fenêtre verticalement en utilisant :&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;:vsplit&lt;/code&gt; puis …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Trés souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
+&lt;p&gt;&lt;code&gt;:vsplit&lt;/code&gt; puis …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Très souvent lorsque j'utilise Vim je sépare ma fenêtre en 2,3,4 pour
 pouvoir ouvrir plusieurs fichiers en même temps.&lt;/p&gt;
 &lt;p&gt;Il y a 2 méthodes :&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;la division de la fenêtre horizontal en utilisant :&lt;/li&gt;
+&lt;li&gt;la division de la fenêtre horizontale en utilisant :&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;code&gt;:split&lt;/code&gt; (ou &lt;code&gt;:new&lt;/code&gt;) puis : &lt;code&gt;:e le_fichier_a_ouvrir&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -3821,14 +3801,14 @@ pouvoir ouvrir plusieurs fichiers en même temps.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;:vsplit&lt;/code&gt; puis : &lt;code&gt;:e le_fichier_a_ouvrir&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Et comme lors de l'utilisation du diff (CTRL + W puis W) pour changer de
 fenêtre (gauche à droite ou droite à gauche ou haut en bas ou bas en
-haut) ou bien en utilisant (CTRL + W puis une fléche directionnelle).&lt;/p&gt;
+haut) ou bien en utilisant (CTRL + W puis une flèche directionnelle).&lt;/p&gt;
 &lt;p&gt;Pour agrandir ou réduire la fenêtre courante utiliser CTRL + W (puis
 &amp;gt; si vous êtes sur votre fenêtre de droite pour ajouter une colonne,
-si vous êtes sur la fenêtre de gauche ceci supprimera une colonne et vis
+si vous êtes sur la fenêtre de gauche ceci supprimera une colonne et vice
 versa avec &amp;lt;) vous pouvez également ajouter / supprimer 5 ou 10
 colonnes avec : &lt;code&gt;5&amp;gt;&lt;/code&gt; et &lt;code&gt;10&amp;gt;&lt;/code&gt;&lt;/p&gt;</content><category term="text"/><category term="vim"/><category term="file"/></entry><entry><title>Différences entre des fichiers avec Vim</title><link href="https://www.choiz.fr/2011-05-19-diff%C3%A9rences-entre-des-fichiers-avec-vim.html" rel="alternate"/><published>2011-05-19T23:32:00+02:00</published><updated>2011-05-19T23:32:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-19:/2011-05-19-différences-entre-des-fichiers-avec-vim.html</id><summary type="html">&lt;p&gt;J'ai souvent besoin de voir les différences entre plusieurs fichiers...
 J'utilise souvent la commande diff dans un terminal, mais mon éditeur
-texte favoris "Vim" sait aussi trés bien faire un différentiel.
+texte favori "Vim" sait aussi très bien faire un différentiel.
 Utilisation avec le terminal :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gh"&gt;diff fichier1 fichier2&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -3836,7 +3816,7 @@ Utilisation avec le terminal :&lt;/p&gt;
 &lt;p&gt;Celui-ci retournera les différences directement dans le terminal (pas
 pratique pour l'édition …&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'ai souvent besoin de voir les différences entre plusieurs fichiers...
 J'utilise souvent la commande diff dans un terminal, mais mon éditeur
-texte favoris "Vim" sait aussi trés bien faire un différentiel.
+texte favori "Vim" sait aussi très bien faire un différentiel.
 Utilisation avec le terminal :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gh"&gt;diff fichier1 fichier2&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -3849,33 +3829,34 @@ pratique pour l'édition).&lt;/p&gt;
 
 &lt;p&gt;Ensuite il suffit d'utiliser (CTRL + W puis W) pour changer de fenêtre
 (gauche à droite ou droite à gauche) ou bien en utilisant (CTRL + W puis
-fléche de droite ou gauche) suivant la direction ou on veut aller.&lt;/p&gt;
+flèche de droite ou gauche) suivant la direction où on veut aller.&lt;/p&gt;
 &lt;p&gt;Pour le reste des commandes reportez-vous au &lt;a href="http://matrix.samizdat.net/pratique/documentation/guide-survie-VI.html"&gt;guide de survie de
 vi&lt;/a&gt;
-!&lt;/p&gt;</content><category term="text"/><category term="vim"/><category term="diff"/><category term="cli"/></entry><entry><title>Migration d'une base de donnée Mysql</title><link href="https://www.choiz.fr/2011-05-14-migration-dune-base-de-donn%C3%A9e-mysql.html" rel="alternate"/><published>2011-05-14T13:21:17+02:00</published><updated>2011-05-14T13:21:17+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-14:/2011-05-14-migration-dune-base-de-donnée-mysql.html</id><summary type="html">&lt;p&gt;Pour faire mes migrations de base de donnée j'utilise en ligne de
+!&lt;/p&gt;</content><category term="text"/><category term="vim"/><category term="diff"/><category term="cli"/></entry><entry><title>Migration d'une base de données Mysql</title><link href="https://www.choiz.fr/2011-05-14-migration-dune-base-de-donn%C3%A9e-mysql.html" rel="alternate"/><published>2011-05-14T13:21:17+02:00</published><updated>2011-05-14T13:21:17+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-05-14:/2011-05-14-migration-dune-base-de-donnée-mysql.html</id><summary type="html">&lt;p&gt;Pour faire mes migrations de base de données j'utilise en ligne de
 commande mysqldump et mysql.&lt;/p&gt;
 &lt;p&gt;Dans un premier temps je sauve ma base database dans le fichier dump.sql
 J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mysqldump -u utilisateur -p p4ss database &amp;gt; dump.sql
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Une fois …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pour faire mes migrations de base de donnée j'utilise en ligne de
+&lt;p&gt;Une fois …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pour faire mes migrations de base de données j'utilise en ligne de
 commande mysqldump et mysql.&lt;/p&gt;
 &lt;p&gt;Dans un premier temps je sauve ma base database dans le fichier dump.sql
 J'utilise l'utilisateur mysql : utilisateur avec son mot de passe p4ss :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mysqldump -u utilisateur -p p4ss database &amp;gt; dump.sql
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Une fois que j'ai mon fichier dump.sql je le met sur la nouvelle
-machine, puis j'execute la commande suivante :&lt;/p&gt;
+&lt;p&gt;Une fois que j'ai mon fichier dump.sql je le mets sur la nouvelle
+machine, puis j'exécute la commande suivante :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mysql -u utilisateur -pp4ss database &amp;lt; fichierdump.sql
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="mysql"/><category term="mysqldump"/><category term="linux"/><category term="sql"/></entry><entry><title>Petit tips pour les utilisateurs de VIM et PHP</title><link href="https://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html" rel="alternate"/><published>2011-04-13T13:59:00+02:00</published><updated>2011-04-13T13:59:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-04-13:/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html</id><summary type="html">&lt;p&gt;Lorsque je code en PHP, pour tester si il y a des erreurs généralement
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="text"/><category term="mysql"/><category term="mysqldump"/><category term="linux"/><category term="sql"/></entry><entry><title>Petit tips pour les utilisateurs de VIM et PHP</title><link href="https://www.choiz.fr/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html" rel="alternate"/><published>2011-04-13T13:59:00+02:00</published><updated>2011-04-13T13:59:00+02:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-04-13:/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html</id><summary type="html">&lt;p&gt;Lorsque je code en PHP, pour tester s'il y a des erreurs généralement
 dans la console je tape la commande :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;php -l fichier_a_tester.php
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Lorsque j'utilise VIM j'utilise la même commande (sans sortir de vim).
-Pour la faire il suffit de faire "ESC" pour passer en mode commande de …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Lorsque je code en PHP, pour tester si il y a des erreurs généralement
+Pour la faire il suffit de faire "ESC" pour passer en mode commande de
+VIM …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Lorsque je code en PHP, pour tester s'il y a des erreurs généralement
 dans la console je tape la commande :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;php -l fichier_a_tester.php
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -3895,14 +3876,14 @@ surround.vim.&lt;/p&gt;
 texte.&lt;/p&gt;
 &lt;p&gt;Comment l'utiliser ?&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;VS&amp;lt;b&amp;gt;&lt;/code&gt; permet d'ajouter les balises &amp;lt;b&amp;gt; et &amp;lt;/b&amp;gt; avant et
-apres la ligne courante et d'indenter celle-ci.&lt;/p&gt;
+après la ligne courante et d'indenter celle-ci.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;vims&amp;lt;a&amp;gt;&lt;/code&gt; permet d'ajouter le …&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'ai ajouté quelques plugins dans ma configuration de Vim dont :
 surround.vim.&lt;/p&gt;
 &lt;p&gt;Ce plugin permet d'ajouter des balises ou tout autre élément autour d'un
 texte.&lt;/p&gt;
 &lt;p&gt;Comment l'utiliser ?&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;VS&amp;lt;b&amp;gt;&lt;/code&gt; permet d'ajouter les balises &amp;lt;b&amp;gt; et &amp;lt;/b&amp;gt; avant et
-apres la ligne courante et d'indenter celle-ci.&lt;/p&gt;
+après la ligne courante et d'indenter celle-ci.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;vims&amp;lt;a&amp;gt;&lt;/code&gt; permet d'ajouter le tag &amp;lt;a&amp;gt; &amp;lt;/a&amp;gt; autour du mot sur
 lequel vous vous trouvez.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;cst&amp;lt;b&amp;gt;&lt;/code&gt; permet de changer le tag &amp;lt;a&amp;gt; (change surround tag) par
@@ -3951,8 +3932,8 @@ fournit un moyen d'accéder aux membres
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Attention l'utilisation du htaccess n'est pas recommandée sur une connexion non
-chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffré
-(HTTPS).&lt;/p&gt;</content><category term="text"/><category term="php"/><category term="code"/></entry><entry><title>jQuery attr() avec onclick par click()</title><link href="https://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html" rel="alternate"/><published>2011-01-07T16:43:00+01:00</published><updated>2011-01-07T16:43:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-01-07:/2011-01-07-jquery-attr-avec-onclick-par-click.html</id><summary type="html">&lt;p&gt;Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery
+chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffrée
+(HTTPS).&lt;/p&gt;</content><category term="text"/><category term="php"/><category term="code"/></entry><entry><title>jQuery attr() avec onclick par click()</title><link href="https://www.choiz.fr/2011-01-07-jquery-attr-avec-onclick-par-click.html" rel="alternate"/><published>2011-01-07T16:43:00+01:00</published><updated>2011-01-07T16:43:00+01:00</updated><author><name>choiz</name></author><id>tag:www.choiz.fr,2011-01-07:/2011-01-07-jquery-attr-avec-onclick-par-click.html</id><summary type="html">&lt;p&gt;Après avoir perdu 2h… J'ai découvert que la méthode attr() de jQuery
 fonctionne pas avec l'attribut "onclick"…&lt;/p&gt;
 &lt;p&gt;Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.&lt;/p&gt;
@@ -3962,7 +3943,7 @@ fonctionne pas avec l'attribut "onclick"…&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Par :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;mavar …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;mavar …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Après avoir perdu 2h… J'ai découvert que la méthode attr() de jQuery
 fonctionne pas avec l'attribut "onclick"…&lt;/p&gt;
 &lt;p&gt;Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire
 .attr('onClick','valeur') ou faire de la façon suivante.&lt;/p&gt;
@@ -3994,7 +3975,7 @@ informations dans vos projets il suffit de taper cette commande :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;Id&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ajax&lt;/span&gt;\&lt;span class="nv"&gt;_modif&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;php&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;481&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2010&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;02&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="nv"&gt;Z&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;choiz&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;D'autres keywords sont disponible tel que :&lt;/p&gt;
+&lt;p&gt;D'autres keywords sont disponibles tel que :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;Revision&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;
 &lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;
 &lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;Author&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;

@@ -13,11 +13,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Suite à l'installation de mon NAS, j'ai installer un proxmox dessus. Par contre il ne faut pas modifier le sources.list ni installer firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du tout). Sur debian éditer le fichier /etc/hosts comme ceci : 127.0.0.1 localhost.localdomain localhost 192 …" />
+<meta name="description" content="Suite à l'installation de mon NAS, j'ai installé un proxmox dessus. Par contre il ne faut pas modifier le sources.list ni installer firmware-linux-nonfree avant d'installer proxmox (cela ne fonctionne pas du tout). Sur debian éditer le fichier /etc/hosts comme ceci : 127.0.0.1 localhost.localdomain localhost 192 …" />
 <meta name="keywords" content="proxmox, debian, linux">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Installation de Proxmox-VE 5 sur Debian Stretch"/>
-<meta property="og:description" content="Suite à l'installation de mon NAS, j'ai installer un proxmox dessus. Par contre il ne faut pas modifier le sources.list ni installer firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du tout). Sur debian éditer le fichier /etc/hosts comme ceci : 127.0.0.1 localhost.localdomain localhost 192 …"/>
+<meta property="og:description" content="Suite à l'installation de mon NAS, j'ai installé un proxmox dessus. Par contre il ne faut pas modifier le sources.list ni installer firmware-linux-nonfree avant d'installer proxmox (cela ne fonctionne pas du tout). Sur debian éditer le fichier /etc/hosts comme ceci : 127.0.0.1 localhost.localdomain localhost 192 …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html"/>
 <meta property="og:type" content="article"/>
@@ -63,9 +63,9 @@
     <p>Posté le sam. 26 août 2017</p>
   </header>
   <div>
-    <p>Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
+    <p>Suite à l'installation de mon NAS, j'ai installé un proxmox dessus.
 Par contre il ne faut pas modifier le sources.list ni installer
-firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
+firmware-linux-nonfree avant d'installer proxmox (cela ne fonctionne pas du
 tout).</p>
 <p>Sur debian éditer le fichier /etc/hosts comme ceci :</p>
 <div class="highlight"><pre><span></span><code><span class="mf">127.0.0.1</span><span class="w">       </span><span class="n">localhost</span><span class="mf">.</span><span class="n">localdomain</span><span class="w"> </span><span class="n">localhost</span>
@@ -82,14 +82,14 @@ tout).</p>
 <span class="m m-Double">192.168.15.77</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="nx">should</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">here</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">IP</span><span class="w"> </span><span class="nx">adress</span>
 </code></pre></div>
 
-<p>Puis on ajoute au sources.list le dépot de proxmox, on récupere la clé et on
+<p>Puis on ajoute au sources.list le dépôt de proxmox, on récupère la clé et on
 update :</p>
 <div class="highlight"><pre><span></span><code><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;deb http://download.proxmox.com/debian/pve stretch pve-no-subscription&quot;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">pve</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">repo</span><span class="o">.</span><span class="n">list</span>
 <span class="n">wget</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">proxmox</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">debian</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">ve</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">5.</span><span class="n">x</span><span class="o">.</span><span class="n">gpg</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">trusted</span><span class="o">.</span><span class="n">gpg</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">ve</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">5.</span><span class="n">x</span><span class="o">.</span><span class="n">gpg</span>
 <span class="n">apt</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">apt</span><span class="w"> </span><span class="n">dist</span><span class="o">-</span><span class="n">upgrade</span>
 </code></pre></div>
 
-<p>Puis on install les packages Proxmox VE :</p>
+<p>Puis on installe les packages Proxmox VE :</p>
 <div class="highlight"><pre><span></span><code>apt install proxmox-ve postfix open-iscsi
 </code></pre></div>
 
@@ -104,7 +104,7 @@ rechercher la ligne avec :</p>
 <p>remplacer par :</p>
 <p><code>if (false /*data.status !== 'Active'*/) {</code></p>
 <p>Puis relancer pveproxy avec la commande <code>pveproxy restart</code></p>
-<p>Se déconnecter de l'interface proxmox, à la reconnection vous n'aurez plus le
+<p>Se déconnecter de l'interface proxmox, à la reconnexion vous n'aurez plus le
 message de souscription.</p>
 <p>Puis faire les commandes optionnelles :</p>
 <div class="highlight"><pre><span></span><code>apt remove os-prober
@@ -189,7 +189,7 @@ update-grub
   },
   "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html",
-  "description": "Suite à l'installation de mon NAS, j'ai installer un proxmox dessus. Par contre il ne faut pas modifier le sources.list ni installer firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du tout). Sur debian éditer le fichier /etc/hosts comme ceci : 127.0.0.1 localhost.localdomain localhost 192 …"
+  "description": "Suite à l'installation de mon NAS, j'ai installé un proxmox dessus. Par contre il ne faut pas modifier le sources.list ni installer firmware-linux-nonfree avant d'installer proxmox (cela ne fonctionne pas du tout). Sur debian éditer le fichier /etc/hosts comme ceci : 127.0.0.1 localhost.localdomain localhost 192 …"
 }
 </script></body>
 </html>

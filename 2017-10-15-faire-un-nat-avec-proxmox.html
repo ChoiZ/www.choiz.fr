@@ -13,11 +13,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut faire la même chose. Ip Public de proxmox : 11.22.33.44 Ip Privé de proxmox : 10.0.0.254 Je …" />
+<meta name="description" content="L'idée est d'utiliser qu'une seule adresse ip publique pour plusieurs VM. Comme à la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut faire la même chose. Ip Publique de proxmox : 11.22.33.44 Ip Privée de proxmox : 10.0.0.254 Je …" />
 <meta name="keywords" content="network, proxmox">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Faire du NAT avec Proxmox"/>
-<meta property="og:description" content="L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut faire la même chose. Ip Public de proxmox : 11.22.33.44 Ip Privé de proxmox : 10.0.0.254 Je …"/>
+<meta property="og:description" content="L'idée est d'utiliser qu'une seule adresse ip publique pour plusieurs VM. Comme à la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut faire la même chose. Ip Publique de proxmox : 11.22.33.44 Ip Privée de proxmox : 10.0.0.254 Je …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html"/>
 <meta property="og:type" content="article"/>
@@ -62,12 +62,12 @@
     <p>Posté le dim. 15 octobre 2017</p>
   </header>
   <div>
-    <p>L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
+    <p>L'idée est d'utiliser qu'une seule adresse ip publique pour plusieurs VM. Comme à
 la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut
 faire la même chose.</p>
-<p>Ip Public de proxmox : 11.22.33.44
-Ip Privé de proxmox : 10.0.0.254</p>
-<p>Je me connect en ssh à Proxmox et je modifie le fichier <code>/etc/network/interfaces</code>
+<p>Ip Publique de proxmox : 11.22.33.44
+Ip Privée de proxmox : 10.0.0.254</p>
+<p>Je me connecte en ssh à Proxmox et je modifie le fichier <code>/etc/network/interfaces</code>
 j'ajoute à la fin du fichier :</p>
 <div class="highlight"><pre><span></span><code><span class="kt">auto</span><span class="w"> </span><span class="nx">vmbr2</span>
 <span class="nx">iface</span><span class="w"> </span><span class="nx">vmbr2</span><span class="w"> </span><span class="nx">inet</span><span class="w"> </span><span class="nx">static</span>
@@ -82,7 +82,7 @@ j'ajoute à la fin du fichier :</p>
 </code></pre></div>
 
 <p>On peut également ajouter si on veut différents ports qu'on ouvre vers
-l'exterieur vers tel ou tel VM ou conteneur.
+l'extérieur vers tel ou tel VM ou conteneur.
 Par exemple j'ouvre le port 22 de mon conteneur avec l'ip 10.0.0.1 sur le port
 8022 de mon ip public :</p>
 <div class="highlight"><pre><span></span><code>    post-up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
@@ -183,7 +183,7 @@ site internet duckduckgo.com par exemple.</p>
   },
   "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html",
-  "description": "L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut faire la même chose. Ip Public de proxmox : 11.22.33.44 Ip Privé de proxmox : 10.0.0.254 Je …"
+  "description": "L'idée est d'utiliser qu'une seule adresse ip publique pour plusieurs VM. Comme à la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut faire la même chose. Ip Publique de proxmox : 11.22.33.44 Ip Privée de proxmox : 10.0.0.254 Je …"
 }
 </script></body>
 </html>

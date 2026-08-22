@@ -16,7 +16,7 @@
 <meta name="description" content="Pour commencer il faut télécharger la dernière version de raspbian sur le site officiel raspberrypi.org. Actuellement c'est 2017-09-07-raspbian-stretch-lite.zip. Il faut ensuite extraire l'image de l'archive : unzip 2017-09-07-raspbian-stretch-lite.zip Puis mettre l'image sur une carte micro sd, j'utilise la commande dmesg pour voir le nom du périphérique USB sur …" />
 <meta name="keywords" content="raspberry, unifi, debian, linux">
 <meta property="og:site_name" content="ChoiZ"/>
-<meta property="og:title" content="Installation d'un controlleur Unifi sur Raspberry Pi 3"/>
+<meta property="og:title" content="Installation d'un contrôleur Unifi sur Raspberry Pi 3"/>
 <meta property="og:description" content="Pour commencer il faut télécharger la dernière version de raspbian sur le site officiel raspberrypi.org. Actuellement c'est 2017-09-07-raspbian-stretch-lite.zip. Il faut ensuite extraire l'image de l'archive : unzip 2017-09-07-raspbian-stretch-lite.zip Puis mettre l'image sur une carte micro sd, j'utilise la commande dmesg pour voir le nom du périphérique USB sur …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://www.choiz.fr/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html"/>
@@ -29,7 +29,7 @@
 <meta property="article:tag" content="unifi"/>
 <meta property="article:tag" content="debian"/>
 <meta property="article:tag" content="linux"/>
-<meta property="og:image" content="">  <title>ChoiZ &ndash; Installation d'un controlleur Unifi sur Raspberry Pi 3</title>
+<meta property="og:image" content="">  <title>ChoiZ &ndash; Installation d'un contrôleur Unifi sur Raspberry Pi 3</title>
 </head>
 <body>
   <aside>
@@ -60,7 +60,7 @@
 
 <article>
   <header>
-    <h1 id="2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3">Installation d'un controlleur Unifi sur Raspberry Pi 3</h1>
+    <h1 id="2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3">Installation d'un contrôleur Unifi sur Raspberry Pi 3</h1>
     <p>Posté le sam. 21 octobre 2017</p>
   </header>
   <div>
@@ -96,9 +96,9 @@ voir le nom du périphérique USB sur ma machine :</p>
 <span class="mh">1854590976</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="p">(</span><span class="mh">1</span><span class="p">,</span><span class="mh">9</span><span class="w"> </span><span class="n">GB</span><span class="p">,</span><span class="w"> </span><span class="mh">1</span><span class="p">,</span><span class="mh">7</span><span class="w"> </span><span class="n">GiB</span><span class="p">)</span><span class="w"> </span><span class="n">copied</span><span class="p">,</span><span class="w"> </span><span class="mh">288</span><span class="p">,</span><span class="mh">12</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="mh">6</span><span class="p">,</span><span class="mh">4</span><span class="w"> </span><span class="n">MB</span><span class="o">/</span><span class="n">s</span>
 </code></pre></div>
 
-<p>Une fois le Raspberry Pi démarrer s'identifier avec : pi / raspberry (attention
-le clavier est en qwerty pour l'instant donc tapper rqspberry en mot de passe ;-)</p>
-<p>Puis tappez la commande <code>sudo bash</code> pour passer en root puis <code>raspi-config</code> pour
+<p>Une fois le Raspberry Pi démarré s'identifier avec : pi / raspberry (attention
+le clavier est en qwerty pour l'instant donc taper rqspberry en mot de passe ;-)</p>
+<p>Puis tapez la commande <code>sudo bash</code> pour passer en root puis <code>raspi-config</code> pour
 configurer votre Raspberry Pi.</p>
 <ol>
 <li>
@@ -133,9 +133,11 @@ configurer votre Raspberry Pi.</p>
 <p>2 Hostname si vous voulez changer le nom de votre raspberry par exemple
 "raspberrypi3".</p>
 </li>
+<li>
+<p>Finish, et redémarrer.</p>
+</li>
 </ol>
-<p>9: Finish, et redémarrer.</p>
-<p>Récuperer l'adresse ip du raspberry pi pour se connecter dessus via SSH.</p>
+<p>Récupérer l'adresse ip du raspberry pi pour se connecter dessus via SSH.</p>
 <div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="nf">pi</span><span class="nv">@adresseip</span>
 </code></pre></div>
 
@@ -151,9 +153,9 @@ configurer votre Raspberry Pi.</p>
 <p>root@raspberrypi3:/home/pi# <code>apt install oracle-java8-jdk -y</code></p>
 <p>root@raspberrypi3:/home/pi# <code>echo 'JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt' | tee /etc/default/unifi &gt; /dev/null</code></p>
 <p>root@raspberrypi3:/home/pi# <code>reboot</code></p>
-<p>Une fois le raspberry pi démarrer se rendre sur <code>https://ip_raspberry:8443</code> vous
+<p>Une fois le raspberry pi démarré se rendre sur <code>https://ip_raspberry:8443</code> vous
 devriez avoir votre interface Unifi disponible.</p>
-<p>Mettre à jour votre materiel unifi depuis le controlleur. Puis sur le raspberry
+<p>Mettre à jour votre matériel unifi depuis le contrôleur. Puis sur le raspberry
 pi nous allons changer d'adresse ip pour avoir un réseau séparé.</p>
 <div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="nf">pi</span><span class="nv">@adresseip</span>
 </code></pre></div>
@@ -167,13 +169,13 @@ pi nous allons changer d'adresse ip pour avoir un réseau séparé.</p>
 <span class="w">    </span><span class="nx">gateway</span><span class="w"> </span><span class="m m-Double">10.0.0.1</span>
 </code></pre></div>
 
-<p>Enregistrer le fichier et quitter (ne pas rédémarrer le pi pour l'instant).</p>
+<p>Enregistrer le fichier et quitter (ne pas redémarrer le pi pour l'instant).</p>
 <p>Retourner sur l'interface d'unifi et modifier l'adresse ip de votre réseau LAN.</p>
 <p>Gateway/Subnet 10.0.0.1/24</p>
 <p>Cliquer sur "UPDATE DHCP RANGE" puis enregistrer vos modifications dans l'onglet
 Devices votre USG devrait être en "provisionning".
 Redémarrez le Raspberry Pi avec <code>sudo reboot</code> puis vous reconnecter au
-controlleur avec la nouvelle adresse ip : <code>https://10.0.0.10:8443</code>.</p>
+contrôleur avec la nouvelle adresse ip : <code>https://10.0.0.10:8443</code>.</p>
   </div>
   <div class="tag-cloud">
     <p>
@@ -242,8 +244,8 @@ controlleur avec la nouvelle adresse ip : <code>https://10.0.0.10:8443</code>.</
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "name": "Installation d'un controlleur Unifi sur Raspberry Pi 3",
-  "headline": "Installation d'un controlleur Unifi sur Raspberry Pi 3",
+  "name": "Installation d'un contrôleur Unifi sur Raspberry Pi 3",
+  "headline": "Installation d'un contrôleur Unifi sur Raspberry Pi 3",
   "datePublished": "2017-10-21 21:57:19+02:00",
   "dateModified": "",
   "author": {

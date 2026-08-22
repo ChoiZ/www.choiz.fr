@@ -60,7 +60,7 @@ Tags :
   <div>
       <p>Lors de l'installation de Debian sur mon poste au travail j'ai eu la
 surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
-chez Deezer c'est un peu problèmatique.</p>
+chez Deezer c'est un peu problématique.</p>
 <p>J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
 ceci :</p>
 <div class="highlight"><pre><span></span><code>vi /etc/apt/source.list
@@ -73,7 +73,7 @@ apt-get install flashplugin-nonfree
 </code></pre></div>
 
 <p>En relançant Firefox j'ai bien flash player fonctionnel sur Deezer.</p>
-<p>Le package flashplugin étant nonfree Debian ne l'inclus pas directement
+<p>Le package flashplugin étant nonfree Debian ne l'inclut pas directement
 lors de l'installation.</p>
   </div>
   <hr />
@@ -112,7 +112,7 @@ fichier avec vim :</p>
 </code></pre></div>
 
 <p>Explications :</p>
-<p><code>:1,$</code> : Sélection des ligne 1 à $ ($ étant la dernière).</p>
+<p><code>:1,$</code> : Sélection des lignes 1 à $ ($ étant la dernière).</p>
 <p><code>s/^/\#/</code> : <code>s</code> pour search, <code>^</code> indique le début de ligne, <code>/</code> est un
 séparateur pour la recherche et pour ce que l'on souhaite remplacer et <code>\#</code>
 est le caractère de remplacement.</p>
@@ -197,7 +197,7 @@ Tags :
       <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
-      <p>Configuration d'un serveur samba. Editer le fichier de configuration
+      <p>Configuration d'un serveur samba. Éditer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :</p>
 <div class="highlight"><pre><span></span><code><span class="o">|</span><span class="w"> </span><span class="err">###</span><span class="w"> </span><span class="k">Global</span><span class="w"> </span><span class="err">###</span>
 <span class="o">|</span><span class="w"> </span><span class="o">[</span><span class="n">global</span><span class="o">]</span>
@@ -232,7 +232,7 @@ Tags :
 <div class="highlight"><pre><span></span><code>smbpasswd -a choiz
 </code></pre></div>
 
-<p>Pour les groupes samba utilise les groupes unix. A vous de voir si vous
+<p>Pour les groupes samba utilise les groupes unix. À vous de voir si vous
 voulez gérer votre partage samba utilisateur par utilisateur ou
 directement avec des groupes.</p>
 <p>N'oubliez pas de redémarrer le service Samba avant de tester depuis
@@ -272,8 +272,8 @@ Tags :
 
 <p>Ou dans la configuration du svn dans ~/.subversion/config le
 global-ignores</p>
-<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
-l'on se trouve actuellement il suffit d'executer la commande svn
+<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier où
+l'on se trouve actuellement il suffit d'exécuter la commande svn
 suivante :</p>
 <div class="highlight"><pre><span></span><code>svn propset svn:ignore &quot;._*&quot; .
 </code></pre></div>
@@ -284,7 +284,7 @@ fichier ~/.subversion/config et d'éditer la ligne suivante :</p>
 <div class="highlight"><pre><span></span><code>global-ignores = ._*
 </code></pre></div>
 
-<p>On peut également ajouter d'autres fichiers a ignorer tel que les .swp
+<p>On peut également ajouter d'autres fichiers à ignorer tel que les .swp
 de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci :</p>
 <div class="highlight"><pre><span></span><code>global-ignores = ._* .DS_STORE *.swp
 </code></pre></div>

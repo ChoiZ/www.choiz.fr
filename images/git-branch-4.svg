@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 170" width="360" height="170" font-family="'Source Sans 3', system-ui, sans-serif" role="img" aria-label="Merge no-ff : A puis D sur master, B-C sur debug_redirect, D fusionne C">
+  <line x1="60" y1="115" x2="150" y2="55"  stroke="#9ca3af" stroke-width="2"/>
+  <line x1="150" y1="55" x2="225" y2="55"  stroke="#9ca3af" stroke-width="2"/>
+  <line x1="225" y1="55" x2="290" y2="115" stroke="#9ca3af" stroke-width="2"/>
+  <line x1="60" y1="115" x2="290" y2="115" stroke="#9ca3af" stroke-width="2"/>
+  <g font-size="14" text-anchor="middle">
+    <circle cx="60"  cy="115" r="17" fill="#eef2ff" stroke="#6366f1"/><text x="60"  y="120" fill="#1f2937">A</text>
+    <circle cx="150" cy="55"  r="17" fill="#eef2ff" stroke="#6366f1"/><text x="150" y="60"  fill="#1f2937">B</text>
+    <circle cx="225" cy="55"  r="17" fill="#eef2ff" stroke="#6366f1"/><text x="225" y="60"  fill="#1f2937">C</text>
+    <circle cx="290" cy="115" r="17" fill="#ecfdf5" stroke="#10b981"/><text x="290" y="120" fill="#065f46">D</text>
+  </g>
+  <line x1="225" y1="38" x2="225" y2="34" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="163" y="8" width="124" height="26" rx="13" fill="#fff7ed" stroke="#f59e0b"/>
+  <text x="225" y="25" text-anchor="middle" font-size="13" fill="#92400e">debug_redirect</text>
+  <line x1="290" y1="132" x2="290" y2="136" stroke="#0099CB" stroke-width="2"/>
+  <rect x="252" y="136" width="76" height="26" rx="13" fill="#e0f2fe" stroke="#0099CB"/>
+  <text x="290" y="153" text-anchor="middle" font-size="13" fill="#075985">master</text>
+</svg>

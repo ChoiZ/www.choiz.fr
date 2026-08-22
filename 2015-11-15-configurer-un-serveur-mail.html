@@ -329,14 +329,14 @@ votredeuxiemedomaine.com        OK
 <div class="highlight"><pre><span></span><code>touch /etc/postfix/virtual_mailbox
 </code></pre></div>
 
-<p>Pour créer un comte mail, éditer /etc/postfix/virtual_mailbox :</p>
+<p>Pour créer un compte mail, éditer /etc/postfix/virtual_mailbox :</p>
 <div class="highlight"><pre><span></span><code><span class="n">email</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="w">          </span><span class="n">votredomaine</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">email</span><span class="nv">@votredomaine</span><span class="p">.</span><span class="n">com</span><span class="o">/</span>
 <span class="n">linus</span><span class="nv">@torvald</span><span class="p">.</span><span class="n">com</span><span class="w">               </span><span class="n">torvald</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">linus</span><span class="nv">@torvald</span><span class="p">.</span><span class="n">com</span><span class="o">/</span>
 </code></pre></div>
 
-<p>N'oubliez pas lors de la création de nouveau comptes mail d'éditer
+<p>N'oubliez pas lors de la création de nouveaux comptes mail d'éditer
 /etc/dovecot/users ;-)</p>
-<p>Maintenant il faut dire a postfix que nous avons modifier nos fichiers
+<p>Maintenant il faut dire à postfix que nous avons modifié nos fichiers
 virtuels :</p>
 <div class="highlight"><pre><span></span><code>postmap /etc/postfix/virtual_alias
 postmap /etc/postfix/virtual_domains
@@ -359,7 +359,7 @@ smtps   inet    n   -   -   -   -   smtpd   -v
  -o smtpd_tls_key_file=/etc/dovecot/ssl/certificat.key
 </code></pre></div>
 
-<p>Puis redemarrer postfix :</p>
+<p>Puis redémarrer postfix :</p>
 <div class="highlight"><pre><span></span><code>/etc/init.d/postfix restart
 </code></pre></div>
 

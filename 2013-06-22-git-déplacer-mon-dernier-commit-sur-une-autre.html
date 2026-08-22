@@ -13,11 +13,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche master… Généralement je fais toujours une branche pour les modifications, cette fois j'avais créé cette branche debug_redirect mais je n'étais pas dessus… Je me suis retrouvé avec les commits A-B-C sur mon master. Or le seul qui …" />
+<meta name="description" content="J'ai fait une boulette ! J'ai commité deux fois en étant sur la branche master… Généralement je fais toujours une branche pour les modifications, cette fois j'avais créé cette branche debug_redirect mais je n'étais pas dessus… Je me suis retrouvé avec les commits A-B-C sur mon master. Or le seul qui …" />
 <meta name="keywords" content="git">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Git déplacer mon dernier commit sur une autre branche"/>
-<meta property="og:description" content="J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche master… Généralement je fais toujours une branche pour les modifications, cette fois j'avais créé cette branche debug_redirect mais je n'étais pas dessus… Je me suis retrouvé avec les commits A-B-C sur mon master. Or le seul qui …"/>
+<meta property="og:description" content="J'ai fait une boulette ! J'ai commité deux fois en étant sur la branche master… Généralement je fais toujours une branche pour les modifications, cette fois j'avais créé cette branche debug_redirect mais je n'étais pas dessus… Je me suis retrouvé avec les commits A-B-C sur mon master. Or le seul qui …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://www.choiz.fr/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html"/>
 <meta property="og:type" content="article"/>
@@ -61,67 +61,45 @@
     <p>Posté le sam. 22 juin 2013</p>
   </header>
   <div>
-    <p>J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche
+    <p>J'ai fait une boulette ! J'ai commité deux fois en étant sur la branche
 <em>master</em>… Généralement je fais toujours une branche pour les
 modifications, cette fois j'avais créé cette branche <em>debug_redirect</em>
 mais je n'étais pas dessus…</p>
 <p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master</em>. Or le seul
 qui devait être dessus devait être A et je devais avoir B-C dans ma
 branche <em>debug_redirect</em>. Voici un schéma de la situation :</p>
-<div class="highlight"><pre><span></span><code>debug_redirect
-          ↓
-          A-B-C
-              ↑
-             master
-</code></pre></div>
-
-<p>Je dois donc soit mettre a jour ma branche <em>debug_redirect</em>. :</p>
+<p><img alt="Schéma : master sur C, debug_redirect sur A" src="https://www.choiz.fr/images/git-branch-1.svg"></p>
+<p>Je dois donc soit mettre à jour ma branche <em>debug_redirect</em>. :</p>
 <div class="highlight"><pre><span></span><code>git checkout debug_redirect
 
 git merge master
 </code></pre></div>
 
 <p>Ce qui donne :</p>
-<div class="highlight"><pre><span></span><code>debug_redirect
-        ↓
-    A-B-C
-        ↑
-      master
-</code></pre></div>
-
-<p>Il me reste qu'a retourner sur le <em>master</em> et revenir à la version A. :</p>
+<p><img alt="Schéma : master et debug_redirect sur C" src="https://www.choiz.fr/images/git-branch-2.svg"></p>
+<p>Il me reste qu'à retourner sur le <em>master</em> et revenir à la version A. :</p>
 <div class="highlight"><pre><span></span><code>git checkout master
 
 git reset --hard HEAD~2
 </code></pre></div>
 
 <p>Ce qui donne :</p>
-<div class="highlight"><pre><span></span><code>  debug_redirect
-      ↓
-  A-B-C
-  ↑
-master
-</code></pre></div>
-
-<p>Maintenant que j'ai fixé mon bug sur ma branche  <em>debug_redirect</em> je
+<p><img alt="Schéma : master sur A, debug_redirect sur C" src="https://www.choiz.fr/images/git-branch-3.svg"></p>
+<p>Maintenant que j'ai fixé mon bug sur ma branche <em>debug_redirect</em> je
 peux le merger avec le <em>master</em>. :</p>
 <div class="highlight"><pre><span></span><code>git merge debug_redirect --no-ff
 </code></pre></div>
 
 <p>Résultat :</p>
-<div class="highlight"><pre><span></span><code>         B-C      debug_redirect
-       /     \
-     A - - - - D   master
-</code></pre></div>
-
+<p><img alt="Schéma : merge no-ff, D fusionne C sur master" src="https://www.choiz.fr/images/git-branch-4.svg"></p>
 <p>Pour voir vos commits par branche vous pouvez aussi utiliser la commande
 git log :</p>
 <div class="highlight"><pre><span></span><code>git log --graph --oneline --decorate
-<span class="gs">*   4c677ac (HEAD, master) Merge branch &#39;debug_redirect&#39;</span>
-<span class="gs">|\ </span>
+<span class="gs">*   4c677ac (HEAD, master) Merge branch &#39;debug_redirect&#39;</span>
+<span class="gs">|\ </span>
 <span class="gs">| *</span> 90e7a7a (debug_redirect) Fix another bug on redirect
 | <span class="gs">* 40ae981 Fix the redirect bug</span>
-<span class="gs">|/ </span>
+<span class="gs">|/ </span>
 <span class="gs">*</span> 4e06ff4 initial commit
 </code></pre></div>
   </div>
@@ -200,7 +178,7 @@ git log :</p>
   },
   "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2013-06-22-git-déplacer-mon-dernier-commit-sur-une-autre.html",
-  "description": "J'ai fais une boulette ! J'ai commité deux fois en étant sur la branche master… Généralement je fais toujours une branche pour les modifications, cette fois j'avais créé cette branche debug_redirect mais je n'étais pas dessus… Je me suis retrouvé avec les commits A-B-C sur mon master. Or le seul qui …"
+  "description": "J'ai fait une boulette ! J'ai commité deux fois en étant sur la branche master… Généralement je fais toujours une branche pour les modifications, cette fois j'avais créé cette branche debug_redirect mais je n'étais pas dessus… Je me suis retrouvé avec les commits A-B-C sur mon master. Or le seul qui …"
 }
 </script></body>
 </html>

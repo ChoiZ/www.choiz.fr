@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160" width="360" height="160" font-family="'Source Sans 3', system-ui, sans-serif" role="img" aria-label="master et debug_redirect pointent tous deux sur C">
+  <line x1="70" y1="60" x2="165" y2="60" stroke="#9ca3af" stroke-width="2"/>
+  <line x1="165" y1="60" x2="260" y2="60" stroke="#9ca3af" stroke-width="2"/>
+  <g font-size="14" text-anchor="middle">
+    <circle cx="70"  cy="60" r="17" fill="#eef2ff" stroke="#6366f1"/><text x="70"  y="65" fill="#1f2937">A</text>
+    <circle cx="165" cy="60" r="17" fill="#eef2ff" stroke="#6366f1"/><text x="165" y="65" fill="#1f2937">B</text>
+    <circle cx="260" cy="60" r="17" fill="#eef2ff" stroke="#6366f1"/><text x="260" y="65" fill="#1f2937">C</text>
+  </g>
+  <line x1="260" y1="77" x2="260" y2="90" stroke="#6b7280" stroke-width="2"/>
+  <rect x="222" y="90" width="76" height="26" rx="13" fill="#e0f2fe" stroke="#0099CB"/>
+  <text x="260" y="107" text-anchor="middle" font-size="13" fill="#075985">master</text>
+  <rect x="198" y="122" width="124" height="26" rx="13" fill="#fff7ed" stroke="#f59e0b"/>
+  <text x="260" y="139" text-anchor="middle" font-size="13" fill="#92400e">debug_redirect</text>
+</svg>

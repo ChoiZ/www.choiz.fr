@@ -89,7 +89,7 @@ Tags :
 </code></pre></div>
 
 <p>Habituellement je détache mon "Screen" mais cette fois j'ai oublié.</p>
-<p>Pour "détacher" / "réattacher" mon "Screen" j'ai du faire la commande suivante :</p>
+<p>Pour "détacher" / "réattacher" mon "Screen" j'ai dû faire la commande suivante :</p>
 <div class="highlight"><pre><span></span><code>screen -dRR
 </code></pre></div>
 
@@ -107,7 +107,7 @@ Tags :
   </header>
   <div>
       <p>Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
-sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc
+sur une branche qui sont pas à commiter dans l'immédiat. J'utilise donc
 git stash, voyons voir comment l'utiliser simplement.</p>
 <p>On regarde l'état du status et des branches :</p>
 <div class="highlight"><pre><span></span><code>git status
@@ -118,7 +118,7 @@ $ git branch
 <span class="k">*</span> master
 </code></pre></div>
 
-<p>Je travail sur la branche master et je n'ai pas d'autre branche. Je vais
+<p>Je travaille sur la branche master et je n'ai pas d'autre branche. Je vais
 donc faire une branche API pour mon projet. :</p>
 <div class="highlight"><pre><span></span><code>git branch API
 
@@ -137,7 +137,7 @@ git branch
   master
 </code></pre></div>
 
-<p>Maintenant je vais modifier un mon fichier manage.py sur ma branche API.
+<p>Maintenant je vais modifier mon fichier manage.py sur ma branche API.
 :</p>
 <div class="highlight"><pre><span></span><code><span class="nv">git</span><span class="w"> </span><span class="nv">status</span>
 #<span class="w"> </span><span class="nv">On</span><span class="w"> </span><span class="nv">branch</span><span class="w"> </span><span class="nv">API</span>
@@ -205,18 +205,18 @@ les modifications précédentes git stash pop. :</p>
 
 <p>Maintenant je peux continuer les modifications sur ma branche API
 réutilise git stash si besoin ou les commiter, merger ma branche…</p>
-<p>git stash pop (récupére le dernier stash enregistré
+<p>git stash pop (récupère le dernier stash enregistré
 <a href="mailto:stash@{0}">stash@{0}</a>, l'applique et le supprime de la liste)
 mon alias = git stapp</p>
-<p>git stash apply (récupére le dernier stash enregistré
-<a href="mailto:stash@{0">stash@{0</a>} et l'applique)</p>
+<p>git stash apply (récupère le dernier stash enregistré
+<a href="mailto:stash@{0}">stash@{0}</a> et l'applique)</p>
 <p>Et pour rien n'oublier (RTFM) : man git stash</p>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="https://www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html">Renomer des fichiers en CLI (ligne de commande)</a></h2>
+    <h2><a href="https://www.choiz.fr/2012-04-14-renomer-des-fichiers-en-cli-ligne-de-commande.html">Renommer des fichiers en CLI (ligne de commande)</a></h2>
     <p>
       Posté le sam. 14 avril 2012 &#8226;
 Tags :
@@ -224,17 +224,17 @@ Tags :
   </header>
   <div>
       <p>Lorsque je fais mes backups j'essaye d'avoir des noms de fichiers
-correct. Sous linux pour renomer plusieurs fichiers avec bash j'utilise
+corrects. Sous linux pour renommer plusieurs fichiers avec bash j'utilise
 "rename".</p>
 <p>Exemple je veux supprimer tous les espaces d'un fichier :</p>
 <div class="highlight"><pre><span></span><code>rename &quot;s/ <span class="gs">*//g&quot; *</span>.*
 </code></pre></div>
 
-<p>Ou renomer tous mes fichiers .WAV en .wav etc… :</p>
+<p>Ou renommer tous mes fichiers .WAV en .wav etc… :</p>
 <div class="highlight"><pre><span></span><code>rename &quot;s/\.WAV/\.wav/g&quot; *.WAV
 </code></pre></div>
 
-<p>A vous de modifier l'expression régulière !</p>
+<p>À vous de modifier l'expression régulière !</p>
   </div>
   <hr />
 </article>
@@ -365,7 +365,7 @@ pouvez spécifier un autre chemin ainsi qu'un autre fichier. :</p>
 </code></pre></div>
 
 <p>Ici on tape un mot de passe si on en veut un lors de la connexion aux
-différents hosts. En général j'en défini un.</p>
+différents hosts. En général j'en définis un.</p>
 <p>Pour finir on copie la clé sur le serveur soit via scp :</p>
 <div class="highlight"><pre><span></span><code><span class="n">scp</span><span class="w"> </span><span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id</span><span class="err">\</span><span class="n">_rsa</span><span class="p">.</span><span class="n">pub</span><span class="w"> </span><span class="k">user</span><span class="nv">@ip</span><span class="err">:</span><span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">authorized</span><span class="err">\</span><span class="n">_keys</span><span class="o">/</span>
 </code></pre></div>
@@ -392,7 +392,7 @@ sur votre site en php il faut télécharger le package php-gettext :</p>
 </code></pre></div>
 
 <p>Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
-commentaires devant les langues qui vont sont à traduire par exemple :
+commentaires devant les langues qui sont à traduire par exemple :
 Allemand, Anglais, Espagnol, Français &amp; Suédois :</p>
 <div class="highlight"><pre><span></span><code>de_DE.UTF-8 UTF-8
 en_GB.UTF-8 UTF-8
@@ -401,7 +401,7 @@ fr_FR.UTF-8 UTF-8
 sv_SE.UTF-8 UTF-8
 </code></pre></div>
 
-<p>Puis regénérer les locales :</p>
+<p>Puis régénérer les locales :</p>
 <div class="highlight"><pre><span></span><code>locale-gen
 </code></pre></div>
 
@@ -438,12 +438,12 @@ sv_SE.UTF-8 UTF-8
 <span class="cp">?&gt;</span>
 </code></pre></div>
 
-<p>Pour générer un fichier .mo a partir d'un fichier .po :</p>
+<p>Pour générer un fichier .mo à partir d'un fichier .po :</p>
 <div class="highlight"><pre><span></span><code>msgfmt domaine.po -o domaine.mo
 </code></pre></div>
 
-<p>Pour générer un fichier .po a partir de fichier php avec du gettext,
-faire un fichier texte avec tous vos fichiers php ou on doit récupérer
+<p>Pour générer un fichier .po à partir de fichier php avec du gettext,
+faire un fichier texte avec tous vos fichiers php où on doit récupérer
 le gettext.</p>
 <p>Exemple listing_gettext.txt tel que :</p>
 <div class="highlight"><pre><span></span><code>index.php
@@ -466,7 +466,7 @@ lang/en_GB/LC_MESSAGES/domaine.mo
 
 <p>N'oubliez pas de redémarrer votre serveur web pour que les changements
 soient pris en compte.</p>
-<p>Mise à jour le 30 Novembre 2015 par
+<p>Mise à jour le 30 novembre 2015 par
 <a href="http://www.github.com/doogaille">doogaille</a>.</p>
   </div>
   <hr />
@@ -481,10 +481,10 @@ Tags :
   </header>
   <div>
       <p>Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
-mapage clavier Mac. Il y a beaucoup de différences entre un clavier
+mappage clavier Mac. Il y a beaucoup de différences entre un clavier
 AZERTY de PC et un clavier AZERTY de Mac.</p>
 <p>Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
-des endroits complétement différents.</p>
+des endroits complètement différents.</p>
 <p>J'ai donc décidé de modifier la configuration de debian pour prendre en
 compte un clavier mac. :</p>
 <div class="highlight"><pre><span></span><code><span class="nv">dpkg</span><span class="o">-</span><span class="nv">reconfigure</span><span class="w"> </span><span class="nv">keyboard</span><span class="o">-</span><span class="nv">console</span>
@@ -512,13 +512,13 @@ compte un clavier mac. :</p>
 
 <p>J'ai choisi un clavier Apple, Français Mac, sans touche AltGr, avec
 comme touche de fonctionnalité secondaire "Alt droit". Malheureusement
-je n'ai pas réussi a mapper l'Alt de gauche pour avoir la même fonction
+je n'ai pas réussi à mapper l'Alt de gauche pour avoir la même fonction
 qu'à droite…</p>
-<p>Et ensuite j'ai indiqué que je ne voulais pas pouvoir quitter le server
-X avec la combinaison de touche Control+Alt+Backspace.</p>
+<p>Et ensuite j'ai indiqué que je ne voulais pas pouvoir quitter le serveur
+X avec la combinaison de touches Control+Alt+Backspace.</p>
 <p>Si ceci ne fonctionne pas il faut se rendre dans la configuration du
-clavier de votre gestionnaire de fenêtre (xfce: dans mon cas). Puis
-désactiver le layout par defaut du système.</p>
+clavier de votre gestionnaire de fenêtres (xfce: dans mon cas). Puis
+désactiver le layout par défaut du système.</p>
 <p><img alt="image0" src="http://media.tumblr.com/tumblr_lvjsbrOL8E1qzr4hx.png"></p>
   </div>
   <hr />

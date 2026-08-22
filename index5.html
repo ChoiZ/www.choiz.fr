@@ -84,7 +84,7 @@ Tags :
   <div>
       <p>Télécharger la dernière version de <a href="http://www.skype.com">Skype</a> (Debian
 7.0 [multiarch]).</p>
-<p>Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. :</p>
+<p>Ajouter l'architecture i386 si vous ne l'avez pas déjà fait. :</p>
 <div class="highlight"><pre><span></span><code>dpkg --add-architecture i386
 </code></pre></div>
 
@@ -142,10 +142,10 @@ formulaire non sécurisée (http://). Cela représente un risque de sécurité
 permettant le vol d&#39;identifiants de connexion.
 </code></pre></div>
 
-<p>La première indications informe que vous n'êtes pas sur un site
-utilisant le HTTPS. Lorsque vous allez remplir le champs "password"
+<p>La première indication informe que vous n'êtes pas sur un site
+utilisant le HTTPS. Lorsque vous allez remplir le champ "password"
 celui-ci sera envoyé en clair sur le réseau.</p>
-<p>La seconde indication informe que l'action du formulaire envoi sur une
+<p>La seconde indication informe que l'action du formulaire envoie sur une
 page qui n'est pas en HTTPS.</p>
 <p>Vous pouvez avoir votre formulaire sur l'url :
 <a href="https://www.mon-formulaire.fr">https://www.mon-formulaire.fr</a> et dans l'action de votre formulaire
@@ -235,14 +235,14 @@ Tags :
 non utilisés (jeux etc…).</p>
 <p>J'ai malheureusement supprimé un peu (trop) de paquets tel que
 (xfdesktop4 et xfce4-panel). Au démarrage de x, une fois identifié, un
-écran gris s'affiche et rien d'autre. Heureusement grâce à mon access
+écran gris s'affiche et rien d'autre. Heureusement grâce à mon accès
 SSH je peux me connecter à la machine à distance.</p>
-<p>Pour voir la liste des paquets déinstallés j'ai donc fait :</p>
+<p>Pour voir la liste des paquets désinstallés j'ai donc fait :</p>
 <div class="highlight"><pre><span></span><code>dpkg --get-selections &gt; liste-des-paquets
 </code></pre></div>
 
 <p>Il suffit ensuite d'ouvrir dans un éditeur texte (type vi) le fichier
-pour voir les paquets installés / déinstallés. Et réinstaller avec sudo
+pour voir les paquets installés / désinstallés. Et réinstaller avec sudo
 apt-get install le ou les paquets manquants.</p>
   </div>
   <hr />
@@ -258,9 +258,9 @@ Tags :
   <div>
       <p>Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
 ligne…</p>
-<p>J'ai du faire un <em>git diff</em> dans mon terminal et copié la ligne (mais
+<p>J'ai dû faire un <em>git diff</em> dans mon terminal et copié la ligne (mais
 pas entièrement…).</p>
-<p>J'ai donc refais un <em>git diff</em> dans mon terminal et je me suis aperçu
+<p>J'ai donc refait un <em>git diff</em> dans mon terminal et je me suis aperçu
 que ma ligne qui devait être sur plusieurs lignes ne l'était pas…</p>
 <p>Mon fichier texte ressemble à ceci :</p>
 <div class="highlight"><pre><span></span><code>ligne avec un peu de texte ici nous avons 66 caractères affichés.
@@ -310,7 +310,7 @@ Tags :
 <div class="highlight"><pre><span></span><code>diskutil list
 </code></pre></div>
 
-<p>Qui permet de lister vos disque dur / clés usb etc…</p>
+<p>Qui permet de lister vos disques durs / clés usb etc…</p>
 <p>ici ma clé usb est disk2. :</p>
 <div class="highlight"><pre><span></span><code>/dev/disk2
    #:                       TYPE NAME                    SIZE       IDENTIFIER
@@ -354,7 +354,7 @@ Tags :
   <div>
       <p>J'utilise git depuis pas mal de temps déjà et j'avais déjà vu des
 messages sur cherry-pick sans savoir ce que c'était.</p>
-<p>git cherry-pick permet d'appliquer un commit sur la branche sur la
+<p>git cherry-pick permet d'appliquer un commit sur la
 branche actuelle.</p>
 <div class="highlight"><pre><span></span><code>git cherry-pick c4a99776
 </code></pre></div>

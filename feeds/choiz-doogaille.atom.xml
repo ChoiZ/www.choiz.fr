@@ -13,7 +13,7 @@ sur votre site en php il faut télécharger le package php-gettext :&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
-commentaires devant les langues qui vont sont à traduire par exemple :
+commentaires devant les langues qui sont à traduire par exemple :
 Allemand, Anglais, Espagnol, Français &amp;amp; Suédois :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;de_DE.UTF-8 UTF-8
 en_GB.UTF-8 UTF-8
@@ -22,7 +22,7 @@ fr_FR.UTF-8 UTF-8
 sv_SE.UTF-8 UTF-8
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Puis regénérer les locales :&lt;/p&gt;
+&lt;p&gt;Puis régénérer les locales :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;locale-gen
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -59,12 +59,12 @@ sv_SE.UTF-8 UTF-8
 &lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Pour générer un fichier .mo a partir d'un fichier .po :&lt;/p&gt;
+&lt;p&gt;Pour générer un fichier .mo à partir d'un fichier .po :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;msgfmt domaine.po -o domaine.mo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Pour générer un fichier .po a partir de fichier php avec du gettext,
-faire un fichier texte avec tous vos fichiers php ou on doit récupérer
+&lt;p&gt;Pour générer un fichier .po à partir de fichier php avec du gettext,
+faire un fichier texte avec tous vos fichiers php où on doit récupérer
 le gettext.&lt;/p&gt;
 &lt;p&gt;Exemple listing_gettext.txt tel que :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;index.php
@@ -87,5 +87,5 @@ lang/en_GB/LC_MESSAGES/domaine.mo
 
 &lt;p&gt;N'oubliez pas de redémarrer votre serveur web pour que les changements
 soient pris en compte.&lt;/p&gt;
-&lt;p&gt;Mise à jour le 30 Novembre 2015 par
+&lt;p&gt;Mise à jour le 30 novembre 2015 par
 &lt;a href="http://www.github.com/doogaille"&gt;doogaille&lt;/a&gt;.&lt;/p&gt;</content><category term="text"/><category term="php"/><category term="gettext"/></entry></feed>

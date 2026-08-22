@@ -58,12 +58,12 @@ Tags :
       <a href="https://www.choiz.fr/tag/network.html">network</a>,      <a href="https://www.choiz.fr/tag/proxmox.html">proxmox</a>    </p>
   </header>
   <div>
-      <p>L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
+      <p>L'idée est d'utiliser qu'une seule adresse ip publique pour plusieurs VM. Comme à
 la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut
 faire la même chose.</p>
-<p>Ip Public de proxmox : 11.22.33.44
-Ip Privé de proxmox : 10.0.0.254</p>
-<p>Je me connect en ssh à Proxmox et je modifie le fichier <code>/etc/network/interfaces</code>
+<p>Ip Publique de proxmox : 11.22.33.44
+Ip Privée de proxmox : 10.0.0.254</p>
+<p>Je me connecte en ssh à Proxmox et je modifie le fichier <code>/etc/network/interfaces</code>
 j'ajoute à la fin du fichier :</p>
 <div class="highlight"><pre><span></span><code><span class="kt">auto</span><span class="w"> </span><span class="nx">vmbr2</span>
 <span class="nx">iface</span><span class="w"> </span><span class="nx">vmbr2</span><span class="w"> </span><span class="nx">inet</span><span class="w"> </span><span class="nx">static</span>
@@ -78,7 +78,7 @@ j'ajoute à la fin du fichier :</p>
 </code></pre></div>
 
 <p>On peut également ajouter si on veut différents ports qu'on ouvre vers
-l'exterieur vers tel ou tel VM ou conteneur.
+l'extérieur vers tel ou tel VM ou conteneur.
 Par exemple j'ouvre le port 22 de mon conteneur avec l'ip 10.0.0.1 sur le port
 8022 de mon ip public :</p>
 <div class="highlight"><pre><span></span><code>    post-up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 8022 -j DNAT --to 10.0.0.1:22
@@ -125,7 +125,7 @@ votre partage.</p>
 </code></pre></div>
 
 <p>J'ajoute dans le fichier le dossier à partager <code>/home/user/share</code> et l'adresse
-du ou des clients qui peuvent accèder a ce partage
+du ou des clients qui peuvent accéder à ce partage
 <code>10.0.0.1(rw,sync,no_subtree_check)</code> ici mon client a l'adresse ip 10.0.0.1 ce
 qui donne :</p>
 <div class="highlight"><pre><span></span><code>/home/user/share 10.0.0.1(rw,sync,no_subtree_check)
@@ -171,16 +171,16 @@ Tags :
       <a href="https://www.choiz.fr/tag/unifi.html">unifi</a>,      <a href="https://www.choiz.fr/tag/network.html">network</a>    </p>
   </header>
   <div>
-      <p>Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.</p>
+      <p>Ayant pas mal utilisé le matériel d'ubiquiti j'ai acheté un USG 3 pour la maison.</p>
 <p>En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
-livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs.</p>
-<p>Il y a pas mal de manipulations a faire avant de pouvoir remplacer totalement sa
+livebox par l'USG tout en conservant la télévision etc… grâce aux VLANs.</p>
+<p>Il y a pas mal de manipulations à faire avant de pouvoir remplacer totalement sa
 livebox par l'USG.</p>
-<p>J'ai utilisé un raspberry pi qui me permet d'installer un controlleur UniFi qui
-permet de gerer son matériel de la marque.</p>
+<p>J'ai utilisé un raspberry pi qui me permet d'installer un contrôleur UniFi qui
+permet de gérer son matériel de la marque.</p>
 <p>En branchant l'USG au secteur il prend l'adresse IP 192.168.1.1 (la même que la
 livebox dans un premier temps ça aide pas…). Je branche donc l'USG en direct sur
-mon poste et je me connect en ssh dessus avec les login / pass : "ubnt / ubnt".</p>
+mon poste et je me connecte en ssh dessus avec les login / pass : "ubnt / ubnt".</p>
 <p>Se rendre sur <a href="https://www.l9.fr/usg-config-generator.php">mon générateur de configuration</a> pour générer un fichier config_usg.sh</p>
 <p>Puis télécharger les fichiers :</p>
 <ul>
@@ -196,7 +196,7 @@ avec l'utilisateur "ubnt" et le mot de passe "ubnt"</p>
 <div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="n">ubnt</span><span class="mf">@192.168.1.1</span>
 </code></pre></div>
 
-<p>Remplacer le dhclient3, copier la rfc au bon endroit et rendre executable mon
+<p>Remplacer le dhclient3, copier la rfc au bon endroit et rendre exécutable mon
 script :</p>
 <div class="highlight"><pre><span></span><code>sudo bash
 mv dhclient3 /sbin/dhclient3
@@ -208,7 +208,7 @@ chmod a+x config_usg.sh
 </code></pre></div>
 
 <p>Editer le fichier /opt/vyatta/sbin/vyatta-interfaces.pl et ajouter l'option 90
-du dhcp. Il faut aller a la ligne 194 :</p>
+du dhcp. Il faut aller à la ligne 194 :</p>
 <div class="highlight"><pre><span></span><code>    $output .= &quot;option rfc3442-classless-static-routes code 121 = array of unsigned integer 8;\n\n&quot;;
 </code></pre></div>
 
@@ -221,13 +221,13 @@ du dhcp. Il faut aller a la ligne 194 :</p>
 <span class="n">Proceed</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">reboot</span><span class="vm">?</span><span class="w"> </span><span class="o">[</span><span class="n">confirm</span><span class="o">]</span><span class="n">y</span>
 </code></pre></div>
 
-<p>Débrancher votre controlleur du réseau (pour ne pas que l'USG reprovisionne une
-vielle configuration).</p>
+<p>Débrancher votre contrôleur du réseau (pour ne pas que l'USG reprovisionne une
+vieille configuration).</p>
 <p>Se connecter de nouveau en ssh sur l'usg :</p>
 <div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="n">ubnt</span><span class="mf">@192.168.1.1</span>
 </code></pre></div>
 
-<p>Se connecter en tant que root pour executer le script</p>
+<p>Se connecter en tant que root pour exécuter le script</p>
 <div class="highlight"><pre><span></span><code>sudo bash
 ./config_usg.sh
 </code></pre></div>
@@ -261,35 +261,35 @@ vielle configuration).</p>
 <span class="p">[</span><span class="n">edit</span><span class="p">]</span>
 </code></pre></div>
 
-<p>Puis j'éteind l'USG pour remplacer la livebox.</p>
+<p>Puis j'éteins l'USG pour remplacer la livebox.</p>
 <p>Le port WAN1 pour l'ONT</p>
 <p>Le port LAN1 pour votre réseau local</p>
 <p>Le port WAN2/LAN2 pour la télévision</p>
-<p>Quand j'arrive a joindre l'usg sur l'IP 192.168.1.1 je me reconnect en ssh et je
-me connect en root pour sauver la config et l'envoyer sur ma machine.</p>
+<p>Quand j'arrive à joindre l'usg sur l'IP 192.168.1.1 je me reconnecte en ssh et je
+me connecte en root pour sauver la config et l'envoyer sur ma machine.</p>
 <div class="highlight"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">bash</span>
 <span class="n">mca</span><span class="o">-</span><span class="n">ctrl</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="k">dump</span><span class="o">-</span><span class="n">cfg</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">gateway</span><span class="p">.</span><span class="n">json</span>
 <span class="n">scp</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">gateway</span><span class="p">.</span><span class="n">json</span><span class="w"> </span><span class="k">user</span><span class="nv">@ma_machine</span><span class="err">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="k">user</span><span class="o">/</span>
 </code></pre></div>
 
 <p>Maintenant je me déconnecte de l'usg. Je débranche le câble réseau entre l'usg et
-mon réseau local pour pouvoir rebrancher mon controlleur. Si on débranche pas
-l'usg il va reprendre la config par defaut du controlleur et il faudra tout
+mon réseau local pour pouvoir rebrancher mon contrôleur. Si on débranche pas
+l'usg il va reprendre la config par défaut du contrôleur et il faudra tout
 refaire (hormis les copies des fichiers dhclient3 rfc… etc…).</p>
-<p>Depuis mon poste je copie sur mon controlleur le fichier config.gateway.json que
+<p>Depuis mon poste je copie sur mon contrôleur le fichier config.gateway.json que
 je viens de sauver.</p>
 <div class="highlight"><pre><span></span><code><span class="n">scp</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">gateway</span><span class="p">.</span><span class="n">json</span><span class="w"> </span><span class="k">user</span><span class="nv">@mon_controlleur</span><span class="err">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="k">user</span>
 </code></pre></div>
 
-<p>Puis je me connecte a mon controlleur en ssh pour déposer dans le bon dossier ce
+<p>Puis je me connecte à mon contrôleur en ssh pour déposer dans le bon dossier ce
 fichier.</p>
-<p>Le dossier doit être <code>/data/sites/default</code> si vous utilisez le site par defaut.</p>
-<p>Reconnecter l'USG a votre réseau.</p>
-<p>Il va être de nouveau provisionné par votre controlleur, si vous avez des
+<p>Le dossier doit être <code>/data/sites/default</code> si vous utilisez le site par défaut.</p>
+<p>Reconnecter l'USG à votre réseau.</p>
+<p>Il va être de nouveau provisionné par votre contrôleur, si vous avez des
 erreurs lors de ce provisionning elles seront affichées dans "alerts" sur votre
-controlleur. Dans ce cas il y a un truc qui cloche entre votre config et celle
-du controlleur revoir les différentes étapes.</p>
-<p>Si le provisionning est ok l'USG redémarre et la config est enfin fini ! ;-)</p>
+contrôleur. Dans ce cas il y a un truc qui cloche entre votre config et celle
+du contrôleur revoir les différentes étapes.</p>
+<p>Si le provisionning est ok l'USG redémarre et la config est enfin finie ! ;-)</p>
 <p>Grand merci au forum lafibre.info et particulièrement ce <a href="https://lafibre.info/remplacer-livebox/unifi-security-gateway-en-remplacement-de-la-livebox/">sujet</a>.</p>
 <p><a href="http://amzn.to/2xXmsDO">Ubiquiti Networks USG</a> sur Amazon.</p>
   </div>
@@ -304,9 +304,9 @@ Tags :
       <a href="https://www.choiz.fr/tag/proxmox.html">proxmox</a>,      <a href="https://www.choiz.fr/tag/debian.html">debian</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>    </p>
   </header>
   <div>
-      <p>Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
+      <p>Suite à l'installation de mon NAS, j'ai installé un proxmox dessus.
 Par contre il ne faut pas modifier le sources.list ni installer
-firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
+firmware-linux-nonfree avant d'installer proxmox (cela ne fonctionne pas du
 tout).</p>
 <p>Sur debian éditer le fichier /etc/hosts comme ceci :</p>
 <div class="highlight"><pre><span></span><code><span class="mf">127.0.0.1</span><span class="w">       </span><span class="n">localhost</span><span class="mf">.</span><span class="n">localdomain</span><span class="w"> </span><span class="n">localhost</span>
@@ -323,14 +323,14 @@ tout).</p>
 <span class="m m-Double">192.168.15.77</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="nx">should</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">here</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">IP</span><span class="w"> </span><span class="nx">adress</span>
 </code></pre></div>
 
-<p>Puis on ajoute au sources.list le dépot de proxmox, on récupere la clé et on
+<p>Puis on ajoute au sources.list le dépôt de proxmox, on récupère la clé et on
 update :</p>
 <div class="highlight"><pre><span></span><code><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;deb http://download.proxmox.com/debian/pve stretch pve-no-subscription&quot;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">pve</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">repo</span><span class="o">.</span><span class="n">list</span>
 <span class="n">wget</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">proxmox</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">debian</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">ve</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">5.</span><span class="n">x</span><span class="o">.</span><span class="n">gpg</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">trusted</span><span class="o">.</span><span class="n">gpg</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">ve</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">5.</span><span class="n">x</span><span class="o">.</span><span class="n">gpg</span>
 <span class="n">apt</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">apt</span><span class="w"> </span><span class="n">dist</span><span class="o">-</span><span class="n">upgrade</span>
 </code></pre></div>
 
-<p>Puis on install les packages Proxmox VE :</p>
+<p>Puis on installe les packages Proxmox VE :</p>
 <div class="highlight"><pre><span></span><code>apt install proxmox-ve postfix open-iscsi
 </code></pre></div>
 
@@ -345,7 +345,7 @@ rechercher la ligne avec :</p>
 <p>remplacer par :</p>
 <p><code>if (false /*data.status !== 'Active'*/) {</code></p>
 <p>Puis relancer pveproxy avec la commande <code>pveproxy restart</code></p>
-<p>Se déconnecter de l'interface proxmox, à la reconnection vous n'aurez plus le
+<p>Se déconnecter de l'interface proxmox, à la reconnexion vous n'aurez plus le
 message de souscription.</p>
 <p>Puis faire les commandes optionnelles :</p>
 <div class="highlight"><pre><span></span><code>apt remove os-prober
@@ -367,7 +367,7 @@ Tags :
       <p>J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
 dessus j'avais installé Debian 6 à l'époque puis j'ai mis à jour jusqu'à la version 9.</p>
 <p>Mon objectif est l'ajout d'un disque car j'ai 4 emplacements pour le stockage et
-je n'utilisais que 3 de ses 4 emplacements.</p>
+je n'utilisais que 3 de ces 4 emplacements.</p>
 <p>Pour commencer il me fallait un rack 5"¼ permettant de mettre un disque 3"½ ou
 2"½, je l'ai trouvé sur <a href="http://www.ldlc.com/fiche/PB00157318.html">LDLC</a> c'est
 un "ICY BOX IB-129SSK-B", ensuite j'ai pris sur
@@ -376,7 +376,7 @@ un disque Seagate ST500LM030 en 2"½ de 500Go et j'avais ce qu'il fallait pour l
 SATA et l'alimentation.</p>
 <p>Ce qui m'a permis de mettre un disque 2"½ au niveau de l'emplacement CDROM du HP
 Microserver.</p>
-<p>J'ai du tué mon uptime d'un an (depuis mon dernier déménagement) :</p>
+<p>J'ai dû tuer mon uptime d'un an (depuis mon dernier déménagement) :</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="mi">12</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">37</span><span class="w"> </span><span class="n">choiz</span><span class="err">@</span><span class="n">wayland</span><span class="w"> </span><span class="o">~</span><span class="w">  </span><span class="c1">#❯❯❯ uptime</span>
 <span class="w"> </span><span class="mi">12</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">37</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="mi">366</span><span class="w"> </span><span class="n">days</span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="p">:</span><span class="mi">08</span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w">  </span><span class="nb">load</span><span class="w"> </span><span class="n">average</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span>
 </code></pre></div>
@@ -396,7 +396,7 @@ lien et les conseils.</p>
 <div class="highlight"><pre><span></span><code># apt install isc-dhcp-server
 </code></pre></div>
 
-<p>Mes IP sont dans le réseau 192.168.1.0/24, mon router en 192.168.1.1, je met un
+<p>Mes IP sont dans le réseau 192.168.1.0/24, mon router en 192.168.1.1, je mets un
 range entre 192.168.1.100 et 192.168.1.150 mon serveur TFTP est en 192.168.1.2.</p>
 <p>Voici la conf d'isc-dhcp-server :</p>
 <div class="highlight"><pre><span></span><code><span class="k">default</span><span class="o">-</span><span class="nx">lease</span><span class="o">-</span><span class="nx">time</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
@@ -436,8 +436,8 @@ notre TFTP :</p>
 </code></pre></div>
 
 <p>Le PXE est maintenant fonctionnel avec l'installation de debian.</p>
-<p>Je réinstall donc debian 9.1 proprement.</p>
-<p>Pour éviter d'avoir ses messages d'erreurs :</p>
+<p>Je réinstalle donc debian 9.1 proprement.</p>
+<p>Pour éviter d'avoir ces messages d'erreurs :</p>
 <div class="highlight"><pre><span></span><code><span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso5</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span>
 <span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span>
 <span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span>
@@ -449,7 +449,7 @@ notre TFTP :</p>
 apt install firmware-linux-nonfree
 </code></pre></div>
 
-<p>Il me reste plus qu'a remonter mes disques de backup et de refaire mes partages.</p>
+<p>Il me reste plus qu'à remonter mes disques de backup et de refaire mes partages.</p>
   </div>
   <hr />
 </article>
@@ -464,7 +464,7 @@ Tags :
   <div>
       <p>Si vous n'avez plus de clé publique, mais que vous avez toujours votre clé privée vous pouvez regénérer votre clé
 publique.</p>
-<p>Pour se faire il faut utiliser la commande <em>ssh-keygen</em> avec l'option <em>-y</em> et <em>-f</em> pour désigner la clé privé.</p>
+<p>Pour ce faire il faut utiliser la commande <em>ssh-keygen</em> avec l'option <em>-y</em> et <em>-f</em> pour désigner la clé privée.</p>
 <p><code>ssh-keygen -y -f ~/.ssh/id_rsa &gt; ~/.ssh/id_rsa.pub</code></p>
 <p>On utilise ci-dessus l'id_rsa (privée) pour générer l'id_rsa.pub.</p>
   </div>
@@ -487,12 +487,12 @@ trouve dans <em>~/.ssh/config</em> et d'ajouter les deux lignes suivantes :</p>
 
 <p>C'est tout.</p>
 <p>Explications : on utilise l'host <em>bastion.fr</em> pour se connecter à
-<em>destination.local</em>. Quand je tape sur ma machine local <em>ssh
+<em>destination.local</em>. Quand je tape sur ma machine locale <em>ssh
 choiz@destination.local</em> mon client SSH lit le fichier de configuration, se
 connecte à l'host <em>bastion.fr</em> avec l'utilisateur <em>user</em> puis fait une nouvelle
 connexion vers ma destination.</p>
 <p>Vous pouvez modifier votre configuration ssh pour se connecter à votre bastion
-avec une clé spécifique puis a votre destination avec une autre clé par exemple
+avec une clé spécifique puis à votre destination avec une autre clé par exemple
 ou avec des utilisateurs différents…</p>
 <p>Exemple :</p>
 <div class="highlight"><pre><span></span><code>Host bastion.fr
@@ -518,7 +518,7 @@ Tags :
   </header>
   <div>
       <p>Voici quelques commandes très utiles si vous utilisez docker.</p>
-<p>Supprimer tous les containers qui sont arétés :</p>
+<p>Supprimer tous les containers qui sont arrêtés :</p>
 <div class="highlight"><pre><span></span><code>docker ps -q | xargs docker rm
 </code></pre></div>
 
@@ -526,11 +526,11 @@ Tags :
 <div class="highlight"><pre><span></span><code>docker images -q | xargs docker rmi
 </code></pre></div>
 
-<p>Se connecter a un conteneur docker lancé par son id :</p>
+<p>Se connecter à un conteneur docker lancé par son id :</p>
 <div class="highlight"><pre><span></span><code>docker exec -it id_de_votre_container /bin/bash
 </code></pre></div>
 
-<p>Se connecter a un conteneur docker lancé par son nom :</p>
+<p>Se connecter à un conteneur docker lancé par son nom :</p>
 <div class="highlight"><pre><span></span><code>docker exec -it nom_de_votre_container /bin/bash
 </code></pre></div>
   </div>
@@ -563,7 +563,7 @@ Tags :
       <a href="https://www.choiz.fr/tag/xubuntu.html">xubuntu</a>,      <a href="https://www.choiz.fr/tag/linux.html">linux</a>,      <a href="https://www.choiz.fr/tag/computer.html">computer</a>    </p>
   </header>
   <div>
-      <p>J'ai récement acheté un ASUS X205TA, livré avec Windows
+      <p>J'ai récemment acheté un ASUS X205TA, livré avec Windows
 10 (32 bits), un disque SSD de 32Go et 2Go de ram et pour un prix de 210€.</p>
 <p>J'ai installé xubuntu 16.04 (64 bits) sur une partition séparée pour garder Windows 10.</p>
 <p>L'installation est plutôt complexe car le "bootloader" est en 32bits (je pense
@@ -572,7 +572,7 @@ d'ailleurs que c'est pour ça qu'il est livré avec un windows 32bits et non
 <p>Voici <a href="http://ubuntuforums.org/showthread.php?t=2254322&amp;page=92&amp;p=13474817#post13474817">un message</a> qui explique l'installation simple d'ubuntu (remplacer l'iso
 par xubuntu ou autre).</p>
 <p>Pour l'instant : la carte son n'est pas reconnue et le pointeur de la souris
-disparait suite a la mise en veille… Mis a part ça la machine fonctionne très
+disparait suite à la mise en veille… Mis à part ça la machine fonctionne très
 bien pour mon utilisation (des petits développements pendant mes trajets maison &lt;-&gt; travail).</p>
   </div>
 </article>

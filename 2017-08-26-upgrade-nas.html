@@ -67,7 +67,7 @@
     <p>J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
 dessus j'avais installé Debian 6 à l'époque puis j'ai mis à jour jusqu'à la version 9.</p>
 <p>Mon objectif est l'ajout d'un disque car j'ai 4 emplacements pour le stockage et
-je n'utilisais que 3 de ses 4 emplacements.</p>
+je n'utilisais que 3 de ces 4 emplacements.</p>
 <p>Pour commencer il me fallait un rack 5"¼ permettant de mettre un disque 3"½ ou
 2"½, je l'ai trouvé sur <a href="http://www.ldlc.com/fiche/PB00157318.html">LDLC</a> c'est
 un "ICY BOX IB-129SSK-B", ensuite j'ai pris sur
@@ -76,7 +76,7 @@ un disque Seagate ST500LM030 en 2"½ de 500Go et j'avais ce qu'il fallait pour l
 SATA et l'alimentation.</p>
 <p>Ce qui m'a permis de mettre un disque 2"½ au niveau de l'emplacement CDROM du HP
 Microserver.</p>
-<p>J'ai du tué mon uptime d'un an (depuis mon dernier déménagement) :</p>
+<p>J'ai dû tuer mon uptime d'un an (depuis mon dernier déménagement) :</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="mi">12</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">37</span><span class="w"> </span><span class="n">choiz</span><span class="err">@</span><span class="n">wayland</span><span class="w"> </span><span class="o">~</span><span class="w">  </span><span class="c1">#❯❯❯ uptime</span>
 <span class="w"> </span><span class="mi">12</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">37</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="mi">366</span><span class="w"> </span><span class="n">days</span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="p">:</span><span class="mi">08</span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w">  </span><span class="nb">load</span><span class="w"> </span><span class="n">average</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span>
 </code></pre></div>
@@ -96,7 +96,7 @@ lien et les conseils.</p>
 <div class="highlight"><pre><span></span><code># apt install isc-dhcp-server
 </code></pre></div>
 
-<p>Mes IP sont dans le réseau 192.168.1.0/24, mon router en 192.168.1.1, je met un
+<p>Mes IP sont dans le réseau 192.168.1.0/24, mon router en 192.168.1.1, je mets un
 range entre 192.168.1.100 et 192.168.1.150 mon serveur TFTP est en 192.168.1.2.</p>
 <p>Voici la conf d'isc-dhcp-server :</p>
 <div class="highlight"><pre><span></span><code><span class="k">default</span><span class="o">-</span><span class="nx">lease</span><span class="o">-</span><span class="nx">time</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
@@ -136,8 +136,8 @@ notre TFTP :</p>
 </code></pre></div>
 
 <p>Le PXE est maintenant fonctionnel avec l'installation de debian.</p>
-<p>Je réinstall donc debian 9.1 proprement.</p>
-<p>Pour éviter d'avoir ses messages d'erreurs :</p>
+<p>Je réinstalle donc debian 9.1 proprement.</p>
+<p>Pour éviter d'avoir ces messages d'erreurs :</p>
 <div class="highlight"><pre><span></span><code><span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso5</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span>
 <span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3_tso</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span>
 <span class="n">W</span><span class="o">:</span><span class="w"> </span><span class="n">Possible</span><span class="w"> </span><span class="n">missing</span><span class="w"> </span><span class="n">firmware</span><span class="w"> </span><span class="sr">/lib/firmware/tigon/</span><span class="n">tg3</span><span class="o">.</span><span class="na">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">tg3</span>
@@ -149,7 +149,7 @@ notre TFTP :</p>
 apt install firmware-linux-nonfree
 </code></pre></div>
 
-<p>Il me reste plus qu'a remonter mes disques de backup et de refaire mes partages.</p>
+<p>Il me reste plus qu'à remonter mes disques de backup et de refaire mes partages.</p>
   </div>
   <div class="tag-cloud">
     <p>

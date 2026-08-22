@@ -13,11 +13,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 <meta name="author" content="choiz" />
-<meta name="description" content="Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison. En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs. Il y a pas mal de manipulations a …" />
+<meta name="description" content="Ayant pas mal utilisé le matériel d'ubiquiti j'ai acheté un USG 3 pour la maison. En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la livebox par l'USG tout en conservant la télévision etc… grâce aux VLANs. Il y a pas mal de manipulations à …" />
 <meta name="keywords" content="unifi, network">
 <meta property="og:site_name" content="ChoiZ"/>
 <meta property="og:title" content="Remplacer sa livebox par un UniFi Security Gateway 3P (USG)"/>
-<meta property="og:description" content="Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison. En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs. Il y a pas mal de manipulations a …"/>
+<meta property="og:description" content="Ayant pas mal utilisé le matériel d'ubiquiti j'ai acheté un USG 3 pour la maison. En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la livebox par l'USG tout en conservant la télévision etc… grâce aux VLANs. Il y a pas mal de manipulations à …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html"/>
 <meta property="og:type" content="article"/>
@@ -62,16 +62,16 @@
     <p>Posté le sam. 26 août 2017</p>
   </header>
   <div>
-    <p>Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.</p>
+    <p>Ayant pas mal utilisé le matériel d'ubiquiti j'ai acheté un USG 3 pour la maison.</p>
 <p>En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
-livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs.</p>
-<p>Il y a pas mal de manipulations a faire avant de pouvoir remplacer totalement sa
+livebox par l'USG tout en conservant la télévision etc… grâce aux VLANs.</p>
+<p>Il y a pas mal de manipulations à faire avant de pouvoir remplacer totalement sa
 livebox par l'USG.</p>
-<p>J'ai utilisé un raspberry pi qui me permet d'installer un controlleur UniFi qui
-permet de gerer son matériel de la marque.</p>
+<p>J'ai utilisé un raspberry pi qui me permet d'installer un contrôleur UniFi qui
+permet de gérer son matériel de la marque.</p>
 <p>En branchant l'USG au secteur il prend l'adresse IP 192.168.1.1 (la même que la
 livebox dans un premier temps ça aide pas…). Je branche donc l'USG en direct sur
-mon poste et je me connect en ssh dessus avec les login / pass : "ubnt / ubnt".</p>
+mon poste et je me connecte en ssh dessus avec les login / pass : "ubnt / ubnt".</p>
 <p>Se rendre sur <a href="https://www.l9.fr/usg-config-generator.php">mon générateur de configuration</a> pour générer un fichier config_usg.sh</p>
 <p>Puis télécharger les fichiers :</p>
 <ul>
@@ -87,7 +87,7 @@ avec l'utilisateur "ubnt" et le mot de passe "ubnt"</p>
 <div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="n">ubnt</span><span class="mf">@192.168.1.1</span>
 </code></pre></div>
 
-<p>Remplacer le dhclient3, copier la rfc au bon endroit et rendre executable mon
+<p>Remplacer le dhclient3, copier la rfc au bon endroit et rendre exécutable mon
 script :</p>
 <div class="highlight"><pre><span></span><code>sudo bash
 mv dhclient3 /sbin/dhclient3
@@ -99,7 +99,7 @@ chmod a+x config_usg.sh
 </code></pre></div>
 
 <p>Editer le fichier /opt/vyatta/sbin/vyatta-interfaces.pl et ajouter l'option 90
-du dhcp. Il faut aller a la ligne 194 :</p>
+du dhcp. Il faut aller à la ligne 194 :</p>
 <div class="highlight"><pre><span></span><code>    $output .= &quot;option rfc3442-classless-static-routes code 121 = array of unsigned integer 8;\n\n&quot;;
 </code></pre></div>
 
@@ -112,13 +112,13 @@ du dhcp. Il faut aller a la ligne 194 :</p>
 <span class="n">Proceed</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">reboot</span><span class="vm">?</span><span class="w"> </span><span class="o">[</span><span class="n">confirm</span><span class="o">]</span><span class="n">y</span>
 </code></pre></div>
 
-<p>Débrancher votre controlleur du réseau (pour ne pas que l'USG reprovisionne une
-vielle configuration).</p>
+<p>Débrancher votre contrôleur du réseau (pour ne pas que l'USG reprovisionne une
+vieille configuration).</p>
 <p>Se connecter de nouveau en ssh sur l'usg :</p>
 <div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="n">ubnt</span><span class="mf">@192.168.1.1</span>
 </code></pre></div>
 
-<p>Se connecter en tant que root pour executer le script</p>
+<p>Se connecter en tant que root pour exécuter le script</p>
 <div class="highlight"><pre><span></span><code>sudo bash
 ./config_usg.sh
 </code></pre></div>
@@ -152,35 +152,35 @@ vielle configuration).</p>
 <span class="p">[</span><span class="n">edit</span><span class="p">]</span>
 </code></pre></div>
 
-<p>Puis j'éteind l'USG pour remplacer la livebox.</p>
+<p>Puis j'éteins l'USG pour remplacer la livebox.</p>
 <p>Le port WAN1 pour l'ONT</p>
 <p>Le port LAN1 pour votre réseau local</p>
 <p>Le port WAN2/LAN2 pour la télévision</p>
-<p>Quand j'arrive a joindre l'usg sur l'IP 192.168.1.1 je me reconnect en ssh et je
-me connect en root pour sauver la config et l'envoyer sur ma machine.</p>
+<p>Quand j'arrive à joindre l'usg sur l'IP 192.168.1.1 je me reconnecte en ssh et je
+me connecte en root pour sauver la config et l'envoyer sur ma machine.</p>
 <div class="highlight"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">bash</span>
 <span class="n">mca</span><span class="o">-</span><span class="n">ctrl</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="k">dump</span><span class="o">-</span><span class="n">cfg</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">gateway</span><span class="p">.</span><span class="n">json</span>
 <span class="n">scp</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">gateway</span><span class="p">.</span><span class="n">json</span><span class="w"> </span><span class="k">user</span><span class="nv">@ma_machine</span><span class="err">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="k">user</span><span class="o">/</span>
 </code></pre></div>
 
 <p>Maintenant je me déconnecte de l'usg. Je débranche le câble réseau entre l'usg et
-mon réseau local pour pouvoir rebrancher mon controlleur. Si on débranche pas
-l'usg il va reprendre la config par defaut du controlleur et il faudra tout
+mon réseau local pour pouvoir rebrancher mon contrôleur. Si on débranche pas
+l'usg il va reprendre la config par défaut du contrôleur et il faudra tout
 refaire (hormis les copies des fichiers dhclient3 rfc… etc…).</p>
-<p>Depuis mon poste je copie sur mon controlleur le fichier config.gateway.json que
+<p>Depuis mon poste je copie sur mon contrôleur le fichier config.gateway.json que
 je viens de sauver.</p>
 <div class="highlight"><pre><span></span><code><span class="n">scp</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">gateway</span><span class="p">.</span><span class="n">json</span><span class="w"> </span><span class="k">user</span><span class="nv">@mon_controlleur</span><span class="err">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="k">user</span>
 </code></pre></div>
 
-<p>Puis je me connecte a mon controlleur en ssh pour déposer dans le bon dossier ce
+<p>Puis je me connecte à mon contrôleur en ssh pour déposer dans le bon dossier ce
 fichier.</p>
-<p>Le dossier doit être <code>/data/sites/default</code> si vous utilisez le site par defaut.</p>
-<p>Reconnecter l'USG a votre réseau.</p>
-<p>Il va être de nouveau provisionné par votre controlleur, si vous avez des
+<p>Le dossier doit être <code>/data/sites/default</code> si vous utilisez le site par défaut.</p>
+<p>Reconnecter l'USG à votre réseau.</p>
+<p>Il va être de nouveau provisionné par votre contrôleur, si vous avez des
 erreurs lors de ce provisionning elles seront affichées dans "alerts" sur votre
-controlleur. Dans ce cas il y a un truc qui cloche entre votre config et celle
-du controlleur revoir les différentes étapes.</p>
-<p>Si le provisionning est ok l'USG redémarre et la config est enfin fini ! ;-)</p>
+contrôleur. Dans ce cas il y a un truc qui cloche entre votre config et celle
+du contrôleur revoir les différentes étapes.</p>
+<p>Si le provisionning est ok l'USG redémarre et la config est enfin finie ! ;-)</p>
 <p>Grand merci au forum lafibre.info et particulièrement ce <a href="https://lafibre.info/remplacer-livebox/unifi-security-gateway-en-remplacement-de-la-livebox/">sujet</a>.</p>
 <p><a href="http://amzn.to/2xXmsDO">Ubiquiti Networks USG</a> sur Amazon.</p>
   </div>
@@ -260,7 +260,7 @@ du controlleur revoir les différentes étapes.</p>
   },
   "image": "{{ SITEURL }}/theme/img/profile.png",
   "url": "https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html",
-  "description": "Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison. En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs. Il y a pas mal de manipulations a …"
+  "description": "Ayant pas mal utilisé le matériel d'ubiquiti j'ai acheté un USG 3 pour la maison. En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la livebox par l'USG tout en conservant la télévision etc… grâce aux VLANs. Il y a pas mal de manipulations à …"
 }
 </script></body>
 </html>
