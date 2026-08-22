@@ -6,7 +6,7 @@ author: choiz
 tags: ["blog", "hugo", "pelican", "migration"]
 ---
 
-En 2015 je migrais ce blog de [Tumblr à Pelican](https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html). **Onze ans après** cette migration Tumblr → Pelican, je passe cette fois de **Pelican à Hugo**. Voici pourquoi et, surtout, comment sans rien casser.
+En 2015 je migrais ce blog de [Tumblr à Pelican](https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html). Onze ans après cette migration Tumblr → Pelican, je passe cette fois de Pelican à Hugo. Voici pourquoi et, surtout, comment sans rien casser.
 
 Pourquoi changer
 ----------------
@@ -15,15 +15,15 @@ Pelican m'a bien servi une décennie. Mais avec le temps, chaque publication tra
 
 [Hugo](https://gohugo.io) répond exactement à ça :
 
-- **un seul binaire**, aucune dépendance — fini le venv et les `pip install` qui cassent ;
-- des **builds quasi instantanés**, même sur cent articles ;
-- un **pipeline d'assets** intégré (Sass, empreinte de version…) ;
-- des **taxonomies** (tags) natives.
+- un seul binaire, aucune dépendance — fini le venv et les `pip install` qui cassent ;
+- des builds quasi instantanés, même sur cent articles ;
+- un pipeline d'assets intégré (Sass, empreinte de version…) ;
+- des taxonomies (tags) natives.
 
 La contrainte non négociable : garder les URLs
 ----------------------------------------------
 
-Le vrai risque d'une migration, ce n'est pas le contenu — c'est de **changer les URLs**. Pour deux raisons : le référencement, et surtout mes **commentaires**. J'utilise [utterances](https://www.choiz.fr/2020-04-13-utiliser-les-github-issues-pour-avoir-des-commentaires-sur-le-blog.html), qui indexe chaque fil de discussion **par l'URL de la page**. Si une URL change, les commentaires existants se détachent.
+Le vrai risque d'une migration, ce n'est pas le contenu — c'est de changer les URLs. Pour deux raisons : le référencement, et surtout mes commentaires. J'utilise [utterances](https://www.choiz.fr/2020-04-13-utiliser-les-github-issues-pour-avoir-des-commentaires-sur-le-blog.html), qui indexe chaque fil de discussion par l'URL de la page. Si une URL change, les commentaires existants se détachent.
 
 Il fallait donc que Hugo produise exactement les mêmes chemins que Pelican, du type `/2015-11-15-configurer-un-serveur-mail.html`. La recette dans `hugo.toml` :
 
@@ -41,7 +41,7 @@ Combiné à un `slug` explicite dans chaque article, on retombe sur le `/slug.ht
 url: "/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html"
 ```
 
-Résultat : **les 103 articles ont gardé leur URL au caractère près**, accents compris.
+Résultat : les 103 articles ont gardé leur URL au caractère près, accents compris.
 
 Convertir le contenu
 --------------------
@@ -67,4 +67,4 @@ hugo
 En résumé
 ---------
 
-Même blog, même allure, **mêmes URLs**, mêmes commentaires — mais un seul binaire à la place de tout un environnement Python. Onze ans après Tumblr, le blog change encore de moteur sans que ça se voie de l'extérieur. C'est exactement ce qu'on demande à une migration.
+Même blog, même allure, mêmes URLs, mêmes commentaires — mais un seul binaire à la place de tout un environnement Python. Onze ans après Tumblr, le blog change encore de moteur sans que ça se voie de l'extérieur. C'est exactement ce qu'on demande à une migration.
