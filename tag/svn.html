@@ -3,39 +3,27 @@
 <head>
   <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
   <link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,600,700&family=jetbrains-mono:400" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/style.min.css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/font-awesome.min.css">
-  <link href="https://www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
   <meta name="author" content="François LASSERRE" />
-  <meta name="description" content="" />
-<meta property="og:site_name" content="ChoiZ"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="ChoiZ"/>
-<meta property="og:description" content=""/>
-<meta property="og:locale" content="fr_FR"/>
-<meta property="og:url" content="https://www.choiz.fr"/>
-  <title>ChoiZ &ndash; Tag : svn</title>
+  <title>ChoiZ &ndash; Svn</title>
 </head>
 <body>
   <aside>
     <div>
-      <a href="https://www.choiz.fr">
-        <img src="https://www.choiz.fr/theme/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
-      </a>
+      <a href="/"><img src="/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE"></a>
       <div>
-          <a href="https://www.choiz.fr">Blog technique de François LASSERRE</a>
+        <a href="/">Blog technique de François LASSERRE</a>
       </div>
       <nav>
         <ul class="list">
           <li><a href="/">Home</a></li>
-          <li><a href="/archives">Archives</a></li>
-          <li><a href="/tags">Tags</a></li>
+          <li><a href="/archives.html">Archives</a></li>
+          <li><a href="/tags.html">Tags</a></li>
         </ul>
       </nav>
       <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
@@ -48,116 +36,32 @@
     </div>
   </aside>
   <main>
-
+    
 <article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html">Passer de svn à git</a></h2>
-    <p>
-      Posté le mar. 16 juillet 2013 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/svn.html">svn</a>,      <a href="https://www.choiz.fr/tag/git.html">git</a>    </p>
-  </header>
+  <header><h1>Tag : Svn</h1></header>
   <div>
-      <p>Sur le projet Addictradio nous utilisons encore un de nos dépôts avec
-svn. Il est temps de faire la migration de svn à git !</p>
-<p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
-voulais voici donc ma procédure :</p>
-<div class="highlight"><pre><span></span><code><span class="n">svn</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="c1">--quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep &quot;^r …</span></code></pre></div>
-      <a class="btn" href="https://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html">Logiciels de gestion de versions (Svn, Git, Mercurial)</a></h2>
-    <p>
-      Posté le mar. 12 février 2013 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/git.html">git</a>,      <a href="https://www.choiz.fr/tag/svn.html">svn</a>    </p>
-  </header>
-  <div>
-      <p>J'ai différents projets sous svn, git et mercurial. J'ai pour but de tout
-migrer sur git car disponible sur github ainsi que sur bitbucket.</p>
-<p>J'ai trouvé un <a href="http://www.yterium.net/Migrer-un-projet-SVN-vers-GIT">très bon tutoriel pour migrer un projet svn à
-git</a>.</p>
-<p>Également un autre tutoriel en anglais pour passer <a href="http://hivelogic.com/articles/converting-from-mercurial-to-git">de mercurial à
-git</a>.</p>
-      <a class="btn" href="https://www.choiz.fr/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html">Ignorer grâce au SVN</a></h2>
-    <p>
-      Posté le mar. 26 juillet 2011 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/svn.html">svn</a>    </p>
-  </header>
-  <div>
-      <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<div class="highlight"><pre><span></span><code>svn propset svn:ignore
-</code></pre></div>
-
-<p>Ou dans la configuration du svn dans ~/.subversion/config le
-global-ignores</p>
-<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier où
-l'on se trouve actuellement il suffit d'exécuter la commande svn
-suivante …</p>
-      <a class="btn" href="https://www.choiz.fr/2011-07-26-ignorer-grâce-au-svn.html">Lire la suite</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Commande SVN pour ajouter des keywords</a></h2>
-    <p>
-      Posté le lun. 25 octobre 2010 &#8226;
-Tags :
-      <a href="https://www.choiz.fr/tag/svn.html">svn</a>    </p>
-  </header>
-  <div>
-      <p>Pour ajouter le numéro de révision ainsi que pas mal d'autres
-informations dans vos projets il suffit de taper cette commande :</p>
-<div class="highlight"><pre><span></span><code>svn propset svn:keywords &quot;Id&quot; index.php
-</code></pre></div>
-
-<p>Ce qui permet d'ajouter le keyword "Id" sur le fichier index.php</p>
-<p>Pour afficher l'Id dans votre fichier index.php ajouter dans …</p>
-      <a class="btn" href="https://www.choiz.fr/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Lire la suite</a>
+    <dl>
+      
+      <dt>mar. 16 juillet 2013</dt>
+      <dd><a href="/2013-07-16-passer-de-svn-%C3%A0-git.html">Passer de svn à git</a></dd>
+      
+      <dt>mar. 12 février 2013</dt>
+      <dd><a href="/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html">Logiciels de gestion de versions (Svn, Git, Mercurial)</a></dd>
+      
+      <dt>mar. 26 juillet 2011</dt>
+      <dd><a href="/2011-07-26-ignorer-gr%C3%A2ce-au-svn.html">Ignorer grâce au SVN</a></dd>
+      
+      <dt>lun. 25 octobre 2010</dt>
+      <dd><a href="/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Commande SVN pour ajouter des keywords</a></dd>
+      
+    </dl>
   </div>
 </article>
-
-  <div class="pagination">
-  </div>
 
     <footer>
-      <p>&copy; François LASSERRE </p>
-<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+      <p>&copy; François LASSERRE</p>
+      <p>Aperçu Hugo — Built using Hugo</p>
+    </footer>
   </main>
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//stats.rocketip.net/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code --><script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " ChoiZ ",
-  "url" : "https://www.choiz.fr",
-  "image": "",
-  "description": ""
-}
-</script></body>
+</body>
 </html>

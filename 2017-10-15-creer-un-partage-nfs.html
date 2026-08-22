@@ -3,48 +3,27 @@
 <head>
   <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
   <link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,600,700&family=jetbrains-mono:400" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/style.min.css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/font-awesome.min.css">
-  <link href="https://www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-<meta name="author" content="choiz" />
-<meta name="description" content="Pour installer un serveur NFS sur Debian voici la marche à suivre : apt install nfs-kernel-server Une fois le paquet installé, il faut modifier la configuration pour ajouter votre partage. Editer le fichier /etc/exports vim /etc/exports J'ajoute dans le fichier le dossier à partager /home/user/share et l'adresse …" />
-<meta name="keywords" content="nfs, linux, debian, gentoo">
-<meta property="og:site_name" content="ChoiZ"/>
-<meta property="og:title" content="Créer un partage NFS"/>
-<meta property="og:description" content="Pour installer un serveur NFS sur Debian voici la marche à suivre : apt install nfs-kernel-server Une fois le paquet installé, il faut modifier la configuration pour ajouter votre partage. Editer le fichier /etc/exports vim /etc/exports J'ajoute dans le fichier le dossier à partager /home/user/share et l'adresse …"/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://www.choiz.fr/2017-10-15-creer-un-partage-nfs.html"/>
-<meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2017-10-15 19:52:13+02:00"/>
-<meta property="article:modified_time" content=""/>
-<meta property="article:author" content="https://www.choiz.fr/author/choiz.html">
-<meta property="article:section" content="text"/>
-<meta property="article:tag" content="nfs"/>
-<meta property="article:tag" content="linux"/>
-<meta property="article:tag" content="debian"/>
-<meta property="article:tag" content="gentoo"/>
-<meta property="og:image" content="">  <title>ChoiZ &ndash; Créer un partage NFS</title>
+  <meta name="author" content="François LASSERRE" />
+  <title>ChoiZ &ndash; Créer un partage NFS</title>
 </head>
 <body>
   <aside>
     <div>
-      <a href="https://www.choiz.fr">
-        <img src="https://www.choiz.fr/theme/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
-      </a>
+      <a href="/"><img src="/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE"></a>
       <div>
-          <a href="https://www.choiz.fr">Blog technique de François LASSERRE</a>
+        <a href="/">Blog technique de François LASSERRE</a>
       </div>
       <nav>
         <ul class="list">
           <li><a href="/">Home</a></li>
-          <li><a href="/archives">Archives</a></li>
-          <li><a href="/tags">Tags</a></li>
+          <li><a href="/archives.html">Archives</a></li>
+          <li><a href="/tags.html">Tags</a></li>
         </ul>
       </nav>
       <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
@@ -57,7 +36,7 @@
     </div>
   </aside>
   <main>
-
+    
 <article>
   <header>
     <h1 id="2017-10-15-creer-un-partage-nfs">Créer un partage NFS</h1>
@@ -65,130 +44,61 @@
   </header>
   <div>
     <p>Pour installer un serveur NFS sur Debian voici la marche à suivre :</p>
-<div class="highlight"><pre><span></span><code>apt install nfs-kernel-server
-</code></pre></div>
-
-<p>Une fois le paquet installé, il faut modifier la configuration pour ajouter
+<pre tabindex="0"><code>apt install nfs-kernel-server
+</code></pre><p>Une fois le paquet installé, il faut modifier la configuration pour ajouter
 votre partage.</p>
 <p>Editer le fichier <code>/etc/exports</code></p>
-<div class="highlight"><pre><span></span><code><span class="n">vim</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">exports</span>
-</code></pre></div>
-
-<p>J'ajoute dans le fichier le dossier à partager <code>/home/user/share</code> et l'adresse
+<pre tabindex="0"><code>vim /etc/exports
+</code></pre><p>J&rsquo;ajoute dans le fichier le dossier à partager <code>/home/user/share</code> et l&rsquo;adresse
 du ou des clients qui peuvent accéder à ce partage
-<code>10.0.0.1(rw,sync,no_subtree_check)</code> ici mon client a l'adresse ip 10.0.0.1 ce
+<code>10.0.0.1(rw,sync,no_subtree_check)</code> ici mon client a l&rsquo;adresse ip 10.0.0.1 ce
 qui donne :</p>
-<div class="highlight"><pre><span></span><code>/home/user/share 10.0.0.1(rw,sync,no_subtree_check)
-</code></pre></div>
-
-<p>Recharger le service :</p>
-<div class="highlight"><pre><span></span><code><span class="n">service</span><span class="w"> </span><span class="n">nfs</span><span class="o">-</span><span class="n">kernel</span><span class="o">-</span><span class="n">server</span><span class="w"> </span><span class="n">reload</span>
-</code></pre></div>
-
-<p>Vérifier que votre partage est bien actif :</p>
-<div class="highlight"><pre><span></span><code>showmount -e
-</code></pre></div>
-
-<p>Côté client, j'ai installé sur Gentoo : <code>net-fs/nfs-utils</code></p>
-<div class="highlight"><pre><span></span><code>emerge -a net-fs/nfs-utils
-</code></pre></div>
-
-<p>Sur Debian installer le paquet : <code>nfs-common</code></p>
-<div class="highlight"><pre><span></span><code>apt install nfs-common
-</code></pre></div>
-
-<p>Ensuite configurer votre fichier <code>/etc/fstab</code></p>
-<div class="highlight"><pre><span></span><code>vim /etc/fstab
-</code></pre></div>
-
-<p>Ajouter à la fin du fichier l'ip de votre partage avec le nom local puis le
+<pre tabindex="0"><code>/home/user/share 10.0.0.1(rw,sync,no_subtree_check)
+</code></pre><p>Recharger le service :</p>
+<pre tabindex="0"><code>service nfs-kernel-server reload
+</code></pre><p>Vérifier que votre partage est bien actif :</p>
+<pre tabindex="0"><code>showmount -e
+</code></pre><p>Côté client, j&rsquo;ai installé sur Gentoo : <code>net-fs/nfs-utils</code></p>
+<pre tabindex="0"><code>emerge -a net-fs/nfs-utils
+</code></pre><p>Sur Debian installer le paquet : <code>nfs-common</code></p>
+<pre tabindex="0"><code>apt install nfs-common
+</code></pre><p>Ensuite configurer votre fichier <code>/etc/fstab</code></p>
+<pre tabindex="0"><code>vim /etc/fstab
+</code></pre><p>Ajouter à la fin du fichier l&rsquo;ip de votre partage avec le nom local puis le
 point de montage sur votre client.</p>
-<div class="highlight"><pre><span></span><code><span class="mf">10.0.0.100</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">share</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">nfs</span><span class="o">-</span><span class="n">nas</span><span class="w"> </span><span class="n">nfs</span><span class="w"> </span><span class="kd">def</span><span class="n">aults</span><span class="p">,</span><span class="n">user</span><span class="p">,</span><span class="n">auto</span><span class="p">,</span><span class="n">noatime</span><span class="p">,</span><span class="nb">int</span><span class="n">r</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">0</span>
-</code></pre></div>
-
-<p>Puis monter le nouveau partage avec la commande <code>mount -a</code></p>
+<pre tabindex="0"><code>10.0.0.100:/home/user/share /home/user/nfs-nas nfs defaults,user,auto,noatime,intr 0 0
+</code></pre><p>Puis monter le nouveau partage avec la commande <code>mount -a</code></p>
 <p>Si vous faites la commande <code>ls /home/user/nfs-nas</code> vous devriez voir les
 fichiers qui se trouvent sur votre serveur.</p>
+
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://www.choiz.fr/tag/nfs.html">nfs</a>
-      <a href="https://www.choiz.fr/tag/linux.html">linux</a>
-      <a href="https://www.choiz.fr/tag/debian.html">debian</a>
-      <a href="https://www.choiz.fr/tag/gentoo.html">gentoo</a>
+      <a href="/tag/nfs.html">nfs</a> <a href="/tag/linux.html">linux</a> <a href="/tag/debian.html">debian</a> <a href="/tag/gentoo.html">gentoo</a> 
     </p>
   </div>
-<div id="comments">
-  <h2>Commentaires</h2>
-  <div id="comments-loading" class="comments-loading" aria-live="polite">
-    <span class="comments-spinner" aria-hidden="true"></span>
-    Chargement des commentaires…
+  <div id="comments">
+    <h2>Commentaires</h2>
+    <div id="comments-loading" class="comments-loading" aria-live="polite">
+      <span class="comments-spinner" aria-hidden="true"></span>
+      Chargement des commentaires…
+    </div>
   </div>
-</div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-<script>
-(function () {
-  var loader = document.getElementById('comments-loading');
-  if (!loader) return;
-  var done = false;
-  function hide() { if (done) return; done = true; loader.style.display = 'none'; }
-  // utterances émet un postMessage quand les commentaires sont rendus
-  window.addEventListener('message', function (e) {
-    if (e.origin === 'https://utteranc.es') hide();
-  });
-  // fallback : masque dès que l'iframe utterances est chargée
-  var obs = new MutationObserver(function () {
-    var f = document.querySelector('.utterances-frame');
-    if (f) { f.addEventListener('load', hide); obs.disconnect(); }
-  });
-  obs.observe(document.body, { childList: true, subtree: true });
-  // fallback ultime : ne jamais rester bloqué
-  setTimeout(hide, 10000);
-})();
-</script></article>
+  <script src="https://utteranc.es/client.js"
+          repo="ChoiZ/comments-on-choiz.fr" issue-term="url" label="blog"
+          theme="github-light" crossorigin="anonymous" async></script>
+  <script>
+  (function(){var l=document.getElementById('comments-loading');if(!l)return;var d=false;function h(){if(d)return;d=true;l.style.display='none';}
+  window.addEventListener('message',function(e){if(e.origin==='https://utteranc.es')h();});
+  var o=new MutationObserver(function(){var f=document.querySelector('.utterances-frame');if(f){f.addEventListener('load',h);o.disconnect();}});
+  o.observe(document.body,{childList:true,subtree:true});setTimeout(h,10000);})();
+  </script>
+</article>
 
     <footer>
-      <p>&copy; François LASSERRE </p>
-<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+      <p>&copy; François LASSERRE</p>
+      <p>Aperçu Hugo — Built using Hugo</p>
+    </footer>
   </main>
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//stats.rocketip.net/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code --><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BlogPosting",
-  "name": "Créer un partage NFS",
-  "headline": "Créer un partage NFS",
-  "datePublished": "2017-10-15 19:52:13+02:00",
-  "dateModified": "",
-  "author": {
-    "@type": "Person",
-    "name": "choiz",
-    "url": "https://www.choiz.fr/author/choiz.html"
-  },
-  "image": "{{ SITEURL }}/theme/img/profile.png",
-  "url": "https://www.choiz.fr/2017-10-15-creer-un-partage-nfs.html",
-  "description": "Pour installer un serveur NFS sur Debian voici la marche à suivre : apt install nfs-kernel-server Une fois le paquet installé, il faut modifier la configuration pour ajouter votre partage. Editer le fichier /etc/exports vim /etc/exports J'ajoute dans le fichier le dossier à partager /home/user/share et l'adresse …"
-}
-</script></body>
+</body>
 </html>

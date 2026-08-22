@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta name="generator" content="Hugo 0.165.0">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,600,700&family=jetbrains-mono:400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="François LASSERRE" />
+  <title>ChoiZ</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="/"><img src="/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE"></a>
+      <div>
+        <a href="/">Blog technique de François LASSERRE</a>
+      </div>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives.html">Archives</a></li>
+          <li><a href="/tags.html">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="https://www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    
+
+
+
+
+<article>
+  <header>
+    <h2><a href="/2014-05-06-faire-un-patch-de-x-commits-avec-git.html">Faire un patch de &#34;x&#34; commit(s) avec git</a></h2>
+    <p>
+      Posté le mar. 6 mai 2014
+       &#8226; Tags : <a href="/tag/git.html">git</a>, <a href="/tag/patch.html">patch</a>
+    </p>
+  </header>
+  <div>
+    <p>Voici mon historique des commits :</p>
+<pre><code>c0004 -- dernier commit
+c0003 -- avant dernier commit
+c0002 -- second commit
+c0001 -- premier commit
+</code></pre>
+<p>Je veux faire un patch du commit c0001 et c0002 je dois donc faire :</p>
+<pre><code>git format-patch -2 c0002 --stdout &gt; mon.patch
+</code></pre>
+<p>le &ldquo;-2&rdquo; sert à récupérer 2 commits à partir du commit c0002.</p>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2014-03-21-installation-de-skype-64-sur-debian.html">Installation de Skype 64 sur Debian</a></h2>
+    <p>
+      Posté le ven. 21 mars 2014
+       &#8226; Tags : <a href="/tag/skype.html">skype</a>, <a href="/tag/debian.html">debian</a>
+    </p>
+  </header>
+  <div>
+    <p>Télécharger la dernière version de <a href="http://www.skype.com">Skype</a> (Debian
+7.0 [multiarch]).</p>
+<p>Ajouter l&rsquo;architecture i386 si vous ne l&rsquo;avez pas déjà fait. :</p>
+<pre><code>dpkg --add-architecture i386
+</code></pre>
+<p>Puis mettre à jour les paquets :</p>
+<pre><code>apt-get update
+apt-get upgrade
+apt-get install -f
+</code></pre>
+<p>Installer Skype en n&rsquo;oubliant pas de remplacer &ldquo;x&rdquo; par la bonne version :</p>
+<pre><code>dpkg -i skype-debian_x_i386.deb
+</code></pre>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2014-03-21-installation-de-firefox-sur-debian.html">Installation de Firefox sur Debian</a></h2>
+    <p>
+      Posté le ven. 21 mars 2014
+       &#8226; Tags : <a href="/tag/firefox.html">firefox</a>, <a href="/tag/debian.html">debian</a>
+    </p>
+  </header>
+  <div>
+    <p>Télécharger la dernière version de Firefox sur <a href="http://www.mozilla.org/">le site de
+mozilla</a>.</p>
+<p>Décompresser l&rsquo;archive dans :</p>
+<pre><code>/opt/firefox/
+</code></pre>
+<p>Créer un lien symbolique avec :</p>
+<pre><code>ls -sf /opt/firefox/firefox /usr/bin/firefox
+</code></pre>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2014-03-18-firebug-champs-mot-de-passe-pr%C3%A9sents-sur-une-page.html">Firebug champs mot de passe présents sur une page non sécurisée</a></h2>
+    <p>
+      Posté le mar. 18 mars 2014
+       &#8226; Tags : <a href="/tag/http.html">http</a>, <a href="/tag/ssl.html">ssl</a>, <a href="/tag/firefox.html">firefox</a>
+    </p>
+  </header>
+  <div>
+    <p>Dans mon firebug des &ldquo;warnings&rdquo; s&rsquo;affichent :</p>
+<pre><code>Champs mot de passe présents sur une page non sécurisée (http://). Cela
+représente un risque de sécurité permettant le vol d'identifiants de
+connexion.
+</code></pre>
+<p>Ainsi que :</p>
+<pre><code>Champs mot de passe présents dans un formulaire possédant une action de
+formulaire non sécurisée (http://). Cela représente un risque de sécurité
+permettant le vol d'identifiants de connexion.
+</code></pre>
+<p>La première indication informe que vous n&rsquo;êtes pas sur un site
+utilisant le HTTPS. Lorsque vous allez remplir le champ &ldquo;password&rdquo;
+celui-ci sera envoyé en clair sur le réseau.</p>
+    <p><a class="btn" href="/2014-03-18-firebug-champs-mot-de-passe-pr%C3%A9sents-sur-une-page.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html">imapfilter ou comment filtrer ses mails facilement</a></h2>
+    <p>
+      Posté le mar. 11 mars 2014
+       &#8226; Tags : <a href="/tag/mail.html">mail</a>, <a href="/tag/imap.html">imap</a>
+    </p>
+  </header>
+  <div>
+    <p>Installer imapfilter via apt par exemple :</p>
+<pre><code>apt-get install imapfilter
+</code></pre>
+<p>Se rendre dans le dossier de configuration :</p>
+<pre><code>cd ~/.imapfilter
+</code></pre>
+<p>Créer un fichier config.lua :</p>
+<pre><code>touch config.lua
+</code></pre>
+<p>Maintenant je décide de faire un fichier de configuration par boite
+email.</p>
+<p>Ici gmail :</p>
+<pre><code>cat &gt; gmail.lua &lt;&lt;EOF
+gmail = IMAP {
+    server = 'imap.gmail.com',
+    username = 'mail@gmail.com',
+    password = 'mon_mot_de_passe',
+    ssl = 'ssl3',
+}
+EOF
+</code></pre>
+<p>Et un pour Yahoo :</p>
+<pre><code>cat &gt; yahoo.lua &lt;&lt;EOF
+yahoo = IMAP {
+    server = 'imap.yahoo.com',
+    username = 'mail@yahoo.com',
+    password = 'mon_mot_de_passe',
+    ssl = 'ssl3',
+}
+EOF
+</code></pre>
+<p>Ajouter nos boites dans le fichier de config avec des filtres :</p>
+    <p><a class="btn" href="/2014-03-11-imapfilter-ou-comment-filtrer-ses-mails-facilement.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2014-03-08-r%C3%A9parer-xubuntu-apr%C3%A8s-un-apt-get-remove-de-trop.html">Réparer xubuntu après un apt-get remove… de trop</a></h2>
+    <p>
+      Posté le sam. 8 mars 2014
+       &#8226; Tags : <a href="/tag/dpkg.html">dpkg</a>, <a href="/tag/debian.html">debian</a>, <a href="/tag/xubuntu.html">xubuntu</a>, <a href="/tag/linux.html">linux</a>
+    </p>
+  </header>
+  <div>
+    <p>En voulant modifier xscreensaver par i3lock j&rsquo;ai supprimé des paquets
+non utilisés (jeux etc…).</p>
+<p>J&rsquo;ai malheureusement supprimé un peu (trop) de paquets tel que
+(xfdesktop4 et xfce4-panel). Au démarrage de x, une fois identifié, un
+écran gris s&rsquo;affiche et rien d&rsquo;autre. Heureusement grâce à mon accès
+SSH je peux me connecter à la machine à distance.</p>
+<p>Pour voir la liste des paquets désinstallés j&rsquo;ai donc fait :</p>
+<pre><code>dpkg --get-selections &gt; liste-des-paquets
+</code></pre>
+<p>Il suffit ensuite d&rsquo;ouvrir dans un éditeur texte (type vi) le fichier
+pour voir les paquets installés / désinstallés. Et réinstaller avec sudo
+apt-get install le ou les paquets manquants.</p>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2014-03-05-git-diff-multiligne.html">Git diff multiligne</a></h2>
+    <p>
+      Posté le mer. 5 mars 2014
+       &#8226; Tags : <a href="/tag/git.html">git</a>, <a href="/tag/diff.html">diff</a>, <a href="/tag/config.html">config</a>
+    </p>
+  </header>
+  <div>
+    <p>Lors d&rsquo;une modification d&rsquo;un bout de code, j&rsquo;ai perdu la fin d&rsquo;une
+ligne…</p>
+<p>J&rsquo;ai dû faire un <em>git diff</em> dans mon terminal et copié la ligne (mais
+pas entièrement…).</p>
+<p>J&rsquo;ai donc refait un <em>git diff</em> dans mon terminal et je me suis aperçu
+que ma ligne qui devait être sur plusieurs lignes ne l&rsquo;était pas…</p>
+<p>Mon fichier texte ressemble à ceci :</p>
+<pre><code>ligne avec un peu de texte ici nous avons 66 caractères affichés.
+</code></pre>
+<p>Or, quand je fais un diff on ne voit pas tous les caractères :</p>
+    <p><a class="btn" href="/2014-03-05-git-diff-multiligne.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2014-03-04-cr%C3%A9ation-dune-cl%C3%A9-usb-xubuntu-sur-mac.html">Création d&#39;une clé usb xubuntu sur mac</a></h2>
+    <p>
+      Posté le mar. 4 mars 2014
+       &#8226; Tags : <a href="/tag/xubuntu.html">xubuntu</a>, <a href="/tag/osx.html">osx</a>, <a href="/tag/linux.html">linux</a>
+    </p>
+  </header>
+  <div>
+    <p>Dans le terminal sur votre mac :</p>
+<pre><code>diskutil list
+</code></pre>
+<p>Qui permet de lister vos disques durs / clés usb etc…</p>
+<p>ici ma clé usb est disk2. :</p>
+<pre><code>/dev/disk2
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *8.1 GB     disk2
+   1:                      Linux                         4.0 GB     disk2s1
+   2:                 Linux_Swap                         4.1 GB     disk2s5
+</code></pre>
+<p>Démontez la clé. :</p>
+<pre><code>diskutil unmountDisk /dev/disk2
+
+Unmount of all volumes on disk2 was successful
+</code></pre>
+<p>Maintenant on copie xubuntu depuis notre dossier téléchargements vers
+cette clé usb :</p>
+    <p><a class="btn" href="/2014-03-04-cr%C3%A9ation-dune-cl%C3%A9-usb-xubuntu-sur-mac.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2014-02-06-git-cherry-pick.html">git cherry-pick</a></h2>
+    <p>
+      Posté le jeu. 6 février 2014
+       &#8226; Tags : <a href="/tag/git.html">git</a>
+    </p>
+  </header>
+  <div>
+    <p>J&rsquo;utilise git depuis pas mal de temps déjà et j&rsquo;avais déjà vu des
+messages sur cherry-pick sans savoir ce que c&rsquo;était.</p>
+<p>git cherry-pick permet d&rsquo;appliquer un commit sur la
+branche actuelle.</p>
+<pre><code>git cherry-pick c4a99776
+</code></pre>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2014-02-06-nouveau-th%C3%A8me.html">Nouveau thème</a></h2>
+    <p>
+      Posté le jeu. 6 février 2014
+       &#8226; Tags : <a href="/tag/blog.html">blog</a>
+    </p>
+  </header>
+  <div>
+    <p>Je n&rsquo;avais pas mis à jour mon thème depuis bien longtemps.</p>
+<p>C&rsquo;est maintenant chose faite avec ce nouveau thème !</p>
+<p><img src="https://31.media.tumblr.com/d0896de0a038122cee44adbfaeb7e90c/tumblr_inline_n0lh2qig1i1qzr4hx.png" alt="nouveau
+thème"></p>
+<p>Voici l&rsquo;ancien thème en souvenir.</p>
+<p><img src="https://31.media.tumblr.com/7a3c7376517807ad0b41b8226a08d5bb/tumblr_inline_n0lh2l5LOi1qzr4hx.png" alt="ancien
+thème"></p>
+    
+  </div>
+</article>
+
+
+
+<div class="pagination">
+  <a class="btn" href="/page/4/index.html" title="Nouveaux articles"><i class="fa fa-angle-left"></i></a>
+  
+    <a class="btn" href="/index.html">1</a>
+  
+    <a class="btn" href="/page/2/index.html">2</a>
+  
+    <a class="btn" href="/page/3/index.html">3</a>
+  
+    <a class="btn" href="/page/4/index.html">4</a>
+  
+    <a class="btn current">5</a>
+  
+    <a class="btn" href="/page/6/index.html">6</a>
+  
+    <a class="btn" href="/page/7/index.html">7</a>
+  
+    <a class="btn" href="/page/8/index.html">8</a>
+  
+    <a class="btn" href="/page/9/index.html">9</a>
+  
+    <a class="btn" href="/page/10/index.html">10</a>
+  
+    <a class="btn" href="/page/11/index.html">11</a>
+  
+  <a class="btn" href="/page/6/index.html" title="Anciens articles"><i class="fa fa-angle-right"></i></a>
+</div>
+
+
+
+    <footer>
+      <p>&copy; François LASSERRE</p>
+      <p>Aperçu Hugo — Built using Hugo</p>
+    </footer>
+  </main>
+</body>
+</html>

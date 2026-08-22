@@ -3,46 +3,27 @@
 <head>
   <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
   <link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,600,700&family=jetbrains-mono:400" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/style.min.css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/font-awesome.min.css">
-  <link href="https://www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-<meta name="author" content="choiz" />
-<meta name="description" content="J'ai toujours du mal pour décompresser un fichier de type "tar.bz2" ou "tar.xz". Je n'ai pas encore trouvé le moyen de me souvenir de la syntaxe… tar.gz Pour les fichiers tar.gz j'arrive parfaitement à compresser ou décompresser ce format exemple : On compresse avec : tar -cvzf archive …" />
-<meta name="keywords" content="archive, gzip">
-<meta property="og:site_name" content="ChoiZ"/>
-<meta property="og:title" content="Compression Décompression tar.gz tar.bz2 tar.xz"/>
-<meta property="og:description" content="J'ai toujours du mal pour décompresser un fichier de type "tar.bz2" ou "tar.xz". Je n'ai pas encore trouvé le moyen de me souvenir de la syntaxe… tar.gz Pour les fichiers tar.gz j'arrive parfaitement à compresser ou décompresser ce format exemple : On compresse avec : tar -cvzf archive …"/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://www.choiz.fr/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html"/>
-<meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2015-08-30 11:47:00+02:00"/>
-<meta property="article:modified_time" content=""/>
-<meta property="article:author" content="https://www.choiz.fr/author/choiz.html">
-<meta property="article:section" content="text"/>
-<meta property="article:tag" content="archive"/>
-<meta property="article:tag" content="gzip"/>
-<meta property="og:image" content="">  <title>ChoiZ &ndash; Compression Décompression tar.gz tar.bz2 tar.xz</title>
+  <meta name="author" content="François LASSERRE" />
+  <title>ChoiZ &ndash; Compression Décompression tar.gz tar.bz2 tar.xz</title>
 </head>
 <body>
   <aside>
     <div>
-      <a href="https://www.choiz.fr">
-        <img src="https://www.choiz.fr/theme/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
-      </a>
+      <a href="/"><img src="/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE"></a>
       <div>
-          <a href="https://www.choiz.fr">Blog technique de François LASSERRE</a>
+        <a href="/">Blog technique de François LASSERRE</a>
       </div>
       <nav>
         <ul class="list">
           <li><a href="/">Home</a></li>
-          <li><a href="/archives">Archives</a></li>
-          <li><a href="/tags">Tags</a></li>
+          <li><a href="/archives.html">Archives</a></li>
+          <li><a href="/tags.html">Tags</a></li>
         </ul>
       </nav>
       <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
@@ -55,146 +36,88 @@
     </div>
   </aside>
   <main>
-
+    
 <article>
   <header>
     <h1 id="2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz">Compression Décompression tar.gz tar.bz2 tar.xz</h1>
     <p>Posté le dim. 30 août 2015</p>
   </header>
   <div>
-    <p>J'ai toujours du mal pour décompresser un fichier de type "tar.bz2" ou
-"tar.xz". Je n'ai pas encore trouvé le moyen de me souvenir de la
+    <p>J&rsquo;ai toujours du mal pour décompresser un fichier de type &ldquo;tar.bz2&rdquo; ou
+&ldquo;tar.xz&rdquo;. Je n&rsquo;ai pas encore trouvé le moyen de me souvenir de la
 syntaxe…</p>
-<h2>tar.gz</h2>
-<p>Pour les fichiers <code>tar.gz</code> j'arrive parfaitement à compresser ou
+<h2 id="targz">tar.gz</h2>
+<p>Pour les fichiers <code>tar.gz</code> j&rsquo;arrive parfaitement à compresser ou
 décompresser ce format exemple :</p>
 <p>On compresse avec :</p>
-<div class="highlight"><pre><span></span><code>tar -cvzf archive.tar.gz dossier_a_compresser/
-</code></pre></div>
-
+<pre><code>tar -cvzf archive.tar.gz dossier_a_compresser/
+</code></pre>
 <p>On décompresse avec :</p>
-<div class="highlight"><pre><span></span><code>tar -xvzf archive.tar.gz
-</code></pre></div>
-
+<pre><code>tar -xvzf archive.tar.gz
+</code></pre>
 <p>Il suffit de retenir :</p>
-<p>-c comme compression / "x" comme eXtract ou eXtraction. -v pour le mode
-verbeux. -z pour le "gzip" d'où le ".gz". -f pour spécifier le fichier.</p>
-<h2>tar.bz2</h2>
-<p>Pour les <code>tar.bz2</code> je ne sais JAMAIS qu'il faut remplacer "z" de gzip
-par "j" de Bzip… (la lettre "b" étant sans doute utilisée avant que le
-bzip n'apparaisse). L'alternative est d'utiliser "--bzip"</p>
+<p>-c comme compression / &ldquo;x&rdquo; comme eXtract ou eXtraction. -v pour le mode
+verbeux. -z pour le &ldquo;gzip&rdquo; d&rsquo;où le &ldquo;.gz&rdquo;. -f pour spécifier le fichier.</p>
+<h2 id="tarbz2">tar.bz2</h2>
+<p>Pour les <code>tar.bz2</code> je ne sais JAMAIS qu&rsquo;il faut remplacer &ldquo;z&rdquo; de gzip
+par &ldquo;j&rdquo; de Bzip… (la lettre &ldquo;b&rdquo; étant sans doute utilisée avant que le
+bzip n&rsquo;apparaisse). L&rsquo;alternative est d&rsquo;utiliser &ldquo;&ndash;bzip&rdquo;</p>
 <p>On compresse avec :</p>
-<div class="highlight"><pre><span></span><code>tar -cvjf archive.tar.bz2 dossier_a_compresser/
-</code></pre></div>
-
+<pre><code>tar -cvjf archive.tar.bz2 dossier_a_compresser/
+</code></pre>
 <p>Ou :</p>
-<div class="highlight"><pre><span></span><code>tar --bzip2 -cvf archive.tar.bz2 dossier_a_compresser/
-</code></pre></div>
-
+<pre><code>tar --bzip2 -cvf archive.tar.bz2 dossier_a_compresser/
+</code></pre>
 <p>On décompresse avec :</p>
-<div class="highlight"><pre><span></span><code>tar -xvjf archive.tar.bz2
-</code></pre></div>
-
+<pre><code>tar -xvjf archive.tar.bz2
+</code></pre>
 <p>Ou :</p>
-<div class="highlight"><pre><span></span><code>tar --bzip2 -xvf archive.tar.bz2
-</code></pre></div>
-
-<h2>tar.xz</h2>
-<p>Pour ce qui est de Lzma ou le <code>tar.xz</code> c'est un "J" majuscule cette
-fois ou d'utiliser "--xz".</p>
+<pre><code>tar --bzip2 -xvf archive.tar.bz2
+</code></pre>
+<h2 id="tarxz">tar.xz</h2>
+<p>Pour ce qui est de Lzma ou le <code>tar.xz</code> c&rsquo;est un &ldquo;J&rdquo; majuscule cette
+fois ou d&rsquo;utiliser &ldquo;&ndash;xz&rdquo;.</p>
 <p>On compresse avec :</p>
-<div class="highlight"><pre><span></span><code>tar -cvJf archive.tar.xz dossier_a_compresser/
-</code></pre></div>
-
+<pre><code>tar -cvJf archive.tar.xz dossier_a_compresser/
+</code></pre>
 <p>Ou :</p>
-<div class="highlight"><pre><span></span><code>tar --xz -cvf archive.tar.xz dossier_a_compresser/
-</code></pre></div>
-
+<pre><code>tar --xz -cvf archive.tar.xz dossier_a_compresser/
+</code></pre>
 <p>On décompresse avec :</p>
-<div class="highlight"><pre><span></span><code>tar -xvJf archive.tar.xz
-</code></pre></div>
-
+<pre><code>tar -xvJf archive.tar.xz
+</code></pre>
 <p>Ou :</p>
-<div class="highlight"><pre><span></span><code>tar --xz -xvf archive.tar.xz
-</code></pre></div>
+<pre><code>tar --xz -xvf archive.tar.xz
+</code></pre>
+
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://www.choiz.fr/tag/archive.html">archive</a>
-      <a href="https://www.choiz.fr/tag/gzip.html">gzip</a>
+      <a href="/tag/archive.html">archive</a> <a href="/tag/gzip.html">gzip</a> 
     </p>
   </div>
-<div id="comments">
-  <h2>Commentaires</h2>
-  <div id="comments-loading" class="comments-loading" aria-live="polite">
-    <span class="comments-spinner" aria-hidden="true"></span>
-    Chargement des commentaires…
+  <div id="comments">
+    <h2>Commentaires</h2>
+    <div id="comments-loading" class="comments-loading" aria-live="polite">
+      <span class="comments-spinner" aria-hidden="true"></span>
+      Chargement des commentaires…
+    </div>
   </div>
-</div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-<script>
-(function () {
-  var loader = document.getElementById('comments-loading');
-  if (!loader) return;
-  var done = false;
-  function hide() { if (done) return; done = true; loader.style.display = 'none'; }
-  // utterances émet un postMessage quand les commentaires sont rendus
-  window.addEventListener('message', function (e) {
-    if (e.origin === 'https://utteranc.es') hide();
-  });
-  // fallback : masque dès que l'iframe utterances est chargée
-  var obs = new MutationObserver(function () {
-    var f = document.querySelector('.utterances-frame');
-    if (f) { f.addEventListener('load', hide); obs.disconnect(); }
-  });
-  obs.observe(document.body, { childList: true, subtree: true });
-  // fallback ultime : ne jamais rester bloqué
-  setTimeout(hide, 10000);
-})();
-</script></article>
+  <script src="https://utteranc.es/client.js"
+          repo="ChoiZ/comments-on-choiz.fr" issue-term="url" label="blog"
+          theme="github-light" crossorigin="anonymous" async></script>
+  <script>
+  (function(){var l=document.getElementById('comments-loading');if(!l)return;var d=false;function h(){if(d)return;d=true;l.style.display='none';}
+  window.addEventListener('message',function(e){if(e.origin==='https://utteranc.es')h();});
+  var o=new MutationObserver(function(){var f=document.querySelector('.utterances-frame');if(f){f.addEventListener('load',h);o.disconnect();}});
+  o.observe(document.body,{childList:true,subtree:true});setTimeout(h,10000);})();
+  </script>
+</article>
 
     <footer>
-      <p>&copy; François LASSERRE </p>
-<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+      <p>&copy; François LASSERRE</p>
+      <p>Aperçu Hugo — Built using Hugo</p>
+    </footer>
   </main>
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//stats.rocketip.net/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code --><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BlogPosting",
-  "name": "Compression Décompression tar.gz tar.bz2 tar.xz",
-  "headline": "Compression Décompression tar.gz tar.bz2 tar.xz",
-  "datePublished": "2015-08-30 11:47:00+02:00",
-  "dateModified": "",
-  "author": {
-    "@type": "Person",
-    "name": "choiz",
-    "url": "https://www.choiz.fr/author/choiz.html"
-  },
-  "image": "{{ SITEURL }}/theme/img/profile.png",
-  "url": "https://www.choiz.fr/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html",
-  "description": "J'ai toujours du mal pour décompresser un fichier de type "tar.bz2" ou "tar.xz". Je n'ai pas encore trouvé le moyen de me souvenir de la syntaxe… tar.gz Pour les fichiers tar.gz j'arrive parfaitement à compresser ou décompresser ce format exemple : On compresse avec : tar -cvzf archive …"
-}
-</script></body>
+</body>
 </html>

@@ -3,46 +3,27 @@
 <head>
   <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
   <link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,600,700&family=jetbrains-mono:400" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/style.min.css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/font-awesome.min.css">
-  <link href="https://www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-<meta name="author" content="choiz" />
-<meta name="description" content="Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ? Il faut mettre Lundi-10-Décembre-2018 dans le nom du fichier ? Non. Il faut donc mettre 10-12-2018 dans le nom du fichier ? Toujours pas. Ok donc comment faire ? Pour moi la …" />
-<meta name="keywords" content="file, date">
-<meta property="og:site_name" content="ChoiZ"/>
-<meta property="og:title" content="Bien nommer ses fichiers"/>
-<meta property="og:description" content="Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ? Il faut mettre Lundi-10-Décembre-2018 dans le nom du fichier ? Non. Il faut donc mettre 10-12-2018 dans le nom du fichier ? Toujours pas. Ok donc comment faire ? Pour moi la …"/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html"/>
-<meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2018-12-13 12:52:55+01:00"/>
-<meta property="article:modified_time" content=""/>
-<meta property="article:author" content="https://www.choiz.fr/author/choiz.html">
-<meta property="article:section" content="text"/>
-<meta property="article:tag" content="file"/>
-<meta property="article:tag" content="date"/>
-<meta property="og:image" content="">  <title>ChoiZ &ndash; Bien nommer ses fichiers</title>
+  <meta name="author" content="François LASSERRE" />
+  <title>ChoiZ &ndash; Bien nommer ses fichiers</title>
 </head>
 <body>
   <aside>
     <div>
-      <a href="https://www.choiz.fr">
-        <img src="https://www.choiz.fr/theme/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
-      </a>
+      <a href="/"><img src="/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE"></a>
       <div>
-          <a href="https://www.choiz.fr">Blog technique de François LASSERRE</a>
+        <a href="/">Blog technique de François LASSERRE</a>
       </div>
       <nav>
         <ul class="list">
           <li><a href="/">Home</a></li>
-          <li><a href="/archives">Archives</a></li>
-          <li><a href="/tags">Tags</a></li>
+          <li><a href="/archives.html">Archives</a></li>
+          <li><a href="/tags.html">Tags</a></li>
         </ul>
       </nav>
       <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
@@ -55,7 +36,7 @@
     </div>
   </aside>
   <main>
-
+    
 <article>
   <header>
     <h1 id="2018-12-13-bien-nommer-ses-fichiers">Bien nommer ses fichiers</h1>
@@ -68,220 +49,171 @@ Non.</p>
 <p>Il faut donc mettre 10-12-2018 dans le nom du fichier ?
 Toujours pas.</p>
 <p>Ok donc comment faire ?
-Pour moi la méthode la plus simple pour bien trier vos fichiers par ordre chronologique, est de commencer par l'année puis le mois puis le jour etc… On précise de plus en plus.
+Pour moi la méthode la plus simple pour bien trier vos fichiers par ordre chronologique, est de commencer par l&rsquo;année puis le mois puis le jour etc… On précise de plus en plus.
 Donc pour le Lundi 10 Décembre 2018 je vais écrire 20181210 ou 2018-12-10.</p>
 <p>Pourquoi ?</p>
-<p>Lorsque l'on va trier nos fichiers avec le premier cas nous aurons :</p>
+<p>Lorsque l&rsquo;on va trier nos fichiers avec le premier cas nous aurons :</p>
 <table>
-<thead>
-<tr>
-<th>Nom du fichier</th>
-<th>Date réelle</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Lundi-10-Décembre-2018</code></td>
-<td>lundi 10 décembre 2018</td>
-</tr>
-<tr>
-<td><code>Lundi-11-Décembre-2017</code></td>
-<td>lundi 11 décembre 2017</td>
-</tr>
-<tr>
-<td><code>Mardi-11-Décembre-2018</code></td>
-<td>mardi 11 décembre 2018</td>
-</tr>
-<tr>
-<td><code>Mardi-12-Décembre-2017</code></td>
-<td>mardi 12 décembre 2017</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Nom du fichier</th>
+					<th>Date réelle</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>Lundi-10-Décembre-2018</code></td>
+					<td>lundi 10 décembre 2018</td>
+			</tr>
+			<tr>
+					<td><code>Lundi-11-Décembre-2017</code></td>
+					<td>lundi 11 décembre 2017</td>
+			</tr>
+			<tr>
+					<td><code>Mardi-11-Décembre-2018</code></td>
+					<td>mardi 11 décembre 2018</td>
+			</tr>
+			<tr>
+					<td><code>Mardi-12-Décembre-2017</code></td>
+					<td>mardi 12 décembre 2017</td>
+			</tr>
+	</tbody>
 </table>
 <p>Le tri se fait jour par jour donc pas du tout par ordre chronologique.
 Nous ne retenons pas cette solution.</p>
 <p>Avec le second exemple :</p>
 <table>
-<thead>
-<tr>
-<th>Nom du fichier</th>
-<th>Date réelle</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>10-12-2018</code></td>
-<td>lundi 10 décembre 2018</td>
-</tr>
-<tr>
-<td><code>11-12-2018</code></td>
-<td>mardi 11 décembre 2018</td>
-</tr>
-<tr>
-<td><code>11-12-2017</code></td>
-<td>lundi 11 décembre 2017</td>
-</tr>
-<tr>
-<td><code>12-12-2017</code></td>
-<td>mardi 12 décembre 2017</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Nom du fichier</th>
+					<th>Date réelle</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>10-12-2018</code></td>
+					<td>lundi 10 décembre 2018</td>
+			</tr>
+			<tr>
+					<td><code>11-12-2018</code></td>
+					<td>mardi 11 décembre 2018</td>
+			</tr>
+			<tr>
+					<td><code>11-12-2017</code></td>
+					<td>lundi 11 décembre 2017</td>
+			</tr>
+			<tr>
+					<td><code>12-12-2017</code></td>
+					<td>mardi 12 décembre 2017</td>
+			</tr>
+	</tbody>
 </table>
-<p>Le tri se fait par jour, puis par mois, puis par année, donc nous avons tous les 10 décembre puis les 11 décembre etc… ce n'est toujours pas par ordre chronologique.
+<p>Le tri se fait par jour, puis par mois, puis par année, donc nous avons tous les 10 décembre puis les 11 décembre etc… ce n&rsquo;est toujours pas par ordre chronologique.
 Nous ne retenons pas cette solution.</p>
 <p>Avec le dernier exemple :</p>
 <table>
-<thead>
-<tr>
-<th>Nom du fichier</th>
-<th>Date réelle</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>2017-12-10</code></td>
-<td>lundi 10 décembre 2017</td>
-</tr>
-<tr>
-<td><code>2017-12-11</code></td>
-<td>mardi 11 décembre 2017</td>
-</tr>
-<tr>
-<td><code>2018-12-11</code></td>
-<td>lundi 11 décembre 2018</td>
-</tr>
-<tr>
-<td><code>2018-12-12</code></td>
-<td>mardi 12 décembre 2018</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Nom du fichier</th>
+					<th>Date réelle</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>2017-12-10</code></td>
+					<td>lundi 10 décembre 2017</td>
+			</tr>
+			<tr>
+					<td><code>2017-12-11</code></td>
+					<td>mardi 11 décembre 2017</td>
+			</tr>
+			<tr>
+					<td><code>2018-12-11</code></td>
+					<td>lundi 11 décembre 2018</td>
+			</tr>
+			<tr>
+					<td><code>2018-12-12</code></td>
+					<td>mardi 12 décembre 2018</td>
+			</tr>
+	</tbody>
 </table>
-<p>C'est bien par ordre chronologique, l'année puis le mois, puis le jour, c'est donc comme ça que nous devons écrire nos fichiers avec une date.</p>
+<p>C&rsquo;est bien par ordre chronologique, l&rsquo;année puis le mois, puis le jour, c&rsquo;est donc comme ça que nous devons écrire nos fichiers avec une date.</p>
 <p>Si vous faites une photo de vous chaque année en septembre vous aurez donc photo.jpg qui sera nommée comme suit :</p>
 <table>
-<thead>
-<tr>
-<th>Nom du fichier</th>
-<th>Correspond à</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>2016-09-photo.jpg</code></td>
-<td>septembre 2016</td>
-</tr>
-<tr>
-<td><code>2017-09-photo.jpg</code></td>
-<td>septembre 2017</td>
-</tr>
-<tr>
-<td><code>2018-09-photo.jpg</code></td>
-<td>septembre 2018</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Nom du fichier</th>
+					<th>Correspond à</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>2016-09-photo.jpg</code></td>
+					<td>septembre 2016</td>
+			</tr>
+			<tr>
+					<td><code>2017-09-photo.jpg</code></td>
+					<td>septembre 2017</td>
+			</tr>
+			<tr>
+					<td><code>2018-09-photo.jpg</code></td>
+					<td>septembre 2018</td>
+			</tr>
+	</tbody>
 </table>
-<p>On a pas besoin de préciser le jour dans le cas précédent car on a qu'une photo par an en septembre d'ailleurs on pourrait même simplifier en :</p>
+<p>On a pas besoin de préciser le jour dans le cas précédent car on a qu&rsquo;une photo par an en septembre d&rsquo;ailleurs on pourrait même simplifier en :</p>
 <table>
-<thead>
-<tr>
-<th>Nom du fichier</th>
-<th>Correspond à</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>2016-photo.jpg</code></td>
-<td>2016</td>
-</tr>
-<tr>
-<td><code>2017-photo.jpg</code></td>
-<td>2017</td>
-</tr>
-<tr>
-<td><code>2018-photo.jpg</code></td>
-<td>2018</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Nom du fichier</th>
+					<th>Correspond à</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>2016-photo.jpg</code></td>
+					<td>2016</td>
+			</tr>
+			<tr>
+					<td><code>2017-photo.jpg</code></td>
+					<td>2017</td>
+			</tr>
+			<tr>
+					<td><code>2018-photo.jpg</code></td>
+					<td>2018</td>
+			</tr>
+	</tbody>
 </table>
-<p>Personnellement je préfère toujours mettre mes fichiers sous la forme 2018-09-01-nom-de-fichier.ext ce qui permet d'avoir toujours la date du jour.</p>
+<p>Personnellement je préfère toujours mettre mes fichiers sous la forme 2018-09-01-nom-de-fichier.ext ce qui permet d&rsquo;avoir toujours la date du jour.</p>
+
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://www.choiz.fr/tag/file.html">file</a>
-      <a href="https://www.choiz.fr/tag/date.html">date</a>
+      <a href="/tag/file.html">file</a> <a href="/tag/date.html">date</a> 
     </p>
   </div>
-<div id="comments">
-  <h2>Commentaires</h2>
-  <div id="comments-loading" class="comments-loading" aria-live="polite">
-    <span class="comments-spinner" aria-hidden="true"></span>
-    Chargement des commentaires…
+  <div id="comments">
+    <h2>Commentaires</h2>
+    <div id="comments-loading" class="comments-loading" aria-live="polite">
+      <span class="comments-spinner" aria-hidden="true"></span>
+      Chargement des commentaires…
+    </div>
   </div>
-</div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-<script>
-(function () {
-  var loader = document.getElementById('comments-loading');
-  if (!loader) return;
-  var done = false;
-  function hide() { if (done) return; done = true; loader.style.display = 'none'; }
-  // utterances émet un postMessage quand les commentaires sont rendus
-  window.addEventListener('message', function (e) {
-    if (e.origin === 'https://utteranc.es') hide();
-  });
-  // fallback : masque dès que l'iframe utterances est chargée
-  var obs = new MutationObserver(function () {
-    var f = document.querySelector('.utterances-frame');
-    if (f) { f.addEventListener('load', hide); obs.disconnect(); }
-  });
-  obs.observe(document.body, { childList: true, subtree: true });
-  // fallback ultime : ne jamais rester bloqué
-  setTimeout(hide, 10000);
-})();
-</script></article>
+  <script src="https://utteranc.es/client.js"
+          repo="ChoiZ/comments-on-choiz.fr" issue-term="url" label="blog"
+          theme="github-light" crossorigin="anonymous" async></script>
+  <script>
+  (function(){var l=document.getElementById('comments-loading');if(!l)return;var d=false;function h(){if(d)return;d=true;l.style.display='none';}
+  window.addEventListener('message',function(e){if(e.origin==='https://utteranc.es')h();});
+  var o=new MutationObserver(function(){var f=document.querySelector('.utterances-frame');if(f){f.addEventListener('load',h);o.disconnect();}});
+  o.observe(document.body,{childList:true,subtree:true});setTimeout(h,10000);})();
+  </script>
+</article>
 
     <footer>
-      <p>&copy; François LASSERRE </p>
-<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+      <p>&copy; François LASSERRE</p>
+      <p>Aperçu Hugo — Built using Hugo</p>
+    </footer>
   </main>
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//stats.rocketip.net/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code --><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BlogPosting",
-  "name": "Bien nommer ses fichiers",
-  "headline": "Bien nommer ses fichiers",
-  "datePublished": "2018-12-13 12:52:55+01:00",
-  "dateModified": "",
-  "author": {
-    "@type": "Person",
-    "name": "choiz",
-    "url": "https://www.choiz.fr/author/choiz.html"
-  },
-  "image": "{{ SITEURL }}/theme/img/profile.png",
-  "url": "https://www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html",
-  "description": "Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ? Il faut mettre Lundi-10-Décembre-2018 dans le nom du fichier ? Non. Il faut donc mettre 10-12-2018 dans le nom du fichier ? Toujours pas. Ok donc comment faire ? Pour moi la …"
-}
-</script></body>
+</body>
 </html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta name="generator" content="Hugo 0.165.0">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,600,700&family=jetbrains-mono:400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="François LASSERRE" />
+  <title>ChoiZ</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="/"><img src="/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE"></a>
+      <div>
+        <a href="/">Blog technique de François LASSERRE</a>
+      </div>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives.html">Archives</a></li>
+          <li><a href="/tags.html">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="https://www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    
+
+
+
+
+<article>
+  <header>
+    <h2><a href="/2016-04-28-passage-en-ssl-du-blog.html">Passage en SSL du blog</a></h2>
+    <p>
+      Posté le jeu. 28 avril 2016
+       &#8226; Tags : <a href="/tag/blog.html">blog</a>, <a href="/tag/ssl.html">ssl</a>, <a href="/tag/github.html">github</a>
+    </p>
+  </header>
+  <div>
+    <p>J&rsquo;utilise pelican sur github pour écrire mon blog depuis quelques temps, voir les
+articles précédents sur le sujet.</p>
+<p>J&rsquo;ai décidé de passer le blog en https, avec un certificat gratuit let&rsquo;s encrypt.</p>
+<p>Pour mettre en place un certificat SSL sur &ldquo;github page&rdquo; il faut avoir un serveur web qui
+fait reverse proxy. J&rsquo;utilise donc apache avec la configuration suivante :</p>
+<ul>
+<li>Un vhost pour &ldquo;choiz.fr&rdquo; qui redirige le port 80 de &ldquo;choiz.fr&rdquo; vers le 443 de &ldquo;<a href="https://www.choiz.fr">www.choiz.fr</a>&rdquo;.</li>
+<li>Un vhost pour &ldquo;choiz.fr&rdquo; qui redirige le port 443 (avec un certificat ssl
+valide) de &ldquo;choiz.fr&rdquo; vers le 443 de
+&ldquo;<a href="https://www.choiz.fr">www.choiz.fr</a>&rdquo;.</li>
+<li>Un vhost pour &ldquo;<a href="https://www.choiz.fr">www.choiz.fr</a>&rdquo; qui redirige le port 80 de &ldquo;<a href="https://www.choiz.fr">www.choiz.fr</a>&rdquo; vers
+le 443 de &ldquo;<a href="https://www.choiz.fr">www.choiz.fr</a>&rdquo;.</li>
+<li>Et un vhost avec le certificat SSL ainsi que le reverse proxy qui fait croire à
+github que je tape directement l&rsquo;url &ldquo;<a href="http://choiz.github.io">http://choiz.github.io</a>&rdquo;.</li>
+</ul>
+<p>Ici la configuration du dernier vhost :</p>
+    <p><a class="btn" href="/2016-04-28-passage-en-ssl-du-blog.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Mise à jour d&#39;un kernel gentoo</a></h2>
+    <p>
+      Posté le sam. 21 novembre 2015
+       &#8226; Tags : <a href="/tag/gentoo.html">gentoo</a>, <a href="/tag/kernel.html">kernel</a>, <a href="/tag/linux.html">linux</a>
+    </p>
+  </header>
+  <div>
+    <p>Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche à
+suivre pour le mettre à jour vers la version : 4.3.0.</p>
+<p>Je liste les différents noyaux gentoo disponibles :</p>
+<pre><code>eix sys-kernel/gentoo-sources
+</code></pre>
+<p>Je télécharge le noyau 4.3.0 :</p>
+<pre><code>emerge -a =sys-kernel/gentoo-sources-4.3.0
+</code></pre>
+<p>Une fois téléchargé, il faut modifier le lien symbolique /usr/src/linux
+grâce à eselect.</p>
+<p>J&rsquo;affiche la liste des noyaux (celui actuellement sélectionné est suivi
+d&rsquo;une étoile) :</p>
+<pre><code>eselect kernel list
+
+[1]     linux-4.2.0-gentoo *
+[2]     linux-4.3.0-gentoo
+</code></pre>
+<p>Pour sélectionner notre noyau 4.3.0 il faut utiliser :</p>
+    <p><a class="btn" href="/2015-11-21-mise-a-jour-d-un-kernel-gentoo.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2015-11-15-configurer-un-serveur-mail.html">Configurer un serveur mail</a></h2>
+    <p>
+      Posté le dim. 15 novembre 2015
+       &#8226; Tags : <a href="/tag/mail.html">mail</a>, <a href="/tag/postfix.html">postfix</a>, <a href="/tag/dovecot.html">dovecot</a>, <a href="/tag/ssl.html">ssl</a>, <a href="/tag/imap.html">imap</a>
+    </p>
+  </header>
+  <div>
+    <p>Installation d&rsquo;un serveur mail complet et à jour sous debian jessie (8.2).</p>
+<h2 id="configuration-des-dns">Configuration des DNS</h2>
+<p>Pour commencer nous allons créer des entrées DNS.</p>
+<p>Nous créons un MX pour les mails avec une priorité de 1, un sous domaine
+&ldquo;mail&rdquo; qui pointe vers l&rsquo;adresse ipv4 de votre serveur, d&rsquo;un sous
+domaine webmail qui pointe sur le sous domaine mail et d&rsquo;un
+enregistrement SPF :</p>
+<pre><code>votredomaine.com.           MX      1   mail.votredomaine.com.
+mail.votredomaine.com.      A           ip.v4.du.serveur
+webmail.votredomaine.com.   CNAME       mail.votredomaine.com.
+votredomain.com.            SPF         &quot;v=spf1 ip4:ip.v4.du.server ~all&quot;
+</code></pre>
+<h2 id="installation-des-paquets">Installation des paquets</h2>
+<p>Maintenant installons postfix dovecot-imapd et sasl2-bin :</p>
+    <p><a class="btn" href="/2015-11-15-configurer-un-serveur-mail.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2015-10-25-gentoo-navigateur-web-par-defaut.html">Gentoo Navigateur Web par Défaut</a></h2>
+    <p>
+      Posté le dim. 25 octobre 2015
+       &#8226; Tags : <a href="/tag/gentoo.html">gentoo</a>, <a href="/tag/web.html">web</a>, <a href="/tag/linux.html">linux</a>
+    </p>
+  </header>
+  <div>
+    <p>Sur ma machine &ldquo;links&rdquo; était le navigateur web par défaut. Il est
+pratique pour lire du texte, dès que l&rsquo;on a du contenu audio ou vidéo il
+est préférable d&rsquo;utiliser un navigateur tel que Firefox.</p>
+<p>Voici la commande pour voir le navigateur par défaut pour les url
+utilisant le protocole &ldquo;http&rdquo; :</p>
+<pre><code>xdg-mime query default x-scheme-handler/http
+</code></pre>
+<p>Et voici la commande pour le &ldquo;https&rdquo; :</p>
+<pre><code>xdg-mime query default x-scheme-handler/https
+</code></pre>
+<p>Pour changer le navigateur par défaut par Firefox il suffit d&rsquo;exécuter
+ces deux commandes :</p>
+    <p><a class="btn" href="/2015-10-25-gentoo-navigateur-web-par-defaut.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2015-10-13-vagrant-faire-un-reseau-prive.html">Vagrant faire un réseau privé</a></h2>
+    <p>
+      Posté le mar. 13 octobre 2015
+       &#8226; Tags : <a href="/tag/linux.html">linux</a>, <a href="/tag/network.html">network</a>
+    </p>
+  </header>
+  <div>
+    <p>J&rsquo;utilise plusieurs machines virtuelles avec vagrant, une avec un
+backoffice et une avec une API.</p>
+<p>J&rsquo;ai donc dû faire un réseau privé dans vagrant pour que le BO
+communique avec l&rsquo;API.</p>
+<p>Il suffit de modifier la configuration de la vm #1 et d&rsquo;ajouter :</p>
+<pre><code>config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.1&quot;
+</code></pre>
+<p>Et dans la configuration de la vm #2 d&rsquo;ajouter :</p>
+<pre><code>config.vm.network &quot;private_network&quot;, ip: &quot;192.168.10.2&quot;
+</code></pre>
+<p>Votre vm #1 peut (suite au redémarrage des deux vm vagrant) communiquer
+avec votre vm #2 directement avec l&rsquo;ip 192.168.10.2.</p>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2015-10-12-des-commentaires-efficaces.html">Des commentaires efficaces</a></h2>
+    <p>
+      Posté le lun. 12 octobre 2015
+       &#8226; Tags : <a href="/tag/comments.html">comments</a>, <a href="/tag/code.html">code</a>
+    </p>
+  </header>
+  <div>
+    <p>Dans mes fichiers de test j&rsquo;utilise souvent des commentaires pour tester
+qu&rsquo;une fonctionnalité de code.</p>
+<p>Par exemple pour tester une api :</p>
+<pre tabindex="0"><code>// Obtenir le livre #1
+api_get(&#39;books/1&#39;);
+
+// Ajouter un livre
+api_add(&#39;books&#39;, $datas);
+</code></pre><p>Je teste généralement chaque élément séparément.</p>
+<p>Pour tester la première portion de mon code :</p>
+<pre tabindex="0"><code>//* Obtenir le livre #1
+api_get(&#39;books/1&#39;);
+//*/
+
+/* Ajouter un livre
+api_add(&#39;books&#39;, $datas);
+//*/
+</code></pre><p>Pour tester la seconde portion de mon code :</p>
+<pre tabindex="0"><code>/* Obtenir le livre #1
+api_get(&#39;books/1&#39;);
+//*/
+
+//* Ajouter un livre
+api_add(&#39;books&#39;, $datas);
+//*/
+</code></pre><p>Il me suffit d&rsquo;ajouter ou d&rsquo;enlever un slash sur le premier commentaire
+pour commenter ou non tout le bloc.</p>
+    <p><a class="btn" href="/2015-10-12-des-commentaires-efficaces.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2015-09-27-mettre-a-jour-gentoo.html">Mettre à jour Gentoo</a></h2>
+    <p>
+      Posté le dim. 27 septembre 2015
+       &#8226; Tags : <a href="/tag/gentoo.html">gentoo</a>, <a href="/tag/emerge.html">emerge</a>, <a href="/tag/linux.html">linux</a>
+    </p>
+  </header>
+  <div>
+    <p>Pour mettre à jour Gentoo j&rsquo;utilise différentes commandes.</p>
+<p>Dans un premier temps je fais la mise à jour d&rsquo;eix :</p>
+<pre><code>eix-sync
+</code></pre>
+<p>Ensuite :</p>
+<pre><code>emerge -pvuDN world
+</code></pre>
+<p>-p ou &ndash;pretend, permet d&rsquo;afficher ce qui sera mis à jour. Affiche
+également les différents flags (N = new (not yet installed), U =
+updating (to another version) etc…) -v ou &ndash;verbose, mode verbeux. -u ou
+&ndash;update, met à jour les programmes dans la meilleure version disponible.
+-D ou &ndash;deep, met à jour les dépendances des programmes si nécessaire.
+-N ou &ndash;newuse, met à jour les programmes dont le &ldquo;USE&rdquo; a été modifié
+depuis son installation.</p>
+    <p><a class="btn" href="/2015-09-27-mettre-a-jour-gentoo.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2015-09-06-compilation-kernel-gentoo.html">Compilation Kernel Gentoo</a></h2>
+    <p>
+      Posté le dim. 6 septembre 2015
+       &#8226; Tags : <a href="/tag/kernel.html">kernel</a>, <a href="/tag/gentoo.html">gentoo</a>, <a href="/tag/linux.html">linux</a>
+    </p>
+  </header>
+  <div>
+    <p>Pour compiler le kernel sous gentoo :</p>
+<pre><code>cd /usr/src/linux
+
+make menuconfig
+
+make &amp;&amp; make modules_install
+
+make install
+</code></pre>
+<p>Le kernel est maintenant compilé.</p>
+<p>Maintenant il faut mettre à jour grub. :</p>
+<pre><code>grub2-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<p>Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi
+que le nombre de compilation.</p>
+<p>Il faut maintenant redémarrer la machine :</p>
+<pre><code>reboot
+</code></pre>
+<p>Au final vérifier avec uname -a si le bon kernel est chargé.</p>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html">Compression Décompression tar.gz tar.bz2 tar.xz</a></h2>
+    <p>
+      Posté le dim. 30 août 2015
+       &#8226; Tags : <a href="/tag/archive.html">archive</a>, <a href="/tag/gzip.html">gzip</a>
+    </p>
+  </header>
+  <div>
+    <p>J&rsquo;ai toujours du mal pour décompresser un fichier de type &ldquo;tar.bz2&rdquo; ou
+&ldquo;tar.xz&rdquo;. Je n&rsquo;ai pas encore trouvé le moyen de me souvenir de la
+syntaxe…</p>
+<h2 id="targz">tar.gz</h2>
+<p>Pour les fichiers <code>tar.gz</code> j&rsquo;arrive parfaitement à compresser ou
+décompresser ce format exemple :</p>
+<p>On compresse avec :</p>
+<pre><code>tar -cvzf archive.tar.gz dossier_a_compresser/
+</code></pre>
+<p>On décompresse avec :</p>
+<pre><code>tar -xvzf archive.tar.gz
+</code></pre>
+<p>Il suffit de retenir :</p>
+<p>-c comme compression / &ldquo;x&rdquo; comme eXtract ou eXtraction. -v pour le mode
+verbeux. -z pour le &ldquo;gzip&rdquo; d&rsquo;où le &ldquo;.gz&rdquo;. -f pour spécifier le fichier.</p>
+    <p><a class="btn" href="/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2015-08-25-suppression-des-branches-distantes-inexistantes.html">Suppression des branches distantes inexistantes</a></h2>
+    <p>
+      Posté le mar. 25 août 2015
+       &#8226; Tags : <a href="/tag/git.html">git</a>
+    </p>
+  </header>
+  <div>
+    <p>Lors d&rsquo;un développement j&rsquo;ai créé une branche &ldquo;add_namespace&rdquo; qui m&rsquo;a
+permis d&rsquo;ajouter des namespaces à différents fichiers PHP.</p>
+<p>Une fois la modification faite j&rsquo;ai envoyé ma branche sur l&rsquo;origin, en
+faisant un &ldquo;pull request&rdquo; (github) ou &ldquo;merge request&rdquo; (gitlab).</p>
+<p>Un autre développeur a accepté mon pull request (il a donc mergé la
+branche) et a supprimé ma branche de l&rsquo;origine.</p>
+<p>Sur mon environnement je vois toujours cette branche.</p>
+<blockquote>
+<p>git branch -a</p>
+    <p><a class="btn" href="/2015-08-25-suppression-des-branches-distantes-inexistantes.html">Lire la suite</a></p>
+  </div>
+</article>
+
+
+
+<div class="pagination">
+  <a class="btn" href="/page/2/index.html" title="Nouveaux articles"><i class="fa fa-angle-left"></i></a>
+  
+    <a class="btn" href="/index.html">1</a>
+  
+    <a class="btn" href="/page/2/index.html">2</a>
+  
+    <a class="btn current">3</a>
+  
+    <a class="btn" href="/page/4/index.html">4</a>
+  
+    <a class="btn" href="/page/5/index.html">5</a>
+  
+    <a class="btn" href="/page/6/index.html">6</a>
+  
+    <a class="btn" href="/page/7/index.html">7</a>
+  
+    <a class="btn" href="/page/8/index.html">8</a>
+  
+    <a class="btn" href="/page/9/index.html">9</a>
+  
+    <a class="btn" href="/page/10/index.html">10</a>
+  
+    <a class="btn" href="/page/11/index.html">11</a>
+  
+  <a class="btn" href="/page/4/index.html" title="Anciens articles"><i class="fa fa-angle-right"></i></a>
+</div>
+
+
+
+    <footer>
+      <p>&copy; François LASSERRE</p>
+      <p>Aperçu Hugo — Built using Hugo</p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta name="generator" content="Hugo 0.165.0">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,600,700&family=jetbrains-mono:400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="François LASSERRE" />
+  <title>ChoiZ</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="/"><img src="/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE"></a>
+      <div>
+        <a href="/">Blog technique de François LASSERRE</a>
+      </div>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives.html">Archives</a></li>
+          <li><a href="/tags.html">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="https://www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    
+
+
+
+
+<article>
+  <header>
+    <h2><a href="/2011-06-30-el%C3%A9ment-cliqu%C3%A9-en-js.html">Elément cliqué en js</a></h2>
+    <p>
+      Posté le jeu. 30 juin 2011
+       &#8226; Tags : <a href="/tag/javascript.html">javascript</a>, <a href="/tag/code.html">code</a>
+    </p>
+  </header>
+  <div>
+    <p>Pour savoir quel élément est cliqué j&rsquo;utilise ce petit bout de javascript :</p>
+<pre><code>function checkclick(e) {
+    e = e || window.event;
+    var o = e.target || e.srcElement;
+    console.log(o);
+}
+document.onclick=checkclick;
+</code></pre>
+<p>Pratique pour faire du débug.</p>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2011-05-30-patch-diff.html">Patch &amp; diff</a></h2>
+    <p>
+      Posté le lun. 30 mai 2011
+       &#8226; Tags : <a href="/tag/diff.html">diff</a>, <a href="/tag/patch.html">patch</a>, <a href="/tag/cli.html">cli</a>, <a href="/tag/linux.html">linux</a>
+    </p>
+  </header>
+  <div>
+    <p>Patch permet de &ldquo;patcher&rdquo; un fichier, dossier, projet ! Pratique lorsque
+vous distribuez du code et que vous voulez le mettre à jour. Comment
+l&rsquo;utiliser ? Dans un premier temps nous allons faire un différentiel de
+notre version actuelle du projet et de la nouvelle version (celle
+patchée). :</p>
+<pre><code>diff -u version1.php version2.php &gt; mon_patch
+</code></pre>
+<p>Notre fichier de patch est &ldquo;mon_patch&rdquo; si vous ouvrez celui-ci vous
+aurez le différentiel entre les deux fichiers. Comment le lire ? Les
+lignes avec des + devant sont les nouvelles lignes celles avec des -
+sont celles à supprimer. Ce n&rsquo;est pas plus difficile que ça ! Maintenant
+j&rsquo;applique mon patch sur mon fichier version1.php grâce à la commande
+suivante :</p>
+    <p><a class="btn" href="/2011-05-30-patch-diff.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2011-05-29-split-vsplit-dans-vim.html">Split &amp; Vsplit dans vim</a></h2>
+    <p>
+      Posté le dim. 29 mai 2011
+       &#8226; Tags : <a href="/tag/vim.html">vim</a>, <a href="/tag/file.html">file</a>
+    </p>
+  </header>
+  <div>
+    <p>Très souvent lorsque j&rsquo;utilise Vim je sépare ma fenêtre en 2,3,4 pour
+pouvoir ouvrir plusieurs fichiers en même temps.</p>
+<p>Il y a 2 méthodes :</p>
+<ul>
+<li>la division de la fenêtre horizontale en utilisant :</li>
+</ul>
+<p><code>:split</code> (ou <code>:new</code>) puis : <code>:e le_fichier_a_ouvrir</code></p>
+<ul>
+<li>la division de la fenêtre verticalement en utilisant :</li>
+</ul>
+<p><code>:vsplit</code> puis : <code>:e le_fichier_a_ouvrir</code></p>
+<p>Et comme lors de l&rsquo;utilisation du diff (CTRL + W puis W) pour changer de
+fenêtre (gauche à droite ou droite à gauche ou haut en bas ou bas en
+haut) ou bien en utilisant (CTRL + W puis une flèche directionnelle).</p>
+    <p><a class="btn" href="/2011-05-29-split-vsplit-dans-vim.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2011-05-19-diff%C3%A9rences-entre-des-fichiers-avec-vim.html">Différences entre des fichiers avec Vim</a></h2>
+    <p>
+      Posté le jeu. 19 mai 2011
+       &#8226; Tags : <a href="/tag/vim.html">vim</a>, <a href="/tag/diff.html">diff</a>, <a href="/tag/cli.html">cli</a>
+    </p>
+  </header>
+  <div>
+    <p>J&rsquo;ai souvent besoin de voir les différences entre plusieurs fichiers&hellip;
+J&rsquo;utilise souvent la commande diff dans un terminal, mais mon éditeur
+texte favori &ldquo;Vim&rdquo; sait aussi très bien faire un différentiel.
+Utilisation avec le terminal :</p>
+<pre><code>diff fichier1 fichier2
+</code></pre>
+<p>Celui-ci retournera les différences directement dans le terminal (pas
+pratique pour l&rsquo;édition).</p>
+<p>Utilisation avec vim :</p>
+<pre><code>vim -d fichier1 fichier2
+</code></pre>
+<p>Ensuite il suffit d&rsquo;utiliser (CTRL + W puis W) pour changer de fenêtre
+(gauche à droite ou droite à gauche) ou bien en utilisant (CTRL + W puis
+flèche de droite ou gauche) suivant la direction où on veut aller.</p>
+    <p><a class="btn" href="/2011-05-19-diff%C3%A9rences-entre-des-fichiers-avec-vim.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2011-05-14-migration-dune-base-de-donn%C3%A9e-mysql.html">Migration d&#39;une base de données Mysql</a></h2>
+    <p>
+      Posté le sam. 14 mai 2011
+       &#8226; Tags : <a href="/tag/mysql.html">mysql</a>, <a href="/tag/linux.html">linux</a>, <a href="/tag/sql.html">sql</a>
+    </p>
+  </header>
+  <div>
+    <p>Pour faire mes migrations de base de données j&rsquo;utilise en ligne de
+commande mysqldump et mysql.</p>
+<p>Dans un premier temps je sauve ma base database dans le fichier dump.sql
+J&rsquo;utilise l&rsquo;utilisateur mysql : utilisateur avec son mot de passe p4ss :</p>
+<pre><code>mysqldump -u utilisateur -p p4ss database &gt; dump.sql
+</code></pre>
+<p>Une fois que j&rsquo;ai mon fichier dump.sql je le mets sur la nouvelle
+machine, puis j&rsquo;exécute la commande suivante :</p>
+<pre><code>mysql -u utilisateur -pp4ss database &lt; fichierdump.sql
+</code></pre>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html">Petit tips pour les utilisateurs de VIM et PHP</a></h2>
+    <p>
+      Posté le mer. 13 avril 2011
+       &#8226; Tags : <a href="/tag/php.html">php</a>, <a href="/tag/vim.html">vim</a>, <a href="/tag/cli.html">cli</a>
+    </p>
+  </header>
+  <div>
+    <p>Lorsque je code en PHP, pour tester s&rsquo;il y a des erreurs généralement
+dans la console je tape la commande :</p>
+<pre><code>php -l fichier_a_tester.php
+</code></pre>
+<p>Lorsque j&rsquo;utilise VIM j&rsquo;utilise la même commande (sans sortir de vim).
+Pour la faire il suffit de faire &ldquo;ESC&rdquo; pour passer en mode commande de
+VIM puis :</p>
+<pre><code>:!php -l %
+</code></pre>
+<p>Ce qui produira exactement le même résultat qu&rsquo;en console.</p>
+<p>:! (permet l&rsquo;execution d&rsquo;une commande système dans vim)</p>
+    <p><a class="btn" href="/2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2011-04-09-surround-avec-vim.html">Surround avec Vim</a></h2>
+    <p>
+      Posté le sam. 9 avril 2011
+       &#8226; Tags : <a href="/tag/vim.html">vim</a>, <a href="/tag/html.html">html</a>
+    </p>
+  </header>
+  <div>
+    <p>J&rsquo;ai ajouté quelques plugins dans ma configuration de Vim dont :
+surround.vim.</p>
+<p>Ce plugin permet d&rsquo;ajouter des balises ou tout autre élément autour d&rsquo;un
+texte.</p>
+<p>Comment l&rsquo;utiliser ?</p>
+<p><code>VS&lt;b&gt;</code> permet d&rsquo;ajouter les balises &lt;b&gt; et &lt;/b&gt; avant et
+après la ligne courante et d&rsquo;indenter celle-ci.</p>
+<p><code>vims&lt;a&gt;</code> permet d&rsquo;ajouter le tag &lt;a&gt; &lt;/a&gt; autour du mot sur
+lequel vous vous trouvez.</p>
+<p><code>cst&lt;b&gt;</code> permet de changer le tag &lt;a&gt; (change surround tag) par
+&lt;b&gt;</p>
+    <p><a class="btn" href="/2011-04-09-surround-avec-vim.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2011-03-08-tpaamayimnekudotayim.html">T_PAAMAYIM_NEKUDOTAYIM</a></h2>
+    <p>
+      Posté le mar. 8 mars 2011
+       &#8226; Tags : <a href="/tag/php.html">php</a>
+    </p>
+  </header>
+  <div>
+    <p>Voilà à quoi correspond cette erreur pour ceux qui demandent :</p>
+<pre><code>Parse error: syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM in /path/file.php on line 3695
+</code></pre>
+<p>Le Paamayim Nekudotayim est l&rsquo;opérateur de résolution de portée.</p>
+<p><a href="http://fr.php.net/manual/fr/language.oop5.paamayim-nekudotayim.php">Dans la doc PHP</a> :</p>
+<p><em>L&rsquo;opérateur de résolution de portée (aussi appelé Paamayim Nekudotayim)
+ou, en termes plus simples, le symbole &ldquo;double deux-points&rdquo; (::),
+fournit un moyen d&rsquo;accéder aux membres
+<a href="http://fr.php.net/manual/fr/language.oop5.static.php">statics</a> ou
+<a href="http://fr.php.net/manual/fr/language.oop5.constants.php">constants</a>.</em></p>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Protection de fichier tel qu&#39;un htaccess en PHP</a></h2>
+    <p>
+      Posté le ven. 11 février 2011
+       &#8226; Tags : <a href="/tag/php.html">php</a>, <a href="/tag/code.html">code</a>
+    </p>
+  </header>
+  <div>
+    <p>Faire un système de protection (tel que htaccess) direct dans un fichier PHP :</p>
+<pre tabindex="0"><code>&lt;?php
+if (!empty($_SERVER[&#34;PHP_AUTH_USER&#34;]) &amp;&amp;
+$_SERVER[&#34;PHP_AUTH_USER&#34;] == &#34;login&#34; &amp;&amp;
+$_SERVER[&#34;PHP_AUTH_PW&#34;] == &#34;password&#34;) {
+    // code protégé ici
+} else {
+    header(&#39;WWW-Authenticate: Basic realm=&#34;Restricted area&#34;&#39;);
+    header(&#39;HTTP/1.0 401 Unauthorized&#39;);
+    exit(&#39;Access Denied&#39;);
+}
+</code></pre><p>Attention l&rsquo;utilisation du htaccess n&rsquo;est pas recommandée sur une connexion non
+chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffrée
+(HTTPS).</p>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2011-01-07-jquery-attr-avec-onclick-par-click.html">jQuery attr() avec onclick par click()</a></h2>
+    <p>
+      Posté le ven. 7 janvier 2011
+       &#8226; Tags : <a href="/tag/code.html">code</a>, <a href="/tag/jquery.html">jquery</a>, <a href="/tag/javascript.html">javascript</a>
+    </p>
+  </header>
+  <div>
+    <p>Après avoir perdu 2h… J&rsquo;ai découvert que la méthode attr() de jQuery
+fonctionne pas avec l&rsquo;attribut &ldquo;onclick&rdquo;…</p>
+<p>Edit : Avec jQuery pour modifier le contenu d&rsquo;un onclick il faut faire
+.attr(&lsquo;onClick&rsquo;,&lsquo;valeur&rsquo;) ou faire de la façon suivante.</p>
+<p>Remplacer donc :</p>
+<pre><code>var mavar = 'fonctionAffichage();';
+$(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
+</code></pre>
+<p>Par :</p>
+<pre><code>var mavar = 'fonctionAffichage();';
+$(&quot;#code&quot;).removeAttr('onclick').click(function() { eval(mavar); });
+</code></pre>
+    
+  </div>
+</article>
+
+
+
+<div class="pagination">
+  <a class="btn" href="/page/9/index.html" title="Nouveaux articles"><i class="fa fa-angle-left"></i></a>
+  
+    <a class="btn" href="/index.html">1</a>
+  
+    <a class="btn" href="/page/2/index.html">2</a>
+  
+    <a class="btn" href="/page/3/index.html">3</a>
+  
+    <a class="btn" href="/page/4/index.html">4</a>
+  
+    <a class="btn" href="/page/5/index.html">5</a>
+  
+    <a class="btn" href="/page/6/index.html">6</a>
+  
+    <a class="btn" href="/page/7/index.html">7</a>
+  
+    <a class="btn" href="/page/8/index.html">8</a>
+  
+    <a class="btn" href="/page/9/index.html">9</a>
+  
+    <a class="btn current">10</a>
+  
+    <a class="btn" href="/page/11/index.html">11</a>
+  
+  <a class="btn" href="/page/11/index.html" title="Anciens articles"><i class="fa fa-angle-right"></i></a>
+</div>
+
+
+
+    <footer>
+      <p>&copy; François LASSERRE</p>
+      <p>Aperçu Hugo — Built using Hugo</p>
+    </footer>
+  </main>
+</body>
+</html>

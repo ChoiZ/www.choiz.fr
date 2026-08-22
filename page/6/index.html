@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta name="generator" content="Hugo 0.165.0">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,600,700&family=jetbrains-mono:400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="François LASSERRE" />
+  <title>ChoiZ</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="/"><img src="/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE"></a>
+      <div>
+        <a href="/">Blog technique de François LASSERRE</a>
+      </div>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives.html">Archives</a></li>
+          <li><a href="/tags.html">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="https://www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    
+
+
+
+
+<article>
+  <header>
+    <h2><a href="/2014-01-19-suppression-dun-caract%C3%A8re-unicode-dans-vim.html">Suppression d&#39;un caractère unicode dans Vim</a></h2>
+    <p>
+      Posté le dim. 19 janvier 2014
+       &#8226; Tags : <a href="/tag/vim.html">vim</a>, <a href="/tag/encoding.html">encoding</a>
+    </p>
+  </header>
+  <div>
+    <p>J&rsquo;étais à la recherche de ce caractère unicode dans vim :</p>
+<pre><code>&lt;U+2028&gt;
+</code></pre>
+<p>Pour pouvoir le supprimer j&rsquo;ai utilisé la commande suivante :</p>
+<pre><code>:%s/\%U2028//g
+</code></pre>
+<p>Décortiquons la commande :</p>
+<p><code>:%s/</code> Recherche et remplace dans tout le fichier</p>
+<p><code>\%U2028</code> Le caractère que l&rsquo;on recherche unicode &ldquo;2028&rdquo;</p>
+<p><code>//</code> par rien (1er slash sépare la recherche par ce qu&rsquo;on remplace, le second pour dire la fin de ce qu&rsquo;on remplace).</p>
+<p><code>g</code> dans tout le fichier (global).</p>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2013-11-13-crontab-e-files.html">crontab -e file(s)</a></h2>
+    <p>
+      Posté le mer. 13 novembre 2013
+       &#8226; Tags : <a href="/tag/crontab.html">crontab</a>, <a href="/tag/file.html">file</a>, <a href="/tag/linux.html">linux</a>
+    </p>
+  </header>
+  <div>
+    <p>Où se trouve(nt) le(s) fichier(s) crontab lorsque l&rsquo;on tape crontab -e ?</p>
+<p>C&rsquo;est une bonne question n&rsquo;est-ce pas ?</p>
+<p>La réponse si vous êtes root est : /var/spool/cron/crontabs/root (sur
+debian, à voir sur d&rsquo;autres distribs)</p>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html">Chmod 755 sur les dossiers et 644 sur les fichiers</a></h2>
+    <p>
+      Posté le mar. 12 novembre 2013
+       &#8226; Tags : <a href="/tag/chmod.html">chmod</a>, <a href="/tag/file.html">file</a>, <a href="/tag/linux.html">linux</a>
+    </p>
+  </header>
+  <div>
+    <p>C&rsquo;est toujours la galère lorsque l&rsquo;on veut que tout soit propre au
+niveau des permissions des dossiers / fichiers.</p>
+<p>Souvent la première chose que l&rsquo;on fait : on va dans chaque dossier et
+on vérifie un à un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
+dossiers ça va mais quand on en a 40… on utilise une autre technique !</p>
+<p>J&rsquo;utilise pour les dossiers :</p>
+<pre><code>$ find \`pwd\` -type d -exec chmod 755 {} \\;
+</code></pre>
+<p>et pour les fichiers :</p>
+    <p><a class="btn" href="/2013-11-12-chmod-755-sur-les-dossiers-et-644-sur-les-fichiers.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2013-11-03-ic%C3%B4nes-favicon-apple-touch-icon.html">Icônes / Favicon / Apple-touch-icon</a></h2>
+    <p>
+      Posté le dim. 3 novembre 2013
+       &#8226; Tags : <a href="/tag/cli.html">cli</a>, <a href="/tag/imagemagick.html">imagemagick</a>
+    </p>
+  </header>
+  <div>
+    <p>Voici comment faire facilement sa favicon et ses icônes pour les
+appareils mobiles avec image magick.</p>
+<p>Mon icône de base est en 512x512px au format png avec prise en charge de
+la transparence &ldquo;icon512.png&rdquo;.</p>
+<p>Je veux faire une favicon en 16x16px, 32x32px 48x48px et 64x64px le tout
+dans un seul fichier favicon.ico. :</p>
+<pre><code>convert icon512.png \
+    -bordercolor white -border 0 \
+    \( -clone 0 -resize 16x16 \) \
+    \( -clone 0 -resize 32x32 \) \
+    \( -clone 0 -resize 48x48 \) \
+    \( -clone 0 -resize 64x64 \) \
+    -delete 0 -alpha off favicon.ico
+</code></pre>
+<p>Ensuite je veux faire mes icônes pour les appareils mobiles : Android,
+Apple etc… :</p>
+    <p><a class="btn" href="/2013-11-03-ic%C3%B4nes-favicon-apple-touch-icon.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2013-10-14-installer-jshint-sur-mac.html">Installer jshint sur mac</a></h2>
+    <p>
+      Posté le lun. 14 octobre 2013
+       &#8226; Tags : <a href="/tag/npm.html">npm</a>
+    </p>
+  </header>
+  <div>
+    <p>Installation via npm de jshint (-g pour installer pour tous les utilisateurs) :
+sudo npm install -g jshint</p>
+<p>Faire un lien symbolique pour pouvoir utiliser directement jshint sans
+préciser tout le chemin à chaque fois :</p>
+<pre><code>ln -s /usr/local/share/npm/bin/jshint /usr/local/bin/jshint
+</code></pre>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2013-10-01-git-se-d%C3%A9placer-dans-une-branche-distante.html">Git se déplacer dans une branche distante</a></h2>
+    <p>
+      Posté le mar. 1 octobre 2013
+       &#8226; Tags : <a href="/tag/git.html">git</a>
+    </p>
+  </header>
+  <div>
+    <p>J&rsquo;utilise des branches telles que prod, preprod pour mes projets et en
+local il m&rsquo;arrive de vouloir aller sur ces branches :</p>
+<pre><code>git checkout preprod
+</code></pre>
+<p>Et j&rsquo;ai l&rsquo;erreur suivante :</p>
+<pre><code>error: pathspec 'preprod' did not match any file(s) known to git.
+</code></pre>
+<p>Je vais mettre à jour mon origin :</p>
+<pre><code>git fetch origin
+</code></pre>
+<p>Maintenant je veux ma branche distante en lui précisant l&rsquo;origin :</p>
+<pre><code>git checkout -b preprod origin/preprod
+</code></pre>
+<p>Et j&rsquo;ai bien ma branche en local comme git me l&rsquo;indique :</p>
+    <p><a class="btn" href="/2013-10-01-git-se-d%C3%A9placer-dans-une-branche-distante.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2013-09-29-connaitre-le-code-r%C3%A9ponse-http-avec-curl.html">Connaitre le code réponse HTTP avec curl</a></h2>
+    <p>
+      Posté le dim. 29 septembre 2013
+       &#8226; Tags : <a href="/tag/curl.html">curl</a>, <a href="/tag/http.html">http</a>
+    </p>
+  </header>
+  <div>
+    <p>Pour connaitre le code réponse HTTP il suffit de faire :</p>
+<pre><code>curl -IL url
+</code></pre>
+<p>Voici l&rsquo;exemple avec tumblr.com :</p>
+<pre><code>curl -IL http://tumblr.com
+
+HTTP/1.1 301 Moved Permanently
+Content-length: 0
+Location: http://www.tumblr.com/
+Connection: close
+
+HTTP/1.1 302 Moved Temporarily
+Server: nginx
+Date: Sun, 29 Sep 2013 17:06:40 GMT
+Content-Type: text/html
+Connection: close
+P3P: CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;
+Location: https://www.tumblr.com/
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 29 Sep 2013 17:06:42 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Vary: Accept-Encoding
+P3P: CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;
+Set-Cookie: tmgioct=52485e21d628b00096885790; expires=Wed, 27-Sep-2023 17:06:41 GMT; path=/; httponly
+</code></pre>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2013-07-16-passer-de-svn-%C3%A0-git.html">Passer de svn à git</a></h2>
+    <p>
+      Posté le mar. 16 juillet 2013
+       &#8226; Tags : <a href="/tag/svn.html">svn</a>, <a href="/tag/git.html">git</a>
+    </p>
+  </header>
+  <div>
+    <p>Sur le projet Addictradio nous utilisons encore un de nos dépôts avec
+svn. Il est temps de faire la migration de svn à git !</p>
+<p>J&rsquo;ai testé plusieurs méthodes et aucune ne fait exactement ce que je
+voulais voici donc ma procédure :</p>
+<pre><code>svn log --quiet 'svn://svn.mondomaine/monprojet' | grep &quot;^r&quot; | awk
+'{print $3}' | sort | uniq | awk '{ print $1&quot; = &quot;$1&quot;
+&lt;&quot;$1&quot;@mondomaine&gt;&quot; }' &gt; authors.txt
+</code></pre>
+<p>J&rsquo;ai ensuite édité authors.txt pour remplacer nos différents pseudos par
+nos prénoms et noms puis j&rsquo;ai vérifié les adresses e-mails.</p>
+    <p><a class="btn" href="/2013-07-16-passer-de-svn-%C3%A0-git.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2013-06-22-export-import-avec-postgresql.html">Export / Import avec PostgreSQL</a></h2>
+    <p>
+      Posté le sam. 22 juin 2013
+       &#8226; Tags : <a href="/tag/sql.html">sql</a>
+    </p>
+  </header>
+  <div>
+    <p>Pour exporter une table spécifique d&rsquo;une base :</p>
+<pre><code>pg_dump *mabase* --table=*matable* &gt; *dump_base_table*.sql
+</code></pre>
+<p>Pour exporter une base :</p>
+<pre><code>pg_dump *mabase* &gt; *dump_base*.sql
+</code></pre>
+<p>Pour importer un dump dans une base :</p>
+<pre><code>psql *base* &lt; *dump_base_table*.sql
+psql *base* &lt; *dump_base*.sql
+</code></pre>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2013-06-22-git-d%C3%A9placer-mon-dernier-commit-sur-une-autre.html">Git déplacer mon dernier commit sur une autre branche</a></h2>
+    <p>
+      Posté le sam. 22 juin 2013
+       &#8226; Tags : <a href="/tag/git.html">git</a>
+    </p>
+  </header>
+  <div>
+    <p>J&rsquo;ai fait une boulette ! J&rsquo;ai commité deux fois en étant sur la branche
+<em>master</em>… Généralement je fais toujours une branche pour les
+modifications, cette fois j&rsquo;avais créé cette branche <em>debug_redirect</em>
+mais je n&rsquo;étais pas dessus…</p>
+<p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master</em>. Or le seul
+qui devait être dessus devait être A et je devais avoir B-C dans ma
+branche <em>debug_redirect</em>. Voici un schéma de la situation :</p>
+    <p><a class="btn" href="/2013-06-22-git-d%C3%A9placer-mon-dernier-commit-sur-une-autre.html">Lire la suite</a></p>
+  </div>
+</article>
+
+
+
+<div class="pagination">
+  <a class="btn" href="/page/5/index.html" title="Nouveaux articles"><i class="fa fa-angle-left"></i></a>
+  
+    <a class="btn" href="/index.html">1</a>
+  
+    <a class="btn" href="/page/2/index.html">2</a>
+  
+    <a class="btn" href="/page/3/index.html">3</a>
+  
+    <a class="btn" href="/page/4/index.html">4</a>
+  
+    <a class="btn" href="/page/5/index.html">5</a>
+  
+    <a class="btn current">6</a>
+  
+    <a class="btn" href="/page/7/index.html">7</a>
+  
+    <a class="btn" href="/page/8/index.html">8</a>
+  
+    <a class="btn" href="/page/9/index.html">9</a>
+  
+    <a class="btn" href="/page/10/index.html">10</a>
+  
+    <a class="btn" href="/page/11/index.html">11</a>
+  
+  <a class="btn" href="/page/7/index.html" title="Anciens articles"><i class="fa fa-angle-right"></i></a>
+</div>
+
+
+
+    <footer>
+      <p>&copy; François LASSERRE</p>
+      <p>Aperçu Hugo — Built using Hugo</p>
+    </footer>
+  </main>
+</body>
+</html>

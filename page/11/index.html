@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta name="generator" content="Hugo 0.165.0">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,600,700&family=jetbrains-mono:400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="François LASSERRE" />
+  <title>ChoiZ</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="/"><img src="/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE"></a>
+      <div>
+        <a href="/">Blog technique de François LASSERRE</a>
+      </div>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives.html">Archives</a></li>
+          <li><a href="/tags.html">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="https://www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    
+
+
+
+
+<article>
+  <header>
+    <h2><a href="/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Commande SVN pour ajouter des keywords</a></h2>
+    <p>
+      Posté le lun. 25 octobre 2010
+       &#8226; Tags : <a href="/tag/svn.html">svn</a>
+    </p>
+  </header>
+  <div>
+    <p>Pour ajouter le numéro de révision ainsi que pas mal d&rsquo;autres
+informations dans vos projets il suffit de taper cette commande :</p>
+<pre><code>svn propset svn:keywords &quot;Id&quot; index.php
+</code></pre>
+<p>Ce qui permet d&rsquo;ajouter le keyword &ldquo;Id&rdquo; sur le fichier index.php</p>
+<p>Pour afficher l&rsquo;Id dans votre fichier index.php ajouter dans celui-ci :</p>
+<pre><code>$Id:$
+</code></pre>
+<p>Une fois le fichier versionné vous obtiendrez :</p>
+<pre><code>$Id: ajax\_modif.php 481 2010-10-25 12:02:50Z choiz $
+</code></pre>
+<p>D&rsquo;autres keywords sont disponibles tel que :</p>
+    <p><a class="btn" href="/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2010-09-15-impression-de-commandes-entre-balise-pre.html">Impression de commandes entre balise &amp;lt;pre&amp;gt;</a></h2>
+    <p>
+      Posté le mer. 15 septembre 2010
+       &#8226; Tags : <a href="/tag/css.html">css</a>, <a href="/tag/html.html">html</a>, <a href="/tag/code.html">code</a>
+    </p>
+  </header>
+  <div>
+    <p>J&rsquo;ai toujours eu pas mal de soucis lors d&rsquo;impression de différentes
+documentations…</p>
+<p>J&rsquo;utilise souvent la balise &lt;pre&gt; pour les lignes de commandes et
+il n&rsquo;y a pas de retour à la ligne fait automatiquement pour cela un
+petit css permet de faire les retours à la ligne lorsque la page est
+trop grande. :</p>
+<pre><code>pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+</code></pre>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html">Limiter la bande passante sous Mac Os X</a></h2>
+    <p>
+      Posté le lun. 12 juillet 2010
+       &#8226; Tags : <a href="/tag/osx.html">osx</a>
+    </p>
+  </header>
+  <div>
+    <p>Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
+virtuel en console.</p>
+<p>Ici on crée un tuyau virtuel de 1Mbit/s.</p>
+<p><code>sudo ipfw pipe 1 config bw 1Mbit/s</code></p>
+<p>On applique ce tuyau au port 80 (pour le téléchargement de fichier via
+un navigateur par exemple).</p>
+<p><code>sudo ipfw add 1 pipe 1 proto tcp src-port 80</code></p>
+<p>Pour voir le tuyau :</p>
+<p><code>sudo ipfw pipe show</code></p>
+<p>Pour supprimer la règle du port 80 :</p>
+    <p><a class="btn" href="/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html">Lire la suite</a></p>
+  </div>
+</article>
+
+
+
+<div class="pagination">
+  <a class="btn" href="/page/10/index.html" title="Nouveaux articles"><i class="fa fa-angle-left"></i></a>
+  
+    <a class="btn" href="/index.html">1</a>
+  
+    <a class="btn" href="/page/2/index.html">2</a>
+  
+    <a class="btn" href="/page/3/index.html">3</a>
+  
+    <a class="btn" href="/page/4/index.html">4</a>
+  
+    <a class="btn" href="/page/5/index.html">5</a>
+  
+    <a class="btn" href="/page/6/index.html">6</a>
+  
+    <a class="btn" href="/page/7/index.html">7</a>
+  
+    <a class="btn" href="/page/8/index.html">8</a>
+  
+    <a class="btn" href="/page/9/index.html">9</a>
+  
+    <a class="btn" href="/page/10/index.html">10</a>
+  
+    <a class="btn current">11</a>
+  
+  
+</div>
+
+
+
+    <footer>
+      <p>&copy; François LASSERRE</p>
+      <p>Aperçu Hugo — Built using Hugo</p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -3,46 +3,27 @@
 <head>
   <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
   <link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,600,700&family=jetbrains-mono:400" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/style.min.css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="https://www.choiz.fr/theme/css/font-awesome.min.css">
-  <link href="https://www.choiz.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-<meta name="author" content="choiz" />
-<meta name="description" content="Sur le projet Addictradio nous utilisons encore un de nos dépôts avec svn. Il est temps de faire la migration de svn à git ! J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais voici donc ma procédure : svn log --quiet 'svn://svn.mondomaine/monprojet' | grep "^r …" />
-<meta name="keywords" content="svn, git">
-<meta property="og:site_name" content="ChoiZ"/>
-<meta property="og:title" content="Passer de svn à git"/>
-<meta property="og:description" content="Sur le projet Addictradio nous utilisons encore un de nos dépôts avec svn. Il est temps de faire la migration de svn à git ! J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais voici donc ma procédure : svn log --quiet 'svn://svn.mondomaine/monprojet' | grep "^r …"/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html"/>
-<meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2013-07-16 22:37:00+02:00"/>
-<meta property="article:modified_time" content=""/>
-<meta property="article:author" content="https://www.choiz.fr/author/choiz.html">
-<meta property="article:section" content="text"/>
-<meta property="article:tag" content="svn"/>
-<meta property="article:tag" content="git"/>
-<meta property="og:image" content="">  <title>ChoiZ &ndash; Passer de svn à git</title>
+  <meta name="author" content="François LASSERRE" />
+  <title>ChoiZ &ndash; Passer de svn à git</title>
 </head>
 <body>
   <aside>
     <div>
-      <a href="https://www.choiz.fr">
-        <img src="https://www.choiz.fr/theme/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE">
-      </a>
+      <a href="/"><img src="/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE"></a>
       <div>
-          <a href="https://www.choiz.fr">Blog technique de François LASSERRE</a>
+        <a href="/">Blog technique de François LASSERRE</a>
       </div>
       <nav>
         <ul class="list">
           <li><a href="/">Home</a></li>
-          <li><a href="/archives">Archives</a></li>
-          <li><a href="/tags">Tags</a></li>
+          <li><a href="/archives.html">Archives</a></li>
+          <li><a href="/tags.html">Tags</a></li>
         </ul>
       </nav>
       <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
@@ -55,7 +36,7 @@
     </div>
   </aside>
   <main>
-
+    
 <article>
   <header>
     <h1 id="2013-07-16-passer-de-svn-à-git">Passer de svn à git</h1>
@@ -64,109 +45,57 @@
   <div>
     <p>Sur le projet Addictradio nous utilisons encore un de nos dépôts avec
 svn. Il est temps de faire la migration de svn à git !</p>
-<p>J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je
+<p>J&rsquo;ai testé plusieurs méthodes et aucune ne fait exactement ce que je
 voulais voici donc ma procédure :</p>
-<div class="highlight"><pre><span></span><code><span class="n">svn</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="c1">--quiet &#39;svn://svn.mondomaine/monprojet&#39; | grep &quot;^r&quot; | awk</span>
-<span class="s1">&#39;{print $3}&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">uniq</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">awk</span><span class="w"> </span><span class="s1">&#39;{ print $1&quot; = &quot;$1&quot;</span>
-<span class="s1">&lt;&quot;$1&quot;@mondomaine&gt;&quot; }&#39;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">authors</span><span class="p">.</span><span class="n">txt</span>
-</code></pre></div>
-
-<p>J'ai ensuite édité authors.txt pour remplacer nos différents pseudos par
-nos prénoms et noms puis j'ai vérifié les adresses e-mails.</p>
-<p>Puis j'ai utilisé git svn clone :</p>
-<div class="highlight"><pre><span></span><code>git svn clone &#39;svn://svn.mondomaine/monprojet&#39; --no-metadata
+<pre><code>svn log --quiet 'svn://svn.mondomaine/monprojet' | grep &quot;^r&quot; | awk
+'{print $3}' | sort | uniq | awk '{ print $1&quot; = &quot;$1&quot;
+&lt;&quot;$1&quot;@mondomaine&gt;&quot; }' &gt; authors.txt
+</code></pre>
+<p>J&rsquo;ai ensuite édité authors.txt pour remplacer nos différents pseudos par
+nos prénoms et noms puis j&rsquo;ai vérifié les adresses e-mails.</p>
+<p>Puis j&rsquo;ai utilisé git svn clone :</p>
+<pre><code>git svn clone 'svn://svn.mondomaine/monprojet' --no-metadata
 --authors-file=authors.txt --tags=tags --branches=branches
 --trunk=trunk monprojet
-</code></pre></div>
-
+</code></pre>
 <p>Si vous avez des tags dans svn, vous pouvez les mettre dans git :</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>-r<span class="w"> </span>|<span class="w"> </span>sed<span class="w"> </span>-rne<span class="w"> </span>&#39;s,<span class="w"> </span>\*tags/([^@]+)$,\\1,p&#39;<span class="w"> </span>|<span class="w"> </span>while<span class="w"> </span>read
-tag;<span class="w"> </span>do<span class="w"> </span>echo<span class="w"> </span>&quot;git<span class="w"> </span>tag<span class="w"> </span><span class="nv">$tag</span><span class="w"> </span>&#39;tags/<span class="cp">${</span><span class="n">tag</span><span class="cp">}</span>^&#39;;<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-r<span class="w"> </span>-d
-tags/<span class="nv">$tag</span>&quot;;<span class="w"> </span>done<span class="w"> </span>|<span class="w"> </span>sh
-</code></pre></div>
-
+<pre><code>git branch -r | sed -rne 's, \*tags/([^@]+)$,\\1,p' | while read
+tag; do echo &quot;git tag $tag 'tags/${tag}^'; git branch -r -d
+tags/$tag&quot;; done | sh
+</code></pre>
 <p>Pour finir ajoutez votre dépôt distant :</p>
-<div class="highlight"><pre><span></span><code><span class="n">git</span><span class="w"> </span><span class="n">remote</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="n">git</span><span class="nv">@git</span><span class="p">.</span><span class="nl">mondomaine</span><span class="p">:</span><span class="o">/</span><span class="n">monprojet</span><span class="p">.</span><span class="n">git</span>
-<span class="n">git</span><span class="w"> </span><span class="n">push</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="c1">--tags</span>
-</code></pre></div>
+<pre><code>git remote add origin git@git.mondomaine:/monprojet.git
+git push -u origin --tags
+</code></pre>
+
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://www.choiz.fr/tag/svn.html">svn</a>
-      <a href="https://www.choiz.fr/tag/git.html">git</a>
+      <a href="/tag/svn.html">svn</a> <a href="/tag/git.html">git</a> 
     </p>
   </div>
-<div id="comments">
-  <h2>Commentaires</h2>
-  <div id="comments-loading" class="comments-loading" aria-live="polite">
-    <span class="comments-spinner" aria-hidden="true"></span>
-    Chargement des commentaires…
+  <div id="comments">
+    <h2>Commentaires</h2>
+    <div id="comments-loading" class="comments-loading" aria-live="polite">
+      <span class="comments-spinner" aria-hidden="true"></span>
+      Chargement des commentaires…
+    </div>
   </div>
-</div>
-<script src="https://utteranc.es/client.js"
-        repo="ChoiZ/comments-on-choiz.fr"
-        issue-term="url"
-        label="blog"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-<script>
-(function () {
-  var loader = document.getElementById('comments-loading');
-  if (!loader) return;
-  var done = false;
-  function hide() { if (done) return; done = true; loader.style.display = 'none'; }
-  // utterances émet un postMessage quand les commentaires sont rendus
-  window.addEventListener('message', function (e) {
-    if (e.origin === 'https://utteranc.es') hide();
-  });
-  // fallback : masque dès que l'iframe utterances est chargée
-  var obs = new MutationObserver(function () {
-    var f = document.querySelector('.utterances-frame');
-    if (f) { f.addEventListener('load', hide); obs.disconnect(); }
-  });
-  obs.observe(document.body, { childList: true, subtree: true });
-  // fallback ultime : ne jamais rester bloqué
-  setTimeout(hide, 10000);
-})();
-</script></article>
+  <script src="https://utteranc.es/client.js"
+          repo="ChoiZ/comments-on-choiz.fr" issue-term="url" label="blog"
+          theme="github-light" crossorigin="anonymous" async></script>
+  <script>
+  (function(){var l=document.getElementById('comments-loading');if(!l)return;var d=false;function h(){if(d)return;d=true;l.style.display='none';}
+  window.addEventListener('message',function(e){if(e.origin==='https://utteranc.es')h();});
+  var o=new MutationObserver(function(){var f=document.querySelector('.utterances-frame');if(f){f.addEventListener('load',h);o.disconnect();}});
+  o.observe(document.body,{childList:true,subtree:true});setTimeout(h,10000);})();
+  </script>
+</article>
 
     <footer>
-      <p>&copy; François LASSERRE </p>
-<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/choiz/Flexfork" target="_blank">Flexfork</a> theme by <a href="http://www.choiz.fr">François LASSERRE</a></p>    </footer>
+      <p>&copy; François LASSERRE</p>
+      <p>Aperçu Hugo — Built using Hugo</p>
+    </footer>
   </main>
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.www.choiz.fr"]]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//stats.rocketip.net/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', '7042kjNK6PYV9LoGM5np']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//stats.rocketip.net/piwik.php?idsite=7042kjNK6PYV9LoGM5np" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code --><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BlogPosting",
-  "name": "Passer de svn à git",
-  "headline": "Passer de svn à git",
-  "datePublished": "2013-07-16 22:37:00+02:00",
-  "dateModified": "",
-  "author": {
-    "@type": "Person",
-    "name": "choiz",
-    "url": "https://www.choiz.fr/author/choiz.html"
-  },
-  "image": "{{ SITEURL }}/theme/img/profile.png",
-  "url": "https://www.choiz.fr/2013-07-16-passer-de-svn-à-git.html",
-  "description": "Sur le projet Addictradio nous utilisons encore un de nos dépôts avec svn. Il est temps de faire la migration de svn à git ! J'ai testé plusieurs méthodes et aucune ne fait exactement ce que je voulais voici donc ma procédure : svn log --quiet 'svn://svn.mondomaine/monprojet' | grep "^r …"
-}
-</script></body>
+</body>
 </html>
