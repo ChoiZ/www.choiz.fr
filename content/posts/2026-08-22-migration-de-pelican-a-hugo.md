@@ -67,4 +67,4 @@ hugo
 En résumé
 ---------
 
-Même blog, même allure, mêmes URLs, mêmes commentaires — mais un seul binaire à la place de tout un environnement Python. Onze ans après Tumblr, le blog change encore de moteur sans que ça se voie de l'extérieur. C'est exactement ce qu'on demande à une migration.
+Même blog, même allure, mêmes URLs, mêmes commentaires — mais un seul binaire à la place de tout un environnement Python. Le blog change encore de moteur sans que ça se voie de l'extérieur. C'est exactement ce qu'on demande à une migration.
