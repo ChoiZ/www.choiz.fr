@@ -1,5 +1,8 @@
 {{ define "main" }}
 <article>
+  <nav class="breadcrumb" aria-label="fil d'Ariane">
+    <a href="/">Accueil</a> › <span>{{ .Title }}</span>
+  </nav>
   <header>
     <h1 id="{{ .Params.slug }}">{{ .Title }}</h1>
     <p>Posté le {{ .Date | time.Format "Mon 2 January 2006" }}</p>
@@ -12,6 +15,10 @@
       {{ range .Params.tags }}<a href="/tag/{{ . | urlize }}.html">{{ . }}</a> {{ end }}
     </p>
   </div>
+  <nav class="post-nav" aria-label="navigation entre articles">
+    {{ with .PrevInSection }}<a href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}
+    {{ with .NextInSection }}<a href="{{ .RelPermalink }}" class="pn-right">{{ .Title }} →</a>{{ end }}
+  </nav>
   <div id="comments">
     <h2>Commentaires</h2>
     <div id="comments-loading" class="comments-loading" aria-live="polite">
