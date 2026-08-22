@@ -2,6 +2,7 @@
 title: "Remplacer sa livebox par un UniFi Security Gateway 3P (USG)"
 date: 2017-08-26T19:00:56
 slug: "2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg)"
+url: "/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html"
 author: choiz
 tags: ["unifi", "network"]
 ---
