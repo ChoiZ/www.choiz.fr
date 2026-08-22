@@ -44,6 +44,27 @@
 
 <article>
   <header>
+    <h2><a href="/2013-06-22-git-d%C3%A9placer-mon-dernier-commit-sur-une-autre.html">Git déplacer mon dernier commit sur une autre branche</a></h2>
+    <p>
+      Posté le sam. 22 juin 2013
+       &#8226; Tags : <a href="/tag/git.html">git</a>
+    </p>
+  </header>
+  <div>
+    <p>J&rsquo;ai fait une boulette ! J&rsquo;ai commité deux fois en étant sur la branche
+<em>master</em>… Généralement je fais toujours une branche pour les
+modifications, cette fois j&rsquo;avais créé cette branche <em>debug_redirect</em>
+mais je n&rsquo;étais pas dessus…</p>
+<p>Je me suis retrouvé avec les commits A-B-C sur mon <em>master</em>. Or le seul
+qui devait être dessus devait être A et je devais avoir B-C dans ma
+branche <em>debug_redirect</em>. Voici un schéma de la situation :</p>
+    <p><a class="btn" href="/2013-06-22-git-d%C3%A9placer-mon-dernier-commit-sur-une-autre.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2013-06-21-installation-disque-dur-seagate-4to-debian.html">Installation disque dur Seagate 4To Debian</a></h2>
     <p>
       Posté le ven. 21 juin 2013
@@ -322,38 +343,6 @@ doit apparaître. Dans Action: choisir &ldquo;Send Hex Code&rdquo; et taper &ldq
   </div>
 </article>
 
-<hr />
-<article>
-  <header>
-    <h2><a href="/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-pr%C3%A9cis.html">Voir le contenu d&#39;un fichier dans un stash précis (git)</a></h2>
-    <p>
-      Posté le ven. 6 juillet 2012
-       &#8226; Tags : <a href="/tag/git.html">git</a>
-    </p>
-  </header>
-  <div>
-    <p>Pour lister les stash :</p>
-<pre><code>git stash list
-
-stash@{0}: WIP on BranchName: 5d8a556 Edit file.js
-stash@{1}: WIP on BranchName: 66dfe78 Edit file.css
-…
-stash@{5}: WIP on BranchName: 3bb67ff Add file.css file.js
-</code></pre>
-<p>Pour voir le contenu d&rsquo;un stash :</p>
-<pre><code>git stash show
-
-stash@{0} chemin/vers/mon/fichier.js | 199 ++++++++++++++++++++++++++--------
-chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------
-</code></pre>
-<p>Pour voir le contenu de &ldquo;chemin/vers/mon/fichier.js&rdquo; qui est dans le
-stash{0} :</p>
-<pre><code>git show stash@{0}:chemin/vers/mon/fichier.js
-</code></pre>
-    
-  </div>
-</article>
-
 
 
 <div class="pagination">
@@ -388,7 +377,7 @@ stash{0} :</p>
 
     <footer>
       <p>&copy; François LASSERRE</p>
-      <p>Aperçu Hugo — Built using Hugo</p>
+      <p>Built using <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></p>
     </footer>
   </main>
 </body>

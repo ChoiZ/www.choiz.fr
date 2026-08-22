@@ -44,6 +44,23 @@
 
 <article>
   <header>
+    <h2><a href="/2026-08-22-migration-de-pelican-a-hugo.html">Migration de Pelican à Hugo</a></h2>
+    <p>
+      Posté le sam. 22 août 2026
+       &#8226; Tags : <a href="/tag/blog.html">blog</a>, <a href="/tag/hugo.html">hugo</a>, <a href="/tag/pelican.html">pelican</a>, <a href="/tag/migration.html">migration</a>
+    </p>
+  </header>
+  <div>
+    <p>En 2015 je migrais ce blog de <a href="https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html">Tumblr à Pelican</a>. <strong>Onze ans après</strong> cette migration Tumblr → Pelican, je passe cette fois de <strong>Pelican à Hugo</strong>. Voici pourquoi et, surtout, comment sans rien casser.</p>
+<h2 id="pourquoi-changer">Pourquoi changer</h2>
+<p>Pelican m&rsquo;a bien servi une décennie. Mais avec le temps, chaque publication traînait sa part de friction : un <em>virtualenv</em> Python à réveiller, des bricolages de locale pour avoir mes dates en français, du CSS minifié à la main… Rien de bloquant, mais de l&rsquo;agacement qui s&rsquo;accumule.</p>
+    <p><a class="btn" href="/2026-08-22-migration-de-pelican-a-hugo.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2026-08-21-trois-parades-contre-le-spam.html">Trois parades contre le spam : cloisonner, autoriser, défier</a></h2>
     <p>
       Posté le ven. 21 août 2026
@@ -241,38 +258,6 @@ debian9wiki STOPPED 0         -      -    -
   </div>
 </article>
 
-<hr />
-<article>
-  <header>
-    <h2><a href="/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html">Installation d&#39;un contrôleur Unifi sur Raspberry Pi 3</a></h2>
-    <p>
-      Posté le sam. 21 octobre 2017
-       &#8226; Tags : <a href="/tag/raspberry.html">raspberry</a>, <a href="/tag/unifi.html">unifi</a>, <a href="/tag/debian.html">debian</a>, <a href="/tag/linux.html">linux</a>
-    </p>
-  </header>
-  <div>
-    <p>Pour commencer il faut télécharger la dernière version de raspbian sur le site
-officiel raspberrypi.org. Actuellement c&rsquo;est 2017-09-07-raspbian-stretch-lite.zip.</p>
-<p>Il faut ensuite extraire l&rsquo;image de l&rsquo;archive :</p>
-<pre tabindex="0"><code>unzip 2017-09-07-raspbian-stretch-lite.zip
-</code></pre><p>Puis mettre l&rsquo;image sur une carte micro sd, j&rsquo;utilise la commande <code>dmesg</code> pour
-voir le nom du périphérique USB sur ma machine :</p>
-<pre tabindex="0"><code>[5371729.056039] usb-storage 2-1.3:1.0: USB Mass Storage device detected
-[5371729.056115] scsi host5: usb-storage 2-1.3:1.0
-[5371730.058300] scsi 5:0:0:0: Direct-Access     Single   Flash Reader     1.00 PQ: 0 ANSI: 0
-[5371730.058447] sd 5:0:0:0: Attached scsi generic sg1 type 0
-[5371730.509370] sd 5:0:0:0: [sdb] 15759360 512-byte logical blocks: (8.07 GB/7.51 GiB)
-[5371730.510383] sd 5:0:0:0: [sdb] Write Protect is off
-[5371730.510386] sd 5:0:0:0: [sdb] Mode Sense: 03 00 00 00
-[5371730.511384] sd 5:0:0:0: [sdb] No Caching mode page found
-[5371730.511386] sd 5:0:0:0: [sdb] Assuming drive cache: write through
-[5371730.516135]  sdb: sdb1
-[5371730.519381] sd 5:0:0:0: [sdb] Attached SCSI removable disk
-</code></pre><p>Je copie donc l&rsquo;image sur /dev/sdb « ma microsd d&rsquo;après dmesg.</p>
-    <p><a class="btn" href="/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html">Lire la suite</a></p>
-  </div>
-</article>
-
 
 
 <div class="pagination">
@@ -307,7 +292,7 @@ voir le nom du périphérique USB sur ma machine :</p>
 
     <footer>
       <p>&copy; François LASSERRE</p>
-      <p>Aperçu Hugo — Built using Hugo</p>
+      <p>Built using <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></p>
     </footer>
   </main>
 </body>

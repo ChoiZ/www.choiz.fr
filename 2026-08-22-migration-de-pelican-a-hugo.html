@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,600,700&family=jetbrains-mono:400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="François LASSERRE" />
+  <title>ChoiZ &ndash; Migration de Pelican à Hugo</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="/"><img src="/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE"></a>
+      <div>
+        <a href="/">Blog technique de François LASSERRE</a>
+      </div>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives.html">Archives</a></li>
+          <li><a href="/tags.html">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="https://www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    
+<article>
+  <header>
+    <h1 id="2026-08-22-migration-de-pelican-a-hugo">Migration de Pelican à Hugo</h1>
+    <p>Posté le sam. 22 août 2026</p>
+  </header>
+  <div>
+    <p>En 2015 je migrais ce blog de <a href="https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html">Tumblr à Pelican</a>. <strong>Onze ans après</strong> cette migration Tumblr → Pelican, je passe cette fois de <strong>Pelican à Hugo</strong>. Voici pourquoi et, surtout, comment sans rien casser.</p>
+<h2 id="pourquoi-changer">Pourquoi changer</h2>
+<p>Pelican m&rsquo;a bien servi une décennie. Mais avec le temps, chaque publication traînait sa part de friction : un <em>virtualenv</em> Python à réveiller, des bricolages de locale pour avoir mes dates en français, du CSS minifié à la main… Rien de bloquant, mais de l&rsquo;agacement qui s&rsquo;accumule.</p>
+<p><a href="https://gohugo.io">Hugo</a> répond exactement à ça :</p>
+<ul>
+<li><strong>un seul binaire</strong>, aucune dépendance — fini le venv et les <code>pip install</code> qui cassent ;</li>
+<li>des <strong>builds quasi instantanés</strong>, même sur cent articles ;</li>
+<li>un <strong>pipeline d&rsquo;assets</strong> intégré (Sass, empreinte de version…) ;</li>
+<li>des <strong>taxonomies</strong> (tags) natives.</li>
+</ul>
+<h2 id="la-contrainte-non-négociable--garder-les-urls">La contrainte non négociable : garder les URLs</h2>
+<p>Le vrai risque d&rsquo;une migration, ce n&rsquo;est pas le contenu — c&rsquo;est de <strong>changer les URLs</strong>. Pour deux raisons : le référencement, et surtout mes <strong>commentaires</strong>. J&rsquo;utilise <a href="https://www.choiz.fr/2020-04-13-utiliser-les-github-issues-pour-avoir-des-commentaires-sur-le-blog.html">utterances</a>, qui indexe chaque fil de discussion <strong>par l&rsquo;URL de la page</strong>. Si une URL change, les commentaires existants se détachent.</p>
+<p>Il fallait donc que Hugo produise exactement les mêmes chemins que Pelican, du type <code>/2015-11-15-configurer-un-serveur-mail.html</code>. La recette dans <code>hugo.toml</code> :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">uglyURLs</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">permalinks</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">posts</span> <span class="p">=</span> <span class="s2">&#34;/:slug/&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">tags</span>  <span class="p">=</span> <span class="s2">&#34;/tag/:slug/&#34;</span>
+</span></span></code></pre></div><p>Combiné à un <code>slug</code> explicite dans chaque article, on retombe sur le <code>/slug.html</code> à la racine. Un seul article m&rsquo;a résisté : celui dont le slug contenait des parenthèses (<code>…-3p-(usg)</code>), que Hugo « nettoyait ». Un <code>url:</code> forcé dans son en-tête a réglé le cas :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html&#34;</span><span class="w">
+</span></span></span></code></pre></div><p>Résultat : <strong>les 103 articles ont gardé leur URL au caractère près</strong>, accents compris.</p>
+<h2 id="convertir-le-contenu">Convertir le contenu</h2>
+<p>Le corps des articles étant déjà en Markdown, il migre tel quel : titres, tableaux, images, blocs de code. Seul l&rsquo;en-tête (les métadonnées) change de format — les <code>Title:</code> / <code>Date:</code> de Pelican deviennent du YAML entre <code>---</code>. Un petit script Python a fait les 103 d&rsquo;un coup.</p>
+<p>Un piège au passage : un titre contenait un <code>#</code> échappé en <code>\#</code> par Pelican, ce que le YAML de Hugo refuse. Il a fallu nettoyer ces échappements à la conversion.</p>
+<h2 id="le-thème-les-tags-le-flux">Le thème, les tags, le flux</h2>
+<p>J&rsquo;ai porté mon thème dans les <em>layouts</em> Hugo : la colonne de gauche, la mise en page, la coloration du code. Les pages de tags retombent sur <code>/tags.html</code> et <code>/tag/x.html</code> comme avant, et le flux Atom reste au même endroit, <code>/feeds/all.atom.xml</code>, pour ne pas perdre les abonnés.</p>
+<h2 id="publier">Publier</h2>
+<p>Je n&rsquo;ai pas changé ma façon de publier : je build en local et je commite la sortie, signée. Juste, la commande d&rsquo;avant — un <code>make</code> qui réveillait Python — est devenue :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hugo
+</span></span></code></pre></div><h2 id="en-résumé">En résumé</h2>
+<p>Même blog, même allure, <strong>mêmes URLs</strong>, mêmes commentaires — mais un seul binaire à la place de tout un environnement Python. Onze ans après Tumblr, le blog change encore de moteur sans que ça se voie de l&rsquo;extérieur. C&rsquo;est exactement ce qu&rsquo;on demande à une migration.</p>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/blog.html">blog</a> <a href="/tag/hugo.html">hugo</a> <a href="/tag/pelican.html">pelican</a> <a href="/tag/migration.html">migration</a> 
+    </p>
+  </div>
+  <div id="comments">
+    <h2>Commentaires</h2>
+    <div id="comments-loading" class="comments-loading" aria-live="polite">
+      <span class="comments-spinner" aria-hidden="true"></span>
+      Chargement des commentaires…
+    </div>
+  </div>
+  <script src="https://utteranc.es/client.js"
+          repo="ChoiZ/comments-on-choiz.fr" issue-term="url" label="blog"
+          theme="github-light" crossorigin="anonymous" async></script>
+  <script>
+  (function(){var l=document.getElementById('comments-loading');if(!l)return;var d=false;function h(){if(d)return;d=true;l.style.display='none';}
+  window.addEventListener('message',function(e){if(e.origin==='https://utteranc.es')h();});
+  var o=new MutationObserver(function(){var f=document.querySelector('.utterances-frame');if(f){f.addEventListener('load',h);o.disconnect();}});
+  o.observe(document.body,{childList:true,subtree:true});setTimeout(h,10000);})();
+  </script>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE</p>
+      <p>Built using <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></p>
+    </footer>
+  </main>
+</body>
+</html>

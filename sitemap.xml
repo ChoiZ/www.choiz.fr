@@ -2,22 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.choiz.fr/tag/antispam.html</loc>
-    <lastmod>2026-08-21T10:00:00+00:00</lastmod>
+    <loc>https://www.choiz.fr/tag/blog.html</loc>
+    <lastmod>2026-08-22T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.choiz.fr/index.html</loc>
+    <lastmod>2026-08-22T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.choiz.fr/tag/hugo.html</loc>
+    <lastmod>2026-08-22T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.choiz.fr/tag/migration.html</loc>
+    <lastmod>2026-08-22T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.choiz.fr/2026-08-22-migration-de-pelican-a-hugo.html</loc>
+    <lastmod>2026-08-22T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.choiz.fr/tag/pelican.html</loc>
+    <lastmod>2026-08-22T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.choiz.fr/posts/index.html</loc>
+    <lastmod>2026-08-22T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.choiz.fr/tags.html</loc>
+    <lastmod>2026-08-22T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.choiz.fr/tag/antispam.html</loc>
     <lastmod>2026-08-21T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.choiz.fr/tag/mail.html</loc>
     <lastmod>2026-08-21T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.choiz.fr/posts/index.html</loc>
-    <lastmod>2026-08-21T10:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.choiz.fr/tag/smtp.html</loc>
-    <lastmod>2026-08-21T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.choiz.fr/tags.html</loc>
     <lastmod>2026-08-21T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.choiz.fr/2026-08-21-trois-parades-contre-le-spam.html</loc>
@@ -40,9 +55,6 @@
   </url><url>
     <loc>https://www.choiz.fr/2026-08-04-versionner-son-css-et-son-js-en-precisant-de-plus-en-plus.html</loc>
     <lastmod>2026-08-04T09:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.choiz.fr/tag/blog.html</loc>
-    <lastmod>2020-04-13T14:13:51+00:00</lastmod>
   </url><url>
     <loc>https://www.choiz.fr/tag/comments.html</loc>
     <lastmod>2020-04-13T14:13:51+00:00</lastmod>

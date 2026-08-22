@@ -44,6 +44,38 @@
 
 <article>
   <header>
+    <h2><a href="/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html">Installation d&#39;un contrôleur Unifi sur Raspberry Pi 3</a></h2>
+    <p>
+      Posté le sam. 21 octobre 2017
+       &#8226; Tags : <a href="/tag/raspberry.html">raspberry</a>, <a href="/tag/unifi.html">unifi</a>, <a href="/tag/debian.html">debian</a>, <a href="/tag/linux.html">linux</a>
+    </p>
+  </header>
+  <div>
+    <p>Pour commencer il faut télécharger la dernière version de raspbian sur le site
+officiel raspberrypi.org. Actuellement c&rsquo;est 2017-09-07-raspbian-stretch-lite.zip.</p>
+<p>Il faut ensuite extraire l&rsquo;image de l&rsquo;archive :</p>
+<pre tabindex="0"><code>unzip 2017-09-07-raspbian-stretch-lite.zip
+</code></pre><p>Puis mettre l&rsquo;image sur une carte micro sd, j&rsquo;utilise la commande <code>dmesg</code> pour
+voir le nom du périphérique USB sur ma machine :</p>
+<pre tabindex="0"><code>[5371729.056039] usb-storage 2-1.3:1.0: USB Mass Storage device detected
+[5371729.056115] scsi host5: usb-storage 2-1.3:1.0
+[5371730.058300] scsi 5:0:0:0: Direct-Access     Single   Flash Reader     1.00 PQ: 0 ANSI: 0
+[5371730.058447] sd 5:0:0:0: Attached scsi generic sg1 type 0
+[5371730.509370] sd 5:0:0:0: [sdb] 15759360 512-byte logical blocks: (8.07 GB/7.51 GiB)
+[5371730.510383] sd 5:0:0:0: [sdb] Write Protect is off
+[5371730.510386] sd 5:0:0:0: [sdb] Mode Sense: 03 00 00 00
+[5371730.511384] sd 5:0:0:0: [sdb] No Caching mode page found
+[5371730.511386] sd 5:0:0:0: [sdb] Assuming drive cache: write through
+[5371730.516135]  sdb: sdb1
+[5371730.519381] sd 5:0:0:0: [sdb] Attached SCSI removable disk
+</code></pre><p>Je copie donc l&rsquo;image sur /dev/sdb « ma microsd d&rsquo;après dmesg.</p>
+    <p><a class="btn" href="/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2017-10-15-faire-un-nat-avec-proxmox.html">Faire du NAT avec Proxmox</a></h2>
     <p>
       Posté le dim. 15 octobre 2017
@@ -268,28 +300,6 @@ en 32 bits, 64 bits et fedora en 64 bits.</p>
   </div>
 </article>
 
-<hr />
-<article>
-  <header>
-    <h2><a href="/2016-05-21-installation-de-xubuntu-16-04-sur-asus-x205ta.html">Installation de xubuntu 16.04 sur ASUS X205TA</a></h2>
-    <p>
-      Posté le sam. 21 mai 2016
-       &#8226; Tags : <a href="/tag/xubuntu.html">xubuntu</a>, <a href="/tag/linux.html">linux</a>, <a href="/tag/hardware.html">hardware</a>
-    </p>
-  </header>
-  <div>
-    <p>J&rsquo;ai récemment acheté un ASUS X205TA, livré avec Windows
-10 (32 bits), un disque SSD de 32Go et 2Go de ram et pour un prix de 210€.</p>
-<p>J&rsquo;ai installé xubuntu 16.04 (64 bits) sur une partition séparée pour garder Windows 10.</p>
-<p>L&rsquo;installation est plutôt complexe car le &ldquo;bootloader&rdquo; est en 32bits (je pense
-d&rsquo;ailleurs que c&rsquo;est pour ça qu&rsquo;il est livré avec un windows 32bits et non
-64bits).</p>
-<p>Voici <a href="http://ubuntuforums.org/showthread.php?t=2254322&amp;page=92&amp;p=13474817#post13474817">un message</a> qui explique l&rsquo;installation simple d&rsquo;ubuntu (remplacer l&rsquo;iso
-par xubuntu ou autre).</p>
-    <p><a class="btn" href="/2016-05-21-installation-de-xubuntu-16-04-sur-asus-x205ta.html">Lire la suite</a></p>
-  </div>
-</article>
-
 
 
 <div class="pagination">
@@ -324,7 +334,7 @@ par xubuntu ou autre).</p>
 
     <footer>
       <p>&copy; François LASSERRE</p>
-      <p>Aperçu Hugo — Built using Hugo</p>
+      <p>Built using <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></p>
     </footer>
   </main>
 </body>

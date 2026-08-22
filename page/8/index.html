@@ -44,6 +44,38 @@
 
 <article>
   <header>
+    <h2><a href="/2012-07-06-voir-le-contenu-dun-fichier-dans-un-stash-pr%C3%A9cis.html">Voir le contenu d&#39;un fichier dans un stash précis (git)</a></h2>
+    <p>
+      Posté le ven. 6 juillet 2012
+       &#8226; Tags : <a href="/tag/git.html">git</a>
+    </p>
+  </header>
+  <div>
+    <p>Pour lister les stash :</p>
+<pre><code>git stash list
+
+stash@{0}: WIP on BranchName: 5d8a556 Edit file.js
+stash@{1}: WIP on BranchName: 66dfe78 Edit file.css
+…
+stash@{5}: WIP on BranchName: 3bb67ff Add file.css file.js
+</code></pre>
+<p>Pour voir le contenu d&rsquo;un stash :</p>
+<pre><code>git stash show
+
+stash@{0} chemin/vers/mon/fichier.js | 199 ++++++++++++++++++++++++++--------
+chemin/vers/mon/autre/fichier.js | 114 ++++++++++++++------
+</code></pre>
+<p>Pour voir le contenu de &ldquo;chemin/vers/mon/fichier.js&rdquo; qui est dans le
+stash{0} :</p>
+<pre><code>git show stash@{0}:chemin/vers/mon/fichier.js
+</code></pre>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2012-04-27-ajout-dans-mon-vimrc-de-matchadd-highlight.html">Ajout dans mon .vimrc de matchadd() &amp; highlight</a></h2>
     <p>
       Posté le ven. 27 avril 2012
@@ -315,26 +347,6 @@ compte un clavier mac. :</p>
   </div>
 </article>
 
-<hr />
-<article>
-  <header>
-    <h2><a href="/2011-12-01-dual-screen-sur-xfce.html">Dual screen sur xfce</a></h2>
-    <p>
-      Posté le jeu. 1 décembre 2011
-       &#8226; Tags : <a href="/tag/linux.html">linux</a>
-    </p>
-  </header>
-  <div>
-    <p>Un petit package bien pratique pour configurer le dual screen sur xfce
-se nomme : arandr :</p>
-<pre><code>apt-get install arandr
-</code></pre>
-<p>Ensuite il suffit d&rsquo;ouvrir le menu d&rsquo;xfce puis paramètres et vous avez
-le ARandR pour configurer les deux écrans.</p>
-    
-  </div>
-</article>
-
 
 
 <div class="pagination">
@@ -369,7 +381,7 @@ le ARandR pour configurer les deux écrans.</p>
 
     <footer>
       <p>&copy; François LASSERRE</p>
-      <p>Aperçu Hugo — Built using Hugo</p>
+      <p>Built using <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></p>
     </footer>
   </main>
 </body>

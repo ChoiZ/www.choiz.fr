@@ -44,6 +44,29 @@
 
 <article>
   <header>
+    <h2><a href="/2015-08-25-suppression-des-branches-distantes-inexistantes.html">Suppression des branches distantes inexistantes</a></h2>
+    <p>
+      Posté le mar. 25 août 2015
+       &#8226; Tags : <a href="/tag/git.html">git</a>
+    </p>
+  </header>
+  <div>
+    <p>Lors d&rsquo;un développement j&rsquo;ai créé une branche &ldquo;add_namespace&rdquo; qui m&rsquo;a
+permis d&rsquo;ajouter des namespaces à différents fichiers PHP.</p>
+<p>Une fois la modification faite j&rsquo;ai envoyé ma branche sur l&rsquo;origin, en
+faisant un &ldquo;pull request&rdquo; (github) ou &ldquo;merge request&rdquo; (gitlab).</p>
+<p>Un autre développeur a accepté mon pull request (il a donc mergé la
+branche) et a supprimé ma branche de l&rsquo;origine.</p>
+<p>Sur mon environnement je vois toujours cette branche.</p>
+<blockquote>
+<p>git branch -a</p>
+    <p><a class="btn" href="/2015-08-25-suppression-des-branches-distantes-inexistantes.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2015-08-20-migration-de-tumblr-a-pelican.html">Migration de Tumblr à Pelican</a></h2>
     <p>
       Posté le jeu. 20 août 2015
@@ -260,28 +283,6 @@ précise, j&rsquo;utilise la commande suivante :</p>
   </div>
 </article>
 
-<hr />
-<article>
-  <header>
-    <h2><a href="/2014-11-08-%C3%A9criture-dun-rapport-de-bug.html">Écriture d&#39;un rapport de bug</a></h2>
-    <p>
-      Posté le sam. 8 novembre 2014
-       &#8226; Tags : <a href="/tag/bug.html">bug</a>, <a href="/tag/doc.html">doc</a>
-    </p>
-  </header>
-  <div>
-    <p>Étant développeur, j&rsquo;ai très souvent des rapports de bug, qui peuvent
-être précis, ou moins suivant la personne.</p>
-<p>L&rsquo;écriture d&rsquo;un rapport de bug peut demander du temps, si on veut faire
-les choses correctement.</p>
-<p>Le rapport de bug doit être écrit <code>clairement</code> et <code>précisément</code> pour
-que les développeurs sachent comment reproduire le bug.</p>
-<p>Pensez à <code>joindre un maximum d'informations</code> : le message d&rsquo;erreur, le
-numéro d&rsquo;erreur, une copie d&rsquo;écran quand c&rsquo;est possible.</p>
-    <p><a class="btn" href="/2014-11-08-%C3%A9criture-dun-rapport-de-bug.html">Lire la suite</a></p>
-  </div>
-</article>
-
 
 
 <div class="pagination">
@@ -316,7 +317,7 @@ numéro d&rsquo;erreur, une copie d&rsquo;écran quand c&rsquo;est possible.</p>
 
     <footer>
       <p>&copy; François LASSERRE</p>
-      <p>Aperçu Hugo — Built using Hugo</p>
+      <p>Built using <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></p>
     </footer>
   </main>
 </body>
