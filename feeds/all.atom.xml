@@ -15,21 +15,21 @@
     <updated>2026-08-22T10:00:00Z</updated>
     <author><name>choiz</name></author>
     <category term="blog"/><category term="hugo"/><category term="pelican"/><category term="migration"/>
-    <summary type="html">&lt;p&gt;En 2015 je migrais ce blog de &lt;a href=&#34;https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html&#34;&gt;Tumblr à Pelican&lt;/a&gt;. &lt;strong&gt;Onze ans après&lt;/strong&gt; cette migration Tumblr → Pelican, je passe cette fois de &lt;strong&gt;Pelican à Hugo&lt;/strong&gt;. Voici pourquoi et, surtout, comment sans rien casser.&lt;/p&gt;
+    <summary type="html">&lt;p&gt;En 2015 je migrais ce blog de &lt;a href=&#34;https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html&#34;&gt;Tumblr à Pelican&lt;/a&gt;. Onze ans après cette migration Tumblr → Pelican, je passe cette fois de Pelican à Hugo. Voici pourquoi et, surtout, comment sans rien casser.&lt;/p&gt;
 &lt;h2 id=&#34;pourquoi-changer&#34;&gt;Pourquoi changer&lt;/h2&gt;
 &lt;p&gt;Pelican m&amp;rsquo;a bien servi une décennie. Mais avec le temps, chaque publication traînait sa part de friction : un &lt;em&gt;virtualenv&lt;/em&gt; Python à réveiller, des bricolages de locale pour avoir mes dates en français, du CSS minifié à la main… Rien de bloquant, mais de l&amp;rsquo;agacement qui s&amp;rsquo;accumule.&lt;/p&gt;</summary>
-    <content type="html">&lt;p&gt;En 2015 je migrais ce blog de &lt;a href=&#34;https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html&#34;&gt;Tumblr à Pelican&lt;/a&gt;. &lt;strong&gt;Onze ans après&lt;/strong&gt; cette migration Tumblr → Pelican, je passe cette fois de &lt;strong&gt;Pelican à Hugo&lt;/strong&gt;. Voici pourquoi et, surtout, comment sans rien casser.&lt;/p&gt;
+    <content type="html">&lt;p&gt;En 2015 je migrais ce blog de &lt;a href=&#34;https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html&#34;&gt;Tumblr à Pelican&lt;/a&gt;. Onze ans après cette migration Tumblr → Pelican, je passe cette fois de Pelican à Hugo. Voici pourquoi et, surtout, comment sans rien casser.&lt;/p&gt;
 &lt;h2 id=&#34;pourquoi-changer&#34;&gt;Pourquoi changer&lt;/h2&gt;
 &lt;p&gt;Pelican m&amp;rsquo;a bien servi une décennie. Mais avec le temps, chaque publication traînait sa part de friction : un &lt;em&gt;virtualenv&lt;/em&gt; Python à réveiller, des bricolages de locale pour avoir mes dates en français, du CSS minifié à la main… Rien de bloquant, mais de l&amp;rsquo;agacement qui s&amp;rsquo;accumule.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; répond exactement à ça :&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;un seul binaire&lt;/strong&gt;, aucune dépendance — fini le venv et les &lt;code&gt;pip install&lt;/code&gt; qui cassent ;&lt;/li&gt;
-&lt;li&gt;des &lt;strong&gt;builds quasi instantanés&lt;/strong&gt;, même sur cent articles ;&lt;/li&gt;
-&lt;li&gt;un &lt;strong&gt;pipeline d&amp;rsquo;assets&lt;/strong&gt; intégré (Sass, empreinte de version…) ;&lt;/li&gt;
-&lt;li&gt;des &lt;strong&gt;taxonomies&lt;/strong&gt; (tags) natives.&lt;/li&gt;
+&lt;li&gt;un seul binaire, aucune dépendance — fini le venv et les &lt;code&gt;pip install&lt;/code&gt; qui cassent ;&lt;/li&gt;
+&lt;li&gt;des builds quasi instantanés, même sur cent articles ;&lt;/li&gt;
+&lt;li&gt;un pipeline d&amp;rsquo;assets intégré (Sass, empreinte de version…) ;&lt;/li&gt;
+&lt;li&gt;des taxonomies (tags) natives.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;la-contrainte-non-négociable--garder-les-urls&#34;&gt;La contrainte non négociable : garder les URLs&lt;/h2&gt;
-&lt;p&gt;Le vrai risque d&amp;rsquo;une migration, ce n&amp;rsquo;est pas le contenu — c&amp;rsquo;est de &lt;strong&gt;changer les URLs&lt;/strong&gt;. Pour deux raisons : le référencement, et surtout mes &lt;strong&gt;commentaires&lt;/strong&gt;. J&amp;rsquo;utilise &lt;a href=&#34;https://www.choiz.fr/2020-04-13-utiliser-les-github-issues-pour-avoir-des-commentaires-sur-le-blog.html&#34;&gt;utterances&lt;/a&gt;, qui indexe chaque fil de discussion &lt;strong&gt;par l&amp;rsquo;URL de la page&lt;/strong&gt;. Si une URL change, les commentaires existants se détachent.&lt;/p&gt;
+&lt;p&gt;Le vrai risque d&amp;rsquo;une migration, ce n&amp;rsquo;est pas le contenu — c&amp;rsquo;est de changer les URLs. Pour deux raisons : le référencement, et surtout mes commentaires. J&amp;rsquo;utilise &lt;a href=&#34;https://www.choiz.fr/2020-04-13-utiliser-les-github-issues-pour-avoir-des-commentaires-sur-le-blog.html&#34;&gt;utterances&lt;/a&gt;, qui indexe chaque fil de discussion par l&amp;rsquo;URL de la page. Si une URL change, les commentaires existants se détachent.&lt;/p&gt;
 &lt;p&gt;Il fallait donc que Hugo produise exactement les mêmes chemins que Pelican, du type &lt;code&gt;/2015-11-15-configurer-un-serveur-mail.html&lt;/code&gt;. La recette dans &lt;code&gt;hugo.toml&lt;/code&gt; :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;uglyURLs&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
@@ -38,7 +38,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;tags&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/tag/:slug/&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Combiné à un &lt;code&gt;slug&lt;/code&gt; explicite dans chaque article, on retombe sur le &lt;code&gt;/slug.html&lt;/code&gt; à la racine. Un seul article m&amp;rsquo;a résisté : celui dont le slug contenait des parenthèses (&lt;code&gt;…-3p-(usg)&lt;/code&gt;), que Hugo « nettoyait ». Un &lt;code&gt;url:&lt;/code&gt; forcé dans son en-tête a réglé le cas :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Résultat : &lt;strong&gt;les 103 articles ont gardé leur URL au caractère près&lt;/strong&gt;, accents compris.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Résultat : les 103 articles ont gardé leur URL au caractère près, accents compris.&lt;/p&gt;
 &lt;h2 id=&#34;convertir-le-contenu&#34;&gt;Convertir le contenu&lt;/h2&gt;
 &lt;p&gt;Le corps des articles étant déjà en Markdown, il migre tel quel : titres, tableaux, images, blocs de code. Seul l&amp;rsquo;en-tête (les métadonnées) change de format — les &lt;code&gt;Title:&lt;/code&gt; / &lt;code&gt;Date:&lt;/code&gt; de Pelican deviennent du YAML entre &lt;code&gt;---&lt;/code&gt;. Un petit script Python a fait les 103 d&amp;rsquo;un coup.&lt;/p&gt;
 &lt;p&gt;Un piège au passage : un titre contenait un &lt;code&gt;#&lt;/code&gt; échappé en &lt;code&gt;\#&lt;/code&gt; par Pelican, ce que le YAML de Hugo refuse. Il a fallu nettoyer ces échappements à la conversion.&lt;/p&gt;
@@ -48,7 +48,7 @@
 &lt;p&gt;Je n&amp;rsquo;ai pas changé ma façon de publier : je build en local et je commite la sortie, signée. Juste, la commande d&amp;rsquo;avant — un &lt;code&gt;make&lt;/code&gt; qui réveillait Python — est devenue :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;en-résumé&#34;&gt;En résumé&lt;/h2&gt;
-&lt;p&gt;Même blog, même allure, &lt;strong&gt;mêmes URLs&lt;/strong&gt;, mêmes commentaires — mais un seul binaire à la place de tout un environnement Python. Onze ans après Tumblr, le blog change encore de moteur sans que ça se voie de l&amp;rsquo;extérieur. C&amp;rsquo;est exactement ce qu&amp;rsquo;on demande à une migration.&lt;/p&gt;
+&lt;p&gt;Même blog, même allure, mêmes URLs, mêmes commentaires — mais un seul binaire à la place de tout un environnement Python. Onze ans après Tumblr, le blog change encore de moteur sans que ça se voie de l&amp;rsquo;extérieur. C&amp;rsquo;est exactement ce qu&amp;rsquo;on demande à une migration.&lt;/p&gt;
 </content>
   </entry>
   
