@@ -2,7 +2,7 @@ Title: Trois parades contre le spam : cloisonner, autoriser, défier
 Date: 2026-08-21 10:00:00
 Author: choiz
 Category: text
-Tags: mail, spam, smtp, antispam
+Tags: mail, antispam, smtp
 Slug: 2026-08-21-trois-parades-contre-le-spam
 Status: published
 

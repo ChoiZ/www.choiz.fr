@@ -2,7 +2,7 @@ Title: Upgrade NAS
 Date: 2017-08-26 11:04:27
 Author: choiz
 Category: text
-Tags: nas, debian, stockage, linux
+Tags: nas, debian, storage, linux
 Slug: 2017-08-26-upgrade-nas
 Status: published
 

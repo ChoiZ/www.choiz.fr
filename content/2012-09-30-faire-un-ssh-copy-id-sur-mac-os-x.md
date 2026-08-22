@@ -2,7 +2,7 @@ Title: Faire un ssh-copy-id sur Mac OS X
 Date: 2012-09-30 11:50:54
 Author: choiz
 Category: text
-Tags: ssh, key, osx
+Tags: ssh, osx
 Slug: 2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x
 Status: published
 

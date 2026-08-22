@@ -2,7 +2,7 @@ Title: Installation de xubuntu 16.04 sur ASUS X205TA
 Date: 2016-05-21 16:34:57
 Author: choiz
 Category: text
-Tags: xubuntu, linux, computer
+Tags: xubuntu, linux, hardware
 Slug: 2016-05-21-installation-de-xubuntu-16-04-sur-ASUS-X205TA
 Status: published
 

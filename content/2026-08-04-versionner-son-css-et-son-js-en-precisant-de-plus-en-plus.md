@@ -2,7 +2,7 @@ Title: Versionner son CSS et son JS en précisant de plus en plus
 Date: 2026-08-04 09:30:00
 Author: choiz
 Category: text
-Tags: css, js, deploy, cache, version
+Tags: css, javascript, deploy, cache, version
 Slug: 2026-08-04-versionner-son-css-et-son-js-en-precisant-de-plus-en-plus
 Status: published
 
