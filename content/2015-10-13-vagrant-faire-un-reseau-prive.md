@@ -9,7 +9,7 @@ Status: published
 J'utilise plusieurs machines virtuelles avec vagrant, une avec un
 backoffice et une avec une API.
 
-J'ai donc du faire un réseau privé dans vagrant pour que le BO
+J'ai donc dû faire un réseau privé dans vagrant pour que le BO
 communique avec l'API.
 
 Il suffit de modifier la configuration de la vm \#1 et d'ajouter :

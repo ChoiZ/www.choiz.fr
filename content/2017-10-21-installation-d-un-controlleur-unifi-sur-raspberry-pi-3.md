@@ -1,4 +1,4 @@
-Title: Installation d'un controlleur Unifi sur Raspberry Pi 3
+Title: Installation d'un contrôleur Unifi sur Raspberry Pi 3
 Date: 2017-10-21 21:57:19
 Author: choiz
 Category: text
@@ -45,10 +45,10 @@ dd bs=4M if=2017-09-07-raspbian-stretch-lite.img of=/dev/sdb conv=fsync
 1854590976 bytes (1,9 GB, 1,7 GiB) copied, 288,12 s, 6,4 MB/s
 ```
 
-Une fois le Raspberry Pi démarrer s'identifier avec : pi / raspberry (attention
-le clavier est en qwerty pour l'instant donc tapper rqspberry en mot de passe ;-)
+Une fois le Raspberry Pi démarré s'identifier avec : pi / raspberry (attention
+le clavier est en qwerty pour l'instant donc taper rqspberry en mot de passe ;-)
 
-Puis tappez la commande `sudo bash` pour passer en root puis `raspi-config` pour
+Puis tapez la commande `sudo bash` pour passer en root puis `raspi-config` pour
 configurer votre Raspberry Pi.
 
 1. Changer les locales (4 Localisation Option, puis I1 Change Locale),
@@ -75,9 +75,9 @@ configurer votre Raspberry Pi.
 8. 2 Hostname si vous voulez changer le nom de votre raspberry par exemple
 "raspberrypi3".
 
-9: Finish, et redémarrer.
+9. Finish, et redémarrer.
 
-Récuperer l'adresse ip du raspberry pi pour se connecter dessus via SSH.
+Récupérer l'adresse ip du raspberry pi pour se connecter dessus via SSH.
 
 ```
 ssh pi@adresseip
@@ -107,10 +107,10 @@ root@raspberrypi3:/home/pi# `echo 'JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp
 
 root@raspberrypi3:/home/pi# `reboot`
 
-Une fois le raspberry pi démarrer se rendre sur `https://ip_raspberry:8443` vous
+Une fois le raspberry pi démarré se rendre sur `https://ip_raspberry:8443` vous
 devriez avoir votre interface Unifi disponible.
 
-Mettre à jour votre materiel unifi depuis le controlleur. Puis sur le raspberry
+Mettre à jour votre matériel unifi depuis le contrôleur. Puis sur le raspberry
 pi nous allons changer d'adresse ip pour avoir un réseau séparé.
 
 ```
@@ -129,7 +129,7 @@ iface eth0 inet static
     gateway 10.0.0.1
 ```
 
-Enregistrer le fichier et quitter (ne pas rédémarrer le pi pour l'instant).
+Enregistrer le fichier et quitter (ne pas redémarrer le pi pour l'instant).
 
 Retourner sur l'interface d'unifi et modifier l'adresse ip de votre réseau LAN.
 
@@ -138,4 +138,4 @@ Gateway/Subnet 10.0.0.1/24
 Cliquer sur "UPDATE DHCP RANGE" puis enregistrer vos modifications dans l'onglet
 Devices votre USG devrait être en "provisionning".
 Redémarrez le Raspberry Pi avec `sudo reboot` puis vous reconnecter au
-controlleur avec la nouvelle adresse ip : `https://10.0.0.10:8443`.
+contrôleur avec la nouvelle adresse ip : `https://10.0.0.10:8443`.

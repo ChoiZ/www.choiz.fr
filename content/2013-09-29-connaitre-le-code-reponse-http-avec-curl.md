@@ -10,7 +10,7 @@ Pour connaitre le code réponse HTTP il suffit de faire :
 
     curl -IL url
 
-Voici l'exemble avec tumblr.com :
+Voici l'exemple avec tumblr.com :
 
     curl -IL http://tumblr.com
 

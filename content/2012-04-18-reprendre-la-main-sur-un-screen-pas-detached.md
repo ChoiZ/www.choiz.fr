@@ -13,7 +13,7 @@ Lorsque j'ai voulu "réattacher" mon "Screen" j'ai eu le message suivant :
 
 Habituellement je détache mon "Screen" mais cette fois j'ai oublié.
 
-Pour "détacher" / "réattacher" mon "Screen" j'ai du faire la commande suivante :
+Pour "détacher" / "réattacher" mon "Screen" j'ai dû faire la commande suivante :
 
     screen -dRR
 

@@ -287,15 +287,15 @@ Créer /etc/postfix/virtual\_mailbox :
 
     touch /etc/postfix/virtual_mailbox
 
-Pour créer un comte mail, éditer /etc/postfix/virtual\_mailbox :
+Pour créer un compte mail, éditer /etc/postfix/virtual\_mailbox :
 
     email@votredomaine.com          votredomaine.com/email@votredomaine.com/
     linus@torvald.com               torvald.com/linus@torvald.com/
 
-N'oubliez pas lors de la création de nouveau comptes mail d'éditer
+N'oubliez pas lors de la création de nouveaux comptes mail d'éditer
 /etc/dovecot/users ;-)
 
-Maintenant il faut dire a postfix que nous avons modifier nos fichiers
+Maintenant il faut dire à postfix que nous avons modifié nos fichiers
 virtuels :
 
     postmap /etc/postfix/virtual_alias
@@ -318,7 +318,7 @@ Editer /etc/postfix/master.cf :
      -o smtpd_tls_cert_file=/etc/dovecot/ssl/certificat.pem
      -o smtpd_tls_key_file=/etc/dovecot/ssl/certificat.key
 
-Puis redemarrer postfix :
+Puis redémarrer postfix :
 
     /etc/init.d/postfix restart
 

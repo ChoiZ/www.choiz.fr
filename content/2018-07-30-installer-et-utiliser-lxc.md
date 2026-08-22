@@ -60,7 +60,7 @@ debian9     STOPPED 0         -      -              -
 debian9wiki RUNNING 0         -      192.168.60.140 -
 ```
 
-Se connecter a l'aide de lxc-attach :
+Se connecter à l'aide de lxc-attach :
 
 ```
 lxc-attach -n debian9wiki

@@ -11,7 +11,7 @@ gentoo l’utilisation de layman peut faciliter la vie.
 
 Étant à la recherche de vagrant, la seule version disponible à ce jour
 sur gentoo est vagrant-1.4.3-r2… En allant sur le site officiel de
-vagrant je me rend compte que nous sommes à la version 1.7.3.
+vagrant je me rends compte que nous sommes à la version 1.7.3.
 
 J’ai donc trouvé un overlay avec vagrant-bin version 1.7.3 :
 <http://gpo.zugaina.org/app-emulation/vagrant-bin>
@@ -24,7 +24,7 @@ Installation :
 
     echo "source /usr/portage/local/layman/make.conf" >> /etc/make.conf
 
-Pour afficher tous les overlays disponible :
+Pour afficher tous les overlays disponibles :
 
     layman -L
 

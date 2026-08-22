@@ -10,7 +10,7 @@ C'est toujours la galère lorsque l'on veut que tout soit propre au
 niveau des permissions des dossiers / fichiers.
 
 Souvent la première chose que l'on fait : on va dans chaque dossier et
-on vérifie un a un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
+on vérifie un à un ses fichiers et sous-dossiers. Quand il y a 1 ou 2
 dossiers ça va mais quand on en a 40… on utilise une autre technique !
 
 J'utilise pour les dossiers :

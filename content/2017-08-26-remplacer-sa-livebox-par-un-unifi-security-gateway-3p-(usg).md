@@ -7,20 +7,20 @@ Tags: unifi, network
 Slug: 2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg)
 Status: published
 
-Ayant pas mal utilisé le materiel d'ubiquiti j'ai acheté un USG 3 pour la maison.
+Ayant pas mal utilisé le matériel d'ubiquiti j'ai acheté un USG 3 pour la maison.
 
 En recherchant un peu sur le net j'ai vu qu'il était possible de remplacer la
-livebox par l'USG tout en concervant la télévision etc… grâce aux VLANs.
+livebox par l'USG tout en conservant la télévision etc… grâce aux VLANs.
 
-Il y a pas mal de manipulations a faire avant de pouvoir remplacer totalement sa
+Il y a pas mal de manipulations à faire avant de pouvoir remplacer totalement sa
 livebox par l'USG.
 
-J'ai utilisé un raspberry pi qui me permet d'installer un controlleur UniFi qui
-permet de gerer son matériel de la marque.
+J'ai utilisé un raspberry pi qui me permet d'installer un contrôleur UniFi qui
+permet de gérer son matériel de la marque.
 
 En branchant l'USG au secteur il prend l'adresse IP 192.168.1.1 (la même que la
 livebox dans un premier temps ça aide pas…). Je branche donc l'USG en direct sur
-mon poste et je me connect en ssh dessus avec les login / pass : "ubnt / ubnt".
+mon poste et je me connecte en ssh dessus avec les login / pass : "ubnt / ubnt".
 
 Se rendre sur [mon générateur de configuration](https://www.l9.fr/usg-config-generator.php) pour générer un fichier config_usg.sh
 
@@ -40,7 +40,7 @@ Se connecter en ssh sur votre usg :
 ssh ubnt@192.168.1.1
 ```
 
-Remplacer le dhclient3, copier la rfc au bon endroit et rendre executable mon
+Remplacer le dhclient3, copier la rfc au bon endroit et rendre exécutable mon
 script :
 ```
 sudo bash
@@ -53,7 +53,7 @@ chmod a+x config_usg.sh
 ```
 
 Editer le fichier /opt/vyatta/sbin/vyatta-interfaces.pl et ajouter l'option 90
-du dhcp. Il faut aller a la ligne 194 :
+du dhcp. Il faut aller à la ligne 194 :
 ```
     $output .= "option rfc3442-classless-static-routes code 121 = array of unsigned integer 8;\n\n";
 ```
@@ -68,15 +68,15 @@ root@ubnt:/home/ubnt# reboot
 Proceed with reboot? [confirm]y
 ```
 
-Débrancher votre controlleur du réseau (pour ne pas que l'USG reprovisionne une
-vielle configuration).
+Débrancher votre contrôleur du réseau (pour ne pas que l'USG reprovisionne une
+vieille configuration).
 
 Se connecter de nouveau en ssh sur l'usg :
 ```
 ssh ubnt@192.168.1.1
 ```
 
-Se connecter en tant que root pour executer le script
+Se connecter en tant que root pour exécuter le script
 ```
 sudo bash
 ./config_usg.sh
@@ -112,7 +112,7 @@ Done
 [edit]
 ```
 
-Puis j'éteind l'USG pour remplacer la livebox.
+Puis j'éteins l'USG pour remplacer la livebox.
 
 Le port WAN1 pour l'ONT
 
@@ -120,8 +120,8 @@ Le port LAN1 pour votre réseau local
 
 Le port WAN2/LAN2 pour la télévision
 
-Quand j'arrive a joindre l'usg sur l'IP 192.168.1.1 je me reconnect en ssh et je
-me connect en root pour sauver la config et l'envoyer sur ma machine.
+Quand j'arrive à joindre l'usg sur l'IP 192.168.1.1 je me reconnecte en ssh et je
+me connecte en root pour sauver la config et l'envoyer sur ma machine.
 ```
 sudo bash
 mca-ctrl -t dump-cfg > config.gateway.json
@@ -129,29 +129,29 @@ scp config.gateway.json user@ma_machine:/home/user/
 ```
 
 Maintenant je me déconnecte de l'usg. Je débranche le câble réseau entre l'usg et
-mon réseau local pour pouvoir rebrancher mon controlleur. Si on débranche pas
-l'usg il va reprendre la config par defaut du controlleur et il faudra tout
+mon réseau local pour pouvoir rebrancher mon contrôleur. Si on débranche pas
+l'usg il va reprendre la config par défaut du contrôleur et il faudra tout
 refaire (hormis les copies des fichiers dhclient3 rfc… etc…).
 
-Depuis mon poste je copie sur mon controlleur le fichier config.gateway.json que
+Depuis mon poste je copie sur mon contrôleur le fichier config.gateway.json que
 je viens de sauver.
 ```
 scp config.gateway.json user@mon_controlleur:/home/user
 ```
 
-Puis je me connecte a mon controlleur en ssh pour déposer dans le bon dossier ce
+Puis je me connecte à mon contrôleur en ssh pour déposer dans le bon dossier ce
 fichier.
 
-Le dossier doit être `/data/sites/default` si vous utilisez le site par defaut.
+Le dossier doit être `/data/sites/default` si vous utilisez le site par défaut.
 
-Reconnecter l'USG a votre réseau.
+Reconnecter l'USG à votre réseau.
 
-Il va être de nouveau provisionné par votre controlleur, si vous avez des
+Il va être de nouveau provisionné par votre contrôleur, si vous avez des
 erreurs lors de ce provisionning elles seront affichées dans "alerts" sur votre
-controlleur. Dans ce cas il y a un truc qui cloche entre votre config et celle
-du controlleur revoir les différentes étapes.
+contrôleur. Dans ce cas il y a un truc qui cloche entre votre config et celle
+du contrôleur revoir les différentes étapes.
 
-Si le provisionning est ok l'USG redémarre et la config est enfin fini ! ;-)
+Si le provisionning est ok l'USG redémarre et la config est enfin finie ! ;-)
 
 Grand merci au forum lafibre.info et particulièrement ce [sujet](https://lafibre.info/remplacer-livebox/unifi-security-gateway-en-remplacement-de-la-livebox/).
 

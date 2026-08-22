@@ -8,7 +8,7 @@ Status: published
 
 Ayant enfin fini la migration de mon NAS vers mon nouveau NAS, j'ai récupéré mon troisième disque de 10To pour l'ajouter à ma grappe RAID1 qui contient déjà 2 disques de 10To.
 
-Pour ajouter le disque /dev/sdd dans la grappe /dev/md0 il faut tapper la commande suivante :
+Pour ajouter le disque /dev/sdd dans la grappe /dev/md0 il faut taper la commande suivante :
 
 ```
 mdadm --manage /dev/md0 --add /dev/sdd1

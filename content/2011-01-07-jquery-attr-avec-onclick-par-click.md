@@ -6,7 +6,7 @@ Tags: code, jquery, javascript
 Slug: 2011-01-07-jquery-attr-avec-onclick-par-click
 Status: published
 
-Après avoir perdu 2h… J'ai découvert que la methode attr() de jQuery
+Après avoir perdu 2h… J'ai découvert que la méthode attr() de jQuery
 fonctionne pas avec l'attribut "onclick"…
 
 Edit : Avec jQuery pour modifier le contenu d'un onclick il faut faire

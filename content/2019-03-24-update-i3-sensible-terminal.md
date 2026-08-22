@@ -15,7 +15,7 @@ par la ligne suivante :
 bindsym $mod+Return exec urxvt
 ```
 
-Je préfere ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par défaut `i3-sensible-terminal`.
+Je préfère ne pas modifier cette ligne à chaque installation de i3wm, donc je réédite ma ligne pour utiliser par défaut `i3-sensible-terminal`.
 
 Pour modifier le terminal executé par la commande `i3-sensible-terminal` il suffit donc de lancer la commande suivante puis de choisir dans mon cas urxvt :
 ```

@@ -39,5 +39,5 @@ Maintenant il faut ajouter dans notre page html entre les balises head :
     <link rel="apple-touch-icon-precomposed" sizes="120x120" href="touch-icon-iphone-retina.png">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="touch-icon-ipad-retina.png">
 
-A noter les appareils Android utilisent aussi les images
+À noter les appareils Android utilisent aussi les images
 "apple-touch-icon".

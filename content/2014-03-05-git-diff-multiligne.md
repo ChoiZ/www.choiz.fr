@@ -9,10 +9,10 @@ Status: published
 Lors d'une modification d'un bout de code, j'ai perdu la fin d'une
 ligne…
 
-J'ai du faire un *git diff* dans mon terminal et copié la ligne (mais
+J'ai dû faire un *git diff* dans mon terminal et copié la ligne (mais
 pas entièrement…).
 
-J'ai donc refais un *git diff* dans mon terminal et je me suis aperçu
+J'ai donc refait un *git diff* dans mon terminal et je me suis aperçu
 que ma ligne qui devait être sur plusieurs lignes ne l'était pas…
 
 Mon fichier texte ressemble à ceci :

@@ -20,7 +20,7 @@ vim /etc/exports
 ```
 
 J'ajoute dans le fichier le dossier à partager `/home/user/share` et l'adresse
-du ou des clients qui peuvent accèder a ce partage
+du ou des clients qui peuvent accéder à ce partage
 `10.0.0.1(rw,sync,no_subtree_check)` ici mon client a l'adresse ip 10.0.0.1 ce
 qui donne :
 ```

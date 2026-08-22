@@ -15,7 +15,7 @@ texte.
 Comment l'utiliser ?
 
 `VS<b>` permet d'ajouter les balises &lt;b&gt; et &lt;/b&gt; avant et
-apres la ligne courante et d'indenter celle-ci.
+après la ligne courante et d'indenter celle-ci.
 
 `vims<a>` permet d'ajouter le tag &lt;a&gt; &lt;/a&gt; autour du mot sur
 lequel vous vous trouvez.

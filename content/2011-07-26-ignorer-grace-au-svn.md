@@ -13,8 +13,8 @@ Il existe plusieurs solutions pour ignorer des fichiers sur un svn :
 Ou dans la configuration du svn dans ~/.subversion/config le
 global-ignores
 
-Pour ignorer tous les fichiers qui commencent par ._ dans le dossier ou
-l'on se trouve actuellement il suffit d'executer la commande svn
+Pour ignorer tous les fichiers qui commencent par ._ dans le dossier où
+l'on se trouve actuellement il suffit d'exécuter la commande svn
 suivante :
 
     svn propset svn:ignore "._*" .
@@ -25,7 +25,7 @@ fichier ~/.subversion/config et d'éditer la ligne suivante :
 
     global-ignores = ._*
 
-On peut également ajouter d'autres fichiers a ignorer tel que les .swp
+On peut également ajouter d'autres fichiers à ignorer tel que les .swp
 de Vim ou les .DS_STORE de Mac OS en remplaçant comme ceci :
 
     global-ignores = ._* .DS_STORE *.swp

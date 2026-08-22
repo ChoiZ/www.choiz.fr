@@ -18,13 +18,13 @@ Quand je vais sur le master il m’arrive d’avoir ce message :
 Je préfèrerai que ma branche soit à jour avec mon origin/master et non
 github/master.
 
-La solution que j’ai trouvé est la suivante :
+La solution que j’ai trouvée est la suivante :
 
 1.  supprimer ma branche master locale :
 
         git branch -d master
 
-2.  récupèrer mon master depuis le remote origin :
+2.  récupérer mon master depuis le remote origin :
 
         git checkout -t -b master origin/master
 

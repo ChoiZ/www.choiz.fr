@@ -8,7 +8,7 @@ Status: published
 
 Lors de l'installation de Debian sur mon poste au travail j'ai eu la
 surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
-chez Deezer c'est un peu problèmatique.
+chez Deezer c'est un peu problématique.
 
 J'ai donc téléchargé le package flashplugin-nonfree en procédant comme
 ceci :
@@ -23,5 +23,5 @@ Ajouter contrib non-free aux différentes sources (sauf security) puis :
 
 En relançant Firefox j'ai bien flash player fonctionnel sur Deezer.
 
-Le package flashplugin étant nonfree Debian ne l'inclus pas directement
+Le package flashplugin étant nonfree Debian ne l'inclut pas directement
 lors de l'installation.

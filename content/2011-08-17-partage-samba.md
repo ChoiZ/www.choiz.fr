@@ -6,7 +6,7 @@ Tags: linux
 Slug: 2011-08-17-partage-samba
 Status: published
 
-Configuration d'un serveur samba. Editer le fichier de configuration
+Configuration d'un serveur samba. Éditer le fichier de configuration
 /etc/samba/smb.conf Voici le contenu de mon fichier de configuration :
 
     | ### Global ###
@@ -41,7 +41,7 @@ Maintenant il faut créer notre utilisateur "choiz" grâce à :
 
     smbpasswd -a choiz
 
-Pour les groupes samba utilise les groupes unix. A vous de voir si vous
+Pour les groupes samba utilise les groupes unix. À vous de voir si vous
 voulez gérer votre partage samba utilisateur par utilisateur ou
 directement avec des groupes.
 

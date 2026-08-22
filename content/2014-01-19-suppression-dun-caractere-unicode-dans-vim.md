@@ -6,7 +6,7 @@ Tags: vim, encoding
 Slug: 2014-01-19-suppression-dun-caractère-unicode-dans-vim
 Status: published
 
-J'étais à la recherche de se caractère unicode dans vim :
+J'étais à la recherche de ce caractère unicode dans vim :
 
     <U+2028>
 

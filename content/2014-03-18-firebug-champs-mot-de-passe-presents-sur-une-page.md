@@ -18,11 +18,11 @@ Ainsi que :
     formulaire non sécurisée (http://). Cela représente un risque de sécurité
     permettant le vol d'identifiants de connexion.
 
-La première indications informe que vous n'êtes pas sur un site
-utilisant le HTTPS. Lorsque vous allez remplir le champs "password"
+La première indication informe que vous n'êtes pas sur un site
+utilisant le HTTPS. Lorsque vous allez remplir le champ "password"
 celui-ci sera envoyé en clair sur le réseau.
 
-La seconde indication informe que l'action du formulaire envoi sur une
+La seconde indication informe que l'action du formulaire envoie sur une
 page qui n'est pas en HTTPS.
 
 Vous pouvez avoir votre formulaire sur l'url :

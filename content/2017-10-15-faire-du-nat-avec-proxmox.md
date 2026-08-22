@@ -6,14 +6,14 @@ Tags: network, proxmox
 Slug: 2017-10-15-faire-un-nat-avec-proxmox
 Status: published
 
-L'idée est d'utiliser qu'une seule adresse ip public pour plusieurs VM. Comme à
+L'idée est d'utiliser qu'une seule adresse ip publique pour plusieurs VM. Comme à
 la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut
 faire la même chose.
 
-Ip Public de proxmox : 11.22.33.44
-Ip Privé de proxmox : 10.0.0.254
+Ip Publique de proxmox : 11.22.33.44
+Ip Privée de proxmox : 10.0.0.254
 
-Je me connect en ssh à Proxmox et je modifie le fichier `/etc/network/interfaces`
+Je me connecte en ssh à Proxmox et je modifie le fichier `/etc/network/interfaces`
 j'ajoute à la fin du fichier :
 
     auto vmbr2
@@ -28,7 +28,7 @@ j'ajoute à la fin du fichier :
         post-down iptables -t nat -D POSTROUTING -s '10.0.0.0/24' -o vmbr0 -j MASQUERADE
 
 On peut également ajouter si on veut différents ports qu'on ouvre vers
-l'exterieur vers tel ou tel VM ou conteneur.
+l'extérieur vers tel ou tel VM ou conteneur.
 Par exemple j'ouvre le port 22 de mon conteneur avec l'ip 10.0.0.1 sur le port
 8022 de mon ip public :
 

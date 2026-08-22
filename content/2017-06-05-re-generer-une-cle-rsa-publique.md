@@ -9,7 +9,7 @@ Status: published
 Si vous n'avez plus de clé publique, mais que vous avez toujours votre clé privée vous pouvez regénérer votre clé
 publique.
 
-Pour se faire il faut utiliser la commande *ssh-keygen* avec l'option *-y* et *-f* pour désigner la clé privé.
+Pour ce faire il faut utiliser la commande *ssh-keygen* avec l'option *-y* et *-f* pour désigner la clé privée.
 
 ```ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub```
 

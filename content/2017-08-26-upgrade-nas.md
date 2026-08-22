@@ -10,7 +10,7 @@ J'ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
 dessus j'avais installé Debian 6 à l'époque puis j'ai mis à jour jusqu'à la version 9.
 
 Mon objectif est l'ajout d'un disque car j'ai 4 emplacements pour le stockage et
-je n'utilisais que 3 de ses 4 emplacements.
+je n'utilisais que 3 de ces 4 emplacements.
 
 Pour commencer il me fallait un rack 5"¼ permettant de mettre un disque 3"½ ou
 2"½, je l'ai trouvé sur [LDLC](http://www.ldlc.com/fiche/PB00157318.html) c'est
@@ -22,7 +22,7 @@ SATA et l'alimentation.
 Ce qui m'a permis de mettre un disque 2"½ au niveau de l'emplacement CDROM du HP
 Microserver.
 
-J'ai du tué mon uptime d'un an (depuis mon dernier déménagement) :
+J'ai dû tuer mon uptime d'un an (depuis mon dernier déménagement) :
 
 ```
  12:31:37 choiz@wayland ~  #❯❯❯ uptime
@@ -50,7 +50,7 @@ Installer le serveur DHCP :
 # apt install isc-dhcp-server
 ```
 
-Mes IP sont dans le réseau 192.168.1.0/24, mon router en 192.168.1.1, je met un
+Mes IP sont dans le réseau 192.168.1.0/24, mon router en 192.168.1.1, je mets un
 range entre 192.168.1.100 et 192.168.1.150 mon serveur TFTP est en 192.168.1.2.
 
 Voici la conf d'isc-dhcp-server :
@@ -96,9 +96,9 @@ notre TFTP :
 
 Le PXE est maintenant fonctionnel avec l'installation de debian.
 
-Je réinstall donc debian 9.1 proprement.
+Je réinstalle donc debian 9.1 proprement.
 
-Pour éviter d'avoir ses messages d'erreurs :
+Pour éviter d'avoir ces messages d'erreurs :
 ```
 W: Possible missing firmware /lib/firmware/tigon/tg3_tso5.bin for module tg3
 W: Possible missing firmware /lib/firmware/tigon/tg3_tso.bin for module tg3
@@ -113,4 +113,4 @@ apt update
 apt install firmware-linux-nonfree
 ```
 
-Il me reste plus qu'a remonter mes disques de backup et de refaire mes partages.
+Il me reste plus qu'à remonter mes disques de backup et de refaire mes partages.

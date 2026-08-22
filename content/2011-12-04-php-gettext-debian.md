@@ -14,7 +14,7 @@ sur votre site en php il faut télécharger le package php-gettext :
     apt-get install php-gettext
 
 Ensuite il faut modifier le fichier /etc/locale.gen et enlever les
-commentaires devant les langues qui vont sont à traduire par exemple :
+commentaires devant les langues qui sont à traduire par exemple :
 Allemand, Anglais, Espagnol, Français & Suédois :
 
     de_DE.UTF-8 UTF-8
@@ -23,7 +23,7 @@ Allemand, Anglais, Espagnol, Français & Suédois :
     fr_FR.UTF-8 UTF-8
     sv_SE.UTF-8 UTF-8
 
-Puis regénérer les locales :
+Puis régénérer les locales :
 
     locale-gen
 
@@ -60,12 +60,12 @@ Puis faites le test en affichant dans un fichier php le texte "hello" :
     echo _('hello');
     ?>
 
-Pour générer un fichier .mo a partir d'un fichier .po :
+Pour générer un fichier .mo à partir d'un fichier .po :
 
     msgfmt domaine.po -o domaine.mo
 
-Pour générer un fichier .po a partir de fichier php avec du gettext,
-faire un fichier texte avec tous vos fichiers php ou on doit récupérer
+Pour générer un fichier .po à partir de fichier php avec du gettext,
+faire un fichier texte avec tous vos fichiers php où on doit récupérer
 le gettext.
 
 Exemple listing\_gettext.txt tel que :
@@ -90,5 +90,5 @@ web :
 N'oubliez pas de redémarrer votre serveur web pour que les changements
 soient pris en compte.
 
-Mise à jour le 30 Novembre 2015 par
+Mise à jour le 30 novembre 2015 par
 [doogaille](http://www.github.com/doogaille).

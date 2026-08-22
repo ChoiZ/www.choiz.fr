@@ -13,7 +13,7 @@ fichier avec vim :
 
 Explications :
 
-`:1,$` : Sélection des ligne 1 à $ ($ étant la dernière).
+`:1,$` : Sélection des lignes 1 à $ ($ étant la dernière).
 
 `s/^/\#/` : `s` pour search, `^` indique le début de ligne, `/` est un
 séparateur pour la recherche et pour ce que l'on souhaite remplacer et `\#`

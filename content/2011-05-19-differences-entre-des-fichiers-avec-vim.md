@@ -8,7 +8,7 @@ Status: published
 
 J'ai souvent besoin de voir les différences entre plusieurs fichiers...
 J'utilise souvent la commande diff dans un terminal, mais mon éditeur
-texte favoris "Vim" sait aussi trés bien faire un différentiel.
+texte favori "Vim" sait aussi très bien faire un différentiel.
 Utilisation avec le terminal :
 
     diff fichier1 fichier2
@@ -22,7 +22,7 @@ Utilisation avec vim :
 
 Ensuite il suffit d'utiliser (CTRL + W puis W) pour changer de fenêtre
 (gauche à droite ou droite à gauche) ou bien en utilisant (CTRL + W puis
-fléche de droite ou gauche) suivant la direction ou on veut aller.
+flèche de droite ou gauche) suivant la direction où on veut aller.
 
 Pour le reste des commandes reportez-vous au [guide de survie de
 vi](http://matrix.samizdat.net/pratique/documentation/guide-survie-VI.html)

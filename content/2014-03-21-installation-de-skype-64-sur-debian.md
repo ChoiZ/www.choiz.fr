@@ -9,7 +9,7 @@ Status: published
 Télécharger la dernière version de [Skype](http://www.skype.com) (Debian
 7.0 \[multiarch\]).
 
-Ajouter l'achitecture i386 si vous ne l'avez pas déjà fait. :
+Ajouter l'architecture i386 si vous ne l'avez pas déjà fait. :
 
     dpkg --add-architecture i386
 

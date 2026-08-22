@@ -18,12 +18,12 @@ tout malheureusement.
 
 La touche "enter" du pavé numérique ne fonctionne pas il faut donc
 cliquer sur "+" et dans Keyboard Shortcut: appuyer sur la touche et "↩"
-doit apparaitre. Dans Action: choisir "Send Hex Code" et taper "0xd".
+doit apparaître. Dans Action: choisir "Send Hex Code" et taper "0xd".
 
-J'ai également ajouter 2 raccourcis bien pratiques :
+J'ai également ajouté 2 raccourcis bien pratiques :
 
 -   "alt et fleche de gauche" soit "⌥←" avec le code "\[H" permet de
-    revenir au debut de la ligne de commande que l'on tape (pratique si
+    revenir au début de la ligne de commande que l'on tape (pratique si
     on oublie un argument).
 -   "alt et fleche de droite" soit "⌥→" avec le code "\[F" pour aller à
     la fin de la ligne.

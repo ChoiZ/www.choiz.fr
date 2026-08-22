@@ -27,13 +27,13 @@ On décompresse avec :
 Il suffit de retenir :
 
 -c comme compression / "x" comme eXtract ou eXtraction. -v pour le mode
-verbeux. -z pour le "gzip" d'ou le ".gz". -f pour spécifier le fichier.
+verbeux. -z pour le "gzip" d'où le ".gz". -f pour spécifier le fichier.
 
 tar.bz2
 -------
 
-Pour les `tar.bz2` je ne sais JAMAIS qu'il faut remplacer "z" de gizip
-par "j" de Bzip… (la lettre "b" étant sans doute utilisé avant que le
+Pour les `tar.bz2` je ne sais JAMAIS qu'il faut remplacer "z" de gzip
+par "j" de Bzip… (la lettre "b" étant sans doute utilisée avant que le
 bzip n'apparaisse). L'alternative est d'utiliser "--bzip"
 
 On compresse avec :

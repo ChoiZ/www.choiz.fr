@@ -6,9 +6,9 @@ Tags: proxmox, debian, linux
 Slug: 2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch
 Status: published
 
-Suite à l'installation de mon NAS, j'ai installer un proxmox dessus.
+Suite à l'installation de mon NAS, j'ai installé un proxmox dessus.
 Par contre il ne faut pas modifier le sources.list ni installer
-firmware-linux-nonfree avant d'installer proxmox (celà ne fonctionne pas du
+firmware-linux-nonfree avant d'installer proxmox (cela ne fonctionne pas du
 tout).
 
 Sur debian éditer le fichier /etc/hosts comme ceci :
@@ -28,7 +28,7 @@ hostname --ip-address
 192.168.15.77 # should return here your IP adress
 ```
 
-Puis on ajoute au sources.list le dépot de proxmox, on récupere la clé et on
+Puis on ajoute au sources.list le dépôt de proxmox, on récupère la clé et on
 update :
 ```
 echo "deb http://download.proxmox.com/debian/pve stretch pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list
@@ -36,7 +36,7 @@ wget http://download.proxmox.com/debian/proxmox-ve-release-5.x.gpg -O /etc/apt/t
 apt update && apt dist-upgrade
 ```
 
-Puis on install les packages Proxmox VE :
+Puis on installe les packages Proxmox VE :
 ```
 apt install proxmox-ve postfix open-iscsi
 ```
@@ -60,7 +60,7 @@ remplacer par :
 
 Puis relancer pveproxy avec la commande `pveproxy restart`
 
-Se déconnecter de l'interface proxmox, à la reconnection vous n'aurez plus le
+Se déconnecter de l'interface proxmox, à la reconnexion vous n'aurez plus le
 message de souscription.
 
 Puis faire les commandes optionnelles :

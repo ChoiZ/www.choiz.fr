@@ -20,7 +20,7 @@ valide) de "choiz.fr" vers le 443 de
 "www.choiz.fr".
 - Un vhost pour "www.choiz.fr" qui redirige le port 80 de "www.choiz.fr" vers
 le 443 de "www.choiz.fr".
-- Et un vhost avec le certificat SSL ainsi que le reverse proxy qui fait croire a
+- Et un vhost avec le certificat SSL ainsi que le reverse proxy qui fait croire à
 github que je tape directement l'url "http://choiz.github.io".
 
 Ici la configuration du dernier vhost :

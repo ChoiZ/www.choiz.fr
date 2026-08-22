@@ -6,8 +6,8 @@ Tags: git
 Slug: 2015-08-25-suppression-des-branches-distantes-inexistantes
 Status: published
 
-Lors d'un developpement j'ai créé une branche "add\_namespace" qui m'a
-permis d'ajouté des namespaces a différents fichiers PHP.
+Lors d'un développement j'ai créé une branche "add\_namespace" qui m'a
+permis d'ajouter des namespaces à différents fichiers PHP.
 
 Une fois la modification faite j'ai envoyé ma branche sur l'origin, en
 faisant un "pull request" (github) ou "merge request" (gitlab).
@@ -27,7 +27,7 @@ Sur mon environnement je vois toujours cette branche.
 >
 > remote/origin/master
 
-Pour pouvoir effacer cette branche dans le remote, il suffit de tapper
+Pour pouvoir effacer cette branche dans le remote, il suffit de taper
 la commande :
 
 > git remote prune origin

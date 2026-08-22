@@ -9,7 +9,7 @@ Status: published
 Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
 virtuel en console.
 
-Ici on créer un tuyau virtuel de 1Mbit/s.
+Ici on crée un tuyau virtuel de 1Mbit/s.
 
 `sudo ipfw pipe 1 config bw 1Mbit/s`
 

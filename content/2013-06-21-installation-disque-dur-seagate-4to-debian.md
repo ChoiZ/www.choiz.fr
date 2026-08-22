@@ -39,7 +39,7 @@ commandes en fonction de votre configuration. :
     Using /dev/sdd
     Welcome to GNU Parted! Type 'help' to view a list of commands.
 
-Définir le label GPT qui permet de faire des partition &gt; 2To. :
+Définir le label GPT qui permet de faire des partitions &gt; 2To. :
 
     mklabel gpt
 
@@ -99,4 +99,4 @@ Formater la partition avec un système de fichiers donné :
     Écriture des superblocs et de l'information de comptabilité du système de
     fichiers : complété
 
-Il ne reste plus qu'a monter la partition et éditer le fstab ;)
+Il ne reste plus qu'à monter la partition et éditer le fstab ;)

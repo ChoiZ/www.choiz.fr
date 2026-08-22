@@ -7,7 +7,7 @@ Slug: 2012-04-14-utilisation-des-branches-et-de-git-stash
 Status: published
 
 Quand j'utilise git avec des branches il m'arrive d'avoir des fichiers
-sur une branche qui sont pas a commiter dans l'immédiat. J'utilise donc
+sur une branche qui sont pas à commiter dans l'immédiat. J'utilise donc
 git stash, voyons voir comment l'utiliser simplement.
 
 On regarde l'état du status et des branches :
@@ -19,7 +19,7 @@ On regarde l'état du status et des branches :
     $ git branch
     * master
 
-Je travail sur la branche master et je n'ai pas d'autre branche. Je vais
+Je travaille sur la branche master et je n'ai pas d'autre branche. Je vais
 donc faire une branche API pour mon projet. :
 
     git branch API
@@ -38,7 +38,7 @@ branche API et modifier les fichiers sur cette branche. :
     * API
       master
 
-Maintenant je vais modifier un mon fichier manage.py sur ma branche API.
+Maintenant je vais modifier mon fichier manage.py sur ma branche API.
 :
 
     git status
@@ -107,11 +107,11 @@ les modifications précédentes git stash pop. :
 Maintenant je peux continuer les modifications sur ma branche API
 réutilise git stash si besoin ou les commiter, merger ma branche…
 
-git stash pop (récupére le dernier stash enregistré
+git stash pop (récupère le dernier stash enregistré
 [stash@{0}](mailto:stash@{0}), l'applique et le supprime de la liste)
 mon alias = git stapp
 
-git stash apply (récupére le dernier stash enregistré
-[stash@{0](mailto:stash@{0)} et l'applique)
+git stash apply (récupère le dernier stash enregistré
+[stash@{0}](mailto:stash@{0}) et l'applique)
 
 Et pour rien n'oublier (RTFM) : man git stash

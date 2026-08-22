@@ -19,7 +19,7 @@ api_get('books/1');
 api_add('books', $datas);
 ```
 
-Je test généralement chaque élément séparement.
+Je teste généralement chaque élément séparément.
 
 Pour tester la première portion de mon code :
 

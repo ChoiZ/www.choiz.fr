@@ -6,7 +6,7 @@ Tags: php, vim, cli
 Slug: 2011-04-13-petit-tips-pour-les-utilisateurs-de-vim-et-php
 Status: published
 
-Lorsque je code en PHP, pour tester si il y a des erreurs généralement
+Lorsque je code en PHP, pour tester s'il y a des erreurs généralement
 dans la console je tape la commande :
 
     php -l fichier_a_tester.php

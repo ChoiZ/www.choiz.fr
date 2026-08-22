@@ -18,7 +18,7 @@ pouvez spécifier un autre chemin ainsi qu'un autre fichier. :
     Enter passphrase (empty for no passphrase):
 
 Ici on tape un mot de passe si on en veut un lors de la connexion aux
-différents hosts. En général j'en défini un.
+différents hosts. En général j'en définis un.
 
 Pour finir on copie la clé sur le serveur soit via scp :
 

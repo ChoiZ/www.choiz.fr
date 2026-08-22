@@ -21,7 +21,7 @@ Une fois le fichier versionné vous obtiendrez :
 
     $Id: ajax\_modif.php 481 2010-10-25 12:02:50Z choiz $
 
-D'autres keywords sont disponible tel que :
+D'autres keywords sont disponibles tel que :
 
     $Revision:$
     $Date:$

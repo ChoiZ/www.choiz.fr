@@ -22,5 +22,5 @@ $_SERVER["PHP_AUTH_PW"] == "password") {
 ```
 
 Attention l'utilisation du htaccess n'est pas recommandée sur une connexion non
-chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffré
+chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffrée
 (HTTPS).

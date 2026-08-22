@@ -10,7 +10,7 @@ Dans le terminal sur votre mac :
 
     diskutil list
 
-Qui permet de lister vos disque dur / clés usb etc…
+Qui permet de lister vos disques durs / clés usb etc…
 
 ici ma clé usb est disk2. :
 

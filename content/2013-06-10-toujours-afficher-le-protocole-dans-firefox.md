@@ -12,7 +12,7 @@ fois <http://>…
 
 Pour résoudre ce problème j'affiche toujours le protocole dans Firefox :
 
-Ecrire dans la barre d'adresse :
+Écrire dans la barre d'adresse :
 
     about:config
 

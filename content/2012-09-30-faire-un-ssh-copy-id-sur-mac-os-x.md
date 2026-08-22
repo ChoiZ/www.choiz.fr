@@ -10,7 +10,7 @@ Si vous avez tenté d’utiliser la commande ssh-copy-id sur Mac OS X, vous
 avez dû vous rendre compte que, même si openssh est installé nativement,
 cette commande n’est pas disponible.
 
-Cette commande n'est pas disponible par defaut sur Mac OS X. Mais on
+Cette commande n'est pas disponible par défaut sur Mac OS X. Mais on
 peut la rendre disponible facilement en quelques étapes. Créer un
 fichier "ssh-copy-id" dans le dossier "/usr/bin/" avec ce contenu :
 
@@ -64,7 +64,7 @@ fichier "ssh-copy-id" dans le dossier "/usr/bin/" avec ce contenu :
 
     EOF
 
-Il ne reste qu'a donner les droits au fichier :
+Il ne reste qu'à donner les droits au fichier :
 
     chmod 755 /usr/bin/ssh-copy-id
 

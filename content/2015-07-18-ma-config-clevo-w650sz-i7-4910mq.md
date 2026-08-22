@@ -17,9 +17,9 @@ i7 4910MQ (qui a un score sur
 plutôt remarquable).
 
 Je l'ai commandé sans ram, sans disque dur, avec un rack pour disque dur
-à la place d'un graveur dvd ou autre cd, sans extension de garanti pour
+à la place d'un graveur dvd ou autre cd, sans extension de garantie pour
 un peu moins de 1000€ (j'ai bénéficié d'une réduction de 5% et des frais
-de port gratuit). J'ai commandé mes barrettes de ram et mon mSata
+de port gratuits). J'ai commandé mes barrettes de ram et mon mSata
 ailleurs, car les marques en stock ne me plaisaient pas. *Note l'équipe
 de Anyware est bien sympa (ils ont enlevé les 2Go de ram qui m'étaient
 inutiles donc non facturé)* Plutôt que payer 2Go de ram et ne jamais les
@@ -34,11 +34,11 @@ moindre…
 
 Pour la compilation de chrome qui prenait 2/3h à elle seule sur mon
 ancien laptop, en 45mn c'était fait avec d'autres grosses applications
-tel que gimp ou darktable…
+telles que gimp ou darktable…
 
-Pour l'instant rien a redire sur cette machine.
+Pour l'instant rien à redire sur cette machine.
 
-Voici les modules a activer dans le noyau pour le réseau et le son :
+Voici les modules à activer dans le noyau pour le réseau et le son :
 
     Realtek 8169 gigabit ethernet support
     Build Analog Device HD-audio codec support

@@ -17,13 +17,13 @@ Host destination.local
 C'est tout.
 
 Explications : on utilise l'host *bastion.fr* pour se connecter à
-*destination.local*. Quand je tape sur ma machine local *ssh
+*destination.local*. Quand je tape sur ma machine locale *ssh
 choiz@destination.local* mon client SSH lit le fichier de configuration, se
 connecte à l'host *bastion.fr* avec l'utilisateur *user* puis fait une nouvelle
 connexion vers ma destination.
 
 Vous pouvez modifier votre configuration ssh pour se connecter à votre bastion
-avec une clé spécifique puis a votre destination avec une autre clé par exemple
+avec une clé spécifique puis à votre destination avec une autre clé par exemple
 ou avec des utilisateurs différents…
 
 Exemple :
