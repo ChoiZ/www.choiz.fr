@@ -1,0 +1,26 @@
+---
+title: "Touche pour sortir sa machine de veille"
+date: 2015-08-08T09:17:25
+slug: "2015-08-08-touche-pour-sortir-sa-machine-de-veille"
+author: choiz
+tags: ["keyboard", "hardware"]
+---
+
+Il y a quelques années, pour sortir ma machine de veille j'utilisais la
+touche "enter" ou "escape".
+
+Ce qui fonctionne mais, si vous êtes dans un programme d'installation
+qui demande une confirmation (formater tout le disque par exemple), en
+appuyant sur "enter" vous allez confirmer le formatage…
+
+Avec la touche escape vous allez généralement annuler l'action que l'on
+vous propose.
+
+Même problème avec toutes les autres touches : "espace" qui confirme
+généralement, "o" pour "oui", "y" pour "yes", "n" pour "no" ou "non", ou
+une quantité "1", "2", ou toute autre lettre définie telle que "a" pour
+"annuler", "c" pour "cancel"…
+
+Bref la seule touche que j'utilise pour sortir mon ordinateur de veille
+est "shift". Que ça soit le "shift" droit ou gauche il ne fait jamais
+d'action spécifique à ma connaissance ;-)

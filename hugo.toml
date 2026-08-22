@@ -1,0 +1,38 @@
+baseURL = "https://www.choiz.fr/"
+languageCode = "fr"
+defaultContentLanguage = "fr"
+title = "ChoiZ"
+
+# URLs identiques à Pelican : /slug.html à la racine
+uglyURLs = true
+
+[permalinks]
+  posts = "/:slug/"
+  tags = "/tag/:slug/"
+
+[taxonomies]
+  tag = "tags"
+
+[outputs]
+  home = ["HTML", "atom"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+
+[mediaTypes."application/atom+xml"]
+  suffixes = ["xml"]
+
+[outputFormats.atom]
+  mediaType = "application/atom+xml"
+  baseName = "all.atom"
+  path = "feeds"
+  isPlainText = true
+  noUgly = true
+  rel = "alternate"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  noClasses = false
+  lineNos = false

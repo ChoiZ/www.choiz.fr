@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ .Site.Title }}</title>
+  <subtitle>Blog technique de François LASSERRE</subtitle>
+  <link href="{{ .Site.BaseURL }}"/>
+  <link href="{{ "feeds/all.atom.xml" | absURL }}" rel="self" type="application/atom+xml"/>
+  <id>{{ .Site.BaseURL }}</id>
+  {{ $posts := where .Site.RegularPages "Section" "posts" }}
+  {{ with (index $posts 0) }}<updated>{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</updated>{{ end }}
+  {{ range first 20 $posts }}
+  <entry>
+    <title>{{ .Title }}</title>
+    <link href="{{ .Permalink }}"/>
+    <id>{{ .Permalink }}</id>
+    <updated>{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</updated>
+    <author><name>{{ .Params.author | default "choiz" }}</name></author>
+    {{ range .Params.tags }}<category term="{{ . }}"/>{{ end }}
+    <summary type="html">{{ .Summary | html }}</summary>
+    <content type="html">{{ .Content | html }}</content>
+  </entry>
+  {{ end }}
+</feed>

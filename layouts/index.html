@@ -1,0 +1,21 @@
+{{ define "main" }}
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ $paginator := .Paginate $posts 10 }}
+{{ range $i, $p := $paginator.Pages }}
+{{ if $i }}<hr />{{ end }}
+<article>
+  <header>
+    <h2><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h2>
+    <p>
+      Posté le {{ $p.Date | time.Format "Mon 2 January 2006" }}
+      {{ with $p.Params.tags }} &#8226; Tags : {{ range $j, $t := . }}{{ if $j }}, {{ end }}<a href="/tag/{{ $t | urlize }}.html">{{ $t }}</a>{{ end }}{{ end }}
+    </p>
+  </header>
+  <div>
+    {{ $p.Summary }}
+    {{ if $p.Truncated }}<p><a class="btn" href="{{ $p.RelPermalink }}">Lire la suite</a></p>{{ end }}
+  </div>
+</article>
+{{ end }}
+{{ partial "pagination.html" . }}
+{{ end }}

@@ -1,0 +1,33 @@
+---
+title: "Docker commandes utiles"
+date: 2017-05-14T21:47:35
+slug: "2017-05-14-docker-commandes-utiles"
+author: choiz
+tags: ["docker", "linux"]
+---
+
+Voici quelques commandes très utiles si vous utilisez docker.
+
+Supprimer tous les containers qui sont arrêtés :
+
+```
+docker ps -q | xargs docker rm
+```
+
+Supprimer toutes les images non utilisées :
+
+```
+docker images -q | xargs docker rmi
+```
+
+Se connecter à un conteneur docker lancé par son id :
+
+```
+docker exec -it id_de_votre_container /bin/bash
+```
+
+Se connecter à un conteneur docker lancé par son nom :
+
+```
+docker exec -it nom_de_votre_container /bin/bash
+```

@@ -1,0 +1,42 @@
+---
+title: "Mise à jour d'un kernel gentoo"
+date: 2015-11-21T13:50:44
+slug: "2015-11-21-mise-a-jour-d-un-kernel-gentoo"
+author: choiz
+tags: ["gentoo", "kernel", "linux"]
+---
+
+Étant actuellement sur un noyau en version 4.2.0, ci-dessous la marche à
+suivre pour le mettre à jour vers la version : 4.3.0.
+
+Je liste les différents noyaux gentoo disponibles :
+
+    eix sys-kernel/gentoo-sources
+
+Je télécharge le noyau 4.3.0 :
+
+    emerge -a =sys-kernel/gentoo-sources-4.3.0
+
+Une fois téléchargé, il faut modifier le lien symbolique /usr/src/linux
+grâce à eselect.
+
+J'affiche la liste des noyaux (celui actuellement sélectionné est suivi
+d'une étoile) :
+
+    eselect kernel list
+
+    [1]     linux-4.2.0-gentoo *
+    [2]     linux-4.3.0-gentoo
+
+Pour sélectionner notre noyau 4.3.0 il faut utiliser :
+
+    eselect kernel set 2
+
+Maintenant que vous avez sélectionné votre noyau, copier le fichier
+".config" de votre noyau précédent (pour conserver vos réglages de
+compilation) :
+
+    cp /usr/src/linux-4.2.0-gentoo/.config /usr/src/linux
+
+Puis [compiler votre
+kernel](http://www.choiz.fr/2015-09-06-compilation-kernel-gentoo.html).

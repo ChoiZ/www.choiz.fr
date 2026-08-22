@@ -1,0 +1,10 @@
+{{ $pag := .Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+<div class="pagination">
+  {{ if $pag.HasPrev }}<a class="btn" href="{{ $pag.Prev.URL }}" title="Nouveaux articles"><i class="fa fa-angle-left"></i></a>{{ end }}
+  {{ range $pag.Pagers }}
+    {{ if eq .PageNumber $pag.PageNumber }}<a class="btn current">{{ .PageNumber }}</a>{{ else }}<a class="btn" href="{{ .URL }}">{{ .PageNumber }}</a>{{ end }}
+  {{ end }}
+  {{ if $pag.HasNext }}<a class="btn" href="{{ $pag.Next.URL }}" title="Anciens articles"><i class="fa fa-angle-right"></i></a>{{ end }}
+</div>
+{{ end }}

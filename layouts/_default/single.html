@@ -1,0 +1,32 @@
+{{ define "main" }}
+<article>
+  <header>
+    <h1 id="{{ .Params.slug }}">{{ .Title }}</h1>
+    <p>Posté le {{ .Date | time.Format "Mon 2 January 2006" }}</p>
+  </header>
+  <div>
+    {{ .Content }}
+  </div>
+  <div class="tag-cloud">
+    <p>
+      {{ range .Params.tags }}<a href="/tag/{{ . | urlize }}.html">{{ . }}</a> {{ end }}
+    </p>
+  </div>
+  <div id="comments">
+    <h2>Commentaires</h2>
+    <div id="comments-loading" class="comments-loading" aria-live="polite">
+      <span class="comments-spinner" aria-hidden="true"></span>
+      Chargement des commentaires…
+    </div>
+  </div>
+  <script src="https://utteranc.es/client.js"
+          repo="ChoiZ/comments-on-choiz.fr" issue-term="url" label="blog"
+          theme="github-light" crossorigin="anonymous" async></script>
+  <script>
+  (function(){var l=document.getElementById('comments-loading');if(!l)return;var d=false;function h(){if(d)return;d=true;l.style.display='none';}
+  window.addEventListener('message',function(e){if(e.origin==='https://utteranc.es')h();});
+  var o=new MutationObserver(function(){var f=document.querySelector('.utterances-frame');if(f){f.addEventListener('load',h);o.disconnect();}});
+  o.observe(document.body,{childList:true,subtree:true});setTimeout(h,10000);})();
+  </script>
+</article>
+{{ end }}

@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article>
+  <header><h1>Archives</h1></header>
+  <div>
+    <dl>
+      {{ range (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
+      <dt>{{ .Date | time.Format "Mon 2 January 2006" }}</dt>
+      <dd><a href="{{ .RelPermalink }}">{{ .Title }}</a></dd>
+      {{ end }}
+    </dl>
+  </div>
+</article>
+{{ end }}
