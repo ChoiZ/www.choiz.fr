@@ -48,7 +48,7 @@
 &lt;p&gt;Je n&amp;rsquo;ai pas changé ma façon de publier : je build en local et je commite la sortie, signée. Juste, la commande d&amp;rsquo;avant — un &lt;code&gt;make&lt;/code&gt; qui réveillait Python — est devenue :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;en-résumé&#34;&gt;En résumé&lt;/h2&gt;
-&lt;p&gt;Même blog, même allure, mêmes URLs, mêmes commentaires — mais un seul binaire à la place de tout un environnement Python. Onze ans après Tumblr, le blog change encore de moteur sans que ça se voie de l&amp;rsquo;extérieur. C&amp;rsquo;est exactement ce qu&amp;rsquo;on demande à une migration.&lt;/p&gt;
+&lt;p&gt;Même blog, même allure, mêmes URLs, mêmes commentaires — mais un seul binaire à la place de tout un environnement Python. Le blog change encore de moteur sans que ça se voie de l&amp;rsquo;extérieur. C&amp;rsquo;est exactement ce qu&amp;rsquo;on demande à une migration.&lt;/p&gt;
 </content>
   </entry>
   
