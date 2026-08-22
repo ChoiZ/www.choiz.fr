@@ -17,38 +17,23 @@
     <category term="blog"/><category term="hugo"/><category term="pelican"/><category term="migration"/>
     <summary type="html">&lt;p&gt;En 2015 je migrais ce blog de &lt;a href=&#34;https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html&#34;&gt;Tumblr à Pelican&lt;/a&gt;. Onze ans après cette migration Tumblr → Pelican, je passe cette fois de Pelican à Hugo. Voici pourquoi et, surtout, comment sans rien casser.&lt;/p&gt;
 &lt;h2 id=&#34;pourquoi-changer&#34;&gt;Pourquoi changer&lt;/h2&gt;
-&lt;p&gt;Pelican m&amp;rsquo;a bien servi une décennie. Mais avec le temps, chaque publication traînait sa part de friction : un &lt;em&gt;virtualenv&lt;/em&gt; Python à réveiller, des bricolages de locale pour avoir mes dates en français, du CSS minifié à la main… Rien de bloquant, mais de l&amp;rsquo;agacement qui s&amp;rsquo;accumule.&lt;/p&gt;</summary>
+&lt;p&gt;Pelican m&amp;rsquo;a bien servi une décennie. Mais avec le temps, chaque publication traînait sa part de friction : un &lt;em&gt;virtualenv&lt;/em&gt; Python à réveiller, des bricolages de locale pour avoir mes dates en français, du CSS minifié à la main… Rien de bloquant, mais de l&amp;rsquo;agacement qui s&amp;rsquo;accumule. &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; répond exactement à ça : un seul binaire sans dépendance (fini le venv et les &lt;code&gt;pip install&lt;/code&gt; qui cassent), des builds quasi instantanés même sur cent articles, un pipeline d&amp;rsquo;assets intégré, et des taxonomies natives pour les tags.&lt;/p&gt;</summary>
     <content type="html">&lt;p&gt;En 2015 je migrais ce blog de &lt;a href=&#34;https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html&#34;&gt;Tumblr à Pelican&lt;/a&gt;. Onze ans après cette migration Tumblr → Pelican, je passe cette fois de Pelican à Hugo. Voici pourquoi et, surtout, comment sans rien casser.&lt;/p&gt;
 &lt;h2 id=&#34;pourquoi-changer&#34;&gt;Pourquoi changer&lt;/h2&gt;
-&lt;p&gt;Pelican m&amp;rsquo;a bien servi une décennie. Mais avec le temps, chaque publication traînait sa part de friction : un &lt;em&gt;virtualenv&lt;/em&gt; Python à réveiller, des bricolages de locale pour avoir mes dates en français, du CSS minifié à la main… Rien de bloquant, mais de l&amp;rsquo;agacement qui s&amp;rsquo;accumule.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; répond exactement à ça :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;un seul binaire, aucune dépendance — fini le venv et les &lt;code&gt;pip install&lt;/code&gt; qui cassent ;&lt;/li&gt;
-&lt;li&gt;des builds quasi instantanés, même sur cent articles ;&lt;/li&gt;
-&lt;li&gt;un pipeline d&amp;rsquo;assets intégré (Sass, empreinte de version…) ;&lt;/li&gt;
-&lt;li&gt;des taxonomies (tags) natives.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;la-contrainte-non-négociable--garder-les-urls&#34;&gt;La contrainte non négociable : garder les URLs&lt;/h2&gt;
-&lt;p&gt;Le vrai risque d&amp;rsquo;une migration, ce n&amp;rsquo;est pas le contenu — c&amp;rsquo;est de changer les URLs. Pour deux raisons : le référencement, et surtout mes commentaires. J&amp;rsquo;utilise &lt;a href=&#34;https://www.choiz.fr/2020-04-13-utiliser-les-github-issues-pour-avoir-des-commentaires-sur-le-blog.html&#34;&gt;utterances&lt;/a&gt;, qui indexe chaque fil de discussion par l&amp;rsquo;URL de la page. Si une URL change, les commentaires existants se détachent.&lt;/p&gt;
+&lt;p&gt;Pelican m&amp;rsquo;a bien servi une décennie. Mais avec le temps, chaque publication traînait sa part de friction : un &lt;em&gt;virtualenv&lt;/em&gt; Python à réveiller, des bricolages de locale pour avoir mes dates en français, du CSS minifié à la main… Rien de bloquant, mais de l&amp;rsquo;agacement qui s&amp;rsquo;accumule. &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; répond exactement à ça : un seul binaire sans dépendance (fini le venv et les &lt;code&gt;pip install&lt;/code&gt; qui cassent), des builds quasi instantanés même sur cent articles, un pipeline d&amp;rsquo;assets intégré, et des taxonomies natives pour les tags.&lt;/p&gt;
+&lt;h2 id=&#34;garder-les-urls&#34;&gt;Garder les URLs&lt;/h2&gt;
+&lt;p&gt;Le vrai risque d&amp;rsquo;une migration, ce n&amp;rsquo;est pas le contenu — c&amp;rsquo;est de changer les URLs. Pour deux raisons : le référencement, et surtout mes commentaires. J&amp;rsquo;utilise &lt;a href=&#34;https://www.choiz.fr/2020-04-13-utiliser-les-github-issues-pour-avoir-des-commentaires-sur-le-blog.html&#34;&gt;utterances&lt;/a&gt;, qui indexe chaque fil de discussion par l&amp;rsquo;URL de la page ; si une URL change, les commentaires existants se détachent.&lt;/p&gt;
 &lt;p&gt;Il fallait donc que Hugo produise exactement les mêmes chemins que Pelican, du type &lt;code&gt;/2015-11-15-configurer-un-serveur-mail.html&lt;/code&gt;. La recette dans &lt;code&gt;hugo.toml&lt;/code&gt; :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;uglyURLs&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;permalinks&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;posts&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/:slug/&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;tags&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/tag/:slug/&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Combiné à un &lt;code&gt;slug&lt;/code&gt; explicite dans chaque article, on retombe sur le &lt;code&gt;/slug.html&lt;/code&gt; à la racine. Un seul article m&amp;rsquo;a résisté : celui dont le slug contenait des parenthèses (&lt;code&gt;…-3p-(usg)&lt;/code&gt;), que Hugo « nettoyait ». Un &lt;code&gt;url:&lt;/code&gt; forcé dans son en-tête a réglé le cas :&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Résultat : les 103 articles ont gardé leur URL au caractère près, accents compris.&lt;/p&gt;
-&lt;h2 id=&#34;convertir-le-contenu&#34;&gt;Convertir le contenu&lt;/h2&gt;
-&lt;p&gt;Le corps des articles étant déjà en Markdown, il migre tel quel : titres, tableaux, images, blocs de code. Seul l&amp;rsquo;en-tête (les métadonnées) change de format — les &lt;code&gt;Title:&lt;/code&gt; / &lt;code&gt;Date:&lt;/code&gt; de Pelican deviennent du YAML entre &lt;code&gt;---&lt;/code&gt;. Un petit script Python a fait les 103 d&amp;rsquo;un coup.&lt;/p&gt;
-&lt;p&gt;Un piège au passage : un titre contenait un &lt;code&gt;#&lt;/code&gt; échappé en &lt;code&gt;\#&lt;/code&gt; par Pelican, ce que le YAML de Hugo refuse. Il a fallu nettoyer ces échappements à la conversion.&lt;/p&gt;
-&lt;h2 id=&#34;le-thème-les-tags-le-flux&#34;&gt;Le thème, les tags, le flux&lt;/h2&gt;
-&lt;p&gt;J&amp;rsquo;ai porté mon thème dans les &lt;em&gt;layouts&lt;/em&gt; Hugo : la colonne de gauche, la mise en page, la coloration du code. Les pages de tags retombent sur &lt;code&gt;/tags.html&lt;/code&gt; et &lt;code&gt;/tag/x.html&lt;/code&gt; comme avant, et le flux Atom reste au même endroit, &lt;code&gt;/feeds/all.atom.xml&lt;/code&gt;, pour ne pas perdre les abonnés.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Combiné à un &lt;code&gt;slug&lt;/code&gt; explicite dans chaque article, on retombe sur le &lt;code&gt;/slug.html&lt;/code&gt; à la racine. Un seul article m&amp;rsquo;a résisté : celui dont le slug contenait des parenthèses (&lt;code&gt;…-3p-(usg)&lt;/code&gt;), que Hugo « nettoyait » ; un &lt;code&gt;url:&lt;/code&gt; forcé dans son en-tête a réglé le cas. Au final, les 103 articles ont gardé leur URL au caractère près, accents compris. Les pages de tags retombent sur &lt;code&gt;/tags.html&lt;/code&gt; et &lt;code&gt;/tag/x.html&lt;/code&gt; comme avant, et le flux Atom reste à &lt;code&gt;/feeds/all.atom.xml&lt;/code&gt; pour ne pas perdre les abonnés.&lt;/p&gt;
+&lt;p&gt;Côté contenu, le corps des articles étant déjà en Markdown, il migre tel quel — titres, tableaux, images, blocs de code. Seul l&amp;rsquo;en-tête change de format : les &lt;code&gt;Title:&lt;/code&gt; / &lt;code&gt;Date:&lt;/code&gt; de Pelican deviennent du YAML entre &lt;code&gt;---&lt;/code&gt;. Un petit script Python a fait les 103 d&amp;rsquo;un coup, avec un piège au passage — un titre contenait un &lt;code&gt;#&lt;/code&gt; échappé en &lt;code&gt;\#&lt;/code&gt; par Pelican, refusé par le YAML de Hugo, qu&amp;rsquo;il a fallu nettoyer. Il ne restait plus qu&amp;rsquo;à reporter mon thème dans les &lt;em&gt;layouts&lt;/em&gt; Hugo, à l&amp;rsquo;identique.&lt;/p&gt;
 &lt;h2 id=&#34;publier&#34;&gt;Publier&lt;/h2&gt;
-&lt;p&gt;Je n&amp;rsquo;ai pas changé ma façon de publier : je build en local et je commite la sortie, signée. Juste, la commande d&amp;rsquo;avant — un &lt;code&gt;make&lt;/code&gt; qui réveillait Python — est devenue :&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;en-résumé&#34;&gt;En résumé&lt;/h2&gt;
-&lt;p&gt;Même blog, même allure, mêmes URLs, mêmes commentaires — mais un seul binaire à la place de tout un environnement Python. Le blog change encore de moteur sans que ça se voie de l&amp;rsquo;extérieur. C&amp;rsquo;est exactement ce qu&amp;rsquo;on demande à une migration.&lt;/p&gt;
+&lt;p&gt;Je n&amp;rsquo;ai pas changé ma façon de publier : je build en local et je commite la sortie, signée. Simplement, la commande d&amp;rsquo;avant — un &lt;code&gt;make&lt;/code&gt; qui réveillait Python — est devenue &lt;code&gt;hugo&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Même blog, même allure, mêmes URLs, mêmes commentaires, mais un seul binaire à la place de tout un environnement Python. Le blog change encore de moteur sans que ça se voie de l&amp;rsquo;extérieur : c&amp;rsquo;est exactement ce qu&amp;rsquo;on demande à une migration.&lt;/p&gt;
 </content>
   </entry>
   
@@ -82,124 +67,101 @@ une adresse rien que pour elle, de la forme &lt;code&gt;societe-HASH@mondomaine.
 &lt;code&gt;HASH&lt;/code&gt; est une petite suite de caractères aléatoires. Par exemple, pour Darty :
 &lt;code&gt;darty-12ej39@mondomaine.fr&lt;/code&gt;. Cette adresse-là, je ne l&amp;rsquo;ai donnée qu&amp;rsquo;à Darty, et
 elle redirige vers ma vraie boîte.&lt;/p&gt;
-&lt;p&gt;L&amp;rsquo;intérêt est double :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;La traçabilité.&lt;/strong&gt; Si je reçois du spam ou du courrier non sollicité sur
-&lt;code&gt;darty-12ej39@…&lt;/code&gt;, je sais exactement d&amp;rsquo;où vient la fuite : soit mon adresse a
-fuité de chez eux (piratage, base mal protégée), soit ils ont tout simplement
-revendu leur base client. L&amp;rsquo;adresse devient une balise : elle me dit qui a
-laissé filer mon contact. Ça m&amp;rsquo;est arrivé pour de vrai — avec Free, par
-exemple.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Le bouton d&amp;rsquo;arrêt.&lt;/strong&gt; Le jour où une de ces adresses est compromise, je n&amp;rsquo;ai
-qu&amp;rsquo;une seule chose à faire : changer le HASH. Pour Free, je suis retourné sur
-leur site et j&amp;rsquo;ai remplacé &lt;code&gt;free-123456@mondomaine.fr&lt;/code&gt; par
-&lt;code&gt;free-987654@mondomaine.fr&lt;/code&gt; — j&amp;rsquo;ai gardé le préfixe &lt;code&gt;free&lt;/code&gt;, je n&amp;rsquo;ai changé que
-les six caractères. L&amp;rsquo;ancienne redirection n&amp;rsquo;existe plus : du jour au
-lendemain, plus aucun spam ne peut atterrir, plus de harcèlement possible sur
-cette adresse, rien. Et Free, lui, écrit désormais à la nouvelle.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;C&amp;rsquo;est simple, robuste, et ça met la responsabilité du bon côté.&lt;/p&gt;
-&lt;p&gt;Et ce n&amp;rsquo;est pas une bidouille réservée à ceux qui hébergent leur mail : des
-services grand public proposent exactement la même chose. Proton offre des
-alias par site (via SimpleLogin ou Proton Pass), et iCloud+ d&amp;rsquo;Apple intègre
-« Masquer mon adresse e-mail », qui génère une adresse unique et aléatoire par
-service, réexpédiée vers votre vraie boîte et désactivable à tout moment. Le
-principe est identique : une adresse par correspondant, qu&amp;rsquo;on peut couper.&lt;/p&gt;
-&lt;h3 id=&#34;une-adresse-par-site-cest-aussi-de-la-sécurité&#34;&gt;Une adresse par site, c&amp;rsquo;est aussi de la sécurité&lt;/h3&gt;
-&lt;p&gt;Cette idée d&amp;rsquo;adresse unique va bien plus loin que l&amp;rsquo;anti-spam. Pour vraiment
-verrouiller mes comptes, j&amp;rsquo;applique la même logique de cloisonnement à tout :
-une adresse email par site, un mot de passe par site (unique, long, aléatoire),
-et la double authentification (2FA) activée partout où c&amp;rsquo;est possible.&lt;/p&gt;
-&lt;p&gt;Avec ça, on limite fortement les dégâts. Si un site se fait pirater, la casse
-reste contenue à ce seul compte : l&amp;rsquo;adresse ne sert nulle part ailleurs, le mot
-de passe non plus, et si les deux fuitent, la 2FA ajoute une barrière
-supplémentaire qui complique sérieusement l&amp;rsquo;accès — sans être infaillible pour
-autant. Pas d&amp;rsquo;effet domino, là où une seule adresse et un seul mot de passe
-réutilisés partout feraient tomber tous vos comptes d&amp;rsquo;un coup.&lt;/p&gt;
-&lt;p&gt;Le seul prérequis, c&amp;rsquo;est de tout garder dans un gestionnaire de mots de passe
-(&lt;em&gt;password manager&lt;/em&gt;) : personne ne peut retenir une adresse et un mot de passe
-différents pour chaque site. Le gestionnaire stocke le tout chiffré ; il devient
-forcément l&amp;rsquo;un des points les plus sensibles à protéger — au même titre que
-votre compte email, vos mécanismes de récupération et vos appareils, qui restent
-eux aussi des maillons critiques.&lt;/p&gt;
-&lt;p&gt;Reste que ces adresses dédiées cachent un autre atout que je n&amp;rsquo;ai pas encore
-exploité : puisqu&amp;rsquo;une adresse ne sert qu&amp;rsquo;à un seul correspondant, je sais à
-l&amp;rsquo;avance qui a le droit de m&amp;rsquo;y écrire.&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;intérêt est double. D&amp;rsquo;abord la traçabilité : si je reçois du spam ou du
+courrier non sollicité sur &lt;code&gt;darty-12ej39@…&lt;/code&gt;, je sais exactement d&amp;rsquo;où vient la
+fuite — soit mon adresse a fuité de chez eux (piratage, base mal protégée),
+soit ils ont tout simplement revendu leur base client. L&amp;rsquo;adresse devient une
+balise qui me dit qui a laissé filer mon contact ; ça m&amp;rsquo;est arrivé pour de
+vrai, avec Free par exemple. Ensuite le bouton d&amp;rsquo;arrêt : le jour où une de ces
+adresses est compromise, je n&amp;rsquo;ai qu&amp;rsquo;une chose à faire, changer le HASH. Pour
+Free, je suis retourné sur leur site et j&amp;rsquo;ai remplacé &lt;code&gt;free-123456@mondomaine.fr&lt;/code&gt;
+par &lt;code&gt;free-987654@mondomaine.fr&lt;/code&gt; — même préfixe &lt;code&gt;free&lt;/code&gt;, seuls les six caractères
+changent. L&amp;rsquo;ancienne redirection n&amp;rsquo;existe plus : du jour au lendemain, plus
+aucun spam ne peut atterrir, plus de harcèlement possible, rien. Et Free, lui,
+écrit désormais à la nouvelle.&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est simple, robuste, et ça met la responsabilité du bon côté. Et ce n&amp;rsquo;est pas
+une bidouille réservée à ceux qui hébergent leur mail : des services grand
+public proposent exactement la même chose. Proton offre des alias par site (via
+SimpleLogin ou Proton Pass), et iCloud+ d&amp;rsquo;Apple intègre « Masquer mon adresse
+e-mail », qui génère une adresse unique et aléatoire par service, réexpédiée
+vers votre vraie boîte et désactivable à tout moment.&lt;/p&gt;
+&lt;p&gt;Cette idée d&amp;rsquo;adresse unique va d&amp;rsquo;ailleurs bien plus loin que l&amp;rsquo;anti-spam. Pour
+vraiment verrouiller mes comptes, j&amp;rsquo;applique la même logique de cloisonnement à
+tout : une adresse par site, un mot de passe par site (unique, long, aléatoire),
+et la double authentification activée partout où c&amp;rsquo;est possible. On limite ainsi
+fortement les dégâts — si un site se fait pirater, la casse reste contenue à ce
+seul compte, et même si l&amp;rsquo;adresse et le mot de passe fuitent, la 2FA ajoute une
+barrière qui complique sérieusement l&amp;rsquo;accès, sans être infaillible pour autant.
+Le seul prérequis, c&amp;rsquo;est de tout garder dans un gestionnaire de mots de passe :
+personne ne peut retenir une adresse et un mot de passe différents pour chaque
+site. Il devient forcément l&amp;rsquo;un des points les plus sensibles à protéger, au
+même titre que votre compte email, vos mécanismes de récupération et vos
+appareils.&lt;/p&gt;
 &lt;h2 id=&#34;deuxième-parade--nautoriser-que-les-bons-expéditeurs&#34;&gt;Deuxième parade : n&amp;rsquo;autoriser que les bons expéditeurs&lt;/h2&gt;
-&lt;p&gt;Reprenons &lt;code&gt;free-987654@mondomaine.fr&lt;/code&gt;. Cette adresse, je l&amp;rsquo;ai donnée à Free et
-à personne d&amp;rsquo;autre. Les emails légitimes que j&amp;rsquo;attends le plus souvent viennent
+&lt;p&gt;Puisqu&amp;rsquo;une adresse ne sert qu&amp;rsquo;à un seul correspondant, je sais à l&amp;rsquo;avance qui a
+le droit de m&amp;rsquo;y écrire. Reprenons &lt;code&gt;free-987654@mondomaine.fr&lt;/code&gt; : je l&amp;rsquo;ai donnée à
+Free et à personne d&amp;rsquo;autre. Les emails que j&amp;rsquo;attends le plus souvent viennent
 donc de chez Free — de domaines comme &lt;code&gt;@free.fr&lt;/code&gt;, &lt;code&gt;@freetelecom.com&lt;/code&gt; et quelques
 autres. Ce qui sort de ce cadre n&amp;rsquo;est pas forcément illégitime, mais mérite au
 moins un coup d&amp;rsquo;œil.&lt;/p&gt;
 &lt;p&gt;Je peux donc lier l&amp;rsquo;adresse à ses expéditeurs autorisés : j&amp;rsquo;autorise d&amp;rsquo;avance
-les domaines de Free, et leurs mails passent directement.&lt;/p&gt;
-&lt;p&gt;Mieux : pour ne pas repartir de zéro, j&amp;rsquo;ai analysé mon INBOX. J&amp;rsquo;ai retrouvé tous
-les mails que Free m&amp;rsquo;avait envoyés par le passé, j&amp;rsquo;en ai extrait les adresses
-d&amp;rsquo;expéditeur réelles (&lt;code&gt;noreply@free.fr&lt;/code&gt;, &lt;code&gt;service-client@…&lt;/code&gt;, etc.) et je les ai
-autorisées d&amp;rsquo;un coup. Résultat : le jour où j&amp;rsquo;active le filtrage, les courriers
-de Free passent déjà tout seuls — aucune friction pour un correspondant que je
-connais déjà.&lt;/p&gt;
-&lt;p&gt;C&amp;rsquo;est la bonne façon de démarrer un filtre : on le pré-remplit avec ce qu&amp;rsquo;on
-sait déjà légitime.&lt;/p&gt;
-&lt;h3 id=&#34;et-si-un-autre-expéditeur-écrit-quand-même-&#34;&gt;Et si un autre expéditeur écrit quand même ?&lt;/h3&gt;
-&lt;p&gt;Sur une adresse aussi cadrée, un mail qui ne vient pas de Free est louche…
-mais pas toujours illégitime. Un exemple concret : je change de Freebox, et
-c&amp;rsquo;est Colissimo qui m&amp;rsquo;écrit pour la livraison, sur mon adresse &lt;code&gt;free-987654@…&lt;/code&gt;.
-Parfaitement normal — sauf que Colissimo n&amp;rsquo;était pas dans ma liste.&lt;/p&gt;
-&lt;p&gt;Dans ce cas, plutôt que de défier l&amp;rsquo;expéditeur, le filtre me prévient, moi : je
-reçois une alerte du genre « un expéditeur inattendu écrit sur ton adresse
-Free — légitime ? », et c&amp;rsquo;est moi qui tranche, oui (et je l&amp;rsquo;autorise pour la
-suite) ou non. C&amp;rsquo;est le bon niveau de contrôle pour une adresse dédiée : les
-livreurs et les services après-vente ponctuels passent quand je le décide, et
-au passage, ça filtre une bonne partie des demandes d&amp;rsquo;avis après achat dont on
-est bombardé. ;-)&lt;/p&gt;
-&lt;p&gt;C&amp;rsquo;est le point important : chaque adresse a sa propre politique. Pour un alias
-dédié comme celui de Free, une liste d&amp;rsquo;autorisés doublée d&amp;rsquo;une alerte en cas
-d&amp;rsquo;imprévu suffit amplement — pas besoin de défi-réponse. Ce dernier ne devient
-utile que là où l&amp;rsquo;on ne peut pas tenir de liste fermée : typiquement l&amp;rsquo;adresse
-principale, ouverte à tout le monde.&lt;/p&gt;
+les domaines de Free, et leurs mails passent directement. Mieux : pour ne pas
+repartir de zéro, j&amp;rsquo;ai analysé mon INBOX, retrouvé tous les mails que Free
+m&amp;rsquo;avait envoyés par le passé, et extrait leurs adresses réelles
+(&lt;code&gt;noreply@free.fr&lt;/code&gt;, &lt;code&gt;service-client@…&lt;/code&gt;, etc.) pour les autoriser d&amp;rsquo;un coup.
+Résultat : le jour où j&amp;rsquo;active le filtrage, les courriers de Free passent déjà
+tout seuls, aucune friction pour un correspondant que je connais déjà. C&amp;rsquo;est la
+bonne façon de démarrer un filtre : on le pré-remplit avec ce qu&amp;rsquo;on sait déjà
+légitime.&lt;/p&gt;
+&lt;p&gt;Reste le cas d&amp;rsquo;un autre expéditeur qui écrit quand même. Sur une adresse aussi
+cadrée, c&amp;rsquo;est louche, mais pas toujours illégitime : je change de Freebox, et
+c&amp;rsquo;est Colissimo qui m&amp;rsquo;écrit pour la livraison sur &lt;code&gt;free-987654@…&lt;/code&gt; —
+parfaitement normal, sauf que Colissimo n&amp;rsquo;était pas dans ma liste. Dans ce cas,
+plutôt que de défier l&amp;rsquo;expéditeur, le filtre me prévient, moi : je reçois une
+alerte du genre « un expéditeur inattendu écrit sur ton adresse Free —
+légitime ? », et c&amp;rsquo;est moi qui tranche. Les livreurs et les services
+après-vente ponctuels passent quand je le décide, et au passage ça filtre une
+bonne partie des demandes d&amp;rsquo;avis après achat dont on est bombardé. ;-) Chaque
+adresse a donc sa propre politique : pour un alias dédié comme celui de Free,
+une liste d&amp;rsquo;autorisés doublée d&amp;rsquo;une alerte suffit — pas besoin de défi-réponse.
+Ce dernier ne devient utile que là où l&amp;rsquo;on ne peut pas tenir de liste fermée :
+l&amp;rsquo;adresse principale, ouverte à tout le monde.&lt;/p&gt;
 &lt;h2 id=&#34;troisième-parade--le-défi-réponse&#34;&gt;Troisième parade : le défi-réponse&lt;/h2&gt;
 &lt;p&gt;Sur cette adresse principale, impossible de tenir une liste fermée : n&amp;rsquo;importe
 qui peut légitimement me découvrir et vouloir m&amp;rsquo;écrire. C&amp;rsquo;est là que j&amp;rsquo;active le
 défi-réponse (&lt;em&gt;challenge-response&lt;/em&gt; en anglais), une méthode un peu radicale et
 assez peu connue. L&amp;rsquo;idée tient en une phrase : si je ne connais pas
 l&amp;rsquo;expéditeur, je mets son message de côté et je lui demande une petite action de
-confirmation avant de le lui délivrer.&lt;/p&gt;
-&lt;p&gt;Ça se place devant votre serveur mail habituel, en modifiant simplement
-l&amp;rsquo;enregistrement MX pour que le courrier entrant passe d&amp;rsquo;abord par le filtre.&lt;/p&gt;
-&lt;h2 id=&#34;le-principe&#34;&gt;Le principe&lt;/h2&gt;
+confirmation avant de le lui délivrer. Ça se place devant votre serveur mail
+habituel, en modifiant simplement l&amp;rsquo;enregistrement MX pour que le courrier
+entrant passe d&amp;rsquo;abord par le filtre.&lt;/p&gt;
 &lt;p&gt;Le filtre tient une liste des expéditeurs qu&amp;rsquo;il connaît. À l&amp;rsquo;arrivée d&amp;rsquo;un
 message, il regarde d&amp;rsquo;abord si l&amp;rsquo;expéditeur est déjà validé et, s&amp;rsquo;il ne l&amp;rsquo;est
 pas, il vérifie que le message vient réellement du domaine qu&amp;rsquo;il prétend avant
-de faire quoi que ce soit. Trois cas :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Expéditeur connu&lt;/strong&gt; (déjà validé) → le message est délivré directement, comme
-si le filtre n&amp;rsquo;existait pas.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Expéditeur inconnu, message suffisamment authentifié&lt;/strong&gt; (il vient bien du
-domaine annoncé) → le message est mis en attente (ni jeté, ni délivré) et le
-filtre envoie à l&amp;rsquo;expéditeur un petit email de vérification. Le lien ouvre une
-page où il doit accomplir une action simple : résoudre une petite opération,
-un captcha ou équivalent.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Expéditeur inconnu, message non authentifié&lt;/strong&gt; (adresse d&amp;rsquo;expéditeur
-potentiellement usurpée) → le message est rejeté, sans rien lui envoyer. C&amp;rsquo;est
-capital : écrire à une adresse peut-être forgée reviendrait à harceler un
-innocent (j&amp;rsquo;y reviens dans les limites).&lt;/li&gt;
-&lt;/ul&gt;
+de faire quoi que ce soit. Trois cas se présentent alors. Si l&amp;rsquo;expéditeur est
+connu, le message est délivré directement, comme si le filtre n&amp;rsquo;existait pas.
+S&amp;rsquo;il est inconnu mais que le message est suffisamment authentifié (il vient bien
+du domaine annoncé), le message est mis en attente et le filtre lui envoie un
+petit email de vérification, dont le lien ouvre une page où accomplir une action
+simple : résoudre une petite opération, un captcha ou équivalent. Enfin, si
+l&amp;rsquo;expéditeur est inconnu et le message non authentifié (adresse potentiellement
+usurpée), le message est rejeté sans que rien ne lui soit envoyé — c&amp;rsquo;est
+capital, écrire à une adresse peut-être forgée reviendrait à harceler un
+innocent, j&amp;rsquo;y reviens plus bas.&lt;/p&gt;
 &lt;p&gt;Quand l&amp;rsquo;expéditeur suit le lien et résout l&amp;rsquo;épreuve, on sait que quelqu&amp;rsquo;un ayant
 accès à cette boîte a bien fait la démarche. Il est alors ajouté à la liste des
 connus, son message en attente est délivré, et tous ses futurs emails passeront
-sans nouvelle vérification.&lt;/p&gt;
-&lt;p&gt;Le pari est simple : un humain qui veut vraiment vous joindre fera la démarche
-une fois ; un envoi de masse, lui, ne s&amp;rsquo;en donnera la plupart du temps pas la
-peine. Suivre un lien, certains robots savent le faire ; enchaîner en plus une
-petite épreuve pour chaque destinataire, c&amp;rsquo;est déjà nettement moins rentable
-pour du spam industriel — sans être, là non plus, une garantie absolue.&lt;/p&gt;
-&lt;h2 id=&#34;le-parcours-dun-mail&#34;&gt;Le parcours d&amp;rsquo;un mail&lt;/h2&gt;
+sans nouvelle vérification. Le pari est simple : un humain qui veut vraiment
+vous joindre fera la démarche une fois ; un envoi de masse, lui, ne s&amp;rsquo;en
+donnera la plupart du temps pas la peine. Suivre un lien, certains robots savent
+le faire ; enchaîner en plus une petite épreuve pour chaque destinataire, c&amp;rsquo;est
+déjà nettement moins rentable pour du spam industriel, sans être là non plus une
+garantie absolue.&lt;/p&gt;
+&lt;p&gt;Voici le parcours d&amp;rsquo;un mail, selon qu&amp;rsquo;il est connu, authentifié, ou suspect :&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/schema-parcours-mail.svg&#34; alt=&#34;Parcours d&amp;rsquo;un mail dans le filtre : connu, authentifié ou rejeté&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ce-que-le-filtre-garde-en-mémoire&#34;&gt;Ce que le filtre garde en mémoire&lt;/h2&gt;
-&lt;p&gt;La brique centrale, c&amp;rsquo;est une liste de correspondances (destinataire,
-expéditeur) → statut. On peut y ajouter des règles générales pour ne pas défier
-tout le monde à l&amp;rsquo;aveugle :&lt;/p&gt;
+&lt;p&gt;Au cœur du filtre, une liste de correspondances (destinataire, expéditeur) →
+statut, qu&amp;rsquo;on peut compléter par des règles générales pour ne pas défier tout le
+monde à l&amp;rsquo;aveugle :&lt;/p&gt;
 &lt;table&gt;
 	&lt;thead&gt;
 			&lt;tr&gt;
@@ -232,38 +194,32 @@ tout le monde à l&amp;rsquo;aveugle :&lt;/p&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;les-limites-honnêtement&#34;&gt;Les limites, honnêtement&lt;/h2&gt;
 &lt;p&gt;Le défi-réponse a une mauvaise réputation dans le monde de l&amp;rsquo;email, et il faut
-la connaître avant de se lancer. Les critiques sont réelles :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Le backscatter.&lt;/strong&gt; C&amp;rsquo;est le reproche numéro un. Les spammeurs usurpent
-fréquemment l&amp;rsquo;adresse d&amp;rsquo;expéditeur ; un filtre naïf enverrait alors son défi à
-un innocent dont l&amp;rsquo;adresse a été usurpée, et produirait du spam en voulant le
-combattre. C&amp;rsquo;est exactement pour ça que, comme vu plus haut, on ne doit défier
-que les messages suffisamment authentifiés — c&amp;rsquo;est-à-dire dont on a pu vérifier
-qu&amp;rsquo;ils proviennent bien du domaine annoncé (SPF, DKIM, idéalement alignés par
-DMARC) — et rejeter les autres sans leur écrire.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Le courrier qui ne peut pas répondre.&lt;/strong&gt; Confirmations de commande, reçus,
-notifications, newsletters, listes de diffusion… tout ce courrier automatique
-et légitime n&amp;rsquo;a personne pour cliquer sur un lien. Il faut donc des listes
-blanches solides, sinon on rate des mails importants.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;L&amp;rsquo;expéditeur qui ne clique jamais.&lt;/strong&gt; Certains correspondants légitimes
-trouveront la démarche pénible, ou ne verront pas l&amp;rsquo;email de vérification (il
-finit lui-même en spam chez eux, ironie…). Leur premier message est au mieux
-retardé, au pire perdu.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Le premier contact est toujours ralenti.&lt;/strong&gt; Par construction, un nouvel
-expéditeur ne vous joint pas instantanément.&lt;/li&gt;
-&lt;/ul&gt;
+la connaître avant de se lancer. Le reproche numéro un, c&amp;rsquo;est le backscatter :
+les spammeurs usurpent fréquemment l&amp;rsquo;adresse d&amp;rsquo;expéditeur, et un filtre naïf
+enverrait alors son défi à un innocent dont l&amp;rsquo;adresse a été usurpée — produisant
+du spam en voulant le combattre. C&amp;rsquo;est exactement pour ça qu&amp;rsquo;on ne doit défier
+que les messages suffisamment authentifiés, dont on a pu vérifier qu&amp;rsquo;ils
+proviennent bien du domaine annoncé (SPF, DKIM, idéalement alignés par DMARC),
+et rejeter les autres sans leur écrire.&lt;/p&gt;
+&lt;p&gt;Il y a aussi tout le courrier qui ne peut pas répondre — confirmations de
+commande, reçus, notifications, newsletters, listes de diffusion — qui n&amp;rsquo;a
+personne pour cliquer sur un lien : sans listes blanches solides, on rate des
+mails importants. Certains correspondants légitimes, eux, ne cliqueront jamais,
+par agacement ou parce que l&amp;rsquo;email de vérification finit lui-même en spam chez
+eux ; leur premier message est au mieux retardé, au pire perdu. Et par
+construction, ce premier contact est toujours ralenti.&lt;/p&gt;
 &lt;h2 id=&#34;alors-pour-qui-&#34;&gt;Alors, pour qui ?&lt;/h2&gt;
 &lt;p&gt;Aucune de ces parades n&amp;rsquo;est universelle, mais elles se complètent. Les adresses
 jetables cloisonnent et permettent de révoquer d&amp;rsquo;un geste tout ce que je
-distribue. Les listes d&amp;rsquo;expéditeurs donnent un contrôle fin sur les adresses
-dédiées. Le défi-réponse, lui, protège une adresse ouverte des inconnus — à
-condition de gérer sérieusement le backscatter.&lt;/p&gt;
-&lt;p&gt;Reste qu&amp;rsquo;il n&amp;rsquo;a rien d&amp;rsquo;une solution miracle. Sur une adresse de support, de
-commande, ou une boîte qui reçoit beaucoup de courrier automatique, c&amp;rsquo;est une
-mauvaise idée. Il prend tout son sens sur une boîte personnelle très exposée au
-spam, où l&amp;rsquo;on échange surtout avec des humains et où l&amp;rsquo;on accepte qu&amp;rsquo;un premier
-contact prenne quelques minutes de plus. Là, bien réglé, l&amp;rsquo;ensemble peut
-transformer une boîte inondée en boîte quasi silencieuse.&lt;/p&gt;
+distribue ; les listes d&amp;rsquo;expéditeurs donnent un contrôle fin sur les adresses
+dédiées ; le défi-réponse protège une adresse ouverte des inconnus, à condition
+de gérer sérieusement le backscatter. Reste qu&amp;rsquo;il n&amp;rsquo;a rien d&amp;rsquo;une solution
+miracle : sur une adresse de support, de commande, ou une boîte qui reçoit
+beaucoup de courrier automatique, c&amp;rsquo;est une mauvaise idée. Il prend tout son
+sens sur une boîte personnelle très exposée au spam, où l&amp;rsquo;on échange surtout
+avec des humains et où l&amp;rsquo;on accepte qu&amp;rsquo;un premier contact prenne quelques
+minutes de plus. Là, bien réglé, l&amp;rsquo;ensemble peut transformer une boîte inondée
+en boîte quasi silencieuse.&lt;/p&gt;
 </content>
   </entry>
   

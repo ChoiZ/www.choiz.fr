@@ -60,124 +60,101 @@ une adresse rien que pour elle, de la forme <code>societe-HASH@mondomaine.fr</co
 <code>HASH</code> est une petite suite de caractères aléatoires. Par exemple, pour Darty :
 <code>darty-12ej39@mondomaine.fr</code>. Cette adresse-là, je ne l&rsquo;ai donnée qu&rsquo;à Darty, et
 elle redirige vers ma vraie boîte.</p>
-<p>L&rsquo;intérêt est double :</p>
-<ul>
-<li><strong>La traçabilité.</strong> Si je reçois du spam ou du courrier non sollicité sur
-<code>darty-12ej39@…</code>, je sais exactement d&rsquo;où vient la fuite : soit mon adresse a
-fuité de chez eux (piratage, base mal protégée), soit ils ont tout simplement
-revendu leur base client. L&rsquo;adresse devient une balise : elle me dit qui a
-laissé filer mon contact. Ça m&rsquo;est arrivé pour de vrai — avec Free, par
-exemple.</li>
-<li><strong>Le bouton d&rsquo;arrêt.</strong> Le jour où une de ces adresses est compromise, je n&rsquo;ai
-qu&rsquo;une seule chose à faire : changer le HASH. Pour Free, je suis retourné sur
-leur site et j&rsquo;ai remplacé <code>free-123456@mondomaine.fr</code> par
-<code>free-987654@mondomaine.fr</code> — j&rsquo;ai gardé le préfixe <code>free</code>, je n&rsquo;ai changé que
-les six caractères. L&rsquo;ancienne redirection n&rsquo;existe plus : du jour au
-lendemain, plus aucun spam ne peut atterrir, plus de harcèlement possible sur
-cette adresse, rien. Et Free, lui, écrit désormais à la nouvelle.</li>
-</ul>
-<p>C&rsquo;est simple, robuste, et ça met la responsabilité du bon côté.</p>
-<p>Et ce n&rsquo;est pas une bidouille réservée à ceux qui hébergent leur mail : des
-services grand public proposent exactement la même chose. Proton offre des
-alias par site (via SimpleLogin ou Proton Pass), et iCloud+ d&rsquo;Apple intègre
-« Masquer mon adresse e-mail », qui génère une adresse unique et aléatoire par
-service, réexpédiée vers votre vraie boîte et désactivable à tout moment. Le
-principe est identique : une adresse par correspondant, qu&rsquo;on peut couper.</p>
-<h3 id="une-adresse-par-site-cest-aussi-de-la-sécurité">Une adresse par site, c&rsquo;est aussi de la sécurité</h3>
-<p>Cette idée d&rsquo;adresse unique va bien plus loin que l&rsquo;anti-spam. Pour vraiment
-verrouiller mes comptes, j&rsquo;applique la même logique de cloisonnement à tout :
-une adresse email par site, un mot de passe par site (unique, long, aléatoire),
-et la double authentification (2FA) activée partout où c&rsquo;est possible.</p>
-<p>Avec ça, on limite fortement les dégâts. Si un site se fait pirater, la casse
-reste contenue à ce seul compte : l&rsquo;adresse ne sert nulle part ailleurs, le mot
-de passe non plus, et si les deux fuitent, la 2FA ajoute une barrière
-supplémentaire qui complique sérieusement l&rsquo;accès — sans être infaillible pour
-autant. Pas d&rsquo;effet domino, là où une seule adresse et un seul mot de passe
-réutilisés partout feraient tomber tous vos comptes d&rsquo;un coup.</p>
-<p>Le seul prérequis, c&rsquo;est de tout garder dans un gestionnaire de mots de passe
-(<em>password manager</em>) : personne ne peut retenir une adresse et un mot de passe
-différents pour chaque site. Le gestionnaire stocke le tout chiffré ; il devient
-forcément l&rsquo;un des points les plus sensibles à protéger — au même titre que
-votre compte email, vos mécanismes de récupération et vos appareils, qui restent
-eux aussi des maillons critiques.</p>
-<p>Reste que ces adresses dédiées cachent un autre atout que je n&rsquo;ai pas encore
-exploité : puisqu&rsquo;une adresse ne sert qu&rsquo;à un seul correspondant, je sais à
-l&rsquo;avance qui a le droit de m&rsquo;y écrire.</p>
+<p>L&rsquo;intérêt est double. D&rsquo;abord la traçabilité : si je reçois du spam ou du
+courrier non sollicité sur <code>darty-12ej39@…</code>, je sais exactement d&rsquo;où vient la
+fuite — soit mon adresse a fuité de chez eux (piratage, base mal protégée),
+soit ils ont tout simplement revendu leur base client. L&rsquo;adresse devient une
+balise qui me dit qui a laissé filer mon contact ; ça m&rsquo;est arrivé pour de
+vrai, avec Free par exemple. Ensuite le bouton d&rsquo;arrêt : le jour où une de ces
+adresses est compromise, je n&rsquo;ai qu&rsquo;une chose à faire, changer le HASH. Pour
+Free, je suis retourné sur leur site et j&rsquo;ai remplacé <code>free-123456@mondomaine.fr</code>
+par <code>free-987654@mondomaine.fr</code> — même préfixe <code>free</code>, seuls les six caractères
+changent. L&rsquo;ancienne redirection n&rsquo;existe plus : du jour au lendemain, plus
+aucun spam ne peut atterrir, plus de harcèlement possible, rien. Et Free, lui,
+écrit désormais à la nouvelle.</p>
+<p>C&rsquo;est simple, robuste, et ça met la responsabilité du bon côté. Et ce n&rsquo;est pas
+une bidouille réservée à ceux qui hébergent leur mail : des services grand
+public proposent exactement la même chose. Proton offre des alias par site (via
+SimpleLogin ou Proton Pass), et iCloud+ d&rsquo;Apple intègre « Masquer mon adresse
+e-mail », qui génère une adresse unique et aléatoire par service, réexpédiée
+vers votre vraie boîte et désactivable à tout moment.</p>
+<p>Cette idée d&rsquo;adresse unique va d&rsquo;ailleurs bien plus loin que l&rsquo;anti-spam. Pour
+vraiment verrouiller mes comptes, j&rsquo;applique la même logique de cloisonnement à
+tout : une adresse par site, un mot de passe par site (unique, long, aléatoire),
+et la double authentification activée partout où c&rsquo;est possible. On limite ainsi
+fortement les dégâts — si un site se fait pirater, la casse reste contenue à ce
+seul compte, et même si l&rsquo;adresse et le mot de passe fuitent, la 2FA ajoute une
+barrière qui complique sérieusement l&rsquo;accès, sans être infaillible pour autant.
+Le seul prérequis, c&rsquo;est de tout garder dans un gestionnaire de mots de passe :
+personne ne peut retenir une adresse et un mot de passe différents pour chaque
+site. Il devient forcément l&rsquo;un des points les plus sensibles à protéger, au
+même titre que votre compte email, vos mécanismes de récupération et vos
+appareils.</p>
 <h2 id="deuxième-parade--nautoriser-que-les-bons-expéditeurs">Deuxième parade : n&rsquo;autoriser que les bons expéditeurs</h2>
-<p>Reprenons <code>free-987654@mondomaine.fr</code>. Cette adresse, je l&rsquo;ai donnée à Free et
-à personne d&rsquo;autre. Les emails légitimes que j&rsquo;attends le plus souvent viennent
+<p>Puisqu&rsquo;une adresse ne sert qu&rsquo;à un seul correspondant, je sais à l&rsquo;avance qui a
+le droit de m&rsquo;y écrire. Reprenons <code>free-987654@mondomaine.fr</code> : je l&rsquo;ai donnée à
+Free et à personne d&rsquo;autre. Les emails que j&rsquo;attends le plus souvent viennent
 donc de chez Free — de domaines comme <code>@free.fr</code>, <code>@freetelecom.com</code> et quelques
 autres. Ce qui sort de ce cadre n&rsquo;est pas forcément illégitime, mais mérite au
 moins un coup d&rsquo;œil.</p>
 <p>Je peux donc lier l&rsquo;adresse à ses expéditeurs autorisés : j&rsquo;autorise d&rsquo;avance
-les domaines de Free, et leurs mails passent directement.</p>
-<p>Mieux : pour ne pas repartir de zéro, j&rsquo;ai analysé mon INBOX. J&rsquo;ai retrouvé tous
-les mails que Free m&rsquo;avait envoyés par le passé, j&rsquo;en ai extrait les adresses
-d&rsquo;expéditeur réelles (<code>noreply@free.fr</code>, <code>service-client@…</code>, etc.) et je les ai
-autorisées d&rsquo;un coup. Résultat : le jour où j&rsquo;active le filtrage, les courriers
-de Free passent déjà tout seuls — aucune friction pour un correspondant que je
-connais déjà.</p>
-<p>C&rsquo;est la bonne façon de démarrer un filtre : on le pré-remplit avec ce qu&rsquo;on
-sait déjà légitime.</p>
-<h3 id="et-si-un-autre-expéditeur-écrit-quand-même-">Et si un autre expéditeur écrit quand même ?</h3>
-<p>Sur une adresse aussi cadrée, un mail qui ne vient pas de Free est louche…
-mais pas toujours illégitime. Un exemple concret : je change de Freebox, et
-c&rsquo;est Colissimo qui m&rsquo;écrit pour la livraison, sur mon adresse <code>free-987654@…</code>.
-Parfaitement normal — sauf que Colissimo n&rsquo;était pas dans ma liste.</p>
-<p>Dans ce cas, plutôt que de défier l&rsquo;expéditeur, le filtre me prévient, moi : je
-reçois une alerte du genre « un expéditeur inattendu écrit sur ton adresse
-Free — légitime ? », et c&rsquo;est moi qui tranche, oui (et je l&rsquo;autorise pour la
-suite) ou non. C&rsquo;est le bon niveau de contrôle pour une adresse dédiée : les
-livreurs et les services après-vente ponctuels passent quand je le décide, et
-au passage, ça filtre une bonne partie des demandes d&rsquo;avis après achat dont on
-est bombardé. ;-)</p>
-<p>C&rsquo;est le point important : chaque adresse a sa propre politique. Pour un alias
-dédié comme celui de Free, une liste d&rsquo;autorisés doublée d&rsquo;une alerte en cas
-d&rsquo;imprévu suffit amplement — pas besoin de défi-réponse. Ce dernier ne devient
-utile que là où l&rsquo;on ne peut pas tenir de liste fermée : typiquement l&rsquo;adresse
-principale, ouverte à tout le monde.</p>
+les domaines de Free, et leurs mails passent directement. Mieux : pour ne pas
+repartir de zéro, j&rsquo;ai analysé mon INBOX, retrouvé tous les mails que Free
+m&rsquo;avait envoyés par le passé, et extrait leurs adresses réelles
+(<code>noreply@free.fr</code>, <code>service-client@…</code>, etc.) pour les autoriser d&rsquo;un coup.
+Résultat : le jour où j&rsquo;active le filtrage, les courriers de Free passent déjà
+tout seuls, aucune friction pour un correspondant que je connais déjà. C&rsquo;est la
+bonne façon de démarrer un filtre : on le pré-remplit avec ce qu&rsquo;on sait déjà
+légitime.</p>
+<p>Reste le cas d&rsquo;un autre expéditeur qui écrit quand même. Sur une adresse aussi
+cadrée, c&rsquo;est louche, mais pas toujours illégitime : je change de Freebox, et
+c&rsquo;est Colissimo qui m&rsquo;écrit pour la livraison sur <code>free-987654@…</code> —
+parfaitement normal, sauf que Colissimo n&rsquo;était pas dans ma liste. Dans ce cas,
+plutôt que de défier l&rsquo;expéditeur, le filtre me prévient, moi : je reçois une
+alerte du genre « un expéditeur inattendu écrit sur ton adresse Free —
+légitime ? », et c&rsquo;est moi qui tranche. Les livreurs et les services
+après-vente ponctuels passent quand je le décide, et au passage ça filtre une
+bonne partie des demandes d&rsquo;avis après achat dont on est bombardé. ;-) Chaque
+adresse a donc sa propre politique : pour un alias dédié comme celui de Free,
+une liste d&rsquo;autorisés doublée d&rsquo;une alerte suffit — pas besoin de défi-réponse.
+Ce dernier ne devient utile que là où l&rsquo;on ne peut pas tenir de liste fermée :
+l&rsquo;adresse principale, ouverte à tout le monde.</p>
 <h2 id="troisième-parade--le-défi-réponse">Troisième parade : le défi-réponse</h2>
 <p>Sur cette adresse principale, impossible de tenir une liste fermée : n&rsquo;importe
 qui peut légitimement me découvrir et vouloir m&rsquo;écrire. C&rsquo;est là que j&rsquo;active le
 défi-réponse (<em>challenge-response</em> en anglais), une méthode un peu radicale et
 assez peu connue. L&rsquo;idée tient en une phrase : si je ne connais pas
 l&rsquo;expéditeur, je mets son message de côté et je lui demande une petite action de
-confirmation avant de le lui délivrer.</p>
-<p>Ça se place devant votre serveur mail habituel, en modifiant simplement
-l&rsquo;enregistrement MX pour que le courrier entrant passe d&rsquo;abord par le filtre.</p>
-<h2 id="le-principe">Le principe</h2>
+confirmation avant de le lui délivrer. Ça se place devant votre serveur mail
+habituel, en modifiant simplement l&rsquo;enregistrement MX pour que le courrier
+entrant passe d&rsquo;abord par le filtre.</p>
 <p>Le filtre tient une liste des expéditeurs qu&rsquo;il connaît. À l&rsquo;arrivée d&rsquo;un
 message, il regarde d&rsquo;abord si l&rsquo;expéditeur est déjà validé et, s&rsquo;il ne l&rsquo;est
 pas, il vérifie que le message vient réellement du domaine qu&rsquo;il prétend avant
-de faire quoi que ce soit. Trois cas :</p>
-<ul>
-<li><strong>Expéditeur connu</strong> (déjà validé) → le message est délivré directement, comme
-si le filtre n&rsquo;existait pas.</li>
-<li><strong>Expéditeur inconnu, message suffisamment authentifié</strong> (il vient bien du
-domaine annoncé) → le message est mis en attente (ni jeté, ni délivré) et le
-filtre envoie à l&rsquo;expéditeur un petit email de vérification. Le lien ouvre une
-page où il doit accomplir une action simple : résoudre une petite opération,
-un captcha ou équivalent.</li>
-<li><strong>Expéditeur inconnu, message non authentifié</strong> (adresse d&rsquo;expéditeur
-potentiellement usurpée) → le message est rejeté, sans rien lui envoyer. C&rsquo;est
-capital : écrire à une adresse peut-être forgée reviendrait à harceler un
-innocent (j&rsquo;y reviens dans les limites).</li>
-</ul>
+de faire quoi que ce soit. Trois cas se présentent alors. Si l&rsquo;expéditeur est
+connu, le message est délivré directement, comme si le filtre n&rsquo;existait pas.
+S&rsquo;il est inconnu mais que le message est suffisamment authentifié (il vient bien
+du domaine annoncé), le message est mis en attente et le filtre lui envoie un
+petit email de vérification, dont le lien ouvre une page où accomplir une action
+simple : résoudre une petite opération, un captcha ou équivalent. Enfin, si
+l&rsquo;expéditeur est inconnu et le message non authentifié (adresse potentiellement
+usurpée), le message est rejeté sans que rien ne lui soit envoyé — c&rsquo;est
+capital, écrire à une adresse peut-être forgée reviendrait à harceler un
+innocent, j&rsquo;y reviens plus bas.</p>
 <p>Quand l&rsquo;expéditeur suit le lien et résout l&rsquo;épreuve, on sait que quelqu&rsquo;un ayant
 accès à cette boîte a bien fait la démarche. Il est alors ajouté à la liste des
 connus, son message en attente est délivré, et tous ses futurs emails passeront
-sans nouvelle vérification.</p>
-<p>Le pari est simple : un humain qui veut vraiment vous joindre fera la démarche
-une fois ; un envoi de masse, lui, ne s&rsquo;en donnera la plupart du temps pas la
-peine. Suivre un lien, certains robots savent le faire ; enchaîner en plus une
-petite épreuve pour chaque destinataire, c&rsquo;est déjà nettement moins rentable
-pour du spam industriel — sans être, là non plus, une garantie absolue.</p>
-<h2 id="le-parcours-dun-mail">Le parcours d&rsquo;un mail</h2>
+sans nouvelle vérification. Le pari est simple : un humain qui veut vraiment
+vous joindre fera la démarche une fois ; un envoi de masse, lui, ne s&rsquo;en
+donnera la plupart du temps pas la peine. Suivre un lien, certains robots savent
+le faire ; enchaîner en plus une petite épreuve pour chaque destinataire, c&rsquo;est
+déjà nettement moins rentable pour du spam industriel, sans être là non plus une
+garantie absolue.</p>
+<p>Voici le parcours d&rsquo;un mail, selon qu&rsquo;il est connu, authentifié, ou suspect :</p>
 <p><img src="/images/schema-parcours-mail.svg" alt="Parcours d&rsquo;un mail dans le filtre : connu, authentifié ou rejeté"></p>
-<h2 id="ce-que-le-filtre-garde-en-mémoire">Ce que le filtre garde en mémoire</h2>
-<p>La brique centrale, c&rsquo;est une liste de correspondances (destinataire,
-expéditeur) → statut. On peut y ajouter des règles générales pour ne pas défier
-tout le monde à l&rsquo;aveugle :</p>
+<p>Au cœur du filtre, une liste de correspondances (destinataire, expéditeur) →
+statut, qu&rsquo;on peut compléter par des règles générales pour ne pas défier tout le
+monde à l&rsquo;aveugle :</p>
 <table>
 	<thead>
 			<tr>
@@ -210,38 +187,32 @@ tout le monde à l&rsquo;aveugle :</p>
 </table>
 <h2 id="les-limites-honnêtement">Les limites, honnêtement</h2>
 <p>Le défi-réponse a une mauvaise réputation dans le monde de l&rsquo;email, et il faut
-la connaître avant de se lancer. Les critiques sont réelles :</p>
-<ul>
-<li><strong>Le backscatter.</strong> C&rsquo;est le reproche numéro un. Les spammeurs usurpent
-fréquemment l&rsquo;adresse d&rsquo;expéditeur ; un filtre naïf enverrait alors son défi à
-un innocent dont l&rsquo;adresse a été usurpée, et produirait du spam en voulant le
-combattre. C&rsquo;est exactement pour ça que, comme vu plus haut, on ne doit défier
-que les messages suffisamment authentifiés — c&rsquo;est-à-dire dont on a pu vérifier
-qu&rsquo;ils proviennent bien du domaine annoncé (SPF, DKIM, idéalement alignés par
-DMARC) — et rejeter les autres sans leur écrire.</li>
-<li><strong>Le courrier qui ne peut pas répondre.</strong> Confirmations de commande, reçus,
-notifications, newsletters, listes de diffusion… tout ce courrier automatique
-et légitime n&rsquo;a personne pour cliquer sur un lien. Il faut donc des listes
-blanches solides, sinon on rate des mails importants.</li>
-<li><strong>L&rsquo;expéditeur qui ne clique jamais.</strong> Certains correspondants légitimes
-trouveront la démarche pénible, ou ne verront pas l&rsquo;email de vérification (il
-finit lui-même en spam chez eux, ironie…). Leur premier message est au mieux
-retardé, au pire perdu.</li>
-<li><strong>Le premier contact est toujours ralenti.</strong> Par construction, un nouvel
-expéditeur ne vous joint pas instantanément.</li>
-</ul>
+la connaître avant de se lancer. Le reproche numéro un, c&rsquo;est le backscatter :
+les spammeurs usurpent fréquemment l&rsquo;adresse d&rsquo;expéditeur, et un filtre naïf
+enverrait alors son défi à un innocent dont l&rsquo;adresse a été usurpée — produisant
+du spam en voulant le combattre. C&rsquo;est exactement pour ça qu&rsquo;on ne doit défier
+que les messages suffisamment authentifiés, dont on a pu vérifier qu&rsquo;ils
+proviennent bien du domaine annoncé (SPF, DKIM, idéalement alignés par DMARC),
+et rejeter les autres sans leur écrire.</p>
+<p>Il y a aussi tout le courrier qui ne peut pas répondre — confirmations de
+commande, reçus, notifications, newsletters, listes de diffusion — qui n&rsquo;a
+personne pour cliquer sur un lien : sans listes blanches solides, on rate des
+mails importants. Certains correspondants légitimes, eux, ne cliqueront jamais,
+par agacement ou parce que l&rsquo;email de vérification finit lui-même en spam chez
+eux ; leur premier message est au mieux retardé, au pire perdu. Et par
+construction, ce premier contact est toujours ralenti.</p>
 <h2 id="alors-pour-qui-">Alors, pour qui ?</h2>
 <p>Aucune de ces parades n&rsquo;est universelle, mais elles se complètent. Les adresses
 jetables cloisonnent et permettent de révoquer d&rsquo;un geste tout ce que je
-distribue. Les listes d&rsquo;expéditeurs donnent un contrôle fin sur les adresses
-dédiées. Le défi-réponse, lui, protège une adresse ouverte des inconnus — à
-condition de gérer sérieusement le backscatter.</p>
-<p>Reste qu&rsquo;il n&rsquo;a rien d&rsquo;une solution miracle. Sur une adresse de support, de
-commande, ou une boîte qui reçoit beaucoup de courrier automatique, c&rsquo;est une
-mauvaise idée. Il prend tout son sens sur une boîte personnelle très exposée au
-spam, où l&rsquo;on échange surtout avec des humains et où l&rsquo;on accepte qu&rsquo;un premier
-contact prenne quelques minutes de plus. Là, bien réglé, l&rsquo;ensemble peut
-transformer une boîte inondée en boîte quasi silencieuse.</p>
+distribue ; les listes d&rsquo;expéditeurs donnent un contrôle fin sur les adresses
+dédiées ; le défi-réponse protège une adresse ouverte des inconnus, à condition
+de gérer sérieusement le backscatter. Reste qu&rsquo;il n&rsquo;a rien d&rsquo;une solution
+miracle : sur une adresse de support, de commande, ou une boîte qui reçoit
+beaucoup de courrier automatique, c&rsquo;est une mauvaise idée. Il prend tout son
+sens sur une boîte personnelle très exposée au spam, où l&rsquo;on échange surtout
+avec des humains et où l&rsquo;on accepte qu&rsquo;un premier contact prenne quelques
+minutes de plus. Là, bien réglé, l&rsquo;ensemble peut transformer une boîte inondée
+en boîte quasi silencieuse.</p>
 
   </div>
   <div class="tag-cloud">
