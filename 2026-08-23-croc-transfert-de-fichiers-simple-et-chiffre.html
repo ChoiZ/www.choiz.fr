@@ -75,6 +75,10 @@
 </span></span></code></pre></div><p>Et à la réception, on ajoute le même <code>--relay</code> devant le code :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">croc --relay <span class="s2">&#34;monrelais.exemple.com:9009&#34;</span> 8451-magnum-cargo-arctic
 </span></span></code></pre></div><p>Si le relais a un mot de passe, on ajoute <code>--pass mon-mot-de-passe</code> des deux côtés. Et pour ne pas répéter tout ça à chaque fois, la variable d&rsquo;environnement <code>CROC_RELAY</code> (et <code>CROC_PASS</code> pour le mot de passe) fait le même travail une fois pour toutes.</p>
+<p>Un point à garder en tête : croc a toujours besoin d&rsquo;un relais pour mettre les deux machines en relation — il n&rsquo;existe pas de transfert « sans relais » sur Internet. Si vous bloquez <code>getcroc.com</code> dans votre pare-feu, croc « classique » cesse donc de fonctionner, et il faut obligatoirement pointer vers votre propre relais, des deux côtés. Seule exception, sur un même réseau local : l&rsquo;option <code>--local</code> démarre un relais local et découvre l&rsquo;autre machine sur le LAN, sans jamais toucher Internet.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">croc --local send mon-fichier.zip
+</span></span><span class="line"><span class="cl">croc --local 8451-magnum-cargo-arctic
+</span></span></code></pre></div><p>Bloquer le relais public devient alors un bon levier pour forcer tout à passer par votre infrastructure : votre relais pour l&rsquo;Internet, <code>--local</code> pour le réseau local.</p>
 <p>croc est devenu mon réflexe pour tout transfert ponctuel entre deux machines : simple, rapide, chiffré, multiplateforme, et je peux tout garder chez moi avec mon propre relais. Exactement le genre d&rsquo;outil que j&rsquo;aime.</p>
 
   </div>
