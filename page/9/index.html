@@ -44,27 +44,6 @@
 
 <article>
   <header>
-    <h2><a href="/2011-12-02-clavier-apple-sur-debian.html">Clavier Apple sur debian</a></h2>
-    <p>
-      Posté le ven. 2 décembre 2011
-       &#8226; Tags : <a href="/tag/debian.html">debian</a>, <a href="/tag/keyboard.html">keyboard</a>, <a href="/tag/osx.html">osx</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>Depuis le temps que je bosse avec un clavier Apple je me suis habitué au
-mappage clavier Mac. Il y a beaucoup de différences entre un clavier
-AZERTY de PC et un clavier AZERTY de Mac.</p>
-<p>Les touches : @ # ~ | (pipe) = + - _ ! ( ) { } [ ] sont disposées à
-des endroits complètement différents.</p>
-<p>J&rsquo;ai donc décidé de modifier la configuration de debian pour prendre en
-compte un clavier mac. :</p>
-    <p><a class="btn" href="/2011-12-02-clavier-apple-sur-debian.html">Lire la suite</a></p>
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
     <h2><a href="/2011-12-01-dual-screen-sur-xfce.html">Dual screen sur xfce</a></h2>
     <p>
       Posté le jeu. 1 décembre 2011
@@ -151,36 +130,6 @@ fichier avec vim :</p>
 séparateur pour la recherche et pour ce que l&rsquo;on souhaite remplacer et <code>\#</code>
 est le caractère de remplacement.</p>
 <p>Je remplace donc le début de ligne par un #.</p>
-    
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
-    <h2><a href="/2011-09-18-plusieurs-comptes-skype-sur-le-m%C3%AAme-mac.html">Plusieurs comptes Skype sur le même Mac !</a></h2>
-    <p>
-      Posté le dim. 18 septembre 2011
-       &#8226; Tags : <a href="/tag/skype.html">skype</a>, <a href="/tag/osx.html">osx</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>Comment lancer plusieurs comptes Skype avec le même Mac ?</p>
-<p><img src="http://media.tumblr.com/tumblr_lrqn73WCUg1qzr4hx.png" alt="image0"></p>
-<p>Créer un compte utilisateur dans les préférences systèmes &gt;
-utilisateurs. Par exemple l&rsquo;utilisateur : &ldquo;skype&rdquo; avec comme mot de
-passe &ldquo;password&rdquo;. Ensuite ouvrir un terminal (dans spotlight tapez
-terminal). Puis :</p>
-<pre><code>su skype (ou &quot;su nomdutilisateur&quot; en fonction de l'utilisateur créé).
-
-Password:
-
-password (ou autre suivant le mot de passe de l'utilisateur).
-</code></pre>
-<p>Puis :</p>
-<pre><code>/Applications/Skype.app/Contents/MacOS/Skype
-</code></pre>
-<p>Ce qui devrait lancer une seconde instance de Skype.</p>
     
   </div>
 </article>
@@ -283,6 +232,51 @@ avoir la machine virtuelle importée !</p>
     <p><a href="http://www.jsfiddle.net/">http://www.jsfiddle.net/</a> Pratique pour tester un code html / css / js</p>
 <p><a href="http://www.jsperf.com/">http://www.jsperf.com/</a> Pour faire des performances de code js</p>
 <p><a href="http://www.pastebin.com/">http://www.pastebin.com/</a> Pour copier coller du code facilement</p>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2011-07-26-ignorer-gr%C3%A2ce-au-svn.html">Ignorer grâce au SVN</a></h2>
+    <p>
+      Posté le mar. 26 juillet 2011
+       &#8226; Tags : <a href="/tag/svn.html">svn</a>
+    </p>
+  </header>
+  <div class="post-excerpt">
+    <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
+<pre><code>svn propset svn:ignore
+</code></pre>
+<p>Ou dans la configuration du svn dans ~/.subversion/config le
+global-ignores</p>
+<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier où
+l&rsquo;on se trouve actuellement il suffit d&rsquo;exécuter la commande svn
+suivante :</p>
+<pre><code>svn propset svn:ignore &quot;._*&quot; .
+</code></pre>
+<p>Par contre si on veut ignorer tous les fichiers qui commencent par ._
+dans tous les dossiers (et sous dossiers) du svn il faut éditer le
+fichier ~/.subversion/config et d&rsquo;éditer la ligne suivante :</p>
+    <p><a class="btn" href="/2011-07-26-ignorer-gr%C3%A2ce-au-svn.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2011-07-05-suppression-des-dsstore.html">Suppression des .DS_Store</a></h2>
+    <p>
+      Posté le mar. 5 juillet 2011
+       &#8226; Tags : <a href="/tag/osx.html">osx</a>, <a href="/tag/file.html">file</a>
+    </p>
+  </header>
+  <div class="post-excerpt">
+    <p>Dans une console sur votre Mac :</p>
+<pre><code>defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+</code></pre>
+<p>Puis redémarrez le mac.</p>
     
   </div>
 </article>

@@ -44,26 +44,6 @@
 
 <article>
   <header>
-    <h2><a href="/2014-02-06-git-cherry-pick.html">git cherry-pick</a></h2>
-    <p>
-      Posté le jeu. 6 février 2014
-       &#8226; Tags : <a href="/tag/git.html">git</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>J&rsquo;utilise git depuis pas mal de temps déjà et j&rsquo;avais déjà vu des
-messages sur cherry-pick sans savoir ce que c&rsquo;était.</p>
-<p>git cherry-pick permet d&rsquo;appliquer un commit sur la
-branche actuelle.</p>
-<pre><code>git cherry-pick c4a99776
-</code></pre>
-    
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
     <h2><a href="/2014-02-06-nouveau-th%C3%A8me.html">Nouveau thème</a></h2>
     <p>
       Posté le jeu. 6 février 2014
@@ -289,6 +269,30 @@ voulais voici donc ma procédure :</p>
 <p>J&rsquo;ai ensuite édité authors.txt pour remplacer nos différents pseudos par
 nos prénoms et noms puis j&rsquo;ai vérifié les adresses e-mails.</p>
     <p><a class="btn" href="/2013-07-16-passer-de-svn-%C3%A0-git.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2013-06-22-export-import-avec-postgresql.html">Export / Import avec PostgreSQL</a></h2>
+    <p>
+      Posté le sam. 22 juin 2013
+       &#8226; Tags : <a href="/tag/sql.html">sql</a>
+    </p>
+  </header>
+  <div class="post-excerpt">
+    <p>Pour exporter une table spécifique d&rsquo;une base :</p>
+<pre><code>pg_dump *mabase* --table=*matable* &gt; *dump_base_table*.sql
+</code></pre>
+<p>Pour exporter une base :</p>
+<pre><code>pg_dump *mabase* &gt; *dump_base*.sql
+</code></pre>
+<p>Pour importer un dump dans une base :</p>
+<pre><code>psql *base* &lt; *dump_base_table*.sql
+psql *base* &lt; *dump_base*.sql
+</code></pre>
+    
   </div>
 </article>
 

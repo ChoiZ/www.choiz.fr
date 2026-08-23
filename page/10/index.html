@@ -44,51 +44,6 @@
 
 <article>
   <header>
-    <h2><a href="/2011-07-26-ignorer-gr%C3%A2ce-au-svn.html">Ignorer grâce au SVN</a></h2>
-    <p>
-      Posté le mar. 26 juillet 2011
-       &#8226; Tags : <a href="/tag/svn.html">svn</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>Il existe plusieurs solutions pour ignorer des fichiers sur un svn :</p>
-<pre><code>svn propset svn:ignore
-</code></pre>
-<p>Ou dans la configuration du svn dans ~/.subversion/config le
-global-ignores</p>
-<p>Pour ignorer tous les fichiers qui commencent par ._ dans le dossier où
-l&rsquo;on se trouve actuellement il suffit d&rsquo;exécuter la commande svn
-suivante :</p>
-<pre><code>svn propset svn:ignore &quot;._*&quot; .
-</code></pre>
-<p>Par contre si on veut ignorer tous les fichiers qui commencent par ._
-dans tous les dossiers (et sous dossiers) du svn il faut éditer le
-fichier ~/.subversion/config et d&rsquo;éditer la ligne suivante :</p>
-    <p><a class="btn" href="/2011-07-26-ignorer-gr%C3%A2ce-au-svn.html">Lire la suite</a></p>
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
-    <h2><a href="/2011-07-05-suppression-des-dsstore.html">Suppression des .DS_Store</a></h2>
-    <p>
-      Posté le mar. 5 juillet 2011
-       &#8226; Tags : <a href="/tag/osx.html">osx</a>, <a href="/tag/file.html">file</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>Dans une console sur votre Mac :</p>
-<pre><code>defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-</code></pre>
-<p>Puis redémarrez le mac.</p>
-    
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
     <h2><a href="/2011-06-30-el%C3%A9ment-cliqu%C3%A9-en-js.html">Elément cliqué en js</a></h2>
     <p>
       Posté le jeu. 30 juin 2011
@@ -286,6 +241,60 @@ ou, en termes plus simples, le symbole &ldquo;double deux-points&rdquo; (::),
 fournit un moyen d&rsquo;accéder aux membres
 <a href="http://fr.php.net/manual/fr/language.oop5.static.php">statics</a> ou
 <a href="http://fr.php.net/manual/fr/language.oop5.constants.php">constants</a>.</em></p>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Protection de fichier tel qu&#39;un htaccess en PHP</a></h2>
+    <p>
+      Posté le ven. 11 février 2011
+       &#8226; Tags : <a href="/tag/php.html">php</a>, <a href="/tag/code.html">code</a>
+    </p>
+  </header>
+  <div class="post-excerpt">
+    <p>Faire un système de protection (tel que htaccess) direct dans un fichier PHP :</p>
+<pre tabindex="0"><code>&lt;?php
+if (!empty($_SERVER[&#34;PHP_AUTH_USER&#34;]) &amp;&amp;
+$_SERVER[&#34;PHP_AUTH_USER&#34;] == &#34;login&#34; &amp;&amp;
+$_SERVER[&#34;PHP_AUTH_PW&#34;] == &#34;password&#34;) {
+    // code protégé ici
+} else {
+    header(&#39;WWW-Authenticate: Basic realm=&#34;Restricted area&#34;&#39;);
+    header(&#39;HTTP/1.0 401 Unauthorized&#39;);
+    exit(&#39;Access Denied&#39;);
+}
+</code></pre><p>Attention l&rsquo;utilisation du htaccess n&rsquo;est pas recommandée sur une connexion non
+chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffrée
+(HTTPS).</p>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2011-01-07-jquery-attr-avec-onclick-par-click.html">jQuery attr() avec onclick par click()</a></h2>
+    <p>
+      Posté le ven. 7 janvier 2011
+       &#8226; Tags : <a href="/tag/code.html">code</a>, <a href="/tag/jquery.html">jquery</a>, <a href="/tag/javascript.html">javascript</a>
+    </p>
+  </header>
+  <div class="post-excerpt">
+    <p>Après avoir perdu 2h… J&rsquo;ai découvert que la méthode attr() de jQuery
+fonctionne pas avec l&rsquo;attribut &ldquo;onclick&rdquo;…</p>
+<p>Edit : Avec jQuery pour modifier le contenu d&rsquo;un onclick il faut faire
+.attr(&lsquo;onClick&rsquo;,&lsquo;valeur&rsquo;) ou faire de la façon suivante.</p>
+<p>Remplacer donc :</p>
+<pre><code>var mavar = 'fonctionAffichage();';
+$(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
+</code></pre>
+<p>Par :</p>
+<pre><code>var mavar = 'fonctionAffichage();';
+$(&quot;#code&quot;).removeAttr('onclick').click(function() { eval(mavar); });
+</code></pre>
     
   </div>
 </article>

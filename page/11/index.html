@@ -44,60 +44,6 @@
 
 <article>
   <header>
-    <h2><a href="/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Protection de fichier tel qu&#39;un htaccess en PHP</a></h2>
-    <p>
-      Posté le ven. 11 février 2011
-       &#8226; Tags : <a href="/tag/php.html">php</a>, <a href="/tag/code.html">code</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>Faire un système de protection (tel que htaccess) direct dans un fichier PHP :</p>
-<pre tabindex="0"><code>&lt;?php
-if (!empty($_SERVER[&#34;PHP_AUTH_USER&#34;]) &amp;&amp;
-$_SERVER[&#34;PHP_AUTH_USER&#34;] == &#34;login&#34; &amp;&amp;
-$_SERVER[&#34;PHP_AUTH_PW&#34;] == &#34;password&#34;) {
-    // code protégé ici
-} else {
-    header(&#39;WWW-Authenticate: Basic realm=&#34;Restricted area&#34;&#39;);
-    header(&#39;HTTP/1.0 401 Unauthorized&#39;);
-    exit(&#39;Access Denied&#39;);
-}
-</code></pre><p>Attention l&rsquo;utilisation du htaccess n&rsquo;est pas recommandée sur une connexion non
-chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffrée
-(HTTPS).</p>
-    
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
-    <h2><a href="/2011-01-07-jquery-attr-avec-onclick-par-click.html">jQuery attr() avec onclick par click()</a></h2>
-    <p>
-      Posté le ven. 7 janvier 2011
-       &#8226; Tags : <a href="/tag/code.html">code</a>, <a href="/tag/jquery.html">jquery</a>, <a href="/tag/javascript.html">javascript</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>Après avoir perdu 2h… J&rsquo;ai découvert que la méthode attr() de jQuery
-fonctionne pas avec l&rsquo;attribut &ldquo;onclick&rdquo;…</p>
-<p>Edit : Avec jQuery pour modifier le contenu d&rsquo;un onclick il faut faire
-.attr(&lsquo;onClick&rsquo;,&lsquo;valeur&rsquo;) ou faire de la façon suivante.</p>
-<p>Remplacer donc :</p>
-<pre><code>var mavar = 'fonctionAffichage();';
-$(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
-</code></pre>
-<p>Par :</p>
-<pre><code>var mavar = 'fonctionAffichage();';
-$(&quot;#code&quot;).removeAttr('onclick').click(function() { eval(mavar); });
-</code></pre>
-    
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
     <h2><a href="/2010-10-25-commande-svn-pour-ajouter-des-keywords.html">Commande SVN pour ajouter des keywords</a></h2>
     <p>
       Posté le lun. 25 octobre 2010

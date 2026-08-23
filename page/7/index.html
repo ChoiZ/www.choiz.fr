@@ -44,30 +44,6 @@
 
 <article>
   <header>
-    <h2><a href="/2013-06-22-export-import-avec-postgresql.html">Export / Import avec PostgreSQL</a></h2>
-    <p>
-      Posté le sam. 22 juin 2013
-       &#8226; Tags : <a href="/tag/sql.html">sql</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>Pour exporter une table spécifique d&rsquo;une base :</p>
-<pre><code>pg_dump *mabase* --table=*matable* &gt; *dump_base_table*.sql
-</code></pre>
-<p>Pour exporter une base :</p>
-<pre><code>pg_dump *mabase* &gt; *dump_base*.sql
-</code></pre>
-<p>Pour importer un dump dans une base :</p>
-<pre><code>psql *base* &lt; *dump_base_table*.sql
-psql *base* &lt; *dump_base*.sql
-</code></pre>
-    
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
     <h2><a href="/2013-06-22-git-d%C3%A9placer-mon-dernier-commit-sur-une-autre.html">Git déplacer mon dernier commit sur une autre branche</a></h2>
     <p>
       Posté le sam. 22 juin 2013
@@ -338,6 +314,32 @@ tout malheureusement.</p>
 cliquer sur &ldquo;+&rdquo; et dans Keyboard Shortcut: appuyer sur la touche et &ldquo;↩&rdquo;
 doit apparaître. Dans Action: choisir &ldquo;Send Hex Code&rdquo; et taper &ldquo;0xd&rdquo;.</p>
     <p><a class="btn" href="/2012-09-29-ma-configuration-iterm2.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
+    <h2><a href="/2012-08-13-mon-fichier-gitignore.html">Mon fichier .gitignore</a></h2>
+    <p>
+      Posté le lun. 13 août 2012
+       &#8226; Tags : <a href="/tag/git.html">git</a>, <a href="/tag/config.html">config</a>, <a href="/tag/file.html">file</a>
+    </p>
+  </header>
+  <div class="post-excerpt">
+    <p>Voilà mon petit fichier .gitignore :</p>
+<pre><code># Ignore files from git
+
+# ._ files (Mac Os X)
+._*
+
+# .DS_STORE (Mac Os X)
+.DS_STORE
+
+# .swp (Vim)
+*.swp
+</code></pre>
+    
   </div>
 </article>
 
