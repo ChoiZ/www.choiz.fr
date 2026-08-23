@@ -5,7 +5,7 @@
 {{ if $i }}<hr />{{ end }}
 <article>
   <header>
-    <h2><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h2>
+    <p class="post-title"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></p>
     <p>
       Posté le {{ $p.Date | time.Format "Mon 2 January 2006" }}
       {{ with $p.Params.tags }} &#8226; Tags : {{ range $j, $t := . }}{{ if $j }}, {{ end }}<a href="/tag/{{ $t | urlize }}.html">{{ $t }}</a>{{ end }}{{ end }}
