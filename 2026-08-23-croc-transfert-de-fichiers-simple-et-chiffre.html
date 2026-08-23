@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,600,700&family=jetbrains-mono:400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="François LASSERRE" />
+  <title>ChoiZ &ndash; croc : transférer des fichiers entre deux machines, simplement et chiffré</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="/"><img src="/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE"></a>
+      <div>
+        <a href="/">Blog technique de François LASSERRE</a>
+      </div>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives.html">Archives</a></li>
+          <li><a href="/tags.html">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="https://www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    
+<article>
+  <nav class="breadcrumb" aria-label="fil d'Ariane">
+    <a href="/">Accueil</a> › <span>croc : transférer des fichiers entre deux machines, simplement et chiffré</span>
+  </nav>
+  <header>
+    <h1 id="2026-08-23-croc-transfert-de-fichiers-simple-et-chiffre">croc : transférer des fichiers entre deux machines, simplement et chiffré</h1>
+    <p>Posté le dim. 23 août 2026</p>
+  </header>
+  <div>
+    <p>Envoyer un fichier d&rsquo;un ordinateur à un autre reste étonnamment pénible : la clé USB qu&rsquo;on n&rsquo;a jamais sous la main, le mail qui refuse au-delà de 25 Mo, le cloud qui réclame un compte et un long téléversement… <a href="https://getcroc.com">croc</a> règle ça en deux commandes, chiffré de bout en bout, sans compte ni serveur à monter. On tape <code>croc send fichier</code> d&rsquo;un côté, on récupère un petit code, on tape ce code de l&rsquo;autre côté, et le transfert démarre — même entre deux machines derrière leurs box, sans ouvrir le moindre port.</p>
+<h2 id="comment-ça-marche">Comment ça marche</h2>
+<p>Tout repose sur le code. Quand vous lancez <code>croc send</code>, l&rsquo;outil génère une phrase du genre <code>8451-magnum-cargo-arctic</code>. Ce code joue deux rôles à la fois : il identifie le transfert, et il sert de secret partagé. Les deux machines le passent dans un PAKE (<em>password-authenticated key exchange</em>), un algorithme qui permet à deux parties de dériver la même clé de chiffrement solide à partir d&rsquo;un secret faible, sans jamais faire transiter cette clé sur le réseau. Le transfert est ensuite chiffré de bout en bout avec cette clé.</p>
+<p>Entre les deux machines se trouve un relais (public par défaut). Mais il ne fait que faire suivre des octets déjà chiffrés : il ne voit ni le contenu du fichier, ni la clé. Son seul rôle est de permettre à deux ordinateurs, chacun derrière son NAT, de se trouver sans redirection de port. Autrement dit, même le relais ne peut rien lire de ce qui passe.</p>
+<h2 id="en-pratique">En pratique</h2>
+<p>L&rsquo;installation, selon la plateforme :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew install croc                  <span class="c1"># macOS</span>
+</span></span><span class="line"><span class="cl">sudo apt install croc              <span class="c1"># Debian / Ubuntu</span>
+</span></span><span class="line"><span class="cl">curl https://getcroc.com <span class="p">|</span> bash    <span class="c1"># multiplateforme</span>
+</span></span></code></pre></div><p>Pour envoyer, on pointe un fichier ou un dossier :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">croc send mon-fichier.zip
+</span></span></code></pre></div><p>croc affiche alors le code à transmettre :</p>
+<pre tabindex="0"><code>Code is: 8451-magnum-cargo-arctic
+</code></pre><p>Et sur l&rsquo;autre machine, il suffit de le taper :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">croc 8451-magnum-cargo-arctic
+</span></span></code></pre></div><p>Ça marche aussi bien pour un dossier entier que pour plusieurs fichiers d&rsquo;un coup, et si le transfert est interrompu, on relance la commande : il reprend là où il s&rsquo;était arrêté. Enfin, on peut choisir son propre code plutôt que de subir celui généré — pratique quand on le dicte au téléphone :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">croc send --code mon-code-a-moi mon-fichier.zip
+</span></span></code></pre></div><h2 id="garder-le-contrôle--son-propre-relais">Garder le contrôle : son propre relais</h2>
+<p>Par défaut, croc passe par le relais public de getcroc.com. Il ne voit rien du contenu, mais si vous voulez la maîtrise totale — ou transférer sur un réseau fermé — hébergez le vôtre, c&rsquo;est une seule commande :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">croc relay
+</span></span></code></pre></div><p>et côté client, on lui indique où pointer :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">croc --relay <span class="s2">&#34;monrelais.exemple.com:9009&#34;</span> send mon-fichier.zip
+</span></span></code></pre></div><p>croc est devenu mon réflexe pour tout transfert ponctuel entre deux machines : simple, rapide, chiffré, multiplateforme, et je peux tout garder chez moi avec mon propre relais. Exactement le genre d&rsquo;outil que j&rsquo;aime.</p>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/cli.html">cli</a> <a href="/tag/network.html">network</a> <a href="/tag/file.html">file</a> 
+    </p>
+  </div>
+  <nav class="post-nav" aria-label="navigation entre articles">
+    <a href="/2026-08-22-migration-de-pelican-a-hugo.html">← Migration de Pelican à Hugo</a>
+    
+  </nav>
+  <div id="comments">
+    <h2>Commentaires</h2>
+    <div id="comments-loading" class="comments-loading" aria-live="polite">
+      <span class="comments-spinner" aria-hidden="true"></span>
+      Chargement des commentaires…
+    </div>
+  </div>
+  <script src="https://utteranc.es/client.js"
+          repo="ChoiZ/comments-on-choiz.fr" issue-term="url" label="blog"
+          theme="github-light" crossorigin="anonymous" async></script>
+  <script>
+  (function(){var l=document.getElementById('comments-loading');if(!l)return;var d=false;function h(){if(d)return;d=true;l.style.display='none';}
+  window.addEventListener('message',function(e){if(e.origin==='https://utteranc.es')h();});
+  var o=new MutationObserver(function(){var f=document.querySelector('.utterances-frame');if(f){f.addEventListener('load',h);o.disconnect();}});
+  o.observe(document.body,{childList:true,subtree:true});setTimeout(h,10000);})();
+  </script>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE</p>
+      <p>Built using <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></p>
+    </footer>
+  </main>
+</body>
+</html>

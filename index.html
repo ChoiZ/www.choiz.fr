@@ -44,6 +44,21 @@
 
 <article>
   <header>
+    <h2><a href="/2026-08-23-croc-transfert-de-fichiers-simple-et-chiffre.html">croc : transférer des fichiers entre deux machines, simplement et chiffré</a></h2>
+    <p>
+      Posté le dim. 23 août 2026
+       &#8226; Tags : <a href="/tag/cli.html">cli</a>, <a href="/tag/network.html">network</a>, <a href="/tag/file.html">file</a>
+    </p>
+  </header>
+  <div>
+    <p>Envoyer un fichier d&rsquo;un ordinateur à un autre reste étonnamment pénible : la clé USB qu&rsquo;on n&rsquo;a jamais sous la main, le mail qui refuse au-delà de 25 Mo, le cloud qui réclame un compte et un long téléversement… <a href="https://getcroc.com">croc</a> règle ça en deux commandes, chiffré de bout en bout, sans compte ni serveur à monter. On tape <code>croc send fichier</code> d&rsquo;un côté, on récupère un petit code, on tape ce code de l&rsquo;autre côté, et le transfert démarre — même entre deux machines derrière leurs box, sans ouvrir le moindre port.</p>
+    <p><a class="btn" href="/2026-08-23-croc-transfert-de-fichiers-simple-et-chiffre.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2026-08-22-migration-de-pelican-a-hugo.html">Migration de Pelican à Hugo</a></h2>
     <p>
       Posté le sam. 22 août 2026
@@ -221,40 +236,6 @@ Donc pour le Lundi 10 Décembre 2018 je vais écrire 20181210 ou 2018-12-10.</p>
 <pre tabindex="0"><code>mdadm: Cannot open /dev/sdd1: Device or resource busy
 </code></pre><p>Il faut donc redémarrer la machine et éditer le grub à la main… (avec la touche e), puis ajouter dans la ligne avec le kernel <code>nodmraid</code> puis appuyer sur f10 ou b pour booter.</p>
     <p><a class="btn" href="/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html">Lire la suite</a></p>
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
-    <h2><a href="/2018-07-30-installer-et-utiliser-lxc.html">Installer et utiliser lxc</a></h2>
-    <p>
-      Posté le lun. 30 juillet 2018
-       &#8226; Tags : <a href="/tag/linux.html">linux</a>, <a href="/tag/lxc.html">lxc</a>, <a href="/tag/debian.html">debian</a>
-    </p>
-  </header>
-  <div>
-    <p>Installation de lxc sur debian :</p>
-<p><code>apt-get install lxc</code></p>
-<p>Création d&rsquo;un conteneur lxc sous debian :</p>
-<p><code>lxc-create -n debian9 -t download</code></p>
-<p>Sélectionner :</p>
-<pre tabindex="0"><code>distribution: debian
-Release: strech
-Architecture: amd64
-</code></pre><p>Lister les conteneurs :</p>
-<pre tabindex="0"><code>lxc-ls -f
-NAME        STATE   AUTOSTART GROUPS IPV4 IPV6
-debian9     STOPPED 0         -      -    -
-</code></pre><p>Copier debian9 en conteneur debian pour l&rsquo;utiliser pour un wiki par exemple :</p>
-<pre tabindex="0"><code>lxc-copy -n debian9 -N debian9wiki -B overlay -s
-</code></pre><p>Vérifions :</p>
-<pre tabindex="0"><code>lxc-ls -f
-NAME        STATE   AUTOSTART GROUPS IPV4 IPV6
-debian9     STOPPED 0         -      -    -
-debian9wiki STOPPED 0         -      -    -
-</code></pre><p>Lancer debian9wiki :</p>
-    <p><a class="btn" href="/2018-07-30-installer-et-utiliser-lxc.html">Lire la suite</a></p>
   </div>
 </article>
 

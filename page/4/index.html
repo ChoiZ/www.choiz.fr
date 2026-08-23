@@ -44,6 +44,35 @@
 
 <article>
   <header>
+    <h2><a href="/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html">Compression Décompression tar.gz tar.bz2 tar.xz</a></h2>
+    <p>
+      Posté le dim. 30 août 2015
+       &#8226; Tags : <a href="/tag/archive.html">archive</a>, <a href="/tag/gzip.html">gzip</a>
+    </p>
+  </header>
+  <div>
+    <p>J&rsquo;ai toujours du mal pour décompresser un fichier de type &ldquo;tar.bz2&rdquo; ou
+&ldquo;tar.xz&rdquo;. Je n&rsquo;ai pas encore trouvé le moyen de me souvenir de la
+syntaxe…</p>
+<h2 id="targz">tar.gz</h2>
+<p>Pour les fichiers <code>tar.gz</code> j&rsquo;arrive parfaitement à compresser ou
+décompresser ce format exemple :</p>
+<p>On compresse avec :</p>
+<pre><code>tar -cvzf archive.tar.gz dossier_a_compresser/
+</code></pre>
+<p>On décompresse avec :</p>
+<pre><code>tar -xvzf archive.tar.gz
+</code></pre>
+<p>Il suffit de retenir :</p>
+<p>-c comme compression / &ldquo;x&rdquo; comme eXtract ou eXtraction. -v pour le mode
+verbeux. -z pour le &ldquo;gzip&rdquo; d&rsquo;où le &ldquo;.gz&rdquo;. -f pour spécifier le fichier.</p>
+    <p><a class="btn" href="/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2015-08-25-suppression-des-branches-distantes-inexistantes.html">Suppression des branches distantes inexistantes</a></h2>
     <p>
       Posté le mar. 25 août 2015
@@ -261,24 +290,6 @@ l&rsquo;autre !</p>
 (ntp.unice.fr).</p>
 <p>J&rsquo;ai donc installé ntp grâce aux paquets debian, et maintenant mes
 serveurs sont à l&rsquo;heure.</p>
-    
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
-    <h2><a href="/2014-12-08-recherche-dans-le-code-source-avec-git.html">Recherche dans le code source avec git</a></h2>
-    <p>
-      Posté le lun. 8 décembre 2014
-       &#8226; Tags : <a href="/tag/git.html">git</a>, <a href="/tag/code.html">code</a>
-    </p>
-  </header>
-  <div>
-    <p>Pour rechercher directement dans le code source une modification
-précise, j&rsquo;utilise la commande suivante :</p>
-<pre><code>git log -p -S 'display'
-</code></pre>
     
   </div>
 </article>

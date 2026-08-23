@@ -6,13 +6,47 @@
   <link href="https://www.choiz.fr/feeds/all.atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://www.choiz.fr/</id>
   
-  <updated>2026-08-22T10:00:00Z</updated>
+  <updated>2026-08-23T11:39:00+02:00</updated>
+  
+  <entry>
+    <title>croc : transférer des fichiers entre deux machines, simplement et chiffré</title>
+    <link href="https://www.choiz.fr/2026-08-23-croc-transfert-de-fichiers-simple-et-chiffre.html"/>
+    <id>https://www.choiz.fr/2026-08-23-croc-transfert-de-fichiers-simple-et-chiffre.html</id>
+    <updated>2026-08-23T11:39:00+02:00</updated>
+    <author><name>choiz</name></author>
+    <category term="cli"/><category term="network"/><category term="file"/>
+    <summary type="html">&lt;p&gt;Envoyer un fichier d&amp;rsquo;un ordinateur à un autre reste étonnamment pénible : la clé USB qu&amp;rsquo;on n&amp;rsquo;a jamais sous la main, le mail qui refuse au-delà de 25 Mo, le cloud qui réclame un compte et un long téléversement… &lt;a href=&#34;https://getcroc.com&#34;&gt;croc&lt;/a&gt; règle ça en deux commandes, chiffré de bout en bout, sans compte ni serveur à monter. On tape &lt;code&gt;croc send fichier&lt;/code&gt; d&amp;rsquo;un côté, on récupère un petit code, on tape ce code de l&amp;rsquo;autre côté, et le transfert démarre — même entre deux machines derrière leurs box, sans ouvrir le moindre port.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;Envoyer un fichier d&amp;rsquo;un ordinateur à un autre reste étonnamment pénible : la clé USB qu&amp;rsquo;on n&amp;rsquo;a jamais sous la main, le mail qui refuse au-delà de 25 Mo, le cloud qui réclame un compte et un long téléversement… &lt;a href=&#34;https://getcroc.com&#34;&gt;croc&lt;/a&gt; règle ça en deux commandes, chiffré de bout en bout, sans compte ni serveur à monter. On tape &lt;code&gt;croc send fichier&lt;/code&gt; d&amp;rsquo;un côté, on récupère un petit code, on tape ce code de l&amp;rsquo;autre côté, et le transfert démarre — même entre deux machines derrière leurs box, sans ouvrir le moindre port.&lt;/p&gt;
+&lt;h2 id=&#34;comment-ça-marche&#34;&gt;Comment ça marche&lt;/h2&gt;
+&lt;p&gt;Tout repose sur le code. Quand vous lancez &lt;code&gt;croc send&lt;/code&gt;, l&amp;rsquo;outil génère une phrase du genre &lt;code&gt;8451-magnum-cargo-arctic&lt;/code&gt;. Ce code joue deux rôles à la fois : il identifie le transfert, et il sert de secret partagé. Les deux machines le passent dans un PAKE (&lt;em&gt;password-authenticated key exchange&lt;/em&gt;), un algorithme qui permet à deux parties de dériver la même clé de chiffrement solide à partir d&amp;rsquo;un secret faible, sans jamais faire transiter cette clé sur le réseau. Le transfert est ensuite chiffré de bout en bout avec cette clé.&lt;/p&gt;
+&lt;p&gt;Entre les deux machines se trouve un relais (public par défaut). Mais il ne fait que faire suivre des octets déjà chiffrés : il ne voit ni le contenu du fichier, ni la clé. Son seul rôle est de permettre à deux ordinateurs, chacun derrière son NAT, de se trouver sans redirection de port. Autrement dit, même le relais ne peut rien lire de ce qui passe.&lt;/p&gt;
+&lt;h2 id=&#34;en-pratique&#34;&gt;En pratique&lt;/h2&gt;
+&lt;p&gt;L&amp;rsquo;installation, selon la plateforme :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install croc                  &lt;span class=&#34;c1&#34;&gt;# macOS&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install croc              &lt;span class=&#34;c1&#34;&gt;# Debian / Ubuntu&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl https://getcroc.com &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; bash    &lt;span class=&#34;c1&#34;&gt;# multiplateforme&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Pour envoyer, on pointe un fichier ou un dossier :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;croc send mon-fichier.zip
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;croc affiche alors le code à transmettre :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Code is: 8451-magnum-cargo-arctic
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Et sur l&amp;rsquo;autre machine, il suffit de le taper :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;croc 8451-magnum-cargo-arctic
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ça marche aussi bien pour un dossier entier que pour plusieurs fichiers d&amp;rsquo;un coup, et si le transfert est interrompu, on relance la commande : il reprend là où il s&amp;rsquo;était arrêté. Enfin, on peut choisir son propre code plutôt que de subir celui généré — pratique quand on le dicte au téléphone :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;croc send --code mon-code-a-moi mon-fichier.zip
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;garder-le-contrôle--son-propre-relais&#34;&gt;Garder le contrôle : son propre relais&lt;/h2&gt;
+&lt;p&gt;Par défaut, croc passe par le relais public de getcroc.com. Il ne voit rien du contenu, mais si vous voulez la maîtrise totale — ou transférer sur un réseau fermé — hébergez le vôtre, c&amp;rsquo;est une seule commande :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;croc relay
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;et côté client, on lui indique où pointer :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;croc --relay &lt;span class=&#34;s2&#34;&gt;&amp;#34;monrelais.exemple.com:9009&amp;#34;&lt;/span&gt; send mon-fichier.zip
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;croc est devenu mon réflexe pour tout transfert ponctuel entre deux machines : simple, rapide, chiffré, multiplateforme, et je peux tout garder chez moi avec mon propre relais. Exactement le genre d&amp;rsquo;outil que j&amp;rsquo;aime.&lt;/p&gt;
+</content>
+  </entry>
   
   <entry>
     <title>Migration de Pelican à Hugo</title>
     <link href="https://www.choiz.fr/2026-08-22-migration-de-pelican-a-hugo.html"/>
     <id>https://www.choiz.fr/2026-08-22-migration-de-pelican-a-hugo.html</id>
-    <updated>2026-08-22T10:00:00Z</updated>
+    <updated>2026-08-22T10:00:00+02:00</updated>
     <author><name>choiz</name></author>
     <category term="blog"/><category term="hugo"/><category term="pelican"/><category term="migration"/>
     <summary type="html">&lt;p&gt;En 2015 je migrais ce blog de &lt;a href=&#34;https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html&#34;&gt;Tumblr à Pelican&lt;/a&gt;. Onze ans après cette migration Tumblr → Pelican, je passe cette fois de Pelican à Hugo. Voici pourquoi et, surtout, comment sans rien casser.&lt;/p&gt;
@@ -41,7 +75,7 @@
     <title>Trois parades contre le spam : cloisonner, autoriser, défier</title>
     <link href="https://www.choiz.fr/2026-08-21-trois-parades-contre-le-spam.html"/>
     <id>https://www.choiz.fr/2026-08-21-trois-parades-contre-le-spam.html</id>
-    <updated>2026-08-21T10:00:00Z</updated>
+    <updated>2026-08-21T10:00:00+02:00</updated>
     <author><name>choiz</name></author>
     <category term="mail"/><category term="antispam"/><category term="smtp"/>
     <summary type="html">&lt;p&gt;Le spam, c&amp;rsquo;est vieux comme le mail, et malgré les filtres bayésiens, les
@@ -227,7 +261,7 @@ en boîte quasi silencieuse.&lt;/p&gt;
     <title>Versionner son CSS et son JS en précisant de plus en plus</title>
     <link href="https://www.choiz.fr/2026-08-04-versionner-son-css-et-son-js-en-precisant-de-plus-en-plus.html"/>
     <id>https://www.choiz.fr/2026-08-04-versionner-son-css-et-son-js-en-precisant-de-plus-en-plus.html</id>
-    <updated>2026-08-04T09:30:00Z</updated>
+    <updated>2026-08-04T09:30:00+02:00</updated>
     <author><name>choiz</name></author>
     <category term="css"/><category term="javascript"/><category term="deploy"/><category term="cache"/><category term="version"/>
     <summary type="html">&lt;p&gt;Quand on met à jour le CSS ou le JS d&amp;rsquo;un site, on tombe toujours sur le même
@@ -380,7 +414,7 @@ un cache toujours à jour.&lt;/p&gt;
     <title>Utiliser les Github Issues pour avoir des commentaires sur le blog</title>
     <link href="https://www.choiz.fr/2020-04-13-utiliser-les-github-issues-pour-avoir-des-commentaires-sur-le-blog.html"/>
     <id>https://www.choiz.fr/2020-04-13-utiliser-les-github-issues-pour-avoir-des-commentaires-sur-le-blog.html</id>
-    <updated>2020-04-13T14:13:51Z</updated>
+    <updated>2020-04-13T14:13:51+02:00</updated>
     <author><name>choiz</name></author>
     <category term="blog"/><category term="github"/><category term="comments"/>
     <summary type="html">&lt;p&gt;J&amp;rsquo;essaye depuis un certain temps de faire attention à ma vie privée sur Internet et j&amp;rsquo;évite d&amp;rsquo;être tracké.&lt;/p&gt;
@@ -410,7 +444,7 @@ un cache toujours à jour.&lt;/p&gt;
     <title>Faire un va et vient avec des interrupteurs muraux Xiaomi</title>
     <link href="https://www.choiz.fr/2020-04-12-faire-un-va-et-vient-avec-des-interrupteurs-muraux-xiaomi.html"/>
     <id>https://www.choiz.fr/2020-04-12-faire-un-va-et-vient-avec-des-interrupteurs-muraux-xiaomi.html</id>
-    <updated>2020-04-12T17:37:45Z</updated>
+    <updated>2020-04-12T17:37:45+02:00</updated>
     <author><name>choiz</name></author>
     <category term="domotique"/><category term="xiaomi"/>
     <summary type="html">&lt;p&gt;J&amp;rsquo;ai recherché longtemps comment faire un va et vient avec des interrupteurs muraux Xiaomi.&lt;/p&gt;
@@ -542,7 +576,7 @@ un cache toujours à jour.&lt;/p&gt;
     <title>Optimisation de pdf grâce à ImageMagick</title>
     <link href="https://www.choiz.fr/2019-04-23-optimisation-de-pdf-grace-a-imagemagick.html"/>
     <id>https://www.choiz.fr/2019-04-23-optimisation-de-pdf-grace-a-imagemagick.html</id>
-    <updated>2019-04-23T00:32:20Z</updated>
+    <updated>2019-04-23T00:32:20+02:00</updated>
     <author><name>choiz</name></author>
     <category term="imagemagick"/><category term="pdf"/>
     <summary type="html">&lt;p&gt;Ayant de gros pdf de 3Mo je cherchais une solution pour les optimiser en ligne de commande.&lt;/p&gt;
@@ -561,7 +595,7 @@ un cache toujours à jour.&lt;/p&gt;
     <title>Update i3-sensible-terminal</title>
     <link href="https://www.choiz.fr/2019-03-24-update-i3-sensible-terminal.html"/>
     <id>https://www.choiz.fr/2019-03-24-update-i3-sensible-terminal.html</id>
-    <updated>2019-03-24T16:26:25Z</updated>
+    <updated>2019-03-24T16:26:25+01:00</updated>
     <author><name>choiz</name></author>
     <category term="linux"/>
     <summary type="html">&lt;p&gt;En voulant modifier ma config de i3 je me suis aperçu que j&amp;rsquo;avais modifié la ligne :&lt;/p&gt;
@@ -584,7 +618,7 @@ un cache toujours à jour.&lt;/p&gt;
     <title>Bien nommer ses fichiers</title>
     <link href="https://www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html"/>
     <id>https://www.choiz.fr/2018-12-13-bien-nommer-ses-fichiers.html</id>
-    <updated>2018-12-13T12:52:55Z</updated>
+    <updated>2018-12-13T12:52:55+01:00</updated>
     <author><name>choiz</name></author>
     <category term="file"/><category term="date"/>
     <summary type="html">&lt;p&gt;Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ?&lt;/p&gt;
@@ -744,7 +778,7 @@ Nous ne retenons pas cette solution.&lt;/p&gt;
     <title>Ajouter un disque a une grappe RAID MDADM</title>
     <link href="https://www.choiz.fr/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html"/>
     <id>https://www.choiz.fr/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html</id>
-    <updated>2018-12-05T23:22:42Z</updated>
+    <updated>2018-12-05T23:22:42+01:00</updated>
     <author><name>choiz</name></author>
     <category term="raid"/><category term="mdadm"/>
     <summary type="html">&lt;p&gt;Ayant enfin fini la migration de mon NAS vers mon nouveau NAS, j&amp;rsquo;ai récupéré mon troisième disque de 10To pour l&amp;rsquo;ajouter à ma grappe RAID1 qui contient déjà 2 disques de 10To.&lt;/p&gt;
@@ -774,7 +808,7 @@ raid_disks for /dev/md0 set to 3
     <title>Installer et utiliser lxc</title>
     <link href="https://www.choiz.fr/2018-07-30-installer-et-utiliser-lxc.html"/>
     <id>https://www.choiz.fr/2018-07-30-installer-et-utiliser-lxc.html</id>
-    <updated>2018-07-30T10:48:04Z</updated>
+    <updated>2018-07-30T10:48:04+02:00</updated>
     <author><name>choiz</name></author>
     <category term="linux"/><category term="lxc"/><category term="debian"/>
     <summary type="html">&lt;p&gt;Installation de lxc sur debian :&lt;/p&gt;
@@ -837,7 +871,7 @@ debian9wiki RUNNING 0         -      192.168.60.140 -
     <title>Installation d'un contrôleur Unifi sur Raspberry Pi 3</title>
     <link href="https://www.choiz.fr/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html"/>
     <id>https://www.choiz.fr/2017-10-21-installation-d-un-controlleur-unifi-sur-raspberry-pi-3.html</id>
-    <updated>2017-10-21T21:57:19Z</updated>
+    <updated>2017-10-21T21:57:19+02:00</updated>
     <author><name>choiz</name></author>
     <category term="raspberry"/><category term="unifi"/><category term="debian"/><category term="linux"/>
     <summary type="html">&lt;p&gt;Pour commencer il faut télécharger la dernière version de raspbian sur le site
@@ -963,7 +997,7 @@ contrôleur avec la nouvelle adresse ip : &lt;code&gt;https://10.0.0.10:8443&lt;
     <title>Faire du NAT avec Proxmox</title>
     <link href="https://www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html"/>
     <id>https://www.choiz.fr/2017-10-15-faire-un-nat-avec-proxmox.html</id>
-    <updated>2017-10-15T22:08:23Z</updated>
+    <updated>2017-10-15T22:08:23+02:00</updated>
     <author><name>choiz</name></author>
     <category term="network"/><category term="proxmox"/>
     <summary type="html">&lt;p&gt;L&amp;rsquo;idée est d&amp;rsquo;utiliser qu&amp;rsquo;une seule adresse ip publique pour plusieurs VM. Comme à
@@ -1035,7 +1069,7 @@ site internet duckduckgo.com par exemple.&lt;/p&gt;
     <title>Créer un partage NFS</title>
     <link href="https://www.choiz.fr/2017-10-15-creer-un-partage-nfs.html"/>
     <id>https://www.choiz.fr/2017-10-15-creer-un-partage-nfs.html</id>
-    <updated>2017-10-15T19:52:13Z</updated>
+    <updated>2017-10-15T19:52:13+02:00</updated>
     <author><name>choiz</name></author>
     <category term="nfs"/><category term="linux"/><category term="debian"/><category term="gentoo"/>
     <summary type="html">&lt;p&gt;Pour installer un serveur NFS sur Debian voici la marche à suivre :&lt;/p&gt;
@@ -1086,7 +1120,7 @@ fichiers qui se trouvent sur votre serveur.&lt;/p&gt;
     <title>Remplacer sa livebox par un UniFi Security Gateway 3P (USG)</title>
     <link href="https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html"/>
     <id>https://www.choiz.fr/2017-08-26-remplacer-sa-livebox-par-un-unifi-security-gateway-3p-(usg).html</id>
-    <updated>2017-08-26T19:00:56Z</updated>
+    <updated>2017-08-26T19:00:56+02:00</updated>
     <author><name>choiz</name></author>
     <category term="unifi"/><category term="network"/>
     <summary type="html">&lt;p&gt;Ayant pas mal utilisé le matériel d&amp;rsquo;ubiquiti j&amp;rsquo;ai acheté un USG 3 pour la maison.&lt;/p&gt;
@@ -1202,7 +1236,7 @@ du contrôleur revoir les différentes étapes.&lt;/p&gt;
     <title>Installation de Proxmox-VE 5 sur Debian Stretch</title>
     <link href="https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html"/>
     <id>https://www.choiz.fr/2017-08-26-installation-de-proxmox-ve-5-sur-debian-stretch.html</id>
-    <updated>2017-08-26T17:36:19Z</updated>
+    <updated>2017-08-26T17:36:19+02:00</updated>
     <author><name>choiz</name></author>
     <category term="proxmox"/><category term="debian"/><category term="linux"/>
     <summary type="html">&lt;p&gt;Suite à l&amp;rsquo;installation de mon NAS, j&amp;rsquo;ai installé un proxmox dessus.
@@ -1268,7 +1302,7 @@ update-grub
     <title>Upgrade NAS</title>
     <link href="https://www.choiz.fr/2017-08-26-upgrade-nas.html"/>
     <id>https://www.choiz.fr/2017-08-26-upgrade-nas.html</id>
-    <updated>2017-08-26T11:04:27Z</updated>
+    <updated>2017-08-26T11:04:27+02:00</updated>
     <author><name>choiz</name></author>
     <category term="nas"/><category term="debian"/><category term="storage"/><category term="linux"/>
     <summary type="html">&lt;p&gt;J&amp;rsquo;ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
@@ -1356,7 +1390,7 @@ apt install firmware-linux-nonfree
     <title>Re-générer une clé rsa publique</title>
     <link href="https://www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html"/>
     <id>https://www.choiz.fr/2017-06-05-re-generer-une-cle-rsa-publique.html</id>
-    <updated>2017-06-05T15:03:08Z</updated>
+    <updated>2017-06-05T15:03:08+02:00</updated>
     <author><name>choiz</name></author>
     <category term="ssh"/>
     <summary type="html">&lt;p&gt;Si vous n&amp;rsquo;avez plus de clé publique, mais que vous avez toujours votre clé privée vous pouvez regénérer votre clé
@@ -1376,7 +1410,7 @@ publique.&lt;/p&gt;
     <title>Utiliser un Bastion SSH</title>
     <link href="https://www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html"/>
     <id>https://www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html</id>
-    <updated>2017-06-01T21:29:24Z</updated>
+    <updated>2017-06-01T21:29:24+02:00</updated>
     <author><name>choiz</name></author>
     <category term="ssh"/><category term="linux"/>
     <summary type="html">&lt;p&gt;Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
@@ -1418,7 +1452,7 @@ Host destination.local
     <title>Docker commandes utiles</title>
     <link href="https://www.choiz.fr/2017-05-14-docker-commandes-utiles.html"/>
     <id>https://www.choiz.fr/2017-05-14-docker-commandes-utiles.html</id>
-    <updated>2017-05-14T21:47:35Z</updated>
+    <updated>2017-05-14T21:47:35+02:00</updated>
     <author><name>choiz</name></author>
     <category term="docker"/><category term="linux"/>
     <summary type="html">&lt;p&gt;Voici quelques commandes très utiles si vous utilisez docker.&lt;/p&gt;
@@ -1441,28 +1475,6 @@ Host destination.local
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Se connecter à un conteneur docker lancé par son nom :&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker exec -it nom_de_votre_container /bin/bash
 &lt;/code&gt;&lt;/pre&gt;</content>
-  </entry>
-  
-  <entry>
-    <title>Convertir un .deb en archive .tar.gz</title>
-    <link href="https://www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html"/>
-    <id>https://www.choiz.fr/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html</id>
-    <updated>2016-07-30T10:28:18Z</updated>
-    <author><name>choiz</name></author>
-    <category term="archive"/><category term="debian"/><category term="gentoo"/><category term="gzip"/><category term="linux"/>
-    <summary type="html">&lt;p&gt;En voulant installer le logiciel &amp;ldquo;slack&amp;rdquo; sur ma machine gentoo au travail j&amp;rsquo;ai
-trouvé un logiciel plutôt intéressant nommé &amp;ldquo;deb2targz&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;En effet &lt;a href=&#34;https://slack.com/downloads&#34;&gt;slack&lt;/a&gt; ne dispose que des archives ubuntu
-en 32 bits, 64 bits et fedora en 64 bits.&lt;/p&gt;
-&lt;p&gt;deb2targz permet de convertir un fichier &amp;ldquo;.deb&amp;rdquo; en archive &amp;ldquo;.tar.gz&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;Si vous êtes sur gentoo installez le via : &lt;code&gt;emerge -a app-arch/deb2targz&lt;/code&gt;&lt;/p&gt;</summary>
-    <content type="html">&lt;p&gt;En voulant installer le logiciel &amp;ldquo;slack&amp;rdquo; sur ma machine gentoo au travail j&amp;rsquo;ai
-trouvé un logiciel plutôt intéressant nommé &amp;ldquo;deb2targz&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;En effet &lt;a href=&#34;https://slack.com/downloads&#34;&gt;slack&lt;/a&gt; ne dispose que des archives ubuntu
-en 32 bits, 64 bits et fedora en 64 bits.&lt;/p&gt;
-&lt;p&gt;deb2targz permet de convertir un fichier &amp;ldquo;.deb&amp;rdquo; en archive &amp;ldquo;.tar.gz&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;Si vous êtes sur gentoo installez le via : &lt;code&gt;emerge -a app-arch/deb2targz&lt;/code&gt;&lt;/p&gt;
-</content>
   </entry>
   
 </feed>
