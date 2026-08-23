@@ -58,6 +58,8 @@ pouvez spécifier un autre chemin ainsi qu&rsquo;un autre fichier. :</p>
 <p>Ici on tape un mot de passe si on en veut un lors de la connexion aux
 différents hosts. En général j&rsquo;en définis un.</p>
 <p>Pour finir on copie la clé sur le serveur soit via scp :</p>
+<p>Au lieu de :</p>
+<pre><del>scp ~/.ssh/id_rsa.pub user@ip:~/.ssh/authorized_keys/</del></pre>
 <pre><code>cat ~/.ssh/id_rsa.pub | ssh user@ip &quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;
 </code></pre>
 <blockquote>

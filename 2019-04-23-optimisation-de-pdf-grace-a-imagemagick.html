@@ -49,6 +49,8 @@
     <p>Ayant de gros pdf de 3Mo je cherchais une solution pour les optimiser en ligne de commande.</p>
 <p>ImageMagick est doté de l&rsquo;outil convert qui permet de convertir des images.</p>
 <p>Avec la commande suivante j&rsquo;ai pu convertir un PDF de 3,5Mo en un PDF de 1,5Mo en compressant les pages au format JPG 90%.</p>
+<p>Au lieu de :</p>
+<pre><del>convert -density 300x300 -quality 9 -compress jpeg input.pdf output.pdf</del></pre>
 <pre tabindex="0"><code>convert -density 300x300 -quality 90 -compress jpeg input.pdf output.pdf
 </code></pre><blockquote>
 <p>⚠️ <code>-quality</code> s&rsquo;exprime sur 100, pas sur 10 : la commande affichait <code>-quality 9</code> (soit 9%, une compression bien trop agressive) alors que le texte annonçait 90%. Corrigé en <code>-quality 90</code>.</p>

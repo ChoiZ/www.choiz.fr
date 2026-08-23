@@ -596,12 +596,16 @@ un cache toujours à jour.&lt;/p&gt;
     <summary type="html">&lt;p&gt;Ayant de gros pdf de 3Mo je cherchais une solution pour les optimiser en ligne de commande.&lt;/p&gt;
 &lt;p&gt;ImageMagick est doté de l&amp;rsquo;outil convert qui permet de convertir des images.&lt;/p&gt;
 &lt;p&gt;Avec la commande suivante j&amp;rsquo;ai pu convertir un PDF de 3,5Mo en un PDF de 1,5Mo en compressant les pages au format JPG 90%.&lt;/p&gt;
+&lt;p&gt;Au lieu de :&lt;/p&gt;
+&lt;pre&gt;&lt;del&gt;convert -density 300x300 -quality 9 -compress jpeg input.pdf output.pdf&lt;/del&gt;&lt;/pre&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;convert -density 300x300 -quality 90 -compress jpeg input.pdf output.pdf
 &lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
 &lt;p&gt;⚠️ &lt;code&gt;-quality&lt;/code&gt; s&amp;rsquo;exprime sur 100, pas sur 10 : la commande affichait &lt;code&gt;-quality 9&lt;/code&gt; (soit 9%, une compression bien trop agressive) alors que le texte annonçait 90%. Corrigé en &lt;code&gt;-quality 90&lt;/code&gt;.&lt;/p&gt;</summary>
     <content type="html">&lt;p&gt;Ayant de gros pdf de 3Mo je cherchais une solution pour les optimiser en ligne de commande.&lt;/p&gt;
 &lt;p&gt;ImageMagick est doté de l&amp;rsquo;outil convert qui permet de convertir des images.&lt;/p&gt;
 &lt;p&gt;Avec la commande suivante j&amp;rsquo;ai pu convertir un PDF de 3,5Mo en un PDF de 1,5Mo en compressant les pages au format JPG 90%.&lt;/p&gt;
+&lt;p&gt;Au lieu de :&lt;/p&gt;
+&lt;pre&gt;&lt;del&gt;convert -density 300x300 -quality 9 -compress jpeg input.pdf output.pdf&lt;/del&gt;&lt;/pre&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;convert -density 300x300 -quality 90 -compress jpeg input.pdf output.pdf
 &lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
 &lt;p&gt;⚠️ &lt;code&gt;-quality&lt;/code&gt; s&amp;rsquo;exprime sur 100, pas sur 10 : la commande affichait &lt;code&gt;-quality 9&lt;/code&gt; (soit 9%, une compression bien trop agressive) alors que le texte annonçait 90%. Corrigé en &lt;code&gt;-quality 90&lt;/code&gt;.&lt;/p&gt;
@@ -986,6 +990,8 @@ activer le serveur SSH.&lt;/p&gt;
 &lt;p&gt;pi@raspberry3:~ $ &lt;code&gt;sudo bash&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;apt install dirmngr -y&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;mkdir -p /etc/apt/keyrings&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Au lieu de :&lt;/p&gt;
+&lt;pre&gt;&lt;del&gt;apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50&lt;/del&gt;&lt;/pre&gt;
 &lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;curl -fsSL https://dl.ui.com/unifi/unifi-repo.gpg -o /etc/apt/keyrings/unifi-repo.gpg&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;echo &#39;deb [signed-by=/etc/apt/keyrings/unifi-repo.gpg] http://www.ubnt.com/downloads/unifi/debian stable ubiquiti&#39; | tee -a /etc/apt/sources.list.d/ubnt.list &amp;gt; /dev/null&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1190,7 +1196,7 @@ mv rfc3442-classless-routes /etc/dhcp3/dhclient-exit-hooks.d/
 chown root:root /etc/dhcp3/dhclient-exit-hooks.d/rfc3442-classless-routes
 chmod a+x config_usg.sh
 &lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;p&gt;⚠️ À ne pas reproduire : un chmod 775 sur ce script rend un binaire root modifiable par tout le groupe, ce qui peut mener à une exécution root si le groupe est compromis. 755 suffit largement (lecture/exécution pour tous, écriture réservée au propriétaire).&lt;/p&gt;
+&lt;p&gt;⚠️ À ne pas reproduire : j&amp;rsquo;avais mis &lt;del&gt;chmod 775&lt;/del&gt; sur ce script, ce qui rend un binaire root modifiable par tout le groupe, ce qui peut mener à une exécution root si le groupe est compromis. 755 suffit largement (lecture/exécution pour tous, écriture réservée au propriétaire).&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Editer le fichier /opt/vyatta/sbin/vyatta-interfaces.pl et ajouter l&amp;rsquo;option 90
 du dhcp. Il faut aller à la ligne 194 :&lt;/p&gt;

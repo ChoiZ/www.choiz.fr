@@ -156,7 +156,7 @@ mailbox Sent {
 }
 </code></pre>
 <blockquote>
-<p>⚠️ À ne pas reproduire : le MD5 brut non salé se casse en rainbow table. Utilise <code>doveadm pw -s SHA512-CRYPT</code> pour générer les hash des comptes.</p>
+<p>⚠️ À ne pas reproduire : j&rsquo;avais mis <del>scheme=MD5</del> : le MD5 brut non salé se casse en rainbow table. Utilise <code>doveadm pw -s SHA512-CRYPT</code> pour générer les hash des comptes.</p>
 </blockquote>
 <pre><code>userdb {
     driver = passwd-file
@@ -276,7 +276,7 @@ smtpd_tls_mandatory_protocols = !SSLv2,!SSLv3
 tls_random_source = dev:/dev/urandom
 </code></pre>
 <blockquote>
-<p>⚠️ À ne pas reproduire : avec <code>smtpd_tls_auth_only = no</code>, les identifiants SASL peuvent transiter en clair sur le port 25 ; l&rsquo;auth ne doit passer qu&rsquo;en chiffré (submission 587 / smtps 465). Le <code>smtpd_tls_mandatory_protocols</code> verrouille en plus un plancher TLS moderne en excluant SSLv2/SSLv3.</p>
+<p>⚠️ À ne pas reproduire : j&rsquo;avais mis <del>smtpd_tls_auth_only = no</del> ; avec cette valeur, les identifiants SASL peuvent transiter en clair sur le port 25 ; l&rsquo;auth ne doit passer qu&rsquo;en chiffré (submission 587 / smtps 465). Le <code>smtpd_tls_mandatory_protocols</code> verrouille en plus un plancher TLS moderne en excluant SSLv2/SSLv3.</p>
 </blockquote>
 <p>Créer /etc/postfix/virtual_alias :</p>
 <pre><code>touch /etc/postfix/virtual_alias

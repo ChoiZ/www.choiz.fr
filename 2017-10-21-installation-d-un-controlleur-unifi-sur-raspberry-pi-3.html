@@ -118,6 +118,8 @@ activer le serveur SSH.</p>
 <p>pi@raspberry3:~ $ <code>sudo bash</code></p>
 <p>root@raspberrypi3:/home/pi# <code>apt install dirmngr -y</code></p>
 <p>root@raspberrypi3:/home/pi# <code>mkdir -p /etc/apt/keyrings</code></p>
+<p>Au lieu de :</p>
+<pre><del>apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50</del></pre>
 <p>root@raspberrypi3:/home/pi# <code>curl -fsSL https://dl.ui.com/unifi/unifi-repo.gpg -o /etc/apt/keyrings/unifi-repo.gpg</code></p>
 <p>root@raspberrypi3:/home/pi# <code>echo 'deb [signed-by=/etc/apt/keyrings/unifi-repo.gpg] http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | tee -a /etc/apt/sources.list.d/ubnt.list &gt; /dev/null</code></p>
 <blockquote>

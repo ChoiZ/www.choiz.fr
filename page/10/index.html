@@ -161,6 +161,8 @@ flèche de droite ou gauche) suivant la direction où on veut aller.</p>
 commande mysqldump et mysql.</p>
 <p>Dans un premier temps je sauve ma base database dans le fichier dump.sql
 J&rsquo;utilise l&rsquo;utilisateur mysql : utilisateur avec son mot de passe p4ss :</p>
+<p>Au lieu de :</p>
+<pre><del>mysqldump -u utilisateur -p p4ss database > dump.sql</del></pre>
 <pre><code>mysqldump -u utilisateur -p database &gt; dump.sql
 </code></pre>
 <blockquote>
@@ -254,6 +256,10 @@ fournit un moyen d&rsquo;accéder aux membres
   </header>
   <div class="post-excerpt">
     <p>Faire un système de protection (tel que htaccess) direct dans un fichier PHP :</p>
+<p>Au lieu de :</p>
+<pre><del>if (!empty($_SERVER["PHP_AUTH_USER"]) &&
+$_SERVER["PHP_AUTH_USER"] == "login" &&
+$_SERVER["PHP_AUTH_PW"] == "password") {</del></pre>
 <pre tabindex="0"><code>&lt;?php
 // Identifiants stockés dans un fichier de config non versionné (hors du repo)
 $config = require __DIR__ . &#39;/auth-config.php&#39;; // [&#39;user&#39; =&gt; &#39;login&#39;, &#39;pass_hash&#39; =&gt; password_hash(&#39;password&#39;, PASSWORD_DEFAULT)]
