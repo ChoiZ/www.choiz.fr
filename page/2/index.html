@@ -50,7 +50,7 @@
        &#8226; Tags : <a href="/tag/linux.html">linux</a>, <a href="/tag/lxc.html">lxc</a>, <a href="/tag/debian.html">debian</a>
     </p>
   </header>
-  <div>
+  <div class="post-excerpt">
     <p>Installation de lxc sur debian :</p>
 <p><code>apt-get install lxc</code></p>
 <p>Création d&rsquo;un conteneur lxc sous debian :</p>
@@ -84,7 +84,7 @@ debian9wiki STOPPED 0         -      -    -
        &#8226; Tags : <a href="/tag/raspberry.html">raspberry</a>, <a href="/tag/unifi.html">unifi</a>, <a href="/tag/debian.html">debian</a>, <a href="/tag/linux.html">linux</a>
     </p>
   </header>
-  <div>
+  <div class="post-excerpt">
     <p>Pour commencer il faut télécharger la dernière version de raspbian sur le site
 officiel raspberrypi.org. Actuellement c&rsquo;est 2017-09-07-raspbian-stretch-lite.zip.</p>
 <p>Il faut ensuite extraire l&rsquo;image de l&rsquo;archive :</p>
@@ -116,7 +116,7 @@ voir le nom du périphérique USB sur ma machine :</p>
        &#8226; Tags : <a href="/tag/network.html">network</a>, <a href="/tag/proxmox.html">proxmox</a>
     </p>
   </header>
-  <div>
+  <div class="post-excerpt">
     <p>L&rsquo;idée est d&rsquo;utiliser qu&rsquo;une seule adresse ip publique pour plusieurs VM. Comme à
 la maison vous avez des adresses ip en 192.168.x.x notre serveur proxmox peut
 faire la même chose.</p>
@@ -152,7 +152,7 @@ Par exemple j&rsquo;ouvre le port 22 de mon conteneur avec l&rsquo;ip 10.0.0.1 s
        &#8226; Tags : <a href="/tag/nfs.html">nfs</a>, <a href="/tag/linux.html">linux</a>, <a href="/tag/debian.html">debian</a>, <a href="/tag/gentoo.html">gentoo</a>
     </p>
   </header>
-  <div>
+  <div class="post-excerpt">
     <p>Pour installer un serveur NFS sur Debian voici la marche à suivre :</p>
 <pre tabindex="0"><code>apt install nfs-kernel-server
 </code></pre><p>Une fois le paquet installé, il faut modifier la configuration pour ajouter
@@ -180,7 +180,7 @@ qui donne :</p>
        &#8226; Tags : <a href="/tag/unifi.html">unifi</a>, <a href="/tag/network.html">network</a>
     </p>
   </header>
-  <div>
+  <div class="post-excerpt">
     <p>Ayant pas mal utilisé le matériel d&rsquo;ubiquiti j&rsquo;ai acheté un USG 3 pour la maison.</p>
 <p>En recherchant un peu sur le net j&rsquo;ai vu qu&rsquo;il était possible de remplacer la
 livebox par l&rsquo;USG tout en conservant la télévision etc… grâce aux VLANs.</p>
@@ -201,7 +201,7 @@ permet de gérer son matériel de la marque.</p>
        &#8226; Tags : <a href="/tag/proxmox.html">proxmox</a>, <a href="/tag/debian.html">debian</a>, <a href="/tag/linux.html">linux</a>
     </p>
   </header>
-  <div>
+  <div class="post-excerpt">
     <p>Suite à l&rsquo;installation de mon NAS, j&rsquo;ai installé un proxmox dessus.
 Par contre il ne faut pas modifier le sources.list ni installer
 firmware-linux-nonfree avant d&rsquo;installer proxmox (cela ne fonctionne pas du
@@ -232,7 +232,7 @@ update :</p>
        &#8226; Tags : <a href="/tag/nas.html">nas</a>, <a href="/tag/debian.html">debian</a>, <a href="/tag/storage.html">storage</a>, <a href="/tag/linux.html">linux</a>
     </p>
   </header>
-  <div>
+  <div class="post-excerpt">
     <p>J&rsquo;ai acheté il y a quelques années un HP Microserver Gen7 qui me sert de NAS,
 dessus j&rsquo;avais installé Debian 6 à l&rsquo;époque puis j&rsquo;ai mis à jour jusqu&rsquo;à la version 9.</p>
 <p>Mon objectif est l&rsquo;ajout d&rsquo;un disque car j&rsquo;ai 4 emplacements pour le stockage et
@@ -256,7 +256,7 @@ SATA et l&rsquo;alimentation.</p>
        &#8226; Tags : <a href="/tag/ssh.html">ssh</a>
     </p>
   </header>
-  <div>
+  <div class="post-excerpt">
     <p>Si vous n&rsquo;avez plus de clé publique, mais que vous avez toujours votre clé privée vous pouvez regénérer votre clé
 publique.</p>
 <p>Pour ce faire il faut utiliser la commande <em>ssh-keygen</em> avec l&rsquo;option <em>-y</em> et <em>-f</em> pour désigner la clé privée.</p>
@@ -275,7 +275,7 @@ publique.</p>
        &#8226; Tags : <a href="/tag/ssh.html">ssh</a>, <a href="/tag/linux.html">linux</a>
     </p>
   </header>
-  <div>
+  <div class="post-excerpt">
     <p>Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
 trouve dans <em>~/.ssh/config</em> et d&rsquo;ajouter les deux lignes suivantes :</p>
 <pre tabindex="0"><code>Host destination.local
@@ -299,7 +299,7 @@ connexion vers ma destination.</p>
        &#8226; Tags : <a href="/tag/docker.html">docker</a>, <a href="/tag/linux.html">linux</a>
     </p>
   </header>
-  <div>
+  <div class="post-excerpt">
     <p>Voici quelques commandes très utiles si vous utilisez docker.</p>
 <p>Supprimer tous les containers qui sont arrêtés :</p>
 <pre tabindex="0"><code>docker ps -q | xargs docker rm
