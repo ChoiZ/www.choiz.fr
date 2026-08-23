@@ -66,7 +66,16 @@ password_verify($_SERVER[&#34;PHP_AUTH_PW&#34;], $config[&#39;pass_hash&#39;])) 
 <p>Attention l&rsquo;utilisation du htaccess n&rsquo;est pas recommandée sur une connexion non
 chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffrée
 (HTTPS).</p>
-
+<p>On peut d&rsquo;ailleurs refuser d&rsquo;emblée toute connexion non chiffrée, directement en
+PHP, en vérifiant qu&rsquo;on est bien en HTTPS (y compris derrière un reverse proxy) :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$secure</span> <span class="o">=</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTPS&#39;</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTPS&#39;</span><span class="p">]</span> <span class="o">!==</span> <span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">||</span> <span class="p">((</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_X_FORWARDED_PROTO&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">===</span> <span class="s1">&#39;https&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$secure</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">header</span><span class="p">(</span><span class="s1">&#39;Location: https://&#39;</span> <span class="o">.</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_HOST&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_URI&#39;</span><span class="p">],</span> <span class="k">true</span><span class="p">,</span> <span class="mi">301</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">exit</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
   </div>
   <div class="tag-cloud">
     <p>
