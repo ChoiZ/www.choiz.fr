@@ -64,11 +64,18 @@
 </span></span></code></pre></div><p>Ça marche aussi bien pour un dossier entier que pour plusieurs fichiers d&rsquo;un coup, et si le transfert est interrompu, on relance la commande : il reprend là où il s&rsquo;était arrêté. Enfin, on peut choisir son propre code plutôt que de subir celui généré — pratique quand on le dicte au téléphone :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">croc send --code mon-code-a-moi mon-fichier.zip
 </span></span></code></pre></div><h2 id="garder-le-contrôle--son-propre-relais">Garder le contrôle : son propre relais</h2>
-<p>Par défaut, croc passe par le relais public de getcroc.com. Il ne voit rien du contenu, mais si vous voulez la maîtrise totale — ou transférer sur un réseau fermé — hébergez le vôtre, c&rsquo;est une seule commande :</p>
+<p>Par défaut, croc passe par le relais public de getcroc.com. Il ne voit rien du contenu, mais si vous voulez la maîtrise totale — ou transférer sur un réseau fermé — hébergez le vôtre. Pas besoin d&rsquo;installer quoi que ce soit de plus : c&rsquo;est le même binaire croc, avec la sous-commande <code>relay</code>. Sur la machine qui servira de relais (un petit VPS, un Raspberry, un poste du réseau) :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">croc relay
-</span></span></code></pre></div><p>et côté client, on lui indique où pointer :</p>
+</span></span></code></pre></div><p>Il écoute sur cinq ports TCP par défaut, de 9009 à 9013 — pensez à les ouvrir dans le pare-feu de la machine. On peut en choisir d&rsquo;autres, deux au minimum :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">croc relay --ports 9009,9010
+</span></span></code></pre></div><p>Et pour restreindre l&rsquo;accès, un mot de passe :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">croc relay --pass mon-mot-de-passe
+</span></span></code></pre></div><p>Côté clients, le point important : les deux doivent pointer vers ce relais, pas seulement l&rsquo;expéditeur. À l&rsquo;envoi, on préfixe la commande par <code>--relay</code> :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">croc --relay <span class="s2">&#34;monrelais.exemple.com:9009&#34;</span> send mon-fichier.zip
-</span></span></code></pre></div><p>croc est devenu mon réflexe pour tout transfert ponctuel entre deux machines : simple, rapide, chiffré, multiplateforme, et je peux tout garder chez moi avec mon propre relais. Exactement le genre d&rsquo;outil que j&rsquo;aime.</p>
+</span></span></code></pre></div><p>Et à la réception, on ajoute le même <code>--relay</code> devant le code :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">croc --relay <span class="s2">&#34;monrelais.exemple.com:9009&#34;</span> 8451-magnum-cargo-arctic
+</span></span></code></pre></div><p>Si le relais a un mot de passe, on ajoute <code>--pass mon-mot-de-passe</code> des deux côtés. Et pour ne pas répéter tout ça à chaque fois, la variable d&rsquo;environnement <code>CROC_RELAY</code> (et <code>CROC_PASS</code> pour le mot de passe) fait le même travail une fois pour toutes.</p>
+<p>croc est devenu mon réflexe pour tout transfert ponctuel entre deux machines : simple, rapide, chiffré, multiplateforme, et je peux tout garder chez moi avec mon propre relais. Exactement le genre d&rsquo;outil que j&rsquo;aime.</p>
 
   </div>
   <div class="tag-cloud">
