@@ -1,5 +1,5 @@
 ---
-title: "Impression de commandes entre balise &lt;pre&gt;"
+title: "Impression de commandes entre balise <pre>"
 date: 2010-09-15T15:43:00
 slug: "2010-09-15-impression-de-commandes-entre-balise-pre"
 author: choiz
