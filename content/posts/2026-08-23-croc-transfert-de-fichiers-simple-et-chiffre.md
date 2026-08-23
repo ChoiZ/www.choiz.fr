@@ -1,6 +1,6 @@
 ---
 title: "croc : transférer des fichiers entre deux machines, simplement et chiffré"
-date: 2026-08-23T18:30:00
+date: 2026-08-23T11:39:00
 slug: "2026-08-23-croc-transfert-de-fichiers-simple-et-chiffre"
 author: choiz
 tags: ["cli", "network", "file"]
