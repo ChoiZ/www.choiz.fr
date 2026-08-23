@@ -1,6 +1,7 @@
 baseURL = "https://www.choiz.fr/"
 languageCode = "fr"
 defaultContentLanguage = "fr"
+timeZone = "Europe/Paris"
 title = "ChoiZ"
 
 # URLs identiques à Pelican : /slug.html à la racine
