@@ -64,9 +64,13 @@ fichier "ssh-copy-id" dans le dossier "/usr/bin/" avec ce contenu :
 
     EOF
 
+> ⚠️ À ne pas reproduire : ce script fait un `eval "$GET_ID"` en réinjectant dans `ID_FILE` le chemin passé via `-i`, sans jamais l'assainir. Un chemin malveillant permet une injection shell. Si vous devez encore bricoler ce genre de script, échappez ou validez l'argument avant de le passer à `eval`, ou évitez `eval` tout court.
+
 Il ne reste qu'à donner les droits au fichier :
 
     chmod 755 /usr/bin/ssh-copy-id
+
+> ⚠️ Obsolète : depuis El Capitan, `/usr/bin` est protégé en écriture par SIP (System Integrity Protection), donc ce `chmod`/dépôt de fichier échoue désormais. Placez plutôt le script dans `/usr/local/bin` (ou `/opt/homebrew/bin` sur Apple Silicon), ou plus simplement installez `brew install openssh`, qui fournit un `ssh-copy-id` natif et à jour.
 
 Vous pouvez maintenant copier votre clé ssh sur un serveur distant en
 tapant :

@@ -76,6 +76,9 @@ Ajouter votre utilisateur user :
 
 ```
 useradd user
+passwd user
 ```
+
+> ⚠️ À ne pas oublier : `useradd` seul crée un compte sans mot de passe, donc verrouillé — la connexion SSH échouera tant que vous n'aurez pas lancé `passwd user` (ou déployé une clé SSH publique). Autant l'ajouter tout de suite.
 
 Se déconnecter du conteneur et se connecter via ssh avec votre utilisateur user.

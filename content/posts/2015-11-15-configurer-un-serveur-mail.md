@@ -43,6 +43,9 @@ Créer un dossier ssl dans dovecot :
 Créer un certificat ssl :
 
     openssl req -new -newkey rsa:2048 -nodes -keyout certificat.key -out certificat.csr
+    chmod 600 certificat.key
+
+> ⚠️ À ne pas reproduire : sans ce `chmod`, la clé privée TLS reste lisible par tout compte local (umask 022 → droits 644 par défaut). Restreins-la à 600 dès sa création.
 
 Puis répondre aux différentes questions pour ma part j'ai répondu :
 
@@ -59,6 +62,8 @@ Puis répondre aux différentes questions pour ma part j'ai répondu :
 Ensuite :
 
     openssl x509 -req -days 365 -in certificat.csr -signkey certificat.key -out certificat.crt
+
+> ⚠️ À ne pas reproduire : un certificat auto-signé ne rassure ni les clients mail ni les serveurs distants et ne se renouvelle pas tout seul. Pour un serveur exposé, préfère Let's Encrypt via `certbot` avec un renouvellement automatique.
 
 Puis :
 
@@ -129,8 +134,10 @@ Editer /etc/dovecot/conf.d/auth-passwdfile.conf.ext :
 
     passdb {
         driver = passwd-file
-        args = scheme=MD5 username_format=%u /etc/dovecot/users
+        args = scheme=SHA512-CRYPT username_format=%u /etc/dovecot/users
     }
+
+> ⚠️ À ne pas reproduire : le MD5 brut non salé se casse en rainbow table. Utilise `doveadm pw -s SHA512-CRYPT` pour générer les hash des comptes.
 
     userdb {
         driver = passwd-file
@@ -261,10 +268,13 @@ Editer /etc/postfix/main.cf ::
     smtpd_recipient_restrictions = permit_sasl_authenticated permit_mynetworks reject_unauth_destination
 
     smtpd_enforce_tls = no
-    smtpd_tls_auth_only = no
+    smtpd_tls_auth_only = yes
     smtpd_tls_ask_ccert = no
     smtpd_tls_received_header = yes
+    smtpd_tls_mandatory_protocols = !SSLv2,!SSLv3
     tls_random_source = dev:/dev/urandom
+
+> ⚠️ À ne pas reproduire : avec `smtpd_tls_auth_only = no`, les identifiants SASL peuvent transiter en clair sur le port 25 ; l'auth ne doit passer qu'en chiffré (submission 587 / smtps 465). Le `smtpd_tls_mandatory_protocols` verrouille en plus un plancher TLS moderne en excluant SSLv2/SSLv3.
 
 Créer /etc/postfix/virtual\_alias :
 
@@ -355,6 +365,15 @@ Créer un vhost pour apache dans
         ServerAdmin contact@domain.com
         ServerName mail.domain.com
 
+        RewriteEngine On
+        RewriteCond %{HTTPS} off
+        RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    </VirtualHost>
+
+    <VirtualHost *:443>
+        ServerAdmin contact@domain.com
+        ServerName mail.domain.com
+
         DocumentRoot /var/www/webmail/public
         <Directory /var/www/webmail/public>
             Options FollowSymLinks
@@ -371,6 +390,10 @@ Créer un vhost pour apache dans
             Deny from all
         </Directory>
 
+        SSLEngine on
+        SSLCertificateFile /etc/dovecot/ssl/certificat.crt
+        SSLCertificateKeyFile /etc/dovecot/ssl/certificat.key
+
         ErrorLog ${APACHE_LOG_DIR}/webmail_error.log
 
         # Possible values include: debug, info, notice, warn, error, crit,
@@ -379,6 +402,8 @@ Créer un vhost pour apache dans
 
         CustomLog ${APACHE_LOG_DIR}/webmail_access.log combined
     </VirtualHost>
+
+> ⚠️ À ne pas reproduire : un webmail servi en HTTP (port 80) fait circuler les identifiants en clair. Sers-le uniquement en HTTPS (443) et redirige tout le trafic 80 vers 443, comme ci-dessus.
 
 N'oubliez pas de redémarrer apache :
 
@@ -400,6 +425,8 @@ Pour configurer rainloop se rendre sur : <http://mail.domain.com/?admin>
 </tr>
 </tbody>
 </table>
+
+> ⚠️ À ne pas reproduire : ce login/mot de passe par défaut est connu de tout le monde. Change-le avant toute exposition publique du serveur, et restreins l'accès à `/?admin` par IP ou par Basic Auth en plus du mot de passe.
 
 Changer la langue et votre mot de passe (dans security).
 

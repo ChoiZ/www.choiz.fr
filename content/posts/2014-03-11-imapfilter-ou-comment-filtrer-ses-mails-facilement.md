@@ -28,7 +28,7 @@ Ici gmail :
         server = 'imap.gmail.com',
         username = 'mail@gmail.com',
         password = 'mon_mot_de_passe',
-        ssl = 'ssl3',
+        ssl = 'tls1.2',
     }
     EOF
 
@@ -39,9 +39,11 @@ Et un pour Yahoo :
         server = 'imap.yahoo.com',
         username = 'mail@yahoo.com',
         password = 'mon_mot_de_passe',
-        ssl = 'ssl3',
+        ssl = 'tls1.2',
     }
     EOF
+
+> ⚠️ À ne pas reproduire : SSLv3 est cassé depuis la faille POODLE (2014) et refusé par la quasi-totalité des serveurs ; le forcer expose au downgrade, alors que ces fichiers .lua contiennent le mot de passe du compte mail en clair. Utilise `tls1.2` et protège ces fichiers avec `chmod 600 gmail.lua yahoo.lua`.
 
 Ajouter nos boites dans le fichier de config avec des filtres :
 

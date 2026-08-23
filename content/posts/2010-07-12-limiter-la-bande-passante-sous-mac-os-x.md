@@ -6,6 +6,8 @@ author: choiz
 tags: ["osx"]
 ---
 
+> ⚠️ Obsolète : `ipfw` a été retiré de macOS depuis Yosemite (2014), cet article ne fonctionne plus tel quel sur un macOS moderne. Pour limiter la bande passante aujourd'hui, il faut passer par `pf`/`pfctl` couplé à `dnctl`, ou plus simplement utiliser le Network Link Conditioner d'Apple.
+
 Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
 virtuel en console.
 

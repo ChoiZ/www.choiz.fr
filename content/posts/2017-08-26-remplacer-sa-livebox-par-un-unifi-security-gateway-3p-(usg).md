@@ -22,6 +22,8 @@ En branchant l'USG au secteur il prend l'adresse IP 192.168.1.1 (la même que la
 livebox dans un premier temps ça aide pas…). Je branche donc l'USG en direct sur
 mon poste et je me connecte en ssh dessus avec les login / pass : "ubnt / ubnt".
 
+> ⚠️ À ne pas reproduire : ce tuto garde les identifiants par défaut ubnt/ubnt jusqu'au bout sans jamais dire de les changer. Sur un routeur/pare-feu, des identifiants par défaut valent prise de contrôle immédiate si le SSH est exposé : changez le mot de passe admin UniFi et celui du compte ubnt avant toute remise en production.
+
 Se rendre sur [mon générateur de configuration](https://www.l9.fr/usg-config-generator.php) pour générer un fichier config_usg.sh
 
 Puis télécharger les fichiers :
@@ -45,12 +47,14 @@ script :
 ```
 sudo bash
 mv dhclient3 /sbin/dhclient3
-chmod 775 /sbin/dhclient3
+chmod 755 /sbin/dhclient3
 chown root:root /sbin/dhclient3
 mv rfc3442-classless-routes /etc/dhcp3/dhclient-exit-hooks.d/
 chown root:root /etc/dhcp3/dhclient-exit-hooks.d/rfc3442-classless-routes
 chmod a+x config_usg.sh
 ```
+
+> ⚠️ À ne pas reproduire : un chmod 775 sur ce script rend un binaire root modifiable par tout le groupe, ce qui peut mener à une exécution root si le groupe est compromis. 755 suffit largement (lecture/exécution pour tous, écriture réservée au propriétaire).
 
 Editer le fichier /opt/vyatta/sbin/vyatta-interfaces.pl et ajouter l'option 90
 du dhcp. Il faut aller à la ligne 194 :

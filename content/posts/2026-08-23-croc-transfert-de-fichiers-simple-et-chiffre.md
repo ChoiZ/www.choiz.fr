@@ -26,6 +26,8 @@ sudo apt install croc              # Debian / Ubuntu
 curl https://getcroc.com | bash    # multiplateforme
 ```
 
+> ⚠️ À ne pas reproduire tel quel : un curl | bash exécute un script sans relecture ni vérification, ce qui est risqué si le serveur ou la connexion est compromis (MITM). Préférez brew/apt ou le binaire signé des releases GitHub, ou à défaut téléchargez le script et relisez-le avant de l'exécuter.
+
 Pour envoyer, on pointe un fichier ou un dossier :
 
 ```sh

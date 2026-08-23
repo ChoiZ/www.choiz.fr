@@ -91,9 +91,13 @@ pi@raspberry3:~ $ `sudo bash`
 
 root@raspberrypi3:/home/pi# `apt install dirmngr -y`
 
-root@raspberrypi3:/home/pi# `echo 'deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | tee -a /etc/apt/sources.list.d/ubnt.list > /dev/null`
+root@raspberrypi3:/home/pi# `mkdir -p /etc/apt/keyrings`
 
-root@raspberrypi3:/home/pi# `apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50`
+root@raspberrypi3:/home/pi# `curl -fsSL https://dl.ui.com/unifi/unifi-repo.gpg -o /etc/apt/keyrings/unifi-repo.gpg`
+
+root@raspberrypi3:/home/pi# `echo 'deb [signed-by=/etc/apt/keyrings/unifi-repo.gpg] http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | tee -a /etc/apt/sources.list.d/ubnt.list > /dev/null`
+
+> ⚠️ À ne pas reproduire : récupérer la clé via `apt-key adv --recv C0A52C50` s'appuie sur un key ID court (32 bits), spoofable, et `apt-key` est de toute façon déprécié. Mieux vaut la clé par empreinte complète (40 hex) téléchargée en HTTPS depuis Ubiquiti, déposée dans /etc/apt/keyrings/ et référencée par signed-by= dans le .list.
 
 root@raspberrypi3:/home/pi# `apt update -y`
 
