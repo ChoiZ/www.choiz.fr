@@ -29,3 +29,16 @@ password_verify($_SERVER["PHP_AUTH_PW"], $config['pass_hash'])) {
 Attention l'utilisation du htaccess n'est pas recommandée sur une connexion non
 chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffrée
 (HTTPS).
+
+On peut d'ailleurs refuser d'emblée toute connexion non chiffrée, directement en
+PHP, en vérifiant qu'on est bien en HTTPS (y compris derrière un reverse proxy) :
+
+```php
+$secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+    || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+
+if (!$secure) {
+    header('Location: https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], true, 301);
+    exit;
+}
+```

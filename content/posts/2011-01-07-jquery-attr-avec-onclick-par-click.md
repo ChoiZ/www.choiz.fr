@@ -17,8 +17,13 @@ Remplacer donc :
     var mavar = 'fonctionAffichage();';
     $("#code").attr("onclick","mavar");
 
-Par :
+Par ce que je conseillais à l'époque… mais qu'il ne faut surtout pas faire :
+
+<pre><del>var mavar = 'fonctionAffichage();';
+$("#code").removeAttr('onclick').click(function() { eval(mavar); });</del></pre>
+
+> ⚠️ Il ne faut pas utiliser `eval()` : exécuter une chaîne de code, c'est une porte ouverte à l'injection ou au XSS dès que cette chaîne contient la moindre donnée non maîtrisée. On attache une référence de fonction, jamais une chaîne à évaluer, et on oublie au passage l'attribut onclick inline.
+
+Voici ce qu'il faut utiliser à la place :
 
     $("#code").off("click").on("click", fonctionAffichage);
-
-> ⚠️ À ne pas reproduire : `eval()` sur une chaîne exécute n'importe quel code, ce qui ouvre la porte à l'injection ou au XSS si cette chaîne contient une donnée non maîtrisée. On attache une référence de fonction, jamais une chaîne à évaluer, et on oublie `eval` comme l'attribut onclick inline.
