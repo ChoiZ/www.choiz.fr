@@ -147,8 +147,8 @@ monde à l'aveugle :
 | Inconnu, message authentifié          | mis en attente + défi |
 | Inconnu, non authentifié / usurpé     | rejeté, sans défi     |
 
-Les limites, honnêtement
-------------------------
+Les limites
+-----------
 
 Le défi-réponse a une mauvaise réputation dans le monde de l'email, et il faut
 la connaître avant de se lancer. Le reproche numéro un, c'est le backscatter :
@@ -167,8 +167,8 @@ par agacement ou parce que l'email de vérification finit lui-même en spam chez
 eux ; leur premier message est au mieux retardé, au pire perdu. Et par
 construction, ce premier contact est toujours ralenti.
 
-Alors, pour qui ?
------------------
+Conclusion
+----------
 
 Aucune de ces parades n'est universelle, mais elles se complètent. Les adresses
 jetables cloisonnent et permettent de révoquer d'un geste tout ce que je
