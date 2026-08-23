@@ -78,7 +78,11 @@ debian9wiki RUNNING 0         -      192.168.60.140 -
 <pre tabindex="0"><code>apt-get install openssh-server
 </code></pre><p>Ajouter votre utilisateur user :</p>
 <pre tabindex="0"><code>useradd user
-</code></pre><p>Se déconnecter du conteneur et se connecter via ssh avec votre utilisateur user.</p>
+passwd user
+</code></pre><blockquote>
+<p>⚠️ À ne pas oublier : <code>useradd</code> seul crée un compte sans mot de passe, donc verrouillé — la connexion SSH échouera tant que vous n&rsquo;aurez pas lancé <code>passwd user</code> (ou déployé une clé SSH publique). Autant l&rsquo;ajouter tout de suite.</p>
+</blockquote>
+<p>Se déconnecter du conteneur et se connecter via ssh avec votre utilisateur user.</p>
 
   </div>
   <div class="tag-cloud">

@@ -70,7 +70,11 @@ de courrier indiquer &ldquo;mail.votredomaine.com&rdquo;.</p>
 </code></pre>
 <p>Créer un certificat ssl :</p>
 <pre><code>openssl req -new -newkey rsa:2048 -nodes -keyout certificat.key -out certificat.csr
+chmod 600 certificat.key
 </code></pre>
+<blockquote>
+<p>⚠️ À ne pas reproduire : sans ce <code>chmod</code>, la clé privée TLS reste lisible par tout compte local (umask 022 → droits 644 par défaut). Restreins-la à 600 dès sa création.</p>
+</blockquote>
 <p>Puis répondre aux différentes questions pour ma part j&rsquo;ai répondu :</p>
 <pre><code>FR
 (vide)
@@ -85,6 +89,9 @@ contact@votredomaine.com
 <p>Ensuite :</p>
 <pre><code>openssl x509 -req -days 365 -in certificat.csr -signkey certificat.key -out certificat.crt
 </code></pre>
+<blockquote>
+<p>⚠️ À ne pas reproduire : un certificat auto-signé ne rassure ni les clients mail ni les serveurs distants et ne se renouvelle pas tout seul. Pour un serveur exposé, préfère Let&rsquo;s Encrypt via <code>certbot</code> avec un renouvellement automatique.</p>
+</blockquote>
 <p>Puis :</p>
 <pre><code>cat certificat.key certificat.crt &gt; certificat.pem
 </code></pre>
@@ -145,10 +152,13 @@ mailbox Sent {
 <p>Editer /etc/dovecot/conf.d/auth-passwdfile.conf.ext :</p>
 <pre><code>passdb {
     driver = passwd-file
-    args = scheme=MD5 username_format=%u /etc/dovecot/users
+    args = scheme=SHA512-CRYPT username_format=%u /etc/dovecot/users
 }
-
-userdb {
+</code></pre>
+<blockquote>
+<p>⚠️ À ne pas reproduire : le MD5 brut non salé se casse en rainbow table. Utilise <code>doveadm pw -s SHA512-CRYPT</code> pour générer les hash des comptes.</p>
+</blockquote>
+<pre><code>userdb {
     driver = passwd-file
     args = username_format=%u /etc/dovecot/users
     default_fields = uid=5000 gid=5000 home=/var/vmail/%d mail=maildir:~/%u
@@ -259,11 +269,15 @@ smtpd_sender_restrictions = permit_sasl_authenticated reject_unknown_sender_doma
 smtpd_recipient_restrictions = permit_sasl_authenticated permit_mynetworks reject_unauth_destination
 
 smtpd_enforce_tls = no
-smtpd_tls_auth_only = no
+smtpd_tls_auth_only = yes
 smtpd_tls_ask_ccert = no
 smtpd_tls_received_header = yes
+smtpd_tls_mandatory_protocols = !SSLv2,!SSLv3
 tls_random_source = dev:/dev/urandom
 </code></pre>
+<blockquote>
+<p>⚠️ À ne pas reproduire : avec <code>smtpd_tls_auth_only = no</code>, les identifiants SASL peuvent transiter en clair sur le port 25 ; l&rsquo;auth ne doit passer qu&rsquo;en chiffré (submission 587 / smtps 465). Le <code>smtpd_tls_mandatory_protocols</code> verrouille en plus un plancher TLS moderne en excluant SSLv2/SSLv3.</p>
+</blockquote>
 <p>Créer /etc/postfix/virtual_alias :</p>
 <pre><code>touch /etc/postfix/virtual_alias
 </code></pre>
@@ -334,6 +348,15 @@ find . -type d -exec chmod 755 {} \;
     ServerAdmin contact@domain.com
     ServerName mail.domain.com
 
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+&lt;/VirtualHost&gt;
+
+&lt;VirtualHost *:443&gt;
+    ServerAdmin contact@domain.com
+    ServerName mail.domain.com
+
     DocumentRoot /var/www/webmail/public
     &lt;Directory /var/www/webmail/public&gt;
         Options FollowSymLinks
@@ -350,6 +373,10 @@ find . -type d -exec chmod 755 {} \;
         Deny from all
     &lt;/Directory&gt;
 
+    SSLEngine on
+    SSLCertificateFile /etc/dovecot/ssl/certificat.crt
+    SSLCertificateKeyFile /etc/dovecot/ssl/certificat.key
+
     ErrorLog ${APACHE_LOG_DIR}/webmail_error.log
 
     # Possible values include: debug, info, notice, warn, error, crit,
@@ -359,6 +386,9 @@ find . -type d -exec chmod 755 {} \;
     CustomLog ${APACHE_LOG_DIR}/webmail_access.log combined
 &lt;/VirtualHost&gt;
 </code></pre>
+<blockquote>
+<p>⚠️ À ne pas reproduire : un webmail servi en HTTP (port 80) fait circuler les identifiants en clair. Sers-le uniquement en HTTPS (443) et redirige tout le trafic 80 vers 443, comme ci-dessus.</p>
+</blockquote>
 <p>N&rsquo;oubliez pas de redémarrer apache :</p>
 <pre><code>/etc/init.d/apache2 restart
 </code></pre>
@@ -377,6 +407,9 @@ find . -type d -exec chmod 755 {} \;
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p>⚠️ À ne pas reproduire : ce login/mot de passe par défaut est connu de tout le monde. Change-le avant toute exposition publique du serveur, et restreins l&rsquo;accès à <code>/?admin</code> par IP ou par Basic Auth en plus du mot de passe.</p>
+</blockquote>
 <p>Changer la langue et votre mot de passe (dans security).</p>
 <p>Puis dans domains configurez votre nom de domaine en cliquant sur + Add
 domain</p>

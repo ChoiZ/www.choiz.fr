@@ -222,10 +222,10 @@ editor = vim
   filemode = false
 [merge]
   tool = vimdiff
-[http]
-  #sslverify = false|
 </code></pre>
-    
+<blockquote>
+<p>⚠️ Obsolète / à ne pas reproduire : ne désactivez jamais la vérification TLS de git (<code>http.sslVerify = false</code>), même en commentaire dans un exemple à copier-coller — ça ouvre la porte à une attaque de type MITM. Si git n&rsquo;accepte pas le certificat d&rsquo;un serveur, corrigez plutôt le magasin de certificats (ou renseignez <code>http.sslCAInfo</code>) au lieu de couper la vérification.</p>
+    <p><a class="btn" href="/2012-04-13-update-gitconfig.html">Lire la suite</a></p>
   </div>
 </article>
 

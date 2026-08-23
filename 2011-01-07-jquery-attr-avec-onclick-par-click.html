@@ -55,9 +55,11 @@ fonctionne pas avec l&rsquo;attribut &ldquo;onclick&rdquo;…</p>
 $(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
 </code></pre>
 <p>Par :</p>
-<pre><code>var mavar = 'fonctionAffichage();';
-$(&quot;#code&quot;).removeAttr('onclick').click(function() { eval(mavar); });
+<pre><code>$(&quot;#code&quot;).off(&quot;click&quot;).on(&quot;click&quot;, fonctionAffichage);
 </code></pre>
+<blockquote>
+<p>⚠️ À ne pas reproduire : <code>eval()</code> sur une chaîne exécute n&rsquo;importe quel code, ce qui ouvre la porte à l&rsquo;injection ou au XSS si cette chaîne contient une donnée non maîtrisée. On attache une référence de fonction, jamais une chaîne à évaluer, et on oublie <code>eval</code> comme l&rsquo;attribut onclick inline.</p>
+</blockquote>
 
   </div>
   <div class="tag-cloud">

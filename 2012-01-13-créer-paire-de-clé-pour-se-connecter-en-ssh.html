@@ -58,8 +58,11 @@ pouvez spécifier un autre chemin ainsi qu&rsquo;un autre fichier. :</p>
 <p>Ici on tape un mot de passe si on en veut un lors de la connexion aux
 différents hosts. En général j&rsquo;en définis un.</p>
 <p>Pour finir on copie la clé sur le serveur soit via scp :</p>
-<pre><code>scp ~/.ssh/id\_rsa.pub user@ip:~/.ssh/authorized\_keys/
+<pre><code>cat ~/.ssh/id_rsa.pub | ssh user@ip &quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;
 </code></pre>
+<blockquote>
+<p>⚠️ À ne pas reproduire : la version d&rsquo;origine (scp vers authorized_keys/ avec un slash final) traitait authorized_keys comme un dossier et n&rsquo;installait donc jamais la clé. La commande ssh-copy-id reste la façon la plus simple d&rsquo;y arriver.</p>
+</blockquote>
 <p>ou via ssh-copy-id :</p>
 <pre><code>ssh-copy-id -i ~/.ssh/id\_rsa.pub user@ip
 </code></pre>

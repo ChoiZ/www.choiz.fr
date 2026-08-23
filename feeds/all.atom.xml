@@ -25,7 +25,10 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install croc                  &lt;span class=&#34;c1&#34;&gt;# macOS&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install croc              &lt;span class=&#34;c1&#34;&gt;# Debian / Ubuntu&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl https://getcroc.com &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; bash    &lt;span class=&#34;c1&#34;&gt;# multiplateforme&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Pour envoyer, on pointe un fichier ou un dossier :&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;⚠️ À ne pas reproduire tel quel : un curl | bash exécute un script sans relecture ni vérification, ce qui est risqué si le serveur ou la connexion est compromis (MITM). Préférez brew/apt ou le binaire signé des releases GitHub, ou à défaut téléchargez le script et relisez-le avant de l&amp;rsquo;exécuter.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Pour envoyer, on pointe un fichier ou un dossier :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;croc send mon-fichier.zip
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;croc affiche alors le code à transmettre :&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Code is: 8451-magnum-cargo-arctic
@@ -593,13 +596,17 @@ un cache toujours à jour.&lt;/p&gt;
     <summary type="html">&lt;p&gt;Ayant de gros pdf de 3Mo je cherchais une solution pour les optimiser en ligne de commande.&lt;/p&gt;
 &lt;p&gt;ImageMagick est doté de l&amp;rsquo;outil convert qui permet de convertir des images.&lt;/p&gt;
 &lt;p&gt;Avec la commande suivante j&amp;rsquo;ai pu convertir un PDF de 3,5Mo en un PDF de 1,5Mo en compressant les pages au format JPG 90%.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;convert -density 300x300 -quality 9 -compress jpeg input.pdf output.pdf
-&lt;/code&gt;&lt;/pre&gt;</summary>
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;convert -density 300x300 -quality 90 -compress jpeg input.pdf output.pdf
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;⚠️ &lt;code&gt;-quality&lt;/code&gt; s&amp;rsquo;exprime sur 100, pas sur 10 : la commande affichait &lt;code&gt;-quality 9&lt;/code&gt; (soit 9%, une compression bien trop agressive) alors que le texte annonçait 90%. Corrigé en &lt;code&gt;-quality 90&lt;/code&gt;.&lt;/p&gt;</summary>
     <content type="html">&lt;p&gt;Ayant de gros pdf de 3Mo je cherchais une solution pour les optimiser en ligne de commande.&lt;/p&gt;
 &lt;p&gt;ImageMagick est doté de l&amp;rsquo;outil convert qui permet de convertir des images.&lt;/p&gt;
 &lt;p&gt;Avec la commande suivante j&amp;rsquo;ai pu convertir un PDF de 3,5Mo en un PDF de 1,5Mo en compressant les pages au format JPG 90%.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;convert -density 300x300 -quality 9 -compress jpeg input.pdf output.pdf
-&lt;/code&gt;&lt;/pre&gt;</content>
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;convert -density 300x300 -quality 90 -compress jpeg input.pdf output.pdf
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;⚠️ &lt;code&gt;-quality&lt;/code&gt; s&amp;rsquo;exprime sur 100, pas sur 10 : la commande affichait &lt;code&gt;-quality 9&lt;/code&gt; (soit 9%, une compression bien trop agressive) alors que le texte annonçait 90%. Corrigé en &lt;code&gt;-quality 90&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
   </entry>
   
   <entry>
@@ -874,7 +881,11 @@ debian9wiki RUNNING 0         -      192.168.60.140 -
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apt-get install openssh-server
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ajouter votre utilisateur user :&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;useradd user
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Se déconnecter du conteneur et se connecter via ssh avec votre utilisateur user.&lt;/p&gt;
+passwd user
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;⚠️ À ne pas oublier : &lt;code&gt;useradd&lt;/code&gt; seul crée un compte sans mot de passe, donc verrouillé — la connexion SSH échouera tant que vous n&amp;rsquo;aurez pas lancé &lt;code&gt;passwd user&lt;/code&gt; (ou déployé une clé SSH publique). Autant l&amp;rsquo;ajouter tout de suite.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Se déconnecter du conteneur et se connecter via ssh avec votre utilisateur user.&lt;/p&gt;
 </content>
   </entry>
   
@@ -974,8 +985,12 @@ activer le serveur SSH.&lt;/p&gt;
 &lt;p&gt;pi@raspberry3:~ $ &lt;code&gt;passwd&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;pi@raspberry3:~ $ &lt;code&gt;sudo bash&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;apt install dirmngr -y&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;echo &#39;deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti&#39; | tee -a /etc/apt/sources.list.d/ubnt.list &amp;gt; /dev/null&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;mkdir -p /etc/apt/keyrings&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;curl -fsSL https://dl.ui.com/unifi/unifi-repo.gpg -o /etc/apt/keyrings/unifi-repo.gpg&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;echo &#39;deb [signed-by=/etc/apt/keyrings/unifi-repo.gpg] http://www.ubnt.com/downloads/unifi/debian stable ubiquiti&#39; | tee -a /etc/apt/sources.list.d/ubnt.list &amp;gt; /dev/null&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ À ne pas reproduire : récupérer la clé via &lt;code&gt;apt-key adv --recv C0A52C50&lt;/code&gt; s&amp;rsquo;appuie sur un key ID court (32 bits), spoofable, et &lt;code&gt;apt-key&lt;/code&gt; est de toute façon déprécié. Mieux vaut la clé par empreinte complète (40 hex) téléchargée en HTTPS depuis Ubiquiti, déposée dans /etc/apt/keyrings/ et référencée par signed-by= dans le .list.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;apt update -y&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;apt install unifi -y&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;root@raspberrypi3:/home/pi# &lt;code&gt;echo &#39;ENABLE_MONGODB=no&#39; | tee -a /etc/mongodb.conf &amp;gt; /dev/null&lt;/code&gt;&lt;/p&gt;
@@ -1151,6 +1166,9 @@ permet de gérer son matériel de la marque.&lt;/p&gt;
 &lt;p&gt;En branchant l&amp;rsquo;USG au secteur il prend l&amp;rsquo;adresse IP 192.168.1.1 (la même que la
 livebox dans un premier temps ça aide pas…). Je branche donc l&amp;rsquo;USG en direct sur
 mon poste et je me connecte en ssh dessus avec les login / pass : &amp;ldquo;ubnt / ubnt&amp;rdquo;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ À ne pas reproduire : ce tuto garde les identifiants par défaut ubnt/ubnt jusqu&amp;rsquo;au bout sans jamais dire de les changer. Sur un routeur/pare-feu, des identifiants par défaut valent prise de contrôle immédiate si le SSH est exposé : changez le mot de passe admin UniFi et celui du compte ubnt avant toute remise en production.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Se rendre sur &lt;a href=&#34;https://www.l9.fr/usg-config-generator.php&#34;&gt;mon générateur de configuration&lt;/a&gt; pour générer un fichier config_usg.sh&lt;/p&gt;
 &lt;p&gt;Puis télécharger les fichiers :&lt;/p&gt;
 &lt;ul&gt;
@@ -1166,12 +1184,15 @@ avec l&amp;rsquo;utilisateur &amp;ldquo;ubnt&amp;rdquo; et le mot de passe &amp;
 script :&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo bash
 mv dhclient3 /sbin/dhclient3
-chmod 775 /sbin/dhclient3
+chmod 755 /sbin/dhclient3
 chown root:root /sbin/dhclient3
 mv rfc3442-classless-routes /etc/dhcp3/dhclient-exit-hooks.d/
 chown root:root /etc/dhcp3/dhclient-exit-hooks.d/rfc3442-classless-routes
 chmod a+x config_usg.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Editer le fichier /opt/vyatta/sbin/vyatta-interfaces.pl et ajouter l&amp;rsquo;option 90
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;⚠️ À ne pas reproduire : un chmod 775 sur ce script rend un binaire root modifiable par tout le groupe, ce qui peut mener à une exécution root si le groupe est compromis. 755 suffit largement (lecture/exécution pour tous, écriture réservée au propriétaire).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Editer le fichier /opt/vyatta/sbin/vyatta-interfaces.pl et ajouter l&amp;rsquo;option 90
 du dhcp. Il faut aller à la ligne 194 :&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    $output .= &amp;#34;option rfc3442-classless-static-routes code 121 = array of unsigned integer 8;\n\n&amp;#34;;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Et ajouter dessous :&lt;/p&gt;

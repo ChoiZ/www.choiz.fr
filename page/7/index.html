@@ -288,7 +288,8 @@ to make sure we haven't added extra keys that you weren't expecting.
 
 EOF
 </code></pre>
-<p>Il ne reste qu&rsquo;à donner les droits au fichier :</p>
+<blockquote>
+<p>⚠️ À ne pas reproduire : ce script fait un <code>eval &quot;$GET_ID&quot;</code> en réinjectant dans <code>ID_FILE</code> le chemin passé via <code>-i</code>, sans jamais l&rsquo;assainir. Un chemin malveillant permet une injection shell. Si vous devez encore bricoler ce genre de script, échappez ou validez l&rsquo;argument avant de le passer à <code>eval</code>, ou évitez <code>eval</code> tout court.</p>
     <p><a class="btn" href="/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html">Lire la suite</a></p>
   </div>
 </article>

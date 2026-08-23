@@ -102,16 +102,12 @@ trop grande. :</p>
     </p>
   </header>
   <div class="post-excerpt">
-    <p>Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
+    <blockquote>
+<p>⚠️ Obsolète : <code>ipfw</code> a été retiré de macOS depuis Yosemite (2014), cet article ne fonctionne plus tel quel sur un macOS moderne. Pour limiter la bande passante aujourd&rsquo;hui, il faut passer par <code>pf</code>/<code>pfctl</code> couplé à <code>dnctl</code>, ou plus simplement utiliser le Network Link Conditioner d&rsquo;Apple.</p>
+</blockquote>
+<p>Pour limiter la bande passante sous Mac Os X il suffit de créer un tuyau
 virtuel en console.</p>
 <p>Ici on crée un tuyau virtuel de 1Mbit/s.</p>
-<p><code>sudo ipfw pipe 1 config bw 1Mbit/s</code></p>
-<p>On applique ce tuyau au port 80 (pour le téléchargement de fichier via
-un navigateur par exemple).</p>
-<p><code>sudo ipfw add 1 pipe 1 proto tcp src-port 80</code></p>
-<p>Pour voir le tuyau :</p>
-<p><code>sudo ipfw pipe show</code></p>
-<p>Pour supprimer la règle du port 80 :</p>
     <p><a class="btn" href="/2010-07-12-limiter-la-bande-passante-sous-mac-os-x.html">Lire la suite</a></p>
   </div>
 </article>

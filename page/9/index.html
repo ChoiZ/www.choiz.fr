@@ -71,22 +71,15 @@ le ARandR pour configurer les deux écrans.</p>
     </p>
   </header>
   <div class="post-excerpt">
-    <p>Lors de l&rsquo;installation de Debian sur mon poste au travail j&rsquo;ai eu la
+    <blockquote>
+<p>⚠️ Obsolète : Adobe Flash Player est en fin de vie depuis le 31 décembre 2020, ce plugin n&rsquo;est plus maintenu, plus supporté par les navigateurs et truffé de failles connues. Ne l&rsquo;installez plus, quelle que soit la distribution.</p>
+</blockquote>
+<p>Lors de l&rsquo;installation de Debian sur mon poste au travail j&rsquo;ai eu la
 surprise en ouvrant Firefox que Deezer ne fonctionne pas ! Travaillant
 chez Deezer c&rsquo;est un peu problématique.</p>
 <p>J&rsquo;ai donc téléchargé le package flashplugin-nonfree en procédant comme
 ceci :</p>
-<pre><code>vi /etc/apt/source.list
-</code></pre>
-<p>Ajouter contrib non-free aux différentes sources (sauf security) puis :</p>
-<pre><code>apt-get update
-
-apt-get install flashplugin-nonfree
-</code></pre>
-<p>En relançant Firefox j&rsquo;ai bien flash player fonctionnel sur Deezer.</p>
-<p>Le package flashplugin étant nonfree Debian ne l&rsquo;inclut pas directement
-lors de l&rsquo;installation.</p>
-    
+    <p><a class="btn" href="/2011-11-30-flash-sous-debian.html">Lire la suite</a></p>
   </div>
 </article>
 
@@ -193,7 +186,6 @@ avoir la machine virtuelle importée !</p>
 | netbios name = %h
 | server string = Serveur samba %h
 | security = user
-| public = yes
 | ## Log ##
 | log file = /var/log/samba/log.%m
 | max log size = 1000
@@ -214,7 +206,8 @@ avoir la machine virtuelle importée !</p>
 | valid users = choiz, @group
 | comment = partage en lecture pour choiz et le groupe &quot;group&quot;
 </code></pre>
-<p>Maintenant il faut créer notre utilisateur &ldquo;choiz&rdquo; grâce à :</p>
+<blockquote>
+<p>⚠️ À ne pas reproduire : j&rsquo;avais mis <code>public = yes</code> dans le <code>[global]</code> de cet exemple, ça autorise l&rsquo;accès invité par défaut sur tout partage qui ne précise pas explicitement <code>guest ok = no</code>. Je l&rsquo;ai retiré du global ; à n&rsquo;activer, si besoin, que partage par partage.</p>
     <p><a class="btn" href="/2011-08-17-partage-samba.html">Lire la suite</a></p>
   </div>
 </article>

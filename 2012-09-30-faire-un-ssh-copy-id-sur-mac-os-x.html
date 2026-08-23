@@ -102,9 +102,15 @@ to make sure we haven't added extra keys that you weren't expecting.
 
 EOF
 </code></pre>
+<blockquote>
+<p>⚠️ À ne pas reproduire : ce script fait un <code>eval &quot;$GET_ID&quot;</code> en réinjectant dans <code>ID_FILE</code> le chemin passé via <code>-i</code>, sans jamais l&rsquo;assainir. Un chemin malveillant permet une injection shell. Si vous devez encore bricoler ce genre de script, échappez ou validez l&rsquo;argument avant de le passer à <code>eval</code>, ou évitez <code>eval</code> tout court.</p>
+</blockquote>
 <p>Il ne reste qu&rsquo;à donner les droits au fichier :</p>
 <pre><code>chmod 755 /usr/bin/ssh-copy-id
 </code></pre>
+<blockquote>
+<p>⚠️ Obsolète : depuis El Capitan, <code>/usr/bin</code> est protégé en écriture par SIP (System Integrity Protection), donc ce <code>chmod</code>/dépôt de fichier échoue désormais. Placez plutôt le script dans <code>/usr/local/bin</code> (ou <code>/opt/homebrew/bin</code> sur Apple Silicon), ou plus simplement installez <code>brew install openssh</code>, qui fournit un <code>ssh-copy-id</code> natif et à jour.</p>
+</blockquote>
 <p>Vous pouvez maintenant copier votre clé ssh sur un serveur distant en
 tapant :</p>
 <pre><code>ssh-copy-id -i id_rsa.pub user@machine.distante

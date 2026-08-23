@@ -63,7 +63,7 @@ gmail = IMAP {
     server = 'imap.gmail.com',
     username = 'mail@gmail.com',
     password = 'mon_mot_de_passe',
-    ssl = 'ssl3',
+    ssl = 'tls1.2',
 }
 EOF
 </code></pre>
@@ -73,10 +73,13 @@ yahoo = IMAP {
     server = 'imap.yahoo.com',
     username = 'mail@yahoo.com',
     password = 'mon_mot_de_passe',
-    ssl = 'ssl3',
+    ssl = 'tls1.2',
 }
 EOF
 </code></pre>
+<blockquote>
+<p>⚠️ À ne pas reproduire : SSLv3 est cassé depuis la faille POODLE (2014) et refusé par la quasi-totalité des serveurs ; le forcer expose au downgrade, alors que ces fichiers .lua contiennent le mot de passe du compte mail en clair. Utilise <code>tls1.2</code> et protège ces fichiers avec <code>chmod 600 gmail.lua yahoo.lua</code>.</p>
+</blockquote>
 <p>Ajouter nos boites dans le fichier de config avec des filtres :</p>
 <pre><code>if_dir = os.getenv('HOME') .. '/.imapfilter/'
 -- on inclus nos comptes imap…

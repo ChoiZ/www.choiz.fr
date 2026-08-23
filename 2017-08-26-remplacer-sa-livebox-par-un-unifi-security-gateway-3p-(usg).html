@@ -56,6 +56,9 @@ permet de gérer son matériel de la marque.</p>
 <p>En branchant l&rsquo;USG au secteur il prend l&rsquo;adresse IP 192.168.1.1 (la même que la
 livebox dans un premier temps ça aide pas…). Je branche donc l&rsquo;USG en direct sur
 mon poste et je me connecte en ssh dessus avec les login / pass : &ldquo;ubnt / ubnt&rdquo;.</p>
+<blockquote>
+<p>⚠️ À ne pas reproduire : ce tuto garde les identifiants par défaut ubnt/ubnt jusqu&rsquo;au bout sans jamais dire de les changer. Sur un routeur/pare-feu, des identifiants par défaut valent prise de contrôle immédiate si le SSH est exposé : changez le mot de passe admin UniFi et celui du compte ubnt avant toute remise en production.</p>
+</blockquote>
 <p>Se rendre sur <a href="https://www.l9.fr/usg-config-generator.php">mon générateur de configuration</a> pour générer un fichier config_usg.sh</p>
 <p>Puis télécharger les fichiers :</p>
 <ul>
@@ -71,12 +74,15 @@ avec l&rsquo;utilisateur &ldquo;ubnt&rdquo; et le mot de passe &ldquo;ubnt&rdquo
 script :</p>
 <pre tabindex="0"><code>sudo bash
 mv dhclient3 /sbin/dhclient3
-chmod 775 /sbin/dhclient3
+chmod 755 /sbin/dhclient3
 chown root:root /sbin/dhclient3
 mv rfc3442-classless-routes /etc/dhcp3/dhclient-exit-hooks.d/
 chown root:root /etc/dhcp3/dhclient-exit-hooks.d/rfc3442-classless-routes
 chmod a+x config_usg.sh
-</code></pre><p>Editer le fichier /opt/vyatta/sbin/vyatta-interfaces.pl et ajouter l&rsquo;option 90
+</code></pre><blockquote>
+<p>⚠️ À ne pas reproduire : un chmod 775 sur ce script rend un binaire root modifiable par tout le groupe, ce qui peut mener à une exécution root si le groupe est compromis. 755 suffit largement (lecture/exécution pour tous, écriture réservée au propriétaire).</p>
+</blockquote>
+<p>Editer le fichier /opt/vyatta/sbin/vyatta-interfaces.pl et ajouter l&rsquo;option 90
 du dhcp. Il faut aller à la ligne 194 :</p>
 <pre tabindex="0"><code>    $output .= &#34;option rfc3442-classless-static-routes code 121 = array of unsigned integer 8;\n\n&#34;;
 </code></pre><p>Et ajouter dessous :</p>

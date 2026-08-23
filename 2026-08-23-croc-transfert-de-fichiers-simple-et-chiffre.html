@@ -55,7 +55,10 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew install croc                  <span class="c1"># macOS</span>
 </span></span><span class="line"><span class="cl">sudo apt install croc              <span class="c1"># Debian / Ubuntu</span>
 </span></span><span class="line"><span class="cl">curl https://getcroc.com <span class="p">|</span> bash    <span class="c1"># multiplateforme</span>
-</span></span></code></pre></div><p>Pour envoyer, on pointe un fichier ou un dossier :</p>
+</span></span></code></pre></div><blockquote>
+<p>⚠️ À ne pas reproduire tel quel : un curl | bash exécute un script sans relecture ni vérification, ce qui est risqué si le serveur ou la connexion est compromis (MITM). Préférez brew/apt ou le binaire signé des releases GitHub, ou à défaut téléchargez le script et relisez-le avant de l&rsquo;exécuter.</p>
+</blockquote>
+<p>Pour envoyer, on pointe un fichier ou un dossier :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">croc send mon-fichier.zip
 </span></span></code></pre></div><p>croc affiche alors le code à transmettre :</p>
 <pre tabindex="0"><code>Code is: 8451-magnum-cargo-arctic

@@ -50,8 +50,11 @@
 commande mysqldump et mysql.</p>
 <p>Dans un premier temps je sauve ma base database dans le fichier dump.sql
 J&rsquo;utilise l&rsquo;utilisateur mysql : utilisateur avec son mot de passe p4ss :</p>
-<pre><code>mysqldump -u utilisateur -p p4ss database &gt; dump.sql
+<pre><code>mysqldump -u utilisateur -p database &gt; dump.sql
 </code></pre>
+<blockquote>
+<p>⚠️ À ne pas reproduire : ne mettez jamais le mot de passe en argument de la commande (visible dans l&rsquo;historique du shell et dans <code>ps aux</code>) ; d&rsquo;ailleurs <code>-p p4ss</code> avec un espace ne le passe même pas, p4ss serait lu comme nom de base. Laissez <code>-p</code> seul pour le prompt interactif, ou utilisez un <code>~/.my.cnf</code> en 600.</p>
+</blockquote>
 <p>Une fois que j&rsquo;ai mon fichier dump.sql je le mets sur la nouvelle
 machine, puis j&rsquo;exécute la commande suivante :</p>
 <pre><code>mysql -u utilisateur -pp4ss database &lt; fichierdump.sql

@@ -161,13 +161,11 @@ flèche de droite ou gauche) suivant la direction où on veut aller.</p>
 commande mysqldump et mysql.</p>
 <p>Dans un premier temps je sauve ma base database dans le fichier dump.sql
 J&rsquo;utilise l&rsquo;utilisateur mysql : utilisateur avec son mot de passe p4ss :</p>
-<pre><code>mysqldump -u utilisateur -p p4ss database &gt; dump.sql
+<pre><code>mysqldump -u utilisateur -p database &gt; dump.sql
 </code></pre>
-<p>Une fois que j&rsquo;ai mon fichier dump.sql je le mets sur la nouvelle
-machine, puis j&rsquo;exécute la commande suivante :</p>
-<pre><code>mysql -u utilisateur -pp4ss database &lt; fichierdump.sql
-</code></pre>
-    
+<blockquote>
+<p>⚠️ À ne pas reproduire : ne mettez jamais le mot de passe en argument de la commande (visible dans l&rsquo;historique du shell et dans <code>ps aux</code>) ; d&rsquo;ailleurs <code>-p p4ss</code> avec un espace ne le passe même pas, p4ss serait lu comme nom de base. Laissez <code>-p</code> seul pour le prompt interactif, ou utilisez un <code>~/.my.cnf</code> en 600.</p>
+    <p><a class="btn" href="/2011-05-14-migration-dune-base-de-donn%C3%A9e-mysql.html">Lire la suite</a></p>
   </div>
 </article>
 
@@ -257,19 +255,21 @@ fournit un moyen d&rsquo;accéder aux membres
   <div class="post-excerpt">
     <p>Faire un système de protection (tel que htaccess) direct dans un fichier PHP :</p>
 <pre tabindex="0"><code>&lt;?php
+// Identifiants stockés dans un fichier de config non versionné (hors du repo)
+$config = require __DIR__ . &#39;/auth-config.php&#39;; // [&#39;user&#39; =&gt; &#39;login&#39;, &#39;pass_hash&#39; =&gt; password_hash(&#39;password&#39;, PASSWORD_DEFAULT)]
+
 if (!empty($_SERVER[&#34;PHP_AUTH_USER&#34;]) &amp;&amp;
-$_SERVER[&#34;PHP_AUTH_USER&#34;] == &#34;login&#34; &amp;&amp;
-$_SERVER[&#34;PHP_AUTH_PW&#34;] == &#34;password&#34;) {
+hash_equals($config[&#39;user&#39;], $_SERVER[&#34;PHP_AUTH_USER&#34;]) &amp;&amp;
+password_verify($_SERVER[&#34;PHP_AUTH_PW&#34;], $config[&#39;pass_hash&#39;])) {
     // code protégé ici
 } else {
     header(&#39;WWW-Authenticate: Basic realm=&#34;Restricted area&#34;&#39;);
     header(&#39;HTTP/1.0 401 Unauthorized&#39;);
     exit(&#39;Access Denied&#39;);
 }
-</code></pre><p>Attention l&rsquo;utilisation du htaccess n&rsquo;est pas recommandée sur une connexion non
-chiffrée (tel que le HTTP). Utilisez-le plutôt sur une connexion chiffrée
-(HTTPS).</p>
-    
+</code></pre><blockquote>
+<p>⚠️ À ne pas reproduire : ne jamais coder les identifiants en dur, ils finissent versionnés et exposés dans le repo. Sortez-les dans une config non versionnée et comparez un hash avec hash_equals() / password_verify() ; le == sur un secret est aussi sensible aux attaques par timing.</p>
+    <p><a class="btn" href="/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Lire la suite</a></p>
   </div>
 </article>
 
@@ -292,10 +292,11 @@ fonctionne pas avec l&rsquo;attribut &ldquo;onclick&rdquo;…</p>
 $(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
 </code></pre>
 <p>Par :</p>
-<pre><code>var mavar = 'fonctionAffichage();';
-$(&quot;#code&quot;).removeAttr('onclick').click(function() { eval(mavar); });
+<pre><code>$(&quot;#code&quot;).off(&quot;click&quot;).on(&quot;click&quot;, fonctionAffichage);
 </code></pre>
-    
+<blockquote>
+<p>⚠️ À ne pas reproduire : <code>eval()</code> sur une chaîne exécute n&rsquo;importe quel code, ce qui ouvre la porte à l&rsquo;injection ou au XSS si cette chaîne contient une donnée non maîtrisée. On attache une référence de fonction, jamais une chaîne à évaluer, et on oublie <code>eval</code> comme l&rsquo;attribut onclick inline.</p>
+    <p><a class="btn" href="/2011-01-07-jquery-attr-avec-onclick-par-click.html">Lire la suite</a></p>
   </div>
 </article>
 
