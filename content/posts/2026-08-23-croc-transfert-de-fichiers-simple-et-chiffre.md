@@ -53,16 +53,36 @@ croc send --code mon-code-a-moi mon-fichier.zip
 Garder le contrôle : son propre relais
 --------------------------------------
 
-Par défaut, croc passe par le relais public de getcroc.com. Il ne voit rien du contenu, mais si vous voulez la maîtrise totale — ou transférer sur un réseau fermé — hébergez le vôtre, c'est une seule commande :
+Par défaut, croc passe par le relais public de getcroc.com. Il ne voit rien du contenu, mais si vous voulez la maîtrise totale — ou transférer sur un réseau fermé — hébergez le vôtre. Pas besoin d'installer quoi que ce soit de plus : c'est le même binaire croc, avec la sous-commande `relay`. Sur la machine qui servira de relais (un petit VPS, un Raspberry, un poste du réseau) :
 
 ```sh
 croc relay
 ```
 
-et côté client, on lui indique où pointer :
+Il écoute sur cinq ports TCP par défaut, de 9009 à 9013 — pensez à les ouvrir dans le pare-feu de la machine. On peut en choisir d'autres, deux au minimum :
+
+```sh
+croc relay --ports 9009,9010
+```
+
+Et pour restreindre l'accès, un mot de passe :
+
+```sh
+croc relay --pass mon-mot-de-passe
+```
+
+Côté clients, le point important : les deux doivent pointer vers ce relais, pas seulement l'expéditeur. À l'envoi, on préfixe la commande par `--relay` :
 
 ```sh
 croc --relay "monrelais.exemple.com:9009" send mon-fichier.zip
 ```
+
+Et à la réception, on ajoute le même `--relay` devant le code :
+
+```sh
+croc --relay "monrelais.exemple.com:9009" 8451-magnum-cargo-arctic
+```
+
+Si le relais a un mot de passe, on ajoute `--pass mon-mot-de-passe` des deux côtés. Et pour ne pas répéter tout ça à chaque fois, la variable d'environnement `CROC_RELAY` (et `CROC_PASS` pour le mot de passe) fait le même travail une fois pour toutes.
 
 croc est devenu mon réflexe pour tout transfert ponctuel entre deux machines : simple, rapide, chiffré, multiplateforme, et je peux tout garder chez moi avec mon propre relais. Exactement le genre d'outil que j'aime.
