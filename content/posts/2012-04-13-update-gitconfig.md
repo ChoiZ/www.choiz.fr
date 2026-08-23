@@ -46,4 +46,4 @@ Ajout du pull, push, diff et surtout stash :
     [merge]
       tool = vimdiff
 
-> ⚠️ Obsolète / à ne pas reproduire : ne désactivez jamais la vérification TLS de git (`http.sslVerify = false`), même en commentaire dans un exemple à copier-coller — ça ouvre la porte à une attaque de type MITM. Si git n'accepte pas le certificat d'un serveur, corrigez plutôt le magasin de certificats (ou renseignez `http.sslCAInfo`) au lieu de couper la vérification.
+> ⚠️ Obsolète / à ne pas reproduire : ne désactivez jamais la vérification TLS de git, ne mettez jamais ~~sslverify = false~~, même en commentaire dans un exemple à copier-coller — ça ouvre la porte à une attaque de type MITM. Si git n'accepte pas le certificat d'un serveur, corrigez plutôt le magasin de certificats (ou renseignez `http.sslCAInfo`) au lieu de couper la vérification.

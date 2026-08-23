@@ -22,6 +22,10 @@ différents hosts. En général j'en définis un.
 
 Pour finir on copie la clé sur le serveur soit via scp :
 
+Au lieu de :
+
+<pre><del>scp ~/.ssh/id_rsa.pub user@ip:~/.ssh/authorized_keys/</del></pre>
+
     cat ~/.ssh/id_rsa.pub | ssh user@ip "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 
 > ⚠️ À ne pas reproduire : la version d'origine (scp vers authorized_keys/ avec un slash final) traitait authorized_keys comme un dossier et n'installait donc jamais la clé. La commande ssh-copy-id reste la façon la plus simple d'y arriver.

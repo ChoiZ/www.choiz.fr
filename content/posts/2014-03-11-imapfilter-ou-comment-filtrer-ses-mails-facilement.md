@@ -43,7 +43,7 @@ Et un pour Yahoo :
     }
     EOF
 
-> ⚠️ À ne pas reproduire : SSLv3 est cassé depuis la faille POODLE (2014) et refusé par la quasi-totalité des serveurs ; le forcer expose au downgrade, alors que ces fichiers .lua contiennent le mot de passe du compte mail en clair. Utilise `tls1.2` et protège ces fichiers avec `chmod 600 gmail.lua yahoo.lua`.
+> ⚠️ À ne pas reproduire : j'avais mis ~~ssl = 'ssl3'~~ : SSLv3 est cassé depuis la faille POODLE (2014) et refusé par la quasi-totalité des serveurs ; le forcer expose au downgrade, alors que ces fichiers .lua contiennent le mot de passe du compte mail en clair. Utilise `tls1.2` et protège ces fichiers avec `chmod 600 gmail.lua yahoo.lua`.
 
 Ajouter nos boites dans le fichier de config avec des filtres :
 

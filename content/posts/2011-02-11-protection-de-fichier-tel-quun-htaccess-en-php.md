@@ -8,6 +8,12 @@ tags: ["php", "code"]
 
 Faire un système de protection (tel que htaccess) direct dans un fichier PHP :
 
+Au lieu de :
+
+<pre><del>if (!empty($_SERVER["PHP_AUTH_USER"]) &&
+$_SERVER["PHP_AUTH_USER"] == "login" &&
+$_SERVER["PHP_AUTH_PW"] == "password") {</del></pre>
+
 ```
 <?php
 // Identifiants stockés dans un fichier de config non versionné (hors du repo)

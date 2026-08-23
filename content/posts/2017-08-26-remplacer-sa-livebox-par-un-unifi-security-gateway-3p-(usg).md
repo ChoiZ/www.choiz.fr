@@ -54,7 +54,7 @@ chown root:root /etc/dhcp3/dhclient-exit-hooks.d/rfc3442-classless-routes
 chmod a+x config_usg.sh
 ```
 
-> ⚠️ À ne pas reproduire : un chmod 775 sur ce script rend un binaire root modifiable par tout le groupe, ce qui peut mener à une exécution root si le groupe est compromis. 755 suffit largement (lecture/exécution pour tous, écriture réservée au propriétaire).
+> ⚠️ À ne pas reproduire : j'avais mis ~~chmod 775~~ sur ce script, ce qui rend un binaire root modifiable par tout le groupe, ce qui peut mener à une exécution root si le groupe est compromis. 755 suffit largement (lecture/exécution pour tous, écriture réservée au propriétaire).
 
 Editer le fichier /opt/vyatta/sbin/vyatta-interfaces.pl et ajouter l'option 90
 du dhcp. Il faut aller à la ligne 194 :

@@ -137,7 +137,7 @@ Editer /etc/dovecot/conf.d/auth-passwdfile.conf.ext :
         args = scheme=SHA512-CRYPT username_format=%u /etc/dovecot/users
     }
 
-> ⚠️ À ne pas reproduire : le MD5 brut non salé se casse en rainbow table. Utilise `doveadm pw -s SHA512-CRYPT` pour générer les hash des comptes.
+> ⚠️ À ne pas reproduire : j'avais mis ~~scheme=MD5~~ : le MD5 brut non salé se casse en rainbow table. Utilise `doveadm pw -s SHA512-CRYPT` pour générer les hash des comptes.
 
     userdb {
         driver = passwd-file
@@ -274,7 +274,7 @@ Editer /etc/postfix/main.cf ::
     smtpd_tls_mandatory_protocols = !SSLv2,!SSLv3
     tls_random_source = dev:/dev/urandom
 
-> ⚠️ À ne pas reproduire : avec `smtpd_tls_auth_only = no`, les identifiants SASL peuvent transiter en clair sur le port 25 ; l'auth ne doit passer qu'en chiffré (submission 587 / smtps 465). Le `smtpd_tls_mandatory_protocols` verrouille en plus un plancher TLS moderne en excluant SSLv2/SSLv3.
+> ⚠️ À ne pas reproduire : j'avais mis ~~smtpd_tls_auth_only = no~~ ; avec cette valeur, les identifiants SASL peuvent transiter en clair sur le port 25 ; l'auth ne doit passer qu'en chiffré (submission 587 / smtps 465). Le `smtpd_tls_mandatory_protocols` verrouille en plus un plancher TLS moderne en excluant SSLv2/SSLv3.
 
 Créer /etc/postfix/virtual\_alias :
 

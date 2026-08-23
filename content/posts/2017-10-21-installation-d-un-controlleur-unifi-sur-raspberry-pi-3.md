@@ -93,6 +93,10 @@ root@raspberrypi3:/home/pi# `apt install dirmngr -y`
 
 root@raspberrypi3:/home/pi# `mkdir -p /etc/apt/keyrings`
 
+Au lieu de :
+
+<pre><del>apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50</del></pre>
+
 root@raspberrypi3:/home/pi# `curl -fsSL https://dl.ui.com/unifi/unifi-repo.gpg -o /etc/apt/keyrings/unifi-repo.gpg`
 
 root@raspberrypi3:/home/pi# `echo 'deb [signed-by=/etc/apt/keyrings/unifi-repo.gpg] http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | tee -a /etc/apt/sources.list.d/ubnt.list > /dev/null`

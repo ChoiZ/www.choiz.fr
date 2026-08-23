@@ -36,7 +36,7 @@ Configuration d'un serveur samba. Éditer le fichier de configuration
     | valid users = choiz, @group
     | comment = partage en lecture pour choiz et le groupe "group"
 
-> ⚠️ À ne pas reproduire : j'avais mis `public = yes` dans le `[global]` de cet exemple, ça autorise l'accès invité par défaut sur tout partage qui ne précise pas explicitement `guest ok = no`. Je l'ai retiré du global ; à n'activer, si besoin, que partage par partage.
+> ⚠️ À ne pas reproduire : j'avais mis ~~public = yes~~ dans le `[global]` de cet exemple, ça autorise l'accès invité par défaut sur tout partage qui ne précise pas explicitement `guest ok = no`. Je l'ai retiré du global ; à n'activer, si besoin, que partage par partage.
 
 Maintenant il faut créer notre utilisateur "choiz" grâce à :
 
