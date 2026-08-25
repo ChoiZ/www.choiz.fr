@@ -44,6 +44,30 @@
 
 <article>
   <header>
+    <h2><a href="/2017-05-14-docker-commandes-utiles.html">Docker commandes utiles</a></h2>
+    <p>
+      Posté le dim. 14 mai 2017
+       &#8226; Tags : <a href="/tag/docker.html">docker</a>, <a href="/tag/linux.html">linux</a>
+    </p>
+  </header>
+  <div class="post-excerpt">
+    <p>Voici quelques commandes très utiles si vous utilisez docker.</p>
+<p>Supprimer tous les containers qui sont arrêtés :</p>
+<pre tabindex="0"><code>docker ps -q | xargs docker rm
+</code></pre><p>Supprimer toutes les images non utilisées :</p>
+<pre tabindex="0"><code>docker images -q | xargs docker rmi
+</code></pre><p>Se connecter à un conteneur docker lancé par son id :</p>
+<pre tabindex="0"><code>docker exec -it id_de_votre_container /bin/bash
+</code></pre><p>Se connecter à un conteneur docker lancé par son nom :</p>
+<pre tabindex="0"><code>docker exec -it nom_de_votre_container /bin/bash
+</code></pre>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2016-07-30-convertir-un-.deb-en-archive-.tar.gz.html">Convertir un .deb en archive .tar.gz</a></h2>
     <p>
       Posté le sam. 30 juillet 2016
@@ -291,39 +315,6 @@ updating (to another version) etc…) -v ou &ndash;verbose, mode verbeux. -u ou
 -N ou &ndash;newuse, met à jour les programmes dont le &ldquo;USE&rdquo; a été modifié
 depuis son installation.</p>
     <p><a class="btn" href="/2015-09-27-mettre-a-jour-gentoo.html">Lire la suite</a></p>
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
-    <h2><a href="/2015-09-06-compilation-kernel-gentoo.html">Compilation Kernel Gentoo</a></h2>
-    <p>
-      Posté le dim. 6 septembre 2015
-       &#8226; Tags : <a href="/tag/kernel.html">kernel</a>, <a href="/tag/gentoo.html">gentoo</a>, <a href="/tag/linux.html">linux</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>Pour compiler le kernel sous gentoo :</p>
-<pre><code>cd /usr/src/linux
-
-make menuconfig
-
-make &amp;&amp; make modules_install
-
-make install
-</code></pre>
-<p>Le kernel est maintenant compilé.</p>
-<p>Maintenant il faut mettre à jour grub. :</p>
-<pre><code>grub2-mkconfig -o /boot/grub/grub.cfg
-</code></pre>
-<p>Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi
-que le nombre de compilation.</p>
-<p>Il faut maintenant redémarrer la machine :</p>
-<pre><code>reboot
-</code></pre>
-<p>Au final vérifier avec uname -a si le bon kernel est chargé.</p>
-    
   </div>
 </article>
 

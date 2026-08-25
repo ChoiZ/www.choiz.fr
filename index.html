@@ -44,6 +44,22 @@
 
 <article>
   <header>
+    <h2><a href="/2026-08-25-bepo-5000eme-jour.html">Bépoète depuis 5 000 jours !</a></h2>
+    <p>
+      Posté le mar. 25 août 2026
+       &#8226; Tags : <a href="/tag/b%C3%A9po.html">bépo</a>, <a href="/tag/keyboard.html">keyboard</a>
+    </p>
+  </header>
+  <div class="post-excerpt">
+    <p>Il y a presque quatorze ans, je notais ici mon <a href="https://www.choiz.fr/2012-12-27-b%C3%A9po-11%C3%A8me-jour.html">bépo, 11ème jour</a>. On est aujourd&rsquo;hui à mon 5000ème jour en bépo ! Ça rajeunit pas :)</p>
+<p>C&rsquo;est d&rsquo;ailleurs le plus curieux à expliquer : la disposition bépo ne vit plus sur le clavier, elle vit dans mes doigts. Peu importe ce qui est sérigraphié sur les touches, tant que la disposition logicielle est en bépo, je tape pareil. Je ne regarde pas mes doigts de toute façon.</p>
+    <p><a class="btn" href="/2026-08-25-bepo-5000eme-jour.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2026-08-23-croc-transfert-de-fichiers-simple-et-chiffre.html">croc : transférer des fichiers entre deux machines, simplement et chiffré</a></h2>
     <p>
       Posté le dim. 23 août 2026
@@ -219,26 +235,6 @@ Toujours pas.</p>
 Pour moi la méthode la plus simple pour bien trier vos fichiers par ordre chronologique, est de commencer par l&rsquo;année puis le mois puis le jour etc… On précise de plus en plus.
 Donc pour le Lundi 10 Décembre 2018 je vais écrire 20181210 ou 2018-12-10.</p>
     <p><a class="btn" href="/2018-12-13-bien-nommer-ses-fichiers.html">Lire la suite</a></p>
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
-    <h2><a href="/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html">Ajouter un disque a une grappe RAID MDADM</a></h2>
-    <p>
-      Posté le mer. 5 décembre 2018
-       &#8226; Tags : <a href="/tag/raid.html">raid</a>, <a href="/tag/mdadm.html">mdadm</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>Ayant enfin fini la migration de mon NAS vers mon nouveau NAS, j&rsquo;ai récupéré mon troisième disque de 10To pour l&rsquo;ajouter à ma grappe RAID1 qui contient déjà 2 disques de 10To.</p>
-<p>Pour ajouter le disque /dev/sdd dans la grappe /dev/md0 il faut taper la commande suivante :</p>
-<pre tabindex="0"><code>mdadm --manage /dev/md0 --add /dev/sdd1
-</code></pre><p>Si vous n&rsquo;avez pas de chance comme moi, vous aurez le message d&rsquo;erreur suivant :</p>
-<pre tabindex="0"><code>mdadm: Cannot open /dev/sdd1: Device or resource busy
-</code></pre><p>Il faut donc redémarrer la machine et éditer le grub à la main… (avec la touche e), puis ajouter dans la ligne avec le kernel <code>nodmraid</code> puis appuyer sur f10 ou b pour booter.</p>
-    <p><a class="btn" href="/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html">Lire la suite</a></p>
   </div>
 </article>
 

@@ -44,6 +44,39 @@
 
 <article>
   <header>
+    <h2><a href="/2015-09-06-compilation-kernel-gentoo.html">Compilation Kernel Gentoo</a></h2>
+    <p>
+      Posté le dim. 6 septembre 2015
+       &#8226; Tags : <a href="/tag/kernel.html">kernel</a>, <a href="/tag/gentoo.html">gentoo</a>, <a href="/tag/linux.html">linux</a>
+    </p>
+  </header>
+  <div class="post-excerpt">
+    <p>Pour compiler le kernel sous gentoo :</p>
+<pre><code>cd /usr/src/linux
+
+make menuconfig
+
+make &amp;&amp; make modules_install
+
+make install
+</code></pre>
+<p>Le kernel est maintenant compilé.</p>
+<p>Maintenant il faut mettre à jour grub. :</p>
+<pre><code>grub2-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<p>Puis lancer uname -a qui affiche le kernel actuellement utilisé ainsi
+que le nombre de compilation.</p>
+<p>Il faut maintenant redémarrer la machine :</p>
+<pre><code>reboot
+</code></pre>
+<p>Au final vérifier avec uname -a si le bon kernel est chargé.</p>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2015-08-30-compression-decompression-tar-gz-tar-bz2-tar-xz.html">Compression Décompression tar.gz tar.bz2 tar.xz</a></h2>
     <p>
       Posté le dim. 30 août 2015
@@ -269,28 +302,6 @@ sous-modules avec les plugins de vim. Pour initialiser, mettre à jour et
 le tout en cascade (dans tous les dossiers et sous-dossiers) il faut
 faire :</p>
     <p><a class="btn" href="/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html">Lire la suite</a></p>
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
-    <h2><a href="/2015-01-24-%C3%AAtes-vous-%C3%A0-lheure-et-votre-serveur.html">Êtes-vous à l&#39;heure ? (Et votre serveur ?)</a></h2>
-    <p>
-      Posté le sam. 24 janvier 2015
-       &#8226; Tags : <a href="/tag/debian.html">debian</a>, <a href="/tag/ntp.html">ntp</a>, <a href="/tag/date.html">date</a>, <a href="/tag/linux.html">linux</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>Je suis à l&rsquo;heure, et mes serveurs le sont également (normalement).</p>
-<p>Normalement oui, mais le serveur NTP que j&rsquo;utilisais ne répond plus… Mes
-serveurs ont donc 1mn30 de retard pour l&rsquo;un, et 40mn de retard pour
-l&rsquo;autre !</p>
-<p>J&rsquo;utilisais ntpdate avec le serveur de l&rsquo;université de Nice
-(ntp.unice.fr).</p>
-<p>J&rsquo;ai donc installé ntp grâce aux paquets debian, et maintenant mes
-serveurs sont à l&rsquo;heure.</p>
-    
   </div>
 </article>
 

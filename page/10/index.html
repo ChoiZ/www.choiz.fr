@@ -44,6 +44,24 @@
 
 <article>
   <header>
+    <h2><a href="/2011-07-05-suppression-des-dsstore.html">Suppression des .DS_Store</a></h2>
+    <p>
+      Posté le mar. 5 juillet 2011
+       &#8226; Tags : <a href="/tag/osx.html">osx</a>, <a href="/tag/file.html">file</a>
+    </p>
+  </header>
+  <div class="post-excerpt">
+    <p>Dans une console sur votre Mac :</p>
+<pre><code>defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+</code></pre>
+<p>Puis redémarrez le mac.</p>
+    
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2011-06-30-el%C3%A9ment-cliqu%C3%A9-en-js.html">Elément cliqué en js</a></h2>
     <p>
       Posté le jeu. 30 juin 2011
@@ -276,33 +294,6 @@ password_verify($_SERVER[&#34;PHP_AUTH_PW&#34;], $config[&#39;pass_hash&#39;])) 
 </code></pre><blockquote>
 <p>⚠️ À ne pas reproduire : ne jamais coder les identifiants en dur, ils finissent versionnés et exposés dans le repo. Sortez-les dans une config non versionnée et comparez un hash avec hash_equals() / password_verify() ; le == sur un secret est aussi sensible aux attaques par timing.</p>
     <p><a class="btn" href="/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Lire la suite</a></p>
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
-    <h2><a href="/2011-01-07-jquery-attr-avec-onclick-par-click.html">jQuery attr() avec onclick par click()</a></h2>
-    <p>
-      Posté le ven. 7 janvier 2011
-       &#8226; Tags : <a href="/tag/code.html">code</a>, <a href="/tag/jquery.html">jquery</a>, <a href="/tag/javascript.html">javascript</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>Après avoir perdu 2h… J&rsquo;ai découvert que la méthode attr() de jQuery
-fonctionne pas avec l&rsquo;attribut &ldquo;onclick&rdquo;…</p>
-<p>Edit : Avec jQuery pour modifier le contenu d&rsquo;un onclick il faut faire
-.attr(&lsquo;onClick&rsquo;,&lsquo;valeur&rsquo;) ou faire de la façon suivante.</p>
-<p>Remplacer donc :</p>
-<pre><code>var mavar = 'fonctionAffichage();';
-$(&quot;#code&quot;).attr(&quot;onclick&quot;,&quot;mavar&quot;);
-</code></pre>
-<p>Par ce que je conseillais à l&rsquo;époque… mais qu&rsquo;il ne faut surtout pas faire :</p>
-<pre><del>var mavar = 'fonctionAffichage();';
-$("#code").removeAttr('onclick').click(function() { eval(mavar); });</del></pre>
-<blockquote>
-<p>⚠️ Il ne faut pas utiliser <code>eval()</code> : exécuter une chaîne de code, c&rsquo;est une porte ouverte à l&rsquo;injection ou au XSS dès que cette chaîne contient la moindre donnée non maîtrisée. On attache une référence de fonction, jamais une chaîne à évaluer, et on oublie au passage l&rsquo;attribut onclick inline.</p>
-    <p><a class="btn" href="/2011-01-07-jquery-attr-avec-onclick-par-click.html">Lire la suite</a></p>
   </div>
 </article>
 

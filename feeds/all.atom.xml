@@ -6,7 +6,28 @@
   <link href="https://www.choiz.fr/feeds/all.atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://www.choiz.fr/</id>
   
-  <updated>2026-08-23T11:39:00+02:00</updated>
+  <updated>2026-08-25T09:00:00+02:00</updated>
+  
+  <entry>
+    <title>Bépoète depuis 5 000 jours !</title>
+    <link href="https://www.choiz.fr/2026-08-25-bepo-5000eme-jour.html"/>
+    <id>https://www.choiz.fr/2026-08-25-bepo-5000eme-jour.html</id>
+    <updated>2026-08-25T09:00:00+02:00</updated>
+    <author><name>choiz</name></author>
+    <category term="bépo"/><category term="keyboard"/>
+    <summary type="html">&lt;p&gt;Il y a presque quatorze ans, je notais ici mon &lt;a href=&#34;https://www.choiz.fr/2012-12-27-b%C3%A9po-11%C3%A8me-jour.html&#34;&gt;bépo, 11ème jour&lt;/a&gt;. On est aujourd&amp;rsquo;hui à mon 5000ème jour en bépo ! Ça rajeunit pas :)&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est d&amp;rsquo;ailleurs le plus curieux à expliquer : la disposition bépo ne vit plus sur le clavier, elle vit dans mes doigts. Peu importe ce qui est sérigraphié sur les touches, tant que la disposition logicielle est en bépo, je tape pareil. Je ne regarde pas mes doigts de toute façon.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;Il y a presque quatorze ans, je notais ici mon &lt;a href=&#34;https://www.choiz.fr/2012-12-27-b%C3%A9po-11%C3%A8me-jour.html&#34;&gt;bépo, 11ème jour&lt;/a&gt;. On est aujourd&amp;rsquo;hui à mon 5000ème jour en bépo ! Ça rajeunit pas :)&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est d&amp;rsquo;ailleurs le plus curieux à expliquer : la disposition bépo ne vit plus sur le clavier, elle vit dans mes doigts. Peu importe ce qui est sérigraphié sur les touches, tant que la disposition logicielle est en bépo, je tape pareil. Je ne regarde pas mes doigts de toute façon.&lt;/p&gt;
+&lt;p&gt;Et si l&amp;rsquo;envie de vous y mettre vous prend, &lt;a href=&#34;https://www.b%C3%A9po%C3%A8te.fr/&#34;&gt;bépoète.fr&lt;/a&gt; est un site sympa pour s&amp;rsquo;entraîner — pensez juste à bien choisir la disposition bépo en haut à gauche du site.&lt;/p&gt;
+&lt;p&gt;Depuis 2019, le bépo n&amp;rsquo;est d&amp;rsquo;ailleurs plus seulement une affaire de convaincus : il est entré dans une &lt;a href=&#34;https://www.afnor.org/decryptages/electrotechnologies/clavier-francais-norme-volontaire/&#34;&gt;norme AFNOR&lt;/a&gt;, la NF Z71-300, qui définit deux dispositions pour le clavier français — un azerty optimisé et le bépo. Une norme volontaire, rien d&amp;rsquo;obligatoire donc, mais le bépo — né en 2003 sous licence libre — y est reconnu comme la disposition la plus ergonomique pour saisir le français. De quoi se sentir un peu moins seul après cinq mille jours.&lt;/p&gt;
+&lt;p&gt;Longtemps, mon clavier c&amp;rsquo;était le &lt;a href=&#34;https://www.choiz.fr/2013-03-04-typematrix-sous-mac-os-x.html&#34;&gt;TypeMatrix&lt;/a&gt;. J&amp;rsquo;en ai eu deux. Le premier a une touche qui ne répond plus. Le second, à cause de sa housse de protection en caoutchouc qui a mal vieilli, est devenu tout collant — j&amp;rsquo;ai eu beau le nettoyer encore et encore, ça ne suffit pas. J&amp;rsquo;attends donc un nouveau TypeMatrix depuis des années : ils annoncent régulièrement qu&amp;rsquo;un modèle va sortir… mais aucune nouvelle concrète.&lt;/p&gt;
+&lt;p&gt;Du coup, j&amp;rsquo;ai pris l&amp;rsquo;habitude de taper directement sur le clavier de mon MacBook Pro : azerty sérigraphié, bépo en logiciel, et mes doigts qui s&amp;rsquo;en fichent complètement.&lt;/p&gt;
+&lt;p&gt;La semaine dernière, j&amp;rsquo;ai fini par m&amp;rsquo;offrir un Magic Keyboard. Avec les canicules, taper à même le MacBook — et donc sur sa chaleur — était devenu franchement désagréable. Un clavier externe remet un peu de distance entre mes doigts et la fournaise. Toujours en bépo, évidemment.&lt;/p&gt;
+&lt;p&gt;Cinq mille jours plus tard, le constat est simple : je ne remarque même plus la disposition, elle est devenue mon clavier par défaut, partout. Il ne me manque qu&amp;rsquo;une chose — que TypeMatrix se décide enfin à sortir son nouveau modèle, pour retrouver son clavier matriciel et ses touches Entrée et Retour arrière au milieu du clavier, qui permettent de corriger ou de faire un retour chariot aussi bien de la main gauche que de la droite.&lt;/p&gt;
+&lt;p&gt;Rendez-vous dans 5000 jours, le 3 mai 2040, pour le 10 000ème ! :)&lt;/p&gt;
+</content>
+  </entry>
   
   <entry>
     <title>croc : transférer des fichiers entre deux machines, simplement et chiffré</title>
@@ -1484,35 +1505,6 @@ Host destination.local
     IdentifyFile ~/.ssh/destination
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Enjoy vincent.m ;-)&lt;/p&gt;
 </content>
-  </entry>
-  
-  <entry>
-    <title>Docker commandes utiles</title>
-    <link href="https://www.choiz.fr/2017-05-14-docker-commandes-utiles.html"/>
-    <id>https://www.choiz.fr/2017-05-14-docker-commandes-utiles.html</id>
-    <updated>2017-05-14T21:47:35+02:00</updated>
-    <author><name>choiz</name></author>
-    <category term="docker"/><category term="linux"/>
-    <summary type="html">&lt;p&gt;Voici quelques commandes très utiles si vous utilisez docker.&lt;/p&gt;
-&lt;p&gt;Supprimer tous les containers qui sont arrêtés :&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker ps -q | xargs docker rm
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Supprimer toutes les images non utilisées :&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker images -q | xargs docker rmi
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Se connecter à un conteneur docker lancé par son id :&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker exec -it id_de_votre_container /bin/bash
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Se connecter à un conteneur docker lancé par son nom :&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker exec -it nom_de_votre_container /bin/bash
-&lt;/code&gt;&lt;/pre&gt;</summary>
-    <content type="html">&lt;p&gt;Voici quelques commandes très utiles si vous utilisez docker.&lt;/p&gt;
-&lt;p&gt;Supprimer tous les containers qui sont arrêtés :&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker ps -q | xargs docker rm
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Supprimer toutes les images non utilisées :&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker images -q | xargs docker rmi
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Se connecter à un conteneur docker lancé par son id :&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker exec -it id_de_votre_container /bin/bash
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Se connecter à un conteneur docker lancé par son nom :&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker exec -it nom_de_votre_container /bin/bash
-&lt;/code&gt;&lt;/pre&gt;</content>
   </entry>
   
 </feed>

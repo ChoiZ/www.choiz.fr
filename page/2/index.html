@@ -44,6 +44,26 @@
 
 <article>
   <header>
+    <h2><a href="/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html">Ajouter un disque a une grappe RAID MDADM</a></h2>
+    <p>
+      Posté le mer. 5 décembre 2018
+       &#8226; Tags : <a href="/tag/raid.html">raid</a>, <a href="/tag/mdadm.html">mdadm</a>
+    </p>
+  </header>
+  <div class="post-excerpt">
+    <p>Ayant enfin fini la migration de mon NAS vers mon nouveau NAS, j&rsquo;ai récupéré mon troisième disque de 10To pour l&rsquo;ajouter à ma grappe RAID1 qui contient déjà 2 disques de 10To.</p>
+<p>Pour ajouter le disque /dev/sdd dans la grappe /dev/md0 il faut taper la commande suivante :</p>
+<pre tabindex="0"><code>mdadm --manage /dev/md0 --add /dev/sdd1
+</code></pre><p>Si vous n&rsquo;avez pas de chance comme moi, vous aurez le message d&rsquo;erreur suivant :</p>
+<pre tabindex="0"><code>mdadm: Cannot open /dev/sdd1: Device or resource busy
+</code></pre><p>Il faut donc redémarrer la machine et éditer le grub à la main… (avec la touche e), puis ajouter dans la ligne avec le kernel <code>nodmraid</code> puis appuyer sur f10 ou b pour booter.</p>
+    <p><a class="btn" href="/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2018-07-30-installer-et-utiliser-lxc.html">Installer et utiliser lxc</a></h2>
     <p>
       Posté le lun. 30 juillet 2018
@@ -287,30 +307,6 @@ trouve dans <em>~/.ssh/config</em> et d&rsquo;ajouter les deux lignes suivantes 
 connecte à l&rsquo;host <em>bastion.fr</em> avec l&rsquo;utilisateur <em>user</em> puis fait une nouvelle
 connexion vers ma destination.</p>
     <p><a class="btn" href="/2017-06-01-utiliser-un-bastion-ssh.html">Lire la suite</a></p>
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
-    <h2><a href="/2017-05-14-docker-commandes-utiles.html">Docker commandes utiles</a></h2>
-    <p>
-      Posté le dim. 14 mai 2017
-       &#8226; Tags : <a href="/tag/docker.html">docker</a>, <a href="/tag/linux.html">linux</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>Voici quelques commandes très utiles si vous utilisez docker.</p>
-<p>Supprimer tous les containers qui sont arrêtés :</p>
-<pre tabindex="0"><code>docker ps -q | xargs docker rm
-</code></pre><p>Supprimer toutes les images non utilisées :</p>
-<pre tabindex="0"><code>docker images -q | xargs docker rmi
-</code></pre><p>Se connecter à un conteneur docker lancé par son id :</p>
-<pre tabindex="0"><code>docker exec -it id_de_votre_container /bin/bash
-</code></pre><p>Se connecter à un conteneur docker lancé par son nom :</p>
-<pre tabindex="0"><code>docker exec -it nom_de_votre_container /bin/bash
-</code></pre>
-    
   </div>
 </article>
 

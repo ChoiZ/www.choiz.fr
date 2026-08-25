@@ -2,8 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.choiz.fr/tag/b%C3%A9po.html</loc>
+    <lastmod>2026-08-25T09:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://www.choiz.fr/2026-08-25-bepo-5000eme-jour.html</loc>
+    <lastmod>2026-08-25T09:00:00+02:00</lastmod>
+  </url><url>
     <loc>https://www.choiz.fr/index.html</loc>
-    <lastmod>2026-08-23T11:39:00+02:00</lastmod>
+    <lastmod>2026-08-25T09:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://www.choiz.fr/tag/keyboard.html</loc>
+    <lastmod>2026-08-25T09:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://www.choiz.fr/posts/index.html</loc>
+    <lastmod>2026-08-25T09:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://www.choiz.fr/tags.html</loc>
+    <lastmod>2026-08-25T09:00:00+02:00</lastmod>
   </url><url>
     <loc>https://www.choiz.fr/tag/cli.html</loc>
     <lastmod>2026-08-23T11:39:00+02:00</lastmod>
@@ -15,12 +30,6 @@
     <lastmod>2026-08-23T11:39:00+02:00</lastmod>
   </url><url>
     <loc>https://www.choiz.fr/tag/network.html</loc>
-    <lastmod>2026-08-23T11:39:00+02:00</lastmod>
-  </url><url>
-    <loc>https://www.choiz.fr/posts/index.html</loc>
-    <lastmod>2026-08-23T11:39:00+02:00</lastmod>
-  </url><url>
-    <loc>https://www.choiz.fr/tags.html</loc>
     <lastmod>2026-08-23T11:39:00+02:00</lastmod>
   </url><url>
     <loc>https://www.choiz.fr/tag/blog.html</loc>
@@ -257,9 +266,6 @@
     <loc>https://www.choiz.fr/2015-08-20-migration-de-tumblr-a-pelican.html</loc>
     <lastmod>2015-08-20T22:03:40+02:00</lastmod>
   </url><url>
-    <loc>https://www.choiz.fr/tag/keyboard.html</loc>
-    <lastmod>2015-08-08T09:17:25+02:00</lastmod>
-  </url><url>
     <loc>https://www.choiz.fr/2015-08-08-touche-pour-sortir-sa-machine-de-veille.html</loc>
     <lastmod>2015-08-08T09:17:25+02:00</lastmod>
   </url><url>
@@ -415,9 +421,6 @@
   </url><url>
     <loc>https://www.choiz.fr/2013-02-12-logiciels-de-gestion-de-versions-svn-git.html</loc>
     <lastmod>2013-02-12T13:26:00+01:00</lastmod>
-  </url><url>
-    <loc>https://www.choiz.fr/tag/b%C3%A9po.html</loc>
-    <lastmod>2012-12-27T21:26:00+01:00</lastmod>
   </url><url>
     <loc>https://www.choiz.fr/2012-12-27-b%C3%A9po-11%C3%A8me-jour.html</loc>
     <lastmod>2012-12-27T21:26:00+01:00</lastmod>
