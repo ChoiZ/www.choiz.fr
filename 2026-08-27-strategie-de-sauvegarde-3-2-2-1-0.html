@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link href="https://fonts.bunny.net/css?family=source-sans-3:400,400i,600,700&family=jetbrains-mono:400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="ChoiZ Atom">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="François LASSERRE" />
+  <title>ChoiZ &ndash; La règle de sauvegarde 3-2-2-1-0</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="/"><img src="/img/profile.png" alt="Blog technique de François LASSERRE" title="Blog technique de François LASSERRE"></a>
+      <div>
+        <a href="/">Blog technique de François LASSERRE</a>
+      </div>
+      <nav>
+        <ul class="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives.html">Archives</a></li>
+          <li><a href="/tags.html">Tags</a></li>
+        </ul>
+      </nav>
+      <p>Je suis ingénieur informatique, depuis l'an 2000, j'ai fondé plusieurs webradios la dernière du nom est <a href="https://www.frequencehit.com">Fréquence Hit</a> n'hésitez pas à jeter une oreille.<br><br>Je fais de la domotique depuis 2017 et j'utilise principalement <a href="https://github.com/ChoiZ/home-assistant#home-assistant">Home-Assistant</a>.</p>
+      <ul class="social">
+        <li><a class="sc-github" href="https://www.github.com/ChoiZ"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-lastfm" href="https://www.last.fm/user/ChoiZ"><i class="fa fa-lastfm"></i></a></li>
+        <li><a class="sc-twitter" href="https://www.twitter.com/ChoiZ"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/ChoiZ"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    
+<article>
+  <nav class="breadcrumb" aria-label="fil d'Ariane">
+    <a href="/">Accueil</a> › <span>La règle de sauvegarde 3-2-2-1-0</span>
+  </nav>
+  <header>
+    <h1 id="2026-08-27-strategie-de-sauvegarde-3-2-2-1-0">La règle de sauvegarde 3-2-2-1-0</h1>
+    <p>Posté le jeu. 27 août 2026</p>
+  </header>
+  <div>
+    <p>Tout le monde connaît le 3-2-1 : trois copies de ses données, sur deux supports différents, dont une hors site. C&rsquo;est la règle qu&rsquo;on récite depuis des années, et elle reste un excellent point de départ. Le problème, c&rsquo;est qu&rsquo;elle a été pensée à une époque où l&rsquo;ennemi principal était la panne de disque ou l&rsquo;incendie. Aujourd&rsquo;hui, l&rsquo;ennemi s&rsquo;appelle surtout rançongiciel, et il a une fâcheuse habitude : avant de chiffrer vos fichiers, il cherche vos sauvegardes et les détruit. Une sauvegarde branchée, montée, accessible depuis la machine compromise, c&rsquo;est une sauvegarde qui part avec le reste.</p>
+<p>D&rsquo;où l&rsquo;évolution de la règle. Veeam a popularisé le 3-2-1-1-0, qui ajoute deux exigences au socle classique : un « 1 » pour une copie hors ligne ou immuable, et un « 0 » pour zéro erreur de restauration. Le 3-2-2-1-0 va un cran plus loin en dédoublant le hors-site : non plus une seule copie distante, mais deux, dans deux endroits séparés. Autant le dire tout de suite : ce sigle exact n&rsquo;est pas gravé dans le marbre d&rsquo;un éditeur, contrairement au 3-2-1-1-0. C&rsquo;est une extension logique, où le second « 2 » traduit une exigence de résilience géographique renforcée. Mais chaque brique, prise séparément, correspond à une bonne pratique établie.</p>
+<h2 id="les-cinq-chiffres-un-par-un">Les cinq chiffres, un par un</h2>
+<table>
+	<thead>
+			<tr>
+					<th>Chiffre</th>
+					<th>Ce qu&rsquo;il exige</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>3</td>
+					<td>Trois copies des données : la production plus deux sauvegardes</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>Réparties sur deux types de supports différents</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>Dont deux copies hors site, dans deux emplacements distincts</td>
+			</tr>
+			<tr>
+					<td>1</td>
+					<td>Dont une copie hors ligne ou immuable (air-gap / <em>immutable</em>)</td>
+			</tr>
+			<tr>
+					<td>0</td>
+					<td>Zéro erreur : sauvegardes vérifiées et restaurations testées</td>
+			</tr>
+	</tbody>
+</table>
+<p>Le 3 se compte simplement : vos données vivantes, plus deux sauvegardes. Trois exemplaires, parce qu&rsquo;avec deux, la corruption silencieuse de l&rsquo;un vous laisse sans point de comparaison, et une seule copie de secours qui tombe en panne au mauvais moment vous laisse à nu.</p>
+<p>Le premier 2 impose deux technologies de stockage différentes. L&rsquo;idée est de ne pas mettre tous ses œufs dans le même panier matériel : deux disques du même lot, achetés le même jour, ont une fâcheuse tendance à lâcher ensemble. Un NAS d&rsquo;un côté, un disque externe ou une bande de l&rsquo;autre, ou encore du disque local et du cloud : le but est que la même faiblesse ne puisse pas emporter deux copies d&rsquo;un coup.</p>
+<p>Le second 2 est ce qui distingue cette règle du 3-2-1 classique. Une seule copie hors site protège de l&rsquo;incendie ou du dégât des eaux qui ravage la pièce où se trouve le reste. Deux copies hors site, dans deux lieux réellement distincts — un autre bâtiment et un cloud, ou deux régions cloud géographiquement éloignées — protègent en plus du sinistre qui frappe le site distant lui-même, ou de la défaillance d&rsquo;un fournisseur. Deux emplacements séparés, pas deux disques dans le même tiroir : c&rsquo;est la distance qui fait la sécurité.</p>
+<p>Le 1 est la parade anti-rançongiciel. Il exige qu&rsquo;au moins une copie soit hors d&rsquo;atteinte d&rsquo;une machine compromise : soit littéralement débranchée (un disque dans un coffre, une bande sortie du lecteur), soit immuable, c&rsquo;est-à-dire verrouillée en écriture pour une durée définie et impossible à modifier ou supprimer même avec les identifiants d&rsquo;administration. C&rsquo;est ce que proposent l&rsquo;<em>Object Lock</em> de la plupart des stockages objet compatibles S3, ou les instantanés en lecture seule côté stockage. Sans ce maillon, un attaquant qui obtient vos accès efface vos sauvegardes aussi facilement que vos fichiers, et toute la belle redondance des chiffres précédents ne sert plus à rien.</p>
+<p>Le 0 est celui qu&rsquo;on oublie presque toujours, et c&rsquo;est peut-être le plus important. Une sauvegarde jamais restaurée est une sauvegarde de Schrödinger : vous ne savez pas si elle est valide tant que vous ne l&rsquo;avez pas ouverte, et le jour où vous en avez besoin est le pire moment pour découvrir qu&rsquo;elle est corrompue, incomplète ou illisible. Le zéro veut dire : on vérifie l&rsquo;intégrité des sauvegardes, et surtout on teste réellement une restauration, idéalement de façon automatisée, dans un environnement isolé. Tant qu&rsquo;une restauration n&rsquo;a pas abouti pour de vrai, vous n&rsquo;avez pas une sauvegarde, vous avez une espérance.</p>
+<h2 id="en-pratique-sans-se-ruiner">En pratique, sans se ruiner</h2>
+<p>On peut cocher toutes les cases sans budget d&rsquo;entreprise. Un exemple concret pour un particulier ou une petite structure : les données sur le poste de travail (copie 1), un NAS à la maison qui les synchronise (copie 2, autre support), un disque externe que l&rsquo;on branche une fois par semaine puis que l&rsquo;on débranche et range (la copie hors ligne du 1), et enfin un stockage objet distant avec <em>Object Lock</em> activé (copie hors site immuable). Deux copies loin du domicile — le cloud, et pourquoi pas un disque déposé chez un proche — et le tour du second 2 est joué. Reste le 0 : une restauration test de temps en temps, ne serait-ce que sortir quelques fichiers au hasard de chaque sauvegarde et vérifier qu&rsquo;ils s&rsquo;ouvrent.</p>
+<p>Ce qu&rsquo;il faut retenir, c&rsquo;est moins le sigle exact que la logique de durcissement progressif. Le 3-2-1 vous protège des accidents matériels. Le 3-2-1-1-0 ajoute la couche anti-rançongiciel et l&rsquo;obligation de vérifier. Le 3-2-2-1-0 renforce encore la dispersion géographique. On n&rsquo;est pas obligé de tout mettre en place du jour au lendemain ; mais si un seul de ces chiffres devait s&rsquo;ajouter à votre 3-2-1 aujourd&rsquo;hui, ce serait le 0. Une sauvegarde qu&rsquo;on n&rsquo;a jamais testée protège surtout la conscience de celui qui l&rsquo;a configurée.</p>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/backup.html">backup</a> <a href="/tag/storage.html">storage</a> 
+    </p>
+  </div>
+  <nav class="post-nav" aria-label="navigation entre articles">
+    <a href="/2026-08-25-bepo-5000eme-jour.html">← Bépoète depuis 5 000 jours !</a>
+    
+  </nav>
+  <div id="comments">
+    <h2>Commentaires</h2>
+    <div id="comments-loading" class="comments-loading" aria-live="polite">
+      <span class="comments-spinner" aria-hidden="true"></span>
+      Chargement des commentaires…
+    </div>
+  </div>
+  <script src="https://utteranc.es/client.js"
+          repo="ChoiZ/comments-on-choiz.fr" issue-term="url" label="blog"
+          theme="github-light" crossorigin="anonymous" async></script>
+  <script>
+  (function(){var l=document.getElementById('comments-loading');if(!l)return;var d=false;function h(){if(d)return;d=true;l.style.display='none';}
+  window.addEventListener('message',function(e){if(e.origin==='https://utteranc.es')h();});
+  var o=new MutationObserver(function(){var f=document.querySelector('.utterances-frame');if(f){f.addEventListener('load',h);o.disconnect();}});
+  o.observe(document.body,{childList:true,subtree:true});setTimeout(h,10000);})();
+  </script>
+</article>
+
+    <footer>
+      <p>&copy; François LASSERRE</p>
+      <p>Built using <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></p>
+    </footer>
+  </main>
+</body>
+</html>

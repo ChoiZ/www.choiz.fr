@@ -44,6 +44,38 @@
 
 <article>
   <header>
+    <h2><a href="/2014-03-04-cr%C3%A9ation-dune-cl%C3%A9-usb-xubuntu-sur-mac.html">Création d&#39;une clé usb xubuntu sur mac</a></h2>
+    <p>
+      Posté le mar. 4 mars 2014
+       &#8226; Tags : <a href="/tag/xubuntu.html">xubuntu</a>, <a href="/tag/osx.html">osx</a>, <a href="/tag/linux.html">linux</a>
+    </p>
+  </header>
+  <div class="post-excerpt">
+    <p>Dans le terminal sur votre mac :</p>
+<pre><code>diskutil list
+</code></pre>
+<p>Qui permet de lister vos disques durs / clés usb etc…</p>
+<p>ici ma clé usb est disk2. :</p>
+<pre><code>/dev/disk2
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *8.1 GB     disk2
+   1:                      Linux                         4.0 GB     disk2s1
+   2:                 Linux_Swap                         4.1 GB     disk2s5
+</code></pre>
+<p>Démontez la clé. :</p>
+<pre><code>diskutil unmountDisk /dev/disk2
+
+Unmount of all volumes on disk2 was successful
+</code></pre>
+<p>Maintenant on copie xubuntu depuis notre dossier téléchargements vers
+cette clé usb :</p>
+    <p><a class="btn" href="/2014-03-04-cr%C3%A9ation-dune-cl%C3%A9-usb-xubuntu-sur-mac.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2014-02-06-git-cherry-pick.html">git cherry-pick</a></h2>
     <p>
       Posté le jeu. 6 février 2014
@@ -263,30 +295,6 @@ P3P: CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;
 Set-Cookie: tmgioct=52485e21d628b00096885790; expires=Wed, 27-Sep-2023 17:06:41 GMT; path=/; httponly
 </code></pre>
     
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
-    <h2><a href="/2013-07-16-passer-de-svn-%C3%A0-git.html">Passer de svn à git</a></h2>
-    <p>
-      Posté le mar. 16 juillet 2013
-       &#8226; Tags : <a href="/tag/svn.html">svn</a>, <a href="/tag/git.html">git</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>Sur le projet Addictradio nous utilisons encore un de nos dépôts avec
-svn. Il est temps de faire la migration de svn à git !</p>
-<p>J&rsquo;ai testé plusieurs méthodes et aucune ne fait exactement ce que je
-voulais voici donc ma procédure :</p>
-<pre><code>svn log --quiet 'svn://svn.mondomaine/monprojet' | grep &quot;^r&quot; | awk
-'{print $3}' | sort | uniq | awk '{ print $1&quot; = &quot;$1&quot;
-&lt;&quot;$1&quot;@mondomaine&gt;&quot; }' &gt; authors.txt
-</code></pre>
-<p>J&rsquo;ai ensuite édité authors.txt pour remplacer nos différents pseudos par
-nos prénoms et noms puis j&rsquo;ai vérifié les adresses e-mails.</p>
-    <p><a class="btn" href="/2013-07-16-passer-de-svn-%C3%A0-git.html">Lire la suite</a></p>
   </div>
 </article>
 

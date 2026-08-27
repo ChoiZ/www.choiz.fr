@@ -44,6 +44,30 @@
 
 <article>
   <header>
+    <h2><a href="/2013-07-16-passer-de-svn-%C3%A0-git.html">Passer de svn à git</a></h2>
+    <p>
+      Posté le mar. 16 juillet 2013
+       &#8226; Tags : <a href="/tag/svn.html">svn</a>, <a href="/tag/git.html">git</a>
+    </p>
+  </header>
+  <div class="post-excerpt">
+    <p>Sur le projet Addictradio nous utilisons encore un de nos dépôts avec
+svn. Il est temps de faire la migration de svn à git !</p>
+<p>J&rsquo;ai testé plusieurs méthodes et aucune ne fait exactement ce que je
+voulais voici donc ma procédure :</p>
+<pre><code>svn log --quiet 'svn://svn.mondomaine/monprojet' | grep &quot;^r&quot; | awk
+'{print $3}' | sort | uniq | awk '{ print $1&quot; = &quot;$1&quot;
+&lt;&quot;$1&quot;@mondomaine&gt;&quot; }' &gt; authors.txt
+</code></pre>
+<p>J&rsquo;ai ensuite édité authors.txt pour remplacer nos différents pseudos par
+nos prénoms et noms puis j&rsquo;ai vérifié les adresses e-mails.</p>
+    <p><a class="btn" href="/2013-07-16-passer-de-svn-%C3%A0-git.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2013-06-22-export-import-avec-postgresql.html">Export / Import avec PostgreSQL</a></h2>
     <p>
       Posté le sam. 22 juin 2013
@@ -315,30 +339,6 @@ EOF
 <blockquote>
 <p>⚠️ À ne pas reproduire : ce script fait un <code>eval &quot;$GET_ID&quot;</code> en réinjectant dans <code>ID_FILE</code> le chemin passé via <code>-i</code>, sans jamais l&rsquo;assainir. Un chemin malveillant permet une injection shell. Si vous devez encore bricoler ce genre de script, échappez ou validez l&rsquo;argument avant de le passer à <code>eval</code>, ou évitez <code>eval</code> tout court.</p>
     <p><a class="btn" href="/2012-09-30-faire-un-ssh-copy-id-sur-mac-os-x.html">Lire la suite</a></p>
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
-    <h2><a href="/2012-09-29-ma-configuration-iterm2.html">Ma configuration iTerm2</a></h2>
-    <p>
-      Posté le sam. 29 septembre 2012
-       &#8226; Tags : <a href="/tag/osx.html">osx</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>Depuis quelques jours j&rsquo;utilise iTerm2 et je trouve ce terminal sous Mac
-Os X vraiment au top !</p>
-<p>J&rsquo;ai un clavier Apple Usb avec le pavé numérique il faut donc modifier
-les préférences d&rsquo;iTerm2.</p>
-<p>iTerm &gt; Préférences (ou ⌘ ,) puis dans Profiles &gt; Keys et en bas
-&ldquo;Load Preset&hellip;&rdquo; et choisir &ldquo;xterm with Numeric Keypad&rdquo;. Ce n&rsquo;est pas
-tout malheureusement.</p>
-<p>La touche &ldquo;enter&rdquo; du pavé numérique ne fonctionne pas il faut donc
-cliquer sur &ldquo;+&rdquo; et dans Keyboard Shortcut: appuyer sur la touche et &ldquo;↩&rdquo;
-doit apparaître. Dans Action: choisir &ldquo;Send Hex Code&rdquo; et taper &ldquo;0xd&rdquo;.</p>
-    <p><a class="btn" href="/2012-09-29-ma-configuration-iterm2.html">Lire la suite</a></p>
   </div>
 </article>
 

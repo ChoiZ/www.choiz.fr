@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.choiz.fr/tag/backup.html</loc>
+    <lastmod>2026-08-27T09:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://www.choiz.fr/index.html</loc>
+    <lastmod>2026-08-27T09:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://www.choiz.fr/2026-08-27-strategie-de-sauvegarde-3-2-2-1-0.html</loc>
+    <lastmod>2026-08-27T09:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://www.choiz.fr/posts/index.html</loc>
+    <lastmod>2026-08-27T09:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://www.choiz.fr/tag/storage.html</loc>
+    <lastmod>2026-08-27T09:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://www.choiz.fr/tags.html</loc>
+    <lastmod>2026-08-27T09:00:00+02:00</lastmod>
+  </url><url>
     <loc>https://www.choiz.fr/tag/b%C3%A9po.html</loc>
     <lastmod>2026-08-25T09:28:00+02:00</lastmod>
   </url><url>
     <loc>https://www.choiz.fr/2026-08-25-bepo-5000eme-jour.html</loc>
     <lastmod>2026-08-25T09:28:00+02:00</lastmod>
   </url><url>
-    <loc>https://www.choiz.fr/index.html</loc>
-    <lastmod>2026-08-25T09:28:00+02:00</lastmod>
-  </url><url>
     <loc>https://www.choiz.fr/tag/keyboard.html</loc>
-    <lastmod>2026-08-25T09:28:00+02:00</lastmod>
-  </url><url>
-    <loc>https://www.choiz.fr/posts/index.html</loc>
-    <lastmod>2026-08-25T09:28:00+02:00</lastmod>
-  </url><url>
-    <loc>https://www.choiz.fr/tags.html</loc>
     <lastmod>2026-08-25T09:28:00+02:00</lastmod>
   </url><url>
     <loc>https://www.choiz.fr/tag/cli.html</loc>
@@ -165,9 +174,6 @@
     <lastmod>2017-08-26T17:36:19+02:00</lastmod>
   </url><url>
     <loc>https://www.choiz.fr/tag/nas.html</loc>
-    <lastmod>2017-08-26T11:04:27+02:00</lastmod>
-  </url><url>
-    <loc>https://www.choiz.fr/tag/storage.html</loc>
     <lastmod>2017-08-26T11:04:27+02:00</lastmod>
   </url><url>
     <loc>https://www.choiz.fr/2017-08-26-upgrade-nas.html</loc>

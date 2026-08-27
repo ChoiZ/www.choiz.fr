@@ -44,6 +44,28 @@
 
 <article>
   <header>
+    <h2><a href="/2018-12-13-bien-nommer-ses-fichiers.html">Bien nommer ses fichiers</a></h2>
+    <p>
+      Posté le jeu. 13 décembre 2018
+       &#8226; Tags : <a href="/tag/file.html">file</a>, <a href="/tag/date.html">date</a>
+    </p>
+  </header>
+  <div class="post-excerpt">
+    <p>Pour bien nommer vos fichiers une méthode simple est de mettre la date dans le nom du fichier mais… comment faire ?</p>
+<p>Il faut mettre Lundi-10-Décembre-2018 dans le nom du fichier ?
+Non.</p>
+<p>Il faut donc mettre 10-12-2018 dans le nom du fichier ?
+Toujours pas.</p>
+<p>Ok donc comment faire ?
+Pour moi la méthode la plus simple pour bien trier vos fichiers par ordre chronologique, est de commencer par l&rsquo;année puis le mois puis le jour etc… On précise de plus en plus.
+Donc pour le Lundi 10 Décembre 2018 je vais écrire 20181210 ou 2018-12-10.</p>
+    <p><a class="btn" href="/2018-12-13-bien-nommer-ses-fichiers.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2018-12-05-ajouter-un-disque-a-une-grappe-raid-mdadm.html">Ajouter un disque a une grappe RAID MDADM</a></h2>
     <p>
       Posté le mer. 5 décembre 2018
@@ -283,30 +305,6 @@ publique.</p>
 <p><code>ssh-keygen -y -f ~/.ssh/id_rsa &gt; ~/.ssh/id_rsa.pub</code></p>
 <p>On utilise ci-dessus l&rsquo;id_rsa (privée) pour générer l&rsquo;id_rsa.pub.</p>
     
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
-    <h2><a href="/2017-06-01-utiliser-un-bastion-ssh.html">Utiliser un Bastion SSH</a></h2>
-    <p>
-      Posté le jeu. 1 juin 2017
-       &#8226; Tags : <a href="/tag/ssh.html">ssh</a>, <a href="/tag/linux.html">linux</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
-trouve dans <em>~/.ssh/config</em> et d&rsquo;ajouter les deux lignes suivantes :</p>
-<pre tabindex="0"><code>Host destination.local
-    ProxyCommand ssh user@bastion.fr -W %h:%p
-</code></pre><p>C&rsquo;est tout.</p>
-<p>Explications : on utilise l&rsquo;host <em>bastion.fr</em> pour se connecter à
-<em>destination.local</em>. Quand je tape sur ma machine locale <em>ssh
-<a href="mailto:choiz@destination.local">choiz@destination.local</a></em> mon client SSH lit le fichier de configuration, se
-connecte à l&rsquo;host <em>bastion.fr</em> avec l&rsquo;utilisateur <em>user</em> puis fait une nouvelle
-connexion vers ma destination.</p>
-    <p><a class="btn" href="/2017-06-01-utiliser-un-bastion-ssh.html">Lire la suite</a></p>
   </div>
 </article>
 

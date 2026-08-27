@@ -44,6 +44,37 @@
 
 <article>
   <header>
+    <h2><a href="/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html">Initialiser des sous-modules en cascade dans git</a></h2>
+    <p>
+      Posté le dim. 25 janvier 2015
+       &#8226; Tags : <a href="/tag/git.html">git</a>
+    </p>
+  </header>
+  <div class="post-excerpt">
+    <p>Pour initialiser les sous-modules dans git j&rsquo;utilise la commande
+suivante :</p>
+<pre><code>git submodule init
+</code></pre>
+<p>Ensuite je dois faire un update des sous-modules pour charger le contenu :</p>
+<pre><code>git submodule update
+</code></pre>
+<p>Pour faire les deux en même temps (init + update) vous pouvez faire :</p>
+<pre><code>git submodule update --init
+</code></pre>
+<p>Imaginons maintenant que vous avez des sous-modules dans d&rsquo;autres
+sous-modules. Exemple dans mon dépôt
+<a href="https://www.github.com/ChoiZ/dotfiles.git">dotfiles</a> j&rsquo;ai mon dépot
+<a href="https://www.github.com/ChoiZ/vim-config.git">vim</a> et dedans des
+sous-modules avec les plugins de vim. Pour initialiser, mettre à jour et
+le tout en cascade (dans tous les dossiers et sous-dossiers) il faut
+faire :</p>
+    <p><a class="btn" href="/2015-01-25-initialiser-des-sous-modules-en-cascade-dans-git.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2015-01-24-%C3%AAtes-vous-%C3%A0-lheure-et-votre-serveur.html">Êtes-vous à l&#39;heure ? (Et votre serveur ?)</a></h2>
     <p>
       Posté le sam. 24 janvier 2015
@@ -270,38 +301,6 @@ que ma ligne qui devait être sur plusieurs lignes ne l&rsquo;était pas…</p>
 </code></pre>
 <p>Or, quand je fais un diff on ne voit pas tous les caractères :</p>
     <p><a class="btn" href="/2014-03-05-git-diff-multiligne.html">Lire la suite</a></p>
-  </div>
-</article>
-
-<hr />
-<article>
-  <header>
-    <h2><a href="/2014-03-04-cr%C3%A9ation-dune-cl%C3%A9-usb-xubuntu-sur-mac.html">Création d&#39;une clé usb xubuntu sur mac</a></h2>
-    <p>
-      Posté le mar. 4 mars 2014
-       &#8226; Tags : <a href="/tag/xubuntu.html">xubuntu</a>, <a href="/tag/osx.html">osx</a>, <a href="/tag/linux.html">linux</a>
-    </p>
-  </header>
-  <div class="post-excerpt">
-    <p>Dans le terminal sur votre mac :</p>
-<pre><code>diskutil list
-</code></pre>
-<p>Qui permet de lister vos disques durs / clés usb etc…</p>
-<p>ici ma clé usb est disk2. :</p>
-<pre><code>/dev/disk2
-   #:                       TYPE NAME                    SIZE       IDENTIFIER
-   0:     FDisk_partition_scheme                        *8.1 GB     disk2
-   1:                      Linux                         4.0 GB     disk2s1
-   2:                 Linux_Swap                         4.1 GB     disk2s5
-</code></pre>
-<p>Démontez la clé. :</p>
-<pre><code>diskutil unmountDisk /dev/disk2
-
-Unmount of all volumes on disk2 was successful
-</code></pre>
-<p>Maintenant on copie xubuntu depuis notre dossier téléchargements vers
-cette clé usb :</p>
-    <p><a class="btn" href="/2014-03-04-cr%C3%A9ation-dune-cl%C3%A9-usb-xubuntu-sur-mac.html">Lire la suite</a></p>
   </div>
 </article>
 

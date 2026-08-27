@@ -6,7 +6,59 @@
   <link href="https://www.choiz.fr/feeds/all.atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://www.choiz.fr/</id>
   
-  <updated>2026-08-25T09:28:00+02:00</updated>
+  <updated>2026-08-27T09:00:00+02:00</updated>
+  
+  <entry>
+    <title>La règle de sauvegarde 3-2-2-1-0</title>
+    <link href="https://www.choiz.fr/2026-08-27-strategie-de-sauvegarde-3-2-2-1-0.html"/>
+    <id>https://www.choiz.fr/2026-08-27-strategie-de-sauvegarde-3-2-2-1-0.html</id>
+    <updated>2026-08-27T09:00:00+02:00</updated>
+    <author><name>choiz</name></author>
+    <category term="backup"/><category term="storage"/>
+    <summary type="html">&lt;p&gt;Tout le monde connaît le 3-2-1 : trois copies de ses données, sur deux supports différents, dont une hors site. C&amp;rsquo;est la règle qu&amp;rsquo;on récite depuis des années, et elle reste un excellent point de départ. Le problème, c&amp;rsquo;est qu&amp;rsquo;elle a été pensée à une époque où l&amp;rsquo;ennemi principal était la panne de disque ou l&amp;rsquo;incendie. Aujourd&amp;rsquo;hui, l&amp;rsquo;ennemi s&amp;rsquo;appelle surtout rançongiciel, et il a une fâcheuse habitude : avant de chiffrer vos fichiers, il cherche vos sauvegardes et les détruit. Une sauvegarde branchée, montée, accessible depuis la machine compromise, c&amp;rsquo;est une sauvegarde qui part avec le reste.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;Tout le monde connaît le 3-2-1 : trois copies de ses données, sur deux supports différents, dont une hors site. C&amp;rsquo;est la règle qu&amp;rsquo;on récite depuis des années, et elle reste un excellent point de départ. Le problème, c&amp;rsquo;est qu&amp;rsquo;elle a été pensée à une époque où l&amp;rsquo;ennemi principal était la panne de disque ou l&amp;rsquo;incendie. Aujourd&amp;rsquo;hui, l&amp;rsquo;ennemi s&amp;rsquo;appelle surtout rançongiciel, et il a une fâcheuse habitude : avant de chiffrer vos fichiers, il cherche vos sauvegardes et les détruit. Une sauvegarde branchée, montée, accessible depuis la machine compromise, c&amp;rsquo;est une sauvegarde qui part avec le reste.&lt;/p&gt;
+&lt;p&gt;D&amp;rsquo;où l&amp;rsquo;évolution de la règle. Veeam a popularisé le 3-2-1-1-0, qui ajoute deux exigences au socle classique : un « 1 » pour une copie hors ligne ou immuable, et un « 0 » pour zéro erreur de restauration. Le 3-2-2-1-0 va un cran plus loin en dédoublant le hors-site : non plus une seule copie distante, mais deux, dans deux endroits séparés. Autant le dire tout de suite : ce sigle exact n&amp;rsquo;est pas gravé dans le marbre d&amp;rsquo;un éditeur, contrairement au 3-2-1-1-0. C&amp;rsquo;est une extension logique, où le second « 2 » traduit une exigence de résilience géographique renforcée. Mais chaque brique, prise séparément, correspond à une bonne pratique établie.&lt;/p&gt;
+&lt;h2 id=&#34;les-cinq-chiffres-un-par-un&#34;&gt;Les cinq chiffres, un par un&lt;/h2&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Chiffre&lt;/th&gt;
+					&lt;th&gt;Ce qu&amp;rsquo;il exige&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;3&lt;/td&gt;
+					&lt;td&gt;Trois copies des données : la production plus deux sauvegardes&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;2&lt;/td&gt;
+					&lt;td&gt;Réparties sur deux types de supports différents&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;2&lt;/td&gt;
+					&lt;td&gt;Dont deux copies hors site, dans deux emplacements distincts&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;1&lt;/td&gt;
+					&lt;td&gt;Dont une copie hors ligne ou immuable (air-gap / &lt;em&gt;immutable&lt;/em&gt;)&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;0&lt;/td&gt;
+					&lt;td&gt;Zéro erreur : sauvegardes vérifiées et restaurations testées&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Le 3 se compte simplement : vos données vivantes, plus deux sauvegardes. Trois exemplaires, parce qu&amp;rsquo;avec deux, la corruption silencieuse de l&amp;rsquo;un vous laisse sans point de comparaison, et une seule copie de secours qui tombe en panne au mauvais moment vous laisse à nu.&lt;/p&gt;
+&lt;p&gt;Le premier 2 impose deux technologies de stockage différentes. L&amp;rsquo;idée est de ne pas mettre tous ses œufs dans le même panier matériel : deux disques du même lot, achetés le même jour, ont une fâcheuse tendance à lâcher ensemble. Un NAS d&amp;rsquo;un côté, un disque externe ou une bande de l&amp;rsquo;autre, ou encore du disque local et du cloud : le but est que la même faiblesse ne puisse pas emporter deux copies d&amp;rsquo;un coup.&lt;/p&gt;
+&lt;p&gt;Le second 2 est ce qui distingue cette règle du 3-2-1 classique. Une seule copie hors site protège de l&amp;rsquo;incendie ou du dégât des eaux qui ravage la pièce où se trouve le reste. Deux copies hors site, dans deux lieux réellement distincts — un autre bâtiment et un cloud, ou deux régions cloud géographiquement éloignées — protègent en plus du sinistre qui frappe le site distant lui-même, ou de la défaillance d&amp;rsquo;un fournisseur. Deux emplacements séparés, pas deux disques dans le même tiroir : c&amp;rsquo;est la distance qui fait la sécurité.&lt;/p&gt;
+&lt;p&gt;Le 1 est la parade anti-rançongiciel. Il exige qu&amp;rsquo;au moins une copie soit hors d&amp;rsquo;atteinte d&amp;rsquo;une machine compromise : soit littéralement débranchée (un disque dans un coffre, une bande sortie du lecteur), soit immuable, c&amp;rsquo;est-à-dire verrouillée en écriture pour une durée définie et impossible à modifier ou supprimer même avec les identifiants d&amp;rsquo;administration. C&amp;rsquo;est ce que proposent l&amp;rsquo;&lt;em&gt;Object Lock&lt;/em&gt; de la plupart des stockages objet compatibles S3, ou les instantanés en lecture seule côté stockage. Sans ce maillon, un attaquant qui obtient vos accès efface vos sauvegardes aussi facilement que vos fichiers, et toute la belle redondance des chiffres précédents ne sert plus à rien.&lt;/p&gt;
+&lt;p&gt;Le 0 est celui qu&amp;rsquo;on oublie presque toujours, et c&amp;rsquo;est peut-être le plus important. Une sauvegarde jamais restaurée est une sauvegarde de Schrödinger : vous ne savez pas si elle est valide tant que vous ne l&amp;rsquo;avez pas ouverte, et le jour où vous en avez besoin est le pire moment pour découvrir qu&amp;rsquo;elle est corrompue, incomplète ou illisible. Le zéro veut dire : on vérifie l&amp;rsquo;intégrité des sauvegardes, et surtout on teste réellement une restauration, idéalement de façon automatisée, dans un environnement isolé. Tant qu&amp;rsquo;une restauration n&amp;rsquo;a pas abouti pour de vrai, vous n&amp;rsquo;avez pas une sauvegarde, vous avez une espérance.&lt;/p&gt;
+&lt;h2 id=&#34;en-pratique-sans-se-ruiner&#34;&gt;En pratique, sans se ruiner&lt;/h2&gt;
+&lt;p&gt;On peut cocher toutes les cases sans budget d&amp;rsquo;entreprise. Un exemple concret pour un particulier ou une petite structure : les données sur le poste de travail (copie 1), un NAS à la maison qui les synchronise (copie 2, autre support), un disque externe que l&amp;rsquo;on branche une fois par semaine puis que l&amp;rsquo;on débranche et range (la copie hors ligne du 1), et enfin un stockage objet distant avec &lt;em&gt;Object Lock&lt;/em&gt; activé (copie hors site immuable). Deux copies loin du domicile — le cloud, et pourquoi pas un disque déposé chez un proche — et le tour du second 2 est joué. Reste le 0 : une restauration test de temps en temps, ne serait-ce que sortir quelques fichiers au hasard de chaque sauvegarde et vérifier qu&amp;rsquo;ils s&amp;rsquo;ouvrent.&lt;/p&gt;
+&lt;p&gt;Ce qu&amp;rsquo;il faut retenir, c&amp;rsquo;est moins le sigle exact que la logique de durcissement progressif. Le 3-2-1 vous protège des accidents matériels. Le 3-2-1-1-0 ajoute la couche anti-rançongiciel et l&amp;rsquo;obligation de vérifier. Le 3-2-2-1-0 renforce encore la dispersion géographique. On n&amp;rsquo;est pas obligé de tout mettre en place du jour au lendemain ; mais si un seul de ces chiffres devait s&amp;rsquo;ajouter à votre 3-2-1 aujourd&amp;rsquo;hui, ce serait le 0. Une sauvegarde qu&amp;rsquo;on n&amp;rsquo;a jamais testée protège surtout la conscience de celui qui l&amp;rsquo;a configurée.&lt;/p&gt;
+</content>
+  </entry>
   
   <entry>
     <title>Bépoète depuis 5 000 jours !</title>
@@ -1462,48 +1514,6 @@ publique.&lt;/p&gt;
 &lt;p&gt;Pour ce faire il faut utiliser la commande &lt;em&gt;ssh-keygen&lt;/em&gt; avec l&amp;rsquo;option &lt;em&gt;-y&lt;/em&gt; et &lt;em&gt;-f&lt;/em&gt; pour désigner la clé privée.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ssh-keygen -y -f ~/.ssh/id_rsa &amp;gt; ~/.ssh/id_rsa.pub&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;On utilise ci-dessus l&amp;rsquo;id_rsa (privée) pour générer l&amp;rsquo;id_rsa.pub.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Utiliser un Bastion SSH</title>
-    <link href="https://www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html"/>
-    <id>https://www.choiz.fr/2017-06-01-utiliser-un-bastion-ssh.html</id>
-    <updated>2017-06-01T21:29:24+02:00</updated>
-    <author><name>choiz</name></author>
-    <category term="ssh"/><category term="linux"/>
-    <summary type="html">&lt;p&gt;Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
-trouve dans &lt;em&gt;~/.ssh/config&lt;/em&gt; et d&amp;rsquo;ajouter les deux lignes suivantes :&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Host destination.local
-    ProxyCommand ssh user@bastion.fr -W %h:%p
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;C&amp;rsquo;est tout.&lt;/p&gt;
-&lt;p&gt;Explications : on utilise l&amp;rsquo;host &lt;em&gt;bastion.fr&lt;/em&gt; pour se connecter à
-&lt;em&gt;destination.local&lt;/em&gt;. Quand je tape sur ma machine locale &lt;em&gt;ssh
-&lt;a href=&#34;mailto:choiz@destination.local&#34;&gt;choiz@destination.local&lt;/a&gt;&lt;/em&gt; mon client SSH lit le fichier de configuration, se
-connecte à l&amp;rsquo;host &lt;em&gt;bastion.fr&lt;/em&gt; avec l&amp;rsquo;utilisateur &lt;em&gt;user&lt;/em&gt; puis fait une nouvelle
-connexion vers ma destination.&lt;/p&gt;</summary>
-    <content type="html">&lt;p&gt;Pour créer un Bastion SSH il suffit de modifier votre configuration ssh qui se
-trouve dans &lt;em&gt;~/.ssh/config&lt;/em&gt; et d&amp;rsquo;ajouter les deux lignes suivantes :&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Host destination.local
-    ProxyCommand ssh user@bastion.fr -W %h:%p
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;C&amp;rsquo;est tout.&lt;/p&gt;
-&lt;p&gt;Explications : on utilise l&amp;rsquo;host &lt;em&gt;bastion.fr&lt;/em&gt; pour se connecter à
-&lt;em&gt;destination.local&lt;/em&gt;. Quand je tape sur ma machine locale &lt;em&gt;ssh
-&lt;a href=&#34;mailto:choiz@destination.local&#34;&gt;choiz@destination.local&lt;/a&gt;&lt;/em&gt; mon client SSH lit le fichier de configuration, se
-connecte à l&amp;rsquo;host &lt;em&gt;bastion.fr&lt;/em&gt; avec l&amp;rsquo;utilisateur &lt;em&gt;user&lt;/em&gt; puis fait une nouvelle
-connexion vers ma destination.&lt;/p&gt;
-&lt;p&gt;Vous pouvez modifier votre configuration ssh pour se connecter à votre bastion
-avec une clé spécifique puis à votre destination avec une autre clé par exemple
-ou avec des utilisateurs différents…&lt;/p&gt;
-&lt;p&gt;Exemple :&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Host bastion.fr
-    User toto
-    IdentifyFile ~/.ssh/bastion
-
-Host destination.local
-    User tata
-    IdentifyFile ~/.ssh/destination
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Enjoy vincent.m ;-)&lt;/p&gt;
 </content>
   </entry>
   

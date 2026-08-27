@@ -44,6 +44,40 @@
 
 <article>
   <header>
+    <h2><a href="/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Protection de fichier tel qu&#39;un htaccess en PHP</a></h2>
+    <p>
+      Posté le ven. 11 février 2011
+       &#8226; Tags : <a href="/tag/php.html">php</a>, <a href="/tag/code.html">code</a>
+    </p>
+  </header>
+  <div class="post-excerpt">
+    <p>Faire un système de protection (tel que htaccess) direct dans un fichier PHP :</p>
+<p>Au lieu de :</p>
+<pre><del>if (!empty($_SERVER["PHP_AUTH_USER"]) &&
+$_SERVER["PHP_AUTH_USER"] == "login" &&
+$_SERVER["PHP_AUTH_PW"] == "password") {</del></pre>
+<pre tabindex="0"><code>&lt;?php
+// Identifiants stockés dans un fichier de config non versionné (hors du repo)
+$config = require __DIR__ . &#39;/auth-config.php&#39;; // [&#39;user&#39; =&gt; &#39;login&#39;, &#39;pass_hash&#39; =&gt; password_hash(&#39;password&#39;, PASSWORD_DEFAULT)]
+
+if (!empty($_SERVER[&#34;PHP_AUTH_USER&#34;]) &amp;&amp;
+hash_equals($config[&#39;user&#39;], $_SERVER[&#34;PHP_AUTH_USER&#34;]) &amp;&amp;
+password_verify($_SERVER[&#34;PHP_AUTH_PW&#34;], $config[&#39;pass_hash&#39;])) {
+    // code protégé ici
+} else {
+    header(&#39;WWW-Authenticate: Basic realm=&#34;Restricted area&#34;&#39;);
+    header(&#39;HTTP/1.0 401 Unauthorized&#39;);
+    exit(&#39;Access Denied&#39;);
+}
+</code></pre><blockquote>
+<p>⚠️ À ne pas reproduire : ne jamais coder les identifiants en dur, ils finissent versionnés et exposés dans le repo. Sortez-les dans une config non versionnée et comparez un hash avec hash_equals() / password_verify() ; le == sur un secret est aussi sensible aux attaques par timing.</p>
+    <p><a class="btn" href="/2011-02-11-protection-de-fichier-tel-quun-htaccess-en-php.html">Lire la suite</a></p>
+  </div>
+</article>
+
+<hr />
+<article>
+  <header>
     <h2><a href="/2011-01-07-jquery-attr-avec-onclick-par-click.html">jQuery attr() avec onclick par click()</a></h2>
     <p>
       Posté le ven. 7 janvier 2011
